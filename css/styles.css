@@ -1,0 +1,13 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+button#lang-toggle:hover {
+  background-color: #1e40af;
+}
