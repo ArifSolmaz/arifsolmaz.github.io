@@ -6,17 +6,50 @@
   <script src="https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
-    body { font-family: sans-serif; padding: 2rem; }
-    input { padding: 5px; margin: 5px; width: 100px; }
-    button { padding: 10px 20px; margin-top: 10px; }
-    #output, #canvas-container { margin-top: 20px; font-size: 1.1rem; background: #f9f9f9; padding: 10px; border-radius: 8px; }
-    canvas { margin-top: 20px; }
+    body {
+      font-family: sans-serif;
+      padding: 2rem;
+      background-color: #f3faff;
+    }
+    input {
+      padding: 5px;
+      margin: 5px;
+      width: 120px;
+    }
+    button {
+      padding: 8px 16px;
+      margin: 6px;
+      border-radius: 6px;
+      border: 1px solid #aaa;
+      background-color: #e3e3ff;
+      cursor: pointer;
+    }
+    #output, #canvas-container {
+      margin-top: 20px;
+      font-size: 1.1rem;
+      background: #ffffff;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    canvas {
+      margin-top: 20px;
+    }
   </style>
 </head>
 <body>
   <h1>☄️ Meteor Enerji Hesaplayıcı</h1>
   <p>1972 meteor olayı gibi büyük meteorların potansiyel etkisini hesaplayın.</p>
 
+  <!-- 🔘 Hazır Senaryolar -->
+  <div>
+    <strong>📌 Hazır Senaryolar:</strong><br>
+    <button onclick="loadScenario(4000000, 15)">1972 ABD Meteoru</button>
+    <button onclick="loadScenario(10000000, 27)">Tunguska (1908)</button>
+    <button onclick="loadScenario(13000, 19)">Çelyabinsk (2013)</button>
+  </div>
+
+  <!-- 🧮 Giriş Formu -->
   <form onsubmit="calculate(); return false;">
     <label>Kütle (kg):</label>
     <input type="number" id="mass" value="4000000" step="100000"><br>
@@ -25,13 +58,16 @@
     <button type="submit">Hesapla</button>
   </form>
 
+  <!-- 🔢 Hesaplama Sonucu -->
   <div id="output">Hesaplama bekleniyor...</div>
 
+  <!-- 📈 Grafik -->
   <div id="canvas-container">
     <h3>Farklı Hızlara Göre Enerji (kütle sabit)</h3>
     <canvas id="energyChart" width="600" height="300"></canvas>
   </div>
 
+  <!-- 🚀 Scriptler -->
   <script>
     let pyodideReady = loadPyodide();
 
@@ -101,6 +137,12 @@ list(zip(velocities_kms.tolist(), energies_megaton.tolist()))
           }
         }
       });
+    }
+
+    function loadScenario(mass, velocity) {
+      document.getElementById("mass").value = mass;
+      document.getElementById("velocity").value = velocity;
+      calculate();
     }
   </script>
 </body>
