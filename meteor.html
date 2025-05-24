@@ -10,200 +10,133 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
   <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css"/>
   <style>
-    body {
-      font-family: sans-serif;
-      padding: 2rem;
-      background-color: #f3faff;
-    }
-    input, select {
-      padding: 5px;
-      margin: 5px;
-      width: 160px;
-    }
-    button {
-      padding: 8px 16px;
-      margin: 6px;
-      border-radius: 6px;
-      border: 1px solid #aaa;
-      background-color: #e3e3ff;
-      cursor: pointer;
-    }
-    #output, #map-container {
-      margin-top: 20px;
-      font-size: 1.1rem;
-      background: #ffffff;
-      padding: 12px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-    }
-    #map {
-      height: 400px;
-      width: 100%;
-    }
-    .export-btn {
-      margin-top: 20px;
-    }
+    body { font-family: sans-serif; padding: 2rem; background-color: #f3faff; }
+    input, select { padding: 5px; margin: 5px; width: 160px; }
+    button { padding: 8px 16px; margin: 6px; border-radius: 6px; border: 1px solid #aaa; background-color: #e3e3ff; cursor: pointer; }
+    #output, #map-container { margin-top: 20px; font-size: 1.1rem; background: #ffffff; padding: 12px; border-radius: 8px; border: 1px solid #ccc; }
+    #map { height: 400px; width: 100%; }
+    .export-btn { margin-top: 20px; }
+    #helpBtn { position: fixed; top: 20px; right: 20px; z-index: 1000; background-color: #0077cc; color: white; }
+    #helpPopup { display: none; position: fixed; top: 80px; right: 20px; width: 300px; background-color: white; border: 1px solid #ccc; padding: 15px; border-radius: 8px; z-index: 1001; box-shadow: 0 0 10px rgba(0,0,0,0.2); }
+    #helpPopup .close { position: absolute; top: 5px; right: 10px; cursor: pointer; font-weight: bold; }
   </style>
 </head>
 <body>
-  <h1>☄️ Meteor Enerji Hesaplayıcı</h1>
-  <p>Meteor çarpmasının etkisini hesaplayın ve farklı senaryoları kıyaslayın.</p>
 
-  <strong>📌 Hazır Senaryolar:</strong><br>
-  <button onclick="loadScenario(4000000, 15, 'land')">1972 ABD Meteoru</button>
-  <button onclick="loadScenario(10000000, 27, 'land')">Tunguska (1908)</button>
-  <button onclick="loadScenario(13000, 19, 'ice')">Çelyabinsk (2013)</button>
+<button id="helpBtn">ℹ️ Yardım</button>
+<div id="helpPopup">
+  <span class="close" onclick="document.getElementById('helpPopup').style.display='none'">×</span>
+  <h3>Kullanım Kılavuzu</h3>
+  <p>Bu sayfada meteor çarpmasının etkilerini hesaplayabilirsiniz:</p>
+  <ul>
+    <li>Hacim, hız, giriş açısı ve meteor tipi seçin.</li>
+    <li>Yüzey türünü belirtin: kara, su, ya da buz.</li>
+    <li>Harita üzerinden çarpma konumu seçin.</li>
+    <li>“Hesapla” tuşuna basarak sonuçları görün.</li>
+    <li>Enerji, krater çapı, patlama yüksekliği, ölümcül ve şok etkisi gibi sonuçlar gösterilir.</li>
+    <li>Haritada renkli çemberlerle etkiler görselleştirilir.</li>
+  </ul>
+  <p>📤 “Sonuçları Kaydet” ile ekran çıktısı alabilirsiniz.</p>
+</div>
 
-  <form onsubmit="calculate(); return false;">
-    <label>Hacim (m³):</label>
-    <input type="number" id="volume" value="1333" step="100"><br>
-    <label>Hız (km/s):</label>
-    <input type="number" id="velocity" value="15" step="1"><br>
-    <label>Giriş Açısı (derece):</label>
-    <input type="number" id="angle" value="90" step="1" min="10" max="90"><br>
-    <label>Yüzey Tipi:</label>
-    <select id="surface">
-      <option value="land">Kara</option>
-      <option value="water">Su</option>
-      <option value="ice">Buz</option>
-    </select><br>
-    <label>Meteor Tipi:</label>
-    <select id="material">
-      <option value="rock">Taş (3000 kg/m^3)</option>
-      <option value="iron">Demir (7800 kg/m^3)</option>
-    </select><br>
-    <button type="submit">Hesapla</button>
-  </form>
+<strong>📌 Hazır Senaryolar:</strong><br>
+<button onclick="loadScenario(4000000, 15, 'land')">1972 ABD Meteoru</button>
+<button onclick="loadScenario(10000000, 27, 'land')">Tunguska (1908)</button>
+<button onclick="loadScenario(13000, 19, 'ice')">Çelyabinsk (2013)</button>
+<br><br>
+<form onsubmit="calculate(); return false;">
+  <label>Hacim (m³):</label><input type="number" id="volume" value="1333"><br>
+  <label>Hız (km/s):</label><input type="number" id="velocity" value="15"><br>
+  <label>Giriş Açısı (derece):</label><input type="number" id="angle" value="90" min="10" max="90"><br>
+  <label>Yüzey Tipi:</label>
+  <select id="surface"><option value="land">Kara</option><option value="water">Su</option><option value="ice">Buz</option></select><br>
+  <label>Meteor Tipi:</label>
+  <select id="material"><option value="rock">Taş (3000 kg/m³)</option><option value="iron">Demir (7800 kg/m³)</option></select><br>
+  <button type="submit">Hesapla</button>
+</form>
 
-  <div id="output">Hesaplama bekleniyor...</div>
-  <button class="export-btn" onclick="exportOutput()">📤 Sonuçları Görsel Olarak Kaydet</button>
+<div id="output">Hesaplama bekleniyor...</div>
+<button class="export-btn" onclick="exportOutput()">📤 Sonuçları Görsel Olarak Kaydet</button>
+<div id="map-container"><h3>🌍 Çarpma Konumunu Seçin</h3><div id="map"></div></div>
 
-  <div id="map-container">
-    <h3>🌍 Çarpma Konumunu Seçin</h3>
-    <div id="map"></div>
-  </div>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+<script>
+let marker, circle;
+const pyodideReady = loadPyodide();
 
-  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-  <script>
-    const pyodideReady = loadPyodide();
+async function calculate() {
+  const pyodide = await pyodideReady;
+  const volume = parseFloat(document.getElementById("volume").value);
+  const velocity = parseFloat(document.getElementById("velocity").value) * 1000;
+  const angle = Math.sin(parseFloat(document.getElementById("angle").value) * Math.PI / 180);
+  const surface = document.getElementById("surface").value;
+  const material = document.getElementById("material").value;
+  const density = material === "rock" ? 3000 : 7800;
+  const mass = volume * density;
+  const drag = 0.8, ablation = 0.85;
+  const v_final = velocity * drag * angle;
+  const m_final = mass * ablation;
+  const mult = surface === "water" ? 0.75 : (surface === "ice" ? 0.6 : 1);
 
-    async function calculate() {
-      const pyodide = await pyodideReady;
-
-      const volume = parseFloat(document.getElementById("volume").value);
-      const velocity_kms = parseFloat(document.getElementById("velocity").value);
-      const angle_deg = parseFloat(document.getElementById("angle").value);
-      const angle_rad = Math.sin(angle_deg * Math.PI / 180);
-      const velocity = velocity_kms * 1000 * angle_rad;
-
-      const surface = document.getElementById("surface").value;
-      const material = document.getElementById("material").value;
-
-      let multiplier = 1;
-      if (surface === "water") multiplier = 0.75;
-      if (surface === "ice") multiplier = 0.6;
-
-      let density = material === "rock" ? 3000 : 7800;
-      const mass = volume * density;
-
-      const dragFactor = 0.8;
-      const ablationFactor = 0.85;
-      const v_final = velocity * dragFactor;
-      const m_final = mass * ablationFactor;
-
-      const code = `
+  const code = `
 m = ${m_final}
 v = ${v_final}
 tnt_megaton = 4.2e15
 hiroshima_kt = 13
-
-H = 0
-if v > 20000:
-    H = 30000
-elif v > 10000:
-    H = 10000
-else:
-    H = 0
-
-E = 0.5 * m * v ** 2 * ${multiplier}
+H = 30000 if v > 20000 else 10000 if v > 10000 else 0
+E = 0.5 * m * v ** 2 * ${mult}
 tnt_eq = E / tnt_megaton
 hiroshima_eq = tnt_eq * 1000 / hiroshima_kt
-crater_diameter = (E / 4.2e15) ** (1/3) * 1200 if H == 0 else 0
+crater_diameter = (E / 4.2e15)**(1/3)*1200 if H == 0 else 0
 crater_depth = crater_diameter * 0.2
+death_radius = (E / 4.2e15)**(1/3)*20000
+shock_radius = (E / 4.2e15)**(1/3)*50000
+f"Enerji: {E:.2e} J\nTNT Karşılığı: {tnt_eq:.2f} megaton\nHiroşima Eşdeğeri: {hiroshima_eq:.1f} bomba\nPatlama Yüksekliği: {H} m\nKrater Çapı: {crater_diameter:.0f} m\nKrater Derinliği: {crater_depth:.0f} m\nÖlümcül Etki Yarıçapı: {death_radius/1000:.1f} km\nŞok Dalgası Etkisi: {shock_radius/1000:.1f} km"`
+  const result = await pyodide.runPythonAsync(code);
+  document.getElementById("output").innerText = result;
 
-death_radius = (E / 4.2e15) ** (1/3) * 20000
-shock_radius = (E / 4.2e15) ** (1/3) * 50000
+  if (marker) {
+    if (circle) map.removeLayer(circle);
+    const latlng = marker.getLatLng();
+    const crater = parseFloat(result.match(/Krater Çapı: (\d+)/)[1]);
+    const death = parseFloat(result.match(/Ölümcül Etki Yarıçapı: ([\d.]+)/)[1]) * 1000;
+    const shock = parseFloat(result.match(/Şok Dalgası Etkisi: ([\d.]+)/)[1]) * 1000;
+    L.circle(latlng, { radius: crater / 2, color: 'red', fillColor: '#f03', fillOpacity: 0.5 }).addTo(map);
+    L.circle(latlng, { radius: death, color: 'orange', fillOpacity: 0.15 }).addTo(map);
+    L.circle(latlng, { radius: shock, color: 'yellow', fillOpacity: 0.1 }).addTo(map);
+  }
+}
 
-f"Enerji: {E:.2e} J\\nTNT Karşılığı: {tnt_eq:.2f} megaton\\nHiroşima Eşdeğeri: {hiroshima_eq:.1f} bomba\\nPatlama Yüksekliği: {H} m\\nKrater Çapı: {crater_diameter:.0f} m\\nKrater Derinliği: {crater_depth:.0f} m\\nÖlümcül Etki Yarıçapı: {death_radius/1000:.1f} km\\nŞok Dalgası Etkisi: {shock_radius/1000:.1f} km (Malzeme: ${material}, Yüzey: ${surface})"
-      `;
+function exportOutput() {
+  html2canvas(document.getElementById("output")).then(canvas => {
+    const link = document.createElement("a");
+    link.download = "meteor_sonuclari.png";
+    link.href = canvas.toDataURL();
+    link.click();
+  });
+}
 
-      const result = await pyodide.runPythonAsync(code);
-      document.getElementById("output").innerText = result;
+function loadScenario(mass, velocity, surface) {
+  const defaultDensity = 3000;
+  const volume = mass / defaultDensity;
+  document.getElementById("volume").value = Math.round(volume);
+  document.getElementById("velocity").value = velocity;
+  document.getElementById("surface").value = surface;
+  document.getElementById("angle").value = 90;
+  document.getElementById("material").value = "rock";
+  calculate();
+}
 
-      if (marker) {
-        if (circle) map.removeLayer(circle);
-
-        const diameter = parseFloat(result.match(/Krater Çapı: (\d+)/)[1]);
-        const death_km = parseFloat(result.match(/Ölümcül Etki Yarıçapı: ([\d.]+)/)[1]);
-        const shock_km = parseFloat(result.match(/Şok Dalgası Etkisi: ([\d.]+)/)[1]);
-
-        circle = L.circle(marker.getLatLng(), {
-          radius: diameter / 2,
-          color: 'red',
-          fillColor: '#f03',
-          fillOpacity: 0.5
-        }).addTo(map);
-
-        L.circle(marker.getLatLng(), {
-          radius: death_km * 1000,
-          color: 'orange',
-          fillOpacity: 0.15,
-          weight: 1
-        }).addTo(map);
-
-        L.circle(marker.getLatLng(), {
-          radius: shock_km * 1000,
-          color: 'yellow',
-          fillOpacity: 0.1,
-          weight: 1
-        }).addTo(map);
-      }
-    }
-
-    function exportOutput() {
-      html2canvas(document.getElementById("output")).then(canvas => {
-        const link = document.createElement('a');
-        link.download = 'meteor_sonuclari.png';
-        link.href = canvas.toDataURL();
-        link.click();
-      });
-    }
-
-    function loadScenario(mass, velocity, surface) {
-      const defaultDensity = 3000;
-      const volume = mass / defaultDensity;
-      document.getElementById("volume").value = Math.round(volume);
-      document.getElementById("velocity").value = velocity;
-      document.getElementById("surface").value = surface;
-      document.getElementById("angle").value = 90;
-      calculate();
-    }
-
-    const map = L.map('map').setView([40, 30], 2);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; OpenStreetMap katkıcıları'
-    }).addTo(map);
-
-    L.Control.geocoder().addTo(map);
-
-    let marker, circle;
-    map.on('click', function(e) {
-      if (marker) map.removeLayer(marker);
-      if (circle) map.removeLayer(circle);
-      marker = L.marker(e.latlng).addTo(map)
-        .bindPopup("Çarpma Noktası: " + e.latlng.lat.toFixed(2) + ", " + e.latlng.lng.toFixed(2))
-        .openPopup();
-    });
-  </script>
+const map = L.map("map").setView([40, 30], 2);
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", { attribution: "OpenStreetMap" }).addTo(map);
+L.Control.geocoder().addTo(map);
+map.on("click", function(e) {
+  if (marker) map.removeLayer(marker);
+  marker = L.marker(e.latlng).addTo(map).bindPopup("Çarpma Noktası: " + e.latlng.lat.toFixed(2) + ", " + e.latlng.lng.toFixed(2)).openPopup();
+});
+document.getElementById("helpBtn").addEventListener("click", function () {
+  document.getElementById("helpPopup").style.display = "block";
+});
+</script>
 </body>
 </html>
