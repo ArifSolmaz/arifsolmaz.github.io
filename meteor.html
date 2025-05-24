@@ -62,10 +62,19 @@
 <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 <script>
 let marker, circle;
-const pyodideReady = loadPyodide();
+let pyodideLoaded = false;
+let pyodide;
+loadPyodide().then(p => {
+  pyodide = p;
+  pyodideLoaded = true;
+});
 
 async function calculate() {
-  const pyodide = await pyodideReady;
+  if (!pyodideLoaded) {
+    alert("Lütfen birkaç saniye bekleyin, sistem yükleniyor...");
+    return;
+  }
+    // pyodide zaten tanımlı
   const volume = parseFloat(document.getElementById("volume").value);
   const velocity = parseFloat(document.getElementById("velocity").value) * 1000;
   const angle = Math.sin(parseFloat(document.getElementById("angle").value) * Math.PI / 180);
