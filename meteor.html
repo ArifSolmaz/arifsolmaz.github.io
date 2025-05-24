@@ -76,17 +76,10 @@
   </div>
 
   <script>
-    let pyodide;
-    window.addEventListener('load', async () => {
-      pyodide = await loadPyodide();
-      console.log("✅ Pyodide yüklendi");
-    });
+    const pyodideReady = loadPyodide();
 
     async function calculate() {
-      if (!pyodide) {
-        alert("Python motoru henüz yüklenmedi. Lütfen birkaç saniye sonra tekrar deneyin.");
-        return;
-      }
+      const pyodide = await pyodideReady;
 
       const mass = parseFloat(document.getElementById("mass").value);
       const velocity_kms = parseFloat(document.getElementById("velocity").value);
@@ -111,7 +104,7 @@ tnt_eq = E / tnt_megaton
 hiroshima_eq = tnt_eq * 1000 / hiroshima_kt
 crater_diameter = (E / 4.2e15) ** (1/3) * 1200
 
-f"Enerji: {E:.2e} J\nTNT Karşılığı: {tnt_eq:.2f} megaton\nHiroşima Eşdeğeri: {hiroshima_eq:.1f} bomba\nKrater Çapı: {crater_diameter:.0f} m (Malzeme: ${material}, Yüzey: ${surface})"
+f"Enerji: {E:.2e} J\\nTNT Karşılığı: {tnt_eq:.2f} megaton\\nHiroşima Eşdeğeri: {hiroshima_eq:.1f} bomba\\nKrater Çapı: {crater_diameter:.0f} m (Malzeme: ${material}, Yüzey: ${surface})"
       `;
 
       const result = await pyodide.runPythonAsync(code);
@@ -134,7 +127,7 @@ f"Enerji: {E:.2e} J\nTNT Karşılığı: {tnt_eq:.2f} megaton\nHiroşima Eşdeğ
     map.on('click', function(e) {
       if (marker) map.removeLayer(marker);
       marker = L.marker(e.latlng).addTo(map)
-        .bindPopup("Çarpma Noktası: " + e.latlng.lat.toFixed(2) + ", " + e.latlng.lng.toFixed(2))
+        .bindPopup("\u00c7arpma Noktası: " + e.latlng.lat.toFixed(2) + ", " + e.latlng.lng.toFixed(2))
         .openPopup();
     });
   </script>
