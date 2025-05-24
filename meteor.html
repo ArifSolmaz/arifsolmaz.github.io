@@ -62,19 +62,10 @@
 <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 <script>
 let marker, circle;
-let pyodideLoaded = false;
-let pyodide;
-loadPyodide().then(p => {
-  pyodide = p;
-  pyodideLoaded = true;
-});
+const pyodideReady = loadPyodide();
 
 async function calculate() {
-  if (!pyodideLoaded) {
-    alert("Lütfen birkaç saniye bekleyin, sistem yükleniyor...");
-    return;
-  }
-    // pyodide zaten tanımlı
+  const pyodide = await pyodideReady;
   const volume = parseFloat(document.getElementById("volume").value);
   const velocity = parseFloat(document.getElementById("velocity").value) * 1000;
   const angle = Math.sin(parseFloat(document.getElementById("angle").value) * Math.PI / 180);
@@ -87,7 +78,7 @@ async function calculate() {
   const m_final = mass * ablation;
   const mult = surface === "water" ? 0.75 : (surface === "ice" ? 0.6 : 1);
 
-  const code = `
+  const code = `\nm = ${m_final}\nv = ${v_final}\ntnt_megaton = 4.2e15\nhiroshima_kt = 13\nH = 30000 if v > 20000 else 10000 if v > 10000 else 0\nE = 0.5 * m * v ** 2 * ${mult}\ntnt_eq = E / tnt_megaton\nhiroshima_eq = tnt_eq * 1000 / hiroshima_kt\ncrater_diameter = (E / 4.2e15)**(1/3)*1200 if H == 0 else 0\ncrater_depth = crater_diameter * 0.2\ndeath_radius = (E / 4.2e15)**(1/3)*20000\nshock_radius = (E / 4.2e15)**(1/3)*50000\noutput = (\n    f"Enerji: {E:.2e} J\\n"\n    f"TNT Karşılığı: {tnt_eq:.2f} megaton\\n"\n    f"Hiroşima Eşdeğeri: {hiroshima_eq:.1f} bomba\\n"\n    f"Patlama Yüksekliği: {H} m\\n"\n    f"Krater Çapı: {crater_diameter:.0f} m\\n"\n    f"Krater Derinliği: {crater_depth:.0f} m\\n"\n    f"Ölümcül Etki Yarıçapı: {death_radius/1000:.1f} km\\n"\n    f"Şok Dalgası Etkisi: {shock_radius/1000:.1f} km")\noutput\n`
 m = ${m_final}
 v = ${v_final}
 tnt_megaton = 4.2e15
