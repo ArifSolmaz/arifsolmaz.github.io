@@ -84,9 +84,20 @@
   </div>
 
   <script>
-    let pyodideReady = loadPyodide();
+    let pyodide;
+    loadPyodideAndStart();
+
+    async function loadPyodideAndStart() {
+      pyodide = await loadPyodide();
+      console.log("✅ Pyodide yüklendi");
+    }
 
     async function calculate() {
+      if (!pyodide) {
+        alert("Python motoru henüz yüklenmedi. Lütfen birkaç saniye sonra tekrar deneyin.");
+        return;
+      }
+
       const mass = parseFloat(document.getElementById("mass").value);
       const velocity_kms = parseFloat(document.getElementById("velocity").value);
       const velocity = velocity_kms * 1000;
@@ -108,12 +119,11 @@ hiroshima_kt = 13
 E = 0.5 * m * v ** 2 * ${multiplier}
 tnt_eq = E / tnt_megaton
 hiroshima_eq = tnt_eq * 1000 / hiroshima_kt
-crater_diameter = (E / 4.2e15) ** (1/3) * 1200  # yaklaşık modelleme
+crater_diameter = (E / 4.2e15) ** (1/3) * 1200
 
 f"Enerji: {E:.2e} J\nTNT Karşılığı: {tnt_eq:.2f} megaton\nHiroşima Eşdeğeri: {hiroshima_eq:.1f} bomba\nKrater Çapı: {crater_diameter:.0f} m (Malzeme: ${material}, Yüzey: ${surface})"
       `;
 
-      let pyodide = await pyodideReady;
       const result = await pyodide.runPythonAsync(code);
       document.getElementById("output").innerText = result;
 
@@ -121,7 +131,7 @@ f"Enerji: {E:.2e} J\nTNT Karşılığı: {tnt_eq:.2f} megaton\nHiroşima Eşdeğ
     }
 
     async function plotGraph(mass) {
-      let pyodide = await pyodideReady;
+      if (!pyodide) return;
 
       const plotCode = `
 import numpy as np
@@ -168,7 +178,6 @@ list(zip(velocities_kms.tolist(), energies.tolist()))
       calculate();
     }
 
-    // Leaflet Haritasını Başlat
     const map = L.map('map').setView([40, 30], 2);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; OpenStreetMap katkıcıları'
