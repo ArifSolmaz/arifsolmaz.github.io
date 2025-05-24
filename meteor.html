@@ -4,11 +4,13 @@
   <meta charset="UTF-8">
   <title>Meteor Enerji Hesaplayıcı</title>
   <script src="https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     body { font-family: sans-serif; padding: 2rem; }
     input { padding: 5px; margin: 5px; width: 100px; }
     button { padding: 10px 20px; margin-top: 10px; }
-    #output { margin-top: 20px; font-size: 1.1rem; background: #f9f9f9; padding: 10px; border-radius: 8px; }
+    #output, #canvas-container { margin-top: 20px; font-size: 1.1rem; background: #f9f9f9; padding: 10px; border-radius: 8px; }
+    canvas { margin-top: 20px; }
   </style>
 </head>
 <body>
@@ -25,13 +27,18 @@
 
   <div id="output">Hesaplama bekleniyor...</div>
 
+  <div id="canvas-container">
+    <h3>Farklı Hızlara Göre Enerji (kütle sabit)</h3>
+    <canvas id="energyChart" width="600" height="300"></canvas>
+  </div>
+
   <script>
     let pyodideReady = loadPyodide();
 
     async function calculate() {
       const mass = parseFloat(document.getElementById("mass").value);
       const velocity_kms = parseFloat(document.getElementById("velocity").value);
-      const velocity = velocity_kms * 1000;  // m/s
+      const velocity = velocity_kms * 1000;
 
       const code = `
 m = ${mass}
@@ -49,6 +56,51 @@ f"Enerji: {E:.2e} J\\nTNT Karşılığı: {tnt_eq:.2f} megaton\\nHiroşima Eşde
       let pyodide = await pyodideReady;
       const result = await pyodide.runPythonAsync(code);
       document.getElementById("output").innerText = result;
+
+      plotGraph(mass);
+    }
+
+    async function plotGraph(mass) {
+      let pyodide = await pyodideReady;
+
+      const plotCode = `
+import numpy as np
+
+velocities = np.linspace(5e3, 30e3, 30)
+energies = 0.5 * ${mass} * velocities ** 2
+velocities_kms = velocities / 1e3
+energies_megaton = energies / 4.2e15
+
+list(zip(velocities_kms.tolist(), energies_megaton.tolist()))
+      `;
+
+      const result = await pyodide.runPythonAsync(plotCode);
+      const data = JSON.parse(JSON.stringify(result));
+      const labels = data.map(pair => pair[0].toFixed(1));
+      const values = data.map(pair => pair[1]);
+
+      if (window.energyChart) window.energyChart.destroy();
+
+      const ctx = document.getElementById("energyChart").getContext("2d");
+      window.energyChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: labels,
+          datasets: [{
+            label: 'Enerji (Megaton TNT)',
+            data: values,
+            fill: false,
+            borderColor: 'blue',
+            tension: 0.2
+          }]
+        },
+        options: {
+          scales: {
+            x: { title: { display: true, text: 'Hız (km/s)' } },
+            y: { title: { display: true, text: 'Enerji (Megaton TNT)' } }
+          }
+        }
+      });
     }
   </script>
 </body>
