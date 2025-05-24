@@ -106,9 +106,8 @@
       let density = material === "rock" ? 3000 : 7800;
       const mass = volume * density;
 
-      // Atmosferik yavaşlama ve kütle kaybı modeli (basitleştirilmiş)
-      const dragFactor = 0.8; // örnek: %20 hız kaybı
-      const ablationFactor = 0.85; // örnek: %15 kütle kaybı
+      const dragFactor = 0.8;
+      const ablationFactor = 0.85;
       const v_final = velocity * dragFactor;
       const m_final = mass * ablationFactor;
 
@@ -118,13 +117,24 @@ v = ${v_final}
 tnt_megaton = 4.2e15
 hiroshima_kt = 13
 
+H = 0
+if v > 20000:
+    H = 30000
+elif v > 10000:
+    H = 10000
+else:
+    H = 0
+
 E = 0.5 * m * v ** 2 * ${multiplier}
 tnt_eq = E / tnt_megaton
 hiroshima_eq = tnt_eq * 1000 / hiroshima_kt
-crater_diameter = (E / 4.2e15) ** (1/3) * 1200
+crater_diameter = (E / 4.2e15) ** (1/3) * 1200 if H == 0 else 0
 crater_depth = crater_diameter * 0.2
 
-f"Enerji: {E:.2e} J\\nTNT Karşılığı: {tnt_eq:.2f} megaton\\nHiroşima Eşdeğeri: {hiroshima_eq:.1f} bomba\\nKrater Çapı: {crater_diameter:.0f} m\\nKrater Derinliği: {crater_depth:.0f} m (Malzeme: ${material}, Yüzey: ${surface})"
+death_radius = (E / 4.2e15) ** (1/3) * 20000
+shock_radius = (E / 4.2e15) ** (1/3) * 50000
+
+f"Enerji: {E:.2e} J\\nTNT Karşılığı: {tnt_eq:.2f} megaton\\nHiroşima Eşdeğeri: {hiroshima_eq:.1f} bomba\\nPatlama Yüksekliği: {H} m\\nKrater Çapı: {crater_diameter:.0f} m\\nKrater Derinliği: {crater_depth:.0f} m\\nÖlümcül Etki Yarıçapı: {death_radius/1000:.1f} km\\nŞok Dalgası Etkisi: {shock_radius/1000:.1f} km (Malzeme: ${material}, Yüzey: ${surface})"
       `;
 
       const result = await pyodide.runPythonAsync(code);
@@ -132,12 +142,30 @@ f"Enerji: {E:.2e} J\\nTNT Karşılığı: {tnt_eq:.2f} megaton\\nHiroşima Eşde
 
       if (marker) {
         if (circle) map.removeLayer(circle);
+
         const diameter = parseFloat(result.match(/Krater Çapı: (\d+)/)[1]);
+        const death_km = parseFloat(result.match(/Ölümcül Etki Yarıçapı: ([\d.]+)/)[1]);
+        const shock_km = parseFloat(result.match(/Şok Dalgası Etkisi: ([\d.]+)/)[1]);
+
         circle = L.circle(marker.getLatLng(), {
           radius: diameter / 2,
           color: 'red',
           fillColor: '#f03',
           fillOpacity: 0.5
+        }).addTo(map);
+
+        L.circle(marker.getLatLng(), {
+          radius: death_km * 1000,
+          color: 'orange',
+          fillOpacity: 0.15,
+          weight: 1
+        }).addTo(map);
+
+        L.circle(marker.getLatLng(), {
+          radius: shock_km * 1000,
+          color: 'yellow',
+          fillOpacity: 0.1,
+          weight: 1
         }).addTo(map);
       }
     }
