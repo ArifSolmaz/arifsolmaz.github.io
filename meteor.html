@@ -62,14 +62,16 @@
         .help-btn {
             background-color: #ffc107;
             color: #333;
-            padding: 10px 20px;
-            font-size: 16px;
+            padding: 8px 15px;
+            font-size: 14px;
             position: fixed;
             top: 20px;
             right: 20px;
             z-index: 1000;
             border-radius: 4px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            display: inline-block; /* Prevent full-width */
+            width: auto; /* Only take needed space */
         }
         .help-btn:hover {
             background-color: #e0a800;
@@ -117,8 +119,8 @@
                 width: 90%;
             }
             .help-btn {
-                padding: 8px 15px;
-                font-size: 14px;
+                padding: 6px 12px;
+                font-size: 12px;
             }
         }
     </style>
