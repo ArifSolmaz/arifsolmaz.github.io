@@ -73,29 +73,18 @@
             pyodide = await loadPyodide();
             await pyodide.loadPackage("micropip");
             await pyodide.runPythonAsync(`
-                import asyncio
-                import platform
-                FPS = 60
-
                 async def calculate_energy(mass, velocity):
                     tnt_megaton_energy = 4.2e15
-                    hiroshima_energy = 13
+                    hiroshima_energy = 13.0
 
-                    delta_k = -0.5 * mass * (velocity ** 2)
+                    delta_k = -0.5 * float(mass) * (float(velocity) ** 2)
                     abs_delta_k = abs(delta_k)
 
                     energy_loss_megatons = abs_delta_k / tnt_megaton_energy
                     energy_loss_kilotons = energy_loss_megatons * 1000
                     equivalent_bombs = energy_loss_kilotons / hiroshima_energy
 
-                    return {
-                        "delta_k": abs_delta_k,
-                        "energy_loss_megatons": energy_loss_megatons,
-                        "equivalent_bombs": equivalent_bombs
-                    }
-
-                if platform.system() == "Emscripten":
-                    asyncio.ensure_future(calculate_energy(40000, 15000))
+                    return {"delta_k": abs_delta_k, "energy_loss_megatons": energy_loss_megatons, "equivalent_bombs": equivalent_bombs}
             `);
         }
 
@@ -109,7 +98,11 @@
             }
 
             try {
-                const result = await pyodide.runPythonAsync(`import asyncio; await calculate_energy(${mass}, ${velocity})`);
+                const result = await pyodide.globals.get("calculate_energy")(mass, velocity);
+
+                if (!result || typeof result !== "object" || !("delta_k" in result)) {
+                    throw new Error("Hesaplama sonucu beklenen formatta değil.");
+                }
 
                 document.getElementById("output").innerHTML = `
                     <h2>Sonuçlar:</h2>
@@ -118,7 +111,8 @@
                     <p>(c) Hiroşima bombalarına denklik: ${result.equivalent_bombs.toFixed(2)} bomba</p>
                 `;
             } catch (error) {
-                document.getElementById("output").innerHTML = `<p style='color: red;'>Hesaplama sırasında bir hata oluştu: ${error}</p>`;
+                document.getElementById("output").innerHTML = `<p style='color: red;'>Hesaplama sırasında bir hata oluştu: ${error.message}</p>`;
+                console.error("Hata detayı:", error); // Hata detayını konsola yaz
             }
         }
 
@@ -126,9 +120,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
