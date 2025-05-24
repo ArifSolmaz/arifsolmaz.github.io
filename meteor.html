@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meteorit Enerji Hesaplayıcı</title>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js"></script>
+</head>
+<body>
+    <h1>Meteorit Enerji Hesaplayıcı</h1>
+    <div id="output"></div>
+    <script>
+        let pyodide;
+
+        async function main() {
+            pyodide = await loadPyodide();
+            await pyodide.loadPackage("micropip");
+            await pyodide.runPythonAsync(`
+                import asyncio
+                import platform
+                FPS = 60
+
+                async def main(mass, velocity):
+                    tnt_megaton_energy = 4.2e15
+                    hiroshima_energy = 13
+
+                    delta_k = -0.5 * mass * (velocity ** 2)
+                    abs_delta_k = abs(delta_k)
+
+                    energy_loss_megatons = abs_delta_k / tnt_megaton_energy
+                    energy_loss_kilotons = energy_loss_megatons * 1000
+                    equivalent_bombs = energy_loss_kilotons / hiroshima_energy
+
+                    return {"delta_k": abs_delta_k, "energy_loss_megatons": energy_loss_megatons, "equivalent_bombs": equivalent_bombs}
+
+                if platform.system() == "Emscripten":
+                    asyncio.ensure_future(main(4e6, 15e3))
+            `);
+
+            let mass = parseFloat(prompt("Meteoritin kütlesini (kg) girin (varsayılan: 4e6): ") || 4e6);
+            let velocity = parseFloat(prompt("Meteoritin hızını (m/s) girin (varsayılan: 15e3): ") || 15e3);
+
+            let result = await pyodide.runPythonAsync(`import asyncio; asyncio.run(main(${mass}, ${velocity}))`);
+
+            document.getElementById("output").innerHTML = `
+                <h2>Sonuçlar:</h2>
+                <p>(a) Kinetik enerji kaybı: ${result.delta_k.toExponential(2)} J</p>
+                <p>(b) Enerji kaybı: ${result.energy_loss_megatons.toFixed(2)} megaton TNT</p>
+                <p>(c) Hiroşima bombalarına denklik: ${result.equivalent_bombs.toFixed(2)} bomba</p>
+            `;
+        }
+
+        main();
+    </script>
+</body>
+</html>
