@@ -26,16 +26,13 @@
       background-color: #e3e3ff;
       cursor: pointer;
     }
-    #output, #canvas-container, #map-container {
+    #output, #map-container {
       margin-top: 20px;
       font-size: 1.1rem;
       background: #ffffff;
       padding: 12px;
       border-radius: 8px;
       border: 1px solid #ccc;
-    }
-    canvas {
-      margin-top: 20px;
     }
     #map {
       height: 400px;
@@ -73,11 +70,6 @@
 
   <div id="output">Hesaplama bekleniyor...</div>
 
-  <div id="canvas-container">
-    <h3>Farklı Hızlara Göre Enerji (kütle sabit)</h3>
-    <canvas id="energyChart" width="600" height="300"></canvas>
-  </div>
-
   <div id="map-container">
     <h3>🌍 Çarpma Konumunu Seçin</h3>
     <div id="map"></div>
@@ -85,12 +77,10 @@
 
   <script>
     let pyodide;
-    loadPyodideAndStart();
-
-    async function loadPyodideAndStart() {
+    window.addEventListener('load', async () => {
       pyodide = await loadPyodide();
       console.log("✅ Pyodide yüklendi");
-    }
+    });
 
     async function calculate() {
       if (!pyodide) {
@@ -126,49 +116,6 @@ f"Enerji: {E:.2e} J\nTNT Karşılığı: {tnt_eq:.2f} megaton\nHiroşima Eşdeğ
 
       const result = await pyodide.runPythonAsync(code);
       document.getElementById("output").innerText = result;
-
-      plotGraph(mass);
-    }
-
-    async function plotGraph(mass) {
-      if (!pyodide) return;
-
-      const plotCode = `
-import numpy as np
-velocities = np.linspace(5e3, 30e3, 30)
-energies = 0.5 * ${mass} * velocities ** 2 / 4.2e15
-velocities_kms = velocities / 1e3
-list(zip(velocities_kms.tolist(), energies.tolist()))
-      `;
-
-      const result = await pyodide.runPythonAsync(plotCode);
-      const data = JSON.parse(JSON.stringify(result));
-      const labels = data.map(pair => pair[0].toFixed(1));
-      const values = data.map(pair => pair[1]);
-
-      if (window.energyChart) window.energyChart.destroy();
-
-      const ctx = document.getElementById("energyChart").getContext("2d");
-      window.energyChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-          labels: labels,
-          datasets: [{
-            label: 'Enerji (Megaton TNT)',
-            data: values,
-            fill: false,
-            borderColor: 'blue',
-            tension: 0.2
-          }]
-        },
-        options: {
-          responsive: true,
-          scales: {
-            x: { title: { display: true, text: 'Hız (km/s)' } },
-            y: { title: { display: true, text: 'Enerji (Megaton TNT)' } }
-          }
-        }
-      });
     }
 
     function loadScenario(mass, velocity, surface) {
