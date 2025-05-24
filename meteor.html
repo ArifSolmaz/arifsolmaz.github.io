@@ -11,10 +11,10 @@
       padding: 2rem;
       background-color: #f3faff;
     }
-    input {
+    input, select {
       padding: 5px;
       margin: 5px;
-      width: 120px;
+      width: 160px;
     }
     button {
       padding: 8px 16px;
@@ -39,35 +39,34 @@
 </head>
 <body>
   <h1>☄️ Meteor Enerji Hesaplayıcı</h1>
-  <p>1972 meteor olayı gibi büyük meteorların potansiyel etkisini hesaplayın.</p>
+  <p>Meteor çarpmasının etkisini hesaplayın ve farklı senaryoları kıyaslayın.</p>
 
-  <!-- 🔘 Hazır Senaryolar -->
-  <div>
-    <strong>📌 Hazır Senaryolar:</strong><br>
-    <button onclick="loadScenario(4000000, 15)">1972 ABD Meteoru</button>
-    <button onclick="loadScenario(10000000, 27)">Tunguska (1908)</button>
-    <button onclick="loadScenario(13000, 19)">Çelyabinsk (2013)</button>
-  </div>
+  <strong>📌 Hazır Senaryolar:</strong><br>
+  <button onclick="loadScenario(4000000, 15)">1972 ABD Meteoru</button>
+  <button onclick="loadScenario(10000000, 27)">Tunguska (1908)</button>
+  <button onclick="loadScenario(13000, 19)">Çelyabinsk (2013)</button>
 
-  <!-- 🧮 Giriş Formu -->
   <form onsubmit="calculate(); return false;">
     <label>Kütle (kg):</label>
     <input type="number" id="mass" value="4000000" step="100000"><br>
     <label>Hız (km/s):</label>
     <input type="number" id="velocity" value="15" step="1"><br>
+    <label>Yüzey Tipi:</label>
+    <select id="surface">
+      <option value="land">Kara</option>
+      <option value="water">Su</option>
+      <option value="ice">Buz</option>
+    </select><br>
     <button type="submit">Hesapla</button>
   </form>
 
-  <!-- 🔢 Hesaplama Sonucu -->
   <div id="output">Hesaplama bekleniyor...</div>
 
-  <!-- 📈 Grafik -->
   <div id="canvas-container">
     <h3>Farklı Hızlara Göre Enerji (kütle sabit)</h3>
     <canvas id="energyChart" width="600" height="300"></canvas>
   </div>
 
-  <!-- 🚀 Scriptler -->
   <script>
     let pyodideReady = loadPyodide();
 
@@ -75,6 +74,11 @@
       const mass = parseFloat(document.getElementById("mass").value);
       const velocity_kms = parseFloat(document.getElementById("velocity").value);
       const velocity = velocity_kms * 1000;
+      const surface = document.getElementById("surface").value;
+
+      let multiplier = 1;
+      if (surface === "water") multiplier = 0.75;
+      if (surface === "ice") multiplier = 0.6;
 
       const code = `
 m = ${mass}
@@ -82,11 +86,11 @@ v = ${velocity}
 tnt_megaton = 4.2e15
 hiroshima_kt = 13
 
-E = 0.5 * m * v ** 2
+E = 0.5 * m * v ** 2 * ${multiplier}
 tnt_eq = E / tnt_megaton
 hiroshima_eq = tnt_eq * 1000 / hiroshima_kt
 
-f"Enerji: {E:.2e} J\\nTNT Karşılığı: {tnt_eq:.2f} megaton\\nHiroşima Eşdeğeri: {hiroshima_eq:.1f} bomba"
+f"Enerji: {E:.2e} J\nTNT Karşılığı: {tnt_eq:.2f} megaton\nHiroşima Eşdeğeri: {hiroshima_eq:.1f} bomba (Yüzey: ${surface})"
       `;
 
       let pyodide = await pyodideReady;
@@ -101,13 +105,10 @@ f"Enerji: {E:.2e} J\\nTNT Karşılığı: {tnt_eq:.2f} megaton\\nHiroşima Eşde
 
       const plotCode = `
 import numpy as np
-
 velocities = np.linspace(5e3, 30e3, 30)
-energies = 0.5 * ${mass} * velocities ** 2
+energies = 0.5 * ${mass} * velocities ** 2 / 4.2e15
 velocities_kms = velocities / 1e3
-energies_megaton = energies / 4.2e15
-
-list(zip(velocities_kms.tolist(), energies_megaton.tolist()))
+list(zip(velocities_kms.tolist(), energies.tolist()))
       `;
 
       const result = await pyodide.runPythonAsync(plotCode);
@@ -131,6 +132,7 @@ list(zip(velocities_kms.tolist(), energies_megaton.tolist()))
           }]
         },
         options: {
+          responsive: true,
           scales: {
             x: { title: { display: true, text: 'Hız (km/s)' } },
             y: { title: { display: true, text: 'Enerji (Megaton TNT)' } }
