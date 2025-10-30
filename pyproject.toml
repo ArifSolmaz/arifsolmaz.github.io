@@ -33,4 +33,4 @@ Homepage = "https://github.com/arifsolmaz/arifsolmaz.github.io"
 Documentation = "https://github.com/arifsolmaz/arifsolmaz.github.io#readme"
 
 [project.scripts]
-spotlightcurve = "exospot_analyzer.cli:main"
+spotlightcurve = "spotlightcurve.cli:main"
