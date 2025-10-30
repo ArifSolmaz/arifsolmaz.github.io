@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "spotlightcurve"
+version = "0.1.0"
+description = "SpotLightCurve: Analyze stellar activity in exoplanet transit light curves"
+readme = "README.md"
+authors = [{name = "Arif Solmaz"}]
+requires-python = ">=3.9"
+license = {text = "MIT"}
+dependencies = [
+    "arviz",
+    "astropy",
+    "astroquery",
+    "celerite2",
+    "eleanor",
+    "exoplanet",
+    "lightkurve",
+    "matplotlib",
+    "numpy",
+    "pandas",
+    "pymc",
+    "scipy",
+    "seaborn",
+    "starry",
+    "typer[all]",
+]
+
+[project.urls]
+Homepage = "https://github.com/arifsolmaz/arifsolmaz.github.io"
+Documentation = "https://github.com/arifsolmaz/arifsolmaz.github.io#readme"
+
+[project.scripts]
+spotlightcurve = "exospot_analyzer.cli:main"
