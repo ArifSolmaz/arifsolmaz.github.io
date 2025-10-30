@@ -52,7 +52,7 @@ Prefer working in the cloud? Follow the [Colab tutorial](tutorials/spotlightcurv
 ## Package Structure
 
 ```
-exospot_analyzer/
+spotlightcurve/
 ├── __init__.py
 ├── cli.py             # Typer-based command-line interface
 ├── diagnostics.py     # Plotting and posterior summaries

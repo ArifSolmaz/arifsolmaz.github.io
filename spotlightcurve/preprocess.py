@@ -29,7 +29,7 @@ def quality_mask(flux: np.ndarray, sigma: float = 5.0) -> np.ndarray:
 
 
 def apply_mask(light_curve, mask: np.ndarray):
-    """Apply a boolean mask to a :class:`~exospot_analyzer.io.LightCurve`."""
+    """Apply a boolean mask to a :class:`~spotlightcurve.io.LightCurve`."""
 
     from .io import LightCurve  # local import to avoid cycle
 
