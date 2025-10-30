@@ -1,6 +1,6 @@
 # SpotLightCurve Colab Tutorial
 
-This guide walks through running the SpotLightCurve pipeline end-to-end in Google Colab.
+This guide walks through running the SpotLightCurve pipeline end-to-end in Google Colab. If you prefer an executable notebook, download [`spotlightcurve_colab.ipynb`](spotlightcurve_colab.ipynb) from the same directory and open it directly in Colab.
 
 ## 1. Launch the notebook
 
