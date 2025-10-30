@@ -47,7 +47,7 @@ az.summary(trace)
 
 ## Google Colab
 
-Prefer working in the cloud? Follow the [Colab tutorial](tutorials/spotlightcurve_colab.md) for a step-by-step notebook that mirrors the CLI workflow.
+Prefer working in the cloud? Launch the ready-to-run [Colab notebook](tutorials/spotlightcurve_colab.ipynb) or browse the [markdown walkthrough](tutorials/spotlightcurve_colab.md) for a step-by-step guide that mirrors the CLI workflow.
 
 ## Package Structure
 
