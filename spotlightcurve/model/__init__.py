@@ -66,10 +66,12 @@ def build_gp_transit_model(
 
 __all__ = ["build_gp_transit_model"]
 
+from .compare import compare_models  # noqa: E402
 from .gp import RotationPeriodResult, estimate_rotation_period, fit_qp_gp  # noqa: E402
 from .spot import SpotModelConfig, fit_transit_spot  # noqa: E402
 
 __all__ += [
+    "compare_models",
     "RotationPeriodResult",
     "estimate_rotation_period",
     "fit_qp_gp",
