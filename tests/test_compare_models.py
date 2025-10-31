@@ -2,9 +2,10 @@
 
 from __future__ import annotations
 
-import numpy as np
-import pandas as pd
 import pytest
+
+np = pytest.importorskip("numpy")
+pd = pytest.importorskip("pandas")
 
 import arviz as az
 

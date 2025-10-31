@@ -35,7 +35,7 @@ def _kipping_to_quad(q1: float, q2: float) -> tuple[float, float]:
     return u1, u2
 
 
-def _evaluate_one_spot_flux(
+def _evaluate_spotted_flux(
     time: np.ndarray,
     period: float,
     t0: float,
@@ -47,12 +47,12 @@ def _evaluate_one_spot_flux(
     cos_i: float,
     q1: float,
     q2: float,
-    spot_lat: float,
-    spot_lon: float,
-    spot_radius: float,
-    spot_contrast: float,
+    spot_lat: np.ndarray,
+    spot_lon: np.ndarray,
+    spot_radius: np.ndarray,
+    spot_contrast: np.ndarray,
 ) -> np.ndarray:
-    """Compute the starry flux for a single circular starspot and transiting planet."""
+    """Compute the starry flux for N circular starspots and a transiting planet."""
 
     u1, u2 = _kipping_to_quad(q1, q2)
 
@@ -62,12 +62,14 @@ def _evaluate_one_spot_flux(
     stellar_map = starry.Map(ydeg=ydeg)
     stellar_map.limb_dark = [u1, u2]
 
-    if spot_radius > 0.0:
+    for lat, lon, radius, contrast in zip(spot_lat, spot_lon, spot_radius, spot_contrast):
+        if radius <= 0.0:
+            continue
         stellar_map.add_spot(
-            lat=float(spot_lat),
-            lon=float(spot_lon),
-            radius=float(spot_radius),
-            contrast=float(spot_contrast),
+            lat=float(lat),
+            lon=float(lon),
+            radius=float(radius),
+            contrast=float(contrast),
         )
 
     star = starry.Primary(map=stellar_map, r=1.0, m=1.0)
@@ -98,11 +100,14 @@ class SpotModelConfig:
     exposure_time: float
     supersample: int = 7
     ydeg: int = 15
+    n_spots: int = 1
     r_bounds: tuple[float, float] = (0.01, 0.2)
     a_rs_log_mu: float = math.log(15.0)
     a_rs_log_sigma: float = 0.4
     spot_radius_bounds: tuple[float, float] = (1.0, 30.0)
     spot_contrast_bounds: tuple[float, float] = (-0.9, 0.9)
+    spot_lat_bounds: tuple[float, float] = (-90.0, 90.0)
+    spot_lon_bounds: tuple[float, float] = (0.0, 360.0)
 
 
 def fit_transit_spot(
@@ -118,7 +123,7 @@ def fit_transit_spot(
     random_seed: Optional[int] = None,
     progressbar: bool = True,
 ):
-    """Fit a single-spot transit model using PyMC and starry."""
+    """Fit an N-spot transit model using PyMC and starry."""
 
     time = np.asarray(time, dtype=float)
     flux = np.asarray(flux, dtype=float)
@@ -135,6 +140,9 @@ def fit_transit_spot(
     if config.exposure_time <= 0:
         raise ValueError("`exposure_time` must be positive.")
 
+    if config.n_spots < 0:
+        raise ValueError("`n_spots` must be non-negative.")
+
     compute_flux = as_op(  # type: ignore[misc]
         itypes=[
             pt.dscalar,
@@ -142,14 +150,14 @@ def fit_transit_spot(
             pt.dscalar,
             pt.dscalar,
             pt.dscalar,
-            pt.dscalar,
-            pt.dscalar,
-            pt.dscalar,
-            pt.dscalar,
+            pt.dvector,
+            pt.dvector,
+            pt.dvector,
+            pt.dvector,
         ],
         otypes=[pt.dvector],
     )(
-        lambda r, a_rs, cos_i, q1, q2, spot_lat, spot_lon, spot_radius, spot_contrast: _evaluate_one_spot_flux(
+        lambda r, a_rs, cos_i, q1, q2, spot_lat, spot_lon, spot_radius, spot_contrast: _evaluate_spotted_flux(
             time=time,
             period=config.period,
             t0=config.t0,
@@ -161,10 +169,10 @@ def fit_transit_spot(
             cos_i=float(cos_i),
             q1=float(q1),
             q2=float(q2),
-            spot_lat=float(spot_lat),
-            spot_lon=float(spot_lon),
-            spot_radius=float(spot_radius),
-            spot_contrast=float(spot_contrast),
+            spot_lat=np.asarray(spot_lat, dtype=float),
+            spot_lon=np.asarray(spot_lon, dtype=float),
+            spot_radius=np.asarray(spot_radius, dtype=float),
+            spot_contrast=np.asarray(spot_contrast, dtype=float),
         )
     )
 
@@ -186,18 +194,36 @@ def fit_transit_spot(
         u1 = pm.Deterministic("u1", 2.0 * sqrt_q1 * q2)
         u2 = pm.Deterministic("u2", sqrt_q1 * (1.0 - 2.0 * q2))
 
-        spot_lat = pm.Uniform("spot_lat", lower=-90.0, upper=90.0)
-        spot_lon = pm.Uniform("spot_lon", lower=0.0, upper=360.0)
-        spot_radius = pm.Uniform(
-            "spot_radius",
-            lower=config.spot_radius_bounds[0],
-            upper=config.spot_radius_bounds[1],
-        )
-        spot_contrast = pm.Uniform(
-            "spot_contrast",
-            lower=config.spot_contrast_bounds[0],
-            upper=config.spot_contrast_bounds[1],
-        )
+        if config.n_spots:
+            spot_lat = pm.Uniform(
+                "spot_lat",
+                lower=config.spot_lat_bounds[0],
+                upper=config.spot_lat_bounds[1],
+                shape=config.n_spots,
+            )
+            spot_lon = pm.Uniform(
+                "spot_lon",
+                lower=config.spot_lon_bounds[0],
+                upper=config.spot_lon_bounds[1],
+                shape=config.n_spots,
+            )
+            spot_radius = pm.Uniform(
+                "spot_radius",
+                lower=config.spot_radius_bounds[0],
+                upper=config.spot_radius_bounds[1],
+                shape=config.n_spots,
+            )
+            spot_contrast = pm.Uniform(
+                "spot_contrast",
+                lower=config.spot_contrast_bounds[0],
+                upper=config.spot_contrast_bounds[1],
+                shape=config.n_spots,
+            )
+        else:
+            spot_lat = pm.Deterministic("spot_lat", pt.as_tensor_variable(np.zeros(0)))
+            spot_lon = pm.Deterministic("spot_lon", pt.as_tensor_variable(np.zeros(0)))
+            spot_radius = pm.Deterministic("spot_radius", pt.as_tensor_variable(np.zeros(0)))
+            spot_contrast = pm.Deterministic("spot_contrast", pt.as_tensor_variable(np.zeros(0)))
 
         model_flux = pm.Deterministic(
             "model_flux",

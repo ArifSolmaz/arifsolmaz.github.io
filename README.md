@@ -6,8 +6,10 @@ SpotLightCurve is an open-source toolkit for analyzing photometric observations 
 
 - Download TESS and Kepler/K2 light curves with a consistent API
 - Perform sigma-clipping, pixel-level decorrelation, and other preprocessing steps
-- Build a joint Gaussian Process + transit model using PyMC and exoplanet
+- Build joint Gaussian Process + transit models with PyMC/exoplanet or a
+  NumPyro+tinygp backend
 - Generate diagnostic plots, posterior summaries, and NetCDF outputs
+- Produce HTML reports summarizing parameters and saved figures
 - Command-line interface for automated runs and reproducible analyses
 - Ready-to-run tutorial for Google Colab users
 - Run injection--recovery experiments with quasi-periodic (stellar rotation)
@@ -15,15 +17,17 @@ SpotLightCurve is an open-source toolkit for analyzing photometric observations 
 
 ## Installation
 
-Clone the repository and install the package in editable mode:
+Clone the repository and install the package in editable mode. The `pymc`
+extra pulls in the PyMC/exoplanet/starry stack used by the flagship backend:
 
 ```bash
 git clone https://github.com/arifsolmaz/arifsolmaz.github.io.git
 cd arifsolmaz.github.io
-pip install -e .
+pip install -e .[pymc]
 ```
 
-> SpotLightCurve requires Python 3.9+ and depends on scientific Python libraries such as PyMC, exoplanet, lightkurve, and starry. Installing inside a virtual environment (e.g., `venv` or `conda`) is recommended.
+> SpotLightCurve requires Python 3.9+ and depends on the scientific Python stack.
+> Installing inside a virtual environment (e.g., `venv` or `conda`) is recommended.
 
 ## Quickstart
 
@@ -39,13 +43,27 @@ spotlightcurve download "TIC 206544316" --sector 15 --output lc.json
 spotlightcurve run lc.json --period 3.5347 --t0 2458325.123 --draws 1000 --tune 1000
 ```
 
-This command will produce posterior samples in `results/trace.nc`. Inspect them in Python with ArviZ:
+This command will produce posterior samples in `results/<run_name>/trace.nc`,
+figures under `results/<run_name>/figures/`, and an HTML report summarising the
+fit. Inspect the NetCDF file in Python with ArviZ:
 
 ```python
 import arviz as az
 trace = az.from_netcdf("results/trace.nc")
 az.summary(trace)
 ```
+
+### YAML-driven analyses and alternative backends
+
+For reproducible runs, capture your inputs in a YAML file and execute:
+
+```bash
+spotlightcurve analyze config.yaml --backend pymc
+```
+
+Swap `--backend numpyro` to run the lightweight NumPyro/tinygp backend. The
+generated directory mirrors the quickstart artefacts and includes an HTML
+report linking to saved figures and tables.
 
 ### Programmatic API
 
@@ -68,6 +86,7 @@ Prefer working in the cloud? Launch the ready-to-run [Colab notebook](tutorials/
 
 ```
 spotlightcurve/
+├── backends/         # PyMC and NumPyro runtime implementations
 ├── __init__.py
 ├── cli.py             # Typer-based command-line interface
 ├── diagnostics.py     # Plotting and posterior summaries
@@ -80,6 +99,7 @@ spotlightcurve/
 │   ├── gp.py
 │   └── spot.py
 ├── preprocess.py      # Quality masks and detrending hooks
+├── report/            # HTML report generation helpers
 └── sim/
     ├── __init__.py    # Simulation helpers
     └── inject.py      # Injection--recovery with QP noise

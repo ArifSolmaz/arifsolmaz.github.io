@@ -4,8 +4,9 @@ from __future__ import annotations
 
 from types import SimpleNamespace
 
-import numpy as np
 import pytest
+
+np = pytest.importorskip("numpy")
 
 from spotlightcurve.io import LightCurve
 from spotlightcurve.io import tess

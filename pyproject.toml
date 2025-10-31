@@ -16,17 +16,27 @@ dependencies = [
     "astroquery",
     "celerite2",
     "eleanor",
-    "exoplanet",
+    "jinja2",
     "lightkurve",
     "matplotlib",
     "numpy",
     "pandas",
     "pyyaml",
-    "pymc",
     "scipy",
     "seaborn",
-    "starry",
     "typer[all]",
+]
+
+[project.optional-dependencies]
+pymc = [
+    "pymc",
+    "exoplanet",
+    "starry",
+]
+numpyro = [
+    "jax[cpu]>=0.4.0",
+    "numpyro",
+    "tinygp",
 ]
 
 [project.urls]
