@@ -1,10 +1,6 @@
-"""SpotLightCurve: Tools for analyzing stellar activity in exoplanet light curves."""
+# spotlightcurve/__init__.py
+"""
+SpotlightCurve package: tools for spot + transit light-curve modelling.
+"""
 
-from importlib.metadata import version, PackageNotFoundError
-
-try:
-    __version__ = version("spotlightcurve")
-except PackageNotFoundError:  # pragma: no cover - during local development
-    __version__ = "0.1.0"
-
-__all__ = ["__version__"]
+__version__ = "0.0.1"

@@ -1,1 +1,4 @@
-spotlightcurve
+numpy>=1.26
+pandas>=2.0
+-e ./spotlightcurve[jax]
+matplotlib

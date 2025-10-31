@@ -1,0 +1,16 @@
+numpy>=1.26
+scipy>=1.11
+pandas>=2.0
+
+[jax]
+jax>=0.4.30
+
+[jax:platform_system != "Darwin" or platform_machine != "arm64"]
+jaxlib>=0.4.30
+
+[jax:platform_system == "Darwin" and platform_machine == "arm64"]
+jax-metal>=0.0.7
+
+[pymc]
+pymc>=5
+arviz>=0.16

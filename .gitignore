@@ -1,0 +1,19 @@
+# Python / Streamlit ignores
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+.DS_Store
+.env
+.venv/
+.vscode/
+.idea/
+*.log
+*.egg-info/
+.ipynb_checkpoints/
+
+# Build/temporary
+build/
+dist/
+
