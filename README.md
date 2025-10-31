@@ -10,6 +10,8 @@ SpotLightCurve is an open-source toolkit for analyzing photometric observations 
 - Generate diagnostic plots, posterior summaries, and NetCDF outputs
 - Command-line interface for automated runs and reproducible analyses
 - Ready-to-run tutorial for Google Colab users
+- Run injection--recovery experiments with quasi-periodic (stellar rotation)
+  noise
 
 ## Installation
 
@@ -72,8 +74,15 @@ spotlightcurve/
 ├── io/
 │   ├── __init__.py    # Core dataclasses and re-exports
 │   └── tess.py        # TESS download helpers and quality masks
-├── model.py           # PyMC/Exoplanet model construction
-└── preprocess.py      # Quality masks and detrending hooks
+├── model/
+│   ├── __init__.py    # GP, spot, and comparison utilities
+│   ├── compare.py
+│   ├── gp.py
+│   └── spot.py
+├── preprocess.py      # Quality masks and detrending hooks
+└── sim/
+    ├── __init__.py    # Simulation helpers
+    └── inject.py      # Injection--recovery with QP noise
 ```
 
 ## Development
