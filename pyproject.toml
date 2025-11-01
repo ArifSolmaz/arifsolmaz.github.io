@@ -28,6 +28,13 @@ dependencies = [
   "tqdm"
 ]
 
+# ✅ Optional dependencies (users can install extras with [jax])
+[project.optional-dependencies]
+jax = [
+  "jax>=0.4.16",
+  "jaxlib>=0.4.16"
+]
+
 [project.urls]
 Homepage = "https://github.com/ArifSolmaz/arifsolmaz.github.io"
 Issues = "https://github.com/ArifSolmaz/arifsolmaz.github.io/issues"
