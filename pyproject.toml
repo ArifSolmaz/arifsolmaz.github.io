@@ -32,7 +32,8 @@ dependencies = [
 [project.optional-dependencies]
 jax = [
   "jax>=0.4.16",
-  "jaxlib>=0.4.16"
+  "jaxlib>=0.4.16; platform_system != 'Darwin'",
+  "jax-metal>=0.1.1; platform_system == 'Darwin'"
 ]
 
 [project.urls]
