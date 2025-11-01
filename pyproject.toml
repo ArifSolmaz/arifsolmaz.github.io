@@ -5,32 +5,33 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "spotlightcurve"
 version = "0.1.0"
-description = "SpotLightCurve: Analyze stellar activity in exoplanet transit light curves"
+description = "A light-curve analysis and starspot modeling toolkit"
 readme = "README.md"
-authors = [{name = "Arif Solmaz"}]
 requires-python = ">=3.9"
-license = {text = "MIT"}
+license = { text = "MIT" }
+authors = [{ name = "Arif Solmaz" }]
+keywords = ["exoplanet", "light curve", "starspot", "astrophysics", "TESS"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Intended Audience :: Science/Research",
+  "Topic :: Scientific/Engineering :: Astronomy"
+]
+
 dependencies = [
-    "arviz",
-    "astropy",
-    "astroquery",
-    "celerite2",
-    "eleanor",
-    "exoplanet",
-    "lightkurve",
-    "matplotlib",
-    "numpy",
-    "pandas",
-    "pymc",
-    "scipy",
-    "seaborn",
-    "starry",
-    "typer[all]",
+  "numpy",
+  "scipy",
+  "pandas",
+  "matplotlib",
+  "astropy",
+  "tqdm"
 ]
 
 [project.urls]
-Homepage = "https://github.com/arifsolmaz/arifsolmaz.github.io"
-Documentation = "https://github.com/arifsolmaz/arifsolmaz.github.io#readme"
+Homepage = "https://github.com/ArifSolmaz/arifsolmaz.github.io"
+Issues = "https://github.com/ArifSolmaz/arifsolmaz.github.io/issues"
 
-[project.scripts]
-spotlightcurve = "spotlightcurve.cli:main"
+[tool.setuptools]
+packages = ["spotlightcurve"]
+include-package-data = true

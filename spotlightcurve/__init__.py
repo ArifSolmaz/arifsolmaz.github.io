@@ -1,6 +1,7 @@
-# spotlightcurve/__init__.py
-"""
-SpotlightCurve package: tools for spot + transit light-curve modelling.
-"""
+__version__ = "0.1.0"
 
-__version__ = "0.0.1"
+from .core import *
+from .io import *
+from .model import *
+from .preprocess import *
+from .diagnostics import *
