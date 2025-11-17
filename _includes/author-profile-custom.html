@@ -1,0 +1,15 @@
+{% assign author = site.data.authors["arifsolmaz"] %}
+
+<div class="author__avatar">
+  <img src="{{ author.avatar | relative_url }}" alt="{{ author.name }}">
+</div>
+
+<div class="author__content">
+  <h3 class="author__name">{{ author.name }}</h3>
+
+  {% if page.lang == "tr" %}
+    <p class="author__bio">{{ author.bio_tr }}</p>
+  {% else %}
+    <p class="author__bio">{{ author.bio_en }}</p>
+  {% endif %}
+</div>
