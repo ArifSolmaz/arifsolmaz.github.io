@@ -1,7 +1,19 @@
 main_en:
   - title: "Home"
     url: /en/
+  - title: "CV"
+    children:
+      - title: "Short CV"
+        url: /en/cv/short/
+      - title: "Long CV"
+        url: /en/cv/long/
 
 main_tr:
   - title: "Ana Sayfa"
     url: /tr/
+  - title: "Özgeçmiş"
+    children:
+      - title: "Kısa Özgeçmiş"
+        url: /tr/cv/kisa/
+      - title: "Uzun Özgeçmiş"
+        url: /tr/cv/uzun/
