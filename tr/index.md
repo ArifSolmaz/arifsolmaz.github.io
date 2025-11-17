@@ -37,6 +37,12 @@ Aşağıdaki kartları kullanarak temel sayfalara hızlıca geçebilirsiniz.
 
 ---
 
+### 🆕 Son 3 Yayın (ORCID'den)
+
+{% include publications_tr_orcid_top3.md %}
+
+---
+
 ### 🔗 Kısa Bağlantılar
 
 - [LinkedIn](https://www.linkedin.com/in/arif-solmaz/)
