@@ -1,0 +1,1 @@
+- Placeholder TR full list (ORCID workflow burayı otomatik güncelleyecek)
