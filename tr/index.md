@@ -9,7 +9,7 @@ classes: wide
 
 ### 🆕 Son 3 Yayın (ORCID'den)
 
-{% include publications_tr_orcid_top3.md %}
+{% include publications_en_orcid_top3.md %}
 
 ---
 
