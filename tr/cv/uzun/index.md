@@ -7,8 +7,6 @@ sidebar:
 lang: tr  
 ---
 
-# Uzun Özgeçmiş (Türkçe)
-
 Aşağıdan ayrıntılı özgeçmişimin PDF sürümünü indirebilir veya görüntüleyebilirsiniz.
 
 - 📄 **PDF İndir:**  
