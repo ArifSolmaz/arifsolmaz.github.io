@@ -6,8 +6,6 @@ sidebar:
   nav: "main_tr"
 ---
 
-# Yayınlar
-
 Aşağıdaki liste ORCID profilimden otomatik olarak oluşturulmaktadır.  
 (**ORCID ID:** 0000-0002-3076-164X).
 
