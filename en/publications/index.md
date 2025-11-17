@@ -11,4 +11,4 @@ sidebar:
 The list below is generated automatically from my ORCID profile  
 (**ORCID ID:** 0000-0002-3076-164X).
 
-{% include_relative ../../publications_en_orcid.md %}
+{% include publications_en_orcid.md %}
