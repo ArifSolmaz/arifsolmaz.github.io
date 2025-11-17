@@ -1,5 +1,5 @@
 ---
-title: "English Homepage"
+title: ""
 layout: single
 author_profile: true
 sidebar:
@@ -28,10 +28,8 @@ feature_row:
     excerpt: "Exoplanets, starspots, time-series analysis, and educational/engineering projects."
 ---
 
-# 🇬🇧 English Homepage
-
 Welcome to my academic website.  
-You can use the cards below to quickly navigate to the main sections.
+Use the cards below to navigate to the main sections.
 
 {% include feature_row %}
 
