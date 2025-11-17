@@ -7,12 +7,6 @@ sidebar:
 classes: wide
 ---
 
-### 🆕 Son 3 Yayın (ORCID'den)
-
-{% include publications_en_orcid_top3.md %}
-
----
-
 ### 🔗 Kısa Bağlantılar
 
 - [LinkedIn](https://www.linkedin.com/in/arif-solmaz/)
