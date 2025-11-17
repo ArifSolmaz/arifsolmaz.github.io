@@ -1,11 +1,4 @@
 ---
-title: ""
-layout: single
-author_profile: true
-sidebar:
-  nav: "main_tr"
-classes: wide
----
 
 ### 🔗 Kısa Bağlantılar
 
