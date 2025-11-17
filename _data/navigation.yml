@@ -21,3 +21,9 @@ main_tr:
         url: /tr/cv/uzun/
   - title: "Yayınlar"
     url: /tr/yayinlar/
+
+    languages:
+  - title: "🇬🇧"
+    url: /en/
+  - title: "🇹🇷"
+    url: /tr/
