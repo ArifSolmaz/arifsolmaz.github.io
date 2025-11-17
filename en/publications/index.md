@@ -8,15 +8,7 @@ sidebar:
 
 # Publications
 
-This page will soon display a fully automated publication list fetched from ORCID.
+The list below is generated automatically from my ORCID profile  
+(**ORCID ID:** 0000-0002-3076-164X).
 
-For now, here is a placeholder:
-
-- Journal articles
-- Conference papers
-- Research notes
-- Outreach work
-
----
-
-More updates soon.
+{% include_relative ../../publications_en_orcid.md %}
