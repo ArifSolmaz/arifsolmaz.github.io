@@ -1,0 +1,23 @@
+title: "Arif Solmaz"
+description: "Academic website of Dr. Arif Solmaz — astrophysics, exoplanets, mechatronics and scientific computing."
+url: "https://arifsolmaz.github.io"
+baseurl: ""
+
+remote_theme: "mmistakes/minimal-mistakes"
+
+plugins:
+  - jekyll-include-cache
+
+# Varsayılan olarak tüm sayfalarda author profili açık
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      author_profile: true
+
+# Kullanacağımız author id
+author:
+  name: "Dr. Arif Solmaz"
+  avatar: "/assets/img/profile.jpg"
+  bio: "Astrophysicist and Mechatronics Engineering academic. Working on exoplanets, starspots, and scientific computing."
