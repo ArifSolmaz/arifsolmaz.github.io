@@ -7,8 +7,6 @@ sidebar:
 lang: tr  
 ---
 
-# Kısa Özgeçmiş (Türkçe)
-
 Aşağıdan kısa özgeçmişimin PDF sürümünü indirebilir veya görüntüleyebilirsiniz.
 
 - 📄 **PDF İndir:**  
