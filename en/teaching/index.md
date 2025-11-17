@@ -5,7 +5,6 @@ author_profile: true
 sidebar:
   nav: "main_en"
 ---
-
 Below is a brief overview of the courses I currently teach or have taught in recent years.
 
 - **Computer Programming I (C Language) – Mechatronics Engineering**
