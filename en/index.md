@@ -37,6 +37,12 @@ You can use the cards below to quickly navigate to the main sections.
 
 ---
 
+### 🆕 Latest 3 publications (from ORCID)
+
+{% include publications_en_orcid_top3.md %}
+
+---
+
 ### 🔗 Quick Links
 
 - [LinkedIn](https://www.linkedin.com/in/arif-solmaz/)
