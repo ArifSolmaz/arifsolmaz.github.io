@@ -7,6 +7,8 @@ main_en:
         url: /en/cv/short/
       - title: "Long CV"
         url: /en/cv/long/
+  - title: "Publications"
+    url: /en/publications/
 
 main_tr:
   - title: "Ana Sayfa"
@@ -17,3 +19,5 @@ main_tr:
         url: /tr/cv/kisa/
       - title: "Uzun Özgeçmiş"
         url: /tr/cv/uzun/
+  - title: "Yayınlar"
+    url: /tr/yayinlar/
