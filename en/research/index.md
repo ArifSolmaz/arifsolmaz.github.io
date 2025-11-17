@@ -5,9 +5,6 @@ author_profile: true
 sidebar:
   nav: "main_en"
 ---
-
-# Research
-
 My research interests lie at the intersection of **exoplanets, stellar activity, and time-series analysis**, with strong emphasis on data analysis and scientific computing.
 
 ## Main Research Topics
