@@ -4,6 +4,7 @@ layout: single
 author_profile: true
 sidebar:
   nav: "main_tr"
+lang: tr  
 ---
 
 Araştırma ilgi alanlarım temel olarak **ötegezegenler, yıldız etkinliği ve zaman serisi analizi** etrafında yoğunlaşmaktadır. Güçlü bir veri analizi ve bilimsel hesaplama altyapısı ile çalışıyorum.
