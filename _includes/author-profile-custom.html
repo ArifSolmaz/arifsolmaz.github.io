@@ -13,3 +13,29 @@
     <p class="author__bio">{{ author.bio_en }}</p>
   {% endif %}
 </div>
+
+<style>
+  .stars {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none; z-index: -1;
+  }
+  .star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.05;
+    animation: twinkle 8s infinite alternate;
+  }
+  @keyframes twinkle {
+    0% { opacity: 0.05; }
+    100% { opacity: 0.2; }
+  }
+</style>
+<div class="stars">
+  <div class="star" style="width:2px;height:2px;top:10%;left:15%;animation-delay:0s;"></div>
+  <div class="star" style="width:1px;height:1px;top:20%;left:70%;animation-delay:2s;"></div>
+  <div class="star" style="width:3px;height:3px;top:60%;left:30%;animation-delay:4s;"></div>
+  <div class="star" style="width:1px;height:1px;top:80%;left:85%;animation-delay:1s;"></div>
+  <!-- 10-15 tane daha ekleyebilirsin, çok hafif -->
+</div>
