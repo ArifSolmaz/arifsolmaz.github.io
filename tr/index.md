@@ -1,5 +1,5 @@
 ---
-title: "Ana Sayfa"
+title: ""
 layout: single
 author_profile: true
 sidebar:
