@@ -30,6 +30,8 @@ jobs:
 
       - name: Build publications markdown files
         run: |
+          mkdir -p _includes
+
           # Full EN publication list
           jq -r '
             .group[]
@@ -44,21 +46,21 @@ jobs:
               + (if $journal != "" then " *" + $journal + "*" else "" end)
               + (if $doi != "" then " DOI:" + $doi else "" end)
           ' orcid_works.json \
-          | sort -r > publications_en_orcid.md
+          | sort -r > _includes/publications_en_orcid.md
 
           # Top 3 EN
-          head -n 3 publications_en_orcid.md > publications_en_orcid_top3.md
+          head -n 3 _includes/publications_en_orcid.md > _includes/publications_en_orcid_top3.md
 
-          # TR copies (same list for now)
-          cp publications_en_orcid.md publications_tr_orcid.md
-          cp publications_en_orcid_top3.md publications_tr_orcid_top3.md
+          # TR copies (same content for now)
+          cp _includes/publications_en_orcid.md _includes/publications_tr_orcid.md
+          cp _includes/publications_en_orcid_top3.md _includes/publications_tr_orcid_top3.md
 
       - name: Commit updated publications files
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Update publications from ORCID"
           file_pattern: |
-            publications_en_orcid.md
-            publications_en_orcid_top3.md
-            publications_tr_orcid.md
-            publications_tr_orcid_top3.md
+            _includes/publications_en_orcid.md
+            _includes/publications_en_orcid_top3.md
+            _includes/publications_tr_orcid.md
+            _includes/publications_tr_orcid_top3.md
