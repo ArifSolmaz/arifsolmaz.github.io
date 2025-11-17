@@ -1,4 +1,10 @@
 ---
+title: "English Homepage"
+layout: single
+author_profile: true
+sidebar:
+  nav: "main_en"
+---
 
 ## 🔗 Quick Links
 
