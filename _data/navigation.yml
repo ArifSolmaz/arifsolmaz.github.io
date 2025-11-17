@@ -1,3 +1,11 @@
+# ---- GLOBAL TOP NAVIGATION (BAYRAKLAR) ----
+main:
+  - title: "🇬🇧"
+    url: /en/
+  - title: "🇹🇷"
+    url: /tr/
+
+# ---- ENGLISH LEFT SIDEBAR ----
 main_en:
   - title: "Home"
     url: /en/
@@ -9,7 +17,12 @@ main_en:
         url: /en/cv/long/
   - title: "Publications"
     url: /en/publications/
+  - title: "Teaching"
+    url: /en/teaching/
+  - title: "Research"
+    url: /en/research/
 
+# ---- TÜRKÇE LEFT SIDEBAR ----
 main_tr:
   - title: "Ana Sayfa"
     url: /tr/
@@ -21,9 +34,7 @@ main_tr:
         url: /tr/cv/uzun/
   - title: "Yayınlar"
     url: /tr/yayinlar/
-
-    languages:
-  - title: "🇬🇧"
-    url: /en/
-  - title: "🇹🇷"
-    url: /tr/
+  - title: "Dersler"
+    url: /tr/dersler/
+  - title: "Araştırma"
+    url: /tr/arastirma/
