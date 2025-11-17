@@ -1,0 +1,14 @@
+- 2025 –  Europlanet Machine Learning Working Group: a year of progress DOI:10.5194/epsc-dps2025-1815
+- 2025 – Testing the performance of cross-correlation techniques to search for molecular features in JWST NIRSpec G395H observations of transiting exoplanets *Monthly Notices of the Royal Astronomical Society* DOI:10.1093/mnras/staf1659
+- 2025 – Planetary Research: A new diamond open access journal for planetary science DOI:10.5194/epsc-dps2025-39
+- 2023 – Leke Örtülmelerinin Ötegezegen Geçiş Ortası Zaman Ölçümlerine Etkisi *Turkish Journal of Astronomy and Astrophysics* DOI:10.55064/tjaa.1203704
+- 2023 – ExoClock Project. III. 450 New Exoplanet Ephemerides from Ground and Space Observations *Astrophysical Journal, Supplement Series* DOI:10.3847/1538-4365/ac9da4
+- 2022 – Physical properties of the trans-Neptunian object (38628) Huya from a multi-chord stellar occultation *arXiv* DOI:10.48550/arXiv.2205.12882
+- 2022 – ExoClock Project III: 450 new exoplanet ephemerides from ground and space observations *arXiv* DOI:10.48550/arXiv.2209.09673
+- 2021 – Çukurova university space sciences and solar energy research and application center (UZAYMER): I. Observing conditions and ongoing projects,Ç.Ü. Uzay Bilimleri ve Güneş Enerjisi Araştırma ve Uygulama Merkezi (UZAYMER): I. gözlem koşulları ve güncel projeler *arXiv* DOI:10.48550/arxiv.2103.04855
+- 2021 – BO Ari Light Curve Analysis using Ground-Based and TESS Data *New Astronomy* DOI:10.1016/j.newast.2021.101571
+- 2020 – The first light curve solutions and period study of BQ Ari *arXiv* DOI:10.48550/arxiv.2006.00528
+- 2019 – Ground-Based Radial Velocity as Critical Support for Future NASA Earth-Finding Missions *arXiv* DOI:10.48550/arxiv.1903.10017
+- 2019 – Astronomy should be in the clouds *arXiv* DOI:10.48550/arxiv.1907.06320
+- 2019 – Astro2020 APC White Paper SmallSats for Astrophysics *arXiv*
+- 2019 – Astro2020 APC White Paper SmallSats for Astrophysics *Arxiv* DOI:10.48550/arxiv.1909.13747
