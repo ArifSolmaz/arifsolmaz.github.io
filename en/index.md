@@ -7,12 +7,6 @@ sidebar:
 classes: wide
 ---
 
-## 🆕 Latest 3 Publications
-
-{% include publications_en_orcid_top3.md %}
-
----
-
 ## 🔗 Quick Links
 
 - [LinkedIn](https://www.linkedin.com/in/arif-solmaz/)
