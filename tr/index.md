@@ -5,34 +5,6 @@ author_profile: true
 sidebar:
   nav: "main_tr"
 classes: wide
-feature_row:
-  - title: "Özgeçmiş"
-    url: "/tr/cv/kisa/"
-    btn_label: "Özgeçmişi Görüntüle"
-    btn_class: "btn--primary"
-    excerpt: "Türkçe kısa ve uzun özgeçmiş (CV) sayfalarına buradan ulaşabilirsiniz."
-  - title: "Yayınlar"
-    url: "/tr/yayinlar/"
-    btn_label: "Yayınları Gör"
-    btn_class: "btn--primary"
-    excerpt: "Hakemli makaleler, bildiriler ve diğer bilimsel çalışmalarım."
-  - title: "Dersler"
-    url: "/tr/dersler/"
-    btn_label: "Derslerim"
-    btn_class: "btn--primary"
-    excerpt: "Mekatronik, programlama, robotik, fizik ve hesaplamalı bilim derslerim."
-  - title: "Araştırma & Projeler"
-    url: "/tr/arastirma/"
-    btn_label: "Keşfet"
-    btn_class: "btn--primary"
-    excerpt: "Ötegezegenler, yıldız lekeleri, zaman serisi analizi ve yürüttüğüm projeler."
----
-
-Akademik web siteme hoş geldiniz.  
-Aşağıdaki kartları kullanarak temel sayfalara hızlıca geçebilirsiniz.
-
-{% include feature_row %}
-
 ---
 
 ### 🆕 Son 3 Yayın (ORCID'den)
