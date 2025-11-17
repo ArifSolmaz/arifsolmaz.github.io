@@ -6,8 +6,6 @@ sidebar:
   nav: "main_en"
 ---
 
-# Short CV (English)
-
 Below you can download or view my short academic CV in PDF format.
 
 - 📄 **Download PDF:**  
