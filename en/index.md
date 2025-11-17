@@ -5,34 +5,6 @@ author_profile: true
 sidebar:
   nav: "main_en"
 classes: wide
-feature_row:
-  - title: "Curriculum Vitae"
-    url: "/en/cv/short/"
-    btn_label: "View CV"
-    btn_class: "btn--primary"
-    excerpt: "Short and long versions of my academic CV in English and Turkish."
-  - title: "Publications"
-    url: "/en/publications/"
-    btn_label: "View publications"
-    btn_class: "btn--primary"
-    excerpt: "Peer-reviewed journal articles, conference proceedings, and outreach work."
-  - title: "Teaching"
-    url: "/en/teaching/"
-    btn_label: "Courses"
-    btn_class: "btn--primary"
-    excerpt: "Courses in mechatronics, programming, robotics, physics, and scientific computing."
-  - title: "Research & Projects"
-    url: "/en/research/"
-    btn_label: "Research areas"
-    btn_class: "btn--primary"
-    excerpt: "Exoplanets, starspots, time-series analysis, and educational/engineering projects."
----
-
-Welcome to my academic website.  
-Use the cards below to navigate to the main sections.
-
-{% include feature_row %}
-
 ---
 
 ### 🆕 Latest 3 publications (from ORCID)
