@@ -6,27 +6,32 @@ sidebar:
   nav: "main_en"
 ---
 
-Below is a short overview of the courses I teach or have taught in recent years.
-You can use this page as a quick reference to my teaching activities.
+Below is a brief overview of the courses I currently teach or have taught in recent years.
 
-Current Courses
-	•	Computer Programming I (C language) – Mechatronics Engineering
-	•	Level: Undergraduate (Year 1)
-	•	Topics: Algorithms, basic C syntax, control structures, functions, arrays, pointers.
-	•	Computer Programming II (Data Structures & Algorithms)
-	•	Level: Undergraduate (Year 2–3)
-	•	Topics: Linked lists, stacks, queues, trees, sorting, search algorithms.
-	•	Robotics / Introduction to Robotics
-	•	Topics: Kinematics, rigid body motion, transformation matrices, trajectory planning.
-	•	Physics 102 – Electricity & Magnetism
-	•	Topics: Electric fields, Gauss’s law, circuits, magnetism, electromagnetic induction.
+- **Computer Programming I (C Language) – Mechatronics Engineering**
+  - Level: Undergraduate (1st year)
+  - Topics: Algorithms, basic C syntax, selection and loop structures, functions, arrays, pointers.
 
-Previous / Occasional Courses
-	•	Numerical Methods / Scientific Computing with Python
-	•	Astronomy and Space Sciences (Introductory level)
-	•	Seminars on Exoplanets and Starspots
+- **Computer Programming II (Data Structures and Algorithms)**
+  - Level: Undergraduate (2nd–3rd year)
+  - Topics: Linked lists, stacks/queues, trees, sorting and searching algorithms.
 
-Teaching Interests
-	•	Integrating Python, Google Colab and simulation-based learning into engineering courses.
-	•	Designing project-based activities that connect mechatronics, physics, and astronomy.
-	•	Developing open educational resources (notebooks, slides, tutorials) that can be reused by students and instructors.
+- **Robotics / Introduction to Robotics**
+  - Topics: Kinematics, rigid body motion, transformation matrices, trajectory planning.
+
+- **Physics 102 – Electricity and Magnetism**
+  - Topics: Electric field, Gauss's law, circuits, magnetism, electromagnetic induction.
+
+## Previous / Occasional Courses
+
+- **Numerical Methods / Scientific Computing (Python)**
+- **Astronomy and Space Sciences (Introductory Level)**
+- **Seminars on Exoplanets and Starspots**
+
+## Teaching Interests
+
+- Developing simulation-based educational materials using **Python and Google Colab**.
+- Designing **project-based courses** that combine mechatronics, physics, and astronomy.
+- Creating reusable **open educational resources** (notebooks, slides, tutorial sets) for students and instructors.
+
+*More detailed syllabi and course-specific pages may be added in the future.*
