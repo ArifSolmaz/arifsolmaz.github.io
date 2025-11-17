@@ -4,6 +4,7 @@ layout: single
 author_profile: true
 sidebar:
   nav: "main_tr"
+lang: tr  
 ---
 
 # Kısa Özgeçmiş (Türkçe)
