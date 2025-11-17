@@ -1,12 +1,4 @@
 ---
-title: "Welcome"
-layout: single
-author_profile: true
+layout: redirect
+redirect_to: "/en/"
 ---
-
-# Hoş geldiniz / Welcome
-
-Bu site iki dilde hazırlanmıştır:
-
-- 🇬🇧 [English Homepage](/en/)
-- 🇹🇷 [Türkçe Ana Sayfa](/tr/)
