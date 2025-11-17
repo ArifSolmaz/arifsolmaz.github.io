@@ -6,8 +6,6 @@ sidebar:
   nav: "main_en"
 ---
 
-# Teaching
-
 Below is a short overview of the courses I teach or have taught in recent years.
 You can use this page as a quick reference to my teaching activities.
 
