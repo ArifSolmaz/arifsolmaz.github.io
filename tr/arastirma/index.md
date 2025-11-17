@@ -6,8 +6,6 @@ sidebar:
   nav: "main_tr"
 ---
 
-# Araştırma
-
 Araştırma ilgi alanlarım temel olarak **ötegezegenler, yıldız etkinliği ve zaman serisi analizi** etrafında yoğunlaşmaktadır. Güçlü bir veri analizi ve bilimsel hesaplama altyapısı ile çalışıyorum.
 
 ## Temel Araştırma Konuları
