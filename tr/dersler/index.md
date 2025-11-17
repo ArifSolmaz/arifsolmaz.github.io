@@ -5,12 +5,7 @@ author_profile: true
 sidebar:
   nav: "main_tr"
 ---
-
-# Dersler
-
 Bu sayfada son yıllarda verdiğim veya vermekte olduğum derslerin kısa bir özetini bulabilirsiniz.
-
-## Güncel Dersler
 
 - **Bilgisayar Programlama I (C dili) – Mekatronik Mühendisliği**
   - Seviye: Lisans (1. sınıf)
