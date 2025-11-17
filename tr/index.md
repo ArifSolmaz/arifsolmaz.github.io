@@ -1,5 +1,5 @@
 ---
-title: "Türkçe Ana Sayfa"
+title: ""
 layout: single
 author_profile: true
 sidebar:
@@ -27,8 +27,6 @@ feature_row:
     btn_class: "btn--primary"
     excerpt: "Ötegezegenler, yıldız lekeleri, zaman serisi analizi ve yürüttüğüm projeler."
 ---
-
-# 🇹🇷 Türkçe Ana Sayfa
 
 Akademik web siteme hoş geldiniz.  
 Aşağıdaki kartları kullanarak temel sayfalara hızlıca geçebilirsiniz.
