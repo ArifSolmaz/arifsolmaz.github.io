@@ -1,7 +1,16 @@
+name: Update ORCID Publications
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 1 * *"
+
 permissions:
   contents: write
-  
-name: Update ORCID Publications
+
+jobs:
+  update-orcid:
+    runs-on: ubuntu-latest
 
 on:
   workflow_dispatch:       # Elle çalıştırmak için
