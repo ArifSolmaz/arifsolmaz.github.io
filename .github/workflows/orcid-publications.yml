@@ -51,7 +51,7 @@ jobs:
           # Top 3 EN
           head -n 3 _includes/publications_en_orcid.md > _includes/publications_en_orcid_top3.md
 
-          # TR copies (same content for now)
+          # TR copies
           cp _includes/publications_en_orcid.md _includes/publications_tr_orcid.md
           cp _includes/publications_en_orcid_top3.md _includes/publications_tr_orcid_top3.md
 
