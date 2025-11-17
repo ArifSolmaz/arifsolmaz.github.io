@@ -6,8 +6,6 @@ sidebar:
   nav: "main_en"
 ---
 
-# Long CV (English)
-
 Below you can download or view my full academic CV in PDF format.
 
 - 📄 **Download PDF:**  
