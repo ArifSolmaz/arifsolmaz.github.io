@@ -1,9 +1,9 @@
 # ---- GLOBAL TOP NAVIGATION (BAYRAKLAR) ----
 main:
-  - title: "🇬🇧"
-    url: /en/
   - title: "🇹🇷"
     url: /tr/
+  - title: "🇬🇧"
+    url: /en/
 
 # ---- ENGLISH LEFT SIDEBAR ----
 main_en:
