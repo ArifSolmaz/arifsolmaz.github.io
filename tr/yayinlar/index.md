@@ -8,15 +8,7 @@ sidebar:
 
 # Yayınlar
 
-Yakında bu sayfada ORCID'den otomatik olarak alınan yayın listesi gösterilecek.
+Aşağıdaki liste ORCID profilimden otomatik olarak oluşturulmaktadır.  
+(**ORCID ID:** 0000-0002-3076-164X).
 
-Şimdilik yer tutucu olarak:
-
-- Makaleler
-- Konferans bildirileri
-- Araştırma notları
-- Popüler bilim yazıları
-
----
-
-Güncellemeler yakında.
+{% include_relative ../../publications_tr_orcid.md %}
