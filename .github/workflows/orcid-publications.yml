@@ -1,21 +1,12 @@
 name: Update ORCID Publications
 
+permissions:
+  contents: write
+
 on:
   workflow_dispatch:
   schedule:
     - cron: "0 0 1 * *"
-
-permissions:
-  contents: write
-
-jobs:
-  update-orcid:
-    runs-on: ubuntu-latest
-
-on:
-  workflow_dispatch:       # Elle çalıştırmak için
-  schedule:
-    - cron: "0 0 1 * *"    # Her ayın 1'inde otomatik (isteğe bağlı)
 
 jobs:
   update-orcid:
@@ -39,7 +30,7 @@ jobs:
 
       - name: Build publications markdown files
         run: |
-          # Tüm yayın listesi (EN)
+          # Full EN publication list
           jq -r '
             .group[]
             | .["work-summary"][0] as $w
@@ -55,10 +46,10 @@ jobs:
           ' orcid_works.json \
           | sort -r > publications_en_orcid.md
 
-          # İlk 3 satır (EN) → top 3
+          # Top 3 EN
           head -n 3 publications_en_orcid.md > publications_en_orcid_top3.md
 
-          # TR dosyaları (şimdilik EN formatının aynısı)
+          # TR copies (same format for now)
           cp publications_en_orcid.md publications_tr_orcid.md
           cp publications_en_orcid_top3.md publications_tr_orcid_top3.md
 
@@ -70,4 +61,4 @@ jobs:
             publications_en_orcid.md
             publications_tr_orcid.md
             publications_en_orcid_top3.md
-            publications_tr_orcid_top3.md
+            publications_tr_
