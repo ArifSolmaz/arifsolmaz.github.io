@@ -1,5 +1,5 @@
 ---
-title: "English Homepage"
+title: ""
 layout: single
 author_profile: true
 sidebar:
