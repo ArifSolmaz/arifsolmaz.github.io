@@ -1,6 +1,12 @@
 ---
-
-### 🔗 Kısa Bağlantılar
+title: "Ana Sayfa"
+layout: single
+author_profile: true
+sidebar:
+  nav: "main_tr"
+lang: tr
+---
+## 🔗 Kısa Bağlantılar
 
 - [LinkedIn](https://www.linkedin.com/in/arif-solmaz/)
 - [ORCID](https://orcid.org/0000-0002-3076-164X)
