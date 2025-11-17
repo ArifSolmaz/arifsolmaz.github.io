@@ -1,0 +1,61 @@
+name: Update ORCID Publications
+
+on:
+  workflow_dispatch:       # Elle çalıştırmak için
+  schedule:
+    - cron: "0 0 1 * *"    # Her ayın 1'inde otomatik (isteğe bağlı)
+
+jobs:
+  update-orcid:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install jq
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jq
+
+      - name: Download works from ORCID
+        run: |
+          curl -L \
+            -H "Accept: application/json" \
+            "https://pub.orcid.org/v3.0/0000-0002-3076-164X/works" \
+            -o orcid_works.json
+
+      - name: Build publications markdown files
+        run: |
+          # Tüm yayın listesi (EN)
+          jq -r '
+            .group[]
+            | .["work-summary"][0] as $w
+            | ($w["publication-date"].year.value // "n.d.") as $year
+            | ($w.title.title.value // "No title") as $title
+            | ($w["journal-title"].value // "") as $journal
+            | ($w["external-ids"]["external-id"] // []
+                | map(select(.["external-id-type"]=="doi") | .["external-id-value"])
+                | .[0] // "") as $doi
+            | "- " + $year + " – " + $title
+              + (if $journal != "" then " *" + $journal + "*" else "" end)
+              + (if $doi != "" then " DOI:" + $doi else "" end)
+          ' orcid_works.json \
+          | sort -r > publications_en_orcid.md
+
+          # İlk 3 satır (EN) → top 3
+          head -n 3 publications_en_orcid.md > publications_en_orcid_top3.md
+
+          # TR dosyaları (şimdilik EN formatının aynısı)
+          cp publications_en_orcid.md publications_tr_orcid.md
+          cp publications_en_orcid_top3.md publications_tr_orcid_top3.md
+
+      - name: Commit updated publications files
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Update publications from ORCID"
+          file_pattern: |
+            publications_en_orcid.md
+            publications_tr_orcid.md
+            publications_en_orcid_top3.md
+            publications_tr_orcid_top3.md
