@@ -31,5 +31,3 @@ Bu sayfada son yıllarda verdiğim veya vermekte olduğum derslerin kısa bir ö
 - Mekatronik, fizik ve astronomiyi birleştiren **proje tabanlı** dersler tasarlama.
 - Öğrenciler ve öğretim üyeleri tarafından tekrar kullanılabilir
   **açık eğitim materyalleri** (notebook’lar, slaytlar, eğitim setleri) hazırlama.
-
-*İleride her ders için ayrı sayfa ve ayrıntılı içerik eklenebilir.*
