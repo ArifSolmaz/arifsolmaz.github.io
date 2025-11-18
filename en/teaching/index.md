@@ -32,5 +32,3 @@ Below is a brief overview of the courses I currently teach or have taught in rec
 - Developing simulation-based educational materials using **Python and Google Colab**.
 - Designing **project-based courses** that combine mechatronics, physics, and astronomy.
 - Creating reusable **open educational resources** (notebooks, slides, tutorial sets) for students and instructors.
-
-*More detailed syllabi and course-specific pages may be added in the future.*
