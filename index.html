@@ -4,982 +4,803 @@
   <meta charset="UTF-8" />
   <title>Dr. Arif Solmaz | Astrophysicist & Educator</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Dr. Arif Solmaz — astrophysicist, data scientist, and educator working on exoplanets, stellar activity, and scientific computing." />
-  <meta name="author" content="Arif Solmaz" />
+  <meta name="description" content="Dr. Arif Solmaz — astrophysicist working on exoplanets, stellar activity, and scientific computing." />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Dr. Arif Solmaz | Astrophysicist & Educator" />
-  <meta property="og:description" content="Exoplanets, starspots, time series, and teaching scientific thinking with real data." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://arifsolmaz.github.io/" />
-
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 
   <style>
     :root {
       --bg: #020617;
-      --bg-alt: #030712;
-      --accent: #f97316;
-      --accent2: #4fd1c5;
-      --accent3: #a855f7;
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-      --border-subtle: rgba(148, 163, 184, 0.3);
-      --card-bg: rgba(15, 23, 42, 0.92);
-      --radius-lg: 1.25rem;
-      --radius-xl: 2rem;
-      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.95);
-      --max-width: 1040px;
-      --transition-fast: 180ms ease-out;
+      --accent: #f97316; /* Star Orange */
+      --accent2: #38bdf8; /* Data Blue */
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --border: rgba(148, 163, 184, 0.15);
+      --card-bg: rgba(15, 23, 42, 0.6);
+      --radius: 1rem;
+      --max-width: 1100px;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
+    /* BASE RESET */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; } 
+    
     body {
-      margin: 0;
-      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #020617;
+      font-family: "Inter", sans-serif;
+      background: var(--bg);
       color: var(--text);
-      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
       overflow-x: hidden;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
+    a { text-decoration: none; color: inherit; transition: 0.2s; }
+    ul { list-style: none; }
+
+    /* BACKGROUND FX */
+    #star-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
+    .noise {
+      position: fixed; inset: 0; z-index: 50; pointer-events: none; opacity: 0.04;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.6' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     }
 
-    .page {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      z-index: 1;
-    }
+    /* LAYOUT */
+    .shell { max-width: var(--max-width); margin: 0 auto; padding: 0 1.5rem; }
+    section { padding: 5rem 0; border-bottom: 1px solid var(--border); }
+    section:last-child { border-bottom: none; }
 
-    .shell {
-      width: 100%;
-      max-width: var(--max-width);
-      padding: 1.4rem 1.5rem;
-      margin: 0 auto;
-    }
-
-    /* SOFT ANIMATED BACKGROUND */
-    .bg-orbits {
-      position: fixed;
-      inset: -20%;
-      z-index: 0;
-      pointer-events: none;
-      opacity: 0.9;
-    }
-
-    .orbit {
-      position: absolute;
-      border-radius: 999px;
-      filter: blur(40px);
-      mix-blend-mode: screen;
-      opacity: 0.35;
-    }
-
-    .orbit.one {
-      width: 420px;
-      height: 420px;
-      background: radial-gradient(circle, rgba(56, 189, 248, 0.9), transparent 60%);
-      top: -6%;
-      left: -8%;
-      animation: floatOrbitOne 38s linear infinite;
-    }
-
-    .orbit.two {
-      width: 360px;
-      height: 360px;
-      background: radial-gradient(circle, rgba(244, 114, 182, 0.9), transparent 65%);
-      bottom: -10%;
-      right: -6%;
-      animation: floatOrbitTwo 46s linear infinite;
-    }
-
-    .orbit.three {
-      width: 520px;
-      height: 520px;
-      background: radial-gradient(circle, rgba(129, 140, 248, 0.8), transparent 65%);
-      top: 40%;
-      left: 50%;
-      transform: translateX(-50%);
-      animation: floatOrbitThree 60s linear infinite;
-    }
-
-    @keyframes floatOrbitOne {
-      0%   { transform: translate(0, 0); }
-      25%  { transform: translate(20px, 40px); }
-      50%  { transform: translate(50px, 10px); }
-      75%  { transform: translate(10px, -20px); }
-      100% { transform: translate(0, 0); }
-    }
-
-    @keyframes floatOrbitTwo {
-      0%   { transform: translate(0, 0); }
-      25%  { transform: translate(-30px, -20px); }
-      50%  { transform: translate(-50px, 10px); }
-      75%  { transform: translate(-10px, 30px); }
-      100% { transform: translate(0, 0); }
-    }
-
-    @keyframes floatOrbitThree {
-      0%   { transform: translate(-50%, 0); }
-      25%  { transform: translate(-52%, 25px); }
-      50%  { transform: translate(-46%, -20px); }
-      75%  { transform: translate(-53%, 5px); }
-      100% { transform: translate(-50%, 0); }
-    }
-
+    /* HEADER */
     header {
-      position: sticky;
-      top: 0;
-      z-index: 40;
-      backdrop-filter: blur(18px);
-      background: linear-gradient(to bottom, rgba(2, 6, 23, 0.95), transparent);
-      border-bottom: 1px solid rgba(15, 23, 42, 0.75);
+      position: sticky; top: 0; z-index: 40;
+      backdrop-filter: blur(12px);
+      background: rgba(2, 6, 23, 0.85);
+      border-bottom: 1px solid var(--border);
     }
-
     .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1.5rem;
+      height: 70px; display: flex; align-items: center; justify-content: space-between;
     }
-
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
-    .avatar {
-      width: 44px;
-      height: 44px;
-      border-radius: 999px;
-      border: 1px solid rgba(248, 250, 252, 0.3);
-      background:
-        radial-gradient(circle at 30% 0%, #38bdf8 0%, #1e293b 45%, #020617 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      font-size: 0.8rem;
-    }
-
-    .brand-title {
-      font-family: "Space Grotesk", system-ui, sans-serif;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-size: 0.82rem;
-      color: #e5e7eb;
-    }
-
-    .brand-sub {
-      font-size: 0.78rem;
-      color: var(--muted);
-    }
-
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 1.2rem;
-      font-size: 0.85rem;
-    }
-
-    .nav-right a {
-      color: var(--muted);
-      position: relative;
-      padding-bottom: 0.08rem;
-    }
-
-    .nav-right a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -0.18rem;
-      width: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-      border-radius: 999px;
-      transition: width var(--transition-fast);
-    }
-
-    .nav-right a:hover {
-      color: #e5e7eb;
-    }
-
-    .nav-right a:hover::after {
-      width: 100%;
-    }
-
-    .pill {
-      padding: 0.32rem 0.7rem;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.55);
-      font-size: 0.76rem;
-      color: #e5e7eb;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      background: radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.32), transparent 60%),
-                  rgba(15, 23, 42, 0.96);
-    }
-
-    .pill span.dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: #22c55e;
-      box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.23);
-    }
-
-    @media (max-width: 768px) {
-      .nav-right {
-        display: none;
-      }
-    }
-
-    main {
-      flex: 1;
-      padding-bottom: 3rem;
-    }
-
-    section {
-      padding: 0 1.5rem 3rem;
-    }
-
-    .section-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-    }
+    .brand { font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: 1.1rem; letter-spacing: -0.02em; }
+    .brand span { color: var(--accent); }
+    
+    .nav-links { display: flex; gap: 2rem; font-size: 0.9rem; font-weight: 500; }
+    .nav-links a:hover { color: var(--accent2); }
+    @media(max-width: 768px) { .nav-links { display: none; } }
 
     /* HERO */
-    .hero {
-      padding: 2.8rem 1.5rem 3rem;
+    .hero { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 3rem; align-items: center; min-height: 80vh; padding-top: 2rem; }
+    @media(max-width: 900px) { .hero { grid-template-columns: 1fr; text-align: center; } }
+
+    .hero-kicker {
+      font-family: "JetBrains Mono", monospace; font-size: 0.8rem; color: var(--accent2);
+      margin-bottom: 1rem; display: inline-block; padding: 0.2rem 0.8rem; 
+      border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 100px;
     }
 
-    .hero-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: minmax(0, 2.3fr) minmax(0, 2fr);
-      gap: 2.3rem;
-      align-items: center;
+    .hero h1 {
+      font-family: "Space Grotesk", sans-serif; font-size: clamp(2.5rem, 5vw, 3.5rem);
+      line-height: 1.1; font-weight: 700; margin-bottom: 1.5rem;
+      background: linear-gradient(to bottom right, #fff 30%, #64748b 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     }
 
-    @media (max-width: 900px) {
-      .hero-inner {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.8rem;
-      padding: 0.3rem 0.75rem 0.3rem 0.4rem;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      background: radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.3), transparent 55%),
-                  rgba(15, 23, 42, 0.96);
-    }
-
-    .eyebrow span.tag {
-      padding: 0.12rem 0.5rem;
-      border-radius: 999px;
-      background: linear-gradient(120deg, var(--accent), var(--accent3));
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-weight: 600;
-      color: #020617;
-    }
-
-    .hero-title {
-      margin-top: 1.5rem;
-      font-size: clamp(2.28rem, 3.6vw, 3rem);
-      line-height: 1.05;
-      font-family: "Space Grotesk", system-ui, sans-serif;
-      letter-spacing: -0.03em;
-    }
-
-    .hero-title span.highlight {
-      background: linear-gradient(120deg, var(--accent), var(--accent2));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .hero-subtitle {
-      margin-top: 1.1rem;
-      font-size: 0.98rem;
-      max-width: 32rem;
-      color: var(--muted);
-    }
-
-    .hero-subtitle strong {
-      color: #e5e7eb;
-      font-weight: 500;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.9rem;
-      margin-top: 1.7rem;
-      align-items: center;
-    }
+    .hero p { font-size: 1.1rem; color: var(--muted); margin-bottom: 2rem; max-width: 540px; }
+    @media(max-width: 900px) { .hero p { margin-left: auto; margin-right: auto; } }
 
     .btn {
-      border-radius: 999px;
-      padding: 0.78rem 1.4rem;
-      font-size: 0.9rem;
-      border: 1px solid transparent;
-      cursor: pointer;
-      font-weight: 500;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      transition:
-        transform var(--transition-fast),
-        box-shadow var(--transition-fast),
-        background var(--transition-fast),
-        border var(--transition-fast);
+      display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem;
+      border-radius: 8px; font-weight: 600; font-size: 0.95rem; cursor: pointer;
+    }
+    .btn-primary { background: var(--text); color: var(--bg); border: 1px solid var(--text); }
+    .btn-primary:hover { background: var(--accent2); border-color: var(--accent2); box-shadow: 0 0 20px rgba(56, 189, 248, 0.3); }
+    
+    /* === INTERACTIVE WASP-52b SIMULATION === */
+    .transit-viz {
+      position: relative; width: 100%; height: 420px;
+      background: linear-gradient(180deg, #0f172a, #020617);
+      border: 1px solid var(--border); border-radius: 1.5rem;
+      display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
+      overflow: hidden; padding-top: 20px;
+      box-shadow: inset 0 0 60px rgba(0,0,0,0.6);
+      user-select: none; /* Vital for dragging */
+      touch-action: none; /* Vital for mobile drag */
     }
 
-    .btn.primary {
-      background:
-        radial-gradient(circle at 0 0, rgba(248, 250, 252, 0.18), transparent 55%),
-        linear-gradient(120deg, var(--accent), var(--accent2));
-      box-shadow: 0 20px 45px rgba(8, 47, 73, 0.95);
-      color: #020617;
+    .live-readout {
+      position: absolute; top: 15px; right: 20px;
+      font-family: "JetBrains Mono", monospace; font-size: 0.75rem; color: var(--accent);
+      background: rgba(249, 115, 22, 0.1); padding: 6px 10px; border-radius: 6px;
+      border: 1px solid rgba(249, 115, 22, 0.2);
+      z-index: 30;
     }
 
-    .btn.primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 26px 55px rgba(8, 47, 73, 0.98);
-    }
-
-    .btn.ghost {
-      border-color: rgba(148, 163, 184, 0.7);
-      background: radial-gradient(circle at 100% 0, rgba(79, 209, 197, 0.25), transparent 55%),
-                  rgba(15, 23, 42, 0.98);
-      color: #e5e7eb;
-    }
-
-    .btn.ghost:hover {
-      border-color: rgba(148, 163, 184, 1);
-      transform: translateY(-1px);
-    }
-
-    .btn-icon {
-      font-size: 1rem;
-    }
-
-    .hero-note {
-      margin-top: 0.9rem;
-      font-size: 0.83rem;
-      color: var(--muted);
-    }
-
-    .hero-right-card {
-      border-radius: var(--radius-xl);
-      background:
-        radial-gradient(circle at 20% 0%, rgba(56, 189, 248, 0.45), transparent 55%),
-        radial-gradient(circle at 80% 100%, rgba(244, 114, 182, 0.45), transparent 55%),
-        #020617;
-      border: 1px solid rgba(148, 163, 184, 0.42);
-      box-shadow: var(--shadow-soft);
-      padding: 1.4rem;
-      min-height: 240px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+    /* Simulation Stage (Star + Planet) */
+    .sim-stage {
       position: relative;
-      overflow: hidden;
+      width: 100%; height: 200px;
+      cursor: default;
     }
 
-    .hero-right-card::before {
-      content: "";
-      position: absolute;
-      inset: -40%;
-      background:
-        radial-gradient(circle at 0 100%, rgba(15, 23, 42, 0.9), transparent 65%),
-        radial-gradient(circle at 100% 0, rgba(15, 23, 42, 0.7), transparent 60%);
-      mix-blend-mode: multiply;
-      pointer-events: none;
-    }
-
-    .hero-right-card-inner {
-      position: relative;
+    /* WASP-52 (K2V Star) - More Orange/Reddish */
+    .star-sim {
+      width: 140px; height: 140px; border-radius: 50%;
+      /* K-type star gradient: Brighter center, darker orange/red limb */
+      background: radial-gradient(circle at 40% 40%, #fff7ed 5%, #fb923c 45%, #c2410c 85%, #7c2d12 100%);
+      box-shadow: 0 0 60px rgba(234, 88, 12, 0.3);
+      position: absolute; 
+      top: 50%; left: 50%; transform: translate(-50%, -50%);
       z-index: 1;
     }
-
-    .hero-card-title {
-      font-family: "Space Grotesk", system-ui, sans-serif;
-      font-size: 0.98rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      margin-bottom: 0.3rem;
+    
+    /* Starspot */
+    .star-spot {
+      position: absolute; width: 18px; height: 12px; 
+      background: rgba(60, 10, 0, 0.85);
+      border-radius: 50%; 
+      top: 50%; left: 50%; 
+      transform: translate(-50%, -50%) rotate(-15deg);
+      filter: blur(1px);
+      box-shadow: inset 0 0 4px rgba(0,0,0,0.9);
     }
 
-    .hero-card-sub {
-      font-size: 0.83rem;
-      color: rgba(226, 232, 240, 0.96);
-      margin-bottom: 0.6rem;
+    /* WASP-52 b (Inflated Hot Jupiter) */
+    .planet-sim {
+      width: 26px; height: 26px; background: #050505; border-radius: 50%;
+      position: absolute; 
+      top: 50%; left: 15%; /* Start pos */
+      transform: translate(-50%, -50%);
+      z-index: 10;
+      box-shadow: inset 3px 3px 6px rgba(255,255,255,0.15);
+      cursor: grab;
+      transition: transform 0.1s;
+    }
+    .planet-sim:active { cursor: grabbing; transform: translate(-50%, -50%) scale(1.1); }
+
+    /* The Graph Area */
+    .graph-container {
+      position: relative;
+      width: 85%; height: 140px;
+      margin-top: 10px;
+      border-left: 2px solid #475569;
+      border-bottom: 2px solid #475569;
+      /* Scientific Grid */
+      background-image: 
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 40px 40px;
     }
 
-    .chip-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.32rem;
-      margin-top: 0.6rem;
-      font-size: 0.78rem;
+    .graph-labels {
+      position: absolute; width: 100%; height: 100%; pointer-events: none;
+    }
+    .label-y {
+      position: absolute; left: -30px; top: 50%;
+      transform: rotate(-90deg) translateX(50%); transform-origin: left;
+      font-family: "JetBrains Mono"; font-size: 0.7rem; color: var(--muted); letter-spacing: 1px;
+    }
+    .label-x {
+      position: absolute; bottom: -25px; right: 0;
+      font-family: "JetBrains Mono"; font-size: 0.7rem; color: var(--muted); letter-spacing: 1px;
     }
 
-    .chip {
-      padding: 0.2rem 0.55rem;
-      border-radius: 999px;
-      border: 1px solid rgba(15, 23, 42, 0.35);
-      background: rgba(15, 23, 42, 0.93);
-      color: rgba(226, 232, 240, 0.96);
-      backdrop-filter: blur(6px);
+    /* SVG Graph */
+    .curve-svg { width: 100%; height: 100%; overflow: visible; }
+    
+    .curve-path {
+      fill: none; stroke: var(--accent2); stroke-width: 3; 
+      stroke-linecap: round; stroke-linejoin: round;
+      vector-effect: non-scaling-stroke;
+      filter: drop-shadow(0 0 4px rgba(56,189,248,0.3));
+    }
+    
+    /* The Tracking Dot */
+    .graph-dot {
+      width: 12px; height: 12px; background: #fff; border-radius: 50%;
+      position: absolute; 
+      top: 0; left: 0; 
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 15px var(--accent2);
+      z-index: 20;
+      pointer-events: none; /* Let clicks pass through */
     }
 
-    .hero-card-footer {
-      margin-top: 0.9rem;
-      font-size: 0.8rem;
-      color: rgba(226, 232, 240, 0.9);
-    }
+    /* SECTIONS & CARDS */
+    .section-head { margin-bottom: 2.5rem; }
+    .section-head h2 { font-family: "Space Grotesk", sans-serif; font-size: 2rem; margin-bottom: 0.5rem; }
+    .section-head p { color: var(--muted); max-width: 600px; }
 
-    /* SECTIONS */
-    .section-header {
-      margin-bottom: 1.3rem;
-    }
-
-    .section-kicker {
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--muted);
-      margin-bottom: 0.25rem;
-    }
-
-    .section-title {
-      font-family: "Space Grotesk", system-ui, sans-serif;
-      font-size: 1.35rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #e5e7eb;
-      margin-bottom: 0.35rem;
-    }
-
-    .section-description {
-      font-size: 0.88rem;
-      color: var(--muted);
-      max-width: 32rem;
-    }
-
-    .two-col {
-      display: grid;
-      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.5fr);
-      gap: 1.4rem;
-    }
-
-    @media (max-width: 900px) {
-      .two-col {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+    
     .card {
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border-subtle);
-      background-color: var(--card-bg);
-      padding: 1rem;
-      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.9);
-      font-size: 0.86rem;
+      background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 2rem;
+      position: relative; overflow: hidden; transition: transform 0.2s;
+      display: flex; flex-direction: column;
+    }
+    .card:hover { transform: translateY(-4px); border-color: rgba(255,255,255,0.1); }
+    
+    .card::before {
+      content: ""; position: absolute; inset: 0;
+      background: radial-gradient(800px circle at var(--x) var(--y), rgba(255,255,255,0.06), transparent 40%);
+      opacity: 0; transition: opacity 0.3s; pointer-events: none;
+    }
+    .grid:hover .card::before { opacity: 1; }
+
+    .card h3 { font-family: "Space Grotesk"; font-size: 1.25rem; margin-bottom: 0.8rem; color: #fff; }
+    .card p { color: var(--muted); font-size: 0.95rem; margin-bottom: 1.5rem; flex-grow: 1; }
+    
+    .tags { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .tag {
+      font-size: 0.75rem; font-family: "JetBrains Mono"; color: var(--accent2);
+      background: rgba(56, 189, 248, 0.1); padding: 0.2rem 0.6rem; border-radius: 4px;
+    }
+
+    /* ADS PUB CARD */
+    .pub-card {
+      grid-column: 1 / -1;
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.8), rgba(2, 6, 23, 0.9));
+      border: 1px solid var(--border);
+    }
+    .pub-list { 
+      display: flex; 
+      flex-direction: column; 
+      gap: 1.2rem; 
+      min-height: 120px; /* Give it some space while loading */
+      justify-content: center;
+      align-items: center;
+      text-align: center;
       color: var(--muted);
-      line-height: 1.7;
-    }
-
-    .card h3 {
-      font-size: 0.96rem;
-      margin-bottom: 0.4rem;
-      color: #e5e7eb;
-      font-family: "Space Grotesk", system-ui, sans-serif;
-    }
-
-    .badge-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-top: 0.75rem;
-      font-size: 0.78rem;
-    }
-
-    .badge {
-      padding: 0.2rem 0.6rem;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      background-color: rgba(15, 23, 42, 0.98);
-    }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1rem;
-    }
-
-    @media (max-width: 980px) {
-      .grid-3 {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 700px) {
-      .grid-3 {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    .mini-card {
-      border-radius: 1rem;
-      border: 1px solid rgba(148, 163, 184, 0.3);
-      background-color: rgba(15, 23, 42, 0.92);
-      padding: 0.9rem;
-      font-size: 0.82rem;
-      color: var(--muted);
-    }
-
-    .mini-card h3 {
       font-size: 0.9rem;
-      margin-bottom: 0.25rem;
-      color: #e5e7eb;
-      font-family: "Space Grotesk", system-ui, sans-serif;
     }
+    .pub-item {
+      display: grid; grid-template-columns: 60px 1fr; gap: 1.2rem;
+      padding-bottom: 1.2rem; border-bottom: 1px solid var(--border);
+    }
+    .pub-item:last-child { border-bottom: none; padding-bottom: 0; }
+    
+    .pub-year {
+      font-family: "JetBrains Mono"; color: var(--accent); font-weight: bold;
+      font-size: 0.9rem; text-align: right; padding-top: 0.2rem;
+    }
+    .pub-title {
+      font-weight: 600; color: var(--text); margin-bottom: 0.3rem; display: block;
+      transition: color 0.2s;
+    }
+    .pub-title:hover { color: var(--accent2); text-decoration: underline; text-decoration-color: var(--accent2); }
+    .pub-meta { font-size: 0.85rem; color: var(--muted); line-height: 1.5; }
+    
+    .ads-link-btn {
+      margin-top: 1.5rem;
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      font-size: 0.85rem; color: var(--accent2); font-weight: 500;
+      font-family: "JetBrains Mono";
+    }
+    .ads-link-btn:hover { color: #fff; }
 
-    .mini-meta {
-      font-size: 0.76rem;
-      color: rgba(148, 163, 184, 0.95);
-      margin-bottom: 0.3rem;
+    /* CODE & CONTACT */
+    .repo-item {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 1rem 0; border-bottom: 1px solid var(--border);
     }
+    .repo-name { font-family: "JetBrains Mono"; font-weight: 700; color: var(--text); }
+    .repo-desc { font-size: 0.9rem; color: var(--muted); margin-top: 0.2rem; }
+    .repo-stat { font-size: 0.8rem; color: var(--muted); display: flex; gap: 1rem; }
 
-    /* CONTACT */
-    .contact-row {
-      display: grid;
-      grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.3fr);
-      gap: 1.4rem;
-    }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    @media(max-width: 700px) { .contact-grid { grid-template-columns: 1fr; } }
+    .contact-list li { margin-bottom: 1rem; display: flex; align-items: center; gap: 0.8rem; }
+    .icon { width: 24px; text-align: center; font-size: 1.2rem; }
 
-    @media (max-width: 900px) {
-      .contact-row {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    .contact-card {
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border-subtle);
-      background-color: var(--card-bg);
-      padding: 1rem;
-      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.9);
-      font-size: 0.86rem;
-      color: var(--muted);
-    }
-
-    .contact-list {
-      list-style: none;
-      margin-top: 0.6rem;
-    }
-
-    .contact-list li + li {
-      margin-top: 0.3rem;
-    }
-
-    .contact-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      font-size: 0.86rem;
-    }
-
-    .contact-link span.icon {
-      font-size: 1rem;
-    }
-
-    .contact-link span.label {
-      border-bottom: 1px dotted rgba(148, 163, 184, 0.7);
-    }
-
-    footer {
-      border-top: 1px solid rgba(15, 23, 42, 0.9);
-      background-color: #020617;
-      padding: 1.1rem 1.5rem 1.5rem;
-      font-size: 0.75rem;
-      color: var(--muted);
-    }
-
-    footer .footer-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    .fade-in {
-      opacity: 0;
-      transform: translateY(12px);
-      transition: opacity 320ms ease-out, transform 320ms ease-out;
-    }
-
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    footer { padding: 3rem 0; text-align: center; font-size: 0.85rem; color: var(--muted); border-top: 1px solid var(--border); }
   </style>
 </head>
 <body>
-<!-- animated background -->
-<div class="bg-orbits">
-  <div class="orbit one"></div>
-  <div class="orbit two"></div>
-  <div class="orbit three"></div>
-</div>
 
-<div class="page">
-  <header>
-    <div class="shell nav">
-      <div class="nav-left">
-        <div class="avatar">AS</div>
-        <div>
-          <div class="brand-title">Dr. Arif Solmaz</div>
-          <div class="brand-sub">Astrophysicist · Data Scientist · Educator</div>
+<canvas id="star-canvas"></canvas>
+<div class="noise"></div>
+
+<header>
+  <div class="shell nav">
+    <a href="#" class="brand">Dr. Arif <span>Solmaz</span></a>
+    <div class="nav-links">
+      <a href="#research">Research</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#code">Code</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</header>
+
+<main class="shell">
+
+  <section class="hero">
+    <div>
+      <span class="hero-kicker">Astrophysics · Data Science</span>
+      <h1>Decoding signals from <br>noisy stars.</h1>
+      <p>
+        I study transiting exoplanets like <strong>WASP-52 b</strong>, stellar activity, and time-series analysis. 
+        I build models to understand what happens when real data meets simple physics.
+      </p>
+      <a href="#research" class="btn btn-primary">Explore Research ↓</a>
+    </div>
+
+    <div class="transit-viz">
+      <div class="live-readout">target: WASP-52 b</div>
+
+      <div class="sim-stage" id="sim-stage">
+        <div class="star-sim">
+          <div class="star-spot"></div>
         </div>
+        <div class="planet-sim" id="planet"></div>
       </div>
+      
+      <div class="graph-container">
+        <div class="graph-labels">
+          <span class="label-y">Relative Flux</span>
+          <span class="label-x">Time</span>
+        </div>
 
-      <div class="nav-right">
-        <a href="#about">About</a>
-        <a href="#work">Research</a>
-        <a href="#teaching">Teaching</a>
-        <a href="#contact">Contact</a>
-        <span class="pill">
-          <span class="dot"></span> Real data · Honest models
-        </span>
+        <svg class="curve-svg" preserveAspectRatio="none" viewBox="0 0 400 100">
+           <path id="curve-path" class="curve-path" d="" />
+        </svg>
+        
+        <div class="graph-dot" id="graph-dot"></div>
       </div>
     </div>
-  </header>
+  </section>
 
-  <main>
-    <!-- HERO -->
-    <section class="hero" id="about">
-      <div class="hero-inner">
-        <div>
-          <div class="eyebrow">
-            <span class="tag">Exoplanets · Stellar activity</span>
-            <span>From noisy stars to clear inferences</span>
-          </div>
+  <section id="research">
+    <div class="section-head">
+      <h2>Research Focus</h2>
+      <p>My work focuses on the intersection of stellar activity and exoplanet characterization. I ask: "How does the star affect what we know about the planet?"</p>
+    </div>
 
-          <h1 class="hero-title">
-            I study <span class="highlight">planets around active stars</span>
-            and teach people to think with data.
-          </h1>
-
-          <p class="hero-subtitle">
-            I work on transiting exoplanets, stellar variability and time-series analysis.  
-            Most of what I do lives where <strong>real data</strong>, <strong>simple models</strong>
-            and <strong>curious students</strong> meet.
-          </p>
-
-          <div class="hero-actions">
-            <a href="#work" class="btn primary">
-              Explore my work
-              <span class="btn-icon">↗</span>
-            </a>
-            <a href="#contact" class="btn ghost">
-              Say hello
-              <span class="btn-icon">→</span>
-            </a>
-          </div>
-
-          <p class="hero-note">
-            Current interests: starspot-contaminated transits, TESS & JWST light curves,
-            and small, honest machine-learning models for astrophysical time series.
-          </p>
-        </div>
-
-        <div>
-          <div class="hero-right-card">
-            <div class="hero-right-card-inner">
-              <div class="hero-card-title">Quick profile</div>
-              <div class="hero-card-sub">
-                A few coordinates in parameter space:
-              </div>
-              <div class="chip-row">
-                <span class="chip">Transiting exoplanets</span>
-                <span class="chip">Active host stars</span>
-                <span class="chip">TESS · JWST</span>
-                <span class="chip">Python · C · Colab</span>
-                <span class="chip">Mentoring & teaching</span>
-              </div>
-              <div class="hero-card-footer">
-                I like well-posed questions, readable code, and error bars that mean what
-                they say.
-              </div>
-            </div>
-          </div>
+    <div class="grid" id="research-grid">
+      <div class="card">
+        <h3>Exoplanets & Activity</h3>
+        <p>
+          Many interesting planets orbit active stars. Starspots and faculae distort transit light curves, affecting radius and timing measurements. I model these distortions to recover accurate planetary parameters.
+        </p>
+        <div class="tags">
+          <span class="tag">TESS/Kepler</span>
+          <span class="tag">Transit Modeling</span>
         </div>
       </div>
-    </section>
 
-    <!-- RESEARCH / WORK -->
-    <section id="work">
-      <div class="section-inner">
-        <div class="section-header">
-          <div class="section-kicker">Research</div>
-          <h2 class="section-title">What I work on</h2>
-          <p class="section-description">
-            A compressed view of the themes that keep showing up in my research.
-          </p>
-        </div>
-
-        <div class="two-col fade-in">
-          <div class="card">
-            <h3>Exoplanets around messy stars</h3>
-            <p>
-              Many of my targets do not have quiet, textbook light curves. Rotating
-              starspots, faculae and other activity features distort transit depths,
-              timings and transmission spectra.
-            </p>
-            <p style="margin-top:0.5rem;">
-              I ask questions like:
-              “If the star really looked like this, what would we actually measure for
-              the planet?”
-            </p>
-            <div class="badge-row">
-              <span class="badge">TESS</span>
-              <span class="badge">WASP-52, HAT-P-36, etc.</span>
-              <span class="badge">starspot modelling</span>
-              <span class="badge">time-series analysis</span>
-            </div>
-          </div>
-
-          <div class="card">
-            <h3>Tools & workflows</h3>
-            <p>
-              I build small, reusable workflows for light curves and teaching:
-              Python scripts, Colab notebooks, and clean examples that can be forked
-              for new projects or classes.
-            </p>
-            <p style="margin-top:0.5rem;">
-              The main design rule is simple:
-              a future student should be able to read it without guessing.
-            </p>
-            <div class="badge-row">
-              <span class="badge">lightkurve · batman · starry</span>
-              <span class="badge">simple Bayesian fits</span>
-              <span class="badge">visual diagnostics</span>
-            </div>
-          </div>
-        </div>
-
-        <div style="margin-top:1.7rem;" class="fade-in">
-          <div class="grid-3">
-            <div class="mini-card">
-              <h3>Stellar noise as information</h3>
-              <div class="mini-meta">Exoplanets · activity</div>
-              <p>
-                Instead of treating stellar variability only as a nuisance, I am interested
-                in what it reveals about stellar surfaces and magnetic behaviour in
-                planet-hosting systems.
-              </p>
-            </div>
-
-            <div class="mini-card">
-              <h3>Pragmatic modelling</h3>
-              <div class="mini-meta">Fits with a purpose</div>
-              <p>
-                I prefer models that are just complicated enough to answer a specific
-                question, with assumptions that are visible rather than hidden.
-              </p>
-            </div>
-
-            <div class="mini-card">
-              <h3>Data literacy</h3>
-              <div class="mini-meta">Students · engineers</div>
-              <p>
-                A parallel goal in most projects is teaching comfort with messy data,
-                uncertainty, and the idea that “not sure yet” is a valid intermediate
-                state.
-              </p>
-            </div>
-          </div>
+      <div class="card">
+        <h3>Stellar Physics</h3>
+        <p>
+          Treating stellar noise as a signal. By analyzing the variability in light curves, we can map surface features (spots) and understand the magnetic evolution of host stars.
+        </p>
+        <div class="tags">
+          <span class="tag">Starspots</span>
+          <span class="tag">Differential Rotation</span>
         </div>
       </div>
-    </section>
 
-    <!-- TEACHING -->
-    <section id="teaching">
-      <div class="section-inner">
-        <div class="section-header">
-          <div class="section-kicker">Teaching</div>
-          <h2 class="section-title">How I teach</h2>
-          <p class="section-description">
-            Courses, labs and mentoring are different ways to train the same muscle:
-            thinking clearly about reality.
-          </p>
-        </div>
-
-        <div class="two-col fade-in">
-          <div class="card">
-            <h3>For students</h3>
-            <p>
-              I teach physics, programming and robotics-related topics, often for
-              mechatronics and engineering students. Many of them start with the belief
-              that “this is too hard”. It usually isn’t.
-            </p>
-            <p style="margin-top:0.5rem;">
-              We use simple examples, live code and real data.  
-              The target is not fancy tricks, but the moment when a student can explain a
-              plot to someone else without help.
-            </p>
-            <div class="badge-row">
-              <span class="badge">C & Python</span>
-              <span class="badge">Google Colab labs</span>
-              <span class="badge">robotics & transforms</span>
-              <span class="badge">small open-ended projects</span>
-            </div>
-          </div>
-
-          <div class="card">
-            <h3>Project philosophy</h3>
-            <p>
-              Good student projects are focused and finite. I value:
-            </p>
-            <ul style="font-size:0.84rem; margin-left:1.1rem; margin-top:0.3rem;">
-              <li>One clear question per project</li>
-              <li>Readable code and labeled figures</li>
-              <li>Transparent limitations and uncertainties</li>
-              <li>Artifacts your future self will understand</li>
-            </ul>
-            <p style="margin-top:0.6rem;">
-              If you are interested in exoplanets, stellar activity or data-heavy topics,
-              feel free to reach out with a short description of your background.
-            </p>
-          </div>
+      <div class="card">
+        <h3>Methods</h3>
+        <p>
+          I prefer pragmatic modeling: models that are just complex enough to answer the question. I use Bayesian inference and MCMC to quantify uncertainties honestly.
+        </p>
+        <div class="tags">
+          <span class="tag">Bayesian Inference</span>
+          <span class="tag">Python</span>
         </div>
       </div>
-    </section>
 
-    <!-- CONTACT -->
-    <section id="contact">
-      <div class="section-inner">
-        <div class="section-header">
-          <div class="section-kicker">Contact</div>
-          <h2 class="section-title">Get in touch</h2>
-          <p class="section-description">
-            I welcome messages from students, collaborators and people who are simply
-            curious about exoplanets and data.
-          </p>
+      <div class="card pub-card">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem;">
+          <h3 style="margin:0; font-size:1.1rem; display:flex; align-items:center; gap:0.5rem;">
+            Selected Publication <span style="font-size:0.8rem; opacity:0.6; font-weight:400;">(via NASA ADS)</span>
+          </h3>
+        </div>
+        
+        <div class="pub-list" id="random-publication-container">
+          <p>Loading a random publication...</p>
         </div>
 
-        <div class="contact-row fade-in">
-          <div class="contact-card">
-            <h3>Before you write</h3>
-            <p>
-              To make our conversation easier, please include:
-            </p>
-            <ul style="font-size:0.84rem; margin-left:1.1rem; margin-top:0.3rem;">
-              <li>Who you are and what you study/work on</li>
-              <li>Which topics from this page caught your eye</li>
-              <li>Roughly how much time or scope you have in mind</li>
-            </ul>
-            <p style="margin-top:0.6rem;">
-              Short, concrete emails are easier to answer carefully.
-            </p>
-          </div>
-
-          <div class="contact-card">
-            <h3>Links & email</h3>
-            <ul class="contact-list">
-  <li>
-    <a class="contact-link" href="mailto:arif.solmaz@gmail.com">
-      <span class="icon">✉️</span>
-      <span class="label">Email</span>
-    </a>
-  </li>
-  <li>
-    <a class="contact-link" href="https://github.com/arifsolmaz" target="_blank" rel="noopener">
-      <span class="icon">🐙</span>
-      <span class="label">GitHub</span>
-    </a>
-  </li>
-  <li>
-    <a class="contact-link" href="https://scholar.google.com/citations?user=KukbrjkAAAAJ&hl=tr" target="_blank" rel="noopener">
-      <span class="icon">📚</span>
-      <span class="label">Google Scholar</span>
-    </a>
-  </li>
-  <li>
-    <a class="contact-link" href="https://orcid.org/0000-0002-3076-164X" target="_blank" rel="noopener">
-      <span class="icon">🟢</span>
-      <span class="label">ORCID</span>
-    </a>
-  </li>
-</ul>
-            <p style="margin-top:0.8rem; font-size:0.8rem;">
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer>
-    <div class="footer-inner">
-      <div>
-        © <span id="year"></span> Arif Solmaz. Built by hand & hosted on GitHub Pages.
-      </div>
-      <div>
-        Last updated: <span id="last-updated">2025</span>
+        <a href="https://ui.adsabs.harvard.edu/search/fq=%7B!type%3Daqp%20v%3D%24fq_database%7D&fq_database=(database%3Aastronomy%20OR%20database%3Aphysics)&q=author%3A%22Solmaz%2C%20Arif%22&sort=date%20desc%2C%20bibcode%20desc&p_=0" target="_blank" class="ads-link-btn">
+          View full library on NASA ADS <span style="font-size:1.2rem;">→</span>
+        </a>
       </div>
     </div>
-  </footer>
-</div>
+  </section>
+
+  <section id="teaching">
+    <div class="section-head">
+      <h2>Teaching & Mentoring</h2>
+      <p>Courses, labs, and student projects designed to build "Data Literacy."</p>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h3>For Students</h3>
+        <p>
+          I teach physics and programming (Python/C) often for engineering students. 
+          My goal is to move students from "following the recipe" to "understanding the ingredients."
+          We use real satellite data, not just textbook examples.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Project Philosophy</h3>
+        <p>
+          Good research projects are focused and finite. I value readable code, 
+          clear visualizations, and honest error bars over complex "black box" solutions.
+        </p>
+        <div class="tags">
+          <span class="tag">Open Science</span>
+          <span class="tag">Reproducibility</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="code">
+    <div class="section-head">
+      <h2>Code & Software</h2>
+      <p>Open source tools and workflows for astrophysical time-series analysis.</p>
+    </div>
+
+    <div class="card" style="padding: 0 2rem;">
+      <div class="repo-item">
+        <div>
+          <div class="repo-name">transit-analysis-workflow</div>
+          <div class="repo-desc">A robust pipeline for analyzing TESS light curves using `lightkurve` and `batman`.</div>
+        </div>
+        <div class="repo-stat">Python</div>
+      </div>
+
+      <div class="repo-item">
+        <div>
+          <div class="repo-name">starspot-modelling</div>
+          <div class="repo-desc">Scripts for simulating the effect of starspot crossings on transit depth.</div>
+        </div>
+        <div class="repo-stat">Jupyter</div>
+      </div>
+
+      <div class="repo-item" style="border: none;">
+        <div>
+          <div class="repo-name">teaching-materials</div>
+          <div class="repo-desc">Public Labs and Colab notebooks for Physics and Data Analysis courses.</div>
+        </div>
+        <div class="repo-stat">Markdown</div>
+      </div>
+    </div>
+    <div style="margin-top: 1.5rem;">
+      <a href="https://github.com/arifsolmaz" target="_blank" style="font-size: 0.9rem; color: var(--accent2);">
+        View all repositories on GitHub →
+      </a>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-head">
+      <h2>Get In Touch</h2>
+      <p>I welcome emails from students and collaborators interested in exoplanets.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="card">
+        <h3>Before you write</h3>
+        <p>
+          To make our conversation efficient, please include:
+        </p>
+        <ul style="font-size: 0.9rem; color: var(--muted); list-style: disc; margin-left: 1.2rem; margin-bottom: 1rem;">
+          <li>Your background (student, researcher, etc.)</li>
+          <li>Specific topic (e.g., "WASP-52b data analysis")</li>
+          <li>Rough timeline or scope of the question</li>
+        </ul>
+        <p>Short, concrete emails are the best.</p>
+      </div>
+
+      <div class="card" style="justify-content: center;">
+        <ul class="contact-list">
+          <li>
+            <span class="icon">✉️</span>
+            <a href="mailto:arif.solmaz@gmail.com">arif.solmaz@gmail.com</a>
+          </li>
+          <li>
+            <span class="icon">🐙</span>
+            <a href="https://github.com/arifsolmaz" target="_blank">github.com/arifsolmaz</a>
+          </li>
+          <li>
+            <span class="icon">🎓</span>
+            <a href="https://scholar.google.com/citations?user=KukbrjkAAAAJ" target="_blank">Google Scholar</a>
+          </li>
+          <li>
+            <span class="icon">🆔</span>
+            <a href="https://orcid.org/0000-0002-3076-164X" target="_blank">ORCID Profile</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="shell">
+    © <span id="year"></span> Dr. Arif Solmaz. <br>
+    Built with pure HTML/CSS & JS.
+  </div>
+</footer>
 
 <script>
+  /* --- 1. DYNAMIC YEAR --- */
   document.getElementById("year").textContent = new Date().getFullYear();
 
-  const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.18 }
-  );
+  /* --- 2. SPOTLIGHT EFFECT --- */
+  const grids = document.querySelectorAll('.grid');
+  grids.forEach(grid => {
+    grid.addEventListener('mousemove', e => {
+      const cards = grid.querySelectorAll('.card');
+      for(const card of cards) {
+        const rect = card.getBoundingClientRect(),
+              x = e.clientX - rect.left,
+              y = e.clientY - rect.top;
+        card.style.setProperty('--x', `${x}px`);
+        card.style.setProperty('--y', `${y}px`);
+      }
+    });
+  });
 
-  document.querySelectorAll(".fade-in").forEach(el => observer.observe(el));
+  /* --- 3. STARFIELD BACKGROUND --- */
+  const canvas = document.getElementById('star-canvas');
+  const ctx = canvas.getContext('2d');
+  let w, h, stars = [];
+  const initStars = () => {
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+    stars = Array.from({length: 100}, () => ({
+      x: Math.random() * w, y: Math.random() * h,
+      r: Math.random() * 1.5, a: Math.random(), s: Math.random() * 0.05
+    }));
+  };
+  const animateStars = () => {
+    ctx.clearRect(0, 0, w, h); ctx.fillStyle = "white";
+    stars.forEach(t => {
+      ctx.globalAlpha = t.a; ctx.beginPath(); ctx.arc(t.x, t.y, t.r, 0, 6.28); ctx.fill();
+      t.y -= t.s; if(t.y < 0) t.y = h;
+    });
+    requestAnimationFrame(animateStars);
+  };
+  window.addEventListener('resize', initStars);
+  initStars(); animateStars();
+
+  /* --- 4. INTERACTIVE PHYSICS ENGINE (WASP-52b) --- */
+  const simStage = document.getElementById('sim-stage');
+  const planet = document.getElementById('planet');
+  const curvePath = document.getElementById('curve-path');
+  const graphDot = document.getElementById('graph-dot');
+
+  let isDragging = false;
+
+  // Visual Sizes in Pixels
+  const STAR_RADIUS = 70; 
+  const PLANET_RADIUS = 13; // Inflated Hot Jupiter
+  const SPOT_RADIUS = 9;
+  
+  // Current state (percentages)
+  let planetX = 15; 
+  let planetY = 50;
+
+  // Helper: Map Range - CORRECTED
+  const mapRange = (val, inMin, inMax, outMin, outMax) => 
+    (val - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
+
+  // Helper: Smooth Ease (for ingress/egress softness)
+  const smoothEase = (t) => (1 - Math.cos(t * Math.PI)) / 2;
+
+  // --- DRAG EVENTS ---
+  function startDrag(e) {
+    isDragging = true;
+    simStage.style.cursor = 'grabbing';
+    planet.style.cursor = 'grabbing';
+    handleMove(e);
+  }
+  function stopDrag() {
+    isDragging = false;
+    simStage.style.cursor = 'default';
+    planet.style.cursor = 'grab';
+  }
+  function handleMove(e) {
+    if (!isDragging) return;
+    e.preventDefault(); 
+    
+    const rect = simStage.getBoundingClientRect();
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+    
+    let x = clientX - rect.left;
+    let y = clientY - rect.top;
+
+    x = Math.max(0, Math.min(x, rect.width));
+    y = Math.max(0, Math.min(y, rect.height));
+
+    planetX = (x / rect.width) * 100;
+    planetY = (y / rect.height) * 100;
+
+    updateVisuals();
+    calculateLightCurve();
+  }
+
+  function updateVisuals() {
+    planet.style.left = `${planetX}%`;
+    planet.style.top = `${planetY}%`;
+  }
+
+  // --- PHYSICS MODEL ---
+  function getFlux(x, y) {
+    let flux = 1.0;
+    const dist = Math.sqrt(x*x + y*y);
+    
+    // 1. TRANSIT DIP (With Limb Darkening for "U" shape)
+    if (dist < STAR_RADIUS + PLANET_RADIUS) {
+      // A. Overlap Factor (0 to 1)
+      let overlap = 0;
+      if (dist <= STAR_RADIUS - PLANET_RADIUS) {
+        overlap = 1.0; // Fully inside
+      } else {
+        let edgeFactor = (STAR_RADIUS + PLANET_RADIUS - dist) / (2 * PLANET_RADIUS);
+        overlap = smoothEase(Math.max(0, Math.min(1, edgeFactor)));
+      }
+
+      // B. Limb Darkening
+      let mu = 0;
+      if (dist < STAR_RADIUS) {
+        mu = Math.sqrt(1 - (dist/STAR_RADIUS)**2);
+      }
+      const intensity = 1.0 - 0.5 * (1 - mu); // Limb darkening coefficient u=0.5 for K-type star
+
+      const maxDepth = 0.026; // ~2.6% depth for WASP-52b
+      flux -= maxDepth * overlap * intensity;
+    }
+
+    // 2. STARSPOT CROSSING (Smooth Gaussian Bump)
+    const distSpot = Math.sqrt(x*x + y*y);
+    const interactRad = PLANET_RADIUS + SPOT_RADIUS;
+
+    if (distSpot < interactRad) {
+      const bumpAmp = 0.008; 
+      const sigma = interactRad / 2.2; 
+      const gaussian = Math.exp(-0.5 * (distSpot * distSpot) / (sigma * sigma));
+      
+      if (flux < 1.0) {
+        flux += bumpAmp * gaussian;
+      }
+    }
+
+    return flux;
+  }
+
+  function calculateLightCurve() {
+    const w = simStage.offsetWidth;
+    const h = simStage.offsetHeight;
+    const cx = w / 2;
+    const cy = h / 2;
+    
+    const dx = (planetX / 100 * w) - cx;
+    const dy = (planetY / 100 * h) - cy;
+
+    const points = [];
+    const scanWidth = 400; 
+    
+    for (let i = 0; i <= scanWidth; i+=5) {
+      const physX = mapRange(i, 0, scanWidth, -180, 180);
+      const f = getFlux(physX, dy); 
+      
+      const plotY = mapRange(f, 1.0, 0.974, 20, 90);
+      points.push(`${i},${plotY.toFixed(1)}`);
+    }
+    curvePath.setAttribute('d', `M${points.join(' L')}`);
+
+    const fNow = getFlux(dx, dy);
+    const dotX = mapRange(dx, -180, 180, 0, 100); 
+    const dotY = mapRange(fNow, 1.0, 0.974, 20, 90); 
+
+    if (dotX >= 0 && dotX <= 100) {
+      graphDot.style.opacity = 1;
+      graphDot.style.left = `${dotX}%`;
+      graphDot.style.top = `${mapRange(dotY, 0, 100, 0, 100)}%`;
+    } else {
+      graphDot.style.opacity = 0.3;
+    }
+  }
+
+  // Listeners for simulation
+  simStage.addEventListener('mousedown', startDrag);
+  window.addEventListener('mousemove', handleMove);
+  window.addEventListener('mouseup', stopDrag);
+  simStage.addEventListener('touchstart', startDrag, {passive: false});
+  window.addEventListener('touchmove', handleMove, {passive: false});
+  window.addEventListener('touchend', stopDrag);
+
+  // Init simulation
+  updateVisuals();
+  calculateLightCurve();
+
+  /* --- 5. NASA ADS RANDOM PUBLICATION FETCHER --- */
+  // ! IMPORTANT: Your actual API token from ADS.
+  const ADS_API_TOKEN = 'NJY1yih82A6rxZSXXlcM444UaZb6i3bMeCkPo8jC'; 
+  const AUTHOR_NAME = 'Solmaz, Arif'; 
+
+  async function fetchAndDisplayRandomPublication() {
+    const container = document.getElementById('random-publication-container');
+    container.innerHTML = '<p>Loading a random publication...</p>'; 
+
+    // Using `docs` as the fields to retrieve relevant information.
+    // `abstract` is included for the description, `bibstem` might be useful for journal abbreviations.
+    const queryUrl = `https://api.adsabs.harvard.edu/v1/search/query?q=author:"${AUTHOR_NAME}"&fl=bibcode,title,year,journal,volume,page,doi,abstract,bibstem&rows=50&sort=date+desc`;
+    
+    console.log("Attempting to fetch from ADS API:");
+    console.log("URL:", queryUrl);
+    console.log("Authorization Header (first 10 chars):", `Bearer ${ADS_API_TOKEN.substring(0, 10)}...`);
+
+    try {
+      const response = await fetch(queryUrl, {
+        method: 'GET',
+        headers: {
+          'Authorization': `Bearer ${ADS_API_TOKEN}`,
+          'Content-Type': 'application/json' 
+        },
+        mode: 'cors' 
+      });
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error(`ADS API request failed with status ${response.status}:`, errorText);
+        throw new Error(`ADS API request failed: ${response.status} ${response.statusText}. Response body: ${errorText.substring(0, 200)}...`); // Log part of the response body
+      }
+
+      const data = await response.json();
+      const docs = data.response.docs;
+
+      if (docs && docs.length > 0) {
+        const randomIndex = Math.floor(Math.random() * docs.length);
+        const pub = docs[randomIndex];
+
+        let journalInfo = pub.bibstem || pub.journal[0] || ''; // Prefer bibstem (abbreviated journal)
+        if (pub.volume) journalInfo += ` Vol.${pub.volume}`;
+        if (pub.page) journalInfo += ` p.${pub.page}`;
+
+        let doiLink = '#';
+        if (pub.doi && pub.doi.length > 0) {
+            doiLink = `https://doi.org/${pub.doi[0]}`;
+        } else if (pub.bibcode) {
+            doiLink = `https://ui.adsabs.harvard.edu/abs/${pub.bibcode}/abstract`;
+        }
+
+        container.innerHTML = `
+          <div class="pub-item">
+            <div class="pub-year">${pub.year}</div>
+            <div>
+              <a href="${doiLink}" target="_blank" class="pub-title">
+                ${pub.title ? pub.title[0] : 'No Title Available'}
+              </a>
+              <div class="pub-meta">
+                <span style="color:var(--accent2);">${journalInfo || 'Journal info unavailable'}.</span> 
+                ${pub.abstract ? pub.abstract[0] : 'Abstract unavailable.'}
+              </div>
+            </div>
+          </div>
+        `;
+        console.log("Successfully loaded a random publication:", pub.title ? pub.title[0] : 'No Title');
+      } else {
+        container.innerHTML = '<p>No publications found for this author on ADS, or check your API token and author name.</p>';
+        console.warn("No publications found for the specified author.");
+      }
+
+    } catch (error) {
+      console.error('Error fetching ADS publications:', error);
+      container.innerHTML = `<p>Failed to load publication. Error: ${error.message}. Please check the browser console (F12) for detailed logs.</p>`;
+    }
+  }
+
+  // Call this function when the page loads
+  document.addEventListener('DOMContentLoaded', fetchAndDisplayRandomPublication);
+
 </script>
+
 </body>
 </html>
