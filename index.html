@@ -575,24 +575,18 @@
   const graphDot = document.getElementById('graph-dot');
 
   let isDragging = false;
-
-  // Visual Sizes in Pixels
   const STAR_RADIUS = 70; 
-  const PLANET_RADIUS = 13; // Inflated Hot Jupiter
+  const PLANET_RADIUS = 13; 
   const SPOT_RADIUS = 9;
   
   // Current state (percentages)
   let planetX = 15; 
   let planetY = 50;
 
-  // Helper: Map Range - CORRECTED
   const mapRange = (val, inMin, inMax, outMin, outMax) => 
     (val - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
-
-  // Helper: Smooth Ease (for ingress/egress softness)
   const smoothEase = (t) => (1 - Math.cos(t * Math.PI)) / 2;
 
-  // --- DRAG EVENTS ---
   function startDrag(e) {
     isDragging = true;
     simStage.style.cursor = 'grabbing';
@@ -607,150 +601,87 @@
   function handleMove(e) {
     if (!isDragging) return;
     e.preventDefault(); 
-    
     const rect = simStage.getBoundingClientRect();
     const clientX = e.touches ? e.touches[0].clientX : e.clientX;
     const clientY = e.touches ? e.touches[0].clientY : e.clientY;
-    
-    let x = clientX - rect.left;
-    let y = clientY - rect.top;
-
-    x = Math.max(0, Math.min(x, rect.width));
-    y = Math.max(0, Math.min(y, rect.height));
-
+    let x = Math.max(0, Math.min(clientX - rect.left, rect.width));
+    let y = Math.max(0, Math.min(clientY - rect.top, rect.height));
     planetX = (x / rect.width) * 100;
     planetY = (y / rect.height) * 100;
-
     updateVisuals();
     calculateLightCurve();
   }
-
   function updateVisuals() {
     planet.style.left = `${planetX}%`;
     planet.style.top = `${planetY}%`;
   }
-
-  // --- PHYSICS MODEL ---
   function getFlux(x, y) {
     let flux = 1.0;
     const dist = Math.sqrt(x*x + y*y);
-    
-    // 1. TRANSIT DIP (With Limb Darkening for "U" shape)
     if (dist < STAR_RADIUS + PLANET_RADIUS) {
-      // A. Overlap Factor (0 to 1)
       let overlap = 0;
-      if (dist <= STAR_RADIUS - PLANET_RADIUS) {
-        overlap = 1.0; // Fully inside
-      } else {
+      if (dist <= STAR_RADIUS - PLANET_RADIUS) { overlap = 1.0; } 
+      else {
         let edgeFactor = (STAR_RADIUS + PLANET_RADIUS - dist) / (2 * PLANET_RADIUS);
         overlap = smoothEase(Math.max(0, Math.min(1, edgeFactor)));
       }
-
-      // B. Limb Darkening
-      let mu = 0;
-      if (dist < STAR_RADIUS) {
-        mu = Math.sqrt(1 - (dist/STAR_RADIUS)**2);
-      }
-      const intensity = 1.0 - 0.5 * (1 - mu); // Limb darkening coefficient u=0.5 for K-type star
-
-      const maxDepth = 0.026; // ~2.6% depth for WASP-52b
-      flux -= maxDepth * overlap * intensity;
+      let mu = (dist < STAR_RADIUS) ? Math.sqrt(1 - (dist/STAR_RADIUS)**2) : 0;
+      const intensity = 1.0 - 0.5 * (1 - mu); 
+      flux -= 0.026 * overlap * intensity;
     }
-
-    // 2. STARSPOT CROSSING (Smooth Gaussian Bump)
     const distSpot = Math.sqrt(x*x + y*y);
     const interactRad = PLANET_RADIUS + SPOT_RADIUS;
-
     if (distSpot < interactRad) {
-      const bumpAmp = 0.008; 
       const sigma = interactRad / 2.2; 
       const gaussian = Math.exp(-0.5 * (distSpot * distSpot) / (sigma * sigma));
-      
-      if (flux < 1.0) {
-        flux += bumpAmp * gaussian;
-      }
+      if (flux < 1.0) flux += 0.008 * gaussian;
     }
-
     return flux;
   }
-
   function calculateLightCurve() {
     const w = simStage.offsetWidth;
     const h = simStage.offsetHeight;
     const cx = w / 2;
     const cy = h / 2;
-    
     const dx = (planetX / 100 * w) - cx;
     const dy = (planetY / 100 * h) - cy;
-
     const points = [];
     const scanWidth = 400; 
-    
     for (let i = 0; i <= scanWidth; i+=5) {
       const physX = mapRange(i, 0, scanWidth, -180, 180);
       const f = getFlux(physX, dy); 
-      
       const plotY = mapRange(f, 1.0, 0.974, 20, 90);
       points.push(`${i},${plotY.toFixed(1)}`);
     }
     curvePath.setAttribute('d', `M${points.join(' L')}`);
-
     const fNow = getFlux(dx, dy);
     const dotX = mapRange(dx, -180, 180, 0, 100); 
     const dotY = mapRange(fNow, 1.0, 0.974, 20, 90); 
-
     if (dotX >= 0 && dotX <= 100) {
       graphDot.style.opacity = 1;
       graphDot.style.left = `${dotX}%`;
       graphDot.style.top = `${mapRange(dotY, 0, 100, 0, 100)}%`;
-    } else {
-      graphDot.style.opacity = 0.3;
-    }
+    } else { graphDot.style.opacity = 0.3; }
   }
-
-  // Listeners for simulation
   simStage.addEventListener('mousedown', startDrag);
   window.addEventListener('mousemove', handleMove);
   window.addEventListener('mouseup', stopDrag);
   simStage.addEventListener('touchstart', startDrag, {passive: false});
   window.addEventListener('touchmove', handleMove, {passive: false});
   window.addEventListener('touchend', stopDrag);
+  updateVisuals(); calculateLightCurve();
 
-  // Init simulation
-  updateVisuals();
-  calculateLightCurve();
-
-  /* --- 5. NASA ADS RANDOM PUBLICATION FETCHER --- */
-  // ! IMPORTANT: Your actual API token from ADS.
-  const ADS_API_TOKEN = 'NJY1yih82A6rxZSXXlcM444UaZb6i3bMeCkPo8jC'; 
-  const AUTHOR_NAME = 'Solmaz, Arif'; 
-
+  /* --- 5. STATIC PUBLICATION LOADER (From publications.json) --- */
   async function fetchAndDisplayRandomPublication() {
     const container = document.getElementById('random-publication-container');
     container.innerHTML = '<p>Loading a random publication...</p>'; 
 
-    // Using `docs` as the fields to retrieve relevant information.
-    // `abstract` is included for the description, `bibstem` might be useful for journal abbreviations.
-    const queryUrl = `https://api.adsabs.harvard.edu/v1/search/query?q=author:"${AUTHOR_NAME}"&fl=bibcode,title,year,journal,volume,page,doi,abstract,bibstem&rows=50&sort=date+desc`;
-    
-    console.log("Attempting to fetch from ADS API:");
-    console.log("URL:", queryUrl);
-    console.log("Authorization Header (first 10 chars):", `Bearer ${ADS_API_TOKEN.substring(0, 10)}...`);
-
     try {
-      const response = await fetch(queryUrl, {
-        method: 'GET',
-        headers: {
-          'Authorization': `Bearer ${ADS_API_TOKEN}`,
-          'Content-Type': 'application/json' 
-        },
-        mode: 'cors' 
-      });
+      // Fetch the LOCAL file you uploaded
+      const response = await fetch('publications.json'); 
 
       if (!response.ok) {
-        const errorText = await response.text();
-        console.error(`ADS API request failed with status ${response.status}:`, errorText);
-        throw new Error(`ADS API request failed: ${response.status} ${response.statusText}. Response body: ${errorText.substring(0, 200)}...`); // Log part of the response body
+        throw new Error(`Could not load publications.json. Make sure you uploaded the file!`);
       }
 
       const data = await response.json();
@@ -760,7 +691,7 @@
         const randomIndex = Math.floor(Math.random() * docs.length);
         const pub = docs[randomIndex];
 
-        let journalInfo = pub.bibstem || pub.journal[0] || ''; // Prefer bibstem (abbreviated journal)
+        let journalInfo = pub.bibstem || (pub.journal ? pub.journal[0] : '');
         if (pub.volume) journalInfo += ` Vol.${pub.volume}`;
         if (pub.page) journalInfo += ` p.${pub.page}`;
 
@@ -780,26 +711,22 @@
               </a>
               <div class="pub-meta">
                 <span style="color:var(--accent2);">${journalInfo || 'Journal info unavailable'}.</span> 
-                ${pub.abstract ? pub.abstract[0] : 'Abstract unavailable.'}
+                ${pub.abstract ? pub.abstract : 'Abstract unavailable.'}
               </div>
             </div>
           </div>
         `;
-        console.log("Successfully loaded a random publication:", pub.title ? pub.title[0] : 'No Title');
       } else {
-        container.innerHTML = '<p>No publications found for this author on ADS, or check your API token and author name.</p>';
-        console.warn("No publications found for the specified author.");
+        container.innerHTML = '<p>No publications found in file.</p>';
       }
 
     } catch (error) {
-      console.error('Error fetching ADS publications:', error);
-      container.innerHTML = `<p>Failed to load publication. Error: ${error.message}. Please check the browser console (F12) for detailed logs.</p>`;
+      console.error('Error:', error);
+      container.innerHTML = `<p>Error: ${error.message}</p>`;
     }
   }
 
-  // Call this function when the page loads
   document.addEventListener('DOMContentLoaded', fetchAndDisplayRandomPublication);
-
 </script>
 
 </body>
