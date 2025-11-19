@@ -46,7 +46,7 @@
         .title { color: var(--accent); font-size: 1.2rem; font-weight: 500; margin-bottom: 20px; }
         .bio { color: var(--text-secondary); max-width: 600px; margin: 0 auto 30px; font-size: 1.1rem; }
 
-        /* --- YENİ EKLENEN MENÜ --- */
+        /* --- MENÜ --- */
         nav {
             display: flex;
             justify-content: center;
@@ -71,7 +71,14 @@
         .social-link:hover { transform: translateY(-3px); border-color: var(--accent); color: var(--text-primary); }
         .social-link i { font-size: 1.2rem; color: var(--accent); }
 
-        .section-title { font-size: 1.5rem; border-left: 4px solid var(--accent); padding-left: 15px; margin-bottom: 20px; color: var(--text-primary); }
+        .section-title { 
+            font-size: 1.5rem; 
+            border-left: 4px solid var(--accent); 
+            padding-left: 15px; 
+            margin-bottom: 20px; 
+            color: var(--text-primary); 
+            scroll-margin-top: 20px; /* Scroll yapınca başlığın yukarıda kalmasını engeller */
+        }
         .content-card { background: var(--card-bg); padding: 30px; border-radius: 12px; margin-bottom: 40px; border: 1px solid rgba(255,255,255,0.03); }
         
         .tag {
@@ -111,7 +118,8 @@
 
         <nav>
             <a href="arastirma/">Araştırma</a>
-            <a href="#">Yayınlar</a> <a href="mailto:mail@arifsolmaz.com">İletişim</a>
+            <a href="#publications">Yayınlar</a> 
+            <a href="mailto:mail@arifsolmaz.com">İletişim</a>
         </nav>
 
         <div class="social-grid">
@@ -143,6 +151,36 @@
             
             <a href="arastirma/" class="btn-link">
                 Detaylı İncele <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+
+        <h2 id="publications" class="section-title">Seçilmiş Yayınlar</h2>
+        <div class="content-card">
+            
+            <div style="margin-bottom: 20px;">
+                <h3 style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 5px;">
+                    Transit Timing Variation Analysis of [Sistem Adı]
+                </h3>
+                <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 5px;">
+                    <em>Monthly Notices of the Royal Astronomical Society, 2024</em>
+                </p>
+                <p style="color: var(--text-secondary); font-size: 0.9rem;">
+                    TESS verileri kullanılarak yapılan analiz çalışması...
+                </p>
+            </div>
+
+            <div style="margin-bottom: 20px;">
+                <h3 style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 5px;">
+                    ExoClock Project III: 450 New Exoplanet Ephemerides
+                </h3>
+                <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 5px;">
+                    <em>Astrophysical Journal Supplement Series, 2023</em>
+                </p>
+            </div>
+
+            <br>
+            <a href="https://ui.adsabs.harvard.edu/search/q=author%3A%22Solmaz%2C%20A%22" style="color: var(--accent); text-decoration: none; font-weight: bold;">
+                Tüm yayınları NASA ADS'de görüntüle <i class="fas fa-arrow-right"></i>
             </a>
         </div>
 
