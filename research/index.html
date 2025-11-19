@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research | Arif Solmaz</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent: #38bdf8;
+            --accent-hover: #0ea5e9;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.7;
+            padding-bottom: 40px;
+        }
+
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+
+        .back-link {
+            display: inline-flex; align-items: center; text-decoration: none;
+            color: var(--accent); font-weight: 600; margin-bottom: 40px; transition: color 0.2s;
+        }
+        .back-link i { margin-right: 8px; }
+        .back-link:hover { color: var(--text-primary); }
+
+        h1 { font-size: 2.2rem; margin-bottom: 20px; color: var(--text-primary); }
+        h2 { font-size: 1.5rem; color: var(--accent); margin-top: 40px; margin-bottom: 20px; border-bottom: 1px solid rgba(56, 189, 248, 0.2); padding-bottom: 10px; }
+        h3 { font-size: 1.2rem; color: var(--text-primary); margin-bottom: 15px; }
+        p { margin-bottom: 20px; color: var(--text-secondary); font-size: 1.05rem; }
+
+        .content-card {
+            background: var(--card-bg); padding: 30px; border-radius: 12px; margin-bottom: 30px;
+            border: 1px solid rgba(255,255,255,0.03); box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+
+        ul { list-style: none; margin-bottom: 10px; }
+        ul li { position: relative; padding-left: 25px; margin-bottom: 12px; color: var(--text-secondary); }
+        ul li::before {
+            content: "\f00c"; font-family: "Font Awesome 6 Free"; font-weight: 900;
+            position: absolute; left: 0; color: var(--accent); font-size: 0.9rem; top: 4px;
+        }
+
+        .footer-note { text-align: center; font-size: 0.9rem; color: var(--text-secondary); opacity: 0.6; margin-top: 50px; border-top: 1px solid var(--card-bg); padding-top: 20px; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <a href="/" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back to Home
+        </a>
+
+        <h1>Research</h1>
+        <p>
+            My research interests primarily revolve around <strong>exoplanets, stellar activity, and time-series analysis</strong>. I work with a strong background in data analysis and scientific computing.
+        </p>
+
+        <h2>Key Research Topics</h2>
+
+        <div class="content-card">
+            <h3>1. Transiting Exoplanets Around Active Stars</h3>
+            <ul>
+                <li>Analysis of light curves for systems showing strong <strong>starspot activity</strong> (e.g., WASP-52, HAT-P-36, HAT-P-11, HATS-2).</li>
+                <li>Modeling the impact of <strong>occulted and unocculted spots</strong> on measured planetary parameters during transit.</li>
+                <li>Investigating the effects of stellar activity on <strong>Transit Timing Variations (TTV)</strong>, transmission spectra, and planetary atmosphere interpretations.</li>
+            </ul>
+        </div>
+
+        <div class="content-card">
+            <h3>2. Transmission Spectroscopy & Atmospheric Inference</h3>
+            <ul>
+                <li>Analysis of space telescope data (TESS, HST, JWST, CHEOPS, etc.).</li>
+                <li>Investigating the potential of stellar spots and faculae to mimic or bias molecular detections (e.g., TiO, silicate clouds).</li>
+                <li>Developing end-to-end data processing pipelines for <strong>reproducible light curve and spectral analysis</strong>.</li>
+            </ul>
+        </div>
+
+        <div class="content-card">
+            <h3>3. Time Series Analysis & Machine Learning</h3>
+            <ul>
+                <li>Period searching, detrending, and noise modeling for space telescope photometry.</li>
+                <li>Exploring <strong>machine learning</strong> applications on variable star and exoplanet light curves.</li>
+                <li>Creating <strong>open-source tools</strong> for teaching and research (TESS/JWST analysis notebooks, Streamlit interfaces, etc.).</li>
+            </ul>
+        </div>
+
+        <h2>Ongoing / Planned Work</h2>
+        <div class="content-card">
+            <ul>
+                <li>Development of infrastructure for <strong>spot-sensitive transit modeling</strong> (Python/Streamlit).</li>
+                <li>Projects for undergraduate students:
+                    <ul style="margin-top: 10px; margin-left: 10px;">
+                        <li>TESS light curve analysis,</li>
+                        <li>Basic exoplanet discovery and characterization,</li>
+                        <li>Projects combining robotics and astronomy (telescope control, simulations, etc.).</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="footer-note">
+            This page serves as a general summary; links to publications, code, and student projects may be added in the future.
+        </div>
+    </div>
+
+</body>
+</html>
