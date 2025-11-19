@@ -578,8 +578,6 @@
   const STAR_RADIUS = 70; 
   const PLANET_RADIUS = 13; 
   const SPOT_RADIUS = 9;
-  
-  // Current state (percentages)
   let planetX = 15; 
   let planetY = 50;
 
@@ -671,27 +669,38 @@
   window.addEventListener('touchend', stopDrag);
   updateVisuals(); calculateLightCurve();
 
-  /* --- 5. STATIC PUBLICATION LOADER (From publications.json) --- */
+  /* --- 5. NASA ADS RANDOM PUBLICATION FETCHER (OPTION 2: LOCAL DATA) --- */
+  // Since ADS blocks direct browser requests, we load from a local file.
+  
   async function fetchAndDisplayRandomPublication() {
     const container = document.getElementById('random-publication-container');
     container.innerHTML = '<p>Loading a random publication...</p>'; 
 
     try {
-      // Fetch the LOCAL file you uploaded
+      // Attempt to fetch from the local 'publications.json' you created
       const response = await fetch('publications.json'); 
 
       if (!response.ok) {
-        throw new Error(`Could not load publications.json. Make sure you uploaded the file!`);
+        throw new Error(`Could not load publications.json. Please ensure the file exists in your repository.`);
       }
 
       const data = await response.json();
       const docs = data.response.docs;
 
-      if (docs && docs.length > 0) {
-        const randomIndex = Math.floor(Math.random() * docs.length);
-        const pub = docs[randomIndex];
+      // FILTERING: Ensure we only show papers from Astronomy or Physics databases
+      // (This handles cases where the local file might have mixed results)
+      const astroDocs = docs.filter(doc => {
+          if (!doc.database) return false;
+          return doc.database.includes('astronomy') || doc.database.includes('physics');
+      });
 
-        let journalInfo = pub.bibstem || (pub.journal ? pub.journal[0] : '');
+      const pool = astroDocs.length > 0 ? astroDocs : docs; // Fallback if filter removes everything
+
+      if (pool && pool.length > 0) {
+        const randomIndex = Math.floor(Math.random() * pool.length);
+        const pub = pool[randomIndex];
+
+        let journalInfo = pub.bibstem ? pub.bibstem[0] : (pub.journal ? pub.journal[0] : '');
         if (pub.volume) journalInfo += ` Vol.${pub.volume}`;
         if (pub.page) journalInfo += ` p.${pub.page}`;
 
@@ -711,18 +720,19 @@
               </a>
               <div class="pub-meta">
                 <span style="color:var(--accent2);">${journalInfo || 'Journal info unavailable'}.</span> 
-                ${pub.abstract ? pub.abstract : 'Abstract unavailable.'}
+                ${pub.abstract ? pub.abstract.substring(0, 200) + '...' : 'Abstract unavailable.'}
               </div>
             </div>
           </div>
         `;
+        console.log("Loaded:", pub.title);
       } else {
-        container.innerHTML = '<p>No publications found in file.</p>';
+        container.innerHTML = '<p>No publications found in data file.</p>';
       }
 
     } catch (error) {
       console.error('Error:', error);
-      container.innerHTML = `<p>Error: ${error.message}</p>`;
+      container.innerHTML = `<p>Error loading publications: ${error.message}</p>`;
     }
   }
 
