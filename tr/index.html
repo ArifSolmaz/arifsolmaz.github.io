@@ -7,13 +7,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* --- TASARIM DEĞİŞKENLERİ (Aynı Tema) --- */
         :root {
-            --bg-color: #0f172a;       /* Uzay Mavisi */
-            --card-bg: #1e293b;        /* Koyu Gri/Mavi */
-            --text-primary: #f8fafc;   /* Yıldız Beyazı */
-            --text-secondary: #94a3b8; /* Nebula Grisi */
-            --accent: #38bdf8;         /* Turkuaz Vurgu */
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent: #38bdf8;
             --accent-hover: #0ea5e9;
         }
 
@@ -29,131 +28,68 @@
             min-height: 100vh;
         }
 
-        /* DİL DEĞİŞTİRME BUTONU (Sağ Üst) */
-        .lang-switch {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            z-index: 100;
-        }
+        .lang-switch { position: absolute; top: 20px; right: 20px; z-index: 100; }
         .lang-switch a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            border: 1px solid var(--text-secondary);
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            transition: 0.3s;
-            background: rgba(30, 41, 59, 0.8);
+            color: var(--text-secondary); text-decoration: none; border: 1px solid var(--text-secondary);
+            padding: 6px 12px; border-radius: 20px; font-size: 0.85rem; transition: 0.3s; background: rgba(30, 41, 59, 0.8);
         }
-        .lang-switch a:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-            background: var(--card-bg);
-        }
+        .lang-switch a:hover { border-color: var(--accent); color: var(--accent); background: var(--card-bg); }
 
-        /* DÜZEN */
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 80px 20px 40px;
-            flex: 1;
-        }
+        .container { max-width: 800px; margin: 0 auto; padding: 80px 20px 40px; flex: 1; }
 
-        /* PROFİL BAŞLIĞI */
-        header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
+        header { text-align: center; margin-bottom: 40px; }
         .profile-img {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            border: 4px solid var(--card-bg);
-            box-shadow: 0 0 30px rgba(56, 189, 248, 0.15);
-            object-fit: cover;
-            margin-bottom: 25px;
+            width: 160px; height: 160px; border-radius: 50%; border: 4px solid var(--card-bg);
+            box-shadow: 0 0 30px rgba(56, 189, 248, 0.15); object-fit: cover; margin-bottom: 25px;
         }
-
         h1 { font-size: 2.5rem; margin-bottom: 8px; letter-spacing: -0.5px; }
         .title { color: var(--accent); font-size: 1.2rem; font-weight: 500; margin-bottom: 20px; }
+        .bio { color: var(--text-secondary); max-width: 600px; margin: 0 auto 30px; font-size: 1.1rem; }
 
-        .bio {
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin: 0 auto 30px;
-            font-size: 1.1rem;
-        }
-
-        /* SOSYAL LİNKLER */
-        .social-grid {
+        /* --- YENİ EKLENEN MENÜ --- */
+        nav {
             display: flex;
             justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin-bottom: 60px;
-        }
-
-        .social-link {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            background: var(--card-bg);
-            padding: 12px 20px;
-            border-radius: 8px;
-            text-decoration: none;
-            color: var(--text-secondary);
-            transition: transform 0.2s, border-color 0.2s, color 0.2s;
-            border: 1px solid transparent;
-        }
-
-        .social-link i { font-size: 1.2rem; color: var(--accent); }
-        .social-link span { font-size: 0.95rem; font-weight: 600; }
-
-        .social-link:hover {
-            transform: translateY(-3px);
-            border-color: var(--accent);
-            color: var(--text-primary);
-        }
-
-        /* İÇERİK KARTLARI */
-        .section-title {
-            font-size: 1.5rem;
-            border-left: 4px solid var(--accent);
-            padding-left: 15px;
-            margin-bottom: 20px;
-            color: var(--text-primary);
-        }
-
-        .content-card {
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 12px;
+            gap: 20px;
             margin-bottom: 40px;
-            border: 1px solid rgba(255,255,255,0.03);
         }
+        nav a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 600;
+            padding-bottom: 5px;
+            border-bottom: 2px solid transparent;
+            transition: 0.3s;
+        }
+        nav a:hover { color: var(--accent); border-color: var(--accent); }
 
+        .social-grid { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 60px; }
+        .social-link {
+            display: flex; align-items: center; gap: 10px; background: var(--card-bg); padding: 12px 20px;
+            border-radius: 8px; text-decoration: none; color: var(--text-secondary); border: 1px solid transparent; transition: 0.2s;
+        }
+        .social-link:hover { transform: translateY(-3px); border-color: var(--accent); color: var(--text-primary); }
+        .social-link i { font-size: 1.2rem; color: var(--accent); }
+
+        .section-title { font-size: 1.5rem; border-left: 4px solid var(--accent); padding-left: 15px; margin-bottom: 20px; color: var(--text-primary); }
+        .content-card { background: var(--card-bg); padding: 30px; border-radius: 12px; margin-bottom: 40px; border: 1px solid rgba(255,255,255,0.03); }
+        
         .tag {
-            display: inline-block;
-            background: rgba(56, 189, 248, 0.1);
-            color: var(--accent);
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            margin-right: 6px;
-            margin-bottom: 8px;
+            display: inline-block; background: rgba(56, 189, 248, 0.1); color: var(--accent);
+            padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; margin-right: 6px; margin-bottom: 8px;
         }
 
-        /* ALT BİLGİ */
-        footer {
-            text-align: center;
-            padding: 40px;
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            border-top: 1px solid var(--card-bg);
-            opacity: 0.7;
+        /* BUTON STİLİ */
+        .btn-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: var(--accent);
+            font-weight: bold;
+            text-decoration: none;
         }
+        .btn-link:hover { text-decoration: underline; }
+
+        footer { text-align: center; padding: 40px; color: var(--text-secondary); font-size: 0.85rem; border-top: 1px solid var(--card-bg); opacity: 0.7; }
     </style>
 </head>
 <body>
@@ -165,15 +101,18 @@
     <div class="container">
         <header>
             <img src="https://github.com/arifsolmaz.png" alt="Arif Solmaz" class="profile-img">
-            
             <h1>Arif Solmaz</h1>
             <div class="title">Astrofizikçi & Araştırmacı</div>
-            
             <p class="bio">
                 Ötegezegen Sistemleri, Fotometrik Analiz ve Yıldız Lekesi Araştırmaları konusunda uzman. 
                 Evreni keşfetmek için Python ve Veri Bilimi kullanıyor.
             </p>
         </header>
+
+        <nav>
+            <a href="arastirma/">Araştırma</a>
+            <a href="#">Yayınlar</a> <a href="mailto:mail@arifsolmaz.com">İletişim</a>
+        </nav>
 
         <div class="social-grid">
             <a href="https://github.com/arifsolmaz" class="social-link" target="_blank">
@@ -193,15 +132,18 @@
         <h2 class="section-title">Çalışma Alanları</h2>
         <div class="content-card">
             <p style="margin-bottom: 20px; color: var(--text-secondary);">
-                Çalışmalarım temel olarak ötegezegen sistemlerini karakterize etmek için fotometrik zaman serisi verilerinin analizine odaklanmaktadır. Özellikle yıldız aktivitesinin (yıldız lekeleri) geçiş ışık eğrileri üzerindeki etkileri ve Geçiş Zamanlaması Değişimleri (TTV) yoluyla yeni dünyaların keşfi ile ilgileniyorum.
+                Çalışmalarım temel olarak ötegezegen sistemlerini karakterize etmek için fotometrik zaman serisi verilerinin analizine odaklanmaktadır. Özellikle yıldız aktivitesinin (yıldız lekeleri) geçiş ışık eğrileri üzerindeki etkileri...
             </p>
             <div>
                 <span class="tag">Ötegezegenler</span>
                 <span class="tag">TTV Analizi</span>
                 <span class="tag">Yıldız Lekeleri</span>
-                <span class="tag">Fotometri</span>
-                <span class="tag">Python & Veri Bilimi</span>
+                <span class="tag">Python</span>
             </div>
+            
+            <a href="arastirma/" class="btn-link">
+                Detaylı İncele <i class="fas fa-arrow-right"></i>
+            </a>
         </div>
 
         <footer>
