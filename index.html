@@ -7,12 +7,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
+        /* --- COSMIC THEME VARIABLES --- */
         :root {
             --bg-color: #0f172a;
             --card-bg: #1e293b;
             --text-primary: #f8fafc;
             --text-secondary: #94a3b8;
-            --accent: #38bdf8; /* Cyan/Blue */
+            --accent: #38bdf8;
             --accent-hover: #0ea5e9;
         }
 
@@ -28,27 +29,30 @@
             min-height: 100vh;
         }
 
-        /* Language Toggle */
+        /* LANGUAGE SWITCHER */
         .lang-switch {
             position: absolute;
             top: 20px;
             right: 20px;
+            z-index: 100;
         }
         .lang-switch a {
             color: var(--text-secondary);
             text-decoration: none;
             border: 1px solid var(--text-secondary);
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 0.9rem;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
             transition: 0.3s;
+            background: rgba(30, 41, 59, 0.8);
         }
         .lang-switch a:hover {
             border-color: var(--accent);
             color: var(--accent);
+            background: var(--card-bg);
         }
 
-        /* Main Layout */
+        /* LAYOUT */
         .container {
             max-width: 800px;
             margin: 0 auto;
@@ -56,23 +60,20 @@
             flex: 1;
         }
 
-        /* Profile Header */
-        header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
+        /* HEADER */
+        header { text-align: center; margin-bottom: 40px; }
 
         .profile-img {
             width: 160px;
             height: 160px;
             border-radius: 50%;
             border: 4px solid var(--card-bg);
-            box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+            box-shadow: 0 0 30px rgba(56, 189, 248, 0.15);
             object-fit: cover;
             margin-bottom: 25px;
         }
 
-        h1 { font-size: 2.5rem; margin-bottom: 10px; letter-spacing: -0.5px; }
+        h1 { font-size: 2.5rem; margin-bottom: 8px; letter-spacing: -0.5px; }
         .title { color: var(--accent); font-size: 1.2rem; font-weight: 500; margin-bottom: 20px; }
 
         .bio {
@@ -82,62 +83,78 @@
             font-size: 1.1rem;
         }
 
-        /* Social Links Grid */
+        /* --- NAVIGATION MENU (NEW) --- */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        nav a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 600;
+            padding-bottom: 5px;
+            border-bottom: 2px solid transparent;
+            transition: 0.3s;
+        }
+        nav a:hover { color: var(--accent); border-color: var(--accent); }
+
+        /* SOCIAL LINKS */
         .social-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            display: flex;
+            justify-content: center;
             gap: 15px;
-            max-width: 700px;
-            margin: 0 auto 60px;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
         }
 
         .social-link {
             display: flex;
-            flex-direction: column;
             align-items: center;
-            justify-content: center;
+            gap: 10px;
             background: var(--card-bg);
-            padding: 20px;
-            border-radius: 12px;
+            padding: 12px 20px;
+            border-radius: 8px;
             text-decoration: none;
             color: var(--text-secondary);
-            transition: transform 0.2s, border-color 0.2s;
+            transition: transform 0.2s, border-color 0.2s, color 0.2s;
             border: 1px solid transparent;
         }
 
-        .social-link i { font-size: 2rem; margin-bottom: 10px; color: var(--accent); }
-        .social-link span { font-size: 0.9rem; font-weight: 600; }
-
+        .social-link i { font-size: 1.2rem; color: var(--accent); }
         .social-link:hover {
-            transform: translateY(-5px);
+            transform: translateY(-3px);
             border-color: var(--accent);
             color: var(--text-primary);
         }
 
-        /* Sections */
+        /* CONTENT SECTIONS */
         .section-title {
             font-size: 1.5rem;
             border-left: 4px solid var(--accent);
             padding-left: 15px;
             margin-bottom: 20px;
             color: var(--text-primary);
+            scroll-margin-top: 20px; /* Fixes scroll position */
         }
 
         .content-card {
-            background: var(--card-bg); /* Slightly lighter dark */
-            padding: 25px;
-            border-radius: 8px;
-            margin-bottom: 30px;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(255,255,255,0.03);
         }
 
         .tag {
             display: inline-block;
             background: rgba(56, 189, 248, 0.1);
             color: var(--accent);
-            padding: 4px 12px;
+            padding: 5px 12px;
             border-radius: 20px;
             font-size: 0.85rem;
-            margin-right: 8px;
+            margin-right: 6px;
             margin-bottom: 8px;
         }
 
@@ -145,8 +162,9 @@
             text-align: center;
             padding: 40px;
             color: var(--text-secondary);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             border-top: 1px solid var(--card-bg);
+            opacity: 0.7;
         }
     </style>
 </head>
@@ -165,45 +183,64 @@
             
             <p class="bio">
                 Specializing in Exoplanet Systems, Photometric Analysis, and Starspot Research.
-                Using Python to explore the universe.
+                Leveraging Python and data science to explore the universe.
             </p>
         </header>
 
+        <nav>
+            <a href="#research">Research</a>
+            <a href="#publications">Publications</a>
+            <a href="mailto:your-email@example.com">Contact</a>
+        </nav>
+
         <div class="social-grid">
-            <a href="https://github.com/arifsolmaz" class="social-link">
-                <i class="fab fa-github"></i>
-                <span>GitHub</span>
+            <a href="https://github.com/arifsolmaz" class="social-link" target="_blank">
+                <i class="fab fa-github"></i> <span>GitHub</span>
             </a>
-            <a href="https://ui.adsabs.harvard.edu/search/q=author%3A%22Solmaz%2C%20A%22" class="social-link">
+            <a href="https://ui.adsabs.harvard.edu/search/q=author%3A%22Solmaz%2C%20A%22" class="social-link" target="_blank">
                 <i class="fas fa-book-open"></i> <span>NASA ADS</span>
             </a>
-            <a href="https://orcid.org/0000-0002-3076-164X" class="social-link">
-                <i class="fab fa-orcid"></i>
-                <span>ORCID</span>
+            <a href="https://orcid.org/0000-0002-3076-164X" class="social-link" target="_blank">
+                <i class="fab fa-orcid"></i> <span>ORCID</span>
             </a>
-            <a href="https://www.linkedin.com/in/arif-solmaz/" class="social-link">
-                <i class="fab fa-linkedin"></i>
-                <span>LinkedIn</span>
+            <a href="https://www.linkedin.com/in/arif-solmaz/" class="social-link" target="_blank">
+                <i class="fab fa-linkedin"></i> <span>LinkedIn</span>
             </a>
         </div>
 
-        <h2 class="section-title">Research Focus</h2>
+        <h2 id="research" class="section-title">Research Focus</h2>
         <div class="content-card">
-            <p style="margin-bottom: 15px; color: var(--text-secondary);">
-                My work primarily focuses on the analysis of photometric time-series data to characterize exoplanetary systems. I am particularly interested in the effects of stellar activity on transit light curves.
+            <p style="margin-bottom: 20px; color: var(--text-secondary);">
+                My work primarily focuses on the analysis of photometric time-series data to characterize exoplanetary systems. I am particularly interested in the effects of stellar activity on transit light curves and the discovery of new worlds through transit timing variations.
             </p>
             <div>
                 <span class="tag">Exoplanets</span>
-                <span class="tag">Starspots</span>
                 <span class="tag">Transit Timing Variations (TTV)</span>
+                <span class="tag">Starspot Analysis</span>
                 <span class="tag">Photometry</span>
-                <span class="tag">Python</span>
+                <span class="tag">Python & Data Science</span>
             </div>
+        </div>
+
+        <h2 id="publications" class="section-title">Recent Publications</h2>
+        <div class="content-card">
+            <p style="margin-bottom: 10px; color: var(--text-secondary);">
+                <strong>Homogeneous Transit Timing Analyses of 10 Exoplanet Systems</strong><br>
+                <span style="font-size: 0.9rem; opacity: 0.8;">Monthly Notices of the Royal Astronomical Society (2022)</span>
+            </p>
+            <p style="margin-bottom: 0; color: var(--text-secondary);">
+                <strong>ExoClock Project III: 450 New Exoplanet Ephemerides</strong><br>
+                <span style="font-size: 0.9rem; opacity: 0.8;">Astrophysical Journal Supplement Series (2023)</span>
+            </p>
+            <br>
+            <a href="https://ui.adsabs.harvard.edu/search/q=author%3A%22Solmaz%2C%20A%22" style="color: var(--accent); text-decoration: none; font-weight: bold;">
+                View all on NASA ADS <i class="fas fa-arrow-right"></i>
+            </a>
         </div>
 
         <footer>
             &copy; 2025 Arif Solmaz. <br>
-            <span style="font-size: 0.8rem; opacity: 0.6;">Powered by GitHub Pages</span>
+            Hosted on GitHub Pages.
         </footer>
     </div>
 
