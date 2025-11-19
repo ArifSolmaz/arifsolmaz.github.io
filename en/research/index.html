@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* --- DESIGN VARIABLES --- */
         :root {
             --bg-color: #0f172a;
             --card-bg: #1e293b;
@@ -27,98 +26,33 @@
             padding-bottom: 40px;
         }
 
-        /* LAYOUT */
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
 
-        /* BACK LINK */
         .back-link {
-            display: inline-flex;
-            align-items: center;
-            text-decoration: none;
-            color: var(--accent);
-            font-weight: 600;
-            margin-bottom: 40px;
-            transition: color 0.2s;
+            display: inline-flex; align-items: center; text-decoration: none;
+            color: var(--accent); font-weight: 600; margin-bottom: 40px; transition: color 0.2s;
         }
         .back-link i { margin-right: 8px; }
         .back-link:hover { color: var(--text-primary); }
 
-        /* HEADINGS */
-        h1 {
-            font-size: 2.2rem;
-            margin-bottom: 20px;
-            color: var(--text-primary);
-        }
+        h1 { font-size: 2.2rem; margin-bottom: 20px; color: var(--text-primary); }
+        h2 { font-size: 1.5rem; color: var(--accent); margin-top: 40px; margin-bottom: 20px; border-bottom: 1px solid rgba(56, 189, 248, 0.2); padding-bottom: 10px; }
+        h3 { font-size: 1.2rem; color: var(--text-primary); margin-bottom: 15px; }
+        p { margin-bottom: 20px; color: var(--text-secondary); font-size: 1.05rem; }
 
-        h2 {
-            font-size: 1.5rem;
-            color: var(--accent);
-            margin-top: 40px;
-            margin-bottom: 20px;
-            border-bottom: 1px solid rgba(56, 189, 248, 0.2);
-            padding-bottom: 10px;
-        }
-
-        h3 {
-            font-size: 1.2rem;
-            color: var(--text-primary);
-            margin-bottom: 15px;
-        }
-
-        p {
-            margin-bottom: 20px;
-            color: var(--text-secondary);
-            font-size: 1.05rem;
-        }
-
-        /* CARD DESIGN */
         .content-card {
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 12px;
-            margin-bottom: 30px;
-            border: 1px solid rgba(255,255,255,0.03);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            background: var(--card-bg); padding: 30px; border-radius: 12px; margin-bottom: 30px;
+            border: 1px solid rgba(255,255,255,0.03); box-shadow: 0 4px 6px rgba(0,0,0,0.2);
         }
 
-        /* LISTS */
-        ul {
-            list-style: none;
-            margin-bottom: 10px;
-        }
-
-        ul li {
-            position: relative;
-            padding-left: 25px;
-            margin-bottom: 12px;
-            color: var(--text-secondary);
-        }
-
+        ul { list-style: none; margin-bottom: 10px; }
+        ul li { position: relative; padding-left: 25px; margin-bottom: 12px; color: var(--text-secondary); }
         ul li::before {
-            content: "\f00c"; /* FontAwesome check icon */
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-            font-size: 0.9rem;
-            top: 4px;
+            content: "\f00c"; font-family: "Font Awesome 6 Free"; font-weight: 900;
+            position: absolute; left: 0; color: var(--accent); font-size: 0.9rem; top: 4px;
         }
 
-        /* FOOTER */
-        .footer-note {
-            text-align: center;
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            opacity: 0.6;
-            margin-top: 50px;
-            border-top: 1px solid var(--card-bg);
-            padding-top: 20px;
-        }
+        .footer-note { text-align: center; font-size: 0.9rem; color: var(--text-secondary); opacity: 0.6; margin-top: 50px; border-top: 1px solid var(--card-bg); padding-top: 20px; }
     </style>
 </head>
 <body>
