@@ -6,6 +6,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Dr. Arif Solmaz — astrophysicist working on exoplanets, stellar activity, and scientific computing." />
 
+  <!-- NEW: basic SEO meta -->
+  <meta name="keywords" content="Arif Solmaz, Dr. Arif Solmaz, astrophysicist, exoplanets, stellar activity, data science, WASP-52 b" />
+  <meta name="author" content="Dr. Arif Solmaz" />
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow" />
+
+  <!-- NEW: canonical URL -->
+  <link rel="canonical" href="https://arifsolmaz.github.io/" />
+
+  <!-- NEW: Open Graph (for Google / social previews) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Dr. Arif Solmaz | Astrophysicist & Educator" />
+  <meta property="og:description" content="Astrophysicist studying exoplanets, stellar activity, and time-series analysis." />
+  <meta property="og:url" content="https://arifsolmaz.github.io/" />
+  <!-- Change this to an actual image file in your repo -->
+  <meta property="og:image" content="https://arifsolmaz.github.io/og-image.jpg" />
+
+  <!-- NEW: Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Dr. Arif Solmaz | Astrophysicist & Educator" />
+  <meta name="twitter:description" content="Astrophysicist studying exoplanets, stellar activity, and time-series analysis." />
+  <meta name="twitter:image" content="https://arifsolmaz.github.io/og-image.jpg" />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
@@ -21,6 +45,19 @@
       --card-bg: rgba(15, 23, 42, 0.6);
       --radius: 1rem;
       --max-width: 1100px;
+    }
+
+    /* NEW: accessible, visually-hidden h1 for SEO */
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
     }
 
     /* BASE RESET */
@@ -293,6 +330,22 @@
 
     footer { padding: 3rem 0; text-align: center; font-size: 0.85rem; color: var(--muted); border-top: 1px solid var(--border); }
   </style>
+
+  <!-- NEW: structured data for Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Dr. Arif Solmaz",
+    "url": "https://arifsolmaz.github.io",
+    "jobTitle": "Astrophysicist & Educator",
+    "sameAs": [
+      "https://github.com/arifsolmaz",
+      "https://scholar.google.com/citations?user=KukbrjkAAAAJ",
+      "https://orcid.org/0000-0002-3076-164X"
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -312,6 +365,8 @@
 </header>
 
 <main class="shell">
+  <!-- NEW: SEO-friendly hidden H1 with your full name -->
+  <h1 class="visually-hidden">Dr. Arif Solmaz – Astrophysicist & Educator</h1>
 
   <section class="hero">
     <div>
@@ -348,6 +403,8 @@
       </div>
     </div>
   </section>
+
+  <!-- rest of your body stays EXACTLY the same -->
 
   <section id="research">
     <div class="section-head">
@@ -670,14 +727,11 @@
   updateVisuals(); calculateLightCurve();
 
   /* --- 5. NASA ADS RANDOM PUBLICATION FETCHER (OPTION 2: LOCAL DATA) --- */
-  // Since ADS blocks direct browser requests, we load from a local file.
-  
   async function fetchAndDisplayRandomPublication() {
     const container = document.getElementById('random-publication-container');
     container.innerHTML = '<p>Loading a random publication...</p>'; 
 
     try {
-      // Attempt to fetch from the local 'publications.json' you created
       const response = await fetch('publications.json'); 
 
       if (!response.ok) {
@@ -687,14 +741,12 @@
       const data = await response.json();
       const docs = data.response.docs;
 
-      // FILTERING: Ensure we only show papers from Astronomy or Physics databases
-      // (This handles cases where the local file might have mixed results)
       const astroDocs = docs.filter(doc => {
           if (!doc.database) return false;
           return doc.database.includes('astronomy') || doc.database.includes('physics');
       });
 
-      const pool = astroDocs.length > 0 ? astroDocs : docs; // Fallback if filter removes everything
+      const pool = astroDocs.length > 0 ? astroDocs : docs;
 
       if (pool && pool.length > 0) {
         const randomIndex = Math.floor(Math.random() * pool.length);
