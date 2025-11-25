@@ -2,32 +2,43 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Dr. Arif Solmaz | Astrophysicist & Educator</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Dr. Arif Solmaz — astrophysicist working on exoplanets, stellar activity, and scientific computing." />
+  <title>Dr. Arif Solmaz | Astrophysicist, Exoplanets & Starspots</title>
 
-  <!-- NEW: basic SEO meta -->
-  <meta name="keywords" content="Arif Solmaz, Dr. Arif Solmaz, astrophysicist, exoplanets, stellar activity, data science, WASP-52 b" />
+  <!-- Core SEO -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Dr. Arif Solmaz is an astrophysicist and educator working on exoplanets, starspots, stellar activity, TESS & JWST light curves, transit timing variations (TTVs), and scientific computing." />
+  <meta name="keywords" content="Arif Solmaz, Dr. Arif Solmaz, astrophysicist, exoplanets, starspots, stellar activity, TESS, JWST, transit timing variations, TTV, transit light curves, time-series analysis, data science, WASP-52 b, HAT-P-36 b" />
   <meta name="author" content="Dr. Arif Solmaz" />
-  <meta name="robots" content="index, follow" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
   <meta name="googlebot" content="index, follow" />
 
-  <!-- NEW: canonical URL -->
+  <!-- Canonical -->
   <link rel="canonical" href="https://arifsolmaz.github.io/" />
 
-  <!-- NEW: Open Graph (for Google / social previews) -->
+  <!-- Open Graph (Facebook / LinkedIn / general) -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Dr. Arif Solmaz | Astrophysicist & Educator" />
-  <meta property="og:description" content="Astrophysicist studying exoplanets, stellar activity, and time-series analysis." />
+  <meta property="og:title" content="Dr. Arif Solmaz | Astrophysicist, Exoplanets & Starspots" />
+  <meta property="og:description" content="Astrophysicist studying exoplanets, stellar activity, starspots, and TESS/JWST light curves with a focus on transit modeling and TTVs." />
   <meta property="og:url" content="https://arifsolmaz.github.io/" />
-  <!-- Change this to an actual image file in your repo -->
+  <meta property="og:site_name" content="Dr. Arif Solmaz" />
+  <!-- Make sure this image exists in your repo -->
   <meta property="og:image" content="https://arifsolmaz.github.io/og-image.jpg" />
+  <meta property="og:image:alt" content="Visual of exoplanet transits and stellar activity by Dr. Arif Solmaz" />
 
-  <!-- NEW: Twitter Card -->
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Dr. Arif Solmaz | Astrophysicist & Educator" />
-  <meta name="twitter:description" content="Astrophysicist studying exoplanets, stellar activity, and time-series analysis." />
+  <meta name="twitter:title" content="Dr. Arif Solmaz | Astrophysicist, Exoplanets & Starspots" />
+  <meta name="twitter:description" content="Exoplanets, stellar activity, starspots, TESS & JWST data analysis, and transit timing variations (TTVs)." />
   <meta name="twitter:image" content="https://arifsolmaz.github.io/og-image.jpg" />
+
+  <!-- (Optional) If you have Google Search Console verification, replace CONTENT_HERE with your token -->
+  <!-- <meta name="google-site-verification" content="CONTENT_HERE" /> -->
+
+  <!-- Favicons (optional but good for branding) -->
+  <!--
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  -->
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -62,8 +73,8 @@
 
     /* BASE RESET */
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; scroll-padding-top: 80px; } 
-    
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
     body {
       font-family: "Inter", sans-serif;
       background: var(--bg);
@@ -99,7 +110,7 @@
     }
     .brand { font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: 1.1rem; letter-spacing: -0.02em; }
     .brand span { color: var(--accent); }
-    
+
     .nav-links { display: flex; gap: 2rem; font-size: 0.9rem; font-weight: 500; }
     .nav-links a:hover { color: var(--accent2); }
     @media(max-width: 768px) { .nav-links { display: none; } }
@@ -110,7 +121,7 @@
 
     .hero-kicker {
       font-family: "JetBrains Mono", monospace; font-size: 0.8rem; color: var(--accent2);
-      margin-bottom: 1rem; display: inline-block; padding: 0.2rem 0.8rem; 
+      margin-bottom: 1rem; display: inline-block; padding: 0.2rem 0.8rem;
       border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 100px;
     }
 
@@ -130,7 +141,7 @@
     }
     .btn-primary { background: var(--text); color: var(--bg); border: 1px solid var(--text); }
     .btn-primary:hover { background: var(--accent2); border-color: var(--accent2); box-shadow: 0 0 20px rgba(56, 189, 248, 0.3); }
-    
+
     /* === INTERACTIVE WASP-52b SIMULATION === */
     .transit-viz {
       position: relative; width: 100%; height: 420px;
@@ -164,17 +175,17 @@
       /* K-type star gradient: Brighter center, darker orange/red limb */
       background: radial-gradient(circle at 40% 40%, #fff7ed 5%, #fb923c 45%, #c2410c 85%, #7c2d12 100%);
       box-shadow: 0 0 60px rgba(234, 88, 12, 0.3);
-      position: absolute; 
+      position: absolute;
       top: 50%; left: 50%; transform: translate(-50%, -50%);
       z-index: 1;
     }
-    
+
     /* Starspot */
     .star-spot {
-      position: absolute; width: 18px; height: 12px; 
+      position: absolute; width: 18px; height: 12px;
       background: rgba(60, 10, 0, 0.85);
-      border-radius: 50%; 
-      top: 50%; left: 50%; 
+      border-radius: 50%;
+      top: 50%; left: 50%;
       transform: translate(-50%, -50%) rotate(-15deg);
       filter: blur(1px);
       box-shadow: inset 0 0 4px rgba(0,0,0,0.9);
@@ -183,7 +194,7 @@
     /* WASP-52 b (Inflated Hot Jupiter) */
     .planet-sim {
       width: 26px; height: 26px; background: #050505; border-radius: 50%;
-      position: absolute; 
+      position: absolute;
       top: 50%; left: 15%; /* Start pos */
       transform: translate(-50%, -50%);
       z-index: 10;
@@ -201,7 +212,7 @@
       border-left: 2px solid #475569;
       border-bottom: 2px solid #475569;
       /* Scientific Grid */
-      background-image: 
+      background-image:
         linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
       background-size: 40px 40px;
@@ -222,19 +233,19 @@
 
     /* SVG Graph */
     .curve-svg { width: 100%; height: 100%; overflow: visible; }
-    
+
     .curve-path {
-      fill: none; stroke: var(--accent2); stroke-width: 3; 
+      fill: none; stroke: var(--accent2); stroke-width: 3;
       stroke-linecap: round; stroke-linejoin: round;
       vector-effect: non-scaling-stroke;
       filter: drop-shadow(0 0 4px rgba(56,189,248,0.3));
     }
-    
+
     /* The Tracking Dot */
     .graph-dot {
       width: 12px; height: 12px; background: #fff; border-radius: 50%;
-      position: absolute; 
-      top: 0; left: 0; 
+      position: absolute;
+      top: 0; left: 0;
       transform: translate(-50%, -50%);
       box-shadow: 0 0 15px var(--accent2);
       z-index: 20;
@@ -247,7 +258,7 @@
     .section-head p { color: var(--muted); max-width: 600px; }
 
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
-    
+
     .card {
       background: var(--card-bg); border: 1px solid var(--border);
       border-radius: var(--radius); padding: 2rem;
@@ -255,7 +266,7 @@
       display: flex; flex-direction: column;
     }
     .card:hover { transform: translateY(-4px); border-color: rgba(255,255,255,0.1); }
-    
+
     .card::before {
       content: ""; position: absolute; inset: 0;
       background: radial-gradient(800px circle at var(--x) var(--y), rgba(255,255,255,0.06), transparent 40%);
@@ -265,7 +276,7 @@
 
     .card h3 { font-family: "Space Grotesk"; font-size: 1.25rem; margin-bottom: 0.8rem; color: #fff; }
     .card p { color: var(--muted); font-size: 0.95rem; margin-bottom: 1.5rem; flex-grow: 1; }
-    
+
     .tags { display: flex; gap: 0.5rem; flex-wrap: wrap; }
     .tag {
       font-size: 0.75rem; font-family: "JetBrains Mono"; color: var(--accent2);
@@ -278,10 +289,10 @@
       background: linear-gradient(145deg, rgba(15, 23, 42, 0.8), rgba(2, 6, 23, 0.9));
       border: 1px solid var(--border);
     }
-    .pub-list { 
-      display: flex; 
-      flex-direction: column; 
-      gap: 1.2rem; 
+    .pub-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
       min-height: 120px; /* Give it some space while loading */
       justify-content: center;
       align-items: center;
@@ -294,7 +305,7 @@
       padding-bottom: 1.2rem; border-bottom: 1px solid var(--border);
     }
     .pub-item:last-child { border-bottom: none; padding-bottom: 0; }
-    
+
     .pub-year {
       font-family: "JetBrains Mono"; color: var(--accent); font-weight: bold;
       font-size: 0.9rem; text-align: right; padding-top: 0.2rem;
@@ -305,7 +316,7 @@
     }
     .pub-title:hover { color: var(--accent2); text-decoration: underline; text-decoration-color: var(--accent2); }
     .pub-meta { font-size: 0.85rem; color: var(--muted); line-height: 1.5; }
-    
+
     .ads-link-btn {
       margin-top: 1.5rem;
       display: inline-flex; align-items: center; gap: 0.6rem;
@@ -331,7 +342,7 @@
     footer { padding: 3rem 0; text-align: center; font-size: 0.85rem; color: var(--muted); border-top: 1px solid var(--border); }
   </style>
 
-  <!-- NEW: structured data for Google -->
+  <!-- Structured data for Google (Person) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -339,10 +350,28 @@
     "name": "Dr. Arif Solmaz",
     "url": "https://arifsolmaz.github.io",
     "jobTitle": "Astrophysicist & Educator",
+    "description": "Astrophysicist working on exoplanets, starspots, stellar activity, TESS & JWST light curves, and transit timing variations (TTVs).",
+    "affiliation": {
+      "@type": "Organization",
+      "name": "Istanbul Health and Technology University"
+    },
+    "email": "mailto:arif.solmaz@gmail.com",
     "sameAs": [
       "https://github.com/arifsolmaz",
       "https://scholar.google.com/citations?user=KukbrjkAAAAJ",
       "https://orcid.org/0000-0002-3076-164X"
+    ],
+    "knowsAbout": [
+      "Exoplanets",
+      "Transit light curves",
+      "TESS mission",
+      "JWST",
+      "Starspots",
+      "Stellar activity",
+      "Transit timing variations",
+      "Time-series analysis",
+      "Bayesian inference",
+      "Scientific computing in Python"
     ]
   }
   </script>
@@ -354,32 +383,33 @@
 
 <header>
   <div class="shell nav">
-    <a href="#" class="brand">Dr. Arif <span>Solmaz</span></a>
-    <div class="nav-links">
+    <a href="#top" class="brand" aria-label="Homepage - Dr. Arif Solmaz">Dr. Arif <span>Solmaz</span></a>
+    <nav class="nav-links" aria-label="Main navigation">
       <a href="#research">Research</a>
       <a href="#teaching">Teaching</a>
       <a href="#code">Code</a>
       <a href="#contact">Contact</a>
-    </div>
+    </nav>
   </div>
 </header>
 
-<main class="shell">
-  <!-- NEW: SEO-friendly hidden H1 with your full name -->
-  <h1 class="visually-hidden">Dr. Arif Solmaz – Astrophysicist & Educator</h1>
+<main class="shell" id="top">
+  <!-- SEO-friendly hidden H1 with your full name + keywords -->
+  <h1 class="visually-hidden">Dr. Arif Solmaz – Astrophysicist & Educator working on exoplanets, starspots, stellar activity, TESS & JWST light curves, and transit timing variations (TTVs).</h1>
 
   <section class="hero">
     <div>
-      <span class="hero-kicker">Astrophysics · Data Science</span>
+      <span class="hero-kicker">Astrophysics · Exoplanets · Data Science</span>
       <h1>Decoding signals from <br>noisy stars.</h1>
       <p>
-        I study transiting exoplanets like <strong>WASP-52 b</strong>, stellar activity, and time-series analysis. 
-        I build models to understand what happens when real data meets simple physics.
+        I am an astrophysicist studying transiting exoplanets such as <strong>WASP-52 b</strong> and <strong>HAT-P-36 b</strong>, stellar activity, and time-series analysis.
+        My research focuses on how starspots, stellar variability, and instrumental systematics affect transit light curves and
+        <strong>transit timing variations (TTVs)</strong> in data from missions like <strong>TESS</strong> and <strong>JWST</strong>.
       </p>
       <a href="#research" class="btn btn-primary">Explore Research ↓</a>
     </div>
 
-    <div class="transit-viz">
+    <div class="transit-viz" aria-label="Interactive exoplanet transit and starspot visualization">
       <div class="live-readout">target: WASP-52 b</div>
 
       <div class="sim-stage" id="sim-stage">
@@ -388,8 +418,8 @@
         </div>
         <div class="planet-sim" id="planet"></div>
       </div>
-      
-      <div class="graph-container">
+
+      <div class="graph-container" aria-hidden="true">
         <div class="graph-labels">
           <span class="label-y">Relative Flux</span>
           <span class="label-x">Time</span>
@@ -398,7 +428,7 @@
         <svg class="curve-svg" preserveAspectRatio="none" viewBox="0 0 400 100">
            <path id="curve-path" class="curve-path" d="" />
         </svg>
-        
+
         <div class="graph-dot" id="graph-dot"></div>
       </div>
     </div>
@@ -407,39 +437,51 @@
   <section id="research">
     <div class="section-head">
       <h2>Research Focus</h2>
-      <p>My work focuses on the intersection of stellar activity and exoplanet characterization. I ask: "How does the star affect what we know about the planet?"</p>
+      <p>
+        My work sits at the intersection of stellar activity and exoplanet characterization. I ask:
+        “How does the star affect what we think we know about the planet?” I often work with space-based light curves
+        from missions such as TESS, Kepler, and JWST.
+      </p>
     </div>
 
     <div class="grid" id="research-grid">
       <div class="card">
-        <h3>Exoplanets & Activity</h3>
+        <h3>Exoplanets & Stellar Activity</h3>
         <p>
-          Many interesting planets orbit active stars. Starspots and faculae distort transit light curves, affecting radius and timing measurements. I model these distortions to recover accurate planetary parameters.
+          Many of the most interesting planets orbit magnetically active stars. Starspots and faculae distort transit light curves,
+          biasing radius and timing measurements. I model these distortions to recover accurate planetary parameters and understand
+          the impact on transit timing variations (TTVs).
         </p>
         <div class="tags">
-          <span class="tag">TESS/Kepler</span>
+          <span class="tag">TESS / Kepler</span>
           <span class="tag">Transit Modeling</span>
+          <span class="tag">TTVs</span>
         </div>
       </div>
 
       <div class="card">
-        <h3>Stellar Physics</h3>
+        <h3>Starspots & Stellar Rotation</h3>
         <p>
-          Treating stellar noise as a signal. By analyzing the variability in light curves, we can map surface features (spots) and understand the magnetic evolution of host stars.
+          I treat stellar “noise” as a valuable signal. By analyzing out-of-transit variability, I investigate starspot distributions,
+          differential rotation, and the long-term magnetic evolution of host stars that shape our interpretation of exoplanet atmospheres.
         </p>
         <div class="tags">
           <span class="tag">Starspots</span>
-          <span class="tag">Differential Rotation</span>
+          <span class="tag">Rotation Periods</span>
+          <span class="tag">Magnetic Activity</span>
         </div>
       </div>
 
       <div class="card">
-        <h3>Methods</h3>
+        <h3>Methods & Tools</h3>
         <p>
-          I prefer pragmatic modeling: models that are just complex enough to answer the question. I use Bayesian inference and MCMC to quantify uncertainties honestly.
+          I prefer pragmatic, physically motivated models: just complex enough to answer the scientific question.
+          My work often combines <strong>Bayesian inference</strong>, <strong>MCMC</strong>, and forward modeling with
+          open-source tools in <strong>Python</strong> to quantify uncertainties honestly and reproducibly.
         </p>
         <div class="tags">
           <span class="tag">Bayesian Inference</span>
+          <span class="tag">MCMC</span>
           <span class="tag">Python</span>
         </div>
       </div>
@@ -450,12 +492,12 @@
             Selected Publication <span style="font-size:0.8rem; opacity:0.6; font-weight:400;">(via NASA ADS)</span>
           </h3>
         </div>
-        
+
         <div class="pub-list" id="random-publication-container">
           <p>Loading a random publication...</p>
         </div>
 
-        <a href="https://ui.adsabs.harvard.edu/search/fq=%7B!type%3Daqp%20v%3D%24fq_database%7D&fq_database=(database%3Aastronomy%20OR%20database%3Aphysics)&q=author%3A%22Solmaz%2C%20Arif%22&sort=date%20desc%2C%20bibcode%20desc&p_=0" target="_blank" class="ads-link-btn">
+        <a href="https://ui.adsabs.harvard.edu/search/fq=%7B!type%3Daqp%20v%3D%24fq_database%7D&fq_database=(database%3Aastronomy%20OR%20database%3Aphysics)&q=author%3A%22Solmaz%2C%20Arif%22&sort=date%20desc%2C%20bibcode%20desc&p_=0" target="_blank" rel="noopener noreferrer" class="ads-link-btn">
           View full library on NASA ADS <span style="font-size:1.2rem;">→</span>
         </a>
       </div>
@@ -465,27 +507,30 @@
   <section id="teaching">
     <div class="section-head">
       <h2>Teaching & Mentoring</h2>
-      <p>Courses, labs, and student projects designed to build "Data Literacy."</p>
+      <p>
+        I teach Physics, Programming (Python / C), and data analysis, often within engineering and mechatronics programs.
+        A recurring theme is “data literacy” – learning to read and question data from real instruments and satellites.
+      </p>
     </div>
 
     <div class="grid">
       <div class="card">
         <h3>For Students</h3>
         <p>
-          I teach physics and programming (Python/C) often for engineering students. 
-          My goal is to move students from "following the recipe" to "understanding the ingredients."
-          We use real satellite data, not just textbook examples.
+          My courses and labs emphasize problem solving with real datasets, including TESS light curves and other astrophysical time series.
+          The goal is to move students from simply “following the recipe” to understanding the physical assumptions and limitations behind each model.
         </p>
       </div>
       <div class="card">
         <h3>Project Philosophy</h3>
         <p>
-          Good research projects are focused and finite. I value readable code, 
-          clear visualizations, and honest error bars over complex "black box" solutions.
+          Good student projects are focused and finite. I value readable, well-documented code, clear visualizations, and honest error bars
+          more than overly complex black-box approaches. Whenever possible, the results are made reproducible and shareable.
         </p>
         <div class="tags">
           <span class="tag">Open Science</span>
           <span class="tag">Reproducibility</span>
+          <span class="tag">Student Projects</span>
         </div>
       </div>
     </div>
@@ -494,14 +539,20 @@
   <section id="code">
     <div class="section-head">
       <h2>Code & Software</h2>
-      <p>Open source tools and workflows for astrophysical time-series analysis.</p>
+      <p>
+        I build open-source tools and workflows for exoplanet transit analysis, starspot modeling, and stellar variability studies,
+        with a focus on TESS and JWST data.
+      </p>
     </div>
 
     <div class="card" style="padding: 0 2rem;">
       <div class="repo-item">
         <div>
           <div class="repo-name">transit-analysis-workflow</div>
-          <div class="repo-desc">A robust pipeline for analyzing TESS light curves using <code>lightkurve</code> and <code>batman</code>.</div>
+          <div class="repo-desc">
+            A robust pipeline for analyzing TESS light curves using
+            <code>lightkurve</code> and <code>batman</code>, including detrending, transit fitting, and basic TTV diagnostics.
+          </div>
         </div>
         <div class="repo-stat">Python</div>
       </div>
@@ -509,16 +560,18 @@
       <div class="repo-item">
         <div>
           <div class="repo-name">starspot-modelling</div>
-          <div class="repo-desc">Scripts for simulating the effect of starspot crossings on transit depth.</div>
+          <div class="repo-desc">
+            Scripts for simulating the effect of starspot crossings on transit depth, shape, and inferred mid-transit times, with applications to TTV analyses.
+          </div>
         </div>
         <div class="repo-stat">Jupyter</div>
       </div>
 
-      <!-- NEW: gpt-exoplanet Streamlit app -->
+      <!-- gpt-exoplanet Streamlit app -->
       <div class="repo-item">
         <div>
           <div class="repo-name">
-            <a href="https://gpt-exoplanet.streamlit.app" target="_blank" style="color: inherit; text-decoration: none;">
+            <a href="https://gpt-exoplanet.streamlit.app" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
               gpt-exoplanet
             </a>
           </div>
@@ -532,14 +585,16 @@
       <div class="repo-item" style="border: none;">
         <div>
           <div class="repo-name">teaching-materials</div>
-          <div class="repo-desc">Public Labs and Colab notebooks for Physics and Data Analysis courses.</div>
+          <div class="repo-desc">
+            Public labs and Google Colab notebooks for Physics and Data Analysis courses, including exoplanet transit exercises and time-series analysis tutorials.
+          </div>
         </div>
         <div class="repo-stat">Markdown</div>
       </div>
     </div>
 
     <div style="margin-top: 1.5rem;">
-      <a href="https://github.com/arifsolmaz" target="_blank" style="font-size: 0.9rem; color: var(--accent2);">
+      <a href="https://github.com/arifsolmaz" target="_blank" rel="noopener noreferrer" style="font-size: 0.9rem; color: var(--accent2);">
         View all repositories on GitHub →
       </a>
     </div>
@@ -548,7 +603,9 @@
   <section id="contact">
     <div class="section-head">
       <h2>Get In Touch</h2>
-      <p>I welcome emails from students and collaborators interested in exoplanets.</p>
+      <p>
+        I welcome emails from students, researchers, and collaborators interested in exoplanets, stellar activity, and astrophysical data analysis.
+      </p>
     </div>
 
     <div class="contact-grid">
@@ -558,11 +615,11 @@
           To make our conversation efficient, please include:
         </p>
         <ul style="font-size: 0.9rem; color: var(--muted); list-style: disc; margin-left: 1.2rem; margin-bottom: 1rem;">
-          <li>Your background (student, researcher, etc.)</li>
-          <li>Specific topic (e.g., "WASP-52b data analysis")</li>
-          <li>Rough timeline or scope of the question</li>
+          <li>Your background (student, researcher, engineer, etc.)</li>
+          <li>Specific topic (e.g., "WASP-52 b starspot modeling", "HAT-P-36 b TTVs")</li>
+          <li>Rough timeline or scope of your question or project</li>
         </ul>
-        <p>Short, concrete emails are the best.</p>
+        <p>Short, concrete emails are the easiest to answer quickly.</p>
       </div>
 
       <div class="card" style="justify-content: center;">
@@ -573,15 +630,15 @@
           </li>
           <li>
             <span class="icon">🐙</span>
-            <a href="https://github.com/arifsolmaz" target="_blank">github.com/arifsolmaz</a>
+            <a href="https://github.com/arifsolmaz" target="_blank" rel="noopener noreferrer">github.com/arifsolmaz</a>
           </li>
           <li>
             <span class="icon">🎓</span>
-            <a href="https://scholar.google.com/citations?user=KukbrjkAAAAJ" target="_blank">Google Scholar</a>
+            <a href="https://scholar.google.com/citations?user=KukbrjkAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a>
           </li>
           <li>
             <span class="icon">🆔</span>
-            <a href="https://orcid.org/0000-0002-3076-164X" target="_blank">ORCID Profile</a>
+            <a href="https://orcid.org/0000-0002-3076-164X" target="_blank" rel="noopener noreferrer">ORCID Profile</a>
           </li>
         </ul>
       </div>
@@ -593,7 +650,7 @@
 <footer>
   <div class="shell">
     © <span id="year"></span> Dr. Arif Solmaz. <br>
-    Built with pure HTML/CSS & JS.
+    Built with pure HTML, CSS &amp; JavaScript.
   </div>
 </footer>
 
@@ -646,13 +703,13 @@
   const graphDot = document.getElementById('graph-dot');
 
   let isDragging = false;
-  const STAR_RADIUS = 70; 
-  const PLANET_RADIUS = 13; 
+  const STAR_RADIUS = 70;
+  const PLANET_RADIUS = 13;
   const SPOT_RADIUS = 9;
-  let planetX = 15; 
+  let planetX = 15;
   let planetY = 50;
 
-  const mapRange = (val, inMin, inMax, outMin, outMax) => 
+  const mapRange = (val, inMin, inMax, outMin, outMax) =>
     (val - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
   const smoothEase = (t) => (1 - Math.cos(t * Math.PI)) / 2;
 
@@ -669,7 +726,7 @@
   }
   function handleMove(e) {
     if (!isDragging) return;
-    e.preventDefault(); 
+    e.preventDefault();
     const rect = simStage.getBoundingClientRect();
     const clientX = e.touches ? e.touches[0].clientX : e.clientX;
     const clientY = e.touches ? e.touches[0].clientY : e.clientY;
@@ -689,19 +746,19 @@
     const dist = Math.sqrt(x*x + y*y);
     if (dist < STAR_RADIUS + PLANET_RADIUS) {
       let overlap = 0;
-      if (dist <= STAR_RADIUS - PLANET_RADIUS) { overlap = 1.0; } 
+      if (dist <= STAR_RADIUS - PLANET_RADIUS) { overlap = 1.0; }
       else {
         let edgeFactor = (STAR_RADIUS + PLANET_RADIUS - dist) / (2 * PLANET_RADIUS);
         overlap = smoothEase(Math.max(0, Math.min(1, edgeFactor)));
       }
       let mu = (dist < STAR_RADIUS) ? Math.sqrt(1 - (dist/STAR_RADIUS)**2) : 0;
-      const intensity = 1.0 - 0.5 * (1 - mu); 
+      const intensity = 1.0 - 0.5 * (1 - mu);
       flux -= 0.026 * overlap * intensity;
     }
     const distSpot = Math.sqrt(x*x + y*y);
     const interactRad = PLANET_RADIUS + SPOT_RADIUS;
     if (distSpot < interactRad) {
-      const sigma = interactRad / 2.2; 
+      const sigma = interactRad / 2.2;
       const gaussian = Math.exp(-0.5 * (distSpot * distSpot) / (sigma * sigma));
       if (flux < 1.0) flux += 0.008 * gaussian;
     }
@@ -715,17 +772,17 @@
     const dx = (planetX / 100 * w) - cx;
     const dy = (planetY / 100 * h) - cy;
     const points = [];
-    const scanWidth = 400; 
+    const scanWidth = 400;
     for (let i = 0; i <= scanWidth; i+=5) {
       const physX = mapRange(i, 0, scanWidth, -180, 180);
-      const f = getFlux(physX, dy); 
+      const f = getFlux(physX, dy);
       const plotY = mapRange(f, 1.0, 0.974, 20, 90);
       points.push(`${i},${plotY.toFixed(1)}`);
     }
     curvePath.setAttribute('d', `M${points.join(' L')}`);
     const fNow = getFlux(dx, dy);
-    const dotX = mapRange(dx, -180, 180, 0, 100); 
-    const dotY = mapRange(fNow, 1.0, 0.974, 20, 90); 
+    const dotX = mapRange(dx, -180, 180, 0, 100);
+    const dotY = mapRange(fNow, 1.0, 0.974, 20, 90);
     if (dotX >= 0 && dotX <= 100) {
       graphDot.style.opacity = 1;
       graphDot.style.left = `${dotX}%`;
@@ -740,13 +797,13 @@
   window.addEventListener('touchend', stopDrag);
   updateVisuals(); calculateLightCurve();
 
-  /* --- 5. NASA ADS RANDOM PUBLICATION FETCHER (OPTION 2: LOCAL DATA) --- */
+  /* --- 5. NASA ADS RANDOM PUBLICATION FETCHER (local JSON) --- */
   async function fetchAndDisplayRandomPublication() {
     const container = document.getElementById('random-publication-container');
-    container.innerHTML = '<p>Loading a random publication...</p>'; 
+    container.innerHTML = '<p>Loading a random publication...</p>';
 
     try {
-      const response = await fetch('publications.json'); 
+      const response = await fetch('publications.json');
 
       if (!response.ok) {
         throw new Error(`Could not load publications.json. Please ensure the file exists in your repository.`);
@@ -781,11 +838,11 @@
           <div class="pub-item">
             <div class="pub-year">${pub.year}</div>
             <div>
-              <a href="${doiLink}" target="_blank" class="pub-title">
+              <a href="${doiLink}" target="_blank" rel="noopener noreferrer" class="pub-title">
                 ${pub.title ? pub.title[0] : 'No Title Available'}
               </a>
               <div class="pub-meta">
-                <span style="color:var(--accent2);">${journalInfo || 'Journal info unavailable'}.</span> 
+                <span style="color:var(--accent2);">${journalInfo || 'Journal info unavailable'}.</span>
                 ${pub.abstract ? pub.abstract.substring(0, 200) + '...' : 'Abstract unavailable.'}
               </div>
             </div>
