@@ -547,44 +547,13 @@
         <span id="cursorPos">Line 1, Col 1</span>
       </div>
       <div class="editor-container">
-        <textarea id="codeEditor">// Exercise 4.19 Solution 
-#include <stdio.h>
-int main(void) { 
-// prompt for input 
-puts("Enter pairs of item numbers and quantities.");
-puts("Enter -1 for the item number to end input.");
-int product; // current product number 
-scanf("%d", &product);
-double total = 0.0; // current total retail value 
-// loop while sentinel value not read from user 
-while (product != -1) { 
-int quantity; // quantity of current product sold 
-scanf("%d", &quantity);
-// determine product then perform calculation
-switch (product) { 
-case 1:
-            total += quantity * 2.98; // update total
-break;
-case 2:
-            total += quantity * 4.50; // update total
-break;
-case 3:
-            total += quantity * 9.98; // update total
-break;
-case 4:
-            total += quantity * 4.49; // update total
-break;
-case 5:
-            total += quantity * 6.87; // update total
-break;
-default:
-printf("Invalid product code:  %d\n", product);
-printf("            Quantity:  %d\n", quantity);
-      } 
-scanf("%d", &product); // get next input
-   } 
-// display total retail value
-printf("The total retail value was:  %.2f\n", total);
+        <textarea id="codeEditor">#include <stdio.h>
+
+int main(void) {
+    printf("Hello, World!\n");
+    printf("Welcome to C programming!\n");
+    
+    return 0;
 }</textarea>
       </div>
     </div>
@@ -601,13 +570,12 @@ printf("The total retail value was:  %.2f\n", total);
           <i class="fas fa-exclamation-triangle"></i>
           <strong>Important:</strong> Enter ALL input values that your program needs before clicking Run. Separate values with spaces or newlines.
         </div>
-        <textarea class="input-area" id="inputArea" placeholder="Example for this program:
-1 5
-2 3
-3 2
--1
+        <textarea class="input-area" id="inputArea" placeholder="Enter input values here if your program uses scanf.
+Separate multiple values with spaces or newlines.
 
-Enter product codes and quantities, end with -1"></textarea>
+Example:
+John 25
+10 20 30"></textarea>
       </div>
       
       <div class="output-section">
@@ -1337,9 +1305,7 @@ Created with ❤️ for C programmers`);
       
       // Add sample input for the default code
       const inputArea = document.getElementById('inputArea');
-      if (inputArea.value === '') {
-        inputArea.value = '1 5\n2 3\n3 2\n-1';
-      }
+      // Leave input area empty for Hello World
       
       // Update cursor position
       editor.on('cursorActivity', function() {
