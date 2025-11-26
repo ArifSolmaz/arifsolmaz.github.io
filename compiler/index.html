@@ -1,1 +1,193 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Arif's Online C Playground</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #111;
+      color: #eee;
+    }
+
+    header {
+      padding: 1rem 1.5rem;
+      background: #222;
+      border-bottom: 1px solid #333;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.4rem;
+    }
+
+    header p {
+      margin: 0.25rem 0 0;
+      font-size: 0.9rem;
+      color: #bbb;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      padding: 1rem 1.5rem 2rem;
+    }
+
+    #editor-label {
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    #code {
+      width: 100%;
+      min-height: 260px;
+      max-height: 500px;
+      background: #1b1b1b;
+      color: #f5f5f5;
+      border: 1px solid #444;
+      border-radius: 4px;
+      padding: 0.75rem;
+      font-family: "Fira Code", "JetBrains Mono", monospace;
+      font-size: 0.9rem;
+      resize: vertical;
+      box-sizing: border-box;
+    }
+
+    #controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    button {
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.9rem;
+      background: #3b82f6;
+      color: white;
+    }
+
+    button:disabled {
+      opacity: 0.6;
+      cursor: default;
+    }
+
+    #status {
+      font-size: 0.85rem;
+      color: #9ca3af;
+    }
+
+    #output-label {
+      margin-top: 0.75rem;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    #output {
+      background: #000;
+      color: #d1fae5;
+      border-radius: 4px;
+      border: 1px solid #333;
+      padding: 0.75rem;
+      min-height: 150px;
+      white-space: pre-wrap;
+      font-family: "Fira Code", "JetBrains Mono", monospace;
+      font-size: 0.9rem;
+      box-sizing: border-box;
+    }
+
+    footer {
+      padding: 0.5rem 1.5rem 1rem;
+      font-size: 0.75rem;
+      color: #6b7280;
+    }
+
+    a {
+      color: #60a5fa;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Online C Playground</h1>
+    <p>
+      Type <strong>pure C</strong> code and click <strong>Run</strong>. 
+      Works best with simple programs using <code>printf()</code>.
+    </p>
+  </header>
+
+  <main>
+    <div id="editor-label">C source code:</div>
+    <textarea id="code">
+// Example: Hello World
+
+#include &lt;stdio.h&gt;
+
+int main(void) {
+    printf("Hello, C learner!\\n");
+    printf("You are running this in your browser.\\n");
+    return 0;
+}
+    </textarea>
+
+    <div id="controls">
+      <button id="runBtn">Run</button>
+      <span id="status">Ready.</span>
+    </div>
+
+    <div id="output-label">Program output:</div>
+    <pre id="output"></pre>
+  </main>
+
+  <footer>
+    Powered by <a href="https://github.com/KritR/picoc-js" target="_blank" rel="noreferrer">picoc-js</a>
+    – a tiny C interpreter compiled to WebAssembly.
+  </footer>
+
+  <!-- Picoc C interpreter (WASM) bundled for browsers -->
+  <script src="https://unpkg.com/picoc-js@1.0.12/dist/bundle.umd.js"
+          type="text/javascript" charset="utf-8"></script>
+
+  <script>
+    const runBtn = document.getElementById("runBtn");
+    const codeEl = document.getElementById("code");
+    const outputEl = document.getElementById("output");
+    const statusEl = document.getElementById("status");
+
+    function setStatus(text) {
+      statusEl.textContent = text;
+    }
+
+    runBtn.addEventListener("click", () => {
+      const code = codeEl.value;
+      outputEl.textContent = "";
+      setStatus("Running...");
+      runBtn.disabled = true;
+
+      // picoc-js exposes a global 'picocjs' object for browsers
+      // See example in its README. 
+      try {
+        picocjs.runC(code, (outputChunk) => {
+          // Called for each line / chunk of output
+          outputEl.textContent += outputChunk;
+        });
+
+        setStatus("Finished.");
+      } catch (err) {
+        outputEl.textContent = "Error: " + err;
+        setStatus("Error.");
+      } finally {
+        runBtn.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>
