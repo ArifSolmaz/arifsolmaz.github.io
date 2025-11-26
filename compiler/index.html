@@ -129,7 +129,7 @@
     <h1>Online C Playground</h1>
     <p>
       Type <strong>pure C</strong> code and click <strong>Run</strong>.
-      For programs that use <code>scanf</code>, put the input below (one value per line or separated by spaces).
+      If your program uses <code>scanf</code>, an extra input box will appear below.
     </p>
   </header>
 
@@ -159,14 +159,14 @@ int main(void) {
 }
     </textarea>
 
-    <div id="input-label">
-      Input data (used for <code>scanf</code>):<br />
-      <small>Example for the program above: <code>3 5 4 6</code> or each number on its own line.</small>
+    <!-- This whole block is only shown when code contains scanf -->
+    <div id="scanf-area" style="display:none;">
+      <div id="input-label">
+        Input data (used for <code>scanf</code>):<br />
+        <small>Enter values separated by spaces or newlines. Example: <code>3 5 4 6</code></small>
+      </div>
+      <textarea id="input"></textarea>
     </div>
-    <textarea id="input">3
-5
-4
-6</textarea>
 
     <div id="controls">
       <button id="runBtn">Run</button>
@@ -192,39 +192,58 @@ int main(void) {
     const inputEl  = document.getElementById("input");
     const outputEl = document.getElementById("output");
     const statusEl = document.getElementById("status");
+    const scanfArea = document.getElementById("scanf-area");
 
     function setStatus(text) {
       statusEl.textContent = text;
     }
 
+    // Detect whether the current code uses scanf
+    function detectScanf() {
+      const code = codeEl.value;
+      const hasScanf = /\bscanf\s*\(/.test(code);
+      scanfArea.style.display = hasScanf ? "block" : "none";
+    }
+
+    // Run detection whenever the user edits code
+    codeEl.addEventListener("input", detectScanf);
+
+    // Initial detection on load
+    detectScanf();
+
     runBtn.addEventListener("click", () => {
       const code  = codeEl.value;
+      const usesScanf = /\bscanf\s*\(/.test(code);
       const input = inputEl.value;
 
       outputEl.textContent = "";
       setStatus("Running...");
       runBtn.disabled = true;
 
-      // Tokenize input: split on any whitespace
-      let tokens = input
-        .split(/\s+/)
-        .map(t => t.trim())
-        .filter(t => t.length > 0);
+      // Tokenize input only if scanf is used
+      let tokens = [];
+      if (usesScanf) {
+        tokens = input
+          .split(/\s+/)
+          .map(t => t.trim())
+          .filter(t => t.length > 0);
+      }
 
       // Save the original prompt
       const originalPrompt = window.prompt;
 
-      // Override prompt so scanf reads from our tokens instead of showing dialogs
-      window.prompt = function(msg) {
-        console.log("[playground] scanf prompt:", msg, "remaining tokens:", tokens.length);
-        if (tokens.length === 0) {
-          // No more input: behave like EOF
-          return "";
-        }
-        return tokens.shift();
-      };
+      // Override prompt only if scanf is present
+      if (usesScanf) {
+        window.prompt = function(msg) {
+          console.log("[playground] scanf prompt:", msg, "remaining tokens:", tokens.length);
+          if (tokens.length === 0) {
+            // No more input: behave like EOF
+            return "";
+          }
+          return tokens.shift();
+        };
+      }
 
-      // picoc-js global (browser example from README)
       const api = window.picocjs || window.picoc;
 
       if (!api || typeof api.runC !== "function") {
@@ -233,14 +252,12 @@ int main(void) {
           "Check access to:\nhttps://unpkg.com/picoc-js@1.0.12/dist/bundle.umd.js\n";
         setStatus("Error loading interpreter.");
         runBtn.disabled = false;
-        // restore prompt
         window.prompt = originalPrompt;
         return;
       }
 
       try {
         api.runC(code, (chunk) => {
-          // Called whenever the program prints something
           outputEl.textContent += chunk;
         });
         setStatus("Finished.");
@@ -249,7 +266,7 @@ int main(void) {
         outputEl.textContent = "Error while running program:\n" + err;
         setStatus("Error.");
       } finally {
-        // Restore the original prompt after execution
+        // Restore original prompt
         window.prompt = originalPrompt;
         runBtn.disabled = false;
       }
