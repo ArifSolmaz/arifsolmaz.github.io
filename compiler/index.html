@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Advanced C Programming Environment</title>
+  <title>Advanced C Programming Environment - No Popups</title>
   
   <!-- CodeMirror CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
@@ -288,6 +288,26 @@
       50% { opacity: 0.5; }
     }
 
+    /* Warning box */
+    .warning-box {
+      background: rgba(209, 153, 34, 0.1);
+      border: 1px solid var(--warning);
+      border-radius: 6px;
+      padding: 0.75rem;
+      margin-bottom: 0.5rem;
+      font-size: 0.875rem;
+      color: var(--warning);
+      display: none;
+    }
+
+    .warning-box.active {
+      display: block;
+    }
+
+    .warning-box i {
+      margin-right: 0.5rem;
+    }
+
     /* Tooltips */
     .tooltip {
       position: relative;
@@ -527,15 +547,44 @@
         <span id="cursorPos">Line 1, Col 1</span>
       </div>
       <div class="editor-container">
-        <textarea id="codeEditor">#include <stdio.h>
-
-int main(void) {
-    printf("Welcome to Advanced C Compiler!\n");
-    printf("This environment supports full C89/C90 standard.\n");
-    
-    // Try the examples to see what's possible!
-    
-    return 0;
+        <textarea id="codeEditor">// Exercise 4.19 Solution 
+#include <stdio.h>
+int main(void) { 
+// prompt for input 
+puts("Enter pairs of item numbers and quantities.");
+puts("Enter -1 for the item number to end input.");
+int product; // current product number 
+scanf("%d", &product);
+double total = 0.0; // current total retail value 
+// loop while sentinel value not read from user 
+while (product != -1) { 
+int quantity; // quantity of current product sold 
+scanf("%d", &quantity);
+// determine product then perform calculation
+switch (product) { 
+case 1:
+            total += quantity * 2.98; // update total
+break;
+case 2:
+            total += quantity * 4.50; // update total
+break;
+case 3:
+            total += quantity * 9.98; // update total
+break;
+case 4:
+            total += quantity * 4.49; // update total
+break;
+case 5:
+            total += quantity * 6.87; // update total
+break;
+default:
+printf("Invalid product code:  %d\n", product);
+printf("            Quantity:  %d\n", quantity);
+      } 
+scanf("%d", &product); // get next input
+   } 
+// display total retail value
+printf("The total retail value was:  %.2f\n", total);
 }</textarea>
       </div>
     </div>
@@ -548,7 +597,17 @@ int main(void) {
             <span>Input (scanf detected)</span>
           </div>
         </div>
-        <textarea class="input-area" id="inputArea" placeholder="Enter input values separated by spaces or newlines..."></textarea>
+        <div class="warning-box" id="scanfWarning">
+          <i class="fas fa-exclamation-triangle"></i>
+          <strong>Important:</strong> Enter ALL input values that your program needs before clicking Run. Separate values with spaces or newlines.
+        </div>
+        <textarea class="input-area" id="inputArea" placeholder="Example for this program:
+1 5
+2 3
+3 2
+-1
+
+Enter product codes and quantities, end with -1"></textarea>
       </div>
       
       <div class="output-section">
@@ -561,7 +620,10 @@ int main(void) {
             <i class="fas fa-trash"></i>
           </button>
         </div>
-        <div class="output-area" id="outputArea">Ready to compile and run your C code...</div>
+        <div class="output-area" id="outputArea">Ready to compile and run your C code...
+
+Note: This environment uses picoc-js which implements C89/C90 standard.
+No browser popups will appear - all input is read from the Input area above.</div>
       </div>
     </div>
   </div>
@@ -575,7 +637,7 @@ int main(void) {
       <span id="executionTime"></span>
     </div>
     <div class="status-right">
-      <span>Powered by picoc-js | C89/C90 Standard</span>
+      <span>Powered by picoc-js | C89/C90 Standard | No Popups</span>
     </div>
   </div>
 
@@ -651,6 +713,55 @@ int main(void) {
 }`
       },
       {
+        title: "Product Retail Calculator",
+        description: "Calculate total retail value (like Exercise 4.19)",
+        code: `// Exercise 4.19 Solution 
+#include <stdio.h>
+int main(void) { 
+    // prompt for input 
+    puts("Enter pairs of item numbers and quantities.");
+    puts("Enter -1 for the item number to end input.");
+    
+    int product; // current product number 
+    scanf("%d", &product);
+    double total = 0.0; // current total retail value 
+    
+    // loop while sentinel value not read from user 
+    while (product != -1) { 
+        int quantity; // quantity of current product sold 
+        scanf("%d", &quantity);
+        
+        // determine product then perform calculation
+        switch (product) { 
+            case 1:
+                total += quantity * 2.98; // update total
+                break;
+            case 2:
+                total += quantity * 4.50; // update total
+                break;
+            case 3:
+                total += quantity * 9.98; // update total
+                break;
+            case 4:
+                total += quantity * 4.49; // update total
+                break;
+            case 5:
+                total += quantity * 6.87; // update total
+                break;
+            default:
+                printf("Invalid product code:  %d\\n", product);
+                printf("            Quantity:  %d\\n", quantity);
+        }
+        scanf("%d", &product); // get next input
+    } 
+    
+    // display total retail value
+    printf("The total retail value was:  %.2f\\n", total);
+    return 0;
+}`,
+        inputExample: "1 5\n2 3\n3 2\n-1"
+      },
+      {
         title: "User Input",
         description: "Interactive program with scanf",
         code: `#include <stdio.h>
@@ -675,7 +786,8 @@ int main(void) {
     }
     
     return 0;
-}`
+}`,
+        inputExample: "John 25"
       },
       {
         title: "Fibonacci Sequence",
@@ -703,7 +815,8 @@ int main(void) {
     
     printf("\\n");
     return 0;
-}`
+}`,
+        inputExample: "10"
       },
       {
         title: "Prime Number Checker",
@@ -744,7 +857,8 @@ int main(void) {
     printf("\\n");
     
     return 0;
-}`
+}`,
+        inputExample: "17"
       },
       {
         title: "Orbital Period Calculator",
@@ -779,7 +893,8 @@ int main(void) {
     printf("Jupiter: 5.20 AU, 11.86 years\\n");
     
     return 0;
-}`
+}`,
+        inputExample: "5.2"
       },
       {
         title: "Transit Depth Calculator",
@@ -829,7 +944,8 @@ int main(void) {
     }
     
     return 0;
-}`
+}`,
+        inputExample: "11.2 1.0"
       },
       {
         title: "Bubble Sort",
@@ -878,124 +994,8 @@ int main(void) {
     printArray(arr, n);
     
     return 0;
-}`
-      },
-      {
-        title: "Matrix Operations",
-        description: "Basic matrix addition and multiplication",
-        code: `#include <stdio.h>
-
-void printMatrix(int mat[][10], int rows, int cols) {
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < cols; j++) {
-            printf("%4d ", mat[i][j]);
-        }
-        printf("\\n");
-    }
-}
-
-int main(void) {
-    int rows = 3, cols = 3;
-    int mat1[10][10], mat2[10][10], result[10][10];
-    
-    printf("=== Matrix Operations ===\\n");
-    printf("Working with %dx%d matrices\\n\\n", rows, cols);
-    
-    // Initialize matrices
-    printf("Matrix A:\\n");
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < cols; j++) {
-            mat1[i][j] = i * cols + j + 1;
-            printf("%4d ", mat1[i][j]);
-        }
-        printf("\\n");
-    }
-    
-    printf("\\nMatrix B:\\n");
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < cols; j++) {
-            mat2[i][j] = (i + 1) * (j + 1);
-            printf("%4d ", mat2[i][j]);
-        }
-        printf("\\n");
-    }
-    
-    // Addition
-    printf("\\nA + B:\\n");
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < cols; j++) {
-            result[i][j] = mat1[i][j] + mat2[i][j];
-        }
-    }
-    printMatrix(result, rows, cols);
-    
-    // Multiplication
-    printf("\\nA × B:\\n");
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < cols; j++) {
-            result[i][j] = 0;
-            for (int k = 0; k < cols; k++) {
-                result[i][j] += mat1[i][k] * mat2[k][j];
-            }
-        }
-    }
-    printMatrix(result, rows, cols);
-    
-    return 0;
-}`
-      },
-      {
-        title: "Factorial & Combinations",
-        description: "Calculate factorial and combinations",
-        code: `#include <stdio.h>
-
-long long factorial(int n) {
-    if (n <= 1) return 1;
-    long long result = 1;
-    for (int i = 2; i <= n; i++) {
-        result *= i;
-    }
-    return result;
-}
-
-long long combination(int n, int r) {
-    if (r > n) return 0;
-    if (r == 0 || r == n) return 1;
-    
-    // C(n,r) = n! / (r! * (n-r)!)
-    // Optimize to avoid overflow
-    long long result = 1;
-    for (int i = 0; i < r; i++) {
-        result *= (n - i);
-        result /= (i + 1);
-    }
-    return result;
-}
-
-int main(void) {
-    int n;
-    
-    printf("Enter a number: ");
-    scanf("%d", &n);
-    
-    printf("\\nFactorial of %d: %lld\\n", n, factorial(n));
-    
-    printf("\\nPascal's Triangle (first %d rows):\\n", n);
-    for (int i = 0; i < n; i++) {
-        // Print spaces for alignment
-        for (int j = 0; j < n - i - 1; j++) {
-            printf("  ");
-        }
-        
-        // Print combinations
-        for (int j = 0; j <= i; j++) {
-            printf("%4lld", combination(i, j));
-        }
-        printf("\\n");
-    }
-    
-    return 0;
-}`
+}`,
+        inputExample: "5\n64 34 25 12 22"
       }
     ];
 
@@ -1027,10 +1027,19 @@ int main(void) {
     function detectScanf() {
       const code = editor.getValue();
       const hasScanf = /\bscanf\s*\(/.test(code);
-      document.getElementById('inputSection').className = hasScanf ? 'input-section active' : 'input-section';
+      const inputSection = document.getElementById('inputSection');
+      const warning = document.getElementById('scanfWarning');
+      
+      if (hasScanf) {
+        inputSection.classList.add('active');
+        warning.classList.add('active');
+      } else {
+        inputSection.classList.remove('active');
+        warning.classList.remove('active');
+      }
     }
 
-    // Run code
+    // Run code - FIXED VERSION WITHOUT POPUPS
     function runCode() {
       if (isRunning) return;
       
@@ -1058,21 +1067,31 @@ int main(void) {
       
       // Get input tokens
       const usesScanf = /\bscanf\s*\(/.test(code);
-      const input = inputArea.value;
+      const input = inputArea.value || '';
       let tokens = [];
       
       if (usesScanf) {
-        tokens = input.split(/\s+/).filter(t => t.length);
+        // Split input into tokens
+        tokens = input.split(/\s+/).filter(t => t.length > 0);
+        console.log('Input tokens:', tokens);
       }
       
-      // Override prompt for scanf
+      // Create custom prompt function that NEVER shows popups
       const originalPrompt = window.prompt;
-      if (usesScanf) {
-        window.prompt = () => {
-          if (tokens.length === 0) return "";
-          return tokens.shift();
-        };
-      }
+      let tokenIndex = 0;
+      
+      // Override prompt to return tokens without any popup
+      window.prompt = function() {
+        if (tokenIndex < tokens.length) {
+          const value = tokens[tokenIndex];
+          tokenIndex++;
+          console.log(`Returning token ${tokenIndex}:`, value);
+          return value;
+        }
+        // Return empty string if no more tokens (picoc will handle as needed)
+        console.log('No more tokens, returning empty string');
+        return '';
+      };
       
       // Get picoc API
       const api = window.picocjs || window.picoc;
@@ -1081,6 +1100,7 @@ int main(void) {
         try {
           statusText.textContent = 'Running...';
           
+          // Run the C code
           api.runC(code, chunk => {
             outputArea.textContent += chunk.replace(/\r\n?/g, "\n");
           });
@@ -1088,13 +1108,26 @@ int main(void) {
           statusDot.className = 'status-dot';
           statusText.textContent = 'Success';
           
+          // Check if all input was consumed
+          if (usesScanf && tokenIndex < tokens.length) {
+            outputArea.textContent += `\n\nWarning: Not all input values were used. Remaining: ${tokens.slice(tokenIndex).join(' ')}`;
+          }
+          
         } catch (err) {
-          outputArea.textContent = `Error: ${err.message || err}`;
+          outputArea.textContent = `Error: ${err.message || err}\n`;
+          
+          // Add helpful error messages
+          if (err.message && err.message.includes('scanf')) {
+            outputArea.textContent += '\nNote: Make sure you have provided all required input values in the Input area before running.';
+          }
+          
           statusDot.className = 'status-dot error';
           statusText.textContent = 'Error';
           
         } finally {
+          // ALWAYS restore original prompt
           window.prompt = originalPrompt;
+          
           isRunning = false;
           runBtn.disabled = false;
           stopBtn.disabled = true;
@@ -1133,7 +1166,7 @@ int main(void) {
 
     // Clear output
     function clearOutput() {
-      document.getElementById('outputArea').textContent = 'Ready to compile and run your C code...';
+      document.getElementById('outputArea').textContent = 'Ready to compile and run your C code...\n\nNote: This environment uses picoc-js which implements C89/C90 standard.\nNo browser popups will appear - all input is read from the Input area above.';
       document.getElementById('executionTime').textContent = '';
       document.getElementById('statusDot').className = 'status-dot';
       document.getElementById('statusText').textContent = 'Ready';
@@ -1193,6 +1226,7 @@ int main(void) {
         card.innerHTML = `
           <div class="example-title">${example.title}</div>
           <div class="example-desc">${example.description}</div>
+          ${example.inputExample ? `<div style="margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-secondary);">Sample input: <code>${example.inputExample.replace(/\n/g, ' ')}</code></div>` : ''}
         `;
         
         list.appendChild(card);
@@ -1210,6 +1244,12 @@ int main(void) {
     function loadExample(index) {
       const example = examples[index];
       editor.setValue(example.code);
+      
+      // Load example input if available
+      if (example.inputExample) {
+        document.getElementById('inputArea').value = example.inputExample;
+      }
+      
       closeExamples();
       detectScanf();
       saveToLocal();
@@ -1247,15 +1287,16 @@ int main(void) {
 
     // Show info
     function showInfo() {
-      alert(`Advanced C Compiler v2.0
+      alert(`Advanced C Compiler v2.1 - No Popups Edition
       
 Features:
 • Full C89/C90 standard support
+• NO BROWSER POPUPS - All input from textarea
 • Syntax highlighting with CodeMirror
 • Multiple themes and font sizes
 • Auto-save to browser storage
-• Example programs including scientific computing
-• scanf input support
+• Example programs with sample inputs
+• scanf input support (without popups!)
 • Code formatting
 • Import/Export functionality
 
@@ -1263,6 +1304,11 @@ Keyboard Shortcuts:
 • F9 or Ctrl+Enter: Run code
 • Ctrl+S: Save to localStorage
 • Tab: Insert 4 spaces
+
+How to use scanf:
+1. Enter ALL input values in the Input area
+2. Separate values with spaces or newlines
+3. Click Run - no popups will appear!
 
 Powered by picoc-js
 Created with ❤️ for C programmers`);
@@ -1288,6 +1334,12 @@ Created with ❤️ for C programmers`);
       
       // Detect scanf on load
       detectScanf();
+      
+      // Add sample input for the default code
+      const inputArea = document.getElementById('inputArea');
+      if (inputArea.value === '') {
+        inputArea.value = '1 5\n2 3\n3 2\n-1';
+      }
       
       // Update cursor position
       editor.on('cursorActivity', function() {
