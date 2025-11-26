@@ -136,28 +136,14 @@
   <main>
     <div id="editor-label">C source code:</div>
     <textarea id="code">
-// Example: sum of values with scanf
-
 #include <stdio.h>
 
 int main(void) {
-    printf("Enter the number of values to be processed: ");
-    int number;
-    scanf("%d", &number);
-
-    int sum = 0;
-
-    for (int i = 1; i <= number; ++i) {
-        printf("Enter a value: ");
-        int value;
-        scanf("%d", &value);
-        sum += value;
-    }
-
-    printf("Sum of the %d values is %d\n", number, sum);
+    printf("Hello, C programmer!\\n");
     return 0;
 }
-    </textarea>
+</textarea>
+
 
     <!-- This whole block is only shown when code contains scanf -->
     <div id="scanf-area" style="display:none;">
