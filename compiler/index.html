@@ -1,238 +1,1335 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Online C Playground</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced C Programming Environment</title>
+  
+  <!-- CodeMirror CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/dracula.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/monokai.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/material-darker.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/hint/show-hint.min.css">
+  
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
   <style>
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    * {
       margin: 0;
       padding: 0;
-      background: #111;
-      color: #eee;
+      box-sizing: border-box;
     }
 
-    header {
-      padding: 1rem 1.5rem;
-      background: #222;
-      border-bottom: 1px solid #333;
+    :root {
+      --bg-primary: #0d1117;
+      --bg-secondary: #161b22;
+      --bg-tertiary: #21262d;
+      --border: #30363d;
+      --text-primary: #c9d1d9;
+      --text-secondary: #8b949e;
+      --accent: #58a6ff;
+      --success: #3fb950;
+      --error: #f85149;
+      --warning: #d29922;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 1.4rem;
-    }
-
-    header p {
-      margin: 0.25rem 0 0;
-      font-size: 0.9rem;
-      color: #bbb;
-    }
-
-    main {
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      height: 100vh;
       display: flex;
       flex-direction: column;
-      gap: 0.75rem;
-      padding: 1rem 1.5rem 2rem;
+      overflow: hidden;
     }
 
-    #editor-label,
-    #input-label,
-    #output-label {
-      font-size: 0.9rem;
-      color: #ccc;
-    }
-
-    #code {
-      width: 100%;
-      min-height: 260px;
-      max-height: 500px;
-      background: #1b1b1b;
-      color: #f5f5f5;
-      border: 1px solid #444;
-      border-radius: 4px;
-      padding: 0.75rem;
-      font-family: "Fira Code", "JetBrains Mono", monospace;
-      font-size: 0.9rem;
-      resize: vertical;
-      box-sizing: border-box;
-    }
-
-    #input {
-      width: 100%;
-      min-height: 80px;
-      background: #1b1b1b;
-      color: #f5f5f5;
-      border: 1px solid #444;
-      border-radius: 4px;
-      padding: 0.5rem;
-      font-family: "Fira Code", "JetBrains Mono", monospace;
-      font-size: 0.9rem;
-      resize: vertical;
-      box-sizing: border-box;
-    }
-
-    #controls {
+    /* Header */
+    .header {
+      background: var(--bg-secondary);
+      border-bottom: 1px solid var(--border);
+      padding: 0.75rem 1.5rem;
       display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
       align-items: center;
+      justify-content: space-between;
+      flex-shrink: 0;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo i {
+      color: var(--accent);
+      font-size: 1.5rem;
+    }
+
+    .logo h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Toolbar */
+    .toolbar {
+      background: var(--bg-tertiary);
+      border-bottom: 1px solid var(--border);
+      padding: 0.5rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      flex-shrink: 0;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 0.5rem;
     }
 
     button {
-      padding: 0.5rem 1rem;
-      border-radius: 4px;
-      border: none;
+      padding: 0.4rem 0.8rem;
+      border: 1px solid var(--border);
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+      border-radius: 6px;
       cursor: pointer;
-      font-weight: 600;
-      font-size: 0.9rem;
-      background: #3b82f6;
-      color: white;
+      font-size: 0.875rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s;
+    }
+
+    button:hover {
+      background: var(--bg-tertiary);
+      border-color: var(--accent);
     }
 
     button:disabled {
-      opacity: 0.6;
-      cursor: default;
+      opacity: 0.5;
+      cursor: not-allowed;
     }
 
-    #status {
-      font-size: 0.85rem;
-      color: #9ca3af;
+    button.primary {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
     }
 
-    #output {
-      background: #000;
-      color: #d1fae5;
-      border-radius: 4px;
-      border: 1px solid #333;
-      padding: 0.75rem;
-      min-height: 150px;
+    button.primary:hover {
+      background: #4493e6;
+    }
+
+    select {
+      padding: 0.4rem 0.8rem;
+      border: 1px solid var(--border);
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+      border-radius: 6px;
+      font-size: 0.875rem;
+      cursor: pointer;
+    }
+
+    .divider {
+      width: 1px;
+      height: 24px;
+      background: var(--border);
+    }
+
+    /* Main Content */
+    .main-content {
+      flex: 1;
+      display: flex;
+      overflow: hidden;
+    }
+
+    .editor-panel {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      border-right: 1px solid var(--border);
+    }
+
+    .panel-header {
+      background: var(--bg-tertiary);
+      padding: 0.5rem 1rem;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .panel-header-title {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .editor-container {
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .CodeMirror {
+      height: 100%;
+      font-family: 'Fira Code', 'JetBrains Mono', 'Courier New', monospace;
+      font-size: 14px;
+    }
+
+    .output-panel {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      max-width: 50%;
+    }
+
+    .input-section {
+      display: none;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .input-section.active {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .input-area {
+      padding: 1rem;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: 'Fira Code', monospace;
+      font-size: 0.875rem;
+      border: none;
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .output-section {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .output-area {
+      flex: 1;
+      padding: 1rem;
+      background: #0d1117;
+      color: #3fb950;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.875rem;
+      overflow-y: auto;
       white-space: pre-wrap;
-      font-family: "Fira Code", "JetBrains Mono", monospace;
-      font-size: 0.9rem;
-      box-sizing: border-box;
+      word-wrap: break-word;
     }
 
-    footer {
-      padding: 0.5rem 1.5rem 1rem;
+    .status-bar {
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border);
+      padding: 0.4rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      flex-shrink: 0;
+    }
+
+    .status-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .status-indicator {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--success);
+    }
+
+    .status-dot.running {
+      background: var(--warning);
+      animation: pulse 1s infinite;
+    }
+
+    .status-dot.error {
+      background: var(--error);
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    /* Tooltips */
+    .tooltip {
+      position: relative;
+    }
+
+    .tooltip:hover::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--bg-tertiary);
+      color: var(--text-primary);
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
       font-size: 0.75rem;
-      color: #6b7280;
+      white-space: nowrap;
+      z-index: 1000;
+      border: 1px solid var(--border);
+      margin-bottom: 0.5rem;
     }
 
-    a {
-      color: #60a5fa;
+    /* Responsive */
+    @media (max-width: 768px) {
+      .main-content {
+        flex-direction: column;
+      }
+      
+      .editor-panel {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
+      
+      .output-panel {
+        max-width: 100%;
+      }
+      
+      .toolbar {
+        padding: 0.5rem;
+      }
+      
+      .btn-group {
+        flex-wrap: wrap;
+      }
+    }
+
+    /* Loading spinner */
+    .spinner {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      border: 2px solid rgba(255,255,255,.3);
+      border-radius: 50%;
+      border-top-color: white;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Examples modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      width: 90%;
+      max-width: 600px;
+      max-height: 80vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .modal-header {
+      padding: 1rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .modal-body {
+      padding: 1rem;
+      overflow-y: auto;
+      flex: 1;
+    }
+
+    .example-card {
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .example-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .example-title {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--accent);
+    }
+
+    .example-desc {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+
+    .close-btn {
+      background: none;
+      border: none;
+      color: var(--text-secondary);
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 0;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .close-btn:hover {
+      color: var(--text-primary);
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Online C Playground</h1>
-    <p>
-      Type <strong>pure C</strong> code and click <strong>Run</strong>.
-      If your program uses <code>scanf</code>, an input box will appear.
-    </p>
-  </header>
+  <div class="header">
+    <div class="header-left">
+      <div class="logo">
+        <i class="fas fa-code"></i>
+        <h1>Advanced C Compiler</h1>
+      </div>
+    </div>
+    <div class="header-right">
+      <button onclick="toggleTheme()" class="tooltip" data-tooltip="Toggle Theme">
+        <i class="fas fa-moon"></i>
+      </button>
+      <button onclick="toggleFullscreen()" class="tooltip" data-tooltip="Fullscreen">
+        <i class="fas fa-expand"></i>
+      </button>
+      <button onclick="showInfo()" class="tooltip" data-tooltip="About">
+        <i class="fas fa-info-circle"></i>
+      </button>
+    </div>
+  </div>
 
-  <main>
-    <div id="editor-label">C source code:</div>
+  <div class="toolbar">
+    <div class="btn-group">
+      <button class="primary" onclick="runCode()" id="runBtn">
+        <i class="fas fa-play"></i>
+        Run (F9)
+      </button>
+      <button onclick="stopCode()" id="stopBtn" disabled>
+        <i class="fas fa-stop"></i>
+        Stop
+      </button>
+    </div>
+    
+    <div class="divider"></div>
+    
+    <div class="btn-group">
+      <button onclick="showExamples()" class="tooltip" data-tooltip="Example Programs">
+        <i class="fas fa-book"></i>
+        Examples
+      </button>
+      <button onclick="clearEditor()" class="tooltip" data-tooltip="Clear Editor">
+        <i class="fas fa-eraser"></i>
+        Clear
+      </button>
+      <button onclick="formatCode()" class="tooltip" data-tooltip="Format Code">
+        <i class="fas fa-indent"></i>
+        Format
+      </button>
+    </div>
+    
+    <div class="divider"></div>
+    
+    <div class="btn-group">
+      <button onclick="downloadCode()" class="tooltip" data-tooltip="Download Code">
+        <i class="fas fa-download"></i>
+      </button>
+      <button onclick="uploadCode()" class="tooltip" data-tooltip="Upload Code">
+        <i class="fas fa-upload"></i>
+      </button>
+      <input type="file" id="fileInput" accept=".c" style="display: none;">
+    </div>
+    
+    <div class="divider"></div>
+    
+    <select id="themeSelect" onchange="changeTheme(this.value)">
+      <option value="dracula">Dracula</option>
+      <option value="monokai">Monokai</option>
+      <option value="material-darker">Material Dark</option>
+      <option value="default">Light</option>
+    </select>
+    
+    <select id="fontSizeSelect" onchange="changeFontSize(this.value)">
+      <option value="12">12px</option>
+      <option value="14" selected>14px</option>
+      <option value="16">16px</option>
+      <option value="18">18px</option>
+    </select>
+  </div>
 
-    <!-- DEFAULT: HELLO WORLD -->
-    <textarea id="code">
-#include <stdio.h>
+  <div class="main-content">
+    <div class="editor-panel">
+      <div class="panel-header">
+        <div class="panel-header-title">
+          <i class="fas fa-file-code"></i>
+          <span>main.c</span>
+        </div>
+        <span id="cursorPos">Line 1, Col 1</span>
+      </div>
+      <div class="editor-container">
+        <textarea id="codeEditor">#include <stdio.h>
 
 int main(void) {
-    printf("Hello, C programmer!\n");
+    printf("Welcome to Advanced C Compiler!\n");
+    printf("This environment supports full C89/C90 standard.\n");
+    
+    // Try the examples to see what's possible!
+    
     return 0;
-}
-    </textarea>
-
-    <!-- This input area auto-appears ONLY if scanf is detected -->
-    <div id="scanf-area" style="display:none;">
-      <div id="input-label">
-        Input data (for <code>scanf</code>):<br />
-        <small>Enter values separated by spaces or newlines.</small>
+}</textarea>
       </div>
-      <textarea id="input"></textarea>
     </div>
-
-    <div id="controls">
-      <button id="runBtn">Run</button>
-      <span id="status">Ready.</span>
+    
+    <div class="output-panel">
+      <div class="input-section" id="inputSection">
+        <div class="panel-header">
+          <div class="panel-header-title">
+            <i class="fas fa-keyboard"></i>
+            <span>Input (scanf detected)</span>
+          </div>
+        </div>
+        <textarea class="input-area" id="inputArea" placeholder="Enter input values separated by spaces or newlines..."></textarea>
+      </div>
+      
+      <div class="output-section">
+        <div class="panel-header">
+          <div class="panel-header-title">
+            <i class="fas fa-terminal"></i>
+            <span>Output</span>
+          </div>
+          <button onclick="clearOutput()" class="tooltip" data-tooltip="Clear Output">
+            <i class="fas fa-trash"></i>
+          </button>
+        </div>
+        <div class="output-area" id="outputArea">Ready to compile and run your C code...</div>
+      </div>
     </div>
+  </div>
 
-    <div id="output-label">Program output:</div>
-    <pre id="output"></pre>
-  </main>
+  <div class="status-bar">
+    <div class="status-left">
+      <div class="status-indicator">
+        <div class="status-dot" id="statusDot"></div>
+        <span id="statusText">Ready</span>
+      </div>
+      <span id="executionTime"></span>
+    </div>
+    <div class="status-right">
+      <span>Powered by picoc-js | C89/C90 Standard</span>
+    </div>
+  </div>
 
-  <footer>
-    Powered by <a href="https://github.com/KritR/picoc-js" target="_blank">picoc-js</a>
-    – a tiny C interpreter compiled to WebAssembly.
-  </footer>
+  <!-- Examples Modal -->
+  <div class="modal" id="examplesModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Example Programs</h2>
+        <button class="close-btn" onclick="closeExamples()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="modal-body" id="examplesList"></div>
+    </div>
+  </div>
 
-  <!-- Picoc C interpreter -->
+  <!-- CodeMirror JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/clike/clike.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/edit/closebrackets.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/edit/matchbrackets.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/hint/show-hint.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/hint/anyword-hint.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/selection/active-line.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/fold/foldcode.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/fold/foldgutter.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/fold/brace-fold.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/fold/comment-fold.min.js"></script>
+  
+  <!-- Picoc JS -->
   <script src="https://unpkg.com/picoc-js@1.0.12/dist/bundle.umd.js"></script>
-
+  
   <script>
-    const runBtn   = document.getElementById("runBtn");
-    const codeEl   = document.getElementById("code");
-    const inputEl  = document.getElementById("input");
-    const outputEl = document.getElementById("output");
-    const statusEl = document.getElementById("status");
-    const scanfArea = document.getElementById("scanf-area");
+    // Initialize CodeMirror
+    const editor = CodeMirror.fromTextArea(document.getElementById('codeEditor'), {
+      mode: 'text/x-csrc',
+      theme: 'dracula',
+      lineNumbers: true,
+      autoCloseBrackets: true,
+      matchBrackets: true,
+      indentUnit: 4,
+      tabSize: 4,
+      indentWithTabs: false,
+      lineWrapping: true,
+      styleActiveLine: true,
+      foldGutter: true,
+      gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
+      extraKeys: {
+        "F9": runCode,
+        "Ctrl-Enter": runCode,
+        "Ctrl-S": saveToLocal,
+        "Tab": function(cm) {
+          if (cm.somethingSelected()) {
+            cm.indentSelection("add");
+          } else {
+            cm.replaceSelection("    ", "end");
+          }
+        }
+      }
+    });
 
-    function setStatus(text) {
-      statusEl.textContent = text;
+    // Example programs
+    const examples = [
+      {
+        title: "Hello World",
+        description: "Classic first program",
+        code: `#include <stdio.h>
+
+int main(void) {
+    printf("Hello, World!\\n");
+    printf("Welcome to C programming!\\n");
+    return 0;
+}`
+      },
+      {
+        title: "User Input",
+        description: "Interactive program with scanf",
+        code: `#include <stdio.h>
+
+int main(void) {
+    char name[50];
+    int age;
+    
+    printf("Enter your name: ");
+    scanf("%s", name);
+    
+    printf("Enter your age: ");
+    scanf("%d", &age);
+    
+    printf("\\nHello %s!\\n", name);
+    printf("You are %d years old.\\n", age);
+    
+    if (age >= 18) {
+        printf("You are an adult.\\n");
+    } else {
+        printf("You are a minor.\\n");
+    }
+    
+    return 0;
+}`
+      },
+      {
+        title: "Fibonacci Sequence",
+        description: "Generate Fibonacci numbers",
+        code: `#include <stdio.h>
+
+int main(void) {
+    int n, first = 0, second = 1, next;
+    
+    printf("Enter the number of terms: ");
+    scanf("%d", &n);
+    
+    printf("\\nFibonacci Series:\\n");
+    
+    for (int i = 0; i < n; i++) {
+        if (i <= 1) {
+            next = i;
+        } else {
+            next = first + second;
+            first = second;
+            second = next;
+        }
+        printf("%d ", next);
+    }
+    
+    printf("\\n");
+    return 0;
+}`
+      },
+      {
+        title: "Prime Number Checker",
+        description: "Check if a number is prime",
+        code: `#include <stdio.h>
+#include <math.h>
+
+int isPrime(int n) {
+    if (n <= 1) return 0;
+    if (n <= 3) return 1;
+    if (n % 2 == 0 || n % 3 == 0) return 0;
+    
+    for (int i = 5; i * i <= n; i += 6) {
+        if (n % i == 0 || n % (i + 2) == 0)
+            return 0;
+    }
+    return 1;
+}
+
+int main(void) {
+    int num;
+    
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    
+    if (isPrime(num)) {
+        printf("%d is a prime number.\\n", num);
+    } else {
+        printf("%d is not a prime number.\\n", num);
+    }
+    
+    printf("\\nPrime numbers from 1 to 100:\\n");
+    for (int i = 2; i <= 100; i++) {
+        if (isPrime(i)) {
+            printf("%d ", i);
+        }
+    }
+    printf("\\n");
+    
+    return 0;
+}`
+      },
+      {
+        title: "Orbital Period Calculator",
+        description: "Calculate orbital period using Kepler's third law",
+        code: `#include <stdio.h>
+#include <math.h>
+
+int main(void) {
+    double semi_major_axis;  // in AU
+    double period;            // in years
+    
+    printf("=== Kepler's Third Law Calculator ===\\n");
+    printf("Calculate orbital period from semi-major axis\\n\\n");
+    
+    printf("Enter semi-major axis in AU: ");
+    scanf("%lf", &semi_major_axis);
+    
+    // Kepler's Third Law: T^2 = a^3 (when a is in AU and T is in years)
+    period = sqrt(semi_major_axis * semi_major_axis * semi_major_axis);
+    
+    printf("\\nResults:\\n");
+    printf("Semi-major axis: %.3f AU\\n", semi_major_axis);
+    printf("Orbital period: %.3f Earth years\\n", period);
+    printf("Orbital period: %.1f Earth days\\n", period * 365.25);
+    
+    // Compare with known planets
+    printf("\\nFor reference (actual values):\\n");
+    printf("Mercury: 0.39 AU, 0.24 years\\n");
+    printf("Venus:   0.72 AU, 0.62 years\\n");
+    printf("Earth:   1.00 AU, 1.00 years\\n");
+    printf("Mars:    1.52 AU, 1.88 years\\n");
+    printf("Jupiter: 5.20 AU, 11.86 years\\n");
+    
+    return 0;
+}`
+      },
+      {
+        title: "Transit Depth Calculator",
+        description: "Calculate exoplanet transit depth",
+        code: `#include <stdio.h>
+#include <math.h>
+
+int main(void) {
+    double planet_radius;  // in Earth radii
+    double star_radius;    // in Solar radii
+    double depth;          // transit depth
+    
+    printf("=== Exoplanet Transit Depth Calculator ===\\n");
+    printf("Calculate the depth of a planetary transit\\n\\n");
+    
+    printf("Enter planet radius (Earth radii): ");
+    scanf("%lf", &planet_radius);
+    
+    printf("Enter star radius (Solar radii): ");
+    scanf("%lf", &star_radius);
+    
+    // Convert to same units (Earth radii)
+    // 1 Solar radius = 109.1 Earth radii
+    double star_radius_earth = star_radius * 109.1;
+    
+    // Transit depth = (Rp/Rs)^2
+    depth = (planet_radius / star_radius_earth) * (planet_radius / star_radius_earth);
+    
+    printf("\\nResults:\\n");
+    printf("Planet radius: %.2f Earth radii\\n", planet_radius);
+    printf("Star radius: %.2f Solar radii\\n", star_radius);
+    printf("Transit depth: %.6f (%.4f%%)\\n", depth, depth * 100);
+    printf("Transit depth: %.1f ppm\\n", depth * 1000000);
+    
+    // Classification
+    printf("\\nPlanet classification:\\n");
+    if (planet_radius < 1.25) {
+        printf("Terrestrial planet (Earth-like)\\n");
+    } else if (planet_radius < 2.0) {
+        printf("Super-Earth\\n");
+    } else if (planet_radius < 4.0) {
+        printf("Sub-Neptune\\n");
+    } else if (planet_radius < 11.0) {
+        printf("Neptune-like\\n");
+    } else {
+        printf("Jupiter-like (Gas Giant)\\n");
+    }
+    
+    return 0;
+}`
+      },
+      {
+        title: "Bubble Sort",
+        description: "Sort an array using bubble sort",
+        code: `#include <stdio.h>
+
+void bubbleSort(int arr[], int n) {
+    for (int i = 0; i < n-1; i++) {
+        for (int j = 0; j < n-i-1; j++) {
+            if (arr[j] > arr[j+1]) {
+                // Swap elements
+                int temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
+        }
+    }
+}
+
+void printArray(int arr[], int size) {
+    for (int i = 0; i < size; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\\n");
+}
+
+int main(void) {
+    int n;
+    
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+    
+    int arr[100];  // Maximum array size
+    
+    printf("Enter %d elements:\\n", n);
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+    
+    printf("\\nOriginal array: ");
+    printArray(arr, n);
+    
+    bubbleSort(arr, n);
+    
+    printf("Sorted array: ");
+    printArray(arr, n);
+    
+    return 0;
+}`
+      },
+      {
+        title: "Matrix Operations",
+        description: "Basic matrix addition and multiplication",
+        code: `#include <stdio.h>
+
+void printMatrix(int mat[][10], int rows, int cols) {
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            printf("%4d ", mat[i][j]);
+        }
+        printf("\\n");
+    }
+}
+
+int main(void) {
+    int rows = 3, cols = 3;
+    int mat1[10][10], mat2[10][10], result[10][10];
+    
+    printf("=== Matrix Operations ===\\n");
+    printf("Working with %dx%d matrices\\n\\n", rows, cols);
+    
+    // Initialize matrices
+    printf("Matrix A:\\n");
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            mat1[i][j] = i * cols + j + 1;
+            printf("%4d ", mat1[i][j]);
+        }
+        printf("\\n");
+    }
+    
+    printf("\\nMatrix B:\\n");
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            mat2[i][j] = (i + 1) * (j + 1);
+            printf("%4d ", mat2[i][j]);
+        }
+        printf("\\n");
+    }
+    
+    // Addition
+    printf("\\nA + B:\\n");
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            result[i][j] = mat1[i][j] + mat2[i][j];
+        }
+    }
+    printMatrix(result, rows, cols);
+    
+    // Multiplication
+    printf("\\nA × B:\\n");
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            result[i][j] = 0;
+            for (int k = 0; k < cols; k++) {
+                result[i][j] += mat1[i][k] * mat2[k][j];
+            }
+        }
+    }
+    printMatrix(result, rows, cols);
+    
+    return 0;
+}`
+      },
+      {
+        title: "Factorial & Combinations",
+        description: "Calculate factorial and combinations",
+        code: `#include <stdio.h>
+
+long long factorial(int n) {
+    if (n <= 1) return 1;
+    long long result = 1;
+    for (int i = 2; i <= n; i++) {
+        result *= i;
+    }
+    return result;
+}
+
+long long combination(int n, int r) {
+    if (r > n) return 0;
+    if (r == 0 || r == n) return 1;
+    
+    // C(n,r) = n! / (r! * (n-r)!)
+    // Optimize to avoid overflow
+    long long result = 1;
+    for (int i = 0; i < r; i++) {
+        result *= (n - i);
+        result /= (i + 1);
+    }
+    return result;
+}
+
+int main(void) {
+    int n;
+    
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    
+    printf("\\nFactorial of %d: %lld\\n", n, factorial(n));
+    
+    printf("\\nPascal's Triangle (first %d rows):\\n", n);
+    for (int i = 0; i < n; i++) {
+        // Print spaces for alignment
+        for (int j = 0; j < n - i - 1; j++) {
+            printf("  ");
+        }
+        
+        // Print combinations
+        for (int j = 0; j <= i; j++) {
+            printf("%4lld", combination(i, j));
+        }
+        printf("\\n");
+    }
+    
+    return 0;
+}`
+      }
+    ];
+
+    // Global variables
+    let isRunning = false;
+    let startTime = null;
+
+    // Auto-save to localStorage
+    function saveToLocal() {
+      localStorage.setItem('cCode', editor.getValue());
+      localStorage.setItem('cInput', document.getElementById('inputArea').value);
     }
 
-    // Detect scanf
+    // Load from localStorage
+    function loadFromLocal() {
+      const savedCode = localStorage.getItem('cCode');
+      const savedInput = localStorage.getItem('cInput');
+      
+      if (savedCode) {
+        editor.setValue(savedCode);
+      }
+      
+      if (savedInput) {
+        document.getElementById('inputArea').value = savedInput;
+      }
+    }
+
+    // Detect scanf in code
     function detectScanf() {
-      const code = codeEl.value;
+      const code = editor.getValue();
       const hasScanf = /\bscanf\s*\(/.test(code);
-      scanfArea.style.display = hasScanf ? "block" : "none";
+      document.getElementById('inputSection').className = hasScanf ? 'input-section active' : 'input-section';
     }
 
-    codeEl.addEventListener("input", detectScanf);
-    detectScanf(); // run on page load
-
-    runBtn.addEventListener("click", () => {
-      const code  = codeEl.value;
-      const usesScanf = /\bscanf\s*\(/.test(code);
-      const input = inputEl.value;
-
-      outputEl.textContent = "";
-      setStatus("Running...");
+    // Run code
+    function runCode() {
+      if (isRunning) return;
+      
+      const code = editor.getValue();
+      const inputArea = document.getElementById('inputArea');
+      const outputArea = document.getElementById('outputArea');
+      const statusDot = document.getElementById('statusDot');
+      const statusText = document.getElementById('statusText');
+      const runBtn = document.getElementById('runBtn');
+      const stopBtn = document.getElementById('stopBtn');
+      
+      // Clear output
+      outputArea.textContent = '';
+      
+      // Update UI
+      isRunning = true;
       runBtn.disabled = true;
-
-      // tokenize input if scanf is used
+      stopBtn.disabled = false;
+      statusDot.className = 'status-dot running';
+      statusText.textContent = 'Compiling...';
+      startTime = performance.now();
+      
+      // Detect scanf
+      detectScanf();
+      
+      // Get input tokens
+      const usesScanf = /\bscanf\s*\(/.test(code);
+      const input = inputArea.value;
       let tokens = [];
+      
       if (usesScanf) {
         tokens = input.split(/\s+/).filter(t => t.length);
       }
-
+      
+      // Override prompt for scanf
       const originalPrompt = window.prompt;
-
       if (usesScanf) {
         window.prompt = () => {
           if (tokens.length === 0) return "";
           return tokens.shift();
         };
       }
-
+      
+      // Get picoc API
       const api = window.picocjs || window.picoc;
+      
+      setTimeout(() => {
+        try {
+          statusText.textContent = 'Running...';
+          
+          api.runC(code, chunk => {
+            outputArea.textContent += chunk.replace(/\r\n?/g, "\n");
+          });
+          
+          statusDot.className = 'status-dot';
+          statusText.textContent = 'Success';
+          
+        } catch (err) {
+          outputArea.textContent = `Error: ${err.message || err}`;
+          statusDot.className = 'status-dot error';
+          statusText.textContent = 'Error';
+          
+        } finally {
+          window.prompt = originalPrompt;
+          isRunning = false;
+          runBtn.disabled = false;
+          stopBtn.disabled = true;
+          
+          // Show execution time
+          if (startTime) {
+            const endTime = performance.now();
+            const duration = (endTime - startTime).toFixed(2);
+            document.getElementById('executionTime').textContent = `Execution time: ${duration}ms`;
+          }
+        }
+      }, 100);
+      
+      // Save to localStorage
+      saveToLocal();
+    }
 
-      try {
-        api.runC(code, chunk => {
-          // FIX: normalize line endings (important!)
-          outputEl.textContent += chunk.replace(/\r\n?/g, "\n");
-        });
-        setStatus("Finished.");
-      } catch (err) {
-        outputEl.textContent = "Error: " + err;
-        setStatus("Error.");
-      } finally {
-        window.prompt = originalPrompt;
-        runBtn.disabled = false;
+    // Stop code (placeholder)
+    function stopCode() {
+      if (!isRunning) return;
+      
+      // Note: picoc-js doesn't support stopping execution
+      // This is just for UI consistency
+      location.reload();
+    }
+
+    // Clear editor
+    function clearEditor() {
+      if (confirm('Are you sure you want to clear the editor?')) {
+        editor.setValue('');
+        document.getElementById('inputArea').value = '';
+        clearOutput();
+        saveToLocal();
       }
+    }
+
+    // Clear output
+    function clearOutput() {
+      document.getElementById('outputArea').textContent = 'Ready to compile and run your C code...';
+      document.getElementById('executionTime').textContent = '';
+      document.getElementById('statusDot').className = 'status-dot';
+      document.getElementById('statusText').textContent = 'Ready';
+    }
+
+    // Format code (basic)
+    function formatCode() {
+      const code = editor.getValue();
+      let formatted = code;
+      
+      // Basic formatting
+      formatted = formatted.replace(/\s*{\s*/g, ' {\n');
+      formatted = formatted.replace(/\s*}\s*/g, '\n}\n');
+      formatted = formatted.replace(/;\s*/g, ';\n');
+      formatted = formatted.replace(/\n\s*\n\s*\n/g, '\n\n');
+      
+      editor.setValue(formatted);
+      
+      // Auto-indent
+      const totalLines = editor.lineCount();
+      for (let i = 0; i < totalLines; i++) {
+        editor.indentLine(i);
+      }
+    }
+
+    // Download code
+    function downloadCode() {
+      const code = editor.getValue();
+      const blob = new Blob([code], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'main.c';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+
+    // Upload code
+    function uploadCode() {
+      document.getElementById('fileInput').click();
+    }
+
+    // Show examples
+    function showExamples() {
+      const modal = document.getElementById('examplesModal');
+      const list = document.getElementById('examplesList');
+      
+      list.innerHTML = '';
+      
+      examples.forEach((example, index) => {
+        const card = document.createElement('div');
+        card.className = 'example-card';
+        card.onclick = () => loadExample(index);
+        
+        card.innerHTML = `
+          <div class="example-title">${example.title}</div>
+          <div class="example-desc">${example.description}</div>
+        `;
+        
+        list.appendChild(card);
+      });
+      
+      modal.classList.add('active');
+    }
+
+    // Close examples modal
+    function closeExamples() {
+      document.getElementById('examplesModal').classList.remove('active');
+    }
+
+    // Load example
+    function loadExample(index) {
+      const example = examples[index];
+      editor.setValue(example.code);
+      closeExamples();
+      detectScanf();
+      saveToLocal();
+    }
+
+    // Change theme
+    function changeTheme(theme) {
+      editor.setOption('theme', theme);
+      localStorage.setItem('cTheme', theme);
+    }
+
+    // Change font size
+    function changeFontSize(size) {
+      editor.getWrapperElement().style.fontSize = size + 'px';
+      localStorage.setItem('cFontSize', size);
+    }
+
+    // Toggle fullscreen
+    function toggleFullscreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+      } else {
+        document.exitFullscreen();
+      }
+    }
+
+    // Toggle theme (light/dark)
+    function toggleTheme() {
+      const currentTheme = editor.getOption('theme');
+      const newTheme = currentTheme === 'default' ? 'dracula' : 'default';
+      editor.setOption('theme', newTheme);
+      document.getElementById('themeSelect').value = newTheme;
+      localStorage.setItem('cTheme', newTheme);
+    }
+
+    // Show info
+    function showInfo() {
+      alert(`Advanced C Compiler v2.0
+      
+Features:
+• Full C89/C90 standard support
+• Syntax highlighting with CodeMirror
+• Multiple themes and font sizes
+• Auto-save to browser storage
+• Example programs including scientific computing
+• scanf input support
+• Code formatting
+• Import/Export functionality
+
+Keyboard Shortcuts:
+• F9 or Ctrl+Enter: Run code
+• Ctrl+S: Save to localStorage
+• Tab: Insert 4 spaces
+
+Powered by picoc-js
+Created with ❤️ for C programmers`);
+    }
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', function() {
+      // Load saved preferences
+      const savedTheme = localStorage.getItem('cTheme');
+      if (savedTheme) {
+        editor.setOption('theme', savedTheme);
+        document.getElementById('themeSelect').value = savedTheme;
+      }
+      
+      const savedFontSize = localStorage.getItem('cFontSize');
+      if (savedFontSize) {
+        editor.getWrapperElement().style.fontSize = savedFontSize + 'px';
+        document.getElementById('fontSizeSelect').value = savedFontSize;
+      }
+      
+      // Load saved code
+      loadFromLocal();
+      
+      // Detect scanf on load
+      detectScanf();
+      
+      // Update cursor position
+      editor.on('cursorActivity', function() {
+        const cursor = editor.getCursor();
+        document.getElementById('cursorPos').textContent = 
+          `Line ${cursor.line + 1}, Col ${cursor.ch + 1}`;
+      });
+      
+      // Auto-save on change
+      editor.on('change', function() {
+        saveToLocal();
+        detectScanf();
+      });
+      
+      // File upload handler
+      document.getElementById('fileInput').addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function(e) {
+            editor.setValue(e.target.result);
+            detectScanf();
+            saveToLocal();
+          };
+          reader.readAsText(file);
+        }
+      });
+      
+      // Keyboard shortcuts
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'F9') {
+          e.preventDefault();
+          runCode();
+        }
+      });
+      
+      // Close modal on click outside
+      document.getElementById('examplesModal').addEventListener('click', function(e) {
+        if (e.target === this) {
+          closeExamples();
+        }
+      });
     });
   </script>
 </body>
