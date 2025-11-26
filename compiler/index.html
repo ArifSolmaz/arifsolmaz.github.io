@@ -258,7 +258,9 @@ int main(void) {
 
       try {
         api.runC(code, (chunk) => {
-          outputEl.textContent += chunk;
+          // Normalize line endings: convert \r or \r\n to \n
+          const normalized = chunk.replace(/\r\n?/g, "\n");
+          outputEl.textContent += normalized;
         });
         setStatus("Finished.");
       } catch (err) {
