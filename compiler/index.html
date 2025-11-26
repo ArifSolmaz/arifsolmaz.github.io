@@ -153,41 +153,55 @@ int main(void) {
   </footer>
 
   <!-- Picoc C interpreter (WASM) bundled for browsers -->
-  <script src="https://unpkg.com/picoc-js@1.0.12/dist/bundle.umd.js"
-          type="text/javascript" charset="utf-8"></script>
+<script src="https://unpkg.com/picoc-js@1.0.12/dist/bundle.umd.js"
+        type="text/javascript" charset="utf-8"></script>
 
-  <script>
-    const runBtn = document.getElementById("runBtn");
-    const codeEl = document.getElementById("code");
-    const outputEl = document.getElementById("output");
-    const statusEl = document.getElementById("status");
+<script>
+  const runBtn   = document.getElementById("runBtn");
+  const codeEl   = document.getElementById("code");
+  const outputEl = document.getElementById("output");
+  const statusEl = document.getElementById("status");
 
-    function setStatus(text) {
-      statusEl.textContent = text;
+  function setStatus(text) {
+    statusEl.textContent = text;
+  }
+
+  runBtn.addEventListener("click", () => {
+    const code = codeEl.value;
+    outputEl.textContent = "";
+    setStatus("Running...");
+    runBtn.disabled = true;
+
+    // Support both possible globals: picocjs (documented) and picoc (older builds)
+    const api = (window.picocjs || window.picoc);
+
+    if (!api || typeof api.runC !== "function") {
+      outputEl.textContent =
+        "Error: picoc-js did not load correctly.\n\n" +
+        "Check that this script can be fetched:\n" +
+        "https://unpkg.com/picoc-js@1.0.12/dist/bundle.umd.js";
+      setStatus("Error loading interpreter.");
+      runBtn.disabled = false;
+      return;
     }
 
-    runBtn.addEventListener("click", () => {
-      const code = codeEl.value;
-      outputEl.textContent = "";
-      setStatus("Running...");
-      runBtn.disabled = true;
+    try {
+      api.runC(code, (chunk) => {
+        // Log to browser console for debugging
+        console.log("[picoc stdout]", chunk);
+        outputEl.textContent += chunk;
+      });
 
-      // picoc-js exposes a global 'picocjs' object for browsers
-      // See example in its README. 
-      try {
-        picocjs.runC(code, (outputChunk) => {
-          // Called for each line / chunk of output
-          outputEl.textContent += outputChunk;
-        });
+      setStatus("Finished.");
+    } catch (err) {
+      console.error(err);
+      outputEl.textContent = "Error while running program:\n" + err;
+      setStatus("Error.");
+    } finally {
+      runBtn.disabled = false;
+    }
+  });
+</script>
 
-        setStatus("Finished.");
-      } catch (err) {
-        outputEl.textContent = "Error: " + err;
-        setStatus("Error.");
-      } finally {
-        runBtn.disabled = false;
-      }
-    });
-  </script>
 </body>
 </html>
