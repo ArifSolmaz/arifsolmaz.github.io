@@ -129,12 +129,14 @@
     <h1>Online C Playground</h1>
     <p>
       Type <strong>pure C</strong> code and click <strong>Run</strong>.
-      If your program uses <code>scanf</code>, an extra input box will appear below.
+      If your program uses <code>scanf</code>, an input box will appear.
     </p>
   </header>
 
   <main>
     <div id="editor-label">C source code:</div>
+
+    <!-- DEFAULT: HELLO WORLD -->
     <textarea id="code">
 #include <stdio.h>
 
@@ -142,14 +144,13 @@ int main(void) {
     printf("Hello, C programmer!\\n");
     return 0;
 }
-</textarea>
+    </textarea>
 
-
-    <!-- This whole block is only shown when code contains scanf -->
+    <!-- This input area auto-appears ONLY if scanf is detected -->
     <div id="scanf-area" style="display:none;">
       <div id="input-label">
-        Input data (used for <code>scanf</code>):<br />
-        <small>Enter values separated by spaces or newlines. Example: <code>3 5 4 6</code></small>
+        Input data (for <code>scanf</code>):<br />
+        <small>Enter values separated by spaces or newlines.</small>
       </div>
       <textarea id="input"></textarea>
     </div>
@@ -164,13 +165,12 @@ int main(void) {
   </main>
 
   <footer>
-    Powered by <a href="https://github.com/KritR/picoc-js" target="_blank" rel="noreferrer">picoc-js</a>
+    Powered by <a href="https://github.com/KritR/picoc-js" target="_blank">picoc-js</a>
     – a tiny C interpreter compiled to WebAssembly.
   </footer>
 
-  <!-- Picoc C interpreter (WASM) bundled for browsers -->
-  <script src="https://unpkg.com/picoc-js@1.0.12/dist/bundle.umd.js"
-          type="text/javascript" charset="utf-8"></script>
+  <!-- Picoc C interpreter -->
+  <script src="https://unpkg.com/picoc-js@1.0.12/dist/bundle.umd.js"></script>
 
   <script>
     const runBtn   = document.getElementById("runBtn");
@@ -184,18 +184,15 @@ int main(void) {
       statusEl.textContent = text;
     }
 
-    // Detect whether the current code uses scanf
+    // Detect scanf
     function detectScanf() {
       const code = codeEl.value;
       const hasScanf = /\bscanf\s*\(/.test(code);
       scanfArea.style.display = hasScanf ? "block" : "none";
     }
 
-    // Run detection whenever the user edits code
     codeEl.addEventListener("input", detectScanf);
-
-    // Initial detection on load
-    detectScanf();
+    detectScanf(); // run on page load
 
     runBtn.addEventListener("click", () => {
       const code  = codeEl.value;
@@ -206,55 +203,33 @@ int main(void) {
       setStatus("Running...");
       runBtn.disabled = true;
 
-      // Tokenize input only if scanf is used
+      // tokenize input if scanf is used
       let tokens = [];
       if (usesScanf) {
-        tokens = input
-          .split(/\s+/)
-          .map(t => t.trim())
-          .filter(t => t.length > 0);
+        tokens = input.split(/\s+/).filter(t => t.length);
       }
 
-      // Save the original prompt
       const originalPrompt = window.prompt;
 
-      // Override prompt only if scanf is present
       if (usesScanf) {
-        window.prompt = function(msg) {
-          console.log("[playground] scanf prompt:", msg, "remaining tokens:", tokens.length);
-          if (tokens.length === 0) {
-            // No more input: behave like EOF
-            return "";
-          }
+        window.prompt = () => {
+          if (tokens.length === 0) return "";
           return tokens.shift();
         };
       }
 
       const api = window.picocjs || window.picoc;
 
-      if (!api || typeof api.runC !== "function") {
-        outputEl.textContent =
-          "Error: picoc-js did not load correctly.\n" +
-          "Check access to:\nhttps://unpkg.com/picoc-js@1.0.12/dist/bundle.umd.js\n";
-        setStatus("Error loading interpreter.");
-        runBtn.disabled = false;
-        window.prompt = originalPrompt;
-        return;
-      }
-
       try {
-        api.runC(code, (chunk) => {
-          // Normalize line endings: convert \r or \r\n to \n
-          const normalized = chunk.replace(/\r\n?/g, "\n");
-          outputEl.textContent += normalized;
+        api.runC(code, chunk => {
+          // FIX: normalize line endings (important!)
+          outputEl.textContent += chunk.replace(/\r\n?/g, "\n");
         });
         setStatus("Finished.");
       } catch (err) {
-        console.error(err);
-        outputEl.textContent = "Error while running program:\n" + err;
+        outputEl.textContent = "Error: " + err;
         setStatus("Error.");
       } finally {
-        // Restore original prompt
         window.prompt = originalPrompt;
         runBtn.disabled = false;
       }
