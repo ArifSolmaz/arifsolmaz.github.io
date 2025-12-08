@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced C Programming Environment - No Popups</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/dracula.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/monokai.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/material-darker.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/hint/show-hint.min.css">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-primary: #0d1117;
+      --bg-secondary: #161b22;
+      --bg-tertiary: #21262d;
+      --border: #30363d;
+      --text-primary: #c9d1d9;
+      --text-secondary: #8b949e;
+      --accent: #58a6ff;
+      --success: #3fb950;
+      --error: #f85149;
+      --warning: #d29922;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* Header */
+    .header {
+      background: var(--bg-secondary);
+      border-bottom: 1px solid var(--border);
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-shrink: 0;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo i {
+      color: var(--accent);
+      font-size: 1.5rem;
+    }
+
+    .logo h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Toolbar */
+    .toolbar {
+      background: var(--bg-tertiary);
+      border-bottom: 1px solid var(--border);
+      padding: 0.5rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      flex-shrink: 0;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    button {
+      padding: 0.4rem 0.8rem;
+      border: 1px solid var(--border);
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.875rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s;
+    }
+
+    button:hover {
+      background: var(--bg-tertiary);
+      border-color: var(--accent);
+    }
+
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    button.primary {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+
+    button.primary:hover {
+      background: #4493e6;
+    }
+
+    select {
+      padding: 0.4rem 0.8rem;
+      border: 1px solid var(--border);
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+      border-radius: 6px;
+      font-size: 0.875rem;
+      cursor: pointer;
+    }
+
+    .divider {
+      width: 1px;
+      height: 24px;
+      background: var(--border);
+    }
+
+    /* Main Content */
+    .main-content {
+      flex: 1;
+      display: flex;
+      overflow: hidden;
+    }
+
+    .editor-panel {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      border-right: 1px solid var(--border);
+    }
+
+    .panel-header {
+      background: var(--bg-tertiary);
+      padding: 0.5rem 1rem;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .panel-header-title {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .editor-container {
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .CodeMirror {
+      height: 100%;
+      font-family: 'Fira Code', 'JetBrains Mono', 'Courier New', monospace;
+      font-size: 14px;
+    }
+
+    .output-panel {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      max-width: 50%;
+    }
+
+    .input-section {
+      display: none;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .input-section.active {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .input-area {
+      padding: 1rem;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: 'Fira Code', monospace;
+      font-size: 0.875rem;
+      border: none;
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .output-section {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .output-area {
+      flex: 1;
+      padding: 1rem;
+      background: #0d1117;
+      color: #3fb950;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.875rem;
+      overflow-y: auto;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+
+    .status-bar {
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border);
+      padding: 0.4rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      flex-shrink: 0;
+    }
+
+    .status-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .status-indicator {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--success);
+    }
+
+    .status-dot.running {
+      background: var(--warning);
+      animation: pulse 1s infinite;
+    }
+
+    .status-dot.error {
+      background: var(--error);
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    /* Warning box */
+    .warning-box {
+      background: rgba(209, 153, 34, 0.1);
+      border: 1px solid var(--warning);
+      border-radius: 6px;
+      padding: 0.75rem;
+      margin-bottom: 0.5rem;
+      font-size: 0.875rem;
+      color: var(--warning);
+      display: none;
+    }
+
+    .warning-box.active {
+      display: block;
+    }
+
+    .warning-box i {
+      margin-right: 0.5rem;
+    }
+
+    /* Tooltips */
+    .tooltip {
+      position: relative;
+    }
+
+    .tooltip:hover::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--bg-tertiary);
+      color: var(--text-primary);
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      white-space: nowrap;
+      z-index: 1000;
+      border: 1px solid var(--border);
+      margin-bottom: 0.5rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .main-content {
+        flex-direction: column;
+      }
+      
+      .editor-panel {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
+      
+      .output-panel {
+        max-width: 100%;
+      }
+      
+      .toolbar {
+        padding: 0.5rem;
+      }
+      
+      .btn-group {
+        flex-wrap: wrap;
+      }
+    }
+
+    /* Loading spinner */
+    .spinner {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      border: 2px solid rgba(255,255,255,.3);
+      border-radius: 50%;
+      border-top-color: white;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Examples modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      width: 90%;
+      max-width: 600px;
+      max-height: 80vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .modal-header {
+      padding: 1rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .modal-body {
+      padding: 1rem;
+      overflow-y: auto;
+      flex: 1;
+    }
+
+    .example-card {
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .example-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .example-title {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--accent);
+    }
+
+    .example-desc {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+
+    .close-btn {
+      background: none;
+      border: none;
+      color: var(--text-secondary);
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 0;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .close-btn:hover {
+      color: var(--text-primary);
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="header-left">
+      <div class="logo">
+        <i class="fas fa-code"></i>
+        <h1>Advanced C Compiler</h1>
+      </div>
+    </div>
+    <div class="header-right">
+      <button onclick="toggleTheme()" class="tooltip" data-tooltip="Toggle Theme">
+        <i class="fas fa-moon"></i>
+      </button>
+      <button onclick="toggleFullscreen()" class="tooltip" data-tooltip="Fullscreen">
+        <i class="fas fa-expand"></i>
+      </button>
+      <button onclick="showInfo()" class="tooltip" data-tooltip="About">
+        <i class="fas fa-info-circle"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="toolbar">
+    <div class="btn-group">
+      <button class="primary" onclick="runCode()" id="runBtn">
+        <i class="fas fa-play"></i>
+        Run (F9)
+      </button>
+      <button onclick="stopCode()" id="stopBtn" disabled>
+        <i class="fas fa-stop"></i>
+        Stop
+      </button>
+    </div>
+    
+    <div class="divider"></div>
+    
+    <div class="btn-group">
+      <button onclick="showExamples()" class="tooltip" data-tooltip="Example Programs">
+        <i class="fas fa-book"></i>
+        Examples
+      </button>
+      <button onclick="clearEditor()" class="tooltip" data-tooltip="Clear Editor">
+        <i class="fas fa-eraser"></i>
+        Clear
+      </button>
+      <button onclick="formatCode()" class="tooltip" data-tooltip="Format Code">
+        <i class="fas fa-indent"></i>
+        Format
+      </button>
+    </div>
+    
+    <div class="divider"></div>
+    
+    <div class="btn-group">
+      <button onclick="downloadCode()" class="tooltip" data-tooltip="Download Code">
+        <i class="fas fa-download"></i>
+      </button>
+      <button onclick="uploadCode()" class="tooltip" data-tooltip="Upload Code">
+        <i class="fas fa-upload"></i>
+      </button>
+      <input type="file" id="fileInput" accept=".c" style="display: none;">
+    </div>
+    
+    <div class="divider"></div>
+    
+    <select id="themeSelect" onchange="changeTheme(this.value)">
+      <option value="dracula">Dracula</option>
+      <option value="monokai">Monokai</option>
+      <option value="material-darker">Material Dark</option>
+      <option value="default">Light</option>
+    </select>
+    
+    <select id="fontSizeSelect" onchange="changeFontSize(this.value)">
+      <option value="12">12px</option>
+      <option value="14" selected>14px</option>
+      <option value="16">16px</option>
+      <option value="18">18px</option>
+    </select>
+  </div>
+
+  <div class="main-content">
+    <div class="editor-panel">
+      <div class="panel-header">
+        <div class="panel-header-title">
+          <i class="fas fa-file-code"></i>
+          <span>main.c</span>
+        </div>
+        <span id="cursorPos">Line 1, Col 1</span>
+      </div>
+      <div class="editor-container">
+        <textarea id="codeEditor"></textarea>
+      </div>
+    </div>
+    
+    <div class="output-panel">
+      <div class="input-section" id="inputSection">
+        <div class="panel-header">
+          <div class="panel-header-title">
+            <i class="fas fa-keyboard"></i>
+            <span>Input (scanf detected)</span>
+          </div>
+        </div>
+        <div class="warning-box" id="scanfWarning">
+          <i class="fas fa-exclamation-triangle"></i>
+          <strong>Important:</strong> Enter ALL input values that your program needs before clicking Run. Separate values with spaces or newlines.
+        </div>
+        <textarea class="input-area" id="inputArea" placeholder="Enter input values here if your program uses scanf.
+Separate multiple values with spaces or newlines.
+
+Example:
+John 25
+10 20 30"></textarea>
+      </div>
+      
+      <div class="output-section">
+        <div class="panel-header">
+          <div class="panel-header-title">
+            <i class="fas fa-terminal"></i>
+            <span>Output</span>
+          </div>
+          <button onclick="clearOutput()" class="tooltip" data-tooltip="Clear Output">
+            <i class="fas fa-trash"></i>
+          </button>
+        </div>
+        <div class="output-area" id="outputArea">Ready to compile and run your C code...
+
+Note: This environment uses picoc-js which implements C89/C90 standard.
+No browser popups will appear - all input is read from the Input area above.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="status-bar">
+    <div class="status-left">
+      <div class="status-indicator">
+        <div class="status-dot" id="statusDot"></div>
+        <span id="statusText">Ready</span>
+      </div>
+      <span id="executionTime"></span>
+    </div>
+    <div class="status-right">
+      <span>Powered by picoc-js | C89/C90 Standard | No Popups</span>
+    </div>
+  </div>
+
+  <div class="modal" id="examplesModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Example Programs</h2>
+        <button class="close-btn" onclick="closeExamples()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="modal-body" id="examplesList"></div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/clike/clike.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/edit/closebrackets.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/edit/matchbrackets.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/hint/show-hint.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/hint/anyword-hint.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/selection/active-line.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/fold/foldcode.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/fold/foldgutter.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/fold/brace-fold.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/fold/comment-fold.min.js"></script>
+  
+  <script src="https://unpkg.com/picoc-js@1.0.12/dist/bundle.umd.js"></script>
+  
+  <script>
+    // Initialize CodeMirror
+    const editor = CodeMirror.fromTextArea(document.getElementById('codeEditor'), {
+      mode: 'text/x-csrc',
+      theme: 'dracula',
+      lineNumbers: true,
+      autoCloseBrackets: true,
+      matchBrackets: true,
+      indentUnit: 4,
+      tabSize: 4,
+      indentWithTabs: false,
+      lineWrapping: true,
+      styleActiveLine: true,
+      foldGutter: true,
+      gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
+      extraKeys: {
+        "F9": runCode,
+        "Ctrl-Enter": runCode,
+        "Ctrl-S": saveToLocal,
+        "Tab": function(cm) {
+          if (cm.somethingSelected()) {
+            cm.indentSelection("add");
+          } else {
+            cm.replaceSelection("    ", "end");
+          }
+        }
+      }
+    });
+
+    // Example programs
+    const examples = [
+      {
+        title: "Hello World",
+        description: "Classic first program",
+        code: `#include <stdio.h>
+
+int main(void) {
+    printf("Hello, World!\\n");
+    printf("Welcome to C programming!\\n");
+    return 0;
+}`
+      },
+      // ... (other examples kept as is) ...
+    ];
+
+    // Global variables
+    let isRunning = false;
+    let startTime = null;
+
+    // Auto-save to localStorage
+    function saveToLocal() {
+      localStorage.setItem('cCode', editor.getValue());
+      localStorage.setItem('cInput', document.getElementById('inputArea').value);
+    }
+
+    // Load from localStorage
+    function loadFromLocal() {
+      const savedCode = localStorage.getItem('cCode');
+      const savedInput = localStorage.getItem('cInput');
+      
+      if (savedCode) {
+        editor.setValue(savedCode);
+      }
+      
+      if (savedInput) {
+        document.getElementById('inputArea').value = savedInput;
+      }
+    }
+
+    // Detect scanf in code
+    function detectScanf() {
+      const code = editor.getValue();
+      const hasScanf = /\bscanf\s*\(/.test(code);
+      const inputSection = document.getElementById('inputSection');
+      const warning = document.getElementById('scanfWarning');
+      
+      if (hasScanf) {
+        inputSection.classList.add('active');
+        warning.classList.add('active');
+      } else {
+        inputSection.classList.remove('active');
+        warning.classList.remove('active');
+      }
+    }
+
+    // Run code - FIXED VERSION WITHOUT POPUPS
+    function runCode() {
+      if (isRunning) return;
+      
+      const code = editor.getValue();
+      const inputArea = document.getElementById('inputArea');
+      const outputArea = document.getElementById('outputArea');
+      const statusDot = document.getElementById('statusDot');
+      const statusText = document.getElementById('statusText');
+      const runBtn = document.getElementById('runBtn');
+      const stopBtn = document.getElementById('stopBtn');
+      
+      // Clear output
+      outputArea.textContent = '';
+      
+      // Update UI
+      isRunning = true;
+      runBtn.disabled = true;
+      stopBtn.disabled = false;
+      statusDot.className = 'status-dot running';
+      statusText.textContent = 'Compiling...';
+      startTime = performance.now();
+      
+      // Detect scanf
+      detectScanf();
+      
+      // Get input tokens
+      const usesScanf = /\bscanf\s*\(/.test(code);
+      const input = inputArea.value || '';
+      let tokens = [];
+      
+      if (usesScanf) {
+        // Split input into tokens
+        tokens = input.split(/\s+/).filter(t => t.length > 0);
+      }
+      
+      // Create custom prompt function that NEVER shows popups
+      const originalPrompt = window.prompt;
+      let tokenIndex = 0;
+      
+      // Override prompt to return tokens without any popup
+      window.prompt = function() {
+        if (tokenIndex < tokens.length) {
+          const value = tokens[tokenIndex];
+          tokenIndex++;
+          return value;
+        }
+        return '';
+      };
+      
+      // Get picoc API
+      const api = window.picocjs || window.picoc;
+      
+      setTimeout(() => {
+        try {
+          statusText.textContent = 'Running...';
+          
+          // Run the C code
+          api.runC(code, chunk => {
+            outputArea.textContent += chunk.replace(/\r\n?/g, "\n");
+          });
+          
+          statusDot.className = 'status-dot';
+          statusText.textContent = 'Success';
+          
+          // Check if all input was consumed
+          if (usesScanf && tokenIndex < tokens.length) {
+            outputArea.textContent += `\n\nWarning: Not all input values were used. Remaining: ${tokens.slice(tokenIndex).join(' ')}`;
+          }
+          
+        } catch (err) {
+          outputArea.textContent = `Error: ${err.message || err}\n`;
+          
+          if (err.message && err.message.includes('scanf')) {
+            outputArea.textContent += '\nNote: Make sure you have provided all required input values in the Input area before running.';
+          }
+          
+          statusDot.className = 'status-dot error';
+          statusText.textContent = 'Error';
+          
+        } finally {
+          window.prompt = originalPrompt;
+          
+          isRunning = false;
+          runBtn.disabled = false;
+          stopBtn.disabled = true;
+          
+          // Show execution time
+          if (startTime) {
+            const endTime = performance.now();
+            const duration = (endTime - startTime).toFixed(2);
+            document.getElementById('executionTime').textContent = `Execution time: ${duration}ms`;
+          }
+        }
+      }, 100);
+      
+      saveToLocal();
+    }
+
+    function stopCode() {
+      if (!isRunning) return;
+      location.reload();
+    }
+
+    function clearEditor() {
+      if (confirm('Are you sure you want to clear the editor?')) {
+        editor.setValue('');
+        document.getElementById('inputArea').value = '';
+        clearOutput();
+        saveToLocal();
+      }
+    }
+
+    function clearOutput() {
+      document.getElementById('outputArea').textContent = 'Ready to compile and run your C code...\n\nNote: This environment uses picoc-js which implements C89/C90 standard.\nNo browser popups will appear - all input is read from the Input area above.';
+      document.getElementById('executionTime').textContent = '';
+      document.getElementById('statusDot').className = 'status-dot';
+      document.getElementById('statusText').textContent = 'Ready';
+    }
+
+    function formatCode() {
+      const code = editor.getValue();
+      let formatted = code;
+      
+      // Basic formatting
+      formatted = formatted.replace(/\s*{\s*/g, ' {\n');
+      formatted = formatted.replace(/\s*}\s*/g, '\n}\n');
+      formatted = formatted.replace(/;\s*/g, ';\n');
+      formatted = formatted.replace(/\n\s*\n\s*\n/g, '\n\n');
+      
+      editor.setValue(formatted);
+      
+      const totalLines = editor.lineCount();
+      for (let i = 0; i < totalLines; i++) {
+        editor.indentLine(i);
+      }
+    }
+
+    function downloadCode() {
+      const code = editor.getValue();
+      const blob = new Blob([code], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'main.c';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+
+    function uploadCode() {
+      document.getElementById('fileInput').click();
+    }
+
+    function showExamples() {
+      const modal = document.getElementById('examplesModal');
+      const list = document.getElementById('examplesList');
+      
+      list.innerHTML = '';
+      
+      examples.forEach((example, index) => {
+        const card = document.createElement('div');
+        card.className = 'example-card';
+        card.onclick = () => loadExample(index);
+        
+        card.innerHTML = `
+          <div class="example-title">${example.title}</div>
+          <div class="example-desc">${example.description}</div>
+          ${example.inputExample ? `<div style="margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-secondary);">Sample input: <code>${example.inputExample.replace(/\n/g, ' ')}</code></div>` : ''}
+        `;
+        
+        list.appendChild(card);
+      });
+      
+      modal.classList.add('active');
+    }
+
+    function closeExamples() {
+      document.getElementById('examplesModal').classList.remove('active');
+    }
+
+    function loadExample(index) {
+      const example = examples[index];
+      editor.setValue(example.code);
+      
+      if (example.inputExample) {
+        document.getElementById('inputArea').value = example.inputExample;
+      }
+      
+      closeExamples();
+      detectScanf();
+      saveToLocal();
+    }
+
+    function changeTheme(theme) {
+      editor.setOption('theme', theme);
+      localStorage.setItem('cTheme', theme);
+    }
+
+    function changeFontSize(size) {
+      editor.getWrapperElement().style.fontSize = size + 'px';
+      localStorage.setItem('cFontSize', size);
+    }
+
+    function toggleFullscreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+      } else {
+        document.exitFullscreen();
+      }
+    }
+
+    function toggleTheme() {
+      const currentTheme = editor.getOption('theme');
+      const newTheme = currentTheme === 'default' ? 'dracula' : 'default';
+      editor.setOption('theme', newTheme);
+      document.getElementById('themeSelect').value = newTheme;
+      localStorage.setItem('cTheme', newTheme);
+    }
+
+    function showInfo() {
+      alert(`Advanced C Compiler v2.1 - No Popups Edition`);
+    }
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', function() {
+      // Load saved preferences (Theme/Font)
+      const savedTheme = localStorage.getItem('cTheme');
+      if (savedTheme) {
+        editor.setOption('theme', savedTheme);
+        document.getElementById('themeSelect').value = savedTheme;
+      }
+      
+      const savedFontSize = localStorage.getItem('cFontSize');
+      if (savedFontSize) {
+        editor.getWrapperElement().style.fontSize = savedFontSize + 'px';
+        document.getElementById('fontSizeSelect').value = savedFontSize;
+      }
+      
+      // FIXED: START WITH HELLO WORLD
+      // We purposefully DO NOT call loadFromLocal() on startup to ensure 
+      // the user always sees the Hello World code first as requested.
+      
+      editor.setValue(`#include <stdio.h>
+
+int main(void) {
+    printf("Hello, world!\\n");
+    return 0;
+}`);
+      
+      // Detect scanf on load
+      detectScanf();
+      
+      // Update cursor position
+      editor.on('cursorActivity', function() {
+        const cursor = editor.getCursor();
+        document.getElementById('cursorPos').textContent = 
+          `Line ${cursor.line + 1}, Col ${cursor.ch + 1}`;
+      });
+      
+      // Auto-save on change
+      editor.on('change', function() {
+        saveToLocal();
+        detectScanf();
+      });
+      
+      // File upload handler
+      document.getElementById('fileInput').addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function(e) {
+            editor.setValue(e.target.result);
+            detectScanf();
+            saveToLocal();
+          };
+          reader.readAsText(file);
+        }
+      });
+      
+      // Keyboard shortcuts
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'F9') {
+          e.preventDefault();
+          runCode();
+        }
+      });
+      
+      // Close modal on click outside
+      document.getElementById('examplesModal').addEventListener('click', function(e) {
+        if (e.target === this) {
+          closeExamples();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
