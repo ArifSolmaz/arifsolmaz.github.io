@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bilim Haberleri | Dr. Arif Solmaz</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <style>
+    /* --- 1. GENEL AYARLAR --- */
+    :root {
+      --bg: #020617;
+      --accent: #f97316; /* Turuncu */
+      --accent2: #38bdf8; /* Mavi */
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --card-bg: rgba(15, 23, 42, 0.8);
+      --border: rgba(148, 163, 184, 0.15);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "Inter", sans-serif; background: var(--bg); color: var(--text); padding-bottom: 4rem; }
+    a { text-decoration: none; color: inherit; transition: 0.2s; }
+    
+    /* Header */
+    header { padding: 1.5rem; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+    .brand { font-family: "Space Grotesk"; font-weight: 700; font-size: 1.2rem; }
+    .nav-link { font-size: 0.9rem; font-weight: 600; color: var(--accent2); }
+
+    .container { max-width: 1000px; margin: 0 auto; padding: 2rem 1.5rem; }
+    h1 { font-family: "Space Grotesk"; font-size: 2.5rem; margin-bottom: 0.5rem; color: #fff; }
+    .subtitle { color: var(--muted); margin-bottom: 2rem; }
+
+    /* --- 2. FİLTRE KUTUSU --- */
+    .filter-info {
+      display: none; align-items: center; gap: 1rem; margin-bottom: 2rem;
+      padding: 1rem; background: rgba(56, 189, 248, 0.1);
+      border: 1px solid var(--accent2); border-radius: 0.5rem;
+      color: #fff; font-family: "JetBrains Mono"; font-size: 0.9rem;
+      animation: fadeIn 0.3s ease;
+    }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+
+    .clear-btn {
+      background: var(--accent2); color: #000; border: none;
+      padding: 0.4rem 1rem; border-radius: 4px; font-weight: bold; cursor: pointer;
+      font-family: "Inter", sans-serif;
+    }
+    .clear-btn:hover { background: #fff; }
+
+    /* --- 3. KART TASARIMI --- */
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; }
+    
+    .card {
+      background: var(--card-bg); border: 1px solid var(--border); border-radius: 1rem;
+      overflow: hidden; cursor: pointer; transition: transform 0.2s;
+      display: flex; flex-direction: column; height: 100%;
+    }
+    .card:hover { transform: translateY(-5px); border-color: var(--accent2); }
+    
+    .card-img { height: 180px; background-color: #1e293b; overflow: hidden; position: relative; }
+    .card-img img { width: 100%; height: 100%; object-fit: cover; }
+    
+    .card-body { padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1; }
+    .date { font-family: "JetBrains Mono"; font-size: 0.75rem; color: var(--accent); margin-bottom: 0.5rem; }
+    .title { font-family: "Space Grotesk"; font-size: 1.2rem; font-weight: 700; margin-bottom: 0.8rem; line-height: 1.3; color: #fff; }
+    .summary { font-size: 0.9rem; color: var(--muted); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; margin-bottom: 1rem; }
+    
+    /* --- ETIKET TASARIMI (Ana Sayfa Stili) --- */
+    .tags { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: auto; padding-top: 1rem; }
+    
+    .tag {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.75rem; 
+      font-weight: 500;
+      color: var(--accent2); 
+      background: rgba(56, 189, 248, 0.08); 
+      border: 1px solid rgba(56, 189, 248, 0.15); 
+      padding: 0.3rem 0.7rem; 
+      border-radius: 6px; 
+      transition: all 0.2s ease;
+      cursor: pointer;
+      user-select: none;
+      display: inline-flex; 
+      align-items: center;
+    }
+
+    .tag:hover {
+      background: rgba(56, 189, 248, 0.2); 
+      border-color: var(--accent2); 
+      box-shadow: 0 0 10px rgba(56, 189, 248, 0.2); 
+      transform: translateY(-2px); 
+      color: #fff; 
+    }
+
+    .read-more { margin-top: 1.2rem; font-size: 0.85rem; color: var(--accent2); font-weight: 600; display: flex; align-items: center; gap: 5px; }
+
+    /* --- 4. POPUP (MODAL) --- */
+    .modal-overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.85); backdrop-filter: blur(8px);
+      z-index: 100; display: none; justify-content: center; align-items: center; padding: 1rem;
+      opacity: 0; transition: opacity 0.3s;
+    }
+    .modal-overlay.active { display: flex; opacity: 1; }
+    
+    .modal-content {
+      background: #0f172a; border: 1px solid var(--accent2); border-radius: 1rem;
+      width: 100%; max-width: 800px; max-height: 90vh; overflow-y: auto;
+      position: relative; box-shadow: 0 0 50px rgba(0,0,0,0.5);
+    }
+    .close-btn {
+      position: absolute; top: 1rem; right: 1rem; background: rgba(0,0,0,0.5); border: none;
+      color: #fff; font-size: 2rem; width: 40px; height: 40px; border-radius: 50%; 
+      cursor: pointer; z-index: 10; display:flex; align-items:center; justify-content:center;
+    }
+    .close-btn:hover { background: rgba(255, 255, 255, 0.2); }
+
+    .modal-img { width: 100%; height: 350px; object-fit: cover; border-bottom: 1px solid var(--border); }
+    .modal-body { padding: 2.5rem; }
+    
+    /* MODAL HEADER, SES VE OYNATICI STİLLERİ */
+    .modal-header-row { display: flex; flex-direction: column; gap: 10px; margin-bottom: 1.5rem; }
+    .modal-date { color: var(--accent); font-family: "JetBrains Mono"; display: block; }
+    .modal-title { font-family: "Space Grotesk"; font-size: 2rem; line-height: 1.2; margin-bottom: 1rem; color: #fff; }
+
+    /* Audio Player (m4a/MP3) */
+    .audio-player-wrapper {
+      width: 100%;
+      background: rgba(56, 189, 248, 0.05);
+      border: 1px solid var(--accent2);
+      border-radius: 8px;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .audio-label { font-size: 0.8rem; color: var(--accent2); font-family: "JetBrains Mono"; font-weight: bold; }
+    audio { width: 100%; height: 35px; outline: none; }
+
+    /* Robot Okuma Butonu (Dosya Yoksa Çıkar) */
+    .speak-btn {
+      align-self: flex-start;
+      background: transparent; border: 1px solid var(--accent); color: var(--accent);
+      padding: 0.4rem 0.8rem; border-radius: 6px; cursor: pointer;
+      font-family: "JetBrains Mono"; font-size: 0.8rem; display: flex; align-items: center; gap: 8px;
+      transition: 0.2s;
+    }
+    .speak-btn:hover { background: var(--accent); color: #fff; }
+    .speak-btn.speaking { background: #ef4444; border-color: #ef4444; color: white; animation: pulse 1.5s infinite; }
+    @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.7; } 100% { opacity: 1; } }
+
+    /* MARKDOWN STİLLERİ */
+    .modal-text { font-size: 1.1rem; color: #cbd5e1; line-height: 1.8; }
+    .modal-text p { margin-bottom: 1.5em; } 
+    .modal-text strong { color: #fff; font-weight: 700; }
+    .modal-text em { font-style: italic; color: var(--accent2); }
+    
+    /* LINK STİLİ */
+    .modal-text a { 
+      color: var(--accent2); 
+      font-weight: 600; 
+      text-decoration: underline; 
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    .modal-text a:hover { color: #fff; text-decoration-color: var(--accent); }
+    
+    .modal-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1rem;}
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand" style="color:#fff">Dr. Arif <span style="color:var(--accent)">Solmaz</span></div>
+    <a href="index.html" class="nav-link">← Ana Sayfa</a>
+  </header>
+
+  <div class="container">
+    <h1>Bilim Haberleri</h1>
+    <p class="subtitle">Astrofizik ve bilim dünyasından güncel gelişmeler, makale özetleri ve notlar.</p>
+    
+    <div class="filter-info" id="filter-box">
+      <span>Filtreleniyor: <strong id="active-tag-name" style="color:var(--accent)"></strong></span>
+      <button class="clear-btn" onclick="resetFilter()">Temizle (Tümünü Göster)</button>
+    </div>
+
+    <div class="grid" id="news-grid"></div>
+  </div>
+
+  <div class="modal-overlay" id="modal">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal()">×</button>
+      <img src="" alt="" class="modal-img" id="m-img">
+      <div class="modal-body">
+        
+        <div class="modal-header-row" id="modal-header-container">
+          <span class="modal-date" id="m-date"></span>
+        </div>
+
+        <h2 class="modal-title" id="m-title"></h2>
+        <div class="modal-text" id="m-text"></div>
+        <div class="modal-tags" id="m-tags"></div>
+      </div>
+    </div>
+  </div>
+
+<script>
+  // ============================================
+  // HABER VERİLERİ
+  // ============================================
+  
+  const newsData = [
+    {
+      date: "08 Aralık 2025",
+      title: "TRAPPIST-1: Mini Güneş Sistemi",
+      image: "https://astrobiology.com/wp-content/uploads/2025/12/A-New-Look-At-TRAPPIST-1e.png",
+      tags: ["atmosfer", "Dünya benzeri ötegezegen", "Goldilocks bölgesi", "Yaşanabilir Bölge", "Pandora Görevi", "Titan", "TRAPPIST-1", "TRAPPIST-1 b", "TRAPPIST-1 e"],
+      
+      // ✅ Releases tag'in: audio-v1
+      // ✅ MP3 varsa ekle (önerilir)
+      audioMp3: "https://cdn.jsdelivr.net/gh/ArifSolmaz/my-media@main/audio/TRAPPIST-1e.mp3",
+      audioM4a: "",
+      
+      text: `Dünya’dan yaklaşık 39 ışık yılı uzakta, küçük ama son derece ilgi çekici bir yıldız sistemi var: **TRAPPIST-1**. Bu sistemin yıldızı, Güneş’ten çok daha **küçük, daha soğuk ve daha sönük** bir **ultrasoğuk kırmızı cüce**. Etrafında ise **yedi adet Dünya boyutlarında gezegen** dönüyor. Üstelik öyle sıkışık bir düzen ki, yıldız ve tüm gezegenleri **Merkür’ün yörüngesinin içine sığacak** kadar kompakt bir “mini Güneş sistemi” gibi düşünebilirsiniz.
+
+Bu yedi gezegen arasında özellikle **TRAPPIST-1e** öne çıkıyor. Çünkü **yaşanabilir bölge** içinde dolanıyor: Yıldızına olan uzaklığı, teorik olarak gezegen yüzeyinde **sıvı su** bulunmasına izin verebilir. Ancak burada kritik bir şart var: **TRAPPIST-1e’nin bir atmosferi olmalı.** Çünkü atmosfer olmadan yüzeyde suyu uzun süre stabil tutmak çok zor. Ve su varsa, yaşam ihtimali de bilimsel hayal gücümüzün kapısını aralıyor.
+
+Peki TRAPPIST-1e’nin gerçekten atmosferi var mı?
+
+Bilim insanları bu soruyu yanıtlamak için **James Webb Uzay Teleskobu**’nun güçlü cihazlarından **NIRSpec** ile gezegenin yıldızının önünden geçtiği anları gözledi. Bu geçişlerde yıldız ışığının küçük bir kısmı gezegenin olası atmosferinden süzülür. Atmosferdeki gazlar belirli dalga boylarını soğurduğunda, astronomlar bu “parmak izlerinden” içeride hangi moleküllerin olabileceğini çıkarabilir.
+
+Ekip, TRAPPIST-1e’nin dört geçişinde **metana dair ipuçları** gördü. Bu ilk bakışta heyecan verici görünebilir. Ancak burada ince bir ayrıntı devreye giriyor: TRAPPIST-1 bir **M cücesi**. Bu tür yıldızların kendi atmosferik özellikleri ve değişkenlikleri, gezegen atmosferi gibi görünen **yanıltıcı sinyaller** üretebilir. Başka bir deyişle, tespit edilen metan **gezegenden değil yıldızdan** geliyor olabilir.
+
+Araştırmacılar olası senaryoları modelledi. TRAPPIST-1e’nin metan zengini bir atmosfere sahip olması durumunda, gezegenin Satürn’ün ünlü uydusu **Titan** benzeri bir kimyaya yaklaşabileceği düşünülüyor. Fakat yapılan analizler, bu tür “sıcak exo-Titan” senaryolarının bile **şimdilik düşük olasılıklı** olduğunu gösteriyor. Bu yüzden bilim insanları, önceki atmosfer işaretlerinin **yıldız kaynaklı gürültü** olma ihtimalinin daha yüksek olabileceğini vurguluyor.
+
+Bu, TRAPPIST-1e’nin atmosferi olmadığı anlamına gelmiyor. Sadece **daha fazla ve daha akıllı gözleme** ihtiyaç var.
+
+Yakın gelecekte bu konuda önemli bir destek, [**NASA’nın Pandora görevi**](https://science.nasa.gov/mission/pandora/) ile gelebilir. Pandora, ötegezegen atmosferlerini incelerken aynı zamanda **ev sahibi yıldızın** davranışını daha iyi ölçmeyi hedefleyen bir uydu. Buna ek olarak, TRAPPIST-1e ile sistemin içteki **havasız** gezegeni TRAPPIST-1b’nin **eşzamanlı geçişleri** gözlenerek yıldız etkisini atmosfer sinyalinden ayırmak amaçlanıyor.
+
+Kısacası TRAPPIST-1e, bize en yakın “Dünya’ya benzer adaylardan” biri olabilir. Ama bilim, heyecanın yanında sabrı da sever: Bu küçük gezegenin gerçekten **nefes alan** bir dünyaya mı yoksa **çıplak bir kayaya** mı benzediğini anlamak için, veri birikmeye devam ediyor.
+
+**Kaynak**: [Astrobiology](https://astrobiology.com/2025/12/a-new-look-at-trappist-1e-an-earth-sized-habitable-zone-exoplanet.html) sayfasından derlenmiştir.`
+    }
+  ];
+
+  // ============================================
+  // SİSTEM KODLARI
+  // ============================================
+  const grid = document.getElementById('news-grid');
+  const modal = document.getElementById('modal');
+  const filterBox = document.getElementById('filter-box');
+  const activeTagName = document.getElementById('active-tag-name');
+  
+  const mImg = document.getElementById('m-img');
+  const mDate = document.getElementById('m-date');
+  const mTitle = document.getElementById('m-title');
+  const mText = document.getElementById('m-text');
+  const mTags = document.getElementById('m-tags');
+  const modalHeaderContainer = document.getElementById('modal-header-container');
+
+  const synth = window.speechSynthesis;
+  let currentArticleText = "";
+
+  marked.use({ breaks: true });
+  renderNews(newsData);
+
+  function renderNews(dataToRender) {
+    grid.innerHTML = "";
+    if (dataToRender.length === 0) {
+      grid.innerHTML = "<p style='color:var(--muted); grid-column:1/-1; text-align:center;'>Bu etikete ait haber bulunamadı.</p>";
+      return;
+    }
+
+    dataToRender.forEach((item) => {
+      const realIndex = newsData.indexOf(item);
+      let tagsHtml = '';
+      if(item.tags) {
+        item.tags.forEach(t => {
+          tagsHtml += `<span class="tag" onclick="event.stopPropagation(); filterByTag('${t}')">${t}</span>`;
+        });
+      }
+      
+      let plainText = item.text
+        .replace(/\[([^\]]+)\]\([^\)]+\)/g, '$1')
+        .replace(/[*_#]/g, ''); 
+
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
+        <div class="card-img"><img src="${item.image}" alt="News" onerror="this.src='https://via.placeholder.com/400x200?text=Görsel+Yok'"></div>
+        <div class="card-body">
+          <span class="date">${item.date}</span>
+          <div class="title">${item.title}</div>
+          <div class="summary">${plainText}</div>
+          <div class="tags">${tagsHtml}</div>
+          <div class="read-more">Devamını Oku →</div>
+        </div>
+      `;
+      card.onclick = () => openModal(realIndex);
+      grid.appendChild(card);
+    });
+  }
+
+  function filterByTag(tagName) {
+    const filtered = newsData.filter(item => item.tags && item.tags.includes(tagName));
+    renderNews(filtered);
+    filterBox.style.display = 'flex';
+    activeTagName.textContent = tagName;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function resetFilter() {
+    renderNews(newsData);
+    filterBox.style.display = 'none';
+  }
+
+  function openModal(index) {
+    const item = newsData[index];
+    mImg.src = item.image;
+    mDate.textContent = item.date;
+    mTitle.textContent = item.title;
+    
+    // Markdown -> HTML
+    mText.innerHTML = marked.parse(item.text);
+    
+    // Güvenli Linkler
+    const allLinks = mText.querySelectorAll('a');
+    allLinks.forEach(link => {
+        link.setAttribute('target', '_blank');
+        link.setAttribute('rel', 'noopener noreferrer');
+        link.style.color = "var(--accent2)";
+        link.style.textDecoration = "underline";
+        link.style.fontWeight = "600";
+    });
+
+    // Robot Okuma Metni Hazırla
+    currentArticleText = item.text
+      .replace(/\[([^\]]+)\]\([^\)]+\)/g, '$1')
+      .replace(/[*_#]/g, '')
+      .replace(/\n/g, '. ');
+
+    // HEADER YÖNETİMİ
+    modalHeaderContainer.innerHTML = ''; 
+    const dateSpan = document.createElement('span');
+    dateSpan.className = 'modal-date';
+    dateSpan.textContent = item.date;
+    modalHeaderContainer.appendChild(dateSpan);
+
+    const hasAudio = (item.audioMp3 && item.audioMp3.trim() !== "") || (item.audioM4a && item.audioM4a.trim() !== "");
+
+    if (hasAudio) {
+        const audioWrapper = document.createElement('div');
+        audioWrapper.className = 'audio-player-wrapper';
+        audioWrapper.innerHTML = `
+          <span class="audio-label">Podcast Özeti (NotebookLM):</span>
+          <audio controls preload="metadata" controlsList="nodownload">
+             ${item.audioMp3 ? `<source src="${item.audioMp3}" type="audio/mpeg">` : ""}
+             ${item.audioM4a ? `<source src="${item.audioM4a}" type="audio/mp4">` : ""}
+             Tarayıcınız ses oynatmayı desteklemiyor.
+          </audio>
+        `;
+        modalHeaderContainer.appendChild(audioWrapper);
+    } 
+    else {
+        const speakBtn = document.createElement('button');
+        speakBtn.className = 'speak-btn';
+        speakBtn.id = 'speak-btn';
+        speakBtn.innerHTML = `<span>🔊</span> <span id="speak-text">Haberi Dinle</span>`;
+        speakBtn.onclick = toggleSpeech;
+        modalHeaderContainer.appendChild(speakBtn);
+    }
+
+    let tagsHtml = '';
+    if(item.tags) {
+      item.tags.forEach(t => {
+        tagsHtml += `<span class="tag" onclick="closeModal(); filterByTag('${t}')">${t}</span>`;
+      });
+    }
+    mTags.innerHTML = tagsHtml;
+
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+    stopSpeaking();
+
+    // sadece modal içindeki audio'yu durdur
+    const audioEl = modalHeaderContainer.querySelector('audio');
+    if(audioEl) {
+      audioEl.pause();
+      audioEl.currentTime = 0;
+    }
+  }
+  
+  // --- ROBOT OKUMA ---
+  function toggleSpeech() {
+    if (synth.speaking) { stopSpeaking(); } else { startSpeaking(); }
+  }
+
+  function startSpeaking() {
+    if (synth.speaking) return;
+    if (currentArticleText !== '') {
+      const utterThis = new SpeechSynthesisUtterance(currentArticleText);
+      utterThis.lang = 'tr-TR';
+      utterThis.rate = 0.9;
+      
+      utterThis.onend = function () { stopSpeaking(); }
+      synth.speak(utterThis);
+      
+      const btn = document.getElementById('speak-btn');
+      if(btn) {
+        btn.classList.add('speaking');
+        btn.querySelector('#speak-text').textContent = "Durdur";
+      }
+    }
+  }
+
+  function stopSpeaking() {
+    if(synth.speaking) { synth.cancel(); }
+    const btn = document.getElementById('speak-btn');
+    if(btn) {
+      btn.classList.remove('speaking');
+      btn.querySelector('#speak-text').textContent = "Haberi Dinle";
+    }
+  }
+  
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+</script>
+
+</body>
+</html>
