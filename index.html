@@ -107,13 +107,54 @@
     }
     .nav {
       height: 70px; display: flex; align-items: center; justify-content: space-between;
+      position: relative;
     }
     .brand { font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: 1.1rem; letter-spacing: -0.02em; }
     .brand span { color: var(--accent); }
 
     .nav-links { display: flex; gap: 2rem; font-size: 0.9rem; font-weight: 500; }
-    .nav-links a:hover { color: var(--accent2); }
-    @media(max-width: 768px) { .nav-links { display: none; } }
+.nav-links a:hover { color: var(--accent2); }
+
+/* Mobile navigation (hamburger) */
+.nav-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: rgba(15, 23, 42, 0.6);
+  color: var(--text);
+  cursor: pointer;
+}
+.nav-toggle:focus-visible { outline: 2px solid rgba(56, 189, 248, 0.7); outline-offset: 2px; }
+.nav-toggle svg { width: 22px; height: 22px; }
+
+@media (max-width: 768px) {
+  .nav-toggle { display: inline-flex; }
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    background: rgba(2, 6, 23, 0.98);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0.25rem 1.5rem 0.75rem;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a {
+    padding: 0.9rem 0;
+    border-top: 1px solid var(--border);
+    font-size: 0.95rem;
+  }
+  .nav-links a:first-child { border-top: none; }
+}
+
 
     /* HERO */
     .hero { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 3rem; align-items: center; min-height: 80vh; padding-top: 2rem; }
@@ -384,7 +425,12 @@
 <header>
   <div class="shell nav">
     <a href="#top" class="brand" aria-label="Homepage - Dr. Arif Solmaz">Dr. Arif <span>Solmaz</span></a>
-    <nav class="nav-links" aria-label="Main navigation">
+<button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <path fill="currentColor" d="M4 6.5h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 5h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 5h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/>
+  </svg>
+</button>
+    <nav class="nav-links" id="primary-nav" aria-label="Main navigation">
       <a href="#research">Research</a>
       <a href="#teaching">Teaching</a>
       <a href="#code">Code</a>
@@ -658,6 +704,48 @@
 <script>
   /* --- 1. DYNAMIC YEAR --- */
   document.getElementById("year").textContent = new Date().getFullYear();
+
+/* --- 0. MOBILE NAV TOGGLE --- */
+const navToggle = document.getElementById('nav-toggle');
+const primaryNav = document.getElementById('primary-nav');
+
+if (navToggle && primaryNav) {
+  const closeNav = () => {
+    primaryNav.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.setAttribute('aria-label', 'Open menu');
+  };
+
+  const openNav = () => {
+    primaryNav.classList.add('open');
+    navToggle.setAttribute('aria-expanded', 'true');
+    navToggle.setAttribute('aria-label', 'Close menu');
+  };
+
+  navToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = primaryNav.classList.contains('open');
+    isOpen ? closeNav() : openNav();
+  });
+
+  primaryNav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      if (window.matchMedia('(max-width: 768px)').matches) closeNav();
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!window.matchMedia('(max-width: 768px)').matches) return;
+    if (primaryNav.classList.contains('open') && !primaryNav.contains(e.target) && !navToggle.contains(e.target)) {
+      closeNav();
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    if (!window.matchMedia('(max-width: 768px)').matches) closeNav();
+  });
+}
+
 
   /* --- 2. SPOTLIGHT EFFECT --- */
   const grids = document.querySelectorAll('.grid');
