@@ -2,6 +2,9 @@ name: Auto-Compile CV
 
 on:
   push:
+    branches:
+      - main
+      - master
     paths:
       - 'cv.tex'
 
@@ -13,34 +16,28 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Get files
+      - name: Checkout
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: ${{ github.head_ref }}
           fetch-depth: 0
         
-      - name: Compile PDF
+      - name: Compile LaTeX
         uses: xu-cheng/latex-action@v3
         with:
           root_file: cv.tex
           
-      - name: Save and Push PDF
+      - name: Commit and Push
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           
-          # Add the compiled PDF
-          git add cv.pdf
+          git add -f cv.pdf
           
-          # Check if there are changes
           if git diff --staged --quiet; then
             echo "No changes to commit"
             exit 0
           fi
           
-          # Commit the changes
           git commit -m "Auto-update CV PDF [skip ci]"
-          
-          # Pull with rebase and push
-          git pull --rebase origin main || git pull --rebase origin master
-          git push origin HEAD:main || git push origin HEAD:master
+          git push
