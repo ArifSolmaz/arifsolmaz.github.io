@@ -1,0 +1,27 @@
+name: Auto-Compile CV
+
+on:
+  push:
+    paths:
+      - 'cv.tex'
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Get files
+        uses: actions/checkout@v4
+        
+      - name: Compile PDF
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: cv.tex
+          
+      - name: Save PDF
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add cv.pdf
+          git commit -m "Updated CV PDF" || echo "No changes"
+          git push

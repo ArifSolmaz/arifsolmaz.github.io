@@ -1,0 +1,348 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---- Packages ----
+\usepackage[margin=1.6cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[default]{sourcesanspro}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{fontawesome5}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+% ---- Colors ----
+\definecolor{accentcolor}{RGB}{25, 50, 120}
+\definecolor{darkgray}{RGB}{70, 70, 70}
+
+% ---- Setup ----
+\hypersetup{
+    colorlinks=true,
+    urlcolor=accentcolor,
+    linkcolor=accentcolor
+}
+
+\setlength{\parindent}{0pt}
+\setstretch{1.08}
+
+% Page numbering
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\color{accentcolor}\small Page \thepage\ of \pageref{LastPage}}
+
+% ---- Custom Commands ----
+\newcommand{\makeheader}[3]{
+    \begin{center}
+        {\Huge\bfseries\color{accentcolor} #1} \\[0.3em]
+        {\Large\color{darkgray} #2} \\[0.5em]
+        \small
+        \faEnvelope\ \href{mailto:#3}{#3} \quad
+        \faGlobe\ \href{https://arifsolmaz.github.io}{arifsolmaz.github.io} \quad
+        \faPhone\ (+90) 538 614 29 38 \\[0.2em]
+        \faMapMarker*\ Istanbul, Turkey
+    \end{center}
+    \vspace{-0.4em}
+}
+
+\titleformat{\section}
+  {\Large\bfseries\color{accentcolor}\uppercase}
+  {}{0em}{}
+  [\titlerule]
+\titlespacing*{\section}{0pt}{12pt}{8pt}
+
+\newcommand{\cventry}[4]{
+  \vspace{6pt}
+  \textbf{#1} \hfill \textit{#3} \\
+  \textbf{\color{darkgray} #2} \hfill #4 \\
+}
+
+\newcommand{\cvdesc}[1]{
+  \vspace{-2pt}
+  \begin{itemize}[leftmargin=12pt, nosep, label=\small\textbullet]
+    \small #1
+  \end{itemize}
+}
+
+\setlist[itemize]{leftmargin=*, labelsep=3mm, itemsep=3pt, topsep=2pt}
+
+% ---- DOCUMENT START ----
+\begin{document}
+
+% ===================== HEADER =====================
+\makeheader
+    {Arif Solmaz, PhD}
+    {Assistant Professor | Computational Physicist | Scientific ML \& Astrophysics}
+    {arif.solmaz@istun.edu.tr}
+
+% ===================== PROFILE =====================
+\section{Profile}
+Computational physicist and astrophysicist specializing in interdisciplinary data science applications. My research bridges astronomy and applied machine learning, focusing on extracting meaningful insights from complex observational data through advanced statistical methods. I lead projects in exoplanet characterization using space telescope data (TESS, JWST) and develop AI-driven solutions for scientific classification problems. My work emphasizes Bayesian inference, time-series analysis, international collaboration, and reproducible research practices. With extensive English-medium teaching experience, I deliver courses integrating computational physics, machine learning, and scientific programming.
+
+% ===================== RESEARCH EXCELLENCE =====================
+\section{Research Excellence \& Innovation}
+\begin{itemize}
+    \item \textbf{Interdisciplinary Leadership}: Successfully bridging astrophysics, machine learning, and applied sciences through funded research projects including prestigious TÜBİTAK and EU programs
+    \item \textbf{Data Science \& AI Applications}: Advanced proficiency in Bayesian inference, MCMC methods, time-series analysis, and deep learning for scientific classification tasks
+    \item \textbf{International Collaboration}: Active contributor to multi-national research teams including ExoClock Project (100+ observers, 50+ countries), Europlanet ML Working Group, and multi-site stellar occultation campaigns
+    \item \textbf{Research Impact}: Publications in high-impact international journals (Astronomy \& Astrophysics, MNRAS, ApJS) with focus on methodological innovation and large-scale collaborations
+    \item \textbf{Grant Success}: Principal Investigator on multiple national research projects; Project Coordinator for EU-funded international education initiative
+\end{itemize}
+
+% ===================== CORE EXPERTISE =====================
+\section{Core Expertise}
+\begin{itemize}
+    \item \textbf{Time-Series Analysis}: Bayesian parameter estimation, MCMC sampling, Gaussian Processes; uncertainty quantification for astronomical observations with systematic noise
+    \item \textbf{Exoplanet Science}: Transit photometry and timing analysis; stellar activity characterization; integration of ground-based and space telescope data (TESS, JWST)
+    \item \textbf{Machine Learning Applications}: Deep learning for image classification, transfer learning, model validation; applications in astronomy and materials science
+    \item \textbf{Scientific Computing}: Python-based research pipelines for data acquisition, reduction, modeling, and publication-quality visualization; emphasis on reproducible workflows
+    \item \textbf{Observational Astronomy}: CCD imaging systems, photometric calibration, telescope operations; multi-site observing campaign coordination
+\end{itemize}
+
+% ===================== TECHNICAL SKILLS =====================
+\section{Technical Skills}
+\begin{itemize}
+    \item \textbf{Programming Languages}: Python (expert), C, Bash; Git/GitHub version control; Linux research environments
+    \item \textbf{Scientific Computing}: NumPy, SciPy, Pandas, Matplotlib; Astropy ecosystem (Astropy, Photutils, Lightkurve)
+    \item \textbf{Statistical Methods}: Bayesian modeling, MCMC (emcee, PyMC), time-series modeling (celerite), Gaussian processes
+    \item \textbf{Machine Learning}: Scikit-learn, TensorFlow/Keras; CNNs for image classification; transfer learning techniques
+    \item \textbf{Research Tools}: LaTeX scientific writing, Jupyter notebooks, reproducible computational environments
+    \item \textbf{Languages}: Turkish (native), English (advanced: YÖKDİL 87.5/100, 2022)
+\end{itemize}
+
+% ===================== EDUCATION =====================
+\section{Education}
+
+\cventry{PhD in Physics}{Çukurova University, Institute of Science}{Jan 2023}{Adana, Turkey}
+\cvdesc{
+    \item Dissertation: \textit{Effects of Starspot Occultations on Exoplanet Transit Mid-time Measurements}
+    \item Developed novel methods for handling systematic errors in astronomical time-series data caused by stellar surface features
+    \item Advisors: Prof. Dr. Aysun Akyüz \& Prof. Dr. Özgür Baştürk (Ankara University)
+}
+
+\cventry{MSc in Space Sciences and Technologies}{Çanakkale Onsekiz Mart University, Institute of Science}{Oct 2010}{Çanakkale, Turkey}
+\cvdesc{
+    \item Thesis: \textit{Extrasolar Planetary Systems: a status review}
+    \item Comprehensive review of exoplanet detection methods and characterization techniques
+    \item Advisor: Prof. Dr. Mehmet Emin Özel
+}
+
+\cventry{BSc in Physics}{Çanakkale Onsekiz Mart University, Faculty of Arts and Sciences}{Jan 2008}{Çanakkale, Turkey}
+\cvdesc{
+    \item Undergraduate thesis: \textit{Large Telescopes and Observing Sites}
+    \item Advisor: Prof. Dr. Faruk Soydugan
+}
+
+% ===================== ACADEMIC APPOINTMENTS =====================
+\section{Academic Appointments}
+
+\cventry
+  {Assistant Professor}
+  {Istanbul Health and Technology University (İSTÜN)\\Faculty of Engineering \& Natural Sciences, Department of Mechatronics Engineering}
+  {May 2024 -- Present}
+  {Istanbul, Turkey}
+\cvdesc{
+    \item Teaching programming, robotics, and machine learning courses in English and Turkish
+    \item Developing curriculum integrating computational physics, data science, and engineering applications
+    \item Leading research projects in astrophysics and applied machine learning
+    \item Supervising undergraduate research projects and thesis work
+}
+
+\cventry
+  {Lecturer}
+  {Çağ University, Faculty of Arts and Sciences\\}
+  {Sep 2015 -- Jun 2023}
+  {Mersin, Turkey}
+\cvdesc{
+    \item Delivered quantitative and computational courses including Statistics, Computer Programming
+    \item Developed digital learning materials and blended teaching approaches
+    \item Supervised student projects emphasizing data analysis and computational thinking
+}
+
+\cventry
+  {Research Assistant}
+  {Çağ University, Faculty of Arts and Sciences}
+  {Feb 2011 -- Sep 2015}
+  {Mersin, Turkey}
+\cvdesc{
+    \item Supported teaching and research activities with emphasis on computational methods
+    \item Assisted in course development and student mentoring
+}
+
+% ===================== FUNDED PROJECTS =====================
+\section{Research Leadership \& Funded Projects}
+
+\textbf{As Principal Investigator / Project Coordinator:}
+\begin{itemize}
+    \item \textbf{Machine Learning-Based Microscopic Wood Species Identification System: An Image-Based Literature-Supported Approach} --- TÜBİTAK-1002 (National Scientific Research Support Program). \textit{Ongoing.}\\
+    Developing deep learning models for automated wood species classification from microscopic images; applications in forestry and materials science.
+    
+    \item \textbf{MILAGE: Technology Use in Mathematics Education} --- EU Funded Project (Erasmus+ Programme). \textit{Sep 2015 -- Sep 2018.}\\
+    International collaboration on digital tools and gamification in mathematics learning; coordinated multi-country partnership.
+    
+    \item \textbf{Geometric Modeling and Analysis of Exoplanet Transit Observations} --- Scientific Research Project, Higher Education Institutions. \textit{Sep 2019 -- Present.}\\
+    Advanced Bayesian methods for parameter estimation from space telescope data; robust handling of stellar activity systematics.
+    
+    \item \textbf{Turkey Meteor Monitoring Systems and Network (Continuation Project)} --- Scientific Research Project, Higher Education Institutions. \textit{Sep 2019 -- Present.}\\
+    Establishing automated detection systems and coordinating national observation network infrastructure.
+    
+    \item \textbf{Light Pollution Measurement Studies} --- Scientific Research Project, Higher Education Institutions. \textit{Sep 2019 -- Present.}\\
+    Systematic monitoring and assessment of light pollution levels; developing measurement protocols and public awareness programs.
+\end{itemize}
+
+\textbf{As Research Fellow / Team Member:}
+\begin{itemize}
+    \item \textbf{Turkey Meteor Monitoring Systems and Network: Creation of National Impact Craters and Meteorites Database} --- TÜBİTAK-1001 (Scientific and Technological Research Projects). \textit{Jan 2014 -- Jul 2017.}\\
+    National network infrastructure and comprehensive database development.
+    
+    \item \textbf{Multi-faceted Analyses of Binary and Multiple Star Systems to Determine Star Formation Region Properties} --- TÜBİTAK-1010 EVRENA (International Research Fellowship Programme). \textit{2010 -- 2013.}\\
+    Observational and theoretical studies of stellar populations in star-forming regions.
+    
+    \item \textbf{Çukurova University UZAYMER Observatory: New CCD Project} --- Funded Research Project, Çukurova University. \textit{Jul -- Sep 2020.}
+    
+    \item \textbf{Doğa Dostu Matematik} --- TÜBİTAK Science Communication Project (Instructor). \textit{Jul 2018 -- Feb 2019.}
+    
+    \item \textbf{Science Outreach Projects} --- Multiple TÜBİTAK science popularization projects (Instructor). \textit{Various periods 2018--2021.}
+\end{itemize}
+
+% ===================== PUBLICATIONS =====================
+\section{Selected Publications}
+
+\textit{Representative publications demonstrating research impact and international collaboration. Complete list available at \href{https://arifsolmaz.github.io}{arifsolmaz.github.io}}
+
+\vspace{0.3em}
+\textbf{High-Impact Peer-Reviewed Publications:}
+\begin{itemize}
+\item \href{https://doi.org/10.1051/0004-6361/202556498}{A high geometric albedo and small size for the Haumea cluster member (24835) 1995 SM55 determined from a stellar occultation and photometric observations}\\
+\textit{Astronomy \& Astrophysics}, 703, A147, 2025 $\cdot$ Multi-site international observing campaign
+
+\item \href{https://doi.org/10.1093/mnras/staf1659}{Testing the performance of cross-correlation techniques to search for molecular features in JWST NIRSpec G395H observations of transiting exoplanets}\\
+\textit{Monthly Notices of the Royal Astronomical Society}, 543, 3456, 2025 $\cdot$ Advanced data analysis methodology
+
+\item \href{https://ui.adsabs.harvard.edu/abs/2025arXiv251114407K/abstract}{ExoClock Project IV: A homogeneous catalogue of 620 updated exoplanet ephemerides}\\
+\textit{arXiv preprint}, arXiv:2511.14407, 2025 $\cdot$ Large-scale international collaboration (100+ authors)
+
+\item \href{https://doi.org/10.3847/1538-4365/ac9da4}{ExoClock Project III: 450 New Exoplanet Ephemerides from Ground and Space Observations}\\
+\textit{The Astrophysical Journal Supplement Series}, 265, 4, 2023 $\cdot$ Contributing author (60+ coauthors)
+
+\item \href{https://doi.org/10.55064/tjaa.1203704}{Leke Örtülmelerinin Ötegezegen Geçiş Ortası Zaman Ölçümlerine Etkisi (Effects of Starspot Occultations on Exoplanet Transit Mid-Time Measurements)}\\
+\textit{Turkish Journal of Astronomy and Astrophysics}, 4, 147, 2023 $\cdot$ PhD dissertation summary
+
+\item \href{https://doi.org/10.1051/0004-6361/202141546}{Physical properties of the trans-Neptunian object (38628) Huya from a multi-chord stellar occultation}\\
+\textit{Astronomy \& Astrophysics}, 664, A130, 2022 $\cdot$ International coordinated observations
+
+\item \href{https://doi.org/10.1016/j.newast.2021.101571}{BO Ari Light Curve Analysis using Ground-Based and TESS Data}\\
+\textit{New Astronomy}, 86, 101571, 2021 $\cdot$ Ground-space data integration
+
+\item \href{https://doi.org/10.1134/S1063773721060050}{The First Light Curve Solutions and Period Study of BQ Ari}\\
+\textit{Astronomy Letters}, 47, 402, 2021
+\end{itemize}
+
+\vspace{0.3em}
+\textbf{Conference Proceedings \& Community Contributions:}
+\begin{itemize}
+\item \href{https://doi.org/10.5194/epsc-dps2025-1467}{Artificial Intelligence in Planetary Science and Astronomy: Applications and Research Potential}\\
+EPSC-DPS Joint Meeting 2025, EPSC-DPS2025-1467 $\cdot$ Invited presentation
+
+\item \href{https://doi.org/10.5194/epsc-dps2025-1815}{Europlanet Machine Learning Working Group: a year of progress}\\
+EPSC-DPS Joint Meeting 2025, EPSC-DPS2025-1815 $\cdot$ Working group coordination
+
+\item \href{https://doi.org/10.21125/iceri.2016.1970}{Breaking Free of the Classroom: Implementing Digital Media to Enhance Students' Involvement in Learning Mathematics}\\
+ICERI2016 Proceedings, 2016 $\cdot$ Educational innovation
+\end{itemize}
+
+% ===================== INTERNATIONAL COLLABORATION =====================
+\section{International Collaboration \& Academic Service}
+\begin{itemize}
+    \item \textbf{ExoClock Collaboration}: Contributing member coordinating ground-based observations and ephemeris refinement for transiting exoplanets; part of international network spanning 100+ observers across 50+ countries
+    
+    \item \textbf{Europlanet Machine Learning Working Group}: Active participant fostering AI/ML applications in planetary science; presenting research findings and coordinating community efforts
+    
+    \item \textbf{Multi-Site Stellar Occultation Campaigns}: Coordinating international observations for physical characterization of trans-Neptunian objects; managing data analysis and collaborative publications
+    
+    \item \textbf{Peer Review Service}: Reviewer for international astronomy and planetary science journals
+    
+    \item \textbf{Scientific Community Engagement}: Regular presenter at international conferences (EPSC-DPS, ICERI); active participant in astronomical research networks
+\end{itemize}
+
+% ===================== TEACHING =====================
+\section{Teaching Experience}
+
+\textbf{Current Teaching (2024--2025 Academic Year):}
+\begin{itemize}
+    \item Computer Programming I (English \& Turkish) --- Introduction to programming, algorithms, Python fundamentals
+    \item Computer Programming II (English \& Turkish) --- Advanced programming concepts, data structures
+    \item Object-Oriented Programming (English \& Turkish) --- OOP principles, design patterns, software engineering
+    \item Robotics (Turkish) --- Control systems, sensor integration, autonomous systems
+    \item Machine Learning (Turkish) --- Supervised/unsupervised learning, neural networks, practical applications
+\end{itemize}
+
+\textbf{Previous Teaching Experience:}
+\begin{itemize}
+    \item Statistics --- Descriptive and inferential methods, applied statistical computing, data visualization
+    \item Quantitative Methods --- Mathematical foundations for data analysis and modeling
+    \item Programming Courses --- Multiple levels from introductory to advanced topics
+\end{itemize}
+
+\textbf{Teaching Philosophy \& Innovations:}
+\begin{itemize}
+    \item Developed project-based learning modules integrating real-world datasets and problems
+    \item Emphasis on reproducible research practices and version control (Git/GitHub)
+    \item Created computational physics and astronomy data analysis course materials
+    \item Supervised undergraduate research projects in data science and astronomy applications
+    \item Extensive experience in English-medium instruction across technical disciplines
+\end{itemize}
+
+% ===================== LEADERSHIP & SERVICE =====================
+\section{Leadership \& Administrative Service}
+\begin{itemize}
+    \item \textbf{Coordinator, Scientific Research Projects Coordination Unit (BAP)}\\
+    Çağ University Rectorate \hfill \textit{2020--2021}\\
+    Managed university research project administration, budget oversight, and reporting
+    
+    \item \textbf{Executive Board Member}\\
+    Çağ University Space Observation Application and Research Center (UZAYMER) \hfill \textit{2012--2023}\\
+    Contributed to strategic planning and research direction for university observatory
+\end{itemize}
+
+% ===================== OUTREACH =====================
+\section{Science Outreach \& Public Engagement}
+\begin{itemize}
+    \item \textbf{Science Outreach Network Turkey Contact Point}\\
+    European Southern Observatory (ESO) \hfill \textit{2010--2022}\\
+    Coordinated science communication activities and educational resource distribution
+    
+    \item \textbf{Turkey Representative}\\
+    Universe Awareness (UNAWE) International Program \hfill \textit{2011--2015}\\
+    Led astronomy education programs for underprivileged children
+    
+    \item \textbf{Science Communication Projects}\\
+    Multiple TÜBİTAK-funded public engagement initiatives \hfill \textit{2018--2021}\\
+    Developed and delivered astronomy and mathematics outreach programs
+\end{itemize}
+
+% ===================== MEMBERSHIPS =====================
+\section{Professional Memberships}
+\begin{itemize}
+    \item \textbf{International Astronomical Union (IAU)} --- Member \hfill \textit{2024 -- Present}
+    \item \textbf{European Astronomical Society (EAS)} --- Member \hfill \textit{2021 -- Present}
+    \item \textbf{Turkish Astronomical Society (TAD)} --- Member \hfill \textit{2009 -- Present}
+    \item \textbf{European Association for Astronomy Education (EAAE)} --- Board Member \hfill \textit{2009 -- Present}
+    \item \textbf{American Association of Variable Star Observers (AAVSO)} --- Member \hfill \textit{2008 -- 2020}
+    \item \textbf{Astronomy Without Borders (AWB)} --- Advisor \hfill \textit{2009 -- 2015}
+    \item \textbf{International Dark-Sky Association (IDA)} --- Advisor \hfill \textit{2009 -- 2020}
+    \item \textbf{NASA Museum Alliance} --- Member \hfill \textit{2008 -- 2020}
+\end{itemize}
+
+\vspace{0.8em}
+\begin{center}
+\hrule
+\vspace{0.4em}
+\small\textit{Complete publication list, research code, and teaching materials available at \href{https://arifsolmaz.github.io}{arifsolmaz.github.io}}\\
+\small\textit{References available upon request}
+\end{center}
+
+\end{document}
