@@ -21,7 +21,6 @@
   <meta property="og:description" content="Astrophysicist studying exoplanets, stellar activity, starspots, and TESS/JWST light curves with a focus on transit modeling and TTVs." />
   <meta property="og:url" content="https://arifsolmaz.github.io/" />
   <meta property="og:site_name" content="Dr. Arif Solmaz" />
-  <!-- Make sure this image exists in your repo -->
   <meta property="og:image" content="https://arifsolmaz.github.io/og-image.jpg" />
   <meta property="og:image:alt" content="Visual of exoplanet transits and stellar activity by Dr. Arif Solmaz" />
 
@@ -31,15 +30,6 @@
   <meta name="twitter:description" content="Exoplanets, stellar activity, starspots, TESS & JWST data analysis, and transit timing variations (TTVs)." />
   <meta name="twitter:image" content="https://arifsolmaz.github.io/og-image.jpg" />
 
-  <!-- (Optional) If you have Google Search Console verification, replace CONTENT_HERE with your token -->
-  <!-- <meta name="google-site-verification" content="CONTENT_HERE" /> -->
-
-  <!-- Favicons (optional but good for branding) -->
-  <!--
-  <link rel="icon" href="/favicon.ico" />
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  -->
-
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,8 +38,8 @@
   <style>
     :root {
       --bg: #020617;
-      --accent: #f97316; /* Star Orange */
-      --accent2: #38bdf8; /* Data Blue */
+      --accent: #f97316;
+      --accent2: #38bdf8;
       --text: #e2e8f0;
       --muted: #94a3b8;
       --border: rgba(148, 163, 184, 0.15);
@@ -58,7 +48,6 @@
       --max-width: 1100px;
     }
 
-    /* NEW: accessible, visually-hidden h1 for SEO */
     .visually-hidden {
       position: absolute;
       width: 1px;
@@ -71,7 +60,6 @@
       border: 0;
     }
 
-    /* BASE RESET */
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; scroll-padding-top: 80px; }
 
@@ -86,19 +74,16 @@
     a { text-decoration: none; color: inherit; transition: 0.2s; }
     ul { list-style: none; }
 
-    /* BACKGROUND FX */
     #star-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
     .noise {
       position: fixed; inset: 0; z-index: 50; pointer-events: none; opacity: 0.04;
       background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.6' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     }
 
-    /* LAYOUT */
     .shell { max-width: var(--max-width); margin: 0 auto; padding: 0 1.5rem; }
     section { padding: 5rem 0; border-bottom: 1px solid var(--border); }
     section:last-child { border-bottom: none; }
 
-    /* HEADER */
     header {
       position: sticky; top: 0; z-index: 40;
       backdrop-filter: blur(12px);
@@ -112,51 +97,69 @@
     .brand { font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: 1.1rem; letter-spacing: -0.02em; }
     .brand span { color: var(--accent); }
 
-    .nav-links { display: flex; gap: 2rem; font-size: 0.9rem; font-weight: 500; }
-.nav-links a:hover { color: var(--accent2); }
+    .nav-links { display: flex; gap: 2rem; font-size: 0.9rem; font-weight: 500; align-items: center; }
+    .nav-links a:hover { color: var(--accent2); }
 
-/* Mobile navigation (hamburger) */
-.nav-toggle {
-  display: none;
-  align-items: center;
-  justify-content: center;
-  width: 42px;
-  height: 42px;
-  border-radius: 10px;
-  border: 1px solid var(--border);
-  background: rgba(15, 23, 42, 0.6);
-  color: var(--text);
-  cursor: pointer;
-}
-.nav-toggle:focus-visible { outline: 2px solid rgba(56, 189, 248, 0.7); outline-offset: 2px; }
-.nav-toggle svg { width: 22px; height: 22px; }
+    /* CV Button Styling */
+    .nav-cv-btn {
+      background: linear-gradient(135deg, var(--accent) 0%, #dc2626 100%);
+      color: white;
+      padding: 0.5rem 1.2rem;
+      border-radius: 8px;
+      font-weight: 600;
+      border: 1px solid rgba(249, 115, 22, 0.3);
+      transition: all 0.3s ease;
+      box-shadow: 0 0 20px rgba(249, 115, 22, 0.2);
+    }
+    .nav-cv-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 25px rgba(249, 115, 22, 0.4);
+      color: white;
+    }
 
-@media (max-width: 768px) {
-  .nav-toggle { display: inline-flex; }
-  .nav-links {
-    position: absolute;
-    top: 70px;
-    left: 0;
-    right: 0;
-    display: none;
-    flex-direction: column;
-    gap: 0;
-    background: rgba(2, 6, 23, 0.98);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-    padding: 0.25rem 1.5rem 0.75rem;
-  }
-  .nav-links.open { display: flex; }
-  .nav-links a {
-    padding: 0.9rem 0;
-    border-top: 1px solid var(--border);
-    font-size: 0.95rem;
-  }
-  .nav-links a:first-child { border-top: none; }
-}
+    .nav-toggle {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(15, 23, 42, 0.6);
+      color: var(--text);
+      cursor: pointer;
+    }
+    .nav-toggle:focus-visible { outline: 2px solid rgba(56, 189, 248, 0.7); outline-offset: 2px; }
+    .nav-toggle svg { width: 22px; height: 22px; }
 
+    @media (max-width: 768px) {
+      .nav-toggle { display: inline-flex; }
+      .nav-links {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        background: rgba(2, 6, 23, 0.98);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border);
+        padding: 0.25rem 1.5rem 0.75rem;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a {
+        padding: 0.9rem 0;
+        border-top: 1px solid var(--border);
+        font-size: 0.95rem;
+      }
+      .nav-links a:first-child { border-top: none; }
+      .nav-cv-btn {
+        text-align: center;
+        margin-top: 0.5rem;
+      }
+    }
 
-    /* HERO */
     .hero { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 3rem; align-items: center; min-height: 80vh; padding-top: 2rem; }
     @media(max-width: 900px) { .hero { grid-template-columns: 1fr; text-align: center; } }
 
@@ -183,7 +186,6 @@
     .btn-primary { background: var(--text); color: var(--bg); border: 1px solid var(--text); }
     .btn-primary:hover { background: var(--accent2); border-color: var(--accent2); box-shadow: 0 0 20px rgba(56, 189, 248, 0.3); }
 
-    /* === INTERACTIVE WASP-52b SIMULATION === */
     .transit-viz {
       position: relative; width: 100%; height: 420px;
       background: linear-gradient(180deg, #0f172a, #020617);
@@ -191,8 +193,8 @@
       display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
       overflow: hidden; padding-top: 20px;
       box-shadow: inset 0 0 60px rgba(0,0,0,0.6);
-      user-select: none; /* Vital for dragging */
-      touch-action: none; /* Vital for mobile drag */
+      user-select: none;
+      touch-action: none;
     }
 
     .live-readout {
@@ -203,17 +205,14 @@
       z-index: 30;
     }
 
-    /* Simulation Stage (Star + Planet) */
     .sim-stage {
       position: relative;
       width: 100%; height: 200px;
       cursor: default;
     }
 
-    /* WASP-52 (K2V Star) - More Orange/Reddish */
     .star-sim {
       width: 140px; height: 140px; border-radius: 50%;
-      /* K-type star gradient: Brighter center, darker orange/red limb */
       background: radial-gradient(circle at 40% 40%, #fff7ed 5%, #fb923c 45%, #c2410c 85%, #7c2d12 100%);
       box-shadow: 0 0 60px rgba(234, 88, 12, 0.3);
       position: absolute;
@@ -221,7 +220,6 @@
       z-index: 1;
     }
 
-    /* Starspot */
     .star-spot {
       position: absolute; width: 18px; height: 12px;
       background: rgba(60, 10, 0, 0.85);
@@ -232,11 +230,10 @@
       box-shadow: inset 0 0 4px rgba(0,0,0,0.9);
     }
 
-    /* WASP-52 b (Inflated Hot Jupiter) */
     .planet-sim {
       width: 26px; height: 26px; background: #050505; border-radius: 50%;
       position: absolute;
-      top: 50%; left: 15%; /* Start pos */
+      top: 50%; left: 15%;
       transform: translate(-50%, -50%);
       z-index: 10;
       box-shadow: inset 3px 3px 6px rgba(255,255,255,0.15);
@@ -245,14 +242,12 @@
     }
     .planet-sim:active { cursor: grabbing; transform: translate(-50%, -50%) scale(1.1); }
 
-    /* The Graph Area */
     .graph-container {
       position: relative;
       width: 85%; height: 140px;
       margin-top: 10px;
       border-left: 2px solid #475569;
       border-bottom: 2px solid #475569;
-      /* Scientific Grid */
       background-image:
         linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
@@ -272,7 +267,6 @@
       font-family: "JetBrains Mono"; font-size: 0.7rem; color: var(--muted); letter-spacing: 1px;
     }
 
-    /* SVG Graph */
     .curve-svg { width: 100%; height: 100%; overflow: visible; }
 
     .curve-path {
@@ -282,7 +276,6 @@
       filter: drop-shadow(0 0 4px rgba(56,189,248,0.3));
     }
 
-    /* The Tracking Dot */
     .graph-dot {
       width: 12px; height: 12px; background: #fff; border-radius: 50%;
       position: absolute;
@@ -290,10 +283,9 @@
       transform: translate(-50%, -50%);
       box-shadow: 0 0 15px var(--accent2);
       z-index: 20;
-      pointer-events: none; /* Let clicks pass through */
+      pointer-events: none;
     }
 
-    /* SECTIONS & CARDS */
     .section-head { margin-bottom: 2.5rem; }
     .section-head h2 { font-family: "Space Grotesk", sans-serif; font-size: 2rem; margin-bottom: 0.5rem; }
     .section-head p { color: var(--muted); max-width: 600px; }
@@ -324,7 +316,6 @@
       background: rgba(56, 189, 248, 0.1); padding: 0.2rem 0.6rem; border-radius: 4px;
     }
 
-    /* ADS PUB CARD */
     .pub-card {
       grid-column: 1 / -1;
       background: linear-gradient(145deg, rgba(15, 23, 42, 0.8), rgba(2, 6, 23, 0.9));
@@ -334,7 +325,7 @@
       display: flex;
       flex-direction: column;
       gap: 1.2rem;
-      min-height: 120px; /* Give it some space while loading */
+      min-height: 120px;
       justify-content: center;
       align-items: center;
       text-align: center;
@@ -366,7 +357,6 @@
     }
     .ads-link-btn:hover { color: #fff; }
 
-    /* CODE & CONTACT */
     .repo-item {
       display: flex; justify-content: space-between; align-items: baseline;
       padding: 1rem 0; border-bottom: 1px solid var(--border);
@@ -380,10 +370,48 @@
     .contact-list li { margin-bottom: 1rem; display: flex; align-items: center; gap: 0.8rem; }
     .icon { width: 24px; text-align: center; font-size: 1.2rem; }
 
+    /* CV Download Button in Contact Section */
+    .cv-download-box {
+      background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(220, 38, 38, 0.1));
+      border: 2px solid rgba(249, 115, 22, 0.3);
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .cv-download-box h3 {
+      font-family: "Space Grotesk";
+      font-size: 1.3rem;
+      margin-bottom: 0.8rem;
+      color: #fff;
+    }
+    .cv-download-box p {
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+    .cv-download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      background: linear-gradient(135deg, var(--accent) 0%, #dc2626 100%);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 1rem;
+      border: 1px solid rgba(249, 115, 22, 0.3);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(249, 115, 22, 0.3);
+    }
+    .cv-download-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(249, 115, 22, 0.5);
+    }
+
     footer { padding: 3rem 0; text-align: center; font-size: 0.85rem; color: var(--muted); border-top: 1px solid var(--border); }
   </style>
 
-  <!-- Structured data for Google (Person) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -425,23 +453,23 @@
 <header>
   <div class="shell nav">
     <a href="#top" class="brand" aria-label="Homepage - Dr. Arif Solmaz">Dr. Arif <span>Solmaz</span></a>
-<button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
-  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-    <path fill="currentColor" d="M4 6.5h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 5h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 5h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/>
-  </svg>
-</button>
+    <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path fill="currentColor" d="M4 6.5h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 5h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 5h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/>
+      </svg>
+    </button>
     <nav class="nav-links" id="primary-nav" aria-label="Main navigation">
       <a href="#research">Research</a>
       <a href="#teaching">Teaching</a>
       <a href="#code">Code</a>
       <a href="#contact">Contact</a>
       <a href="news.html" class="nav-news" style="color:#f97316; font-weight:700;">News</a>
+      <a href="cv.pdf" download class="nav-cv-btn">📄 CV</a>
     </nav>
   </div>
 </header>
 
 <main class="shell" id="top">
-  <!-- SEO-friendly hidden H1 with your full name + keywords -->
   <h1 class="visually-hidden">Dr. Arif Solmaz – Astrophysicist & Educator working on exoplanets, starspots, stellar activity, TESS & JWST light curves, and transit timing variations (TTVs).</h1>
 
   <section class="hero">
@@ -486,7 +514,7 @@
       <h2>Research Focus</h2>
       <p>
         My work sits at the intersection of stellar activity and exoplanet characterization. I ask:
-        “How does the star affect what we think we know about the planet?” I often work with space-based light curves
+        "How does the star affect what we think we know about the planet?" I often work with space-based light curves
         from missions such as TESS, Kepler, and JWST.
       </p>
     </div>
@@ -509,7 +537,7 @@
       <div class="card">
         <h3>Starspots & Stellar Rotation</h3>
         <p>
-          I treat stellar “noise” as a valuable signal. By analyzing out-of-transit variability, I investigate starspot distributions,
+          I treat stellar "noise" as a valuable signal. By analyzing out-of-transit variability, I investigate starspot distributions,
           differential rotation, and the long-term magnetic evolution of host stars that shape our interpretation of exoplanet atmospheres.
         </p>
         <div class="tags">
@@ -556,7 +584,7 @@
       <h2>Teaching & Mentoring</h2>
       <p>
         I teach Physics, Programming (Python / C), and data analysis, often within engineering and mechatronics programs.
-        A recurring theme is “data literacy” – learning to read and question data from real instruments and satellites.
+        A recurring theme is "data literacy" – learning to read and question data from real instruments and satellites.
       </p>
     </div>
 
@@ -565,7 +593,7 @@
         <h3>For Students</h3>
         <p>
           My courses and labs emphasize problem solving with real datasets, including TESS light curves and other astrophysical time series.
-          The goal is to move students from simply “following the recipe” to understanding the physical assumptions and limitations behind each model.
+          The goal is to move students from simply "following the recipe" to understanding the physical assumptions and limitations behind each model.
         </p>
       </div>
       <div class="card">
@@ -614,7 +642,6 @@
         <div class="repo-stat">Jupyter</div>
       </div>
 
-      <!-- gpt-exoplanet Streamlit app -->
       <div class="repo-item">
         <div>
           <div class="repo-name">
@@ -690,6 +717,16 @@
         </ul>
       </div>
     </div>
+
+    <!-- CV Download Box -->
+    <div class="cv-download-box">
+      <h3>📄 Curriculum Vitae</h3>
+      <p>Download my complete academic CV with full publication list, teaching experience, and research projects.</p>
+      <a href="cv.pdf" download class="cv-download-btn">
+        <span>Download CV (PDF)</span>
+        <span style="font-size:1.3rem;">↓</span>
+      </a>
+    </div>
   </section>
 
 </main>
@@ -702,52 +739,48 @@
 </footer>
 
 <script>
-  /* --- 1. DYNAMIC YEAR --- */
   document.getElementById("year").textContent = new Date().getFullYear();
 
-/* --- 0. MOBILE NAV TOGGLE --- */
-const navToggle = document.getElementById('nav-toggle');
-const primaryNav = document.getElementById('primary-nav');
+  const navToggle = document.getElementById('nav-toggle');
+  const primaryNav = document.getElementById('primary-nav');
 
-if (navToggle && primaryNav) {
-  const closeNav = () => {
-    primaryNav.classList.remove('open');
-    navToggle.setAttribute('aria-expanded', 'false');
-    navToggle.setAttribute('aria-label', 'Open menu');
-  };
+  if (navToggle && primaryNav) {
+    const closeNav = () => {
+      primaryNav.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.setAttribute('aria-label', 'Open menu');
+    };
 
-  const openNav = () => {
-    primaryNav.classList.add('open');
-    navToggle.setAttribute('aria-expanded', 'true');
-    navToggle.setAttribute('aria-label', 'Close menu');
-  };
+    const openNav = () => {
+      primaryNav.classList.add('open');
+      navToggle.setAttribute('aria-expanded', 'true');
+      navToggle.setAttribute('aria-label', 'Close menu');
+    };
 
-  navToggle.addEventListener('click', (e) => {
-    e.stopPropagation();
-    const isOpen = primaryNav.classList.contains('open');
-    isOpen ? closeNav() : openNav();
-  });
-
-  primaryNav.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      if (window.matchMedia('(max-width: 768px)').matches) closeNav();
+    navToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = primaryNav.classList.contains('open');
+      isOpen ? closeNav() : openNav();
     });
-  });
 
-  document.addEventListener('click', (e) => {
-    if (!window.matchMedia('(max-width: 768px)').matches) return;
-    if (primaryNav.classList.contains('open') && !primaryNav.contains(e.target) && !navToggle.contains(e.target)) {
-      closeNav();
-    }
-  });
+    primaryNav.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        if (window.matchMedia('(max-width: 768px)').matches) closeNav();
+      });
+    });
 
-  window.addEventListener('resize', () => {
-    if (!window.matchMedia('(max-width: 768px)').matches) closeNav();
-  });
-}
+    document.addEventListener('click', (e) => {
+      if (!window.matchMedia('(max-width: 768px)').matches) return;
+      if (primaryNav.classList.contains('open') && !primaryNav.contains(e.target) && !navToggle.contains(e.target)) {
+        closeNav();
+      }
+    });
 
+    window.addEventListener('resize', () => {
+      if (!window.matchMedia('(max-width: 768px)').matches) closeNav();
+    });
+  }
 
-  /* --- 2. SPOTLIGHT EFFECT --- */
   const grids = document.querySelectorAll('.grid');
   grids.forEach(grid => {
     grid.addEventListener('mousemove', e => {
@@ -762,7 +795,6 @@ if (navToggle && primaryNav) {
     });
   });
 
-  /* --- 3. STARFIELD BACKGROUND --- */
   const canvas = document.getElementById('star-canvas');
   const ctx = canvas.getContext('2d');
   let w, h, stars = [];
@@ -785,7 +817,6 @@ if (navToggle && primaryNav) {
   window.addEventListener('resize', initStars);
   initStars(); animateStars();
 
-  /* --- 4. INTERACTIVE PHYSICS ENGINE (WASP-52b) --- */
   const simStage = document.getElementById('sim-stage');
   const planet = document.getElementById('planet');
   const curvePath = document.getElementById('curve-path');
@@ -886,7 +917,6 @@ if (navToggle && primaryNav) {
   window.addEventListener('touchend', stopDrag);
   updateVisuals(); calculateLightCurve();
 
-  /* --- 5. NASA ADS RANDOM PUBLICATION FETCHER (local JSON) --- */
   async function fetchAndDisplayRandomPublication() {
     const container = document.getElementById('random-publication-container');
     container.innerHTML = '<p>Loading a random publication...</p>';
