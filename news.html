@@ -170,6 +170,27 @@
     .modal-text a:hover { color: #fff; text-decoration-color: var(--accent); }
     
     .modal-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1rem;}
+  
+    /* --- 4b. HABER YORUMLARI (GISCUS) --- */
+    .modal-divider {
+      border: 0;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      margin: 1.25rem 0;
+    }
+    .comments-section { padding-bottom: 1.25rem; }
+    .comments-title {
+      font-size: 1.05rem;
+      margin: 0 0 0.75rem 0;
+      color: rgba(226,232,240,0.95);
+      letter-spacing: 0.2px;
+    }
+    .comments-note {
+      margin-top: 0.75rem;
+      font-size: 0.85rem;
+      color: rgba(226,232,240,0.7);
+    }
+    #giscus_thread { min-height: 220px; }
+
   </style>
 </head>
 <body>
@@ -204,6 +225,12 @@
         <h2 class="modal-title" id="m-title"></h2>
         <div class="modal-text" id="m-text"></div>
         <div class="modal-tags" id="m-tags"></div>
+        <hr class="modal-divider">
+        <div class="comments-section">
+          <h3 class="comments-title">Yorumlar</h3>
+          <div id="giscus_thread"></div>
+          <p class="comments-note">Yorum yazmak için GitHub hesabınızla giriş yapmanız gerekir.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -246,6 +273,87 @@ Kısacası TRAPPIST-1 e, bize en yakın “Dünya’ya benzer adaylardan” biri
 **Kaynak**: [Astrobiology](https://astrobiology.com/2025/12/a-new-look-at-trappist-1e-an-earth-sized-habitable-zone-exoplanet.html) sayfasından derlenmiştir.`
     }
   ];
+
+
+  // ============================================
+  // HABER-BAZLI YORUMLAR (GISCUS)
+  // ============================================
+  // 1) GitHub'da ayrı bir repo aç (örn: ArifSolmaz/arifsolmaz-comments)
+  // 2) Repo Settings -> Discussions: ON
+  // 3) giscus.app üzerinden embed ayarlarını oluşturup aşağıya repoId ve categoryId değerlerini kopyala.
+  const GISCUS_CONFIG = {
+    repo: "ArifSolmaz/arifsolmaz-comments",   // <-- DEĞİŞTİR (owner/repo)
+    repoId: "R_kgDOQpDPgA",                 // <-- giscus.app'ten kopyala
+    category: "General",                      // <-- giscus.app'te seçtiğin kategori adı
+    categoryId: "DIC_kwDOQpDPgM4Cz0ao",         // <-- giscus.app'ten kopyala
+    theme: "preferred_color_scheme",
+    lang: "tr"
+  };
+
+  function slugifyTR(input) {
+    if (!input) return '';
+    const map = { 'ı':'i','İ':'i','ğ':'g','Ğ':'g','ü':'u','Ü':'u','ş':'s','Ş':'s','ö':'o','Ö':'o','ç':'c','Ç':'c' };
+    const s = String(input).trim().split('').map(ch => map[ch] || ch).join('');
+    return s
+      .normalize('NFD').replace(/[\u0300-\u036f]/g, '')  // aksanları sil
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/(^-|-$)+/g, '');
+  }
+
+  // Haber başlığı/tarihi değişse bile aynı thread kalsın istiyorsan newsData içine "id" alanı ekle:
+  // { id: "trappist-1e-2025-12-08", date:"...", title:"...", ... }
+  function getNewsThreadTerm(item) {
+    if (item && item.id) return String(item.id);
+    const base = `${item?.date || ''} ${item?.title || ''}`.trim();
+    return 'news-' + slugifyTR(base);
+  }
+
+  function loadGiscus(term) {
+    const container = document.getElementById('giscus_thread');
+    if (!container) return;
+
+    // Konfigürasyon doldurulmadıysa uyarı göster
+    if (!GISCUS_CONFIG.repoId || GISCUS_CONFIG.repoId.includes('REPO_ID') ||
+        !GISCUS_CONFIG.categoryId || GISCUS_CONFIG.categoryId.includes('CATEGORY_ID')) {
+      container.innerHTML = `
+        <div style="padding: 1rem; border: 1px dashed rgba(226,232,240,0.25); border-radius: 0.75rem; color: rgba(226,232,240,0.75); font-size: 0.95rem;">
+          Yorumlar henüz etkinleştirilmedi. <br/>
+          <span style="opacity:0.8">GISCUS_CONFIG içindeki repoId ve categoryId alanlarını giscus.app'ten kopyalayıp yapıştır.</span>
+        </div>`;
+      return;
+    }
+
+    // Daha önce yüklenmiş iframe/script varsa temizle
+    container.innerHTML = '';
+
+    const s = document.createElement('script');
+    s.src = 'https://giscus.app/client.js';
+    s.async = true;
+    s.crossOrigin = 'anonymous';
+
+    s.setAttribute('data-repo', GISCUS_CONFIG.repo);
+    s.setAttribute('data-repo-id', GISCUS_CONFIG.repoId);
+    s.setAttribute('data-category', GISCUS_CONFIG.category);
+    s.setAttribute('data-category-id', GISCUS_CONFIG.categoryId);
+
+    s.setAttribute('data-mapping', 'specific');
+    s.setAttribute('data-term', term);
+
+    s.setAttribute('data-reactions-enabled', '1');
+    s.setAttribute('data-emit-metadata', '0');
+    s.setAttribute('data-input-position', 'top');
+    s.setAttribute('data-theme', GISCUS_CONFIG.theme);
+    s.setAttribute('data-lang', GISCUS_CONFIG.lang);
+    s.setAttribute('data-loading', 'lazy');
+
+    container.appendChild(s);
+  }
+
+  function loadGiscusForItem(item) {
+    const term = getNewsThreadTerm(item);
+    loadGiscus(term);
+  }
 
   // ============================================
   // SİSTEM KODLARI
@@ -382,6 +490,9 @@ Kısacası TRAPPIST-1 e, bize en yakın “Dünya’ya benzer adaylardan” biri
     }
     mTags.innerHTML = tagsHtml;
 
+    // Haber-bazlı yorumları yükle
+    loadGiscusForItem(item);
+
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
   }
@@ -390,6 +501,10 @@ Kısacası TRAPPIST-1 e, bize en yakın “Dünya’ya benzer adaylardan” biri
     modal.classList.remove('active');
     document.body.style.overflow = 'auto';
     stopSpeaking();
+
+    // yorum bölümünü temizle
+    const giscusContainer = document.getElementById('giscus_thread');
+    if (giscusContainer) giscusContainer.innerHTML = '';
 
     // sadece modal içindeki audio'yu durdur
     const audioEl = modalHeaderContainer.querySelector('audio');
