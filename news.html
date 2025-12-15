@@ -315,7 +315,7 @@ Kısacası TRAPPIST-1 e, bize en yakın “Dünya’ya benzer adaylardan” biri
   const CUSDIS_APP_ID = "be1f0165-7af9-4018-9d61-fd9123f56e70";
 
   function cusdisEnabled() {
-    return CUSDIS_APP_ID && !CUSDIS_APP_ID.includes("be1f0165-7af9-4018-9d61-fd9123f56e70");
+  return CUSDIS_APP_ID && CUSDIS_APP_ID.length > 0;
   }
 
   function ensureCusdisCountScript() {
