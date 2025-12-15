@@ -30,25 +30,22 @@ jobs:
           working_directory: cv
           root_file: main.tex
 
-      - name: Copy PDF into site
+      - name: Copy PDF to root as cv.pdf
         run: |
-          mkdir -p assets
-          cp cv/main.pdf assets/cv.pdf
+          cp cv/main.pdf cv.pdf
 
-      - name: Commit & push PDF safely
+      - name: Commit & push cv.pdf safely
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add assets/cv.pdf
+          git add cv.pdf
           if git diff --cached --quiet; then
             echo "No changes to commit."
             exit 0
           fi
 
-          git commit -m "Auto-build CV PDF"
+          git commit -m "Auto-build cv.pdf"
 
-          # Rebase onto latest remote to avoid 'fetch first' rejection
           git pull --rebase origin "${GITHUB_REF_NAME}"
-
           git push origin HEAD:"${GITHUB_REF_NAME}"
