@@ -44,7 +44,7 @@
       --muted: #94a3b8;
       --border: rgba(148, 163, 184, 0.15);
       --card-bg: rgba(15, 23, 42, 0.6);
-      --radius: 1rem;
+      --radius: 1.2rem;
       --max-width: 1100px;
     }
 
@@ -81,8 +81,27 @@
     }
 
     .shell { max-width: var(--max-width); margin: 0 auto; padding: 0 1.5rem; }
-    section { padding: 5rem 0; border-bottom: 1px solid var(--border); }
+    section { padding: 3rem 0; border-bottom: 1px solid var(--border); }
     section:last-child { border-bottom: none; }
+
+    /* Bölüm renk geçişleri ve yuvarlatılmış kenarlar */
+    #research, #teaching, #code, #contact {
+      border-radius: 1.5rem;
+      margin: 1rem 0;
+      padding: 2.5rem 2rem;
+    }
+    #research {
+      background: linear-gradient(180deg, rgba(56, 189, 248, 0.12) 0%, transparent 100%);
+    }
+    #teaching {
+      background: linear-gradient(180deg, rgba(249, 115, 22, 0.10) 0%, transparent 100%);
+    }
+    #code {
+      background: linear-gradient(180deg, rgba(56, 189, 248, 0.08) 0%, rgba(249, 115, 22, 0.05) 100%);
+    }
+    #contact {
+      background: linear-gradient(180deg, rgba(249, 115, 22, 0.08) 0%, transparent 100%);
+    }
 
     header {
       position: sticky; top: 0; z-index: 40;
@@ -142,10 +161,17 @@
     .hero { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 3rem; align-items: center; min-height: 80vh; padding-top: 2rem; }
     @media(max-width: 900px) { .hero { grid-template-columns: 1fr; text-align: center; } }
 
+    /* 1. Hero kicker - daha koyu/belirgin stil */
     .hero-kicker {
-      font-family: "JetBrains Mono", monospace; font-size: 0.8rem; color: var(--accent2);
-      margin-bottom: 1rem; display: inline-block; padding: 0.2rem 0.8rem;
-      border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 100px;
+      font-family: "JetBrains Mono", monospace; 
+      font-size: 0.8rem; 
+      color: #94a3b8;
+      margin-bottom: 1rem; 
+      display: inline-block; 
+      padding: 0.4rem 1rem;
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(148, 163, 184, 0.3); 
+      border-radius: 100px;
     }
 
     .hero h1 {
@@ -236,10 +262,11 @@
     .graph-labels {
       position: absolute; width: 100%; height: 100%; pointer-events: none;
     }
+    /* 7. Relative Flux yazısını içeriye kaydır */
     .label-y {
-      position: absolute; left: -30px; top: 50%;
+      position: absolute; left: -15px; top: 50%;
       transform: rotate(-90deg) translateX(50%); transform-origin: left;
-      font-family: "JetBrains Mono"; font-size: 0.7rem; color: var(--muted); letter-spacing: 1px;
+      font-family: "JetBrains Mono"; font-size: 0.65rem; color: var(--muted); letter-spacing: 1px;
     }
     .label-x {
       position: absolute; bottom: -25px; right: 0;
@@ -265,19 +292,69 @@
       pointer-events: none;
     }
 
-    .section-head { margin-bottom: 2.5rem; }
-    .section-head h2 { font-family: "Space Grotesk", sans-serif; font-size: 2rem; margin-bottom: 0.5rem; }
-    .section-head p { color: var(--muted); max-width: 600px; }
+    /* 2. Section head - tam genişlik, kenarlardan boşluk */
+    .section-head { 
+      margin-bottom: 2rem;
+      padding: 1.5rem 2rem;
+      background: rgba(15, 23, 42, 0.5);
+      border-radius: 1rem;
+      border: 1px solid var(--border);
+    }
+    .section-head h2 { 
+      font-family: "Space Grotesk", sans-serif; 
+      font-size: 2rem; 
+      margin-bottom: 0.8rem; 
+    }
+    .section-head p { 
+      color: var(--muted); 
+      max-width: 100%;
+      line-height: 1.7;
+    }
 
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
 
+    /* Kartlar - yuvarlatılmış kenarlar ve farklı tonlar */
     .card {
-      background: var(--card-bg); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 2rem;
-      position: relative; overflow: hidden; transition: transform 0.2s;
-      display: flex; flex-direction: column;
+      background: var(--card-bg); 
+      border: 1px solid var(--border);
+      border-radius: var(--radius); 
+      padding: 2rem;
+      position: relative; 
+      overflow: hidden; 
+      transition: transform 0.2s;
+      display: flex; 
+      flex-direction: column;
     }
     .card:hover { transform: translateY(-4px); border-color: rgba(255,255,255,0.1); }
+
+    /* Farklı tonlar için kartlara özel stiller */
+    #research .grid .card:nth-child(1) {
+      background: linear-gradient(145deg, rgba(56, 189, 248, 0.08), rgba(15, 23, 42, 0.6));
+    }
+    #research .grid .card:nth-child(2) {
+      background: linear-gradient(145deg, rgba(249, 115, 22, 0.06), rgba(15, 23, 42, 0.6));
+    }
+    #research .grid .card:nth-child(3) {
+      background: linear-gradient(145deg, rgba(139, 92, 246, 0.06), rgba(15, 23, 42, 0.6));
+    }
+
+    #teaching .grid .card:nth-child(1) {
+      background: linear-gradient(145deg, rgba(249, 115, 22, 0.08), rgba(15, 23, 42, 0.6));
+    }
+    #teaching .grid .card:nth-child(2) {
+      background: linear-gradient(145deg, rgba(56, 189, 248, 0.06), rgba(15, 23, 42, 0.6));
+    }
+
+    #contact .contact-grid .card:nth-child(1) {
+      background: linear-gradient(145deg, rgba(249, 115, 22, 0.06), rgba(15, 23, 42, 0.6));
+    }
+    #contact .contact-grid .card:nth-child(2) {
+      background: linear-gradient(145deg, rgba(56, 189, 248, 0.08), rgba(15, 23, 42, 0.6));
+    }
+
+    #code .card {
+      background: linear-gradient(145deg, rgba(56, 189, 248, 0.05), rgba(15, 23, 42, 0.6));
+    }
 
     .card::before {
       content: ""; position: absolute; inset: 0;
@@ -297,7 +374,7 @@
 
     .pub-card {
       grid-column: 1 / -1;
-      background: linear-gradient(145deg, rgba(15, 23, 42, 0.8), rgba(2, 6, 23, 0.9));
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.8), rgba(2, 6, 23, 0.9)) !important;
       border: 1px solid var(--border);
     }
     .pub-list {
@@ -348,27 +425,6 @@
     @media(max-width: 700px) { .contact-grid { grid-template-columns: 1fr; } }
     .contact-list li { margin-bottom: 1rem; display: flex; align-items: center; gap: 0.8rem; }
     .icon { width: 24px; text-align: center; font-size: 1.2rem; }
-
-    /* CV Download Link in Contact Section */
-    .cv-download-box {
-      text-align: center;
-      margin-top: 2rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid var(--border);
-    }
-    .cv-download-box a {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: var(--accent2);
-      font-size: 0.9rem;
-      font-weight: 500;
-      transition: all 0.2s;
-    }
-    .cv-download-box a:hover {
-      color: #fff;
-      gap: 0.7rem;
-    }
 
     footer { padding: 3rem 0; text-align: center; font-size: 0.85rem; color: var(--muted); border-top: 1px solid var(--border); }
   </style>
@@ -674,15 +730,12 @@
             <span class="icon">🆔</span>
             <a href="https://orcid.org/0000-0002-3076-164X" target="_blank" rel="noopener noreferrer">ORCID Profile</a>
           </li>
+          <li>
+            <span class="icon">📄</span>
+            <a href="cv.pdf" target="_blank" rel="noopener noreferrer">View my full CV (PDF)</a>
+          </li>
         </ul>
       </div>
-    </div>
-
-    <!-- CV Link -->
-    <div class="cv-download-box">
-      <a href="cv.pdf" target="_blank" rel="noopener noreferrer">
-        📄 View my full CV (PDF)
-      </a>
     </div>
   </section>
 
