@@ -31,7 +31,7 @@ jobs:
           root_file: cv.tex
 
           # Eğer paketlerin shell-escape istiyorsa (minted vs.) aç:
-          # latexmk_shell_escape: true
+          # latexmk_shell_escape: true 
 
           # Eğer xelatex kullanıyorsan aç:
           # latexmk_use_xelatex: true
