@@ -1,11 +1,14 @@
 name: Build CV PDF
 
 on:
+  workflow_dispatch:
   push:
+    branches: [ "main" ]
     paths:
       - "cv.tex"
       - "publications.json"
       - ".github/workflows/build-cv.yml"
+      - ".github/workflows/compile-cv.yml"
 
 concurrency:
   group: cv-${{ github.ref }}
@@ -29,12 +32,13 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: cv.tex
-
-          # Eğer paketlerin shell-escape istiyorsa (minted vs.) aç:
-          # latexmk_shell_escape: true 
-
-          # Eğer xelatex kullanıyorsan aç:
+          # latexmk_shell_escape: true
           # latexmk_use_xelatex: true
+
+      - name: Verify output
+        run: |
+          ls -la
+          test -f cv.pdf
 
       - name: Commit & push cv.pdf safely
         run: |
@@ -49,6 +53,5 @@ jobs:
 
           git commit -m "Auto-build cv.pdf"
 
-          # remote ilerideyse 'fetch first' yememek için:
           git pull --rebase origin "${GITHUB_REF_NAME}"
           git push origin HEAD:"${GITHUB_REF_NAME}"
