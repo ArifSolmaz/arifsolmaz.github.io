@@ -3,8 +3,9 @@ name: Build CV PDF
 on:
   push:
     paths:
-      - "cv/**"
-      - ".github/workflows/compile-cv.yml"
+      - "cv.tex"
+      - "publications.json"
+      - ".github/workflows/build-cv.yml"
 
 concurrency:
   group: cv-${{ github.ref }}
@@ -14,7 +15,7 @@ permissions:
   contents: write
 
 jobs:
-  compile:
+  build:
     if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
 
@@ -24,15 +25,16 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Compile LaTeX
+      - name: Compile LaTeX (cv.tex -> cv.pdf)
         uses: xu-cheng/latex-action@v3
         with:
-          working_directory: cv
-          root_file: main.tex
+          root_file: cv.tex
 
-      - name: Copy PDF to root as cv.pdf
-        run: |
-          cp cv/main.pdf cv.pdf
+          # Eğer paketlerin shell-escape istiyorsa (minted vs.) aç:
+          # latexmk_shell_escape: true
+
+          # Eğer xelatex kullanıyorsan aç:
+          # latexmk_use_xelatex: true
 
       - name: Commit & push cv.pdf safely
         run: |
@@ -47,5 +49,6 @@ jobs:
 
           git commit -m "Auto-build cv.pdf"
 
+          # remote ilerideyse 'fetch first' yememek için:
           git pull --rebase origin "${GITHUB_REF_NAME}"
           git push origin HEAD:"${GITHUB_REF_NAME}"
