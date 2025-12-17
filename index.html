@@ -176,7 +176,7 @@
 
     .hero h1 {
       font-family: "Space Grotesk", sans-serif; font-size: clamp(2.5rem, 5vw, 3.5rem);
-      line-height: 1.1; font-weight: 700; margin-bottom: 1.5rem;
+      line-height: 1.1; font-weight: 700; margin-bottom: 0.6rem;
       background: linear-gradient(to bottom right, #fff 30%, #64748b 100%);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     }
@@ -430,11 +430,17 @@
   </style>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "@id": "https://arifsolmaz.github.io/#profile",
+  "url": "https://arifsolmaz.github.io/",
+  "mainEntity": {
     "@type": "Person",
-    "name": "Dr. Arif Solmaz",
-    "url": "https://arifsolmaz.github.io",
+    "@id": "https://arifsolmaz.github.io/#person",
+    "name": "Arif Solmaz",
+    "honorificPrefix": "Dr.",
+    "url": "https://arifsolmaz.github.io/",
     "jobTitle": "Astrophysicist & Educator",
     "description": "Astrophysicist working on exoplanets, starspots, stellar activity, TESS & JWST light curves, and transit timing variations (TTVs).",
     "affiliation": {
@@ -460,7 +466,8 @@
       "Scientific computing in Python"
     ]
   }
-  </script>
+}
+</script>
 </head>
 <body>
 
@@ -486,12 +493,13 @@
 </header>
 
 <main class="shell" id="top">
-  <h1 class="visually-hidden">Dr. Arif Solmaz – Astrophysicist & Educator working on exoplanets, starspots, stellar activity, TESS & JWST light curves, and transit timing variations (TTVs).</h1>
+  <p class="visually-hidden">Dr. Arif Solmaz – Astrophysicist & Educator working on exoplanets, starspots, stellar activity, TESS & JWST light curves, and transit timing variations (TTVs).</p>
 
   <section class="hero">
     <div>
       <span class="hero-kicker">Astrophysics · Exoplanets · Data Science</span>
-      <h1>Decoding signals from <br>noisy stars.</h1>
+      <h1>Dr. Arif Solmaz</h1>
+      <h2 class="hero-tagline">Decoding signals from <br>noisy stars.</h2>
       <p>
         I am an astrophysicist studying transiting exoplanets such as <strong>WASP-52 b</strong> and <strong>HAT-P-36 b</strong>, stellar activity, and time-series analysis.
         My research focuses on how starspots, stellar variability, and instrumental systematics affect transit light curves and
