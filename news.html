@@ -13,25 +13,82 @@
 
   <style>
     /* --- 1. GENEL AYARLAR --- */
-    :root {
-      --bg: #020617;
-      --accent: #f97316; /* Turuncu */
-      --accent2: #38bdf8; /* Mavi */
-      --text: #e2e8f0;
-      --muted: #94a3b8;
-      --card-bg: rgba(15, 23, 42, 0.8);
-      --border: rgba(148, 163, 184, 0.15);
+    :root{
+      --bg0:#05060a;
+      --bg1:#0b0d14;
+
+      --fg: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.56);
+      --hair: rgba(255,255,255,.14);
+
+      --accent:#f97316; /* Turuncu */
+      --accent2:#38bdf8; /* Mavi */
+
+      --card-bg: rgba(11, 13, 20, 0.55);
+      --border: rgba(255,255,255,.12);
+
+      /* Back-compat with existing news.css variables */
+      --bg: var(--bg0);
+      --text: var(--fg);
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: "Inter", sans-serif; background: var(--bg); color: var(--text); padding-bottom: 4rem; }
-    a { text-decoration: none; color: inherit; transition: 0.2s; }
+* { box-sizing: border-box; margin: 0; padding: 0; }    body{
+      font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial;
+      color: var(--fg);
+      min-height: 100svh;
+      background:
+        radial-gradient(900px 520px at 25% 28%, rgba(255,255,255,.04), transparent 60%),
+        radial-gradient(900px 620px at 80% 72%, rgba(255,255,255,.03), transparent 62%),
+        linear-gradient(180deg, var(--bg0), var(--bg1));
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: geometricPrecision;
+      letter-spacing: -0.01em;
+      position: relative;
+      isolation: isolate;
+      padding-bottom: 4rem;
+    }
+    body::before{
+      content:"";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+      opacity: .06;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+      background-size: 240px 240px;
+      mix-blend-mode: overlay;
+    }
+    body::after{
+      content:"";
+      position: fixed;
+      inset: -20%;
+      pointer-events: none;
+      z-index: -1;
+      background: radial-gradient(900px 700px at 50% 45%,
+        rgba(0,0,0,0) 0%,
+        rgba(0,0,0,.35) 62%,
+        rgba(0,0,0,.78) 100%);
+      opacity: .65;
+    }
+a { text-decoration: none; color: inherit; transition: 0.2s; }
     
     /* Header */
     header { padding: 1.5rem; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
-    .brand { font-family: "Space Grotesk"; font-weight: 700; font-size: 1.2rem; }
-    .nav-link { font-size: 0.9rem; font-weight: 600; color: var(--accent2); }
-
-    .container { max-width: 1000px; margin: 0 auto; padding: 2rem 1.5rem; }
+    .brand { font-family: "Space Grotesk"; font-weight: 700; font-size: 1.2rem; }    .nav-link{
+      font-size: .78rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      opacity: .72;
+      padding: .2rem 0 .55rem;
+      border-bottom: 1px solid rgba(255,255,255,.10);
+      transition: opacity .18s ease, border-color .18s ease, transform .18s ease;
+    }
+    .nav-link:hover{
+      opacity: 1;
+      border-bottom-color: rgba(255,255,255,.28);
+      transform: translateY(-1px);
+    }
+.container { max-width: 1000px; margin: 0 auto; padding: 2rem 1.5rem; }
     h1 { font-family: "Space Grotesk"; font-size: 2.5rem; margin-bottom: 0.5rem; color: #fff; }
     .subtitle { color: var(--muted); margin-bottom: 2rem; }
 
@@ -54,26 +111,60 @@
 
     /* --- 3. KART TASARIMI --- */
     .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; }
-    
-    .card {
-      background: var(--card-bg); border: 1px solid var(--border); border-radius: 1rem;
-      overflow: hidden; cursor: pointer; transition: transform 0.2s;
-      display: flex; flex-direction: column; height: 100%;
+
+    .card{
+      background: var(--card-bg);
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 18px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform .18s ease, border-color .18s ease;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      backdrop-filter: blur(10px);
     }
-    .card:hover { transform: translateY(-5px); border-color: var(--accent2); }
-    
-    .card-img { height: 180px; background-color: #1e293b; overflow: hidden; position: relative; }
-    .card-img img { width: 100%; height: 100%; object-fit: cover; }
-    
-    .card-body { padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1; }
-    .date { font-family: "JetBrains Mono"; font-size: 0.75rem; color: var(--accent); margin-bottom: 0.5rem; }
-    .title { font-family: "Space Grotesk"; font-size: 1.2rem; font-weight: 700; margin-bottom: 0.8rem; line-height: 1.3; color: #fff; }
-    .summary { font-size: 0.9rem; color: var(--muted); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; margin-bottom: 1rem; }
-    
-    /* --- ETIKET TASARIMI (Ana Sayfa Stili) --- */
-    .tags { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: auto; padding-top: 1rem; }
-    
-    .tag {
+    .card:hover{
+      transform: translateY(-4px);
+      border-color: rgba(255,255,255,.22);
+    }
+.card-img { height: 180px; background-color: #1e293b; overflow: hidden; position: relative; }
+    .card-img img { width: 100%; height: 100%; object-fit: cover; }    .card-body{
+      padding: 1.25rem 1.25rem 1.1rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      gap: .55rem;
+    }    .date{
+      font-family: "JetBrains Mono";
+      font-size: 0.75rem;
+      color: var(--accent);
+      margin: 0;
+    }    .title{
+      font-family: "Space Grotesk";
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.3;
+      color: #fff;
+      margin: 0;
+    }    .summary{
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.6;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      margin: 0;
+    }
+/* --- ETIKET TASARIMI (Ana Sayfa Stili) --- */    .tags{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: .35rem;
+      padding-top: 0;
+    }
+.tag {
       font-family: "JetBrains Mono", monospace;
       font-size: 0.75rem; 
       font-weight: 500;
@@ -95,80 +186,57 @@
       box-shadow: 0 0 10px rgba(56, 189, 248, 0.2); 
       transform: translateY(-2px); 
       color: #fff; 
-    }
-
-    
-    .read-more {
-      margin-top: 1.2rem;
-      font-size: 0.85rem;
-      color: var(--accent2);
-      font-weight: 600;
+    }    .read-more{
+      margin-top: auto;
+      padding-top: .9rem;
+      font-size: .78rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.72);
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 12px;
     }
-    .comment-count {
-      font-family: "JetBrains Mono", monospace;
-      font-size: 0.75rem;
-      color: var(--muted);
-      font-weight: 500;
-      white-space: nowrap;
-    }
-
-    .comments-wrap {
-    margin-top: 2rem;
-    border-top: 1px solid var(--border);
-    padding-top: 1.2rem;
-    background: #f1f5f9;
-    padding: 1.5rem;
-    border-radius: 12px;
-    margin-left: -1rem;
-    margin-right: -1rem;
-    }
-    .comments-title {
-    font-family: "Space Grotesk";
-    font-size: 1.05rem;
-    font-weight: 700;
-    color: #1e293b;
-    margin-bottom: 0.6rem;
-    }
-    .comments-note {
-      font-size: 0.85rem;
-      color: var(--muted);
-      margin-bottom: 0.8rem;
-    }
-    /* Cusdis iframe will be injected here */
-
 /* --- 4. POPUP (MODAL) --- */
     .modal-overlay {
       position: fixed; inset: 0; background: rgba(0,0,0,0.85); backdrop-filter: blur(8px);
       z-index: 100; display: none; justify-content: center; align-items: center; padding: 1rem;
       opacity: 0; transition: opacity 0.3s;
     }
-    .modal-overlay.active { display: flex; opacity: 1; }
-    
-    .modal-content {
-      background: #0f172a; border: 1px solid var(--accent2); border-radius: 1rem;
-      width: 100%; max-width: 800px; max-height: 90vh; overflow-y: auto;
-      position: relative; box-shadow: 0 0 50px rgba(0,0,0,0.5);
+    .modal-overlay.active { display: flex; opacity: 1; }    .modal-content{
+      background: linear-gradient(180deg, rgba(11,13,20,.92), rgba(5,6,10,.92));
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 20px;
+      width: 100%;
+      max-width: 820px;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      box-shadow: 0 0 60px rgba(0,0,0,.55);
     }
-    .close-btn {
+.close-btn {
       position: absolute; top: 1rem; right: 1rem; background: rgba(0,0,0,0.5); border: none;
       color: #fff; font-size: 2rem; width: 40px; height: 40px; border-radius: 50%; 
       cursor: pointer; z-index: 10; display:flex; align-items:center; justify-content:center;
     }
     .close-btn:hover { background: rgba(255, 255, 255, 0.2); }
 
-    .modal-img { width: 100%; height: 350px; object-fit: cover; border-bottom: 1px solid var(--border); }
-    .modal-body { padding: 2.5rem; }
-    
-    /* MODAL HEADER, SES VE OYNATICI STİLLERİ */
+    .modal-img { width: 100%; height: 350px; object-fit: cover; border-bottom: 1px solid var(--border); }    .modal-body{
+      padding: clamp(1.3rem, 2.5vw, 2.3rem);
+    }
+/* MODAL HEADER, SES VE OYNATICI STİLLERİ */
     .modal-header-row { display: flex; flex-direction: column; gap: 10px; margin-bottom: 1.5rem; }
-    .modal-date { color: var(--accent); font-family: "JetBrains Mono"; display: block; }
-    .modal-title { font-family: "Space Grotesk"; font-size: 2rem; line-height: 1.2; margin-bottom: 1rem; color: #fff; }
-
-    /* Audio Player (m4a/MP3) */
+    .modal-date { color: var(--accent); font-family: "JetBrains Mono"; display: block; }    .modal-title{
+      font-family: "Space Grotesk";
+      font-size: 2rem;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      color: #fff;
+      font-weight: 500;
+      letter-spacing: -0.03em;
+    }
+/* Audio Player (m4a/MP3) */
     .audio-player-wrapper {
       width: 100%;
       background: rgba(56, 189, 248, 0.05);
@@ -194,9 +262,13 @@
     .speak-btn.speaking { background: #ef4444; border-color: #ef4444; color: white; animation: pulse 1.5s infinite; }
     @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.7; } 100% { opacity: 1; } }
 
-    /* MARKDOWN STİLLERİ */
-    .modal-text { font-size: 1.1rem; color: #cbd5e1; line-height: 1.8; }
-    .modal-text p { margin-bottom: 1.5em; } 
+    /* MARKDOWN STİLLERİ */    .modal-text{
+      font-size: 1.05rem;
+      color: rgba(255,255,255,.84);
+      line-height: 1.85;
+      max-width: 70ch;
+    }
+.modal-text p { margin-bottom: 1.5em; } 
     .modal-text strong { color: #fff; font-weight: 700; }
     .modal-text em { font-style: italic; color: var(--accent2); }
     
@@ -245,12 +317,6 @@
         <h2 class="modal-title" id="m-title"></h2>
         <div class="modal-text" id="m-text"></div>
         <div class="modal-tags" id="m-tags"></div>
-        <div class="comments-wrap" id="comments-wrap">
-          <div class="comments-title">Yorumlar</div>
-          <div class="comments-note" id="comments-note" style="display:none"></div>
-          <div id="cusdis_thread"></div>
-        </div>
-
       </div>
     </div>
   </div>
@@ -336,78 +402,9 @@ Kısacası TRAPPIST-1 e, bize en yakın “Dünya’ya benzer adaylardan” biri
   const synth = window.speechSynthesis;
   let currentArticleText = "";
 
-  // --- CUSDIS YORUMLAR ---
-  // 1) Cusdis dashboard'dan App ID alıp buraya yapıştırın
-  // 2) Self-host yaparsanız CUSDIS_HOST'u kendi domain'inize çevirin
-  const CUSDIS_HOST = "https://cusdis.com";
-  const CUSDIS_APP_ID = "be1f0165-7af9-4018-9d61-fd9123f56e70";
-
-  function cusdisEnabled() {
-  return CUSDIS_APP_ID && CUSDIS_APP_ID.length > 0;
-  }
-
-  function ensureCusdisCountScript() {
-    if (!cusdisEnabled()) return;
-    if (document.getElementById('cusdis-count-script')) return;
-
-    const s = document.createElement('script');
-    s.id = 'cusdis-count-script';
-    s.defer = true;
-    s.dataset.host = CUSDIS_HOST;
-    s.dataset.appId = CUSDIS_APP_ID;
-    s.src = CUSDIS_HOST + "/js/cusdis-count.umd.js";
-    document.body.appendChild(s);
-  }
-
-  function loadCusdisForItem(item) {
-    const note = document.getElementById('comments-note');
-    const thread = document.getElementById('cusdis_thread');
-    if (!thread) return;
-
-    if (!cusdisEnabled()) {
-      if (note) {
-        note.style.display = 'block';
-        note.textContent = "Yorum sistemi henüz yapılandırılmadı. (Cusdis App ID eklenmedi.)";
-      }
-      thread.innerHTML = '';
-      return;
-    } else {
-      if (note) note.style.display = 'none';
-    }
-
-    const pageId = item.id || ('news-' + item.date);
-    const pageUrl = window.location.origin + window.location.pathname + "#" + encodeURIComponent(pageId);
-    const pageTitle = item.title || "News";
-
-    thread.setAttribute('data-host', CUSDIS_HOST);
-    thread.setAttribute('data-app-id', CUSDIS_APP_ID);
-    thread.setAttribute('data-page-id', pageId);
-    thread.setAttribute('data-page-url', pageUrl);
-    thread.setAttribute('data-page-title', pageTitle);
-
-    thread.setAttribute('data-theme', 'light');
-
-    // Önce eski iframe'i temizle
-    thread.innerHTML = '';
-
-    // Widget script'i her modal açılışında yeniden yüklemek, sayfa-id değişimini garanti eder
-    const old = document.getElementById('cusdis-widget-script');
-    if (old) old.remove();
-
-    const s = document.createElement('script');
-    s.id = 'cusdis-widget-script';
-    s.async = true;
-    s.defer = true;
-    s.src = CUSDIS_HOST + "/js/cusdis.es.js";
-    document.body.appendChild(s);
-
-    ensureCusdisCountScript();
-  }
-
 
   marked.use({ breaks: true });
   renderNews(newsData);
-  ensureCusdisCountScript();
 
   // Sayfa #haber-id ile açıldıysa modal'ı otomatik aç
   (function openFromHash(){
@@ -428,7 +425,8 @@ Kısacası TRAPPIST-1 e, bize en yakın “Dünya’ya benzer adaylardan” biri
       const realIndex = newsData.indexOf(item);
       let tagsHtml = '';
       if(item.tags) {
-        item.tags.forEach(t => {
+        const uniqTags = [...new Set(item.tags || [])];
+        uniqTags.forEach(t => {
           tagsHtml += `<span class="tag" onclick="event.stopPropagation(); filterByTag('${t}')">${t}</span>`;
         });
       }
@@ -446,7 +444,7 @@ Kısacası TRAPPIST-1 e, bize en yakın “Dünya’ya benzer adaylardan” biri
           <div class="title">${item.title}</div>
           <div class="summary">${plainText}</div>
           <div class="tags">${tagsHtml}</div>
-          <div class="read-more"><span>Devamını Oku →</span><span class="comment-count"><span data-cusdis-count-page-id="${item.id || ('news-'+realIndex)}">0</span> yorum</span></div>
+          <div class="read-more"><span>Devamını Oku →</span></div>
         </div>
       `;
       card.onclick = () => openModal(realIndex);
@@ -525,14 +523,12 @@ Kısacası TRAPPIST-1 e, bize en yakın “Dünya’ya benzer adaylardan” biri
 
     let tagsHtml = '';
     if(item.tags) {
-      item.tags.forEach(t => {
+      const uniqTags = [...new Set(item.tags || [])];
+      uniqTags.forEach(t => {
         tagsHtml += `<span class="tag" onclick="closeModal(); filterByTag('${t}')">${t}</span>`;
       });
     }
     mTags.innerHTML = tagsHtml;
-
-    // Cusdis yorumlarını ilgili haber için yükle
-    loadCusdisForItem(item);
 
     // Haber bazlı paylaşılabilir link (hash)
     if (item.id) window.location.hash = item.id;
