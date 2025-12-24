@@ -6,116 +6,106 @@
   <title>Arif Solmaz</title>
 
   <style>
-    /* Reset */
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root{
-      --bg0:#05060a;
-      --fg: rgba(255,255,255,.95);
-      --muted: rgba(255,255,255,.6);
-      --accent-glow: rgba(140, 200, 255, 0.2);
+      --bg: #030305;
+      --fg: #e0e0e0;
+      --muted: #555;
     }
 
     body{
-      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       color: var(--fg);
-      min-height: 100vh;
+      background-color: var(--bg);
+      height: 100vh;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      overflow: hidden;
-      background-color: var(--bg0);
-      -webkit-font-smoothing: antialiased;
       position: relative;
     }
 
-    /* Canvas Arkaplanı */
-    #star-canvas {
-      position: fixed;
+    canvas {
+      position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: -1;
+      z-index: 1;
     }
 
-    /* İçerik Konteyneri */
     .container{
-      text-align: center;
-      padding: 2rem;
-      width: min(900px, 90vw);
       z-index: 10;
-      /* Yazıların arkasındaki yıldızların karışmaması için hafif bir backdrop */
-      background: radial-gradient(closest-side, rgba(5,6,10,0.6), transparent);
+      text-align: center;
+      mix-blend-mode: exclusion; 
+      pointer-events: none;
+      opacity: 0;
+      animation: slowReveal 2s ease-out forwards;
+      animation-delay: 0.5s;
     }
 
     .name{
-      font-size: clamp(3rem, 7vw, 5rem);
-      font-weight: 200; /* Daha ince, daha modern */
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-weight: 200;
       letter-spacing: -0.04em;
       margin-bottom: 0.5rem;
-      text-shadow: 0 0 30px rgba(255,255,255,0.1);
-      animation: fadeIn 1.5s ease-out;
+      color: #fff;
     }
 
     .profession{
-      font-size: 0.85rem;
-      letter-spacing: 0.4em;
+      font-size: 1.25rem; 
+      letter-spacing: 0.25em;
       text-transform: uppercase;
-      color: var(--muted);
+      color: #888;
       margin-bottom: 3.5rem;
       display: inline-block;
-      position: relative;
-      animation: fadeIn 2s ease-out;
+      font-weight: 400;
     }
 
     .links{
       display: flex;
-      gap: 2rem;
       justify-content: center;
-      flex-wrap: wrap;
-      animation: fadeIn 2.5s ease-out;
+      gap: 3.5rem;
+      pointer-events: auto;
     }
 
     .link{
-      color: var(--fg);
+      color: #ccc;
       text-decoration: none;
-      font-size: 0.8rem;
-      letter-spacing: 0.2em;
+      font-size: 1.0rem;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
-      opacity: 0.6;
-      padding: 0.8rem 1.2rem;
-      border: 1px solid rgba(255,255,255,0.05);
-      border-radius: 4px;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      background: rgba(255,255,255,0.01);
+      opacity: 0.8;
+      padding-bottom: 4px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.3s ease;
+      position: relative;
     }
 
     .link:hover{
       opacity: 1;
-      background: rgba(255,255,255,0.08);
-      border-color: rgba(255,255,255,0.3);
-      box-shadow: 0 0 20px var(--accent-glow);
-      transform: scale(1.05);
+      color: #fff;
+      border-bottom-color: rgba(255, 255, 255, 1);
+      text-shadow: 0 0 12px rgba(255,255,255,0.6);
+      transform: translateY(-2px);
     }
-
-    /* Giriş Animasyonu */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
+    
+    @keyframes slowReveal {
+      to { opacity: 1; }
     }
-
+    
     @media (max-width: 600px){
-      .links{ gap: 1rem; }
-      .link { padding: 0.6rem 1rem; font-size: 0.75rem; }
+        .profession { font-size: 1rem; }
+        .link { font-size: 0.85rem; gap: 2rem; }
     }
   </style>
 </head>
 
 <body>
-  
-  <canvas id="star-canvas"></canvas>
+
+  <canvas id="cosmos"></canvas>
 
   <div class="container">
     <div class="name">Arif Solmaz</div>
@@ -128,121 +118,108 @@
   </div>
 
   <script>
-    /**
-     * 3D STARFIELD (Derinlik Efekti)
-     * Yıldızlar merkezden dışa doğru hareket eder (Z ekseni hareketi).
-     * Mouse hareketi kamerayı hafifçe döndürür.
-     */
-    const canvas = document.getElementById('star-canvas');
+    const canvas = document.getElementById('cosmos');
     const ctx = canvas.getContext('2d');
 
-    let width, height;
-    
-    // Yıldız sayısı ve hızı
-    const STAR_COUNT = 400; 
-    const SPEED = 0.5; // Hız faktörü
+    let w, h;
+    let particles = [];
+    let mouse = { x: -1000, y: -1000 };
 
-    let stars = [];
-    let mouseX = 0;
-    let mouseY = 0;
+    const PARTICLE_COUNT = 100;   
+    const CONNECT_DIST = 100;     
+    const MOUSE_DIST = 200;       
+    const DRIFT_SPEED = 0.3;      
 
-    // Yıldız Sınıfı
-    class Star {
+    class Particle {
       constructor() {
-        this.init(true);
-      }
-
-      init(randomZ = false) {
-        // Ekran koordinatları (-width/2 ile width/2 arası)
-        this.x = (Math.random() - 0.5) * width * 2;
-        this.y = (Math.random() - 0.5) * height * 2;
-        
-        // Derinlik (Z): 0 (yakın) ile width (uzak) arası
-        this.z = randomZ ? Math.random() * width : width;
-        
-        // Parlaklık rastgeleliği
-        this.opacity = Math.random();
+        this.x = Math.random() * w;
+        this.y = Math.random() * h;
+        this.vx = (Math.random() - 0.5) * DRIFT_SPEED;
+        this.vy = (Math.random() - 0.5) * DRIFT_SPEED;
+        this.size = Math.random() * 1.5 + 0.5;
       }
 
       update() {
-        // Yıldızı yaklaştır (Z azalt)
-        this.z -= SPEED * 5; // Hız çarpanı
+        this.x += this.vx;
+        this.y += this.vy;
 
-        // Eğer yıldız arkaya geçerse (z < 1), yeniden başlat
-        if (this.z <= 1) {
-          this.init();
-        }
-      }
-
-      draw() {
-        // Perspektif hesabı
-        // sx, sy: 2D ekran koordinatları
-        // "width / this.z": Uzaktakiler merkeze yakın, yakındakiler kenara uzak
-        let x_2d = (this.x / this.z) * (width / 2);
-        let y_2d = (this.y / this.z) * (width / 2);
-
-        // Mouse Parallax etkisi (Kamera dönüşü)
-        x_2d += (mouseX * 0.05); 
-        y_2d += (mouseY * 0.05);
-
-        // Ekran merkezine göre ötele
-        const finalX = x_2d + width / 2;
-        const finalY = y_2d + height / 2;
-
-        // Boyut hesabı (Yaklaştıkça büyür)
-        const size = (1 - this.z / width) * 2.5;
-
-        // Sadece ekran içindeyse çiz
-        if (finalX >= 0 && finalX <= width && finalY >= 0 && finalY <= height) {
-          // Parlaklık: Uzaktakiler sönük, yakındakiler parlak
-          const alpha = (1 - this.z / width) * this.opacity;
-          
-          ctx.fillStyle = `rgba(255, 255, 255, ${alpha})`;
-          ctx.beginPath();
-          ctx.arc(finalX, finalY, size < 0 ? 0 : size, 0, Math.PI * 2);
-          ctx.fill();
-        }
+        if (this.x < 0) this.x = w;
+        if (this.x > w) this.x = 0;
+        if (this.y < 0) this.y = h;
+        if (this.y > h) this.y = 0;
       }
     }
 
     function init() {
       resize();
-      window.addEventListener('resize', resize);
-      window.addEventListener('mousemove', (e) => {
-        // Mouse'un merkeze olan uzaklığı
-        mouseX = e.clientX - width / 2;
-        mouseY = e.clientY - height / 2;
-      });
-
-      stars = [];
-      for (let i = 0; i < STAR_COUNT; i++) {
-        stars.push(new Star());
+      particles = [];
+      for(let i = 0; i < PARTICLE_COUNT; i++) {
+        particles.push(new Particle());
       }
-      animate();
     }
 
     function resize() {
-      width = window.innerWidth;
-      height = window.innerHeight;
-      canvas.width = width;
-      canvas.height = height;
+      w = window.innerWidth;
+      h = window.innerHeight;
+      canvas.width = w;
+      canvas.height = h;
     }
 
     function animate() {
-      // Hafif iz bırakarak temizle (motion blur etkisi için alpha 0.4)
-      // Tam temizlik isterseniz fillStyle ve fillRect satırlarını silip clearRect kullanın
-      ctx.fillStyle = "rgba(5, 6, 10, 0.4)"; 
-      ctx.fillRect(0, 0, width, height);
+      ctx.clearRect(0, 0, w, h);
 
-      stars.forEach(star => {
-        star.update();
-        star.draw();
+      particles.forEach((p, index) => {
+        p.update();
+
+        const dx = mouse.x - p.x;
+        const dy = mouse.y - p.y;
+        const dist = Math.sqrt(dx*dx + dy*dy);
+
+        let alpha = 0;
+
+        if (dist < MOUSE_DIST) {
+          alpha = 1 - (dist / MOUSE_DIST);
+          
+          ctx.fillStyle = `rgba(255, 255, 255, ${alpha})`;
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+          ctx.fill();
+
+          for (let j = index + 1; j < particles.length; j++) {
+            const p2 = particles[j];
+            const dx2 = p.x - p2.x;
+            const dy2 = p.y - p2.y;
+            const dist2 = Math.sqrt(dx2*dx2 + dy2*dy2);
+
+            if (dist2 < CONNECT_DIST) {
+              const lineAlpha = alpha * (1 - dist2 / CONNECT_DIST) * 0.5;
+              
+              ctx.beginPath();
+              ctx.strokeStyle = `rgba(255, 255, 255, ${lineAlpha})`;
+              ctx.lineWidth = 0.5;
+              ctx.moveTo(p.x, p.y);
+              ctx.lineTo(p2.x, p2.y);
+              ctx.stroke();
+            }
+          }
+        }
       });
 
       requestAnimationFrame(animate);
     }
 
+    window.addEventListener('resize', () => { resize(); init(); });
+    window.addEventListener('mousemove', (e) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    });
+    window.addEventListener('mouseleave', () => {
+        mouse.x = -1000;
+        mouse.y = -1000;
+    });
+
     init();
+    animate();
   </script>
 </body>
 </html>
