@@ -11,130 +11,112 @@
 
     :root{
       --bg0:#05060a;
-      --bg1:#0b0d14;
-      --fg: rgba(255,255,255,.92);
-      --muted: rgba(255,255,255,.56);
-      --hair: rgba(255,255,255,.14);
+      --fg: rgba(255,255,255,.95);
+      --muted: rgba(255,255,255,.6);
+      --accent-glow: rgba(140, 200, 255, 0.2);
     }
 
     body{
-      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
       color: var(--fg);
-      min-height: 100svh;
-      display: grid;
-      place-items: center;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       overflow: hidden;
-      background:
-        radial-gradient(900px 520px at 25% 28%, rgba(255,255,255,.04), transparent 60%),
-        radial-gradient(900px 620px at 80% 72%, rgba(255,255,255,.03), transparent 62%),
-        linear-gradient(180deg, var(--bg0), var(--bg1));
+      background-color: var(--bg0);
       -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      text-rendering: geometricPrecision;
-      letter-spacing: -0.01em;
       position: relative;
-      isolation: isolate;
     }
 
-    /* Very subtle grain (designer “print” feel) */
-    body::before{
-      content:"";
+    /* Canvas Arkaplanı */
+    #star-canvas {
       position: fixed;
-      inset: 0;
-      pointer-events: none;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       z-index: -1;
-      opacity: .06;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
-      background-size: 240px 240px;
-      mix-blend-mode: overlay;
     }
 
-    /* Subtle vignette for focus (not a panel) */
-    body::after{
-      content:"";
-      position: fixed;
-      inset: -20%;
-      pointer-events: none;
-      z-index: -1;
-      background: radial-gradient(900px 700px at 50% 45%,
-        rgba(0,0,0,0) 0%,
-        rgba(0,0,0,.35) 62%,
-        rgba(0,0,0,.78) 100%);
-      opacity: .65;
-    }
-
+    /* İçerik Konteyneri */
     .container{
       text-align: center;
-      padding: 2.2rem 1.2rem;
-      width: min(900px, 92vw);
+      padding: 2rem;
+      width: min(900px, 90vw);
+      z-index: 10;
+      /* Yazıların arkasındaki yıldızların karışmaması için hafif bir backdrop */
+      background: radial-gradient(closest-side, rgba(5,6,10,0.6), transparent);
     }
 
     .name{
-      font-size: clamp(2.6rem, 6vw, 4.8rem);
-      font-weight: 300;
-      letter-spacing: -0.05em;
-      line-height: 1.02;
-      margin-bottom: .85rem;
+      font-size: clamp(3rem, 7vw, 5rem);
+      font-weight: 200; /* Daha ince, daha modern */
+      letter-spacing: -0.04em;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 0 30px rgba(255,255,255,0.1);
+      animation: fadeIn 1.5s ease-out;
     }
 
     .profession{
-      font-size: .80rem;
-      letter-spacing: .32em;
+      font-size: 0.85rem;
+      letter-spacing: 0.4em;
       text-transform: uppercase;
       color: var(--muted);
-      margin-bottom: 3rem;
+      margin-bottom: 3.5rem;
+      display: inline-block;
+      position: relative;
+      animation: fadeIn 2s ease-out;
     }
 
     .links{
-      display: inline-flex;
-      gap: clamp(1.4rem, 5vw, 3rem);
-      flex-wrap: wrap;
+      display: flex;
+      gap: 2rem;
       justify-content: center;
-      align-items: baseline;
+      flex-wrap: wrap;
+      animation: fadeIn 2.5s ease-out;
     }
 
     .link{
       color: var(--fg);
       text-decoration: none;
-      font-size: .78rem;
-      letter-spacing: .18em;
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      opacity: .72;
-      padding: .2rem 0 .55rem;
-      border-bottom: 1px solid rgba(255,255,255,.10);
-      transition: opacity .18s ease, border-color .18s ease, transform .18s ease;
-      outline: none;
+      opacity: 0.6;
+      padding: 0.8rem 1.2rem;
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 4px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      background: rgba(255,255,255,0.01);
     }
 
     .link:hover{
       opacity: 1;
-      border-bottom-color: rgba(255,255,255,.28);
-      transform: translateY(-1px);
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.3);
+      box-shadow: 0 0 20px var(--accent-glow);
+      transform: scale(1.05);
     }
 
-    .link:focus-visible{
-      opacity: 1;
-      border-bottom-color: rgba(255,255,255,.28);
-      box-shadow: 0 0 0 3px rgba(255,255,255,.10);
-      border-radius: 8px;
-      padding-left: .35rem;
-      padding-right: .35rem;
-      margin-left: -.35rem;
-      margin-right: -.35rem;
+    /* Giriş Animasyonu */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    @media (max-width: 520px){
-      .profession{ margin-bottom: 2.4rem; }
-      .links{ gap: 1.5rem; }
-    }
-
-    @media (prefers-reduced-motion: reduce){
-      .link{ transition: none; }
+    @media (max-width: 600px){
+      .links{ gap: 1rem; }
+      .link { padding: 0.6rem 1rem; font-size: 0.75rem; }
     }
   </style>
 </head>
 
 <body>
+  
+  <canvas id="star-canvas"></canvas>
+
   <div class="container">
     <div class="name">Arif Solmaz</div>
     <div class="profession">Astronomer</div>
@@ -144,5 +126,123 @@
       <a href="https://arifsolmaz.github.io/news" class="link" target="_self" rel="noopener">News</a>
     </div>
   </div>
+
+  <script>
+    /**
+     * 3D STARFIELD (Derinlik Efekti)
+     * Yıldızlar merkezden dışa doğru hareket eder (Z ekseni hareketi).
+     * Mouse hareketi kamerayı hafifçe döndürür.
+     */
+    const canvas = document.getElementById('star-canvas');
+    const ctx = canvas.getContext('2d');
+
+    let width, height;
+    
+    // Yıldız sayısı ve hızı
+    const STAR_COUNT = 400; 
+    const SPEED = 0.5; // Hız faktörü
+
+    let stars = [];
+    let mouseX = 0;
+    let mouseY = 0;
+
+    // Yıldız Sınıfı
+    class Star {
+      constructor() {
+        this.init(true);
+      }
+
+      init(randomZ = false) {
+        // Ekran koordinatları (-width/2 ile width/2 arası)
+        this.x = (Math.random() - 0.5) * width * 2;
+        this.y = (Math.random() - 0.5) * height * 2;
+        
+        // Derinlik (Z): 0 (yakın) ile width (uzak) arası
+        this.z = randomZ ? Math.random() * width : width;
+        
+        // Parlaklık rastgeleliği
+        this.opacity = Math.random();
+      }
+
+      update() {
+        // Yıldızı yaklaştır (Z azalt)
+        this.z -= SPEED * 5; // Hız çarpanı
+
+        // Eğer yıldız arkaya geçerse (z < 1), yeniden başlat
+        if (this.z <= 1) {
+          this.init();
+        }
+      }
+
+      draw() {
+        // Perspektif hesabı
+        // sx, sy: 2D ekran koordinatları
+        // "width / this.z": Uzaktakiler merkeze yakın, yakındakiler kenara uzak
+        let x_2d = (this.x / this.z) * (width / 2);
+        let y_2d = (this.y / this.z) * (width / 2);
+
+        // Mouse Parallax etkisi (Kamera dönüşü)
+        x_2d += (mouseX * 0.05); 
+        y_2d += (mouseY * 0.05);
+
+        // Ekran merkezine göre ötele
+        const finalX = x_2d + width / 2;
+        const finalY = y_2d + height / 2;
+
+        // Boyut hesabı (Yaklaştıkça büyür)
+        const size = (1 - this.z / width) * 2.5;
+
+        // Sadece ekran içindeyse çiz
+        if (finalX >= 0 && finalX <= width && finalY >= 0 && finalY <= height) {
+          // Parlaklık: Uzaktakiler sönük, yakındakiler parlak
+          const alpha = (1 - this.z / width) * this.opacity;
+          
+          ctx.fillStyle = `rgba(255, 255, 255, ${alpha})`;
+          ctx.beginPath();
+          ctx.arc(finalX, finalY, size < 0 ? 0 : size, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+    }
+
+    function init() {
+      resize();
+      window.addEventListener('resize', resize);
+      window.addEventListener('mousemove', (e) => {
+        // Mouse'un merkeze olan uzaklığı
+        mouseX = e.clientX - width / 2;
+        mouseY = e.clientY - height / 2;
+      });
+
+      stars = [];
+      for (let i = 0; i < STAR_COUNT; i++) {
+        stars.push(new Star());
+      }
+      animate();
+    }
+
+    function resize() {
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvas.width = width;
+      canvas.height = height;
+    }
+
+    function animate() {
+      // Hafif iz bırakarak temizle (motion blur etkisi için alpha 0.4)
+      // Tam temizlik isterseniz fillStyle ve fillRect satırlarını silip clearRect kullanın
+      ctx.fillStyle = "rgba(5, 6, 10, 0.4)"; 
+      ctx.fillRect(0, 0, width, height);
+
+      stars.forEach(star => {
+        star.update();
+        star.draw();
+      });
+
+      requestAnimationFrame(animate);
+    }
+
+    init();
+  </script>
 </body>
 </html>
