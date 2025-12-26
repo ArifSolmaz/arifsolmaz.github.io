@@ -1,225 +1,519 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Arif Solmaz</title>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Arif Solmaz – Astronomer studying exoplanets and stellar activity using space telescope data.">
+  <title>Arif Solmaz – Astronomer</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    :root{
-      --bg: #030305;
-      --fg: #e0e0e0;
-      --muted: #555;
+    /* ========================================
+       CSS Custom Properties & Reset
+       ======================================== */
+    :root {
+      --color-bg: #0a0a0c;
+      --color-bg-subtle: #111114;
+      --color-text: #e8e8ea;
+      --color-text-muted: #8a8a8f;
+      --color-accent: #c9a962;
+      --color-accent-soft: rgba(201, 169, 98, 0.15);
+      --color-border: rgba(255, 255, 255, 0.08);
+      --color-glow: rgba(201, 169, 98, 0.08);
+      
+      --font-serif: "Cormorant Garamond", Georgia, serif;
+      --font-sans: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+      
+      --max-width: 720px;
+      --spacing-section: 5rem;
     }
 
-    body{
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      color: var(--fg);
-      background-color: var(--bg);
-      height: 100vh;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* ========================================
+       Base Styles
+       ======================================== */
+    html {
+      font-size: 100%;
+      scroll-behavior: smooth;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    body {
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--color-text);
+      background-color: var(--color-bg);
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
       position: relative;
     }
 
-    canvas {
-      position: absolute;
+    /* Subtle atmospheric gradient */
+    body::before {
+      content: "";
+      position: fixed;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-    }
-
-    .container{
-      z-index: 10;
-      text-align: center;
-      mix-blend-mode: exclusion; 
+      right: 0;
+      height: 60vh;
+      background: radial-gradient(
+        ellipse 80% 50% at 50% 0%,
+        rgba(201, 169, 98, 0.04) 0%,
+        transparent 70%
+      );
       pointer-events: none;
-      opacity: 0;
-      animation: slowReveal 2s ease-out forwards;
-      animation-delay: 0.5s;
+      z-index: -1;
     }
 
-    .name{
-      font-size: clamp(3rem, 7vw, 5.5rem);
-      font-weight: 200;
-      letter-spacing: -0.04em;
-      margin-bottom: 0.5rem;
-      color: #fff;
+    /* ========================================
+       Layout
+       ======================================== */
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 2rem;
     }
 
-    .profession{
-      font-size: 1.25rem; 
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: #888;
-      margin-bottom: 3.5rem;
-      display: inline-block;
+    main {
+      padding: var(--spacing-section) 0;
+    }
+
+    section {
+      margin-bottom: var(--spacing-section);
+    }
+
+    section:last-of-type {
+      margin-bottom: 0;
+    }
+
+    /* ========================================
+       Typography
+       ======================================== */
+    h1, h2 {
+      font-family: var(--font-serif);
       font-weight: 400;
     }
 
-    .links{
-      display: flex;
-      justify-content: center;
-      gap: 3.5rem;
-      pointer-events: auto;
+    h2 {
+      font-size: 0.8125rem;
+      font-family: var(--font-sans);
+      font-weight: 500;
+      color: var(--color-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      margin-bottom: 1.5rem;
     }
 
-    .link{
-      color: #ccc;
+    p {
+      margin-bottom: 1.25rem;
+      color: var(--color-text-muted);
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    a {
+      color: var(--color-text);
       text-decoration: none;
-      font-size: 1.0rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      opacity: 0.8;
-      padding-bottom: 4px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-      transition: all 0.3s ease;
+      border-bottom: 1px solid var(--color-border);
+      transition: border-color 0.2s ease, color 0.2s ease;
+    }
+
+    a:hover,
+    a:focus {
+      color: var(--color-accent);
+      border-bottom-color: var(--color-accent);
+    }
+
+    a:focus {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 4px;
+    }
+
+    /* ========================================
+       Header
+       ======================================== */
+    header {
+      padding: 6rem 0 4rem;
+      text-align: center;
       position: relative;
     }
 
-    .link:hover{
-      opacity: 1;
+    .name {
+      font-size: clamp(2.5rem, 8vw, 4rem);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
       color: #fff;
-      border-bottom-color: rgba(255, 255, 255, 1);
-      text-shadow: 0 0 12px rgba(255,255,255,0.6);
-      transform: translateY(-2px);
     }
-    
-    @keyframes slowReveal {
-      to { opacity: 1; }
+
+    .role {
+      font-family: var(--font-serif);
+      font-size: 1.375rem;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--color-text-muted);
+      margin-bottom: 0.5rem;
     }
-    
-    @media (max-width: 600px){
-        .profession { font-size: 1rem; }
-        .link { font-size: 0.85rem; gap: 2rem; }
+
+    .affiliation {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      opacity: 0.7;
+    }
+
+    /* Decorative line */
+    .header-line {
+      width: 60px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+      margin: 2.5rem auto 0;
+    }
+
+    /* ========================================
+       Research Topics
+       ======================================== */
+    .topics {
+      list-style: none;
+    }
+
+    .topics li {
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--color-border);
+      color: var(--color-text);
+      font-size: 1.0625rem;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+
+    .topics li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 1.45rem;
+      width: 6px;
+      height: 6px;
+      background: var(--color-accent);
+      border-radius: 50%;
+      opacity: 0.6;
+    }
+
+    .topics li:last-child {
+      border-bottom: none;
+    }
+
+    /* ========================================
+       Why It Matters - Featured Block
+       ======================================== */
+    .featured-block {
+      background: var(--color-bg-subtle);
+      border: 1px solid var(--color-border);
+      border-radius: 2px;
+      padding: 2.5rem;
+      position: relative;
+    }
+
+    .featured-block::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+    }
+
+    .featured-block p {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      line-height: 1.8;
+      color: var(--color-text);
+    }
+
+    /* ========================================
+       Links
+       ======================================== */
+    .links-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1px;
+      background: var(--color-border);
+      border: 1px solid var(--color-border);
+      list-style: none;
+    }
+
+    .links-grid li {
+      background: var(--color-bg);
+    }
+
+    .links-grid a {
+      display: block;
+      padding: 1.25rem 1.5rem;
+      border-bottom: none;
+      font-size: 0.9375rem;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .links-grid a:hover {
+      background: var(--color-accent-soft);
+      color: var(--color-accent);
+    }
+
+    .links-grid a:focus {
+      outline-offset: -2px;
+    }
+
+    .link-label {
+      display: block;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-text-muted);
+      margin-bottom: 0.25rem;
+    }
+
+    /* ========================================
+       Teaching Section
+       ======================================== */
+    .teaching-content {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    @media (min-width: 500px) {
+      .teaching-content {
+        grid-template-columns: auto 1fr;
+        gap: 2rem;
+      }
+    }
+
+    .teaching-content p {
+      margin: 0;
+    }
+
+    /* ========================================
+       Contact
+       ======================================== */
+    .contact-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .contact-item {
+      flex: 1;
+      min-width: 150px;
+    }
+
+    .contact-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--color-text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-value {
+      font-size: 1rem;
+      color: var(--color-text);
+    }
+
+    .contact-value a {
+      border-bottom-color: transparent;
+    }
+
+    .contact-value a:hover {
+      border-bottom-color: var(--color-accent);
+    }
+
+    /* ========================================
+       Footer
+       ======================================== */
+    footer {
+      padding: 3rem 0;
+      margin-top: 2rem;
+      border-top: 1px solid var(--color-border);
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 0.8125rem;
+      color: var(--color-text-muted);
+      opacity: 0.6;
+      margin-bottom: 0.25rem;
+    }
+
+    /* ========================================
+       Skip Link (Accessibility)
+       ======================================== */
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 1rem;
+      background: var(--color-accent);
+      color: var(--color-bg);
+      padding: 0.75rem 1.5rem;
+      border-bottom: none;
+      font-weight: 500;
+      z-index: 100;
+      border-radius: 2px;
+    }
+
+    .skip-link:focus {
+      top: 1rem;
+      outline: none;
+    }
+
+    /* ========================================
+       Responsive
+       ======================================== */
+    @media (max-width: 600px) {
+      :root {
+        --spacing-section: 3.5rem;
+      }
+
+      header {
+        padding: 4rem 0 3rem;
+      }
+
+      .featured-block {
+        padding: 1.75rem;
+      }
+
+      .featured-block p {
+        font-size: 1.125rem;
+      }
+
+      .links-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 
 <body>
+  <!-- Accessibility: Skip to main content -->
+  <a href="#main" class="skip-link">Skip to main content</a>
 
-  <canvas id="cosmos"></canvas>
-
-  <div class="container">
-    <div class="name">Arif Solmaz</div>
-    <div class="profession">Astronomer</div>
-    <div class="links">
-      <a href="https://ui.adsabs.harvard.edu/search/fq=%7B!type%3Daqp%20v%3D%24fq_database%7D&fq_database=(database%3Aastronomy%20OR%20database%3Aphysics)&q=-docs(1f8e5e2fda6aa0148343a32ba70673cc)%20%20author%3A%22solmaz%2C%20arif%22&sort=date%20desc%2C%20bibcode%20desc&p_=0" class="link" target="_blank" rel="noopener noreferrer">ADS</a>
-      <a href="https://arifsolmaz.github.io/cv.pdf" class="link" target="_blank" rel="noopener noreferrer">CV</a>
-      <a href="https://arifsolmaz.github.io/news" class="link" target="_self" rel="noopener">News</a>
+  <!-- ======================================
+       Header / Identity
+       ====================================== -->
+  <header>
+    <div class="container">
+      <h1 class="name">Arif Solmaz</h1>
+      <p class="role">Astronomer studying planets around other stars</p>
+      <p class="affiliation">Istanbul Health and Technology University, Turkey</p>
+      <div class="header-line" aria-hidden="true"></div>
     </div>
-  </div>
+  </header>
 
-  <script>
-    const canvas = document.getElementById('cosmos');
-    const ctx = canvas.getContext('2d');
+  <!-- ======================================
+       Main Content
+       ====================================== -->
+  <main id="main" class="container">
 
-    let w, h;
-    let particles = [];
-    let mouse = { x: -1000, y: -1000 };
+    <!-- What I Work On -->
+    <section aria-labelledby="research-heading">
+      <h2 id="research-heading">What I Work On</h2>
+      <ul class="topics">
+        <li>Searching for and studying planets orbiting distant stars</li>
+        <li>Understanding how starspots and stellar activity affect observations</li>
+        <li>Analyzing data from space telescopes, including TESS and JWST</li>
+        <li>Applying machine learning to astronomical problems</li>
+        <li>Coordinating international observation campaigns</li>
+      </ul>
+    </section>
 
-    const PARTICLE_COUNT = 100;   
-    const CONNECT_DIST = 100;     
-    const MOUSE_DIST = 200;       
-    const DRIFT_SPEED = 0.3;      
+    <!-- Why It Matters -->
+    <section aria-labelledby="impact-heading">
+      <h2 id="impact-heading">Why It Matters</h2>
+      <div class="featured-block">
+        <p>
+          Finding planets beyond our solar system helps us understand how common worlds like Earth might be. By studying these distant planets and their host stars, we learn about conditions that could support life elsewhere—contributing to one of humanity's oldest questions.
+        </p>
+      </div>
+    </section>
 
-    class Particle {
-      constructor() {
-        this.x = Math.random() * w;
-        this.y = Math.random() * h;
-        this.vx = (Math.random() - 0.5) * DRIFT_SPEED;
-        this.vy = (Math.random() - 0.5) * DRIFT_SPEED;
-        this.size = Math.random() * 1.5 + 0.5;
-      }
+    <!-- Selected Work & Links -->
+    <section aria-labelledby="work-heading">
+      <h2 id="work-heading">Work & Links</h2>
+      <ul class="links-grid">
+        <li>
+          <a href="https://ui.adsabs.harvard.edu/search/fq=%7B!type%3Daqp%20v%3D%24fq_database%7D&fq_database=(database%3Aastronomy%20OR%20database%3Aphysics)&q=-docs(1f8e5e2fda6aa0148343a32ba70673cc)%20%20author%3A%22solmaz%2C%20arif%22&sort=date%20desc%2C%20bibcode%20desc&p_=0" target="_blank" rel="noopener noreferrer">
+            <span class="link-label">Publications</span>
+            NASA ADS
+          </a>
+        </li>
+        <li>
+          <a href="https://arifsolmaz.github.io/cv.pdf" target="_blank" rel="noopener noreferrer">
+            <span class="link-label">Curriculum Vitae</span>
+            Download PDF
+          </a>
+        </li>
+        <li>
+          <a href="https://arifsolmaz.github.io/news" rel="noopener">
+            <span class="link-label">News</span>
+            Outreach & Updates
+          </a>
+        </li>
+      </ul>
+    </section>
 
-      update() {
-        this.x += this.vx;
-        this.y += this.vy;
+    <!-- Teaching & Public Engagement -->
+    <section aria-labelledby="teaching-heading">
+      <h2 id="teaching-heading">Teaching & Outreach</h2>
+      <p>
+        I teach programming, robotics, and machine learning to engineering students. For over a decade, I have worked with the European Southern Observatory and international programs bringing astronomy to schools and communities.
+      </p>
+    </section>
 
-        if (this.x < 0) this.x = w;
-        if (this.x > w) this.x = 0;
-        if (this.y < 0) this.y = h;
-        if (this.y > h) this.y = 0;
-      }
-    }
+    <!-- Contact -->
+    <section aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Contact</h2>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <div class="contact-label">Email</div>
+          <div class="contact-value">
+            <a href="mailto:arif.solmaz@istun.edu.tr">arif.solmaz@istun.edu.tr</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-label">Location</div>
+          <div class="contact-value">Istanbul, Turkey</div>
+        </div>
+      </div>
+    </section>
 
-    function init() {
-      resize();
-      particles = [];
-      for(let i = 0; i < PARTICLE_COUNT; i++) {
-        particles.push(new Particle());
-      }
-    }
+  </main>
 
-    function resize() {
-      w = window.innerWidth;
-      h = window.innerHeight;
-      canvas.width = w;
-      canvas.height = h;
-    }
+  <!-- ======================================
+       Footer
+       ====================================== -->
+  <footer>
+    <div class="container">
+      <p>Designed for accessibility and readability</p>
+      <p>Last updated December 2025</p>
+    </div>
+  </footer>
 
-    function animate() {
-      ctx.clearRect(0, 0, w, h);
-
-      particles.forEach((p, index) => {
-        p.update();
-
-        const dx = mouse.x - p.x;
-        const dy = mouse.y - p.y;
-        const dist = Math.sqrt(dx*dx + dy*dy);
-
-        let alpha = 0;
-
-        if (dist < MOUSE_DIST) {
-          alpha = 1 - (dist / MOUSE_DIST);
-          
-          ctx.fillStyle = `rgba(255, 255, 255, ${alpha})`;
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-          ctx.fill();
-
-          for (let j = index + 1; j < particles.length; j++) {
-            const p2 = particles[j];
-            const dx2 = p.x - p2.x;
-            const dy2 = p.y - p2.y;
-            const dist2 = Math.sqrt(dx2*dx2 + dy2*dy2);
-
-            if (dist2 < CONNECT_DIST) {
-              const lineAlpha = alpha * (1 - dist2 / CONNECT_DIST) * 0.5;
-              
-              ctx.beginPath();
-              ctx.strokeStyle = `rgba(255, 255, 255, ${lineAlpha})`;
-              ctx.lineWidth = 0.5;
-              ctx.moveTo(p.x, p.y);
-              ctx.lineTo(p2.x, p2.y);
-              ctx.stroke();
-            }
-          }
-        }
-      });
-
-      requestAnimationFrame(animate);
-    }
-
-    window.addEventListener('resize', () => { resize(); init(); });
-    window.addEventListener('mousemove', (e) => {
-      mouse.x = e.clientX;
-      mouse.y = e.clientY;
-    });
-    window.addEventListener('mouseleave', () => {
-        mouse.x = -1000;
-        mouse.y = -1000;
-    });
-
-    init();
-    animate();
-  </script>
 </body>
 </html>
