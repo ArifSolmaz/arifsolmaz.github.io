@@ -9,7 +9,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
   
   <style>
     /* ========================================
@@ -22,14 +22,18 @@
       --color-text-muted: #8a8a8f;
       --color-accent: #c9a962;
       --color-accent-soft: rgba(201, 169, 98, 0.15);
+      --color-accent-glow: rgba(201, 169, 98, 0.4);
       --color-border: rgba(255, 255, 255, 0.08);
-      --color-glow: rgba(201, 169, 98, 0.08);
       
       --font-serif: "Cormorant Garamond", Georgia, serif;
       --font-sans: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: "DM Mono", "SF Mono", monospace;
       
-      --max-width: 720px;
-      --spacing-section: 5rem;
+      --max-width: 800px;
+      --spacing-section: 4rem;
+
+      /* NEW: snap offset for fixed header */
+      --snap-top-offset: 100px;
     }
 
     *, *::before, *::after {
@@ -38,20 +42,12 @@
       padding: 0;
     }
 
-    /* ========================================
-       Base Styles
-       ======================================== */
     html {
       font-size: 100%;
-      scroll-behavior: smooth;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        transition-duration: 0.01ms !important;
-      }
+      /* CHANGED: prevent conflicts during tour; JS re-enables smooth after tour */
+      scroll-behavior: auto;
+      /* NEW: helps trackpad overscroll feel */
+      overscroll-behavior-y: contain;
     }
 
     body {
@@ -62,7 +58,7 @@
       background-color: var(--color-bg);
       -webkit-font-smoothing: antialiased;
       min-height: 100vh;
-      position: relative;
+      overflow-x: hidden;
     }
 
     /* Subtle atmospheric gradient */
@@ -72,10 +68,10 @@
       top: 0;
       left: 0;
       right: 0;
-      height: 60vh;
+      height: 100vh;
       background: radial-gradient(
-        ellipse 80% 50% at 50% 0%,
-        rgba(201, 169, 98, 0.04) 0%,
+        ellipse 80% 50% at 50% 20%,
+        rgba(201, 169, 98, 0.06) 0%,
         transparent 70%
       );
       pointer-events: none;
@@ -83,32 +79,250 @@
     }
 
     /* ========================================
-       Layout
+       Hero Section (Initial State)
        ======================================== */
+    .hero {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 100;
+      background: var(--color-bg);
+      transition: opacity 1s ease, visibility 1s ease;
+    }
+
+    .hero.fade-out {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .hero.static .hero-name,
+    .hero.static .hero-role,
+    .hero.static .hero-line {
+      opacity: 1;
+      transform: translateY(0);
+      animation: none;
+    }
+
+    .hero.static .hero-scroll-hint {
+      display: none;
+    }
+
+    .hero-name {
+      font-family: var(--font-serif);
+      font-size: clamp(3rem, 10vw, 5.5rem);
+      font-weight: 400;
+      color: #fff;
+      letter-spacing: -0.02em;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1.2s ease forwards;
+      animation-delay: 0.3s;
+    }
+
+    .hero-role {
+      font-family: var(--font-serif);
+      font-size: clamp(1.2rem, 3vw, 1.5rem);
+      font-style: italic;
+      color: var(--color-text-muted);
+      margin-top: 0.5rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease forwards;
+      animation-delay: 0.8s;
+    }
+
+    .hero-line {
+      width: 60px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+      margin-top: 2rem;
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+      animation-delay: 1.3s;
+    }
+
+    .hero-scroll-hint {
+      position: absolute;
+      bottom: 3rem;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--color-text-muted);
+      opacity: 0;
+      animation: fadeIn 1s ease forwards, float 2s ease-in-out infinite;
+      animation-delay: 2s, 3s;
+    }
+
+    .hero-scroll-hint::after {
+      content: "";
+      display: block;
+      width: 1px;
+      height: 30px;
+      background: linear-gradient(to bottom, var(--color-accent), transparent);
+      margin: 0.75rem auto 0;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    /* ========================================
+       Fixed Header (After Animation)
+       ======================================== */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 1.25rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 90;
+      background: rgba(10, 10, 12, 0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--color-border);
+      transform: translateY(-100%);
+      opacity: 0;
+      transition: transform 0.8s ease, opacity 0.8s ease;
+    }
+
+    .header.visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .header-name {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: #fff;
+      text-decoration: none;
+      border: none;
+    }
+
+    .header-name:hover {
+      border: none;
+    }
+
+    .header-name span {
+      color: var(--color-accent);
+    }
+
+    .nav-link {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      text-decoration: none;
+      padding-bottom: 0.25rem;
+      border-bottom: 1px solid transparent;
+      transition: all 0.2s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--color-text);
+      border-bottom-color: var(--color-accent);
+    }
+
+    /* ========================================
+       Main Content
+       ======================================== */
+    .hero-spacer {
+      height: 100vh;
+      pointer-events: none;
+
+      /* NEW: collapse after tour to remove the "black void" at top */
+      transition: height 0.8s ease;
+    }
+
+    /* NEW */
+    .hero-spacer.collapsed {
+      height: 0;
+    }
+    
+    .main-content {
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+
+    .main-content.visible {
+      opacity: 1;
+    }
+
+    .content-wrapper {
+      padding-top: 100px;
+    }
+
     .container {
       max-width: var(--max-width);
       margin: 0 auto;
       padding: 0 2rem;
     }
 
-    main {
-      padding: var(--spacing-section) 0;
+    /* ========================================
+       Scroll Snap (NEW) - FIXED for better section visibility
+       ======================================== */
+    html, body {
+      scroll-padding-top: var(--snap-top-offset);
     }
 
-    section {
-      margin-bottom: var(--spacing-section);
-    }
-
-    section:last-of-type {
-      margin-bottom: 0;
+    body.snap-active {
+      scroll-snap-type: y mandatory;
     }
 
     /* ========================================
-       Typography
+       Sections - FIXED to ensure titles are visible
        ======================================== */
-    h1, h2 {
-      font-family: var(--font-serif);
-      font-weight: 400;
+    section {
+      padding: var(--spacing-section) 0;
+      
+      /* NEW: extra padding at top for first section to ensure title visibility */
+      padding-top: calc(var(--spacing-section) + 40px);
+      margin-top: -40px; /* Compensate for extra padding */
+      
+      /* NEW: snap targets */
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+
+      /* NEW: Ensure sections don't get hidden under header */
+      scroll-margin-top: 100px;
+
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    /* First section needs more space */
+    #research {
+      padding-top: calc(var(--spacing-section) + 60px);
+      margin-top: -60px;
+      scroll-margin-top: 120px;
+    }
+
+    section.in-view {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     h2 {
@@ -119,6 +333,8 @@
       text-transform: uppercase;
       letter-spacing: 0.2em;
       margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 2; /* Ensure title stays above content */
     }
 
     p {
@@ -134,58 +350,12 @@
       color: var(--color-text);
       text-decoration: none;
       border-bottom: 1px solid var(--color-border);
-      transition: border-color 0.2s ease, color 0.2s ease;
+      transition: all 0.2s ease;
     }
 
-    a:hover,
-    a:focus {
+    a:hover {
       color: var(--color-accent);
       border-bottom-color: var(--color-accent);
-    }
-
-    a:focus {
-      outline: 2px solid var(--color-accent);
-      outline-offset: 4px;
-    }
-
-    /* ========================================
-       Header
-       ======================================== */
-    header {
-      padding: 6rem 0 4rem;
-      text-align: center;
-      position: relative;
-    }
-
-    .name {
-      font-size: clamp(2.5rem, 8vw, 4rem);
-      font-weight: 400;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.75rem;
-      color: #fff;
-    }
-
-    .role {
-      font-family: var(--font-serif);
-      font-size: 1.375rem;
-      font-style: italic;
-      font-weight: 400;
-      color: var(--color-text-muted);
-      margin-bottom: 0.5rem;
-    }
-
-    .affiliation {
-      font-size: 0.875rem;
-      color: var(--color-text-muted);
-      opacity: 0.7;
-    }
-
-    /* Decorative line */
-    .header-line {
-      width: 60px;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
-      margin: 2.5rem auto 0;
     }
 
     /* ========================================
@@ -202,6 +372,14 @@
       font-size: 1.0625rem;
       position: relative;
       padding-left: 1.5rem;
+      opacity: 0;
+      transform: translateX(-10px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .topics li.animate {
+      opacity: 1;
+      transform: translateX(0);
     }
 
     .topics li::before {
@@ -221,7 +399,7 @@
     }
 
     /* ========================================
-       Why It Matters - Featured Block
+       Featured Block
        ======================================== */
     .featured-block {
       background: var(--color-bg-subtle);
@@ -249,36 +427,49 @@
     }
 
     /* ========================================
-       Links
+       Links Grid - UPDATED: 3 columns on desktop, 1 on mobile
        ======================================== */
     .links-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1px;
-      background: var(--color-border);
-      border: 1px solid var(--color-border);
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
       list-style: none;
     }
 
     .links-grid li {
-      background: var(--color-bg);
+      background: var(--color-bg-subtle);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease, background 0.3s ease;
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+    }
+
+    .links-grid li:hover {
+      background: var(--color-accent-soft);
+      transform: translateY(-2px);
+    }
+
+    .links-grid li.animate {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .links-grid a {
-      display: block;
-      padding: 1.25rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      padding: 1.75rem 1.5rem;
       border-bottom: none;
-      font-size: 0.9375rem;
-      transition: background 0.2s ease, color 0.2s ease;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+      height: 100%;
+      min-height: 120px;
     }
 
     .links-grid a:hover {
-      background: var(--color-accent-soft);
       color: var(--color-accent);
-    }
-
-    .links-grid a:focus {
-      outline-offset: -2px;
+      background: none;
     }
 
     .link-label {
@@ -287,53 +478,53 @@
       text-transform: uppercase;
       letter-spacing: 0.1em;
       color: var(--color-text-muted);
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    /* Link text styling */
+    .links-grid a span:not(.link-label) {
+      font-size: 1.125rem;
+      font-weight: 500;
+      color: var(--color-text);
+      margin-top: auto;
+      display: block;
     }
 
     /* ========================================
-       Teaching Section
-       ======================================== */
-    .teaching-content {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1rem;
-    }
-
-    @media (min-width: 500px) {
-      .teaching-content {
-        grid-template-columns: auto 1fr;
-        gap: 2rem;
-      }
-    }
-
-    .teaching-content p {
-      margin: 0;
-    }
-
-    /* ========================================
-       Contact
+       Contact Section
        ======================================== */
     .contact-grid {
       display: flex;
       flex-wrap: wrap;
-      gap: 2rem;
+      gap: 0.75rem;
     }
 
     .contact-item {
-      flex: 1;
-      min-width: 150px;
+      flex: 1 1 auto;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      padding: 1rem 1.25rem;
+      background: var(--color-bg-subtle);
+      border-radius: 4px;
+      border: 1px solid var(--color-border);
+    }
+
+    .contact-item.animate {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .contact-label {
-      font-size: 0.75rem;
+      font-size: 0.6875rem;
       text-transform: uppercase;
       letter-spacing: 0.15em;
       color: var(--color-text-muted);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.25rem;
     }
 
     .contact-value {
-      font-size: 1rem;
+      font-size: 0.875rem;
       color: var(--color-text);
     }
 
@@ -344,12 +535,96 @@
     .contact-value a:hover {
       border-bottom-color: var(--color-accent);
     }
+    
+    /* ========================================
+       Scroll to Top Button
+       ======================================== */
+    .scroll-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 44px;
+      height: 44px;
+      background: var(--color-bg-subtle);
+      border: 1px solid var(--color-border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+      z-index: 80;
+    }
+    
+    .scroll-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    
+    .scroll-top:hover {
+      background: var(--color-accent-soft);
+      border-color: var(--color-accent);
+      transform: translateY(-2px);
+    }
+    
+    .scroll-top svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--color-text);
+      transition: stroke 0.3s ease;
+    }
+    
+    .scroll-top:hover svg {
+      stroke: var(--color-accent);
+    }
+    
+    @media (max-width: 800px) {
+      .contact-grid {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      
+      .contact-item {
+        width: 100%;
+      }
+
+      :root {
+        --snap-top-offset: 80px;
+      }
+      
+      /* Adjust section padding for mobile */
+      section {
+        scroll-margin-top: 80px;
+        padding-top: calc(var(--spacing-section) + 30px);
+        margin-top: -30px;
+      }
+      
+      #research {
+        padding-top: calc(var(--spacing-section) + 50px);
+        margin-top: -50px;
+        scroll-margin-top: 100px;
+      }
+      
+      /* Links Grid: Switch to 1 column on mobile */
+      .links-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .links-grid a {
+        min-height: 100px;
+        padding: 1.5rem;
+      }
+    }
 
     /* ========================================
        Footer
        ======================================== */
     footer {
-      padding: 3rem 0;
+      padding: 2.5rem 0 3rem;
       margin-top: 2rem;
       border-top: 1px solid var(--color-border);
       text-align: center;
@@ -363,24 +638,53 @@
     }
 
     /* ========================================
-       Skip Link (Accessibility)
+       Skip Animation Button
        ======================================== */
-    .skip-link {
-      position: absolute;
-      top: -100%;
-      left: 1rem;
-      background: var(--color-accent);
-      color: var(--color-bg);
-      padding: 0.75rem 1.5rem;
-      border-bottom: none;
-      font-weight: 500;
-      z-index: 100;
+    .skip-btn {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid var(--color-border);
+      color: var(--color-text-muted);
+      padding: 0.75rem 1.25rem;
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
       border-radius: 2px;
+      z-index: 200;
+      opacity: 0;
+      transition: opacity 0.3s ease, background 0.2s ease, color 0.2s ease;
     }
 
-    .skip-link:focus {
-      top: 1rem;
-      outline: none;
+    .skip-btn.visible {
+      opacity: 1;
+    }
+
+    .skip-btn:hover {
+      background: var(--color-accent);
+      color: var(--color-bg);
+      border-color: var(--color-accent);
+    }
+
+    .skip-btn.hidden {
+      display: none;
+    }
+
+    /* ========================================
+       Progress Bar
+       ======================================== */
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--color-accent), var(--color-accent-glow));
+      z-index: 200;
+      width: 0%;
+      transition: width 0.3s ease, opacity 0.5s ease;
     }
 
     /* ========================================
@@ -388,11 +692,11 @@
        ======================================== */
     @media (max-width: 600px) {
       :root {
-        --spacing-section: 3.5rem;
+        --spacing-section: 3rem;
       }
 
-      header {
-        padding: 4rem 0 3rem;
+      .hero-name {
+        font-size: 2.5rem;
       }
 
       .featured-block {
@@ -403,117 +707,478 @@
         font-size: 1.125rem;
       }
 
+      .skip-btn {
+        bottom: 1rem;
+        right: 1rem;
+        padding: 0.5rem 1rem;
+      }
+      
+      .scroll-top {
+        bottom: 1rem;
+        right: 1rem;
+        width: 40px;
+        height: 40px;
+      }
+      
+      .content-wrapper {
+        padding-top: 80px;
+      }
+    }
+
+    /* Tablet view: 2 columns for links */
+    @media (min-width: 601px) and (max-width: 900px) {
       .links-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      body.snap-active {
+        scroll-snap-type: none;
       }
     }
   </style>
 </head>
 
 <body>
-  <!-- Accessibility: Skip to main content -->
-  <a href="#main" class="skip-link">Skip to main content</a>
+  <!-- Progress Bar -->
+  <div class="progress-bar" id="progress-bar"></div>
 
-  <!-- ======================================
-       Header / Identity
-       ====================================== -->
-  <header>
-    <div class="container">
-      <h1 class="name">Arif Solmaz</h1>
-      <p class="role">Astronomer studying planets around other stars</p>
-      <p class="affiliation">Istanbul Health and Technology University, Turkey</p>
-      <div class="header-line" aria-hidden="true"></div>
-    </div>
+  <!-- Hero Section -->
+  <div class="hero" id="hero">
+    <h1 class="hero-name">Arif Solmaz</h1>
+    <p class="hero-role">Astronomer studying planets around other stars</p>
+    <div class="hero-line"></div>
+    <div class="hero-scroll-hint">Scroll to explore</div>
+  </div>
+
+  <!-- Fixed Header -->
+  <header class="header" id="header">
+    <a href="index.html" class="header-name">Arif <span>Solmaz</span></a>
+    <a href="news" class="nav-link">News →</a>
   </header>
+  
+  <!-- Scroll to Top Button -->
+  <button class="scroll-top" id="scroll-top" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </button>
 
-  <!-- ======================================
-       Main Content
-       ====================================== -->
-  <main id="main" class="container">
+  <!-- Skip Button -->
+  <button class="skip-btn" id="skip-btn">Skip Tour</button>
 
-    <!-- What I Work On -->
-    <section aria-labelledby="research-heading">
-      <h2 id="research-heading">What I Work On</h2>
-      <ul class="topics">
-        <li>Searching for and studying planets orbiting distant stars</li>
-        <li>Understanding how starspots and stellar activity affect observations</li>
-        <li>Analyzing data from space telescopes, including TESS and JWST</li>
-        <li>Applying machine learning to astronomical problems</li>
-        <li>Coordinating international observation campaigns</li>
-      </ul>
-    </section>
+  <!-- Main Content -->
+  <main class="main-content" id="main-content">
+    <!-- Spacer to push content below hero -->
+    <div class="hero-spacer" id="hero-spacer"></div>
+    
+    <div class="content-wrapper">
+      <div class="container">
 
-    <!-- Why It Matters -->
-    <section aria-labelledby="impact-heading">
-      <h2 id="impact-heading">Why It Matters</h2>
-      <div class="featured-block">
+      <!-- What I Work On -->
+      <section id="research" aria-labelledby="research-heading">
+        <h2 id="research-heading">What I Work On</h2>
+        <ul class="topics" id="topics-list">
+          <li>Searching for and studying planets orbiting distant stars</li>
+          <li>Understanding how starspots and stellar activity affect observations</li>
+          <li>Analyzing data from space telescopes, including TESS and JWST</li>
+          <li>Applying machine learning to astronomical problems</li>
+          <li>Coordinating international observation campaigns</li>
+        </ul>
+      </section>
+
+      <!-- Why It Matters -->
+      <section id="impact" aria-labelledby="impact-heading">
+        <h2 id="impact-heading">Why It Matters</h2>
+        <div class="featured-block" id="featured-block">
+          <p>
+            Finding planets beyond our solar system helps us understand how common worlds like Earth might be. By studying these distant planets and their host stars, we learn about conditions that could support life elsewhere—contributing to one of humanity's oldest questions.
+          </p>
+        </div>
+      </section>
+
+      <!-- Links -->
+      <section id="links" aria-labelledby="links-heading">
+        <h2 id="links-heading">Work & Links</h2>
+        <ul class="links-grid" id="links-grid">
+          <li>
+            <a href="https://ui.adsabs.harvard.edu/search/fq=%7B!type%3Daqp%20v%3D%24fq_database%7D&fq_database=(database%3Aastronomy%20OR%20database%3Aphysics)&q=-docs(1f8e5e2fda6aa0148343a32ba70673cc)%20%20author%3A%22solmaz%2C%20arif%22&sort=date%20desc%2C%20bibcode%20desc&p_=0" target="_blank" rel="noopener noreferrer">
+              <span class="link-label">Publications</span>
+              NASA ADS
+            </a>
+          </li>
+          <li>
+            <a href="https://arifsolmaz.github.io/news" rel="noopener">
+              <span class="link-label">News</span>
+              Outreach & Updates
+            </a>
+          </li>
+          <li>
+            <a href="https://arifsolmaz.github.io/cv.pdf" target="_blank" rel="noopener noreferrer">
+              <span class="link-label">Curriculum Vitae</span>
+              Download PDF
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Teaching -->
+      <section id="teaching" aria-labelledby="teaching-heading">
+        <h2 id="teaching-heading">Teaching & Outreach</h2>
         <p>
-          Finding planets beyond our solar system helps us understand how common worlds like Earth might be. By studying these distant planets and their host stars, we learn about conditions that could support life elsewhere—contributing to one of humanity's oldest questions.
+          I teach programming, robotics, and machine learning to engineering students. For over a decade, I have worked with the European Southern Observatory and international programs bringing astronomy to schools and communities.
         </p>
-      </div>
-    </section>
+      </section>
 
-    <!-- Selected Work & Links -->
-    <section aria-labelledby="work-heading">
-      <h2 id="work-heading">Work & Links</h2>
-      <ul class="links-grid">
-        <li>
-          <a href="https://ui.adsabs.harvard.edu/search/fq=%7B!type%3Daqp%20v%3D%24fq_database%7D&fq_database=(database%3Aastronomy%20OR%20database%3Aphysics)&q=-docs(1f8e5e2fda6aa0148343a32ba70673cc)%20%20author%3A%22solmaz%2C%20arif%22&sort=date%20desc%2C%20bibcode%20desc&p_=0" target="_blank" rel="noopener noreferrer">
-            <span class="link-label">Publications</span>
-            NASA ADS
-          </a>
-        </li>
-        <li>
-          <a href="https://arifsolmaz.github.io/cv.pdf" target="_blank" rel="noopener noreferrer">
-            <span class="link-label">Curriculum Vitae</span>
-            Download PDF
-          </a>
-        </li>
-        <li>
-          <a href="https://arifsolmaz.github.io/news" rel="noopener">
-            <span class="link-label">News</span>
-            Outreach & Updates
-          </a>
-        </li>
-      </ul>
-    </section>
-
-    <!-- Teaching & Public Engagement -->
-    <section aria-labelledby="teaching-heading">
-      <h2 id="teaching-heading">Teaching & Outreach</h2>
-      <p>
-        I teach programming, robotics, and machine learning to engineering students. For over a decade, I have worked with the European Southern Observatory and international programs bringing astronomy to schools and communities.
-      </p>
-    </section>
-
-    <!-- Contact -->
-    <section aria-labelledby="contact-heading">
-      <h2 id="contact-heading">Contact</h2>
-      <div class="contact-grid">
-        <div class="contact-item">
-          <div class="contact-label">Email</div>
-          <div class="contact-value">
-            <a href="mailto:arif.solmaz@istun.edu.tr">arif.solmaz@istun.edu.tr</a>
+      <!-- Contact -->
+      <section id="contact" aria-labelledby="contact-heading">
+        <h2 id="contact-heading">Contact</h2>
+        <div class="contact-grid" id="contact-grid">
+          <div class="contact-item">
+            <div class="contact-label">Email</div>
+            <div class="contact-value">
+              <a href="mailto:arif.solmaz@istun.edu.tr">arif.solmaz@istun.edu.tr</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-label">Location</div>
+            <div class="contact-value">Istanbul, Turkey</div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-label">Institution</div>
+            <div class="contact-value">Istanbul Health and Technology University</div>
           </div>
         </div>
-        <div class="contact-item">
-          <div class="contact-label">Location</div>
-          <div class="contact-value">Istanbul, Turkey</div>
-        </div>
-      </div>
-    </section>
+      </section>
 
+    </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <p>Designed for accessibility and readability</p>
+        <p>Last updated December 2025</p>
+      </div>
+    </footer>
   </main>
 
-  <!-- ======================================
-       Footer
-       ====================================== -->
-  <footer>
-    <div class="container">
-      <p>Designed for accessibility and readability</p>
-      <p>Last updated December 2025</p>
-    </div>
-  </footer>
+  <script>
+    // ============================================
+    // ANIMATION TOUR SYSTEM WITH LONGER READING TIMES
+    // ============================================
 
+    const hero = document.getElementById('hero');
+    const header = document.getElementById('header');
+    const mainContent = document.getElementById('main-content');
+    const skipBtn = document.getElementById('skip-btn');
+    const progressBar = document.getElementById('progress-bar');
+    const heroSpacer = document.getElementById('hero-spacer');
+    const scrollTopBtn = document.getElementById('scroll-top');
+
+    const sections = document.querySelectorAll('section');
+    const topicItems = document.querySelectorAll('#topics-list li');
+    const linkItems = document.querySelectorAll('#links-grid li');
+    const contactItems = document.querySelectorAll('.contact-item');
+
+    let tourActive = false;
+    let tourCancelled = false;
+    let tourIsScrolling = false;
+    let animationTimeouts = [];
+
+    // Section reading times in seconds (generous reading times)
+    const sectionReadingTimes = {
+      'research': 10,    // What I Work On - has bullet list
+      'impact': 12,      // Why It Matters - featured block
+      'links': 8,        // Work & Links - grid
+      'teaching': 10,    // Teaching & Outreach - paragraph
+      'contact': 8       // Contact - grid
+    };
+
+    // Utility: Delay function
+    const delay = (ms) => new Promise(resolve => {
+      const timeout = setTimeout(resolve, ms);
+      animationTimeouts.push(timeout);
+    });
+
+    // Update progress bar
+    const updateProgress = (percent) => {
+      progressBar.style.width = percent + '%';
+    };
+
+    // Show/hide scroll to top button
+    const updateScrollTopButton = () => {
+      if (window.pageYOffset > window.innerHeight * 0.5) {
+        scrollTopBtn.classList.add('visible');
+      } else {
+        scrollTopBtn.classList.remove('visible');
+      }
+    };
+
+    // FIXED: Improved snap scroll to section that accounts for header
+    const snapToSection = (element) => {
+      return new Promise(resolve => {
+        tourIsScrolling = true;
+
+        // Calculate the scroll position to ensure section title is visible
+        const headerHeight = header.offsetHeight || 100; // Default to 100px if not available
+        const elementRect = element.getBoundingClientRect();
+        const elementTop = window.pageYOffset + elementRect.top;
+        
+        // Calculate position: element top - header height - extra padding
+        const scrollPosition = elementTop - headerHeight - 20;
+        
+        window.scrollTo({
+          top: scrollPosition,
+          behavior: 'smooth'
+        });
+
+        // Settle time (increased for smoother transition)
+        const settleMs = 2000;
+        const t = setTimeout(() => {
+          tourIsScrolling = false;
+          resolve();
+        }, settleMs);
+        animationTimeouts.push(t);
+      });
+    };
+
+    // Start the tour
+    const startTour = async () => {
+      if (tourActive) return;
+      tourActive = true;
+
+      // During tour, avoid global smooth conflicts
+      document.documentElement.style.scrollBehavior = 'auto';
+
+      // Enable snap during tour
+      document.body.classList.add('snap-active');
+
+      // Show skip button
+      await delay(1500);
+      if (tourCancelled) return;
+      skipBtn.classList.add('visible');
+
+      // Wait for hero to be appreciated (longer initial wait)
+      await delay(3500);
+      if (tourCancelled) return;
+
+      updateProgress(10);
+
+      // Fade out hero, show header and content
+      hero.classList.add('fade-out');
+      await delay(1400);
+      if (tourCancelled) return;
+
+      header.classList.add('visible');
+      mainContent.classList.add('visible');
+      
+      // Make all sections visible immediately
+      sections.forEach(section => section.classList.add('in-view'));
+      topicItems.forEach(item => item.classList.add('animate'));
+      linkItems.forEach(item => item.classList.add('animate'));
+      contactItems.forEach(item => item.classList.add('animate'));
+
+      await delay(800);
+      if (tourCancelled) return;
+
+      updateProgress(20);
+
+      // IMPORTANT: First scroll to top to ensure correct positioning
+      window.scrollTo({
+        top: 0,
+        behavior: 'instant'
+      });
+      
+      await delay(200);
+
+      // Scroll to each section with pauses
+      const sectionIds = ['research', 'impact', 'links', 'teaching', 'contact'];
+      
+      for (let i = 0; i < sectionIds.length; i++) {
+        if (tourCancelled) return;
+        
+        const section = document.getElementById(sectionIds[i]);
+        const sectionId = sectionIds[i];
+        const readingTime = sectionReadingTimes[sectionId] * 1000; // Convert to milliseconds
+        
+        // Extra delay for first section to ensure header is fully visible
+        if (i === 0) {
+          await delay(500);
+        }
+        
+        await snapToSection(section);
+        if (tourCancelled) return;
+        
+        // Update progress
+        updateProgress(20 + ((i + 1) / sectionIds.length) * 70);
+        
+        // Pause to read the section (SIGNIFICANTLY INCREASED)
+        await delay(readingTime);
+        if (tourCancelled) return;
+      }
+
+      // Scroll to very bottom
+      await delay(800);
+      if (tourCancelled) return;
+      tourIsScrolling = true;
+      window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: 'smooth'
+      });
+      await delay(2200);
+      tourIsScrolling = false;
+      
+      updateProgress(100);
+      await delay(2000);
+      
+      // End tour
+      endTour();
+    };
+
+    // Skip/End tour
+    const endTour = () => {
+      tourCancelled = true;
+      tourActive = false;
+      tourIsScrolling = false;
+
+      // Clear all pending timeouts
+      animationTimeouts.forEach(timeout => clearTimeout(timeout));
+      animationTimeouts = [];
+
+      // Make everything visible immediately
+      hero.classList.add('fade-out');
+      hero.classList.add('static');
+      header.classList.add('visible');
+      mainContent.classList.add('visible');
+
+      sections.forEach(section => section.classList.add('in-view'));
+      topicItems.forEach(item => item.classList.add('animate'));
+      linkItems.forEach(item => item.classList.add('animate'));
+      contactItems.forEach(item => item.classList.add('animate'));
+
+      // Collapse spacer to remove "black void" when returning to top
+      if (heroSpacer) heroSpacer.classList.add('collapsed');
+
+      // Hide skip button and progress bar
+      skipBtn.classList.remove('visible');
+      skipBtn.classList.add('hidden');
+      progressBar.style.width = '100%';
+      setTimeout(() => {
+        progressBar.style.opacity = '0';
+      }, 500);
+
+      // Disable snap after tour for normal reading
+      document.body.classList.remove('snap-active');
+
+      // Re-enable pleasant smooth scrolling for normal navigation after tour
+      document.documentElement.style.scrollBehavior = 'smooth';
+
+      // Enable scroll-based hero visibility after tour
+      enableHeroScrollBehavior();
+    };
+
+    // Show/hide hero based on scroll position (after tour)
+    let heroScrollEnabled = false;
+    const enableHeroScrollBehavior = () => {
+      heroScrollEnabled = true;
+    };
+
+    // Scroll listener for hero visibility and scroll-to-top button
+    let ticking = false;
+    let lastScrollY = 0;
+    
+    const updateScrollEffects = () => {
+      // Update scroll to top button
+      updateScrollTopButton();
+      
+      if (!heroScrollEnabled || tourActive) return;
+      
+      const scrollY = window.pageYOffset;
+      const heroHeight = window.innerHeight;
+      const threshold = heroHeight - 100;
+      
+      if (scrollY <= threshold) {
+        hero.classList.remove('fade-out');
+        header.classList.remove('visible');
+      } else {
+        hero.classList.add('fade-out');
+        header.classList.add('visible');
+      }
+      
+      ticking = false;
+    };
+
+    window.addEventListener('scroll', () => {
+      // Update progress bar based on scroll
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = scrollTop / docHeight;
+      progressBar.style.width = `${scrollPercent * 100}%`;
+      
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(updateScrollEffects);
+      }
+      
+      // Tour skip detection - on manual scroll only
+      if (tourActive && !tourIsScrolling) {
+        const scrollDiff = Math.abs(window.scrollY - lastScrollY);
+        if (scrollDiff > 20) {
+          endTour();
+        }
+      }
+      lastScrollY = window.scrollY;
+    }, { passive: true });
+
+    // Scroll to top button handler
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Skip button handler
+    skipBtn.addEventListener('click', endTour);
+
+    // Keyboard shortcut to skip (Escape or Space)
+    document.addEventListener('keydown', (e) => {
+      if ((e.key === 'Escape' || e.key === ' ') && tourActive) {
+        e.preventDefault();
+        endTour();
+      }
+    });
+
+    // Click anywhere to skip
+    document.addEventListener('click', (e) => {
+      if (tourActive && e.target !== skipBtn && !e.target.closest('a')) {
+        endTour();
+      }
+    });
+
+    // Start tour on page load
+    window.addEventListener('load', () => {
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      
+      if (prefersReducedMotion) {
+        endTour();
+      } else {
+        startTour();
+      }
+    });
+
+    // Handle window resize
+    window.addEventListener('resize', () => {
+      updateScrollTopButton();
+    });
+  </script>
 </body>
 </html>
