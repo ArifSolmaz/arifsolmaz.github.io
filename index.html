@@ -12,9 +12,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
   
   <style>
-    /* ========================================
-       CSS Custom Properties & Reset
-       ======================================== */
     :root {
       --color-bg: #0a0a0c;
       --color-bg-subtle: #111114;
@@ -22,18 +19,13 @@
       --color-text-muted: #8a8a8f;
       --color-accent: #c9a962;
       --color-accent-soft: rgba(201, 169, 98, 0.15);
-      --color-accent-glow: rgba(201, 169, 98, 0.4);
       --color-border: rgba(255, 255, 255, 0.08);
       
       --font-serif: "Cormorant Garamond", Georgia, serif;
       --font-sans: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
-      --font-mono: "DM Mono", "SF Mono", monospace;
       
       --max-width: 800px;
-      --spacing-section: 4rem;
-
-      /* NEW: snap offset for fixed header */
-      --snap-top-offset: 100px;
+      --header-height: 70px;
     }
 
     *, *::before, *::after {
@@ -44,10 +36,6 @@
 
     html {
       font-size: 100%;
-      /* CHANGED: prevent conflicts during tour; JS re-enables smooth after tour */
-      scroll-behavior: auto;
-      /* NEW: helps trackpad overscroll feel */
-      overscroll-behavior-y: contain;
     }
 
     body {
@@ -61,7 +49,6 @@
       overflow-x: hidden;
     }
 
-    /* Subtle atmospheric gradient */
     body::before {
       content: "";
       position: fixed;
@@ -78,9 +65,7 @@
       z-index: -1;
     }
 
-    /* ========================================
-       Hero Section (Initial State)
-       ======================================== */
+    /* Hero */
     .hero {
       position: fixed;
       top: 0;
@@ -93,25 +78,14 @@
       align-items: center;
       z-index: 100;
       background: var(--color-bg);
-      transition: opacity 1s ease, visibility 1s ease;
-    }
-
-    .hero.fade-out {
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-    }
-
-    .hero.static .hero-name,
-    .hero.static .hero-role,
-    .hero.static .hero-line {
       opacity: 1;
-      transform: translateY(0);
-      animation: none;
+      transition: opacity 1.2s ease;
     }
 
-    .hero.static .hero-scroll-hint {
-      display: none;
+    .hero.hidden {
+      opacity: 0;
+      pointer-events: none;
+      visibility: hidden;
     }
 
     .hero-name {
@@ -122,8 +96,7 @@
       letter-spacing: -0.02em;
       opacity: 0;
       transform: translateY(30px);
-      animation: fadeInUp 1.2s ease forwards;
-      animation-delay: 0.3s;
+      animation: fadeInUp 1.2s ease forwards 0.3s;
     }
 
     .hero-role {
@@ -134,8 +107,7 @@
       margin-top: 0.5rem;
       opacity: 0;
       transform: translateY(20px);
-      animation: fadeInUp 1s ease forwards;
-      animation-delay: 0.8s;
+      animation: fadeInUp 1s ease forwards 0.8s;
     }
 
     .hero-line {
@@ -144,11 +116,10 @@
       background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
       margin-top: 2rem;
       opacity: 0;
-      animation: fadeIn 1s ease forwards;
-      animation-delay: 1.3s;
+      animation: fadeIn 1s ease forwards 1.3s;
     }
 
-    .hero-scroll-hint {
+    .hero-hint {
       position: absolute;
       bottom: 3rem;
       font-size: 0.75rem;
@@ -156,54 +127,34 @@
       letter-spacing: 0.2em;
       color: var(--color-text-muted);
       opacity: 0;
-      animation: fadeIn 1s ease forwards, float 2s ease-in-out infinite;
-      animation-delay: 2s, 3s;
-    }
-
-    .hero-scroll-hint::after {
-      content: "";
-      display: block;
-      width: 1px;
-      height: 30px;
-      background: linear-gradient(to bottom, var(--color-accent), transparent);
-      margin: 0.75rem auto 0;
+      animation: fadeIn 1s ease forwards 2s;
     }
 
     @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      to { opacity: 1; transform: translateY(0); }
     }
-
     @keyframes fadeIn {
       to { opacity: 1; }
     }
 
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
-    }
-
-    /* ========================================
-       Fixed Header (After Animation)
-       ======================================== */
+    /* Header */
     .header {
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
-      padding: 1.25rem 2rem;
+      height: var(--header-height);
+      padding: 0 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       z-index: 90;
-      background: rgba(10, 10, 12, 0.9);
+      background: rgba(10, 10, 12, 0.95);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--color-border);
       transform: translateY(-100%);
       opacity: 0;
-      transition: transform 0.8s ease, opacity 0.8s ease;
+      transition: transform 0.6s ease, opacity 0.6s ease;
     }
 
     .header.visible {
@@ -214,19 +165,12 @@
     .header-name {
       font-family: var(--font-serif);
       font-size: 1.25rem;
-      font-weight: 400;
       color: #fff;
       text-decoration: none;
       border: none;
     }
-
-    .header-name:hover {
-      border: none;
-    }
-
-    .header-name span {
-      color: var(--color-accent);
-    }
+    .header-name:hover { border: none; }
+    .header-name span { color: var(--color-accent); }
 
     .nav-link {
       font-size: 0.75rem;
@@ -235,43 +179,26 @@
       text-transform: uppercase;
       color: var(--color-text-muted);
       text-decoration: none;
-      padding-bottom: 0.25rem;
       border-bottom: 1px solid transparent;
       transition: all 0.2s ease;
     }
-
     .nav-link:hover {
       color: var(--color-text);
       border-bottom-color: var(--color-accent);
     }
 
-    /* ========================================
-       Main Content
-       ======================================== */
-    .hero-spacer {
-      height: 100vh;
-      pointer-events: none;
-
-      /* NEW: collapse after tour to remove the "black void" at top */
-      transition: height 0.8s ease;
-    }
-
-    /* NEW */
-    .hero-spacer.collapsed {
-      height: 0;
-    }
-    
+    /* Main Content */
     .main-content {
       opacity: 0;
-      transition: opacity 1s ease;
+      transition: opacity 0.8s ease;
     }
-
     .main-content.visible {
       opacity: 1;
     }
 
-    .content-wrapper {
-      padding-top: 100px;
+    .spacer {
+      height: 100vh;
+      transition: height 0.6s ease;
     }
 
     .container {
@@ -280,47 +207,14 @@
       padding: 0 2rem;
     }
 
-    /* ========================================
-       Scroll Snap (NEW) - FIXED for better section visibility
-       ======================================== */
-    html, body {
-      scroll-padding-top: var(--snap-top-offset);
-    }
-
-    body.snap-active {
-      scroll-snap-type: y mandatory;
-    }
-
-    /* ========================================
-       Sections - FIXED to ensure titles are visible
-       ======================================== */
+    /* Sections */
     section {
-      padding: var(--spacing-section) 0;
-      
-      /* NEW: extra padding at top for first section to ensure title visibility */
-      padding-top: calc(var(--spacing-section) + 40px);
-      margin-top: -40px; /* Compensate for extra padding */
-      
-      /* NEW: snap targets */
-      scroll-snap-align: start;
-      scroll-snap-stop: always;
-
-      /* NEW: Ensure sections don't get hidden under header */
-      scroll-margin-top: 100px;
-
+      padding: 4rem 0;
       opacity: 0;
       transform: translateY(20px);
       transition: opacity 0.6s ease, transform 0.6s ease;
     }
-
-    /* First section needs more space */
-    #research {
-      padding-top: calc(var(--spacing-section) + 60px);
-      margin-top: -60px;
-      scroll-margin-top: 120px;
-    }
-
-    section.in-view {
+    section.visible {
       opacity: 1;
       transform: translateY(0);
     }
@@ -333,18 +227,13 @@
       text-transform: uppercase;
       letter-spacing: 0.2em;
       margin-bottom: 1.5rem;
-      position: relative;
-      z-index: 2; /* Ensure title stays above content */
     }
 
     p {
       margin-bottom: 1.25rem;
       color: var(--color-text-muted);
     }
-
-    p:last-child {
-      margin-bottom: 0;
-    }
+    p:last-child { margin-bottom: 0; }
 
     a {
       color: var(--color-text);
@@ -352,19 +241,15 @@
       border-bottom: 1px solid var(--color-border);
       transition: all 0.2s ease;
     }
-
     a:hover {
       color: var(--color-accent);
       border-bottom-color: var(--color-accent);
     }
 
-    /* ========================================
-       Research Topics
-       ======================================== */
+    /* Topics List */
     .topics {
       list-style: none;
     }
-
     .topics li {
       padding: 1rem 0;
       border-bottom: 1px solid var(--color-border);
@@ -374,14 +259,12 @@
       padding-left: 1.5rem;
       opacity: 0;
       transform: translateX(-10px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
+      transition: opacity 0.4s ease, transform 0.4s ease;
     }
-
-    .topics li.animate {
+    .topics li.visible {
       opacity: 1;
       transform: translateX(0);
     }
-
     .topics li::before {
       content: "";
       position: absolute;
@@ -393,14 +276,9 @@
       border-radius: 50%;
       opacity: 0.6;
     }
+    .topics li:last-child { border-bottom: none; }
 
-    .topics li:last-child {
-      border-bottom: none;
-    }
-
-    /* ========================================
-       Featured Block
-       ======================================== */
+    /* Featured Block */
     .featured-block {
       background: var(--color-bg-subtle);
       border: 1px solid var(--color-border);
@@ -408,7 +286,6 @@
       padding: 2.5rem;
       position: relative;
     }
-
     .featured-block::before {
       content: "";
       position: absolute;
@@ -418,7 +295,6 @@
       height: 1px;
       background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
     }
-
     .featured-block p {
       font-family: var(--font-serif);
       font-size: 1.25rem;
@@ -426,95 +302,69 @@
       color: var(--color-text);
     }
 
-    /* ========================================
-       Links Grid - UPDATED: 3 columns on desktop, 1 on mobile
-       ======================================== */
+    /* Links Grid */
     .links-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1rem;
       list-style: none;
     }
-
     .links-grid li {
       background: var(--color-bg-subtle);
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease, transform 0.6s ease, background 0.3s ease;
-      border-radius: 4px;
-      overflow: hidden;
       border: 1px solid var(--color-border);
+      border-radius: 4px;
+      opacity: 0;
+      transform: translateY(15px);
+      transition: opacity 0.5s ease, transform 0.5s ease, background 0.2s ease;
     }
-
-    .links-grid li:hover {
-      background: var(--color-accent-soft);
-      transform: translateY(-2px);
-    }
-
-    .links-grid li.animate {
+    .links-grid li.visible {
       opacity: 1;
       transform: translateY(0);
     }
-
+    .links-grid li:hover {
+      background: var(--color-accent-soft);
+    }
     .links-grid a {
       display: flex;
       flex-direction: column;
-      padding: 1.75rem 1.5rem;
+      padding: 1.5rem;
       border-bottom: none;
-      font-size: 1rem;
-      transition: color 0.3s ease;
       height: 100%;
-      min-height: 120px;
     }
-
-    .links-grid a:hover {
-      color: var(--color-accent);
-      background: none;
-    }
-
+    .links-grid a:hover { background: none; }
     .link-label {
-      display: block;
       font-size: 0.75rem;
       text-transform: uppercase;
       letter-spacing: 0.1em;
       color: var(--color-text-muted);
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.5rem;
     }
-
-    /* Link text styling */
-    .links-grid a span:not(.link-label) {
-      font-size: 1.125rem;
+    .link-text {
+      font-size: 1rem;
       font-weight: 500;
       color: var(--color-text);
-      margin-top: auto;
-      display: block;
     }
 
-    /* ========================================
-       Contact Section
-       ======================================== */
+    /* Contact Grid */
     .contact-grid {
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
     }
-
     .contact-item {
-      flex: 1 1 auto;
-      opacity: 0;
-      transform: translateY(10px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
+      flex: 1 1 180px;
       padding: 1rem 1.25rem;
       background: var(--color-bg-subtle);
-      border-radius: 4px;
       border: 1px solid var(--color-border);
+      border-radius: 4px;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
     }
-
-    .contact-item.animate {
+    .contact-item.visible {
       opacity: 1;
       transform: translateY(0);
     }
-
     .contact-label {
       font-size: 0.6875rem;
       text-transform: uppercase;
@@ -522,114 +372,20 @@
       color: var(--color-text-muted);
       margin-bottom: 0.25rem;
     }
-
     .contact-value {
       font-size: 0.875rem;
       color: var(--color-text);
     }
+    .contact-value a { border-bottom-color: transparent; }
+    .contact-value a:hover { border-bottom-color: var(--color-accent); }
 
-    .contact-value a {
-      border-bottom-color: transparent;
-    }
-
-    .contact-value a:hover {
-      border-bottom-color: var(--color-accent);
-    }
-    
-    /* ========================================
-       Scroll to Top Button
-       ======================================== */
-    .scroll-top {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      width: 44px;
-      height: 44px;
-      background: var(--color-bg-subtle);
-      border: 1px solid var(--color-border);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(10px);
-      transition: all 0.3s ease;
-      z-index: 80;
-    }
-    
-    .scroll-top.visible {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-    }
-    
-    .scroll-top:hover {
-      background: var(--color-accent-soft);
-      border-color: var(--color-accent);
-      transform: translateY(-2px);
-    }
-    
-    .scroll-top svg {
-      width: 18px;
-      height: 18px;
-      stroke: var(--color-text);
-      transition: stroke 0.3s ease;
-    }
-    
-    .scroll-top:hover svg {
-      stroke: var(--color-accent);
-    }
-    
-    @media (max-width: 800px) {
-      .contact-grid {
-        flex-direction: column;
-        align-items: stretch;
-      }
-      
-      .contact-item {
-        width: 100%;
-      }
-
-      :root {
-        --snap-top-offset: 80px;
-      }
-      
-      /* Adjust section padding for mobile */
-      section {
-        scroll-margin-top: 80px;
-        padding-top: calc(var(--spacing-section) + 30px);
-        margin-top: -30px;
-      }
-      
-      #research {
-        padding-top: calc(var(--spacing-section) + 50px);
-        margin-top: -50px;
-        scroll-margin-top: 100px;
-      }
-      
-      /* Links Grid: Switch to 1 column on mobile */
-      .links-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .links-grid a {
-        min-height: 100px;
-        padding: 1.5rem;
-      }
-    }
-
-    /* ========================================
-       Footer
-       ======================================== */
+    /* Footer */
     footer {
-      padding: 2.5rem 0 3rem;
+      padding: 2rem 0;
       margin-top: 2rem;
       border-top: 1px solid var(--color-border);
       text-align: center;
     }
-
     footer p {
       font-size: 0.8125rem;
       color: var(--color-text-muted);
@@ -637,9 +393,7 @@
       margin-bottom: 0.25rem;
     }
 
-    /* ========================================
-       Skip Animation Button
-       ======================================== */
+    /* Skip Button */
     .skip-btn {
       position: fixed;
       bottom: 2rem;
@@ -656,136 +410,93 @@
       border-radius: 2px;
       z-index: 200;
       opacity: 0;
-      transition: opacity 0.3s ease, background 0.2s ease, color 0.2s ease;
+      pointer-events: none;
+      transition: opacity 0.3s ease, background 0.2s ease;
     }
-
     .skip-btn.visible {
       opacity: 1;
+      pointer-events: auto;
     }
-
     .skip-btn:hover {
       background: var(--color-accent);
       color: var(--color-bg);
       border-color: var(--color-accent);
     }
 
-    .skip-btn.hidden {
-      display: none;
-    }
-
-    /* ========================================
-       Progress Bar
-       ======================================== */
+    /* Progress Bar */
     .progress-bar {
       position: fixed;
       top: 0;
       left: 0;
       height: 2px;
-      background: linear-gradient(90deg, var(--color-accent), var(--color-accent-glow));
+      background: var(--color-accent);
       z-index: 200;
       width: 0%;
-      transition: width 0.3s ease, opacity 0.5s ease;
+      transition: width 0.2s ease;
     }
 
-    /* ========================================
-       Responsive
-       ======================================== */
+    /* Responsive */
+    @media (max-width: 800px) {
+      .links-grid {
+        grid-template-columns: 1fr;
+      }
+      .contact-grid {
+        flex-direction: column;
+      }
+      .contact-item {
+        flex: 1 1 auto;
+      }
+    }
+
     @media (max-width: 600px) {
-      :root {
-        --spacing-section: 3rem;
-      }
-
-      .hero-name {
-        font-size: 2.5rem;
-      }
-
-      .featured-block {
-        padding: 1.75rem;
-      }
-
-      .featured-block p {
-        font-size: 1.125rem;
-      }
-
+      .hero-name { font-size: 2.5rem; }
+      .featured-block { padding: 1.75rem; }
+      .featured-block p { font-size: 1.125rem; }
       .skip-btn {
         bottom: 1rem;
         right: 1rem;
         padding: 0.5rem 1rem;
       }
-      
-      .scroll-top {
-        bottom: 1rem;
-        right: 1rem;
-        width: 40px;
-        height: 40px;
-      }
-      
-      .content-wrapper {
-        padding-top: 80px;
-      }
     }
 
-    /* Tablet view: 2 columns for links */
-    @media (min-width: 601px) and (max-width: 900px) {
-      .links-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    /* Reduced motion */
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after {
         animation-duration: 0.01ms !important;
         transition-duration: 0.01ms !important;
-      }
-
-      body.snap-active {
-        scroll-snap-type: none;
       }
     }
   </style>
 </head>
 
 <body>
-  <!-- Progress Bar -->
-  <div class="progress-bar" id="progress-bar"></div>
+  <div class="progress-bar" id="progress"></div>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <div class="hero" id="hero">
     <h1 class="hero-name">Arif Solmaz</h1>
     <p class="hero-role">Astronomer studying planets around other stars</p>
     <div class="hero-line"></div>
-    <div class="hero-scroll-hint">Scroll to explore</div>
+    <div class="hero-hint">Scroll to explore</div>
   </div>
 
-  <!-- Fixed Header -->
+  <!-- Header -->
   <header class="header" id="header">
     <a href="index.html" class="header-name">Arif <span>Solmaz</span></a>
     <a href="news" class="nav-link">News →</a>
   </header>
-  
-  <!-- Scroll to Top Button -->
-  <button class="scroll-top" id="scroll-top" aria-label="Scroll to top">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <path d="M12 19V5M5 12l7-7 7 7"/>
-    </svg>
-  </button>
 
   <!-- Skip Button -->
   <button class="skip-btn" id="skip-btn">Skip Tour</button>
 
   <!-- Main Content -->
-  <main class="main-content" id="main-content">
-    <!-- Spacer to push content below hero -->
-    <div class="hero-spacer" id="hero-spacer"></div>
+  <main class="main-content" id="main">
+    <div class="spacer" id="spacer"></div>
     
-    <div class="content-wrapper">
-      <div class="container">
-
-      <!-- What I Work On -->
-      <section id="research" aria-labelledby="research-heading">
-        <h2 id="research-heading">What I Work On</h2>
-        <ul class="topics" id="topics-list">
+    <div class="container">
+      <!-- Research -->
+      <section id="research">
+        <h2>What I Work On</h2>
+        <ul class="topics" id="topics">
           <li>Searching for and studying planets orbiting distant stars</li>
           <li>Understanding how starspots and stellar activity affect observations</li>
           <li>Analyzing data from space telescopes, including TESS and JWST</li>
@@ -794,52 +505,48 @@
         </ul>
       </section>
 
-      <!-- Why It Matters -->
-      <section id="impact" aria-labelledby="impact-heading">
-        <h2 id="impact-heading">Why It Matters</h2>
-        <div class="featured-block" id="featured-block">
-          <p>
-            Finding planets beyond our solar system helps us understand how common worlds like Earth might be. By studying these distant planets and their host stars, we learn about conditions that could support life elsewhere—contributing to one of humanity's oldest questions.
-          </p>
+      <!-- Impact -->
+      <section id="impact">
+        <h2>Why It Matters</h2>
+        <div class="featured-block">
+          <p>Finding planets beyond our solar system helps us understand how common worlds like Earth might be. By studying these distant planets and their host stars, we learn about conditions that could support life elsewhere—contributing to one of humanity's oldest questions.</p>
         </div>
       </section>
 
       <!-- Links -->
-      <section id="links" aria-labelledby="links-heading">
-        <h2 id="links-heading">Work & Links</h2>
+      <section id="links">
+        <h2>Work & Links</h2>
         <ul class="links-grid" id="links-grid">
           <li>
             <a href="https://ui.adsabs.harvard.edu/search/fq=%7B!type%3Daqp%20v%3D%24fq_database%7D&fq_database=(database%3Aastronomy%20OR%20database%3Aphysics)&q=-docs(1f8e5e2fda6aa0148343a32ba70673cc)%20%20author%3A%22solmaz%2C%20arif%22&sort=date%20desc%2C%20bibcode%20desc&p_=0" target="_blank" rel="noopener noreferrer">
               <span class="link-label">Publications</span>
-              NASA ADS
+              <span class="link-text">NASA ADS</span>
             </a>
           </li>
           <li>
             <a href="https://arifsolmaz.github.io/news" rel="noopener">
               <span class="link-label">News</span>
-              Outreach & Updates
+              <span class="link-text">Outreach & Updates</span>
             </a>
           </li>
           <li>
             <a href="https://arifsolmaz.github.io/cv.pdf" target="_blank" rel="noopener noreferrer">
               <span class="link-label">Curriculum Vitae</span>
-              Download PDF
+              <span class="link-text">Download PDF</span>
             </a>
           </li>
         </ul>
       </section>
 
       <!-- Teaching -->
-      <section id="teaching" aria-labelledby="teaching-heading">
-        <h2 id="teaching-heading">Teaching & Outreach</h2>
-        <p>
-          I teach programming, robotics, and machine learning to engineering students. For over a decade, I have worked with the European Southern Observatory and international programs bringing astronomy to schools and communities.
-        </p>
+      <section id="teaching">
+        <h2>Teaching & Outreach</h2>
+        <p>I teach programming, robotics, and machine learning to engineering students. For over a decade, I have worked with the European Southern Observatory and international programs bringing astronomy to schools and communities.</p>
       </section>
 
       <!-- Contact -->
-      <section id="contact" aria-labelledby="contact-heading">
-        <h2 id="contact-heading">Contact</h2>
+      <section id="contact">
+        <h2>Contact</h2>
         <div class="contact-grid" id="contact-grid">
           <div class="contact-item">
             <div class="contact-label">Email</div>
@@ -857,11 +564,8 @@
           </div>
         </div>
       </section>
-
-    </div>
     </div>
 
-    <!-- Footer -->
     <footer>
       <div class="container">
         <p>Designed for accessibility and readability</p>
@@ -871,313 +575,222 @@
   </main>
 
   <script>
-    // ============================================
-    // ANIMATION TOUR SYSTEM WITH LONGER READING TIMES
-    // ============================================
-
     const hero = document.getElementById('hero');
     const header = document.getElementById('header');
-    const mainContent = document.getElementById('main-content');
+    const main = document.getElementById('main');
+    const spacer = document.getElementById('spacer');
     const skipBtn = document.getElementById('skip-btn');
-    const progressBar = document.getElementById('progress-bar');
-    const heroSpacer = document.getElementById('hero-spacer');
-    const scrollTopBtn = document.getElementById('scroll-top');
-
+    const progress = document.getElementById('progress');
+    
     const sections = document.querySelectorAll('section');
-    const topicItems = document.querySelectorAll('#topics-list li');
+    const topics = document.querySelectorAll('#topics li');
     const linkItems = document.querySelectorAll('#links-grid li');
     const contactItems = document.querySelectorAll('.contact-item');
 
-    let tourActive = false;
-    let tourCancelled = false;
-    let tourIsScrolling = false;
-    let animationTimeouts = [];
+    let tourRunning = false;
+    let tourEnded = false;
+    let isScrolling = false;
+    let timeouts = [];
 
-    // Section reading times in seconds (generous reading times)
-    const sectionReadingTimes = {
-      'research': 10,    // What I Work On - has bullet list
-      'impact': 12,      // Why It Matters - featured block
-      'links': 8,        // Work & Links - grid
-      'teaching': 10,    // Teaching & Outreach - paragraph
-      'contact': 8       // Contact - grid
-    };
-
-    // Utility: Delay function
-    const delay = (ms) => new Promise(resolve => {
-      const timeout = setTimeout(resolve, ms);
-      animationTimeouts.push(timeout);
+    const wait = (ms) => new Promise(resolve => {
+      const t = setTimeout(resolve, ms);
+      timeouts.push(t);
     });
 
-    // Update progress bar
-    const updateProgress = (percent) => {
-      progressBar.style.width = percent + '%';
-    };
-
-    // Show/hide scroll to top button
-    const updateScrollTopButton = () => {
-      if (window.pageYOffset > window.innerHeight * 0.5) {
-        scrollTopBtn.classList.add('visible');
-      } else {
-        scrollTopBtn.classList.remove('visible');
-      }
-    };
-
-    // FIXED: Improved snap scroll to section that accounts for header
-    const snapToSection = (element) => {
+    // Smooth scroll with custom easing
+    const smoothScroll = (target, duration) => {
       return new Promise(resolve => {
-        tourIsScrolling = true;
+        isScrolling = true;
+        const start = window.pageYOffset;
+        const distance = target - start;
+        const startTime = performance.now();
 
-        // Calculate the scroll position to ensure section title is visible
-        const headerHeight = header.offsetHeight || 100; // Default to 100px if not available
-        const elementRect = element.getBoundingClientRect();
-        const elementTop = window.pageYOffset + elementRect.top;
-        
-        // Calculate position: element top - header height - extra padding
-        const scrollPosition = elementTop - headerHeight - 20;
-        
-        window.scrollTo({
-          top: scrollPosition,
-          behavior: 'smooth'
-        });
+        const scroll = (currentTime) => {
+          if (tourEnded) {
+            isScrolling = false;
+            resolve();
+            return;
+          }
 
-        // Settle time (increased for smoother transition)
-        const settleMs = 2000;
-        const t = setTimeout(() => {
-          tourIsScrolling = false;
-          resolve();
-        }, settleMs);
-        animationTimeouts.push(t);
+          const elapsed = currentTime - startTime;
+          const p = Math.min(elapsed / duration, 1);
+          
+          // Smooth ease-in-out
+          const ease = p < 0.5 
+            ? 2 * p * p 
+            : 1 - Math.pow(-2 * p + 2, 2) / 2;
+
+          window.scrollTo(0, start + distance * ease);
+
+          if (elapsed < duration) {
+            requestAnimationFrame(scroll);
+          } else {
+            isScrolling = false;
+            resolve();
+          }
+        };
+
+        requestAnimationFrame(scroll);
       });
     };
 
-    // Start the tour
+    const updateProgress = (pct) => {
+      progress.style.width = pct + '%';
+    };
+
     const startTour = async () => {
-      if (tourActive) return;
-      tourActive = true;
+      if (tourRunning) return;
+      tourRunning = true;
 
-      // During tour, avoid global smooth conflicts
-      document.documentElement.style.scrollBehavior = 'auto';
-
-      // Enable snap during tour
-      document.body.classList.add('snap-active');
-
-      // Show skip button
-      await delay(1500);
-      if (tourCancelled) return;
+      // Show skip button after 1s
+      await wait(1000);
+      if (tourEnded) return;
       skipBtn.classList.add('visible');
 
-      // Wait for hero to be appreciated (longer initial wait)
-      await delay(3500);
-      if (tourCancelled) return;
+      // Enjoy hero for 2.5s more
+      await wait(2500);
+      if (tourEnded) return;
+
+      updateProgress(5);
+
+      // Fade hero, show header & content
+      hero.classList.add('hidden');
+      await wait(1200);
+      if (tourEnded) return;
+
+      header.classList.add('visible');
+      main.classList.add('visible');
+
+      // Make sections visible
+      sections.forEach(s => s.classList.add('visible'));
+      topics.forEach(t => t.classList.add('visible'));
+      linkItems.forEach(l => l.classList.add('visible'));
+      contactItems.forEach(c => c.classList.add('visible'));
+
+      await wait(800);
+      if (tourEnded) return;
 
       updateProgress(10);
 
-      // Fade out hero, show header and content
-      hero.classList.add('fade-out');
-      await delay(1400);
-      if (tourCancelled) return;
+      // Scroll through sections with pauses
+      const sectionData = [
+        { id: 'research', pause: 5000 },
+        { id: 'impact', pause: 5000 },
+        { id: 'links', pause: 4000 },
+        { id: 'teaching', pause: 4000 },
+        { id: 'contact', pause: 3000 }
+      ];
 
-      header.classList.add('visible');
-      mainContent.classList.add('visible');
-      
-      // Make all sections visible immediately
-      sections.forEach(section => section.classList.add('in-view'));
-      topicItems.forEach(item => item.classList.add('animate'));
-      linkItems.forEach(item => item.classList.add('animate'));
-      contactItems.forEach(item => item.classList.add('animate'));
+      for (let i = 0; i < sectionData.length; i++) {
+        if (tourEnded) return;
 
-      await delay(800);
-      if (tourCancelled) return;
+        const section = document.getElementById(sectionData[i].id);
+        const rect = section.getBoundingClientRect();
+        const target = window.pageYOffset + rect.top - 100;
 
-      updateProgress(20);
+        // Scroll to section (3 seconds per scroll)
+        await smoothScroll(target, 3000);
+        if (tourEnded) return;
 
-      // IMPORTANT: First scroll to top to ensure correct positioning
-      window.scrollTo({
-        top: 0,
-        behavior: 'instant'
-      });
-      
-      await delay(200);
-
-      // Scroll to each section with pauses
-      const sectionIds = ['research', 'impact', 'links', 'teaching', 'contact'];
-      
-      for (let i = 0; i < sectionIds.length; i++) {
-        if (tourCancelled) return;
-        
-        const section = document.getElementById(sectionIds[i]);
-        const sectionId = sectionIds[i];
-        const readingTime = sectionReadingTimes[sectionId] * 1000; // Convert to milliseconds
-        
-        // Extra delay for first section to ensure header is fully visible
-        if (i === 0) {
-          await delay(500);
-        }
-        
-        await snapToSection(section);
-        if (tourCancelled) return;
-        
         // Update progress
-        updateProgress(20 + ((i + 1) / sectionIds.length) * 70);
-        
-        // Pause to read the section (SIGNIFICANTLY INCREASED)
-        await delay(readingTime);
-        if (tourCancelled) return;
+        updateProgress(10 + ((i + 1) / sectionData.length) * 85);
+
+        // Pause to read
+        await wait(sectionData[i].pause);
+        if (tourEnded) return;
       }
 
-      // Scroll to very bottom
-      await delay(800);
-      if (tourCancelled) return;
-      tourIsScrolling = true;
-      window.scrollTo({
-        top: document.body.scrollHeight,
-        behavior: 'smooth'
-      });
-      await delay(2200);
-      tourIsScrolling = false;
-      
+      // Scroll to bottom
+      await smoothScroll(document.body.scrollHeight - window.innerHeight, 2000);
+      if (tourEnded) return;
+
       updateProgress(100);
-      await delay(2000);
-      
-      // End tour
+      await wait(1500);
+
       endTour();
     };
 
-    // Skip/End tour
     const endTour = () => {
-      tourCancelled = true;
-      tourActive = false;
-      tourIsScrolling = false;
+      tourEnded = true;
+      tourRunning = false;
+      isScrolling = false;
 
-      // Clear all pending timeouts
-      animationTimeouts.forEach(timeout => clearTimeout(timeout));
-      animationTimeouts = [];
+      // Clear timeouts
+      timeouts.forEach(t => clearTimeout(t));
+      timeouts = [];
 
-      // Make everything visible immediately
-      hero.classList.add('fade-out');
-      hero.classList.add('static');
+      // Ensure everything visible
+      hero.classList.add('hidden');
       header.classList.add('visible');
-      mainContent.classList.add('visible');
+      main.classList.add('visible');
+      sections.forEach(s => s.classList.add('visible'));
+      topics.forEach(t => t.classList.add('visible'));
+      linkItems.forEach(l => l.classList.add('visible'));
+      contactItems.forEach(c => c.classList.add('visible'));
 
-      sections.forEach(section => section.classList.add('in-view'));
-      topicItems.forEach(item => item.classList.add('animate'));
-      linkItems.forEach(item => item.classList.add('animate'));
-      contactItems.forEach(item => item.classList.add('animate'));
-
-      // Collapse spacer to remove "black void" when returning to top
-      if (heroSpacer) heroSpacer.classList.add('collapsed');
-
-      // Hide skip button and progress bar
+      // Hide skip button
       skipBtn.classList.remove('visible');
-      skipBtn.classList.add('hidden');
-      progressBar.style.width = '100%';
+      skipBtn.style.display = 'none';
+
+      // Fade progress bar
+      updateProgress(100);
       setTimeout(() => {
-        progressBar.style.opacity = '0';
+        progress.style.opacity = '0';
       }, 500);
 
-      // Disable snap after tour for normal reading
-      document.body.classList.remove('snap-active');
+      // Collapse spacer and add padding to content
+      spacer.style.height = '0';
+      spacer.style.display = 'none';
+      
+      // Add top padding to container so content doesn't go under header
+      const container = document.querySelector('.container');
+      container.style.paddingTop = 'calc(70px + 2rem)';
 
-      // Re-enable pleasant smooth scrolling for normal navigation after tour
-      document.documentElement.style.scrollBehavior = 'smooth';
-
-      // Enable scroll-based hero visibility after tour
-      enableHeroScrollBehavior();
+      // Enable scroll behavior flag
+      enableScrollBehavior();
     };
 
-    // Show/hide hero based on scroll position (after tour)
-    let heroScrollEnabled = false;
-    const enableHeroScrollBehavior = () => {
-      heroScrollEnabled = true;
+    let scrollBehaviorEnabled = false;
+
+    const enableScrollBehavior = () => {
+      scrollBehaviorEnabled = true;
     };
 
-    // Scroll listener for hero visibility and scroll-to-top button
-    let ticking = false;
-    let lastScrollY = 0;
-    
-    const updateScrollEffects = () => {
-      // Update scroll to top button
-      updateScrollTopButton();
-      
-      if (!heroScrollEnabled || tourActive) return;
-      
-      const scrollY = window.pageYOffset;
-      const heroHeight = window.innerHeight;
-      const threshold = heroHeight - 100;
-      
-      if (scrollY <= threshold) {
-        hero.classList.remove('fade-out');
-        header.classList.remove('visible');
-      } else {
-        hero.classList.add('fade-out');
-        header.classList.add('visible');
-      }
-      
-      ticking = false;
-    };
-
+    // Scroll listener - no hero toggle after tour, just header stays visible
+    let lastY = 0;
     window.addEventListener('scroll', () => {
-      // Update progress bar based on scroll
-      const scrollTop = window.pageYOffset;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const scrollPercent = scrollTop / docHeight;
-      progressBar.style.width = `${scrollPercent * 100}%`;
-      
-      if (!ticking) {
-        ticking = true;
-        requestAnimationFrame(updateScrollEffects);
+      // Skip tour on manual scroll
+      if (tourRunning && !isScrolling && Math.abs(window.pageYOffset - lastY) > 30) {
+        endTour();
       }
-      
-      // Tour skip detection - on manual scroll only
-      if (tourActive && !tourIsScrolling) {
-        const scrollDiff = Math.abs(window.scrollY - lastScrollY);
-        if (scrollDiff > 20) {
-          endTour();
-        }
-      }
-      lastScrollY = window.scrollY;
+      lastY = window.pageYOffset;
     }, { passive: true });
 
-    // Scroll to top button handler
-    scrollTopBtn.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    });
-
-    // Skip button handler
+    // Skip button
     skipBtn.addEventListener('click', endTour);
 
-    // Keyboard shortcut to skip (Escape or Space)
+    // Click to skip
+    document.addEventListener('click', (e) => {
+      if (tourRunning && !e.target.closest('a') && e.target !== skipBtn) {
+        endTour();
+      }
+    });
+
+    // Keyboard to skip
     document.addEventListener('keydown', (e) => {
-      if ((e.key === 'Escape' || e.key === ' ') && tourActive) {
+      if (tourRunning && (e.key === 'Escape' || e.key === ' ')) {
         e.preventDefault();
         endTour();
       }
     });
 
-    // Click anywhere to skip
-    document.addEventListener('click', (e) => {
-      if (tourActive && e.target !== skipBtn && !e.target.closest('a')) {
-        endTour();
-      }
-    });
-
-    // Start tour on page load
+    // Start on load
     window.addEventListener('load', () => {
-      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      
-      if (prefersReducedMotion) {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         endTour();
       } else {
         startTour();
       }
-    });
-
-    // Handle window resize
-    window.addEventListener('resize', () => {
-      updateScrollTopButton();
     });
   </script>
 </body>
