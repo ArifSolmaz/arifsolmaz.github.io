@@ -14,6 +14,8 @@
   
   <!-- Markdown Parser -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <!-- CSV Parser -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
   
   <style>
     /* ========================================
@@ -689,78 +691,14 @@
        ====================================== -->
   <script>
     // ============================================
-    // NEWS DATA
+    // CONFIGURATION
     // ============================================
-    const newsData = [
-      {
-        id: "news-2025-12-24-hubble-protoplanetary",
-        date: "24 Aralık 2025",
-        title: "Hubble'dan Kaotik Gezegen Doğumu",
-        image: "https://www.cfa.harvard.edu/sites/default/files/2025-12/STScI-01K4NEMZAN3V1YQCQ8W0HB9VPE_0.jpg",
-        tags: ["Hubble","NASA","gezegen oluşumu","protoplanetary disk","uzay keşfi","astronomi","IRAS 23077+6707","genç yıldızlar","Güneş Sistemi","gaz ve toz diski","evren"],
-        audioMp3: "https://cdn.jsdelivr.net/gh/ArifSolmaz/my-media@main/audio/dracula.mp3",
-        audioM4a: "",
-        text: `**Hubble'dan Çarpıcı Keşif: Gezegenlerin Doğduğu En Büyük ve En Karmaşık Disk Görüntülendi** NASA'nın **Hubble Uzay Teleskobu**, bugüne kadar gözlemlenen **en büyük gezegen oluşum diskini** ortaya çıkardı. Yaklaşık **400 milyar mil** (yaklaşık **640 milyar kilometre**) genişliğe sahip bu dev yapı, **Güneş Sistemi'nin çapının yaklaşık 40 katı** büyüklüğünde ve Dünya'dan yalnızca **1.000 ışık yılı** uzaklıkta bulunuyor.
+    const GOOGLE_SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRElLrJl3fWS40NSQJNiXvZwcjImJt4u00aK9q8zFdBVdN1gtBnrjl4t4tjuTXXhy2GTTVdiwGz6MZP/pub?output=csv";
 
-Bilim insanları, gezegenlerin genç yıldızların etrafındaki **gaz ve toz disklerinden** oluştuğunu uzun süredir biliyor. Ancak Hubble'ın yeni gözlemleri, gezegen oluşumunun her zaman **sakin ve düzenli** olmadığını gösteriyor. Diskin üstünde ve altında, **dumanı andıran ipliksi yapılar** uzanıyor; bu da ortamın **son derece çalkantılı ve kaotik** olabileceğine işaret ediyor.
-
-IRAS 23077+6707 olarak kataloglanan bu sistem, Dünya'dan bakıldığında neredeyse **kenardan** görülüyor. Bu nedenle karanlık ve tozlu orta bölgesi ile üstünde ve altında parlayan gaz katmanları, yapıya **bir hamburger görünümü** kazandırıyor. Ancak bu disk, şimdiye kadar gözlemlenenler arasında **en düzensiz ve en karmaşık** yapılardan biri.
-
-Bilim insanlarını en çok şaşırtan özelliklerden biri, disk yapısındaki **belirgin asimetri** oldu. Diskin yalnızca **bir tarafında** uzun ve parlak filamentler görülürken, diğer taraf neredeyse **keskin bir sınırla** sona eriyor. Bu durum, diskin çevresinden **gaz ve toz akışı** yaşadığını ya da bulunduğu ortamla güçlü etkileşimler içinde olduğunu düşündürüyor.
-
-Araştırmacılara göre bu dev disk, **erken Güneş Sistemi'nin çok daha büyük bir versiyonu** olabilir. Tahminlere göre disk, **Jüpiter'in kütlesinin 10 ila 30 katı** kadar madde içeriyor. Bu da sistemde **birden fazla gaz devi gezegenin** oluşmuş ya da oluşuyor olabileceği anlamına geliyor.
-
-Otuz yılı aşkın süredir görev yapan **Hubble Uzay Teleskobu**, evrenin yapısı ve gezegenlerin kökeni hakkındaki bilgilerimizi sürekli genişletiyor. Bu keşif, gezegenlerin yalnızca sakin ortamlarda değil, **son derece kaotik ve uç koşullarda da** oluşabileceğini göstererek bilim dünyasına **yeni sorular ve yeni araştırma yolları** açıyor.
-
-**Kaynak**: [CFA](https://www.cfa.harvard.edu/news/nasas-hubble-reveals-largest-found-chaotic-birthplace-planets)`
-      },
-      {
-        id: "news-2025-12-16-superkilonova-at2025ulz",
-        date: "16 Aralık 2025",
-        title: "Evrenin 'İki Patlamalı' Gizemi: Süperkilonova Adayı",
-        image: "https://keckobservatory.org/wp-content/uploads/2025/12/3-panel-SKN-sm-1024x576.jpg",
-        tags: ["süperkilonova", "AT2025ulz", "kilonova", "süpernova", "kütleçekim dalgaları", "LIGO", "Virgo", "GW170817"],
-        audioMp3: "https://cdn.jsdelivr.net/gh/ArifSolmaz/my-media@main/audio/superkilonova.mp3",
-        audioM4a: "",
-        text: `Gökbilimciler, AT2025ulz adlı kısa süreli bir kozmik olayı inceleyerek daha önce yalnızca kuramsal olarak öne sürülen bir senaryoya işaret eden bulgular elde etti: **"süperkilonova"** — yani bir **süpernova** patlamasının tetiklediği **kilonova**. Bu durumda olay, sanki **iki aşamalı/iki patlamalı** bir süreç gibi görünüyor.
-
-Gözlemler, ilk birkaç gün boyunca AT2025ulz'nin 2017'deki ünlü kilonova **GW170817**'ye benzer biçimde hızla sönükleştiğini ve **kırmızı dalga boylarında** parladığını gösterdi. Bu **"kırmızılaşma"**, kilonovalarda oluşan **çok ağır elementlerin** (ör. **altın** benzeri) **mavi ışığı** daha çok soğurup **kırmızı ışığın** baskın kalmasına yol açmasıyla açıklanabiliyor. Ancak birkaç gün sonra olay **yeniden parlaklaştı**, **maviye döndü** ve tayfında **hidrojen** izleri belirdi; bunlar ise **çekirdek çökmesi** kaynaklı bir **süpernovanın** tipik işaretleri.
-
-Aynı zamanlarda **LIGO** ve **Virgo** dedektörleri, en az bir bileşeni **alışılmadık derecede küçük kütleli** olabilecek iki cismin birleşmesine işaret eden bir **kütleçekim dalgası** sinyali yakaladı. Ekip, olası açıklamalardan biri olarak şunu tartışıyor: **hızla dönen** büyük bir yıldız **süpernova** olarak patlıyor, ardından iki çok küçük (**Güneş'ten düşük kütleli** olabilir) **nötron yıldızı** oluşuyor ve bunlar kısa süre içinde birleşerek **kilonova** üretiyor; fakat ilk **süpernova enkazı**, kilonova imzasını bir süre **örtüyor**. Çalışma **The Astrophysical Journal Letters**'ta yayımlandı.
-
-Araştırmacılar, bunun **kesin bir keşif değil güçlü bir aday** olduğunun altını çiziyor: **Süperkilonova** hipotezini doğrulamanın yolu, benzer olayları **daha fazla** sayıda yakalamak ve **çoklu gözlemle** (**ışık + kütleçekim dalgaları**) karşılaştırmak.
-
-**Kaynak**: [Keck Observatory](https://keckobservatory.org/superkilonova/)`
-      },
-      {
-        id: "news-2025-12-08-trappist-1-mini-gunes-sistemi",
-        date: "08 Aralık 2025",
-        title: "TRAPPIST-1: Mini Güneş Sistemi",
-        image: "https://astrobiology.com/wp-content/uploads/2025/12/A-New-Look-At-TRAPPIST-1e.png",
-        tags: ["atmosfer", "Dünya benzeri ötegezegen", "Goldilocks bölgesi", "Yaşanabilir Bölge", "Pandora Görevi", "Titan", "TRAPPIST-1", "TRAPPIST-1 b", "TRAPPIST-1 e"],
-        audioMp3: "https://cdn.jsdelivr.net/gh/ArifSolmaz/my-media@main/audio/TRAPPIST-1e.mp3",
-        audioM4a: "",
-        text: `Dünya'dan yaklaşık 39 ışık yılı uzakta, küçük ama son derece ilgi çekici bir yıldız sistemi var: **TRAPPIST-1**. Bu sistemin yıldızı, Güneş'ten çok daha **küçük, daha soğuk ve daha sönük** bir **ultrasoğuk kırmızı cüce**. Etrafında ise **yedi adet Dünya boyutlarında gezegen** dönüyor. Üstelik öyle sıkışık bir düzen ki, yıldız ve tüm gezegenleri **Merkür'ün yörüngesinin içine sığacak** kadar kompakt bir "mini Güneş sistemi" gibi düşünebilirsiniz.
-
-Bu yedi gezegen arasında özellikle **TRAPPIST-1 e** öne çıkıyor. Çünkü **yaşanabilir bölge** içinde dolanıyor: Yıldızına olan uzaklığı, teorik olarak gezegen yüzeyinde **sıvı su** bulunmasına izin verebilir. Ancak burada kritik bir şart var: **TRAPPIST-1 e'nin bir atmosferi olmalı.** Çünkü atmosfer olmadan yüzeyde suyu uzun süre stabil tutmak çok zor. Ve su varsa, yaşam ihtimali de bilimsel hayal gücümüzün kapısını aralıyor.
-
-Peki TRAPPIST-1 e'nin gerçekten atmosferi var mı?
-
-Bilim insanları bu soruyu yanıtlamak için **James Webb Uzay Teleskobu**'nun güçlü cihazlarından **NIRSpec** ile gezegenin yıldızının önünden geçtiği anları gözledi. Bu geçişlerde yıldız ışığının küçük bir kısmı gezegenin olası atmosferinden süzülür. Atmosferdeki gazlar belirli dalga boylarını soğurduğunda, astronomlar bu "parmak izlerinden" içeride hangi moleküllerin olabileceğini çıkarabilir.
-
-Ekip, TRAPPIST-1 e'nin dört geçişinde **metana dair ipuçları** gördü. Bu ilk bakışta heyecan verici görünebilir. Ancak burada ince bir ayrıntı devreye giriyor: TRAPPIST-1 bir **M cücesi**. Bu tür yıldızların kendi atmosferik özellikleri ve değişkenlikleri, gezegen atmosferi gibi görünen **yanıltıcı sinyaller** üretebilir. Başka bir deyişle, tespit edilen metan **gezegenden değil yıldızdan** geliyor olabilir.
-
-Araştırmacılar olası senaryoları modelledi. TRAPPIST-1 e'nin metan zengini bir atmosfere sahip olması durumunda, gezegenin Satürn'ün ünlü uydusu **Titan** benzeri bir kimyaya yaklaşabileceği düşünülüyor. Fakat yapılan analizler, bu tür "sıcak öte-Titan" senaryolarının bile **şimdilik düşük olasılıklı** olduğunu gösteriyor. Bu yüzden bilim insanları, önceki atmosfer işaretlerinin **yıldız kaynaklı gürültü** olma ihtimalinin daha yüksek olabileceğini vurguluyor.
-
-Bu, TRAPPIST-1 e'nin atmosferi olmadığı anlamına gelmiyor. Sadece **daha fazla ve daha akıllı gözleme** ihtiyaç var.
-
-Yakın gelecekte bu konuda önemli bir destek, [**NASA'nın Pandora görevi**](https://science.nasa.gov/mission/pandora/) ile gelebilir. Pandora, ötegezegen atmosferlerini incelerken aynı zamanda **ev sahibi yıldızın** davranışını daha iyi ölçmeyi hedefleyen bir uydu. Buna ek olarak, TRAPPIST-1 e ile sistemin içteki **havasız** gezegeni TRAPPIST-1 b'nin **eşzamanlı geçişleri** gözlenerek yıldız etkisini atmosfer sinyalinden ayırmak amaçlanıyor.
-
-Kısacası TRAPPIST-1 e, bize en yakın "Dünya'ya benzer adaylardan" biri olabilir. Ama bilim, heyecanın yanında sabrı da sever: Bu küçük gezegenin gerçekten **nefes alan** bir dünyaya mı yoksa **çıplak bir kayaya** mı benzediğini anlamak için, veri birikmeye devam ediyor.
-
-**Kaynak**: [Astrobiology](https://astrobiology.com/2025/12/a-new-look-at-trappist-1e-an-earth-sized-habitable-zone-exoplanet.html) sayfasından derlenmiştir.`
-      }
-    ];
+    // ============================================
+    // STATE
+    // ============================================
+    let newsData = [];
 
     // ============================================
     // SYSTEM CODE
@@ -781,15 +719,57 @@ Kısacası TRAPPIST-1 e, bize en yakın "Dünya'ya benzer adaylardan" biri olabi
     let currentArticleText = "";
 
     marked.use({ breaks: true });
-    renderNews(newsData);
 
-    // Open modal from URL hash
-    (function openFromHash() {
-      const hid = (window.location.hash || '').replace('#', '').trim();
-      if (!hid) return;
-      const idx = newsData.findIndex(x => x.id === hid);
-      if (idx >= 0) openModal(idx);
-    })();
+    // Fetch and Initialize
+    Papa.parse(GOOGLE_SHEET_CSV_URL, {
+      download: true,
+      header: true,
+      skipEmptyLines: true,
+      complete: function(results) {
+        // Process data
+        newsData = results.data.map(item => {
+           // Tags come as string "tag1, tag2", need to split
+           if (item.tags && typeof item.tags === 'string') {
+             item.tags = item.tags.split(',').map(t => t.trim()).filter(t => t);
+           }
+           return item;
+        });
+
+        // Initial Render
+        renderNews(newsData);
+
+        // Open modal from URL hash
+        const hid = (window.location.hash || '').replace('#', '').trim();
+        if (hid) {
+          const idx = newsData.findIndex(x => x.id === hid);
+          if (idx >= 0) openModal(idx);
+        }
+      },
+      error: function(err) {
+        console.error("Error fetching CSV:", err);
+        // Fallback to local news.csv if google sheet fails (or CORS issues in dev)
+        // In production on the same domain, this is less of an issue, but for reliability:
+        if (GOOGLE_SHEET_CSV_URL.startsWith('http')) {
+             console.log("Falling back to local news.csv...");
+             Papa.parse("news.csv", {
+                 download: true,
+                 header: true,
+                 skipEmptyLines: true,
+                 complete: function(results) {
+                     newsData = results.data.map(item => {
+                        if (item.tags && typeof item.tags === 'string') {
+                            item.tags = item.tags.split(',').map(t => t.trim()).filter(t => t);
+                        }
+                        return item;
+                     });
+                     renderNews(newsData);
+                 }
+             });
+        } else {
+             grid.innerHTML = "<p>Haberler yüklenirken bir hata oluştu.</p>";
+        }
+      }
+    });
 
     function renderNews(dataToRender) {
       grid.innerHTML = "";
