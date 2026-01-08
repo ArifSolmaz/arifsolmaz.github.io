@@ -2215,6 +2215,128 @@
                 </div>
             </div>
 
+            <!-- NEWS DETAIL PAGE -->
+            <div id="news-detail" class="page">
+                <div style="margin-bottom:1rem;">
+                    <a href="#" onclick="goTo('news'); return false;" class="btn btn-ghost btn-sm"><i class="fa-solid fa-arrow-left"></i> <span data-en>Back to News</span><span data-tr>Haberlere Dön</span></a>
+                </div>
+                <article style="max-width:800px;">
+                    <header style="margin-bottom:1.5rem;">
+                        <span class="tag" id="newsDetailCategory">News</span>
+                        <h1 id="newsDetailTitle" style="margin:0.5rem 0; font-size:2rem;">Loading...</h1>
+                        <div style="color:var(--text-muted); font-size:0.9rem;">
+                            <span><i class="fa-solid fa-calendar"></i> <span id="newsDetailDate"></span></span>
+                            <span style="margin-left:1rem;"><i class="fa-solid fa-user"></i> <span id="newsDetailAuthor"></span></span>
+                        </div>
+                    </header>
+                    <div id="newsDetailImage" style="height:300px; border-radius:var(--radius-lg); background-size:cover; background-position:center; margin-bottom:1.5rem;"></div>
+                    <div id="newsDetailContent" style="white-space:pre-line; line-height:1.8; font-size:1rem;"></div>
+                </article>
+            </div>
+
+            <!-- EVENT DETAIL PAGE -->
+            <div id="event-detail" class="page">
+                <div style="margin-bottom:1rem;">
+                    <a href="#" onclick="goTo('news'); return false;" class="btn btn-ghost btn-sm"><i class="fa-solid fa-arrow-left"></i> <span data-en>Back to Events</span><span data-tr>Etkinliklere Dön</span></a>
+                </div>
+                <article style="max-width:800px;">
+                    <header style="margin-bottom:1.5rem;">
+                        <span class="tag" id="eventDetailType">Event</span>
+                        <h1 id="eventDetailTitle" style="margin:0.5rem 0; font-size:2rem;">Loading...</h1>
+                        <div style="color:var(--text-muted); font-size:0.9rem; display:flex; flex-wrap:wrap; gap:1rem;">
+                            <span><i class="fa-solid fa-calendar"></i> <span id="eventDetailDate"></span></span>
+                            <span><i class="fa-solid fa-clock"></i> <span id="eventDetailTime"></span></span>
+                            <span><i class="fa-solid fa-location-dot"></i> <span id="eventDetailLocation"></span></span>
+                        </div>
+                        <div id="eventDetailSpeakerBox" style="margin-top:0.75rem; padding:0.75rem; background:var(--accent-light); border-radius:var(--radius-md); display:none;">
+                            <strong><span data-en>Speaker:</span><span data-tr>Konuşmacı:</span></strong> <span id="eventDetailSpeaker"></span>
+                        </div>
+                    </header>
+                    <div id="eventDetailContent" style="white-space:pre-line; line-height:1.8; font-size:1rem;"></div>
+                    <div id="eventRegisterBox" style="margin-top:1.5rem; display:none;">
+                        <a href="#" id="eventRegisterLink" class="btn btn-accent" target="_blank"><i class="fa-solid fa-calendar-plus"></i> <span data-en>Register</span><span data-tr>Kayıt Ol</span></a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- PROJECT DETAIL PAGE -->
+            <div id="project-detail" class="page">
+                <div style="margin-bottom:1rem;">
+                    <a href="#" onclick="goTo('projects'); return false;" class="btn btn-ghost btn-sm"><i class="fa-solid fa-arrow-left"></i> <span data-en>Back to Projects</span><span data-tr>Projelere Dön</span></a>
+                </div>
+                <article style="max-width:800px;">
+                    <header style="margin-bottom:1.5rem;">
+                        <div style="display:flex; gap:0.5rem; margin-bottom:0.5rem;">
+                            <span class="tag" id="projectDetailCategory">Capstone</span>
+                            <span class="tag tag-purple" id="projectDetailYear">2024</span>
+                            <span class="tag tag-green" id="projectDetailAward" style="display:none;"><i class="fa-solid fa-trophy"></i> <span id="projectAwardText"></span></span>
+                        </div>
+                        <h1 id="projectDetailTitle" style="margin:0.5rem 0; font-size:2rem;">Loading...</h1>
+                        <div style="color:var(--text-muted); font-size:0.9rem;">
+                            <span><i class="fa-solid fa-users"></i> <span id="projectDetailTeam"></span></span>
+                            <span style="margin-left:1rem;"><i class="fa-solid fa-user-tie"></i> <span data-en>Advisor:</span><span data-tr>Danışman:</span> <span id="projectDetailAdvisor"></span></span>
+                        </div>
+                    </header>
+                    <div id="projectDetailImage" style="height:300px; border-radius:var(--radius-lg); background-size:cover; background-position:center; margin-bottom:1.5rem;"></div>
+                    <div id="projectDetailContent" style="white-space:pre-line; line-height:1.8; font-size:1rem;"></div>
+                    <div style="margin-top:1.5rem; padding:1rem; background:var(--bg-warm); border-radius:var(--radius-md);">
+                        <h4 style="margin:0 0 0.5rem 0;"><span data-en>Technologies</span><span data-tr>Teknolojiler</span></h4>
+                        <div id="projectDetailTech" style="display:flex; flex-wrap:wrap; gap:0.3rem;"></div>
+                    </div>
+                    <div id="projectGithubBox" style="margin-top:1rem; display:none;">
+                        <a href="#" id="projectGithubLink" class="btn btn-ghost" target="_blank"><i class="fa-brands fa-github"></i> <span data-en>View on GitHub</span><span data-tr>GitHub'da Görüntüle</span></a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- LAB DETAIL PAGE -->
+            <div id="lab-detail" class="page">
+                <div style="margin-bottom:1rem;">
+                    <a href="#" onclick="goTo('labs'); return false;" class="btn btn-ghost btn-sm"><i class="fa-solid fa-arrow-left"></i> <span data-en>Back to Labs</span><span data-tr>Lablara Dön</span></a>
+                </div>
+                <article style="max-width:800px;">
+                    <header style="margin-bottom:1.5rem;">
+                        <span class="tag" id="labDetailType">Lab</span>
+                        <h1 id="labDetailTitle" style="margin:0.5rem 0; font-size:2rem;">Loading...</h1>
+                        <div style="color:var(--text-muted); font-size:0.9rem;">
+                            <span><i class="fa-solid fa-door-open"></i> <span data-en>Room:</span><span data-tr>Oda:</span> <span id="labDetailRoom"></span></span>
+                            <span style="margin-left:1rem;"><i class="fa-solid fa-user-tie"></i> <span data-en>Manager:</span><span data-tr>Yönetici:</span> <span id="labDetailManager"></span></span>
+                        </div>
+                    </header>
+                    <div id="labDetailImage" style="height:300px; border-radius:var(--radius-lg); background-size:cover; background-position:center; margin-bottom:1.5rem;"></div>
+                    <div id="labDetailContent" style="white-space:pre-line; line-height:1.8; font-size:1rem;"></div>
+                    <div style="margin-top:1.5rem; padding:1rem; background:var(--green-light); border-radius:var(--radius-md); border-left:4px solid var(--green);">
+                        <h4 style="margin:0 0 0.5rem 0; color:var(--green);"><i class="fa-solid fa-wrench"></i> <span data-en>Equipment</span><span data-tr>Ekipman</span></h4>
+                        <p id="labDetailEquipment" style="margin:0; color:var(--text-secondary);"></p>
+                    </div>
+                </article>
+            </div>
+
+            <!-- JOB DETAIL PAGE -->
+            <div id="job-detail" class="page">
+                <div style="margin-bottom:1rem;">
+                    <a href="#" onclick="goTo('jobs'); return false;" class="btn btn-ghost btn-sm"><i class="fa-solid fa-arrow-left"></i> <span data-en>Back to Jobs</span><span data-tr>İşlere Dön</span></a>
+                </div>
+                <article style="max-width:800px;">
+                    <header style="margin-bottom:1.5rem;">
+                        <span class="tag" id="jobDetailType">Full-Time</span>
+                        <h1 id="jobDetailTitle" style="margin:0.5rem 0; font-size:2rem;">Loading...</h1>
+                        <div style="color:var(--text-muted); font-size:0.9rem; display:flex; flex-wrap:wrap; gap:1rem;">
+                            <span><i class="fa-solid fa-building"></i> <span id="jobDetailCompany"></span></span>
+                            <span><i class="fa-solid fa-location-dot"></i> <span id="jobDetailLocation"></span></span>
+                            <span><i class="fa-solid fa-money-bill"></i> <span id="jobDetailSalary"></span></span>
+                        </div>
+                        <div id="jobDeadlineBox" style="margin-top:0.75rem; padding:0.75rem; background:var(--amber-light); border-radius:var(--radius-md); display:none;">
+                            <strong><i class="fa-solid fa-clock"></i> <span data-en>Deadline:</span><span data-tr>Son Tarih:</span></strong> <span id="jobDetailDeadline"></span>
+                        </div>
+                    </header>
+                    <div id="jobDetailContent" style="white-space:pre-line; line-height:1.8; font-size:1rem;"></div>
+                    <div id="jobApplyBox" style="margin-top:1.5rem; display:none;">
+                        <a href="#" id="jobApplyLink" class="btn btn-accent" target="_blank"><i class="fa-solid fa-paper-plane"></i> <span data-en>Apply Now</span><span data-tr>Şimdi Başvur</span></a>
+                    </div>
+                </article>
+            </div>
+
         </main>
     </div>
 
@@ -2419,12 +2541,12 @@
             const news = DATA.news.slice(0, 6);
             document.getElementById('newsBadge').textContent = DATA.news.length;
 
-            const newsHTML = news.slice(0, 3).map(n => {
+            const newsHTML = news.slice(0, 3).map((n, i) => {
                 const d = formatDate(n.date);
                 const color = n.category?.toLowerCase() === 'award' ? 'var(--green)' :
                     n.category?.toLowerCase() === 'academic' ? 'var(--purple)' : 'var(--amber)';
                 return `
-                <div class="news-card">
+                <div class="news-card card-clickable" onclick="goToNewsDetail(${i})">
                     <div class="news-img" style="background-image:url('${n.image || 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80'}');">
                         <div class="news-date" style="background:${color};"><span class="day">${d.day}</span><span class="month">${d.month}</span></div>
                     </div>
@@ -2438,10 +2560,10 @@
             }).join('');
 
             document.getElementById('latestNews').innerHTML = newsHTML || '<p>No news available.</p>';
-            document.getElementById('allNews').innerHTML = DATA.news.map(n => {
+            document.getElementById('allNews').innerHTML = DATA.news.map((n, i) => {
                 const d = formatDate(n.date);
                 return `
-                <div class="news-card">
+                <div class="news-card card-clickable" onclick="goToNewsDetail(${i})">
                     <div class="news-img" style="background-image:url('${n.image || 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80'}');">
                         <div class="news-date"><span class="day">${d.day}</span><span class="month">${d.month}</span></div>
                     </div>
@@ -2458,8 +2580,8 @@
         function renderEvents() {
             const events = DATA.events.slice(0, 4);
 
-            const eventsHTML = events.map(e => `
-            <div class="timeline-item">
+            const eventsHTML = events.map((e, i) => `
+            <div class="timeline-item card-clickable" onclick="goToEventDetail(${i})" style="cursor:pointer;">
                 <div class="timeline-date">${e.date || ''} · ${e.time || ''}</div>
                 <div class="timeline-card">
                     <span class="tag ${getTagClass(e.type)}">${e.type || 'Event'}</span>
@@ -2632,8 +2754,8 @@
         }
 
         function renderProjects() {
-            const html = DATA.projects.map(p => `
-            <div class="project-card">
+            const html = DATA.projects.map((p, i) => `
+            <div class="project-card card-clickable" onclick="goToProjectDetail(${i})" style="cursor:pointer;">
                 <div class="project-img" style="background-image:url('${p.image || 'https://images.unsplash.com/photo-1561557944-6e7860d1a7eb?w=600&q=80'}');">
                     <span class="project-year" ${p.award ? 'style="background:var(--amber);"' : ''}>${p.award ? '🏆 ' : ''}${p.year || '2024'}</span>
                 </div>
@@ -2652,8 +2774,8 @@
         `).join('');
 
             document.getElementById('projectsList').innerHTML = html || '<p>No projects.</p>';
-            document.getElementById('featuredProjects').innerHTML = DATA.projects.slice(0, 4).map(p => `
-            <div class="project-card" onclick="goTo('projects')">
+            document.getElementById('featuredProjects').innerHTML = DATA.projects.slice(0, 4).map((p, i) => `
+            <div class="project-card card-clickable" onclick="goToProjectDetail(${i})" style="cursor:pointer;">
                 <div class="project-img" style="background-image:url('${p.image || 'https://images.unsplash.com/photo-1561557944-6e7860d1a7eb?w=600&q=80'}');">
                     <span class="project-year">${p.year || '2024'}</span>
                 </div>
@@ -2667,8 +2789,8 @@
         }
 
         function renderLabs() {
-            const html = DATA.labs.map(l => `
-            <div class="card">
+            const html = DATA.labs.map((l, i) => `
+            <div class="card card-clickable" onclick="goToLabDetail(${i})" style="cursor:pointer;">
                 <div class="card-img" style="background-image:url('${l.image || 'https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?w=600&q=80'}');"></div>
                 <div class="card-body">
                     <span class="tag ${l.type === 'Research' ? 'tag-green' : ''}">${l.type || 'Lab'}</span>
@@ -2677,7 +2799,7 @@
                 </div>
                 <div class="card-footer">
                     <span>${l.room || ''} · ${l.manager || ''}</span>
-                    <button class="btn btn-sm btn-ghost">${t('Book', 'Rezerve')}</button>
+                    <span class="card-footer-link">${t('View Details', 'Detaylar')} →</span>
                 </div>
             </div>
         `).join('');
@@ -2687,8 +2809,8 @@
         function renderJobs() {
             document.getElementById('jobsBadge').textContent = DATA.jobs.length;
 
-            const html = DATA.jobs.map(j => `
-            <div class="card-compact">
+            const html = DATA.jobs.map((j, i) => `
+            <div class="card-compact card-clickable" onclick="goToJobDetail(${i})" style="cursor:pointer;">
                 <div class="card-compact-content">
                     <h4>${j.title || ''}</h4>
                     <p>${j.company || ''} · ${j.location || ''} · ${j.salary || ''}</p>
@@ -2800,6 +2922,127 @@
                 <div class="alert alert-success"><i class="fa-solid fa-certificate"></i> ${s.accreditation_status || 'MÜDEK'}</div>
             </div>
         `;
+        }
+
+        // ═══════════════════════════════════════════════════════════════════════════
+        // DETAIL PAGE RENDER FUNCTIONS
+        // ═══════════════════════════════════════════════════════════════════════════
+        
+        function goToNewsDetail(index) {
+            const n = DATA.news[index];
+            if (!n) return;
+            document.getElementById('newsDetailCategory').textContent = n.category || 'News';
+            document.getElementById('newsDetailCategory').className = 'tag ' + getTagClass(n.category);
+            document.getElementById('newsDetailTitle').textContent = t(n.title_en, n.title_tr) || n.title || '';
+            document.getElementById('newsDetailDate').textContent = n.date || '';
+            document.getElementById('newsDetailAuthor').textContent = n.author || 'Department';
+            document.getElementById('newsDetailImage').style.backgroundImage = `url('${n.image || 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80'}')`;
+            document.getElementById('newsDetailContent').textContent = t(n.content_en, n.content_tr) || t(n.description_en, n.description_tr) || n.description || '';
+            goTo('news-detail');
+        }
+        
+        function goToEventDetail(index) {
+            const e = DATA.events[index];
+            if (!e) return;
+            document.getElementById('eventDetailType').textContent = e.type || 'Event';
+            document.getElementById('eventDetailType').className = 'tag ' + getTagClass(e.type);
+            document.getElementById('eventDetailTitle').textContent = t(e.title_en, e.title_tr) || e.title || '';
+            document.getElementById('eventDetailDate').textContent = e.date || '';
+            document.getElementById('eventDetailTime').textContent = e.time || '';
+            document.getElementById('eventDetailLocation').textContent = e.location || '';
+            document.getElementById('eventDetailContent').textContent = t(e.content_en, e.content_tr) || t(e.description_en, e.description_tr) || e.description || '';
+            
+            if (e.speaker) {
+                document.getElementById('eventDetailSpeakerBox').style.display = 'block';
+                document.getElementById('eventDetailSpeaker').textContent = e.speaker;
+            } else {
+                document.getElementById('eventDetailSpeakerBox').style.display = 'none';
+            }
+            
+            if (e.registration_link) {
+                document.getElementById('eventRegisterBox').style.display = 'block';
+                document.getElementById('eventRegisterLink').href = e.registration_link;
+            } else {
+                document.getElementById('eventRegisterBox').style.display = 'none';
+            }
+            goTo('event-detail');
+        }
+        
+        function goToProjectDetail(index) {
+            const p = DATA.projects[index];
+            if (!p) return;
+            document.getElementById('projectDetailCategory').textContent = p.category || 'Project';
+            document.getElementById('projectDetailCategory').className = 'tag ' + getTagClass(p.category);
+            document.getElementById('projectDetailYear').textContent = p.year || '';
+            document.getElementById('projectDetailTitle').textContent = t(p.title_en, p.title_tr) || p.title || '';
+            document.getElementById('projectDetailTeam').textContent = p.team || '';
+            document.getElementById('projectDetailAdvisor').textContent = p.advisor || '';
+            document.getElementById('projectDetailImage').style.backgroundImage = `url('${p.image || 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&q=80'}')`;
+            document.getElementById('projectDetailContent').textContent = t(p.content_en, p.content_tr) || t(p.description_en, p.description_tr) || p.description || '';
+            
+            if (p.award) {
+                document.getElementById('projectDetailAward').style.display = 'inline-flex';
+                document.getElementById('projectAwardText').textContent = p.award;
+            } else {
+                document.getElementById('projectDetailAward').style.display = 'none';
+            }
+            
+            if (p.technologies) {
+                document.getElementById('projectDetailTech').innerHTML = p.technologies.split(',').map(tech => 
+                    `<span class="tag tag-sm">${tech.trim()}</span>`
+                ).join('');
+            } else {
+                document.getElementById('projectDetailTech').innerHTML = '';
+            }
+            
+            if (p.github) {
+                document.getElementById('projectGithubBox').style.display = 'block';
+                document.getElementById('projectGithubLink').href = p.github;
+            } else {
+                document.getElementById('projectGithubBox').style.display = 'none';
+            }
+            goTo('project-detail');
+        }
+        
+        function goToLabDetail(index) {
+            const l = DATA.labs[index];
+            if (!l) return;
+            document.getElementById('labDetailType').textContent = l.type || 'Lab';
+            document.getElementById('labDetailType').className = 'tag ' + getTagClass(l.type);
+            document.getElementById('labDetailTitle').textContent = t(l.name_en, l.name_tr) || l.name || '';
+            document.getElementById('labDetailRoom').textContent = l.room || '';
+            document.getElementById('labDetailManager').textContent = l.manager || '';
+            document.getElementById('labDetailImage').style.backgroundImage = `url('${l.image || 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&q=80'}')`;
+            document.getElementById('labDetailContent').textContent = t(l.content_en, l.content_tr) || '';
+            document.getElementById('labDetailEquipment').textContent = t(l.equipment_en, l.equipment_tr) || l.equipment || '';
+            goTo('lab-detail');
+        }
+        
+        function goToJobDetail(index) {
+            const j = DATA.jobs[index];
+            if (!j) return;
+            document.getElementById('jobDetailType').textContent = j.type || 'Full-Time';
+            document.getElementById('jobDetailType').className = 'tag ' + getTagClass(j.type);
+            document.getElementById('jobDetailTitle').textContent = j.title || '';
+            document.getElementById('jobDetailCompany').textContent = j.company || '';
+            document.getElementById('jobDetailLocation').textContent = j.location || '';
+            document.getElementById('jobDetailSalary').textContent = j.salary || '';
+            document.getElementById('jobDetailContent').textContent = t(j.content_en, j.content_tr) || j.description || '';
+            
+            if (j.deadline) {
+                document.getElementById('jobDeadlineBox').style.display = 'block';
+                document.getElementById('jobDetailDeadline').textContent = j.deadline;
+            } else {
+                document.getElementById('jobDeadlineBox').style.display = 'none';
+            }
+            
+            if (j.apply_link) {
+                document.getElementById('jobApplyBox').style.display = 'block';
+                document.getElementById('jobApplyLink').href = j.apply_link;
+            } else {
+                document.getElementById('jobApplyBox').style.display = 'none';
+            }
+            goTo('job-detail');
         }
 
         function renderAll() {
