@@ -5,24 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>İSTUN Mechatronics Engineering</title>
-
-    <!-- Fonts: Premium Pairing (Outfit + Inter) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap"
         rel="stylesheet">
-
-    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <script>
         // ╔════════════════════════════════════════════════════════════════════════════╗
-        // ║  CONFIGURATION                                                             ║
+        // ║  GOOGLE SHEET CONFIGURATION - CHANGE THIS TO YOUR SHEET ID                 ║
         // ╚════════════════════════════════════════════════════════════════════════════╝
+
         const GOOGLE_SHEET_ID = '1MrgcCLRlEUTGaKUI62GcdmlIRqPPwfETx6AREZzpGKI';
 
-        // Exact Tab Names from your Google Sheet
+        // Sheet tab names (must match exactly your Google Sheet tab names)
         const SHEETS = {
             settings: 'Settings',
             news: 'News',
@@ -41,54 +36,46 @@
     </script>
 
     <style>
-        /* ════════════════════════════════════════════════════════════════════════════
-           DESIGN SYSTEM
-           ════════════════════════════════════════════════════════════════════════════ */
         :root {
-            /* Palette: Modern Academic Tech (Deep Navy + Vibrant Blue + Clean White) */
-            --bg-page: #F8FAFC;
-            --bg-white: #ffffff;
-            --bg-glass: rgba(255, 255, 255, 0.85);
-
-            --primary: #0F172A;
-            /* Slate 900 - Deep professional dark */
-            --primary-light: #1E293B;
-            /* Slate 800 */
-
-            --accent: #3A46ED;
-            /* Vibrant Tech Blue */
-            --accent-glow: rgba(58, 70, 237, 0.15);
-            --accent-dark: #312E81;
-
-            --success: #10B981;
-            --warning: #F59E0B;
-            --danger: #EF4444;
-
-            --text-main: #0F172A;
-            --text-muted: #64748B;
-            --text-light: #94A3B8;
-
-            --border: #E2E8F0;
-            --border-hover: #CBD5E1;
-
-            --font-display: 'Outfit', sans-serif;
-            --font-body: 'Inter', sans-serif;
-
-            --radius-sm: 8px;
-            --radius-md: 12px;
-            --radius-lg: 16px;
-            --radius-xl: 24px;
-
-            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.06);
-            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-            --shadow-float: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-
-            --container-width: 1280px;
-            --header-height: 80px;
+            --primary: #0c1220;
+            --secondary: #1e293b;
+            --accent: #6366f1;
+            --accent-hover: #4f46e5;
+            --accent-light: #eef2ff;
+            --green: #10b981;
+            --green-light: #ecfdf5;
+            --amber: #f59e0b;
+            --amber-light: #fffbeb;
+            --pink: #ec4899;
+            --pink-light: #fdf2f8;
+            --purple: #8b5cf6;
+            --purple-light: #f5f3ff;
+            --red: #ef4444;
+            --red-light: #fef2f2;
+            --cyan: #06b6d4;
+            --cyan-light: #ecfeff;
+            --bg-cream: #faf8f5;
+            --bg-warm: #f5f3ef;
+            --border: #e5e2dc;
+            --border-dark: #d1cdc4;
+            --text-main: #1a1a1a;
+            --text-secondary: #374151;
+            --text-muted: #64748b;
+            --text-light: #94a3b8;
+            --sidebar-width: 250px;
+            --header-height: 60px;
+            --font-display: 'Fraunces', Georgia, serif;
+            --font-body: 'DM Sans', system-ui, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 14px;
+            --radius-xl: 20px;
         }
 
-        /* RESET & BASE */
         *,
         *::before,
         *::after {
@@ -97,66 +84,1354 @@
 
         body {
             font-family: var(--font-body);
-            background-color: var(--bg-page);
+            background: var(--bg-cream);
             color: var(--text-main);
             margin: 0;
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
             line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
+            font-size: 14px;
         }
 
         h1,
         h2,
         h3,
-        h4,
-        h5,
-        h6 {
+        h4 {
             font-family: var(--font-display);
-            font-weight: 700;
-            margin-top: 0;
-            line-height: 1.1;
-            color: var(--primary);
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            line-height: 1.25;
+        }
+
+        h1 {
+            font-size: clamp(1.5rem, 4vw, 2rem);
+        }
+
+        h2 {
+            font-size: clamp(1.1rem, 3vw, 1.4rem);
+            margin-bottom: 1rem;
+        }
+
+        h3 {
+            font-size: 1rem;
+        }
+
+        h4 {
+            font-size: 0.9rem;
         }
 
         a {
+            color: var(--accent);
             text-decoration: none;
-            color: inherit;
-            transition: all 0.2s;
         }
 
-        ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
+        p {
+            color: var(--text-secondary);
+            margin: 0 0 1rem 0;
         }
 
-        img {
-            max-width: 100%;
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-warm);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border-dark);
+            border-radius: 3px;
+        }
+
+        /* HEADER */
+        header {
+            height: var(--header-height);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(250, 248, 245, 0.97);
+            backdrop-filter: blur(12px);
+            z-index: 100;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--accent), var(--green));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.85rem;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: 1px solid var(--border);
+            padding: 0.4rem 0.6rem;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .header-center {
+            flex: 1;
+            max-width: 320px;
+            margin: 0 1.5rem;
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 0.4rem 0.8rem 0.4rem 2rem;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: var(--bg-warm);
+            font-size: 0.8rem;
+            font-family: var(--font-body);
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: white;
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 0.75rem;
+        }
+
+        .header-right {
+            display: flex;
+            gap: 0.4rem;
+            align-items: center;
+        }
+
+        .lang-switcher {
+            display: flex;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+        }
+
+        .lang-btn {
+            padding: 0.3rem 0.5rem;
+            font-size: 0.7rem;
+            font-weight: 600;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            color: var(--text-muted);
+            font-family: var(--font-body);
+        }
+
+        .lang-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .header-btn {
+            width: 32px;
+            height: 32px;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border);
+            background: transparent;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            position: relative;
+        }
+
+        .header-btn:hover {
+            background: white;
+        }
+
+        .header-btn .badge {
+            position: absolute;
+            top: -3px;
+            right: -3px;
+            width: 14px;
+            height: 14px;
+            background: var(--red);
+            color: white;
+            font-size: 0.5rem;
+            font-weight: 700;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* LAYOUT */
+        .layout-wrapper {
+            display: flex;
+            margin-top: var(--header-height);
+            height: calc(100vh - var(--header-height));
+        }
+
+        /* SIDEBAR */
+        aside {
+            width: var(--sidebar-width);
+            background: var(--bg-warm);
+            border-right: 1px solid var(--border);
+            overflow-y: auto;
+            padding: 0.85rem 0.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .nav-section-title {
+            font-family: var(--font-mono);
+            font-size: 0.55rem;
+            text-transform: uppercase;
+            color: var(--text-light);
+            margin: 0 0 0.3rem 0.6rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0.45rem 0.65rem;
+            border-radius: var(--radius-sm);
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            font-weight: 500;
+            cursor: pointer;
+            border: 1px solid transparent;
+            margin-bottom: 1px;
+            transition: all 0.15s;
+        }
+
+        .nav-item:hover {
+            background: white;
+            color: var(--text-main);
+            border-color: var(--border);
+        }
+
+        .nav-item.active {
+            background: white;
+            color: var(--accent);
+            border-color: var(--border);
+            font-weight: 600;
+        }
+
+        .nav-item i {
+            width: 14px;
+            text-align: center;
+            font-size: 0.75rem;
+        }
+
+        .nav-dot {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+        }
+
+        .nav-badge {
+            margin-left: auto;
+            background: var(--accent);
+            color: white;
+            font-size: 0.55rem;
+            padding: 1px 5px;
+            border-radius: 8px;
+            font-weight: 700;
+        }
+
+        .nav-badge.green {
+            background: var(--green);
+        }
+
+        .nav-badge.amber {
+            background: var(--amber);
+        }
+
+        .sidebar-card {
+            margin-top: auto;
+            padding: 0.75rem;
+            background: white;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border);
+            font-size: 0.72rem;
+        }
+
+        .sidebar-card-title {
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .sidebar-card-title i {
+            color: var(--amber);
+        }
+
+        .sidebar-card p {
+            font-size: 0.68rem;
+            color: var(--text-muted);
+            margin: 0 0 0.5rem 0;
+        }
+
+        /* MAIN */
+        main {
+            flex: 1;
+            overflow-y: auto;
+            background: var(--bg-cream);
+            padding-bottom: 72px;
+            /* space for fixed refresh bar */
+        }
+
+        .page {
+            display: none;
+            padding: 1.25rem 1.5rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .page.active {
             display: block;
         }
 
-        .container {
-            max-width: var(--container-width);
-            margin: 0 auto;
-            padding: 0 2rem;
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(5px);
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
-        /* ════════════════════════════════════════════════════════════════════════════
-           UTILITIES & ANIMATIONS
-           ════════════════════════════════════════════════════════════════════════════ */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        .page-header {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
         }
 
-        .reveal.active {
+        .page-header h1 {
+            margin: 0 0 0.2rem 0;
+        }
+
+        .page-header .subtitle {
+            color: var(--text-muted);
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        /* BUTTONS */
+        .btn {
+            padding: 0.45rem 0.85rem;
+            font-size: 0.78rem;
+            border-radius: var(--radius-sm);
+            font-weight: 500;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            border: none;
+            font-family: var(--font-body);
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary);
+        }
+
+        .btn-accent {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-ghost {
+            color: var(--text-secondary);
+            background: transparent;
+            border: 1px solid var(--border);
+        }
+
+        .btn-ghost:hover {
+            background: white;
+        }
+
+        .btn-sm {
+            padding: 0.35rem 0.6rem;
+            font-size: 0.72rem;
+        }
+
+        .btn-lg {
+            padding: 0.55rem 1.1rem;
+            font-size: 0.85rem;
+        }
+
+        /* HERO */
+        .hero {
+            background: var(--primary);
+            color: white;
+            border-radius: var(--radius-xl);
+            padding: 2rem 1.75rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 15% 85%, rgba(99, 102, 241, 0.35), transparent 45%),
+                radial-gradient(ellipse at 85% 15%, rgba(16, 185, 129, 0.25), transparent 45%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 580px;
+        }
+
+        .hero h1 {
+            color: white;
+            margin: 0 0 0.5rem 0;
+            font-weight: 400;
+            font-style: italic;
+            font-size: clamp(1.3rem, 4vw, 1.8rem);
+        }
+
+        .hero p {
+            color: rgba(255, 255, 255, 0.85);
+            margin: 0 0 1.25rem 0;
+            font-size: 0.88rem;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .hero .btn-primary {
+            background: white;
+            color: var(--primary);
+        }
+
+        .hero .btn-ghost {
+            border-color: rgba(255, 255, 255, 0.35);
+            color: white;
+        }
+
+        /* STATS */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+            gap: 0.6rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 0.85rem;
+            border-radius: var(--radius-md);
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: all 0.2s;
+        }
+
+        .stat-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .stat-value {
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: var(--accent);
+            display: block;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.62rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-top: 0.25rem;
+        }
+
+        /* CARDS */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+            gap: 1rem;
+        }
+
+        .card-grid-sm {
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        }
+
+        .card {
+            background: white;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: all 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent);
+        }
+
+        .card-clickable {
+            cursor: pointer;
+        }
+
+        .card-img {
+            height: 130px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .card-img-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent 60%);
+        }
+
+        .card-img-badge {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+        }
+
+        .card-body {
+            padding: 0.9rem;
+        }
+
+        .card-body h3 {
+            margin: 0 0 0.3rem 0;
+            font-size: 0.92rem;
+        }
+
+        .card-body h4 {
+            margin: 0 0 0.2rem 0;
+            font-size: 0.85rem;
+        }
+
+        .card-body p {
+            color: var(--text-muted);
+            margin: 0;
+            font-size: 0.78rem;
+            line-height: 1.4;
+        }
+
+        .card-footer {
+            padding: 0.7rem 0.9rem;
+            border-top: 1px solid var(--border);
+            font-size: 0.72rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-muted);
+        }
+
+        .card-footer-link {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* COMPACT CARD */
+        .card-compact {
+            display: flex;
+            align-items: center;
+            padding: 0.8rem;
+            gap: 0.75rem;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            transition: all 0.2s;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-compact:hover {
+            border-color: var(--accent);
+        }
+
+        .card-compact-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.95rem;
+            flex-shrink: 0;
+        }
+
+        .card-compact-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .card-compact-content h4 {
+            margin: 0 0 0.1rem 0;
+            font-size: 0.82rem;
+        }
+
+        .card-compact-content p {
+            margin: 0;
+            font-size: 0.72rem;
+            color: var(--text-muted);
+        }
+
+        /* TAGS */
+        .tag {
+            display: inline-flex;
+            padding: 2px 7px;
+            background: var(--bg-warm);
+            color: var(--text-muted);
+            border-radius: 20px;
+            font-size: 0.62rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .tag-accent {
+            background: var(--accent-light);
+            color: var(--accent);
+        }
+
+        .tag-green {
+            background: var(--green-light);
+            color: var(--green);
+        }
+
+        .tag-amber {
+            background: var(--amber-light);
+            color: var(--amber);
+        }
+
+        .tag-pink {
+            background: var(--pink-light);
+            color: var(--pink);
+        }
+
+        .tag-purple {
+            background: var(--purple-light);
+            color: var(--purple);
+        }
+
+        .tag-red {
+            background: var(--red-light);
+            color: var(--red);
+        }
+
+        .tag-cyan {
+            background: var(--cyan-light);
+            color: var(--cyan);
+        }
+
+        /* SECTION */
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .section-header h2 {
+            margin: 0;
+        }
+
+        /* QUICK LINKS */
+        .quick-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .quick-link {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 0.75rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .quick-link:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .quick-link i {
+            font-size: 1rem;
+            color: var(--accent);
+            margin-bottom: 0.25rem;
+            display: block;
+        }
+
+        .quick-link span {
+            font-size: 0.72rem;
+            font-weight: 500;
+        }
+
+        /* FACULTY */
+        .faculty-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+            gap: 0.75rem;
+        }
+
+        .faculty-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .faculty-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent);
+        }
+
+        .faculty-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin: 0 auto 0.5rem;
+            object-fit: cover;
+            border: 3px solid var(--bg-warm);
+        }
+
+        .faculty-name {
+            font-family: var(--font-display);
+            font-size: 0.85rem;
+            margin: 0 0 0.1rem 0;
+        }
+
+        .faculty-title {
+            color: var(--text-muted);
+            font-size: 0.68rem;
+            margin: 0 0 0.35rem 0;
+        }
+
+        .faculty-field {
+            font-size: 0.65rem;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .faculty-links {
+            display: flex;
+            justify-content: center;
+            gap: 0.25rem;
+            margin-top: 0.5rem;
+        }
+
+        .faculty-links a {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: var(--bg-warm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 0.6rem;
+            transition: all 0.2s;
+        }
+
+        .faculty-links a:hover {
+            background: var(--accent);
+            color: white;
+        }
+
+        /* PROJECT CARDS */
+        .project-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--purple);
+        }
+
+        .project-img {
+            height: 120px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .project-year {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            background: var(--purple);
+            color: white;
+            padding: 2px 8px;
+            border-radius: var(--radius-sm);
+            font-size: 0.62rem;
+            font-weight: 700;
+        }
+
+        .project-body {
+            padding: 0.85rem;
+        }
+
+        .project-body h4 {
+            margin: 0 0 0.25rem 0;
+            font-size: 0.85rem;
+        }
+
+        .project-body p {
+            margin: 0 0 0.6rem 0;
+            color: var(--text-muted);
+            font-size: 0.72rem;
+        }
+
+        .project-team {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .project-avatars {
+            display: flex;
+        }
+
+        .project-avatars img {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            border: 2px solid white;
+            margin-left: -5px;
+        }
+
+        .project-avatars img:first-child {
+            margin-left: 0;
+        }
+
+        .project-names {
+            font-size: 0.68rem;
+            color: var(--text-muted);
+        }
+
+        /* NEWS */
+        .news-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: all 0.2s;
+        }
+
+        .news-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--amber);
+        }
+
+        .news-img {
+            height: 130px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .news-date {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            background: var(--amber);
+            color: white;
+            padding: 0.35rem 0.5rem;
+            border-radius: var(--radius-sm);
+            text-align: center;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+        .news-date .day {
+            font-size: 1rem;
+            display: block;
+        }
+
+        .news-date .month {
+            font-size: 0.55rem;
+            text-transform: uppercase;
+        }
+
+        .news-body {
+            padding: 0.85rem;
+        }
+
+        .news-body h4 {
+            margin: 0 0 0.25rem 0;
+            font-size: 0.85rem;
+        }
+
+        .news-body p {
+            margin: 0;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        /* PUBLICATIONS */
+        .pub-item {
+            padding: 0.85rem;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            margin-bottom: 0.6rem;
+            transition: all 0.2s;
+        }
+
+        .pub-item:hover {
+            border-color: var(--accent);
+        }
+
+        .pub-title {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            line-height: 1.35;
+            font-size: 0.85rem;
+        }
+
+        .pub-authors {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-bottom: 0.3rem;
+        }
+
+        .pub-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+
+        .pub-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        /* RESEARCH */
+        .research-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 1rem;
+            margin-bottom: 0.85rem;
+            transition: all 0.2s;
+        }
+
+        .research-card:hover {
+            border-color: var(--accent);
+        }
+
+        .research-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .research-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.95rem;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .research-info h3 {
+            margin: 0 0 0.1rem 0;
+            font-size: 0.92rem;
+        }
+
+        .research-info p {
+            margin: 0;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        .research-desc {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+            line-height: 1.45;
+        }
+
+        .research-members {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.3rem;
+        }
+
+        .research-member {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 0.25rem 0.5rem;
+            background: var(--bg-warm);
+            border-radius: 20px;
+            font-size: 0.68rem;
+        }
+
+        .research-member img {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+        }
+
+        /* TIMELINE */
+        .timeline {
+            position: relative;
+            padding-left: 1.4rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 4px;
+            top: 3px;
+            bottom: 12px;
+            width: 2px;
+            background: var(--border);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 0.9rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -1.4rem;
+            top: 3px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: 2px solid white;
+            box-shadow: 0 0 0 2px var(--accent-light);
+        }
+
+        .timeline-date {
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .timeline-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 0.7rem;
+            margin-top: 0.3rem;
+        }
+
+        .timeline-card h4 {
+            margin: 0.2rem 0;
+            font-size: 0.82rem;
+        }
+
+        .timeline-card p {
+            margin: 0;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        /* TABS */
+        .tabs {
+            display: flex;
+            gap: 0.25rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.6rem;
+            flex-wrap: wrap;
+        }
+
+        .tab {
+            padding: 0.38rem 0.7rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            background: transparent;
+            font-size: 0.75rem;
+            font-weight: 500;
+            cursor: pointer;
+            font-family: var(--font-body);
+            color: var(--text-muted);
+        }
+
+        .tab.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .tab:hover:not(.active) {
+            background: var(--bg-warm);
+        }
+
+        /* TABLE */
+        .table-wrapper {
+            overflow-x: auto;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            background: white;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .data-table th,
+        .data-table td {
+            padding: 0.65rem 0.8rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.78rem;
+        }
+
+        .data-table th {
+            background: var(--bg-warm);
+            font-size: 0.62rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        .data-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .data-table tr:hover td {
+            background: var(--bg-cream);
+        }
+
+        /* STATUS */
+        .status {
+            padding: 2px 6px;
+            border-radius: 20px;
+            font-size: 0.62rem;
+            font-weight: 600;
+        }
+
+        .status-active {
+            background: var(--green-light);
+            color: var(--green);
+        }
+
+        .status-pending {
+            background: var(--amber-light);
+            color: var(--amber);
+        }
+
+        /* COURSE */
+        .course-item {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 0.7rem 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            margin-bottom: 0.5rem;
+            transition: all 0.2s;
+        }
+
+        .course-item:hover {
+            border-color: var(--accent);
+        }
+
+        .course-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.88rem;
+            flex-shrink: 0;
+        }
+
+        .course-info {
+            flex: 1;
+        }
+
+        .course-info h4 {
+            margin: 0 0 0.1rem 0;
+            font-size: 0.82rem;
+        }
+
+        .course-info p {
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 0.7rem;
+        }
+
+        /* PARTNERS */
+        .partners-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            align-items: center;
+            padding: 1.25rem;
+            background: white;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border);
+        }
+
+        .partner-logo {
+            height: 24px;
+            opacity: 0.5;
+            filter: grayscale(100%);
+            transition: all 0.2s;
+        }
+
+        .partner-logo:hover {
             opacity: 1;
-            transform: translateY(0);
+            filter: grayscale(0%);
+        }
+
+        /* ALERTS */
+        .alert {
+            padding: 0.7rem 0.8rem;
+            border-radius: var(--radius-md);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+            font-size: 0.8rem;
+        }
+
+        .alert i {
+            font-size: 0.85rem;
+            margin-top: 0.05rem;
+        }
+
+        .alert-info {
+            background: var(--accent-light);
+            color: var(--accent);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+        }
+
+        .alert-success {
+            background: var(--green-light);
+            color: #047857;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .alert-warning {
+            background: var(--amber-light);
+            color: #b45309;
+            border: 1px solid rgba(245, 158, 11, 0.2);
+        }
+
+        /* LOADING */
+        .loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            color: var(--text-muted);
+        }
+
+        .loading i {
+            margin-right: 0.5rem;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
         }
 
         .skeleton {
-            background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);
+            background: linear-gradient(90deg, var(--bg-warm) 25%, var(--border) 50%, var(--bg-warm) 75%);
             background-size: 200% 100%;
             animation: shimmer 1.5s infinite;
             border-radius: var(--radius-sm);
@@ -172,713 +1447,636 @@
             }
         }
 
-        /* ════════════════════════════════════════════════════════════════════════════
-           HEADER
-           ════════════════════════════════════════════════════════════════════════════ */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            height: var(--header-height);
-            z-index: 1000;
-            transition: all 0.3s ease;
-            background: transparent;
+        /* TWO COLS */
+        .two-cols {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
         }
 
-        header.scrolled {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border);
-            height: 70px;
-        }
-
-        .nav-wrapper {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 100%;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-weight: 800;
-            font-size: 1.25rem;
-            color: var(--primary);
-            font-family: var(--font-display);
-        }
-
-        .logo-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--accent);
-            color: white;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            box-shadow: 0 4px 10px rgba(58, 70, 237, 0.3);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-link {
-            font-weight: 500;
-            font-size: 0.95rem;
-            color: var(--text-main);
-            position: relative;
-        }
-
-        .nav-link:hover {
-            color: var(--accent);
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent);
-            transition: width 0.3s;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        /* ════════════════════════════════════════════════════════════════════════════
-           HERO SECTION
-           ════════════════════════════════════════════════════════════════════════════ */
-        .hero {
-            position: relative;
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
-            padding-top: var(--header-height);
-            background: radial-gradient(circle at top right, rgba(58, 70, 237, 0.08), transparent 40%),
-                radial-gradient(circle at bottom left, rgba(16, 185, 129, 0.05), transparent 40%);
-            overflow: hidden;
-        }
-
-        /* Interactive Background Mesh */
-        .hero-mesh {
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);
-            border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.6;
-            top: -100px;
-            right: -100px;
-            z-index: -1;
-            animation: float 10s ease-in-out infinite;
-        }
-
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translate(0, 0);
-            }
-
-            50% {
-                transform: translate(-30px, 40px);
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .two-cols {
+                grid-template-columns: 1fr;
             }
         }
 
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .hero-text h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            letter-spacing: -0.02em;
-        }
-
-        .hero-text h1 span {
-            color: var(--accent);
-            position: relative;
-            display: inline-block;
-        }
-
-        .hero-text p {
-            font-size: 1.2rem;
-            color: var(--text-muted);
-            margin-bottom: 2.5rem;
-            max-width: 600px;
-        }
-
-        .cta-group {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 0.9rem 1.8rem;
-            background: var(--primary);
-            color: white;
-            border-radius: var(--radius-md);
-            font-weight: 600;
-            transition: all 0.3s;
-            border: 1px solid transparent;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px -5px rgba(15, 23, 42, 0.3);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--primary);
-            border-color: var(--border);
-        }
-
-        .btn-outline:hover {
-            background: white;
-            border-color: var(--primary);
-            box-shadow: var(--shadow-md);
-        }
-
-        /* Hero Stats Cards */
-        .hero-stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-            position: relative;
-        }
-
-        .stat-card {
-            background: var(--bg-glass);
-            padding: 2rem;
-            border-radius: var(--radius-lg);
-            border: 1px solid white;
-            box-shadow: var(--shadow-float);
-            backdrop-filter: blur(10px);
-            transition: transform 0.3s;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .stat-card:nth-child(2) {
-            transform: translateY(30px);
-        }
-
-        /* Offset Effect */
-        .stat-card:nth-child(2):hover {
-            transform: translateY(25px);
-        }
-
-        .stat-value {
-            font-family: var(--font-display);
-            font-size: 3rem;
-            font-weight: 800;
-            color: var(--accent);
-            display: block;
-            margin-bottom: 0.5rem;
-            line-height: 1;
-        }
-
-        .stat-label {
-            color: var(--text-muted);
-            font-weight: 500;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        /* ════════════════════════════════════════════════════════════════════════════
-           SECTIONS GENERAL
-           ════════════════════════════════════════════════════════════════════════════ */
-        .section {
-            padding: 6rem 0;
-            position: relative;
-        }
-
-        .section-header {
-            margin-bottom: 4rem;
-            max-width: 700px;
-        }
-
-        .label {
-            color: var(--accent);
-            font-weight: 700;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .section-header h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        /* ════════════════════════════════════════════════════════════════════════════
-           RESEARCH GRID
-           ════════════════════════════════════════════════════════════════════════════ */
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        .research-card {
-            background: white;
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            border: 1px solid var(--border);
-            transition: all 0.4s ease;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .research-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--accent-glow);
-        }
-
-        .research-img {
-            height: 220px;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-
-        .research-img::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(15, 23, 42, 0.6), transparent);
-        }
-
-        .research-badge {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: white;
-            padding: 0.4rem 0.8rem;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.75rem;
-            color: var(--primary);
-            box-shadow: var(--shadow-md);
-        }
-
-        .research-content {
-            padding: 2rem;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .research-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .research-content p {
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-            flex: 1;
-        }
-
-        .research-meta {
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--border);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .research-lead {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
-        .research-lead img {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        /* ════════════════════════════════════════════════════════════════════════════
-           FACULTY & PEOPLE
-           ════════════════════════════════════════════════════════════════════════════ */
-        .faculty-scroller {
-            display: flex;
-            gap: 2rem;
-            overflow-x: auto;
-            padding-bottom: 2rem;
-            scrollbar-width: none;
-        }
-
-        .faculty-scroller::-webkit-scrollbar {
-            display: none;
-        }
-
-        .faculty-card {
-            min-width: 280px;
-            background: white;
-            padding: 2rem;
-            border-radius: var(--radius-lg);
-            text-align: center;
-            border: 1px solid var(--border);
-            transition: all 0.3s;
-        }
-
-        .faculty-card:hover {
-            border-color: var(--accent);
-            box-shadow: var(--shadow-md);
-        }
-
-        .faculty-img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            margin: 0 auto 1.5rem;
-            object-fit: cover;
-            border: 3px solid var(--bg-page);
-            box-shadow: 0 0 0 2px var(--accent);
-        }
-
-        .faculty-name {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .faculty-role {
-            color: var(--accent);
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-        }
-
-        /* ════════════════════════════════════════════════════════════════════════════
-           NEWS LIST
-           ════════════════════════════════════════════════════════════════════════════ */
-        .news-item {
-            display: grid;
-            grid-template-columns: 200px 1fr;
-            gap: 2rem;
-            margin-bottom: 2rem;
-            background: white;
-            padding: 1.5rem;
-            border-radius: var(--radius-md);
-            border: 1px solid var(--border);
-            transition: all 0.3s;
-        }
-
-        .news-item:hover {
-            transform: translateX(10px);
-            border-color: var(--accent);
-        }
-
-        .news-date {
-            background: var(--bg-page);
-            border-radius: var(--radius-sm);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            height: 100%;
-            color: var(--text-muted);
-        }
-
-        .news-date b {
-            font-size: 2rem;
-            color: var(--primary);
-            line-height: 1;
-            display: block;
-        }
-
-        .news-content h3 {
-            font-size: 1.25rem;
-            margin-bottom: 0.5rem;
-        }
-
-        /* ════════════════════════════════════════════════════════════════════════════
-           FOOTER
-           ════════════════════════════════════════════════════════════════════════════ */
-        footer {
-            background: var(--primary);
-            color: white;
-            padding: 5rem 0 2rem;
-            margin-top: 4rem;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr;
-            gap: 4rem;
-            margin-bottom: 4rem;
-        }
-
-        .footer-brand h2 {
-            color: white;
-            margin-bottom: 1.5rem;
-        }
-
-        .footer-brand p {
-            color: #94A3B8;
-            max-width: 300px;
-        }
-
-        .footer-links h4 {
-            color: white;
-            margin-bottom: 1.5rem;
-        }
-
-        .footer-links ul li {
-            margin-bottom: 0.8rem;
-        }
-
-        .footer-links a {
-            color: #94A3B8;
-        }
-
-        .footer-links a:hover {
-            color: white;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 2rem;
-            text-align: center;
-            color: #64748B;
-            font-size: 0.9rem;
-        }
-
-        /* ════════════════════════════════════════════════════════════════════════════
-           MOBILE
-           ════════════════════════════════════════════════════════════════════════════ */
         @media (max-width: 768px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-                gap: 2rem;
+            aside {
+                position: fixed;
+                left: -100%;
+                top: var(--header-height);
+                height: calc(100vh - var(--header-height));
+                z-index: 90;
+                width: 260px;
+                transition: left 0.3s ease;
             }
 
-            .hero-text h1 {
-                font-size: 2.5rem;
+            aside.open {
+                left: 0;
             }
 
-            .cta-group {
-                justify-content: center;
-            }
-
-            .hero-stats {
-                grid-template-columns: 1fr;
-            }
-
-            .stat-card:nth-child(2) {
-                transform: none;
-            }
-
-            .nav-links {
+            .sidebar-overlay {
                 display: none;
+                position: fixed;
+                inset: 0;
+                background: rgba(0, 0, 0, 0.4);
+                z-index: 85;
+                top: var(--header-height);
             }
 
-            .mobile-toggle {
+            .sidebar-overlay.show {
                 display: block;
             }
 
-            .news-item {
-                grid-template-columns: 1fr;
-                height: auto;
+            .mobile-menu-btn {
+                display: block;
             }
 
-            .news-date {
+            .header-center {
+                display: none;
+            }
+
+            .page {
                 padding: 1rem;
-                flex-direction: row;
-                gap: 1rem;
-                height: auto;
             }
 
-            .news-date b {
-                display: inline;
-                font-size: 1rem;
+            .hero {
+                padding: 1.5rem 1.25rem;
             }
+
+            .hero-actions {
+                flex-direction: column;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .faculty-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* ─────────────────────────────────────────────────────────────
+           DATA REFRESH BAR (fixed at bottom)
+           ───────────────────────────────────────────────────────────── */
+        .refresh-bar {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 120;
+            background: rgba(250, 248, 245, 0.97);
+            backdrop-filter: blur(12px);
+            border-top: 1px solid var(--border);
+            padding: 0.55rem 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .refresh-inner {
+            width: min(1100px, calc(100% - 1.8rem));
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+        }
+
+        .refresh-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 0.1rem;
+            min-width: 0;
+        }
+
+        .refresh-title {
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--text-main);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .refresh-subtitle {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .refresh-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .refresh-status {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 768px) {
+            .refresh-inner {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .refresh-actions {
+                justify-content: space-between;
+            }
+        }
+
+        /* LANGUAGE */
+        [data-en],
+        [data-tr] {
+            display: none;
+        }
+
+        html[lang="en"] [data-en] {
+            display: inline;
+        }
+
+        html[lang="en"] [data-en].block {
+            display: block;
+        }
+
+        html[lang="en"] [data-en].flex {
+            display: flex;
+        }
+
+        html[lang="en"] [data-en].grid {
+            display: grid;
+        }
+
+        html[lang="tr"] [data-tr] {
+            display: inline;
+        }
+
+        html[lang="tr"] [data-tr].block {
+            display: block;
+        }
+
+        html[lang="tr"] [data-tr].flex {
+            display: flex;
+        }
+
+        html[lang="tr"] [data-tr].grid {
+            display: grid;
         }
     </style>
 </head>
 
 <body>
 
-    <!-- NAVIGATION -->
-    <header id="header">
-        <div class="container nav-wrapper">
-            <a href="#" class="logo">
-                <div class="logo-icon"><i class="fa-solid fa-robot"></i></div>
-                <span>ISTUN Mechatronics</span>
+    <header>
+        <div class="header-left">
+            <button class="mobile-menu-btn" onclick="toggleSidebar()"><i class="fa-solid fa-bars"></i></button>
+            <a class="logo" onclick="goTo('home')">
+                <div class="logo-icon"><i class="fa-solid fa-microchip"></i></div>
+                <span id="siteName">İSTUN Mechatronics</span>
             </a>
-            <nav class="nav-links">
-                <a href="#about" class="nav-link">About</a>
-                <a href="#research" class="nav-link">Research</a>
-                <a href="#faculty" class="nav-link">People</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#news" class="nav-link">News</a>
-            </nav>
-            <a href="#contact" class="btn btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.9rem;">Apply Now</a>
+        </div>
+        <div class="header-center">
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search...">
+            </div>
+        </div>
+        <div class="header-right">
+            <div class="lang-switcher">
+                <button class="lang-btn active" onclick="setLang('en')">EN</button>
+                <button class="lang-btn" onclick="setLang('tr')">TR</button>
+            </div>
+            <button class="header-btn"><i class="fa-solid fa-bell"></i><span class="badge"
+                    id="notifBadge">0</span></button>
         </div>
     </header>
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <div class="hero-mesh"></div>
-        <div class="container hero-content">
-            <div class="hero-text reveal">
-                <h1 id="heroTitle">Pioneering the Future of <br><span>Intelligent Systems</span></h1>
-                <p id="heroSubtitle">Fetching world-class engineering data...</p>
-                <div class="cta-group">
-                    <a href="#research" class="btn">Explore Research <i class="fa-solid fa-arrow-right"></i></a>
-                    <a href="#video" class="btn btn-outline"><i class="fa-solid fa-play"></i> Watch Video</a>
-                </div>
-            </div>
+    <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
 
-            <div class="hero-stats" id="heroStats">
-                <!-- Skeleton Stats -->
-                <div class="stat-card skeleton" style="height: 180px;"></div>
-                <div class="stat-card skeleton" style="height: 180px;"></div>
+    <div class="layout-wrapper">
+        <aside id="sidebar">
+            <div class="nav-section">
+                <div class="nav-section-title">Overview</div>
+                <a class="nav-item active" data-page="home" onclick="goTo('home', this)"><i
+                        class="fa-solid fa-house"></i> <span data-en>Home</span><span data-tr>Ana Sayfa</span></a>
+                <a class="nav-item" data-page="about" onclick="goTo('about', this)"><i class="fa-solid fa-landmark"></i>
+                    <span data-en>About</span><span data-tr>Hakkında</span></a>
+                <a class="nav-item" data-page="news" onclick="goTo('news', this)">
+                    <div class="nav-dot" style="background:var(--amber);"></div> <span data-en>News</span><span
+                        data-tr>Haberler</span> <span class="nav-badge amber" id="newsBadge">0</span>
+                </a>
             </div>
-        </div>
-    </section>
-
-    <!-- RESEARCH SECTION -->
-    <section id="research" class="section">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="label">Research Areas</span>
-                <h2>Driving Innovation</h2>
-                <p style="color:var(--text-muted); font-size:1.1rem;">Our labs are at the forefront of robotics,
-                    automation, and sustainable energy.</p>
+            <div class="nav-section">
+                <div class="nav-section-title">Research</div>
+                <a class="nav-item" data-page="research" onclick="goTo('research', this)"><i
+                        class="fa-solid fa-flask"></i> <span data-en>Research</span><span data-tr>Araştırma</span></a>
+                <a class="nav-item" data-page="publications" onclick="goTo('publications', this)"><i
+                        class="fa-solid fa-book"></i> <span data-en>Publications</span><span data-tr>Yayınlar</span></a>
+                <a class="nav-item" data-page="labs" onclick="goTo('labs', this)">
+                    <div class="nav-dot" style="background:var(--green);"></div> <span data-en>Labs</span><span
+                        data-tr>Lablar</span>
+                </a>
             </div>
-
-            <div class="grid-3" id="researchGrid">
-                <div class="research-card skeleton" style="height:400px;"></div>
-                <div class="research-card skeleton" style="height:400px;"></div>
-                <div class="research-card skeleton" style="height:400px;"></div>
+            <div class="nav-section">
+                <div class="nav-section-title">People</div>
+                <a class="nav-item" data-page="faculty" onclick="goTo('faculty', this)"><i
+                        class="fa-solid fa-users"></i> <span data-en>Faculty</span><span
+                        data-tr>Akademisyenler</span></a>
+                <a class="nav-item" data-page="students" onclick="goTo('students', this)"><i
+                        class="fa-solid fa-user-graduate"></i> <span data-en>Students</span><span
+                        data-tr>Öğrenciler</span></a>
+                <a class="nav-item" data-page="alumni" onclick="goTo('alumni', this)"><i class="fa-solid fa-medal"></i>
+                    <span data-en>Alumni</span><span data-tr>Mezunlar</span></a>
             </div>
-        </div>
-    </section>
-
-    <!-- FACULTY SECTION -->
-    <section id="faculty" class="section" style="background: white;">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="label">Our Team</span>
-                <h2>Meet the Experts</h2>
+            <div class="nav-section">
+                <div class="nav-section-title">Academics</div>
+                <a class="nav-item" data-page="projects" onclick="goTo('projects', this)">
+                    <div class="nav-dot" style="background:var(--purple);"></div> <span data-en>Projects</span><span
+                        data-tr>Projeler</span>
+                </a>
+                <a class="nav-item" data-page="courses" onclick="goTo('courses', this)"><i
+                        class="fa-solid fa-book-open"></i> <span data-en>Courses</span><span data-tr>Dersler</span></a>
             </div>
-
-            <div class="faculty-scroller" id="facultyList">
-                <div class="faculty-card skeleton" style="width:280px; height:350px;"></div>
-                <div class="faculty-card skeleton" style="width:280px; height:350px;"></div>
-                <div class="faculty-card skeleton" style="width:280px; height:350px;"></div>
-                <div class="faculty-card skeleton" style="width:280px; height:350px;"></div>
+            <div class="nav-section">
+                <div class="nav-section-title">Resources</div>
+                <a class="nav-item" data-page="jobs" onclick="goTo('jobs', this)"><i class="fa-solid fa-briefcase"></i>
+                    <span data-en>Jobs</span><span data-tr>İş</span> <span class="nav-badge green"
+                        id="jobsBadge">0</span></a>
+                <a class="nav-item" data-page="partners" onclick="goTo('partners', this)"><i
+                        class="fa-solid fa-handshake"></i> <span data-en>Partners</span><span
+                        data-tr>Ortaklar</span></a>
+                <a class="nav-item" data-page="contact" onclick="goTo('contact', this)"><i
+                        class="fa-solid fa-envelope"></i> <span data-en>Contact</span><span data-tr>İletişim</span></a>
             </div>
-        </div>
-    </section>
-
-    <!-- NEWS SECTION -->
-    <section id="news" class="section">
-        <div class="container" style="max-width: 900px;">
-            <div class="section-header reveal" style="text-align: center; margin: 0 auto 4rem;">
-                <span class="label">Updates</span>
-                <h2>Latest News & Events</h2>
+            <div class="sidebar-card" id="nextEventCard">
+                <div class="sidebar-card-title"><i class="fa-solid fa-calendar-day"></i> <span data-en>Next
+                        Event</span><span data-tr>Etkinlik</span></div>
+                <p id="nextEventText">Loading...</p>
+                <button class="btn btn-sm btn-ghost" style="width:100%;" onclick="goTo('news')"><span data-en>View
+                        Calendar</span><span data-tr>Takvim</span></button>
             </div>
+        </aside>
 
-            <div id="newsList">
-                <div class="news-item skeleton" style="height:150px;"></div>
-                <div class="news-item skeleton" style="height:150px;"></div>
-            </div>
+        <main id="mainContent">
 
-            <div style="text-align: center; margin-top: 3rem;">
-                <a href="#" class="btn btn-outline">View All Archives</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <h2>ISTUN Mechatronics</h2>
-                    <p id="footerAddress">Engineering Building, Istanbul.</p>
-                    <div style="display:flex; gap:1rem; margin-top:1.5rem;">
-                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <!-- HOME PAGE -->
+            <div id="home" class="page active">
+                <div class="hero">
+                    <div class="hero-content">
+                        <h1 id="heroTitle">Loading...</h1>
+                        <p id="heroSubtitle">Loading department information...</p>
+                        <div class="hero-actions">
+                            <button class="btn btn-primary btn-lg" onclick="goTo('research')"><i
+                                    class="fa-solid fa-flask"></i> <span data-en>Research</span><span
+                                    data-tr>Araştırma</span></button>
+                            <button class="btn btn-primary btn-lg" onclick="goTo('projects')"><i
+                                    class="fa-solid fa-rocket"></i> <span data-en>Projects</span><span
+                                    data-tr>Projeler</span></button>
+                            <button class="btn btn-ghost btn-lg"><i class="fa-solid fa-play"></i> <span
+                                    data-en>Video</span><span data-tr>Video</span></button>
+                        </div>
                     </div>
                 </div>
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#">Undergraduate</a></li>
-                        <li><a href="#">Graduate Program</a></li>
-                        <li><a href="#">Research Labs</a></li>
-                        <li><a href="#">Apply</a></li>
-                    </ul>
+
+                <div class="stats-grid" id="statsGrid">
+                    <div class="stat-card skeleton" style="height:70px;"></div>
+                    <div class="stat-card skeleton" style="height:70px;"></div>
+                    <div class="stat-card skeleton" style="height:70px;"></div>
+                    <div class="stat-card skeleton" style="height:70px;"></div>
+                    <div class="stat-card skeleton" style="height:70px;"></div>
+                    <div class="stat-card skeleton" style="height:70px;"></div>
                 </div>
-                <div class="footer-links">
-                    <h4>Contact</h4>
-                    <ul id="footerContact">
-                        <li>Loading...</li>
-                    </ul>
+
+                <div class="quick-links" id="quickLinks">
+                    <a class="quick-link" onclick="goTo('projects')"><i class="fa-solid fa-lightbulb"></i><span
+                            data-en>Capstone</span><span data-tr>Bitirme</span></a>
+                    <a class="quick-link" onclick="goTo('courses')"><i class="fa-solid fa-calendar-check"></i><span
+                            data-en>Courses</span><span data-tr>Dersler</span></a>
+                    <a class="quick-link" onclick="goTo('labs')"><i class="fa-solid fa-flask-vial"></i><span
+                            data-en>Labs</span><span data-tr>Lablar</span></a>
+                    <a class="quick-link" onclick="goTo('news')"><i class="fa-solid fa-video"></i><span
+                            data-en>Seminars</span><span data-tr>Seminerler</span></a>
+                    <a class="quick-link" onclick="goTo('jobs')"><i class="fa-solid fa-briefcase"></i><span
+                            data-en>Jobs</span><span data-tr>İşler</span></a>
+                    <a class="quick-link" onclick="goTo('contact')"><i class="fa-solid fa-file-arrow-down"></i><span
+                            data-en>Contact</span><span data-tr>İletişim</span></a>
+                </div>
+
+                <section class="section">
+                    <div class="section-header">
+                        <h2><span data-en>Featured Research</span><span data-tr>Öne Çıkan Araştırma</span></h2>
+                        <button class="btn btn-ghost btn-sm" onclick="goTo('research')"><span data-en>View
+                                All</span><span data-tr>Tümü</span> →</button>
+                    </div>
+                    <div class="card-grid" id="featuredResearch">
+                        <div class="card skeleton" style="height:260px;"></div>
+                        <div class="card skeleton" style="height:260px;"></div>
+                        <div class="card skeleton" style="height:260px;"></div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <div class="section-header">
+                        <h2><span data-en>Student Projects</span><span data-tr>Öğrenci Projeleri</span></h2>
+                        <button class="btn btn-ghost btn-sm" onclick="goTo('projects')"><span data-en>All
+                                Projects</span><span data-tr>Tüm Projeler</span> →</button>
+                    </div>
+                    <div class="card-grid card-grid-sm" id="featuredProjects">
+                        <div class="project-card skeleton" style="height:220px;"></div>
+                        <div class="project-card skeleton" style="height:220px;"></div>
+                        <div class="project-card skeleton" style="height:220px;"></div>
+                        <div class="project-card skeleton" style="height:220px;"></div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <div class="section-header">
+                        <h2><span data-en>Latest News</span><span data-tr>Son Haberler</span></h2>
+                        <button class="btn btn-ghost btn-sm" onclick="goTo('news')"><span data-en>All News</span><span
+                                data-tr>Tüm Haberler</span> →</button>
+                    </div>
+                    <div class="card-grid" id="latestNews">
+                        <div class="news-card skeleton" style="height:220px;"></div>
+                        <div class="news-card skeleton" style="height:220px;"></div>
+                        <div class="news-card skeleton" style="height:220px;"></div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <div class="section-header">
+                        <h2><span data-en>Upcoming Events</span><span data-tr>Yaklaşan Etkinlikler</span></h2>
+                    </div>
+                    <div class="timeline" id="upcomingEvents">
+                        <div class="timeline-item">
+                            <div class="timeline-card skeleton" style="height:80px;"></div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-card skeleton" style="height:80px;"></div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-card skeleton" style="height:80px;"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <div class="section-header">
+                        <h2><span data-en>Industry Partners</span><span data-tr>Sanayi Ortakları</span></h2>
+                    </div>
+                    <div class="partners-row" id="homePartners">
+                        <div class="skeleton" style="width:80px; height:24px;"></div>
+                        <div class="skeleton" style="width:80px; height:24px;"></div>
+                        <div class="skeleton" style="width:80px; height:24px;"></div>
+                        <div class="skeleton" style="width:80px; height:24px;"></div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- ABOUT PAGE -->
+            <div id="about" class="page">
+                <div class="page-header">
+                    <h1><span data-en>About the Department</span><span data-tr>Bölüm Hakkında</span></h1>
+                    <p class="subtitle" id="aboutSubtitle">Loading...</p>
+                </div>
+                <div id="aboutContent" class="two-cols">
+                    <div class="loading"><i class="fa-solid fa-spinner"></i> Loading content...</div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                &copy; 2026 Istanbul Health and Technology University. All Rights Reserved.
+
+            <!-- NEWS PAGE -->
+            <div id="news" class="page">
+                <div class="page-header">
+                    <h1><span data-en>News & Events</span><span data-tr>Haberler & Etkinlikler</span></h1>
+                    <p class="subtitle"><span data-en>Latest updates from the department</span><span data-tr>Bölümden
+                            son güncellemeler</span></p>
+                </div>
+                <div class="card-grid" id="allNews">
+                    <div class="news-card skeleton" style="height:220px;"></div>
+                    <div class="news-card skeleton" style="height:220px;"></div>
+                    <div class="news-card skeleton" style="height:220px;"></div>
+                </div>
+                <h2 style="margin-top:2rem;"><span data-en>Upcoming Events</span><span data-tr>Yaklaşan
+                        Etkinlikler</span></h2>
+                <div class="timeline" id="allEvents">
+                    <div class="timeline-item">
+                        <div class="timeline-card skeleton" style="height:80px;"></div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </footer>
+
+            <!-- RESEARCH PAGE -->
+            <div id="research" class="page">
+                <div class="page-header">
+                    <h1><span data-en>Research Groups</span><span data-tr>Araştırma Grupları</span></h1>
+                    <p class="subtitle"><span data-en>Collaborative teams advancing engineering</span><span
+                            data-tr>Mühendisliği ileriye taşıyan ekipler</span></p>
+                </div>
+                <div id="researchGroups">
+                    <div class="research-card skeleton" style="height:150px;"></div>
+                    <div class="research-card skeleton" style="height:150px;"></div>
+                </div>
+            </div>
+
+            <!-- PUBLICATIONS PAGE -->
+            <div id="publications" class="page">
+                <div class="page-header">
+                    <h1><span data-en>Publications</span><span data-tr>Yayınlar</span></h1>
+                    <p class="subtitle"><span data-en>Recent scholarly work</span><span data-tr>Son akademik
+                            çalışmalar</span></p>
+                </div>
+                <div id="publicationsList">
+                    <div class="pub-item skeleton" style="height:90px;"></div>
+                    <div class="pub-item skeleton" style="height:90px;"></div>
+                    <div class="pub-item skeleton" style="height:90px;"></div>
+                </div>
+            </div>
+
+            <!-- LABS PAGE -->
+            <div id="labs" class="page">
+                <div class="page-header">
+                    <h1><span data-en>Laboratories</span><span data-tr>Laboratuvarlar</span></h1>
+                    <p class="subtitle"><span data-en>State-of-the-art facilities</span><span data-tr>Modern
+                            tesisler</span></p>
+                </div>
+                <div class="card-grid" id="labsList">
+                    <div class="card skeleton" style="height:250px;"></div>
+                    <div class="card skeleton" style="height:250px;"></div>
+                </div>
+            </div>
+
+            <!-- FACULTY PAGE -->
+            <div id="faculty" class="page">
+                <div class="page-header">
+                    <h1><span data-en>Faculty Directory</span><span data-tr>Akademik Kadro</span></h1>
+                    <p class="subtitle"><span data-en>Our researchers and educators</span><span
+                            data-tr>Araştırmacılarımız ve eğitimcilerimiz</span></p>
+                </div>
+                <div id="facultyList">
+                    <div class="faculty-grid" id="facultyGrid">
+                        <div class="faculty-card skeleton" style="height:180px;"></div>
+                        <div class="faculty-card skeleton" style="height:180px;"></div>
+                        <div class="faculty-card skeleton" style="height:180px;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STUDENTS PAGE -->
+            <div id="students" class="page">
+                <div class="page-header">
+                    <h1><span data-en>Graduate Students</span><span data-tr>Lisansüstü Öğrenciler</span></h1>
+                    <p class="subtitle"><span data-en>Current MSc and PhD students</span><span data-tr>YL ve Doktora
+                            öğrencileri</span></p>
+                </div>
+                <div class="table-wrapper">
+                    <table class="data-table" id="studentsTable">
+                        <thead>
+                            <tr>
+                                <th><span data-en>Name</span><span data-tr>İsim</span></th>
+                                <th><span data-en>Program</span><span data-tr>Program</span></th>
+                                <th><span data-en>Advisor</span><span data-tr>Danışman</span></th>
+                                <th><span data-en>Research Topic</span><span data-tr>Araştırma</span></th>
+                                <th><span data-en>Year</span><span data-tr>Yıl</span></th>
+                            </tr>
+                        </thead>
+                        <tbody id="studentsBody">
+                            <tr>
+                                <td colspan="5" class="loading"><i class="fa-solid fa-spinner"></i> Loading...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- ALUMNI PAGE -->
+            <div id="alumni" class="page">
+                <div class="page-header">
+                    <h1><span data-en>Alumni</span><span data-tr>Mezunlar</span></h1>
+                    <p class="subtitle"><span data-en>Where our graduates work</span><span data-tr>Mezunlarımız nerede
+                            çalışıyor</span></p>
+                </div>
+                <div class="stats-grid" id="alumniStats">
+                    <div class="stat-card skeleton" style="height:70px;"></div>
+                    <div class="stat-card skeleton" style="height:70px;"></div>
+                    <div class="stat-card skeleton" style="height:70px;"></div>
+                </div>
+                <h2><span data-en>Notable Alumni</span><span data-tr>Öne Çıkan Mezunlar</span></h2>
+                <div class="card-grid card-grid-sm" id="alumniList">
+                    <div class="card-compact skeleton" style="height:60px;"></div>
+                    <div class="card-compact skeleton" style="height:60px;"></div>
+                </div>
+            </div>
+
+            <!-- PROJECTS PAGE -->
+            <div id="projects" class="page">
+                <div class="page-header">
+                    <h1><span data-en>Student Projects</span><span data-tr>Öğrenci Projeleri</span></h1>
+                    <p class="subtitle"><span data-en>Capstone projects and competitions</span><span data-tr>Bitirme
+                            projeleri ve yarışmalar</span></p>
+                </div>
+                <div class="card-grid card-grid-sm" id="projectsList">
+                    <div class="project-card skeleton" style="height:220px;"></div>
+                    <div class="project-card skeleton" style="height:220px;"></div>
+                    <div class="project-card skeleton" style="height:220px;"></div>
+                </div>
+            </div>
+
+            <!-- COURSES PAGE -->
+            <div id="courses" class="page">
+                <div class="page-header">
+                    <h1><span data-en>Course Catalog</span><span data-tr>Ders Kataloğu</span></h1>
+                    <p class="subtitle"><span data-en>Undergraduate and graduate courses</span><span data-tr>Lisans ve
+                            lisansüstü dersler</span></p>
+                </div>
+                <div id="coursesList">
+                    <div class="course-item skeleton" style="height:60px;"></div>
+                    <div class="course-item skeleton" style="height:60px;"></div>
+                    <div class="course-item skeleton" style="height:60px;"></div>
+                </div>
+            </div>
+
+            <!-- JOBS PAGE -->
+            <div id="jobs" class="page">
+                <div class="page-header">
+                    <h1><span data-en>Jobs & Internships</span><span data-tr>İş & Staj</span></h1>
+                    <p class="subtitle"><span data-en>Career opportunities</span><span data-tr>Kariyer fırsatları</span>
+                    </p>
+                </div>
+                <div id="jobsList">
+                    <div class="card-compact skeleton" style="height:70px;"></div>
+                    <div class="card-compact skeleton" style="height:70px;"></div>
+                </div>
+            </div>
+
+            <!-- PARTNERS PAGE -->
+            <div id="partners" class="page">
+                <div class="page-header">
+                    <h1><span data-en>Partners</span><span data-tr>Ortaklar</span></h1>
+                    <p class="subtitle"><span data-en>Industry and academic collaborations</span><span data-tr>Sanayi ve
+                            akademik işbirlikleri</span></p>
+                </div>
+                <h2><span data-en>Industry Partners</span><span data-tr>Sanayi Ortakları</span></h2>
+                <div class="partners-row" id="industryPartners">
+                    <div class="skeleton" style="width:80px; height:28px;"></div>
+                </div>
+                <h2 style="margin-top:2rem;"><span data-en>Academic Collaborations</span><span data-tr>Akademik
+                        İşbirlikleri</span></h2>
+                <div id="academicPartners">
+                    <div class="card-compact skeleton" style="height:60px;"></div>
+                </div>
+            </div>
+
+            <!-- CONTACT PAGE -->
+            <div id="contact" class="page">
+                <div class="page-header">
+                    <h1><span data-en>Contact</span><span data-tr>İletişim</span></h1>
+                    <p class="subtitle"><span data-en>Get in touch with us</span><span data-tr>Bize ulaşın</span></p>
+                </div>
+                <div class="two-cols" id="contactContent">
+                    <div class="loading"><i class="fa-solid fa-spinner"></i> Loading...</div>
+                </div>
+            </div>
+
+        </main>
+    </div>
 
     <script>
         // ═══════════════════════════════════════════════════════════════════════════
-        // CORE DATA LOGIC (ROBUST CSV PARSER)
+        // DATA STORE
         // ═══════════════════════════════════════════════════════════════════════════
-        const DATA = { settings: {}, news: [], research: [], faculty: [], events: [] };
+        const DATA = {
+            settings: [],
+            news: [],
+            events: [],
+            faculty: [],
+            research: [],
+            publications: [],
+            courses: [],
+            projects: [],
+            labs: [],
+            jobs: [],
+            alumni: [],
+            partners: [],
+            students: []
+        };
 
-        // Cache bust to prevent stale content
-        const CACHE_BUST = Date.now();
+        let lang = localStorage.getItem('lang') || 'en';
 
+        // cache-bust token so edits in Google Sheet reflect immediately
+        let CACHE_BUST = Date.now();
+        let IS_REFRESHING = false;
+
+        // ═══════════════════════════════════════════════════════════════════════════
+        // GOOGLE SHEETS FETCH
+        // ═══════════════════════════════════════════════════════════════════════════
         function getSheetURL(tabName) {
-            // Headers=0 ensures we get ALL rows without Google guessing headers
             return `https://docs.google.com/spreadsheets/d/${GOOGLE_SHEET_ID}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(tabName)}&headers=0&cb=${CACHE_BUST}`;
         }
 
-        /* 
-           Parses CSV handling newlines inside quoted cells. 
-           If returnRaw is true, returns array of arrays (good for Settings sheet).
-           If returnRaw is false, returns array of objects using first row as headers.
-        */
         function parseCSV(csvText, returnRaw = false) {
             const rows = [];
             let currentRow = [];
@@ -938,12 +2136,12 @@
             return data;
         }
 
-        async function fetchSheet(tabName, isSettings = false) {
+        async function fetchSheet(tabName) {
             try {
                 const response = await fetch(getSheetURL(tabName), { cache: 'no-store' });
                 if (!response.ok) throw new Error('Failed to fetch');
                 const csv = await response.text();
-                return parseCSV(csv, isSettings);
+                return parseCSV(csv, tabName === 'Settings'); // Use raw mode for Settings
             } catch (err) {
                 console.error(`Error fetching ${tabName}:`, err);
                 return [];
@@ -952,171 +2150,653 @@
 
         async function fetchSettings() {
             try {
-                const rows = await fetchSheet(SHEETS.settings, true);
+                const rows = await fetchSheet(SHEETS.settings);
                 const settings = {};
 
+                // Handle raw rows for Settings to robustly support multiline cells (Alt+Enter)
+                // and missing headers/transposed layouts
                 rows.forEach(row => {
                     if (!row || row.length < 2) return;
 
                     const keyCell = row[0] || '';
                     const valCell = row[1] || '';
 
+                    // If cell contains newlines, split them (handling Alt+Enter in Sheets)
                     if (keyCell.includes('\n') || valCell.includes('\n')) {
                         const keys = keyCell.split('\n');
                         const vals = valCell.split('\n');
                         const count = Math.max(keys.length, vals.length);
+
                         for (let i = 0; i < count; i++) {
                             const k = (keys[i] || '').trim();
                             const v = (vals[i] || '').trim();
-                            if (k && k !== 'key') settings[k] = v;
+                            if (k && k.toLowerCase() !== 'key') { // skip header 'key'
+                                settings[k] = v;
+                            }
                         }
                     } else {
-                        if (keyCell !== 'key') settings[keyCell] = valCell;
+                        const k = keyCell.trim();
+                        const v = valCell.trim();
+                        if (k && k.toLowerCase() !== 'key') {
+                            settings[k] = v;
+                        }
                     }
                 });
+                console.log('Parsed Settings:', settings);
                 return settings;
             } catch (err) {
+                console.error('Error parsing settings:', err);
                 return {};
             }
         }
 
         // ═══════════════════════════════════════════════════════════════════════════
-        // UI RENDERING
+        // RENDER FUNCTIONS
         // ═══════════════════════════════════════════════════════════════════════════
 
-        function t(en, tr) { return en; } // Default to English for World Class design for now
+        function t(en, tr) {
+            return lang === 'tr' && tr ? tr : en;
+        }
 
-        function render() {
-            // Settings
+        function getTagClass(category) {
+            const map = {
+                'grant': 'tag-accent', 'research': 'tag-accent',
+                'award': 'tag-green', 'competition': 'tag-green',
+                'academic': 'tag-purple', 'capstone': 'tag-purple',
+                'industry': 'tag-cyan', 'event': 'tag-pink',
+                'seminar': 'tag-accent', 'workshop': 'tag-purple',
+                'deadline': 'tag-red', 'phd': 'tag-accent', 'msc': 'tag-green'
+            };
+            return map[(category || '').toLowerCase()] || '';
+        }
+
+        function formatDate(dateStr) {
+            if (!dateStr) return { day: '--', month: '---' };
+            const d = new Date(dateStr);
+            const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            return { day: d.getDate(), month: months[d.getMonth()] };
+        }
+
+        function renderSettings() {
             const s = DATA.settings;
-            document.getElementById('heroTitle').innerHTML = s.hero_title_en || 'Pioneering the Future of <br><span>Intelligent Systems</span>';
-            document.getElementById('heroSubtitle').textContent = s.hero_subtitle_en || 'Department of Mechatronics Engineering';
+            document.getElementById('siteName').textContent = s.site_name || 'İSTUN Mechatronics';
+            document.getElementById('heroTitle').textContent = t(s.hero_title_en, s.hero_title_tr) || 'Engineering Intelligent Systems';
+            document.getElementById('heroSubtitle').textContent = t(s.hero_subtitle_en, s.hero_subtitle_tr) || '';
 
-            // Stats in Hero
-            document.getElementById('heroStats').innerHTML = `
+            // Stats
+            const stats = [
+                { value: s.stat_faculty || '18', label: t('Faculty', 'Akademisyen') },
+                { value: s.stat_students || '450', label: t('Students', 'Öğrenci') },
+                { value: s.stat_publications || '127', label: t('Publications', 'Yayın') },
+                { value: s.stat_grants || '₺18M', label: t('Grants', 'Hibe') },
+                { value: s.stat_employment || '94%', label: t('Employment', 'İstihdam') },
+                { value: s.stat_partners || '32', label: t('Partners', 'Ortak') }
+            ];
+
+            document.getElementById('statsGrid').innerHTML = stats.map(st => `
             <div class="stat-card">
-                <span class="stat-value">${s.stat_grants}</span>
-                <div class="stat-label">Active Research Grants</div>
+                <span class="stat-value">${st.value}</span>
+                <div class="stat-label">${st.label}</div>
             </div>
-            <div class="stat-card">
-                <span class="stat-value">${s.stat_faculty}</span>
-                <div class="stat-label">Faculty Members</div>
-            </div>
-        `;
+        `).join('');
+        }
 
-            // Footer Data
-            document.getElementById('footerAddress').textContent = s.address;
-            document.getElementById('footerContact').innerHTML = `
-             <li>${s.email}</li>
-             <li>${s.phone}</li>
-        `;
+        function renderNews() {
+            const news = DATA.news.slice(0, 6);
+            document.getElementById('newsBadge').textContent = DATA.news.length;
 
-            // Research
-            const researchHTML = DATA.research.slice(0, 3).map(r => `
-            <div class="research-card">
-                <div class="research-img" style="background-image: url('${r.image || 'https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?w=600&q=80'}')">
-                    <span class="research-badge">${r.type || 'Lab'}</span>
+            const newsHTML = news.slice(0, 3).map(n => {
+                const d = formatDate(n.date);
+                const color = n.category?.toLowerCase() === 'award' ? 'var(--green)' :
+                    n.category?.toLowerCase() === 'academic' ? 'var(--purple)' : 'var(--amber)';
+                return `
+                <div class="news-card">
+                    <div class="news-img" style="background-image:url('${n.image || 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80'}');">
+                        <div class="news-date" style="background:${color};"><span class="day">${d.day}</span><span class="month">${d.month}</span></div>
+                    </div>
+                    <div class="news-body">
+                        <span class="tag ${getTagClass(n.category)}">${n.category || 'News'}</span>
+                        <h4>${t(n.title_en, n.title_tr) || n.title || 'News Item'}</h4>
+                        <p>${t(n.description_en, n.description_tr) || n.description || ''}</p>
+                    </div>
                 </div>
-                <div class="research-content">
-                    <h3>${r.name_en || r.name}</h3>
-                    <p>${r.description_en || r.description}</p>
-                    <div class="research-meta">
-                        <span class="research-lead"><img src="https://ui-avatars.com/api/?name=${r.lead}&background=0F172A&color=fff" alt=""> ${r.lead}</span>
-                        <a href="#" style="color:var(--accent); font-weight:600;">View Lab <i class="fa-solid fa-arrow-right"></i></a>
+            `;
+            }).join('');
+
+            document.getElementById('latestNews').innerHTML = newsHTML || '<p>No news available.</p>';
+            document.getElementById('allNews').innerHTML = DATA.news.map(n => {
+                const d = formatDate(n.date);
+                return `
+                <div class="news-card">
+                    <div class="news-img" style="background-image:url('${n.image || 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80'}');">
+                        <div class="news-date"><span class="day">${d.day}</span><span class="month">${d.month}</span></div>
+                    </div>
+                    <div class="news-body">
+                        <span class="tag ${getTagClass(n.category)}">${n.category || 'News'}</span>
+                        <h4>${t(n.title_en, n.title_tr) || n.title || ''}</h4>
+                        <p>${t(n.description_en, n.description_tr) || n.description || ''}</p>
+                    </div>
+                </div>
+            `;
+            }).join('') || '<p>No news.</p>';
+        }
+
+        function renderEvents() {
+            const events = DATA.events.slice(0, 4);
+
+            const eventsHTML = events.map(e => `
+            <div class="timeline-item">
+                <div class="timeline-date">${e.date || ''} · ${e.time || ''}</div>
+                <div class="timeline-card">
+                    <span class="tag ${getTagClass(e.type)}">${e.type || 'Event'}</span>
+                    <h4>${t(e.title_en, e.title_tr) || e.title || ''}</h4>
+                    <p>${t(e.description_en, e.description_tr) || e.description || ''}</p>
+                </div>
+            </div>
+        `).join('');
+
+            document.getElementById('upcomingEvents').innerHTML = eventsHTML || '<p>No upcoming events.</p>';
+            document.getElementById('allEvents').innerHTML = eventsHTML || '<p>No events.</p>';
+
+            // Next event card
+            if (events[0]) {
+                document.getElementById('nextEventText').innerHTML = `<strong>${events[0].date || ''}</strong><br>${t(events[0].title_en, events[0].title_tr) || events[0].title || ''}`;
+            }
+        }
+
+        function renderResearch() {
+            const colors = ['#10b981', '#6366f1', '#ec4899', '#14b8a6', '#f59e0b'];
+            const icons = ['fa-robot', 'fa-microchip', 'fa-star', 'fa-hand', 'fa-bolt'];
+
+            // Featured on home (max 3)
+            const featuredHTML = DATA.research.slice(0, 3).map((r, i) => `
+            <div class="card card-clickable" onclick="goTo('research')">
+                <div class="card-img" style="background-image:url('${r.image || 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&q=80'}');">
+                    <div class="card-img-overlay"></div>
+                    <div class="card-img-badge"><span class="tag tag-green">${r.type || 'Lab'}</span></div>
+                </div>
+                <div class="card-body">
+                    <h3>${t(r.name_en, r.name_tr) || r.name || ''}</h3>
+                    <p>${t(r.description_en, r.description_tr) || r.description || ''}</p>
+                </div>
+                <div class="card-footer"><span>${r.lead || ''}</span><span class="card-footer-link">${t('Learn more', 'Detaylar')} →</span></div>
+            </div>
+        `).join('');
+            document.getElementById('featuredResearch').innerHTML = featuredHTML || '<p>No research groups.</p>';
+
+            // Full list
+            const fullHTML = DATA.research.map((r, i) => `
+            <div class="research-card">
+                <div class="research-header">
+                    <div class="research-icon" style="background:linear-gradient(135deg, ${colors[i % colors.length]}, ${colors[(i + 1) % colors.length]});"><i class="fa-solid ${icons[i % icons.length]}"></i></div>
+                    <div class="research-info">
+                        <h3>${t(r.name_en, r.name_tr) || r.name || ''}</h3>
+                        <p>${r.focus || ''}</p>
+                    </div>
+                </div>
+                <p class="research-desc">${t(r.description_en, r.description_tr) || r.description || ''}</p>
+                <div class="research-members">
+                    <span class="research-member"><img src="https://ui-avatars.com/api/?name=${encodeURIComponent(r.lead || 'L')}&background=0f172a&color=fff&size=32" alt=""> ${r.lead || ''} (Lead)</span>
+                    ${r.members ? `<span class="research-member">+${r.members} members</span>` : ''}
+                </div>
+            </div>
+        `).join('');
+            document.getElementById('researchGroups').innerHTML = fullHTML || '<p>No research groups.</p>';
+        }
+
+        function renderFaculty() {
+            const html = DATA.faculty.map(f => `
+            <div class="faculty-card">
+                <img src="${f.photo || `https://ui-avatars.com/api/?name=${encodeURIComponent(f.name || 'F')}&background=6366f1&color=fff&size=120`}" class="faculty-avatar" alt="${f.name}">
+                <h3 class="faculty-name">${f.name || ''}</h3>
+                <p class="faculty-title">${f.title || ''}</p>
+                <div class="faculty-field">${t(f.research_en, f.research_tr) || f.research || ''}</div>
+                <div class="faculty-links">
+                    ${f.email ? `<a href="mailto:${f.email}" title="Email"><i class="fa-solid fa-envelope"></i></a>` : ''}
+                    ${f.scholar ? `<a href="${f.scholar}" title="Scholar"><i class="fa-brands fa-google-scholar"></i></a>` : ''}
+                    ${f.github ? `<a href="${f.github}" title="GitHub"><i class="fa-brands fa-github"></i></a>` : ''}
+                </div>
+            </div>
+        `).join('');
+            document.getElementById('facultyGrid').innerHTML = html || '<p>No faculty data.</p>';
+        }
+
+        function renderPublications() {
+            const html = DATA.publications.map(p => `
+            <div class="pub-item">
+                <div class="pub-title">${p.title || ''}</div>
+                <div class="pub-authors">${p.authors || ''}</div>
+                <div class="pub-meta">
+                    <span><i class="fa-solid fa-book"></i> ${p.journal || ''}, ${p.year || ''}</span>
+                    ${p.citations ? `<span><i class="fa-solid fa-quote-left"></i> ${p.citations} citations</span>` : ''}
+                    ${p.doi ? `<span><i class="fa-solid fa-link"></i> <a href="${p.doi}">DOI</a></span>` : ''}
+                </div>
+            </div>
+        `).join('');
+            document.getElementById('publicationsList').innerHTML = html || '<p>No publications.</p>';
+        }
+
+        function renderCourses() {
+            const icons = { 'physics': 'fa-atom', 'programming': 'fa-code', 'robotics': 'fa-robot', 'control': 'fa-gears', 'ai': 'fa-brain', 'electronics': 'fa-microchip' };
+            const colors = { 'physics': 'var(--purple)', 'programming': 'var(--green)', 'robotics': 'var(--pink)', 'control': 'var(--amber)', 'ai': 'var(--accent)', 'electronics': 'var(--cyan)' };
+
+            const html = DATA.courses.map(c => {
+                const cat = (c.category || 'physics').toLowerCase();
+                return `
+                <div class="course-item">
+                    <div class="course-icon" style="background:${colors[cat] || 'var(--accent)'}20; color:${colors[cat] || 'var(--accent)'};">
+                        <i class="fa-solid ${icons[cat] || 'fa-book'}"></i>
+                    </div>
+                    <div class="course-info">
+                        <h4>${c.code || ''}: ${t(c.name_en, c.name_tr) || c.name || ''}</h4>
+                        <p>${t(c.description_en, c.description_tr) || c.description || ''} · ${c.instructor || ''} · ${c.year || ''}</p>
+                    </div>
+                    <span class="tag">${c.ects || '3'} ECTS</span>
+                </div>
+            `;
+            }).join('');
+            document.getElementById('coursesList').innerHTML = html || '<p>No courses.</p>';
+        }
+
+        function renderProjects() {
+            const html = DATA.projects.map(p => `
+            <div class="project-card">
+                <div class="project-img" style="background-image:url('${p.image || 'https://images.unsplash.com/photo-1561557944-6e7860d1a7eb?w=600&q=80'}');">
+                    <span class="project-year" ${p.award ? 'style="background:var(--amber);"' : ''}>${p.award ? '🏆 ' : ''}${p.year || '2024'}</span>
+                </div>
+                <div class="project-body">
+                    <span class="tag ${getTagClass(p.category)}">${p.category || 'Capstone'}</span>
+                    <h4>${t(p.title_en, p.title_tr) || p.title || ''}</h4>
+                    <p>${t(p.description_en, p.description_tr) || p.description || ''}</p>
+                    <div class="project-team">
+                        <div class="project-avatars">
+                            ${(p.team || 'Team').split(',').slice(0, 3).map(m => `<img src="https://ui-avatars.com/api/?name=${encodeURIComponent(m.trim())}&background=6366f1&color=fff&size=44" alt="">`).join('')}
+                        </div>
+                        <span class="project-names">${p.team || ''}</span>
                     </div>
                 </div>
             </div>
         `).join('');
-            document.getElementById('researchGrid').innerHTML = researchHTML;
 
-            // Faculty
-            const facultyHTML = DATA.faculty.map(f => `
-            <div class="faculty-card">
-                <img src="${f.photo || `https://ui-avatars.com/api/?name=${f.name}&background=random&size=200`}" class="faculty-img" alt="${f.name}">
-                <h3 class="faculty-name">${f.name}</h3>
-                <div class="faculty-role">${f.title}</div>
-                <p style="font-size:0.9rem; color:var(--text-muted);">${f.research_en || f.research}</p>
-            </div>
-        `).join('');
-            document.getElementById('facultyList').innerHTML = facultyHTML;
-
-            // News
-            const newsHTML = DATA.news.slice(0, 3).map(n => {
-                const date = new Date(n.date);
-                const month = date.toLocaleString('default', { month: 'short' });
-                return `
-            <div class="news-item">
-                <div class="news-date">
-                    <b>${date.getDate()}</b>
-                    <span>${month}</span>
+            document.getElementById('projectsList').innerHTML = html || '<p>No projects.</p>';
+            document.getElementById('featuredProjects').innerHTML = DATA.projects.slice(0, 4).map(p => `
+            <div class="project-card" onclick="goTo('projects')">
+                <div class="project-img" style="background-image:url('${p.image || 'https://images.unsplash.com/photo-1561557944-6e7860d1a7eb?w=600&q=80'}');">
+                    <span class="project-year">${p.year || '2024'}</span>
                 </div>
-                <div class="news-content">
-                    <span style="color:var(--accent); font-weight:600; font-size:0.85rem;">${n.category}</span>
-                    <h3>${n.title_en || n.title}</h3>
-                    <p style="color:var(--text-muted);">${n.description_en || n.description}</p>
+                <div class="project-body">
+                    <span class="tag ${getTagClass(p.category)}">${p.category || ''}</span>
+                    <h4>${t(p.title_en, p.title_tr) || p.title || ''}</h4>
+                    <p>${t(p.description_en, p.description_tr) || p.description || ''}</p>
                 </div>
             </div>
-            `;
-            }).join('');
-            document.getElementById('newsList').innerHTML = newsHTML;
-
-            // Trigger scroll animations
-            observeElements();
+        `).join('') || '';
         }
 
-        async function init() {
+        function renderLabs() {
+            const html = DATA.labs.map(l => `
+            <div class="card">
+                <div class="card-img" style="background-image:url('${l.image || 'https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?w=600&q=80'}');"></div>
+                <div class="card-body">
+                    <span class="tag ${l.type === 'Research' ? 'tag-green' : ''}">${l.type || 'Lab'}</span>
+                    <h3>${t(l.name_en, l.name_tr) || l.name || ''}</h3>
+                    <p>${t(l.equipment_en, l.equipment_tr) || l.equipment || ''}</p>
+                </div>
+                <div class="card-footer">
+                    <span>${l.room || ''} · ${l.manager || ''}</span>
+                    <button class="btn btn-sm btn-ghost">${t('Book', 'Rezerve')}</button>
+                </div>
+            </div>
+        `).join('');
+            document.getElementById('labsList').innerHTML = html || '<p>No labs.</p>';
+        }
+
+        function renderJobs() {
+            document.getElementById('jobsBadge').textContent = DATA.jobs.length;
+
+            const html = DATA.jobs.map(j => `
+            <div class="card-compact">
+                <div class="card-compact-content">
+                    <h4>${j.title || ''}</h4>
+                    <p>${j.company || ''} · ${j.location || ''} · ${j.salary || ''}</p>
+                </div>
+                <span class="tag ${getTagClass(j.type)}">${j.type || 'Job'}</span>
+            </div>
+        `).join('');
+            document.getElementById('jobsList').innerHTML = html || '<p>No jobs available.</p>';
+        }
+
+        function renderAlumni() {
+            const s = DATA.settings;
+            document.getElementById('alumniStats').innerHTML = `
+            <div class="stat-card"><span class="stat-value">${s.alumni_total || '312'}</span><div class="stat-label">${t('Total Alumni', 'Toplam Mezun')}</div></div>
+            <div class="stat-card"><span class="stat-value">${s.alumni_employed || '94%'}</span><div class="stat-label">${t('Employed', 'İstihdam')}</div></div>
+            <div class="stat-card"><span class="stat-value">${s.alumni_startups || '8'}</span><div class="stat-label">${t('Startups', 'Girişim')}</div></div>
+        `;
+
+            const html = DATA.alumni.map(a => `
+            <div class="card-compact">
+                <img src="${a.photo || `https://ui-avatars.com/api/?name=${encodeURIComponent(a.name || 'A')}&background=6366f1&color=fff&size=80`}" style="width:44px;height:44px;border-radius:50%;" alt="">
+                <div class="card-compact-content">
+                    <h4>${a.name || ''} (${a.year || ''})</h4>
+                    <p>${a.position || ''} @ ${a.company || ''}</p>
+                </div>
+            </div>
+        `).join('');
+            document.getElementById('alumniList').innerHTML = html || '<p>No alumni data.</p>';
+        }
+
+        function renderStudents() {
+            const html = DATA.students.map(s => `
+            <tr>
+                <td><strong>${s.name || ''}</strong></td>
+                <td><span class="tag ${s.program?.toLowerCase() === 'phd' ? 'tag-accent' : 'tag-green'}">${s.program || ''}</span></td>
+                <td>${s.advisor || ''}</td>
+                <td>${s.research || ''}</td>
+                <td>${s.year || ''}</td>
+            </tr>
+        `).join('');
+            document.getElementById('studentsBody').innerHTML = html || '<tr><td colspan="5">No students.</td></tr>';
+        }
+
+        function renderPartners() {
+            const industry = DATA.partners.filter(p => p.type?.toLowerCase() === 'industry');
+            const academic = DATA.partners.filter(p => p.type?.toLowerCase() === 'academic');
+
+            const industryHTML = industry.map(p =>
+                p.logo ? `<img src="${p.logo}" class="partner-logo" alt="${p.name}" title="${p.name}" style="height:${p.height || '24'}px;">` :
+                    `<span style="color:var(--text-muted);font-weight:600;">${p.name}</span>`
+            ).join('');
+
+            document.getElementById('industryPartners').innerHTML = industryHTML || '<p>No partners.</p>';
+            document.getElementById('homePartners').innerHTML = industryHTML || '';
+
+            const academicHTML = academic.map(p => `
+            <div class="card-compact">
+                <div class="card-compact-icon" style="background:var(--accent-light); color:var(--accent);"><i class="fa-solid fa-university"></i></div>
+                <div class="card-compact-content">
+                    <h4>${p.name || ''}</h4>
+                    <p>${t(p.description_en, p.description_tr) || p.description || ''}</p>
+                </div>
+            </div>
+        `).join('');
+            document.getElementById('academicPartners').innerHTML = academicHTML || '<p>No academic partners.</p>';
+        }
+
+        function renderContact() {
+            const s = DATA.settings;
+            document.getElementById('contactContent').innerHTML = `
+            <div>
+                <h2>${t('Department Office', 'Bölüm Sekreterliği')}</h2>
+                <p><i class="fa-solid fa-location-dot" style="width:18px; color:var(--accent);"></i> ${s.address || 'Engineering Building'}</p>
+                <p><i class="fa-solid fa-phone" style="width:18px; color:var(--accent);"></i> ${s.phone || ''}</p>
+                <p><i class="fa-solid fa-envelope" style="width:18px; color:var(--accent);"></i> ${s.email || ''}</p>
+                <p><i class="fa-solid fa-clock" style="width:18px; color:var(--accent);"></i> ${s.hours || 'Mon-Fri 09:00-17:00'}</p>
+                
+                <h2 style="margin-top:1.5rem;">${t('Key Contacts', 'Önemli Kişiler')}</h2>
+                <p><strong>${t('Department Chair', 'Bölüm Başkanı')}:</strong> ${s.chair || ''}</p>
+                <p><strong>${t('Graduate Coordinator', 'Lisansüstü Koordinatörü')}:</strong> ${s.grad_coordinator || ''}</p>
+            </div>
+            <div style="background:var(--bg-warm); border-radius:var(--radius-lg); height:200px; display:flex; align-items:center; justify-content:center; border:1px solid var(--border);">
+                <span style="color:var(--text-muted); text-align:center;">
+                    <i class="fa-solid fa-map-location-dot" style="font-size:2rem; margin-bottom:0.5rem; display:block;"></i>
+                    ${t('Campus Map', 'Kampüs Haritası')}
+                </span>
+            </div>
+               `;
+        }
+
+        function renderAbout() {
+            const s = DATA.settings;
+            document.getElementById('aboutSubtitle').textContent = t(s.about_subtitle_en, s.about_subtitle_tr) || '';
+            document.getElementById('aboutContent').innerHTML = `
+            <div>
+                <h2>${t('Our Mission', 'Misyonumuz')}</h2>
+                <p>${t(s.mission_en, s.mission_tr) || ''}</p>
+                <h2>${t('Vision', 'Vizyon')}</h2>
+                <p>${t(s.vision_en, s.vision_tr) || ''}</p>
+            </div>
+            <div>
+                <h2>${t('Accreditation', 'Akreditasyon')}</h2>
+                <p>${t(s.accreditation_en, s.accreditation_tr) || ''}</p>
+                <div class="alert alert-success"><i class="fa-solid fa-certificate"></i> ${s.accreditation_status || 'MÜDEK'}</div>
+            </div>
+        `;
+        }
+
+        function renderAll() {
+            renderSettings();
+            renderNews();
+            renderEvents();
+            renderResearch();
+            renderFaculty();
+            renderPublications();
+            renderCourses();
+            renderProjects();
+            renderLabs();
+            renderJobs();
+            renderAlumni();
+            renderStudents();
+            renderPartners();
+            renderContact();
+            renderAbout();
+        }
+
+        // ═══════════════════════════════════════════════════════════════════════════
+        // NAVIGATION
+        // ═══════════════════════════════════════════════════════════════════════════
+
+        function goTo(pageId, navEl) {
+            document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+            if (navEl) navEl.classList.add('active');
+            else {
+                const nav = document.querySelector(`.nav-item[data-page="${pageId}"]`);
+                if (nav) nav.classList.add('active');
+            }
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            const page = document.getElementById(pageId);
+            if (page) {
+                page.classList.add('active');
+                document.getElementById('mainContent').scrollTop = 0;
+            }
+            closeSidebar();
+        }
+
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('open');
+            document.querySelector('.sidebar-overlay').classList.toggle('show');
+        }
+        function closeSidebar() {
+            document.getElementById('sidebar').classList.remove('open');
+            document.querySelector('.sidebar-overlay').classList.remove('show');
+        }
+
+        function setLang(l) {
+            lang = l;
+            document.documentElement.lang = l;
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.toggle('active', btn.textContent === l.toUpperCase()));
+            localStorage.setItem('lang', l);
+            renderAll();
+            updateLastUpdatedLabel(); // keep the timestamp locale consistent
+        }
+
+        // ═══════════════════════════════════════════════════════════════════════════
+        // REFRESH BAR UI
+        // ═══════════════════════════════════════════════════════════════════════════
+
+        function setRefreshUI(state, msgKey) {
+            const btn = document.getElementById('refreshBtn');
+            const status = document.getElementById('refreshStatus');
+
+            if (!btn || !status) return;
+
+            const texts = {
+                ready: { en: 'Ready', tr: 'Hazır' },
+                updating: { en: 'Updating…', tr: 'Güncelleniyor…' },
+                updated: { en: 'Updated', tr: 'Güncellendi' },
+                error: { en: 'Update failed', tr: 'Güncelleme başarısız' }
+            };
+
+            const label = texts[msgKey] ? (lang === 'tr' ? texts[msgKey].tr : texts[msgKey].en) : '';
+
+            if (state === 'busy') {
+                btn.disabled = true;
+                btn.innerHTML = `<i class="fa-solid fa-spinner" style="animation: spin 1s linear infinite;"></i> <span data-en>Update</span><span data-tr>Güncelle</span>`;
+                status.textContent = label;
+            } else {
+                btn.disabled = false;
+                btn.innerHTML = `<i class="fa-solid fa-rotate"></i> <span data-en>Update</span><span data-tr>Güncelle</span>`;
+                status.textContent = label;
+            }
+        }
+
+        function updateLastUpdatedLabel() {
+            const el = document.getElementById('lastUpdatedText');
+            if (!el) return;
+
+            const ts = localStorage.getItem('lastUpdatedTs');
+            if (!ts) { el.textContent = '—'; return; }
+
+            const d = new Date(parseInt(ts, 10));
+            el.textContent = d.toLocaleString(lang === 'tr' ? 'tr-TR' : 'en-US');
+        }
+
+        // ═══════════════════════════════════════════════════════════════════════════
+        // DATA LOADING (INITIAL + REFRESH)
+        // ═══════════════════════════════════════════════════════════════════════════
+
+        async function loadAllData() {
+            [
+                DATA.settings,
+                DATA.news,
+                DATA.events,
+                DATA.faculty,
+                DATA.research,
+                DATA.publications,
+                DATA.courses,
+                DATA.projects,
+                DATA.labs,
+                DATA.jobs,
+                DATA.alumni,
+                DATA.partners,
+                DATA.students
+            ] = await Promise.all([
+                fetchSettings(), // Use the specialized settings parser
+                fetchSheet(SHEETS.news),
+                fetchSheet(SHEETS.events),
+                fetchSheet(SHEETS.faculty),
+                fetchSheet(SHEETS.research),
+                fetchSheet(SHEETS.publications),
+                fetchSheet(SHEETS.courses),
+                fetchSheet(SHEETS.projects),
+                fetchSheet(SHEETS.labs),
+                fetchSheet(SHEETS.jobs),
+                fetchSheet(SHEETS.alumni),
+                fetchSheet(SHEETS.partners),
+                fetchSheet(SHEETS.students)
+            ]);
+
+            renderAll();
+
+            // store last updated timestamp
+            localStorage.setItem('lastUpdatedTs', String(Date.now()));
+            updateLastUpdatedLabel();
+        }
+
+        async function refreshData() {
+            if (IS_REFRESHING) return;
+            IS_REFRESHING = true;
+
+            CACHE_BUST = Date.now();
+            setRefreshUI('busy', 'updating');
+
             try {
-                [
-                    DATA.settings,
-                    DATA.news,
-                    DATA.partners,
-                    DATA.students,
-                    DATA.research,
-                    DATA.faculty
-                ] = await Promise.all([
-                    fetchSettings(), // Use the specialized settings parser
-                    fetchSheet(SHEETS.news),
-                    fetchSheet(SHEETS.partners),
-                    fetchSheet(SHEETS.students),
-                    fetchSheet(SHEETS.research),
-                    fetchSheet(SHEETS.faculty)
-                ]);
-
-                render();
-
+                await loadAllData();
+                setRefreshUI('idle', 'updated');
+                setTimeout(() => setRefreshUI('idle', 'ready'), 1500);
             } catch (e) {
-                console.error('Init error:', e);
+                console.error(e);
+                setRefreshUI('idle', 'error');
+            } finally {
+                IS_REFRESHING = false;
             }
         }
 
         // ═══════════════════════════════════════════════════════════════════════════
-        // INTERACTIONS
+        // INIT
         // ═══════════════════════════════════════════════════════════════════════════
 
-        // Sticky Header
-        window.addEventListener('scroll', () => {
-            const header = document.getElementById('header');
-            if (window.scrollY > 50) header.classList.add('scrolled');
-            else header.classList.remove('scrolled');
-        });
+        async function init() {
+            document.documentElement.lang = lang;
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.toggle('active', btn.textContent === lang.toUpperCase()));
 
-        // Scroll Animations
-        function observeElements() {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1 });
+            updateLastUpdatedLabel();
+            setRefreshUI('idle', 'ready');
 
-            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+            // Check if sheet ID is configured
+            if (GOOGLE_SHEET_ID === 'YOUR_GOOGLE_SHEET_ID_HERE') {
+                document.getElementById('heroTitle').textContent = '⚠️ Google Sheet Not Configured';
+                document.getElementById('heroSubtitle').innerHTML = 'Please set your GOOGLE_SHEET_ID in the script section. <a href="#setup">See setup instructions below.</a>';
+                return;
+            }
+
+            try {
+                setRefreshUI('busy', 'updating');
+                await loadAllData();
+                setRefreshUI('idle', 'ready');
+            } catch (e) {
+                console.error(e);
+                setRefreshUI('idle', 'error');
+            }
         }
 
         document.addEventListener('DOMContentLoaded', init);
-
     </script>
+
+    <!-- DATA REFRESH BAR -->
+    <div class="refresh-bar" id="refreshBar">
+        <div class="refresh-inner">
+            <div class="refresh-meta">
+                <div class="refresh-title">
+                    <span data-en>Data</span><span data-tr>Veri</span>
+                </div>
+                <div class="refresh-subtitle" id="refreshInfo">
+                    <span data-en>Last updated: </span><span data-tr>Son güncelleme: </span><span
+                        id="lastUpdatedText">—</span>
+                </div>
+            </div>
+            <div class="refresh-actions">
+                <span class="refresh-status" id="refreshStatus"><span data-en>Ready</span><span
+                        data-tr>Hazır</span></span>
+                <button class="btn btn-accent btn-sm" id="refreshBtn" onclick="refreshData()">
+                    <i class="fa-solid fa-rotate"></i>
+                    <span data-en>Update</span><span data-tr>Güncelle</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 
+    ╔═══════════════════════════════════════════════════════════════════════════════╗
+    ║                         SETUP INSTRUCTIONS                                     ║
+    ╠═══════════════════════════════════════════════════════════════════════════════╣
+    ║                                                                                ║
+    ║  1. CREATE A GOOGLE SHEET with these tabs (exact names):                       ║
+    ║     - Settings, News, Events, Faculty, Research, Publications,                 ║
+    ║     - Courses, Projects, Labs, Jobs, Alumni, Partners, Students               ║
+    ║                                                                                ║
+    ║  2. PUBLISH THE SHEET:                                                         ║
+    ║     File → Share → Publish to web → Entire Document → CSV → Publish           ║
+    ║                                                                                ║
+    ║  3. COPY THE SHEET ID from the URL:                                            ║
+    ║     https://docs.google.com/spreadsheets/d/[THIS_IS_THE_ID]/edit              ║
+    ║                                                                                ║
+    ║  4. PASTE THE ID in the GOOGLE_SHEET_ID variable at the top of this file       ║
+    ║                                                                                ║
+    ║  See the template sheet structure in the README or create your own.            ║
+    ║                                                                                ║
+    ╚═══════════════════════════════════════════════════════════════════════════════╝
+    -->
 </body>
 
 </html>
