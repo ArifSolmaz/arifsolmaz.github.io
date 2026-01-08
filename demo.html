@@ -885,7 +885,7 @@
             let currentVal = '';
             let inQuotes = false;
 
-            // Normalize line endings
+            // Normalize line endings to \n
             const csv = csvText.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
 
             for (let i = 0; i < csv.length; i++) {
@@ -895,7 +895,7 @@
                 if (char === '"') {
                     if (inQuotes && nextChar === '"') {
                         currentVal += '"';
-                        i++;
+                        i++; // skip escaped quote
                     } else {
                         inQuotes = !inQuotes;
                     }
@@ -904,13 +904,17 @@
                     currentVal = '';
                 } else if (char === '\n' && !inQuotes) {
                     currentRow.push(currentVal.trim());
-                    if (currentRow.length > 0) rows.push(currentRow);
+                    if (currentRow.length > 0 && (currentRow.length > 1 || currentRow[0] !== '')) {
+                        rows.push(currentRow);
+                    }
                     currentRow = [];
                     currentVal = '';
                 } else {
                     currentVal += char;
                 }
             }
+
+            // Add last row if exists
             if (currentVal || currentRow.length) {
                 currentRow.push(currentVal.trim());
                 if (currentRow.length > 0) rows.push(currentRow);
@@ -921,6 +925,7 @@
 
             const headers = rows[0];
             const data = [];
+
             for (let i = 1; i < rows.length; i++) {
                 const values = rows[i];
                 const row = {};
@@ -945,17 +950,14 @@
             }
         }
 
-        // Specialized function to handle the vertical layout of Settings sheet
         async function fetchSettings() {
             try {
-                // Fetch raw rows
                 const rows = await fetchSheet(SHEETS.settings, true);
                 const settings = {};
 
                 rows.forEach(row => {
                     if (!row || row.length < 2) return;
 
-                    // Handle split cells (Alt+Enter in Google Sheets)
                     const keyCell = row[0] || '';
                     const valCell = row[1] || '';
 
@@ -1067,11 +1069,15 @@
                 [
                     DATA.settings,
                     DATA.news,
+                    DATA.partners,
+                    DATA.students,
                     DATA.research,
                     DATA.faculty
                 ] = await Promise.all([
-                    fetchSettings(), // Vital: call the specific settings parser
+                    fetchSettings(), // Use the specialized settings parser
                     fetchSheet(SHEETS.news),
+                    fetchSheet(SHEETS.partners),
+                    fetchSheet(SHEETS.students),
                     fetchSheet(SHEETS.research),
                     fetchSheet(SHEETS.faculty)
                 ]);
