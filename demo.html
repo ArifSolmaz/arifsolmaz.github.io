@@ -1,35 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>İSTUN Mechatronics Engineering</title>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <script>
-    // ╔════════════════════════════════════════════════════════════════════════════╗
-    // ║  GOOGLE SHEET CONFIGURATION - CHANGE THIS TO YOUR SHEET ID                 ║
-    // ╚════════════════════════════════════════════════════════════════════════════╝
-    
-    const GOOGLE_SHEET_ID = '1MrgcCLRlEUTGaKUI62GcdmlIRqPPwfETx6AREZzpGKI';
-    
-    // Sheet tab names (must match exactly your Google Sheet tab names)
-    const SHEETS = {
-        settings: 'Settings',
-        news: 'News',
-        events: 'Events', 
-        faculty: 'Faculty',
-        research: 'Research',
-        publications: 'Publications',
-        courses: 'Courses',
-        projects: 'Projects',
-        labs: 'Labs',
-        jobs: 'Jobs',
-        alumni: 'Alumni',
-        partners: 'Partners',
-        students: 'Students'
-    };
+        // ╔════════════════════════════════════════════════════════════════════════════╗
+        // ║  GOOGLE SHEET CONFIGURATION - CHANGE THIS TO YOUR SHEET ID                 ║
+        // ╚════════════════════════════════════════════════════════════════════════════╝
+
+        const GOOGLE_SHEET_ID = '1MrgcCLRlEUTGaKUI62GcdmlIRqPPwfETx6AREZzpGKI';
+
+        // Sheet tab names (must match exactly your Google Sheet tab names)
+        const SHEETS = {
+            settings: 'Settings',
+            news: 'News',
+            events: 'Events',
+            faculty: 'Faculty',
+            research: 'Research',
+            publications: 'Publications',
+            courses: 'Courses',
+            projects: 'Projects',
+            labs: 'Labs',
+            jobs: 'Jobs',
+            alumni: 'Alumni',
+            partners: 'Partners',
+            students: 'Students'
+        };
     </script>
 
     <style>
@@ -64,17 +67,21 @@
             --font-display: 'Fraunces', Georgia, serif;
             --font-body: 'DM Sans', system-ui, sans-serif;
             --font-mono: 'JetBrains Mono', monospace;
-            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
-            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
             --radius-sm: 6px;
             --radius-md: 10px;
             --radius-lg: 14px;
             --radius-xl: 20px;
         }
 
-        *, *::before, *::after { box-sizing: border-box; }
-        
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: var(--font-body);
             background: var(--bg-cream);
@@ -88,24 +95,55 @@
             font-size: 14px;
         }
 
-        h1, h2, h3, h4 { 
-            font-family: var(--font-display); 
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: var(--font-display);
             font-weight: 500;
             letter-spacing: -0.02em;
             line-height: 1.25;
         }
-        
-        h1 { font-size: clamp(1.5rem, 4vw, 2rem); }
-        h2 { font-size: clamp(1.1rem, 3vw, 1.4rem); margin-bottom: 1rem; }
-        h3 { font-size: 1rem; }
-        h4 { font-size: 0.9rem; }
 
-        a { color: var(--accent); text-decoration: none; }
-        p { color: var(--text-secondary); margin: 0 0 1rem 0; }
+        h1 {
+            font-size: clamp(1.5rem, 4vw, 2rem);
+        }
 
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: var(--bg-warm); }
-        ::-webkit-scrollbar-thumb { background: var(--border-dark); border-radius: 3px; }
+        h2 {
+            font-size: clamp(1.1rem, 3vw, 1.4rem);
+            margin-bottom: 1rem;
+        }
+
+        h3 {
+            font-size: 1rem;
+        }
+
+        h4 {
+            font-size: 0.9rem;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        p {
+            color: var(--text-secondary);
+            margin: 0 0 1rem 0;
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-warm);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border-dark);
+            border-radius: 3px;
+        }
 
         /* HEADER */
         header {
@@ -123,7 +161,11 @@
             z-index: 100;
         }
 
-        .header-left { display: flex; align-items: center; gap: 0.75rem; }
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
 
         .logo {
             font-family: var(--font-display);
@@ -135,7 +177,7 @@
             gap: 8px;
             cursor: pointer;
         }
-        
+
         .logo-icon {
             width: 32px;
             height: 32px;
@@ -158,9 +200,16 @@
             font-size: 1rem;
         }
 
-        .header-center { flex: 1; max-width: 320px; margin: 0 1.5rem; }
+        .header-center {
+            flex: 1;
+            max-width: 320px;
+            margin: 0 1.5rem;
+        }
 
-        .search-box { position: relative; }
+        .search-box {
+            position: relative;
+        }
+
         .search-box input {
             width: 100%;
             padding: 0.4rem 0.8rem 0.4rem 2rem;
@@ -170,10 +219,27 @@
             font-size: 0.8rem;
             font-family: var(--font-body);
         }
-        .search-box input:focus { outline: none; border-color: var(--accent); background: white; }
-        .search-box i { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 0.75rem; }
 
-        .header-right { display: flex; gap: 0.4rem; align-items: center; }
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: white;
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 0.75rem;
+        }
+
+        .header-right {
+            display: flex;
+            gap: 0.4rem;
+            align-items: center;
+        }
 
         .lang-switcher {
             display: flex;
@@ -192,7 +258,11 @@
             color: var(--text-muted);
             font-family: var(--font-body);
         }
-        .lang-btn.active { background: var(--primary); color: white; }
+
+        .lang-btn.active {
+            background: var(--primary);
+            color: white;
+        }
 
         .header-btn {
             width: 32px;
@@ -208,7 +278,11 @@
             font-size: 0.8rem;
             position: relative;
         }
-        .header-btn:hover { background: white; }
+
+        .header-btn:hover {
+            background: white;
+        }
+
         .header-btn .badge {
             position: absolute;
             top: -3px;
@@ -268,11 +342,32 @@
             margin-bottom: 1px;
             transition: all 0.15s;
         }
-        .nav-item:hover { background: white; color: var(--text-main); border-color: var(--border); }
-        .nav-item.active { background: white; color: var(--accent); border-color: var(--border); font-weight: 600; }
-        .nav-item i { width: 14px; text-align: center; font-size: 0.75rem; }
-        
-        .nav-dot { width: 5px; height: 5px; border-radius: 50%; }
+
+        .nav-item:hover {
+            background: white;
+            color: var(--text-main);
+            border-color: var(--border);
+        }
+
+        .nav-item.active {
+            background: white;
+            color: var(--accent);
+            border-color: var(--border);
+            font-weight: 600;
+        }
+
+        .nav-item i {
+            width: 14px;
+            text-align: center;
+            font-size: 0.75rem;
+        }
+
+        .nav-dot {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+        }
+
         .nav-badge {
             margin-left: auto;
             background: var(--accent);
@@ -282,8 +377,14 @@
             border-radius: 8px;
             font-weight: 700;
         }
-        .nav-badge.green { background: var(--green); }
-        .nav-badge.amber { background: var(--amber); }
+
+        .nav-badge.green {
+            background: var(--green);
+        }
+
+        .nav-badge.amber {
+            background: var(--amber);
+        }
 
         .sidebar-card {
             margin-top: auto;
@@ -293,16 +394,32 @@
             border: 1px solid var(--border);
             font-size: 0.72rem;
         }
-        .sidebar-card-title { font-weight: 600; margin-bottom: 0.3rem; display: flex; align-items: center; gap: 5px; }
-        .sidebar-card-title i { color: var(--amber); }
-        .sidebar-card p { font-size: 0.68rem; color: var(--text-muted); margin: 0 0 0.5rem 0; }
+
+        .sidebar-card-title {
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .sidebar-card-title i {
+            color: var(--amber);
+        }
+
+        .sidebar-card p {
+            font-size: 0.68rem;
+            color: var(--text-muted);
+            margin: 0 0 0.5rem 0;
+        }
 
         /* MAIN */
         main {
             flex: 1;
             overflow-y: auto;
             background: var(--bg-cream);
-            padding-bottom: 72px; /* space for fixed refresh bar */
+            padding-bottom: 72px;
+            /* space for fixed refresh bar */
         }
 
         .page {
@@ -312,13 +429,37 @@
             margin: 0 auto;
             animation: fadeIn 0.3s ease;
         }
-        .page.active { display: block; }
 
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; } }
+        .page.active {
+            display: block;
+        }
 
-        .page-header { margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
-        .page-header h1 { margin: 0 0 0.2rem 0; }
-        .page-header .subtitle { color: var(--text-muted); margin: 0; font-size: 0.9rem; }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(5px);
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .page-header {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .page-header h1 {
+            margin: 0 0 0.2rem 0;
+        }
+
+        .page-header .subtitle {
+            color: var(--text-muted);
+            margin: 0;
+            font-size: 0.9rem;
+        }
 
         /* BUTTONS */
         .btn {
@@ -334,13 +475,40 @@
             font-family: var(--font-body);
             transition: all 0.2s;
         }
-        .btn-primary { background: var(--primary); color: white; }
-        .btn-primary:hover { background: var(--secondary); }
-        .btn-accent { background: var(--accent); color: white; }
-        .btn-ghost { color: var(--text-secondary); background: transparent; border: 1px solid var(--border); }
-        .btn-ghost:hover { background: white; }
-        .btn-sm { padding: 0.35rem 0.6rem; font-size: 0.72rem; }
-        .btn-lg { padding: 0.55rem 1.1rem; font-size: 0.85rem; }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary);
+        }
+
+        .btn-accent {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-ghost {
+            color: var(--text-secondary);
+            background: transparent;
+            border: 1px solid var(--border);
+        }
+
+        .btn-ghost:hover {
+            background: white;
+        }
+
+        .btn-sm {
+            padding: 0.35rem 0.6rem;
+            font-size: 0.72rem;
+        }
+
+        .btn-lg {
+            padding: 0.55rem 1.1rem;
+            font-size: 0.85rem;
+        }
 
         /* HERO */
         .hero {
@@ -352,19 +520,50 @@
             position: relative;
             overflow: hidden;
         }
+
         .hero::before {
             content: '';
             position: absolute;
             inset: 0;
             background: radial-gradient(ellipse at 15% 85%, rgba(99, 102, 241, 0.35), transparent 45%),
-                        radial-gradient(ellipse at 85% 15%, rgba(16, 185, 129, 0.25), transparent 45%);
+                radial-gradient(ellipse at 85% 15%, rgba(16, 185, 129, 0.25), transparent 45%);
         }
-        .hero-content { position: relative; z-index: 1; max-width: 580px; }
-        .hero h1 { color: white; margin: 0 0 0.5rem 0; font-weight: 400; font-style: italic; font-size: clamp(1.3rem, 4vw, 1.8rem); }
-        .hero p { color: rgba(255,255,255,0.85); margin: 0 0 1.25rem 0; font-size: 0.88rem; }
-        .hero-actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-        .hero .btn-primary { background: white; color: var(--primary); }
-        .hero .btn-ghost { border-color: rgba(255,255,255,0.35); color: white; }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 580px;
+        }
+
+        .hero h1 {
+            color: white;
+            margin: 0 0 0.5rem 0;
+            font-weight: 400;
+            font-style: italic;
+            font-size: clamp(1.3rem, 4vw, 1.8rem);
+        }
+
+        .hero p {
+            color: rgba(255, 255, 255, 0.85);
+            margin: 0 0 1.25rem 0;
+            font-size: 0.88rem;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .hero .btn-primary {
+            background: white;
+            color: var(--primary);
+        }
+
+        .hero .btn-ghost {
+            border-color: rgba(255, 255, 255, 0.35);
+            color: white;
+        }
 
         /* STATS */
         .stats-grid {
@@ -373,6 +572,7 @@
             gap: 0.6rem;
             margin-bottom: 1.5rem;
         }
+
         .stat-card {
             background: white;
             padding: 0.85rem;
@@ -381,7 +581,12 @@
             border: 1px solid var(--border);
             transition: all 0.2s;
         }
-        .stat-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+
+        .stat-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
         .stat-value {
             font-family: var(--font-display);
             font-size: 1.35rem;
@@ -390,11 +595,24 @@
             display: block;
             line-height: 1;
         }
-        .stat-label { font-size: 0.62rem; color: var(--text-muted); text-transform: uppercase; margin-top: 0.25rem; }
+
+        .stat-label {
+            font-size: 0.62rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-top: 0.25rem;
+        }
 
         /* CARDS */
-        .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 1rem; }
-        .card-grid-sm { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+            gap: 1rem;
+        }
+
+        .card-grid-sm {
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        }
 
         .card {
             background: white;
@@ -403,8 +621,16 @@
             border: 1px solid var(--border);
             transition: all 0.2s;
         }
-        .card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); border-color: var(--accent); }
-        .card-clickable { cursor: pointer; }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent);
+        }
+
+        .card-clickable {
+            cursor: pointer;
+        }
 
         .card-img {
             height: 130px;
@@ -412,13 +638,39 @@
             background-position: center;
             position: relative;
         }
-        .card-img-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.5), transparent 60%); }
-        .card-img-badge { position: absolute; top: 8px; left: 8px; }
 
-        .card-body { padding: 0.9rem; }
-        .card-body h3 { margin: 0 0 0.3rem 0; font-size: 0.92rem; }
-        .card-body h4 { margin: 0 0 0.2rem 0; font-size: 0.85rem; }
-        .card-body p { color: var(--text-muted); margin: 0; font-size: 0.78rem; line-height: 1.4; }
+        .card-img-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent 60%);
+        }
+
+        .card-img-badge {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+        }
+
+        .card-body {
+            padding: 0.9rem;
+        }
+
+        .card-body h3 {
+            margin: 0 0 0.3rem 0;
+            font-size: 0.92rem;
+        }
+
+        .card-body h4 {
+            margin: 0 0 0.2rem 0;
+            font-size: 0.85rem;
+        }
+
+        .card-body p {
+            color: var(--text-muted);
+            margin: 0;
+            font-size: 0.78rem;
+            line-height: 1.4;
+        }
 
         .card-footer {
             padding: 0.7rem 0.9rem;
@@ -429,7 +681,11 @@
             align-items: center;
             color: var(--text-muted);
         }
-        .card-footer-link { color: var(--accent); font-weight: 600; }
+
+        .card-footer-link {
+            color: var(--accent);
+            font-weight: 600;
+        }
 
         /* COMPACT CARD */
         .card-compact {
@@ -443,7 +699,11 @@
             transition: all 0.2s;
             margin-bottom: 0.5rem;
         }
-        .card-compact:hover { border-color: var(--accent); }
+
+        .card-compact:hover {
+            border-color: var(--accent);
+        }
+
         .card-compact-icon {
             width: 38px;
             height: 38px;
@@ -454,9 +714,22 @@
             font-size: 0.95rem;
             flex-shrink: 0;
         }
-        .card-compact-content { flex: 1; min-width: 0; }
-        .card-compact-content h4 { margin: 0 0 0.1rem 0; font-size: 0.82rem; }
-        .card-compact-content p { margin: 0; font-size: 0.72rem; color: var(--text-muted); }
+
+        .card-compact-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .card-compact-content h4 {
+            margin: 0 0 0.1rem 0;
+            font-size: 0.82rem;
+        }
+
+        .card-compact-content p {
+            margin: 0;
+            font-size: 0.72rem;
+            color: var(--text-muted);
+        }
 
         /* TAGS */
         .tag {
@@ -469,21 +742,68 @@
             font-weight: 600;
             text-transform: uppercase;
         }
-        .tag-accent { background: var(--accent-light); color: var(--accent); }
-        .tag-green { background: var(--green-light); color: var(--green); }
-        .tag-amber { background: var(--amber-light); color: var(--amber); }
-        .tag-pink { background: var(--pink-light); color: var(--pink); }
-        .tag-purple { background: var(--purple-light); color: var(--purple); }
-        .tag-red { background: var(--red-light); color: var(--red); }
-        .tag-cyan { background: var(--cyan-light); color: var(--cyan); }
+
+        .tag-accent {
+            background: var(--accent-light);
+            color: var(--accent);
+        }
+
+        .tag-green {
+            background: var(--green-light);
+            color: var(--green);
+        }
+
+        .tag-amber {
+            background: var(--amber-light);
+            color: var(--amber);
+        }
+
+        .tag-pink {
+            background: var(--pink-light);
+            color: var(--pink);
+        }
+
+        .tag-purple {
+            background: var(--purple-light);
+            color: var(--purple);
+        }
+
+        .tag-red {
+            background: var(--red-light);
+            color: var(--red);
+        }
+
+        .tag-cyan {
+            background: var(--cyan-light);
+            color: var(--cyan);
+        }
 
         /* SECTION */
-        .section { margin-bottom: 2rem; }
-        .section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem; }
-        .section-header h2 { margin: 0; }
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .section-header h2 {
+            margin: 0;
+        }
 
         /* QUICK LINKS */
-        .quick-links { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 0.5rem; margin-bottom: 1.5rem; }
+        .quick-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
         .quick-link {
             background: white;
             border: 1px solid var(--border);
@@ -493,12 +813,31 @@
             cursor: pointer;
             transition: all 0.2s;
         }
-        .quick-link:hover { border-color: var(--accent); transform: translateY(-2px); }
-        .quick-link i { font-size: 1rem; color: var(--accent); margin-bottom: 0.25rem; display: block; }
-        .quick-link span { font-size: 0.72rem; font-weight: 500; }
+
+        .quick-link:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .quick-link i {
+            font-size: 1rem;
+            color: var(--accent);
+            margin-bottom: 0.25rem;
+            display: block;
+        }
+
+        .quick-link span {
+            font-size: 0.72rem;
+            font-weight: 500;
+        }
 
         /* FACULTY */
-        .faculty-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 0.75rem; }
+        .faculty-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+            gap: 0.75rem;
+        }
+
         .faculty-card {
             background: white;
             border: 1px solid var(--border);
@@ -508,14 +847,50 @@
             cursor: pointer;
             transition: all 0.2s;
         }
-        .faculty-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); border-color: var(--accent); }
-        .faculty-avatar { width: 60px; height: 60px; border-radius: 50%; margin: 0 auto 0.5rem; object-fit: cover; border: 3px solid var(--bg-warm); }
-        .faculty-name { font-family: var(--font-display); font-size: 0.85rem; margin: 0 0 0.1rem 0; }
-        .faculty-title { color: var(--text-muted); font-size: 0.68rem; margin: 0 0 0.35rem 0; }
-        .faculty-field { font-size: 0.65rem; color: var(--accent); font-weight: 500; }
-        .faculty-links { display: flex; justify-content: center; gap: 0.25rem; margin-top: 0.5rem; }
+
+        .faculty-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent);
+        }
+
+        .faculty-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin: 0 auto 0.5rem;
+            object-fit: cover;
+            border: 3px solid var(--bg-warm);
+        }
+
+        .faculty-name {
+            font-family: var(--font-display);
+            font-size: 0.85rem;
+            margin: 0 0 0.1rem 0;
+        }
+
+        .faculty-title {
+            color: var(--text-muted);
+            font-size: 0.68rem;
+            margin: 0 0 0.35rem 0;
+        }
+
+        .faculty-field {
+            font-size: 0.65rem;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .faculty-links {
+            display: flex;
+            justify-content: center;
+            gap: 0.25rem;
+            margin-top: 0.5rem;
+        }
+
         .faculty-links a {
-            width: 22px; height: 22px;
+            width: 22px;
+            height: 22px;
             border-radius: 50%;
             background: var(--bg-warm);
             display: flex;
@@ -525,7 +900,11 @@
             font-size: 0.6rem;
             transition: all 0.2s;
         }
-        .faculty-links a:hover { background: var(--accent); color: white; }
+
+        .faculty-links a:hover {
+            background: var(--accent);
+            color: white;
+        }
 
         /* PROJECT CARDS */
         .project-card {
@@ -536,8 +915,20 @@
             transition: all 0.2s;
             cursor: pointer;
         }
-        .project-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); border-color: var(--purple); }
-        .project-img { height: 120px; background-size: cover; background-position: center; position: relative; }
+
+        .project-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--purple);
+        }
+
+        .project-img {
+            height: 120px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
         .project-year {
             position: absolute;
             top: 8px;
@@ -549,14 +940,48 @@
             font-size: 0.62rem;
             font-weight: 700;
         }
-        .project-body { padding: 0.85rem; }
-        .project-body h4 { margin: 0 0 0.25rem 0; font-size: 0.85rem; }
-        .project-body p { margin: 0 0 0.6rem 0; color: var(--text-muted); font-size: 0.72rem; }
-        .project-team { display: flex; align-items: center; gap: 0.4rem; }
-        .project-avatars { display: flex; }
-        .project-avatars img { width: 22px; height: 22px; border-radius: 50%; border: 2px solid white; margin-left: -5px; }
-        .project-avatars img:first-child { margin-left: 0; }
-        .project-names { font-size: 0.68rem; color: var(--text-muted); }
+
+        .project-body {
+            padding: 0.85rem;
+        }
+
+        .project-body h4 {
+            margin: 0 0 0.25rem 0;
+            font-size: 0.85rem;
+        }
+
+        .project-body p {
+            margin: 0 0 0.6rem 0;
+            color: var(--text-muted);
+            font-size: 0.72rem;
+        }
+
+        .project-team {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .project-avatars {
+            display: flex;
+        }
+
+        .project-avatars img {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            border: 2px solid white;
+            margin-left: -5px;
+        }
+
+        .project-avatars img:first-child {
+            margin-left: 0;
+        }
+
+        .project-names {
+            font-size: 0.68rem;
+            color: var(--text-muted);
+        }
 
         /* NEWS */
         .news-card {
@@ -566,8 +991,20 @@
             overflow: hidden;
             transition: all 0.2s;
         }
-        .news-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); border-color: var(--amber); }
-        .news-img { height: 130px; background-size: cover; background-position: center; position: relative; }
+
+        .news-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--amber);
+        }
+
+        .news-img {
+            height: 130px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
         .news-date {
             position: absolute;
             top: 8px;
@@ -580,11 +1017,31 @@
             font-weight: 700;
             line-height: 1.1;
         }
-        .news-date .day { font-size: 1rem; display: block; }
-        .news-date .month { font-size: 0.55rem; text-transform: uppercase; }
-        .news-body { padding: 0.85rem; }
-        .news-body h4 { margin: 0 0 0.25rem 0; font-size: 0.85rem; }
-        .news-body p { margin: 0; font-size: 0.75rem; color: var(--text-muted); }
+
+        .news-date .day {
+            font-size: 1rem;
+            display: block;
+        }
+
+        .news-date .month {
+            font-size: 0.55rem;
+            text-transform: uppercase;
+        }
+
+        .news-body {
+            padding: 0.85rem;
+        }
+
+        .news-body h4 {
+            margin: 0 0 0.25rem 0;
+            font-size: 0.85rem;
+        }
+
+        .news-body p {
+            margin: 0;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
 
         /* PUBLICATIONS */
         .pub-item {
@@ -595,11 +1052,37 @@
             margin-bottom: 0.6rem;
             transition: all 0.2s;
         }
-        .pub-item:hover { border-color: var(--accent); }
-        .pub-title { font-weight: 600; margin-bottom: 0.25rem; line-height: 1.35; font-size: 0.85rem; }
-        .pub-authors { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.3rem; }
-        .pub-meta { display: flex; flex-wrap: wrap; gap: 0.75rem; font-size: 0.7rem; color: var(--text-muted); }
-        .pub-meta span { display: flex; align-items: center; gap: 0.25rem; }
+
+        .pub-item:hover {
+            border-color: var(--accent);
+        }
+
+        .pub-title {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            line-height: 1.35;
+            font-size: 0.85rem;
+        }
+
+        .pub-authors {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-bottom: 0.3rem;
+        }
+
+        .pub-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+
+        .pub-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
 
         /* RESEARCH */
         .research-card {
@@ -610,10 +1093,21 @@
             margin-bottom: 0.85rem;
             transition: all 0.2s;
         }
-        .research-card:hover { border-color: var(--accent); }
-        .research-header { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 0.6rem; }
+
+        .research-card:hover {
+            border-color: var(--accent);
+        }
+
+        .research-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 0.6rem;
+        }
+
         .research-icon {
-            width: 38px; height: 38px;
+            width: 38px;
+            height: 38px;
             border-radius: var(--radius-sm);
             display: flex;
             align-items: center;
@@ -622,10 +1116,31 @@
             color: white;
             flex-shrink: 0;
         }
-        .research-info h3 { margin: 0 0 0.1rem 0; font-size: 0.92rem; }
-        .research-info p { margin: 0; font-size: 0.78rem; color: var(--text-muted); }
-        .research-desc { font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.45; }
-        .research-members { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+
+        .research-info h3 {
+            margin: 0 0 0.1rem 0;
+            font-size: 0.92rem;
+        }
+
+        .research-info p {
+            margin: 0;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        .research-desc {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+            line-height: 1.45;
+        }
+
+        .research-members {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.3rem;
+        }
+
         .research-member {
             display: flex;
             align-items: center;
@@ -635,10 +1150,19 @@
             border-radius: 20px;
             font-size: 0.68rem;
         }
-        .research-member img { width: 16px; height: 16px; border-radius: 50%; }
+
+        .research-member img {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+        }
 
         /* TIMELINE */
-        .timeline { position: relative; padding-left: 1.4rem; }
+        .timeline {
+            position: relative;
+            padding-left: 1.4rem;
+        }
+
         .timeline::before {
             content: '';
             position: absolute;
@@ -648,7 +1172,12 @@
             width: 2px;
             background: var(--border);
         }
-        .timeline-item { position: relative; padding-bottom: 0.9rem; }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 0.9rem;
+        }
+
         .timeline-item::before {
             content: '';
             position: absolute;
@@ -661,7 +1190,14 @@
             border: 2px solid white;
             box-shadow: 0 0 0 2px var(--accent-light);
         }
-        .timeline-date { font-size: 0.65rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; }
+
+        .timeline-date {
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
         .timeline-card {
             background: white;
             border: 1px solid var(--border);
@@ -669,11 +1205,28 @@
             padding: 0.7rem;
             margin-top: 0.3rem;
         }
-        .timeline-card h4 { margin: 0.2rem 0; font-size: 0.82rem; }
-        .timeline-card p { margin: 0; font-size: 0.75rem; color: var(--text-muted); }
+
+        .timeline-card h4 {
+            margin: 0.2rem 0;
+            font-size: 0.82rem;
+        }
+
+        .timeline-card p {
+            margin: 0;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
 
         /* TABS */
-        .tabs { display: flex; gap: 0.25rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.6rem; flex-wrap: wrap; }
+        .tabs {
+            display: flex;
+            gap: 0.25rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.6rem;
+            flex-wrap: wrap;
+        }
+
         .tab {
             padding: 0.38rem 0.7rem;
             border: 1px solid var(--border);
@@ -685,8 +1238,16 @@
             font-family: var(--font-body);
             color: var(--text-muted);
         }
-        .tab.active { background: var(--primary); color: white; border-color: var(--primary); }
-        .tab:hover:not(.active) { background: var(--bg-warm); }
+
+        .tab.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .tab:hover:not(.active) {
+            background: var(--bg-warm);
+        }
 
         /* TABLE */
         .table-wrapper {
@@ -695,13 +1256,20 @@
             border-radius: var(--radius-md);
             background: white;
         }
-        .data-table { width: 100%; border-collapse: collapse; }
-        .data-table th, .data-table td {
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .data-table th,
+        .data-table td {
             padding: 0.65rem 0.8rem;
             text-align: left;
             border-bottom: 1px solid var(--border);
             font-size: 0.78rem;
         }
+
         .data-table th {
             background: var(--bg-warm);
             font-size: 0.62rem;
@@ -709,13 +1277,32 @@
             font-weight: 600;
             color: var(--text-muted);
         }
-        .data-table tr:last-child td { border-bottom: none; }
-        .data-table tr:hover td { background: var(--bg-cream); }
+
+        .data-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .data-table tr:hover td {
+            background: var(--bg-cream);
+        }
 
         /* STATUS */
-        .status { padding: 2px 6px; border-radius: 20px; font-size: 0.62rem; font-weight: 600; }
-        .status-active { background: var(--green-light); color: var(--green); }
-        .status-pending { background: var(--amber-light); color: var(--amber); }
+        .status {
+            padding: 2px 6px;
+            border-radius: 20px;
+            font-size: 0.62rem;
+            font-weight: 600;
+        }
+
+        .status-active {
+            background: var(--green-light);
+            color: var(--green);
+        }
+
+        .status-pending {
+            background: var(--amber-light);
+            color: var(--amber);
+        }
 
         /* COURSE */
         .course-item {
@@ -729,9 +1316,14 @@
             margin-bottom: 0.5rem;
             transition: all 0.2s;
         }
-        .course-item:hover { border-color: var(--accent); }
+
+        .course-item:hover {
+            border-color: var(--accent);
+        }
+
         .course-icon {
-            width: 36px; height: 36px;
+            width: 36px;
+            height: 36px;
             border-radius: var(--radius-sm);
             display: flex;
             align-items: center;
@@ -739,9 +1331,21 @@
             font-size: 0.88rem;
             flex-shrink: 0;
         }
-        .course-info { flex: 1; }
-        .course-info h4 { margin: 0 0 0.1rem 0; font-size: 0.82rem; }
-        .course-info p { margin: 0; color: var(--text-muted); font-size: 0.7rem; }
+
+        .course-info {
+            flex: 1;
+        }
+
+        .course-info h4 {
+            margin: 0 0 0.1rem 0;
+            font-size: 0.82rem;
+        }
+
+        .course-info p {
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 0.7rem;
+        }
 
         /* PARTNERS */
         .partners-row {
@@ -755,8 +1359,18 @@
             border-radius: var(--radius-lg);
             border: 1px solid var(--border);
         }
-        .partner-logo { height: 24px; opacity: 0.5; filter: grayscale(100%); transition: all 0.2s; }
-        .partner-logo:hover { opacity: 1; filter: grayscale(0%); }
+
+        .partner-logo {
+            height: 24px;
+            opacity: 0.5;
+            filter: grayscale(100%);
+            transition: all 0.2s;
+        }
+
+        .partner-logo:hover {
+            opacity: 1;
+            filter: grayscale(0%);
+        }
 
         /* ALERTS */
         .alert {
@@ -768,10 +1382,29 @@
             gap: 0.6rem;
             font-size: 0.8rem;
         }
-        .alert i { font-size: 0.85rem; margin-top: 0.05rem; }
-        .alert-info { background: var(--accent-light); color: var(--accent); border: 1px solid rgba(99,102,241,0.2); }
-        .alert-success { background: var(--green-light); color: #047857; border: 1px solid rgba(16,185,129,0.2); }
-        .alert-warning { background: var(--amber-light); color: #b45309; border: 1px solid rgba(245,158,11,0.2); }
+
+        .alert i {
+            font-size: 0.85rem;
+            margin-top: 0.05rem;
+        }
+
+        .alert-info {
+            background: var(--accent-light);
+            color: var(--accent);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+        }
+
+        .alert-success {
+            background: var(--green-light);
+            color: #047857;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .alert-warning {
+            background: var(--amber-light);
+            color: #b45309;
+            border: 1px solid rgba(245, 158, 11, 0.2);
+        }
 
         /* LOADING */
         .loading {
@@ -781,8 +1414,21 @@
             padding: 2rem;
             color: var(--text-muted);
         }
-        .loading i { margin-right: 0.5rem; animation: spin 1s linear infinite; }
-        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+        .loading i {
+            margin-right: 0.5rem;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
 
         .skeleton {
             background: linear-gradient(90deg, var(--bg-warm) 25%, var(--border) 50%, var(--bg-warm) 75%);
@@ -790,14 +1436,29 @@
             animation: shimmer 1.5s infinite;
             border-radius: var(--radius-sm);
         }
-        @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+
+        @keyframes shimmer {
+            0% {
+                background-position: 200% 0;
+            }
+
+            100% {
+                background-position: -200% 0;
+            }
+        }
 
         /* TWO COLS */
-        .two-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+        .two-cols {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+        }
 
         /* RESPONSIVE */
         @media (max-width: 1024px) {
-            .two-cols { grid-template-columns: 1fr; }
+            .two-cols {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 768px) {
@@ -810,23 +1471,51 @@
                 width: 260px;
                 transition: left 0.3s ease;
             }
-            aside.open { left: 0; }
+
+            aside.open {
+                left: 0;
+            }
+
             .sidebar-overlay {
                 display: none;
                 position: fixed;
                 inset: 0;
-                background: rgba(0,0,0,0.4);
+                background: rgba(0, 0, 0, 0.4);
                 z-index: 85;
                 top: var(--header-height);
             }
-            .sidebar-overlay.show { display: block; }
-            .mobile-menu-btn { display: block; }
-            .header-center { display: none; }
-            .page { padding: 1rem; }
-            .hero { padding: 1.5rem 1.25rem; }
-            .hero-actions { flex-direction: column; }
-            .card-grid { grid-template-columns: 1fr; }
-            .faculty-grid { grid-template-columns: repeat(2, 1fr); }
+
+            .sidebar-overlay.show {
+                display: block;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .header-center {
+                display: none;
+            }
+
+            .page {
+                padding: 1rem;
+            }
+
+            .hero {
+                padding: 1.5rem 1.25rem;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .faculty-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         /* ─────────────────────────────────────────────────────────────
@@ -891,22 +1580,56 @@
         }
 
         @media (max-width: 768px) {
-            .refresh-inner { flex-direction: column; align-items: stretch; }
-            .refresh-actions { justify-content: space-between; }
+            .refresh-inner {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .refresh-actions {
+                justify-content: space-between;
+            }
         }
 
         /* LANGUAGE */
-        [data-en], [data-tr] { display: none; }
-        html[lang="en"] [data-en] { display: inline; }
-        html[lang="en"] [data-en].block { display: block; }
-        html[lang="en"] [data-en].flex { display: flex; }
-        html[lang="en"] [data-en].grid { display: grid; }
-        html[lang="tr"] [data-tr] { display: inline; }
-        html[lang="tr"] [data-tr].block { display: block; }
-        html[lang="tr"] [data-tr].flex { display: flex; }
-        html[lang="tr"] [data-tr].grid { display: grid; }
+        [data-en],
+        [data-tr] {
+            display: none;
+        }
+
+        html[lang="en"] [data-en] {
+            display: inline;
+        }
+
+        html[lang="en"] [data-en].block {
+            display: block;
+        }
+
+        html[lang="en"] [data-en].flex {
+            display: flex;
+        }
+
+        html[lang="en"] [data-en].grid {
+            display: grid;
+        }
+
+        html[lang="tr"] [data-tr] {
+            display: inline;
+        }
+
+        html[lang="tr"] [data-tr].block {
+            display: block;
+        }
+
+        html[lang="tr"] [data-tr].flex {
+            display: flex;
+        }
+
+        html[lang="tr"] [data-tr].grid {
+            display: grid;
+        }
     </style>
 </head>
+
 <body>
 
     <header>
@@ -928,7 +1651,8 @@
                 <button class="lang-btn active" onclick="setLang('en')">EN</button>
                 <button class="lang-btn" onclick="setLang('tr')">TR</button>
             </div>
-            <button class="header-btn"><i class="fa-solid fa-bell"></i><span class="badge" id="notifBadge">0</span></button>
+            <button class="header-btn"><i class="fa-solid fa-bell"></i><span class="badge"
+                    id="notifBadge">0</span></button>
         </div>
     </header>
 
@@ -938,37 +1662,63 @@
         <aside id="sidebar">
             <div class="nav-section">
                 <div class="nav-section-title">Overview</div>
-                <a class="nav-item active" data-page="home" onclick="goTo('home', this)"><i class="fa-solid fa-house"></i> <span data-en>Home</span><span data-tr>Ana Sayfa</span></a>
-                <a class="nav-item" data-page="about" onclick="goTo('about', this)"><i class="fa-solid fa-landmark"></i> <span data-en>About</span><span data-tr>Hakkında</span></a>
-                <a class="nav-item" data-page="news" onclick="goTo('news', this)"><div class="nav-dot" style="background:var(--amber);"></div> <span data-en>News</span><span data-tr>Haberler</span> <span class="nav-badge amber" id="newsBadge">0</span></a>
+                <a class="nav-item active" data-page="home" onclick="goTo('home', this)"><i
+                        class="fa-solid fa-house"></i> <span data-en>Home</span><span data-tr>Ana Sayfa</span></a>
+                <a class="nav-item" data-page="about" onclick="goTo('about', this)"><i class="fa-solid fa-landmark"></i>
+                    <span data-en>About</span><span data-tr>Hakkında</span></a>
+                <a class="nav-item" data-page="news" onclick="goTo('news', this)">
+                    <div class="nav-dot" style="background:var(--amber);"></div> <span data-en>News</span><span
+                        data-tr>Haberler</span> <span class="nav-badge amber" id="newsBadge">0</span>
+                </a>
             </div>
             <div class="nav-section">
                 <div class="nav-section-title">Research</div>
-                <a class="nav-item" data-page="research" onclick="goTo('research', this)"><i class="fa-solid fa-flask"></i> <span data-en>Research</span><span data-tr>Araştırma</span></a>
-                <a class="nav-item" data-page="publications" onclick="goTo('publications', this)"><i class="fa-solid fa-book"></i> <span data-en>Publications</span><span data-tr>Yayınlar</span></a>
-                <a class="nav-item" data-page="labs" onclick="goTo('labs', this)"><div class="nav-dot" style="background:var(--green);"></div> <span data-en>Labs</span><span data-tr>Lablar</span></a>
+                <a class="nav-item" data-page="research" onclick="goTo('research', this)"><i
+                        class="fa-solid fa-flask"></i> <span data-en>Research</span><span data-tr>Araştırma</span></a>
+                <a class="nav-item" data-page="publications" onclick="goTo('publications', this)"><i
+                        class="fa-solid fa-book"></i> <span data-en>Publications</span><span data-tr>Yayınlar</span></a>
+                <a class="nav-item" data-page="labs" onclick="goTo('labs', this)">
+                    <div class="nav-dot" style="background:var(--green);"></div> <span data-en>Labs</span><span
+                        data-tr>Lablar</span>
+                </a>
             </div>
             <div class="nav-section">
                 <div class="nav-section-title">People</div>
-                <a class="nav-item" data-page="faculty" onclick="goTo('faculty', this)"><i class="fa-solid fa-users"></i> <span data-en>Faculty</span><span data-tr>Akademisyenler</span></a>
-                <a class="nav-item" data-page="students" onclick="goTo('students', this)"><i class="fa-solid fa-user-graduate"></i> <span data-en>Students</span><span data-tr>Öğrenciler</span></a>
-                <a class="nav-item" data-page="alumni" onclick="goTo('alumni', this)"><i class="fa-solid fa-medal"></i> <span data-en>Alumni</span><span data-tr>Mezunlar</span></a>
+                <a class="nav-item" data-page="faculty" onclick="goTo('faculty', this)"><i
+                        class="fa-solid fa-users"></i> <span data-en>Faculty</span><span
+                        data-tr>Akademisyenler</span></a>
+                <a class="nav-item" data-page="students" onclick="goTo('students', this)"><i
+                        class="fa-solid fa-user-graduate"></i> <span data-en>Students</span><span
+                        data-tr>Öğrenciler</span></a>
+                <a class="nav-item" data-page="alumni" onclick="goTo('alumni', this)"><i class="fa-solid fa-medal"></i>
+                    <span data-en>Alumni</span><span data-tr>Mezunlar</span></a>
             </div>
             <div class="nav-section">
                 <div class="nav-section-title">Academics</div>
-                <a class="nav-item" data-page="projects" onclick="goTo('projects', this)"><div class="nav-dot" style="background:var(--purple);"></div> <span data-en>Projects</span><span data-tr>Projeler</span></a>
-                <a class="nav-item" data-page="courses" onclick="goTo('courses', this)"><i class="fa-solid fa-book-open"></i> <span data-en>Courses</span><span data-tr>Dersler</span></a>
+                <a class="nav-item" data-page="projects" onclick="goTo('projects', this)">
+                    <div class="nav-dot" style="background:var(--purple);"></div> <span data-en>Projects</span><span
+                        data-tr>Projeler</span>
+                </a>
+                <a class="nav-item" data-page="courses" onclick="goTo('courses', this)"><i
+                        class="fa-solid fa-book-open"></i> <span data-en>Courses</span><span data-tr>Dersler</span></a>
             </div>
             <div class="nav-section">
                 <div class="nav-section-title">Resources</div>
-                <a class="nav-item" data-page="jobs" onclick="goTo('jobs', this)"><i class="fa-solid fa-briefcase"></i> <span data-en>Jobs</span><span data-tr>İş</span> <span class="nav-badge green" id="jobsBadge">0</span></a>
-                <a class="nav-item" data-page="partners" onclick="goTo('partners', this)"><i class="fa-solid fa-handshake"></i> <span data-en>Partners</span><span data-tr>Ortaklar</span></a>
-                <a class="nav-item" data-page="contact" onclick="goTo('contact', this)"><i class="fa-solid fa-envelope"></i> <span data-en>Contact</span><span data-tr>İletişim</span></a>
+                <a class="nav-item" data-page="jobs" onclick="goTo('jobs', this)"><i class="fa-solid fa-briefcase"></i>
+                    <span data-en>Jobs</span><span data-tr>İş</span> <span class="nav-badge green"
+                        id="jobsBadge">0</span></a>
+                <a class="nav-item" data-page="partners" onclick="goTo('partners', this)"><i
+                        class="fa-solid fa-handshake"></i> <span data-en>Partners</span><span
+                        data-tr>Ortaklar</span></a>
+                <a class="nav-item" data-page="contact" onclick="goTo('contact', this)"><i
+                        class="fa-solid fa-envelope"></i> <span data-en>Contact</span><span data-tr>İletişim</span></a>
             </div>
             <div class="sidebar-card" id="nextEventCard">
-                <div class="sidebar-card-title"><i class="fa-solid fa-calendar-day"></i> <span data-en>Next Event</span><span data-tr>Etkinlik</span></div>
+                <div class="sidebar-card-title"><i class="fa-solid fa-calendar-day"></i> <span data-en>Next
+                        Event</span><span data-tr>Etkinlik</span></div>
                 <p id="nextEventText">Loading...</p>
-                <button class="btn btn-sm btn-ghost" style="width:100%;" onclick="goTo('news')"><span data-en>View Calendar</span><span data-tr>Takvim</span></button>
+                <button class="btn btn-sm btn-ghost" style="width:100%;" onclick="goTo('news')"><span data-en>View
+                        Calendar</span><span data-tr>Takvim</span></button>
             </div>
         </aside>
 
@@ -981,9 +1731,14 @@
                         <h1 id="heroTitle">Loading...</h1>
                         <p id="heroSubtitle">Loading department information...</p>
                         <div class="hero-actions">
-                            <button class="btn btn-primary btn-lg" onclick="goTo('research')"><i class="fa-solid fa-flask"></i> <span data-en>Research</span><span data-tr>Araştırma</span></button>
-                            <button class="btn btn-primary btn-lg" onclick="goTo('projects')"><i class="fa-solid fa-rocket"></i> <span data-en>Projects</span><span data-tr>Projeler</span></button>
-                            <button class="btn btn-ghost btn-lg"><i class="fa-solid fa-play"></i> <span data-en>Video</span><span data-tr>Video</span></button>
+                            <button class="btn btn-primary btn-lg" onclick="goTo('research')"><i
+                                    class="fa-solid fa-flask"></i> <span data-en>Research</span><span
+                                    data-tr>Araştırma</span></button>
+                            <button class="btn btn-primary btn-lg" onclick="goTo('projects')"><i
+                                    class="fa-solid fa-rocket"></i> <span data-en>Projects</span><span
+                                    data-tr>Projeler</span></button>
+                            <button class="btn btn-ghost btn-lg"><i class="fa-solid fa-play"></i> <span
+                                    data-en>Video</span><span data-tr>Video</span></button>
                         </div>
                     </div>
                 </div>
@@ -998,18 +1753,25 @@
                 </div>
 
                 <div class="quick-links" id="quickLinks">
-                    <a class="quick-link" onclick="goTo('projects')"><i class="fa-solid fa-lightbulb"></i><span data-en>Capstone</span><span data-tr>Bitirme</span></a>
-                    <a class="quick-link" onclick="goTo('courses')"><i class="fa-solid fa-calendar-check"></i><span data-en>Courses</span><span data-tr>Dersler</span></a>
-                    <a class="quick-link" onclick="goTo('labs')"><i class="fa-solid fa-flask-vial"></i><span data-en>Labs</span><span data-tr>Lablar</span></a>
-                    <a class="quick-link" onclick="goTo('news')"><i class="fa-solid fa-video"></i><span data-en>Seminars</span><span data-tr>Seminerler</span></a>
-                    <a class="quick-link" onclick="goTo('jobs')"><i class="fa-solid fa-briefcase"></i><span data-en>Jobs</span><span data-tr>İşler</span></a>
-                    <a class="quick-link" onclick="goTo('contact')"><i class="fa-solid fa-file-arrow-down"></i><span data-en>Contact</span><span data-tr>İletişim</span></a>
+                    <a class="quick-link" onclick="goTo('projects')"><i class="fa-solid fa-lightbulb"></i><span
+                            data-en>Capstone</span><span data-tr>Bitirme</span></a>
+                    <a class="quick-link" onclick="goTo('courses')"><i class="fa-solid fa-calendar-check"></i><span
+                            data-en>Courses</span><span data-tr>Dersler</span></a>
+                    <a class="quick-link" onclick="goTo('labs')"><i class="fa-solid fa-flask-vial"></i><span
+                            data-en>Labs</span><span data-tr>Lablar</span></a>
+                    <a class="quick-link" onclick="goTo('news')"><i class="fa-solid fa-video"></i><span
+                            data-en>Seminars</span><span data-tr>Seminerler</span></a>
+                    <a class="quick-link" onclick="goTo('jobs')"><i class="fa-solid fa-briefcase"></i><span
+                            data-en>Jobs</span><span data-tr>İşler</span></a>
+                    <a class="quick-link" onclick="goTo('contact')"><i class="fa-solid fa-file-arrow-down"></i><span
+                            data-en>Contact</span><span data-tr>İletişim</span></a>
                 </div>
 
                 <section class="section">
                     <div class="section-header">
                         <h2><span data-en>Featured Research</span><span data-tr>Öne Çıkan Araştırma</span></h2>
-                        <button class="btn btn-ghost btn-sm" onclick="goTo('research')"><span data-en>View All</span><span data-tr>Tümü</span> →</button>
+                        <button class="btn btn-ghost btn-sm" onclick="goTo('research')"><span data-en>View
+                                All</span><span data-tr>Tümü</span> →</button>
                     </div>
                     <div class="card-grid" id="featuredResearch">
                         <div class="card skeleton" style="height:260px;"></div>
@@ -1021,7 +1783,8 @@
                 <section class="section">
                     <div class="section-header">
                         <h2><span data-en>Student Projects</span><span data-tr>Öğrenci Projeleri</span></h2>
-                        <button class="btn btn-ghost btn-sm" onclick="goTo('projects')"><span data-en>All Projects</span><span data-tr>Tüm Projeler</span> →</button>
+                        <button class="btn btn-ghost btn-sm" onclick="goTo('projects')"><span data-en>All
+                                Projects</span><span data-tr>Tüm Projeler</span> →</button>
                     </div>
                     <div class="card-grid card-grid-sm" id="featuredProjects">
                         <div class="project-card skeleton" style="height:220px;"></div>
@@ -1034,7 +1797,8 @@
                 <section class="section">
                     <div class="section-header">
                         <h2><span data-en>Latest News</span><span data-tr>Son Haberler</span></h2>
-                        <button class="btn btn-ghost btn-sm" onclick="goTo('news')"><span data-en>All News</span><span data-tr>Tüm Haberler</span> →</button>
+                        <button class="btn btn-ghost btn-sm" onclick="goTo('news')"><span data-en>All News</span><span
+                                data-tr>Tüm Haberler</span> →</button>
                     </div>
                     <div class="card-grid" id="latestNews">
                         <div class="news-card skeleton" style="height:220px;"></div>
@@ -1048,14 +1812,22 @@
                         <h2><span data-en>Upcoming Events</span><span data-tr>Yaklaşan Etkinlikler</span></h2>
                     </div>
                     <div class="timeline" id="upcomingEvents">
-                        <div class="timeline-item"><div class="timeline-card skeleton" style="height:80px;"></div></div>
-                        <div class="timeline-item"><div class="timeline-card skeleton" style="height:80px;"></div></div>
-                        <div class="timeline-item"><div class="timeline-card skeleton" style="height:80px;"></div></div>
+                        <div class="timeline-item">
+                            <div class="timeline-card skeleton" style="height:80px;"></div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-card skeleton" style="height:80px;"></div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-card skeleton" style="height:80px;"></div>
+                        </div>
                     </div>
                 </section>
 
                 <section class="section">
-                    <div class="section-header"><h2><span data-en>Industry Partners</span><span data-tr>Sanayi Ortakları</span></h2></div>
+                    <div class="section-header">
+                        <h2><span data-en>Industry Partners</span><span data-tr>Sanayi Ortakları</span></h2>
+                    </div>
                     <div class="partners-row" id="homePartners">
                         <div class="skeleton" style="width:80px; height:24px;"></div>
                         <div class="skeleton" style="width:80px; height:24px;"></div>
@@ -1080,16 +1852,20 @@
             <div id="news" class="page">
                 <div class="page-header">
                     <h1><span data-en>News & Events</span><span data-tr>Haberler & Etkinlikler</span></h1>
-                    <p class="subtitle"><span data-en>Latest updates from the department</span><span data-tr>Bölümden son güncellemeler</span></p>
+                    <p class="subtitle"><span data-en>Latest updates from the department</span><span data-tr>Bölümden
+                            son güncellemeler</span></p>
                 </div>
                 <div class="card-grid" id="allNews">
                     <div class="news-card skeleton" style="height:220px;"></div>
                     <div class="news-card skeleton" style="height:220px;"></div>
                     <div class="news-card skeleton" style="height:220px;"></div>
                 </div>
-                <h2 style="margin-top:2rem;"><span data-en>Upcoming Events</span><span data-tr>Yaklaşan Etkinlikler</span></h2>
+                <h2 style="margin-top:2rem;"><span data-en>Upcoming Events</span><span data-tr>Yaklaşan
+                        Etkinlikler</span></h2>
                 <div class="timeline" id="allEvents">
-                    <div class="timeline-item"><div class="timeline-card skeleton" style="height:80px;"></div></div>
+                    <div class="timeline-item">
+                        <div class="timeline-card skeleton" style="height:80px;"></div>
+                    </div>
                 </div>
             </div>
 
@@ -1097,7 +1873,8 @@
             <div id="research" class="page">
                 <div class="page-header">
                     <h1><span data-en>Research Groups</span><span data-tr>Araştırma Grupları</span></h1>
-                    <p class="subtitle"><span data-en>Collaborative teams advancing engineering</span><span data-tr>Mühendisliği ileriye taşıyan ekipler</span></p>
+                    <p class="subtitle"><span data-en>Collaborative teams advancing engineering</span><span
+                            data-tr>Mühendisliği ileriye taşıyan ekipler</span></p>
                 </div>
                 <div id="researchGroups">
                     <div class="research-card skeleton" style="height:150px;"></div>
@@ -1109,7 +1886,8 @@
             <div id="publications" class="page">
                 <div class="page-header">
                     <h1><span data-en>Publications</span><span data-tr>Yayınlar</span></h1>
-                    <p class="subtitle"><span data-en>Recent scholarly work</span><span data-tr>Son akademik çalışmalar</span></p>
+                    <p class="subtitle"><span data-en>Recent scholarly work</span><span data-tr>Son akademik
+                            çalışmalar</span></p>
                 </div>
                 <div id="publicationsList">
                     <div class="pub-item skeleton" style="height:90px;"></div>
@@ -1122,7 +1900,8 @@
             <div id="labs" class="page">
                 <div class="page-header">
                     <h1><span data-en>Laboratories</span><span data-tr>Laboratuvarlar</span></h1>
-                    <p class="subtitle"><span data-en>State-of-the-art facilities</span><span data-tr>Modern tesisler</span></p>
+                    <p class="subtitle"><span data-en>State-of-the-art facilities</span><span data-tr>Modern
+                            tesisler</span></p>
                 </div>
                 <div class="card-grid" id="labsList">
                     <div class="card skeleton" style="height:250px;"></div>
@@ -1134,7 +1913,8 @@
             <div id="faculty" class="page">
                 <div class="page-header">
                     <h1><span data-en>Faculty Directory</span><span data-tr>Akademik Kadro</span></h1>
-                    <p class="subtitle"><span data-en>Our researchers and educators</span><span data-tr>Araştırmacılarımız ve eğitimcilerimiz</span></p>
+                    <p class="subtitle"><span data-en>Our researchers and educators</span><span
+                            data-tr>Araştırmacılarımız ve eğitimcilerimiz</span></p>
                 </div>
                 <div id="facultyList">
                     <div class="faculty-grid" id="facultyGrid">
@@ -1149,7 +1929,8 @@
             <div id="students" class="page">
                 <div class="page-header">
                     <h1><span data-en>Graduate Students</span><span data-tr>Lisansüstü Öğrenciler</span></h1>
-                    <p class="subtitle"><span data-en>Current MSc and PhD students</span><span data-tr>YL ve Doktora öğrencileri</span></p>
+                    <p class="subtitle"><span data-en>Current MSc and PhD students</span><span data-tr>YL ve Doktora
+                            öğrencileri</span></p>
                 </div>
                 <div class="table-wrapper">
                     <table class="data-table" id="studentsTable">
@@ -1163,7 +1944,9 @@
                             </tr>
                         </thead>
                         <tbody id="studentsBody">
-                            <tr><td colspan="5" class="loading"><i class="fa-solid fa-spinner"></i> Loading...</td></tr>
+                            <tr>
+                                <td colspan="5" class="loading"><i class="fa-solid fa-spinner"></i> Loading...</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -1173,7 +1956,8 @@
             <div id="alumni" class="page">
                 <div class="page-header">
                     <h1><span data-en>Alumni</span><span data-tr>Mezunlar</span></h1>
-                    <p class="subtitle"><span data-en>Where our graduates work</span><span data-tr>Mezunlarımız nerede çalışıyor</span></p>
+                    <p class="subtitle"><span data-en>Where our graduates work</span><span data-tr>Mezunlarımız nerede
+                            çalışıyor</span></p>
                 </div>
                 <div class="stats-grid" id="alumniStats">
                     <div class="stat-card skeleton" style="height:70px;"></div>
@@ -1191,7 +1975,8 @@
             <div id="projects" class="page">
                 <div class="page-header">
                     <h1><span data-en>Student Projects</span><span data-tr>Öğrenci Projeleri</span></h1>
-                    <p class="subtitle"><span data-en>Capstone projects and competitions</span><span data-tr>Bitirme projeleri ve yarışmalar</span></p>
+                    <p class="subtitle"><span data-en>Capstone projects and competitions</span><span data-tr>Bitirme
+                            projeleri ve yarışmalar</span></p>
                 </div>
                 <div class="card-grid card-grid-sm" id="projectsList">
                     <div class="project-card skeleton" style="height:220px;"></div>
@@ -1204,7 +1989,8 @@
             <div id="courses" class="page">
                 <div class="page-header">
                     <h1><span data-en>Course Catalog</span><span data-tr>Ders Kataloğu</span></h1>
-                    <p class="subtitle"><span data-en>Undergraduate and graduate courses</span><span data-tr>Lisans ve lisansüstü dersler</span></p>
+                    <p class="subtitle"><span data-en>Undergraduate and graduate courses</span><span data-tr>Lisans ve
+                            lisansüstü dersler</span></p>
                 </div>
                 <div id="coursesList">
                     <div class="course-item skeleton" style="height:60px;"></div>
@@ -1217,7 +2003,8 @@
             <div id="jobs" class="page">
                 <div class="page-header">
                     <h1><span data-en>Jobs & Internships</span><span data-tr>İş & Staj</span></h1>
-                    <p class="subtitle"><span data-en>Career opportunities</span><span data-tr>Kariyer fırsatları</span></p>
+                    <p class="subtitle"><span data-en>Career opportunities</span><span data-tr>Kariyer fırsatları</span>
+                    </p>
                 </div>
                 <div id="jobsList">
                     <div class="card-compact skeleton" style="height:70px;"></div>
@@ -1229,13 +2016,15 @@
             <div id="partners" class="page">
                 <div class="page-header">
                     <h1><span data-en>Partners</span><span data-tr>Ortaklar</span></h1>
-                    <p class="subtitle"><span data-en>Industry and academic collaborations</span><span data-tr>Sanayi ve akademik işbirlikleri</span></p>
+                    <p class="subtitle"><span data-en>Industry and academic collaborations</span><span data-tr>Sanayi ve
+                            akademik işbirlikleri</span></p>
                 </div>
                 <h2><span data-en>Industry Partners</span><span data-tr>Sanayi Ortakları</span></h2>
                 <div class="partners-row" id="industryPartners">
                     <div class="skeleton" style="width:80px; height:28px;"></div>
                 </div>
-                <h2 style="margin-top:2rem;"><span data-en>Academic Collaborations</span><span data-tr>Akademik İşbirlikleri</span></h2>
+                <h2 style="margin-top:2rem;"><span data-en>Academic Collaborations</span><span data-tr>Akademik
+                        İşbirlikleri</span></h2>
                 <div id="academicPartners">
                     <div class="card-compact skeleton" style="height:60px;"></div>
                 </div>
@@ -1256,181 +2045,186 @@
     </div>
 
     <script>
-    // ═══════════════════════════════════════════════════════════════════════════
-    // DATA STORE
-    // ═══════════════════════════════════════════════════════════════════════════
-    const DATA = {
-        settings: [],
-        news: [],
-        events: [],
-        faculty: [],
-        research: [],
-        publications: [],
-        courses: [],
-        projects: [],
-        labs: [],
-        jobs: [],
-        alumni: [],
-        partners: [],
-        students: []
-    };
+        // ═══════════════════════════════════════════════════════════════════════════
+        // DATA STORE
+        // ═══════════════════════════════════════════════════════════════════════════
+        const DATA = {
+            settings: [],
+            news: [],
+            events: [],
+            faculty: [],
+            research: [],
+            publications: [],
+            courses: [],
+            projects: [],
+            labs: [],
+            jobs: [],
+            alumni: [],
+            partners: [],
+            students: []
+        };
 
-    let lang = localStorage.getItem('lang') || 'en';
+        let lang = localStorage.getItem('lang') || 'en';
 
-    // cache-bust token so edits in Google Sheet reflect immediately
-    let CACHE_BUST = Date.now();
-    let IS_REFRESHING = false;
+        // cache-bust token so edits in Google Sheet reflect immediately
+        let CACHE_BUST = Date.now();
+        let IS_REFRESHING = false;
 
-    // ═══════════════════════════════════════════════════════════════════════════
-    // GOOGLE SHEETS FETCH
-    // ═══════════════════════════════════════════════════════════════════════════
-    function getSheetURL(tabName) {
-        return `https://docs.google.com/spreadsheets/d/${GOOGLE_SHEET_ID}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(tabName)}&cb=${CACHE_BUST}`;
-    }
+        // ═══════════════════════════════════════════════════════════════════════════
+        // GOOGLE SHEETS FETCH
+        // ═══════════════════════════════════════════════════════════════════════════
+        function getSheetURL(tabName) {
+            return `https://docs.google.com/spreadsheets/d/${GOOGLE_SHEET_ID}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(tabName)}&cb=${CACHE_BUST}`;
+        }
 
-    function parseCSV(csvText) {
-        const rows = [];
-        let currentRow = [];
-        let currentVal = '';
-        let inQuotes = false;
-        
-        // Normalize line endings to \n
-        const csv = csvText.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
-        
-        for (let i = 0; i < csv.length; i++) {
-            const char = csv[i];
-            const nextChar = csv[i + 1];
-            
-            if (char === '"') {
-                if (inQuotes && nextChar === '"') {
-                    currentVal += '"';
-                    i++; // skip escaped quote
+        function parseCSV(csvText) {
+            const rows = [];
+            let currentRow = [];
+            let currentVal = '';
+            let inQuotes = false;
+
+            // Normalize line endings to \n
+            const csv = csvText.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+
+            for (let i = 0; i < csv.length; i++) {
+                const char = csv[i];
+                const nextChar = csv[i + 1];
+
+                if (char === '"') {
+                    if (inQuotes && nextChar === '"') {
+                        currentVal += '"';
+                        i++; // skip escaped quote
+                    } else {
+                        inQuotes = !inQuotes;
+                    }
+                } else if (char === ',' && !inQuotes) {
+                    currentRow.push(currentVal.trim());
+                    currentVal = '';
+                } else if (char === '\n' && !inQuotes) {
+                    currentRow.push(currentVal.trim());
+                    if (currentRow.length > 0 && (currentRow.length > 1 || currentRow[0] !== '')) {
+                        rows.push(currentRow);
+                    }
+                    currentRow = [];
+                    currentVal = '';
                 } else {
-                    inQuotes = !inQuotes;
+                    currentVal += char;
                 }
-            } else if (char === ',' && !inQuotes) {
+            }
+
+            // Add last row if exists
+            if (currentVal || currentRow.length) {
                 currentRow.push(currentVal.trim());
-                currentVal = '';
-            } else if (char === '\n' && !inQuotes) {
-                currentRow.push(currentVal.trim());
-                if (currentRow.length > 0 && (currentRow.length > 1 || currentRow[0] !== '')) {
-                    rows.push(currentRow);
+                if (currentRow.length > 0) rows.push(currentRow);
+            }
+
+            if (rows.length < 2) return [];
+
+            const headers = rows[0];
+            const data = [];
+
+            for (let i = 1; i < rows.length; i++) {
+                const values = rows[i];
+                const row = {};
+                headers.forEach((h, idx) => {
+                    const key = h.toLowerCase().replace(/\s+/g, '_');
+                    row[key] = values[idx] || '';
+                });
+                data.push(row);
+            }
+            return data;
+        }
+
+        async function fetchSheet(tabName) {
+            try {
+                const response = await fetch(getSheetURL(tabName), { cache: 'no-store' });
+                if (!response.ok) throw new Error('Failed to fetch');
+                const csv = await response.text();
+                if (tabName === 'Settings') {
+                    console.log('DEBUG_SETTINGS_CSV_START');
+                    console.log(csv);
+                    console.log('DEBUG_SETTINGS_CSV_END');
                 }
-                currentRow = [];
-                currentVal = '';
-            } else {
-                currentVal += char;
+                return parseCSV(csv);
+            } catch (err) {
+                console.error(`Error fetching ${tabName}:`, err);
+                return [];
             }
         }
-        
-        // Add last row if exists
-        if (currentVal || currentRow.length) {
-            currentRow.push(currentVal.trim());
-            if (currentRow.length > 0) rows.push(currentRow);
+
+        async function fetchSettings() {
+            try {
+                const data = await fetchSheet(SHEETS.settings);
+                const settings = {};
+                data.forEach(row => {
+                    if (row.key) settings[row.key] = row.value || '';
+                });
+                return settings;
+            } catch (err) {
+                return {};
+            }
         }
-        
-        if (rows.length < 2) return [];
-        
-        const headers = rows[0];
-        const data = [];
-        
-        for (let i = 1; i < rows.length; i++) {
-            const values = rows[i];
-            const row = {};
-            headers.forEach((h, idx) => {
-                const key = h.toLowerCase().replace(/\s+/g, '_');
-                row[key] = values[idx] || '';
-            });
-            data.push(row);
+
+        // ═══════════════════════════════════════════════════════════════════════════
+        // RENDER FUNCTIONS
+        // ═══════════════════════════════════════════════════════════════════════════
+
+        function t(en, tr) {
+            return lang === 'tr' && tr ? tr : en;
         }
-        return data;
-    }
 
-    async function fetchSheet(tabName) {
-        try {
-            const response = await fetch(getSheetURL(tabName), { cache: 'no-store' });
-            if (!response.ok) throw new Error('Failed to fetch');
-            const csv = await response.text();
-            return parseCSV(csv);
-        } catch (err) {
-            console.error(`Error fetching ${tabName}:`, err);
-            return [];
+        function getTagClass(category) {
+            const map = {
+                'grant': 'tag-accent', 'research': 'tag-accent',
+                'award': 'tag-green', 'competition': 'tag-green',
+                'academic': 'tag-purple', 'capstone': 'tag-purple',
+                'industry': 'tag-cyan', 'event': 'tag-pink',
+                'seminar': 'tag-accent', 'workshop': 'tag-purple',
+                'deadline': 'tag-red', 'phd': 'tag-accent', 'msc': 'tag-green'
+            };
+            return map[(category || '').toLowerCase()] || '';
         }
-    }
 
-    async function fetchSettings() {
-        try {
-            const data = await fetchSheet(SHEETS.settings);
-            const settings = {};
-            data.forEach(row => {
-                if (row.key) settings[row.key] = row.value || '';
-            });
-            return settings;
-        } catch (err) {
-            return {};
+        function formatDate(dateStr) {
+            if (!dateStr) return { day: '--', month: '---' };
+            const d = new Date(dateStr);
+            const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            return { day: d.getDate(), month: months[d.getMonth()] };
         }
-    }
 
-    // ═══════════════════════════════════════════════════════════════════════════
-    // RENDER FUNCTIONS
-    // ═══════════════════════════════════════════════════════════════════════════
+        function renderSettings() {
+            const s = DATA.settings;
+            document.getElementById('siteName').textContent = s.site_name || 'İSTUN Mechatronics';
+            document.getElementById('heroTitle').textContent = t(s.hero_title_en, s.hero_title_tr) || 'Engineering Intelligent Systems';
+            document.getElementById('heroSubtitle').textContent = t(s.hero_subtitle_en, s.hero_subtitle_tr) || '';
 
-    function t(en, tr) {
-        return lang === 'tr' && tr ? tr : en;
-    }
+            // Stats
+            const stats = [
+                { value: s.stat_faculty || '18', label: t('Faculty', 'Akademisyen') },
+                { value: s.stat_students || '450', label: t('Students', 'Öğrenci') },
+                { value: s.stat_publications || '127', label: t('Publications', 'Yayın') },
+                { value: s.stat_grants || '₺18M', label: t('Grants', 'Hibe') },
+                { value: s.stat_employment || '94%', label: t('Employment', 'İstihdam') },
+                { value: s.stat_partners || '32', label: t('Partners', 'Ortak') }
+            ];
 
-    function getTagClass(category) {
-        const map = {
-            'grant': 'tag-accent', 'research': 'tag-accent',
-            'award': 'tag-green', 'competition': 'tag-green',
-            'academic': 'tag-purple', 'capstone': 'tag-purple',
-            'industry': 'tag-cyan', 'event': 'tag-pink',
-            'seminar': 'tag-accent', 'workshop': 'tag-purple',
-            'deadline': 'tag-red', 'phd': 'tag-accent', 'msc': 'tag-green'
-        };
-        return map[(category || '').toLowerCase()] || '';
-    }
-
-    function formatDate(dateStr) {
-        if (!dateStr) return { day: '--', month: '---' };
-        const d = new Date(dateStr);
-        const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-        return { day: d.getDate(), month: months[d.getMonth()] };
-    }
-
-    function renderSettings() {
-        const s = DATA.settings;
-        document.getElementById('siteName').textContent = s.site_name || 'İSTUN Mechatronics';
-        document.getElementById('heroTitle').textContent = t(s.hero_title_en, s.hero_title_tr) || 'Engineering Intelligent Systems';
-        document.getElementById('heroSubtitle').textContent = t(s.hero_subtitle_en, s.hero_subtitle_tr) || '';
-        
-        // Stats
-        const stats = [
-            { value: s.stat_faculty || '18', label: t('Faculty', 'Akademisyen') },
-            { value: s.stat_students || '450', label: t('Students', 'Öğrenci') },
-            { value: s.stat_publications || '127', label: t('Publications', 'Yayın') },
-            { value: s.stat_grants || '₺18M', label: t('Grants', 'Hibe') },
-            { value: s.stat_employment || '94%', label: t('Employment', 'İstihdam') },
-            { value: s.stat_partners || '32', label: t('Partners', 'Ortak') }
-        ];
-        
-        document.getElementById('statsGrid').innerHTML = stats.map(st => `
+            document.getElementById('statsGrid').innerHTML = stats.map(st => `
             <div class="stat-card">
                 <span class="stat-value">${st.value}</span>
                 <div class="stat-label">${st.label}</div>
             </div>
         `).join('');
-    }
+        }
 
-    function renderNews() {
-        const news = DATA.news.slice(0, 6);
-        document.getElementById('newsBadge').textContent = DATA.news.length;
-        
-        const newsHTML = news.slice(0, 3).map(n => {
-            const d = formatDate(n.date);
-            const color = n.category?.toLowerCase() === 'award' ? 'var(--green)' : 
-                         n.category?.toLowerCase() === 'academic' ? 'var(--purple)' : 'var(--amber)';
-            return `
+        function renderNews() {
+            const news = DATA.news.slice(0, 6);
+            document.getElementById('newsBadge').textContent = DATA.news.length;
+
+            const newsHTML = news.slice(0, 3).map(n => {
+                const d = formatDate(n.date);
+                const color = n.category?.toLowerCase() === 'award' ? 'var(--green)' :
+                    n.category?.toLowerCase() === 'academic' ? 'var(--purple)' : 'var(--amber)';
+                return `
                 <div class="news-card">
                     <div class="news-img" style="background-image:url('${n.image || 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80'}');">
                         <div class="news-date" style="background:${color};"><span class="day">${d.day}</span><span class="month">${d.month}</span></div>
@@ -1442,12 +2236,12 @@
                     </div>
                 </div>
             `;
-        }).join('');
-        
-        document.getElementById('latestNews').innerHTML = newsHTML || '<p>No news available.</p>';
-        document.getElementById('allNews').innerHTML = DATA.news.map(n => {
-            const d = formatDate(n.date);
-            return `
+            }).join('');
+
+            document.getElementById('latestNews').innerHTML = newsHTML || '<p>No news available.</p>';
+            document.getElementById('allNews').innerHTML = DATA.news.map(n => {
+                const d = formatDate(n.date);
+                return `
                 <div class="news-card">
                     <div class="news-img" style="background-image:url('${n.image || 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80'}');">
                         <div class="news-date"><span class="day">${d.day}</span><span class="month">${d.month}</span></div>
@@ -1459,13 +2253,13 @@
                     </div>
                 </div>
             `;
-        }).join('') || '<p>No news.</p>';
-    }
+            }).join('') || '<p>No news.</p>';
+        }
 
-    function renderEvents() {
-        const events = DATA.events.slice(0, 4);
-        
-        const eventsHTML = events.map(e => `
+        function renderEvents() {
+            const events = DATA.events.slice(0, 4);
+
+            const eventsHTML = events.map(e => `
             <div class="timeline-item">
                 <div class="timeline-date">${e.date || ''} · ${e.time || ''}</div>
                 <div class="timeline-card">
@@ -1475,22 +2269,22 @@
                 </div>
             </div>
         `).join('');
-        
-        document.getElementById('upcomingEvents').innerHTML = eventsHTML || '<p>No upcoming events.</p>';
-        document.getElementById('allEvents').innerHTML = eventsHTML || '<p>No events.</p>';
-        
-        // Next event card
-        if (events[0]) {
-            document.getElementById('nextEventText').innerHTML = `<strong>${events[0].date || ''}</strong><br>${t(events[0].title_en, events[0].title_tr) || events[0].title || ''}`;
-        }
-    }
 
-    function renderResearch() {
-        const colors = ['#10b981', '#6366f1', '#ec4899', '#14b8a6', '#f59e0b'];
-        const icons = ['fa-robot', 'fa-microchip', 'fa-star', 'fa-hand', 'fa-bolt'];
-        
-        // Featured on home (max 3)
-        const featuredHTML = DATA.research.slice(0, 3).map((r, i) => `
+            document.getElementById('upcomingEvents').innerHTML = eventsHTML || '<p>No upcoming events.</p>';
+            document.getElementById('allEvents').innerHTML = eventsHTML || '<p>No events.</p>';
+
+            // Next event card
+            if (events[0]) {
+                document.getElementById('nextEventText').innerHTML = `<strong>${events[0].date || ''}</strong><br>${t(events[0].title_en, events[0].title_tr) || events[0].title || ''}`;
+            }
+        }
+
+        function renderResearch() {
+            const colors = ['#10b981', '#6366f1', '#ec4899', '#14b8a6', '#f59e0b'];
+            const icons = ['fa-robot', 'fa-microchip', 'fa-star', 'fa-hand', 'fa-bolt'];
+
+            // Featured on home (max 3)
+            const featuredHTML = DATA.research.slice(0, 3).map((r, i) => `
             <div class="card card-clickable" onclick="goTo('research')">
                 <div class="card-img" style="background-image:url('${r.image || 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&q=80'}');">
                     <div class="card-img-overlay"></div>
@@ -1503,13 +2297,13 @@
                 <div class="card-footer"><span>${r.lead || ''}</span><span class="card-footer-link">${t('Learn more', 'Detaylar')} →</span></div>
             </div>
         `).join('');
-        document.getElementById('featuredResearch').innerHTML = featuredHTML || '<p>No research groups.</p>';
-        
-        // Full list
-        const fullHTML = DATA.research.map((r, i) => `
+            document.getElementById('featuredResearch').innerHTML = featuredHTML || '<p>No research groups.</p>';
+
+            // Full list
+            const fullHTML = DATA.research.map((r, i) => `
             <div class="research-card">
                 <div class="research-header">
-                    <div class="research-icon" style="background:linear-gradient(135deg, ${colors[i % colors.length]}, ${colors[(i+1) % colors.length]});"><i class="fa-solid ${icons[i % icons.length]}"></i></div>
+                    <div class="research-icon" style="background:linear-gradient(135deg, ${colors[i % colors.length]}, ${colors[(i + 1) % colors.length]});"><i class="fa-solid ${icons[i % icons.length]}"></i></div>
                     <div class="research-info">
                         <h3>${t(r.name_en, r.name_tr) || r.name || ''}</h3>
                         <p>${r.focus || ''}</p>
@@ -1522,11 +2316,11 @@
                 </div>
             </div>
         `).join('');
-        document.getElementById('researchGroups').innerHTML = fullHTML || '<p>No research groups.</p>';
-    }
+            document.getElementById('researchGroups').innerHTML = fullHTML || '<p>No research groups.</p>';
+        }
 
-    function renderFaculty() {
-        const html = DATA.faculty.map(f => `
+        function renderFaculty() {
+            const html = DATA.faculty.map(f => `
             <div class="faculty-card">
                 <img src="${f.photo || `https://ui-avatars.com/api/?name=${encodeURIComponent(f.name || 'F')}&background=6366f1&color=fff&size=120`}" class="faculty-avatar" alt="${f.name}">
                 <h3 class="faculty-name">${f.name || ''}</h3>
@@ -1539,11 +2333,11 @@
                 </div>
             </div>
         `).join('');
-        document.getElementById('facultyGrid').innerHTML = html || '<p>No faculty data.</p>';
-    }
+            document.getElementById('facultyGrid').innerHTML = html || '<p>No faculty data.</p>';
+        }
 
-    function renderPublications() {
-        const html = DATA.publications.map(p => `
+        function renderPublications() {
+            const html = DATA.publications.map(p => `
             <div class="pub-item">
                 <div class="pub-title">${p.title || ''}</div>
                 <div class="pub-authors">${p.authors || ''}</div>
@@ -1554,16 +2348,16 @@
                 </div>
             </div>
         `).join('');
-        document.getElementById('publicationsList').innerHTML = html || '<p>No publications.</p>';
-    }
+            document.getElementById('publicationsList').innerHTML = html || '<p>No publications.</p>';
+        }
 
-    function renderCourses() {
-        const icons = { 'physics': 'fa-atom', 'programming': 'fa-code', 'robotics': 'fa-robot', 'control': 'fa-gears', 'ai': 'fa-brain', 'electronics': 'fa-microchip' };
-        const colors = { 'physics': 'var(--purple)', 'programming': 'var(--green)', 'robotics': 'var(--pink)', 'control': 'var(--amber)', 'ai': 'var(--accent)', 'electronics': 'var(--cyan)' };
-        
-        const html = DATA.courses.map(c => {
-            const cat = (c.category || 'physics').toLowerCase();
-            return `
+        function renderCourses() {
+            const icons = { 'physics': 'fa-atom', 'programming': 'fa-code', 'robotics': 'fa-robot', 'control': 'fa-gears', 'ai': 'fa-brain', 'electronics': 'fa-microchip' };
+            const colors = { 'physics': 'var(--purple)', 'programming': 'var(--green)', 'robotics': 'var(--pink)', 'control': 'var(--amber)', 'ai': 'var(--accent)', 'electronics': 'var(--cyan)' };
+
+            const html = DATA.courses.map(c => {
+                const cat = (c.category || 'physics').toLowerCase();
+                return `
                 <div class="course-item">
                     <div class="course-icon" style="background:${colors[cat] || 'var(--accent)'}20; color:${colors[cat] || 'var(--accent)'};">
                         <i class="fa-solid ${icons[cat] || 'fa-book'}"></i>
@@ -1575,12 +2369,12 @@
                     <span class="tag">${c.ects || '3'} ECTS</span>
                 </div>
             `;
-        }).join('');
-        document.getElementById('coursesList').innerHTML = html || '<p>No courses.</p>';
-    }
+            }).join('');
+            document.getElementById('coursesList').innerHTML = html || '<p>No courses.</p>';
+        }
 
-    function renderProjects() {
-        const html = DATA.projects.map(p => `
+        function renderProjects() {
+            const html = DATA.projects.map(p => `
             <div class="project-card">
                 <div class="project-img" style="background-image:url('${p.image || 'https://images.unsplash.com/photo-1561557944-6e7860d1a7eb?w=600&q=80'}');">
                     <span class="project-year" ${p.award ? 'style="background:var(--amber);"' : ''}>${p.award ? '🏆 ' : ''}${p.year || '2024'}</span>
@@ -1598,9 +2392,9 @@
                 </div>
             </div>
         `).join('');
-        
-        document.getElementById('projectsList').innerHTML = html || '<p>No projects.</p>';
-        document.getElementById('featuredProjects').innerHTML = DATA.projects.slice(0, 4).map(p => `
+
+            document.getElementById('projectsList').innerHTML = html || '<p>No projects.</p>';
+            document.getElementById('featuredProjects').innerHTML = DATA.projects.slice(0, 4).map(p => `
             <div class="project-card" onclick="goTo('projects')">
                 <div class="project-img" style="background-image:url('${p.image || 'https://images.unsplash.com/photo-1561557944-6e7860d1a7eb?w=600&q=80'}');">
                     <span class="project-year">${p.year || '2024'}</span>
@@ -1612,10 +2406,10 @@
                 </div>
             </div>
         `).join('') || '';
-    }
+        }
 
-    function renderLabs() {
-        const html = DATA.labs.map(l => `
+        function renderLabs() {
+            const html = DATA.labs.map(l => `
             <div class="card">
                 <div class="card-img" style="background-image:url('${l.image || 'https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?w=600&q=80'}');"></div>
                 <div class="card-body">
@@ -1629,13 +2423,13 @@
                 </div>
             </div>
         `).join('');
-        document.getElementById('labsList').innerHTML = html || '<p>No labs.</p>';
-    }
+            document.getElementById('labsList').innerHTML = html || '<p>No labs.</p>';
+        }
 
-    function renderJobs() {
-        document.getElementById('jobsBadge').textContent = DATA.jobs.length;
-        
-        const html = DATA.jobs.map(j => `
+        function renderJobs() {
+            document.getElementById('jobsBadge').textContent = DATA.jobs.length;
+
+            const html = DATA.jobs.map(j => `
             <div class="card-compact">
                 <div class="card-compact-content">
                     <h4>${j.title || ''}</h4>
@@ -1644,18 +2438,18 @@
                 <span class="tag ${getTagClass(j.type)}">${j.type || 'Job'}</span>
             </div>
         `).join('');
-        document.getElementById('jobsList').innerHTML = html || '<p>No jobs available.</p>';
-    }
+            document.getElementById('jobsList').innerHTML = html || '<p>No jobs available.</p>';
+        }
 
-    function renderAlumni() {
-        const s = DATA.settings;
-        document.getElementById('alumniStats').innerHTML = `
+        function renderAlumni() {
+            const s = DATA.settings;
+            document.getElementById('alumniStats').innerHTML = `
             <div class="stat-card"><span class="stat-value">${s.alumni_total || '312'}</span><div class="stat-label">${t('Total Alumni', 'Toplam Mezun')}</div></div>
             <div class="stat-card"><span class="stat-value">${s.alumni_employed || '94%'}</span><div class="stat-label">${t('Employed', 'İstihdam')}</div></div>
             <div class="stat-card"><span class="stat-value">${s.alumni_startups || '8'}</span><div class="stat-label">${t('Startups', 'Girişim')}</div></div>
         `;
-        
-        const html = DATA.alumni.map(a => `
+
+            const html = DATA.alumni.map(a => `
             <div class="card-compact">
                 <img src="${a.photo || `https://ui-avatars.com/api/?name=${encodeURIComponent(a.name || 'A')}&background=6366f1&color=fff&size=80`}" style="width:44px;height:44px;border-radius:50%;" alt="">
                 <div class="card-compact-content">
@@ -1664,11 +2458,11 @@
                 </div>
             </div>
         `).join('');
-        document.getElementById('alumniList').innerHTML = html || '<p>No alumni data.</p>';
-    }
+            document.getElementById('alumniList').innerHTML = html || '<p>No alumni data.</p>';
+        }
 
-    function renderStudents() {
-        const html = DATA.students.map(s => `
+        function renderStudents() {
+            const html = DATA.students.map(s => `
             <tr>
                 <td><strong>${s.name || ''}</strong></td>
                 <td><span class="tag ${s.program?.toLowerCase() === 'phd' ? 'tag-accent' : 'tag-green'}">${s.program || ''}</span></td>
@@ -1677,22 +2471,22 @@
                 <td>${s.year || ''}</td>
             </tr>
         `).join('');
-        document.getElementById('studentsBody').innerHTML = html || '<tr><td colspan="5">No students.</td></tr>';
-    }
+            document.getElementById('studentsBody').innerHTML = html || '<tr><td colspan="5">No students.</td></tr>';
+        }
 
-    function renderPartners() {
-        const industry = DATA.partners.filter(p => p.type?.toLowerCase() === 'industry');
-        const academic = DATA.partners.filter(p => p.type?.toLowerCase() === 'academic');
-        
-        const industryHTML = industry.map(p => 
-            p.logo ? `<img src="${p.logo}" class="partner-logo" alt="${p.name}" title="${p.name}" style="height:${p.height || '24'}px;">` :
-            `<span style="color:var(--text-muted);font-weight:600;">${p.name}</span>`
-        ).join('');
-        
-        document.getElementById('industryPartners').innerHTML = industryHTML || '<p>No partners.</p>';
-        document.getElementById('homePartners').innerHTML = industryHTML || '';
-        
-        const academicHTML = academic.map(p => `
+        function renderPartners() {
+            const industry = DATA.partners.filter(p => p.type?.toLowerCase() === 'industry');
+            const academic = DATA.partners.filter(p => p.type?.toLowerCase() === 'academic');
+
+            const industryHTML = industry.map(p =>
+                p.logo ? `<img src="${p.logo}" class="partner-logo" alt="${p.name}" title="${p.name}" style="height:${p.height || '24'}px;">` :
+                    `<span style="color:var(--text-muted);font-weight:600;">${p.name}</span>`
+            ).join('');
+
+            document.getElementById('industryPartners').innerHTML = industryHTML || '<p>No partners.</p>';
+            document.getElementById('homePartners').innerHTML = industryHTML || '';
+
+            const academicHTML = academic.map(p => `
             <div class="card-compact">
                 <div class="card-compact-icon" style="background:var(--accent-light); color:var(--accent);"><i class="fa-solid fa-university"></i></div>
                 <div class="card-compact-content">
@@ -1701,12 +2495,12 @@
                 </div>
             </div>
         `).join('');
-        document.getElementById('academicPartners').innerHTML = academicHTML || '<p>No academic partners.</p>';
-    }
+            document.getElementById('academicPartners').innerHTML = academicHTML || '<p>No academic partners.</p>';
+        }
 
-    function renderContact() {
-        const s = DATA.settings;
-        document.getElementById('contactContent').innerHTML = `
+        function renderContact() {
+            const s = DATA.settings;
+            document.getElementById('contactContent').innerHTML = `
             <div>
                 <h2>${t('Department Office', 'Bölüm Sekreterliği')}</h2>
                 <p><i class="fa-solid fa-location-dot" style="width:18px; color:var(--accent);"></i> ${s.address || 'Engineering Building'}</p>
@@ -1725,12 +2519,12 @@
                 </span>
             </div>
                `;
-    }
+        }
 
-    function renderAbout() {
-        const s = DATA.settings;
-        document.getElementById('aboutSubtitle').textContent = t(s.about_subtitle_en, s.about_subtitle_tr) || '';
-        document.getElementById('aboutContent').innerHTML = `
+        function renderAbout() {
+            const s = DATA.settings;
+            document.getElementById('aboutSubtitle').textContent = t(s.about_subtitle_en, s.about_subtitle_tr) || '';
+            document.getElementById('aboutContent').innerHTML = `
             <div>
                 <h2>${t('Our Mission', 'Misyonumuz')}</h2>
                 <p>${t(s.mission_en, s.mission_tr) || ''}</p>
@@ -1743,195 +2537,195 @@
                 <div class="alert alert-success"><i class="fa-solid fa-certificate"></i> ${s.accreditation_status || 'MÜDEK'}</div>
             </div>
         `;
-    }
-
-    function renderAll() {
-        renderSettings();
-        renderNews();
-        renderEvents();
-        renderResearch();
-        renderFaculty();
-        renderPublications();
-        renderCourses();
-        renderProjects();
-        renderLabs();
-        renderJobs();
-        renderAlumni();
-        renderStudents();
-        renderPartners();
-        renderContact();
-        renderAbout();
-    }
-
-    // ═══════════════════════════════════════════════════════════════════════════
-    // NAVIGATION
-    // ═══════════════════════════════════════════════════════════════════════════
-
-    function goTo(pageId, navEl) {
-        document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
-        if (navEl) navEl.classList.add('active');
-        else {
-            const nav = document.querySelector(`.nav-item[data-page="${pageId}"]`);
-            if (nav) nav.classList.add('active');
-        }
-        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-        const page = document.getElementById(pageId);
-        if (page) {
-            page.classList.add('active');
-            document.getElementById('mainContent').scrollTop = 0;
-        }
-        closeSidebar();
-    }
-
-    function toggleSidebar() {
-        document.getElementById('sidebar').classList.toggle('open');
-        document.querySelector('.sidebar-overlay').classList.toggle('show');
-    }
-    function closeSidebar() {
-        document.getElementById('sidebar').classList.remove('open');
-        document.querySelector('.sidebar-overlay').classList.remove('show');
-    }
-
-    function setLang(l) {
-        lang = l;
-        document.documentElement.lang = l;
-        document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.toggle('active', btn.textContent === l.toUpperCase()));
-        localStorage.setItem('lang', l);
-        renderAll();
-        updateLastUpdatedLabel(); // keep the timestamp locale consistent
-    }
-
-    // ═══════════════════════════════════════════════════════════════════════════
-    // REFRESH BAR UI
-    // ═══════════════════════════════════════════════════════════════════════════
-
-    function setRefreshUI(state, msgKey) {
-        const btn = document.getElementById('refreshBtn');
-        const status = document.getElementById('refreshStatus');
-
-        if (!btn || !status) return;
-
-        const texts = {
-            ready: { en: 'Ready', tr: 'Hazır' },
-            updating: { en: 'Updating…', tr: 'Güncelleniyor…' },
-            updated: { en: 'Updated', tr: 'Güncellendi' },
-            error: { en: 'Update failed', tr: 'Güncelleme başarısız' }
-        };
-
-        const label = texts[msgKey] ? (lang === 'tr' ? texts[msgKey].tr : texts[msgKey].en) : '';
-
-        if (state === 'busy') {
-            btn.disabled = true;
-            btn.innerHTML = `<i class="fa-solid fa-spinner" style="animation: spin 1s linear infinite;"></i> <span data-en>Update</span><span data-tr>Güncelle</span>`;
-            status.textContent = label;
-        } else {
-            btn.disabled = false;
-            btn.innerHTML = `<i class="fa-solid fa-rotate"></i> <span data-en>Update</span><span data-tr>Güncelle</span>`;
-            status.textContent = label;
-        }
-    }
-
-    function updateLastUpdatedLabel() {
-        const el = document.getElementById('lastUpdatedText');
-        if (!el) return;
-
-        const ts = localStorage.getItem('lastUpdatedTs');
-        if (!ts) { el.textContent = '—'; return; }
-
-        const d = new Date(parseInt(ts, 10));
-        el.textContent = d.toLocaleString(lang === 'tr' ? 'tr-TR' : 'en-US');
-    }
-
-    // ═══════════════════════════════════════════════════════════════════════════
-    // DATA LOADING (INITIAL + REFRESH)
-    // ═══════════════════════════════════════════════════════════════════════════
-
-    async function loadAllData() {
-        [
-            DATA.settings,
-            DATA.news,
-            DATA.events,
-            DATA.faculty,
-            DATA.research,
-            DATA.publications,
-            DATA.courses,
-            DATA.projects,
-            DATA.labs,
-            DATA.jobs,
-            DATA.alumni,
-            DATA.partners,
-            DATA.students
-        ] = await Promise.all([
-            fetchSheet(SHEETS.settings),
-            fetchSheet(SHEETS.news),
-            fetchSheet(SHEETS.events),
-            fetchSheet(SHEETS.faculty),
-            fetchSheet(SHEETS.research),
-            fetchSheet(SHEETS.publications),
-            fetchSheet(SHEETS.courses),
-            fetchSheet(SHEETS.projects),
-            fetchSheet(SHEETS.labs),
-            fetchSheet(SHEETS.jobs),
-            fetchSheet(SHEETS.alumni),
-            fetchSheet(SHEETS.partners),
-            fetchSheet(SHEETS.students)
-        ]);
-
-        renderAll();
-
-        // store last updated timestamp
-        localStorage.setItem('lastUpdatedTs', String(Date.now()));
-        updateLastUpdatedLabel();
-    }
-
-    async function refreshData() {
-        if (IS_REFRESHING) return;
-        IS_REFRESHING = true;
-
-        CACHE_BUST = Date.now();
-        setRefreshUI('busy', 'updating');
-
-        try {
-            await loadAllData();
-            setRefreshUI('idle', 'updated');
-            setTimeout(() => setRefreshUI('idle', 'ready'), 1500);
-        } catch (e) {
-            console.error(e);
-            setRefreshUI('idle', 'error');
-        } finally {
-            IS_REFRESHING = false;
-        }
-    }
-
-    // ═══════════════════════════════════════════════════════════════════════════
-    // INIT
-    // ═══════════════════════════════════════════════════════════════════════════
-
-    async function init() {
-        document.documentElement.lang = lang;
-        document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.toggle('active', btn.textContent === lang.toUpperCase()));
-
-        updateLastUpdatedLabel();
-        setRefreshUI('idle', 'ready');
-        
-        // Check if sheet ID is configured
-        if (GOOGLE_SHEET_ID === 'YOUR_GOOGLE_SHEET_ID_HERE') {
-            document.getElementById('heroTitle').textContent = '⚠️ Google Sheet Not Configured';
-            document.getElementById('heroSubtitle').innerHTML = 'Please set your GOOGLE_SHEET_ID in the script section. <a href="#setup">See setup instructions below.</a>';
-            return;
         }
 
-        try {
+        function renderAll() {
+            renderSettings();
+            renderNews();
+            renderEvents();
+            renderResearch();
+            renderFaculty();
+            renderPublications();
+            renderCourses();
+            renderProjects();
+            renderLabs();
+            renderJobs();
+            renderAlumni();
+            renderStudents();
+            renderPartners();
+            renderContact();
+            renderAbout();
+        }
+
+        // ═══════════════════════════════════════════════════════════════════════════
+        // NAVIGATION
+        // ═══════════════════════════════════════════════════════════════════════════
+
+        function goTo(pageId, navEl) {
+            document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+            if (navEl) navEl.classList.add('active');
+            else {
+                const nav = document.querySelector(`.nav-item[data-page="${pageId}"]`);
+                if (nav) nav.classList.add('active');
+            }
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            const page = document.getElementById(pageId);
+            if (page) {
+                page.classList.add('active');
+                document.getElementById('mainContent').scrollTop = 0;
+            }
+            closeSidebar();
+        }
+
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('open');
+            document.querySelector('.sidebar-overlay').classList.toggle('show');
+        }
+        function closeSidebar() {
+            document.getElementById('sidebar').classList.remove('open');
+            document.querySelector('.sidebar-overlay').classList.remove('show');
+        }
+
+        function setLang(l) {
+            lang = l;
+            document.documentElement.lang = l;
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.toggle('active', btn.textContent === l.toUpperCase()));
+            localStorage.setItem('lang', l);
+            renderAll();
+            updateLastUpdatedLabel(); // keep the timestamp locale consistent
+        }
+
+        // ═══════════════════════════════════════════════════════════════════════════
+        // REFRESH BAR UI
+        // ═══════════════════════════════════════════════════════════════════════════
+
+        function setRefreshUI(state, msgKey) {
+            const btn = document.getElementById('refreshBtn');
+            const status = document.getElementById('refreshStatus');
+
+            if (!btn || !status) return;
+
+            const texts = {
+                ready: { en: 'Ready', tr: 'Hazır' },
+                updating: { en: 'Updating…', tr: 'Güncelleniyor…' },
+                updated: { en: 'Updated', tr: 'Güncellendi' },
+                error: { en: 'Update failed', tr: 'Güncelleme başarısız' }
+            };
+
+            const label = texts[msgKey] ? (lang === 'tr' ? texts[msgKey].tr : texts[msgKey].en) : '';
+
+            if (state === 'busy') {
+                btn.disabled = true;
+                btn.innerHTML = `<i class="fa-solid fa-spinner" style="animation: spin 1s linear infinite;"></i> <span data-en>Update</span><span data-tr>Güncelle</span>`;
+                status.textContent = label;
+            } else {
+                btn.disabled = false;
+                btn.innerHTML = `<i class="fa-solid fa-rotate"></i> <span data-en>Update</span><span data-tr>Güncelle</span>`;
+                status.textContent = label;
+            }
+        }
+
+        function updateLastUpdatedLabel() {
+            const el = document.getElementById('lastUpdatedText');
+            if (!el) return;
+
+            const ts = localStorage.getItem('lastUpdatedTs');
+            if (!ts) { el.textContent = '—'; return; }
+
+            const d = new Date(parseInt(ts, 10));
+            el.textContent = d.toLocaleString(lang === 'tr' ? 'tr-TR' : 'en-US');
+        }
+
+        // ═══════════════════════════════════════════════════════════════════════════
+        // DATA LOADING (INITIAL + REFRESH)
+        // ═══════════════════════════════════════════════════════════════════════════
+
+        async function loadAllData() {
+            [
+                DATA.settings,
+                DATA.news,
+                DATA.events,
+                DATA.faculty,
+                DATA.research,
+                DATA.publications,
+                DATA.courses,
+                DATA.projects,
+                DATA.labs,
+                DATA.jobs,
+                DATA.alumni,
+                DATA.partners,
+                DATA.students
+            ] = await Promise.all([
+                fetchSheet(SHEETS.settings),
+                fetchSheet(SHEETS.news),
+                fetchSheet(SHEETS.events),
+                fetchSheet(SHEETS.faculty),
+                fetchSheet(SHEETS.research),
+                fetchSheet(SHEETS.publications),
+                fetchSheet(SHEETS.courses),
+                fetchSheet(SHEETS.projects),
+                fetchSheet(SHEETS.labs),
+                fetchSheet(SHEETS.jobs),
+                fetchSheet(SHEETS.alumni),
+                fetchSheet(SHEETS.partners),
+                fetchSheet(SHEETS.students)
+            ]);
+
+            renderAll();
+
+            // store last updated timestamp
+            localStorage.setItem('lastUpdatedTs', String(Date.now()));
+            updateLastUpdatedLabel();
+        }
+
+        async function refreshData() {
+            if (IS_REFRESHING) return;
+            IS_REFRESHING = true;
+
+            CACHE_BUST = Date.now();
             setRefreshUI('busy', 'updating');
-            await loadAllData();
-            setRefreshUI('idle', 'ready');
-        } catch (e) {
-            console.error(e);
-            setRefreshUI('idle', 'error');
-        }
-    }
 
-    document.addEventListener('DOMContentLoaded', init);
+            try {
+                await loadAllData();
+                setRefreshUI('idle', 'updated');
+                setTimeout(() => setRefreshUI('idle', 'ready'), 1500);
+            } catch (e) {
+                console.error(e);
+                setRefreshUI('idle', 'error');
+            } finally {
+                IS_REFRESHING = false;
+            }
+        }
+
+        // ═══════════════════════════════════════════════════════════════════════════
+        // INIT
+        // ═══════════════════════════════════════════════════════════════════════════
+
+        async function init() {
+            document.documentElement.lang = lang;
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.toggle('active', btn.textContent === lang.toUpperCase()));
+
+            updateLastUpdatedLabel();
+            setRefreshUI('idle', 'ready');
+
+            // Check if sheet ID is configured
+            if (GOOGLE_SHEET_ID === 'YOUR_GOOGLE_SHEET_ID_HERE') {
+                document.getElementById('heroTitle').textContent = '⚠️ Google Sheet Not Configured';
+                document.getElementById('heroSubtitle').innerHTML = 'Please set your GOOGLE_SHEET_ID in the script section. <a href="#setup">See setup instructions below.</a>';
+                return;
+            }
+
+            try {
+                setRefreshUI('busy', 'updating');
+                await loadAllData();
+                setRefreshUI('idle', 'ready');
+            } catch (e) {
+                console.error(e);
+                setRefreshUI('idle', 'error');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', init);
     </script>
 
     <!-- DATA REFRESH BAR -->
@@ -1942,11 +2736,13 @@
                     <span data-en>Data</span><span data-tr>Veri</span>
                 </div>
                 <div class="refresh-subtitle" id="refreshInfo">
-                    <span data-en>Last updated: </span><span data-tr>Son güncelleme: </span><span id="lastUpdatedText">—</span>
+                    <span data-en>Last updated: </span><span data-tr>Son güncelleme: </span><span
+                        id="lastUpdatedText">—</span>
                 </div>
             </div>
             <div class="refresh-actions">
-                <span class="refresh-status" id="refreshStatus"><span data-en>Ready</span><span data-tr>Hazır</span></span>
+                <span class="refresh-status" id="refreshStatus"><span data-en>Ready</span><span
+                        data-tr>Hazır</span></span>
                 <button class="btn btn-accent btn-sm" id="refreshBtn" onclick="refreshData()">
                     <i class="fa-solid fa-rotate"></i>
                     <span data-en>Update</span><span data-tr>Güncelle</span>
@@ -1977,4 +2773,5 @@
     ╚═══════════════════════════════════════════════════════════════════════════════╝
     -->
 </body>
+
 </html>
