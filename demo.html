@@ -1627,6 +1627,125 @@
         html[lang="tr"] [data-tr].grid {
             display: grid;
         }
+
+        /* ACADEMIC PROFILE PAGE */
+        .profile-layout {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 2.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .profile-sidebar {
+            position: sticky;
+            top: 2rem;
+            height: fit-content;
+        }
+
+        .profile-photo-container {
+            width: 100%;
+            aspect-ratio: 1;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--border);
+            margin-bottom: 1.5rem;
+            background: var(--bg-warm);
+        }
+
+        .profile-photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-contact-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .profile-contact-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.6rem 0.8rem;
+            background: var(--bg-warm);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .profile-contact-link:hover {
+            border-color: var(--accent);
+            background: white;
+            color: var(--accent);
+            transform: translateY(-1px);
+        }
+
+        .profile-main h2 {
+            font-size: 1.4rem;
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent-light);
+        }
+
+        .profile-main h2:first-of-type {
+            margin-top: 0;
+        }
+
+        .profile-bio {
+            line-height: 1.7;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .profile-meta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .meta-item label {
+            display: block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--accent);
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+        }
+
+        .meta-item p {
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        @media (max-width: 900px) {
+            .profile-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-sidebar {
+                position: static;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+        }
+
+        .card-clickable {
+            cursor: pointer;
+            transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .card-clickable:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent);
+            box-shadow: var(--shadow-lg);
+        }
     </style>
 </head>
 
@@ -2030,6 +2149,61 @@
                 </div>
             </div>
 
+            <!-- PROFILE PAGE -->
+            <div id="profile" class="page">
+                <div class="page-header" style="display:flex; justify-content:space-between; align-items:flex-end;">
+                    <div>
+                        <button class="btn btn-ghost btn-sm" onclick="goTo('faculty')" style="margin-bottom:1rem;">
+                            <i class="fa-solid fa-arrow-left"></i> <span data-en>Back to Faculty</span><span
+                                data-tr>Kadroya Dön</span>
+                        </button>
+                        <h1 id="profName">Name Loading...</h1>
+                        <p class="subtitle" id="profTitle">Title...</p>
+                    </div>
+                </div>
+
+                <div class="profile-layout">
+                    <aside class="profile-sidebar">
+                        <div class="profile-photo-container">
+                            <img id="profPhoto"
+                                src="https://ui-avatars.com/api/?name=F&background=6366f1&color=fff&size=400"
+                                alt="Faculty">
+                        </div>
+                        <div class="profile-contact-list" id="profLinks">
+                            <!-- Links injected by JS -->
+                        </div>
+                    </aside>
+
+                    <main class="profile-main">
+                        <div id="profBioSection">
+                            <h2><span data-en>Biography</span><span data-tr>Biyografi</span></h2>
+                            <div class="profile-bio" id="profBio">...</div>
+                        </div>
+
+                        <div class="profile-meta-grid">
+                            <div class="meta-item">
+                                <label><span data-en>Research Areas</span><span data-tr>Araştırma
+                                        Alanları</span></label>
+                                <p id="profResearch">...</p>
+                            </div>
+                            <div class="meta-item" id="profEducationSection">
+                                <label><span data-en>Education</span><span data-tr>Eğitim</span></label>
+                                <p id="profEducation">...</p>
+                            </div>
+                            <div class="meta-item" id="profOfficeSection">
+                                <label><span data-en>Office</span><span data-tr>Ofis</span></label>
+                                <p id="profOffice">...</p>
+                            </div>
+                        </div>
+
+                        <div id="profHonorsSection">
+                            <h2><span data-en>Honors & Awards</span><span data-tr>Ödüller</span></h2>
+                            <p id="profHonors" class="profile-bio">...</p>
+                        </div>
+                    </main>
+                </div>
+            </div>
+
             <!-- CONTACT PAGE -->
             <div id="contact" class="page">
                 <div class="page-header">
@@ -2346,19 +2520,78 @@
 
         function renderFaculty() {
             const html = DATA.faculty.map(f => `
-            <div class="faculty-card">
+            <div class="faculty-card card-clickable" onclick="goToProfile('${(f.name || '').replace(/'/g, "\\'")}')">
                 <img src="${f.photo || `https://ui-avatars.com/api/?name=${encodeURIComponent(f.name || 'F')}&background=6366f1&color=fff&size=120`}" class="faculty-avatar" alt="${f.name}">
                 <h3 class="faculty-name">${f.name || ''}</h3>
                 <p class="faculty-title">${f.title || ''}</p>
                 <div class="faculty-field">${t(f.research_en, f.research_tr) || f.research || ''}</div>
                 <div class="faculty-links">
-                    ${f.email ? `<a href="mailto:${f.email}" title="Email"><i class="fa-solid fa-envelope"></i></a>` : ''}
-                    ${f.scholar ? `<a href="${f.scholar}" title="Scholar"><i class="fa-brands fa-google-scholar"></i></a>` : ''}
-                    ${f.github ? `<a href="${f.github}" title="GitHub"><i class="fa-brands fa-github"></i></a>` : ''}
+                    ${f.email ? `<a href="mailto:${f.email}" title="Email" onclick="event.stopPropagation()"><i class="fa-solid fa-envelope"></i></a>` : ''}
+                    ${f.scholar ? `<a href="${f.scholar}" title="Scholar" onclick="event.stopPropagation()"><i class="fa-brands fa-google-scholar"></i></a>` : ''}
+                    ${f.github ? `<a href="${f.github}" title="GitHub" onclick="event.stopPropagation()"><i class="fa-brands fa-github"></i></a>` : ''}
                 </div>
             </div>
         `).join('');
             document.getElementById('facultyGrid').innerHTML = html || '<p>No faculty data.</p>';
+        }
+
+        function goToProfile(name) {
+            renderProfile(name);
+            goTo('profile');
+        }
+
+        function renderProfile(name) {
+            const f = DATA.faculty.find(item => item.name === name);
+            if (!f) return;
+
+            // Header info
+            document.getElementById('profName').textContent = f.name || '';
+            document.getElementById('profTitle').textContent = f.title || '';
+            document.getElementById('profPhoto').src = f.photo || `https://ui-avatars.com/api/?name=${encodeURIComponent(f.name || 'F')}&background=6366f1&color=fff&size=400`;
+
+            // Core Meta
+            document.getElementById('profResearch').textContent = t(f.research_en, f.research_tr) || f.research || '—';
+
+            // Contextual Sections (Bio, Education, Office, Honors)
+            const bio = t(f.bio_en, f.bio_tr);
+            if (bio) {
+                document.getElementById('profBioSection').style.display = 'block';
+                document.getElementById('profBio').textContent = bio;
+            } else {
+                document.getElementById('profBioSection').style.display = 'none';
+            }
+
+            const edu = t(f.education_en, f.education_tr);
+            if (edu) {
+                document.getElementById('profEducationSection').style.display = 'block';
+                document.getElementById('profEducation').textContent = edu;
+            } else {
+                document.getElementById('profEducationSection').style.display = 'none';
+            }
+
+            if (f.office) {
+                document.getElementById('profOfficeSection').style.display = 'block';
+                document.getElementById('profOffice').textContent = f.office;
+            } else {
+                document.getElementById('profOfficeSection').style.display = 'none';
+            }
+
+            const honors = t(f.honors_en, f.honors_tr);
+            if (honors) {
+                document.getElementById('profHonorsSection').style.display = 'block';
+                document.getElementById('profHonors').textContent = honors;
+            } else {
+                document.getElementById('profHonorsSection').style.display = 'none';
+            }
+
+            // Links
+            const linksHTML = [];
+            if (f.email) linksHTML.push(`<a href="mailto:${f.email}" class="profile-contact-link"><i class="fa-solid fa-envelope"></i> <span>${f.email}</span></a>`);
+            if (f.yok_cv) linksHTML.push(`<a href="${f.yok_cv}" target="_blank" class="profile-contact-link"><i class="fa-solid fa-graduation-cap"></i> <span>YÖK Akademik CV</span></a>`);
+            if (f.scholar) linksHTML.push(`<a href="${f.scholar}" target="_blank" class="profile-contact-link"><i class="fa-brands fa-google-scholar"></i> <span>Google Scholar</span></a>`);
+            if (f.github) linksHTML.push(`<a href="${f.github}" target="_blank" class="profile-contact-link"><i class="fa-brands fa-github"></i> <span>GitHub Profile</span></a>`);
+
+            document.getElementById('profLinks').innerHTML = linksHTML.join('') || '<p class="text-muted">No links available</p>';
         }
 
         function renderPublications() {
