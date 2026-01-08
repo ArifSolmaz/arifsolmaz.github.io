@@ -1850,7 +1850,7 @@
             DATA.partners,
             DATA.students
         ] = await Promise.all([
-            fetchSettings(),
+            fetchSheet(SHEETS.settings),
             fetchSheet(SHEETS.news),
             fetchSheet(SHEETS.events),
             fetchSheet(SHEETS.faculty),
