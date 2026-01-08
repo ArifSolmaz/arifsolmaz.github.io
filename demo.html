@@ -302,6 +302,7 @@
             flex: 1;
             overflow-y: auto;
             background: var(--bg-cream);
+            padding-bottom: 72px; /* space for fixed refresh bar */
         }
 
         .page {
@@ -828,6 +829,72 @@
             .faculty-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
+        /* ─────────────────────────────────────────────────────────────
+           DATA REFRESH BAR (fixed at bottom)
+           ───────────────────────────────────────────────────────────── */
+        .refresh-bar {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 120;
+            background: rgba(250, 248, 245, 0.97);
+            backdrop-filter: blur(12px);
+            border-top: 1px solid var(--border);
+            padding: 0.55rem 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .refresh-inner {
+            width: min(1100px, calc(100% - 1.8rem));
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+        }
+
+        .refresh-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 0.1rem;
+            min-width: 0;
+        }
+
+        .refresh-title {
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--text-main);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .refresh-subtitle {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .refresh-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .refresh-status {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 768px) {
+            .refresh-inner { flex-direction: column; align-items: stretch; }
+            .refresh-actions { justify-content: space-between; }
+        }
+
         /* LANGUAGE */
         [data-en], [data-tr] { display: none; }
         html[lang="en"] [data-en] { display: inline; }
@@ -1210,11 +1277,15 @@
 
     let lang = localStorage.getItem('lang') || 'en';
 
+    // cache-bust token so edits in Google Sheet reflect immediately
+    let CACHE_BUST = Date.now();
+    let IS_REFRESHING = false;
+
     // ═══════════════════════════════════════════════════════════════════════════
     // GOOGLE SHEETS FETCH
     // ═══════════════════════════════════════════════════════════════════════════
     function getSheetURL(tabName) {
-        return `https://docs.google.com/spreadsheets/d/${GOOGLE_SHEET_ID}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(tabName)}`;
+        return `https://docs.google.com/spreadsheets/d/${GOOGLE_SHEET_ID}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(tabName)}&cb=${CACHE_BUST}`;
     }
 
     function parseCSV(csv) {
@@ -1265,7 +1336,7 @@
 
     async function fetchSheet(tabName) {
         try {
-            const response = await fetch(getSheetURL(tabName));
+            const response = await fetch(getSheetURL(tabName), { cache: 'no-store' });
             if (!response.ok) throw new Error('Failed to fetch');
             const csv = await response.text();
             return parseCSV(csv);
@@ -1641,7 +1712,7 @@
                     ${t('Campus Map', 'Kampüs Haritası')}
                 </span>
             </div>
-        `;
+               `;
     }
 
     function renderAbout() {
@@ -1660,6 +1731,24 @@
                 <div class="alert alert-success"><i class="fa-solid fa-certificate"></i> ${s.accreditation_status || 'MÜDEK'}</div>
             </div>
         `;
+    }
+
+    function renderAll() {
+        renderSettings();
+        renderNews();
+        renderEvents();
+        renderResearch();
+        renderFaculty();
+        renderPublications();
+        renderCourses();
+        renderProjects();
+        renderLabs();
+        renderJobs();
+        renderAlumni();
+        renderStudents();
+        renderPartners();
+        renderContact();
+        renderAbout();
     }
 
     // ═══════════════════════════════════════════════════════════════════════════
@@ -1697,42 +1786,55 @@
         document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.toggle('active', btn.textContent === l.toUpperCase()));
         localStorage.setItem('lang', l);
         renderAll();
-    }
-
-    function renderAll() {
-        renderSettings();
-        renderNews();
-        renderEvents();
-        renderResearch();
-        renderFaculty();
-        renderPublications();
-        renderCourses();
-        renderProjects();
-        renderLabs();
-        renderJobs();
-        renderAlumni();
-        renderStudents();
-        renderPartners();
-        renderContact();
-        renderAbout();
+        updateLastUpdatedLabel(); // keep the timestamp locale consistent
     }
 
     // ═══════════════════════════════════════════════════════════════════════════
-    // INIT
+    // REFRESH BAR UI
     // ═══════════════════════════════════════════════════════════════════════════
 
-    async function init() {
-        document.documentElement.lang = lang;
-        document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.toggle('active', btn.textContent === lang.toUpperCase()));
-        
-        // Check if sheet ID is configured
-        if (GOOGLE_SHEET_ID === 'YOUR_GOOGLE_SHEET_ID_HERE') {
-            document.getElementById('heroTitle').textContent = '⚠️ Google Sheet Not Configured';
-            document.getElementById('heroSubtitle').innerHTML = 'Please set your GOOGLE_SHEET_ID in the script section. <a href="#setup">See setup instructions below.</a>';
-            return;
+    function setRefreshUI(state, msgKey) {
+        const btn = document.getElementById('refreshBtn');
+        const status = document.getElementById('refreshStatus');
+
+        if (!btn || !status) return;
+
+        const texts = {
+            ready: { en: 'Ready', tr: 'Hazır' },
+            updating: { en: 'Updating…', tr: 'Güncelleniyor…' },
+            updated: { en: 'Updated', tr: 'Güncellendi' },
+            error: { en: 'Update failed', tr: 'Güncelleme başarısız' }
+        };
+
+        const label = texts[msgKey] ? (lang === 'tr' ? texts[msgKey].tr : texts[msgKey].en) : '';
+
+        if (state === 'busy') {
+            btn.disabled = true;
+            btn.innerHTML = `<i class="fa-solid fa-spinner" style="animation: spin 1s linear infinite;"></i> <span data-en>Update</span><span data-tr>Güncelle</span>`;
+            status.textContent = label;
+        } else {
+            btn.disabled = false;
+            btn.innerHTML = `<i class="fa-solid fa-rotate"></i> <span data-en>Update</span><span data-tr>Güncelle</span>`;
+            status.textContent = label;
         }
-        
-        // Fetch all data
+    }
+
+    function updateLastUpdatedLabel() {
+        const el = document.getElementById('lastUpdatedText');
+        if (!el) return;
+
+        const ts = localStorage.getItem('lastUpdatedTs');
+        if (!ts) { el.textContent = '—'; return; }
+
+        const d = new Date(parseInt(ts, 10));
+        el.textContent = d.toLocaleString(lang === 'tr' ? 'tr-TR' : 'en-US');
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════════
+    // DATA LOADING (INITIAL + REFRESH)
+    // ═══════════════════════════════════════════════════════════════════════════
+
+    async function loadAllData() {
         [
             DATA.settings,
             DATA.news,
@@ -1762,12 +1864,84 @@
             fetchSheet(SHEETS.partners),
             fetchSheet(SHEETS.students)
         ]);
-        
+
         renderAll();
+
+        // store last updated timestamp
+        localStorage.setItem('lastUpdatedTs', String(Date.now()));
+        updateLastUpdatedLabel();
+    }
+
+    async function refreshData() {
+        if (IS_REFRESHING) return;
+        IS_REFRESHING = true;
+
+        CACHE_BUST = Date.now();
+        setRefreshUI('busy', 'updating');
+
+        try {
+            await loadAllData();
+            setRefreshUI('idle', 'updated');
+            setTimeout(() => setRefreshUI('idle', 'ready'), 1500);
+        } catch (e) {
+            console.error(e);
+            setRefreshUI('idle', 'error');
+        } finally {
+            IS_REFRESHING = false;
+        }
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════════
+    // INIT
+    // ═══════════════════════════════════════════════════════════════════════════
+
+    async function init() {
+        document.documentElement.lang = lang;
+        document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.toggle('active', btn.textContent === lang.toUpperCase()));
+
+        updateLastUpdatedLabel();
+        setRefreshUI('idle', 'ready');
+        
+        // Check if sheet ID is configured
+        if (GOOGLE_SHEET_ID === 'YOUR_GOOGLE_SHEET_ID_HERE') {
+            document.getElementById('heroTitle').textContent = '⚠️ Google Sheet Not Configured';
+            document.getElementById('heroSubtitle').innerHTML = 'Please set your GOOGLE_SHEET_ID in the script section. <a href="#setup">See setup instructions below.</a>';
+            return;
+        }
+
+        try {
+            setRefreshUI('busy', 'updating');
+            await loadAllData();
+            setRefreshUI('idle', 'ready');
+        } catch (e) {
+            console.error(e);
+            setRefreshUI('idle', 'error');
+        }
     }
 
     document.addEventListener('DOMContentLoaded', init);
     </script>
+
+    <!-- DATA REFRESH BAR -->
+    <div class="refresh-bar" id="refreshBar">
+        <div class="refresh-inner">
+            <div class="refresh-meta">
+                <div class="refresh-title">
+                    <span data-en>Data</span><span data-tr>Veri</span>
+                </div>
+                <div class="refresh-subtitle" id="refreshInfo">
+                    <span data-en>Last updated: </span><span data-tr>Son güncelleme: </span><span id="lastUpdatedText">—</span>
+                </div>
+            </div>
+            <div class="refresh-actions">
+                <span class="refresh-status" id="refreshStatus"><span data-en>Ready</span><span data-tr>Hazır</span></span>
+                <button class="btn btn-accent btn-sm" id="refreshBtn" onclick="refreshData()">
+                    <i class="fa-solid fa-rotate"></i>
+                    <span data-en>Update</span><span data-tr>Güncelle</span>
+                </button>
+            </div>
+        </div>
+    </div>
 
     <!-- 
     ╔═══════════════════════════════════════════════════════════════════════════════╗
