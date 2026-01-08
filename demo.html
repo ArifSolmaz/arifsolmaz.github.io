@@ -2077,7 +2077,7 @@
             return `https://docs.google.com/spreadsheets/d/${GOOGLE_SHEET_ID}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(tabName)}&cb=${CACHE_BUST}`;
         }
 
-        function parseCSV(csvText) {
+        function parseCSV(csvText, returnRaw = false) {
             const rows = [];
             let currentRow = [];
             let currentVal = '';
@@ -2118,6 +2118,7 @@
                 if (currentRow.length > 0) rows.push(currentRow);
             }
 
+            if (returnRaw) return rows;
             if (rows.length < 2) return [];
 
             const headers = rows[0];
@@ -2140,12 +2141,7 @@
                 const response = await fetch(getSheetURL(tabName), { cache: 'no-store' });
                 if (!response.ok) throw new Error('Failed to fetch');
                 const csv = await response.text();
-                if (tabName === 'Settings') {
-                    console.log('DEBUG_SETTINGS_CSV_START');
-                    console.log(csv);
-                    console.log('DEBUG_SETTINGS_CSV_END');
-                }
-                return parseCSV(csv);
+                return parseCSV(csv, tabName === 'Settings'); // Use raw mode for Settings
             } catch (err) {
                 console.error(`Error fetching ${tabName}:`, err);
                 return [];
@@ -2154,13 +2150,41 @@
 
         async function fetchSettings() {
             try {
-                const data = await fetchSheet(SHEETS.settings);
+                const rows = await fetchSheet(SHEETS.settings);
                 const settings = {};
-                data.forEach(row => {
-                    if (row.key) settings[row.key] = row.value || '';
+
+                // Handle raw rows for Settings to robustly support multiline cells (Alt+Enter)
+                // and missing headers/transposed layouts
+                rows.forEach(row => {
+                    if (!row || row.length < 2) return;
+
+                    const keyCell = row[0] || '';
+                    const valCell = row[1] || '';
+
+                    // If cell contains newlines, split them (handling Alt+Enter in Sheets)
+                    if (keyCell.includes('\n') || valCell.includes('\n')) {
+                        const keys = keyCell.split('\n');
+                        const vals = valCell.split('\n');
+                        const count = Math.max(keys.length, vals.length);
+
+                        for (let i = 0; i < count; i++) {
+                            const k = (keys[i] || '').trim();
+                            const v = (vals[i] || '').trim();
+                            if (k && k.toLowerCase() !== 'key') { // skip header 'key'
+                                settings[k] = v;
+                            }
+                        }
+                    } else {
+                        const k = keyCell.trim();
+                        const v = valCell.trim();
+                        if (k && k.toLowerCase() !== 'key') {
+                            settings[k] = v;
+                        }
+                    }
                 });
                 return settings;
             } catch (err) {
+                console.error('Error parsing settings:', err);
                 return {};
             }
         }
