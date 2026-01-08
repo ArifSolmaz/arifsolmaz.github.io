@@ -2537,11 +2537,16 @@
                 <p><strong>${t('Department Chair', 'Bölüm Başkanı')}:</strong> ${s.chair || ''}</p>
                 <p><strong>${t('Graduate Coordinator', 'Lisansüstü Koordinatörü')}:</strong> ${s.grad_coordinator || ''}</p>
             </div>
-            <div style="background:var(--bg-warm); border-radius:var(--radius-lg); height:200px; display:flex; align-items:center; justify-content:center; border:1px solid var(--border);">
-                <span style="color:var(--text-muted); text-align:center;">
-                    <i class="fa-solid fa-map-location-dot" style="font-size:2rem; margin-bottom:0.5rem; display:block;"></i>
-                    ${t('Campus Map', 'Kampüs Haritası')}
-                </span>
+            <div style="border-radius:var(--radius-lg); overflow:hidden; border:1px solid var(--border); height:300px;">
+                <iframe 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0" 
+                    loading="lazy" 
+                    allowfullscreen 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.13481232!2d28.9439!3d41.0478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab098867a0799%3A0xc3f7a731215b49cb!2zSGlza2FuaGFuIFNhxJ9sw6VrIHZlIFRla25vbG9qaSDDnG5pdmVyc2l0ZXNp!5e0!3m2!1str!2str!4v1704746000000!5m2!1str!2str">
+                </iframe>
             </div>
                `;
         }
