@@ -2074,7 +2074,7 @@
         // GOOGLE SHEETS FETCH
         // ═══════════════════════════════════════════════════════════════════════════
         function getSheetURL(tabName) {
-            return `https://docs.google.com/spreadsheets/d/${GOOGLE_SHEET_ID}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(tabName)}&cb=${CACHE_BUST}`;
+            return `https://docs.google.com/spreadsheets/d/${GOOGLE_SHEET_ID}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(tabName)}&headers=0&cb=${CACHE_BUST}`;
         }
 
         function parseCSV(csvText, returnRaw = false) {
@@ -2182,6 +2182,7 @@
                         }
                     }
                 });
+                console.log('Parsed Settings:', settings);
                 return settings;
             } catch (err) {
                 console.error('Error parsing settings:', err);
@@ -2680,7 +2681,7 @@
                 DATA.partners,
                 DATA.students
             ] = await Promise.all([
-                fetchSheet(SHEETS.settings),
+                fetchSettings(), // Use the specialized settings parser
                 fetchSheet(SHEETS.news),
                 fetchSheet(SHEETS.events),
                 fetchSheet(SHEETS.faculty),
