@@ -1536,6 +1536,10 @@
             justify-content: center;
         }
 
+        .refresh-bar:hover .refresh-meta {
+            color: var(--accent);
+        }
+
         @media (max-width: 900px) {
             .refresh-bar {
                 left: 0;
@@ -3243,25 +3247,418 @@
     <!-- DATA REFRESH BAR -->
     <div class="refresh-bar" id="refreshBar">
         <div class="refresh-inner">
-            <div class="refresh-meta">
+            <div class="refresh-meta" onclick="toggleUpdatePanel()" style="cursor:pointer;">
                 <div class="refresh-title">
+                    <i class="fa-solid fa-database" style="margin-right:0.3rem; opacity:0.7;"></i>
                     <span data-en>Data</span><span data-tr>Veri</span>
+                    <i class="fa-solid fa-chevron-up" id="panelToggleIcon" style="margin-left:0.4rem; font-size:0.65rem; opacity:0.5; transition:transform 0.3s;"></i>
                 </div>
                 <div class="refresh-subtitle" id="refreshInfo">
-                    <span data-en>Last updated: </span><span data-tr>Son güncelleme: </span><span
-                        id="lastUpdatedText">—</span>
+                    <span data-en>Last updated: </span><span data-tr>Son güncelleme: </span><span id="lastUpdatedText">—</span>
                 </div>
             </div>
             <div class="refresh-actions">
-                <span class="refresh-status" id="refreshStatus"><span data-en>Ready</span><span
-                        data-tr>Hazır</span></span>
+                <span class="refresh-status" id="refreshStatus"><span data-en>Ready</span><span data-tr>Hazır</span></span>
+                <button class="btn btn-ghost btn-sm" onclick="openAdminLogin()" title="Admin">
+                    <i class="fa-solid fa-gear"></i>
+                </button>
                 <button class="btn btn-accent btn-sm" id="refreshBtn" onclick="refreshData()">
                     <i class="fa-solid fa-rotate"></i>
                     <span data-en>Update</span><span data-tr>Güncelle</span>
                 </button>
             </div>
         </div>
+        
+        <!-- Update Details Panel -->
+        <div class="update-panel" id="updatePanel">
+            <div class="update-panel-inner">
+                <div class="update-panel-header">
+                    <h4><i class="fa-solid fa-clock-rotate-left"></i> <span data-en>Update Log</span><span data-tr>Güncelleme Günlüğü</span></h4>
+                    <button class="btn btn-ghost btn-sm" onclick="toggleUpdatePanel()"><i class="fa-solid fa-times"></i></button>
+                </div>
+                <div class="update-panel-content" id="updateLogContent">
+                    <p class="text-muted"><span data-en>Loading data...</span><span data-tr>Veri yükleniyor...</span></p>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <!-- Admin Login Modal -->
+    <div class="modal-overlay" id="adminModal" onclick="if(event.target===this)closeAdminModal()">
+        <div class="admin-modal">
+            <div class="admin-modal-header">
+                <h3><i class="fa-solid fa-shield-halved"></i> <span data-en>Admin Panel</span><span data-tr>Yönetici Paneli</span></h3>
+                <button class="btn btn-ghost btn-sm" onclick="closeAdminModal()"><i class="fa-solid fa-times"></i></button>
+            </div>
+            
+            <!-- Login Form -->
+            <div id="adminLoginForm" class="admin-section">
+                <p class="admin-desc"><span data-en>Enter password to access the data editor</span><span data-tr>Veri düzenleyiciye erişmek için şifre girin</span></p>
+                <div class="admin-input-group">
+                    <input type="password" id="adminPassword" placeholder="Password / Şifre" class="admin-input" onkeypress="if(event.key==='Enter')checkAdminLogin()">
+                    <button class="btn btn-accent" onclick="checkAdminLogin()">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+                <p class="admin-hint" id="loginError" style="color:var(--pink); display:none;">
+                    <i class="fa-solid fa-exclamation-circle"></i> <span data-en>Incorrect password</span><span data-tr>Yanlış şifre</span>
+                </p>
+                <p class="admin-hint">
+                    <i class="fa-solid fa-info-circle"></i> <span data-en>Default: admin123</span><span data-tr>Varsayılan: admin123</span>
+                </p>
+            </div>
+            
+            <!-- Sheet Editor (hidden until login) -->
+            <div id="adminSheetEditor" class="admin-section" style="display:none;">
+                <div class="admin-tabs">
+                    <button class="admin-tab active" onclick="showAdminTab('embed')"><i class="fa-solid fa-table"></i> <span data-en>Edit Data</span><span data-tr>Veri Düzenle</span></button>
+                    <button class="admin-tab" onclick="showAdminTab('settings')"><i class="fa-solid fa-cog"></i> <span data-en>Settings</span><span data-tr>Ayarlar</span></button>
+                </div>
+                
+                <div id="adminTabEmbed" class="admin-tab-content">
+                    <p class="admin-desc"><span data-en>Edit your Google Sheet directly:</span><span data-tr>Google Sheet'inizi doğrudan düzenleyin:</span></p>
+                    <div class="sheet-embed-container">
+                        <iframe id="sheetEmbed" src="" frameborder="0" style="width:100%; height:400px; border-radius:8px; border:1px solid var(--border);"></iframe>
+                    </div>
+                    <div class="admin-actions">
+                        <a href="" id="openSheetLink" target="_blank" class="btn btn-ghost">
+                            <i class="fa-solid fa-external-link"></i> <span data-en>Open in Google Sheets</span><span data-tr>Google Sheets'te Aç</span>
+                        </a>
+                        <button class="btn btn-accent" onclick="refreshData(); closeAdminModal();">
+                            <i class="fa-solid fa-rotate"></i> <span data-en>Refresh Site Data</span><span data-tr>Site Verisini Yenile</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div id="adminTabSettings" class="admin-tab-content" style="display:none;">
+                    <div class="settings-group">
+                        <label><span data-en>Google Sheet ID</span><span data-tr>Google Sheet ID</span></label>
+                        <input type="text" id="settingSheetId" class="admin-input" style="width:100%;">
+                        <p class="admin-hint"><span data-en>Found in the sheet URL after /d/</span><span data-tr>Sheet URL'sinde /d/ sonrasında bulunur</span></p>
+                    </div>
+                    <div class="settings-group">
+                        <label><span data-en>Admin Password</span><span data-tr>Yönetici Şifresi</span></label>
+                        <input type="text" id="settingPassword" class="admin-input" style="width:100%;">
+                    </div>
+                    <button class="btn btn-accent" onclick="saveAdminSettings()">
+                        <i class="fa-solid fa-save"></i> <span data-en>Save Settings</span><span data-tr>Ayarları Kaydet</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        /* Update Panel Styles */
+        .update-panel {
+            position: absolute;
+            bottom: 100%;
+            left: 0;
+            right: 0;
+            background: var(--bg-main);
+            border-top: 1px solid var(--border);
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        .update-panel.show {
+            max-height: 300px;
+            padding: 1rem 0;
+        }
+        .update-panel-inner {
+            width: min(1100px, calc(100% - 1.8rem));
+            margin: 0 auto;
+        }
+        .update-panel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+        .update-panel-header h4 {
+            margin: 0;
+            font-size: 0.9rem;
+            color: var(--text-main);
+        }
+        .update-panel-content {
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        .update-log-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border-light);
+            font-size: 0.85rem;
+        }
+        .update-log-item:last-child { border-bottom: none; }
+        .update-log-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            color: white;
+        }
+        .update-log-info { flex: 1; }
+        .update-log-name { font-weight: 500; color: var(--text-main); }
+        .update-log-count { color: var(--text-muted); font-size: 0.8rem; }
+        .update-log-time { color: var(--text-muted); font-size: 0.75rem; white-space: nowrap; }
+        
+        /* Admin Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(4px);
+            z-index: 1000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+        .modal-overlay.show { display: flex; }
+        .admin-modal {
+            background: var(--bg-main);
+            border-radius: var(--radius-lg);
+            width: min(700px, 100%);
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+        }
+        .admin-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            background: var(--bg-main);
+            z-index: 1;
+        }
+        .admin-modal-header h3 {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+        .admin-section { padding: 1.25rem; }
+        .admin-desc {
+            color: var(--text-secondary);
+            margin: 0 0 1rem 0;
+            font-size: 0.9rem;
+        }
+        .admin-input-group {
+            display: flex;
+            gap: 0.5rem;
+        }
+        .admin-input {
+            flex: 1;
+            padding: 0.6rem 0.9rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            font-size: 0.95rem;
+            background: var(--bg-warm);
+        }
+        .admin-input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-light);
+        }
+        .admin-hint {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin: 0.75rem 0 0 0;
+        }
+        .admin-tabs {
+            display: flex;
+            gap: 0.25rem;
+            padding: 0 1.25rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .admin-tab {
+            padding: 0.6rem 1rem;
+            background: none;
+            border: none;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            margin-bottom: -1px;
+        }
+        .admin-tab:hover { color: var(--text-main); }
+        .admin-tab.active {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
+        .admin-tab-content { padding: 1.25rem; }
+        .sheet-embed-container {
+            background: var(--bg-warm);
+            border-radius: var(--radius-md);
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .admin-actions {
+            display: flex;
+            gap: 0.75rem;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+        }
+        .settings-group {
+            margin-bottom: 1rem;
+        }
+        .settings-group label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.4rem;
+            font-size: 0.9rem;
+        }
+    </style>
+
+    <script>
+        // ═══════════════════════════════════════════════════════════════════════════
+        // ADMIN & UPDATE PANEL FUNCTIONS
+        // ═══════════════════════════════════════════════════════════════════════════
+        
+        // Config stored in localStorage
+        const ADMIN_CONFIG = {
+            password: localStorage.getItem('adminPassword') || 'admin123',
+            sheetId: localStorage.getItem('sheetId') || GOOGLE_SHEET_ID
+        };
+        
+        // Track loaded sheets
+        const UPDATE_LOG = [];
+        
+        function logSheetUpdate(sheetName, count) {
+            const now = new Date();
+            UPDATE_LOG.push({
+                name: sheetName,
+                count: count,
+                time: now.toLocaleTimeString('tr-TR'),
+                timestamp: now
+            });
+            renderUpdateLog();
+        }
+        
+        function renderUpdateLog() {
+            const container = document.getElementById('updateLogContent');
+            if (UPDATE_LOG.length === 0) {
+                container.innerHTML = `<p class="text-muted"><span data-en>No updates yet</span><span data-tr>Henüz güncelleme yok</span></p>`;
+                return;
+            }
+            
+            const icons = {
+                'Settings': { icon: 'fa-cog', color: '#64748b' },
+                'News': { icon: 'fa-newspaper', color: '#f59e0b' },
+                'Events': { icon: 'fa-calendar', color: '#6366f1' },
+                'Faculty': { icon: 'fa-user-tie', color: '#0f172a' },
+                'Research': { icon: 'fa-flask', color: '#10b981' },
+                'Publications': { icon: 'fa-book', color: '#8b5cf6' },
+                'Courses': { icon: 'fa-graduation-cap', color: '#ec4899' },
+                'Projects': { icon: 'fa-rocket', color: '#14b8a6' },
+                'Labs': { icon: 'fa-microscope', color: '#3b82f6' },
+                'Jobs': { icon: 'fa-briefcase', color: '#22c55e' },
+                'Alumni': { icon: 'fa-users', color: '#f97316' },
+                'Partners': { icon: 'fa-handshake', color: '#0ea5e9' },
+                'Students': { icon: 'fa-user-graduate', color: '#a855f7' }
+            };
+            
+            const html = UPDATE_LOG.slice().reverse().map(item => {
+                const cfg = icons[item.name] || { icon: 'fa-database', color: '#64748b' };
+                return `
+                    <div class="update-log-item">
+                        <div class="update-log-icon" style="background:${cfg.color};">
+                            <i class="fa-solid ${cfg.icon}"></i>
+                        </div>
+                        <div class="update-log-info">
+                            <div class="update-log-name">${item.name}</div>
+                            <div class="update-log-count">${item.count} ${item.count === 1 ? 'kayıt' : 'kayıt'} yüklendi</div>
+                        </div>
+                        <div class="update-log-time">${item.time}</div>
+                    </div>
+                `;
+            }).join('');
+            
+            container.innerHTML = html;
+            applyLanguage();
+        }
+        
+        function toggleUpdatePanel() {
+            const panel = document.getElementById('updatePanel');
+            const icon = document.getElementById('panelToggleIcon');
+            panel.classList.toggle('show');
+            icon.style.transform = panel.classList.contains('show') ? 'rotate(180deg)' : 'rotate(0)';
+        }
+        
+        function openAdminLogin() {
+            document.getElementById('adminModal').classList.add('show');
+            document.getElementById('adminPassword').focus();
+            document.getElementById('settingSheetId').value = ADMIN_CONFIG.sheetId;
+            document.getElementById('settingPassword').value = ADMIN_CONFIG.password;
+        }
+        
+        function closeAdminModal() {
+            document.getElementById('adminModal').classList.remove('show');
+            document.getElementById('loginError').style.display = 'none';
+        }
+        
+        function checkAdminLogin() {
+            const pwd = document.getElementById('adminPassword').value;
+            if (pwd === ADMIN_CONFIG.password) {
+                document.getElementById('adminLoginForm').style.display = 'none';
+                document.getElementById('adminSheetEditor').style.display = 'block';
+                
+                // Load embedded sheet
+                const sheetUrl = `https://docs.google.com/spreadsheets/d/${ADMIN_CONFIG.sheetId}/edit?usp=sharing&rm=embedded`;
+                document.getElementById('sheetEmbed').src = sheetUrl;
+                document.getElementById('openSheetLink').href = `https://docs.google.com/spreadsheets/d/${ADMIN_CONFIG.sheetId}/edit`;
+            } else {
+                document.getElementById('loginError').style.display = 'block';
+                document.getElementById('adminPassword').value = '';
+            }
+        }
+        
+        function showAdminTab(tab) {
+            document.querySelectorAll('.admin-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.admin-tab-content').forEach(c => c.style.display = 'none');
+            
+            event.target.closest('.admin-tab').classList.add('active');
+            document.getElementById('adminTab' + tab.charAt(0).toUpperCase() + tab.slice(1)).style.display = 'block';
+        }
+        
+        function saveAdminSettings() {
+            const newSheetId = document.getElementById('settingSheetId').value.trim();
+            const newPassword = document.getElementById('settingPassword').value.trim();
+            
+            if (newSheetId) {
+                localStorage.setItem('sheetId', newSheetId);
+                ADMIN_CONFIG.sheetId = newSheetId;
+                GOOGLE_SHEET_ID = newSheetId; // Update global
+            }
+            if (newPassword) {
+                localStorage.setItem('adminPassword', newPassword);
+                ADMIN_CONFIG.password = newPassword;
+            }
+            
+            alert(currentLang === 'tr' ? 'Ayarlar kaydedildi! Sayfa yenilenecek.' : 'Settings saved! Page will reload.');
+            location.reload();
+        }
+        
+        // Override the original loadSheet to track updates
+        const originalLoadSheet = loadSheet;
+        loadSheet = async function(sheetName, key) {
+            const result = await originalLoadSheet(sheetName, key);
+            if (DATA[key] && DATA[key].length > 0) {
+                logSheetUpdate(sheetName, DATA[key].length);
+            } else if (key === 'settings' && Object.keys(DATA.settings).length > 0) {
+                logSheetUpdate(sheetName, Object.keys(DATA.settings).length);
+            }
+            return result;
+        };
+    </script>
 
     <!-- 
     ╔═══════════════════════════════════════════════════════════════════════════════╗
