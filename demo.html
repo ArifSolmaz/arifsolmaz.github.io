@@ -2370,6 +2370,56 @@
             students: []
         };
 
+        // UPDATE LOG for tracking sheet loads
+        const UPDATE_LOG = [];
+        
+        function renderUpdateLog() {
+            const container = document.getElementById('updateLogContent');
+            if (!container) return;
+            
+            if (UPDATE_LOG.length === 0) {
+                container.innerHTML = `<p class="text-muted"><span data-en>No updates yet</span><span data-tr>Henüz güncelleme yok</span></p>`;
+                return;
+            }
+            
+            const icons = {
+                'Settings': { icon: 'fa-cog', color: '#64748b' },
+                'News': { icon: 'fa-newspaper', color: '#f59e0b' },
+                'Events': { icon: 'fa-calendar', color: '#6366f1' },
+                'Faculty': { icon: 'fa-user-tie', color: '#0f172a' },
+                'Research': { icon: 'fa-flask', color: '#10b981' },
+                'Publications': { icon: 'fa-book', color: '#8b5cf6' },
+                'Courses': { icon: 'fa-graduation-cap', color: '#ec4899' },
+                'Projects': { icon: 'fa-rocket', color: '#14b8a6' },
+                'Labs': { icon: 'fa-microscope', color: '#3b82f6' },
+                'Jobs': { icon: 'fa-briefcase', color: '#22c55e' },
+                'Alumni': { icon: 'fa-users', color: '#f97316' },
+                'Partners': { icon: 'fa-handshake', color: '#0ea5e9' },
+                'Students': { icon: 'fa-user-graduate', color: '#a855f7' }
+            };
+            
+            const currentLang = localStorage.getItem('lang') || 'en';
+            const recordText = currentLang === 'tr' ? 'kayıt yüklendi' : 'records loaded';
+            
+            const html = UPDATE_LOG.map(item => {
+                const cfg = icons[item.name] || { icon: 'fa-database', color: '#64748b' };
+                return `
+                    <div class="update-log-item">
+                        <div class="update-log-icon" style="background:${cfg.color};">
+                            <i class="fa-solid ${cfg.icon}"></i>
+                        </div>
+                        <div class="update-log-info">
+                            <div class="update-log-name">${item.name}</div>
+                            <div class="update-log-count">${item.count} ${recordText}</div>
+                        </div>
+                        <div class="update-log-time">${item.time}</div>
+                    </div>
+                `;
+            }).join('');
+            
+            container.innerHTML = html;
+        }
+
         let lang = localStorage.getItem('lang') || 'en';
 
         // cache-bust token so edits in Google Sheet reflect immediately
@@ -3157,6 +3207,9 @@
         // ═══════════════════════════════════════════════════════════════════════════
 
         async function loadAllData() {
+            // Clear previous log
+            UPDATE_LOG.length = 0;
+            
             [
                 DATA.settings,
                 DATA.news,
@@ -3187,6 +3240,38 @@
                 fetchSheet(SHEETS.students)
             ]);
 
+            // Log all loaded data
+            const now = new Date();
+            const timeStr = now.toLocaleTimeString('tr-TR');
+            
+            if (DATA.settings && Object.keys(DATA.settings).length > 0) 
+                UPDATE_LOG.push({ name: 'Settings', count: Object.keys(DATA.settings).length, time: timeStr });
+            if (DATA.news?.length) 
+                UPDATE_LOG.push({ name: 'News', count: DATA.news.length, time: timeStr });
+            if (DATA.events?.length) 
+                UPDATE_LOG.push({ name: 'Events', count: DATA.events.length, time: timeStr });
+            if (DATA.faculty?.length) 
+                UPDATE_LOG.push({ name: 'Faculty', count: DATA.faculty.length, time: timeStr });
+            if (DATA.research?.length) 
+                UPDATE_LOG.push({ name: 'Research', count: DATA.research.length, time: timeStr });
+            if (DATA.publications?.length) 
+                UPDATE_LOG.push({ name: 'Publications', count: DATA.publications.length, time: timeStr });
+            if (DATA.courses?.length) 
+                UPDATE_LOG.push({ name: 'Courses', count: DATA.courses.length, time: timeStr });
+            if (DATA.projects?.length) 
+                UPDATE_LOG.push({ name: 'Projects', count: DATA.projects.length, time: timeStr });
+            if (DATA.labs?.length) 
+                UPDATE_LOG.push({ name: 'Labs', count: DATA.labs.length, time: timeStr });
+            if (DATA.jobs?.length) 
+                UPDATE_LOG.push({ name: 'Jobs', count: DATA.jobs.length, time: timeStr });
+            if (DATA.alumni?.length) 
+                UPDATE_LOG.push({ name: 'Alumni', count: DATA.alumni.length, time: timeStr });
+            if (DATA.partners?.length) 
+                UPDATE_LOG.push({ name: 'Partners', count: DATA.partners.length, time: timeStr });
+            if (DATA.students?.length) 
+                UPDATE_LOG.push({ name: 'Students', count: DATA.students.length, time: timeStr });
+            
+            renderUpdateLog();
             renderAll();
 
             // store last updated timestamp
@@ -3576,63 +3661,6 @@
             sheetId: localStorage.getItem('sheetId') || GOOGLE_SHEET_ID
         };
         
-        // Track loaded sheets
-        const UPDATE_LOG = [];
-        
-        function logSheetUpdate(sheetName, count) {
-            const now = new Date();
-            UPDATE_LOG.push({
-                name: sheetName,
-                count: count,
-                time: now.toLocaleTimeString('tr-TR'),
-                timestamp: now
-            });
-            renderUpdateLog();
-        }
-        
-        function renderUpdateLog() {
-            const container = document.getElementById('updateLogContent');
-            if (UPDATE_LOG.length === 0) {
-                container.innerHTML = `<p class="text-muted"><span data-en>No updates yet</span><span data-tr>Henüz güncelleme yok</span></p>`;
-                return;
-            }
-            
-            const icons = {
-                'Settings': { icon: 'fa-cog', color: '#64748b' },
-                'News': { icon: 'fa-newspaper', color: '#f59e0b' },
-                'Events': { icon: 'fa-calendar', color: '#6366f1' },
-                'Faculty': { icon: 'fa-user-tie', color: '#0f172a' },
-                'Research': { icon: 'fa-flask', color: '#10b981' },
-                'Publications': { icon: 'fa-book', color: '#8b5cf6' },
-                'Courses': { icon: 'fa-graduation-cap', color: '#ec4899' },
-                'Projects': { icon: 'fa-rocket', color: '#14b8a6' },
-                'Labs': { icon: 'fa-microscope', color: '#3b82f6' },
-                'Jobs': { icon: 'fa-briefcase', color: '#22c55e' },
-                'Alumni': { icon: 'fa-users', color: '#f97316' },
-                'Partners': { icon: 'fa-handshake', color: '#0ea5e9' },
-                'Students': { icon: 'fa-user-graduate', color: '#a855f7' }
-            };
-            
-            const html = UPDATE_LOG.slice().reverse().map(item => {
-                const cfg = icons[item.name] || { icon: 'fa-database', color: '#64748b' };
-                return `
-                    <div class="update-log-item">
-                        <div class="update-log-icon" style="background:${cfg.color};">
-                            <i class="fa-solid ${cfg.icon}"></i>
-                        </div>
-                        <div class="update-log-info">
-                            <div class="update-log-name">${item.name}</div>
-                            <div class="update-log-count">${item.count} ${item.count === 1 ? 'kayıt' : 'kayıt'} yüklendi</div>
-                        </div>
-                        <div class="update-log-time">${item.time}</div>
-                    </div>
-                `;
-            }).join('');
-            
-            container.innerHTML = html;
-            applyLanguage();
-        }
-        
         function toggleUpdatePanel() {
             const panel = document.getElementById('updatePanel');
             const icon = document.getElementById('panelToggleIcon');
@@ -3694,18 +3722,6 @@
             alert(currentLang === 'tr' ? 'Ayarlar kaydedildi! Sayfa yenilenecek.' : 'Settings saved! Page will reload.');
             location.reload();
         }
-        
-        // Override the original loadSheet to track updates
-        const originalLoadSheet = loadSheet;
-        loadSheet = async function(sheetName, key) {
-            const result = await originalLoadSheet(sheetName, key);
-            if (DATA[key] && DATA[key].length > 0) {
-                logSheetUpdate(sheetName, DATA[key].length);
-            } else if (key === 'settings' && Object.keys(DATA.settings).length > 0) {
-                logSheetUpdate(sheetName, Object.keys(DATA.settings).length);
-            }
-            return result;
-        };
     </script>
 
     <!-- 
