@@ -2370,8 +2370,12 @@
             students: []
         };
 
-        // Previous data counts for change tracking
-        let PREVIOUS_COUNTS = JSON.parse(localStorage.getItem('dataCounts') || '{}');
+        // ═══════════════════════════════════════════════════════════════════════════
+        // SMART CHANGE TRACKING SYSTEM
+        // ═══════════════════════════════════════════════════════════════════════════
+        
+        // Store previous data snapshots for comparison
+        let PREVIOUS_DATA = JSON.parse(localStorage.getItem('previousDataSnapshot') || '{}');
         
         // UPDATE LOG for tracking sheet changes
         const UPDATE_LOG = [];
@@ -2393,38 +2397,236 @@
             'Students': 'Öğrenciler'
         };
         
-        function getChangeMessage(name, oldCount, newCount, lang) {
-            const diff = newCount - oldCount;
-            const nameTr = SHEET_NAMES_TR[name] || name;
-            
-            if (oldCount === 0 || oldCount === undefined) {
-                // First load
-                return lang === 'tr' 
-                    ? `${newCount} ${nameTr.toLowerCase()} yüklendi`
-                    : `${newCount} ${name.toLowerCase()} loaded`;
-            } else if (diff > 0) {
-                // New items added
-                return lang === 'tr'
-                    ? `+${diff} yeni eklendi (${oldCount} → ${newCount})`
-                    : `+${diff} new added (${oldCount} → ${newCount})`;
-            } else if (diff < 0) {
-                // Items removed
-                return lang === 'tr'
-                    ? `${Math.abs(diff)} silindi (${oldCount} → ${newCount})`
-                    : `${Math.abs(diff)} removed (${oldCount} → ${newCount})`;
-            } else {
-                // No change
-                return lang === 'tr'
-                    ? `${newCount} kayıt (değişiklik yok)`
-                    : `${newCount} records (no change)`;
-            }
+        // Get unique identifier for a record
+        function getRecordId(record, sheetName) {
+            // Try different ID fields based on sheet type
+            return record.id || record.name || record.title || record.title_en || 
+                   record.name_en || record.company || record.code || 
+                   JSON.stringify(record).substring(0, 50);
         }
         
-        function getChangeType(oldCount, newCount) {
-            if (oldCount === 0 || oldCount === undefined) return 'new';
-            if (newCount > oldCount) return 'added';
-            if (newCount < oldCount) return 'removed';
-            return 'unchanged';
+        // Get display title for a record
+        function getRecordTitle(record, lang) {
+            const title = record.title_tr || record.title_en || record.title ||
+                         record.name_tr || record.name_en || record.name ||
+                         record.company || record.code || record.id || '?';
+            return title.length > 30 ? title.substring(0, 30) + '...' : title;
+        }
+        
+        // Create a hash/fingerprint of a record for comparison
+        function hashRecord(record) {
+            const str = JSON.stringify(record);
+            let hash = 0;
+            for (let i = 0; i < str.length; i++) {
+                const char = str.charCodeAt(i);
+                hash = ((hash << 5) - hash) + char;
+                hash = hash & hash;
+            }
+            return hash.toString(36);
+        }
+        
+        // Compare two datasets and find differences
+        function compareData(oldData, newData, sheetName, lang) {
+            const changes = {
+                added: [],
+                removed: [],
+                modified: [],
+                unchanged: 0
+            };
+            
+            if (!oldData || !Array.isArray(oldData)) {
+                // First load - all items are new
+                if (newData && Array.isArray(newData)) {
+                    changes.added = newData.map(r => getRecordTitle(r, lang));
+                }
+                return changes;
+            }
+            
+            if (!newData || !Array.isArray(newData)) {
+                return changes;
+            }
+            
+            // Create maps for comparison
+            const oldMap = new Map();
+            const newMap = new Map();
+            
+            oldData.forEach(record => {
+                const id = getRecordId(record, sheetName);
+                oldMap.set(id, { record, hash: hashRecord(record) });
+            });
+            
+            newData.forEach(record => {
+                const id = getRecordId(record, sheetName);
+                newMap.set(id, { record, hash: hashRecord(record) });
+            });
+            
+            // Find added and modified items
+            newMap.forEach((value, id) => {
+                const oldItem = oldMap.get(id);
+                if (!oldItem) {
+                    changes.added.push(getRecordTitle(value.record, lang));
+                } else if (oldItem.hash !== value.hash) {
+                    // Find what changed
+                    const changedFields = findChangedFields(oldItem.record, value.record);
+                    changes.modified.push({
+                        title: getRecordTitle(value.record, lang),
+                        fields: changedFields
+                    });
+                } else {
+                    changes.unchanged++;
+                }
+            });
+            
+            // Find removed items
+            oldMap.forEach((value, id) => {
+                if (!newMap.has(id)) {
+                    changes.removed.push(getRecordTitle(value.record, lang));
+                }
+            });
+            
+            return changes;
+        }
+        
+        // Find which fields changed between two records
+        function findChangedFields(oldRecord, newRecord) {
+            const changed = [];
+            const fieldLabels = {
+                title_en: 'başlık', title_tr: 'başlık', title: 'başlık',
+                name_en: 'isim', name_tr: 'isim', name: 'isim',
+                email: 'e-posta', phone: 'telefon',
+                description_en: 'açıklama', description_tr: 'açıklama',
+                content_en: 'içerik', content_tr: 'içerik',
+                date: 'tarih', time: 'saat', location: 'konum',
+                image: 'görsel', photo: 'fotoğraf',
+                position_en: 'pozisyon', position_tr: 'pozisyon',
+                department: 'bölüm', office: 'ofis',
+                salary: 'maaş', deadline: 'son tarih',
+                yok_cv: 'YÖK CV', website: 'web sitesi'
+            };
+            
+            const allKeys = new Set([...Object.keys(oldRecord), ...Object.keys(newRecord)]);
+            
+            allKeys.forEach(key => {
+                const oldVal = oldRecord[key];
+                const newVal = newRecord[key];
+                
+                if (JSON.stringify(oldVal) !== JSON.stringify(newVal)) {
+                    const label = fieldLabels[key] || key;
+                    changed.push(label);
+                }
+            });
+            
+            return changed.slice(0, 3); // Max 3 fields to show
+        }
+        
+        // Compare settings object
+        function compareSettings(oldSettings, newSettings, lang) {
+            const changes = {
+                added: [],
+                removed: [],
+                modified: [],
+                unchanged: 0
+            };
+            
+            if (!oldSettings || Object.keys(oldSettings).length === 0) {
+                changes.added = Object.keys(newSettings || {});
+                return changes;
+            }
+            
+            const oldKeys = Object.keys(oldSettings || {});
+            const newKeys = Object.keys(newSettings || {});
+            
+            newKeys.forEach(key => {
+                if (!(key in oldSettings)) {
+                    changes.added.push(key);
+                } else if (oldSettings[key] !== newSettings[key]) {
+                    changes.modified.push({ title: key, fields: ['değer'] });
+                } else {
+                    changes.unchanged++;
+                }
+            });
+            
+            oldKeys.forEach(key => {
+                if (!(key in newSettings)) {
+                    changes.removed.push(key);
+                }
+            });
+            
+            return changes;
+        }
+        
+        // Generate smart change message
+        function generateChangeMessage(changes, sheetName, lang) {
+            const parts = [];
+            const isTr = lang === 'tr';
+            
+            if (changes.added.length > 0) {
+                if (changes.added.length <= 2) {
+                    const names = changes.added.map(n => `"${n}"`).join(', ');
+                    parts.push(isTr 
+                        ? `<span style="color:#22c55e;">+${changes.added.length} yeni:</span> ${names}`
+                        : `<span style="color:#22c55e;">+${changes.added.length} new:</span> ${names}`);
+                } else {
+                    parts.push(isTr 
+                        ? `<span style="color:#22c55e;">+${changes.added.length} yeni eklendi</span>`
+                        : `<span style="color:#22c55e;">+${changes.added.length} new added</span>`);
+                }
+            }
+            
+            if (changes.modified.length > 0) {
+                if (changes.modified.length <= 2) {
+                    const details = changes.modified.map(m => {
+                        const fieldStr = m.fields.length > 0 ? ` (${m.fields.join(', ')})` : '';
+                        return `"${m.title}"${fieldStr}`;
+                    }).join(', ');
+                    parts.push(isTr 
+                        ? `<span style="color:#f59e0b;">✏️ ${changes.modified.length} güncellendi:</span> ${details}`
+                        : `<span style="color:#f59e0b;">✏️ ${changes.modified.length} updated:</span> ${details}`);
+                } else {
+                    parts.push(isTr 
+                        ? `<span style="color:#f59e0b;">✏️ ${changes.modified.length} kayıt güncellendi</span>`
+                        : `<span style="color:#f59e0b;">✏️ ${changes.modified.length} records updated</span>`);
+                }
+            }
+            
+            if (changes.removed.length > 0) {
+                if (changes.removed.length <= 2) {
+                    const names = changes.removed.map(n => `"${n}"`).join(', ');
+                    parts.push(isTr 
+                        ? `<span style="color:#ef4444;">-${changes.removed.length} silindi:</span> ${names}`
+                        : `<span style="color:#ef4444;">-${changes.removed.length} removed:</span> ${names}`);
+                } else {
+                    parts.push(isTr 
+                        ? `<span style="color:#ef4444;">-${changes.removed.length} silindi</span>`
+                        : `<span style="color:#ef4444;">-${changes.removed.length} removed</span>`);
+                }
+            }
+            
+            if (parts.length === 0) {
+                const total = changes.unchanged + changes.added.length + changes.modified.length;
+                return isTr 
+                    ? `<span style="color:#64748b;">✓ ${total} kayıt (değişiklik yok)</span>`
+                    : `<span style="color:#64748b;">✓ ${total} records (no changes)</span>`;
+            }
+            
+            return parts.join('<br>');
+        }
+        
+        // Get change type for styling
+        function getChangeType(changes) {
+            if (changes.added.length > 0 && changes.modified.length === 0 && changes.removed.length === 0) {
+                return 'added';
+            }
+            if (changes.removed.length > 0 && changes.added.length === 0 && changes.modified.length === 0) {
+                return 'removed';
+            }
+            if (changes.modified.length > 0 || (changes.added.length > 0 && changes.removed.length > 0)) {
+                return 'modified';
+            }
+            if (changes.added.length === 0 && changes.removed.length === 0 && changes.modified.length === 0) {
+                return 'unchanged';
+            }
+            return 'mixed';
         }
         
         function renderUpdateLog() {
@@ -2454,35 +2656,33 @@
             
             const currentLang = localStorage.getItem('lang') || 'en';
             
-            const html = UPDATE_LOG.map(item => {
+            // Sort: changes first, then unchanged
+            const sorted = [...UPDATE_LOG].sort((a, b) => {
+                const aHasChanges = a.changeType !== 'unchanged';
+                const bHasChanges = b.changeType !== 'unchanged';
+                if (aHasChanges && !bHasChanges) return -1;
+                if (!aHasChanges && bHasChanges) return 1;
+                return 0;
+            });
+            
+            const html = sorted.map(item => {
                 const cfg = icons[item.name] || { icon: 'fa-database', color: '#64748b' };
                 const displayName = currentLang === 'tr' ? (SHEET_NAMES_TR[item.name] || item.name) : item.name;
                 
                 // Change indicator styling
-                let changeIcon = '';
-                let changeClass = '';
-                if (item.changeType === 'added') {
-                    changeIcon = '<i class="fa-solid fa-arrow-up" style="color:#22c55e; margin-right:0.3rem;"></i>';
-                    changeClass = 'color:#22c55e;';
-                } else if (item.changeType === 'removed') {
-                    changeIcon = '<i class="fa-solid fa-arrow-down" style="color:#ef4444; margin-right:0.3rem;"></i>';
-                    changeClass = 'color:#ef4444;';
-                } else if (item.changeType === 'unchanged') {
-                    changeIcon = '<i class="fa-solid fa-check" style="color:#64748b; margin-right:0.3rem;"></i>';
-                    changeClass = 'color:#64748b;';
-                } else {
-                    changeIcon = '<i class="fa-solid fa-plus" style="color:#6366f1; margin-right:0.3rem;"></i>';
-                    changeClass = 'color:#6366f1;';
-                }
+                let borderColor = '#e2e0dc';
+                if (item.changeType === 'added') borderColor = '#22c55e';
+                else if (item.changeType === 'removed') borderColor = '#ef4444';
+                else if (item.changeType === 'modified' || item.changeType === 'mixed') borderColor = '#f59e0b';
                 
                 return `
-                    <div class="update-log-item">
+                    <div class="update-log-item" style="border-left: 3px solid ${borderColor}; padding-left: 0.75rem;">
                         <div class="update-log-icon" style="background:${cfg.color};">
                             <i class="fa-solid ${cfg.icon}"></i>
                         </div>
-                        <div class="update-log-info">
+                        <div class="update-log-info" style="flex:1;">
                             <div class="update-log-name">${displayName}</div>
-                            <div class="update-log-count" style="${changeClass}">${changeIcon}${item.message}</div>
+                            <div class="update-log-count" style="font-size:0.8rem; line-height:1.4;">${item.message}</div>
                         </div>
                         <div class="update-log-time">${item.time}</div>
                     </div>
@@ -3282,6 +3482,11 @@
             // Clear previous log
             UPDATE_LOG.length = 0;
             
+            const now = new Date();
+            const timeStr = now.toLocaleTimeString('tr-TR');
+            const currentLang = localStorage.getItem('lang') || 'en';
+            
+            // Fetch all data
             [
                 DATA.settings,
                 DATA.news,
@@ -3297,7 +3502,7 @@
                 DATA.partners,
                 DATA.students
             ] = await Promise.all([
-                fetchSettings(), // Use the specialized settings parser
+                fetchSettings(),
                 fetchSheet(SHEETS.news),
                 fetchSheet(SHEETS.events),
                 fetchSheet(SHEETS.faculty),
@@ -3312,49 +3517,68 @@
                 fetchSheet(SHEETS.students)
             ]);
 
-            // Log all loaded data with change tracking
-            const now = new Date();
-            const timeStr = now.toLocaleTimeString('tr-TR');
-            const currentLang = localStorage.getItem('lang') || 'en';
+            // Smart change detection for each sheet
+            const sheets = [
+                { name: 'Settings', data: DATA.settings, isSettings: true },
+                { name: 'News', data: DATA.news },
+                { name: 'Events', data: DATA.events },
+                { name: 'Faculty', data: DATA.faculty },
+                { name: 'Research', data: DATA.research },
+                { name: 'Publications', data: DATA.publications },
+                { name: 'Courses', data: DATA.courses },
+                { name: 'Projects', data: DATA.projects },
+                { name: 'Labs', data: DATA.labs },
+                { name: 'Jobs', data: DATA.jobs },
+                { name: 'Alumni', data: DATA.alumni },
+                { name: 'Partners', data: DATA.partners },
+                { name: 'Students', data: DATA.students }
+            ];
             
-            // Build new counts
-            const newCounts = {
-                Settings: DATA.settings ? Object.keys(DATA.settings).length : 0,
-                News: DATA.news?.length || 0,
-                Events: DATA.events?.length || 0,
-                Faculty: DATA.faculty?.length || 0,
-                Research: DATA.research?.length || 0,
-                Publications: DATA.publications?.length || 0,
-                Courses: DATA.courses?.length || 0,
-                Projects: DATA.projects?.length || 0,
-                Labs: DATA.labs?.length || 0,
-                Jobs: DATA.jobs?.length || 0,
-                Alumni: DATA.alumni?.length || 0,
-                Partners: DATA.partners?.length || 0,
-                Students: DATA.students?.length || 0
-            };
+            // Create new snapshot for saving
+            const newSnapshot = {};
             
-            // Create update log with change detection
-            for (const [name, newCount] of Object.entries(newCounts)) {
-                if (newCount > 0) {
-                    const oldCount = PREVIOUS_COUNTS[name] || 0;
-                    const changeType = getChangeType(oldCount, newCount);
-                    const message = getChangeMessage(name, oldCount, newCount, currentLang);
-                    
-                    UPDATE_LOG.push({
-                        name: name,
-                        count: newCount,
-                        oldCount: oldCount,
-                        changeType: changeType,
-                        message: message,
-                        time: timeStr
-                    });
+            for (const sheet of sheets) {
+                const oldData = PREVIOUS_DATA[sheet.name];
+                const newData = sheet.data;
+                
+                // Skip empty sheets
+                if (!newData || (Array.isArray(newData) && newData.length === 0) || 
+                    (!Array.isArray(newData) && Object.keys(newData).length === 0)) {
+                    continue;
                 }
+                
+                // Compare data
+                let changes;
+                if (sheet.isSettings) {
+                    changes = compareSettings(oldData, newData, currentLang);
+                } else {
+                    changes = compareData(oldData, newData, sheet.name, currentLang);
+                }
+                
+                // Generate message
+                const message = generateChangeMessage(changes, sheet.name, currentLang);
+                const changeType = getChangeType(changes);
+                
+                UPDATE_LOG.push({
+                    name: sheet.name,
+                    changeType: changeType,
+                    message: message,
+                    time: timeStr,
+                    changes: changes
+                });
+                
+                // Save to new snapshot
+                newSnapshot[sheet.name] = Array.isArray(newData) ? [...newData] : {...newData};
             }
             
-            // Save current counts for next comparison
-            PREVIOUS_COUNTS = newCounts;
-            localStorage.setItem('dataCounts', JSON.stringify(newCounts));
+            // Save current data for next comparison
+            PREVIOUS_DATA = newSnapshot;
+            try {
+                localStorage.setItem('previousDataSnapshot', JSON.stringify(newSnapshot));
+            } catch (e) {
+                // localStorage might be full, try to save just the essential data
+                console.warn('Could not save full snapshot to localStorage:', e);
+            }
             
             renderUpdateLog();
             renderAll();
@@ -3443,8 +3667,13 @@
         <div class="update-panel" id="updatePanel">
             <div class="update-panel-inner">
                 <div class="update-panel-header">
-                    <h4><i class="fa-solid fa-clock-rotate-left"></i> <span data-en>Update Log</span><span data-tr>Güncelleme Günlüğü</span></h4>
-                    <button class="btn btn-ghost btn-sm" onclick="toggleUpdatePanel()"><i class="fa-solid fa-times"></i></button>
+                    <h4><i class="fa-solid fa-clock-rotate-left"></i> <span data-en>Change Log</span><span data-tr>Değişiklik Günlüğü</span></h4>
+                    <div style="display:flex; gap:0.5rem; align-items:center;">
+                        <button class="btn btn-ghost btn-sm" onclick="clearChangeHistory()" title="Clear history / Geçmişi temizle" style="font-size:0.7rem; color:#64748b;">
+                            <i class="fa-solid fa-trash-can"></i> <span data-en>Reset</span><span data-tr>Sıfırla</span>
+                        </button>
+                        <button class="btn btn-ghost btn-sm" onclick="toggleUpdatePanel()"><i class="fa-solid fa-times"></i></button>
+                    </div>
                 </div>
                 <div class="update-panel-content" id="updateLogContent">
                     <p class="text-muted"><span data-en>Loading data...</span><span data-tr>Veri yükleniyor...</span></p>
@@ -3745,6 +3974,27 @@
             password: localStorage.getItem('adminPassword') || 'admin123',
             sheetId: localStorage.getItem('sheetId') || GOOGLE_SHEET_ID
         };
+        
+        // Clear change history to reset baseline
+        function clearChangeHistory() {
+            const currentLang = localStorage.getItem('lang') || 'en';
+            const confirmMsg = currentLang === 'tr' 
+                ? 'Değişiklik geçmişi sıfırlanacak. Devam edilsin mi?' 
+                : 'This will reset the change history baseline. Continue?';
+            
+            if (confirm(confirmMsg)) {
+                localStorage.removeItem('previousDataSnapshot');
+                PREVIOUS_DATA = {};
+                
+                const successMsg = currentLang === 'tr'
+                    ? 'Geçmiş sıfırlandı. Sonraki güncelleme tüm verileri "yeni" olarak gösterecek.'
+                    : 'History cleared. Next update will show all data as "new".';
+                alert(successMsg);
+                
+                // Refresh to show current state as new
+                refreshData();
+            }
+        }
         
         function toggleUpdatePanel() {
             const panel = document.getElementById('updatePanel');
