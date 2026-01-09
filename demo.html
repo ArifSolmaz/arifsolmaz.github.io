@@ -2370,8 +2370,62 @@
             students: []
         };
 
-        // UPDATE LOG for tracking sheet loads
+        // Previous data counts for change tracking
+        let PREVIOUS_COUNTS = JSON.parse(localStorage.getItem('dataCounts') || '{}');
+        
+        // UPDATE LOG for tracking sheet changes
         const UPDATE_LOG = [];
+        
+        // Sheet display names (TR)
+        const SHEET_NAMES_TR = {
+            'Settings': 'Ayarlar',
+            'News': 'Haberler',
+            'Events': 'Etkinlikler',
+            'Faculty': 'Akademisyenler',
+            'Research': 'Araştırma Grupları',
+            'Publications': 'Yayınlar',
+            'Courses': 'Dersler',
+            'Projects': 'Projeler',
+            'Labs': 'Laboratuvarlar',
+            'Jobs': 'İş İlanları',
+            'Alumni': 'Mezunlar',
+            'Partners': 'Ortaklar',
+            'Students': 'Öğrenciler'
+        };
+        
+        function getChangeMessage(name, oldCount, newCount, lang) {
+            const diff = newCount - oldCount;
+            const nameTr = SHEET_NAMES_TR[name] || name;
+            
+            if (oldCount === 0 || oldCount === undefined) {
+                // First load
+                return lang === 'tr' 
+                    ? `${newCount} ${nameTr.toLowerCase()} yüklendi`
+                    : `${newCount} ${name.toLowerCase()} loaded`;
+            } else if (diff > 0) {
+                // New items added
+                return lang === 'tr'
+                    ? `+${diff} yeni eklendi (${oldCount} → ${newCount})`
+                    : `+${diff} new added (${oldCount} → ${newCount})`;
+            } else if (diff < 0) {
+                // Items removed
+                return lang === 'tr'
+                    ? `${Math.abs(diff)} silindi (${oldCount} → ${newCount})`
+                    : `${Math.abs(diff)} removed (${oldCount} → ${newCount})`;
+            } else {
+                // No change
+                return lang === 'tr'
+                    ? `${newCount} kayıt (değişiklik yok)`
+                    : `${newCount} records (no change)`;
+            }
+        }
+        
+        function getChangeType(oldCount, newCount) {
+            if (oldCount === 0 || oldCount === undefined) return 'new';
+            if (newCount > oldCount) return 'added';
+            if (newCount < oldCount) return 'removed';
+            return 'unchanged';
+        }
         
         function renderUpdateLog() {
             const container = document.getElementById('updateLogContent');
@@ -2399,18 +2453,36 @@
             };
             
             const currentLang = localStorage.getItem('lang') || 'en';
-            const recordText = currentLang === 'tr' ? 'kayıt yüklendi' : 'records loaded';
             
             const html = UPDATE_LOG.map(item => {
                 const cfg = icons[item.name] || { icon: 'fa-database', color: '#64748b' };
+                const displayName = currentLang === 'tr' ? (SHEET_NAMES_TR[item.name] || item.name) : item.name;
+                
+                // Change indicator styling
+                let changeIcon = '';
+                let changeClass = '';
+                if (item.changeType === 'added') {
+                    changeIcon = '<i class="fa-solid fa-arrow-up" style="color:#22c55e; margin-right:0.3rem;"></i>';
+                    changeClass = 'color:#22c55e;';
+                } else if (item.changeType === 'removed') {
+                    changeIcon = '<i class="fa-solid fa-arrow-down" style="color:#ef4444; margin-right:0.3rem;"></i>';
+                    changeClass = 'color:#ef4444;';
+                } else if (item.changeType === 'unchanged') {
+                    changeIcon = '<i class="fa-solid fa-check" style="color:#64748b; margin-right:0.3rem;"></i>';
+                    changeClass = 'color:#64748b;';
+                } else {
+                    changeIcon = '<i class="fa-solid fa-plus" style="color:#6366f1; margin-right:0.3rem;"></i>';
+                    changeClass = 'color:#6366f1;';
+                }
+                
                 return `
                     <div class="update-log-item">
                         <div class="update-log-icon" style="background:${cfg.color};">
                             <i class="fa-solid ${cfg.icon}"></i>
                         </div>
                         <div class="update-log-info">
-                            <div class="update-log-name">${item.name}</div>
-                            <div class="update-log-count">${item.count} ${recordText}</div>
+                            <div class="update-log-name">${displayName}</div>
+                            <div class="update-log-count" style="${changeClass}">${changeIcon}${item.message}</div>
                         </div>
                         <div class="update-log-time">${item.time}</div>
                     </div>
@@ -3240,36 +3312,49 @@
                 fetchSheet(SHEETS.students)
             ]);
 
-            // Log all loaded data
+            // Log all loaded data with change tracking
             const now = new Date();
             const timeStr = now.toLocaleTimeString('tr-TR');
+            const currentLang = localStorage.getItem('lang') || 'en';
             
-            if (DATA.settings && Object.keys(DATA.settings).length > 0) 
-                UPDATE_LOG.push({ name: 'Settings', count: Object.keys(DATA.settings).length, time: timeStr });
-            if (DATA.news?.length) 
-                UPDATE_LOG.push({ name: 'News', count: DATA.news.length, time: timeStr });
-            if (DATA.events?.length) 
-                UPDATE_LOG.push({ name: 'Events', count: DATA.events.length, time: timeStr });
-            if (DATA.faculty?.length) 
-                UPDATE_LOG.push({ name: 'Faculty', count: DATA.faculty.length, time: timeStr });
-            if (DATA.research?.length) 
-                UPDATE_LOG.push({ name: 'Research', count: DATA.research.length, time: timeStr });
-            if (DATA.publications?.length) 
-                UPDATE_LOG.push({ name: 'Publications', count: DATA.publications.length, time: timeStr });
-            if (DATA.courses?.length) 
-                UPDATE_LOG.push({ name: 'Courses', count: DATA.courses.length, time: timeStr });
-            if (DATA.projects?.length) 
-                UPDATE_LOG.push({ name: 'Projects', count: DATA.projects.length, time: timeStr });
-            if (DATA.labs?.length) 
-                UPDATE_LOG.push({ name: 'Labs', count: DATA.labs.length, time: timeStr });
-            if (DATA.jobs?.length) 
-                UPDATE_LOG.push({ name: 'Jobs', count: DATA.jobs.length, time: timeStr });
-            if (DATA.alumni?.length) 
-                UPDATE_LOG.push({ name: 'Alumni', count: DATA.alumni.length, time: timeStr });
-            if (DATA.partners?.length) 
-                UPDATE_LOG.push({ name: 'Partners', count: DATA.partners.length, time: timeStr });
-            if (DATA.students?.length) 
-                UPDATE_LOG.push({ name: 'Students', count: DATA.students.length, time: timeStr });
+            // Build new counts
+            const newCounts = {
+                Settings: DATA.settings ? Object.keys(DATA.settings).length : 0,
+                News: DATA.news?.length || 0,
+                Events: DATA.events?.length || 0,
+                Faculty: DATA.faculty?.length || 0,
+                Research: DATA.research?.length || 0,
+                Publications: DATA.publications?.length || 0,
+                Courses: DATA.courses?.length || 0,
+                Projects: DATA.projects?.length || 0,
+                Labs: DATA.labs?.length || 0,
+                Jobs: DATA.jobs?.length || 0,
+                Alumni: DATA.alumni?.length || 0,
+                Partners: DATA.partners?.length || 0,
+                Students: DATA.students?.length || 0
+            };
+            
+            // Create update log with change detection
+            for (const [name, newCount] of Object.entries(newCounts)) {
+                if (newCount > 0) {
+                    const oldCount = PREVIOUS_COUNTS[name] || 0;
+                    const changeType = getChangeType(oldCount, newCount);
+                    const message = getChangeMessage(name, oldCount, newCount, currentLang);
+                    
+                    UPDATE_LOG.push({
+                        name: name,
+                        count: newCount,
+                        oldCount: oldCount,
+                        changeType: changeType,
+                        message: message,
+                        time: timeStr
+                    });
+                }
+            }
+            
+            // Save current counts for next comparison
+            PREVIOUS_COUNTS = newCounts;
+            localStorage.setItem('dataCounts', JSON.stringify(newCounts));
             
             renderUpdateLog();
             renderAll();
