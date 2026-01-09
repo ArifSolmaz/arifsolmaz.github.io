@@ -3337,8 +3337,15 @@
         // RENDER FUNCTIONS
         // ═══════════════════════════════════════════════════════════════════════════
 
-        function t(en, tr) {
-            return lang === 'tr' && tr ? tr : en;
+        function t(en, tr, fallback) {
+            // Smart translation function with fallback
+            // Priority: 
+            //   TR mode: tr → en → fallback
+            //   EN mode: en → fallback
+            if (lang === 'tr') {
+                return tr || en || fallback || '';
+            }
+            return en || fallback || '';
         }
 
         function getTagClass(category) {
@@ -3399,8 +3406,8 @@
                     </div>
                     <div class="news-body">
                         <span class="tag ${getTagClass(n.category)}">${n.category || 'News'}</span>
-                        <h4>${t(n.title_en, n.title_tr) || n.title || 'News Item'}</h4>
-                        <p>${t(n.description_en, n.description_tr) || n.description || ''}</p>
+                        <h4>${t(n.title_en, n.title_tr, n.title) || 'News Item'}</h4>
+                        <p>${t(n.description_en, n.description_tr, n.description) || ''}</p>
                     </div>
                 </div>
             `;
@@ -3416,8 +3423,8 @@
                     </div>
                     <div class="news-body">
                         <span class="tag ${getTagClass(n.category)}">${n.category || 'News'}</span>
-                        <h4>${t(n.title_en, n.title_tr) || n.title || ''}</h4>
-                        <p>${t(n.description_en, n.description_tr) || n.description || ''}</p>
+                        <h4>${t(n.title_en, n.title_tr, n.title) || ''}</h4>
+                        <p>${t(n.description_en, n.description_tr, n.description) || ''}</p>
                     </div>
                 </div>
             `;
@@ -3432,8 +3439,8 @@
                 <div class="timeline-date">${e.date || ''} · ${e.time || ''}</div>
                 <div class="timeline-card">
                     <span class="tag ${getTagClass(e.type)}">${e.type || 'Event'}</span>
-                    <h4>${t(e.title_en, e.title_tr) || e.title || ''}</h4>
-                    <p>${t(e.description_en, e.description_tr) || e.description || ''}</p>
+                    <h4>${t(e.title_en, e.title_tr, e.title) || ''}</h4>
+                    <p>${t(e.description_en, e.description_tr, e.description) || ''}</p>
                 </div>
             </div>
         `).join('');
@@ -3459,8 +3466,8 @@
                     <div class="card-img-badge"><span class="tag tag-green">${r.type || 'Lab'}</span></div>
                 </div>
                 <div class="card-body">
-                    <h3>${t(r.name_en, r.name_tr) || r.name || ''}</h3>
-                    <p>${t(r.description_en, r.description_tr) || r.description || ''}</p>
+                    <h3>${t(r.name_en, r.name_tr, r.name) || ''}</h3>
+                    <p>${t(r.description_en, r.description_tr, r.description) || ''}</p>
                 </div>
                 <div class="card-footer"><span>${r.lead || ''}</span><span class="card-footer-link">${t('Learn more', 'Detaylar')} →</span></div>
             </div>
@@ -3473,11 +3480,11 @@
                 <div class="research-header">
                     <div class="research-icon" style="background:linear-gradient(135deg, ${colors[i % colors.length]}, ${colors[(i + 1) % colors.length]});"><i class="fa-solid ${icons[i % icons.length]}"></i></div>
                     <div class="research-info">
-                        <h3>${t(r.name_en, r.name_tr) || r.name || ''}</h3>
+                        <h3>${t(r.name_en, r.name_tr, r.name) || ''}</h3>
                         <p>${r.focus || ''}</p>
                     </div>
                 </div>
-                <p class="research-desc">${t(r.description_en, r.description_tr) || r.description || ''}</p>
+                <p class="research-desc">${t(r.description_en, r.description_tr, r.description) || ''}</p>
                 <div class="research-members">
                     <span class="research-member"><img src="https://ui-avatars.com/api/?name=${encodeURIComponent(r.lead || 'L')}&background=0f172a&color=fff&size=32" alt=""> ${r.lead || ''} (Lead)</span>
                     ${r.members ? `<span class="research-member">+${r.members} members</span>` : ''}
@@ -3493,7 +3500,7 @@
                 <img src="${f.photo || `https://ui-avatars.com/api/?name=${encodeURIComponent(f.name || 'F')}&background=6366f1&color=fff&size=120`}" class="faculty-avatar" alt="${f.name}">
                 <h3 class="faculty-name">${f.name || ''}</h3>
                 <p class="faculty-title">${f.title || ''}</p>
-                <div class="faculty-field">${t(f.research_en, f.research_tr) || f.research || ''}</div>
+                <div class="faculty-field">${t(f.research_en, f.research_tr, f.research) || ''}</div>
                 <div class="faculty-links">
                     ${f.email ? `<a href="mailto:${f.email}" title="Email" onclick="event.stopPropagation()"><i class="fa-solid fa-envelope"></i></a>` : ''}
                     ${f.scholar ? `<a href="${f.scholar}" title="Scholar" onclick="event.stopPropagation()"><i class="fa-brands fa-google-scholar"></i></a>` : ''}
@@ -3519,7 +3526,7 @@
             document.getElementById('profPhoto').src = f.photo || `https://ui-avatars.com/api/?name=${encodeURIComponent(f.name || 'F')}&background=6366f1&color=fff&size=400`;
 
             // Core Meta
-            document.getElementById('profResearch').textContent = t(f.research_en, f.research_tr) || f.research || '—';
+            document.getElementById('profResearch').textContent = t(f.research_en, f.research_tr, f.research) || '—';
 
             // Contextual Sections (Bio, Education, Office, Honors)
             const bio = t(f.bio_en, f.bio_tr);
@@ -3590,8 +3597,8 @@
                         <i class="fa-solid ${icons[cat] || 'fa-book'}"></i>
                     </div>
                     <div class="course-info">
-                        <h4>${c.code || ''}: ${t(c.name_en, c.name_tr) || c.name || ''}</h4>
-                        <p>${t(c.description_en, c.description_tr) || c.description || ''} · ${c.instructor || ''} · ${c.year || ''}</p>
+                        <h4>${c.code || ''}: ${t(c.name_en, c.name_tr, c.name) || ''}</h4>
+                        <p>${t(c.description_en, c.description_tr, c.description) || ''} · ${c.instructor || ''} · ${c.year || ''}</p>
                     </div>
                     <span class="tag">${c.ects || '3'} ECTS</span>
                 </div>
@@ -3608,8 +3615,8 @@
                 </div>
                 <div class="project-body">
                     <span class="tag ${getTagClass(p.category)}">${p.category || 'Capstone'}</span>
-                    <h4>${t(p.title_en, p.title_tr) || p.title || ''}</h4>
-                    <p>${t(p.description_en, p.description_tr) || p.description || ''}</p>
+                    <h4>${t(p.title_en, p.title_tr, p.title) || ''}</h4>
+                    <p>${t(p.description_en, p.description_tr, p.description) || ''}</p>
                     <div class="project-team">
                         <div class="project-avatars">
                             ${(p.team || 'Team').split(',').slice(0, 3).map(m => `<img src="https://ui-avatars.com/api/?name=${encodeURIComponent(m.trim())}&background=6366f1&color=fff&size=44" alt="">`).join('')}
@@ -3628,8 +3635,8 @@
                 </div>
                 <div class="project-body">
                     <span class="tag ${getTagClass(p.category)}">${p.category || ''}</span>
-                    <h4>${t(p.title_en, p.title_tr) || p.title || ''}</h4>
-                    <p>${t(p.description_en, p.description_tr) || p.description || ''}</p>
+                    <h4>${t(p.title_en, p.title_tr, p.title) || ''}</h4>
+                    <p>${t(p.description_en, p.description_tr, p.description) || ''}</p>
                 </div>
             </div>
         `).join('') || '';
@@ -3641,8 +3648,8 @@
                 <div class="card-img" style="background-image:url('${l.image || 'https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?w=600&q=80'}');"></div>
                 <div class="card-body">
                     <span class="tag ${l.type === 'Research' ? 'tag-green' : ''}">${l.type || 'Lab'}</span>
-                    <h3>${t(l.name_en, l.name_tr) || l.name || ''}</h3>
-                    <p>${t(l.equipment_en, l.equipment_tr) || l.equipment || ''}</p>
+                    <h3>${t(l.name_en, l.name_tr, l.name) || ''}</h3>
+                    <p>${t(l.equipment_en, l.equipment_tr, l.equipment) || ''}</p>
                 </div>
                 <div class="card-footer">
                     <span>${l.room || ''} · ${l.manager || ''}</span>
@@ -3718,7 +3725,7 @@
                 <div class="card-compact-icon" style="background:var(--accent-light); color:var(--accent);"><i class="fa-solid fa-university"></i></div>
                 <div class="card-compact-content">
                     <h4>${p.name || ''}</h4>
-                    <p>${t(p.description_en, p.description_tr) || p.description || ''}</p>
+                    <p>${t(p.description_en, p.description_tr, p.description) || ''}</p>
                 </div>
             </div>
         `).join('');
@@ -3780,11 +3787,11 @@
             if (!n) return;
             document.getElementById('newsDetailCategory').textContent = n.category || 'News';
             document.getElementById('newsDetailCategory').className = 'tag ' + getTagClass(n.category);
-            document.getElementById('newsDetailTitle').textContent = t(n.title_en, n.title_tr) || n.title || '';
+            document.getElementById('newsDetailTitle').textContent = t(n.title_en, n.title_tr, n.title) || '';
             document.getElementById('newsDetailDate').textContent = n.date || '';
             document.getElementById('newsDetailAuthor').textContent = n.author || 'Department';
             document.getElementById('newsDetailImage').style.backgroundImage = `url('${n.image || 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80'}')`;
-            document.getElementById('newsDetailContent').textContent = t(n.content_en, n.content_tr) || t(n.description_en, n.description_tr) || n.description || '';
+            document.getElementById('newsDetailContent').textContent = t(n.content_en, n.content_tr) || t(n.description_en, n.description_tr, n.description) || '';
             goTo('news-detail');
         }
         
@@ -3793,11 +3800,11 @@
             if (!e) return;
             document.getElementById('eventDetailType').textContent = e.type || 'Event';
             document.getElementById('eventDetailType').className = 'tag ' + getTagClass(e.type);
-            document.getElementById('eventDetailTitle').textContent = t(e.title_en, e.title_tr) || e.title || '';
+            document.getElementById('eventDetailTitle').textContent = t(e.title_en, e.title_tr, e.title) || '';
             document.getElementById('eventDetailDate').textContent = e.date || '';
             document.getElementById('eventDetailTime').textContent = e.time || '';
             document.getElementById('eventDetailLocation').textContent = e.location || '';
-            document.getElementById('eventDetailContent').textContent = t(e.content_en, e.content_tr) || t(e.description_en, e.description_tr) || e.description || '';
+            document.getElementById('eventDetailContent').textContent = t(e.content_en, e.content_tr) || t(e.description_en, e.description_tr, e.description) || '';
             
             if (e.speaker) {
                 document.getElementById('eventDetailSpeakerBox').style.display = 'flex';
@@ -3821,11 +3828,11 @@
             document.getElementById('projectDetailCategory').textContent = p.category || 'Project';
             document.getElementById('projectDetailCategory').className = 'tag ' + getTagClass(p.category);
             document.getElementById('projectDetailYear').textContent = p.year || '';
-            document.getElementById('projectDetailTitle').textContent = t(p.title_en, p.title_tr) || p.title || '';
+            document.getElementById('projectDetailTitle').textContent = t(p.title_en, p.title_tr, p.title) || '';
             document.getElementById('projectDetailTeam').textContent = p.team || '';
             document.getElementById('projectDetailAdvisor').textContent = p.advisor || '';
             document.getElementById('projectDetailImage').style.backgroundImage = `url('${p.image || 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&q=80'}')`;
-            document.getElementById('projectDetailContent').textContent = t(p.content_en, p.content_tr) || t(p.description_en, p.description_tr) || p.description || '';
+            document.getElementById('projectDetailContent').textContent = t(p.content_en, p.content_tr) || t(p.description_en, p.description_tr, p.description) || '';
             
             if (p.award) {
                 document.getElementById('projectDetailAward').style.display = 'inline-flex';
@@ -3856,12 +3863,12 @@
             if (!l) return;
             document.getElementById('labDetailType').textContent = l.type || 'Lab';
             document.getElementById('labDetailType').className = 'tag ' + getTagClass(l.type);
-            document.getElementById('labDetailTitle').textContent = t(l.name_en, l.name_tr) || l.name || '';
+            document.getElementById('labDetailTitle').textContent = t(l.name_en, l.name_tr, l.name) || '';
             document.getElementById('labDetailRoom').textContent = l.room || '';
             document.getElementById('labDetailManager').textContent = l.manager || '';
             document.getElementById('labDetailImage').style.backgroundImage = `url('${l.image || 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&q=80'}')`;
             document.getElementById('labDetailContent').textContent = t(l.content_en, l.content_tr) || '';
-            document.getElementById('labDetailEquipment').textContent = t(l.equipment_en, l.equipment_tr) || l.equipment || '';
+            document.getElementById('labDetailEquipment').textContent = t(l.equipment_en, l.equipment_tr, l.equipment) || '';
             goTo('lab-detail');
         }
         
