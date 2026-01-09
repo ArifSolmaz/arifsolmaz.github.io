@@ -1454,6 +1454,179 @@
             gap: 1.25rem;
         }
 
+        /* ─────────────────────────────────────────────────────────────
+           DETAIL PAGE STYLES
+           ───────────────────────────────────────────────────────────── */
+        .detail-page {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .detail-back {
+            margin-bottom: 1rem;
+        }
+        
+        .detail-card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        
+        .detail-image {
+            width: 100%;
+            height: 280px;
+            background-size: cover;
+            background-position: center;
+            background-color: #f0eeea;
+        }
+        
+        .detail-body {
+            padding: 1.5rem;
+        }
+        
+        .detail-meta {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .detail-date, .detail-author {
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+        
+        .detail-date i, .detail-author i {
+            margin-right: 0.3rem;
+        }
+        
+        .detail-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #0c1220;
+            margin: 0 0 1.25rem 0;
+            line-height: 1.3;
+        }
+        
+        .detail-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: #faf8f5;
+            border-radius: 12px;
+        }
+        
+        .detail-info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+        
+        .detail-info-item > i {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            border-radius: 8px;
+            color: #6366f1;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        
+        .detail-info-label {
+            display: block;
+            font-size: 0.75rem;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            margin-bottom: 0.15rem;
+        }
+        
+        .detail-info-value {
+            display: block;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #0c1220;
+        }
+        
+        .detail-speaker-box {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 1rem;
+            background: linear-gradient(135deg, #ede9fe 0%, #e0e7ff 100%);
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .detail-speaker-box > i {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            border-radius: 8px;
+            color: #6366f1;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+        
+        .detail-content {
+            line-height: 1.8;
+            font-size: 1rem;
+            color: #334155;
+            white-space: pre-line;
+        }
+        
+        .detail-tech-box, .detail-equipment-box {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: #faf8f5;
+            border-radius: 12px;
+        }
+        
+        .detail-tech-box h4, .detail-equipment-box h4 {
+            margin: 0 0 0.75rem 0;
+            font-size: 0.9rem;
+            color: #0c1220;
+        }
+        
+        .detail-tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+        
+        .detail-equipment-box {
+            background: linear-gradient(135deg, #dcfce7 0%, #d1fae5 100%);
+            border-left: 4px solid #22c55e;
+        }
+        
+        .detail-equipment-box h4 {
+            color: #16a34a;
+        }
+        
+        .detail-equipment-box p {
+            margin: 0;
+            color: #334155;
+            line-height: 1.6;
+        }
+        
+        .detail-actions {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e2e0dc;
+        }
+
         /* RESPONSIVE */
         @media (max-width: 1024px) {
             .two-cols {
@@ -1498,6 +1671,28 @@
             }
 
             .page {
+                padding: 1rem;
+            }
+
+            /* Detail page mobile */
+            .detail-page {
+                padding: 0;
+            }
+            
+            .detail-title {
+                font-size: 1.4rem;
+            }
+            
+            .detail-image {
+                height: 200px;
+            }
+            
+            .detail-info-grid {
+                grid-template-columns: 1fr;
+                gap: 0.75rem;
+            }
+            
+            .detail-body {
                 padding: 1rem;
             }
 
@@ -2227,124 +2422,235 @@
 
             <!-- NEWS DETAIL PAGE -->
             <div id="news-detail" class="page">
-                <div style="margin-bottom:1rem;">
-                    <a href="#" onclick="goTo('news'); return false;" class="btn btn-ghost btn-sm"><i class="fa-solid fa-arrow-left"></i> <span data-en>Back to News</span><span data-tr>Haberlere Dön</span></a>
-                </div>
-                <article style="max-width:800px;">
-                    <header style="margin-bottom:1.5rem;">
-                        <span class="tag" id="newsDetailCategory">News</span>
-                        <h1 id="newsDetailTitle" style="margin:0.5rem 0; font-size:2rem;">Loading...</h1>
-                        <div style="color:var(--text-muted); font-size:0.9rem;">
-                            <span><i class="fa-solid fa-calendar"></i> <span id="newsDetailDate"></span></span>
-                            <span style="margin-left:1rem;"><i class="fa-solid fa-user"></i> <span id="newsDetailAuthor"></span></span>
+                <div class="detail-page">
+                    <button onclick="goTo('news')" class="btn btn-ghost btn-sm detail-back">
+                        <i class="fa-solid fa-arrow-left"></i> <span data-en>Back to News</span><span data-tr>Haberlere Dön</span>
+                    </button>
+                    
+                    <div class="detail-card">
+                        <div class="detail-image" id="newsDetailImage"></div>
+                        <div class="detail-body">
+                            <div class="detail-meta">
+                                <span class="tag" id="newsDetailCategory">News</span>
+                                <span class="detail-date"><i class="fa-solid fa-calendar"></i> <span id="newsDetailDate"></span></span>
+                                <span class="detail-author"><i class="fa-solid fa-user"></i> <span id="newsDetailAuthor"></span></span>
+                            </div>
+                            <h1 class="detail-title" id="newsDetailTitle">Loading...</h1>
+                            <div class="detail-content" id="newsDetailContent"></div>
                         </div>
-                    </header>
-                    <div id="newsDetailImage" style="height:300px; border-radius:var(--radius-lg); background-size:cover; background-position:center; margin-bottom:1.5rem;"></div>
-                    <div id="newsDetailContent" style="white-space:pre-line; line-height:1.8; font-size:1rem;"></div>
-                </article>
+                    </div>
+                </div>
             </div>
 
             <!-- EVENT DETAIL PAGE -->
             <div id="event-detail" class="page">
-                <div style="margin-bottom:1rem;">
-                    <a href="#" onclick="goTo('news'); return false;" class="btn btn-ghost btn-sm"><i class="fa-solid fa-arrow-left"></i> <span data-en>Back to Events</span><span data-tr>Etkinliklere Dön</span></a>
-                </div>
-                <article style="max-width:800px;">
-                    <header style="margin-bottom:1.5rem;">
-                        <span class="tag" id="eventDetailType">Event</span>
-                        <h1 id="eventDetailTitle" style="margin:0.5rem 0; font-size:2rem;">Loading...</h1>
-                        <div style="color:var(--text-muted); font-size:0.9rem; display:flex; flex-wrap:wrap; gap:1rem;">
-                            <span><i class="fa-solid fa-calendar"></i> <span id="eventDetailDate"></span></span>
-                            <span><i class="fa-solid fa-clock"></i> <span id="eventDetailTime"></span></span>
-                            <span><i class="fa-solid fa-location-dot"></i> <span id="eventDetailLocation"></span></span>
+                <div class="detail-page">
+                    <button onclick="goTo('events')" class="btn btn-ghost btn-sm detail-back">
+                        <i class="fa-solid fa-arrow-left"></i> <span data-en>Back to Events</span><span data-tr>Etkinliklere Dön</span>
+                    </button>
+                    
+                    <div class="detail-card">
+                        <div class="detail-body">
+                            <div class="detail-meta">
+                                <span class="tag" id="eventDetailType">Event</span>
+                            </div>
+                            <h1 class="detail-title" id="eventDetailTitle">Loading...</h1>
+                            
+                            <div class="detail-info-grid">
+                                <div class="detail-info-item">
+                                    <i class="fa-solid fa-calendar"></i>
+                                    <div>
+                                        <span class="detail-info-label"><span data-en>Date</span><span data-tr>Tarih</span></span>
+                                        <span class="detail-info-value" id="eventDetailDate"></span>
+                                    </div>
+                                </div>
+                                <div class="detail-info-item">
+                                    <i class="fa-solid fa-clock"></i>
+                                    <div>
+                                        <span class="detail-info-label"><span data-en>Time</span><span data-tr>Saat</span></span>
+                                        <span class="detail-info-value" id="eventDetailTime"></span>
+                                    </div>
+                                </div>
+                                <div class="detail-info-item">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <div>
+                                        <span class="detail-info-label"><span data-en>Location</span><span data-tr>Konum</span></span>
+                                        <span class="detail-info-value" id="eventDetailLocation"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div id="eventDetailSpeakerBox" class="detail-speaker-box" style="display:none;">
+                                <i class="fa-solid fa-user-tie"></i>
+                                <div>
+                                    <span class="detail-info-label"><span data-en>Speaker</span><span data-tr>Konuşmacı</span></span>
+                                    <span class="detail-info-value" id="eventDetailSpeaker"></span>
+                                </div>
+                            </div>
+                            
+                            <div class="detail-content" id="eventDetailContent"></div>
+                            
+                            <div id="eventRegisterBox" class="detail-actions" style="display:none;">
+                                <a href="#" id="eventRegisterLink" class="btn btn-accent" target="_blank">
+                                    <i class="fa-solid fa-calendar-plus"></i> <span data-en>Register Now</span><span data-tr>Şimdi Kayıt Ol</span>
+                                </a>
+                            </div>
                         </div>
-                        <div id="eventDetailSpeakerBox" style="margin-top:0.75rem; padding:0.75rem; background:var(--accent-light); border-radius:var(--radius-md); display:none;">
-                            <strong><span data-en>Speaker:</span><span data-tr>Konuşmacı:</span></strong> <span id="eventDetailSpeaker"></span>
-                        </div>
-                    </header>
-                    <div id="eventDetailContent" style="white-space:pre-line; line-height:1.8; font-size:1rem;"></div>
-                    <div id="eventRegisterBox" style="margin-top:1.5rem; display:none;">
-                        <a href="#" id="eventRegisterLink" class="btn btn-accent" target="_blank"><i class="fa-solid fa-calendar-plus"></i> <span data-en>Register</span><span data-tr>Kayıt Ol</span></a>
                     </div>
-                </article>
+                </div>
             </div>
 
             <!-- PROJECT DETAIL PAGE -->
             <div id="project-detail" class="page">
-                <div style="margin-bottom:1rem;">
-                    <a href="#" onclick="goTo('projects'); return false;" class="btn btn-ghost btn-sm"><i class="fa-solid fa-arrow-left"></i> <span data-en>Back to Projects</span><span data-tr>Projelere Dön</span></a>
+                <div class="detail-page">
+                    <button onclick="goTo('projects')" class="btn btn-ghost btn-sm detail-back">
+                        <i class="fa-solid fa-arrow-left"></i> <span data-en>Back to Projects</span><span data-tr>Projelere Dön</span>
+                    </button>
+                    
+                    <div class="detail-card">
+                        <div class="detail-image" id="projectDetailImage"></div>
+                        <div class="detail-body">
+                            <div class="detail-meta">
+                                <span class="tag" id="projectDetailCategory">Capstone</span>
+                                <span class="tag tag-purple" id="projectDetailYear">2024</span>
+                                <span class="tag tag-green" id="projectDetailAward" style="display:none;">
+                                    <i class="fa-solid fa-trophy"></i> <span id="projectAwardText"></span>
+                                </span>
+                            </div>
+                            <h1 class="detail-title" id="projectDetailTitle">Loading...</h1>
+                            
+                            <div class="detail-info-grid">
+                                <div class="detail-info-item">
+                                    <i class="fa-solid fa-users"></i>
+                                    <div>
+                                        <span class="detail-info-label"><span data-en>Team</span><span data-tr>Ekip</span></span>
+                                        <span class="detail-info-value" id="projectDetailTeam"></span>
+                                    </div>
+                                </div>
+                                <div class="detail-info-item">
+                                    <i class="fa-solid fa-user-tie"></i>
+                                    <div>
+                                        <span class="detail-info-label"><span data-en>Advisor</span><span data-tr>Danışman</span></span>
+                                        <span class="detail-info-value" id="projectDetailAdvisor"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="detail-content" id="projectDetailContent"></div>
+                            
+                            <div class="detail-tech-box">
+                                <h4><i class="fa-solid fa-code"></i> <span data-en>Technologies</span><span data-tr>Teknolojiler</span></h4>
+                                <div id="projectDetailTech" class="detail-tech-tags"></div>
+                            </div>
+                            
+                            <div id="projectGithubBox" class="detail-actions" style="display:none;">
+                                <a href="#" id="projectGithubLink" class="btn btn-ghost" target="_blank">
+                                    <i class="fa-brands fa-github"></i> <span data-en>View on GitHub</span><span data-tr>GitHub'da Görüntüle</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <article style="max-width:800px;">
-                    <header style="margin-bottom:1.5rem;">
-                        <div style="display:flex; gap:0.5rem; margin-bottom:0.5rem;">
-                            <span class="tag" id="projectDetailCategory">Capstone</span>
-                            <span class="tag tag-purple" id="projectDetailYear">2024</span>
-                            <span class="tag tag-green" id="projectDetailAward" style="display:none;"><i class="fa-solid fa-trophy"></i> <span id="projectAwardText"></span></span>
-                        </div>
-                        <h1 id="projectDetailTitle" style="margin:0.5rem 0; font-size:2rem;">Loading...</h1>
-                        <div style="color:var(--text-muted); font-size:0.9rem;">
-                            <span><i class="fa-solid fa-users"></i> <span id="projectDetailTeam"></span></span>
-                            <span style="margin-left:1rem;"><i class="fa-solid fa-user-tie"></i> <span data-en>Advisor:</span><span data-tr>Danışman:</span> <span id="projectDetailAdvisor"></span></span>
-                        </div>
-                    </header>
-                    <div id="projectDetailImage" style="height:300px; border-radius:var(--radius-lg); background-size:cover; background-position:center; margin-bottom:1.5rem;"></div>
-                    <div id="projectDetailContent" style="white-space:pre-line; line-height:1.8; font-size:1rem;"></div>
-                    <div style="margin-top:1.5rem; padding:1rem; background:var(--bg-warm); border-radius:var(--radius-md);">
-                        <h4 style="margin:0 0 0.5rem 0;"><span data-en>Technologies</span><span data-tr>Teknolojiler</span></h4>
-                        <div id="projectDetailTech" style="display:flex; flex-wrap:wrap; gap:0.3rem;"></div>
-                    </div>
-                    <div id="projectGithubBox" style="margin-top:1rem; display:none;">
-                        <a href="#" id="projectGithubLink" class="btn btn-ghost" target="_blank"><i class="fa-brands fa-github"></i> <span data-en>View on GitHub</span><span data-tr>GitHub'da Görüntüle</span></a>
-                    </div>
-                </article>
             </div>
 
             <!-- LAB DETAIL PAGE -->
             <div id="lab-detail" class="page">
-                <div style="margin-bottom:1rem;">
-                    <a href="#" onclick="goTo('labs'); return false;" class="btn btn-ghost btn-sm"><i class="fa-solid fa-arrow-left"></i> <span data-en>Back to Labs</span><span data-tr>Lablara Dön</span></a>
-                </div>
-                <article style="max-width:800px;">
-                    <header style="margin-bottom:1.5rem;">
-                        <span class="tag" id="labDetailType">Lab</span>
-                        <h1 id="labDetailTitle" style="margin:0.5rem 0; font-size:2rem;">Loading...</h1>
-                        <div style="color:var(--text-muted); font-size:0.9rem;">
-                            <span><i class="fa-solid fa-door-open"></i> <span data-en>Room:</span><span data-tr>Oda:</span> <span id="labDetailRoom"></span></span>
-                            <span style="margin-left:1rem;"><i class="fa-solid fa-user-tie"></i> <span data-en>Manager:</span><span data-tr>Yönetici:</span> <span id="labDetailManager"></span></span>
+                <div class="detail-page">
+                    <button onclick="goTo('labs')" class="btn btn-ghost btn-sm detail-back">
+                        <i class="fa-solid fa-arrow-left"></i> <span data-en>Back to Labs</span><span data-tr>Lablara Dön</span>
+                    </button>
+                    
+                    <div class="detail-card">
+                        <div class="detail-image" id="labDetailImage"></div>
+                        <div class="detail-body">
+                            <div class="detail-meta">
+                                <span class="tag" id="labDetailType">Lab</span>
+                            </div>
+                            <h1 class="detail-title" id="labDetailTitle">Loading...</h1>
+                            
+                            <div class="detail-info-grid">
+                                <div class="detail-info-item">
+                                    <i class="fa-solid fa-door-open"></i>
+                                    <div>
+                                        <span class="detail-info-label"><span data-en>Room</span><span data-tr>Oda</span></span>
+                                        <span class="detail-info-value" id="labDetailRoom"></span>
+                                    </div>
+                                </div>
+                                <div class="detail-info-item">
+                                    <i class="fa-solid fa-user-tie"></i>
+                                    <div>
+                                        <span class="detail-info-label"><span data-en>Manager</span><span data-tr>Yönetici</span></span>
+                                        <span class="detail-info-value" id="labDetailManager"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="detail-content" id="labDetailContent"></div>
+                            
+                            <div class="detail-equipment-box">
+                                <h4><i class="fa-solid fa-wrench"></i> <span data-en>Equipment</span><span data-tr>Ekipman</span></h4>
+                                <p id="labDetailEquipment"></p>
+                            </div>
                         </div>
-                    </header>
-                    <div id="labDetailImage" style="height:300px; border-radius:var(--radius-lg); background-size:cover; background-position:center; margin-bottom:1.5rem;"></div>
-                    <div id="labDetailContent" style="white-space:pre-line; line-height:1.8; font-size:1rem;"></div>
-                    <div style="margin-top:1.5rem; padding:1rem; background:var(--green-light); border-radius:var(--radius-md); border-left:4px solid var(--green);">
-                        <h4 style="margin:0 0 0.5rem 0; color:var(--green);"><i class="fa-solid fa-wrench"></i> <span data-en>Equipment</span><span data-tr>Ekipman</span></h4>
-                        <p id="labDetailEquipment" style="margin:0; color:var(--text-secondary);"></p>
                     </div>
-                </article>
+                </div>
             </div>
 
             <!-- JOB DETAIL PAGE -->
             <div id="job-detail" class="page">
-                <div style="margin-bottom:1rem;">
-                    <a href="#" onclick="goTo('jobs'); return false;" class="btn btn-ghost btn-sm"><i class="fa-solid fa-arrow-left"></i> <span data-en>Back to Jobs</span><span data-tr>İşlere Dön</span></a>
-                </div>
-                <article style="max-width:800px;">
-                    <header style="margin-bottom:1.5rem;">
-                        <span class="tag" id="jobDetailType">Full-Time</span>
-                        <h1 id="jobDetailTitle" style="margin:0.5rem 0; font-size:2rem;">Loading...</h1>
-                        <div style="color:var(--text-muted); font-size:0.9rem; display:flex; flex-wrap:wrap; gap:1rem;">
-                            <span><i class="fa-solid fa-building"></i> <span id="jobDetailCompany"></span></span>
-                            <span><i class="fa-solid fa-location-dot"></i> <span id="jobDetailLocation"></span></span>
-                            <span><i class="fa-solid fa-money-bill"></i> <span id="jobDetailSalary"></span></span>
+                <div class="detail-page">
+                    <button onclick="goTo('jobs')" class="btn btn-ghost btn-sm detail-back">
+                        <i class="fa-solid fa-arrow-left"></i> <span data-en>Back to Jobs</span><span data-tr>İş İlanlarına Dön</span>
+                    </button>
+                    
+                    <div class="detail-card">
+                        <div class="detail-body">
+                            <div class="detail-meta">
+                                <span class="tag" id="jobDetailType">Full-time</span>
+                            </div>
+                            <h1 class="detail-title" id="jobDetailTitle">Loading...</h1>
+                            
+                            <div class="detail-info-grid">
+                                <div class="detail-info-item">
+                                    <i class="fa-solid fa-building"></i>
+                                    <div>
+                                        <span class="detail-info-label"><span data-en>Company</span><span data-tr>Şirket</span></span>
+                                        <span class="detail-info-value" id="jobDetailCompany"></span>
+                                    </div>
+                                </div>
+                                <div class="detail-info-item">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <div>
+                                        <span class="detail-info-label"><span data-en>Location</span><span data-tr>Konum</span></span>
+                                        <span class="detail-info-value" id="jobDetailLocation"></span>
+                                    </div>
+                                </div>
+                                <div class="detail-info-item" id="jobSalaryItem" style="display:none;">
+                                    <i class="fa-solid fa-money-bill"></i>
+                                    <div>
+                                        <span class="detail-info-label"><span data-en>Salary</span><span data-tr>Maaş</span></span>
+                                        <span class="detail-info-value" id="jobDetailSalary"></span>
+                                    </div>
+                                </div>
+                                <div class="detail-info-item" id="jobDeadlineItem" style="display:none;">
+                                    <i class="fa-solid fa-calendar-xmark"></i>
+                                    <div>
+                                        <span class="detail-info-label"><span data-en>Deadline</span><span data-tr>Son Tarih</span></span>
+                                        <span class="detail-info-value" id="jobDetailDeadline"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="detail-content" id="jobDetailContent"></div>
+                            
+                            <div id="jobApplyBox" class="detail-actions" style="display:none;">
+                                <a href="#" id="jobApplyLink" class="btn btn-accent" target="_blank">
+                                    <i class="fa-solid fa-paper-plane"></i> <span data-en>Apply Now</span><span data-tr>Şimdi Başvur</span>
+                                </a>
+                            </div>
                         </div>
-                        <div id="jobDeadlineBox" style="margin-top:0.75rem; padding:0.75rem; background:var(--amber-light); border-radius:var(--radius-md); display:none;">
-                            <strong><i class="fa-solid fa-clock"></i> <span data-en>Deadline:</span><span data-tr>Son Tarih:</span></strong> <span id="jobDetailDeadline"></span>
-                        </div>
-                    </header>
-                    <div id="jobDetailContent" style="white-space:pre-line; line-height:1.8; font-size:1rem;"></div>
-                    <div id="jobApplyBox" style="margin-top:1.5rem; display:none;">
-                        <a href="#" id="jobApplyLink" class="btn btn-accent" target="_blank"><i class="fa-solid fa-paper-plane"></i> <span data-en>Apply Now</span><span data-tr>Şimdi Başvur</span></a>
                     </div>
-                </article>
+                </div>
             </div>
 
         </main>
@@ -3285,7 +3591,7 @@
             document.getElementById('eventDetailContent').textContent = t(e.content_en, e.content_tr) || t(e.description_en, e.description_tr) || e.description || '';
             
             if (e.speaker) {
-                document.getElementById('eventDetailSpeakerBox').style.display = 'block';
+                document.getElementById('eventDetailSpeakerBox').style.display = 'flex';
                 document.getElementById('eventDetailSpeaker').textContent = e.speaker;
             } else {
                 document.getElementById('eventDetailSpeakerBox').style.display = 'none';
@@ -3358,14 +3664,20 @@
             document.getElementById('jobDetailTitle').textContent = j.title || '';
             document.getElementById('jobDetailCompany').textContent = j.company || '';
             document.getElementById('jobDetailLocation').textContent = j.location || '';
-            document.getElementById('jobDetailSalary').textContent = j.salary || '';
             document.getElementById('jobDetailContent').textContent = t(j.content_en, j.content_tr) || j.description || '';
             
+            if (j.salary) {
+                document.getElementById('jobSalaryItem').style.display = 'flex';
+                document.getElementById('jobDetailSalary').textContent = j.salary;
+            } else {
+                document.getElementById('jobSalaryItem').style.display = 'none';
+            }
+            
             if (j.deadline) {
-                document.getElementById('jobDeadlineBox').style.display = 'block';
+                document.getElementById('jobDeadlineItem').style.display = 'flex';
                 document.getElementById('jobDetailDeadline').textContent = j.deadline;
             } else {
-                document.getElementById('jobDeadlineBox').style.display = 'none';
+                document.getElementById('jobDeadlineItem').style.display = 'none';
             }
             
             if (j.apply_link) {
