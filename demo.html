@@ -413,13 +413,192 @@
             margin: 0 0 0.5rem 0;
         }
 
+        /* SIDEBAR DATA PANEL */
+        .sidebar-data-panel {
+            margin-top: auto;
+            border-top: 1px solid var(--border);
+            background: #faf8f5;
+        }
+        
+        .sidebar-data-toggle {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            transition: background 0.2s;
+        }
+        
+        .sidebar-data-toggle:hover {
+            background: var(--bg-warm);
+        }
+        
+        .sidebar-data-toggle-left {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .sidebar-data-toggle-left i {
+            color: var(--accent);
+        }
+        
+        .sidebar-data-toggle-right {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .sidebar-data-toggle-right i {
+            font-size: 0.65rem;
+            transition: transform 0.3s;
+        }
+        
+        .sidebar-data-panel.open .sidebar-data-toggle-right i {
+            transform: rotate(180deg);
+        }
+        
+        .data-status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #22c55e;
+        }
+        
+        .data-status-dot.loading {
+            background: #f59e0b;
+            animation: pulse 1s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+        
+        .sidebar-data-content {
+            display: none;
+            padding: 0 1rem 1rem;
+        }
+        
+        .sidebar-data-panel.open .sidebar-data-content {
+            display: block;
+        }
+        
+        .data-info-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .data-info-label {
+            color: var(--text-muted);
+        }
+        
+        .data-info-value {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+        
+        .data-actions-row {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .data-actions-row .btn {
+            flex: 1;
+            justify-content: center;
+        }
+        
+        .data-changelog {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            margin-bottom: 0.75rem;
+            overflow: hidden;
+        }
+        
+        .data-changelog-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0.75rem;
+            background: #faf8f5;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+        }
+        
+        .data-changelog-content {
+            max-height: 200px;
+            overflow-y: auto;
+            padding: 0.5rem 0.75rem;
+            font-size: 0.7rem;
+        }
+        
+        .changelog-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            padding: 0.4rem 0;
+            border-bottom: 1px solid #f0eeea;
+        }
+        
+        .changelog-item:last-child {
+            border-bottom: none;
+        }
+        
+        .changelog-icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.6rem;
+            color: #fff;
+            flex-shrink: 0;
+        }
+        
+        .changelog-info {
+            flex: 1;
+            min-width: 0;
+        }
+        
+        .changelog-name {
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+        
+        .changelog-detail {
+            color: var(--text-muted);
+            font-size: 0.65rem;
+            line-height: 1.3;
+        }
+        
+        .data-admin-row {
+            padding-top: 0.5rem;
+            border-top: 1px solid var(--border);
+        }
+        
+        .btn-xs {
+            padding: 0.2rem 0.4rem;
+            font-size: 0.65rem;
+        }
+
         /* MAIN */
         main {
             flex: 1;
             overflow-y: auto;
             background: var(--bg-cream);
-            padding-bottom: 72px;
-            /* space for fixed refresh bar */
         }
 
         .page {
@@ -1713,88 +1892,6 @@
             }
         }
 
-        /* ─────────────────────────────────────────────────────────────
-           DATA REFRESH BAR (fixed at bottom)
-           ───────────────────────────────────────────────────────────── */
-        .refresh-bar {
-            position: fixed;
-            left: var(--sidebar-width);
-            right: 0;
-            bottom: 0;
-            z-index: 120;
-            background: rgba(250, 248, 245, 0.97);
-            backdrop-filter: blur(12px);
-            border-top: 1px solid var(--border);
-            padding: 0.55rem 0.9rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .refresh-bar:hover .refresh-meta {
-            color: var(--accent);
-        }
-
-        @media (max-width: 900px) {
-            .refresh-bar {
-                left: 0;
-            }
-        }
-
-        .refresh-inner {
-            width: min(1100px, calc(100% - 1.8rem));
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 0.75rem;
-        }
-
-        .refresh-meta {
-            display: flex;
-            flex-direction: column;
-            gap: 0.1rem;
-            min-width: 0;
-        }
-
-        .refresh-title {
-            font-size: 0.78rem;
-            font-weight: 600;
-            color: var(--text-main);
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .refresh-subtitle {
-            font-size: 0.7rem;
-            color: var(--text-muted);
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .refresh-actions {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .refresh-status {
-            font-size: 0.7rem;
-            color: var(--text-muted);
-        }
-
-        @media (max-width: 768px) {
-            .refresh-inner {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .refresh-actions {
-                justify-content: space-between;
-            }
-        }
-
         /* LANGUAGE */
         [data-en],
         [data-tr] {
@@ -2043,6 +2140,50 @@
                 <p id="nextEventText">Loading...</p>
                 <button class="btn btn-sm btn-ghost" style="width:100%;" onclick="goTo('news')"><span data-en>View
                         Calendar</span><span data-tr>Takvim</span></button>
+            </div>
+            
+            <!-- Data Panel Dropdown -->
+            <div class="sidebar-data-panel">
+                <button class="sidebar-data-toggle" onclick="toggleDataPanel()">
+                    <div class="sidebar-data-toggle-left">
+                        <i class="fa-solid fa-database"></i>
+                        <span data-en>Data Panel</span><span data-tr>Veri Paneli</span>
+                    </div>
+                    <div class="sidebar-data-toggle-right">
+                        <span class="data-status-dot" id="dataStatusDot"></span>
+                        <i class="fa-solid fa-chevron-up" id="dataPanelIcon"></i>
+                    </div>
+                </button>
+                <div class="sidebar-data-content" id="dataPanelContent">
+                    <div class="data-info-row">
+                        <span class="data-info-label"><span data-en>Last Updated</span><span data-tr>Son Güncelleme</span></span>
+                        <span class="data-info-value" id="sidebarLastUpdated">—</span>
+                    </div>
+                    <div class="data-actions-row">
+                        <button class="btn btn-ghost btn-sm" onclick="refreshData()" id="sidebarRefreshBtn">
+                            <i class="fa-solid fa-rotate"></i> <span data-en>Refresh</span><span data-tr>Yenile</span>
+                        </button>
+                        <button class="btn btn-ghost btn-sm" onclick="toggleChangeLog()">
+                            <i class="fa-solid fa-list"></i> <span data-en>Log</span><span data-tr>Kayıt</span>
+                        </button>
+                    </div>
+                    <div class="data-changelog" id="sidebarChangeLog" style="display:none;">
+                        <div class="data-changelog-header">
+                            <span><i class="fa-solid fa-clock-rotate-left"></i> <span data-en>Changes</span><span data-tr>Değişiklikler</span></span>
+                            <button class="btn btn-ghost btn-xs" onclick="clearChangeHistory()" title="Reset">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </button>
+                        </div>
+                        <div class="data-changelog-content" id="sidebarLogContent">
+                            <span class="text-muted"><span data-en>No changes</span><span data-tr>Değişiklik yok</span></span>
+                        </div>
+                    </div>
+                    <div class="data-admin-row">
+                        <button class="btn btn-ghost btn-sm" onclick="openAdminLogin()" style="width:100%;">
+                            <i class="fa-solid fa-shield-halved"></i> <span data-en>Admin Access</span><span data-tr>Yönetici Erişimi</span>
+                        </button>
+                    </div>
+                </div>
             </div>
         </aside>
 
@@ -2935,6 +3076,70 @@
             return 'mixed';
         }
         
+        // Render change log to sidebar
+        function renderSidebarLog() {
+            const container = document.getElementById('sidebarLogContent');
+            if (!container) return;
+            
+            if (UPDATE_LOG.length === 0) {
+                container.innerHTML = `<span class="text-muted">${lang === 'tr' ? 'Değişiklik yok' : 'No changes'}</span>`;
+                return;
+            }
+            
+            const icons = {
+                'Settings': { icon: 'fa-cog', color: '#64748b' },
+                'News': { icon: 'fa-newspaper', color: '#f59e0b' },
+                'Events': { icon: 'fa-calendar', color: '#6366f1' },
+                'Faculty': { icon: 'fa-user-tie', color: '#0f172a' },
+                'Research': { icon: 'fa-flask', color: '#10b981' },
+                'Publications': { icon: 'fa-book', color: '#8b5cf6' },
+                'Courses': { icon: 'fa-graduation-cap', color: '#ec4899' },
+                'Projects': { icon: 'fa-rocket', color: '#14b8a6' },
+                'Labs': { icon: 'fa-microscope', color: '#3b82f6' },
+                'Jobs': { icon: 'fa-briefcase', color: '#22c55e' },
+                'Alumni': { icon: 'fa-users', color: '#f97316' },
+                'Partners': { icon: 'fa-handshake', color: '#0ea5e9' },
+                'Students': { icon: 'fa-user-graduate', color: '#a855f7' }
+            };
+            
+            // Only show sheets with changes
+            const changed = UPDATE_LOG.filter(item => item.changeType !== 'unchanged');
+            
+            if (changed.length === 0) {
+                container.innerHTML = `<span class="text-muted">${lang === 'tr' ? 'Değişiklik yok' : 'No changes'}</span>`;
+                return;
+            }
+            
+            const html = changed.slice(0, 8).map(item => {
+                const cfg = icons[item.name] || { icon: 'fa-database', color: '#64748b' };
+                const displayName = lang === 'tr' ? (SHEET_NAMES_TR[item.name] || item.name) : item.name;
+                
+                return `
+                    <div class="changelog-item">
+                        <div class="changelog-icon" style="background:${cfg.color};">
+                            <i class="fa-solid ${cfg.icon}"></i>
+                        </div>
+                        <div class="changelog-info">
+                            <div class="changelog-name">${displayName}</div>
+                            <div class="changelog-detail">${item.message}</div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+            
+            container.innerHTML = html;
+        }
+        
+        // Update sidebar last updated time
+        function updateSidebarInfo() {
+            const ts = localStorage.getItem('lastUpdatedTs');
+            const el = document.getElementById('sidebarLastUpdated');
+            if (el && ts) {
+                const d = new Date(parseInt(ts));
+                el.textContent = d.toLocaleTimeString(lang === 'tr' ? 'tr-TR' : 'en-US', { hour: '2-digit', minute: '2-digit' });
+            }
+        }
+        
         function renderUpdateLog() {
             const container = document.getElementById('updateLogContent');
             if (!container) return;
@@ -2996,6 +3201,10 @@
             }).join('');
             
             container.innerHTML = html;
+            
+            // Also update sidebar log
+            renderSidebarLog();
+            updateSidebarInfo();
         }
 
         let lang = localStorage.getItem('lang') || 'en';
@@ -3750,40 +3959,27 @@
         // ═══════════════════════════════════════════════════════════════════════════
 
         function setRefreshUI(state, msgKey) {
-            const btn = document.getElementById('refreshBtn');
-            const status = document.getElementById('refreshStatus');
-
-            if (!btn || !status) return;
-
-            const texts = {
-                ready: { en: 'Ready', tr: 'Hazır' },
-                updating: { en: 'Updating…', tr: 'Güncelleniyor…' },
-                updated: { en: 'Updated', tr: 'Güncellendi' },
-                error: { en: 'Update failed', tr: 'Güncelleme başarısız' }
-            };
-
-            const label = texts[msgKey] ? (lang === 'tr' ? texts[msgKey].tr : texts[msgKey].en) : '';
+            const btn = document.getElementById('sidebarRefreshBtn');
+            const dot = document.getElementById('dataStatusDot');
 
             if (state === 'busy') {
-                btn.disabled = true;
-                btn.innerHTML = `<i class="fa-solid fa-spinner" style="animation: spin 1s linear infinite;"></i> <span data-en>Update</span><span data-tr>Güncelle</span>`;
-                status.textContent = label;
+                if (btn) {
+                    btn.disabled = true;
+                    btn.innerHTML = `<i class="fa-solid fa-spinner" style="animation: spin 1s linear infinite;"></i> <span data-en>...</span><span data-tr>...</span>`;
+                }
+                if (dot) dot.classList.add('loading');
             } else {
-                btn.disabled = false;
-                btn.innerHTML = `<i class="fa-solid fa-rotate"></i> <span data-en>Update</span><span data-tr>Güncelle</span>`;
-                status.textContent = label;
+                if (btn) {
+                    btn.disabled = false;
+                    btn.innerHTML = `<i class="fa-solid fa-rotate"></i> <span data-en>Refresh</span><span data-tr>Yenile</span>`;
+                }
+                if (dot) dot.classList.remove('loading');
             }
         }
 
         function updateLastUpdatedLabel() {
-            const el = document.getElementById('lastUpdatedText');
-            if (!el) return;
-
-            const ts = localStorage.getItem('lastUpdatedTs');
-            if (!ts) { el.textContent = '—'; return; }
-
-            const d = new Date(parseInt(ts, 10));
-            el.textContent = d.toLocaleString(lang === 'tr' ? 'tr-TR' : 'en-US');
+            // Update sidebar timestamp
+            updateSidebarInfo();
         }
 
         // ═══════════════════════════════════════════════════════════════════════════
@@ -3950,50 +4146,6 @@
         document.addEventListener('DOMContentLoaded', init);
     </script>
 
-    <!-- DATA REFRESH BAR -->
-    <div class="refresh-bar" id="refreshBar">
-        <div class="refresh-inner">
-            <div class="refresh-meta" onclick="toggleUpdatePanel()" style="cursor:pointer;">
-                <div class="refresh-title">
-                    <i class="fa-solid fa-database" style="margin-right:0.3rem; opacity:0.7;"></i>
-                    <span data-en>Data</span><span data-tr>Veri</span>
-                    <i class="fa-solid fa-chevron-up" id="panelToggleIcon" style="margin-left:0.4rem; font-size:0.65rem; opacity:0.5; transition:transform 0.3s;"></i>
-                </div>
-                <div class="refresh-subtitle" id="refreshInfo">
-                    <span data-en>Last updated: </span><span data-tr>Son güncelleme: </span><span id="lastUpdatedText">—</span>
-                </div>
-            </div>
-            <div class="refresh-actions">
-                <span class="refresh-status" id="refreshStatus"><span data-en>Ready</span><span data-tr>Hazır</span></span>
-                <button class="btn btn-ghost btn-sm" onclick="openAdminLogin()" title="Admin">
-                    <i class="fa-solid fa-gear"></i>
-                </button>
-                <button class="btn btn-accent btn-sm" id="refreshBtn" onclick="refreshData()">
-                    <i class="fa-solid fa-rotate"></i>
-                    <span data-en>Update</span><span data-tr>Güncelle</span>
-                </button>
-            </div>
-        </div>
-        
-        <!-- Update Details Panel -->
-        <div class="update-panel" id="updatePanel">
-            <div class="update-panel-inner">
-                <div class="update-panel-header">
-                    <h4><i class="fa-solid fa-clock-rotate-left"></i> <span data-en>Change Log</span><span data-tr>Değişiklik Günlüğü</span></h4>
-                    <div style="display:flex; gap:0.5rem; align-items:center;">
-                        <button class="btn btn-ghost btn-sm" onclick="clearChangeHistory()" title="Clear history / Geçmişi temizle" style="font-size:0.7rem; color:#64748b;">
-                            <i class="fa-solid fa-trash-can"></i> <span data-en>Reset</span><span data-tr>Sıfırla</span>
-                        </button>
-                        <button class="btn btn-ghost btn-sm" onclick="toggleUpdatePanel()"><i class="fa-solid fa-times"></i></button>
-                    </div>
-                </div>
-                <div class="update-panel-content" id="updateLogContent">
-                    <p class="text-muted"><span data-en>Loading data...</span><span data-tr>Veri yükleniyor...</span></p>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Admin Login Modal -->
     <div class="modal-overlay" id="adminModal" onclick="if(event.target===this)closeAdminModal()">
         <div class="admin-modal" id="adminModalBox">
@@ -4017,9 +4169,6 @@
                     </div>
                     <p class="admin-hint" id="loginError" style="color:#ec4899; display:none;">
                         <i class="fa-solid fa-exclamation-circle"></i> <span data-en>Incorrect password</span><span data-tr>Yanlış şifre</span>
-                    </p>
-                    <p class="admin-hint">
-                        <i class="fa-solid fa-info-circle"></i> <span data-en>Default: admin123</span><span data-tr>Varsayılan: admin123</span>
                     </p>
                 </div>
                 
@@ -4052,8 +4201,9 @@
                             <p class="admin-hint"><span data-en>Found in the sheet URL after /d/</span><span data-tr>Sheet URL'sinde /d/ sonrasında bulunur</span></p>
                         </div>
                         <div class="settings-group">
-                            <label><span data-en>Admin Password</span><span data-tr>Yönetici Şifresi</span></label>
-                            <input type="text" id="settingPassword" class="admin-input" style="width:100%;">
+                            <label><span data-en>Change Admin Password</span><span data-tr>Yönetici Şifresini Değiştir</span></label>
+                            <input type="password" id="settingCurrentPassword" class="admin-input" style="width:100%; margin-bottom:0.5rem;" placeholder="Current password / Mevcut şifre">
+                            <input type="password" id="settingNewPassword" class="admin-input" style="width:100%;" placeholder="New password / Yeni şifre">
                         </div>
                         <button class="btn btn-accent" onclick="saveAdminSettings()">
                             <i class="fa-solid fa-save"></i> <span data-en>Save Settings</span><span data-tr>Ayarları Kaydet</span>
@@ -4067,73 +4217,6 @@
     </div>
 
     <style>
-        /* Update Panel Styles */
-        .update-panel {
-            position: absolute;
-            bottom: 100%;
-            left: 0;
-            right: 0;
-            background: #faf8f5;
-            border-top: 1px solid #e2e0dc;
-            box-shadow: 0 -8px 30px rgba(0,0,0,0.15);
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease, padding 0.3s ease;
-            z-index: 125;
-        }
-        .update-panel.show {
-            max-height: 300px;
-            padding: 1rem 0;
-        }
-        .update-panel-inner {
-            width: min(1100px, calc(100% - 1.8rem));
-            margin: 0 auto;
-            background: #faf8f5;
-        }
-        .update-panel-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 0.75rem;
-        }
-        .update-panel-header h4 {
-            margin: 0;
-            font-size: 0.9rem;
-            color: #0c1220;
-        }
-        .update-panel-content {
-            max-height: 200px;
-            overflow-y: auto;
-            background: #fff;
-            border-radius: 8px;
-            border: 1px solid #e2e0dc;
-            padding: 0.5rem;
-        }
-        .update-log-item {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 0.5rem;
-            border-bottom: 1px solid #f0eeea;
-            font-size: 0.85rem;
-            background: #fff;
-        }
-        .update-log-item:last-child { border-bottom: none; }
-        .update-log-icon {
-            width: 28px;
-            height: 28px;
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.75rem;
-            color: white;
-        }
-        .update-log-info { flex: 1; }
-        .update-log-name { font-weight: 500; color: #0c1220; }
-        .update-log-count { color: #64748b; font-size: 0.8rem; }
-        .update-log-time { color: #64748b; font-size: 0.75rem; white-space: nowrap; }
-        
         /* Admin Modal Styles */
         .modal-overlay {
             position: fixed;
@@ -4280,17 +4363,42 @@
         // ═══════════════════════════════════════════════════════════════════════════
         // ADMIN & UPDATE PANEL FUNCTIONS
         // ═══════════════════════════════════════════════════════════════════════════
+        // SIDEBAR DATA PANEL & ADMIN FUNCTIONS
+        // ═══════════════════════════════════════════════════════════════════════════
         
-        // Config stored in localStorage
+        // Simple hash function for password storage
+        function simpleHash(str) {
+            let hash = 0;
+            for (let i = 0; i < str.length; i++) {
+                const char = str.charCodeAt(i);
+                hash = ((hash << 5) - hash) + char;
+                hash = hash & hash;
+            }
+            return hash.toString(36);
+        }
+        
+        // Config stored in localStorage (password is hashed)
+        const DEFAULT_PWD_HASH = simpleHash('admin123');
         const ADMIN_CONFIG = {
-            password: localStorage.getItem('adminPassword') || 'admin123',
+            passwordHash: localStorage.getItem('adminPasswordHash') || DEFAULT_PWD_HASH,
             sheetId: localStorage.getItem('sheetId') || GOOGLE_SHEET_ID
         };
         
+        // Toggle sidebar data panel
+        function toggleDataPanel() {
+            const panel = document.querySelector('.sidebar-data-panel');
+            panel.classList.toggle('open');
+        }
+        
+        // Toggle change log in sidebar
+        function toggleChangeLog() {
+            const log = document.getElementById('sidebarChangeLog');
+            log.style.display = log.style.display === 'none' ? 'block' : 'none';
+        }
+        
         // Clear change history to reset baseline
         function clearChangeHistory() {
-            const currentLang = localStorage.getItem('lang') || 'en';
-            const confirmMsg = currentLang === 'tr' 
+            const confirmMsg = lang === 'tr' 
                 ? 'Değişiklik geçmişi sıfırlanacak. Devam edilsin mi?' 
                 : 'This will reset the change history baseline. Continue?';
             
@@ -4298,38 +4406,31 @@
                 localStorage.removeItem('previousDataSnapshot');
                 PREVIOUS_DATA = {};
                 
-                const successMsg = currentLang === 'tr'
-                    ? 'Geçmiş sıfırlandı. Sonraki güncelleme tüm verileri "yeni" olarak gösterecek.'
-                    : 'History cleared. Next update will show all data as "new".';
+                const successMsg = lang === 'tr'
+                    ? 'Geçmiş sıfırlandı.'
+                    : 'History cleared.';
                 alert(successMsg);
-                
-                // Refresh to show current state as new
                 refreshData();
             }
-        }
-        
-        function toggleUpdatePanel() {
-            const panel = document.getElementById('updatePanel');
-            const icon = document.getElementById('panelToggleIcon');
-            panel.classList.toggle('show');
-            icon.style.transform = panel.classList.contains('show') ? 'rotate(180deg)' : 'rotate(0)';
         }
         
         function openAdminLogin() {
             document.getElementById('adminModal').classList.add('show');
             document.getElementById('adminPassword').focus();
             document.getElementById('settingSheetId').value = ADMIN_CONFIG.sheetId;
-            document.getElementById('settingPassword').value = ADMIN_CONFIG.password;
         }
         
         function closeAdminModal() {
             document.getElementById('adminModal').classList.remove('show');
             document.getElementById('loginError').style.display = 'none';
+            document.getElementById('adminPassword').value = '';
         }
         
         function checkAdminLogin() {
             const pwd = document.getElementById('adminPassword').value;
-            if (pwd === ADMIN_CONFIG.password) {
+            const pwdHash = simpleHash(pwd);
+            
+            if (pwdHash === ADMIN_CONFIG.passwordHash) {
                 document.getElementById('adminLoginForm').style.display = 'none';
                 document.getElementById('adminSheetEditor').style.display = 'flex';
                 
@@ -4354,19 +4455,32 @@
         
         function saveAdminSettings() {
             const newSheetId = document.getElementById('settingSheetId').value.trim();
-            const newPassword = document.getElementById('settingPassword').value.trim();
+            const currentPwd = document.getElementById('settingCurrentPassword').value.trim();
+            const newPwd = document.getElementById('settingNewPassword').value.trim();
             
-            if (newSheetId) {
+            // Update sheet ID
+            if (newSheetId && newSheetId !== ADMIN_CONFIG.sheetId) {
                 localStorage.setItem('sheetId', newSheetId);
                 ADMIN_CONFIG.sheetId = newSheetId;
-                GOOGLE_SHEET_ID = newSheetId; // Update global
-            }
-            if (newPassword) {
-                localStorage.setItem('adminPassword', newPassword);
-                ADMIN_CONFIG.password = newPassword;
+                GOOGLE_SHEET_ID = newSheetId;
             }
             
-            alert(currentLang === 'tr' ? 'Ayarlar kaydedildi! Sayfa yenilenecek.' : 'Settings saved! Page will reload.');
+            // Update password (requires current password verification)
+            if (newPwd) {
+                if (!currentPwd) {
+                    alert(lang === 'tr' ? 'Mevcut şifreyi girin' : 'Enter current password');
+                    return;
+                }
+                if (simpleHash(currentPwd) !== ADMIN_CONFIG.passwordHash) {
+                    alert(lang === 'tr' ? 'Mevcut şifre yanlış' : 'Current password is incorrect');
+                    return;
+                }
+                const newHash = simpleHash(newPwd);
+                localStorage.setItem('adminPasswordHash', newHash);
+                ADMIN_CONFIG.passwordHash = newHash;
+            }
+            
+            alert(lang === 'tr' ? 'Ayarlar kaydedildi! Sayfa yenilenecek.' : 'Settings saved! Page will reload.');
             location.reload();
         }
     </script>
