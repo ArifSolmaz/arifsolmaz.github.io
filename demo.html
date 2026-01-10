@@ -3208,6 +3208,10 @@
         }
 
         let lang = localStorage.getItem('lang') || 'en';
+        
+        // Track current detail page for language switching
+        let currentDetailPage = null;
+        let currentDetailIndex = null;
 
         // cache-bust token so edits in Google Sheet reflect immediately
         let CACHE_BUST = Date.now();
@@ -3784,6 +3788,8 @@
         function goToNewsDetail(index) {
             const n = DATA.news[index];
             if (!n) return;
+            currentDetailPage = 'news';
+            currentDetailIndex = index;
             document.getElementById('newsDetailCategory').textContent = n.category || 'News';
             document.getElementById('newsDetailCategory').className = 'tag ' + getTagClass(n.category);
             document.getElementById('newsDetailTitle').textContent = t(n.title_en, n.title_tr);
@@ -3797,6 +3803,8 @@
         function goToEventDetail(index) {
             const e = DATA.events[index];
             if (!e) return;
+            currentDetailPage = 'event';
+            currentDetailIndex = index;
             document.getElementById('eventDetailType').textContent = e.type || 'Event';
             document.getElementById('eventDetailType').className = 'tag ' + getTagClass(e.type);
             document.getElementById('eventDetailTitle').textContent = t(e.title_en, e.title_tr);
@@ -3824,6 +3832,8 @@
         function goToProjectDetail(index) {
             const p = DATA.projects[index];
             if (!p) return;
+            currentDetailPage = 'project';
+            currentDetailIndex = index;
             document.getElementById('projectDetailCategory').textContent = p.category || 'Project';
             document.getElementById('projectDetailCategory').className = 'tag ' + getTagClass(p.category);
             document.getElementById('projectDetailYear').textContent = p.year;
@@ -3860,6 +3870,8 @@
         function goToLabDetail(index) {
             const l = DATA.labs[index];
             if (!l) return;
+            currentDetailPage = 'lab';
+            currentDetailIndex = index;
             document.getElementById('labDetailType').textContent = l.type || 'Lab';
             document.getElementById('labDetailType').className = 'tag ' + getTagClass(l.type);
             document.getElementById('labDetailTitle').textContent = t(l.name_en, l.name_tr);
@@ -3874,6 +3886,8 @@
         function goToJobDetail(index) {
             const j = DATA.jobs[index];
             if (!j) return;
+            currentDetailPage = 'job';
+            currentDetailIndex = index;
             document.getElementById('jobDetailType').textContent = j.type || 'Full-Time';
             document.getElementById('jobDetailType').className = 'tag ' + getTagClass(j.type);
             document.getElementById('jobDetailTitle').textContent = t(j.title_en, j.title_tr);
@@ -3903,6 +3917,19 @@
             }
             goTo('job-detail');
         }
+        
+        // Refresh current detail page when language changes
+        function refreshCurrentDetailPage() {
+            if (currentDetailPage === null || currentDetailIndex === null) return;
+            
+            switch(currentDetailPage) {
+                case 'news': goToNewsDetail(currentDetailIndex); break;
+                case 'event': goToEventDetail(currentDetailIndex); break;
+                case 'project': goToProjectDetail(currentDetailIndex); break;
+                case 'lab': goToLabDetail(currentDetailIndex); break;
+                case 'job': goToJobDetail(currentDetailIndex); break;
+            }
+        }
 
         function renderAll() {
             renderSettings();
@@ -3927,6 +3954,12 @@
         // ═══════════════════════════════════════════════════════════════════════════
 
         function goTo(pageId, navEl) {
+            // Clear detail tracking when navigating to a non-detail page
+            if (!pageId.includes('-detail')) {
+                currentDetailPage = null;
+                currentDetailIndex = null;
+            }
+            
             document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
             if (navEl) navEl.classList.add('active');
             else {
@@ -3957,6 +3990,7 @@
             document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.toggle('active', btn.textContent === l.toUpperCase()));
             localStorage.setItem('lang', l);
             renderAll();
+            refreshCurrentDetailPage(); // Re-render detail page if one is open
             updateLastUpdatedLabel(); // keep the timestamp locale consistent
         }
 
