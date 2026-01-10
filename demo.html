@@ -233,6 +233,92 @@
             transform: translateY(-50%);
             color: var(--text-muted);
             font-size: 0.75rem;
+            pointer-events: none;
+        }
+
+        .search-results {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            max-height: 400px;
+            overflow-y: auto;
+            z-index: 1000;
+            display: none;
+            margin-top: 8px;
+        }
+
+        .search-results.show {
+            display: block;
+        }
+
+        .search-result-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            cursor: pointer;
+            border-bottom: 1px solid var(--border);
+            transition: background 0.15s;
+        }
+
+        .search-result-item:last-child {
+            border-bottom: none;
+        }
+
+        .search-result-item:hover {
+            background: var(--bg-warm);
+        }
+
+        .search-result-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .search-result-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .search-result-title {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .search-result-meta {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .search-no-results {
+            padding: 24px;
+            text-align: center;
+            color: var(--text-muted);
+        }
+
+        .search-category {
+            padding: 8px 16px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            background: var(--bg-warm);
+            border-bottom: 1px solid var(--border);
         }
 
         .header-right {
@@ -2064,7 +2150,8 @@
         <div class="header-center">
             <div class="search-box">
                 <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" placeholder="Search...">
+                <input type="text" id="searchInput" placeholder="Search..." oninput="performSearch(this.value)" onfocus="showSearchResults()" onblur="hideSearchResultsDelayed()">
+                <div class="search-results" id="searchResults"></div>
             </div>
         </div>
         <div class="header-right">
@@ -3982,6 +4069,262 @@
         function closeSidebar() {
             document.getElementById('sidebar').classList.remove('open');
             document.querySelector('.sidebar-overlay').classList.remove('show');
+        }
+
+        // ═══════════════════════════════════════════════════════════════════════════
+        // SEARCH FUNCTIONALITY
+        // ═══════════════════════════════════════════════════════════════════════════
+        
+        let searchTimeout = null;
+        
+        function performSearch(query) {
+            clearTimeout(searchTimeout);
+            const resultsContainer = document.getElementById('searchResults');
+            
+            if (!query || query.length < 2) {
+                resultsContainer.innerHTML = '';
+                resultsContainer.classList.remove('show');
+                return;
+            }
+            
+            searchTimeout = setTimeout(() => {
+                const results = searchAllData(query.toLowerCase());
+                displaySearchResults(results, query);
+            }, 150);
+        }
+        
+        function searchAllData(query) {
+            const results = [];
+            
+            // Search News
+            DATA.news.forEach((item, index) => {
+                const title = t(item.title_en, item.title_tr) || '';
+                const desc = t(item.description_en, item.description_tr) || '';
+                if (title.toLowerCase().includes(query) || desc.toLowerCase().includes(query)) {
+                    results.push({
+                        type: 'news',
+                        title: title,
+                        meta: item.date,
+                        icon: 'fa-newspaper',
+                        color: '#ef4444',
+                        action: () => goToNewsDetail(index)
+                    });
+                }
+            });
+            
+            // Search Events
+            DATA.events.forEach((item, index) => {
+                const title = t(item.title_en, item.title_tr) || '';
+                const desc = t(item.description_en, item.description_tr) || '';
+                if (title.toLowerCase().includes(query) || desc.toLowerCase().includes(query)) {
+                    results.push({
+                        type: 'events',
+                        title: title,
+                        meta: item.date,
+                        icon: 'fa-calendar',
+                        color: '#8b5cf6',
+                        action: () => goToEventDetail(index)
+                    });
+                }
+            });
+            
+            // Search Faculty
+            DATA.faculty.forEach((item, index) => {
+                const name = item.name || '';
+                const research = t(item.research_en, item.research_tr) || '';
+                if (name.toLowerCase().includes(query) || research.toLowerCase().includes(query)) {
+                    results.push({
+                        type: 'faculty',
+                        title: name,
+                        meta: research,
+                        icon: 'fa-user-tie',
+                        color: '#6366f1',
+                        action: () => { goTo('faculty'); setTimeout(() => showProfile(index), 100); }
+                    });
+                }
+            });
+            
+            // Search Research
+            DATA.research.forEach((item, index) => {
+                const name = t(item.name_en, item.name_tr) || '';
+                const desc = t(item.description_en, item.description_tr) || '';
+                if (name.toLowerCase().includes(query) || desc.toLowerCase().includes(query)) {
+                    results.push({
+                        type: 'research',
+                        title: name,
+                        meta: item.lead,
+                        icon: 'fa-flask',
+                        color: '#10b981',
+                        action: () => goTo('research')
+                    });
+                }
+            });
+            
+            // Search Courses
+            DATA.courses.forEach((item, index) => {
+                const name = t(item.name_en, item.name_tr) || '';
+                const code = item.code || '';
+                if (name.toLowerCase().includes(query) || code.toLowerCase().includes(query)) {
+                    results.push({
+                        type: 'courses',
+                        title: `${code}: ${name}`,
+                        meta: item.instructor,
+                        icon: 'fa-book',
+                        color: '#f59e0b',
+                        action: () => goTo('courses')
+                    });
+                }
+            });
+            
+            // Search Projects
+            DATA.projects.forEach((item, index) => {
+                const title = t(item.title_en, item.title_tr) || '';
+                const desc = t(item.description_en, item.description_tr) || '';
+                if (title.toLowerCase().includes(query) || desc.toLowerCase().includes(query)) {
+                    results.push({
+                        type: 'projects',
+                        title: title,
+                        meta: item.team,
+                        icon: 'fa-diagram-project',
+                        color: '#ec4899',
+                        action: () => goToProjectDetail(index)
+                    });
+                }
+            });
+            
+            // Search Labs
+            DATA.labs.forEach((item, index) => {
+                const name = t(item.name_en, item.name_tr) || '';
+                const equipment = t(item.equipment_en, item.equipment_tr) || '';
+                if (name.toLowerCase().includes(query) || equipment.toLowerCase().includes(query)) {
+                    results.push({
+                        type: 'labs',
+                        title: name,
+                        meta: item.room,
+                        icon: 'fa-microscope',
+                        color: '#06b6d4',
+                        action: () => goToLabDetail(index)
+                    });
+                }
+            });
+            
+            // Search Jobs
+            DATA.jobs.forEach((item, index) => {
+                const title = t(item.title_en, item.title_tr) || '';
+                const company = item.company || '';
+                if (title.toLowerCase().includes(query) || company.toLowerCase().includes(query)) {
+                    results.push({
+                        type: 'jobs',
+                        title: title,
+                        meta: company,
+                        icon: 'fa-briefcase',
+                        color: '#14b8a6',
+                        action: () => goToJobDetail(index)
+                    });
+                }
+            });
+            
+            // Search Publications
+            DATA.publications.forEach((item, index) => {
+                const title = item.title || '';
+                const authors = item.authors || '';
+                if (title.toLowerCase().includes(query) || authors.toLowerCase().includes(query)) {
+                    results.push({
+                        type: 'publications',
+                        title: title,
+                        meta: authors,
+                        icon: 'fa-file-lines',
+                        color: '#6366f1',
+                        action: () => goTo('publications')
+                    });
+                }
+            });
+            
+            return results;
+        }
+        
+        function displaySearchResults(results, query) {
+            const container = document.getElementById('searchResults');
+            
+            if (results.length === 0) {
+                container.innerHTML = `<div class="search-no-results">
+                    <i class="fa-solid fa-search" style="font-size:1.5rem;margin-bottom:8px;opacity:0.3;"></i>
+                    <p>${lang === 'tr' ? 'Sonuç bulunamadı' : 'No results found'}</p>
+                </div>`;
+                container.classList.add('show');
+                return;
+            }
+            
+            // Group results by type
+            const grouped = {};
+            results.forEach(r => {
+                if (!grouped[r.type]) grouped[r.type] = [];
+                grouped[r.type].push(r);
+            });
+            
+            const typeNames = {
+                news: lang === 'tr' ? 'Haberler' : 'News',
+                events: lang === 'tr' ? 'Etkinlikler' : 'Events',
+                faculty: lang === 'tr' ? 'Akademisyenler' : 'Faculty',
+                research: lang === 'tr' ? 'Araştırma' : 'Research',
+                courses: lang === 'tr' ? 'Dersler' : 'Courses',
+                projects: lang === 'tr' ? 'Projeler' : 'Projects',
+                labs: lang === 'tr' ? 'Laboratuvarlar' : 'Labs',
+                jobs: lang === 'tr' ? 'İş İlanları' : 'Jobs',
+                publications: lang === 'tr' ? 'Yayınlar' : 'Publications'
+            };
+            
+            let html = '';
+            for (const [type, items] of Object.entries(grouped)) {
+                html += `<div class="search-category">${typeNames[type] || type}</div>`;
+                items.slice(0, 3).forEach((item, idx) => {
+                    html += `
+                        <div class="search-result-item" onclick="searchResultClick(${results.indexOf(item)})">
+                            <div class="search-result-icon" style="background:${item.color}20;color:${item.color};">
+                                <i class="fa-solid ${item.icon}"></i>
+                            </div>
+                            <div class="search-result-content">
+                                <div class="search-result-title">${highlightMatch(item.title, query)}</div>
+                                <div class="search-result-meta">${item.meta || ''}</div>
+                            </div>
+                        </div>
+                    `;
+                });
+            }
+            
+            container.innerHTML = html;
+            container.classList.add('show');
+            
+            // Store results for click handling
+            window._searchResults = results;
+        }
+        
+        function highlightMatch(text, query) {
+            if (!text) return '';
+            const regex = new RegExp(`(${query})`, 'gi');
+            return text.replace(regex, '<mark style="background:#fef08a;padding:0 2px;border-radius:2px;">$1</mark>');
+        }
+        
+        function searchResultClick(index) {
+            const result = window._searchResults[index];
+            if (result && result.action) {
+                result.action();
+                document.getElementById('searchInput').value = '';
+                document.getElementById('searchResults').classList.remove('show');
+            }
+        }
+        
+        function showSearchResults() {
+            const input = document.getElementById('searchInput');
+            if (input.value.length >= 2) {
+                document.getElementById('searchResults').classList.add('show');
+            }
+        }
+        
+        function hideSearchResultsDelayed() {
+            setTimeout(() => {
+                document.getElementById('searchResults').classList.remove('show');
+            }, 200);
         }
 
         function setLang(l) {
