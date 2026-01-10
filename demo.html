@@ -3272,7 +3272,7 @@
                 const row = {};
                 headers.forEach((h, idx) => {
                     const key = h.toLowerCase().replace(/\s+/g, '_');
-                    row[key] = values[idx] || '';
+                    row[key] = values[idx];
                 });
                 data.push(row);
             }
@@ -3301,8 +3301,8 @@
                 rows.forEach(row => {
                     if (!row || row.length < 2) return;
 
-                    const keyCell = row[0] || '';
-                    const valCell = row[1] || '';
+                    const keyCell = row[0];
+                    const valCell = row[1];
 
                     // If cell contains newlines, split them (handling Alt+Enter in Sheets)
                     if (keyCell.includes('\n') || valCell.includes('\n')) {
@@ -3337,15 +3337,14 @@
         // RENDER FUNCTIONS
         // ═══════════════════════════════════════════════════════════════════════════
 
-        function t(en, tr, fallback) {
-            // Smart translation function with fallback
-            // Priority: 
-            //   TR mode: tr → en → fallback
-            //   EN mode: en → fallback
+        function t(en, tr) {
+            // Bilingual translation function
+            // TR mode: prefer tr, fallback to en
+            // EN mode: use en
             if (lang === 'tr') {
-                return tr || en || fallback || '';
+                return tr || en;
             }
-            return en || fallback || '';
+            return en;
         }
 
         function getTagClass(category) {
@@ -3357,7 +3356,7 @@
                 'seminar': 'tag-accent', 'workshop': 'tag-purple',
                 'deadline': 'tag-red', 'phd': 'tag-accent', 'msc': 'tag-green'
             };
-            return map[(category || '').toLowerCase()] || '';
+            return map[(category || '').toLowerCase()];
         }
 
         function formatDate(dateStr) {
@@ -3371,7 +3370,7 @@
             const s = DATA.settings;
             document.getElementById('siteName').textContent = s.site_name || 'İSTUN Mechatronics Engineering';
             document.getElementById('heroTitle').textContent = t(s.hero_title_en, s.hero_title_tr) || 'Engineering Intelligent Systems';
-            document.getElementById('heroSubtitle').textContent = t(s.hero_subtitle_en, s.hero_subtitle_tr) || '';
+            document.getElementById('heroSubtitle').textContent = t(s.hero_subtitle_en, s.hero_subtitle_tr);
 
             // Stats
             const stats = [
@@ -3406,8 +3405,8 @@
                     </div>
                     <div class="news-body">
                         <span class="tag ${getTagClass(n.category)}">${n.category || 'News'}</span>
-                        <h4>${t(n.title_en, n.title_tr, n.title) || 'News Item'}</h4>
-                        <p>${t(n.description_en, n.description_tr, n.description) || ''}</p>
+                        <h4>${t(n.title_en, n.title_tr) || 'News Item'}</h4>
+                        <p>${t(n.description_en, n.description_tr)}</p>
                     </div>
                 </div>
             `;
@@ -3423,8 +3422,8 @@
                     </div>
                     <div class="news-body">
                         <span class="tag ${getTagClass(n.category)}">${n.category || 'News'}</span>
-                        <h4>${t(n.title_en, n.title_tr, n.title) || ''}</h4>
-                        <p>${t(n.description_en, n.description_tr, n.description) || ''}</p>
+                        <h4>${t(n.title_en, n.title_tr)}</h4>
+                        <p>${t(n.description_en, n.description_tr)}</p>
                     </div>
                 </div>
             `;
@@ -3436,11 +3435,11 @@
 
             const eventsHTML = events.map((e, i) => `
             <div class="timeline-item card-clickable" onclick="goToEventDetail(${i})" style="cursor:pointer;">
-                <div class="timeline-date">${e.date || ''} · ${e.time || ''}</div>
+                <div class="timeline-date">${e.date} · ${e.time}</div>
                 <div class="timeline-card">
                     <span class="tag ${getTagClass(e.type)}">${e.type || 'Event'}</span>
-                    <h4>${t(e.title_en, e.title_tr, e.title) || ''}</h4>
-                    <p>${t(e.description_en, e.description_tr, e.description) || ''}</p>
+                    <h4>${t(e.title_en, e.title_tr)}</h4>
+                    <p>${t(e.description_en, e.description_tr)}</p>
                 </div>
             </div>
         `).join('');
@@ -3450,7 +3449,7 @@
 
             // Next event card
             if (events[0]) {
-                document.getElementById('nextEventText').innerHTML = `<strong>${events[0].date || ''}</strong><br>${t(events[0].title_en, events[0].title_tr) || events[0].title || ''}`;
+                document.getElementById('nextEventText').innerHTML = `<strong>${events[0].date}</strong><br>${t(events[0].title_en, events[0].title_tr) || events[0].title}`;
             }
         }
 
@@ -3466,10 +3465,10 @@
                     <div class="card-img-badge"><span class="tag tag-green">${r.type || 'Lab'}</span></div>
                 </div>
                 <div class="card-body">
-                    <h3>${t(r.name_en, r.name_tr, r.name) || ''}</h3>
-                    <p>${t(r.description_en, r.description_tr, r.description) || ''}</p>
+                    <h3>${t(r.name_en, r.name_tr)}</h3>
+                    <p>${t(r.description_en, r.description_tr)}</p>
                 </div>
-                <div class="card-footer"><span>${r.lead || ''}</span><span class="card-footer-link">${t('Learn more', 'Detaylar')} →</span></div>
+                <div class="card-footer"><span>${r.lead}</span><span class="card-footer-link">${t('Learn more', 'Detaylar')} →</span></div>
             </div>
         `).join('');
             document.getElementById('featuredResearch').innerHTML = featuredHTML || '<p>No research groups.</p>';
@@ -3480,13 +3479,13 @@
                 <div class="research-header">
                     <div class="research-icon" style="background:linear-gradient(135deg, ${colors[i % colors.length]}, ${colors[(i + 1) % colors.length]});"><i class="fa-solid ${icons[i % icons.length]}"></i></div>
                     <div class="research-info">
-                        <h3>${t(r.name_en, r.name_tr, r.name) || ''}</h3>
-                        <p>${r.focus || ''}</p>
+                        <h3>${t(r.name_en, r.name_tr)}</h3>
+                        <p>${r.focus}</p>
                     </div>
                 </div>
-                <p class="research-desc">${t(r.description_en, r.description_tr, r.description) || ''}</p>
+                <p class="research-desc">${t(r.description_en, r.description_tr)}</p>
                 <div class="research-members">
-                    <span class="research-member"><img src="https://ui-avatars.com/api/?name=${encodeURIComponent(r.lead || 'L')}&background=0f172a&color=fff&size=32" alt=""> ${r.lead || ''} (Lead)</span>
+                    <span class="research-member"><img src="https://ui-avatars.com/api/?name=${encodeURIComponent(r.lead || 'L')}&background=0f172a&color=fff&size=32" alt=""> ${r.lead} (Lead)</span>
                     ${r.members ? `<span class="research-member">+${r.members} members</span>` : ''}
                 </div>
             </div>
@@ -3498,9 +3497,9 @@
             const html = DATA.faculty.map(f => `
             <div class="faculty-card card-clickable" onclick="goToProfile('${(f.name || '').replace(/'/g, "\\'")}')">
                 <img src="${f.photo || `https://ui-avatars.com/api/?name=${encodeURIComponent(f.name || 'F')}&background=6366f1&color=fff&size=120`}" class="faculty-avatar" alt="${f.name}">
-                <h3 class="faculty-name">${f.name || ''}</h3>
-                <p class="faculty-title">${f.title || ''}</p>
-                <div class="faculty-field">${t(f.research_en, f.research_tr, f.research) || ''}</div>
+                <h3 class="faculty-name">${f.name}</h3>
+                <p class="faculty-title">${f.title}</p>
+                <div class="faculty-field">${t(f.research_en, f.research_tr)}</div>
                 <div class="faculty-links">
                     ${f.email ? `<a href="mailto:${f.email}" title="Email" onclick="event.stopPropagation()"><i class="fa-solid fa-envelope"></i></a>` : ''}
                     ${f.scholar ? `<a href="${f.scholar}" title="Scholar" onclick="event.stopPropagation()"><i class="fa-brands fa-google-scholar"></i></a>` : ''}
@@ -3521,12 +3520,12 @@
             if (!f) return;
 
             // Header info
-            document.getElementById('profName').textContent = f.name || '';
-            document.getElementById('profTitle').textContent = f.title || '';
+            document.getElementById('profName').textContent = f.name;
+            document.getElementById('profTitle').textContent = f.title;
             document.getElementById('profPhoto').src = f.photo || `https://ui-avatars.com/api/?name=${encodeURIComponent(f.name || 'F')}&background=6366f1&color=fff&size=400`;
 
             // Core Meta
-            document.getElementById('profResearch').textContent = t(f.research_en, f.research_tr, f.research) || '—';
+            document.getElementById('profResearch').textContent = t(f.research_en, f.research_tr) || '—';
 
             // Contextual Sections (Bio, Education, Office, Honors)
             const bio = t(f.bio_en, f.bio_tr);
@@ -3573,10 +3572,10 @@
         function renderPublications() {
             const html = DATA.publications.map(p => `
             <div class="pub-item">
-                <div class="pub-title">${p.title || ''}</div>
-                <div class="pub-authors">${p.authors || ''}</div>
+                <div class="pub-title">${p.title}</div>
+                <div class="pub-authors">${p.authors}</div>
                 <div class="pub-meta">
-                    <span><i class="fa-solid fa-book"></i> ${p.journal || ''}, ${p.year || ''}</span>
+                    <span><i class="fa-solid fa-book"></i> ${p.journal}, ${p.year}</span>
                     ${p.citations ? `<span><i class="fa-solid fa-quote-left"></i> ${p.citations} citations</span>` : ''}
                     ${p.doi ? `<span><i class="fa-solid fa-link"></i> <a href="${p.doi}">DOI</a></span>` : ''}
                 </div>
@@ -3597,8 +3596,8 @@
                         <i class="fa-solid ${icons[cat] || 'fa-book'}"></i>
                     </div>
                     <div class="course-info">
-                        <h4>${c.code || ''}: ${t(c.name_en, c.name_tr, c.name) || ''}</h4>
-                        <p>${t(c.description_en, c.description_tr, c.description) || ''} · ${c.instructor || ''} · ${c.year || ''}</p>
+                        <h4>${c.code}: ${t(c.name_en, c.name_tr)}</h4>
+                        <p>${t(c.description_en, c.description_tr)} · ${c.instructor} · ${c.year}</p>
                     </div>
                     <span class="tag">${c.ects || '3'} ECTS</span>
                 </div>
@@ -3615,13 +3614,13 @@
                 </div>
                 <div class="project-body">
                     <span class="tag ${getTagClass(p.category)}">${p.category || 'Capstone'}</span>
-                    <h4>${t(p.title_en, p.title_tr, p.title) || ''}</h4>
-                    <p>${t(p.description_en, p.description_tr, p.description) || ''}</p>
+                    <h4>${t(p.title_en, p.title_tr)}</h4>
+                    <p>${t(p.description_en, p.description_tr)}</p>
                     <div class="project-team">
                         <div class="project-avatars">
                             ${(p.team || 'Team').split(',').slice(0, 3).map(m => `<img src="https://ui-avatars.com/api/?name=${encodeURIComponent(m.trim())}&background=6366f1&color=fff&size=44" alt="">`).join('')}
                         </div>
-                        <span class="project-names">${p.team || ''}</span>
+                        <span class="project-names">${p.team}</span>
                     </div>
                 </div>
             </div>
@@ -3634,12 +3633,12 @@
                     <span class="project-year">${p.year || '2024'}</span>
                 </div>
                 <div class="project-body">
-                    <span class="tag ${getTagClass(p.category)}">${p.category || ''}</span>
-                    <h4>${t(p.title_en, p.title_tr, p.title) || ''}</h4>
-                    <p>${t(p.description_en, p.description_tr, p.description) || ''}</p>
+                    <span class="tag ${getTagClass(p.category)}">${p.category}</span>
+                    <h4>${t(p.title_en, p.title_tr)}</h4>
+                    <p>${t(p.description_en, p.description_tr)}</p>
                 </div>
             </div>
-        `).join('') || '';
+        `).join('');
         }
 
         function renderLabs() {
@@ -3648,11 +3647,11 @@
                 <div class="card-img" style="background-image:url('${l.image || 'https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?w=600&q=80'}');"></div>
                 <div class="card-body">
                     <span class="tag ${l.type === 'Research' ? 'tag-green' : ''}">${l.type || 'Lab'}</span>
-                    <h3>${t(l.name_en, l.name_tr, l.name) || ''}</h3>
-                    <p>${t(l.equipment_en, l.equipment_tr, l.equipment) || ''}</p>
+                    <h3>${t(l.name_en, l.name_tr)}</h3>
+                    <p>${t(l.equipment_en, l.equipment_tr)}</p>
                 </div>
                 <div class="card-footer">
-                    <span>${l.room || ''} · ${l.manager || ''}</span>
+                    <span>${l.room} · ${l.manager}</span>
                     <span class="card-footer-link">${t('View Details', 'Detaylar')} →</span>
                 </div>
             </div>
@@ -3666,8 +3665,8 @@
             const html = DATA.jobs.map((j, i) => `
             <div class="card-compact card-clickable" onclick="goToJobDetail(${i})" style="cursor:pointer;">
                 <div class="card-compact-content">
-                    <h4>${j.title || ''}</h4>
-                    <p>${j.company || ''} · ${j.location || ''} · ${j.salary || ''}</p>
+                    <h4>${t(j.title_en, j.title_tr)}</h4>
+                    <p>${j.company} · ${j.location} · ${j.salary}</p>
                 </div>
                 <span class="tag ${getTagClass(j.type)}">${j.type || 'Job'}</span>
             </div>
@@ -3687,8 +3686,8 @@
             <div class="card-compact">
                 <img src="${a.photo || `https://ui-avatars.com/api/?name=${encodeURIComponent(a.name || 'A')}&background=6366f1&color=fff&size=80`}" style="width:44px;height:44px;border-radius:50%;" alt="">
                 <div class="card-compact-content">
-                    <h4>${a.name || ''} (${a.year || ''})</h4>
-                    <p>${a.position || ''} @ ${a.company || ''}</p>
+                    <h4>${a.name} (${a.year})</h4>
+                    <p>${a.position} @ ${a.company}</p>
                 </div>
             </div>
         `).join('');
@@ -3698,11 +3697,11 @@
         function renderStudents() {
             const html = DATA.students.map(s => `
             <tr>
-                <td><strong>${s.name || ''}</strong></td>
-                <td><span class="tag ${s.program?.toLowerCase() === 'phd' ? 'tag-accent' : 'tag-green'}">${s.program || ''}</span></td>
-                <td>${s.advisor || ''}</td>
-                <td>${s.research || ''}</td>
-                <td>${s.year || ''}</td>
+                <td><strong>${s.name}</strong></td>
+                <td><span class="tag ${s.program?.toLowerCase() === 'phd' ? 'tag-accent' : 'tag-green'}">${s.program}</span></td>
+                <td>${s.advisor}</td>
+                <td>${s.research}</td>
+                <td>${s.year}</td>
             </tr>
         `).join('');
             document.getElementById('studentsBody').innerHTML = html || '<tr><td colspan="5">No students.</td></tr>';
@@ -3718,14 +3717,14 @@
             ).join('');
 
             document.getElementById('industryPartners').innerHTML = industryHTML || '<p>No partners.</p>';
-            document.getElementById('homePartners').innerHTML = industryHTML || '';
+            document.getElementById('homePartners').innerHTML = industryHTML;
 
             const academicHTML = academic.map(p => `
             <div class="card-compact">
                 <div class="card-compact-icon" style="background:var(--accent-light); color:var(--accent);"><i class="fa-solid fa-university"></i></div>
                 <div class="card-compact-content">
-                    <h4>${p.name || ''}</h4>
-                    <p>${t(p.description_en, p.description_tr, p.description) || ''}</p>
+                    <h4>${p.name}</h4>
+                    <p>${t(p.description_en, p.description_tr)}</p>
                 </div>
             </div>
         `).join('');
@@ -3738,13 +3737,13 @@
             <div>
                 <h2>${t('Department Office', 'Bölüm Sekreterliği')}</h2>
                 <p><i class="fa-solid fa-location-dot" style="width:18px; color:var(--accent);"></i> ${t('ISTUN Sütlüce Campus, Beyoğlu, İstanbul', 'İSTÜN Sütlüce Kampüsü, Beyoğlu, İstanbul')}</p>
-                <p><i class="fa-solid fa-phone" style="width:18px; color:var(--accent);"></i> ${s.phone || ''}</p>
-                <p><i class="fa-solid fa-envelope" style="width:18px; color:var(--accent);"></i> ${s.email || ''}</p>
+                <p><i class="fa-solid fa-phone" style="width:18px; color:var(--accent);"></i> ${s.phone}</p>
+                <p><i class="fa-solid fa-envelope" style="width:18px; color:var(--accent);"></i> ${s.email}</p>
                 <p><i class="fa-solid fa-clock" style="width:18px; color:var(--accent);"></i> ${s.hours || 'Mon-Fri 09:00-17:00'}</p>
                 
                 <h2 style="margin-top:1.5rem;">${t('Key Contacts', 'Önemli Kişiler')}</h2>
-                <p><strong>${t('Department Chair', 'Bölüm Başkanı')}:</strong> ${s.chair || ''}</p>
-                <p><strong>${t('Graduate Coordinator', 'Lisansüstü Koordinatörü')}:</strong> ${s.grad_coordinator || ''}</p>
+                <p><strong>${t('Department Chair', 'Bölüm Başkanı')}:</strong> ${s.chair}</p>
+                <p><strong>${t('Graduate Coordinator', 'Lisansüstü Koordinatörü')}:</strong> ${s.grad_coordinator}</p>
             </div>
             <div style="border-radius:var(--radius-lg); overflow:hidden; border:1px solid var(--border); height:300px;">
                 <iframe 
@@ -3762,17 +3761,17 @@
 
         function renderAbout() {
             const s = DATA.settings;
-            document.getElementById('aboutSubtitle').textContent = t(s.about_subtitle_en, s.about_subtitle_tr) || '';
+            document.getElementById('aboutSubtitle').textContent = t(s.about_subtitle_en, s.about_subtitle_tr);
             document.getElementById('aboutContent').innerHTML = `
             <div>
                 <h2>${t('Our Mission', 'Misyonumuz')}</h2>
-                <p>${t(s.mission_en, s.mission_tr) || ''}</p>
+                <p>${t(s.mission_en, s.mission_tr)}</p>
                 <h2>${t('Vision', 'Vizyon')}</h2>
-                <p>${t(s.vision_en, s.vision_tr) || ''}</p>
+                <p>${t(s.vision_en, s.vision_tr)}</p>
             </div>
             <div>
                 <h2>${t('Accreditation', 'Akreditasyon')}</h2>
-                <p>${t(s.accreditation_en, s.accreditation_tr) || ''}</p>
+                <p>${t(s.accreditation_en, s.accreditation_tr)}</p>
                 <div class="alert alert-success"><i class="fa-solid fa-certificate"></i> ${s.accreditation_status || 'MÜDEK'}</div>
             </div>
         `;
@@ -3787,11 +3786,11 @@
             if (!n) return;
             document.getElementById('newsDetailCategory').textContent = n.category || 'News';
             document.getElementById('newsDetailCategory').className = 'tag ' + getTagClass(n.category);
-            document.getElementById('newsDetailTitle').textContent = t(n.title_en, n.title_tr, n.title) || '';
-            document.getElementById('newsDetailDate').textContent = n.date || '';
+            document.getElementById('newsDetailTitle').textContent = t(n.title_en, n.title_tr);
+            document.getElementById('newsDetailDate').textContent = n.date;
             document.getElementById('newsDetailAuthor').textContent = n.author || 'Department';
             document.getElementById('newsDetailImage').style.backgroundImage = `url('${n.image || 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80'}')`;
-            document.getElementById('newsDetailContent').textContent = t(n.content_en, n.content_tr) || t(n.description_en, n.description_tr, n.description) || '';
+            document.getElementById('newsDetailContent').textContent = t(n.content_en, n.content_tr) || t(n.description_en, n.description_tr);
             goTo('news-detail');
         }
         
@@ -3800,11 +3799,11 @@
             if (!e) return;
             document.getElementById('eventDetailType').textContent = e.type || 'Event';
             document.getElementById('eventDetailType').className = 'tag ' + getTagClass(e.type);
-            document.getElementById('eventDetailTitle').textContent = t(e.title_en, e.title_tr, e.title) || '';
-            document.getElementById('eventDetailDate').textContent = e.date || '';
-            document.getElementById('eventDetailTime').textContent = e.time || '';
-            document.getElementById('eventDetailLocation').textContent = e.location || '';
-            document.getElementById('eventDetailContent').textContent = t(e.content_en, e.content_tr) || t(e.description_en, e.description_tr, e.description) || '';
+            document.getElementById('eventDetailTitle').textContent = t(e.title_en, e.title_tr);
+            document.getElementById('eventDetailDate').textContent = e.date;
+            document.getElementById('eventDetailTime').textContent = e.time;
+            document.getElementById('eventDetailLocation').textContent = e.location;
+            document.getElementById('eventDetailContent').textContent = t(e.content_en, e.content_tr) || t(e.description_en, e.description_tr);
             
             if (e.speaker) {
                 document.getElementById('eventDetailSpeakerBox').style.display = 'flex';
@@ -3827,12 +3826,12 @@
             if (!p) return;
             document.getElementById('projectDetailCategory').textContent = p.category || 'Project';
             document.getElementById('projectDetailCategory').className = 'tag ' + getTagClass(p.category);
-            document.getElementById('projectDetailYear').textContent = p.year || '';
-            document.getElementById('projectDetailTitle').textContent = t(p.title_en, p.title_tr, p.title) || '';
-            document.getElementById('projectDetailTeam').textContent = p.team || '';
-            document.getElementById('projectDetailAdvisor').textContent = p.advisor || '';
+            document.getElementById('projectDetailYear').textContent = p.year;
+            document.getElementById('projectDetailTitle').textContent = t(p.title_en, p.title_tr);
+            document.getElementById('projectDetailTeam').textContent = p.team;
+            document.getElementById('projectDetailAdvisor').textContent = p.advisor;
             document.getElementById('projectDetailImage').style.backgroundImage = `url('${p.image || 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&q=80'}')`;
-            document.getElementById('projectDetailContent').textContent = t(p.content_en, p.content_tr) || t(p.description_en, p.description_tr, p.description) || '';
+            document.getElementById('projectDetailContent').textContent = t(p.content_en, p.content_tr) || t(p.description_en, p.description_tr);
             
             if (p.award) {
                 document.getElementById('projectDetailAward').style.display = 'inline-flex';
@@ -3863,12 +3862,12 @@
             if (!l) return;
             document.getElementById('labDetailType').textContent = l.type || 'Lab';
             document.getElementById('labDetailType').className = 'tag ' + getTagClass(l.type);
-            document.getElementById('labDetailTitle').textContent = t(l.name_en, l.name_tr, l.name) || '';
-            document.getElementById('labDetailRoom').textContent = l.room || '';
-            document.getElementById('labDetailManager').textContent = l.manager || '';
+            document.getElementById('labDetailTitle').textContent = t(l.name_en, l.name_tr);
+            document.getElementById('labDetailRoom').textContent = l.room;
+            document.getElementById('labDetailManager').textContent = l.manager;
             document.getElementById('labDetailImage').style.backgroundImage = `url('${l.image || 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&q=80'}')`;
-            document.getElementById('labDetailContent').textContent = t(l.content_en, l.content_tr) || '';
-            document.getElementById('labDetailEquipment').textContent = t(l.equipment_en, l.equipment_tr, l.equipment) || '';
+            document.getElementById('labDetailContent').textContent = t(l.content_en, l.content_tr);
+            document.getElementById('labDetailEquipment').textContent = t(l.equipment_en, l.equipment_tr);
             goTo('lab-detail');
         }
         
@@ -3877,10 +3876,10 @@
             if (!j) return;
             document.getElementById('jobDetailType').textContent = j.type || 'Full-Time';
             document.getElementById('jobDetailType').className = 'tag ' + getTagClass(j.type);
-            document.getElementById('jobDetailTitle').textContent = j.title || '';
-            document.getElementById('jobDetailCompany').textContent = j.company || '';
-            document.getElementById('jobDetailLocation').textContent = j.location || '';
-            document.getElementById('jobDetailContent').textContent = t(j.content_en, j.content_tr) || j.description || '';
+            document.getElementById('jobDetailTitle').textContent = t(j.title_en, j.title_tr);
+            document.getElementById('jobDetailCompany').textContent = j.company;
+            document.getElementById('jobDetailLocation').textContent = j.location;
+            document.getElementById('jobDetailContent').textContent = t(j.content_en, j.content_tr) || t(j.description_en, j.description_tr);
             
             if (j.salary) {
                 document.getElementById('jobSalaryItem').style.display = 'flex';
