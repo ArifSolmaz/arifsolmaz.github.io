@@ -1,644 +1,597 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exoplanet Papers | Daily arXiv Summaries</title>
-    <meta name="description" content="Daily AI-powered summaries of exoplanet research papers from arXiv, written for general audiences.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            /* Soft, warm light theme */
-            --bg-page: #faf9f7;
-            --bg-card: #ffffff;
-            --bg-card-hover: #ffffff;
-            --bg-summary: #f5f3f0;
-            --accent-primary: #6366f1;
-            --accent-secondary: #8b5cf6;
-            --accent-warm: #d97706;
-            --accent-teal: #0d9488;
-            --accent-green: #059669;
-            --text-primary: #1e293b;
-            --text-secondary: #475569;
-            --text-muted: #64748b;
-            --border: #e5e5e5;
-            --border-accent: rgba(99, 102, 241, 0.2);
-            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04);
-            --shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-            --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.08);
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Arif Solmaz – Astronomer studying exoplanets and stellar activity using space telescope data.">
+  <title>Arif Solmaz – Astronomer</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Space+Mono:wght@400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --color-void: #030308;
+      --color-text: #e4e4ec;
+      --color-muted: #6b6b80;
+      --color-stellar: #ffd475;
+      --color-stellar-glow: rgba(255, 212, 117, 0.3);
+      --color-transit: #4a9eff;
+      --color-glass-border: rgba(255, 255, 255, 0.08);
+      
+      --font-display: "Playfair Display", Georgia, serif;
+      --font-mono: "Space Mono", monospace;
+      --font-body: "Outfit", -apple-system, sans-serif;
+    }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        body {
-            font-family: 'DM Sans', sans-serif;
-            background: var(--bg-page);
-            color: var(--text-primary);
-            min-height: 100vh;
-            line-height: 1.6;
-        }
+    html, body {
+      height: 100%;
+      overflow: hidden;
+    }
 
-        /* Soft gradient background */
-        .bg-pattern {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(ellipse at 0% 0%, rgba(99, 102, 241, 0.06) 0%, transparent 50%),
-                radial-gradient(ellipse at 100% 50%, rgba(139, 92, 246, 0.04) 0%, transparent 50%),
-                radial-gradient(ellipse at 50% 100%, rgba(245, 158, 11, 0.03) 0%, transparent 50%);
-            pointer-events: none;
-            z-index: 0;
-        }
+    body {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--color-text);
+      background: var(--color-void);
+      -webkit-font-smoothing: antialiased;
+    }
 
-        .container {
-            position: relative;
-            z-index: 2;
-            max-width: 860px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
+    /* ═══════════════════════════════════════════
+       STARFIELD
+    ═══════════════════════════════════════════ */
+    #starfield {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
 
-        /* Header */
-        header {
-            text-align: center;
-            padding: 2.5rem 0 3rem;
-            margin-bottom: 2rem;
-        }
+    /* ═══════════════════════════════════════════
+       MAIN LAYOUT - SINGLE SCREEN
+    ═══════════════════════════════════════════ */
+    .page {
+      position: relative;
+      z-index: 10;
+      height: 100vh;
+      height: 100dvh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr auto;
+      gap: 2rem;
+      padding: 3rem;
+    }
 
-        .logo-icon {
-            width: 72px;
-            height: 72px;
-            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.2rem;
-            box-shadow: 0 8px 24px rgba(99, 102, 241, 0.25);
-            margin: 0 auto 1.5rem;
-        }
+    /* ═══════════════════════════════════════════
+       LEFT COLUMN - IDENTITY
+    ═══════════════════════════════════════════ */
+    .identity {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1.5rem;
+    }
 
-        h1 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.8rem;
-            font-weight: 600;
-            letter-spacing: -0.01em;
-            color: var(--text-primary);
-        }
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--color-transit);
+      opacity: 0;
+      animation: fade-in 0.8s ease 0.2s forwards;
+    }
 
-        .subtitle {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            margin-top: 0.5rem;
-            font-weight: 400;
-        }
+    .name {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      font-weight: 400;
+      line-height: 0.95;
+      color: #fff;
+      letter-spacing: -0.02em;
+      opacity: 0;
+      animation: fade-in 0.8s ease 0.3s forwards;
+    }
 
-        .badges {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 0.6rem;
-            margin-top: 1.5rem;
-        }
+    .name span {
+      display: block;
+      font-style: italic;
+      color: var(--color-stellar);
+    }
 
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            padding: 0.45rem 0.9rem;
-            border-radius: 100px;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
+    .tagline {
+      font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+      color: var(--color-muted);
+      max-width: 400px;
+      line-height: 1.7;
+      opacity: 0;
+      animation: fade-in 0.8s ease 0.4s forwards;
+    }
 
-        .badge-ai {
-            background: linear-gradient(135deg, rgba(5, 150, 105, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%);
-            border: 1px solid rgba(5, 150, 105, 0.2);
-            color: var(--accent-green);
-        }
+    .affiliation {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      padding-top: 0.5rem;
+      border-top: 1px solid var(--color-glass-border);
+      opacity: 0;
+      animation: fade-in 0.8s ease 0.5s forwards;
+    }
 
-        .badge-date {
-            background: #f1f5f9;
-            border: 1px solid var(--border);
-            color: var(--text-secondary);
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.75rem;
-        }
+    .affiliation-label {
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-muted);
+    }
 
-        .badge-count {
-            background: rgba(217, 119, 6, 0.1);
-            border: 1px solid rgba(217, 119, 6, 0.2);
-            color: var(--accent-warm);
-        }
+    .affiliation-value {
+      font-size: 0.9rem;
+      color: var(--color-text);
+    }
 
-        /* Intro box */
-        .intro-box {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 1.5rem 2rem;
-            margin-bottom: 2.5rem;
-            text-align: center;
-            box-shadow: var(--shadow-sm);
-        }
+    /* ═══════════════════════════════════════════
+       RIGHT COLUMN - INFO GRID
+    ═══════════════════════════════════════════ */
+    .info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1.5rem;
+    }
 
-        .intro-box p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
+    .info-section {
+      opacity: 0;
+      animation: fade-in 0.8s ease forwards;
+    }
 
-        .intro-box strong {
-            color: var(--text-primary);
-            font-weight: 500;
-        }
+    .info-section:nth-child(1) { animation-delay: 0.4s; }
+    .info-section:nth-child(2) { animation-delay: 0.5s; }
+    .info-section:nth-child(3) { animation-delay: 0.6s; }
 
-        /* Loading */
-        .loading {
-            text-align: center;
-            padding: 4rem 2rem;
-        }
+    .info-label {
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--color-transit);
+      margin-bottom: 0.75rem;
+    }
 
-        .loading-spinner {
-            width: 48px;
-            height: 48px;
-            border: 3px solid var(--border);
-            border-top-color: var(--accent-primary);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 1.5rem;
-        }
+    /* Research Topics */
+    .topics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
 
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
+    .topic {
+      font-size: 0.8rem;
+      color: var(--color-text);
+      padding: 0.4rem 0.8rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--color-glass-border);
+      border-radius: 20px;
+      transition: all 0.3s ease;
+    }
 
-        .loading-text {
-            color: var(--text-secondary);
-            font-size: 1rem;
-        }
+    .topic:hover {
+      border-color: var(--color-stellar-glow);
+      background: rgba(255, 212, 117, 0.05);
+    }
 
-        /* Papers */
-        .papers-list {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
+    /* Links */
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
 
-        .paper-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-sm);
-            animation: fadeInUp 0.5s ease forwards;
-            opacity: 0;
-        }
+    .link {
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: #fff;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--color-glass-border);
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
 
-        .paper-card:hover {
-            box-shadow: var(--shadow-hover);
-            border-color: var(--border-accent);
-            transform: translateY(-2px);
-        }
+    .link:hover {
+      border-color: var(--color-stellar);
+      background: rgba(255, 212, 117, 0.08);
+      transform: translateY(-2px);
+    }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(16px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+    .link-arrow {
+      font-size: 0.75rem;
+      opacity: 0.5;
+      transition: all 0.3s ease;
+    }
 
-        .paper-header {
-            padding: 1.5rem 1.75rem;
-            border-bottom: 1px solid var(--border);
-        }
+    .link:hover .link-arrow {
+      opacity: 1;
+      transform: translateX(2px);
+    }
 
-        .paper-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.6rem;
-            margin-bottom: 0.75rem;
-            align-items: center;
-        }
+    /* Contact */
+    .contact-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
 
-        .paper-category {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.7rem;
-            padding: 0.25rem 0.6rem;
-            background: rgba(99, 102, 241, 0.08);
-            border-radius: 6px;
-            color: var(--accent-primary);
-            font-weight: 500;
-        }
+    .contact-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
 
-        .paper-date {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.7rem;
-            color: var(--text-muted);
-        }
+    .contact-key {
+      font-family: var(--font-mono);
+      font-size: 0.5rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-muted);
+    }
 
-        .paper-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.35rem;
-            font-weight: 600;
-            line-height: 1.4;
-            margin-bottom: 0.5rem;
-        }
+    .contact-value {
+      font-size: 0.85rem;
+      color: var(--color-text);
+    }
 
-        .paper-title a {
-            color: var(--text-primary);
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
+    .contact-value a {
+      color: var(--color-text);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s ease;
+    }
 
-        .paper-title a:hover {
-            color: var(--accent-primary);
-        }
+    .contact-value a:hover {
+      border-bottom-color: var(--color-stellar);
+    }
 
-        .paper-authors {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
+    /* ═══════════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════════ */
+    .footer {
+      grid-column: 1 / -1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 1rem;
+      border-top: 1px solid var(--color-glass-border);
+      opacity: 0;
+      animation: fade-in 0.8s ease 0.7s forwards;
+    }
 
-        /* Summary section */
-        .summary-section {
-            padding: 1.75rem;
-            background: var(--bg-summary);
-        }
+    .footer-text {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      color: var(--color-muted);
+    }
 
-        .summary-label {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            font-size: 0.7rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--accent-green);
-            margin-bottom: 1rem;
-        }
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+    }
 
-        .summary-content {
-            font-family: 'Source Serif 4', Georgia, serif;
-            font-size: 1rem;
-            line-height: 1.8;
-            color: var(--text-secondary);
-        }
+    .footer-link {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      color: var(--color-muted);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
 
-        .summary-content h4 {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: var(--accent-warm);
-            margin: 1.5rem 0 0.6rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
+    .footer-link:hover {
+      color: var(--color-stellar);
+    }
 
-        .summary-content h4:first-child {
-            margin-top: 0;
-        }
+    /* ═══════════════════════════════════════════
+       ANIMATIONS
+    ═══════════════════════════════════════════ */
+    @keyframes fade-in {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-        .summary-content p {
-            margin-bottom: 0.75rem;
-            color: var(--text-primary);
-        }
+    /* ═══════════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .page {
+        padding: 2rem;
+        gap: 1.5rem;
+      }
+      
+      .topic {
+        font-size: 0.75rem;
+        padding: 0.35rem 0.7rem;
+      }
+    }
 
-        .summary-content p:last-child {
-            margin-bottom: 0;
-        }
+    @media (max-width: 768px) {
+      .page {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        padding: 1.5rem;
+        gap: 2rem;
+        height: auto;
+        min-height: 100vh;
+        min-height: 100dvh;
+        overflow-y: auto;
+      }
+      
+      html, body {
+        overflow: auto;
+      }
+      
+      .identity {
+        gap: 1rem;
+      }
+      
+      .name {
+        font-size: 2.5rem;
+      }
+      
+      .tagline {
+        font-size: 0.9rem;
+      }
+      
+      .info {
+        gap: 1.5rem;
+      }
+      
+      .topics {
+        gap: 0.4rem;
+      }
+      
+      .topic {
+        font-size: 0.7rem;
+        padding: 0.3rem 0.6rem;
+      }
+      
+      .links {
+        gap: 0.5rem;
+      }
+      
+      .link {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+      }
+      
+      .contact-grid {
+        gap: 1rem;
+      }
+      
+      .footer {
+        flex-direction: column;
+        gap: 0.75rem;
+        text-align: center;
+      }
+    }
 
-        /* Abstract toggle */
-        .original-abstract {
-            padding: 0 1.75rem 1.25rem;
-        }
+    @media (max-width: 480px) {
+      .page {
+        padding: 1.25rem;
+      }
+      
+      .name {
+        font-size: 2rem;
+      }
+      
+      .eyebrow {
+        font-size: 0.55rem;
+      }
+      
+      .info-label {
+        font-size: 0.5rem;
+      }
+    }
+    
+    @media (max-height: 700px) and (min-width: 769px) {
+      .page {
+        padding: 2rem;
+        gap: 1rem;
+      }
+      
+      .identity {
+        gap: 1rem;
+      }
+      
+      .info {
+        gap: 1rem;
+      }
+      
+      .name {
+        font-size: clamp(2rem, 5vw, 3.5rem);
+      }
+      
+      .tagline {
+        font-size: 0.85rem;
+      }
+      
+      .topic {
+        font-size: 0.7rem;
+        padding: 0.3rem 0.6rem;
+      }
+      
+      .info-label {
+        margin-bottom: 0.5rem;
+      }
+    }
 
-        .abstract-toggle {
-            background: none;
-            border: none;
-            color: var(--text-muted);
-            font-family: 'DM Sans', sans-serif;
-            font-size: 0.8rem;
-            cursor: pointer;
-            padding: 0.5rem 0;
-            transition: color 0.2s ease;
-        }
-
-        .abstract-toggle:hover {
-            color: var(--text-secondary);
-        }
-
-        .abstract-content {
-            margin-top: 0.75rem;
-            padding: 1rem 1.25rem;
-            background: #f8f9fa;
-            border-radius: 10px;
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            line-height: 1.7;
-            display: none;
-            border: 1px solid var(--border);
-        }
-
-        .abstract-content.visible {
-            display: block;
-        }
-
-        /* Paper footer */
-        .paper-footer {
-            padding: 1rem 1.75rem;
-            border-top: 1px solid var(--border);
-            display: flex;
-            gap: 0.75rem;
-            flex-wrap: wrap;
-            background: #fafafa;
-        }
-
-        .paper-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            padding: 0.5rem 1rem;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            color: var(--text-secondary);
-            font-size: 0.8rem;
-            font-weight: 500;
-            text-decoration: none;
-            transition: all 0.2s ease;
-        }
-
-        .paper-link:hover {
-            background: var(--bg-summary);
-            border-color: var(--border-accent);
-            color: var(--accent-primary);
-        }
-
-        /* Error */
-        .error-box {
-            background: #fef2f2;
-            border: 1px solid #fecaca;
-            border-radius: 12px;
-            padding: 2rem;
-            text-align: center;
-            color: #dc2626;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 2.5rem 0;
-            margin-top: 3rem;
-            border-top: 1px solid var(--border);
-            color: var(--text-muted);
-            font-size: 0.85rem;
-        }
-
-        footer a {
-            color: var(--accent-primary);
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .container {
-                padding: 1rem;
-            }
-
-            h1 {
-                font-size: 2rem;
-            }
-
-            .paper-header, .summary-section, .paper-footer, .original-abstract {
-                padding-left: 1.25rem;
-                padding-right: 1.25rem;
-            }
-
-            .summary-content {
-                font-size: 0.95rem;
-            }
-
-            .badges {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-    </style>
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <div class="bg-pattern"></div>
+  <canvas id="starfield"></canvas>
 
-    <div class="container">
-        <header>
-            <div class="logo-icon">🪐</div>
-            <h1>Exoplanet Papers</h1>
-            <p class="subtitle">AI-Powered Summaries for Everyone</p>
-            <div class="badges">
-                <span class="badge badge-ai">
-                    <span>✨</span>
-                    <span>Extended summaries by Claude AI</span>
-                </span>
-                <span class="badge badge-date" id="updateBadge">
-                    <span>📅</span>
-                    <span id="updateDate">Loading...</span>
-                </span>
-                <span class="badge badge-count" id="countBadge" style="display: none;">
-                    <span>📄</span>
-                    <span id="paperCount">0 papers</span>
-                </span>
-            </div>
-        </header>
-
-        <div class="intro-box">
-            <p>
-                Each paper includes an <strong>AI-generated extended summary</strong> written for general audiences. 
-                These explain the research significance, methods, and findings in accessible language—perfect 
-                for science enthusiasts, journalists, students, or researchers from other fields.
-            </p>
-        </div>
-
-        <div id="content">
-            <div class="loading">
-                <div class="loading-spinner"></div>
-                <p class="loading-text">Loading today's papers...</p>
-            </div>
-        </div>
-
-        <footer>
-            <p>Data from <a href="https://arxiv.org" target="_blank">arXiv.org</a> (astro-ph.EP) • 
-               Summaries by Claude AI • 
-               Updated weekdays at 08:00 UTC</p>
-            <p style="margin-top: 0.5rem;">
-                <a href="https://arifsolmaz.github.io" target="_blank">arifsolmaz.github.io</a>
-            </p>
-        </footer>
+  <div class="page">
+    <!-- Left: Identity -->
+    <div class="identity">
+      <p class="eyebrow">Astronomer</p>
+      <h1 class="name">
+        Arif
+        <span>Solmaz</span>
+      </h1>
+      <p class="tagline">Searching for worlds beyond our solar system through the language of light and time. Specializing in transit timing variations, stellar activity, and space telescope data analysis.</p>
+      <div class="affiliation">
+        <span class="affiliation-label">Institution</span>
+        <span class="affiliation-value">Istanbul Health and Technology University</span>
+      </div>
     </div>
 
-    <script>
-        // Format authors
-        function formatAuthors(authors) {
-            if (!authors || authors.length === 0) return 'Unknown authors';
-            if (authors.length <= 3) return authors.join(', ');
-            return `${authors.slice(0, 3).join(', ')} et al. (${authors.length} authors)`;
-        }
+    <!-- Right: Info -->
+    <div class="info">
+      <div class="info-section">
+        <p class="info-label">Research Focus</p>
+        <div class="topics">
+          <span class="topic">Exoplanet Detection</span>
+          <span class="topic">Transit Timing Variations</span>
+          <span class="topic">Stellar Activity</span>
+          <span class="topic">TESS & JWST</span>
+          <span class="topic">Machine Learning</span>
+        </div>
+      </div>
 
-        // Format date
-        function formatDate(dateStr) {
-            const date = new Date(dateStr);
-            return date.toLocaleDateString('en-US', { 
-                month: 'short', 
-                day: 'numeric', 
-                year: 'numeric' 
-            });
-        }
+      <div class="info-section">
+        <p class="info-label">Work</p>
+        <div class="links">
+          <a href="https://ui.adsabs.harvard.edu/search/fq=%7B!type%3Daqp%20v%3D%24fq_database%7D&fq_database=(database%3Aastronomy%20OR%20database%3Aphysics)&q=-docs(1f8e5e2fda6aa0148343a32ba70673cc)%20%20author%3A%22solmaz%2C%20arif%22&sort=date%20desc%2C%20bibcode%20desc&p_=0" target="_blank" rel="noopener" class="link">
+            Publications <span class="link-arrow">→</span>
+          </a>
+          <a href="https://arifsolmaz.github.io/cv.pdf" target="_blank" rel="noopener" class="link">
+            CV <span class="link-arrow">→</span>
+          </a>
+          <a href="news" class="link">
+            News <span class="link-arrow">→</span>
+          </a>
+        </div>
+      </div>
 
-        // Toggle abstract
-        function toggleAbstract(id) {
-            const content = document.getElementById(`abstract-${id}`);
-            const btn = document.getElementById(`toggle-${id}`);
-            
-            if (content.classList.contains('visible')) {
-                content.classList.remove('visible');
-                btn.textContent = '▼ Show original abstract';
-            } else {
-                content.classList.add('visible');
-                btn.textContent = '▲ Hide original abstract';
-            }
-        }
+      <div class="info-section">
+        <p class="info-label">Contact</p>
+        <div class="contact-grid">
+          <div class="contact-item">
+            <span class="contact-key">Email</span>
+            <span class="contact-value"><a href="mailto:arif.solmaz@istun.edu.tr">arif.solmaz@istun.edu.tr</a></span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-key">Location</span>
+            <span class="contact-value">Istanbul, Turkey</span>
+          </div>
+        </div>
+      </div>
+    </div>
 
-        // Render paper card
-        function renderPaperCard(paper, index, fetchDate) {
-            const safeId = paper.id.replace(/[^a-zA-Z0-9]/g, '-');
-            
-            return `
-                <article class="paper-card" style="animation-delay: ${0.05 + index * 0.05}s">
-                    <div class="paper-header">
-                        <div class="paper-meta">
-                            ${(paper.categories || []).slice(0, 2).map(cat => 
-                                `<span class="paper-category">${cat}</span>`
-                            ).join('')}
-                            <span class="paper-date">${formatDate(fetchDate)}</span>
-                        </div>
-                        <h2 class="paper-title">
-                            <a href="${paper.abs_link}" target="_blank" rel="noopener">${paper.title}</a>
-                        </h2>
-                        <p class="paper-authors">${formatAuthors(paper.authors)}</p>
-                    </div>
-                    
-                    <div class="summary-section">
-                        <div class="summary-label">
-                            <span>✨</span>
-                            <span>AI Summary for General Audiences</span>
-                        </div>
-                        <div class="summary-content">
-                            ${paper.summary_html || '<p><em>Summary not available.</em></p>'}
-                        </div>
-                    </div>
-                    
-                    <div class="original-abstract">
-                        <button class="abstract-toggle" id="toggle-${safeId}" onclick="toggleAbstract('${safeId}')">
-                            ▼ Show original abstract
-                        </button>
-                        <div class="abstract-content" id="abstract-${safeId}">
-                            ${paper.abstract}
-                        </div>
-                    </div>
-                    
-                    <div class="paper-footer">
-                        <a href="${paper.abs_link}" target="_blank" rel="noopener" class="paper-link">
-                            📄 arXiv Page
-                        </a>
-                        <a href="${paper.pdf_link}" target="_blank" rel="noopener" class="paper-link">
-                            📥 Download PDF
-                        </a>
-                    </div>
-                </article>
-            `;
-        }
+    <!-- Footer -->
+    <footer class="footer">
+      <span class="footer-text">© 2025 Arif Solmaz</span>
+      <div class="footer-links">
+        <a href="news" class="footer-link">Outreach</a>
+        <a href="https://ui.adsabs.harvard.edu/search/fq=%7B!type%3Daqp%20v%3D%24fq_database%7D&fq_database=(database%3Aastronomy%20OR%20database%3Aphysics)&q=-docs(1f8e5e2fda6aa0148343a32ba70673cc)%20%20author%3A%22solmaz%2C%20arif%22&sort=date%20desc%2C%20bibcode%20desc&p_=0" target="_blank" rel="noopener" class="footer-link">NASA ADS</a>
+      </div>
+    </footer>
+  </div>
 
-        // Main load function
-        async function loadPapers() {
-            const content = document.getElementById('content');
-            
-            try {
-                // Fetch the cached JSON data
-                const response = await fetch('data/papers.json');
-                
-                if (!response.ok) {
-                    throw new Error('Failed to load papers data');
-                }
-                
-                const data = await response.json();
-                
-                // Update badges
-                if (data.updated_at) {
-                    const updateDate = new Date(data.updated_at);
-                    document.getElementById('updateDate').textContent = updateDate.toLocaleDateString('en-US', {
-                        weekday: 'long',
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric'
-                    });
-                }
-                
-                if (data.paper_count) {
-                    document.getElementById('paperCount').textContent = `${data.paper_count} papers`;
-                    document.getElementById('countBadge').style.display = 'inline-flex';
-                }
-                
-                // Render papers
-                if (data.papers && data.papers.length > 0) {
-                    const fetchDate = data.updated_at || new Date().toISOString();
-                    content.innerHTML = `
-                        <div class="papers-list">
-                            ${data.papers.map((paper, index) => renderPaperCard(paper, index, fetchDate)).join('')}
-                        </div>
-                    `;
-                } else {
-                    content.innerHTML = `
-                        <div class="error-box">
-                            <p>🔭 No papers available. Check back tomorrow!</p>
-                        </div>
-                    `;
-                }
-                
-            } catch (error) {
-                console.error('Error loading papers:', error);
-                content.innerHTML = `
-                    <div class="error-box">
-                        <p>⚠️ Error loading papers data.</p>
-                        <p style="font-size: 0.85rem; margin-top: 1rem; opacity: 0.7;">
-                            The data file may not exist yet. Papers are updated daily at 08:00 UTC.
-                        </p>
-                    </div>
-                `;
-            }
-        }
-
-        // Initialize
-        document.addEventListener('DOMContentLoaded', () => {
-            loadPapers();
+  <script>
+    const canvas = document.getElementById('starfield');
+    const ctx = canvas.getContext('2d');
+    
+    let stars = [];
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    const numStars = 200;
+    
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      initStars();
+    }
+    
+    function initStars() {
+      stars = [];
+      for (let i = 0; i < numStars; i++) {
+        stars.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          size: Math.random() * 1.2 + 0.3,
+          speed: Math.random() * 0.5 + 0.1,
+          brightness: Math.random() * 0.5 + 0.3,
+          twinkleSpeed: Math.random() * 0.02 + 0.005,
+          twinkleOffset: Math.random() * Math.PI * 2
         });
-    </script>
+      }
+    }
+    
+    function drawStars() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      const time = Date.now() * 0.001;
+      
+      stars.forEach(star => {
+        const parallaxX = (mouseX - canvas.width / 2) * star.speed * 0.015;
+        const parallaxY = (mouseY - canvas.height / 2) * star.speed * 0.015;
+        
+        const x = star.x + parallaxX;
+        const y = star.y + parallaxY;
+        
+        const twinkle = Math.sin(time * star.twinkleSpeed * 10 + star.twinkleOffset) * 0.3 + 0.7;
+        const alpha = star.brightness * twinkle;
+        
+        ctx.beginPath();
+        ctx.arc(x, y, star.size, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 255, 255, ${alpha})`;
+        ctx.fill();
+        
+        if (star.size > 0.8) {
+          ctx.beginPath();
+          ctx.arc(x, y, star.size * 2.5, 0, Math.PI * 2);
+          const gradient = ctx.createRadialGradient(x, y, 0, x, y, star.size * 2.5);
+          gradient.addColorStop(0, `rgba(255, 212, 117, ${alpha * 0.2})`);
+          gradient.addColorStop(1, 'transparent');
+          ctx.fillStyle = gradient;
+          ctx.fill();
+        }
+      });
+      
+      requestAnimationFrame(drawStars);
+    }
+    
+    document.addEventListener('mousemove', e => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+    
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+    drawStars();
+  </script>
 </body>
 </html>
