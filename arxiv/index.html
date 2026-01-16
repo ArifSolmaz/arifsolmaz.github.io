@@ -70,6 +70,21 @@
             margin-bottom: 1.5rem;
         }
 
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-bottom: 1rem;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-primary);
+        }
+
         .logo-icon {
             width: 56px;
             height: 56px;
@@ -452,6 +467,7 @@
 
     <div class="container">
         <header>
+            <a href="https://arifsolmaz.github.io" class="back-link">← Back to Home</a>
             <div class="logo-icon">🪐</div>
             <h1>Exoplanet Papers</h1>
             <p class="subtitle">Daily arXiv astro-ph.EP Summaries</p>
