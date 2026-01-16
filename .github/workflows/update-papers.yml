@@ -34,7 +34,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git pull --rebase
+          git pull --rebase origin main
           git add arxiv/data/papers.json
           if git diff --staged --quiet; then
             echo "No changes to commit"
