@@ -2,11 +2,8 @@ name: Update Exoplanet Papers
 
 on:
   schedule:
-    # Runs at 08:00 UTC on weekdays only (Mon-Fri)
-    # arXiv announces new papers around 00:00-02:00 UTC
-    # We fetch at 08:00 to ensure papers are available before tweeting starts
     - cron: '0 8 * * 1-5'
-  workflow_dispatch: # Allow manual trigger
+  workflow_dispatch:
 
 jobs:
   update-papers:
@@ -34,11 +31,22 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+          
+          # Save our generated file
+          cp arxiv/data/papers.json /tmp/papers.json
+          
+          # Get latest from remote
+          git fetch origin main
+          git reset --hard origin/main
+          
+          # Restore our generated file
+          cp /tmp/papers.json arxiv/data/papers.json
+          
+          # Commit and push
           git add arxiv/data/papers.json
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
             git commit -m "Update papers $(date +'%Y-%m-%d')"
-            git pull --rebase origin main
             git push
           fi

@@ -2,17 +2,13 @@ name: Tweet Paper
 
 on:
   schedule:
-    # Runs hourly from 09:00-23:00 UTC on weekdays
-    # This spreads ~15 papers across 15 hours
-    # Adjust times based on your audience's timezone
     - cron: '0 9-23 * * 1-5'
-  workflow_dispatch: # Allow manual trigger
+  workflow_dispatch:
 
 jobs:
   tweet-paper:
     runs-on: ubuntu-latest
     
-    # Only run if Twitter is configured
     if: ${{ vars.TWITTER_ENABLED != 'false' }}
     
     steps:
@@ -47,11 +43,22 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+          
+          # Save our tracking file
+          cp arxiv/data/tweeted.json /tmp/tweeted.json
+          
+          # Get latest from remote
+          git fetch origin main
+          git reset --hard origin/main
+          
+          # Restore our tracking file
+          cp /tmp/tweeted.json arxiv/data/tweeted.json
+          
+          # Commit and push
           git add arxiv/data/tweeted.json
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
             git commit -m "Update tweeted tracking $(date +'%Y-%m-%d %H:%M')"
-            git pull --rebase origin main
             git push
           fi
