@@ -494,8 +494,9 @@ def extract_summary_sections(summary: str) -> dict[str, str]:
                             if other_marker in content and other_marker != marker:
                                 content = content.split(other_marker)[0]
                     
-                    # Clean and store
+                    # Clean and store - remove markdown ** markers
                     content = content.strip().replace("\n", " ")
+                    content = content.replace("**", "")  # Remove bold markers
                     content = re.sub(r'\s+', ' ', content)
                     sections[section_key] = content
                     break
@@ -555,11 +556,11 @@ def format_tweet_premium(paper: dict, page_url: str, hashtags: list[str], limit:
     # Get full summary sections
     sections = extract_summary_sections(paper.get("summary", ""))
     
-    # Build the tweet
+    # Build the tweet (no markdown - Twitter doesn't support it)
     hashtag_str = " ".join(hashtags)
     
     tweet_parts = [
-        f"🪐 **{title}**",
+        f"🪐 {title}",
         f"",
         f"👥 {author_str}",
         f"🔗 {link}",
@@ -569,28 +570,28 @@ def format_tweet_premium(paper: dict, page_url: str, hashtags: list[str], limit:
     if sections["why_it_matters"]:
         tweet_parts.extend([
             "",
-            "🌟 **Why It Matters**",
+            "🌟 WHY IT MATTERS",
             sections["why_it_matters"]
         ])
     
     if sections["what_they_did"]:
         tweet_parts.extend([
             "",
-            "🔬 **What They Did**", 
+            "🔬 WHAT THEY DID", 
             sections["what_they_did"]
         ])
     
     if sections["key_findings"]:
         tweet_parts.extend([
             "",
-            "💡 **Key Findings**",
+            "💡 KEY FINDINGS",
             sections["key_findings"]
         ])
     
     if sections["looking_forward"]:
         tweet_parts.extend([
             "",
-            "🔭 **Looking Forward**",
+            "🔭 LOOKING FORWARD",
             sections["looking_forward"]
         ])
     
