@@ -527,7 +527,7 @@
         }
 
         // Render paper card
-        function renderPaperCard(paper, index) {
+        function renderPaperCard(paper, index, fetchDate) {
             const safeId = paper.id.replace(/[^a-zA-Z0-9]/g, '-');
             
             return `
@@ -537,7 +537,7 @@
                             ${(paper.categories || []).slice(0, 2).map(cat => 
                                 `<span class="paper-category">${cat}</span>`
                             ).join('')}
-                            <span class="paper-date">${formatDate(paper.published)}</span>
+                            <span class="paper-date">${formatDate(fetchDate)}</span>
                         </div>
                         <h2 class="paper-title">
                             <a href="${paper.abs_link}" target="_blank" rel="noopener">${paper.title}</a>
@@ -608,9 +608,10 @@
                 
                 // Render papers
                 if (data.papers && data.papers.length > 0) {
+                    const fetchDate = data.updated_at || new Date().toISOString();
                     content.innerHTML = `
                         <div class="papers-list">
-                            ${data.papers.map((paper, index) => renderPaperCard(paper, index)).join('')}
+                            ${data.papers.map((paper, index) => renderPaperCard(paper, index, fetchDate)).join('')}
                         </div>
                     `;
                 } else {
