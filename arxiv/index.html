@@ -531,7 +531,7 @@
             const safeId = paper.id.replace(/[^a-zA-Z0-9]/g, '-');
             
             return `
-                <article class="paper-card" style="animation-delay: ${0.05 + index * 0.05}s">
+                <article class="paper-card" id="paper-${safeId}" style="animation-delay: ${0.05 + index * 0.05}s">
                     <div class="paper-header">
                         <div class="paper-meta">
                             ${(paper.categories || []).slice(0, 2).map(cat => 

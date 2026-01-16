@@ -542,74 +542,75 @@ def format_tweet_free(paper: dict, page_url: str, hashtags: list[str]) -> str:
 
 
 def format_tweet_premium(paper: dict, page_url: str, hashtags: list[str], limit: int) -> str:
-    """Format tweet for Twitter Premium (4000 or 25000 chars)."""
+    """Format tweet for Twitter Premium - punchy single highlight, not full summary."""
     title = paper["title"]
     link = paper["abs_link"]
+    paper_id = paper["id"]
     authors = paper.get("authors", [])
     
-    # Format authors
-    if len(authors) <= 3:
-        author_str = ", ".join(authors)
-    else:
-        author_str = f"{', '.join(authors[:3])} et al."
+    # Create anchor ID (same as website)
+    safe_id = re.sub(r'[^a-zA-Z0-9]', '-', paper_id)
+    paper_url = f"{page_url}#paper-{safe_id}"
     
-    # Get full summary sections
+    # Format authors (first author + et al.)
+    if len(authors) == 1:
+        author_str = authors[0]
+    elif len(authors) <= 2:
+        author_str = " & ".join(authors)
+    else:
+        author_str = f"{authors[0]} et al."
+    
+    # Get the key insight - prioritize "why it matters" or "key findings"
     sections = extract_summary_sections(paper.get("summary", ""))
     
-    # Build the tweet (no markdown - Twitter doesn't support it)
+    # Create ONE compelling sentence from the summary
+    key_insight = ""
+    
+    # Try to get the best single insight
+    if sections["why_it_matters"]:
+        # Get first 1-2 sentences from "Why It Matters"
+        sentences = sections["why_it_matters"].split(". ")
+        key_insight = sentences[0] + "."
+        if len(sentences) > 1 and len(key_insight) < 150:
+            key_insight = sentences[0] + ". " + sentences[1] + "."
+    
+    if not key_insight and sections["key_findings"]:
+        sentences = sections["key_findings"].split(". ")
+        key_insight = sentences[0] + "."
+    
+    # Clean up the insight
+    key_insight = key_insight.strip()
+    if len(key_insight) > 280:
+        key_insight = truncate_text(key_insight, 280)
+    
+    # Build the tweet
     hashtag_str = " ".join(hashtags)
     
     tweet_parts = [
         f"🪐 {title}",
-        f"",
-        f"👥 {author_str}",
-        f"🔗 {link}",
-    ]
-    
-    # Add summary sections
-    if sections["why_it_matters"]:
-        tweet_parts.extend([
-            "",
-            "🌟 WHY IT MATTERS",
-            sections["why_it_matters"]
-        ])
-    
-    if sections["what_they_did"]:
-        tweet_parts.extend([
-            "",
-            "🔬 WHAT THEY DID", 
-            sections["what_they_did"]
-        ])
-    
-    if sections["key_findings"]:
-        tweet_parts.extend([
-            "",
-            "💡 KEY FINDINGS",
-            sections["key_findings"]
-        ])
-    
-    if sections["looking_forward"]:
-        tweet_parts.extend([
-            "",
-            "🔭 LOOKING FORWARD",
-            sections["looking_forward"]
-        ])
-    
-    # Add link to full page and hashtags
-    tweet_parts.extend([
         "",
-        f"📖 Full summary with all papers: {page_url}",
+        f"👥 {author_str}",
+        "",
+        f"💡 {key_insight}" if key_insight else "",
+        "",
+        f"🔗 {link}",
+        f"📖 Full summary: {paper_url}",
         "",
         hashtag_str
-    ])
+    ]
     
-    tweet = "\n".join(tweet_parts)
+    # Filter empty lines and join
+    tweet = "\n".join([p for p in tweet_parts if p or p == ""])
+    
+    # Clean up multiple blank lines
+    while "\n\n\n" in tweet:
+        tweet = tweet.replace("\n\n\n", "\n\n")
     
     # Truncate if needed
     if len(tweet) > limit:
         tweet = tweet[:limit-3] + "..."
     
-    return tweet
+    return tweet.strip()
 
 
 def format_paper_tweet(paper: dict, page_url: str) -> str:
