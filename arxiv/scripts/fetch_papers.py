@@ -24,17 +24,162 @@ from xml.etree import ElementTree as ET
 # Configuration
 ARXIV_CATEGORY = "astro-ph.EP"
 MAX_PAPERS = 15
+FETCH_MULTIPLIER = 4  # Fetch more to filter down to MAX_PAPERS
 OUTPUT_FILE = Path(__file__).parent.parent / "data" / "papers.json"
+
+# Keywords to identify exoplanet-related papers
+# Papers must contain at least one of these in title or abstract
+EXOPLANET_KEYWORDS = [
+    # Core terms
+    "exoplanet", "exoplanets", "exoplanetary",
+    "extrasolar planet", "extrasolar planets",
+    
+    # Planet types
+    "hot jupiter", "hot jupiters",
+    "warm jupiter", "warm jupiters",
+    "cold jupiter", "cold jupiters",
+    "super-earth", "super earth", "super-earths",
+    "sub-neptune", "sub neptune", "sub-neptunes", "mini-neptune",
+    "earth-like planet", "earth-sized planet", "earth analog",
+    "terrestrial planet", "terrestrial exoplanet",
+    "gas giant planet",
+    "ice giant planet",
+    "rocky planet", "rocky exoplanet",
+    "lava world", "lava planet",
+    "ocean world", "water world",
+    "rogue planet", "free-floating planet",
+    
+    # Detection methods
+    "transit method", "transiting planet", "transiting exoplanet",
+    "transit detection", "transit survey",
+    "radial velocity planet", "rv detection",
+    "doppler detection",
+    "microlensing planet",
+    "direct imaging planet", "directly imaged planet",
+    "transit timing variation", "ttv",
+    
+    # Atmosphere studies
+    "exoplanet atmosphere", "planetary atmosphere",
+    "atmospheric characterization",
+    "transmission spectrum", "transmission spectroscopy",
+    "emission spectrum", "emission spectroscopy",
+    "thermal emission",
+    "atmospheric escape", "atmospheric evaporation",
+    "exoplanet spectroscopy",
+    
+    # Habitability
+    "habitable zone", "habitable exoplanet", "habitable planet",
+    "habitability",
+    "biosignature", "biosignatures",
+    "potentially habitable",
+    
+    # Specific missions/instruments for exoplanets
+    "tess planet", "tess candidate",
+    "kepler planet", "kepler candidate",
+    "k2 planet",
+    "jwst exoplanet", "jwst planet",
+    "cheops",
+    "plato mission",
+    "ariel mission",
+    "harps planet",
+    "espresso planet",
+    
+    # Planetary systems
+    "planetary system", "planet system",
+    "multi-planet system", "multiplanet",
+    "planet host star", "planet-hosting",
+    "star-planet interaction",
+    "planet occurrence", "planet frequency",
+    
+    # Formation & evolution (exoplanet context)
+    "planet formation",
+    "planet migration",
+    "protoplanetary disk",  # Often about forming exoplanets
+    "debris disk",
+    "planet-disk interaction",
+    "core accretion",
+    "gravitational instability planet",
+    
+    # Notable systems
+    "trappist-1", "trappist 1",
+    "proxima centauri b", "proxima b",
+    "55 cancri",
+    "gj 1214",
+    "gj 436",
+    "hd 189733",
+    "hd 209458",
+    "wasp-39", "wasp-76", "wasp-121", "wasp-18", "wasp-12",
+    "toi-700",
+    "lhs 1140",
+    "k2-18",
+    "kepler-186", "kepler-452", "kepler-22",
+    "hr 8799",
+    "beta pictoris",
+    "51 pegasi",
+    "tau ceti",
+    "gliese 581", "gliese 667",
+    "l 98-59",
+    "toi-175", "toi-270",
+    "hat-p", "hatp",
+    "kelt-", 
+    "tres-",
+    "corot-",
+    "ogle-",
+    "xo-",
+]
+
+# Keywords to EXCLUDE (solar system focused, not exoplanets)
+EXCLUDE_KEYWORDS = [
+    "mars rover", "mars mission", "martian surface",
+    "lunar surface", "moon landing", "apollo",
+    "jupiter mission", "juno mission",
+    "saturn ring", "cassini",
+    "venus atmosphere", "venus mission",
+    "mercury messenger",
+    "new horizons",
+    "asteroid mining", "asteroid deflection",
+    "near-earth asteroid", "near earth asteroid",
+    "meteorite",
+    "comet tail", "cometary activity",
+    "kuiper belt object",
+    "trans-neptunian",
+    "dwarf planet ceres", "dwarf planet pluto",
+]
+
+
+def is_exoplanet_paper(title: str, abstract: str) -> bool:
+    """Check if a paper is related to exoplanet science."""
+    text = f"{title} {abstract}".lower()
+    
+    # Check for exclusion keywords first
+    for keyword in EXCLUDE_KEYWORDS:
+        if keyword.lower() in text:
+            # But still include if it also has strong exoplanet keywords
+            has_exoplanet_keyword = any(
+                kw.lower() in text for kw in ["exoplanet", "exoplanetary", "extrasolar"]
+            )
+            if not has_exoplanet_keyword:
+                return False
+    
+    # Check for exoplanet keywords
+    for keyword in EXOPLANET_KEYWORDS:
+        if keyword.lower() in text:
+            return True
+    
+    return False
 
 
 def fetch_arxiv_papers(category: str, max_results: int = 15) -> list[dict]:
-    """Fetch recent papers from arXiv API."""
+    """Fetch recent papers from arXiv API and filter for exoplanet content."""
+    
+    # Fetch more papers than needed to ensure enough after filtering
+    fetch_count = max_results * FETCH_MULTIPLIER
     
     base_url = "http://export.arxiv.org/api/query"
     params = {
         "search_query": f"cat:{category}",
         "start": 0,
-        "max_results": max_results,
+        "max_results": fetch_count,
         "sortBy": "submittedDate",
         "sortOrder": "descending"
     }
@@ -46,7 +191,7 @@ def fetch_arxiv_papers(category: str, max_results: int = 15) -> list[dict]:
     root = ET.fromstring(response.content)
     ns = {"atom": "http://www.w3.org/2005/Atom", "arxiv": "http://arxiv.org/schemas/atom"}
     
-    papers = []
+    all_papers = []
     for entry in root.findall("atom:entry", ns):
         # Extract ID
         arxiv_id = entry.find("atom:id", ns).text
@@ -80,7 +225,7 @@ def fetch_arxiv_papers(category: str, max_results: int = 15) -> list[dict]:
         pdf_link = f"https://arxiv.org/pdf/{paper_id}.pdf"
         abs_link = f"https://arxiv.org/abs/{paper_id}"
         
-        papers.append({
+        all_papers.append({
             "id": paper_id,
             "title": title,
             "abstract": abstract,
@@ -92,7 +237,16 @@ def fetch_arxiv_papers(category: str, max_results: int = 15) -> list[dict]:
             "abs_link": abs_link
         })
     
-    return papers
+    # Filter for exoplanet papers only
+    exoplanet_papers = [
+        p for p in all_papers 
+        if is_exoplanet_paper(p["title"], p["abstract"])
+    ]
+    
+    print(f"Fetched {len(all_papers)} total papers, {len(exoplanet_papers)} are exoplanet-related")
+    
+    # Return up to max_results
+    return exoplanet_papers[:max_results]
 
 
 def generate_summary(client: anthropic.Anthropic, paper: dict) -> str:
