@@ -1,0 +1,43 @@
+name: Update Exoplanet Papers
+
+on:
+  schedule:
+    # Runs at 08:00 UTC on weekdays only (Mon-Fri)
+    # arXiv announces new papers around 00:00-02:00 UTC
+    # We fetch at 08:00 to ensure papers are available before tweeting starts
+    - cron: '0 8 * * 1-5'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  update-papers:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install requests anthropic feedparser
+
+      - name: Fetch papers and generate summaries
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python arxiv/scripts/fetch_papers.py
+
+      - name: Commit and push if changed
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add arxiv/data/papers.json
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update papers $(date +'%Y-%m-%d')"
+            git push
+          fi

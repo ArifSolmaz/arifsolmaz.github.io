@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exoplanet Papers | Daily arXiv Summaries</title>
+    <meta name="description" content="Daily AI-powered summaries of exoplanet research papers from arXiv, written for general audiences.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-deep: #0a0a12;
+            --bg-card: #12121f;
+            --bg-card-hover: #1a1a2e;
+            --bg-summary: #0f1729;
+            --accent-nebula: #7c3aed;
+            --accent-star: #fbbf24;
+            --accent-cyan: #22d3ee;
+            --accent-green: #34d399;
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --border: rgba(124, 58, 237, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: var(--bg-deep);
+            color: var(--text-primary);
+            min-height: 100vh;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Starfield */
+        .starfield {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s ease-in-out infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        /* Nebula gradient */
+        .nebula {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(ellipse at 20% 20%, rgba(124, 58, 237, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(34, 211, 238, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(251, 191, 36, 0.05) 0%, transparent 60%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 3rem 0 4rem;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 3rem;
+        }
+
+        .logo-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, var(--accent-nebula), var(--accent-cyan));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 0 40px rgba(124, 58, 237, 0.4);
+            margin: 0 auto 1.5rem;
+        }
+
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-cyan) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+            font-weight: 300;
+        }
+
+        .badges {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.5rem 1rem;
+            border-radius: 100px;
+            font-size: 0.85rem;
+        }
+
+        .badge-ai {
+            background: rgba(52, 211, 153, 0.15);
+            border: 1px solid rgba(52, 211, 153, 0.3);
+            color: var(--accent-green);
+        }
+
+        .badge-date {
+            background: rgba(124, 58, 237, 0.1);
+            border: 1px solid var(--border);
+            color: var(--accent-cyan);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .badge-count {
+            background: rgba(251, 191, 36, 0.1);
+            border: 1px solid rgba(251, 191, 36, 0.3);
+            color: var(--accent-star);
+        }
+
+        /* Intro box */
+        .intro-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .intro-box p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .intro-box strong {
+            color: var(--text-primary);
+        }
+
+        /* Loading */
+        .loading {
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .loading-spinner {
+            width: 60px;
+            height: 60px;
+            border: 3px solid var(--border);
+            border-top-color: var(--accent-nebula);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1.5rem;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        /* Papers */
+        .papers-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+
+        .paper-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            animation: fadeInUp 0.5s ease forwards;
+            opacity: 0;
+        }
+
+        .paper-card:hover {
+            border-color: rgba(124, 58, 237, 0.4);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .paper-header {
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .paper-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            align-items: center;
+        }
+
+        .paper-category {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            padding: 0.25rem 0.6rem;
+            background: rgba(124, 58, 237, 0.2);
+            border-radius: 4px;
+            color: var(--accent-cyan);
+        }
+
+        .paper-date {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+
+        .paper-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-weight: 500;
+            line-height: 1.4;
+            margin-bottom: 0.5rem;
+        }
+
+        .paper-title a {
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .paper-title a:hover {
+            color: var(--accent-cyan);
+        }
+
+        .paper-authors {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Summary section */
+        .summary-section {
+            padding: 2rem;
+            background: var(--bg-summary);
+        }
+
+        .summary-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent-green);
+            margin-bottom: 1rem;
+        }
+
+        .summary-content {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 1.05rem;
+            line-height: 1.85;
+            color: var(--text-primary);
+        }
+
+        .summary-content h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--accent-star);
+            margin: 1.5rem 0 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .summary-content h4:first-child {
+            margin-top: 0;
+        }
+
+        .summary-content p {
+            margin-bottom: 1rem;
+        }
+
+        .summary-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Abstract toggle */
+        .original-abstract {
+            padding: 0 2rem 1.5rem;
+        }
+
+        .abstract-toggle {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.8rem;
+            cursor: pointer;
+            padding: 0.5rem 0;
+            transition: color 0.3s ease;
+        }
+
+        .abstract-toggle:hover {
+            color: var(--text-secondary);
+        }
+
+        .abstract-content {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: rgba(0,0,0,0.2);
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            display: none;
+        }
+
+        .abstract-content.visible {
+            display: block;
+        }
+
+        /* Paper footer */
+        .paper-footer {
+            padding: 1rem 2rem;
+            border-top: 1px solid var(--border);
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .paper-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(124, 58, 237, 0.1);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .paper-link:hover {
+            background: rgba(124, 58, 237, 0.2);
+            border-color: var(--accent-nebula);
+            color: var(--text-primary);
+        }
+
+        /* Error */
+        .error-box {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            color: #fca5a5;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 0;
+            margin-top: 4rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--accent-cyan);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .paper-header, .summary-section, .paper-footer, .original-abstract {
+                padding-left: 1.25rem;
+                padding-right: 1.25rem;
+            }
+
+            .summary-content {
+                font-size: 1rem;
+            }
+
+            .badges {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="starfield" id="starfield"></div>
+    <div class="nebula"></div>
+
+    <div class="container">
+        <header>
+            <div class="logo-icon">🪐</div>
+            <h1>Exoplanet Papers</h1>
+            <p class="subtitle">AI-Powered Summaries for Everyone</p>
+            <div class="badges">
+                <span class="badge badge-ai">
+                    <span>✨</span>
+                    <span>Extended summaries by Claude AI</span>
+                </span>
+                <span class="badge badge-date" id="updateBadge">
+                    <span>📅</span>
+                    <span id="updateDate">Loading...</span>
+                </span>
+                <span class="badge badge-count" id="countBadge" style="display: none;">
+                    <span>📄</span>
+                    <span id="paperCount">0 papers</span>
+                </span>
+            </div>
+        </header>
+
+        <div class="intro-box">
+            <p>
+                Each paper includes an <strong>AI-generated extended summary</strong> written for general audiences. 
+                These explain the research significance, methods, and findings in accessible language—perfect 
+                for science enthusiasts, journalists, students, or researchers from other fields.
+            </p>
+        </div>
+
+        <div id="content">
+            <div class="loading">
+                <div class="loading-spinner"></div>
+                <p class="loading-text">Loading today's papers...</p>
+            </div>
+        </div>
+
+        <footer>
+            <p>Data from <a href="https://arxiv.org" target="_blank">arXiv.org</a> (astro-ph.EP) • 
+               Summaries by Claude AI • 
+               Updated weekdays at 10:00 UTC</p>
+            <p style="margin-top: 0.5rem;">
+                <a href="https://arifsolmaz.github.io" target="_blank">arifsolmaz.github.io</a>
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // Create starfield
+        function createStarfield() {
+            const starfield = document.getElementById('starfield');
+            const numStars = 80;
+
+            for (let i = 0; i < numStars; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.width = Math.random() * 2 + 1 + 'px';
+                star.style.height = star.style.width;
+                star.style.animationDelay = Math.random() * 3 + 's';
+                starfield.appendChild(star);
+            }
+        }
+
+        // Format authors
+        function formatAuthors(authors) {
+            if (!authors || authors.length === 0) return 'Unknown authors';
+            if (authors.length <= 3) return authors.join(', ');
+            return `${authors.slice(0, 3).join(', ')} et al. (${authors.length} authors)`;
+        }
+
+        // Format date
+        function formatDate(dateStr) {
+            const date = new Date(dateStr);
+            return date.toLocaleDateString('en-US', { 
+                month: 'short', 
+                day: 'numeric', 
+                year: 'numeric' 
+            });
+        }
+
+        // Toggle abstract
+        function toggleAbstract(id) {
+            const content = document.getElementById(`abstract-${id}`);
+            const btn = document.getElementById(`toggle-${id}`);
+            
+            if (content.classList.contains('visible')) {
+                content.classList.remove('visible');
+                btn.textContent = '▼ Show original abstract';
+            } else {
+                content.classList.add('visible');
+                btn.textContent = '▲ Hide original abstract';
+            }
+        }
+
+        // Render paper card
+        function renderPaperCard(paper, index) {
+            const safeId = paper.id.replace(/[^a-zA-Z0-9]/g, '-');
+            
+            return `
+                <article class="paper-card" style="animation-delay: ${0.1 + index * 0.08}s">
+                    <div class="paper-header">
+                        <div class="paper-meta">
+                            ${(paper.categories || []).slice(0, 2).map(cat => 
+                                `<span class="paper-category">${cat}</span>`
+                            ).join('')}
+                            <span class="paper-date">${formatDate(paper.published)}</span>
+                        </div>
+                        <h2 class="paper-title">
+                            <a href="${paper.abs_link}" target="_blank" rel="noopener">${paper.title}</a>
+                        </h2>
+                        <p class="paper-authors">${formatAuthors(paper.authors)}</p>
+                    </div>
+                    
+                    <div class="summary-section">
+                        <div class="summary-label">
+                            <span>✨</span>
+                            <span>AI Summary for General Audiences</span>
+                        </div>
+                        <div class="summary-content">
+                            ${paper.summary_html || '<p><em>Summary not available.</em></p>'}
+                        </div>
+                    </div>
+                    
+                    <div class="original-abstract">
+                        <button class="abstract-toggle" id="toggle-${safeId}" onclick="toggleAbstract('${safeId}')">
+                            ▼ Show original abstract
+                        </button>
+                        <div class="abstract-content" id="abstract-${safeId}">
+                            ${paper.abstract}
+                        </div>
+                    </div>
+                    
+                    <div class="paper-footer">
+                        <a href="${paper.abs_link}" target="_blank" rel="noopener" class="paper-link">
+                            📄 arXiv Page
+                        </a>
+                        <a href="${paper.pdf_link}" target="_blank" rel="noopener" class="paper-link">
+                            📥 Download PDF
+                        </a>
+                    </div>
+                </article>
+            `;
+        }
+
+        // Main load function
+        async function loadPapers() {
+            const content = document.getElementById('content');
+            
+            try {
+                // Fetch the cached JSON data
+                const response = await fetch('data/papers.json');
+                
+                if (!response.ok) {
+                    throw new Error('Failed to load papers data');
+                }
+                
+                const data = await response.json();
+                
+                // Update badges
+                if (data.updated_at) {
+                    const updateDate = new Date(data.updated_at);
+                    document.getElementById('updateDate').textContent = updateDate.toLocaleDateString('en-US', {
+                        weekday: 'long',
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                    });
+                }
+                
+                if (data.paper_count) {
+                    document.getElementById('paperCount').textContent = `${data.paper_count} papers`;
+                    document.getElementById('countBadge').style.display = 'inline-flex';
+                }
+                
+                // Render papers
+                if (data.papers && data.papers.length > 0) {
+                    content.innerHTML = `
+                        <div class="papers-list">
+                            ${data.papers.map((paper, index) => renderPaperCard(paper, index)).join('')}
+                        </div>
+                    `;
+                } else {
+                    content.innerHTML = `
+                        <div class="error-box">
+                            <p>🔭 No papers available. Check back tomorrow!</p>
+                        </div>
+                    `;
+                }
+                
+            } catch (error) {
+                console.error('Error loading papers:', error);
+                content.innerHTML = `
+                    <div class="error-box">
+                        <p>⚠️ Error loading papers data.</p>
+                        <p style="font-size: 0.85rem; margin-top: 1rem; opacity: 0.7;">
+                            The data file may not exist yet. Papers are updated daily at 10:00 UTC.
+                        </p>
+                    </div>
+                `;
+            }
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            createStarfield();
+            loadPapers();
+        });
+    </script>
+</body>
+</html>

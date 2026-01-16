@@ -1,0 +1,108 @@
+{
+  "updated_at": "2026-01-16T17:11:27.922949+00:00",
+  "category": "astro-ph.EP",
+  "paper_count": 3,
+  "papers": [
+    {
+      "id": "2601.10666v1",
+      "title": "Observation Timelines for the Potential Lunar Impact of Asteroid 2024 YR4",
+      "abstract": "The near-Earth asteroid 2024 YR4 -- a $\\sim$60 m rocky object that was once considered a potential Earth impactor -- has since been ruled out for Earth but retained a $\\sim$4.3% probability of striking the Moon in 2032. Such an impact, with equivalent kinetic energy of $\\sim$6.5 Mt TNT, is expected to produce a $\\sim$1 km crater on the Moon, and will be the most energetic lunar impact event ever recorded in human history. Despite the associated risk, this scenario offers a rare and valuable scientific opportunity. Using a hybrid framework combining Monte Carlo orbital propagation, smoothed particle hydrodynamics (SPH) impact modeling, and N-body ejecta dynamics, we evaluate the physical outcomes and propose the observation timelines of this rare event. Our results suggest an optical flash of visual magnitude from -2.5 to -3 lasting several minutes directly after the impact, followed by hours of infrared afterglow from $\\sim$2000 K molten rock cooling to a few hundred K. The associated seismic energy release would lead to a global-scale lunar reverberation (magnitude $\\sim$5.0) that can be detectable by modern seismometers. Furthermore, the impact would eject $\\sim$10$^8$ kg of debris that escapes the lunar gravity, with a small fraction reaching Earth to produce a lunar meteor outburst within 100 years. Finally, we integrate these results into a coordinated observation timeline, identifying the best detection windows for ground-based telescopes, lunar orbiters, and surface stations.",
+      "authors": [
+        "Yifan He",
+        "Yixuan Wu",
+        "Yifei Jiao",
+        "Wen-Yue Dai",
+        "Xin Liu",
+        "Bin Cheng",
+        "Hexi Baoyin"
+      ],
+      "categories": [
+        "astro-ph.EP"
+      ],
+      "published": "2026-01-15T18:33:03Z",
+      "updated": "2026-01-15T18:33:03Z",
+      "pdf_link": "https://arxiv.org/pdf/2601.10666v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2601.10666v1"
+    },
+    {
+      "id": "2601.10631v1",
+      "title": "Circumplanetary Disk Candidate in the Disk of HD 163296 Traced by Localized Emission from Simple Organics",
+      "abstract": "Atacama Large Millimeter/submillimeter Array observations suggest that the disc of HD 163296 is being actively shaped by embedded, yet unseen protoplanets, as indicated by numerous gas and dust substructures consistent with planet-disc interaction models. We report the first detection of simple organic molecules, HCN and C2H, tracing a candidate circumplanetary disc (CPD) in the HD 163296 system, located at an orbital radius of $R=88\\pm7$ au and azimuth $φ=46\\pm3^\\circ$ (or $R=0.75''$, $\\rm{PA}=350^\\circ$ in projected sky coordinates), and originating near the midplane of the circumstellar disc. The signature is localised but spectrally resolved, and it overlaps with a previously reported planet candidate, P94, identified through kinematic perturbations traced by CO lines. We propose a scenario in which the observed chemical anomalies arise from increased heating driven by the forming planet and ongoing accretion through its CPD, facilitating the thermal desorption of species that would otherwise remain frozen out in the disc midplane, and potentially triggering the activation barriers of chemical reactions that lead to enhanced molecular production. Based on a first-order dynamical analysis of the HCN spectrum from the CPD--isolated with a 7$σ$ significance--we infer an upper limit on the planet mass of 1.8 $M_{\\rm Jup}$, consistent with predictions from CO kinematics and constraints from direct imaging studies. By comparing the CPD sizes derived from our models with theoretical expectations where the CPD radius corresponds to roughly one-third of the planet's Hill radius, we favor CPD gas temperatures $T > 150$ K, planet masses $M_{\\rm p} < 1.0$ $M_{\\rm Jup}$, and CPD radii $R_{\\rm CPD} < 2$ au.",
+      "authors": [
+        "Andres F. Izquierdo",
+        "Jaehan Bae",
+        "Maria Galloway-Sprietsma",
+        "Ewine F. van Dishoeck",
+        "Stefano Facchini",
+        "Giovanni Rosotti",
+        "Jochen Stadler",
+        "Myriam Benisty",
+        "Leonardo Testi"
+      ],
+      "categories": [
+        "astro-ph.EP",
+        "astro-ph.SR"
+      ],
+      "published": "2026-01-15T17:50:13Z",
+      "updated": "2026-01-15T17:50:13Z",
+      "pdf_link": "https://arxiv.org/pdf/2601.10631v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2601.10631v1"
+    },
+    {
+      "id": "2601.10598v1",
+      "title": "A young progenitor for the most common planetary systems in the Galaxy",
+      "abstract": "The Galaxy's most common known planetary systems have several Earth-to-Neptune-size planets in compact orbits. At small orbital separations, larger planets are less common than their smaller counterparts by an order of magnitude. The young star V1298 Tau hosts one such compact planetary system, albeit with four planets that are uncommonly large (5 to 10 Earth radii). The planets form a chain of near-resonances that result in transit-timing variations of several hours. Here we present a multi-year campaign to characterize this system with transit-timing variations, a method insensitive to the intense magnetic activity of the star. Through targeted observations, we first resolved the previously unknown orbital period of the outermost planet. The full 9-year baseline from these and archival data then enabled robust determination of the masses and orbital parameters for all four planets. We find the planets have low, sub-Neptune masses and nearly circular orbits, implying a dynamically tranquil history. Their low masses and large radii indicate that the inner planets underwent a period of rapid cooling immediately after dispersal of the protoplanetary disk. Still, they are much less dense than mature planets of comparable size. We predict the planets will contract to 1.5-4.0 Earth radii and join the population of super-Earths and sub-Neptunes that nature produces in abundance.",
+      "authors": [
+        "John H. Livingston",
+        "Erik A. Petigura",
+        "Trevor J. David",
+        "Kento Masuda",
+        "James Owen",
+        "David Nesvorný",
+        "Konstantin Batygin",
+        "Jerome de Leon",
+        "Mayuko Mori",
+        "Kai Ikuta",
+        "Akihiko Fukui",
+        "Noriharu Watanabe",
+        "Jaume Orell Miquel",
+        "Felipe Murgas",
+        "Hannu Parviainen",
+        "Judith Korth",
+        "Florence Libotte",
+        "Néstor Abreu García",
+        "Pedro Pablo Meni Gallardo",
+        "Norio Narita",
+        "Enric Pallé",
+        "Motohide Tamura",
+        "Atsunori Yonehara",
+        "Andrew Ridden-Harper",
+        "Allyson Bieryla",
+        "Alessandro A. Trani",
+        "Eric E. Mamajek",
+        "David R. Ciardi",
+        "Varoujan Gorjian",
+        "Lynne A. Hillenbrand",
+        "Luisa M. Rebull",
+        "Elisabeth R. Newton",
+        "Andrew W. Mann",
+        "Andrew Vanderburg",
+        "Guðmundur Stefánsson",
+        "Suvrath Mahadevan",
+        "Caleb Cañas",
+        "Joe Ninan",
+        "Jesus Higuera",
+        "Kamen Todorov",
+        "Jean-Michel Désert",
+        "Lorenzo Pino"
+      ],
+      "categories": [
+        "astro-ph.EP"
+      ],
+      "published": "2026-01-15T17:07:23Z",
+      "updated": "2026-01-15T17:07:23Z",
+      "pdf_link": "https://arxiv.org/pdf/2601.10598v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2601.10598v1"
+    }
+  ]
+}
