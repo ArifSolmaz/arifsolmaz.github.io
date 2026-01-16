@@ -7,21 +7,27 @@
     <meta name="description" content="Daily AI-powered summaries of exoplanet research papers from arXiv, written for general audiences.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-deep: #0a0a12;
-            --bg-card: #12121f;
-            --bg-card-hover: #1a1a2e;
-            --bg-summary: #0f1729;
-            --accent-nebula: #7c3aed;
-            --accent-star: #fbbf24;
-            --accent-cyan: #22d3ee;
-            --accent-green: #34d399;
-            --text-primary: #f1f5f9;
-            --text-secondary: #94a3b8;
+            /* Soft, warm light theme */
+            --bg-page: #faf9f7;
+            --bg-card: #ffffff;
+            --bg-card-hover: #ffffff;
+            --bg-summary: #f5f3f0;
+            --accent-primary: #6366f1;
+            --accent-secondary: #8b5cf6;
+            --accent-warm: #d97706;
+            --accent-teal: #0d9488;
+            --accent-green: #059669;
+            --text-primary: #1e293b;
+            --text-secondary: #475569;
             --text-muted: #64748b;
-            --border: rgba(124, 58, 237, 0.2);
+            --border: #e5e5e5;
+            --border-accent: rgba(99, 102, 241, 0.2);
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04);
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.08);
         }
 
         * {
@@ -31,56 +37,32 @@
         }
 
         body {
-            font-family: 'Space Grotesk', sans-serif;
-            background: var(--bg-deep);
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg-page);
             color: var(--text-primary);
             min-height: 100vh;
             line-height: 1.6;
-            overflow-x: hidden;
         }
 
-        /* Starfield */
-        .starfield {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .star {
-            position: absolute;
-            background: white;
-            border-radius: 50%;
-            animation: twinkle 3s ease-in-out infinite;
-        }
-
-        @keyframes twinkle {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 1; }
-        }
-
-        /* Nebula gradient */
-        .nebula {
+        /* Soft gradient background */
+        .bg-pattern {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             background: 
-                radial-gradient(ellipse at 20% 20%, rgba(124, 58, 237, 0.1) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 80%, rgba(34, 211, 238, 0.08) 0%, transparent 50%),
-                radial-gradient(ellipse at 50% 50%, rgba(251, 191, 36, 0.05) 0%, transparent 60%);
+                radial-gradient(ellipse at 0% 0%, rgba(99, 102, 241, 0.06) 0%, transparent 50%),
+                radial-gradient(ellipse at 100% 50%, rgba(139, 92, 246, 0.04) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 100%, rgba(245, 158, 11, 0.03) 0%, transparent 50%);
             pointer-events: none;
-            z-index: 1;
+            z-index: 0;
         }
 
         .container {
             position: relative;
             z-index: 2;
-            max-width: 900px;
+            max-width: 860px;
             margin: 0 auto;
             padding: 2rem;
         }
@@ -88,47 +70,43 @@
         /* Header */
         header {
             text-align: center;
-            padding: 3rem 0 4rem;
-            border-bottom: 1px solid var(--border);
-            margin-bottom: 3rem;
+            padding: 2.5rem 0 3rem;
+            margin-bottom: 2rem;
         }
 
         .logo-icon {
-            width: 64px;
-            height: 64px;
-            background: linear-gradient(135deg, var(--accent-nebula), var(--accent-cyan));
-            border-radius: 50%;
+            width: 72px;
+            height: 72px;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
-            box-shadow: 0 0 40px rgba(124, 58, 237, 0.4);
+            font-size: 2.2rem;
+            box-shadow: 0 8px 24px rgba(99, 102, 241, 0.25);
             margin: 0 auto 1.5rem;
         }
 
         h1 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 3rem;
-            font-weight: 500;
-            letter-spacing: 0.02em;
-            background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-cyan) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-size: 2.8rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            color: var(--text-primary);
         }
 
         .subtitle {
             font-size: 1.1rem;
             color: var(--text-secondary);
             margin-top: 0.5rem;
-            font-weight: 300;
+            font-weight: 400;
         }
 
         .badges {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 0.75rem;
+            gap: 0.6rem;
             margin-top: 1.5rem;
         }
 
@@ -136,38 +114,41 @@
             display: inline-flex;
             align-items: center;
             gap: 0.4rem;
-            padding: 0.5rem 1rem;
+            padding: 0.45rem 0.9rem;
             border-radius: 100px;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
+            font-weight: 500;
         }
 
         .badge-ai {
-            background: rgba(52, 211, 153, 0.15);
-            border: 1px solid rgba(52, 211, 153, 0.3);
+            background: linear-gradient(135deg, rgba(5, 150, 105, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%);
+            border: 1px solid rgba(5, 150, 105, 0.2);
             color: var(--accent-green);
         }
 
         .badge-date {
-            background: rgba(124, 58, 237, 0.1);
+            background: #f1f5f9;
             border: 1px solid var(--border);
-            color: var(--accent-cyan);
+            color: var(--text-secondary);
             font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
         }
 
         .badge-count {
-            background: rgba(251, 191, 36, 0.1);
-            border: 1px solid rgba(251, 191, 36, 0.3);
-            color: var(--accent-star);
+            background: rgba(217, 119, 6, 0.1);
+            border: 1px solid rgba(217, 119, 6, 0.2);
+            color: var(--accent-warm);
         }
 
         /* Intro box */
         .intro-box {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin-bottom: 2rem;
+            border-radius: 16px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 2.5rem;
             text-align: center;
+            box-shadow: var(--shadow-sm);
         }
 
         .intro-box p {
@@ -178,6 +159,7 @@
 
         .intro-box strong {
             color: var(--text-primary);
+            font-weight: 500;
         }
 
         /* Loading */
@@ -187,10 +169,10 @@
         }
 
         .loading-spinner {
-            width: 60px;
-            height: 60px;
+            width: 48px;
+            height: 48px;
             border: 3px solid var(--border);
-            border-top-color: var(--accent-nebula);
+            border-top-color: var(--accent-primary);
             border-radius: 50%;
             animation: spin 1s linear infinite;
             margin: 0 auto 1.5rem;
@@ -202,14 +184,14 @@
 
         .loading-text {
             color: var(--text-secondary);
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
 
         /* Papers */
         .papers-list {
             display: flex;
             flex-direction: column;
-            gap: 2.5rem;
+            gap: 1.5rem;
         }
 
         .paper-card {
@@ -217,20 +199,22 @@
             border: 1px solid var(--border);
             border-radius: 16px;
             overflow: hidden;
-            transition: all 0.4s ease;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
             animation: fadeInUp 0.5s ease forwards;
             opacity: 0;
         }
 
         .paper-card:hover {
-            border-color: rgba(124, 58, 237, 0.4);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--border-accent);
+            transform: translateY(-2px);
         }
 
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(16px);
             }
             to {
                 opacity: 1;
@@ -239,14 +223,14 @@
         }
 
         .paper-header {
-            padding: 1.5rem 2rem;
+            padding: 1.5rem 1.75rem;
             border-bottom: 1px solid var(--border);
         }
 
         .paper-meta {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.75rem;
+            gap: 0.6rem;
             margin-bottom: 0.75rem;
             align-items: center;
         }
@@ -255,9 +239,10 @@
             font-family: 'JetBrains Mono', monospace;
             font-size: 0.7rem;
             padding: 0.25rem 0.6rem;
-            background: rgba(124, 58, 237, 0.2);
-            border-radius: 4px;
-            color: var(--accent-cyan);
+            background: rgba(99, 102, 241, 0.08);
+            border-radius: 6px;
+            color: var(--accent-primary);
+            font-weight: 500;
         }
 
         .paper-date {
@@ -268,8 +253,8 @@
 
         .paper-title {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.4rem;
-            font-weight: 500;
+            font-size: 1.35rem;
+            font-weight: 600;
             line-height: 1.4;
             margin-bottom: 0.5rem;
         }
@@ -277,11 +262,11 @@
         .paper-title a {
             color: var(--text-primary);
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: color 0.2s ease;
         }
 
         .paper-title a:hover {
-            color: var(--accent-cyan);
+            color: var(--accent-primary);
         }
 
         .paper-authors {
@@ -291,35 +276,35 @@
 
         /* Summary section */
         .summary-section {
-            padding: 2rem;
+            padding: 1.75rem;
             background: var(--bg-summary);
         }
 
         .summary-label {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            font-size: 0.75rem;
-            font-weight: 500;
+            gap: 0.4rem;
+            font-size: 0.7rem;
+            font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.08em;
             color: var(--accent-green);
             margin-bottom: 1rem;
         }
 
         .summary-content {
             font-family: 'Source Serif 4', Georgia, serif;
-            font-size: 1.05rem;
-            line-height: 1.85;
-            color: var(--text-primary);
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
         }
 
         .summary-content h4 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.9rem;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.8rem;
             font-weight: 600;
-            color: var(--accent-star);
-            margin: 1.5rem 0 0.75rem;
+            color: var(--accent-warm);
+            margin: 1.5rem 0 0.6rem;
             text-transform: uppercase;
             letter-spacing: 0.05em;
         }
@@ -329,7 +314,8 @@
         }
 
         .summary-content p {
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
         }
 
         .summary-content p:last-child {
@@ -338,18 +324,18 @@
 
         /* Abstract toggle */
         .original-abstract {
-            padding: 0 2rem 1.5rem;
+            padding: 0 1.75rem 1.25rem;
         }
 
         .abstract-toggle {
             background: none;
             border: none;
             color: var(--text-muted);
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'DM Sans', sans-serif;
             font-size: 0.8rem;
             cursor: pointer;
             padding: 0.5rem 0;
-            transition: color 0.3s ease;
+            transition: color 0.2s ease;
         }
 
         .abstract-toggle:hover {
@@ -357,14 +343,15 @@
         }
 
         .abstract-content {
-            margin-top: 1rem;
-            padding: 1rem;
-            background: rgba(0,0,0,0.2);
-            border-radius: 8px;
+            margin-top: 0.75rem;
+            padding: 1rem 1.25rem;
+            background: #f8f9fa;
+            border-radius: 10px;
             font-size: 0.9rem;
             color: var(--text-secondary);
             line-height: 1.7;
             display: none;
+            border: 1px solid var(--border);
         }
 
         .abstract-content.visible {
@@ -373,56 +360,59 @@
 
         /* Paper footer */
         .paper-footer {
-            padding: 1rem 2rem;
+            padding: 1rem 1.75rem;
             border-top: 1px solid var(--border);
             display: flex;
-            gap: 1rem;
+            gap: 0.75rem;
             flex-wrap: wrap;
+            background: #fafafa;
         }
 
         .paper-link {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.4rem;
             padding: 0.5rem 1rem;
-            background: rgba(124, 58, 237, 0.1);
+            background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 6px;
+            border-radius: 8px;
             color: var(--text-secondary);
-            font-size: 0.85rem;
+            font-size: 0.8rem;
+            font-weight: 500;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
         }
 
         .paper-link:hover {
-            background: rgba(124, 58, 237, 0.2);
-            border-color: var(--accent-nebula);
-            color: var(--text-primary);
+            background: var(--bg-summary);
+            border-color: var(--border-accent);
+            color: var(--accent-primary);
         }
 
         /* Error */
         .error-box {
-            background: rgba(239, 68, 68, 0.1);
-            border: 1px solid rgba(239, 68, 68, 0.3);
+            background: #fef2f2;
+            border: 1px solid #fecaca;
             border-radius: 12px;
             padding: 2rem;
             text-align: center;
-            color: #fca5a5;
+            color: #dc2626;
         }
 
         /* Footer */
         footer {
             text-align: center;
-            padding: 3rem 0;
-            margin-top: 4rem;
+            padding: 2.5rem 0;
+            margin-top: 3rem;
             border-top: 1px solid var(--border);
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         footer a {
-            color: var(--accent-cyan);
+            color: var(--accent-primary);
             text-decoration: none;
+            font-weight: 500;
         }
 
         footer a:hover {
@@ -445,7 +435,7 @@
             }
 
             .summary-content {
-                font-size: 1rem;
+                font-size: 0.95rem;
             }
 
             .badges {
@@ -456,8 +446,7 @@
     </style>
 </head>
 <body>
-    <div class="starfield" id="starfield"></div>
-    <div class="nebula"></div>
+    <div class="bg-pattern"></div>
 
     <div class="container">
         <header>
@@ -498,7 +487,7 @@
         <footer>
             <p>Data from <a href="https://arxiv.org" target="_blank">arXiv.org</a> (astro-ph.EP) • 
                Summaries by Claude AI • 
-               Updated weekdays at 10:00 UTC</p>
+               Updated weekdays at 08:00 UTC</p>
             <p style="margin-top: 0.5rem;">
                 <a href="https://arifsolmaz.github.io" target="_blank">arifsolmaz.github.io</a>
             </p>
@@ -506,23 +495,6 @@
     </div>
 
     <script>
-        // Create starfield
-        function createStarfield() {
-            const starfield = document.getElementById('starfield');
-            const numStars = 80;
-
-            for (let i = 0; i < numStars; i++) {
-                const star = document.createElement('div');
-                star.className = 'star';
-                star.style.left = Math.random() * 100 + '%';
-                star.style.top = Math.random() * 100 + '%';
-                star.style.width = Math.random() * 2 + 1 + 'px';
-                star.style.height = star.style.width;
-                star.style.animationDelay = Math.random() * 3 + 's';
-                starfield.appendChild(star);
-            }
-        }
-
         // Format authors
         function formatAuthors(authors) {
             if (!authors || authors.length === 0) return 'Unknown authors';
@@ -559,7 +531,7 @@
             const safeId = paper.id.replace(/[^a-zA-Z0-9]/g, '-');
             
             return `
-                <article class="paper-card" style="animation-delay: ${0.1 + index * 0.08}s">
+                <article class="paper-card" style="animation-delay: ${0.05 + index * 0.05}s">
                     <div class="paper-header">
                         <div class="paper-meta">
                             ${(paper.categories || []).slice(0, 2).map(cat => 
@@ -655,7 +627,7 @@
                     <div class="error-box">
                         <p>⚠️ Error loading papers data.</p>
                         <p style="font-size: 0.85rem; margin-top: 1rem; opacity: 0.7;">
-                            The data file may not exist yet. Papers are updated daily at 10:00 UTC.
+                            The data file may not exist yet. Papers are updated daily at 08:00 UTC.
                         </p>
                     </div>
                 `;
@@ -664,7 +636,6 @@
 
         // Initialize
         document.addEventListener('DOMContentLoaded', () => {
-            createStarfield();
             loadPapers();
         });
     </script>
