@@ -517,7 +517,7 @@ def format_tweet_free(paper: dict, page_url: str, hashtags: list[str]) -> str:
     hashtag_str = " ".join(hashtags[:5])  # Limit hashtags for free
     
     # Calculate available space
-    fixed = f"🪐 \n\n🔗 {link}\n\n{hashtag_str}"
+    fixed = f"\n\n{link}\n\n{hashtag_str}"
     available = 280 - len(fixed) - 10
     
     if brief:
@@ -527,16 +527,16 @@ def format_tweet_free(paper: dict, page_url: str, hashtags: list[str]) -> str:
         truncated_title = truncate_text(title, title_space)
         truncated_brief = truncate_text(brief, brief_space)
         
-        tweet = f"🪐 {truncated_title}\n\n💡 {truncated_brief}\n\n🔗 {link}\n\n{hashtag_str}"
+        tweet = f"{truncated_title}\n\n{truncated_brief}\n\n{link}\n\n{hashtag_str}"
     else:
         truncated_title = truncate_text(title, available)
-        tweet = f"🪐 {truncated_title}\n\n🔗 {link}\n\n{hashtag_str}"
+        tweet = f"{truncated_title}\n\n{link}\n\n{hashtag_str}"
     
     # Safety truncation
     if len(tweet) > 280:
         overflow = len(tweet) - 277
         hashtag_str = " ".join(hashtags[:3])
-        tweet = f"🪐 {truncate_text(title, available - overflow)}\n\n🔗 {link}\n\n{hashtag_str}"
+        tweet = f"{truncate_text(title, available - overflow)}\n\n{link}\n\n{hashtag_str}"
     
     return tweet[:280]
 
@@ -583,18 +583,18 @@ def format_tweet_premium(paper: dict, page_url: str, hashtags: list[str], limit:
     if len(key_insight) > 280:
         key_insight = truncate_text(key_insight, 280)
     
-    # Build the tweet
+    # Build the tweet - clean, no emojis
     hashtag_str = " ".join(hashtags)
     
     tweet_parts = [
-        f"🪐 {title}",
+        title,
         "",
-        f"👥 {author_str}",
+        author_str,
         "",
-        f"💡 {key_insight}" if key_insight else "",
+        key_insight if key_insight else "",
         "",
-        f"🔗 {link}",
-        f"📖 Full summary: {paper_url}",
+        link,
+        f"Full summary: {paper_url}",
         "",
         hashtag_str
     ]
