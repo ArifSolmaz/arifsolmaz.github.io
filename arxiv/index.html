@@ -4,16 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exoplanet Papers | Daily arXiv Summaries</title>
-    <meta name="description" content="Daily AI-powered summaries of exoplanet research papers from arXiv, written for general audiences.">
+    <meta name="description" content="Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* Soft, warm light theme */
             --bg-page: #faf9f7;
             --bg-card: #ffffff;
-            --bg-card-hover: #ffffff;
             --bg-summary: #f5f3f0;
             --accent-primary: #6366f1;
             --accent-secondary: #8b5cf6;
@@ -24,10 +22,10 @@
             --text-secondary: #475569;
             --text-muted: #64748b;
             --border: #e5e5e5;
-            --border-accent: rgba(99, 102, 241, 0.2);
+            --border-accent: rgba(99, 102, 241, 0.3);
             --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04);
             --shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-            --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.1);
         }
 
         * {
@@ -44,7 +42,6 @@
             line-height: 1.6;
         }
 
-        /* Soft gradient background */
         .bg-pattern {
             position: fixed;
             top: 0;
@@ -53,8 +50,7 @@
             height: 100%;
             background: 
                 radial-gradient(ellipse at 0% 0%, rgba(99, 102, 241, 0.06) 0%, transparent 50%),
-                radial-gradient(ellipse at 100% 50%, rgba(139, 92, 246, 0.04) 0%, transparent 50%),
-                radial-gradient(ellipse at 50% 100%, rgba(245, 158, 11, 0.03) 0%, transparent 50%);
+                radial-gradient(ellipse at 100% 50%, rgba(139, 92, 246, 0.04) 0%, transparent 50%);
             pointer-events: none;
             z-index: 0;
         }
@@ -62,43 +58,42 @@
         .container {
             position: relative;
             z-index: 2;
-            max-width: 860px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 1.5rem;
         }
 
-        /* Header */
+        /* Header - Compact */
         header {
             text-align: center;
-            padding: 2.5rem 0 3rem;
-            margin-bottom: 2rem;
+            padding: 2rem 0;
+            margin-bottom: 1.5rem;
         }
 
         .logo-icon {
-            width: 72px;
-            height: 72px;
+            width: 56px;
+            height: 56px;
             background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-            border-radius: 20px;
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.2rem;
-            box-shadow: 0 8px 24px rgba(99, 102, 241, 0.25);
-            margin: 0 auto 1.5rem;
+            font-size: 1.8rem;
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.25);
+            margin: 0 auto 1rem;
         }
 
         h1 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 2.8rem;
+            font-size: 2.2rem;
             font-weight: 600;
-            letter-spacing: -0.01em;
             color: var(--text-primary);
+            margin-bottom: 0.25rem;
         }
 
         .subtitle {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: var(--text-secondary);
-            margin-top: 0.5rem;
             font-weight: 400;
         }
 
@@ -106,103 +101,65 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 0.6rem;
-            margin-top: 1.5rem;
+            gap: 0.5rem;
+            margin-top: 1rem;
         }
 
         .badge {
             display: inline-flex;
             align-items: center;
-            gap: 0.4rem;
-            padding: 0.45rem 0.9rem;
+            gap: 0.3rem;
+            padding: 0.35rem 0.75rem;
             border-radius: 100px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: 500;
-        }
-
-        .badge-ai {
-            background: linear-gradient(135deg, rgba(5, 150, 105, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%);
-            border: 1px solid rgba(5, 150, 105, 0.2);
-            color: var(--accent-green);
-        }
-
-        .badge-date {
             background: #f1f5f9;
             border: 1px solid var(--border);
             color: var(--text-secondary);
+        }
+
+        .badge-date {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
         }
 
         .badge-count {
             background: rgba(217, 119, 6, 0.1);
-            border: 1px solid rgba(217, 119, 6, 0.2);
+            border-color: rgba(217, 119, 6, 0.2);
             color: var(--accent-warm);
         }
 
-        /* Intro box */
-        .intro-box {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 1.5rem 2rem;
-            margin-bottom: 2.5rem;
-            text-align: center;
-            box-shadow: var(--shadow-sm);
+        /* Grid Layout */
+        .papers-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
         }
 
-        .intro-box p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.7;
+        @media (max-width: 900px) {
+            .papers-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
-        .intro-box strong {
-            color: var(--text-primary);
-            font-weight: 500;
+        @media (max-width: 600px) {
+            .papers-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
-        /* Loading */
-        .loading {
-            text-align: center;
-            padding: 4rem 2rem;
-        }
-
-        .loading-spinner {
-            width: 48px;
-            height: 48px;
-            border: 3px solid var(--border);
-            border-top-color: var(--accent-primary);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 1.5rem;
-        }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-
-        .loading-text {
-            color: var(--text-secondary);
-            font-size: 1rem;
-        }
-
-        /* Papers */
-        .papers-list {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
+        /* Paper Card - Compact */
         .paper-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 16px;
-            overflow: hidden;
-            transition: all 0.3s ease;
+            border-radius: 12px;
+            padding: 1rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
             box-shadow: var(--shadow-sm);
-            animation: fadeInUp 0.5s ease forwards;
-            opacity: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 160px;
         }
 
         .paper-card:hover {
@@ -211,79 +168,137 @@
             transform: translateY(-2px);
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(16px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .paper-header {
-            padding: 1.5rem 1.75rem;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .paper-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.6rem;
-            margin-bottom: 0.75rem;
-            align-items: center;
-        }
-
         .paper-category {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 0.7rem;
-            padding: 0.25rem 0.6rem;
+            font-size: 0.65rem;
+            padding: 0.2rem 0.5rem;
             background: rgba(99, 102, 241, 0.08);
-            border-radius: 6px;
+            border-radius: 4px;
             color: var(--accent-primary);
             font-weight: 500;
-        }
-
-        .paper-date {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.7rem;
-            color: var(--text-muted);
+            display: inline-block;
+            margin-bottom: 0.5rem;
+            width: fit-content;
         }
 
         .paper-title {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.35rem;
+            font-size: 1rem;
             font-weight: 600;
-            line-height: 1.4;
-            margin-bottom: 0.5rem;
-        }
-
-        .paper-title a {
+            line-height: 1.3;
             color: var(--text-primary);
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-
-        .paper-title a:hover {
-            color: var(--accent-primary);
+            margin-bottom: 0.5rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
 
         .paper-authors {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: auto;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 100;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            overflow-y: auto;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal {
+            background: var(--bg-card);
+            border-radius: 16px;
+            max-width: 700px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 32px;
+            height: 32px;
+            border: none;
+            background: var(--bg-summary);
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            transition: all 0.2s;
+            z-index: 10;
+        }
+
+        .modal-close:hover {
+            background: var(--border);
+            color: var(--text-primary);
+        }
+
+        .modal-header {
+            padding: 1.5rem 1.5rem 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .modal-meta {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .modal-date {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+
+        .modal-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            line-height: 1.3;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            padding-right: 2rem;
+        }
+
+        .modal-authors {
             font-size: 0.85rem;
             color: var(--text-muted);
         }
 
-        /* Summary section */
-        .summary-section {
-            padding: 1.75rem;
+        .modal-summary {
+            padding: 1.5rem;
             background: var(--bg-summary);
         }
 
         .summary-label {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
             font-size: 0.7rem;
             font-weight: 600;
             text-transform: uppercase;
@@ -294,17 +309,17 @@
 
         .summary-content {
             font-family: 'Source Serif 4', Georgia, serif;
-            font-size: 1rem;
+            font-size: 0.95rem;
             line-height: 1.8;
-            color: var(--text-secondary);
+            color: var(--text-primary);
         }
 
         .summary-content h4 {
             font-family: 'DM Sans', sans-serif;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: 600;
             color: var(--accent-warm);
-            margin: 1.5rem 0 0.6rem;
+            margin: 1.25rem 0 0.5rem;
             text-transform: uppercase;
             letter-spacing: 0.05em;
         }
@@ -314,28 +329,20 @@
         }
 
         .summary-content p {
-            margin-bottom: 0.75rem;
-            color: var(--text-primary);
+            margin-bottom: 0.5rem;
         }
 
-        .summary-content p:last-child {
-            margin-bottom: 0;
-        }
-
-        /* Abstract toggle */
-        .original-abstract {
-            padding: 0 1.75rem 1.25rem;
+        .modal-abstract {
+            padding: 0 1.5rem 1rem;
         }
 
         .abstract-toggle {
             background: none;
             border: none;
             color: var(--text-muted);
-            font-family: 'DM Sans', sans-serif;
             font-size: 0.8rem;
             cursor: pointer;
             padding: 0.5rem 0;
-            transition: color 0.2s ease;
         }
 
         .abstract-toggle:hover {
@@ -343,36 +350,35 @@
         }
 
         .abstract-content {
-            margin-top: 0.75rem;
-            padding: 1rem 1.25rem;
+            margin-top: 0.5rem;
+            padding: 1rem;
             background: #f8f9fa;
-            border-radius: 10px;
-            font-size: 0.9rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
             color: var(--text-secondary);
-            line-height: 1.7;
+            line-height: 1.6;
             display: none;
-            border: 1px solid var(--border);
         }
 
         .abstract-content.visible {
             display: block;
         }
 
-        /* Paper footer */
-        .paper-footer {
-            padding: 1rem 1.75rem;
+        .modal-footer {
+            padding: 1rem 1.5rem;
             border-top: 1px solid var(--border);
             display: flex;
-            gap: 0.75rem;
+            gap: 0.5rem;
             flex-wrap: wrap;
             background: #fafafa;
+            border-radius: 0 0 16px 16px;
         }
 
-        .paper-link {
+        .modal-link {
             display: inline-flex;
             align-items: center;
-            gap: 0.4rem;
-            padding: 0.5rem 1rem;
+            gap: 0.3rem;
+            padding: 0.5rem 0.9rem;
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 8px;
@@ -380,13 +386,53 @@
             font-size: 0.8rem;
             font-weight: 500;
             text-decoration: none;
-            transition: all 0.2s ease;
+            transition: all 0.2s;
         }
 
-        .paper-link:hover {
-            background: var(--bg-summary);
-            border-color: var(--border-accent);
+        .modal-link:hover {
+            background: var(--accent-primary);
+            border-color: var(--accent-primary);
+            color: white;
+        }
+
+        /* Loading */
+        .loading {
+            text-align: center;
+            padding: 3rem;
+            grid-column: 1 / -1;
+        }
+
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--border);
+            border-top-color: var(--accent-primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        footer a {
             color: var(--accent-primary);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
         }
 
         /* Error */
@@ -397,51 +443,7 @@
             padding: 2rem;
             text-align: center;
             color: #dc2626;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 2.5rem 0;
-            margin-top: 3rem;
-            border-top: 1px solid var(--border);
-            color: var(--text-muted);
-            font-size: 0.85rem;
-        }
-
-        footer a {
-            color: var(--accent-primary);
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .container {
-                padding: 1rem;
-            }
-
-            h1 {
-                font-size: 2rem;
-            }
-
-            .paper-header, .summary-section, .paper-footer, .original-abstract {
-                padding-left: 1.25rem;
-                padding-right: 1.25rem;
-            }
-
-            .summary-content {
-                font-size: 0.95rem;
-            }
-
-            .badges {
-                flex-direction: column;
-                align-items: center;
-            }
+            grid-column: 1 / -1;
         }
     </style>
 </head>
@@ -452,12 +454,8 @@
         <header>
             <div class="logo-icon">🪐</div>
             <h1>Exoplanet Papers</h1>
-            <p class="subtitle">AI-Powered Summaries for Everyone</p>
+            <p class="subtitle">Daily arXiv astro-ph.EP Summaries</p>
             <div class="badges">
-                <span class="badge badge-ai">
-                    <span>✨</span>
-                    <span>Extended summaries by Claude AI</span>
-                </span>
                 <span class="badge badge-date" id="updateBadge">
                     <span>📅</span>
                     <span id="updateDate">Loading...</span>
@@ -469,40 +467,48 @@
             </div>
         </header>
 
-        <div class="intro-box">
-            <p>
-                Each paper includes an <strong>AI-generated extended summary</strong> written for general audiences. 
-                These explain the research significance, methods, and findings in accessible language—perfect 
-                for science enthusiasts, journalists, students, or researchers from other fields.
-            </p>
-        </div>
-
         <div id="content">
-            <div class="loading">
-                <div class="loading-spinner"></div>
-                <p class="loading-text">Loading today's papers...</p>
+            <div class="papers-grid">
+                <div class="loading">
+                    <div class="loading-spinner"></div>
+                    <p>Loading today's papers...</p>
+                </div>
             </div>
         </div>
 
         <footer>
             <p>Data from <a href="https://arxiv.org" target="_blank">arXiv.org</a> (astro-ph.EP) • 
-               Summaries by Claude AI • 
                Updated weekdays at 08:00 UTC</p>
-            <p style="margin-top: 0.5rem;">
+            <p style="margin-top: 0.3rem;">
                 <a href="https://arifsolmaz.github.io" target="_blank">arifsolmaz.github.io</a>
             </p>
         </footer>
     </div>
 
+    <!-- Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal" id="modal">
+            <button class="modal-close" onclick="closeModal()">×</button>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
     <script>
-        // Format authors
+        let papersData = [];
+        let fetchDate = '';
+
         function formatAuthors(authors) {
             if (!authors || authors.length === 0) return 'Unknown authors';
-            if (authors.length <= 3) return authors.join(', ');
-            return `${authors.slice(0, 3).join(', ')} et al. (${authors.length} authors)`;
+            if (authors.length <= 2) return authors.join(', ');
+            return `${authors[0]} et al. (${authors.length} authors)`;
         }
 
-        // Format date
+        function formatAuthorsShort(authors) {
+            if (!authors || authors.length === 0) return 'Unknown';
+            if (authors.length === 1) return authors[0];
+            return `${authors[0]} et al.`;
+        }
+
         function formatDate(dateStr) {
             const date = new Date(dateStr);
             return date.toLocaleDateString('en-US', { 
@@ -512,10 +518,86 @@
             });
         }
 
-        // Toggle abstract
-        function toggleAbstract(id) {
-            const content = document.getElementById(`abstract-${id}`);
-            const btn = document.getElementById(`toggle-${id}`);
+        function getSafeId(id) {
+            return id.replace(/[^a-zA-Z0-9]/g, '-');
+        }
+
+        // Render compact card
+        function renderPaperCard(paper, index) {
+            const safeId = getSafeId(paper.id);
+            return `
+                <div class="paper-card" id="paper-${safeId}" onclick="openModal('${safeId}')">
+                    <span class="paper-category">${(paper.categories || ['astro-ph.EP'])[0]}</span>
+                    <div class="paper-title">${paper.title}</div>
+                    <div class="paper-authors">${formatAuthorsShort(paper.authors)}</div>
+                </div>
+            `;
+        }
+
+        // Render modal content
+        function renderModalContent(paper) {
+            const safeId = getSafeId(paper.id);
+            return `
+                <div class="modal-header">
+                    <div class="modal-meta">
+                        ${(paper.categories || []).slice(0, 2).map(cat => 
+                            `<span class="paper-category">${cat}</span>`
+                        ).join('')}
+                        <span class="modal-date">${formatDate(fetchDate)}</span>
+                    </div>
+                    <h2 class="modal-title">${paper.title}</h2>
+                    <p class="modal-authors">${formatAuthors(paper.authors)}</p>
+                </div>
+                
+                <div class="modal-summary">
+                    <div class="summary-label">✨ Summary for General Audiences</div>
+                    <div class="summary-content">
+                        ${paper.summary_html || '<p><em>Summary not available.</em></p>'}
+                    </div>
+                </div>
+                
+                <div class="modal-abstract">
+                    <button class="abstract-toggle" onclick="toggleAbstract(event)">
+                        ▼ Show original abstract
+                    </button>
+                    <div class="abstract-content">
+                        ${paper.abstract}
+                    </div>
+                </div>
+                
+                <div class="modal-footer">
+                    <a href="${paper.abs_link}" target="_blank" class="modal-link">
+                        📄 arXiv Page
+                    </a>
+                    <a href="${paper.pdf_link}" target="_blank" class="modal-link">
+                        📥 Download PDF
+                    </a>
+                </div>
+            `;
+        }
+
+        function openModal(safeId) {
+            const paper = papersData.find(p => getSafeId(p.id) === safeId);
+            if (!paper) return;
+            
+            document.getElementById('modalContent').innerHTML = renderModalContent(paper);
+            document.getElementById('modalOverlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            // Update URL hash without scrolling
+            history.replaceState(null, null, `#paper-${safeId}`);
+        }
+
+        function closeModal() {
+            document.getElementById('modalOverlay').classList.remove('active');
+            document.body.style.overflow = '';
+            history.replaceState(null, null, window.location.pathname);
+        }
+
+        function toggleAbstract(event) {
+            event.stopPropagation();
+            const btn = event.target;
+            const content = btn.nextElementSibling;
             
             if (content.classList.contains('visible')) {
                 content.classList.remove('visible');
@@ -526,79 +608,32 @@
             }
         }
 
-        // Render paper card
-        function renderPaperCard(paper, index, fetchDate) {
-            const safeId = paper.id.replace(/[^a-zA-Z0-9]/g, '-');
-            
-            return `
-                <article class="paper-card" id="paper-${safeId}" style="animation-delay: ${0.05 + index * 0.05}s">
-                    <div class="paper-header">
-                        <div class="paper-meta">
-                            ${(paper.categories || []).slice(0, 2).map(cat => 
-                                `<span class="paper-category">${cat}</span>`
-                            ).join('')}
-                            <span class="paper-date">${formatDate(fetchDate)}</span>
-                        </div>
-                        <h2 class="paper-title">
-                            <a href="${paper.abs_link}" target="_blank" rel="noopener">${paper.title}</a>
-                        </h2>
-                        <p class="paper-authors">${formatAuthors(paper.authors)}</p>
-                    </div>
-                    
-                    <div class="summary-section">
-                        <div class="summary-label">
-                            <span>✨</span>
-                            <span>AI Summary for General Audiences</span>
-                        </div>
-                        <div class="summary-content">
-                            ${paper.summary_html || '<p><em>Summary not available.</em></p>'}
-                        </div>
-                    </div>
-                    
-                    <div class="original-abstract">
-                        <button class="abstract-toggle" id="toggle-${safeId}" onclick="toggleAbstract('${safeId}')">
-                            ▼ Show original abstract
-                        </button>
-                        <div class="abstract-content" id="abstract-${safeId}">
-                            ${paper.abstract}
-                        </div>
-                    </div>
-                    
-                    <div class="paper-footer">
-                        <a href="${paper.abs_link}" target="_blank" rel="noopener" class="paper-link">
-                            📄 arXiv Page
-                        </a>
-                        <a href="${paper.pdf_link}" target="_blank" rel="noopener" class="paper-link">
-                            📥 Download PDF
-                        </a>
-                    </div>
-                </article>
-            `;
-        }
+        // Close modal on overlay click
+        document.getElementById('modalOverlay').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('modalOverlay')) {
+                closeModal();
+            }
+        });
 
-        // Main load function
+        // Close modal on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+
         async function loadPapers() {
             const content = document.getElementById('content');
             
             try {
-                // Fetch the cached JSON data
                 const response = await fetch('data/papers.json');
-                
-                if (!response.ok) {
-                    throw new Error('Failed to load papers data');
-                }
+                if (!response.ok) throw new Error('Failed to load');
                 
                 const data = await response.json();
+                papersData = data.papers || [];
+                fetchDate = data.updated_at || new Date().toISOString();
                 
                 // Update badges
                 if (data.updated_at) {
-                    const updateDate = new Date(data.updated_at);
-                    document.getElementById('updateDate').textContent = updateDate.toLocaleDateString('en-US', {
-                        weekday: 'long',
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric'
-                    });
+                    document.getElementById('updateDate').textContent = formatDate(data.updated_at);
                 }
                 
                 if (data.paper_count) {
@@ -606,39 +641,42 @@
                     document.getElementById('countBadge').style.display = 'inline-flex';
                 }
                 
-                // Render papers
-                if (data.papers && data.papers.length > 0) {
-                    const fetchDate = data.updated_at || new Date().toISOString();
+                // Render grid
+                if (papersData.length > 0) {
                     content.innerHTML = `
-                        <div class="papers-list">
-                            ${data.papers.map((paper, index) => renderPaperCard(paper, index, fetchDate)).join('')}
+                        <div class="papers-grid">
+                            ${papersData.map((paper, index) => renderPaperCard(paper, index)).join('')}
                         </div>
                     `;
+                    
+                    // Check for hash and open modal
+                    if (window.location.hash) {
+                        const safeId = window.location.hash.replace('#paper-', '');
+                        setTimeout(() => openModal(safeId), 100);
+                    }
                 } else {
                     content.innerHTML = `
-                        <div class="error-box">
-                            <p>🔭 No papers available. Check back tomorrow!</p>
+                        <div class="papers-grid">
+                            <div class="error-box">
+                                <p>🔭 No papers available. Check back tomorrow!</p>
+                            </div>
                         </div>
                     `;
                 }
                 
             } catch (error) {
-                console.error('Error loading papers:', error);
+                console.error('Error:', error);
                 content.innerHTML = `
-                    <div class="error-box">
-                        <p>⚠️ Error loading papers data.</p>
-                        <p style="font-size: 0.85rem; margin-top: 1rem; opacity: 0.7;">
-                            The data file may not exist yet. Papers are updated daily at 08:00 UTC.
-                        </p>
+                    <div class="papers-grid">
+                        <div class="error-box">
+                            <p>⚠️ Error loading papers data.</p>
+                        </div>
                     </div>
                 `;
             }
         }
 
-        // Initialize
-        document.addEventListener('DOMContentLoaded', () => {
-            loadPapers();
-        });
+        document.addEventListener('DOMContentLoaded', loadPapers);
     </script>
 </body>
 </html>
