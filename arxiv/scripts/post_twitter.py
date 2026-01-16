@@ -2,6 +2,7 @@
 """
 Post individual exoplanet paper summaries to Twitter/X.
 Tweets ONE paper per run with dynamic hashtags extracted from paper content.
+Attempts to attach Figure 1 from the paper when available.
 
 Supports Twitter Premium for longer tweets:
 - Free: 280 characters
@@ -15,9 +16,12 @@ import json
 import os
 import re
 import sys
+import tempfile
 from datetime import datetime, timezone
 from pathlib import Path
+from urllib.parse import urljoin
 
+import requests
 import tweepy
 
 
@@ -216,6 +220,120 @@ KEYWORD_HASHTAGS = {
 BASE_HASHTAGS = ["#Exoplanets", "#Astronomy", "#arXiv"]
 
 
+def fetch_paper_figure(paper_id: str) -> str | None:
+    """
+    Attempt to fetch Figure 1 from a paper.
+    Returns the local file path if successful, None otherwise.
+    
+    Tries multiple sources:
+    1. arXiv HTML page (og:image meta tag)
+    2. ar5iv.org HTML rendering
+    """
+    
+    print(f"  Attempting to fetch figure for {paper_id}...")
+    
+    # Method 1: Try arXiv abstract page og:image (often contains a figure preview)
+    try:
+        abs_url = f"https://arxiv.org/abs/{paper_id}"
+        response = requests.get(abs_url, timeout=15, headers={
+            'User-Agent': 'Mozilla/5.0 (compatible; ExoplanetBot/1.0)'
+        })
+        
+        if response.status_code == 200:
+            # Look for og:image meta tag
+            og_match = re.search(r'<meta\s+property="og:image"\s+content="([^"]+)"', response.text)
+            if og_match:
+                img_url = og_match.group(1)
+                # Skip placeholder images
+                if 'arxiv-logo' not in img_url and 'static' not in img_url:
+                    img_path = download_image(img_url, paper_id)
+                    if img_path:
+                        return img_path
+    except Exception as e:
+        print(f"    arXiv page fetch failed: {e}")
+    
+    # Method 2: Try ar5iv (HTML rendering of papers)
+    try:
+        ar5iv_url = f"https://ar5iv.labs.arxiv.org/html/{paper_id}"
+        response = requests.get(ar5iv_url, timeout=20, headers={
+            'User-Agent': 'Mozilla/5.0 (compatible; ExoplanetBot/1.0)'
+        })
+        
+        if response.status_code == 200:
+            # Look for figure images
+            patterns = [
+                r'<img[^>]+src="([^"]+)"[^>]*class="[^"]*ltx_graphics[^"]*"',
+                r'<figure[^>]*>.*?<img[^>]+src="([^"]+)".*?</figure>',
+                r'<img[^>]+src="(/html/[^"]+\.(?:png|jpg|jpeg|gif))"',
+            ]
+            
+            for pattern in patterns:
+                matches = re.findall(pattern, response.text, re.IGNORECASE | re.DOTALL)
+                for match in matches[:3]:  # Try first 3 matches
+                    img_url = match
+                    if img_url.startswith('/'):
+                        img_url = f"https://ar5iv.labs.arxiv.org{img_url}"
+                    elif not img_url.startswith('http'):
+                        img_url = f"https://ar5iv.labs.arxiv.org/html/{paper_id}/{img_url}"
+                    
+                    img_path = download_image(img_url, paper_id)
+                    if img_path:
+                        return img_path
+    except Exception as e:
+        print(f"    ar5iv fetch failed: {e}")
+    
+    print(f"    No figure found for {paper_id}")
+    return None
+
+
+def download_image(url: str, paper_id: str) -> str | None:
+    """Download an image to a temporary file. Returns file path or None."""
+    try:
+        response = requests.get(url, timeout=15, headers={
+            'User-Agent': 'Mozilla/5.0 (compatible; ExoplanetBot/1.0)'
+        })
+        
+        if response.status_code != 200:
+            return None
+        
+        # Check content type
+        content_type = response.headers.get('content-type', '')
+        if not any(t in content_type for t in ['image/png', 'image/jpeg', 'image/gif', 'image/webp']):
+            # Try to detect from content
+            if not response.content[:8].startswith((b'\x89PNG', b'\xff\xd8\xff', b'GIF8')):
+                return None
+        
+        # Check size (Twitter requires images > 5KB, < 5MB)
+        size = len(response.content)
+        if size < 5000 or size > 5_000_000:
+            print(f"    Image size {size} bytes - skipping (too small or large)")
+            return None
+        
+        # Determine extension
+        if b'\x89PNG' in response.content[:8]:
+            ext = '.png'
+        elif b'\xff\xd8\xff' in response.content[:8]:
+            ext = '.jpg'
+        elif b'GIF8' in response.content[:8]:
+            ext = '.gif'
+        else:
+            ext = '.png'  # Default
+        
+        # Save to temp file
+        safe_id = paper_id.replace('/', '_').replace('.', '_')
+        temp_path = f"/tmp/arxiv_fig_{safe_id}{ext}"
+        
+        with open(temp_path, 'wb') as f:
+            f.write(response.content)
+        
+        print(f"    Downloaded figure: {temp_path} ({size/1024:.1f} KB)")
+        return temp_path
+        
+    except Exception as e:
+        print(f"    Image download failed: {e}")
+        return None
+
+
 def load_papers():
     """Load papers from JSON file."""
     if not PAPERS_FILE.exists():
@@ -243,7 +361,7 @@ def save_tweeted(data):
 
 
 def create_twitter_client():
-    """Create authenticated Twitter API v2 client."""
+    """Create authenticated Twitter API v2 client and v1.1 API for media uploads."""
     required_keys = [
         "TWITTER_API_KEY",
         "TWITTER_API_SECRET", 
@@ -254,8 +372,9 @@ def create_twitter_client():
     missing = [k for k in required_keys if not os.environ.get(k)]
     if missing:
         print(f"Missing Twitter credentials: {', '.join(missing)}")
-        return None
+        return None, None
     
+    # v2 client for tweeting
     client = tweepy.Client(
         consumer_key=os.environ["TWITTER_API_KEY"],
         consumer_secret=os.environ["TWITTER_API_SECRET"],
@@ -263,7 +382,16 @@ def create_twitter_client():
         access_token_secret=os.environ["TWITTER_ACCESS_SECRET"]
     )
     
-    return client
+    # v1.1 API for media uploads (v2 doesn't support media upload directly)
+    auth = tweepy.OAuth1UserHandler(
+        os.environ["TWITTER_API_KEY"],
+        os.environ["TWITTER_API_SECRET"],
+        os.environ["TWITTER_ACCESS_TOKEN"],
+        os.environ["TWITTER_ACCESS_SECRET"]
+    )
+    api_v1 = tweepy.API(auth)
+    
+    return client, api_v1
 
 
 def get_tweet_limit():
@@ -497,10 +625,24 @@ def format_paper_tweet(paper: dict, page_url: str) -> str:
         return format_tweet_free(paper, page_url, hashtags)
 
 
-def post_tweet(client: tweepy.Client, tweet_text: str) -> str | None:
-    """Post a single tweet. Returns tweet ID on success."""
+def upload_media(api_v1: tweepy.API, image_path: str) -> str | None:
+    """Upload an image to Twitter. Returns media_id on success."""
     try:
-        response = client.create_tweet(text=tweet_text)
+        media = api_v1.media_upload(filename=image_path)
+        print(f"Uploaded media: {media.media_id}")
+        return str(media.media_id)
+    except tweepy.TweepyException as e:
+        print(f"Error uploading media: {e}")
+        return None
+
+
+def post_tweet(client: tweepy.Client, tweet_text: str, media_ids: list[str] = None) -> str | None:
+    """Post a single tweet with optional media. Returns tweet ID on success."""
+    try:
+        if media_ids:
+            response = client.create_tweet(text=tweet_text, media_ids=media_ids)
+        else:
+            response = client.create_tweet(text=tweet_text)
         tweet_id = response.data["id"]
         print(f"Posted tweet: {tweet_id}")
         return tweet_id
@@ -509,8 +651,18 @@ def post_tweet(client: tweepy.Client, tweet_text: str) -> str | None:
         return None
 
 
+def cleanup_temp_file(filepath: str):
+    """Remove temporary file if it exists."""
+    try:
+        if filepath and os.path.exists(filepath):
+            os.remove(filepath)
+            print(f"Cleaned up temp file: {filepath}")
+    except Exception as e:
+        print(f"Could not clean up {filepath}: {e}")
+
+
 def main():
-    """Main function - tweet ONE paper."""
+    """Main function - tweet ONE paper with figure if available."""
     
     # Load papers
     data = load_papers()
@@ -546,14 +698,31 @@ def main():
         print("All papers have been tweeted today!")
         return
     
-    # Create Twitter client
-    client = create_twitter_client()
+    # Create Twitter clients (v2 for tweeting, v1.1 for media upload)
+    client, api_v1 = create_twitter_client()
     if not client:
         print("Could not create Twitter client. Exiting.")
         return
     
     # Get page URL
     page_url = os.environ.get("PAGE_URL", "https://arifsolmaz.github.io/arxiv")
+    
+    # Try to fetch a figure for the paper
+    figure_path = None
+    media_ids = None
+    
+    if api_v1:  # Only try if we have v1.1 API for media upload
+        figure_path = fetch_paper_figure(paper_to_tweet["id"])
+        
+        if figure_path:
+            media_id = upload_media(api_v1, figure_path)
+            if media_id:
+                media_ids = [media_id]
+                print(f"📸 Figure will be attached to tweet!")
+            else:
+                print("⚠️ Figure upload failed, tweeting without image")
+        else:
+            print("📄 No figure found, tweeting text only")
     
     # Format and post tweet
     tweet_text = format_paper_tweet(paper_to_tweet, page_url)
@@ -563,7 +732,11 @@ def main():
     print(tweet_text)
     print("-" * 50)
     
-    tweet_id = post_tweet(client, tweet_text)
+    tweet_id = post_tweet(client, tweet_text, media_ids)
+    
+    # Clean up temp file
+    if figure_path:
+        cleanup_temp_file(figure_path)
     
     if tweet_id:
         # Mark as tweeted
