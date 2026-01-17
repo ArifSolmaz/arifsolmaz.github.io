@@ -568,6 +568,62 @@
             return id.replace(/[^a-zA-Z0-9]/g, '-');
         }
 
+        // Keyword to hashtag mapping (same as Python script, lowercase keys)
+        const KEYWORD_HASHTAGS = {
+            // Telescopes & Instruments
+            "jwst": "#JWST", "james webb": "#JWST", "webb": "#JWST",
+            "tess": "#TESS", "kepler": "#Kepler", "hubble": "#Hubble",
+            "alma": "#ALMA", "vlt": "#VLT", "gaia": "#Gaia",
+            "harps": "#HARPS", "espresso": "#ESPRESSO", "cheops": "#CHEOPS",
+            // Planet types
+            "hot jupiter": "#HotJupiter", "super-earth": "#SuperEarth", "super earth": "#SuperEarth",
+            "sub-neptune": "#SubNeptune", "sub neptune": "#SubNeptune",
+            "earth-like": "#EarthLike", "earth-sized": "#EarthSized",
+            "water world": "#WaterWorld", "ocean world": "#OceanWorld",
+            "rogue planet": "#RoguePlanet",
+            // Habitability
+            "habitable": "#HabitableZone", "habitability": "#Habitability",
+            "biosignature": "#Biosignatures", "biosignatures": "#Biosignatures",
+            // Notable systems
+            "trappist": "#TRAPPIST1", "proxima": "#ProximaCentauri",
+            "wasp-39": "#WASP39", "wasp-76": "#WASP76",
+            // Methods
+            "transit": "#TransitMethod", "radial velocity": "#RadialVelocity",
+            "spectroscopy": "#Spectroscopy", "atmosphere": "#ExoplanetAtmosphere"
+        };
+
+        // Extract hashtags from paper content
+        function extractHashtags(paper, maxHashtags = 4) {
+            const text = `${paper.title} ${paper.abstract}`.toLowerCase();
+            const found = new Set();
+            
+            // Priority keywords (check first)
+            const priorityKeywords = ["jwst", "james webb", "habitable", "biosignature", "trappist", "earth-like"];
+            
+            for (const keyword of priorityKeywords) {
+                if (text.includes(keyword) && KEYWORD_HASHTAGS[keyword]) {
+                    found.add(KEYWORD_HASHTAGS[keyword]);
+                }
+            }
+            
+            // Then check other keywords
+            for (const [keyword, hashtag] of Object.entries(KEYWORD_HASHTAGS)) {
+                if (text.includes(keyword)) {
+                    found.add(hashtag);
+                }
+            }
+            
+            // Start with base hashtag, add found ones
+            const result = ["#Exoplanets"];
+            for (const tag of found) {
+                if (!result.includes(tag) && result.length < maxHashtags) {
+                    result.push(tag);
+                }
+            }
+            
+            return result;
+        }
+
         // Get tweet text for sharing
         function getTweetText(paper) {
             const tweetHook = paper.tweet_hook || {};
@@ -590,8 +646,9 @@
             const paperUrl = `${PAGE_URL}#paper-${safeId}`;
             text += '\n\n' + paperUrl;
             
-            // Add hashtag
-            text += '\n\n#Exoplanets';
+            // Add dynamic hashtags
+            const hashtags = extractHashtags(paper);
+            text += '\n\n' + hashtags.join(' ');
             
             return text;
         }
