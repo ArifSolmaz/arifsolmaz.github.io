@@ -25,8 +25,8 @@ from xml.etree import ElementTree as ET
 
 # Configuration
 ARXIV_CATEGORY = "astro-ph.EP"
-MAX_PAPERS = 15
-FETCH_MULTIPLIER = 4  # Fetch more to filter down to MAX_PAPERS
+MAX_PAPERS = 50  # Fetch all available papers
+FETCH_MULTIPLIER = 2  # Fetch extra to ensure we get enough
 OUTPUT_FILE = Path(__file__).parent.parent / "data" / "papers.json"
 
 # Keywords to identify exoplanet-related papers
@@ -177,22 +177,48 @@ TWEETABILITY_KEYWORDS = {
 
 
 def is_exoplanet_paper(title: str, abstract: str) -> bool:
-    """Check if a paper is related to exoplanet science."""
+    """
+    Check if a paper is EXPLICITLY about exoplanet science.
+    Uses strict matching to separate exoplanet papers from general planetary science.
+    """
     text = f"{title} {abstract}".lower()
     
-    # Check for exclusion keywords first
-    for keyword in EXCLUDE_KEYWORDS:
-        if keyword.lower() in text:
-            # But still include if it also has strong exoplanet keywords
-            has_exoplanet_keyword = any(
-                kw.lower() in text for kw in ["exoplanet", "exoplanetary", "extrasolar"]
-            )
-            if not has_exoplanet_keyword:
-                return False
+    # STRICT exoplanet keywords - must explicitly mention exoplanets
+    strict_exoplanet_keywords = [
+        # Core terms (required for "exoplanet-focused" label)
+        "exoplanet", "exoplanets", "exoplanetary",
+        "extrasolar planet", "extrasolar planets",
+        
+        # Specific planet types that are exoplanet-specific
+        "hot jupiter", "warm jupiter", "cold jupiter",
+        "super-earth", "super earth", "mini-neptune", "sub-neptune",
+        
+        # Habitability (almost always exoplanet context)
+        "habitable zone", "habitable exoplanet", "habitability",
+        "biosignature", "biosignatures",
+        
+        # Exoplanet missions/surveys context
+        "tess planet", "tess candidate", "toi-",
+        "kepler planet", "kepler candidate", "kepler-",
+        "k2 planet", "k2-",
+        "wasp-", "hat-p-", "hatp-",
+        "trappist-1", "trappist",
+        "proxima centauri b", "proxima b",
+        "gj 1214", "gj 436", "hd 189733", "hd 209458",
+        "55 cancri", "tau ceti",
+        
+        # Explicit exoplanet atmosphere studies
+        "exoplanet atmosphere", "exoplanetary atmosphere",
+        "transmission spectrum", "transmission spectroscopy",
+        
+        # Planet occurrence/demographics (exoplanet context)
+        "planet occurrence", "planet frequency",
+        "planet host star", "planet-hosting star",
+    ]
     
-    # Check for exoplanet keywords
-    for keyword in EXOPLANET_KEYWORDS:
-        if keyword.lower() in text:
+    # Check for strict exoplanet keywords
+    for keyword in strict_exoplanet_keywords:
+        if keyword in text:
             return True
     
     return False
@@ -278,20 +304,26 @@ def fetch_arxiv_papers(category: str, max_results: int = 15) -> list[dict]:
             "abs_link": abs_link
         })
     
-    # Filter for exoplanet papers only
-    exoplanet_papers = [
-        p for p in all_papers 
-        if is_exoplanet_paper(p["title"], p["abstract"])
-    ]
-    
-    # Calculate tweetability score for each paper
-    for paper in exoplanet_papers:
+    # Mark exoplanet-focused papers and calculate tweetability
+    for paper in all_papers:
+        paper["is_exoplanet_focused"] = is_exoplanet_paper(paper["title"], paper["abstract"])
         paper["tweetability_score"] = calculate_tweetability_score(paper)
     
-    print(f"Fetched {len(all_papers)} total papers, {len(exoplanet_papers)} are exoplanet-related")
+    # Separate by type
+    exoplanet_papers = [p for p in all_papers if p["is_exoplanet_focused"]]
+    general_papers = [p for p in all_papers if not p["is_exoplanet_focused"]]
     
-    # Return up to max_results
-    return exoplanet_papers[:max_results]
+    print(f"Fetched {len(all_papers)} total papers:")
+    print(f"  🪐 Exoplanet-focused: {len(exoplanet_papers)}")
+    print(f"  🔭 General astro-ph.EP: {len(general_papers)}")
+    
+    # Sort each group by tweetability
+    exoplanet_papers.sort(key=lambda p: -p["tweetability_score"])
+    general_papers.sort(key=lambda p: -p["tweetability_score"])
+    
+    # Return ALL papers - we need both types for time-based tweeting
+    # Exoplanet papers first (for prime time), then general (for off-peak)
+    return exoplanet_papers + general_papers
 
 
 def generate_summary(client: anthropic.Anthropic, paper: dict) -> str:

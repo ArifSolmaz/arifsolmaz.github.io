@@ -532,17 +532,69 @@ def extract_hashtags(paper: dict, max_hashtags: int = MAX_HASHTAGS) -> list[str]
     return result
 
 
+def is_prime_time_pst() -> bool:
+    """
+    Check if current time is PST prime time for tweeting exoplanet papers.
+    Prime time PST: 8 AM - 12 PM and 5 PM - 11 PM
+    
+    In UTC (PST = UTC - 8):
+    - 8 AM - 12 PM PST = 16:00 - 20:00 UTC
+    - 5 PM - 11 PM PST = 01:00 - 07:00 UTC
+    """
+    from datetime import datetime, timezone
+    
+    now_utc = datetime.now(timezone.utc)
+    hour = now_utc.hour
+    
+    # Morning prime time: 16:00-20:00 UTC (8 AM - 12 PM PST)
+    # Evening prime time: 01:00-07:00 UTC (5 PM - 11 PM PST)
+    morning_prime = 16 <= hour < 20
+    evening_prime = 1 <= hour < 7
+    
+    return morning_prime or evening_prime
+
+
 def select_best_paper(papers: list, tweeted_ids: set) -> dict | None:
-    """Select the most tweetable untweeted paper."""
+    """
+    Select the best untweeted paper based on time of day.
+    
+    - During PST prime time: prioritize exoplanet-focused papers
+    - During off-peak: tweet other astro-ph.EP papers
+    - Falls back to any untweeted paper if preferred category is empty
+    """
     untweeted = [p for p in papers if p["id"] not in tweeted_ids]
     
     if not untweeted:
         return None
     
-    # Sort by tweetability score (descending)
-    untweeted.sort(key=lambda p: p.get("tweetability_score", 0), reverse=True)
+    prime_time = is_prime_time_pst()
     
-    return untweeted[0]
+    # Separate exoplanet and non-exoplanet papers
+    exoplanet_papers = [p for p in untweeted if p.get("is_exoplanet_focused", True)]
+    other_papers = [p for p in untweeted if not p.get("is_exoplanet_focused", True)]
+    
+    # Sort each group by tweetability
+    exoplanet_papers.sort(key=lambda p: p.get("tweetability_score", 0), reverse=True)
+    other_papers.sort(key=lambda p: p.get("tweetability_score", 0), reverse=True)
+    
+    if prime_time:
+        # Prime time: prefer exoplanet papers, fall back to others
+        print(f"🌟 PRIME TIME (PST) - Prioritizing exoplanet papers")
+        if exoplanet_papers:
+            return exoplanet_papers[0]
+        elif other_papers:
+            print(f"   No exoplanet papers left, using general astro-ph.EP")
+            return other_papers[0]
+    else:
+        # Off-peak: prefer other papers, fall back to exoplanets
+        print(f"📋 OFF-PEAK - Tweeting general astro-ph.EP papers")
+        if other_papers:
+            return other_papers[0]
+        elif exoplanet_papers:
+            print(f"   No general papers left, using exoplanet paper")
+            return exoplanet_papers[0]
+    
+    return None
 
 
 def format_tweet_thread_free(paper: dict, page_url: str, hashtags: list[str]) -> tuple[str, str]:
@@ -722,14 +774,17 @@ def main():
             "last_reset": papers_date
         }
     
-    # Select the best paper to tweet (by tweetability score)
+    # Select the best paper to tweet based on time of day
     paper_to_tweet = select_best_paper(papers, tweeted_ids)
     
     if not paper_to_tweet:
         print("All papers have been tweeted today!")
         return
     
-    print(f"Selected paper: {paper_to_tweet['id']} (tweetability: {paper_to_tweet.get('tweetability_score', 0)})")
+    paper_type = "🪐 EXOPLANET" if paper_to_tweet.get("is_exoplanet_focused", True) else "🔭 GENERAL"
+    print(f"Selected paper: {paper_to_tweet['id']}")
+    print(f"  Type: {paper_type}")
+    print(f"  Tweetability: {paper_to_tweet.get('tweetability_score', 0)}")
     
     # Create Twitter clients (v2 for tweeting, v1.1 for media upload)
     client, api_v1 = create_twitter_client()

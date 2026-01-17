@@ -46,28 +46,41 @@ from post_twitter import (
 )
 
 
-def test_fetch_papers(max_papers: int = 3):
+def test_fetch_papers(max_papers: int = 50):
     """Test fetching papers from arXiv."""
     print("=" * 60)
-    print("📡 TESTING: Fetch papers from arXiv")
+    print("📡 TESTING: Fetch papers from arXiv (ALL astro-ph.EP)")
     print("=" * 60)
     
     try:
         papers = fetch_arxiv_papers(ARXIV_CATEGORY, max_papers)
-        print(f"✅ Successfully fetched {len(papers)} papers\n")
         
-        for i, paper in enumerate(papers, 1):
-            print(f"Paper {i}:")
-            print(f"  ID: {paper['id']}")
-            print(f"  Title: {paper['title'][:80]}...")
-            print(f"  Authors: {', '.join(paper['authors'][:3])}{'...' if len(paper['authors']) > 3 else ''}")
-            print(f"  Categories: {', '.join(paper['categories'])}")
-            print(f"  Tweetability Score: {paper.get('tweetability_score', 0)}")
-            print()
+        # Count by type
+        exo_count = sum(1 for p in papers if p.get('is_exoplanet_focused', False))
+        gen_count = len(papers) - exo_count
         
+        print(f"✅ Returning {len(papers)} papers for website/tweeting")
+        print(f"   🪐 Exoplanet-focused: {exo_count}")
+        print(f"   🔭 General astro-ph.EP: {gen_count}\n")
+        
+        # Show first 10 of each type
+        exo_papers = [p for p in papers if p.get('is_exoplanet_focused', False)]
+        gen_papers = [p for p in papers if not p.get('is_exoplanet_focused', False)]
+        
+        print("Top exoplanet papers (prime time tweets):")
+        for i, paper in enumerate(exo_papers[:5], 1):
+            print(f"  {i}. 🪐 Score: {paper.get('tweetability_score', 0):+3} | {paper['title'][:50]}...")
+        
+        print("\nTop general papers (off-peak tweets):")
+        for i, paper in enumerate(gen_papers[:5], 1):
+            print(f"  {i}. 🔭 Score: {paper.get('tweetability_score', 0):+3} | {paper['title'][:50]}...")
+        
+        print()
         return papers
     except Exception as e:
         print(f"❌ Error fetching papers: {e}")
+        import traceback
+        traceback.print_exc()
         return None
 
 
@@ -224,18 +237,47 @@ def test_paper_card_generation(papers: list):
 def test_tweetability_scoring(papers: list):
     """Test tweetability scoring and paper selection."""
     print("\n" + "=" * 60)
-    print("📊 TESTING: Tweetability scoring")
+    print("📊 TESTING: Tweetability scoring & time-based selection")
     print("=" * 60)
     
-    # Sort papers by tweetability score
-    sorted_papers = sorted(papers, key=lambda p: p.get('tweetability_score', 0), reverse=True)
+    # Separate by type (default to False since we now use stricter matching)
+    exoplanet_papers = [p for p in papers if p.get('is_exoplanet_focused', False)]
+    other_papers = [p for p in papers if not p.get('is_exoplanet_focused', False)]
     
-    print("\nPapers ranked by tweetability:")
-    for i, paper in enumerate(sorted_papers, 1):
-        score = paper.get('tweetability_score', 0)
-        print(f"  {i}. Score: {score:+3d} | {paper['title'][:60]}...")
+    print(f"\nPaper breakdown:")
+    print(f"  🪐 Exoplanet-focused: {len(exoplanet_papers)}")
+    print(f"  🔭 General astro-ph.EP: {len(other_papers)}")
     
-    print(f"\n✅ Best paper to tweet: {sorted_papers[0]['id']}")
+    # Show top 5 of each type
+    print("\nTop exoplanet papers (for prime time):")
+    for i, p in enumerate(sorted(exoplanet_papers, key=lambda x: -x.get('tweetability_score', 0))[:5], 1):
+        print(f"  {i}. 🪐 Score: {p.get('tweetability_score', 0):+3d} | {p['title'][:50]}...")
+    
+    print("\nTop general papers (for off-peak):")
+    for i, p in enumerate(sorted(other_papers, key=lambda x: -x.get('tweetability_score', 0))[:5], 1):
+        print(f"  {i}. 🔭 Score: {p.get('tweetability_score', 0):+3d} | {p['title'][:50]}...")
+    
+    # Test time-based selection
+    from datetime import datetime, timezone
+    now_utc = datetime.now(timezone.utc)
+    
+    # Import the function
+    from post_twitter import is_prime_time_pst, select_best_paper
+    
+    prime_time = is_prime_time_pst()
+    print(f"\nCurrent time: {now_utc.strftime('%H:%M')} UTC")
+    print(f"Prime time PST: {'YES 🌟' if prime_time else 'NO 📋'}")
+    
+    if prime_time:
+        print("🌟 PRIME TIME - Would tweet exoplanet papers")
+    else:
+        print("📋 OFF-PEAK - Would tweet general papers")
+    
+    # Simulate selection
+    selected = select_best_paper(papers, set())
+    if selected:
+        is_exo = "🪐 EXOPLANET" if selected.get('is_exoplanet_focused', False) else "🔭 GENERAL"
+        print(f"Would tweet: {is_exo} - {selected['id']}")
 
 
 def test_twitter_connection():
@@ -352,7 +394,7 @@ def save_test_data(papers: list):
 
 def main():
     parser = argparse.ArgumentParser(description="Test exoplanet paper system locally")
-    parser.add_argument("--papers", type=int, default=3, help="Number of papers to fetch (default: 3)")
+    parser.add_argument("--papers", type=int, default=50, help="Max papers to fetch (default: 50)")
     parser.add_argument("--summaries", type=int, default=1, help="Number of summaries to generate (default: 1)")
     parser.add_argument("--hooks", type=int, default=1, help="Number of tweet hooks to generate (default: 1)")
     parser.add_argument("--post", action="store_true", help="Actually post a tweet thread (requires confirmation)")

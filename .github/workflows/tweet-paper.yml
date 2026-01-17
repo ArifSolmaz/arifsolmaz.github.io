@@ -2,9 +2,14 @@ name: Tweet Paper Thread
 
 on:
   schedule:
-    # Tweet one paper per hour from 09:00-23:00 UTC on weekdays
-    # This spreads ~15 papers throughout the day
-    - cron: '0 9-23 * * 1-5'
+    # Full PST day: 7 AM - 11:59 PM PST
+    # PST = UTC - 8, so this spans across UTC midnight
+    
+    # Part 1: 15:00-23:00 UTC Mon-Fri (7 AM - 3:59 PM PST same day)
+    - cron: '0 15-23 * * 1-5'
+    
+    # Part 2: 00:00-07:00 UTC Tue-Sat (4 PM - 11 PM PST previous day = Mon-Fri PST)
+    - cron: '0 0-7 * * 2-6'
   workflow_dispatch:  # Allow manual trigger
 
 jobs:
