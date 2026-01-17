@@ -226,6 +226,8 @@ def fetch_paper_figure(paper_id: str) -> str | None:
 def download_image(url: str, paper_id: str) -> str | None:
     """Download an image to a temporary file. Returns file path or None."""
     try:
+        import tempfile
+        
         response = requests.get(url, timeout=15, headers={
             'User-Agent': 'Mozilla/5.0 (compatible; ExoplanetBot/1.0)'
         })
@@ -256,9 +258,10 @@ def download_image(url: str, paper_id: str) -> str | None:
         else:
             ext = '.png'  # Default
         
-        # Save to temp file
+        # Save to cross-platform temp directory
         safe_id = paper_id.replace('/', '_').replace('.', '_')
-        temp_path = f"/tmp/arxiv_fig_{safe_id}{ext}"
+        temp_dir = tempfile.gettempdir()
+        temp_path = os.path.join(temp_dir, f"arxiv_fig_{safe_id}{ext}")
         
         with open(temp_path, 'wb') as f:
             f.write(response.content)
@@ -283,6 +286,9 @@ def generate_paper_card(paper: dict) -> str | None:
         return None
     
     try:
+        import tempfile
+        import platform
+        
         # Card dimensions (Twitter recommends 1200x675 for cards)
         width, height = 1200, 675
         
@@ -299,12 +305,38 @@ def generate_paper_card(paper: dict) -> str | None:
         # Draw accent bar at top
         draw.rectangle([(0, 0), (width, 8)], fill=accent_color)
         
-        # Try to load fonts (fallback to default if not available)
-        try:
-            title_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 42)
-            body_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 28)
-            small_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 22)
-        except:
+        # Try to load fonts (with cross-platform support)
+        title_font = None
+        body_font = None
+        small_font = None
+        
+        # Font paths for different operating systems
+        font_paths = []
+        if platform.system() == "Windows":
+            font_paths = [
+                "C:/Windows/Fonts/arial.ttf",
+                "C:/Windows/Fonts/segoeui.ttf",
+                "C:/Windows/Fonts/calibri.ttf",
+            ]
+        else:  # Linux/Mac
+            font_paths = [
+                "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+                "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+                "/System/Library/Fonts/Helvetica.ttc",
+            ]
+        
+        # Try to load a font
+        for font_path in font_paths:
+            try:
+                title_font = ImageFont.truetype(font_path, 42)
+                body_font = ImageFont.truetype(font_path, 28)
+                small_font = ImageFont.truetype(font_path, 22)
+                break
+            except:
+                continue
+        
+        # Fallback to default if no font found
+        if title_font is None:
             title_font = ImageFont.load_default()
             body_font = ImageFont.load_default()
             small_font = ImageFont.load_default()
@@ -367,9 +399,10 @@ def generate_paper_card(paper: dict) -> str | None:
         # Draw planet emoji (as text, won't render as emoji but shows intent)
         draw.text((width - 100, height - 80), "🪐", fill=accent_color, font=small_font)
         
-        # Save
+        # Save to cross-platform temp directory
         safe_id = paper["id"].replace('/', '_').replace('.', '_')
-        temp_path = f"/tmp/arxiv_card_{safe_id}.png"
+        temp_dir = tempfile.gettempdir()
+        temp_path = os.path.join(temp_dir, f"arxiv_card_{safe_id}.png")
         img.save(temp_path, 'PNG')
         
         print(f"    Generated paper card: {temp_path}")
