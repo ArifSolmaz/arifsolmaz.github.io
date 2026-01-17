@@ -5,17 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Bilim Haberleri | Arif Solmaz</title>
-  <meta name="description" content="Astrofizik ve öte gezegen araştırmalarından güncel bilim haberleri, arXiv makalelerinden Türkçe özetler.">
+  <meta name="description" content="Öte gezegen araştırmalarından güncel bilim haberleri, arXiv makalelerinden Türkçe özetler.">
   
-  <!-- Favicon -->
   <link rel="icon" href="favicon.ico">
-  
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- Markdown parser -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   
   <style>
@@ -32,11 +27,7 @@
       --shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: var(--font-sans);
@@ -46,7 +37,6 @@
       min-height: 100vh;
     }
 
-    /* Header */
     header {
       display: flex;
       justify-content: space-between;
@@ -66,9 +56,7 @@
       text-decoration: none;
     }
 
-    .brand span {
-      color: var(--color-accent);
-    }
+    .brand span { color: var(--color-accent); }
 
     .nav-link {
       color: var(--color-text-muted);
@@ -77,11 +65,8 @@
       transition: color 0.2s;
     }
 
-    .nav-link:hover {
-      color: var(--color-accent);
-    }
+    .nav-link:hover { color: var(--color-accent); }
 
-    /* Page Header */
     .page-header {
       text-align: center;
       padding: 3rem 2rem 2rem;
@@ -112,44 +97,12 @@
       border-radius: 2px;
     }
 
-    /* Source Toggle */
-    .source-toggle {
-      display: flex;
-      justify-content: center;
-      gap: 0.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .source-btn {
-      padding: 0.5rem 1rem;
-      border: 1px solid var(--color-border);
-      background: var(--color-surface);
-      color: var(--color-text-muted);
-      border-radius: 20px;
-      cursor: pointer;
-      font-size: 0.85rem;
-      transition: all 0.2s;
-    }
-
-    .source-btn.active {
-      background: var(--color-accent);
-      color: var(--color-bg);
-      border-color: var(--color-accent);
-    }
-
-    .source-btn:hover:not(.active) {
-      border-color: var(--color-accent);
-      color: var(--color-accent);
-    }
-
-    /* Container */
     .container {
       max-width: 1400px;
       margin: 0 auto;
       padding: 0 2rem 3rem;
     }
 
-    /* Filter Box */
     .filter-info {
       display: none;
       align-items: center;
@@ -177,14 +130,12 @@
       color: var(--color-bg);
     }
 
-    /* Grid */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
       gap: 1.5rem;
     }
 
-    /* Card */
     .card {
       background: var(--color-surface);
       border: 1px solid var(--color-border);
@@ -211,13 +162,9 @@
       transition: transform 0.3s;
     }
 
-    .card:hover .card-img img {
-      transform: scale(1.05);
-    }
+    .card:hover .card-img img { transform: scale(1.05); }
 
-    .card-body {
-      padding: 1.25rem;
-    }
+    .card-body { padding: 1.25rem; }
 
     .card .date {
       font-size: 0.8rem;
@@ -264,9 +211,7 @@
       transition: background 0.2s;
     }
 
-    .tag:hover {
-      background: rgba(96, 165, 250, 0.2);
-    }
+    .tag:hover { background: rgba(96, 165, 250, 0.2); }
 
     .read-more {
       color: var(--color-accent);
@@ -274,13 +219,11 @@
       font-weight: 500;
     }
 
-    /* arxiv badge */
     .arxiv-badge {
       background: rgba(180, 83, 9, 0.2);
       color: #f59e0b;
     }
 
-    /* Modal */
     .modal-overlay {
       position: fixed;
       inset: 0;
@@ -293,9 +236,7 @@
       overflow-y: auto;
     }
 
-    .modal-overlay.active {
-      display: flex;
-    }
+    .modal-overlay.active { display: flex; }
 
     .modal-content {
       background: var(--color-surface);
@@ -320,12 +261,9 @@
       font-size: 1.5rem;
       cursor: pointer;
       z-index: 10;
-      transition: background 0.2s;
     }
 
-    .close-btn:hover {
-      background: rgba(0, 0, 0, 0.7);
-    }
+    .close-btn:hover { background: rgba(0, 0, 0, 0.7); }
 
     .modal-img {
       width: 100%;
@@ -333,16 +271,7 @@
       object-fit: cover;
     }
 
-    .modal-body {
-      padding: 1.5rem 2rem 2rem;
-    }
-
-    .modal-header-row {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 0.75rem;
-    }
+    .modal-body { padding: 1.5rem 2rem 2rem; }
 
     .modal-date {
       font-size: 0.85rem;
@@ -361,18 +290,9 @@
       line-height: 1.8;
     }
 
-    .modal-text p {
-      margin-bottom: 1rem;
-    }
-
-    .modal-text strong {
-      color: var(--color-accent);
-    }
-
-    .modal-text a {
-      color: var(--color-accent);
-      text-decoration: underline;
-    }
+    .modal-text p { margin-bottom: 1rem; }
+    .modal-text strong { color: var(--color-accent); }
+    .modal-text a { color: var(--color-accent); text-decoration: underline; }
 
     .modal-tags {
       display: flex;
@@ -399,12 +319,9 @@
       text-decoration: none;
       border-radius: 6px;
       font-size: 0.85rem;
-      transition: background 0.2s;
     }
 
-    .modal-link-btn:hover {
-      background: var(--color-accent);
-    }
+    .modal-link-btn:hover { background: var(--color-accent); }
 
     .modal-link-btn.secondary {
       background: transparent;
@@ -417,7 +334,6 @@
       color: var(--color-accent);
     }
 
-    /* Loading State */
     .loading-spinner {
       display: flex;
       flex-direction: column;
@@ -437,81 +353,38 @@
       margin-bottom: 1rem;
     }
 
-    @keyframes spin {
-      to {
-        transform: rotate(360deg);
-      }
-    }
+    @keyframes spin { to { transform: rotate(360deg); } }
 
-    /* Responsive */
     @media (max-width: 768px) {
-      header {
-        padding: 1rem;
-      }
-
-      .page-header {
-        padding: 2rem 1rem 1.5rem;
-      }
-
-      .page-title {
-        font-size: 1.8rem;
-      }
-
-      .container {
-        padding: 0 1rem 2rem;
-      }
-
-      .grid {
-        grid-template-columns: 1fr;
-      }
-
-      .modal-overlay {
-        padding: 0;
-        align-items: flex-start;
-      }
-
-      .modal-content {
-        border-radius: 0;
-        max-height: 100vh;
-      }
-
-      .modal-body {
-        padding: 1rem 1.25rem 1.5rem;
-      }
+      header { padding: 1rem; }
+      .page-header { padding: 2rem 1rem 1.5rem; }
+      .page-title { font-size: 1.8rem; }
+      .container { padding: 0 1rem 2rem; }
+      .grid { grid-template-columns: 1fr; }
+      .modal-overlay { padding: 0; align-items: flex-start; }
+      .modal-content { border-radius: 0; max-height: 100vh; }
+      .modal-body { padding: 1rem 1.25rem 1.5rem; }
     }
   </style>
 </head>
 
 <body>
-  <!-- Header -->
   <header>
     <a href="index.html" class="brand">Arif <span>Solmaz</span></a>
     <a href="index.html" class="nav-link">← Ana Sayfa</a>
   </header>
 
-  <!-- Page Header -->
   <div class="page-header">
     <h1 class="page-title">Bilim Haberleri</h1>
-    <p class="page-subtitle">Astrofizik ve bilim dünyasından güncel gelişmeler, makale özetleri ve notlar.</p>
-    <div class="header-line" aria-hidden="true"></div>
-    
-    <!-- Source Toggle -->
-    <div class="source-toggle" style="margin-top: 1.5rem;">
-      <button class="source-btn active" data-source="all">Tümü</button>
-      <button class="source-btn" data-source="arxiv">arXiv Haberleri</button>
-      <button class="source-btn" data-source="manual">Diğer Haberler</button>
-    </div>
+    <p class="page-subtitle">arXiv öte gezegen makalelerinden günlük Türkçe özetler</p>
+    <div class="header-line"></div>
   </div>
 
-  <!-- Main Content -->
   <div class="container">
-    <!-- Filter Box -->
     <div class="filter-info" id="filter-box">
       <span>Filtreleniyor: <strong id="active-tag-name"></strong></span>
       <button class="clear-btn" onclick="resetFilter()">Temizle</button>
     </div>
-
-    <!-- News Grid -->
     <div class="grid" id="news-grid">
       <div class="loading-spinner">
         <div class="spinner"></div>
@@ -520,15 +393,12 @@
     </div>
   </div>
 
-  <!-- Modal -->
   <div class="modal-overlay" id="modal">
     <div class="modal-content">
-      <button class="close-btn" onclick="closeModal()" aria-label="Kapat">×</button>
+      <button class="close-btn" onclick="closeModal()">×</button>
       <img src="" alt="" class="modal-img" id="m-img" referrerpolicy="no-referrer">
       <div class="modal-body">
-        <div class="modal-header-row" id="modal-header-container">
-          <span class="modal-date" id="m-date"></span>
-        </div>
+        <span class="modal-date" id="m-date"></span>
         <h2 class="modal-title" id="m-title"></h2>
         <div class="modal-text" id="m-text"></div>
         <div class="modal-links" id="m-links"></div>
@@ -537,160 +407,61 @@
     </div>
   </div>
 
-  <!-- JavaScript -->
   <script>
-    // ============================================
-    // CONFIGURATION
-    // ============================================
-    
-    // Local arXiv news JSON (auto-generated from papers.json)
     const ARXIV_NEWS_URL = "arxiv/data/arxiv_news.json";
     
-    // Google Sheet CSV (for manually added news)
-    const GOOGLE_SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRElLrJl3fWS40NSQJNiXvZwcjImJt4u00aK9q8zFdBVdN1gtBnrjl4t4tjuTXXhy2GTTVdiwGz6MZP/pub?output=csv";
-
-    // ============================================
-    // STATE
-    // ============================================
-    let arxivNews = [];
-    let manualNews = [];
-    let allNews = [];
-    let currentSource = 'all';
-
-    // ============================================
-    // DOM ELEMENTS
-    // ============================================
+    let newsData = [];
     const grid = document.getElementById('news-grid');
     const filterBox = document.getElementById('filter-box');
     const activeTagName = document.getElementById('active-tag-name');
     const modal = document.getElementById('modal');
-    const mImg = document.getElementById('m-img');
-    const mDate = document.getElementById('m-date');
-    const mTitle = document.getElementById('m-title');
-    const mText = document.getElementById('m-text');
-    const mTags = document.getElementById('m-tags');
-    const mLinks = document.getElementById('m-links');
 
-    // ============================================
-    // DATA LOADING
-    // ============================================
-    
-    async function loadArxivNews() {
-      try {
-        const response = await fetch(ARXIV_NEWS_URL);
-        if (!response.ok) throw new Error('arXiv news not found');
-        const data = await response.json();
-        
-        // Process arxiv news
-        return data.map(item => ({
-          ...item,
-          source: 'arxiv',
-          tags: item.tags ? (typeof item.tags === 'string' ? item.tags.split(',').map(t => t.trim()) : item.tags) : []
-        }));
-      } catch (e) {
-        console.log('arXiv news not available:', e.message);
-        return [];
-      }
-    }
-
-    async function loadManualNews() {
-      try {
-        const response = await fetch(GOOGLE_SHEET_CSV_URL);
-        if (!response.ok) throw new Error('Google Sheet not available');
-        const csv = await response.text();
-        
-        const lines = csv.split('\n');
-        const headers = parseCSVLine(lines[0]);
-        
-        return lines.slice(1)
-          .filter(line => line.trim())
-          .map(line => {
-            const values = parseCSVLine(line);
-            const item = {};
-            headers.forEach((h, i) => item[h.trim()] = values[i] || '');
-            
-            return {
-              ...item,
-              source: 'manual',
-              tags: item.tags ? item.tags.split(',').map(t => t.trim()) : []
-            };
-          })
-          .filter(item => item.id && item.title);
-      } catch (e) {
-        console.log('Manual news not available:', e.message);
-        return [];
-      }
-    }
-
-    function parseCSVLine(line) {
-      const result = [];
-      let current = '';
-      let inQuotes = false;
-      
-      for (let i = 0; i < line.length; i++) {
-        const char = line[i];
-        
-        if (char === '"') {
-          inQuotes = !inQuotes;
-        } else if (char === ',' && !inQuotes) {
-          result.push(current.trim());
-          current = '';
-        } else {
-          current += char;
-        }
-      }
-      result.push(current.trim());
+    function stripMarkdown(text) {
+      if (!text) return '';
+      let result = text;
+      // Remove asterisks (all unicode variants)
+      result = result.replace(/[\*\u002A\uFE61\uFF0A]/g, '');
+      // Remove markdown links
+      result = result.replace(/\[([^\]]*)\]\([^)]*\)/g, '$1');
+      // Remove headers
+      result = result.replace(/#{1,6}\s*/g, '');
+      // Clean whitespace
+      result = result.replace(/\\n/g, ' ').replace(/\n/g, ' ').replace(/\s+/g, ' ').trim();
       return result;
     }
 
-    async function loadAllNews() {
-      // Load both sources in parallel
-      const [arxiv, manual] = await Promise.all([
-        loadArxivNews(),
-        loadManualNews()
-      ]);
-      
-      arxivNews = arxiv;
-      manualNews = manual;
-      
-      // Combine and sort by date (newest first)
-      allNews = [...arxivNews, ...manualNews].sort((a, b) => {
-        return new Date(b.date) - new Date(a.date);
-      });
-      
-      console.log(`Loaded: ${arxivNews.length} arXiv news, ${manualNews.length} manual news`);
-      
-      renderNews(getFilteredNews());
+    async function loadNews() {
+      try {
+        const response = await fetch(ARXIV_NEWS_URL);
+        if (!response.ok) throw new Error('Not found');
+        const data = await response.json();
+        
+        newsData = data.map(item => ({
+          ...item,
+          tags: item.tags ? (typeof item.tags === 'string' ? item.tags.split(',').map(t => t.trim()) : item.tags) : []
+        }));
+        
+        renderNews(newsData);
+      } catch (e) {
+        grid.innerHTML = `<p style="color:var(--color-text-muted); grid-column:1/-1; text-align:center; padding:3rem;">
+          Henüz haber yok. Haberler otomatik olarak her gün oluşturulacak.
+        </p>`;
+      }
     }
 
-    function getFilteredNews() {
-      if (currentSource === 'arxiv') return arxivNews;
-      if (currentSource === 'manual') return manualNews;
-      return allNews;
-    }
-
-    // ============================================
-    // RENDERING
-    // ============================================
-    
-    function renderNews(dataToRender) {
+    function renderNews(data) {
       grid.innerHTML = "";
       
-      if (dataToRender.length === 0) {
-        grid.innerHTML = `<p style='color:var(--color-text-muted); grid-column:1/-1; text-align:center; padding: 3rem;'>
-          Bu kategoride haber bulunamadı.
-        </p>`;
+      if (data.length === 0) {
+        grid.innerHTML = `<p style="color:var(--color-text-muted); grid-column:1/-1; text-align:center; padding:3rem;">Haber bulunamadı.</p>`;
         return;
       }
 
-      dataToRender.forEach((item) => {
-        const realIndex = allNews.indexOf(item);
+      data.forEach((item, index) => {
+        const cleanTitle = stripMarkdown(item.title);
+        const cleanText = stripMarkdown(item.text);
         
-        // Generate tags HTML
-        let tagsHtml = '';
-        if (item.source === 'arxiv') {
-          tagsHtml += `<span class="tag arxiv-badge">arXiv</span>`;
-        }
+        let tagsHtml = '<span class="tag arxiv-badge">arXiv</span>';
         const uniqTags = [...new Set(item.tags || [])].slice(0, 4);
         uniqTags.forEach(t => {
           if (t && t !== 'arXiv') {
@@ -698,22 +469,8 @@
           }
         });
 
-        // Clean text preview - strip ALL markdown formatting
-        let plainText = (item.text || '');
-        // Remove markdown bold/italic (use split/join - more reliable than regex)
-        plainText = plainText.split('**').join('');
-        plainText = plainText.split('*').join('');
-        // Remove markdown links [text](url) -> text
-        plainText = plainText.replace(/\[([^\]]+)\]\([^\)]+\)/g, '$1');
-        // Remove headers
-        plainText = plainText.replace(/#{1,6}\s*/g, '');
-        // Clean up whitespace
-        plainText = plainText.replace(/\\n/g, ' ').replace(/\n/g, ' ').replace(/\s+/g, ' ').trim();
-
         const card = document.createElement('div');
         card.className = 'card';
-        // Also clean title of any markdown
-        const cleanTitle = (item.title || '').split('**').join('').split('*').join('');
         card.innerHTML = `
           <div class="card-img">
             <img src="${item.image || 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=600&q=80'}" 
@@ -723,22 +480,18 @@
           <div class="card-body">
             <span class="date">${item.date}</span>
             <div class="title">${cleanTitle}</div>
-            <div class="summary">${plainText}</div>
+            <div class="summary">${cleanText}</div>
             <div class="tags">${tagsHtml}</div>
-            <div class="read-more"><span>Devamını Oku →</span></div>
+            <div class="read-more">Devamını Oku →</div>
           </div>
         `;
-        card.onclick = () => openModal(realIndex);
+        card.onclick = () => openModal(index);
         grid.appendChild(card);
       });
     }
 
-    // ============================================
-    // FILTERING
-    // ============================================
-    
     function filterByTag(tagName) {
-      const filtered = allNews.filter(item => item.tags && item.tags.includes(tagName));
+      const filtered = newsData.filter(item => item.tags && item.tags.includes(tagName));
       renderNews(filtered);
       filterBox.style.display = 'flex';
       activeTagName.textContent = tagName;
@@ -746,66 +499,32 @@
     }
 
     function resetFilter() {
-      renderNews(getFilteredNews());
+      renderNews(newsData);
       filterBox.style.display = 'none';
     }
 
-    // ============================================
-    // SOURCE TOGGLE
-    // ============================================
-    
-    document.querySelectorAll('.source-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.source-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        currentSource = btn.dataset.source;
-        filterBox.style.display = 'none';
-        renderNews(getFilteredNews());
-      });
-    });
-
-    // ============================================
-    // MODAL
-    // ============================================
-    
     function openModal(index) {
-      const item = allNews[index];
+      const item = newsData[index];
       if (!item) return;
       
-      mImg.src = item.image || 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=600&q=80';
-      mDate.textContent = item.date;
-      mTitle.textContent = item.title;
+      document.getElementById('m-img').src = item.image || 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=600&q=80';
+      document.getElementById('m-date').textContent = item.date;
+      document.getElementById('m-title').textContent = stripMarkdown(item.title);
 
-      // Markdown -> HTML (handle escaped newlines)
-      let textContent = (item.text || '')
-        .replace(/\\n/g, '\n')
-        .replace(/\\\\n/g, '\n');  // Handle double-escaped
-      mText.innerHTML = marked.parse(textContent);
+      let textContent = (item.text || '').replace(/\\n/g, '\n');
+      document.getElementById('m-text').innerHTML = marked.parse(textContent);
 
-      // Make links safe
-      mText.querySelectorAll('a').forEach(link => {
-        link.setAttribute('target', '_blank');
-        link.setAttribute('rel', 'noopener noreferrer');
-      });
-
-      // Generate links for arxiv items
+      const mLinks = document.getElementById('m-links');
       mLinks.innerHTML = '';
-      if (item.source === 'arxiv' && item.abs_link) {
+      if (item.abs_link) {
         mLinks.innerHTML = `
-          <a href="${item.abs_link}" target="_blank" rel="noopener" class="modal-link-btn">
-            📄 arXiv Makalesi
-          </a>
-          <a href="${item.pdf_link || item.abs_link.replace('/abs/', '/pdf/') + '.pdf'}" target="_blank" rel="noopener" class="modal-link-btn secondary">
-            📥 PDF İndir
-          </a>
+          <a href="${item.abs_link}" target="_blank" rel="noopener" class="modal-link-btn">📄 arXiv Makalesi</a>
+          <a href="${item.pdf_link || item.abs_link.replace('/abs/', '/pdf/') + '.pdf'}" target="_blank" rel="noopener" class="modal-link-btn secondary">📥 PDF İndir</a>
         `;
       }
 
-      // Generate tags
-      mTags.innerHTML = '';
-      if (item.source === 'arxiv') {
-        mTags.innerHTML += `<span class="tag arxiv-badge">arXiv</span>`;
-      }
+      const mTags = document.getElementById('m-tags');
+      mTags.innerHTML = '<span class="tag arxiv-badge">arXiv</span>';
       (item.tags || []).forEach(t => {
         if (t && t !== 'arXiv') {
           mTags.innerHTML += `<span class="tag" onclick="filterByTag('${t}'); closeModal();">${t}</span>`;
@@ -821,21 +540,10 @@
       document.body.style.overflow = '';
     }
 
-    // Close modal on overlay click
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) closeModal();
-    });
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
 
-    // Close modal on Escape key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeModal();
-    });
-
-    // ============================================
-    // INITIALIZATION
-    // ============================================
-    
-    loadAllNews();
+    loadNews();
   </script>
 </body>
 </html>
