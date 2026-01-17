@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Bilim Haberleri | Arif Solmaz</title>
-  <meta name="description" content="Ötegezegen araştırmaları ve güncel bilim haberleri, arXiv makalelerinden Türkçe özetler.">
+  <meta name="description" content="Öte gezegen araştırmalarından güncel bilim haberleri, arXiv makalelerinden Türkçe özetler.">
   
   <link rel="icon" href="favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -405,7 +405,7 @@
 
   <div class="page-header">
     <h1 class="page-title">Bilim Haberleri</h1>
-    <p class="page-subtitle">arXiv makalelerinden günlük Türkçe özetler</p>
+    <p class="page-subtitle">arXiv öte gezegen makalelerinden günlük Türkçe özetler</p>
     <div class="header-line"></div>
   </div>
 
@@ -472,6 +472,9 @@
         }));
         
         renderNews(newsData);
+        
+        // Check for deep link hash
+        checkHash();
       } catch (e) {
         grid.innerHTML = `<p style="color:var(--color-text-muted); grid-column:1/-1; text-align:center; padding:3rem;">
           Henüz haber yok. Haberler otomatik olarak her gün oluşturulacak.
@@ -501,6 +504,7 @@
 
         const card = document.createElement('div');
         card.className = 'card';
+        card.id = item.id;  // Add ID for deep linking
         card.innerHTML = `
           <div class="card-img">
             <img src="${item.image || 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=600&q=80'}" 
@@ -515,7 +519,7 @@
             <div class="read-more">Devamını Oku →</div>
           </div>
         `;
-        card.onclick = () => openModal(index);
+        card.onclick = () => openModalById(item.id);
         grid.appendChild(card);
       });
     }
@@ -533,9 +537,12 @@
       filterBox.style.display = 'none';
     }
 
-    function openModal(index) {
-      const item = newsData[index];
+    function openModalById(itemId) {
+      const item = newsData.find(n => n.id === itemId);
       if (!item) return;
+      
+      // Update URL hash
+      history.replaceState(null, null, '#' + itemId);
       
       document.getElementById('m-img').src = item.image || 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=600&q=80';
       document.getElementById('m-date').textContent = item.date;
@@ -552,10 +559,10 @@
         `;
       }
 
-      // Share buttons
-      const shareUrl = encodeURIComponent(window.location.href.split('#')[0] + '#news-' + index);
+      // Share buttons - use item.id for permanent links
+      const shareUrl = encodeURIComponent(window.location.origin + window.location.pathname + '#' + itemId);
       const shareTitle = encodeURIComponent(stripMarkdown(item.title));
-      const shareText = encodeURIComponent(stripMarkdown(item.title) + ' - arXiv öte gezegen haberleri');
+      const shareText = encodeURIComponent(stripMarkdown(item.title) + ' - arXiv ötegezegen haberleri');
       
       const mShare = document.getElementById('m-share');
       mShare.innerHTML = `
@@ -568,7 +575,7 @@
         <a href="mailto:?subject=${shareTitle}&body=${shareText}%0A%0A${shareUrl}" class="share-btn" title="E-posta ile Paylaş">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
         </a>
-        <button onclick="copyNewsLink(${index})" class="share-btn" title="Linki Kopyala">
+        <button onclick="copyNewsLink('${itemId}')" class="share-btn" title="Linki Kopyala">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
         </button>
       `;
@@ -588,17 +595,39 @@
     function closeModal() {
       modal.classList.remove('active');
       document.body.style.overflow = '';
+      history.replaceState(null, null, window.location.pathname);
     }
 
-    function copyNewsLink(index) {
-      const url = window.location.href.split('#')[0] + '#news-' + index;
+    function copyNewsLink(itemId) {
+      const url = window.location.origin + window.location.pathname + '#' + itemId;
       navigator.clipboard.writeText(url).then(() => {
         alert('Link kopyalandı!');
       });
     }
 
+    // Handle deep linking - open modal if hash present
+    function checkHash() {
+      const hash = window.location.hash.slice(1);
+      if (hash && newsData.length > 0) {
+        const item = newsData.find(n => n.id === hash);
+        if (item) {
+          openModalById(hash);
+        }
+      }
+    }
+
     modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+    
+    // Handle back/forward button navigation
+    window.addEventListener('hashchange', () => {
+      const hash = window.location.hash.slice(1);
+      if (hash) {
+        openModalById(hash);
+      } else {
+        closeModal();
+      }
+    });
 
     loadNews();
   </script>
