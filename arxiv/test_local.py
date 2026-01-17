@@ -13,6 +13,9 @@ Usage:
     # Test with specific number of papers
     python test_local.py --papers 3
 
+    # Generate ALL summaries (takes longer, costs ~$1-2)
+    python test_local.py --summaries all
+
 Requirements:
     pip install requests anthropic tweepy pillow
 """
@@ -84,7 +87,7 @@ def test_fetch_papers(max_papers: int = 25):
         return None
 
 
-def test_generate_summaries(papers: list, max_summaries: int = 1):
+def test_generate_summaries(papers: list, max_summaries: int | str = 1):
     """Test AI summary generation."""
     print("=" * 60)
     print("🤖 TESTING: Generate AI summaries")
@@ -95,6 +98,16 @@ def test_generate_summaries(papers: list, max_summaries: int = 1):
         print("⚠️  ANTHROPIC_API_KEY not set. Skipping summary generation.")
         print("   Set it with: export ANTHROPIC_API_KEY='your-key-here'")
         return papers
+    
+    # Handle 'all' option
+    if max_summaries == "all":
+        max_summaries = len(papers)
+        print(f"📝 Generating summaries for ALL {max_summaries} papers...")
+    else:
+        max_summaries = int(max_summaries)
+        if max_summaries < len(papers):
+            print(f"⚠️  Only generating {max_summaries}/{len(papers)} summaries.")
+            print(f"   Use --summaries all to generate all summaries.")
     
     try:
         import anthropic
@@ -117,7 +130,7 @@ def test_generate_summaries(papers: list, max_summaries: int = 1):
         return papers
 
 
-def test_generate_tweet_hooks(papers: list, max_hooks: int = 1):
+def test_generate_tweet_hooks(papers: list, max_hooks: int | str = 1):
     """Test tweet hook generation."""
     print("\n" + "=" * 60)
     print("🎣 TESTING: Generate tweet hooks")
@@ -127,6 +140,12 @@ def test_generate_tweet_hooks(papers: list, max_hooks: int = 1):
     if not api_key:
         print("⚠️  ANTHROPIC_API_KEY not set. Skipping hook generation.")
         return papers
+    
+    # Handle 'all' option
+    if max_hooks == "all":
+        max_hooks = len(papers)
+    else:
+        max_hooks = int(max_hooks)
     
     try:
         import anthropic
@@ -375,13 +394,23 @@ def test_post_thread(client, api_v1, papers: list):
         print("Cancelled.")
 
 
-def save_test_data(papers: list):
+def save_test_data(papers: list, warn_missing: bool = True):
     """Save test data to papers.json for website testing."""
     print("\n" + "=" * 60)
     print("💾 SAVING: Test data to papers.json")
     print("=" * 60)
     
     from datetime import datetime, timezone
+    
+    # Count papers with/without summaries
+    papers_with_summary = sum(1 for p in papers if p.get("summary_html") and p["summary_html"] != "<p><em>Summary unavailable.</em></p>")
+    papers_without_summary = len(papers) - papers_with_summary
+    
+    if warn_missing and papers_without_summary > 0:
+        print(f"\n⚠️  WARNING: {papers_without_summary}/{len(papers)} papers are MISSING summaries!")
+        print(f"   The website will show 'Summary unavailable' for these papers.")
+        print(f"   To generate all summaries, run: python test_local.py --summaries all")
+        print()
     
     output = {
         "updated_at": datetime.now(timezone.utc).isoformat(),
@@ -397,6 +426,8 @@ def save_test_data(papers: list):
         json.dump(output, f, indent=2, ensure_ascii=False)
     
     print(f"✅ Saved {len(papers)} papers to {output_file}")
+    print(f"   📝 With summaries: {papers_with_summary}")
+    print(f"   ❌ Missing summaries: {papers_without_summary}")
     print(f"\n📖 To test the website:")
     print(f"   cd {Path(__file__).parent}")
     print(f"   python -m http.server 8000")
@@ -406,13 +437,14 @@ def save_test_data(papers: list):
 def main():
     parser = argparse.ArgumentParser(description="Test exoplanet paper system locally")
     parser.add_argument("--papers", type=int, default=25, help="Max papers to fetch (default: 25)")
-    parser.add_argument("--summaries", type=int, default=1, help="Number of summaries to generate (default: 1)")
-    parser.add_argument("--hooks", type=int, default=1, help="Number of tweet hooks to generate (default: 1)")
+    parser.add_argument("--summaries", default="1", help="Number of summaries to generate, or 'all' (default: 1)")
+    parser.add_argument("--hooks", default="1", help="Number of tweet hooks to generate, or 'all' (default: 1)")
     parser.add_argument("--post", action="store_true", help="Actually post a tweet thread (requires confirmation)")
     parser.add_argument("--skip-fetch", action="store_true", help="Skip fetching papers (use existing data)")
+    parser.add_argument("--no-save", action="store_true", help="Don't save papers.json (preview only)")
     args = parser.parse_args()
     
-    print("\n🪐 Exoplanet Papers - Local Test Suite (IMPROVED)\n")
+    print("\n🪐 Exoplanet Papers - Local Test Suite\n")
     
     # Step 1: Fetch papers
     if args.skip_fetch:
@@ -455,19 +487,13 @@ def main():
         client, api_v1 = twitter_result
         test_post_thread(client, api_v1, papers)
     
-    # Step 10: Save test data
-    save_test_data(papers)
+    # Step 10: Save test data (unless --no-save)
+    if not args.no_save:
+        save_test_data(papers)
     
     print("\n" + "=" * 60)
     print("✅ All tests completed!")
     print("=" * 60)
-    print("\n📋 Summary of improvements:")
-    print("   • Tweet hooks: Hook → Claim → Evidence → Question format")
-    print("   • Hashtags: Fixed lowercase matching, limited to 2-4 tags")
-    print("   • Threading: Tweet 1 (content + image), Tweet 2 (links)")
-    print("   • Selection: Papers ranked by tweetability score")
-    print("   • Images: Fallback paper card when no figure available")
-    print("   • Website: Share button added to paper modals")
 
 
 if __name__ == "__main__":

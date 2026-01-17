@@ -471,6 +471,17 @@ def format_summary_html(summary: str) -> str:
     return '\n'.join(formatted)
 
 
+def paper_needs_summary(paper: dict) -> bool:
+    """Check if a paper is missing its summary or tweet hook."""
+    summary_html = paper.get("summary_html", "")
+    has_summary = summary_html and summary_html != "<p><em>Summary unavailable.</em></p>"
+    
+    tweet_hook = paper.get("tweet_hook", {})
+    has_hook = tweet_hook and tweet_hook.get("hook")
+    
+    return not has_summary or not has_hook
+
+
 def main():
     """Main function to fetch papers and generate summaries."""
     
@@ -497,14 +508,24 @@ def main():
     
     new_paper_ids = {p["id"] for p in papers}
     
-    # Check if paper list is identical
+    # Check if paper list is identical AND all have summaries
+    # BUG FIX: Don't skip if papers are missing summaries!
     if new_paper_ids == existing_ids:
-        print("No new papers since last update. Skipping summary generation.")
-        # Still update the timestamp
-        existing_data["updated_at"] = datetime.now(timezone.utc).isoformat()
-        with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-            json.dump(existing_data, f, indent=2, ensure_ascii=False)
-        return
+        # Check if any papers are missing summaries
+        papers_missing_summaries = [
+            p_id for p_id in new_paper_ids 
+            if p_id in existing_papers and paper_needs_summary(existing_papers[p_id])
+        ]
+        
+        if not papers_missing_summaries:
+            print("No new papers since last update and all have summaries. Skipping.")
+            # Still update the timestamp
+            existing_data["updated_at"] = datetime.now(timezone.utc).isoformat()
+            with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+                json.dump(existing_data, f, indent=2, ensure_ascii=False)
+            return
+        else:
+            print(f"Found {len(papers_missing_summaries)} papers missing summaries. Regenerating...")
     
     # Initialize Anthropic client
     api_key = os.environ.get("ANTHROPIC_API_KEY")
@@ -519,17 +540,27 @@ def main():
         # Check if we already have content for this paper
         if paper["id"] in existing_papers:
             existing = existing_papers[paper["id"]]
-            if existing.get("summary_html"):
-                print(f"Reusing existing summary for {paper['id']}")
-                paper["summary"] = existing["summary"]
-                paper["summary_html"] = existing["summary_html"]
-                # Also reuse tweet hook if exists
-                if existing.get("tweet_hook"):
-                    paper["tweet_hook"] = existing["tweet_hook"]
+            
+            # Check if existing paper has valid summary
+            existing_summary = existing.get("summary_html", "")
+            has_valid_summary = existing_summary and existing_summary != "<p><em>Summary unavailable.</em></p>"
+            
+            # Check if existing paper has valid tweet hook
+            existing_hook = existing.get("tweet_hook", {})
+            has_valid_hook = existing_hook and existing_hook.get("hook")
+            
+            if has_valid_summary and has_valid_hook:
+                print(f"Reusing existing content for {paper['id']}")
+                paper["summary"] = existing.get("summary", "")
+                paper["summary_html"] = existing_summary
+                paper["tweet_hook"] = existing_hook
                 # Preserve tweetability score if already calculated
                 if existing.get("tweetability_score") is not None:
                     paper["tweetability_score"] = existing["tweetability_score"]
                 continue
+            else:
+                # Paper exists but is missing content - need to generate
+                print(f"Paper {paper['id']} exists but missing content (summary: {has_valid_summary}, hook: {has_valid_hook})")
         
         print(f"Generating content {i+1}/{len(papers)}: {paper['id']}")
         
