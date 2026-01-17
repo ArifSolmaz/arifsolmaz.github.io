@@ -250,12 +250,18 @@
             border-color: var(--border-accent);
         }
 
-        .paper-number {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.7rem;
-            color: var(--text-muted);
-            min-width: 20px;
-            padding-top: 0.25rem;
+        .paper-thumb {
+            width: 80px;
+            height: 60px;
+            border-radius: 6px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .paper-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .paper-content {
@@ -365,6 +371,19 @@
         .modal-close:hover {
             background: var(--border);
             color: var(--text-primary);
+        }
+
+        .modal-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            border-radius: 16px 16px 0 0;
+        }
+
+        .modal-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .modal-header {
@@ -677,10 +696,11 @@
         function renderHighlight(paper) {
             const safeId = getSafeId(paper.id);
             const teaser = getTeaser(paper);
+            const imageUrl = paper.figure_url || 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=800&q=80';
             
             return `
                 <div class="section-title">⭐ Today's Highlight</div>
-                <div class="highlight-card" onclick="openModal('${safeId}')">
+                <div class="highlight-card" onclick="openModal('${safeId}')" style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.9), rgba(139, 92, 246, 0.9)), url('${imageUrl}'); background-size: cover; background-position: center;">
                     <span class="highlight-category">${(paper.categories || ['astro-ph.EP'])[0]}</span>
                     <div class="highlight-title">${paper.title}</div>
                     <div class="highlight-authors">${formatAuthorsShort(paper.authors)}</div>
@@ -694,10 +714,13 @@
         function renderPaperItem(paper, index) {
             const safeId = getSafeId(paper.id);
             const isExoplanet = paper.is_exoplanet_focused !== false;
+            const imageUrl = paper.figure_url || 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=400&q=80';
             
             return `
                 <div class="paper-item" onclick="openModal('${safeId}')">
-                    <div class="paper-number">${String(index + 1).padStart(2, '0')}</div>
+                    <div class="paper-thumb">
+                        <img src="${imageUrl}" alt="" onerror="this.src='https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=400&q=80'" />
+                    </div>
                     <div class="paper-content">
                         <div class="paper-meta">
                             <span class="paper-category">${(paper.categories || ['astro-ph.EP'])[0]}</span>
@@ -754,8 +777,12 @@
         function renderModalContent(paper) {
             const safeId = getSafeId(paper.id);
             const isExoplanet = paper.is_exoplanet_focused !== false;
+            const imageUrl = paper.figure_url || 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=800&q=80';
             
             return `
+                <div class="modal-image">
+                    <img src="${imageUrl}" alt="" onerror="this.src='https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=800&q=80'" />
+                </div>
                 <div class="modal-header">
                     <div class="modal-meta">
                         ${(paper.categories || []).slice(0, 2).map(cat => 

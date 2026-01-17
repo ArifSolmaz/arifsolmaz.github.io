@@ -17,10 +17,83 @@ import re
 import time
 from datetime import datetime, timezone
 from pathlib import Path
+import urllib.request
+import urllib.error
 
 import anthropic
 import requests
 from xml.etree import ElementTree as ET
+
+
+def fetch_arxiv_figure(paper_id: str) -> str | None:
+    """Try to fetch the first figure from arXiv HTML version of the paper."""
+    try:
+        # Try arXiv HTML page first
+        html_url = f"https://arxiv.org/html/{paper_id}"
+        
+        req = urllib.request.Request(html_url, headers={'User-Agent': 'Mozilla/5.0 (compatible; ExoplanetBot/1.0)'})
+        with urllib.request.urlopen(req, timeout=10) as response:
+            html = response.read().decode('utf-8', errors='ignore')
+        
+        # Look for figure images
+        patterns = [
+            r'<figure[^>]*>.*?<img[^>]+src=["\']([^"\']+)["\']',
+            r'<img[^>]+class=["\'][^"\']*ltx_graphics[^"\']*["\'][^>]+src=["\']([^"\']+)["\']',
+        ]
+        
+        for pattern in patterns:
+            matches = re.findall(pattern, html, re.IGNORECASE | re.DOTALL)
+            if matches:
+                img_path = matches[0] if isinstance(matches[0], str) else matches[0][0]
+                if img_path.startswith('/'):
+                    return f"https://arxiv.org{img_path}"
+                elif img_path.startswith('http'):
+                    return img_path
+                else:
+                    return f"https://arxiv.org/html/{paper_id}/{img_path}"
+        
+        return None
+    except Exception:
+        return None
+
+
+def get_topic_fallback_image(title: str, abstract: str) -> str:
+    """Get a topic-based fallback image based on paper content."""
+    content = (title + " " + abstract).lower()
+    
+    if any(word in content for word in ["jwst", "james webb"]):
+        return "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=800&q=80"
+    elif any(word in content for word in ["mars", "martian"]):
+        return "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?w=800&q=80"
+    elif any(word in content for word in ["jupiter", "jovian", "gas giant"]):
+        return "https://images.unsplash.com/photo-1614732414444-096e5f1122d5?w=800&q=80"
+    elif any(word in content for word in ["saturn", "ring", "titan"]):
+        return "https://images.unsplash.com/photo-1614724723656-457ac62c2c98?w=800&q=80"
+    elif any(word in content for word in ["habitable", "earth-like", "rocky"]):
+        return "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80"
+    elif any(word in content for word in ["atmosphere", "spectrum"]):
+        return "https://images.unsplash.com/photo-1464802686167-b939a6910659?w=800&q=80"
+    elif any(word in content for word in ["transit", "kepler", "tess"]):
+        return "https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?w=800&q=80"
+    elif any(word in content for word in ["binary", "orbit"]):
+        return "https://images.unsplash.com/photo-1543722530-d2c3201371e7?w=800&q=80"
+    elif any(word in content for word in ["disk", "protoplanet", "formation"]):
+        return "https://images.unsplash.com/photo-1537420327992-d6e192287183?w=800&q=80"
+    elif any(word in content for word in ["water", "ocean", "ice"]):
+        return "https://images.unsplash.com/photo-1614728263952-84ea256f9679?w=800&q=80"
+    elif any(word in content for word in ["sun", "solar", "stellar"]):
+        return "https://images.unsplash.com/photo-1532693322450-2cb5c511067d?w=800&q=80"
+    
+    # Generic fallbacks
+    fallbacks = [
+        "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=800&q=80",
+        "https://images.unsplash.com/photo-1464802686167-b939a6910659?w=800&q=80",
+        "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=800&q=80",
+        "https://images.unsplash.com/photo-1475274047050-1d0c0975c63e?w=800&q=80",
+        "https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?w=800&q=80",
+        "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?w=800&q=80",
+    ]
+    return fallbacks[hash(title) % len(fallbacks)]
 
 
 # Configuration
@@ -587,6 +660,34 @@ def main():
                 "evidence": "",
                 "question": ""
             }
+    
+    # Fetch figures for all papers
+    print("\nFetching figures for papers...")
+    for i, paper in enumerate(papers):
+        # Skip if already has figure
+        if paper.get("figure_url"):
+            continue
+        
+        # Check if existing paper has figure
+        if paper["id"] in existing_papers and existing_papers[paper["id"]].get("figure_url"):
+            paper["figure_url"] = existing_papers[paper["id"]]["figure_url"]
+            continue
+        
+        print(f"  [{i+1}/{len(papers)}] Fetching figure for {paper['id']}...")
+        
+        # Try to fetch actual figure from arXiv
+        figure_url = fetch_arxiv_figure(paper["id"])
+        
+        if figure_url:
+            print(f"    ✓ Found arXiv figure")
+            paper["figure_url"] = figure_url
+        else:
+            # Use topic-based fallback
+            paper["figure_url"] = get_topic_fallback_image(paper["title"], paper["abstract"])
+            print(f"    → Using topic-based fallback")
+        
+        # Small delay to be nice to arXiv
+        time.sleep(0.3)
     
     # Prepare output data
     output = {
