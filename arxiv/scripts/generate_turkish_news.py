@@ -19,8 +19,8 @@ import anthropic
 PAPERS_FILE = Path(__file__).parent.parent / "data" / "papers.json"
 NEWS_FILE = Path(__file__).parent.parent / "data" / "arxiv_news.json"
 EXISTING_NEWS_FILE = Path(__file__).parent.parent / "data" / "existing_news.json"
-MAX_NEWS_ITEMS = 50  # Keep last 50 news items to avoid file bloat
-MAX_PAPERS_PER_DAY = 5  # Maximum papers to convert to news per day
+MAX_NEWS_ITEMS = 100  # Keep last 100 news items to avoid file bloat
+MAX_PAPERS_PER_DAY = 50  # Process all exoplanet papers (typically 10-25 per day)
 
 # Turkish news generation prompt
 TURKISH_NEWS_PROMPT = """Sen bir bilim gazetecisisin. Aşağıdaki akademik makale özetini, Türkçe basın bülteni tarzında popüler bilim haberi olarak yeniden yaz.
