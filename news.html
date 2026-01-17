@@ -698,14 +698,16 @@
           }
         });
 
-        // Clean text preview - properly strip all markdown
+        // Clean text preview - strip ALL markdown formatting
         let plainText = (item.text || '')
-          .replace(/\*\*([^*]+)\*\*/g, '$1')  // **bold** → bold
-          .replace(/\*([^*]+)\*/g, '$1')      // *italic* → italic
+          .replace(/\*\*/g, '')               // Remove all ** 
+          .replace(/\*/g, '')                 // Remove all *
           .replace(/\[([^\]]+)\]\([^\)]+\)/g, '$1')  // [link](url) → link
-          .replace(/#{1,6}\s*/g, '')          // headers
-          .replace(/\\n/g, ' ')
-          .replace(/\n/g, ' ');
+          .replace(/#{1,6}\s*/g, '')          // Remove headers
+          .replace(/\\n/g, ' ')               // Escaped newlines
+          .replace(/\n/g, ' ')                // Regular newlines
+          .replace(/\s+/g, ' ')               // Collapse multiple spaces
+          .trim();
 
         const card = document.createElement('div');
         card.className = 'card';
