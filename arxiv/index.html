@@ -13,6 +13,7 @@
             --bg-page: #faf9f7;
             --bg-card: #ffffff;
             --bg-summary: #f5f3f0;
+            --bg-highlight: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             --accent-primary: #6366f1;
             --accent-secondary: #8b5cf6;
             --accent-warm: #d97706;
@@ -42,32 +43,16 @@
             line-height: 1.6;
         }
 
-        .bg-pattern {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(ellipse at 0% 0%, rgba(99, 102, 241, 0.06) 0%, transparent 50%),
-                radial-gradient(ellipse at 100% 50%, rgba(139, 92, 246, 0.04) 0%, transparent 50%);
-            pointer-events: none;
-            z-index: 0;
-        }
-
         .container {
-            position: relative;
-            z-index: 2;
-            max-width: 1200px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 1.5rem;
         }
 
-        /* Header - Compact */
+        /* Header */
         header {
             text-align: center;
-            padding: 2rem 0;
-            margin-bottom: 1.5rem;
+            padding: 2rem 0 1.5rem;
         }
 
         .back-link {
@@ -109,91 +94,208 @@
         .subtitle {
             font-size: 1rem;
             color: var(--text-secondary);
-            font-weight: 400;
         }
 
-        .badges {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.3rem;
-            padding: 0.35rem 0.75rem;
-            border-radius: 100px;
-            font-size: 0.75rem;
-            font-weight: 500;
-            background: #f1f5f9;
-            border: 1px solid var(--border);
-            color: var(--text-secondary);
-        }
-
-        .badge-date {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.7rem;
-        }
-
-        .badge-count {
-            background: rgba(217, 119, 6, 0.1);
-            border-color: rgba(217, 119, 6, 0.2);
-            color: var(--accent-warm);
-        }
-
-        /* Grid Layout */
-        .papers-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-        }
-
-        @media (max-width: 900px) {
-            .papers-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 600px) {
-            .papers-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Paper Card - Compact */
-        .paper-card {
+        /* Date Banner */
+        .date-banner {
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 12px;
-            padding: 1rem;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            box-shadow: var(--shadow-sm);
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
             display: flex;
-            flex-direction: column;
-            min-height: 160px;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
 
-        .paper-card:hover {
-            box-shadow: var(--shadow-hover);
-            border-color: var(--border-accent);
+        .date-info {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .date-icon {
+            font-size: 1.5rem;
+        }
+
+        .date-text {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .date-note {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .stats {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 0.25rem 0.75rem;
+            background: var(--bg-summary);
+            border-radius: 8px;
+        }
+
+        .stat-number {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--accent-primary);
+        }
+
+        .stat-label {
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Section Title */
+        .section-title {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+            margin-top: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Highlight Card */
+        .highlight-card {
+            background: var(--bg-highlight);
+            border-radius: 16px;
+            padding: 1.5rem;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight-card:hover {
             transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(99, 102, 241, 0.3);
+        }
+
+        .highlight-category {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.65rem;
+            padding: 0.2rem 0.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 0.75rem;
+        }
+
+        .highlight-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-authors {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+
+        .highlight-teaser {
+            font-size: 0.9rem;
+            opacity: 0.85;
+            line-height: 1.5;
+        }
+
+        .highlight-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Paper List */
+        .papers-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .paper-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 0.9rem 1.1rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            gap: 0.75rem;
+            align-items: flex-start;
+        }
+
+        .paper-item:hover {
+            box-shadow: var(--shadow);
+            border-color: var(--border-accent);
+        }
+
+        .paper-number {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            min-width: 20px;
+            padding-top: 0.25rem;
+        }
+
+        .paper-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .paper-meta {
+            display: flex;
+            gap: 0.4rem;
+            align-items: center;
+            margin-bottom: 0.3rem;
+            flex-wrap: wrap;
         }
 
         .paper-category {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 0.65rem;
-            padding: 0.2rem 0.5rem;
+            font-size: 0.55rem;
+            padding: 0.1rem 0.35rem;
             background: rgba(99, 102, 241, 0.08);
-            border-radius: 4px;
+            border-radius: 3px;
             color: var(--accent-primary);
             font-weight: 500;
-            display: inline-block;
-            margin-bottom: 0.5rem;
-            width: fit-content;
+        }
+
+        .paper-type-badge {
+            font-size: 0.55rem;
+            padding: 0.1rem 0.35rem;
+            border-radius: 3px;
+            font-weight: 500;
+        }
+
+        .paper-type-badge.exoplanet {
+            background: rgba(5, 150, 105, 0.1);
+            color: var(--accent-green);
+        }
+
+        .paper-type-badge.general {
+            background: rgba(100, 116, 139, 0.1);
+            color: var(--text-muted);
         }
 
         .paper-title {
@@ -202,21 +304,12 @@
             font-weight: 600;
             line-height: 1.3;
             color: var(--text-primary);
-            margin-bottom: 0.5rem;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
+            margin-bottom: 0.2rem;
         }
 
         .paper-authors {
             font-size: 0.75rem;
             color: var(--text-muted);
-            margin-top: auto;
-            display: -webkit-box;
-            -webkit-line-clamp: 1;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
         }
 
         /* Modal */
@@ -285,12 +378,6 @@
             margin-bottom: 0.75rem;
             flex-wrap: wrap;
             align-items: center;
-        }
-
-        .modal-date {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.7rem;
-            color: var(--text-muted);
         }
 
         .modal-title {
@@ -411,16 +498,13 @@
             color: white;
         }
 
-        .modal-link.share-twitter:hover {
-            background: #1da1f2;
-            border-color: #1da1f2;
-        }
-
-        /* Loading */
-        .loading {
+        /* Loading & Error */
+        .loading, .error-box, .empty-state {
             text-align: center;
             padding: 3rem;
-            grid-column: 1 / -1;
+            background: var(--bg-card);
+            border-radius: 12px;
+            border: 1px solid var(--border);
         }
 
         .loading-spinner {
@@ -435,6 +519,16 @@
 
         @keyframes spin {
             to { transform: rotate(360deg); }
+        }
+
+        .error-box {
+            background: #fef2f2;
+            border-color: #fecaca;
+            color: #dc2626;
+        }
+
+        .empty-state {
+            color: var(--text-muted);
         }
 
         /* Footer */
@@ -456,71 +550,67 @@
             text-decoration: underline;
         }
 
-        /* Error */
-        .error-box {
-            background: #fef2f2;
-            border: 1px solid #fecaca;
-            border-radius: 12px;
-            padding: 2rem;
-            text-align: center;
-            color: #dc2626;
-            grid-column: 1 / -1;
-        }
-
-        /* Share notification */
-        .share-notification {
-            position: fixed;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--text-primary);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            opacity: 0;
-            transition: opacity 0.3s;
-            z-index: 1000;
-        }
-
-        .share-notification.visible {
-            opacity: 1;
+        /* Responsive */
+        @media (max-width: 600px) {
+            .date-banner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .highlight-title {
+                font-size: 1.2rem;
+            }
+            
+            .paper-item {
+                flex-direction: column;
+                gap: 0.3rem;
+            }
+            
+            .paper-number {
+                display: none;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="bg-pattern"></div>
-
     <div class="container">
         <header>
             <a href="https://arifsolmaz.github.io" class="back-link">← Back to Home</a>
             <div class="logo-icon">🪐</div>
             <h1>Exoplanet Papers</h1>
             <p class="subtitle">Daily arXiv astro-ph.EP Summaries</p>
-            <div class="badges">
-                <span class="badge badge-date" id="updateBadge">
-                    <span>📅</span>
-                    <span id="updateDate">Loading...</span>
-                </span>
-                <span class="badge badge-count" id="countBadge" style="display: none;">
-                    <span>📄</span>
-                    <span id="paperCount">0 papers</span>
-                </span>
-            </div>
         </header>
 
-        <div id="content">
-            <div class="papers-grid">
-                <div class="loading">
-                    <div class="loading-spinner"></div>
-                    <p>Loading today's papers...</p>
+        <div class="date-banner">
+            <div class="date-info">
+                <span class="date-icon">📅</span>
+                <div>
+                    <div class="date-text" id="updateDate">Loading...</div>
+                    <div class="date-note" id="dateNote">Updated weekdays after arXiv announcement</div>
                 </div>
+            </div>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number" id="exoplanetCount">-</div>
+                    <div class="stat-label">Exoplanet</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number" id="totalCount">-</div>
+                    <div class="stat-label">Total</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="content">
+            <div class="loading">
+                <div class="loading-spinner"></div>
+                <p>Loading today's papers...</p>
             </div>
         </div>
 
         <footer>
             <p>Data from <a href="https://arxiv.org" target="_blank">arXiv.org</a> (astro-ph.EP) • 
-               Updated weekdays at 08:00 UTC</p>
+               Summaries generated with AI</p>
             <p style="margin-top: 0.3rem;">
                 <a href="https://arifsolmaz.github.io" target="_blank">arifsolmaz.github.io</a>
             </p>
@@ -535,13 +625,10 @@
         </div>
     </div>
 
-    <!-- Share notification -->
-    <div class="share-notification" id="shareNotification">Link copied to clipboard!</div>
-
     <script>
+        const PAGE_URL = "https://arifsolmaz.github.io/arxiv";
         let papersData = [];
         let fetchDate = '';
-        const PAGE_URL = window.location.origin + window.location.pathname;
 
         function formatAuthors(authors) {
             if (!authors || authors.length === 0) return 'Unknown authors';
@@ -558,7 +645,8 @@
         function formatDate(dateStr) {
             const date = new Date(dateStr);
             return date.toLocaleDateString('en-US', { 
-                month: 'short', 
+                weekday: 'long',
+                month: 'long', 
                 day: 'numeric', 
                 year: 'numeric' 
             });
@@ -568,139 +656,115 @@
             return id.replace(/[^a-zA-Z0-9]/g, '-');
         }
 
-        // Keyword to hashtag mapping (same as Python script, lowercase keys)
-        const KEYWORD_HASHTAGS = {
-            // Telescopes & Instruments
-            "jwst": "#JWST", "james webb": "#JWST", "webb": "#JWST",
-            "tess": "#TESS", "kepler": "#Kepler", "hubble": "#Hubble",
-            "alma": "#ALMA", "vlt": "#VLT", "gaia": "#Gaia",
-            "harps": "#HARPS", "espresso": "#ESPRESSO", "cheops": "#CHEOPS",
-            // Planet types
-            "hot jupiter": "#HotJupiter", "super-earth": "#SuperEarth", "super earth": "#SuperEarth",
-            "sub-neptune": "#SubNeptune", "sub neptune": "#SubNeptune",
-            "earth-like": "#EarthLike", "earth-sized": "#EarthSized",
-            "water world": "#WaterWorld", "ocean world": "#OceanWorld",
-            "rogue planet": "#RoguePlanet",
-            // Habitability
-            "habitable": "#HabitableZone", "habitability": "#Habitability",
-            "biosignature": "#Biosignatures", "biosignatures": "#Biosignatures",
-            // Notable systems
-            "trappist": "#TRAPPIST1", "proxima": "#ProximaCentauri",
-            "wasp-39": "#WASP39", "wasp-76": "#WASP76",
-            // Methods
-            "transit": "#TransitMethod", "radial velocity": "#RadialVelocity",
-            "spectroscopy": "#Spectroscopy", "atmosphere": "#ExoplanetAtmosphere"
-        };
-
-        // Extract hashtags from paper content
-        function extractHashtags(paper, maxHashtags = 4) {
-            const text = `${paper.title} ${paper.abstract}`.toLowerCase();
-            const found = new Set();
-            
-            // Priority keywords (check first)
-            const priorityKeywords = ["jwst", "james webb", "habitable", "biosignature", "trappist", "earth-like"];
-            
-            for (const keyword of priorityKeywords) {
-                if (text.includes(keyword) && KEYWORD_HASHTAGS[keyword]) {
-                    found.add(KEYWORD_HASHTAGS[keyword]);
+        // Get first meaningful sentence from summary for teaser
+        function getTeaser(paper) {
+            if (paper.summary) {
+                // Try to get from "Why It Matters" section
+                const match = paper.summary.match(/Why It Matters\*?\*?\s*\n?([\s\S]*?)(?:\n\n|\*\*What)/i);
+                if (match) {
+                    const text = match[1].trim().replace(/\*\*/g, '');
+                    const firstSentence = text.split(/[.!?]/)[0];
+                    return firstSentence.length > 150 ? firstSentence.slice(0, 147) + '...' : firstSentence + '.';
                 }
             }
-            
-            // Then check other keywords
-            for (const [keyword, hashtag] of Object.entries(KEYWORD_HASHTAGS)) {
-                if (text.includes(keyword)) {
-                    found.add(hashtag);
-                }
-            }
-            
-            // Start with base hashtag, add found ones
-            const result = ["#Exoplanets"];
-            for (const tag of found) {
-                if (!result.includes(tag) && result.length < maxHashtags) {
-                    result.push(tag);
-                }
-            }
-            
-            return result;
+            // Fallback to abstract
+            const abstract = paper.abstract || '';
+            const firstSentence = abstract.split(/[.!?]/)[0];
+            return firstSentence.length > 150 ? firstSentence.slice(0, 147) + '...' : firstSentence + '.';
         }
 
-        // Get tweet text for sharing
-        function getTweetText(paper) {
-            const tweetHook = paper.tweet_hook || {};
-            const hook = tweetHook.hook || '';
-            const question = tweetHook.question || '';
-            
-            let text = '';
-            if (hook) {
-                text = hook;
-                if (question) {
-                    text += '\n\n' + question;
-                }
-            } else {
-                // Fallback to title
-                text = paper.title;
-            }
-            
-            // Add link
+        // Render highlight card for top paper
+        function renderHighlight(paper) {
             const safeId = getSafeId(paper.id);
-            const paperUrl = `${PAGE_URL}#paper-${safeId}`;
-            text += '\n\n' + paperUrl;
+            const teaser = getTeaser(paper);
             
-            // Add dynamic hashtags
-            const hashtags = extractHashtags(paper);
-            text += '\n\n' + hashtags.join(' ');
-            
-            return text;
-        }
-
-        // Share on Twitter
-        function shareOnTwitter(paperId, event) {
-            if (event) event.stopPropagation();
-            
-            const paper = papersData.find(p => getSafeId(p.id) === paperId);
-            if (!paper) return;
-            
-            const text = getTweetText(paper);
-            const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`;
-            window.open(tweetUrl, '_blank', 'width=550,height=420');
-        }
-
-        // Copy link to clipboard
-        function copyLink(paperId, event) {
-            if (event) event.stopPropagation();
-            
-            const safeId = getSafeId(paperId);
-            const url = `${PAGE_URL}#paper-${safeId}`;
-            
-            navigator.clipboard.writeText(url).then(() => {
-                const notification = document.getElementById('shareNotification');
-                notification.classList.add('visible');
-                setTimeout(() => notification.classList.remove('visible'), 2000);
-            });
-        }
-
-        // Render compact card
-        function renderPaperCard(paper, index) {
-            const safeId = getSafeId(paper.id);
             return `
-                <div class="paper-card" id="paper-${safeId}" onclick="openModal('${safeId}')">
-                    <span class="paper-category">${(paper.categories || ['astro-ph.EP'])[0]}</span>
-                    <div class="paper-title">${paper.title}</div>
-                    <div class="paper-authors">${formatAuthorsShort(paper.authors)}</div>
+                <div class="section-title">⭐ Today's Highlight</div>
+                <div class="highlight-card" onclick="openModal('${safeId}')">
+                    <span class="highlight-category">${(paper.categories || ['astro-ph.EP'])[0]}</span>
+                    <div class="highlight-title">${paper.title}</div>
+                    <div class="highlight-authors">${formatAuthorsShort(paper.authors)}</div>
+                    <div class="highlight-teaser">${teaser}</div>
+                    <div class="highlight-cta">Read summary →</div>
                 </div>
             `;
+        }
+
+        // Render paper list item
+        function renderPaperItem(paper, index) {
+            const safeId = getSafeId(paper.id);
+            const isExoplanet = paper.is_exoplanet_focused !== false;
+            
+            return `
+                <div class="paper-item" onclick="openModal('${safeId}')">
+                    <div class="paper-number">${String(index + 1).padStart(2, '0')}</div>
+                    <div class="paper-content">
+                        <div class="paper-meta">
+                            <span class="paper-category">${(paper.categories || ['astro-ph.EP'])[0]}</span>
+                            ${isExoplanet ? 
+                                '<span class="paper-type-badge exoplanet">🪐 Exoplanet</span>' : 
+                                '<span class="paper-type-badge general">🔭 General</span>'
+                            }
+                        </div>
+                        <div class="paper-title">${paper.title}</div>
+                        <div class="paper-authors">${formatAuthorsShort(paper.authors)}</div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Render papers list
+        function renderPapersList(papers) {
+            const exoplanetPapers = papers.filter(p => p.is_exoplanet_focused !== false);
+            const generalPapers = papers.filter(p => p.is_exoplanet_focused === false);
+            
+            // Find best paper for highlight (highest tweetability score among exoplanet papers)
+            let highlightPaper = null;
+            if (exoplanetPapers.length > 0) {
+                highlightPaper = exoplanetPapers.reduce((best, p) => 
+                    (p.tweetability_score || 0) > (best.tweetability_score || 0) ? p : best
+                );
+            }
+            
+            // Remaining papers (exclude highlight)
+            const remainingExo = exoplanetPapers.filter(p => p.id !== highlightPaper?.id);
+            const allRemaining = [...remainingExo, ...generalPapers];
+            
+            let html = '';
+            
+            // Highlight section
+            if (highlightPaper) {
+                html += renderHighlight(highlightPaper);
+            }
+            
+            // Section title
+            html += `<div class="section-title">📄 All Papers (${allRemaining.length})</div>`;
+            
+            // Papers list
+            html += '<div class="papers-list">';
+            allRemaining.forEach((paper, index) => {
+                html += renderPaperItem(paper, index);
+            });
+            html += '</div>';
+            
+            return html;
         }
 
         // Render modal content
         function renderModalContent(paper) {
             const safeId = getSafeId(paper.id);
+            const isExoplanet = paper.is_exoplanet_focused !== false;
+            
             return `
                 <div class="modal-header">
                     <div class="modal-meta">
                         ${(paper.categories || []).slice(0, 2).map(cat => 
                             `<span class="paper-category">${cat}</span>`
                         ).join('')}
-                        <span class="modal-date">${formatDate(fetchDate)}</span>
+                        ${isExoplanet ? 
+                            '<span class="paper-type-badge exoplanet">🪐 Exoplanet</span>' : 
+                            '<span class="paper-type-badge general">🔭 General</span>'
+                        }
                     </div>
                     <h2 class="modal-title">${paper.title}</h2>
                     <p class="modal-authors">${formatAuthors(paper.authors)}</p>
@@ -729,10 +793,10 @@
                     <a href="${paper.pdf_link}" target="_blank" class="modal-link">
                         📥 Download PDF
                     </a>
-                    <button class="modal-link share-twitter" onclick="shareOnTwitter('${safeId}', event)">
+                    <button class="modal-link" onclick="shareOnTwitter('${safeId}', event)">
                         🐦 Tweet This
                     </button>
-                    <button class="modal-link" onclick="copyLink('${paper.id}', event)">
+                    <button class="modal-link" onclick="copyLink('${safeId}', event)">
                         🔗 Copy Link
                     </button>
                 </div>
@@ -747,7 +811,6 @@
             document.getElementById('modalOverlay').classList.add('active');
             document.body.style.overflow = 'hidden';
             
-            // Update URL hash without scrolling
             history.replaceState(null, null, `#paper-${safeId}`);
         }
 
@@ -771,14 +834,68 @@
             }
         }
 
-        // Close modal on overlay click
+        // Hashtag extraction for sharing (strict matching)
+        const EXOPLANET_KEYWORDS = {
+            "jwst": "#JWST", "james webb": "#JWST",
+            "habitable zone": "#HabitableZone",
+            "biosignature": "#Biosignatures",
+            "trappist-1": "#TRAPPIST1",
+            "hot jupiter": "#HotJupiter",
+            "super-earth": "#SuperEarth",
+            "transmission spectrum": "#TransmissionSpectroscopy"
+        };
+
+        function extractHashtags(paper) {
+            const text = `${paper.title} ${paper.abstract}`.toLowerCase();
+            const isExo = paper.is_exoplanet_focused !== false;
+            const base = isExo ? ["#Exoplanets", "#Astronomy"] : ["#Astronomy", "#PlanetaryScience"];
+            
+            const found = [];
+            for (const [kw, tag] of Object.entries(EXOPLANET_KEYWORDS)) {
+                if (text.includes(kw) && !found.includes(tag)) {
+                    found.push(tag);
+                }
+            }
+            
+            return [...base, ...found.slice(0, 2)];
+        }
+
+        function shareOnTwitter(safeId, event) {
+            if (event) event.stopPropagation();
+            
+            const paper = papersData.find(p => getSafeId(p.id) === safeId);
+            if (!paper) return;
+            
+            const paperUrl = `${PAGE_URL}#paper-${safeId}`;
+            const hashtags = extractHashtags(paper);
+            
+            let text = paper.title;
+            text += `\n\n${paperUrl}`;
+            text += `\n\n${hashtags.join(' ')}`;
+            
+            const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`;
+            window.open(tweetUrl, '_blank', 'width=550,height=420');
+        }
+
+        function copyLink(safeId, event) {
+            if (event) event.stopPropagation();
+            
+            const paperUrl = `${PAGE_URL}#paper-${safeId}`;
+            navigator.clipboard.writeText(paperUrl).then(() => {
+                const btn = event.target;
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '✓ Copied!';
+                setTimeout(() => btn.innerHTML = originalText, 2000);
+            });
+        }
+
+        // Close modal handlers
         document.getElementById('modalOverlay').addEventListener('click', (e) => {
             if (e.target === document.getElementById('modalOverlay')) {
                 closeModal();
             }
         });
 
-        // Close modal on Escape key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') closeModal();
         });
@@ -794,23 +911,26 @@
                 papersData = data.papers || [];
                 fetchDate = data.updated_at || new Date().toISOString();
                 
-                // Update badges
+                // Update date banner
                 if (data.updated_at) {
                     document.getElementById('updateDate').textContent = formatDate(data.updated_at);
+                    
+                    // Check if weekend
+                    const date = new Date(data.updated_at);
+                    const day = date.getDay();
+                    if (day === 0 || day === 6) {
+                        document.getElementById('dateNote').textContent = "Weekend - showing Friday's papers";
+                    }
                 }
                 
-                if (data.paper_count) {
-                    document.getElementById('paperCount').textContent = `${data.paper_count} papers`;
-                    document.getElementById('countBadge').style.display = 'inline-flex';
-                }
+                // Update stats
+                const exoCount = papersData.filter(p => p.is_exoplanet_focused !== false).length;
+                document.getElementById('exoplanetCount').textContent = exoCount;
+                document.getElementById('totalCount').textContent = papersData.length;
                 
-                // Render grid
+                // Render content
                 if (papersData.length > 0) {
-                    content.innerHTML = `
-                        <div class="papers-grid">
-                            ${papersData.map((paper, index) => renderPaperCard(paper, index)).join('')}
-                        </div>
-                    `;
+                    content.innerHTML = renderPapersList(papersData);
                     
                     // Check for hash and open modal
                     if (window.location.hash) {
@@ -819,10 +939,8 @@
                     }
                 } else {
                     content.innerHTML = `
-                        <div class="papers-grid">
-                            <div class="error-box">
-                                <p>🔭 No papers available. Check back tomorrow!</p>
-                            </div>
+                        <div class="empty-state">
+                            <p>🔭 No papers available today. Check back tomorrow!</p>
                         </div>
                     `;
                 }
@@ -830,10 +948,8 @@
             } catch (error) {
                 console.error('Error:', error);
                 content.innerHTML = `
-                    <div class="papers-grid">
-                        <div class="error-box">
-                            <p>⚠️ Error loading papers data.</p>
-                        </div>
+                    <div class="error-box">
+                        <p>⚠️ Error loading papers data.</p>
                     </div>
                 `;
             }

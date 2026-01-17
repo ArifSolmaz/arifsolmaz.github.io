@@ -43,115 +43,106 @@ TWEET_LIMITS = {
 }
 
 # Keyword to hashtag mapping for exoplanet research
-# ALL KEYS MUST BE LOWERCASE for matching to work!
+# STRICT matching: Use multi-word phrases to avoid false positives
+# Only match terms that are EXPLICITLY about the topic
+
 KEYWORD_HASHTAGS = {
-    # Detection methods
-    "transit": "#TransitMethod",
-    "transiting": "#TransitMethod",
-    "radial velocity": "#RadialVelocity",
-    "rv": "#RadialVelocity",
-    "microlensing": "#Microlensing",
-    "direct imaging": "#DirectImaging",
-    "astrometry": "#Astrometry",
-    "photometry": "#Photometry",
-    "spectroscopy": "#Spectroscopy",
-    "transmission spectrum": "#TransmissionSpectroscopy",
-    "emission spectrum": "#EmissionSpectroscopy",
+    # === HIGH CONFIDENCE MATCHES (multi-word, specific) ===
     
-    # Telescopes & Instruments (lowercase keys!)
+    # Telescopes & Instruments - specific phrases
     "jwst": "#JWST",
     "james webb": "#JWST",
-    "webb": "#JWST",
-    "hubble": "#Hubble",
-    "hst": "#HST",
-    "tess": "#TESS",
-    "kepler": "#Kepler",
-    "k2": "#K2",
-    "cheops": "#CHEOPS",
-    "spitzer": "#Spitzer",
-    "vlt": "#VLT",
-    "keck": "#Keck",
-    "alma": "#ALMA",
-    "harps": "#HARPS",
-    "espresso": "#ESPRESSO",
-    "nirspec": "#JWST",
-    "miri": "#JWST",
-    "nircam": "#JWST",
-    "roman": "#NancyGraceRoman",
-    "euclid": "#Euclid",
-    "plato": "#PLATO",
-    "ariel": "#Ariel",
-    "elt": "#ELT",
-    "gmt": "#GMT",
-    "tmt": "#TMT",
-    "gaia": "#Gaia",
+    "webb space telescope": "#JWST",
+    "tess mission": "#TESS",
+    "tess planet": "#TESS",
+    "tess candidate": "#TESS",
+    "kepler mission": "#Kepler",
+    "kepler planet": "#Kepler",
+    "alma observation": "#ALMA",
+    "harps spectrograph": "#HARPS",
+    "espresso spectrograph": "#ESPRESSO",
+    "hubble space": "#Hubble",
+    "vlt observation": "#VLT",
+    "keck observation": "#Keck",
+    "gaia dr": "#Gaia",
     
-    # Planet types
+    # Planet types - specific phrases
     "hot jupiter": "#HotJupiter",
-    "hot jupiters": "#HotJupiters",
     "warm jupiter": "#WarmJupiter",
-    "cold jupiter": "#ColdJupiter",
     "super-earth": "#SuperEarth",
     "super earth": "#SuperEarth",
-    "super-earths": "#SuperEarths",
     "sub-neptune": "#SubNeptune",
-    "sub neptune": "#SubNeptune",
     "mini-neptune": "#MiniNeptune",
-    "mini neptune": "#MiniNeptune",
-    "earth-like": "#EarthLike",
-    "earth-sized": "#EarthSized",
-    "terrestrial": "#TerrestrialPlanet",
-    "gas giant": "#GasGiant",
-    "ice giant": "#IceGiant",
-    "rocky planet": "#RockyPlanet",
+    "earth-like planet": "#EarthLike",
+    "earth-sized planet": "#EarthSized",
+    "terrestrial planet": "#TerrestrialPlanet",
+    "terrestrial exoplanet": "#TerrestrialPlanet",
     "lava world": "#LavaWorld",
     "ocean world": "#OceanWorld",
     "water world": "#WaterWorld",
     "rogue planet": "#RoguePlanet",
-    "free-floating": "#RoguePlanet",
+    "free-floating planet": "#RoguePlanet",
     
-    # Atmospheres & Composition
-    "atmosphere": "#ExoplanetAtmosphere",
-    "atmospheric": "#ExoplanetAtmosphere",
-    "water vapor": "#WaterVapor",
-    "h2o": "#WaterVapor",
-    "carbon dioxide": "#CO2",
-    "co2": "#CO2",
-    "methane": "#Methane",
-    "ch4": "#Methane",
-    
-    # Habitability & Biosignatures
-    "habitable": "#HabitableZone",
+    # Exoplanet-specific terms
+    "exoplanet atmosphere": "#ExoplanetAtmosphere",
+    "exoplanetary atmosphere": "#ExoplanetAtmosphere",
+    "transmission spectrum": "#TransmissionSpectroscopy",
+    "transmission spectroscopy": "#TransmissionSpectroscopy",
+    "emission spectrum": "#EmissionSpectroscopy",
     "habitable zone": "#HabitableZone",
-    "habitability": "#Habitability",
+    "habitable exoplanet": "#HabitableZone",
     "biosignature": "#Biosignatures",
     "biosignatures": "#Biosignatures",
-    "biomarker": "#Biosignatures",
-    "astrobiology": "#Astrobiology",
     
-    # Stellar types
-    "m dwarf": "#MDwarf",
-    "m-dwarf": "#MDwarf",
-    "red dwarf": "#RedDwarf",
+    # Detection methods - specific phrases
+    "transit method": "#TransitMethod",
+    "transiting exoplanet": "#TransitMethod",
+    "transiting planet": "#TransitMethod",
+    "radial velocity method": "#RadialVelocity",
+    "radial velocity survey": "#RadialVelocity",
+    "microlensing planet": "#Microlensing",
+    "direct imaging": "#DirectImaging",
+    "directly imaged": "#DirectImaging",
     
-    # Notable systems
+    # Notable systems - exact matches
     "trappist-1": "#TRAPPIST1",
-    "trappist": "#TRAPPIST1",
-    "proxima": "#ProximaCentauri",
-    "proxima centauri": "#ProximaCentauri",
+    "proxima centauri b": "#ProximaCentauri",
+    "proxima b": "#ProximaCentauri",
     "wasp-39": "#WASP39",
     "wasp-76": "#WASP76",
     "toi-700": "#TOI700",
     "k2-18": "#K218b",
+    "55 cancri": "#55Cancri",
+    "gj 1214": "#GJ1214",
+    "hd 189733": "#HD189733",
     
-    # Processes
+    # Formation - specific phrases
     "planet formation": "#PlanetFormation",
-    "protoplanetary": "#ProtoplanetaryDisk",
-    "migration": "#PlanetMigration",
+    "planetary formation": "#PlanetFormation",
+    "protoplanetary disk": "#ProtoplanetaryDisk",
+    "protoplanetary disc": "#ProtoplanetaryDisk",
+    "planet migration": "#PlanetMigration",
+    "planetary migration": "#PlanetMigration",
 }
 
-# Base hashtag always included
-BASE_HASHTAG = "#Exoplanets"
+# Hashtags for general astro-ph.EP papers (not exoplanet-focused)
+GENERAL_HASHTAGS = {
+    "protoplanetary disk": "#ProtoplanetaryDisk",
+    "protoplanetary disc": "#ProtoplanetaryDisk",
+    "debris disk": "#DebrisDisk",
+    "debris disc": "#DebrisDisk",
+    "asteroid": "#Asteroids",
+    "meteor": "#Meteors",
+    "comet": "#Comets",
+    "brown dwarf": "#BrownDwarfs",
+    "planet formation": "#PlanetFormation",
+    "dust grain": "#DustGrains",
+    "interstellar object": "#InterstellarObject",
+}
+
+# Base hashtags by paper type
+BASE_HASHTAGS_EXOPLANET = ["#Exoplanets", "#Astronomy"]
+BASE_HASHTAGS_GENERAL = ["#Astronomy", "#PlanetaryScience"]
 
 # Maximum hashtags to include (including base)
 MAX_HASHTAGS = 4
@@ -499,34 +490,44 @@ def truncate_text(text: str, max_length: int, suffix: str = "...") -> str:
 
 
 def extract_hashtags(paper: dict, max_hashtags: int = MAX_HASHTAGS) -> list[str]:
-    """Extract relevant hashtags from paper title and abstract."""
+    """
+    Extract relevant hashtags from paper title and abstract.
+    Uses strict matching to avoid false positives.
+    """
     text = f"{paper['title']} {paper['abstract']}".lower()
+    is_exoplanet = paper.get('is_exoplanet_focused', False)
     
-    found_hashtags = set()
+    found_hashtags = []
     
-    # Check for keyword matches (keys are already lowercase)
-    for keyword, hashtag in KEYWORD_HASHTAGS.items():
+    # Choose which keyword set to use based on paper type
+    if is_exoplanet:
+        keyword_set = KEYWORD_HASHTAGS
+        base_tags = BASE_HASHTAGS_EXOPLANET.copy()
+    else:
+        keyword_set = GENERAL_HASHTAGS
+        base_tags = BASE_HASHTAGS_GENERAL.copy()
+    
+    # Check for keyword matches (all keys are lowercase)
+    for keyword, hashtag in keyword_set.items():
         if keyword in text:
-            # Some entries have multiple hashtags
-            for tag in hashtag.split():
-                found_hashtags.add(tag)
+            # Avoid duplicates
+            if hashtag not in found_hashtags and hashtag not in base_tags:
+                found_hashtags.append(hashtag)
     
-    # Convert to list
-    hashtags = list(found_hashtags)
+    # If no specific hashtags found, that's okay - we'll use base tags
+    # Prioritize high-value hashtags for exoplanet papers
+    if is_exoplanet:
+        priority_prefixes = ["#JWST", "#Habitable", "#Biosig", "#TRAPPIST", "#EarthLike", "#SuperEarth"]
+        priority = [h for h in found_hashtags if any(h.startswith(p) for p in priority_prefixes)]
+        others = [h for h in found_hashtags if h not in priority]
+        found_hashtags = priority + others
     
-    # Prioritize certain categories
-    priority_prefixes = ["#JWST", "#Habitable", "#Biosig", "#TRAPPIST", "#EarthLike"]
-    priority = [h for h in hashtags if any(h.startswith(p) for p in priority_prefixes)]
-    others = [h for h in hashtags if h not in priority]
+    # Build final list: base tags + content-specific tags (up to max)
+    result = base_tags[:2]  # Always include 2 base tags
+    remaining_slots = max_hashtags - len(result)
     
-    # Combine: priority first, then others
-    sorted_hashtags = priority + others
-    
-    # Start with base hashtag, then add content-specific ones
-    # Total: max_hashtags (including base)
-    result = [BASE_HASHTAG]
-    for h in sorted_hashtags:
-        if h not in result and len(result) < max_hashtags:
+    for h in found_hashtags[:remaining_slots]:
+        if h not in result:
             result.append(h)
     
     return result

@@ -25,7 +25,7 @@ from xml.etree import ElementTree as ET
 
 # Configuration
 ARXIV_CATEGORY = "astro-ph.EP"
-MAX_PAPERS = 50  # Fetch all available papers
+MAX_PAPERS = 25  # Daily batch limit (typical arXiv day has 15-25 papers)
 FETCH_MULTIPLIER = 2  # Fetch extra to ensure we get enough
 OUTPUT_FILE = Path(__file__).parent.parent / "data" / "papers.json"
 
@@ -321,9 +321,10 @@ def fetch_arxiv_papers(category: str, max_results: int = 15) -> list[dict]:
     exoplanet_papers.sort(key=lambda p: -p["tweetability_score"])
     general_papers.sort(key=lambda p: -p["tweetability_score"])
     
-    # Return ALL papers - we need both types for time-based tweeting
-    # Exoplanet papers first (for prime time), then general (for off-peak)
-    return exoplanet_papers + general_papers
+    # Combine papers: exoplanet first, then general
+    # Limit to max_results total
+    all_sorted = exoplanet_papers + general_papers
+    return all_sorted[:max_results]
 
 
 def generate_summary(client: anthropic.Anthropic, paper: dict) -> str:

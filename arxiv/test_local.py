@@ -46,10 +46,10 @@ from post_twitter import (
 )
 
 
-def test_fetch_papers(max_papers: int = 50):
+def test_fetch_papers(max_papers: int = 25):
     """Test fetching papers from arXiv."""
     print("=" * 60)
-    print("📡 TESTING: Fetch papers from arXiv (ALL astro-ph.EP)")
+    print("📡 TESTING: Fetch papers from arXiv (daily batch)")
     print("=" * 60)
     
     try:
@@ -154,13 +154,24 @@ def test_generate_tweet_hooks(papers: list, max_hooks: int = 1):
 def test_hashtag_extraction(papers: list):
     """Test hashtag extraction from papers."""
     print("\n" + "=" * 60)
-    print("🏷️  TESTING: Hashtag extraction (FIXED - lowercase matching)")
+    print("🏷️  TESTING: Hashtag extraction (STRICT matching)")
     print("=" * 60)
     
-    for i, paper in enumerate(papers, 1):
+    # Test a few exoplanet papers
+    exo_papers = [p for p in papers if p.get('is_exoplanet_focused', False)]
+    gen_papers = [p for p in papers if not p.get('is_exoplanet_focused', False)]
+    
+    print("\n🪐 Exoplanet papers:")
+    for paper in exo_papers[:5]:
         hashtags = extract_hashtags(paper)
-        print(f"\nPaper {i}: {paper['title'][:60]}...")
-        print(f"  Extracted hashtags ({len(hashtags)}): {' '.join(hashtags)}")
+        print(f"  • {paper['title'][:50]}...")
+        print(f"    → {' '.join(hashtags)}")
+    
+    print("\n🔭 General papers:")
+    for paper in gen_papers[:5]:
+        hashtags = extract_hashtags(paper)
+        print(f"  • {paper['title'][:50]}...")
+        print(f"    → {' '.join(hashtags)}")
 
 
 def test_thread_formatting(papers: list):
@@ -394,7 +405,7 @@ def save_test_data(papers: list):
 
 def main():
     parser = argparse.ArgumentParser(description="Test exoplanet paper system locally")
-    parser.add_argument("--papers", type=int, default=50, help="Max papers to fetch (default: 50)")
+    parser.add_argument("--papers", type=int, default=25, help="Max papers to fetch (default: 25)")
     parser.add_argument("--summaries", type=int, default=1, help="Number of summaries to generate (default: 1)")
     parser.add_argument("--hooks", type=int, default=1, help="Number of tweet hooks to generate (default: 1)")
     parser.add_argument("--post", action="store_true", help="Actually post a tweet thread (requires confirmation)")
