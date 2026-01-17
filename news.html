@@ -309,6 +309,35 @@
       margin-top: 1rem;
     }
 
+    .modal-share {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .share-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      color: var(--color-text-muted);
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+
+    .share-btn:hover {
+      background: var(--color-accent);
+      border-color: var(--color-accent);
+      color: var(--color-bg);
+    }
+
     .modal-link-btn {
       display: inline-flex;
       align-items: center;
@@ -402,6 +431,7 @@
         <h2 class="modal-title" id="m-title"></h2>
         <div class="modal-text" id="m-text"></div>
         <div class="modal-links" id="m-links"></div>
+        <div class="modal-share" id="m-share"></div>
         <div class="modal-tags" id="m-tags"></div>
       </div>
     </div>
@@ -518,10 +548,30 @@
       mLinks.innerHTML = '';
       if (item.abs_link) {
         mLinks.innerHTML = `
-          <a href="${item.abs_link}" target="_blank" rel="noopener" class="modal-link-btn">📄 arXiv Makalesi</a>
-          <a href="${item.pdf_link || item.abs_link.replace('/abs/', '/pdf/') + '.pdf'}" target="_blank" rel="noopener" class="modal-link-btn secondary">📥 PDF İndir</a>
+          <a href="${item.pdf_link || item.abs_link.replace('/abs/', '/pdf/') + '.pdf'}" target="_blank" rel="noopener" class="modal-link-btn">📥 PDF İndir</a>
         `;
       }
+
+      // Share buttons
+      const shareUrl = encodeURIComponent(window.location.href.split('#')[0] + '#news-' + index);
+      const shareTitle = encodeURIComponent(stripMarkdown(item.title));
+      const shareText = encodeURIComponent(stripMarkdown(item.title) + ' - arXiv öte gezegen haberleri');
+      
+      const mShare = document.getElementById('m-share');
+      mShare.innerHTML = `
+        <a href="https://twitter.com/intent/tweet?text=${shareText}&url=${shareUrl}" target="_blank" rel="noopener" class="share-btn" title="Twitter'da Paylaş">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="https://bsky.app/intent/compose?text=${shareText}%20${shareUrl}" target="_blank" rel="noopener" class="share-btn" title="Bluesky'da Paylaş">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489-.094-.777-.18-1.97.038-2.819.197-.763 1.27-5.393 1.27-5.393s-.324-.65-.324-1.61c0-1.508.874-2.634 1.963-2.634.926 0 1.373.695 1.373 1.528 0 .931-.593 2.323-.899 3.614-.255 1.08.542 1.96 1.607 1.96 1.93 0 3.415-2.035 3.415-4.974 0-2.6-1.869-4.417-4.536-4.417-3.089 0-4.902 2.316-4.902 4.713 0 .933.36 1.936.807 2.48.089.108.102.202.076.312l-.3 1.227c-.048.196-.157.237-.363.143-1.353-.63-2.2-2.609-2.2-4.198 0-3.418 2.484-6.56 7.165-6.56 3.763 0 6.688 2.681 6.688 6.263 0 3.739-2.358 6.748-5.63 6.748-1.1 0-2.132-.571-2.485-1.246l-.676 2.577c-.244.937-.904 2.11-1.346 2.824A10.001 10.001 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+        </a>
+        <a href="mailto:?subject=${shareTitle}&body=${shareText}%0A%0A${shareUrl}" class="share-btn" title="E-posta ile Paylaş">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </a>
+        <button onclick="copyNewsLink(${index})" class="share-btn" title="Linki Kopyala">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+        </button>
+      `;
 
       const mTags = document.getElementById('m-tags');
       mTags.innerHTML = '<span class="tag arxiv-badge">arXiv</span>';
@@ -538,6 +588,13 @@
     function closeModal() {
       modal.classList.remove('active');
       document.body.style.overflow = '';
+    }
+
+    function copyNewsLink(index) {
+      const url = window.location.href.split('#')[0] + '#news-' + index;
+      navigator.clipboard.writeText(url).then(() => {
+        alert('Link kopyalandı!');
+      });
     }
 
     modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });

@@ -128,44 +128,73 @@ def get_paper_figure_url(paper: dict) -> str:
     if paper.get("figure_url"):
         return paper["figure_url"]
     
-    # Large pool of diverse astronomy/exoplanet images from Unsplash
+    # Large pool of 50+ diverse astronomy/space images
     fallbacks = [
-        # Galaxies & Deep Space
+        # Galaxies
         "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=800&q=80",
         "https://images.unsplash.com/photo-1537420327992-d6e192287183?w=800&q=80",
         "https://images.unsplash.com/photo-1543722530-d2c3201371e7?w=800&q=80",
         "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800&q=80",
+        "https://images.unsplash.com/photo-1590985560880-aee0e3ce4ce4?w=800&q=80",
+        "https://images.unsplash.com/photo-1495942786450-5a3e59dd2ba3?w=800&q=80",
         # Nebulae
         "https://images.unsplash.com/photo-1464802686167-b939a6910659?w=800&q=80",
         "https://images.unsplash.com/photo-1507400492013-162706c8c05e?w=800&q=80",
         "https://images.unsplash.com/photo-1630694093867-4b947d812bf0?w=800&q=80",
-        # Stars & Night Sky
+        "https://images.unsplash.com/photo-1465101162946-4377e57745c3?w=800&q=80",
+        "https://images.unsplash.com/photo-1608178398319-48f814d0750c?w=800&q=80",
+        # Stars & Milky Way
         "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=800&q=80",
         "https://images.unsplash.com/photo-1475274047050-1d0c0975c63e?w=800&q=80",
+        "https://images.unsplash.com/photo-1509773896068-7fd415d91e2e?w=800&q=80",
         "https://images.unsplash.com/photo-1507400492013-162706c8c05e?w=800&q=80",
+        "https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?w=800&q=80",
+        "https://images.unsplash.com/photo-1435224668334-0f82ec57b605?w=800&q=80",
         # Planets
         "https://images.unsplash.com/photo-1614728263952-84ea256f9679?w=800&q=80",
         "https://images.unsplash.com/photo-1614313913007-2b4ae8ce32d6?w=800&q=80",
         "https://images.unsplash.com/photo-1639921884918-8d28ab2e39a4?w=800&q=80",
-        # Space Art
+        "https://images.unsplash.com/photo-1545156521-77bd85671d30?w=800&q=80",
+        "https://images.unsplash.com/photo-1630839437035-dac17da580d0?w=800&q=80",
+        "https://images.unsplash.com/photo-1617952739858-28043cfa1fd3?w=800&q=80",
+        # Earth from space
         "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80",
-        "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?w=800&q=80",
-        "https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?w=800&q=80",
+        "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=800&q=80",
+        "https://images.unsplash.com/photo-1454789548928-9efd52dc4031?w=800&q=80",
+        "https://images.unsplash.com/photo-1541873676-a18131494184?w=800&q=80",
         # Sun & Solar
         "https://images.unsplash.com/photo-1532693322450-2cb5c511067d?w=800&q=80",
         "https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?w=800&q=80",
-        # Earth-like views
-        "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=800&q=80",
-        "https://images.unsplash.com/photo-1454789548928-9efd52dc4031?w=800&q=80",
-        # Abstract Space
+        "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=800&q=80",
+        # Space Art & Abstract
+        "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?w=800&q=80",
+        "https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?w=800&q=80",
         "https://images.unsplash.com/photo-1520034475321-cbe63696469a?w=800&q=80",
         "https://images.unsplash.com/photo-1610296669228-602fa827fc1f?w=800&q=80",
         "https://images.unsplash.com/photo-1579566346927-c68383817a25?w=800&q=80",
         "https://images.unsplash.com/photo-1484589065579-248aad0d628b?w=800&q=80",
+        "https://images.unsplash.com/photo-1528722828814-77b9b83aafb2?w=800&q=80",
+        "https://images.unsplash.com/photo-1505506874110-6a7a69069a08?w=800&q=80",
+        # Aurora & Night Sky
+        "https://images.unsplash.com/photo-1483086431886-3590a88317fe?w=800&q=80",
+        "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=800&q=80",
+        "https://images.unsplash.com/photo-1507400492013-162706c8c05e?w=800&q=80",
+        # Telescopes & Observatories
+        "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?w=800&q=80",
+        "https://images.unsplash.com/photo-1543722530-d2c3201371e7?w=800&q=80",
+        # More cosmic views
+        "https://images.unsplash.com/photo-1464802686167-b939a6910659?w=800&q=80",
+        "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80",
+        "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=800&q=80",
+        "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=800&q=80",
+        "https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?w=800&q=80",
+        "https://images.unsplash.com/photo-1462332420958-a05d1e002413?w=800&q=80",
+        "https://images.unsplash.com/photo-1507908708918-778587c9e563?w=800&q=80",
+        "https://images.unsplash.com/photo-1518141532615-4305c9f914c9?w=800&q=80",
     ]
     
-    # Use paper ID + title hash for consistent but varied selection
-    hash_input = f"{paper['id']}-{paper['title']}"
+    # Use paper ID + title + abstract hash for maximum variety
+    hash_input = f"{paper['id']}-{paper['title']}-{paper.get('abstract', '')[:100]}"
     idx = hash(hash_input) % len(fallbacks)
     return fallbacks[idx]
 
@@ -177,10 +206,30 @@ def create_news_item(paper: dict, turkish_data: dict, date: str) -> dict:
     paper_id_clean = paper["id"].replace(".", "-").replace("/", "-")
     news_id = f"news-{date}-{paper_id_clean}"
     
-    # Get tags and add base astronomy tags
+    # Get tags and fix Turkish translations
     tags = turkish_data.get("tags", [])
-    base_tags = ["arXiv", "astronomi", "öte gezegen"]
-    all_tags = list(set(base_tags + tags))[:8]  # Max 8 tags
+    
+    # Fix common keyword issues
+    fixed_tags = []
+    for tag in tags:
+        tag = tag.strip()
+        # Fix Turkish translations
+        tag = tag.replace("öte gezegen", "ötegezegen")
+        tag = tag.replace("Öte Gezegen", "Ötegezegen")
+        tag = tag.replace("exoplanet", "ötegezegen")
+        tag = tag.replace("Exoplanet", "Ötegezegen")
+        tag = tag.replace("astronomy", "astronomi")
+        tag = tag.replace("Astronomy", "Astronomi")
+        if tag and tag not in fixed_tags:
+            fixed_tags.append(tag)
+    
+    # Add base tags if not present
+    base_tags = ["arXiv", "astronomi", "ötegezegen"]
+    for bt in base_tags:
+        if bt.lower() not in [t.lower() for t in fixed_tags]:
+            fixed_tags.insert(0, bt)
+    
+    all_tags = fixed_tags[:8]  # Max 8 tags
     
     return {
         "id": news_id,
@@ -189,7 +238,7 @@ def create_news_item(paper: dict, turkish_data: dict, date: str) -> dict:
         "title": turkish_data["title"],
         "image": get_paper_figure_url(paper),
         "tags": ",".join(all_tags),
-        "audioMp3": "",  # Can be added later
+        "audioMp3": "",
         "audioM4a": "",
         "text": turkish_data["text"] + f"\n\n**Kaynak**: [arXiv:{paper['id']}]({paper['abs_link']})",
         "abs_link": paper.get("abs_link", f"https://arxiv.org/abs/{paper['id']}"),
