@@ -445,7 +445,9 @@
         <h1>📰 Haber Yönetimi</h1>
         <div class="toolbar">
           <button class="btn btn-warning" onclick="autoFixAll()">🔧 Tümünü Otomatik Düzelt</button>
-          <button class="btn btn-success" onclick="downloadJSON()">💾 JSON İndir</button>
+          <button class="btn btn-success" onclick="saveToGitHub()">🚀 GitHub'a Kaydet</button>
+          <button class="btn btn-outline" onclick="downloadJSON()">💾 JSON İndir</button>
+          <button class="btn btn-outline" onclick="showTokenModal()">⚙️ Ayarlar</button>
         </div>
       </header>
 
@@ -461,6 +463,10 @@
         <div class="stat">
           <div class="stat-value" id="fixedCount">0</div>
           <div class="stat-label">Düzeltildi</div>
+        </div>
+        <div class="stat" id="unsavedIndicator" style="display: none; border-color: var(--warning);">
+          <div class="stat-value" style="color: var(--warning);">!</div>
+          <div class="stat-label">Kaydedilmedi</div>
         </div>
       </div>
 
@@ -521,6 +527,41 @@
     <span id="toastMessage"></span>
   </div>
 
+  <!-- Token Settings Modal -->
+  <div class="modal-overlay" id="tokenModal">
+    <div class="modal" style="max-width: 500px;">
+      <div class="modal-header">
+        <h2>⚙️ GitHub Ayarları</h2>
+        <button class="modal-close" onclick="closeTokenModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>GitHub Personal Access Token</label>
+          <input type="password" id="githubToken" placeholder="ghp_xxxxxxxxxxxx">
+          <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem;">
+            Token tarayıcınızda saklanır, kimseyle paylaşılmaz.
+          </p>
+        </div>
+        
+        <div class="corrections-panel" style="margin-top: 1rem;">
+          <h4 style="color: var(--accent);">📋 Token Nasıl Oluşturulur?</h4>
+          <ol style="font-size: 0.85rem; color: var(--text-muted); padding-left: 1.2rem; line-height: 1.8;">
+            <li><a href="https://github.com/settings/tokens/new" target="_blank" style="color: var(--accent);">GitHub Token Sayfası</a>'na gidin</li>
+            <li>Note: <code>admin-panel</code> yazın</li>
+            <li>Expiration: İstediğiniz süreyi seçin</li>
+            <li>Scope: <strong>repo</strong> kutusunu işaretleyin</li>
+            <li>"Generate token" tıklayın</li>
+            <li>Token'ı kopyalayıp buraya yapıştırın</li>
+          </ol>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline" onclick="clearToken()">🗑️ Token'ı Sil</button>
+        <button class="btn btn-primary" onclick="saveToken()">💾 Kaydet</button>
+      </div>
+    </div>
+  </div>
+
   <script>
     // Common Turkish spelling/grammar errors and their corrections
     const CORRECTIONS = {
@@ -565,6 +606,119 @@
       " .": ".",
       "  ": " ",
     };
+
+    // GitHub configuration
+    const GITHUB_OWNER = 'ArifSolmaz';
+    const GITHUB_REPO = 'arifsolmaz.github.io';
+    const GITHUB_FILE_PATH = 'arxiv/data/arxiv_news.json';
+    const GITHUB_BRANCH = 'main';
+
+    // Token management
+    function getToken() {
+      return localStorage.getItem('github_admin_token') || '';
+    }
+
+    function showTokenModal() {
+      document.getElementById('githubToken').value = getToken();
+      document.getElementById('tokenModal').classList.add('active');
+    }
+
+    function closeTokenModal() {
+      document.getElementById('tokenModal').classList.remove('active');
+    }
+
+    function saveToken() {
+      const token = document.getElementById('githubToken').value.trim();
+      if (token) {
+        localStorage.setItem('github_admin_token', token);
+        showToast('Token kaydedildi!', 'success');
+        closeTokenModal();
+      } else {
+        showToast('Token boş olamaz', 'error');
+      }
+    }
+
+    function clearToken() {
+      localStorage.removeItem('github_admin_token');
+      document.getElementById('githubToken').value = '';
+      showToast('Token silindi', 'success');
+    }
+
+    // Save to GitHub
+    async function saveToGitHub() {
+      const token = getToken();
+      
+      if (!token) {
+        showToast('Önce GitHub token ayarlayın (⚙️ Ayarlar)', 'error');
+        showTokenModal();
+        return;
+      }
+
+      try {
+        showToast('GitHub\'a kaydediliyor...', 'success');
+
+        // First, get the current file's SHA (required for updates)
+        const getResponse = await fetch(
+          `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${GITHUB_FILE_PATH}?ref=${GITHUB_BRANCH}`,
+          {
+            headers: {
+              'Authorization': `Bearer ${token}`,
+              'Accept': 'application/vnd.github.v3+json'
+            }
+          }
+        );
+
+        let sha = '';
+        if (getResponse.ok) {
+          const fileData = await getResponse.json();
+          sha = fileData.sha;
+        }
+
+        // Prepare the content
+        const content = JSON.stringify(newsData, null, 2);
+        const encodedContent = btoa(unescape(encodeURIComponent(content)));
+
+        // Update the file
+        const updateResponse = await fetch(
+          `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${GITHUB_FILE_PATH}`,
+          {
+            method: 'PUT',
+            headers: {
+              'Authorization': `Bearer ${token}`,
+              'Accept': 'application/vnd.github.v3+json',
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              message: `Update Turkish news via admin panel - ${new Date().toISOString().slice(0, 10)}`,
+              content: encodedContent,
+              sha: sha,
+              branch: GITHUB_BRANCH
+            })
+          }
+        );
+
+        if (updateResponse.ok) {
+          showToast('✅ GitHub\'a kaydedildi! Sayfa 1-2 dakika içinde güncellenecek.', 'success');
+          fixedCount = 0;
+          updateStats();
+        } else {
+          const errorData = await updateResponse.json();
+          console.error('GitHub error:', errorData);
+          
+          if (updateResponse.status === 401) {
+            showToast('Token geçersiz veya süresi dolmuş', 'error');
+            showTokenModal();
+          } else if (updateResponse.status === 404) {
+            showToast('Dosya bulunamadı veya repo erişim yok', 'error');
+          } else {
+            showToast(`Hata: ${errorData.message || 'Bilinmeyen hata'}`, 'error');
+          }
+        }
+      } catch (error) {
+        console.error('Save error:', error);
+        showToast('Bağlantı hatası: ' + error.message, 'error');
+      }
+    }
 
     let newsData = [];
     let editingIndex = -1;
@@ -689,6 +843,14 @@
       
       document.getElementById('errorCount').textContent = errorCount;
       document.getElementById('fixedCount').textContent = fixedCount;
+      
+      // Show/hide unsaved indicator
+      const unsavedIndicator = document.getElementById('unsavedIndicator');
+      if (fixedCount > 0) {
+        unsavedIndicator.style.display = 'block';
+      } else {
+        unsavedIndicator.style.display = 'none';
+      }
     }
 
     function openEdit(index) {
@@ -813,12 +975,19 @@
 
     // Close modal on escape
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeModal();
+      if (e.key === 'Escape') {
+        closeModal();
+        closeTokenModal();
+      }
     });
 
     // Close modal on overlay click
     document.getElementById('editModal').addEventListener('click', (e) => {
       if (e.target === document.getElementById('editModal')) closeModal();
+    });
+
+    document.getElementById('tokenModal').addEventListener('click', (e) => {
+      if (e.target === document.getElementById('tokenModal')) closeTokenModal();
     });
   </script>
 </body>
