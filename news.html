@@ -699,18 +699,21 @@
         });
 
         // Clean text preview - strip ALL markdown formatting
-        let plainText = (item.text || '')
-          .replace(/\*\*/g, '')               // Remove all ** 
-          .replace(/\*/g, '')                 // Remove all *
-          .replace(/\[([^\]]+)\]\([^\)]+\)/g, '$1')  // [link](url) → link
-          .replace(/#{1,6}\s*/g, '')          // Remove headers
-          .replace(/\\n/g, ' ')               // Escaped newlines
-          .replace(/\n/g, ' ')                // Regular newlines
-          .replace(/\s+/g, ' ')               // Collapse multiple spaces
-          .trim();
+        let plainText = (item.text || '');
+        // Remove markdown bold/italic (use split/join - more reliable than regex)
+        plainText = plainText.split('**').join('');
+        plainText = plainText.split('*').join('');
+        // Remove markdown links [text](url) -> text
+        plainText = plainText.replace(/\[([^\]]+)\]\([^\)]+\)/g, '$1');
+        // Remove headers
+        plainText = plainText.replace(/#{1,6}\s*/g, '');
+        // Clean up whitespace
+        plainText = plainText.replace(/\\n/g, ' ').replace(/\n/g, ' ').replace(/\s+/g, ' ').trim();
 
         const card = document.createElement('div');
         card.className = 'card';
+        // Also clean title of any markdown
+        const cleanTitle = (item.title || '').split('**').join('').split('*').join('');
         card.innerHTML = `
           <div class="card-img">
             <img src="${item.image || 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=600&q=80'}" 
@@ -719,7 +722,7 @@
           </div>
           <div class="card-body">
             <span class="date">${item.date}</span>
-            <div class="title">${item.title}</div>
+            <div class="title">${cleanTitle}</div>
             <div class="summary">${plainText}</div>
             <div class="tags">${tagsHtml}</div>
             <div class="read-more"><span>Devamını Oku →</span></div>
