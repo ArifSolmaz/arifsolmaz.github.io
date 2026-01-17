@@ -7,6 +7,8 @@ Note: arXiv publication schedule:
 - Papers submitted Mon-Thu by 14:00 ET are announced the next day
 - Papers submitted Fri-Sun are announced on Monday
 - No announcements on weekends
+
+NEW: Also generates tweet-optimized hooks for better Twitter engagement.
 """
 
 import json
@@ -146,6 +148,33 @@ EXCLUDE_KEYWORDS = [
     "dwarf planet ceres", "dwarf planet pluto",
 ]
 
+# Tweetability scoring keywords (for picking most engaging paper)
+TWEETABILITY_KEYWORDS = {
+    # High engagement topics (+3)
+    "jwst": 3, "james webb": 3,
+    "habitable": 3, "habitability": 3,
+    "biosignature": 3, "biosignatures": 3,
+    "earth-like": 3, "earthlike": 3, "earth-sized": 3,
+    "water world": 3, "ocean world": 3,
+    "life": 3,
+    "trappist": 3, "proxima": 3,
+    
+    # Discovery/novelty language (+2)
+    "first": 2, "discovery": 2, "discovered": 2,
+    "detection": 2, "detected": 2, "detect": 2,
+    "new": 2, "novel": 2,
+    "confirmed": 2, "confirmation": 2,
+    "breakthrough": 2,
+    
+    # Popular instruments (+1)
+    "tess": 1, "kepler": 1, "gaia": 1, "hubble": 1,
+    "alma": 1, "vlt": 1,
+    
+    # Technical/instrumentation (-2)
+    "calibration": -2, "pipeline": -2, "systematic": -2,
+    "correction": -2, "reduction": -2,
+}
+
 
 def is_exoplanet_paper(title: str, abstract: str) -> bool:
     """Check if a paper is related to exoplanet science."""
@@ -167,6 +196,18 @@ def is_exoplanet_paper(title: str, abstract: str) -> bool:
             return True
     
     return False
+
+
+def calculate_tweetability_score(paper: dict) -> int:
+    """Calculate how 'tweetable' a paper is based on keywords."""
+    text = f"{paper['title']} {paper['abstract']}".lower()
+    score = 0
+    
+    for keyword, points in TWEETABILITY_KEYWORDS.items():
+        if keyword.lower() in text:
+            score += points
+    
+    return score
 
 
 def fetch_arxiv_papers(category: str, max_results: int = 15) -> list[dict]:
@@ -243,6 +284,10 @@ def fetch_arxiv_papers(category: str, max_results: int = 15) -> list[dict]:
         if is_exoplanet_paper(p["title"], p["abstract"])
     ]
     
+    # Calculate tweetability score for each paper
+    for paper in exoplanet_papers:
+        paper["tweetability_score"] = calculate_tweetability_score(paper)
+    
     print(f"Fetched {len(all_papers)} total papers, {len(exoplanet_papers)} are exoplanet-related")
     
     # Return up to max_results
@@ -289,6 +334,78 @@ Guidelines:
     except Exception as e:
         print(f"Error generating summary for {paper['id']}: {e}")
         return ""
+
+
+def generate_tweet_hook(client: anthropic.Anthropic, paper: dict) -> dict:
+    """Generate tweet-optimized hook, evidence, and question for a paper."""
+    
+    prompt = f"""You are a science communicator crafting a tweet about an exoplanet research paper. Your goal is to maximize engagement (replies and retweets).
+
+PAPER TITLE: {paper['title']}
+
+ABSTRACT: {paper['abstract']}
+
+Generate tweet content in this EXACT format (each field on its own line):
+
+HOOK: [A concrete, attention-grabbing statement. No jargon. Max 120 chars. Start with the most interesting finding or implication, not "Astronomers discovered..." or "New research shows..."]
+
+CLAIM: [What's new or changed because of this research. Max 100 chars. Be specific.]
+
+EVIDENCE: [One specific detail from the paper: a number, comparison, or concrete finding. If no headline number in abstract, say "Method: [brief method description]". Max 100 chars.]
+
+QUESTION: [A thought-provoking question designed to get replies. Ask something experts and enthusiasts would want to answer. Max 80 chars.]
+
+Guidelines:
+- NO analogies like "imagine trying to..." or "think of it like..."
+- NO generic openings like "Astronomers have discovered..." or "A new study..."
+- Lead with the MOST INTERESTING thing, not context
+- Use technical terms that the astronomy Twitter community knows (JWST, RV, transit, etc.)
+- The question should invite genuine discussion, not rhetorical
+
+Example good output:
+HOOK: Water vapor detected in a sub-Neptune atmosphere just 22 light-years away
+CLAIM: First atmospheric characterization of a potentially habitable-zone world around an M dwarf
+EVIDENCE: JWST NIRSpec found H2O absorption at 3σ confidence in GJ 1214b's transmission spectrum
+QUESTION: What biosignatures should we prioritize searching for in sub-Neptune atmospheres?"""
+
+    try:
+        response = client.messages.create(
+            model="claude-sonnet-4-20250514",
+            max_tokens=500,
+            messages=[{"role": "user", "content": prompt}]
+        )
+        
+        text = response.content[0].text
+        
+        # Parse the response
+        hook_data = {
+            "hook": "",
+            "claim": "",
+            "evidence": "",
+            "question": ""
+        }
+        
+        for line in text.strip().split("\n"):
+            line = line.strip()
+            if line.startswith("HOOK:"):
+                hook_data["hook"] = line[5:].strip()
+            elif line.startswith("CLAIM:"):
+                hook_data["claim"] = line[6:].strip()
+            elif line.startswith("EVIDENCE:"):
+                hook_data["evidence"] = line[9:].strip()
+            elif line.startswith("QUESTION:"):
+                hook_data["question"] = line[9:].strip()
+        
+        return hook_data
+        
+    except Exception as e:
+        print(f"Error generating tweet hook for {paper['id']}: {e}")
+        return {
+            "hook": "",
+            "claim": "",
+            "evidence": "",
+            "question": ""
+        }
 
 
 def format_summary_html(summary: str) -> str:
@@ -364,27 +481,48 @@ def main():
     else:
         client = anthropic.Anthropic(api_key=api_key)
     
-    # Generate summaries (reuse existing ones when possible)
+    # Generate summaries and tweet hooks (reuse existing ones when possible)
     for i, paper in enumerate(papers):
-        # Check if we already have a summary for this paper
-        if paper["id"] in existing_papers and existing_papers[paper["id"]].get("summary_html"):
-            print(f"Reusing existing summary for {paper['id']}")
-            paper["summary"] = existing_papers[paper["id"]]["summary"]
-            paper["summary_html"] = existing_papers[paper["id"]]["summary_html"]
-            continue
+        # Check if we already have content for this paper
+        if paper["id"] in existing_papers:
+            existing = existing_papers[paper["id"]]
+            if existing.get("summary_html"):
+                print(f"Reusing existing summary for {paper['id']}")
+                paper["summary"] = existing["summary"]
+                paper["summary_html"] = existing["summary_html"]
+                # Also reuse tweet hook if exists
+                if existing.get("tweet_hook"):
+                    paper["tweet_hook"] = existing["tweet_hook"]
+                # Preserve tweetability score if already calculated
+                if existing.get("tweetability_score") is not None:
+                    paper["tweetability_score"] = existing["tweetability_score"]
+                continue
         
-        print(f"Generating summary {i+1}/{len(papers)}: {paper['id']}")
+        print(f"Generating content {i+1}/{len(papers)}: {paper['id']}")
         
         if client:
+            # Generate long-form summary
             summary = generate_summary(client, paper)
             paper["summary"] = summary
             paper["summary_html"] = format_summary_html(summary)
+            
+            # Generate tweet-optimized hook
+            time.sleep(0.5)  # Brief pause between API calls
+            tweet_hook = generate_tweet_hook(client, paper)
+            paper["tweet_hook"] = tweet_hook
+            
             # Rate limiting - be nice to the API
             if i < len(papers) - 1:
                 time.sleep(1)
         else:
             paper["summary"] = ""
             paper["summary_html"] = "<p><em>Summary unavailable.</em></p>"
+            paper["tweet_hook"] = {
+                "hook": "",
+                "claim": "",
+                "evidence": "",
+                "question": ""
+            }
     
     # Prepare output data
     output = {

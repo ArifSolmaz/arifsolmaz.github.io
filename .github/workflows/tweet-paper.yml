@@ -1,30 +1,30 @@
-name: Tweet Paper
+name: Tweet Paper Thread
 
 on:
   schedule:
+    # Tweet one paper per hour from 09:00-23:00 UTC on weekdays
+    # This spreads ~15 papers throughout the day
     - cron: '0 9-23 * * 1-5'
-  workflow_dispatch:
+  workflow_dispatch:  # Allow manual trigger
 
 jobs:
   tweet-paper:
     runs-on: ubuntu-latest
     
-    if: ${{ vars.TWITTER_ENABLED != 'false' }}
-    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
+      
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-
+      
       - name: Install dependencies
         run: |
-          pip install tweepy requests
-
-      - name: Tweet one paper
+          pip install requests tweepy pillow
+      
+      - name: Tweet paper thread
         env:
           TWITTER_API_KEY: ${{ secrets.TWITTER_API_KEY }}
           TWITTER_API_SECRET: ${{ secrets.TWITTER_API_SECRET }}
@@ -33,32 +33,12 @@ jobs:
           TWITTER_PREMIUM: ${{ vars.TWITTER_PREMIUM }}
           PAGE_URL: "https://arifsolmaz.github.io/arxiv"
         run: |
-          if [ -z "$TWITTER_API_KEY" ]; then
-            echo "Twitter credentials not configured. Skipping."
-            exit 0
-          fi
           python arxiv/scripts/post_twitter.py
-
-      - name: Commit tweeted tracking file
+      
+      - name: Commit tweeted tracking
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          
-          # Save our tracking file
-          cp arxiv/data/tweeted.json /tmp/tweeted.json
-          
-          # Get latest from remote
-          git fetch origin main
-          git reset --hard origin/main
-          
-          # Restore our tracking file
-          cp /tmp/tweeted.json arxiv/data/tweeted.json
-          
-          # Commit and push
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
           git add arxiv/data/tweeted.json
-          if git diff --staged --quiet; then
-            echo "No changes to commit"
-          else
-            git commit -m "Update tweeted tracking $(date +'%Y-%m-%d %H:%M')"
-            git push
-          fi
+          git diff --staged --quiet || git commit -m "Update tweeted papers tracking"
+          git push

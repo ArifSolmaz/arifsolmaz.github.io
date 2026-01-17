@@ -2,8 +2,9 @@ name: Update Exoplanet Papers
 
 on:
   schedule:
+    # Run at 08:00 UTC on weekdays (after arXiv's 20:00 ET announcement)
     - cron: '0 8 * * 1-5'
-  workflow_dispatch:
+  workflow_dispatch:  # Allow manual trigger
 
 jobs:
   update-papers:
@@ -12,41 +13,26 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
+      
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-
+      
       - name: Install dependencies
         run: |
-          pip install requests anthropic feedparser
-
+          pip install requests anthropic
+      
       - name: Fetch papers and generate summaries
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: python arxiv/scripts/fetch_papers.py
-
+        run: |
+          python arxiv/scripts/fetch_papers.py
+      
       - name: Commit and push if changed
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          
-          # Save our generated file
-          cp arxiv/data/papers.json /tmp/papers.json
-          
-          # Get latest from remote
-          git fetch origin main
-          git reset --hard origin/main
-          
-          # Restore our generated file
-          cp /tmp/papers.json arxiv/data/papers.json
-          
-          # Commit and push
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
           git add arxiv/data/papers.json
-          if git diff --staged --quiet; then
-            echo "No changes to commit"
-          else
-            git commit -m "Update papers $(date +'%Y-%m-%d')"
-            git push
-          fi
+          git diff --staged --quiet || git commit -m "Update exoplanet papers $(date +'%Y-%m-%d')"
+          git push

@@ -1,8 +1,14 @@
 #!/usr/bin/env python3
 """
-Post individual exoplanet paper summaries to Twitter/X.
-Tweets ONE paper per run with dynamic hashtags extracted from paper content.
-Attempts to attach Figure 1 from the paper when available.
+Post individual exoplanet paper summaries to Twitter/X as 2-tweet threads.
+Tweets ONE paper per run, selecting the most "tweetable" untweeted paper.
+
+IMPROVEMENTS:
+- Posts as 2-tweet thread (hook first, links second)
+- Fixed hashtag matching (lowercase keys)
+- Reduced hashtags (2-4 max)
+- Generates fallback "paper card" images
+- Selects most engaging paper based on tweetability score
 
 Supports Twitter Premium for longer tweets:
 - Free: 280 characters
@@ -37,13 +43,13 @@ TWEET_LIMITS = {
 }
 
 # Keyword to hashtag mapping for exoplanet research
-# Maps common terms found in papers to appropriate hashtags
+# ALL KEYS MUST BE LOWERCASE for matching to work!
 KEYWORD_HASHTAGS = {
     # Detection methods
     "transit": "#TransitMethod",
     "transiting": "#TransitMethod",
     "radial velocity": "#RadialVelocity",
-    "RV": "#RadialVelocity",
+    "rv": "#RadialVelocity",
     "microlensing": "#Microlensing",
     "direct imaging": "#DirectImaging",
     "astrometry": "#Astrometry",
@@ -52,47 +58,48 @@ KEYWORD_HASHTAGS = {
     "transmission spectrum": "#TransmissionSpectroscopy",
     "emission spectrum": "#EmissionSpectroscopy",
     
-    # Telescopes & Instruments
-    "JWST": "#JWST",
-    "James Webb": "#JWST",
-    "Webb": "#JWST",
-    "Hubble": "#Hubble #HST",
-    "HST": "#HST",
-    "TESS": "#TESS",
-    "Kepler": "#Kepler",
-    "K2": "#K2",
-    "CHEOPS": "#CHEOPS",
-    "Spitzer": "#Spitzer",
-    "VLT": "#VLT",
-    "Keck": "#Keck",
-    "ALMA": "#ALMA",
-    "HARPS": "#HARPS",
-    "ESPRESSO": "#ESPRESSO",
-    "NIRSpec": "#JWST #NIRSpec",
-    "MIRI": "#JWST #MIRI",
-    "NIRCam": "#JWST #NIRCam",
-    "Roman": "#NancyGraceRoman",
-    "Euclid": "#Euclid",
-    "PLATO": "#PLATO",
-    "Ariel": "#Ariel",
-    "ELT": "#ELT",
-    "GMT": "#GMT",
-    "TMT": "#TMT",
+    # Telescopes & Instruments (lowercase keys!)
+    "jwst": "#JWST",
+    "james webb": "#JWST",
+    "webb": "#JWST",
+    "hubble": "#Hubble",
+    "hst": "#HST",
+    "tess": "#TESS",
+    "kepler": "#Kepler",
+    "k2": "#K2",
+    "cheops": "#CHEOPS",
+    "spitzer": "#Spitzer",
+    "vlt": "#VLT",
+    "keck": "#Keck",
+    "alma": "#ALMA",
+    "harps": "#HARPS",
+    "espresso": "#ESPRESSO",
+    "nirspec": "#JWST",
+    "miri": "#JWST",
+    "nircam": "#JWST",
+    "roman": "#NancyGraceRoman",
+    "euclid": "#Euclid",
+    "plato": "#PLATO",
+    "ariel": "#Ariel",
+    "elt": "#ELT",
+    "gmt": "#GMT",
+    "tmt": "#TMT",
+    "gaia": "#Gaia",
     
     # Planet types
-    "hot Jupiter": "#HotJupiter",
-    "hot Jupiters": "#HotJupiters",
-    "warm Jupiter": "#WarmJupiter",
-    "cold Jupiter": "#ColdJupiter",
-    "super-Earth": "#SuperEarth",
-    "super Earth": "#SuperEarth",
-    "super-Earths": "#SuperEarths",
-    "sub-Neptune": "#SubNeptune",
-    "sub Neptune": "#SubNeptune",
-    "mini-Neptune": "#MiniNeptune",
-    "mini Neptune": "#MiniNeptune",
-    "Earth-like": "#EarthLike",
-    "Earth-sized": "#EarthSized",
+    "hot jupiter": "#HotJupiter",
+    "hot jupiters": "#HotJupiters",
+    "warm jupiter": "#WarmJupiter",
+    "cold jupiter": "#ColdJupiter",
+    "super-earth": "#SuperEarth",
+    "super earth": "#SuperEarth",
+    "super-earths": "#SuperEarths",
+    "sub-neptune": "#SubNeptune",
+    "sub neptune": "#SubNeptune",
+    "mini-neptune": "#MiniNeptune",
+    "mini neptune": "#MiniNeptune",
+    "earth-like": "#EarthLike",
+    "earth-sized": "#EarthSized",
     "terrestrial": "#TerrestrialPlanet",
     "gas giant": "#GasGiant",
     "ice giant": "#IceGiant",
@@ -107,24 +114,11 @@ KEYWORD_HASHTAGS = {
     "atmosphere": "#ExoplanetAtmosphere",
     "atmospheric": "#ExoplanetAtmosphere",
     "water vapor": "#WaterVapor",
-    "H2O": "#WaterVapor",
+    "h2o": "#WaterVapor",
     "carbon dioxide": "#CO2",
-    "CO2": "#CO2",
+    "co2": "#CO2",
     "methane": "#Methane",
-    "CH4": "#Methane",
-    "ammonia": "#Ammonia",
-    "hydrogen": "#Hydrogen",
-    "helium": "#Helium",
-    "oxygen": "#Oxygen",
-    "nitrogen": "#Nitrogen",
-    "sulfur": "#Sulfur",
-    "sodium": "#Sodium",
-    "potassium": "#Potassium",
-    "iron": "#Iron",
-    "silicate": "#Silicates",
-    "clouds": "#ExoplanetClouds",
-    "haze": "#ExoplanetHaze",
-    "aerosol": "#Aerosols",
+    "ch4": "#Methane",
     
     # Habitability & Biosignatures
     "habitable": "#HabitableZone",
@@ -133,91 +127,34 @@ KEYWORD_HASHTAGS = {
     "biosignature": "#Biosignatures",
     "biosignatures": "#Biosignatures",
     "biomarker": "#Biosignatures",
-    "life": "#Astrobiology",
     "astrobiology": "#Astrobiology",
-    "SETI": "#SETI",
-    "technosignature": "#Technosignatures",
     
     # Stellar types
-    "M dwarf": "#MDwarf",
-    "M-dwarf": "#MDwarf",
+    "m dwarf": "#MDwarf",
+    "m-dwarf": "#MDwarf",
     "red dwarf": "#RedDwarf",
-    "K dwarf": "#KDwarf",
-    "G dwarf": "#SunLikeStar",
-    "Sun-like": "#SunLikeStar",
-    "solar-type": "#SunLikeStar",
-    "white dwarf": "#WhiteDwarf",
-    "binary": "#BinaryStar",
-    "circumbinary": "#Circumbinary",
     
     # Notable systems
-    "TRAPPIST-1": "#TRAPPIST1",
-    "TRAPPIST": "#TRAPPIST1",
-    "Proxima": "#ProximaCentauri",
-    "Proxima Centauri": "#ProximaCentauri",
-    "55 Cancri": "#55Cancri",
-    "GJ 1214": "#GJ1214",
-    "GJ 436": "#GJ436",
-    "HD 189733": "#HD189733",
-    "HD 209458": "#HD209458",
-    "WASP-39": "#WASP39",
-    "WASP-76": "#WASP76",
-    "WASP-121": "#WASP121",
-    "TOI-700": "#TOI700",
-    "LHS 1140": "#LHS1140",
-    "K2-18": "#K218b",
-    "Kepler-186": "#Kepler186",
-    "Kepler-452": "#Kepler452",
+    "trappist-1": "#TRAPPIST1",
+    "trappist": "#TRAPPIST1",
+    "proxima": "#ProximaCentauri",
+    "proxima centauri": "#ProximaCentauri",
+    "wasp-39": "#WASP39",
+    "wasp-76": "#WASP76",
+    "toi-700": "#TOI700",
+    "k2-18": "#K218b",
     
-    # Processes & Phenomena
-    "migration": "#PlanetMigration",
-    "formation": "#PlanetFormation",
+    # Processes
+    "planet formation": "#PlanetFormation",
     "protoplanetary": "#ProtoplanetaryDisk",
-    "disk": "#ProtoplanetaryDisk",
-    "accretion": "#Accretion",
-    "tidal": "#TidalEffects",
-    "tidal heating": "#TidalHeating",
-    "obliquity": "#Obliquity",
-    "eccentricity": "#Eccentricity",
-    "resonance": "#OrbitalResonance",
-    "mean motion resonance": "#OrbitalResonance",
-    "MMR": "#OrbitalResonance",
-    "evaporation": "#AtmosphericEscape",
-    "escape": "#AtmosphericEscape",
-    "mass loss": "#AtmosphericEscape",
-    "photoevaporation": "#Photoevaporation",
-    "interior": "#PlanetaryInterior",
-    "core": "#PlanetaryCore",
-    "mantle": "#PlanetaryMantle",
-    "magnetic field": "#MagneticField",
-    "magnetosphere": "#Magnetosphere",
-    "volcanism": "#Volcanism",
-    "volcanic": "#Volcanism",
-    "climate": "#ExoplanetClimate",
-    "temperature": "#Temperature",
-    "rotation": "#Rotation",
-    "tidally locked": "#TidallyLocked",
-    
-    # Statistics & Surveys
-    "occurrence rate": "#OccurrenceRate",
-    "demographics": "#ExoplanetDemographics",
-    "population": "#ExoplanetPopulation",
-    "catalog": "#ExoplanetCatalog",
-    "survey": "#ExoplanetSurvey",
-    "confirmed": "#ConfirmedExoplanet",
-    "candidate": "#ExoplanetCandidate",
-    "validation": "#PlanetValidation",
-    
-    # Machine Learning
-    "machine learning": "#MachineLearning #ML",
-    "deep learning": "#DeepLearning",
-    "neural network": "#NeuralNetwork",
-    "AI": "#AI",
-    "artificial intelligence": "#AI",
+    "migration": "#PlanetMigration",
 }
 
-# Base hashtags always included
-BASE_HASHTAGS = ["#Exoplanets", "#Astronomy", "#arXiv"]
+# Base hashtag always included
+BASE_HASHTAG = "#Exoplanets"
+
+# Maximum hashtags to include (including base)
+MAX_HASHTAGS = 4
 
 
 def fetch_paper_figure(paper_id: str) -> str | None:
@@ -334,6 +271,115 @@ def download_image(url: str, paper_id: str) -> str | None:
         return None
 
 
+def generate_paper_card(paper: dict) -> str | None:
+    """
+    Generate a branded "paper card" image as fallback when no figure is available.
+    Returns the local file path if successful, None otherwise.
+    """
+    try:
+        from PIL import Image, ImageDraw, ImageFont
+    except ImportError:
+        print("    PIL not available for paper card generation")
+        return None
+    
+    try:
+        # Card dimensions (Twitter recommends 1200x675 for cards)
+        width, height = 1200, 675
+        
+        # Colors
+        bg_color = "#0f172a"  # Dark blue
+        accent_color = "#6366f1"  # Indigo
+        text_color = "#f8fafc"  # Near white
+        muted_color = "#94a3b8"  # Gray
+        
+        # Create image
+        img = Image.new('RGB', (width, height), bg_color)
+        draw = ImageDraw.Draw(img)
+        
+        # Draw accent bar at top
+        draw.rectangle([(0, 0), (width, 8)], fill=accent_color)
+        
+        # Try to load fonts (fallback to default if not available)
+        try:
+            title_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 42)
+            body_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 28)
+            small_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 22)
+        except:
+            title_font = ImageFont.load_default()
+            body_font = ImageFont.load_default()
+            small_font = ImageFont.load_default()
+        
+        # Wrap and draw title
+        title = paper["title"]
+        # Simple word wrap
+        words = title.split()
+        lines = []
+        current_line = []
+        for word in words:
+            current_line.append(word)
+            test_line = " ".join(current_line)
+            bbox = draw.textbbox((0, 0), test_line, font=title_font)
+            if bbox[2] > width - 100:
+                current_line.pop()
+                lines.append(" ".join(current_line))
+                current_line = [word]
+        if current_line:
+            lines.append(" ".join(current_line))
+        
+        # Limit to 4 lines
+        if len(lines) > 4:
+            lines = lines[:4]
+            lines[-1] = lines[-1][:50] + "..."
+        
+        y_pos = 60
+        for line in lines:
+            draw.text((50, y_pos), line, fill=text_color, font=title_font)
+            y_pos += 55
+        
+        # Draw hook/key insight if available
+        tweet_hook = paper.get("tweet_hook", {})
+        hook = tweet_hook.get("hook", "")
+        if hook:
+            # Wrap hook text
+            hook_words = hook.split()
+            hook_lines = []
+            current_line = []
+            for word in hook_words:
+                current_line.append(word)
+                test_line = " ".join(current_line)
+                bbox = draw.textbbox((0, 0), test_line, font=body_font)
+                if bbox[2] > width - 100:
+                    current_line.pop()
+                    hook_lines.append(" ".join(current_line))
+                    current_line = [word]
+            if current_line:
+                hook_lines.append(" ".join(current_line))
+            
+            y_pos += 40
+            for line in hook_lines[:3]:
+                draw.text((50, y_pos), line, fill=muted_color, font=body_font)
+                y_pos += 38
+        
+        # Draw arXiv ID at bottom
+        arxiv_text = f"arXiv:{paper['id']}"
+        draw.text((50, height - 80), arxiv_text, fill=accent_color, font=small_font)
+        
+        # Draw planet emoji (as text, won't render as emoji but shows intent)
+        draw.text((width - 100, height - 80), "🪐", fill=accent_color, font=small_font)
+        
+        # Save
+        safe_id = paper["id"].replace('/', '_').replace('.', '_')
+        temp_path = f"/tmp/arxiv_card_{safe_id}.png"
+        img.save(temp_path, 'PNG')
+        
+        print(f"    Generated paper card: {temp_path}")
+        return temp_path
+        
+    except Exception as e:
+        print(f"    Paper card generation failed: {e}")
+        return None
+
+
 def load_papers():
     """Load papers from JSON file."""
     if not PAPERS_FILE.exists():
@@ -419,140 +465,107 @@ def truncate_text(text: str, max_length: int, suffix: str = "...") -> str:
     return truncated + suffix
 
 
-def extract_hashtags(paper: dict, max_hashtags: int = 8) -> list[str]:
+def extract_hashtags(paper: dict, max_hashtags: int = MAX_HASHTAGS) -> list[str]:
     """Extract relevant hashtags from paper title and abstract."""
     text = f"{paper['title']} {paper['abstract']}".lower()
     
     found_hashtags = set()
     
-    # Check for keyword matches
+    # Check for keyword matches (keys are already lowercase)
     for keyword, hashtag in KEYWORD_HASHTAGS.items():
-        if keyword.lower() in text:
+        if keyword in text:
             # Some entries have multiple hashtags
             for tag in hashtag.split():
                 found_hashtags.add(tag)
     
-    # Convert to list and limit
+    # Convert to list
     hashtags = list(found_hashtags)
     
     # Prioritize certain categories
-    priority_prefixes = ["#JWST", "#TESS", "#TRAPPIST", "#Habitable", "#Biosig", "#WASP"]
+    priority_prefixes = ["#JWST", "#Habitable", "#Biosig", "#TRAPPIST", "#EarthLike"]
     priority = [h for h in hashtags if any(h.startswith(p) for p in priority_prefixes)]
     others = [h for h in hashtags if h not in priority]
     
     # Combine: priority first, then others
     sorted_hashtags = priority + others
     
-    # Limit to max and add base hashtags
-    paper_hashtags = sorted_hashtags[:max_hashtags]
+    # Start with base hashtag, then add content-specific ones
+    # Total: max_hashtags (including base)
+    result = [BASE_HASHTAG]
+    for h in sorted_hashtags:
+        if h not in result and len(result) < max_hashtags:
+            result.append(h)
     
-    # Add base hashtags (always included)
-    all_hashtags = BASE_HASHTAGS + paper_hashtags
-    
-    # Remove duplicates while preserving order
-    seen = set()
-    unique_hashtags = []
-    for h in all_hashtags:
-        if h not in seen:
-            seen.add(h)
-            unique_hashtags.append(h)
-    
-    return unique_hashtags
+    return result
 
 
-def extract_summary_sections(summary: str) -> dict[str, str]:
-    """Extract individual sections from the AI summary."""
-    sections = {
-        "why_it_matters": "",
-        "what_they_did": "",
-        "key_findings": "",
-        "looking_forward": ""
-    }
+def select_best_paper(papers: list, tweeted_ids: set) -> dict | None:
+    """Select the most tweetable untweeted paper."""
+    untweeted = [p for p in papers if p["id"] not in tweeted_ids]
     
-    if not summary:
-        return sections
+    if not untweeted:
+        return None
     
-    # Define section markers
-    markers = {
-        "why_it_matters": ["Why It Matters", "Why it Matters"],
-        "what_they_did": ["What They Did", "What they Did"],
-        "key_findings": ["Key Findings", "Key findings"],
-        "looking_forward": ["Looking Forward", "Looking forward", "Implications"]
-    }
+    # Sort by tweetability score (descending)
+    untweeted.sort(key=lambda p: p.get("tweetability_score", 0), reverse=True)
     
-    for section_key, section_markers in markers.items():
-        for marker in section_markers:
-            if marker in summary:
-                parts = summary.split(marker)
-                if len(parts) > 1:
-                    content = parts[1]
-                    # Clean up
-                    content = content.lstrip("*: \n")
-                    # Stop at next section
-                    for other_markers in markers.values():
-                        for other_marker in other_markers:
-                            if other_marker in content and other_marker != marker:
-                                content = content.split(other_marker)[0]
-                    
-                    # Clean and store - remove markdown ** markers
-                    content = content.strip().replace("\n", " ")
-                    content = content.replace("**", "")  # Remove bold markers
-                    content = re.sub(r'\s+', ' ', content)
-                    sections[section_key] = content
-                    break
-    
-    return sections
+    return untweeted[0]
 
 
-def format_tweet_free(paper: dict, page_url: str, hashtags: list[str]) -> str:
-    """Format tweet for free Twitter (280 chars)."""
-    title = paper["title"]
-    link = paper["abs_link"]
+def format_tweet_thread_free(paper: dict, page_url: str, hashtags: list[str]) -> tuple[str, str]:
+    """Format 2-tweet thread for free Twitter (280 chars each)."""
     
-    # Get brief summary
-    sections = extract_summary_sections(paper.get("summary", ""))
-    brief = sections["why_it_matters"] or sections["key_findings"]
+    tweet_hook = paper.get("tweet_hook", {})
+    hook = tweet_hook.get("hook", "")
+    claim = tweet_hook.get("claim", "")
+    evidence = tweet_hook.get("evidence", "")
+    question = tweet_hook.get("question", "")
     
-    # Build components
-    hashtag_str = " ".join(hashtags[:5])  # Limit hashtags for free
-    
-    # Calculate available space
-    fixed = f"\n\n{link}\n\n{hashtag_str}"
-    available = 280 - len(fixed) - 10
-    
-    if brief:
-        title_space = int(available * 0.5)
-        brief_space = available - title_space - 5
-        
-        truncated_title = truncate_text(title, title_space)
-        truncated_brief = truncate_text(brief, brief_space)
-        
-        tweet = f"{truncated_title}\n\n{truncated_brief}\n\n{link}\n\n{hashtag_str}"
+    # Tweet 1: Hook + question (no links, image attached)
+    if hook and question:
+        tweet1 = f"{hook}\n\n{question}"
+    elif hook:
+        tweet1 = hook
     else:
-        truncated_title = truncate_text(title, available)
-        tweet = f"{truncated_title}\n\n{link}\n\n{hashtag_str}"
+        # Fallback to title
+        tweet1 = truncate_text(paper["title"], 250)
     
-    # Safety truncation
-    if len(tweet) > 280:
-        overflow = len(tweet) - 277
-        hashtag_str = " ".join(hashtags[:3])
-        tweet = f"{truncate_text(title, available - overflow)}\n\n{link}\n\n{hashtag_str}"
+    # Ensure tweet 1 fits
+    if len(tweet1) > 280:
+        tweet1 = truncate_text(tweet1, 277)
     
-    return tweet[:280]
-
-
-def format_tweet_premium(paper: dict, page_url: str, hashtags: list[str], limit: int) -> str:
-    """Format tweet for Twitter Premium - punchy single highlight, not full summary."""
-    title = paper["title"]
+    # Tweet 2: Links + hashtags
     link = paper["abs_link"]
     paper_id = paper["id"]
+    safe_id = re.sub(r'[^a-zA-Z0-9]', '-', paper_id)
+    summary_link = f"{page_url}#paper-{safe_id}"
+    
+    hashtag_str = " ".join(hashtags)
+    
+    tweet2 = f"📄 {link}\n📖 Full summary: {summary_link}\n\n{hashtag_str}"
+    
+    # Ensure tweet 2 fits
+    if len(tweet2) > 280:
+        # Reduce hashtags
+        hashtag_str = " ".join(hashtags[:2])
+        tweet2 = f"📄 {link}\n📖 {summary_link}\n\n{hashtag_str}"
+    
+    return tweet1, tweet2
+
+
+def format_tweet_thread_premium(paper: dict, page_url: str, hashtags: list[str], limit: int) -> tuple[str, str]:
+    """Format 2-tweet thread for Twitter Premium."""
+    
+    tweet_hook = paper.get("tweet_hook", {})
+    hook = tweet_hook.get("hook", "")
+    claim = tweet_hook.get("claim", "")
+    evidence = tweet_hook.get("evidence", "")
+    question = tweet_hook.get("question", "")
+    
+    title = paper["title"]
     authors = paper.get("authors", [])
     
-    # Create anchor ID (same as website)
-    safe_id = re.sub(r'[^a-zA-Z0-9]', '-', paper_id)
-    paper_url = f"{page_url}#paper-{safe_id}"
-    
-    # Format authors (first author + et al.)
+    # Format authors
     if len(authors) == 1:
         author_str = authors[0]
     elif len(authors) <= 2:
@@ -560,61 +573,45 @@ def format_tweet_premium(paper: dict, page_url: str, hashtags: list[str], limit:
     else:
         author_str = f"{authors[0]} et al."
     
-    # Get the key insight - prioritize "why it matters" or "key findings"
-    sections = extract_summary_sections(paper.get("summary", ""))
+    # Tweet 1: Full content (no links, image attached)
+    parts = [title, "", author_str, ""]
     
-    # Create ONE compelling sentence from the summary
-    key_insight = ""
+    if hook:
+        parts.extend([hook, ""])
+    if claim:
+        parts.extend([claim, ""])
+    if evidence:
+        parts.extend([evidence, ""])
+    if question:
+        parts.extend(["", question])
     
-    # Try to get the best single insight
-    if sections["why_it_matters"]:
-        # Get first 1-2 sentences from "Why It Matters"
-        sentences = sections["why_it_matters"].split(". ")
-        key_insight = sentences[0] + "."
-        if len(sentences) > 1 and len(key_insight) < 150:
-            key_insight = sentences[0] + ". " + sentences[1] + "."
-    
-    if not key_insight and sections["key_findings"]:
-        sentences = sections["key_findings"].split(". ")
-        key_insight = sentences[0] + "."
-    
-    # Clean up the insight
-    key_insight = key_insight.strip()
-    if len(key_insight) > 280:
-        key_insight = truncate_text(key_insight, 280)
-    
-    # Build the tweet - clean, no emojis
-    hashtag_str = " ".join(hashtags)
-    
-    tweet_parts = [
-        title,
-        "",
-        author_str,
-        "",
-        key_insight if key_insight else "",
-        "",
-        link,
-        f"Full summary: {paper_url}",
-        "",
-        hashtag_str
-    ]
-    
-    # Filter empty lines and join
-    tweet = "\n".join([p for p in tweet_parts if p or p == ""])
+    tweet1 = "\n".join(parts)
     
     # Clean up multiple blank lines
-    while "\n\n\n" in tweet:
-        tweet = tweet.replace("\n\n\n", "\n\n")
+    while "\n\n\n" in tweet1:
+        tweet1 = tweet1.replace("\n\n\n", "\n\n")
+    
+    tweet1 = tweet1.strip()
     
     # Truncate if needed
-    if len(tweet) > limit:
-        tweet = tweet[:limit-3] + "..."
+    if len(tweet1) > limit:
+        tweet1 = truncate_text(tweet1, limit - 3)
     
-    return tweet.strip()
+    # Tweet 2: Links + hashtags
+    link = paper["abs_link"]
+    paper_id = paper["id"]
+    safe_id = re.sub(r'[^a-zA-Z0-9]', '-', paper_id)
+    summary_link = f"{page_url}#paper-{safe_id}"
+    
+    hashtag_str = " ".join(hashtags)
+    
+    tweet2 = f"📄 arXiv: {link}\n📖 Full summary: {summary_link}\n\n{hashtag_str}"
+    
+    return tweet1, tweet2
 
 
-def format_paper_tweet(paper: dict, page_url: str) -> str:
-    """Create a tweet for a single paper."""
+def format_paper_thread(paper: dict, page_url: str) -> tuple[str, str]:
+    """Create a 2-tweet thread for a paper."""
     limit = get_tweet_limit()
     hashtags = extract_hashtags(paper)
     
@@ -622,9 +619,9 @@ def format_paper_tweet(paper: dict, page_url: str) -> str:
     print(f"Extracted hashtags: {hashtags}")
     
     if limit > 280:
-        return format_tweet_premium(paper, page_url, hashtags, limit)
+        return format_tweet_thread_premium(paper, page_url, hashtags, limit)
     else:
-        return format_tweet_free(paper, page_url, hashtags)
+        return format_tweet_thread_free(paper, page_url, hashtags)
 
 
 def upload_media(api_v1: tweepy.API, image_path: str) -> str | None:
@@ -638,13 +635,16 @@ def upload_media(api_v1: tweepy.API, image_path: str) -> str | None:
         return None
 
 
-def post_tweet(client: tweepy.Client, tweet_text: str, media_ids: list[str] = None) -> str | None:
-    """Post a single tweet with optional media. Returns tweet ID on success."""
+def post_tweet(client: tweepy.Client, tweet_text: str, media_ids: list[str] = None, reply_to: str = None) -> str | None:
+    """Post a single tweet with optional media and reply. Returns tweet ID on success."""
     try:
+        kwargs = {"text": tweet_text}
         if media_ids:
-            response = client.create_tweet(text=tweet_text, media_ids=media_ids)
-        else:
-            response = client.create_tweet(text=tweet_text)
+            kwargs["media_ids"] = media_ids
+        if reply_to:
+            kwargs["in_reply_to_tweet_id"] = reply_to
+        
+        response = client.create_tweet(**kwargs)
         tweet_id = response.data["id"]
         print(f"Posted tweet: {tweet_id}")
         return tweet_id
@@ -664,7 +664,7 @@ def cleanup_temp_file(filepath: str):
 
 
 def main():
-    """Main function - tweet ONE paper with figure if available."""
+    """Main function - tweet ONE paper as a 2-tweet thread with image."""
     
     # Load papers
     data = load_papers()
@@ -689,16 +689,14 @@ def main():
             "last_reset": papers_date
         }
     
-    # Find next paper to tweet
-    paper_to_tweet = None
-    for paper in papers:
-        if paper["id"] not in tweeted_ids:
-            paper_to_tweet = paper
-            break
+    # Select the best paper to tweet (by tweetability score)
+    paper_to_tweet = select_best_paper(papers, tweeted_ids)
     
     if not paper_to_tweet:
         print("All papers have been tweeted today!")
         return
+    
+    print(f"Selected paper: {paper_to_tweet['id']} (tweetability: {paper_to_tweet.get('tweetability_score', 0)})")
     
     # Create Twitter clients (v2 for tweeting, v1.1 for media upload)
     client, api_v1 = create_twitter_client()
@@ -709,43 +707,68 @@ def main():
     # Get page URL
     page_url = os.environ.get("PAGE_URL", "https://arifsolmaz.github.io/arxiv")
     
-    # Try to fetch a figure for the paper
+    # Try to get an image (figure or fallback card)
     figure_path = None
     media_ids = None
     
     if api_v1:  # Only try if we have v1.1 API for media upload
+        # Try to fetch actual figure first
         figure_path = fetch_paper_figure(paper_to_tweet["id"])
+        
+        # If no figure, generate a paper card
+        if not figure_path:
+            print("  Generating fallback paper card...")
+            figure_path = generate_paper_card(paper_to_tweet)
         
         if figure_path:
             media_id = upload_media(api_v1, figure_path)
             if media_id:
                 media_ids = [media_id]
-                print(f"📸 Figure will be attached to tweet!")
+                print(f"📸 Image will be attached to tweet!")
             else:
-                print("⚠️ Figure upload failed, tweeting without image")
+                print("⚠️ Image upload failed, tweeting without image")
         else:
-            print("📄 No figure found, tweeting text only")
+            print("📄 No image available, tweeting text only")
     
-    # Format and post tweet
-    tweet_text = format_paper_tweet(paper_to_tweet, page_url)
+    # Format the 2-tweet thread
+    tweet1_text, tweet2_text = format_paper_thread(paper_to_tweet, page_url)
+    
     print(f"\nTweeting paper: {paper_to_tweet['id']}")
-    print(f"Tweet ({len(tweet_text)} chars):\n")
+    print(f"\nTweet 1 ({len(tweet1_text)} chars):")
     print("-" * 50)
-    print(tweet_text)
+    print(tweet1_text)
+    print("-" * 50)
+    print(f"\nTweet 2 ({len(tweet2_text)} chars):")
+    print("-" * 50)
+    print(tweet2_text)
     print("-" * 50)
     
-    tweet_id = post_tweet(client, tweet_text, media_ids)
+    # Post tweet 1 (with image, no links)
+    tweet1_id = post_tweet(client, tweet1_text, media_ids)
     
-    # Clean up temp file
+    # Clean up temp file after upload
     if figure_path:
         cleanup_temp_file(figure_path)
     
-    if tweet_id:
-        # Mark as tweeted
-        tweeted_ids.add(paper_to_tweet["id"])
-        tweeted_data["tweeted_ids"] = list(tweeted_ids)
-        save_tweeted(tweeted_data)
-        print(f"\n✅ Successfully tweeted! Remaining papers: {len(papers) - len(tweeted_ids)}")
+    if tweet1_id:
+        # Post tweet 2 as reply (with links)
+        tweet2_id = post_tweet(client, tweet2_text, reply_to=tweet1_id)
+        
+        if tweet2_id:
+            # Mark as tweeted
+            tweeted_ids.add(paper_to_tweet["id"])
+            tweeted_data["tweeted_ids"] = list(tweeted_ids)
+            save_tweeted(tweeted_data)
+            print(f"\n✅ Thread posted successfully!")
+            print(f"   Tweet 1: https://twitter.com/i/status/{tweet1_id}")
+            print(f"   Tweet 2: https://twitter.com/i/status/{tweet2_id}")
+            print(f"   Remaining papers: {len(papers) - len(tweeted_ids)}")
+        else:
+            print("\n⚠️ Tweet 1 posted but Tweet 2 failed")
+            # Still mark as tweeted to avoid duplicate tweet 1s
+            tweeted_ids.add(paper_to_tweet["id"])
+            tweeted_data["tweeted_ids"] = list(tweeted_ids)
+            save_tweeted(tweeted_data)
     else:
         print("\n❌ Failed to post tweet")
         sys.exit(1)

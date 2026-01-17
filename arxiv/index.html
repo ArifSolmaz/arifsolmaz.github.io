@@ -402,12 +402,18 @@
             font-weight: 500;
             text-decoration: none;
             transition: all 0.2s;
+            cursor: pointer;
         }
 
         .modal-link:hover {
             background: var(--accent-primary);
             border-color: var(--accent-primary);
             color: white;
+        }
+
+        .modal-link.share-twitter:hover {
+            background: #1da1f2;
+            border-color: #1da1f2;
         }
 
         /* Loading */
@@ -460,6 +466,26 @@
             color: #dc2626;
             grid-column: 1 / -1;
         }
+
+        /* Share notification */
+        .share-notification {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--text-primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 1000;
+        }
+
+        .share-notification.visible {
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
@@ -509,9 +535,13 @@
         </div>
     </div>
 
+    <!-- Share notification -->
+    <div class="share-notification" id="shareNotification">Link copied to clipboard!</div>
+
     <script>
         let papersData = [];
         let fetchDate = '';
+        const PAGE_URL = window.location.origin + window.location.pathname;
 
         function formatAuthors(authors) {
             if (!authors || authors.length === 0) return 'Unknown authors';
@@ -536,6 +566,60 @@
 
         function getSafeId(id) {
             return id.replace(/[^a-zA-Z0-9]/g, '-');
+        }
+
+        // Get tweet text for sharing
+        function getTweetText(paper) {
+            const tweetHook = paper.tweet_hook || {};
+            const hook = tweetHook.hook || '';
+            const question = tweetHook.question || '';
+            
+            let text = '';
+            if (hook) {
+                text = hook;
+                if (question) {
+                    text += '\n\n' + question;
+                }
+            } else {
+                // Fallback to title
+                text = paper.title;
+            }
+            
+            // Add link
+            const safeId = getSafeId(paper.id);
+            const paperUrl = `${PAGE_URL}#paper-${safeId}`;
+            text += '\n\n' + paperUrl;
+            
+            // Add hashtag
+            text += '\n\n#Exoplanets';
+            
+            return text;
+        }
+
+        // Share on Twitter
+        function shareOnTwitter(paperId, event) {
+            if (event) event.stopPropagation();
+            
+            const paper = papersData.find(p => getSafeId(p.id) === paperId);
+            if (!paper) return;
+            
+            const text = getTweetText(paper);
+            const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`;
+            window.open(tweetUrl, '_blank', 'width=550,height=420');
+        }
+
+        // Copy link to clipboard
+        function copyLink(paperId, event) {
+            if (event) event.stopPropagation();
+            
+            const safeId = getSafeId(paperId);
+            const url = `${PAGE_URL}#paper-${safeId}`;
+            
+            navigator.clipboard.writeText(url).then(() => {
+                const notification = document.getElementById('shareNotification');
+                notification.classList.add('visible');
+                setTimeout(() => notification.classList.remove('visible'), 2000);
+            });
         }
 
         // Render compact card
@@ -588,6 +672,12 @@
                     <a href="${paper.pdf_link}" target="_blank" class="modal-link">
                         📥 Download PDF
                     </a>
+                    <button class="modal-link share-twitter" onclick="shareOnTwitter('${safeId}', event)">
+                        🐦 Tweet This
+                    </button>
+                    <button class="modal-link" onclick="copyLink('${paper.id}', event)">
+                        🔗 Copy Link
+                    </button>
                 </div>
             `;
         }
