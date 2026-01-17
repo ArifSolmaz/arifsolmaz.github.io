@@ -228,6 +228,78 @@ def get_paper_figure_url(paper: dict) -> str:
     return generic_fallbacks[idx]
 
 
+def fix_turkish_errors(text: str) -> str:
+    """Fix common Turkish spelling and grammar errors in generated text."""
+    
+    # Dictionary of common errors and their corrections
+    corrections = {
+        # Specific errors found
+        "zuyereya": "süreye",
+        "Zuyereya": "Süreye",
+        "ötegezegenların": "ötegezegenlerin",
+        "Ötegezegenların": "Ötegezegenlerin",
+        "ötegezegenlar": "ötegezegenler",
+        "Ötegezegenlar": "Ötegezegenler",
+        "ötegezegenlarda": "ötegezegenlerde",
+        "ötegezegenlara": "ötegezegenlere",
+        
+        # Common Turkish grammar fixes for "ötegezegen"
+        "ötegezegen'in": "ötegezegenin",
+        "ötegezegen'ler": "ötegezegenler",
+        "ötegezegen'e": "ötegezegene",
+        "ötegezegen'den": "ötegezegenden",
+        
+        # Spacing issues
+        "öte gezegen": "ötegezegen",
+        "Öte Gezegen": "Ötegezegen",
+        "Öte gezegen": "Ötegezegen",
+        "öte-gezegen": "ötegezegen",
+        
+        # Common typos in astronomy terms
+        "atmospher": "atmosfer",
+        "spectroscopi": "spektroskopi",
+        "teleskob": "teleskop",
+        "yörünğe": "yörünge",
+        "güneş sistemi dışı gezegen": "ötegezegen",
+        
+        # Grammar suffix errors
+        "gezegenlerin'in": "gezegenlerin",
+        "yıldızların'ın": "yıldızların",
+        "sistemlerin'in": "sistemlerin",
+        
+        # Capitalization for acronyms
+        "jwst": "JWST",
+        "Jwst": "JWST",
+        " nasa ": " NASA ",
+        " tess ": " TESS ",
+        " esa ": " ESA ",
+        " vlt ": " VLT ",
+        " alma ": " ALMA ",
+        
+        # Punctuation spacing
+        " ,": ",",
+        " .": ".",
+        " ;": ";",
+        " :": ":",
+        "  ": " ",
+        
+        # Common word errors
+        "keşfettiler": "keşfetti",  # Plural verb with singular subject
+        "açıkladılar": "açıkladı",
+        "buldular": "buldu",
+    }
+    
+    result = text
+    for wrong, correct in corrections.items():
+        result = result.replace(wrong, correct)
+    
+    # Clean up multiple spaces
+    while "  " in result:
+        result = result.replace("  ", " ")
+    
+    return result
+
+
 def create_news_item(paper: dict, turkish_data: dict, date: str) -> dict:
     """Create a news item in the required format."""
     
@@ -272,16 +344,20 @@ def create_news_item(paper: dict, turkish_data: dict, date: str) -> dict:
     
     all_tags = fixed_tags[:8]  # Max 8 tags
     
+    # Apply Turkish error corrections to title and text
+    corrected_title = fix_turkish_errors(turkish_data["title"])
+    corrected_text = fix_turkish_errors(turkish_data["text"])
+    
     return {
         "id": news_id,
         "arxiv_id": paper["id"],
         "date": date,
-        "title": turkish_data["title"],
+        "title": corrected_title,
         "image": get_paper_figure_url(paper),
         "tags": ",".join(all_tags),
         "audioMp3": "",
         "audioM4a": "",
-        "text": turkish_data["text"] + f"\n\n**Kaynak**: [arXiv:{paper['id']}]({paper['abs_link']})",
+        "text": corrected_text + f"\n\n**Kaynak**: [arXiv:{paper['id']}]({paper['abs_link']})",
         "abs_link": paper.get("abs_link", f"https://arxiv.org/abs/{paper['id']}"),
         "pdf_link": paper.get("pdf_link", f"https://arxiv.org/pdf/{paper['id']}.pdf")
     }
