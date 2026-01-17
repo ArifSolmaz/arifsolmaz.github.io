@@ -123,25 +123,50 @@ def generate_turkish_news(paper: dict, client: anthropic.Anthropic) -> dict | No
 
 
 def get_paper_figure_url(paper: dict) -> str:
-    """Get figure URL for paper, or fallback to a default astronomy image."""
+    """Get figure URL for paper, or fallback to a varied astronomy image."""
     # Check if paper has a figure URL
     if paper.get("figure_url"):
         return paper["figure_url"]
     
-    # Try to construct arXiv HTML figure URL
-    paper_id = paper["id"]
-    html_base = f"https://arxiv.org/html/{paper_id}"
-    
-    # Fallback: use a relevant astronomy/exoplanet image
+    # Large pool of diverse astronomy/exoplanet images from Unsplash
     fallbacks = [
-        "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=600&q=80",  # Galaxy
-        "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80",  # Space
-        "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=600&q=80",  # Stars
-        "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?w=600&q=80",  # Night sky
+        # Galaxies & Deep Space
+        "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=800&q=80",
+        "https://images.unsplash.com/photo-1537420327992-d6e192287183?w=800&q=80",
+        "https://images.unsplash.com/photo-1543722530-d2c3201371e7?w=800&q=80",
+        "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800&q=80",
+        # Nebulae
+        "https://images.unsplash.com/photo-1464802686167-b939a6910659?w=800&q=80",
+        "https://images.unsplash.com/photo-1507400492013-162706c8c05e?w=800&q=80",
+        "https://images.unsplash.com/photo-1630694093867-4b947d812bf0?w=800&q=80",
+        # Stars & Night Sky
+        "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=800&q=80",
+        "https://images.unsplash.com/photo-1475274047050-1d0c0975c63e?w=800&q=80",
+        "https://images.unsplash.com/photo-1507400492013-162706c8c05e?w=800&q=80",
+        # Planets
+        "https://images.unsplash.com/photo-1614728263952-84ea256f9679?w=800&q=80",
+        "https://images.unsplash.com/photo-1614313913007-2b4ae8ce32d6?w=800&q=80",
+        "https://images.unsplash.com/photo-1639921884918-8d28ab2e39a4?w=800&q=80",
+        # Space Art
+        "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80",
+        "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?w=800&q=80",
+        "https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?w=800&q=80",
+        # Sun & Solar
+        "https://images.unsplash.com/photo-1532693322450-2cb5c511067d?w=800&q=80",
+        "https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?w=800&q=80",
+        # Earth-like views
+        "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=800&q=80",
+        "https://images.unsplash.com/photo-1454789548928-9efd52dc4031?w=800&q=80",
+        # Abstract Space
+        "https://images.unsplash.com/photo-1520034475321-cbe63696469a?w=800&q=80",
+        "https://images.unsplash.com/photo-1610296669228-602fa827fc1f?w=800&q=80",
+        "https://images.unsplash.com/photo-1579566346927-c68383817a25?w=800&q=80",
+        "https://images.unsplash.com/photo-1484589065579-248aad0d628b?w=800&q=80",
     ]
     
-    # Use paper ID hash to consistently pick same fallback for same paper
-    idx = hash(paper_id) % len(fallbacks)
+    # Use paper ID + title hash for consistent but varied selection
+    hash_input = f"{paper['id']}-{paper['title']}"
+    idx = hash(hash_input) % len(fallbacks)
     return fallbacks[idx]
 
 
