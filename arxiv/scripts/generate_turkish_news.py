@@ -12,8 +12,46 @@ import os
 import re
 from datetime import datetime, timezone
 from pathlib import Path
+import urllib.request
+import urllib.error
 
 import anthropic
+
+
+def fetch_arxiv_figure(paper_id: str) -> str | None:
+    """Try to fetch the first figure from arXiv HTML version of the paper."""
+    try:
+        # arXiv HTML URL
+        html_url = f"https://arxiv.org/html/{paper_id}"
+        
+        req = urllib.request.Request(html_url, headers={'User-Agent': 'Mozilla/5.0'})
+        with urllib.request.urlopen(req, timeout=10) as response:
+            html = response.read().decode('utf-8', errors='ignore')
+        
+        # Look for figure images in the HTML
+        # Pattern 1: <img src="..." in figure elements
+        patterns = [
+            r'<figure[^>]*>.*?<img[^>]+src=["\']([^"\']+)["\']',
+            r'<img[^>]+class=["\'][^"\']*ltx_graphics[^"\']*["\'][^>]+src=["\']([^"\']+)["\']',
+            r'/html/[^"\']+/[^"\']+\.(png|jpg|jpeg|gif)',
+        ]
+        
+        for pattern in patterns:
+            matches = re.findall(pattern, html, re.IGNORECASE | re.DOTALL)
+            if matches:
+                img_path = matches[0] if isinstance(matches[0], str) else matches[0][0]
+                # Convert relative path to absolute URL
+                if img_path.startswith('/'):
+                    return f"https://arxiv.org{img_path}"
+                elif img_path.startswith('http'):
+                    return img_path
+                else:
+                    return f"https://arxiv.org/html/{paper_id}/{img_path}"
+        
+        return None
+    except Exception as e:
+        print(f"  Could not fetch arXiv figure: {e}")
+        return None
 
 # Configuration
 PAPERS_FILE = Path(__file__).parent.parent / "data" / "papers.json"
@@ -40,11 +78,18 @@ Başlık: {title}
 8. Bilimsel doğruluğu koru
 9. Heyecan verici ama abartısız bir dil kullan
 
+**ÖNEMLİ TERİM KURALLARI:**
+- "exoplanet" = "ötegezegen" (TEK KELİME, "öte gezegen" DEĞİL!)
+- "astronomy" = "astronomi"
+- "habitable" = "yaşanabilir"
+- "atmosphere" = "atmosfer"
+- Etiketlerde SADECE Türkçe kullan, İngilizce kelime KULLANMA
+
 **Çıktı formatı (sadece JSON):**
 {{
   "title": "Türkçe haber başlığı",
   "text": "Tam haber metni (markdown formatında)",
-  "tags": ["etiket1", "etiket2", "etiket3"]
+  "tags": ["ötegezegen", "astronomi", "diğer-türkçe-etiketler"]
 }}
 
 Sadece JSON döndür, başka bir şey ekleme."""
@@ -123,80 +168,64 @@ def generate_turkish_news(paper: dict, client: anthropic.Anthropic) -> dict | No
 
 
 def get_paper_figure_url(paper: dict) -> str:
-    """Get figure URL for paper, or fallback to a varied astronomy image."""
-    # Check if paper has a figure URL
+    """Get figure URL for paper - try arXiv first, then topic-based fallback."""
+    
+    # 1. Check if paper already has a figure URL
     if paper.get("figure_url"):
         return paper["figure_url"]
     
-    # Large pool of 50+ diverse astronomy/space images
-    fallbacks = [
-        # Galaxies
+    # 2. Try to fetch actual figure from arXiv HTML
+    print(f"  Trying to fetch figure from arXiv...")
+    arxiv_figure = fetch_arxiv_figure(paper["id"])
+    if arxiv_figure:
+        print(f"  ✓ Found arXiv figure: {arxiv_figure[:60]}...")
+        return arxiv_figure
+    
+    # 3. Fallback: Select topic-based image based on paper content
+    title_lower = paper.get("title", "").lower()
+    abstract_lower = paper.get("abstract", "").lower()
+    content = title_lower + " " + abstract_lower
+    
+    # Topic-based image selection
+    if any(word in content for word in ["jwst", "james webb", "webb telescope"]):
+        return "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=800&q=80"
+    elif any(word in content for word in ["mars", "martian"]):
+        return "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?w=800&q=80"
+    elif any(word in content for word in ["jupiter", "jovian", "gas giant"]):
+        return "https://images.unsplash.com/photo-1614732414444-096e5f1122d5?w=800&q=80"
+    elif any(word in content for word in ["saturn", "ring", "titan"]):
+        return "https://images.unsplash.com/photo-1614724723656-457ac62c2c98?w=800&q=80"
+    elif any(word in content for word in ["venus", "venusian"]):
+        return "https://images.unsplash.com/photo-1614313913007-2b4ae8ce32d6?w=800&q=80"
+    elif any(word in content for word in ["sun", "solar", "stellar", "star"]):
+        return "https://images.unsplash.com/photo-1532693322450-2cb5c511067d?w=800&q=80"
+    elif any(word in content for word in ["earth", "habitable", "rocky", "terrestrial"]):
+        return "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80"
+    elif any(word in content for word in ["atmosphere", "spectrum", "spectroscopy"]):
+        return "https://images.unsplash.com/photo-1464802686167-b939a6910659?w=800&q=80"
+    elif any(word in content for word in ["transit", "kepler", "tess"]):
+        return "https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?w=800&q=80"
+    elif any(word in content for word in ["binary", "orbit", "system"]):
+        return "https://images.unsplash.com/photo-1543722530-d2c3201371e7?w=800&q=80"
+    elif any(word in content for word in ["disk", "protoplanet", "formation"]):
+        return "https://images.unsplash.com/photo-1537420327992-d6e192287183?w=800&q=80"
+    elif any(word in content for word in ["water", "ocean", "ice"]):
+        return "https://images.unsplash.com/photo-1614728263952-84ea256f9679?w=800&q=80"
+    
+    # Generic space images as final fallback (varied by hash)
+    generic_fallbacks = [
         "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=800&q=80",
-        "https://images.unsplash.com/photo-1537420327992-d6e192287183?w=800&q=80",
-        "https://images.unsplash.com/photo-1543722530-d2c3201371e7?w=800&q=80",
-        "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800&q=80",
-        "https://images.unsplash.com/photo-1590985560880-aee0e3ce4ce4?w=800&q=80",
-        "https://images.unsplash.com/photo-1495942786450-5a3e59dd2ba3?w=800&q=80",
-        # Nebulae
         "https://images.unsplash.com/photo-1464802686167-b939a6910659?w=800&q=80",
-        "https://images.unsplash.com/photo-1507400492013-162706c8c05e?w=800&q=80",
-        "https://images.unsplash.com/photo-1630694093867-4b947d812bf0?w=800&q=80",
-        "https://images.unsplash.com/photo-1465101162946-4377e57745c3?w=800&q=80",
-        "https://images.unsplash.com/photo-1608178398319-48f814d0750c?w=800&q=80",
-        # Stars & Milky Way
         "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=800&q=80",
         "https://images.unsplash.com/photo-1475274047050-1d0c0975c63e?w=800&q=80",
-        "https://images.unsplash.com/photo-1509773896068-7fd415d91e2e?w=800&q=80",
-        "https://images.unsplash.com/photo-1507400492013-162706c8c05e?w=800&q=80",
         "https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?w=800&q=80",
-        "https://images.unsplash.com/photo-1435224668334-0f82ec57b605?w=800&q=80",
-        # Planets
-        "https://images.unsplash.com/photo-1614728263952-84ea256f9679?w=800&q=80",
-        "https://images.unsplash.com/photo-1614313913007-2b4ae8ce32d6?w=800&q=80",
-        "https://images.unsplash.com/photo-1639921884918-8d28ab2e39a4?w=800&q=80",
-        "https://images.unsplash.com/photo-1545156521-77bd85671d30?w=800&q=80",
-        "https://images.unsplash.com/photo-1630839437035-dac17da580d0?w=800&q=80",
-        "https://images.unsplash.com/photo-1617952739858-28043cfa1fd3?w=800&q=80",
-        # Earth from space
-        "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80",
-        "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=800&q=80",
-        "https://images.unsplash.com/photo-1454789548928-9efd52dc4031?w=800&q=80",
-        "https://images.unsplash.com/photo-1541873676-a18131494184?w=800&q=80",
-        # Sun & Solar
-        "https://images.unsplash.com/photo-1532693322450-2cb5c511067d?w=800&q=80",
-        "https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?w=800&q=80",
-        "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=800&q=80",
-        # Space Art & Abstract
         "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?w=800&q=80",
-        "https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?w=800&q=80",
         "https://images.unsplash.com/photo-1520034475321-cbe63696469a?w=800&q=80",
-        "https://images.unsplash.com/photo-1610296669228-602fa827fc1f?w=800&q=80",
-        "https://images.unsplash.com/photo-1579566346927-c68383817a25?w=800&q=80",
-        "https://images.unsplash.com/photo-1484589065579-248aad0d628b?w=800&q=80",
-        "https://images.unsplash.com/photo-1528722828814-77b9b83aafb2?w=800&q=80",
         "https://images.unsplash.com/photo-1505506874110-6a7a69069a08?w=800&q=80",
-        # Aurora & Night Sky
-        "https://images.unsplash.com/photo-1483086431886-3590a88317fe?w=800&q=80",
-        "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=800&q=80",
-        "https://images.unsplash.com/photo-1507400492013-162706c8c05e?w=800&q=80",
-        # Telescopes & Observatories
-        "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?w=800&q=80",
-        "https://images.unsplash.com/photo-1543722530-d2c3201371e7?w=800&q=80",
-        # More cosmic views
-        "https://images.unsplash.com/photo-1464802686167-b939a6910659?w=800&q=80",
-        "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80",
-        "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=800&q=80",
-        "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=800&q=80",
-        "https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?w=800&q=80",
-        "https://images.unsplash.com/photo-1462332420958-a05d1e002413?w=800&q=80",
-        "https://images.unsplash.com/photo-1507908708918-778587c9e563?w=800&q=80",
-        "https://images.unsplash.com/photo-1518141532615-4305c9f914c9?w=800&q=80",
     ]
     
-    # Use paper ID + title + abstract hash for maximum variety
-    hash_input = f"{paper['id']}-{paper['title']}-{paper.get('abstract', '')[:100]}"
-    idx = hash(hash_input) % len(fallbacks)
-    return fallbacks[idx]
+    idx = hash(paper['id'] + paper['title']) % len(generic_fallbacks)
+    return generic_fallbacks[idx]
 
 
 def create_news_item(paper: dict, turkish_data: dict, date: str) -> dict:
@@ -213,13 +242,25 @@ def create_news_item(paper: dict, turkish_data: dict, date: str) -> dict:
     fixed_tags = []
     for tag in tags:
         tag = tag.strip()
-        # Fix Turkish translations
-        tag = tag.replace("öte gezegen", "ötegezegen")
-        tag = tag.replace("Öte Gezegen", "Ötegezegen")
-        tag = tag.replace("exoplanet", "ötegezegen")
-        tag = tag.replace("Exoplanet", "Ötegezegen")
-        tag = tag.replace("astronomy", "astronomi")
-        tag = tag.replace("Astronomy", "Astronomi")
+        # Skip empty tags
+        if not tag:
+            continue
+        # Fix Turkish translations (case-insensitive)
+        tag_lower = tag.lower()
+        if tag_lower in ["öte gezegen", "öte-gezegen", "exoplanet", "exoplanets"]:
+            tag = "ötegezegen"
+        elif tag_lower in ["astronomy", "astronomi̇"]:
+            tag = "astronomi"
+        elif tag_lower == "uzay araştırması":
+            tag = "uzay-araştırması"
+        elif tag_lower == "uzay keşfi":
+            tag = "uzay-keşfi"
+        elif tag_lower == "gezegen keşfi":
+            tag = "gezegen-keşfi"
+        # Remove English words that slipped through
+        elif tag_lower in ["space", "planet", "research", "discovery", "telescope"]:
+            continue
+        
         if tag and tag not in fixed_tags:
             fixed_tags.append(tag)
     
