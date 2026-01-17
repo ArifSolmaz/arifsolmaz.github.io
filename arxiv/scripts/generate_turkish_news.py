@@ -173,13 +173,16 @@ def create_news_item(paper: dict, turkish_data: dict, date: str) -> dict:
 
 
 def select_papers_for_news(papers: list[dict], processed_ids: set[str]) -> list[dict]:
-    """Select papers to convert to news (prioritize by tweetability score)."""
+    """Select papers to convert to news (only exoplanet-focused, prioritize by tweetability score)."""
     
-    # Filter out already processed
-    unprocessed = [p for p in papers if p["id"] not in processed_ids]
+    # Filter out already processed AND non-exoplanet papers
+    unprocessed = [
+        p for p in papers 
+        if p["id"] not in processed_ids and p.get("is_exoplanet_focused", False)
+    ]
     
     if not unprocessed:
-        print("All papers already processed")
+        print("All exoplanet papers already processed (or no exoplanet papers found)")
         return []
     
     # Sort by tweetability score (higher = more interesting)

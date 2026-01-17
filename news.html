@@ -698,11 +698,14 @@
           }
         });
 
-        // Clean text preview
+        // Clean text preview - properly strip all markdown
         let plainText = (item.text || '')
-          .replace(/\[([^\]]+)\]\([^\)]+\)/g, '$1')
-          .replace(/[*_#]/g, '')
-          .replace(/\\n/g, ' ');
+          .replace(/\*\*([^*]+)\*\*/g, '$1')  // **bold** → bold
+          .replace(/\*([^*]+)\*/g, '$1')      // *italic* → italic
+          .replace(/\[([^\]]+)\]\([^\)]+\)/g, '$1')  // [link](url) → link
+          .replace(/#{1,6}\s*/g, '')          // headers
+          .replace(/\\n/g, ' ')
+          .replace(/\n/g, ' ');
 
         const card = document.createElement('div');
         card.className = 'card';
@@ -768,8 +771,10 @@
       mDate.textContent = item.date;
       mTitle.textContent = item.title;
 
-      // Markdown -> HTML
-      const textContent = (item.text || '').replace(/\\n/g, '\n');
+      // Markdown -> HTML (handle escaped newlines)
+      let textContent = (item.text || '')
+        .replace(/\\n/g, '\n')
+        .replace(/\\\\n/g, '\n');  // Handle double-escaped
       mText.innerHTML = marked.parse(textContent);
 
       // Make links safe
