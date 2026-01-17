@@ -1,124 +1,69 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="referrer" content="no-referrer">
-  <meta name="description" content="Astrofizik ve bilim dünyasından güncel gelişmeler – Dr. Arif Solmaz">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Bilim Haberleri | Arif Solmaz</title>
+  <meta name="description" content="Astrofizik ve öte gezegen araştırmalarından güncel bilim haberleri, arXiv makalelerinden Türkçe özetler.">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico">
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   
-  <!-- Markdown Parser -->
+  <!-- Markdown parser -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  <!-- CSV Parser -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
   
   <style>
-    /* ========================================
-       CSS Custom Properties & Reset
-       ======================================== */
     :root {
-      --color-bg: #0a0a0c;
-      --color-bg-subtle: #111114;
-      --color-bg-card: rgba(17, 17, 20, 0.7);
-      --color-text: #e8e8ea;
-      --color-text-muted: #8a8a8f;
-      --color-accent: #c9a962;
-      --color-accent-soft: rgba(201, 169, 98, 0.15);
-      --color-accent-hover: rgba(201, 169, 98, 0.25);
-      --color-border: rgba(255, 255, 255, 0.08);
-      --color-border-hover: rgba(255, 255, 255, 0.15);
-      
-      --font-serif: "Cormorant Garamond", Georgia, serif;
-      --font-sans: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
-      --font-mono: "DM Mono", "SF Mono", monospace;
-      
-      --max-width: 1100px;
-      --radius: 3px;
+      --color-bg: #0a0a0f;
+      --color-surface: #12121a;
+      --color-border: #1e1e2d;
+      --color-text: #e5e5e5;
+      --color-text-muted: #888;
+      --color-accent: #60a5fa;
+      --color-accent-dim: #3b82f6;
+      --font-sans: 'Inter', system-ui, sans-serif;
+      --radius: 12px;
+      --shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
     }
 
-    *, *::before, *::after {
-      box-sizing: border-box;
+    * {
       margin: 0;
       padding: 0;
-    }
-
-    /* ========================================
-       Base Styles
-       ======================================== */
-    html {
-      font-size: 100%;
-      scroll-behavior: smooth;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        transition-duration: 0.01ms !important;
-      }
+      box-sizing: border-box;
     }
 
     body {
       font-family: var(--font-sans);
-      font-size: 1rem;
-      line-height: 1.7;
+      background: var(--color-bg);
       color: var(--color-text);
-      background-color: var(--color-bg);
-      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
       min-height: 100vh;
-      position: relative;
     }
 
-    /* Subtle atmospheric gradient */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 70vh;
-      background: radial-gradient(
-        ellipse 90% 50% at 50% 0%,
-        rgba(201, 169, 98, 0.03) 0%,
-        transparent 70%
-      );
-      pointer-events: none;
-      z-index: -1;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-      transition: color 0.2s ease, border-color 0.2s ease;
-    }
-
-    /* ========================================
-       Header
-       ======================================== */
+    /* Header */
     header {
-      padding: 1.25rem 2rem;
-      border-bottom: 1px solid var(--color-border);
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 1rem 2rem;
+      background: var(--color-surface);
+      border-bottom: 1px solid var(--color-border);
       position: sticky;
       top: 0;
-      background: rgba(10, 10, 12, 0.9);
-      backdrop-filter: blur(12px);
-      z-index: 50;
+      z-index: 100;
     }
 
     .brand {
-      font-family: var(--font-serif);
       font-size: 1.25rem;
-      font-weight: 400;
-      color: #fff;
-      letter-spacing: -0.01em;
+      font-weight: 700;
+      color: var(--color-text);
+      text-decoration: none;
     }
 
     .brand span {
@@ -126,105 +71,105 @@
     }
 
     .nav-link {
-      font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
       color: var(--color-text-muted);
-      padding-bottom: 0.25rem;
-      border-bottom: 1px solid transparent;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
     }
 
     .nav-link:hover {
-      color: var(--color-text);
-      border-bottom-color: var(--color-accent);
+      color: var(--color-accent);
     }
 
-    /* ========================================
-       Page Header
-       ======================================== */
+    /* Page Header */
     .page-header {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 4rem 2rem 3rem;
       text-align: center;
+      padding: 3rem 2rem 2rem;
+      max-width: 800px;
+      margin: 0 auto;
     }
 
     .page-title {
-      font-family: var(--font-serif);
-      font-size: clamp(2rem, 5vw, 3rem);
-      font-weight: 400;
-      color: #fff;
-      margin-bottom: 0.75rem;
-      letter-spacing: -0.02em;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, var(--color-text), var(--color-accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     .page-subtitle {
-      font-size: 1rem;
       color: var(--color-text-muted);
-      max-width: 50ch;
-      margin: 0 auto;
+      font-size: 1.1rem;
     }
 
-    /* Decorative line */
     .header-line {
       width: 60px;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
-      margin: 2rem auto 0;
+      height: 3px;
+      background: var(--color-accent);
+      margin: 1.5rem auto 0;
+      border-radius: 2px;
     }
 
-    /* ========================================
-       Container
-       ======================================== */
+    /* Source Toggle */
+    .source-toggle {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .source-btn {
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--color-border);
+      background: var(--color-surface);
+      color: var(--color-text-muted);
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      transition: all 0.2s;
+    }
+
+    .source-btn.active {
+      background: var(--color-accent);
+      color: var(--color-bg);
+      border-color: var(--color-accent);
+    }
+
+    .source-btn:hover:not(.active) {
+      border-color: var(--color-accent);
+      color: var(--color-accent);
+    }
+
+    /* Container */
     .container {
-      max-width: var(--max-width);
+      max-width: 1400px;
       margin: 0 auto;
-      padding: 0 2rem 4rem;
+      padding: 0 2rem 3rem;
     }
 
-    /* ========================================
-       Filter Box
-       ======================================== */
+    /* Filter Box */
     .filter-info {
       display: none;
       align-items: center;
-      justify-content: space-between;
       gap: 1rem;
-      margin-bottom: 2rem;
-      padding: 1rem 1.25rem;
-      background: var(--color-accent-soft);
-      border: 1px solid rgba(201, 169, 98, 0.25);
+      padding: 0.75rem 1rem;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
       border-radius: var(--radius);
-      font-size: 0.9rem;
-      animation: fadeIn 0.3s ease;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-8px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .filter-info span {
-      color: var(--color-text-muted);
-    }
-
-    .filter-info strong {
-      color: var(--color-accent);
-      font-weight: 500;
+      margin-bottom: 1.5rem;
     }
 
     .clear-btn {
+      padding: 0.4rem 0.8rem;
       background: transparent;
-      color: var(--color-accent);
       border: 1px solid var(--color-accent);
-      padding: 0.4rem 1rem;
-      border-radius: var(--radius);
-      font-family: var(--font-sans);
-      font-size: 0.8rem;
-      font-weight: 500;
+      color: var(--color-accent);
+      border-radius: 6px;
       cursor: pointer;
-      transition: all 0.2s ease;
+      font-size: 0.85rem;
+      transition: all 0.2s;
     }
 
     .clear-btn:hover {
@@ -232,431 +177,333 @@
       color: var(--color-bg);
     }
 
-    /* ========================================
-       Card Grid
-       ======================================== */
+    /* Grid */
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
       gap: 1.5rem;
     }
 
-    /* ========================================
-       Card Design
-       ======================================== */
+    /* Card */
     .card {
-      background: var(--color-bg-card);
+      background: var(--color-surface);
       border: 1px solid var(--color-border);
       border-radius: var(--radius);
       overflow: hidden;
       cursor: pointer;
-      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-      display: flex;
-      flex-direction: column;
-      height: 100%;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
 
     .card:hover {
       transform: translateY(-4px);
-      border-color: var(--color-border-hover);
-      box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.5);
+      box-shadow: var(--shadow);
     }
 
     .card-img {
-      height: 200px;
-      background-color: var(--color-bg-subtle);
+      height: 180px;
       overflow: hidden;
-      position: relative;
-    }
-
-    .card-img::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, transparent 60%, var(--color-bg-card));
-      pointer-events: none;
     }
 
     .card-img img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.3s ease;
+      transition: transform 0.3s;
     }
 
     .card:hover .card-img img {
-      transform: scale(1.03);
+      transform: scale(1.05);
     }
 
     .card-body {
-      padding: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-      gap: 0.75rem;
+      padding: 1.25rem;
     }
 
-    .date {
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      color: var(--color-accent);
-      letter-spacing: 0.05em;
-    }
-
-    .title {
-      font-family: var(--font-serif);
-      font-size: 1.375rem;
-      font-weight: 500;
-      line-height: 1.35;
-      color: #fff;
-    }
-
-    .summary {
-      font-size: 0.9375rem;
+    .card .date {
+      font-size: 0.8rem;
       color: var(--color-text-muted);
-      line-height: 1.65;
+      margin-bottom: 0.5rem;
+    }
+
+    .card .title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      line-height: 1.4;
       display: -webkit-box;
-      -webkit-line-clamp: 3;
+      -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
     }
 
-    /* ========================================
-       Tags
-       ======================================== */
-    .tags {
+    .card .summary {
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+
+    .card .tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: auto;
-      padding-top: 0.75rem;
+      gap: 0.4rem;
+      margin-bottom: 0.75rem;
     }
 
     .tag {
-      font-family: var(--font-mono);
-      font-size: 0.6875rem;
-      color: var(--color-text-muted);
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid var(--color-border);
-      padding: 0.3rem 0.6rem;
-      border-radius: 2px;
-      transition: all 0.15s ease;
+      display: inline-block;
+      padding: 0.25rem 0.6rem;
+      background: rgba(96, 165, 250, 0.1);
+      color: var(--color-accent);
+      border-radius: 4px;
+      font-size: 0.75rem;
       cursor: pointer;
-      user-select: none;
+      transition: background 0.2s;
     }
 
     .tag:hover {
-      color: var(--color-accent);
-      border-color: rgba(201, 169, 98, 0.3);
-      background: var(--color-accent-soft);
+      background: rgba(96, 165, 250, 0.2);
     }
 
-    /* ========================================
-       Read More
-       ======================================== */
     .read-more {
-      margin-top: 1rem;
-      padding-top: 1rem;
-      border-top: 1px solid var(--color-border);
-      font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--color-text-muted);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .read-more::after {
-      content: "→";
-      transition: transform 0.2s ease;
-    }
-
-    .card:hover .read-more {
       color: var(--color-accent);
+      font-size: 0.85rem;
+      font-weight: 500;
     }
 
-    .card:hover .read-more::after {
-      transform: translateX(4px);
+    /* arxiv badge */
+    .arxiv-badge {
+      background: rgba(180, 83, 9, 0.2);
+      color: #f59e0b;
     }
 
-    /* ========================================
-       Modal Overlay
-       ======================================== */
+    /* Modal */
     .modal-overlay {
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.9);
-      backdrop-filter: blur(8px);
-      z-index: 100;
+      background: rgba(0, 0, 0, 0.85);
       display: none;
+      align-items: center;
       justify-content: center;
-      align-items: flex-start;
+      z-index: 1000;
       padding: 2rem;
       overflow-y: auto;
-      opacity: 0;
-      transition: opacity 0.25s ease;
     }
 
     .modal-overlay.active {
       display: flex;
-      opacity: 1;
     }
 
-    /* ========================================
-       Modal Content
-       ======================================== */
     .modal-content {
-      background: var(--color-bg);
-      border: 1px solid var(--color-border);
+      background: var(--color-surface);
       border-radius: var(--radius);
-      width: 100%;
       max-width: 800px;
-      margin: 2rem auto;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
       position: relative;
-      box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.6);
     }
 
     .close-btn {
       position: absolute;
       top: 1rem;
       right: 1rem;
-      background: rgba(0, 0, 0, 0.6);
-      border: 1px solid var(--color-border);
-      color: var(--color-text-muted);
-      font-size: 1.5rem;
-      width: 44px;
-      height: 44px;
+      width: 36px;
+      height: 36px;
+      border: none;
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
       border-radius: 50%;
+      font-size: 1.5rem;
       cursor: pointer;
       z-index: 10;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.2s ease;
+      transition: background 0.2s;
     }
 
     .close-btn:hover {
-      background: var(--color-accent);
-      border-color: var(--color-accent);
-      color: var(--color-bg);
+      background: rgba(0, 0, 0, 0.7);
     }
 
     .modal-img {
       width: 100%;
-      height: 300px;
+      max-height: 400px;
       object-fit: cover;
-      display: block;
     }
 
     .modal-body {
-      padding: 2.5rem;
+      padding: 1.5rem 2rem 2rem;
     }
 
-    /* ========================================
-       Modal Header Row
-       ======================================== */
     .modal-header-row {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
       gap: 1rem;
-      margin-bottom: 1.5rem;
-      padding-bottom: 1.5rem;
-      border-bottom: 1px solid var(--color-border);
+      margin-bottom: 0.75rem;
     }
 
     .modal-date {
-      font-family: var(--font-mono);
-      font-size: 0.8125rem;
-      color: var(--color-accent);
-      letter-spacing: 0.05em;
-    }
-
-    /* ========================================
-       Audio Player
-       ======================================== */
-    .audio-player-wrapper {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-    }
-
-    .audio-label {
-      font-size: 0.75rem;
+      font-size: 0.85rem;
       color: var(--color-text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
     }
 
-    audio {
-      height: 36px;
-      border-radius: var(--radius);
-    }
-
-    audio::-webkit-media-controls-panel {
-      background: var(--color-bg-subtle);
-    }
-
-    /* ========================================
-       Speak Button
-       ======================================== */
-    .speak-btn {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: transparent;
-      border: 1px solid var(--color-border);
-      color: var(--color-text-muted);
-      padding: 0.5rem 1rem;
-      border-radius: var(--radius);
-      font-family: var(--font-sans);
-      font-size: 0.8125rem;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-
-    .speak-btn:hover {
-      border-color: var(--color-accent);
-      color: var(--color-accent);
-    }
-
-    .speak-btn.speaking {
-      background: var(--color-accent);
-      border-color: var(--color-accent);
-      color: var(--color-bg);
-      animation: pulse 1.5s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.7; }
-    }
-
-    /* ========================================
-       Modal Title & Text
-       ======================================== */
     .modal-title {
-      font-family: var(--font-serif);
-      font-size: 1.75rem;
-      font-weight: 500;
-      color: #fff;
-      line-height: 1.35;
-      margin-bottom: 2rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      line-height: 1.3;
     }
 
     .modal-text {
-      font-size: 1.0625rem;
-      color: var(--color-text-muted);
-      line-height: 1.85;
-      max-width: 65ch;
+      color: var(--color-text);
+      line-height: 1.8;
     }
 
     .modal-text p {
-      margin-bottom: 1.5em;
+      margin-bottom: 1rem;
     }
 
     .modal-text strong {
-      color: #fff;
-      font-weight: 500;
-    }
-
-    .modal-text em {
-      font-style: italic;
-      color: var(--color-text);
+      color: var(--color-accent);
     }
 
     .modal-text a {
       color: var(--color-accent);
-      border-bottom: 1px solid transparent;
-      font-weight: 500;
+      text-decoration: underline;
     }
 
-    .modal-text a:hover {
-      border-bottom-color: var(--color-accent);
-    }
-
-    /* ========================================
-       Modal Tags
-       ======================================== */
     .modal-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
-      margin-top: 2.5rem;
+      margin-top: 1.5rem;
       padding-top: 1.5rem;
       border-top: 1px solid var(--color-border);
     }
 
-    /* ========================================
-       Responsive
-       ======================================== */
-    @media (max-width: 600px) {
+    .modal-links {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .modal-link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.5rem 1rem;
+      background: var(--color-accent-dim);
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      transition: background 0.2s;
+    }
+
+    .modal-link-btn:hover {
+      background: var(--color-accent);
+    }
+
+    .modal-link-btn.secondary {
+      background: transparent;
+      border: 1px solid var(--color-border);
+      color: var(--color-text-muted);
+    }
+
+    .modal-link-btn.secondary:hover {
+      border-color: var(--color-accent);
+      color: var(--color-accent);
+    }
+
+    /* Loading State */
+    .loading-spinner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem;
+      color: var(--color-text-muted);
+    }
+
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid var(--color-border);
+      border-top-color: var(--color-accent);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-bottom: 1rem;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
       header {
-        padding: 1rem 1.25rem;
+        padding: 1rem;
       }
 
       .page-header {
-        padding: 3rem 1.25rem 2rem;
+        padding: 2rem 1rem 1.5rem;
+      }
+
+      .page-title {
+        font-size: 1.8rem;
       }
 
       .container {
-        padding: 0 1.25rem 3rem;
+        padding: 0 1rem 2rem;
       }
 
       .grid {
         grid-template-columns: 1fr;
-        gap: 1.25rem;
       }
 
       .modal-overlay {
-        padding: 1rem;
+        padding: 0;
+        align-items: flex-start;
+      }
+
+      .modal-content {
+        border-radius: 0;
+        max-height: 100vh;
       }
 
       .modal-body {
-        padding: 1.5rem;
-      }
-
-      .modal-title {
-        font-size: 1.5rem;
-      }
-
-      .modal-img {
-        height: 200px;
-      }
-
-      .modal-header-row {
-        flex-direction: column;
-        align-items: flex-start;
+        padding: 1rem 1.25rem 1.5rem;
       }
     }
   </style>
 </head>
 
 <body>
-  <!-- ======================================
-       Header
-       ====================================== -->
+  <!-- Header -->
   <header>
     <a href="index.html" class="brand">Arif <span>Solmaz</span></a>
     <a href="index.html" class="nav-link">← Ana Sayfa</a>
   </header>
 
-  <!-- ======================================
-       Page Header
-       ====================================== -->
+  <!-- Page Header -->
   <div class="page-header">
     <h1 class="page-title">Bilim Haberleri</h1>
     <p class="page-subtitle">Astrofizik ve bilim dünyasından güncel gelişmeler, makale özetleri ve notlar.</p>
     <div class="header-line" aria-hidden="true"></div>
+    
+    <!-- Source Toggle -->
+    <div class="source-toggle" style="margin-top: 1.5rem;">
+      <button class="source-btn active" data-source="all">Tümü</button>
+      <button class="source-btn" data-source="arxiv">arXiv Haberleri</button>
+      <button class="source-btn" data-source="manual">Diğer Haberler</button>
+    </div>
   </div>
 
-  <!-- ======================================
-       Main Content
-       ====================================== -->
+  <!-- Main Content -->
   <div class="container">
     <!-- Filter Box -->
     <div class="filter-info" id="filter-box">
@@ -665,12 +512,15 @@
     </div>
 
     <!-- News Grid -->
-    <div class="grid" id="news-grid"></div>
+    <div class="grid" id="news-grid">
+      <div class="loading-spinner">
+        <div class="spinner"></div>
+        <span>Haberler yükleniyor...</span>
+      </div>
+    </div>
   </div>
 
-  <!-- ======================================
-       Modal
-       ====================================== -->
+  <!-- Modal -->
   <div class="modal-overlay" id="modal">
     <div class="modal-content">
       <button class="close-btn" onclick="closeModal()" aria-label="Kapat">×</button>
@@ -681,127 +531,193 @@
         </div>
         <h2 class="modal-title" id="m-title"></h2>
         <div class="modal-text" id="m-text"></div>
+        <div class="modal-links" id="m-links"></div>
         <div class="modal-tags" id="m-tags"></div>
       </div>
     </div>
   </div>
 
-  <!-- ======================================
-       JavaScript
-       ====================================== -->
+  <!-- JavaScript -->
   <script>
     // ============================================
     // CONFIGURATION
     // ============================================
+    
+    // Local arXiv news JSON (auto-generated from papers.json)
+    const ARXIV_NEWS_URL = "arxiv/data/arxiv_news.json";
+    
+    // Google Sheet CSV (for manually added news)
     const GOOGLE_SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRElLrJl3fWS40NSQJNiXvZwcjImJt4u00aK9q8zFdBVdN1gtBnrjl4t4tjuTXXhy2GTTVdiwGz6MZP/pub?output=csv";
 
     // ============================================
     // STATE
     // ============================================
-    let newsData = [];
+    let arxivNews = [];
+    let manualNews = [];
+    let allNews = [];
+    let currentSource = 'all';
 
     // ============================================
-    // SYSTEM CODE
+    // DOM ELEMENTS
     // ============================================
     const grid = document.getElementById('news-grid');
-    const modal = document.getElementById('modal');
     const filterBox = document.getElementById('filter-box');
     const activeTagName = document.getElementById('active-tag-name');
-
+    const modal = document.getElementById('modal');
     const mImg = document.getElementById('m-img');
     const mDate = document.getElementById('m-date');
     const mTitle = document.getElementById('m-title');
     const mText = document.getElementById('m-text');
     const mTags = document.getElementById('m-tags');
-    const modalHeaderContainer = document.getElementById('modal-header-container');
+    const mLinks = document.getElementById('m-links');
 
-    const synth = window.speechSynthesis;
-    let currentArticleText = "";
-
-    marked.use({ breaks: true });
-
-    // Fetch and Initialize
-    Papa.parse(GOOGLE_SHEET_CSV_URL, {
-      download: true,
-      header: true,
-      skipEmptyLines: true,
-      complete: function(results) {
-        // Process data
-        newsData = results.data.map(item => {
-           // Tags come as string "tag1, tag2", need to split
-           if (item.tags && typeof item.tags === 'string') {
-             item.tags = item.tags.split(',').map(t => t.trim()).filter(t => t);
-           }
-           return item;
-        });
+    // ============================================
+    // DATA LOADING
+    // ============================================
+    
+    async function loadArxivNews() {
+      try {
+        const response = await fetch(ARXIV_NEWS_URL);
+        if (!response.ok) throw new Error('arXiv news not found');
+        const data = await response.json();
         
-        // Initial Render
-        renderNews(newsData);
+        // Process arxiv news
+        return data.map(item => ({
+          ...item,
+          source: 'arxiv',
+          tags: item.tags ? (typeof item.tags === 'string' ? item.tags.split(',').map(t => t.trim()) : item.tags) : []
+        }));
+      } catch (e) {
+        console.log('arXiv news not available:', e.message);
+        return [];
+      }
+    }
 
-        // Open modal from URL hash
-        const hid = (window.location.hash || '').replace('#', '').trim();
-        if (hid) {
-          const idx = newsData.findIndex(x => x.id === hid);
-          if (idx >= 0) openModal(idx);
-        }
-      },
-      error: function(err) {
-        console.error("Error fetching CSV:", err);
-        // Fallback to local news.csv if google sheet fails (or CORS issues in dev)
-        // In production on the same domain, this is less of an issue, but for reliability:
-        if (GOOGLE_SHEET_CSV_URL.startsWith('http')) {
-             console.log("Falling back to local news.csv...");
-             Papa.parse("news.csv", {
-                 download: true,
-                 header: true,
-                 skipEmptyLines: true,
-                 complete: function(results) {
-                     newsData = results.data.map(item => {
-                        if (item.tags && typeof item.tags === 'string') {
-                            item.tags = item.tags.split(',').map(t => t.trim()).filter(t => t);
-                        }
-                        return item;
-                     });
-                     renderNews(newsData);
-                 }
-             });
+    async function loadManualNews() {
+      try {
+        const response = await fetch(GOOGLE_SHEET_CSV_URL);
+        if (!response.ok) throw new Error('Google Sheet not available');
+        const csv = await response.text();
+        
+        const lines = csv.split('\n');
+        const headers = parseCSVLine(lines[0]);
+        
+        return lines.slice(1)
+          .filter(line => line.trim())
+          .map(line => {
+            const values = parseCSVLine(line);
+            const item = {};
+            headers.forEach((h, i) => item[h.trim()] = values[i] || '');
+            
+            return {
+              ...item,
+              source: 'manual',
+              tags: item.tags ? item.tags.split(',').map(t => t.trim()) : []
+            };
+          })
+          .filter(item => item.id && item.title);
+      } catch (e) {
+        console.log('Manual news not available:', e.message);
+        return [];
+      }
+    }
+
+    function parseCSVLine(line) {
+      const result = [];
+      let current = '';
+      let inQuotes = false;
+      
+      for (let i = 0; i < line.length; i++) {
+        const char = line[i];
+        
+        if (char === '"') {
+          inQuotes = !inQuotes;
+        } else if (char === ',' && !inQuotes) {
+          result.push(current.trim());
+          current = '';
         } else {
-             grid.innerHTML = "<p>Haberler yüklenirken bir hata oluştu.</p>";
+          current += char;
         }
       }
-    });
+      result.push(current.trim());
+      return result;
+    }
 
+    async function loadAllNews() {
+      // Load both sources in parallel
+      const [arxiv, manual] = await Promise.all([
+        loadArxivNews(),
+        loadManualNews()
+      ]);
+      
+      arxivNews = arxiv;
+      manualNews = manual;
+      
+      // Combine and sort by date (newest first)
+      allNews = [...arxivNews, ...manualNews].sort((a, b) => {
+        return new Date(b.date) - new Date(a.date);
+      });
+      
+      console.log(`Loaded: ${arxivNews.length} arXiv news, ${manualNews.length} manual news`);
+      
+      renderNews(getFilteredNews());
+    }
+
+    function getFilteredNews() {
+      if (currentSource === 'arxiv') return arxivNews;
+      if (currentSource === 'manual') return manualNews;
+      return allNews;
+    }
+
+    // ============================================
+    // RENDERING
+    // ============================================
+    
     function renderNews(dataToRender) {
       grid.innerHTML = "";
+      
       if (dataToRender.length === 0) {
-        grid.innerHTML = "<p style='color:var(--color-text-muted); grid-column:1/-1; text-align:center;'>Bu etikete ait haber bulunamadı.</p>";
+        grid.innerHTML = `<p style='color:var(--color-text-muted); grid-column:1/-1; text-align:center; padding: 3rem;'>
+          Bu kategoride haber bulunamadı.
+        </p>`;
         return;
       }
 
       dataToRender.forEach((item) => {
-        const realIndex = newsData.indexOf(item);
+        const realIndex = allNews.indexOf(item);
+        
+        // Generate tags HTML
         let tagsHtml = '';
-        if (item.tags) {
-          const uniqTags = [...new Set(item.tags || [])].slice(0, 4);
-          uniqTags.forEach(t => {
-            tagsHtml += `<span class="tag" onclick="event.stopPropagation(); filterByTag('${t}')">${t}</span>`;
-          });
+        if (item.source === 'arxiv') {
+          tagsHtml += `<span class="tag arxiv-badge">arXiv</span>`;
         }
+        const uniqTags = [...new Set(item.tags || [])].slice(0, 4);
+        uniqTags.forEach(t => {
+          if (t && t !== 'arXiv') {
+            tagsHtml += `<span class="tag" onclick="event.stopPropagation(); filterByTag('${t}')">${t}</span>`;
+          }
+        });
 
-        let plainText = item.text
+        // Clean text preview
+        let plainText = (item.text || '')
           .replace(/\[([^\]]+)\]\([^\)]+\)/g, '$1')
-          .replace(/[*_#]/g, '');
+          .replace(/[*_#]/g, '')
+          .replace(/\\n/g, ' ');
 
         const card = document.createElement('div');
         card.className = 'card';
         card.innerHTML = `
-          <div class="card-img"><img src="${item.image}" alt="" referrerpolicy="no-referrer" onerror="this.src='https://via.placeholder.com/400x200?text=Görsel+Yok'"></div>
+          <div class="card-img">
+            <img src="${item.image || 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=600&q=80'}" 
+                 alt="" referrerpolicy="no-referrer" 
+                 onerror="this.src='https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=600&q=80'">
+          </div>
           <div class="card-body">
             <span class="date">${item.date}</span>
             <div class="title">${item.title}</div>
             <div class="summary">${plainText}</div>
             <div class="tags">${tagsHtml}</div>
-            <div class="read-more"><span>Devamını Oku</span></div>
+            <div class="read-more"><span>Devamını Oku →</span></div>
           </div>
         `;
         card.onclick = () => openModal(realIndex);
@@ -809,8 +725,12 @@
       });
     }
 
+    // ============================================
+    // FILTERING
+    // ============================================
+    
     function filterByTag(tagName) {
-      const filtered = newsData.filter(item => item.tags && item.tags.includes(tagName));
+      const filtered = allNews.filter(item => item.tags && item.tags.includes(tagName));
       renderNews(filtered);
       filterBox.style.display = 'flex';
       activeTagName.textContent = tagName;
@@ -818,73 +738,69 @@
     }
 
     function resetFilter() {
-      renderNews(newsData);
+      renderNews(getFilteredNews());
       filterBox.style.display = 'none';
     }
 
+    // ============================================
+    // SOURCE TOGGLE
+    // ============================================
+    
+    document.querySelectorAll('.source-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.source-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentSource = btn.dataset.source;
+        filterBox.style.display = 'none';
+        renderNews(getFilteredNews());
+      });
+    });
+
+    // ============================================
+    // MODAL
+    // ============================================
+    
     function openModal(index) {
-      const item = newsData[index];
-      mImg.src = item.image;
+      const item = allNews[index];
+      if (!item) return;
+      
+      mImg.src = item.image || 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=600&q=80';
       mDate.textContent = item.date;
       mTitle.textContent = item.title;
 
       // Markdown -> HTML
-      mText.innerHTML = marked.parse(item.text);
+      const textContent = (item.text || '').replace(/\\n/g, '\n');
+      mText.innerHTML = marked.parse(textContent);
 
-      // Safe links
-      const allLinks = mText.querySelectorAll('a');
-      allLinks.forEach(link => {
+      // Make links safe
+      mText.querySelectorAll('a').forEach(link => {
         link.setAttribute('target', '_blank');
         link.setAttribute('rel', 'noopener noreferrer');
       });
 
-      // Prepare text for speech
-      currentArticleText = item.text
-        .replace(/\[([^\]]+)\]\([^\)]+\)/g, '$1')
-        .replace(/[*_#]/g, '')
-        .replace(/\n/g, '. ');
-
-      // Header management
-      modalHeaderContainer.innerHTML = '';
-      const dateSpan = document.createElement('span');
-      dateSpan.className = 'modal-date';
-      dateSpan.textContent = item.date;
-      modalHeaderContainer.appendChild(dateSpan);
-
-      const hasAudio = (item.audioMp3 && item.audioMp3.trim() !== "") || (item.audioM4a && item.audioM4a.trim() !== "");
-
-      if (hasAudio) {
-        const audioWrapper = document.createElement('div');
-        audioWrapper.className = 'audio-player-wrapper';
-        audioWrapper.innerHTML = `
-          <span class="audio-label">Sesli Özet:</span>
-          <audio controls preload="metadata" controlsList="nodownload">
-            ${item.audioMp3 ? `<source src="${item.audioMp3}" type="audio/mpeg">` : ""}
-            ${item.audioM4a ? `<source src="${item.audioM4a}" type="audio/mp4">` : ""}
-            Tarayıcınız ses oynatmayı desteklemiyor.
-          </audio>
+      // Generate links for arxiv items
+      mLinks.innerHTML = '';
+      if (item.source === 'arxiv' && item.abs_link) {
+        mLinks.innerHTML = `
+          <a href="${item.abs_link}" target="_blank" rel="noopener" class="modal-link-btn">
+            📄 arXiv Makalesi
+          </a>
+          <a href="${item.pdf_link || item.abs_link.replace('/abs/', '/pdf/') + '.pdf'}" target="_blank" rel="noopener" class="modal-link-btn secondary">
+            📥 PDF İndir
+          </a>
         `;
-        modalHeaderContainer.appendChild(audioWrapper);
-      } else {
-        const speakBtn = document.createElement('button');
-        speakBtn.className = 'speak-btn';
-        speakBtn.id = 'speak-btn';
-        speakBtn.innerHTML = `<span>🔊</span> <span id="speak-text">Haberi Dinle</span>`;
-        speakBtn.onclick = toggleSpeech;
-        modalHeaderContainer.appendChild(speakBtn);
       }
 
-      let tagsHtml = '';
-      if (item.tags) {
-        const uniqTags = [...new Set(item.tags || [])];
-        uniqTags.forEach(t => {
-          tagsHtml += `<span class="tag" onclick="closeModal(); filterByTag('${t}')">${t}</span>`;
-        });
+      // Generate tags
+      mTags.innerHTML = '';
+      if (item.source === 'arxiv') {
+        mTags.innerHTML += `<span class="tag arxiv-badge">arXiv</span>`;
       }
-      mTags.innerHTML = tagsHtml;
-
-      // Shareable link
-      if (item.id) window.location.hash = item.id;
+      (item.tags || []).forEach(t => {
+        if (t && t !== 'arXiv') {
+          mTags.innerHTML += `<span class="tag" onclick="filterByTag('${t}'); closeModal();">${t}</span>`;
+        }
+      });
 
       modal.classList.add('active');
       document.body.style.overflow = 'hidden';
@@ -892,64 +808,24 @@
 
     function closeModal() {
       modal.classList.remove('active');
-      document.body.style.overflow = 'auto';
-      stopSpeaking();
-
-      // Clear URL hash
-      if (window.location.hash) {
-        history.replaceState(null, '', window.location.pathname + window.location.search);
-      }
-
-      // Stop audio
-      const audioEl = modalHeaderContainer.querySelector('audio');
-      if (audioEl) {
-        audioEl.pause();
-        audioEl.currentTime = 0;
-      }
+      document.body.style.overflow = '';
     }
 
-    // Speech synthesis
-    function toggleSpeech() {
-      if (synth.speaking) { stopSpeaking(); } else { startSpeaking(); }
-    }
-
-    function startSpeaking() {
-      if (synth.speaking) return;
-      if (currentArticleText !== '') {
-        const utterThis = new SpeechSynthesisUtterance(currentArticleText);
-        utterThis.lang = 'tr-TR';
-        utterThis.rate = 0.9;
-        utterThis.onend = function () { stopSpeaking(); }
-        synth.speak(utterThis);
-
-        const btn = document.getElementById('speak-btn');
-        if (btn) {
-          btn.classList.add('speaking');
-          btn.querySelector('#speak-text').textContent = "Durdur";
-        }
-      }
-    }
-
-    function stopSpeaking() {
-      if (synth.speaking) { synth.cancel(); }
-      const btn = document.getElementById('speak-btn');
-      if (btn) {
-        btn.classList.remove('speaking');
-        btn.querySelector('#speak-text').textContent = "Haberi Dinle";
-      }
-    }
-
-    // Close modal on backdrop click
+    // Close modal on overlay click
     modal.addEventListener('click', (e) => {
       if (e.target === modal) closeModal();
     });
 
     // Close modal on Escape key
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && modal.classList.contains('active')) {
-        closeModal();
-      }
+      if (e.key === 'Escape') closeModal();
     });
+
+    // ============================================
+    // INITIALIZATION
+    // ============================================
+    
+    loadAllNews();
   </script>
 </body>
 </html>

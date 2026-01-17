@@ -1,0 +1,38 @@
+name: Generate Turkish News from arXiv Papers
+
+on:
+  schedule:
+    # Run at 03:00 UTC on weekdays (1 hour after papers are fetched at 02:00 UTC)
+    # This is 06:00 Istanbul time
+    - cron: '0 3 * * 1-5'
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  generate-news:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          pip install anthropic
+      
+      - name: Generate Turkish news articles
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          python arxiv/scripts/generate_turkish_news.py
+      
+      - name: Commit and push if changed
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add arxiv/data/arxiv_news.json
+          git diff --staged --quiet || (git commit -m "Generate Turkish news $(date +'%Y-%m-%d')" && git pull --rebase && git push)
