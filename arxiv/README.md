@@ -1,158 +1,168 @@
 # 🪐 Exoplanet Papers - Daily arXiv Digest with AI Summaries
 
-A beautiful, automated daily digest of exoplanet research papers from arXiv with **AI-generated summaries** written for general audiences, **Turkish news translations**, and **optimized Twitter engagement**.
+A beautiful, automated daily digest of exoplanet research papers from arXiv with **AI-generated summaries** written for general audiences, **cross-platform social posting**, and **RSS feed**.
 
-🌐 **Live Site**: [arifsolmaz.github.io/arxiv](https://arifsolmaz.github.io/arxiv)  
-🇹🇷 **Turkish News**: [arifsolmaz.github.io/news.html](https://arifsolmaz.github.io/news.html)
+🌐 **Live site:** [arifsolmaz.github.io/arxiv](https://arifsolmaz.github.io/arxiv)
 
 ## ✨ Features
 
-### 📰 Daily Paper Digest
-- **Daily Updates**: Automatically fetches papers from arXiv astro-ph.EP RSS feed
-- **Archive System**: Browse papers by date with Prev/Next navigation
-- **Smart Classification**: Improved detection of exoplanet-focused papers
+- **Daily Updates**: Automatically fetches the latest papers from arXiv astro-ph.EP
 - **AI Summaries**: Each paper gets a ~300 word summary explaining:
   - Why It Matters (big picture significance)
   - What They Did (methods in plain language)
   - Key Findings (main discoveries)
   - Looking Forward (implications)
+- **RSS Feed**: Subscribe at `/arxiv/feed.xml`
+- **Paper Archive**: Browse past days' papers with date navigation
+- **Cross-Platform Posting**: Automated posts to Twitter/X and Bluesky
+- **Telegram Notifications**: Get notified when tweets are posted
+- **Smart Figure Fetching**: Extracts actual paper figures, with branded fallback cards
+- **Turkish News**: Auto-generated Turkish news articles for outreach
+- **Beautiful UI**: Clean design with responsive layout
+- **Zero Maintenance**: GitHub Actions handles everything automatically
 
-### 🇹🇷 Turkish News Page
-- **Auto-Translation**: Generates Turkish press-release style news articles
-- **Terminology**: Proper Turkish terms (ötegezegen, atmosfer, etc.)
-- **Tag-based Filtering**: Filter news by topic tags
-- **Admin Panel**: Direct editing via GitHub API
+## 📅 Schedule (Istanbul Time, UTC+3)
 
-### 🐦 Twitter Integration
-- **2-Tweet Threads**: Hook + content (with image), then links + hashtags
-- **Smart Selection**: Papers ranked by "tweetability" score
-- **Time-Based Posting**: Exoplanet papers during PST prime time
-- **Real Figures**: Fetches actual paper figures from arXiv HTML
-- **Fallback Cards**: Generates branded cards when no figure available
+| Time | Event |
+|------|-------|
+| 05:00 | Fetch new papers from arXiv |
+| 06:00 | Generate Turkish news articles |
+| 07:00-23:00 | Tweet papers (evenly distributed) |
 
-### 🖼️ Figure Detection
-- Fetches Figure 1 from arXiv HTML beta pages
-- Falls back to ar5iv.org rendering
-- Topic-based fallback images (JWST, habitable zones, etc.)
-- Correct URL construction for relative paths
+Papers are distributed evenly throughout the day. With 15 papers, expect one tweet roughly every 64 minutes.
 
 ## 📁 File Structure
 
 ```
-arifsolmaz.github.io/
+your-repo/
 ├── .github/
 │   └── workflows/
-│       ├── update-papers.yml        # Fetches papers daily at 02:00 UTC
-│       ├── tweet-paper.yml          # Tweets hourly during prime time
-│       └── generate-turkish-news.yml # Turkish news at 03:00 UTC
+│       ├── update-papers.yml      # Fetches papers (05:00 Istanbul)
+│       ├── generate-turkish-news.yml  # Turkish news (06:00 Istanbul)
+│       ├── tweet-paper.yml        # Twitter posting (07:00-23:00 Istanbul)
+│       └── post-bluesky.yml       # Bluesky posting
 ├── arxiv/
-│   ├── index.html                   # Main webpage with date picker
+│   ├── index.html                 # Main webpage
+│   ├── feed.xml                   # RSS feed (auto-generated)
+│   ├── news.html                  # Turkish news page
+│   ├── admin.html                 # Admin panel for corrections
 │   ├── data/
-│   │   ├── papers.json              # Current day's papers
-│   │   ├── tweeted.json             # Tracks tweeted papers
+│   │   ├── papers.json            # Today's papers
+│   │   ├── tweeted.json           # Tweet tracking
+│   │   ├── bluesky_posted.json    # Bluesky tracking
+│   │   ├── arxiv_news.json        # Turkish news data
 │   │   └── archive/
-│   │       ├── index.json           # List of available dates
-│   │       ├── 2026-01-19.json      # Papers for specific date
-│   │       └── ...                  # Up to 90 days history
+│   │       ├── index.json         # Archive date list
+│   │       └── YYYY-MM-DD.json    # Daily archives
 │   └── scripts/
-│       ├── fetch_papers.py          # Fetches papers, generates summaries
-│       ├── post_twitter.py          # Posts as 2-tweet thread
-│       ├── generate_turkish_news.py # Creates Turkish news articles
-│       └── split_archive.py         # Utility: split papers by date
-├── news.html                        # Turkish news page
-└── admin.html                       # Admin panel for editing
+│       ├── fetch_papers.py        # Fetch + summarize papers
+│       ├── generate_turkish_news.py
+│       ├── generate_rss.py        # RSS feed generator
+│       ├── archive_papers.py      # Daily archiver
+│       ├── post_twitter.py        # Twitter posting
+│       └── post_bluesky.py        # Bluesky posting
 ```
 
 ## 🚀 Setup Instructions
 
-### Step 1: Add Repository Secrets
+### Step 1: Add Required Secrets
 
 Go to **Settings** → **Secrets and variables** → **Actions** and add:
 
-| Secret Name | Required | Description |
-|-------------|----------|-------------|
-| `ANTHROPIC_API_KEY` | ✅ | For AI summaries |
-| `TWITTER_API_KEY` | Optional | For Twitter posting |
-| `TWITTER_API_SECRET` | Optional | For Twitter posting |
-| `TWITTER_ACCESS_TOKEN` | Optional | For Twitter posting |
-| `TWITTER_ACCESS_SECRET` | Optional | For Twitter posting |
+| Secret | Description |
+|--------|-------------|
+| `ANTHROPIC_API_KEY` | For AI summaries |
+| `TWITTER_API_KEY` | Twitter API |
+| `TWITTER_API_SECRET` | Twitter API |
+| `TWITTER_ACCESS_TOKEN` | Twitter API |
+| `TWITTER_ACCESS_SECRET` | Twitter API |
+| `TELEGRAM_BOT_TOKEN` | From @BotFather |
+| `TELEGRAM_CHAT_ID` | Your chat ID |
+| `BLUESKY_HANDLE` | e.g., `yourname.bsky.social` |
+| `BLUESKY_PASSWORD` | App password (not main password!) |
 
-### Step 2: Enable Workflows
+### Step 2: Optional Variables
 
-1. Go to **Actions** tab
-2. Enable workflows if prompted
-3. Run **Update Exoplanet Papers** manually for first run
+Go to **Settings** → **Variables** → **Actions**:
 
-### Step 3: (Optional) Twitter Premium
+| Variable | Value | Description |
+|----------|-------|-------------|
+| `TWITTER_PREMIUM` | `true` or `plus` | Enable longer tweets |
 
-Add repository variable `TWITTER_PREMIUM` = `true` for longer tweets.
+### Step 3: Run Initial Update
 
-## 🔄 Workflow Schedule
+1. Go to **Actions** → **Update Exoplanet Papers**
+2. Click **Run workflow**
 
-| Workflow | Schedule (UTC) | Description |
-|----------|----------------|-------------|
-| Update Papers | 02:00 Mon-Fri | Fetch new papers after arXiv announces |
-| Tweet Paper | Hourly 9-23 | Tweet one paper per hour |
-| Turkish News | 03:00 Mon-Fri | Generate Turkish translations |
+## 📡 RSS Feed
 
-*Note: arXiv announces papers at 20:00 ET (01:00 UTC), Mon-Fri only.*
+Subscribe to updates at:
+```
+https://arifsolmaz.github.io/arxiv/feed.xml
+```
 
-## 🏷️ Exoplanet Classification
+Works with any RSS reader (Feedly, Inoreader, NetNewsWire, etc.)
 
-Papers are classified as "exoplanet-focused" based on keywords:
+## 🦋 Bluesky Setup
 
-| Category | Keywords |
-|----------|----------|
-| Core Terms | exoplanet, extrasolar planet |
-| Planet Types | hot jupiter, super-earth, sub-neptune |
-| Habitability | habitable zone, biosignature |
-| Methods | microlensing planet, transiting planet, radial velocity |
-| Systems | TRAPPIST-1, WASP-, TOI-, Kepler- |
-| Atmospheres | transmission spectrum, planetary atmosphere |
+1. Go to Bluesky → **Settings** → **App Passwords**
+2. Create new app password named "GitHub Bot"
+3. Add to GitHub Secrets as `BLUESKY_PASSWORD`
+4. Add your handle as `BLUESKY_HANDLE` (e.g., `yourname.bsky.social`)
 
-## 🐦 Tweet Format
+## 📱 Telegram Notifications
 
-### Tweet 1 (with figure image)
+Get notified when tweets are posted:
+
+1. Message [@BotFather](https://t.me/botfather) → `/newbot`
+2. Get your chat ID from [@userinfobot](https://t.me/userinfobot)
+3. Add `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID` to GitHub Secrets
+
+## 🧪 Testing Locally
+
+```bash
+# Install dependencies
+pip install requests anthropic tweepy pillow atproto
+
+# Check tweet timing (won't actually tweet without credentials)
+python arxiv/scripts/post_twitter.py
+
+# Test paper fetching
+python arxiv/scripts/fetch_papers.py
+```
+
+## 🏷️ Dynamic Hashtags
+
+Hashtags are automatically extracted (2-4 max):
+
+| Category | Example Hashtags |
+|----------|------------------|
+| Telescopes | #JWST #TESS #Kepler #Hubble |
+| Planet Types | #HotJupiter #SuperEarth #SubNeptune |
+| Habitability | #HabitableZone #Biosignatures |
+| Systems | #TRAPPIST1 #ProximaCentauri |
+
+## 📝 Tweet Format
+
+**Tweet 1** (with figure/card image):
 ```
 [Paper Title]
 
 [Author et al.]
 
 [Hook: attention-grabbing finding]
-
 [Claim: what's new]
-
 [Evidence: specific detail]
 
 [Question: invite discussion]
 ```
 
-### Tweet 2 (reply)
+**Tweet 2** (reply):
 ```
 📄 arXiv: [link]
 📖 Full summary: [page link]
 
-#Exoplanets #Astronomy #JWST
-```
-
-## 🧪 Local Testing
-
-```bash
-# Install dependencies
-pip install requests anthropic tweepy pillow
-
-# Set API key
-export ANTHROPIC_API_KEY='your-key'
-
-# Fetch papers
-cd arxiv/scripts
-python fetch_papers.py
-
-# Test figure detection
-python test_figure_fetch.py
-
-# Split existing papers into daily archives
-python split_archive.py
+#Exoplanets #JWST
 ```
 
 ## 💰 Cost Estimate
@@ -160,25 +170,29 @@ python split_archive.py
 - ~$0.003-0.005 per paper summary
 - ~$0.001-0.002 per tweet hook
 - ~$0.002-0.004 per Turkish news article
-- **~$2-4 per month** total (typical usage)
+- **~$2-4 per month** total
 
 ## 🔧 Troubleshooting
 
-### Papers from wrong date showing
-- The fetch script now uses RSS feed only (today's papers)
-- API fallback only if RSS fails completely
+### No tweets posting
+- Check if within tweet window (07:00-23:00 Istanbul)
+- Run `python arxiv/scripts/post_twitter.py` locally to see timing
 
-### Figures not loading
-- Check if arXiv has HTML version: `arxiv.org/html/[paper_id]`
-- Script tries arxiv.org/html first, then ar5iv.org
-
-### Twitter 403 error
+### Twitter 403 Forbidden
 - App needs Read and Write permissions
 - Regenerate tokens after changing permissions
 
-### Turkish translation issues
-- Check admin panel to fix terminology
-- "ötegezegen" should be one word
+### Telegram not working
+- Verify chat ID with test: `curl "https://api.telegram.org/bot<TOKEN>/sendMessage?chat_id=<ID>&text=test"`
+- Make sure you started a conversation with the bot first
+
+### Bluesky not posting
+- Use app password, not main password
+- Check handle format (include `.bsky.social`)
+
+### Figures not loading
+- Script tries: stored URL → arXiv HTML → ar5iv → fallback card
+- Some papers only have PDFs (no extractable figures)
 
 ## 📄 License
 
@@ -189,3 +203,9 @@ MIT License - Feel free to use and modify!
 - Paper data from [arXiv.org](https://arxiv.org)
 - AI summaries by [Claude](https://anthropic.com) (Anthropic)
 - Built for the exoplanet research community 🪐
+
+---
+
+**Follow for updates:**
+- 🐦 Twitter/X: [@arifsolmaz](https://x.com/arifsolmaz)
+- 🦋 Bluesky: [@arifsolmaz.bsky.social](https://bsky.app/profile/arifsolmaz.bsky.social)
