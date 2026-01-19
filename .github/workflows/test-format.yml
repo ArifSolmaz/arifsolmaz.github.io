@@ -1,0 +1,38 @@
+name: Test Tweet Format (DELETE ME)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install requests tweepy pillow
+      - name: Test tweet format (dry run)
+        env:
+          PAGE_URL: "https://arifsolmaz.github.io/arxiv"
+        run: |
+          python -c "
+import json
+import sys
+sys.path.insert(0, 'arxiv/scripts')
+from post_twitter import format_paper_thread, load_papers
+
+data = load_papers()
+if data and data.get('papers'):
+    paper = data['papers'][0]
+    tweet1, tweet2 = format_paper_thread(paper, 'https://arifsolmaz.github.io/arxiv')
+    print('=== TWEET 1 ===')
+    print(tweet1)
+    print()
+    print(f'({len(tweet1)} chars)')
+    print()
+    print('=== TWEET 2 ===')
+    print(tweet2)
+    print()
+    print(f'({len(tweet2)} chars)')
+"
