@@ -23,6 +23,54 @@ import requests
 import tweepy
 from PIL import Image, ImageDraw, ImageFont
 
+
+def clean_latex_name(name: str) -> str:
+    """Clean LaTeX escape sequences from author names."""
+    # Common LaTeX accent replacements
+    replacements = {
+        # Acute accents \'
+        "\\'a": "á", "\\'e": "é", "\\'i": "í", "\\'o": "ó", "\\'u": "ú",
+        "\\'A": "Á", "\\'E": "É", "\\'I": "Í", "\\'O": "Ó", "\\'U": "Ú",
+        "\\'n": "ń", "\\'c": "ć", "\\'s": "ś", "\\'z": "ź",
+        # Grave accents \`
+        "\\`a": "à", "\\`e": "è", "\\`i": "ì", "\\`o": "ò", "\\`u": "ù",
+        # Umlaut \"
+        '\\"a': "ä", '\\"e': "ë", '\\"i': "ï", '\\"o': "ö", '\\"u': "ü",
+        '\\"A': "Ä", '\\"E': "Ë", '\\"I': "Ï", '\\"O': "Ö", '\\"U': "Ü",
+        # Caron \v{}
+        "\\v{c}": "č", "\\v{C}": "Č", "\\v{s}": "š", "\\v{S}": "Š",
+        "\\v{z}": "ž", "\\v{Z}": "Ž", "\\v{r}": "ř", "\\v{R}": "Ř",
+        "\\v{e}": "ě", "\\v{E}": "Ě", "\\v{n}": "ň", "\\v{N}": "Ň",
+        # Cedilla \c{}
+        "\\c{c}": "ç", "\\c{C}": "Ç",
+        # Tilde \~
+        "\\~n": "ñ", "\\~N": "Ñ", "\\~a": "ã", "\\~o": "õ",
+        # Circumflex \^
+        "\\^a": "â", "\\^e": "ê", "\\^i": "î", "\\^o": "ô", "\\^u": "û",
+        # Polish l
+        "\\l": "ł", "\\L": "Ł",
+        # German sharp s
+        "\\ss": "ß",
+        # Scandinavian
+        "\\aa": "å", "\\AA": "Å", "\\o": "ø", "\\O": "Ø", "\\ae": "æ", "\\AE": "Æ",
+    }
+    
+    result = name
+    for latex, char in replacements.items():
+        result = result.replace(latex, char)
+    
+    # Handle \v{X} patterns not in the map (generic caron)
+    result = re.sub(r"\\v\{(\w)\}", r"\1", result)
+    
+    # Handle remaining backslash escapes
+    result = re.sub(r"\\['\"`^~](\w)", r"\1", result)
+    result = re.sub(r"\\['\"`^~]\{(\w)\}", r"\1", result)
+    
+    # Clean up any remaining backslashes before letters
+    result = re.sub(r"\\(\w)", r"\1", result)
+    
+    return result
+
 # Paths
 SCRIPT_DIR = Path(__file__).parent
 DATA_DIR = SCRIPT_DIR.parent / "data"
@@ -530,13 +578,20 @@ def format_tweet_thread_premium(paper: dict, page_url: str, hashtags: list[str],
     title = paper["title"]
     authors = paper.get("authors", [])
     
-    # Always use "First Author et al." format
-    if len(authors) == 0:
+    # Parse first author - authors might be a list of names or a list with one comma-separated string
+    if not authors:
         author_str = "Unknown"
-    elif len(authors) == 1:
-        author_str = authors[0]
     else:
-        author_str = f"{authors[0]} et al."
+        # If first element contains comma, it's all authors in one string
+        first_item = authors[0]
+        if "," in first_item:
+            first_author = first_item.split(",")[0].strip()
+            first_author = clean_latex_name(first_author)
+            author_str = f"{first_author} et al."
+        elif len(authors) == 1:
+            author_str = clean_latex_name(authors[0])
+        else:
+            author_str = f"{clean_latex_name(authors[0])} et al."
     
     # Build tweet: Hook first, then title + author, then question
     parts = []
@@ -577,13 +632,20 @@ def format_tweet_thread_free(paper: dict, page_url: str, hashtags: list[str]) ->
     title = paper["title"]
     authors = paper.get("authors", [])
     
-    # Always use "First Author et al." format
-    if len(authors) == 0:
+    # Parse first author - authors might be a list of names or a list with one comma-separated string
+    if not authors:
         author_str = "Unknown"
-    elif len(authors) == 1:
-        author_str = authors[0]
     else:
-        author_str = f"{authors[0]} et al."
+        # If first element contains comma, it's all authors in one string
+        first_item = authors[0]
+        if "," in first_item:
+            first_author = first_item.split(",")[0].strip()
+            first_author = clean_latex_name(first_author)
+            author_str = f"{first_author} et al."
+        elif len(authors) == 1:
+            author_str = clean_latex_name(authors[0])
+        else:
+            author_str = f"{clean_latex_name(authors[0])} et al."
     
     # Build tweet: Hook first (if fits), then title + author, then question
     parts = []
