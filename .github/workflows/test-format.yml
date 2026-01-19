@@ -12,27 +12,23 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install requests tweepy pillow
-      - name: Test tweet format (dry run)
-        env:
-          PAGE_URL: "https://arifsolmaz.github.io/arxiv"
+      - name: Show new tweet format
         run: |
+          echo "=== Testing new tweet format ==="
           python -c "
-import json
-import sys
-sys.path.insert(0, 'arxiv/scripts')
-from post_twitter import format_paper_thread, load_papers
-
-data = load_papers()
-if data and data.get('papers'):
-    paper = data['papers'][0]
-    tweet1, tweet2 = format_paper_thread(paper, 'https://arifsolmaz.github.io/arxiv')
-    print('=== TWEET 1 ===')
-    print(tweet1)
-    print()
-    print(f'({len(tweet1)} chars)')
-    print()
-    print('=== TWEET 2 ===')
-    print(tweet2)
-    print()
-    print(f'({len(tweet2)} chars)')
-"
+          import json
+          with open('arxiv/data/papers.json') as f:
+              data = json.load(f)
+          paper = data['papers'][0]
+          authors = paper.get('authors', [])
+          author_str = authors[0] + ' et al.' if len(authors) > 1 else (authors[0] if authors else 'Unknown')
+          hook = paper.get('tweet_hook', {}).get('hook', '')
+          question = paper.get('tweet_hook', {}).get('question', '')
+          title = paper['title']
+          print()
+          if hook: print(hook); print()
+          print('📄 ' + title)
+          print('👤 ' + author_str)
+          if question: print(); print(question)
+          print()
+          "
