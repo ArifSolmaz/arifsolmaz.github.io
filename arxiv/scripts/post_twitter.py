@@ -522,36 +522,37 @@ def extract_hashtags(paper: dict, max_hashtags: int = MAX_HASHTAGS) -> list[str]
 
 
 def format_tweet_thread_premium(paper: dict, page_url: str, hashtags: list[str], limit: int) -> tuple[str, str]:
-    """Format for premium accounts (longer tweets)."""
+    """Format for premium accounts (longer tweets). Hook-first format."""
     tweet_hook = paper.get("tweet_hook", {})
     hook = tweet_hook.get("hook", "")
-    claim = tweet_hook.get("claim", "")
-    evidence = tweet_hook.get("evidence", "")
     question = tweet_hook.get("question", "")
     
     title = paper["title"]
     authors = paper.get("authors", [])
     
-    if len(authors) == 1:
+    # Always use "First Author et al." format
+    if len(authors) == 0:
+        author_str = "Unknown"
+    elif len(authors) == 1:
         author_str = authors[0]
-    elif len(authors) <= 2:
-        author_str = " & ".join(authors)
     else:
         author_str = f"{authors[0]} et al."
     
-    parts = [title, "", author_str, ""]
+    # Build tweet: Hook first, then title + author, then question
+    parts = []
+    
     if hook:
-        parts.extend([hook, ""])
-    if claim:
-        parts.extend([claim, ""])
-    if evidence:
-        parts.extend([evidence, ""])
+        parts.append(hook)
+        parts.append("")
+    
+    parts.append(f"📄 {title}")
+    parts.append(f"👤 {author_str}")
+    
     if question:
-        parts.extend(["", question])
+        parts.append("")
+        parts.append(question)
     
     tweet1 = "\n".join(parts)
-    while "\n\n\n" in tweet1:
-        tweet1 = tweet1.replace("\n\n\n", "\n\n")
     tweet1 = tweet1.strip()
     
     if len(tweet1) > limit:
@@ -569,19 +570,52 @@ def format_tweet_thread_premium(paper: dict, page_url: str, hashtags: list[str],
 
 
 def format_tweet_thread_free(paper: dict, page_url: str, hashtags: list[str]) -> tuple[str, str]:
-    """Format for free accounts (280 chars)."""
+    """Format for free accounts (280 chars). Hook-first format."""
     tweet_hook = paper.get("tweet_hook", {})
     hook = tweet_hook.get("hook", "")
     question = tweet_hook.get("question", "")
     title = paper["title"]
+    authors = paper.get("authors", [])
     
-    # Tweet 1: Title + hook (with image)
-    tweet1 = title
+    # Always use "First Author et al." format
+    if len(authors) == 0:
+        author_str = "Unknown"
+    elif len(authors) == 1:
+        author_str = authors[0]
+    else:
+        author_str = f"{authors[0]} et al."
+    
+    # Build tweet: Hook first (if fits), then title + author, then question
+    parts = []
+    
     if hook:
-        tweet1 += f"\n\n{hook}"
-    if question and len(tweet1) + len(question) + 2 < 260:
-        tweet1 += f"\n\n{question}"
+        parts.append(hook)
+        parts.append("")
     
+    parts.append(f"📄 {title}")
+    parts.append(f"👤 {author_str}")
+    
+    if question:
+        parts.append("")
+        parts.append(question)
+    
+    tweet1 = "\n".join(parts)
+    
+    # If too long, try without question
+    if len(tweet1) > 280:
+        parts = []
+        if hook:
+            parts.append(hook)
+            parts.append("")
+        parts.append(f"📄 {title}")
+        parts.append(f"👤 {author_str}")
+        tweet1 = "\n".join(parts)
+    
+    # If still too long, try without hook
+    if len(tweet1) > 280:
+        tweet1 = f"📄 {title}\n👤 {author_str}"
+    
+    # Final truncate if needed
     if len(tweet1) > 280:
         tweet1 = truncate_text(tweet1, 277)
     
