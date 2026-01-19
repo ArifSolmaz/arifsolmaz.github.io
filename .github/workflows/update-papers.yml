@@ -2,18 +2,10 @@ name: Update Exoplanet Papers
 
 on:
   schedule:
-    # arXiv announces papers at 20:00 ET (01:00 UTC on the next day)
-    # RSS feed updates immediately, API can be delayed
-    # Run at multiple times to catch the update:
-    - cron: '30 1 * * 1-5'   # 01:30 UTC - 30 min after announcement (RSS should be ready)
-    - cron: '30 2 * * 1-5'   # 02:30 UTC - Backup run in case RSS was slow
-    - cron: '30 8 * * 1-5'   # 08:30 UTC - Catch any missed papers for the day
+    # Run at 02:00 UTC on weekdays (right after arXiv's 20:00 ET announcement)
+    # This is 05:00 Istanbul time
+    - cron: '0 2 * * 1-5'
   workflow_dispatch:  # Allow manual trigger
-    inputs:
-      force_refresh:
-        description: 'Force regenerate all summaries'
-        required: false
-        default: 'false'
 
 jobs:
   update-papers:
@@ -22,8 +14,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0  # Full history for proper rebasing
       
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -34,54 +24,27 @@ jobs:
         run: |
           pip install requests anthropic
       
-      - name: Show current time info
-        run: |
-          echo "Current UTC time: $(date -u)"
-          echo "Day of week: $(date -u +%A)"
-          echo "This helps verify we're running at the right time"
-      
       - name: Fetch papers and generate summaries
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          FORCE_REFRESH: ${{ github.event.inputs.force_refresh }}
         run: |
           python arxiv/scripts/fetch_papers.py
       
-      - name: Check for changes
-        id: check_changes
+      - name: Archive papers
         run: |
-          git diff --name-only arxiv/data/papers.json > /tmp/changed_files.txt
-          if [ -s /tmp/changed_files.txt ]; then
-            echo "has_changes=true" >> $GITHUB_OUTPUT
-            echo "Papers data has changed"
-            # Show what papers are now in the file
-            echo "Paper count: $(jq '.paper_count' arxiv/data/papers.json)"
-            echo "First 3 paper IDs:"
-            jq -r '.papers[:3][].id' arxiv/data/papers.json
-          else
-            echo "has_changes=false" >> $GITHUB_OUTPUT
-            echo "No changes to papers.json"
-          fi
+          python arxiv/scripts/archive_papers.py
+      
+      - name: Generate RSS feed
+        run: |
+          python arxiv/scripts/generate_rss.py
       
       - name: Commit and push if changed
-        if: steps.check_changes.outputs.has_changes == 'true'
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           
-          # Add papers.json and archive files
           git add arxiv/data/papers.json
           git add arxiv/data/archive/
+          git add arxiv/feed.xml
           
-          # Create descriptive commit message
-          PAPER_COUNT=$(jq '.paper_count' arxiv/data/papers.json)
-          EXO_COUNT=$(jq '[.papers[] | select(.is_exoplanet_focused == true)] | length' arxiv/data/papers.json)
-          
-          git commit -m "Update papers $(date +'%Y-%m-%d %H:%M UTC') - $PAPER_COUNT papers ($EXO_COUNT exoplanet)"
-          
-          # Handle potential conflicts from concurrent runs
-          for i in 1 2 3; do
-            git pull --rebase origin main && git push origin main && break
-            echo "Push failed, retrying in 5s..."
-            sleep 5
-          done
+          git diff --staged --quiet || (git commit -m "Update exoplanet papers $(date +'%Y-%m-%d')" && git pull --rebase && git push)

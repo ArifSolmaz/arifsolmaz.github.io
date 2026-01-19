@@ -1,0 +1,62 @@
+name: Post to Bluesky
+
+on:
+  schedule:
+    # Run every 2 hours during the day (UTC)
+    # Offset from Twitter to spread posts
+    - cron: '30 8,10,12,14,16,18,20,22 * * 1-5'
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  post-bluesky:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          pip install requests atproto pillow
+      
+      - name: Post to Bluesky
+        id: post
+        env:
+          BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
+          BLUESKY_PASSWORD: ${{ secrets.BLUESKY_PASSWORD }}
+          PAGE_URL: "https://arifsolmaz.github.io/arxiv"
+        run: |
+          python arxiv/scripts/post_bluesky.py 2>&1 | tee bluesky_output.log
+          
+          if grep -q "Posted successfully" bluesky_output.log; then
+            echo "posted=true" >> $GITHUB_OUTPUT
+            PAPER_ID=$(grep "Selected paper:" bluesky_output.log | sed 's/.*Selected paper: //' | head -1)
+            echo "paper_id=$PAPER_ID" >> $GITHUB_OUTPUT
+          else
+            echo "posted=false" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Send Telegram notification
+        if: steps.post.outputs.posted == 'true'
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          PAPER_ID: ${{ steps.post.outputs.paper_id }}
+        run: |
+          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            -d chat_id="${TELEGRAM_CHAT_ID}" \
+            -d text="🦋 Bluesky post! 📄 ${PAPER_ID}"
+      
+      - name: Commit posted tracking
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add arxiv/data/bluesky_posted.json
+          git diff --staged --quiet || git commit -m "Update Bluesky posted tracking"
+          git pull --rebase origin main || true
+          git push || true
