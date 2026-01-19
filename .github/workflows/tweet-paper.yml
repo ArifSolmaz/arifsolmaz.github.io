@@ -41,22 +41,14 @@ jobs:
         run: |
           python arxiv/scripts/post_twitter.py 2>&1 | tee tweet_output.log
           
-          # Check if tweet was actually posted
           if grep -q "Thread posted successfully" tweet_output.log; then
             echo "tweeted=true" >> $GITHUB_OUTPUT
-            
-            # Extract paper ID
             PAPER_ID=$(grep "Selected paper:" tweet_output.log | sed 's/.*Selected paper: //' | head -1)
             echo "paper_id=$PAPER_ID" >> $GITHUB_OUTPUT
-            
-            # Extract tweet URL
             TWEET_URL=$(grep "Tweet 1:" tweet_output.log | grep -oE 'https://[^ ]+' | head -1)
             echo "tweet_url=$TWEET_URL" >> $GITHUB_OUTPUT
-            
-            echo "✅ Tweet posted: $PAPER_ID"
           else
             echo "tweeted=false" >> $GITHUB_OUTPUT
-            echo "ℹ️ No tweet posted (all papers tweeted or skipped)"
           fi
       
       - name: Send Telegram notification
@@ -64,20 +56,13 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          PAPER_ID: ${{ steps.tweet.outputs.paper_id }}
+          TWEET_URL: ${{ steps.tweet.outputs.tweet_url }}
         run: |
-          PAPER_ID="${{ steps.tweet.outputs.paper_id }}"
-          TWEET_URL="${{ steps.tweet.outputs.tweet_url }}"
-          
-          MESSAGE="🐦 Tweet posted!
-📄 $PAPER_ID
-🔗 $TWEET_URL"
-          
           curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
             -d chat_id="${TELEGRAM_CHAT_ID}" \
-            -d text="$MESSAGE" \
-            -d parse_mode="HTML"
-          
-          echo "✅ Telegram notification sent"
+            -d text="🐦 Tweet posted! 📄 ${PAPER_ID} 🔗 ${TWEET_URL}"
+          echo "Telegram notification sent"
       
       - name: Commit tweeted tracking
         run: |
