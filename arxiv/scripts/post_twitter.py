@@ -657,8 +657,8 @@ def select_best_paper(papers: list, tweeted_ids: set) -> dict | None:
     current_hour = now.hour
     current_minute = now.minute
     
-    # Tweet window: 6 AM to 11 PM Istanbul
-    tweet_start_hour = 6
+    # Tweet window: 7 AM to 11 PM Istanbul (16 hours)
+    tweet_start_hour = 7
     tweet_end_hour = 23
     
     if current_hour < tweet_start_hour or current_hour >= tweet_end_hour:
