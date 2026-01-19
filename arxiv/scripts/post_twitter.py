@@ -785,6 +785,71 @@ def cleanup_temp_file(filepath: str):
         print(f"Could not clean up {filepath}: {e}")
 
 
+def should_tweet_now(total_papers: int, tweeted_count: int) -> bool:
+    """
+    Determine if we should tweet now based on even distribution across the day.
+    
+    Tweet window: 06:00 - 02:00 Istanbul (03:00 - 23:00 UTC) = 20 hours
+    Papers are distributed evenly across this window.
+    """
+    from datetime import datetime, timezone, timedelta
+    
+    # Istanbul timezone (UTC+3)
+    istanbul = timezone(timedelta(hours=3))
+    now = datetime.now(istanbul)
+    
+    # Tweet window in Istanbul time
+    window_start_hour = 6   # 06:00 Istanbul
+    window_end_hour = 26    # 02:00 next day (represented as 26 for easier math)
+    window_duration_minutes = (window_end_hour - window_start_hour) * 60  # 1200 minutes
+    
+    # Current time as minutes since midnight
+    current_minutes = now.hour * 60 + now.minute
+    
+    # Handle times after midnight (00:00-02:00)
+    if now.hour < window_start_hour:
+        current_minutes += 24 * 60  # Add 24 hours
+    
+    # Minutes since window start
+    minutes_since_start = current_minutes - (window_start_hour * 60)
+    
+    # Check if we're in the tweet window
+    if minutes_since_start < 0 or minutes_since_start > window_duration_minutes:
+        print(f"⏰ Outside tweet window (06:00-02:00 Istanbul). Current: {now.strftime('%H:%M')}")
+        return False
+    
+    # Calculate expected number of tweets by now
+    if total_papers <= 0:
+        return False
+    
+    # Interval between tweets (in minutes)
+    interval = window_duration_minutes / total_papers
+    
+    # Expected tweets by now (0-indexed)
+    expected_tweets = int(minutes_since_start / interval)
+    
+    # Should we tweet?
+    should_tweet = tweeted_count < expected_tweets + 1  # +1 because we want to include current slot
+    
+    print(f"📊 Smart timing:")
+    print(f"   Papers: {total_papers}, Tweeted: {tweeted_count}")
+    print(f"   Interval: {interval:.0f} min (~{interval/60:.1f} hours)")
+    print(f"   Time: {now.strftime('%H:%M')} Istanbul ({minutes_since_start:.0f} min into window)")
+    print(f"   Expected tweets by now: {expected_tweets + 1}")
+    
+    if should_tweet:
+        print(f"   ✅ Time to tweet!")
+    else:
+        next_tweet_at = (tweeted_count) * interval
+        wait_minutes = next_tweet_at - minutes_since_start
+        if wait_minutes > 0:
+            print(f"   ⏳ Next tweet in ~{wait_minutes:.0f} min")
+        else:
+            print(f"   ⏳ Waiting for next slot")
+    
+    return should_tweet
+
+
 def main():
     """Main function - tweet ONE paper as a 2-tweet thread with image."""
     
@@ -795,7 +860,7 @@ def main():
         return
     
     papers = data["papers"]
-    papers_date = data.get("updated_at", "")[:10]
+    papers_date = data.get("date", data.get("updated_at", "")[:10])
     
     # Load tweeted tracking
     tweeted_data = load_tweeted()
@@ -810,6 +875,11 @@ def main():
             "tweeted_ids": [],
             "last_reset": papers_date
         }
+    
+    # Check if it's time to tweet based on even distribution
+    if not should_tweet_now(len(papers), len(tweeted_ids)):
+        print("\nNot time to tweet yet. Exiting.")
+        return
     
     # Select the best paper to tweet based on time of day
     paper_to_tweet = select_best_paper(papers, tweeted_ids)
