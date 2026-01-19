@@ -51,27 +51,72 @@ def is_exoplanet_focused(title: str, abstract: str) -> bool:
     text = f"{title} {abstract}".lower()
     
     strict_keywords = [
+        # Core exoplanet terms
         "exoplanet", "exoplanets", "exoplanetary",
         "extrasolar planet", "extrasolar planets",
+        
+        # Planet types
         "hot jupiter", "warm jupiter", "cold jupiter",
         "super-earth", "super earth", "mini-neptune", "sub-neptune",
+        "earth-like planet", "earth-sized planet",
+        "rocky planet", "terrestrial planet",
+        "gas giant planet", "ice giant planet",
+        
+        # Habitability
         "habitable zone", "habitable exoplanet", "habitability",
         "biosignature", "biosignatures",
+        
+        # Detection methods
+        "microlensing planet", "microlensing bound planet",
+        "transiting planet", "transiting exoplanet",
+        "radial velocity planet",
+        "directly imaged planet",
+        
+        # Surveys & missions with planet context
         "tess planet", "tess candidate", "toi-",
         "kepler planet", "kepler candidate", "kepler-",
         "k2 planet", "k2-",
+        
+        # Known systems
         "wasp-", "hat-p-", "hatp-",
         "trappist-1", "trappist",
         "proxima centauri b", "proxima b",
         "gj 1214", "gj 436", "hd 189733", "hd 209458",
         "55 cancri", "tau ceti",
+        
+        # Atmospheres
         "exoplanet atmosphere", "exoplanetary atmosphere",
+        "planetary atmosphere",
         "transmission spectrum", "transmission spectroscopy",
+        "emission spectrum of",
+        
+        # Specific contexts
         "planet occurrence", "planet frequency",
         "planet host star", "planet-hosting star",
+        "spin-orbit", "orbital obliquity",
+        "planet detection", "planet discovery",
+        "bound planet",  # for microlensing
     ]
     
-    return any(keyword in text for keyword in strict_keywords)
+    # Check for strict keywords
+    if any(keyword in text for keyword in strict_keywords):
+        return True
+    
+    # Additional check: "planet" + specific context words
+    if "planet" in text:
+        planet_contexts = [
+            "detected", "discovered", "confirmed", "candidate",
+            "orbiting", "orbit", "transit", "radial velocity",
+            "mass", "radius", "density", "atmosphere",
+            "formation", "migration", "evolution",
+        ]
+        if any(ctx in text for ctx in planet_contexts):
+            # But exclude solar system contexts
+            solar_system = ["mars", "venus", "mercury", "saturn", "neptune", "uranus", "pluto", "asteroid", "comet", "interstellar"]
+            if not any(ss in text for ss in solar_system):
+                return True
+    
+    return False
 
 
 def calculate_tweetability_score(paper: dict) -> int:
@@ -202,16 +247,17 @@ def fetch_via_api(max_results: int) -> list[dict]:
 
 
 def fetch_arxiv_papers(max_results: int = 25) -> list[dict]:
-    """Fetch papers from RSS and API, merge results."""
+    """Fetch papers from RSS feed only (today's announcements)."""
     
+    # RSS feed contains ONLY papers announced today
     papers = fetch_via_rss()
-    api_papers = fetch_via_api(max_results * 2)
     
-    existing_ids = {p["id"] for p in papers}
-    for p in api_papers:
-        if p["id"] not in existing_ids:
-            papers.append(p)
-            existing_ids.add(p["id"])
+    # Only use API as fallback if RSS completely fails
+    if not papers:
+        print("RSS failed, falling back to API...")
+        papers = fetch_via_api(max_results)
+        # API returns mixed dates, so limit results
+        papers = papers[:max_results]
     
     if not papers:
         print("WARNING: No papers from RSS or API!")
@@ -232,7 +278,7 @@ def fetch_arxiv_papers(max_results: int = 25) -> list[dict]:
     
     papers.sort(key=lambda p: (-get_arxiv_sortkey(p), not p["is_exoplanet_focused"], -p["tweetability_score"]))
     
-    return papers[:max_results]
+    return papers
 
 
 def fetch_arxiv_figure(paper_id: str) -> str | None:

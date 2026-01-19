@@ -20,6 +20,80 @@ PAPERS_FILE = DATA_DIR / "papers.json"
 ARCHIVE_DIR = DATA_DIR / "archive"
 ARCHIVE_INDEX = ARCHIVE_DIR / "index.json"
 
+
+def is_exoplanet_focused(title: str, abstract: str) -> bool:
+    """Check if paper is specifically about exoplanets."""
+    text = f"{title} {abstract}".lower()
+    
+    strict_keywords = [
+        # Core exoplanet terms
+        "exoplanet", "exoplanets", "exoplanetary",
+        "extrasolar planet", "extrasolar planets",
+        
+        # Planet types
+        "hot jupiter", "warm jupiter", "cold jupiter",
+        "super-earth", "super earth", "mini-neptune", "sub-neptune",
+        "earth-like planet", "earth-sized planet",
+        "rocky planet", "terrestrial planet",
+        "gas giant planet", "ice giant planet",
+        
+        # Habitability
+        "habitable zone", "habitable exoplanet", "habitability",
+        "biosignature", "biosignatures",
+        
+        # Detection methods
+        "microlensing planet", "microlensing bound planet",
+        "transiting planet", "transiting exoplanet",
+        "radial velocity planet",
+        "directly imaged planet",
+        
+        # Surveys & missions with planet context
+        "tess planet", "tess candidate", "toi-",
+        "kepler planet", "kepler candidate", "kepler-",
+        "k2 planet", "k2-",
+        
+        # Known systems
+        "wasp-", "hat-p-", "hatp-",
+        "trappist-1", "trappist",
+        "proxima centauri b", "proxima b",
+        "gj 1214", "gj 436", "hd 189733", "hd 209458",
+        "55 cancri", "tau ceti",
+        
+        # Atmospheres
+        "exoplanet atmosphere", "exoplanetary atmosphere",
+        "planetary atmosphere",
+        "transmission spectrum", "transmission spectroscopy",
+        "emission spectrum of",
+        
+        # Specific contexts
+        "planet occurrence", "planet frequency",
+        "planet host star", "planet-hosting star",
+        "spin-orbit", "orbital obliquity",
+        "planet detection", "planet discovery",
+        "bound planet",  # for microlensing
+    ]
+    
+    # Check for strict keywords
+    if any(keyword in text for keyword in strict_keywords):
+        return True
+    
+    # Additional check: "planet" + specific context words
+    if "planet" in text:
+        planet_contexts = [
+            "detected", "discovered", "confirmed", "candidate",
+            "orbiting", "orbit", "transit", "radial velocity",
+            "mass", "radius", "density", "atmosphere",
+            "formation", "migration", "evolution",
+        ]
+        if any(ctx in text for ctx in planet_contexts):
+            # But exclude solar system contexts
+            solar_system = ["mars", "venus", "mercury", "saturn", "neptune", "uranus", "pluto", "asteroid", "comet", "interstellar"]
+            if not any(ss in text for ss in solar_system):
+                return True
+    
+    return False
+
+
 # arXiv announcement schedule (Mon-Fri, no weekends)
 # Papers submitted by 14:00 ET are announced at 20:00 ET same day
 # The date in the ID reflects when it was submitted, not announced
@@ -70,16 +144,44 @@ def main():
     print("Split papers.json into daily archives")
     print("=" * 60)
     
-    # Load existing papers
-    if not PAPERS_FILE.exists():
-        print(f"ERROR: {PAPERS_FILE} not found")
-        return
+    # Load papers from ALL sources (papers.json + existing archives)
+    all_papers = {}
     
-    with open(PAPERS_FILE, "r", encoding="utf-8") as f:
-        data = json.load(f)
+    # Load from papers.json
+    if PAPERS_FILE.exists():
+        with open(PAPERS_FILE, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        for p in data.get("papers", []):
+            all_papers[p["id"]] = p
+        print(f"Loaded {len(data.get('papers', []))} papers from papers.json")
     
-    papers = data.get("papers", [])
-    print(f"Loaded {len(papers)} papers from papers.json")
+    # Load from existing archive files
+    if ARCHIVE_DIR.exists():
+        for archive_file in sorted(ARCHIVE_DIR.glob("*.json")):
+            if archive_file.name == "index.json":
+                continue
+            try:
+                with open(archive_file, "r", encoding="utf-8") as f:
+                    archive_data = json.load(f)
+                for p in archive_data.get("papers", []):
+                    if p["id"] not in all_papers:
+                        all_papers[p["id"]] = p
+                print(f"Loaded {len(archive_data.get('papers', []))} papers from {archive_file.name}")
+            except Exception as e:
+                print(f"Error loading {archive_file}: {e}")
+    
+    papers = list(all_papers.values())
+    print(f"\nTotal unique papers: {len(papers)}")
+    
+    # Re-classify papers with improved detection
+    print("\nRe-classifying papers...")
+    for paper in papers:
+        old_status = paper.get("is_exoplanet_focused", False)
+        new_status = is_exoplanet_focused(paper["title"], paper.get("abstract", ""))
+        paper["is_exoplanet_focused"] = new_status
+        if old_status != new_status:
+            status_str = "🪐 NOW EXOPLANET" if new_status else "📄 now general"
+            print(f"  {paper['id']}: {status_str}")
     
     # Group papers by date
     papers_by_date = defaultdict(list)

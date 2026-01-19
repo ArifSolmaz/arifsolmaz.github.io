@@ -1,6 +1,6 @@
 {
   "date": "2026-01-16",
-  "updated_at": "2026-01-19T04:32:47.696456+00:00",
+  "updated_at": "2026-01-19T04:51:43.177359+00:00",
   "category": "astro-ph.EP",
   "paper_count": 10,
   "papers": [
@@ -32,6 +32,41 @@
         "question": "Could sulfur abundance be a better formation tracer than C/O ratios for gas giants?"
       },
       "figure_url": "https://arxiv.org/html/2601.10508v1/kama2019.png"
+    },
+    {
+      "id": "2601.10631v1",
+      "title": "Circumplanetary Disk Candidate in the Disk of HD 163296 Traced by Localized Emission from Simple Organics",
+      "abstract": "Atacama Large Millimeter/submillimeter Array observations suggest that the disc of HD 163296 is being actively shaped by embedded, yet unseen protoplanets, as indicated by numerous gas and dust substructures consistent with planet-disc interaction models. We report the first detection of simple organic molecules, HCN and C2H, tracing a candidate circumplanetary disc (CPD) in the HD 163296 system, located at an orbital radius of $R=88\\pm7$ au and azimuth $φ=46\\pm3^\\circ$ (or $R=0.75''$, $\\rm{PA}=350^\\circ$ in projected sky coordinates), and originating near the midplane of the circumstellar disc. The signature is localised but spectrally resolved, and it overlaps with a previously reported planet candidate, P94, identified through kinematic perturbations traced by CO lines. We propose a scenario in which the observed chemical anomalies arise from increased heating driven by the forming planet and ongoing accretion through its CPD, facilitating the thermal desorption of species that would otherwise remain frozen out in the disc midplane, and potentially triggering the activation barriers of chemical reactions that lead to enhanced molecular production. Based on a first-order dynamical analysis of the HCN spectrum from the CPD--isolated with a 7$σ$ significance--we infer an upper limit on the planet mass of 1.8 $M_{\\rm Jup}$, consistent with predictions from CO kinematics and constraints from direct imaging studies. By comparing the CPD sizes derived from our models with theoretical expectations where the CPD radius corresponds to roughly one-third of the planet's Hill radius, we favor CPD gas temperatures $T > 150$ K, planet masses $M_{\\rm p} < 1.0$ $M_{\\rm Jup}$, and CPD radii $R_{\\rm CPD} < 2$ au.",
+      "authors": [
+        "Andres F. Izquierdo",
+        "Jaehan Bae",
+        "Maria Galloway-Sprietsma",
+        "Ewine F. van Dishoeck",
+        "Stefano Facchini",
+        "Giovanni Rosotti",
+        "Jochen Stadler",
+        "Myriam Benisty",
+        "Leonardo Testi"
+      ],
+      "categories": [
+        "astro-ph.EP",
+        "astro-ph.SR"
+      ],
+      "published": "2026-01-15T17:50:13Z",
+      "updated": "2026-01-15T17:50:13Z",
+      "pdf_link": "https://arxiv.org/pdf/2601.10631v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2601.10631v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 30,
+      "summary": "**Why It Matters**\nScientists have discovered the first chemical fingerprint of a disk of gas and dust swirling around a forming planet, providing unprecedented insight into how planets grow and evolve. This breakthrough offers a new way to study planets that are still forming and too faint to see directly, potentially revolutionizing our understanding of planetary birth.\n\n**What They Did**\nResearchers used the powerful Atacama Large Millimeter/submillimeter Array (ALMA) telescope to analyze the disk around HD 163296, a young star located about 330 light-years away. They detected specific organic molecules—hydrogen cyanide (HCN) and a simple hydrocarbon (C2H)—in a small, localized region that appears to be orbiting the star at roughly the same distance as Neptune orbits our Sun.\n\n**Key Findings**\nThe organic molecules are concentrated in a tiny disk around what appears to be a forming planet about the size of Jupiter, creating the first chemical evidence of a \"circumplanetary disk\"—essentially a mini version of the larger disk surrounding the parent star. This chemical signature matches the location of a previously suspected planet detected through subtle motions in the surrounding gas. The heat from the forming planet and its feeding process is warming the surrounding material to over 150 Kelvin (about -190°F), causing frozen molecules to vaporize and become detectable. The planet appears to be less massive than Jupiter, with its surrounding disk spanning less than twice the distance from Earth to the Sun.\n\n**Looking Forward**\nThis discovery opens a new chapter in planet-hunting techniques, allowing astronomers to study forming planets through their chemical signatures even when they're too dim to photograph directly. Future observations could reveal how planets accumulate their atmospheres and potentially identify the building blocks of life forming around other worlds.",
+      "summary_html": "<h4>Why It Matters</h4>\nScientists have discovered the first chemical fingerprint of a disk of gas and dust swirling around a forming planet, providing unprecedented insight into how planets grow and evolve. This breakthrough offers a new way to study planets that are still forming and too faint to see directly, potentially revolutionizing our understanding of planetary birth.\n<h4>What They Did</h4>\nResearchers used the powerful Atacama Large Millimeter/submillimeter Array (ALMA) telescope to analyze the disk around HD 163296, a young star located about 330 light-years away. They detected specific organic molecules—hydrogen cyanide (HCN) and a simple hydrocarbon (C2H)—in a small, localized region that appears to be orbiting the star at roughly the same distance as Neptune orbits our Sun.\n<h4>Key Findings</h4>\nThe organic molecules are concentrated in a tiny disk around what appears to be a forming planet about the size of Jupiter, creating the first chemical evidence of a \"circumplanetary disk\"—essentially a mini version of the larger disk surrounding the parent star. This chemical signature matches the location of a previously suspected planet detected through subtle motions in the surrounding gas. The heat from the forming planet and its feeding process is warming the surrounding material to over 150 Kelvin (about -190°F), causing frozen molecules to vaporize and become detectable. The planet appears to be less massive than Jupiter, with its surrounding disk spanning less than twice the distance from Earth to the Sun.\n<h4>Looking Forward</h4>\nThis discovery opens a new chapter in planet-hunting techniques, allowing astronomers to study forming planets through their chemical signatures even when they're too dim to photograph directly. Future observations could reveal how planets accumulate their atmospheres and potentially identify the building blocks of life forming around other worlds.",
+      "tweet_hook": {
+        "hook": "First detection of organic molecules around forming planet discovered",
+        "claim": "Simple organics HCN and C2H reveal circumplanetary disk in HD 163296 system",
+        "evidence": "Localized chemical signatures trace Jupiter-mass planet candidate at 88 AU orbital radius",
+        "question": "Could heated circumplanetary disks be organic chemistry factories in space?"
+      },
+      "figure_url": "https://arxiv.org/html/2601.10631v1/x1.png"
     },
     {
       "id": "2601.10450v1",
@@ -248,39 +283,32 @@
       "figure_url": "https://arxiv.org/html/2601.09835v1/scenario.png"
     },
     {
-      "id": "2601.10631v1",
-      "title": "Circumplanetary Disk Candidate in the Disk of HD 163296 Traced by Localized Emission from Simple Organics",
-      "abstract": "Atacama Large Millimeter/submillimeter Array observations suggest that the disc of HD 163296 is being actively shaped by embedded, yet unseen protoplanets, as indicated by numerous gas and dust substructures consistent with planet-disc interaction models. We report the first detection of simple organic molecules, HCN and C2H, tracing a candidate circumplanetary disc (CPD) in the HD 163296 system, located at an orbital radius of $R=88\\pm7$ au and azimuth $φ=46\\pm3^\\circ$ (or $R=0.75''$, $\\rm{PA}=350^\\circ$ in projected sky coordinates), and originating near the midplane of the circumstellar disc. The signature is localised but spectrally resolved, and it overlaps with a previously reported planet candidate, P94, identified through kinematic perturbations traced by CO lines. We propose a scenario in which the observed chemical anomalies arise from increased heating driven by the forming planet and ongoing accretion through its CPD, facilitating the thermal desorption of species that would otherwise remain frozen out in the disc midplane, and potentially triggering the activation barriers of chemical reactions that lead to enhanced molecular production. Based on a first-order dynamical analysis of the HCN spectrum from the CPD--isolated with a 7$σ$ significance--we infer an upper limit on the planet mass of 1.8 $M_{\\rm Jup}$, consistent with predictions from CO kinematics and constraints from direct imaging studies. By comparing the CPD sizes derived from our models with theoretical expectations where the CPD radius corresponds to roughly one-third of the planet's Hill radius, we favor CPD gas temperatures $T > 150$ K, planet masses $M_{\\rm p} < 1.0$ $M_{\\rm Jup}$, and CPD radii $R_{\\rm CPD} < 2$ au.",
+      "id": "2601.10585v1",
+      "title": "Canceling Effects of Conjunctions Render Higher Order Mean Motion Resonances Weak",
+      "abstract": "Mean motion resonances (MMRs) are a key phenomenon in orbital dynamics. The traditional disturbing function expansion in celestial mechanics shows that, at low eccentricities, $p$:$p-q$ MMRs exhibit a clear hierarchy of strengths, scaling as $e^q$, where $q$ is the order of the resonance. This explains why first-order MMRs (e.g., 3:2 and 4:3) are important, while the infinite number of higher order integer ratios are not. However, this relationship derived from a technical perturbation series expansion provides little physical intuition. In this paper, we provide a simple physical explanation of this result for closely spaced orbits. In this limit, interplanetary interactions are negligible except during close encounters at conjunction, where the planets impart a gravitational \"kick\" to each other's mean motion. We show that while first-order MMRs involve a single conjunction before the configuration repeats, higher order MMRs involve multiple conjunctions per cycle, whose effects cancel out more precisely the higher the order of the resonance. Starting from the effects of a single conjunction, we provide an alternate, physically motivated derivation of MMRs' $e^q$ strength scaling.",
       "authors": [
-        "Andres F. Izquierdo",
-        "Jaehan Bae",
-        "Maria Galloway-Sprietsma",
-        "Ewine F. van Dishoeck",
-        "Stefano Facchini",
-        "Giovanni Rosotti",
-        "Jochen Stadler",
-        "Myriam Benisty",
-        "Leonardo Testi"
+        "Elizabeth K Jones",
+        "Samuel Hadden",
+        "Daniel Tamayo"
       ],
       "categories": [
-        "astro-ph.EP",
-        "astro-ph.SR"
+        "astro-ph.EP"
       ],
-      "published": "2026-01-15T17:50:13Z",
-      "updated": "2026-01-15T17:50:13Z",
-      "pdf_link": "https://arxiv.org/pdf/2601.10631v1.pdf",
-      "abs_link": "https://arxiv.org/abs/2601.10631v1",
-      "is_exoplanet_focused": false,
-      "tweetability_score": 30,
-      "summary": "**Why It Matters**\nScientists have discovered the first chemical fingerprint of a disk of gas and dust swirling around a forming planet, providing unprecedented insight into how planets grow and evolve. This breakthrough offers a new way to study planets that are still forming and too faint to see directly, potentially revolutionizing our understanding of planetary birth.\n\n**What They Did**\nResearchers used the powerful Atacama Large Millimeter/submillimeter Array (ALMA) telescope to analyze the disk around HD 163296, a young star located about 330 light-years away. They detected specific organic molecules—hydrogen cyanide (HCN) and a simple hydrocarbon (C2H)—in a small, localized region that appears to be orbiting the star at roughly the same distance as Neptune orbits our Sun.\n\n**Key Findings**\nThe organic molecules are concentrated in a tiny disk around what appears to be a forming planet about the size of Jupiter, creating the first chemical evidence of a \"circumplanetary disk\"—essentially a mini version of the larger disk surrounding the parent star. This chemical signature matches the location of a previously suspected planet detected through subtle motions in the surrounding gas. The heat from the forming planet and its feeding process is warming the surrounding material to over 150 Kelvin (about -190°F), causing frozen molecules to vaporize and become detectable. The planet appears to be less massive than Jupiter, with its surrounding disk spanning less than twice the distance from Earth to the Sun.\n\n**Looking Forward**\nThis discovery opens a new chapter in planet-hunting techniques, allowing astronomers to study forming planets through their chemical signatures even when they're too dim to photograph directly. Future observations could reveal how planets accumulate their atmospheres and potentially identify the building blocks of life forming around other worlds.",
-      "summary_html": "<h4>Why It Matters</h4>\nScientists have discovered the first chemical fingerprint of a disk of gas and dust swirling around a forming planet, providing unprecedented insight into how planets grow and evolve. This breakthrough offers a new way to study planets that are still forming and too faint to see directly, potentially revolutionizing our understanding of planetary birth.\n<h4>What They Did</h4>\nResearchers used the powerful Atacama Large Millimeter/submillimeter Array (ALMA) telescope to analyze the disk around HD 163296, a young star located about 330 light-years away. They detected specific organic molecules—hydrogen cyanide (HCN) and a simple hydrocarbon (C2H)—in a small, localized region that appears to be orbiting the star at roughly the same distance as Neptune orbits our Sun.\n<h4>Key Findings</h4>\nThe organic molecules are concentrated in a tiny disk around what appears to be a forming planet about the size of Jupiter, creating the first chemical evidence of a \"circumplanetary disk\"—essentially a mini version of the larger disk surrounding the parent star. This chemical signature matches the location of a previously suspected planet detected through subtle motions in the surrounding gas. The heat from the forming planet and its feeding process is warming the surrounding material to over 150 Kelvin (about -190°F), causing frozen molecules to vaporize and become detectable. The planet appears to be less massive than Jupiter, with its surrounding disk spanning less than twice the distance from Earth to the Sun.\n<h4>Looking Forward</h4>\nThis discovery opens a new chapter in planet-hunting techniques, allowing astronomers to study forming planets through their chemical signatures even when they're too dim to photograph directly. Future observations could reveal how planets accumulate their atmospheres and potentially identify the building blocks of life forming around other worlds.",
+      "published": "2026-01-15T16:55:40Z",
+      "updated": "2026-01-15T16:55:40Z",
+      "pdf_link": "https://arxiv.org/pdf/2601.10585v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2601.10585v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 0,
+      "summary": "**Why It Matters**\nThis research provides a clearer physical understanding of why certain planetary orbital relationships dominate our solar system while others remain weak. Mean motion resonances—where planets' orbital periods form simple mathematical ratios—are fundamental to explaining how planetary systems form and remain stable over billions of years.\n\n**What They Did**\nInstead of relying on complex mathematical equations that have been used for centuries, the researchers developed a simpler, more intuitive approach to explain orbital resonances. They focused on what happens when planets come closest to each other (conjunctions), treating these encounters as gravitational \"kicks\" that slightly alter each planet's motion.\n\n**Key Findings**\nThe study reveals why first-order resonances (like 3:2 ratios) are much stronger than higher-order ones in shaping planetary systems. In first-order resonances, planets experience only one close encounter per cycle before their configuration repeats, creating a cumulative effect over time. Higher-order resonances involve multiple conjunctions per cycle, but these gravitational kicks tend to cancel each other out—and this cancellation becomes more precise as the resonance order increases. This elegant explanation confirms the mathematical relationship that resonance strength decreases dramatically with higher orders, following a pattern based on orbital eccentricity.\n\n**Looking Forward**\nThis physically intuitive framework could make orbital dynamics more accessible to students and researchers, potentially accelerating discoveries in planetary science. The clearer understanding of resonance mechanics may also improve our ability to predict the long-term evolution of both our solar system and newly discovered exoplanetary systems.",
+      "summary_html": "<h4>Why It Matters</h4>\nThis research provides a clearer physical understanding of why certain planetary orbital relationships dominate our solar system while others remain weak. Mean motion resonances—where planets' orbital periods form simple mathematical ratios—are fundamental to explaining how planetary systems form and remain stable over billions of years.\n<h4>What They Did</h4>\nInstead of relying on complex mathematical equations that have been used for centuries, the researchers developed a simpler, more intuitive approach to explain orbital resonances. They focused on what happens when planets come closest to each other (conjunctions), treating these encounters as gravitational \"kicks\" that slightly alter each planet's motion.\n<h4>Key Findings</h4>\nThe study reveals why first-order resonances (like 3:2 ratios) are much stronger than higher-order ones in shaping planetary systems. In first-order resonances, planets experience only one close encounter per cycle before their configuration repeats, creating a cumulative effect over time. Higher-order resonances involve multiple conjunctions per cycle, but these gravitational kicks tend to cancel each other out—and this cancellation becomes more precise as the resonance order increases. This elegant explanation confirms the mathematical relationship that resonance strength decreases dramatically with higher orders, following a pattern based on orbital eccentricity.\n<h4>Looking Forward</h4>\nThis physically intuitive framework could make orbital dynamics more accessible to students and researchers, potentially accelerating discoveries in planetary science. The clearer understanding of resonance mechanics may also improve our ability to predict the long-term evolution of both our solar system and newly discovered exoplanetary systems.",
       "tweet_hook": {
-        "hook": "First detection of organic molecules around forming planet discovered",
-        "claim": "Simple organics HCN and C2H reveal circumplanetary disk in HD 163296 system",
-        "evidence": "Localized chemical signatures trace Jupiter-mass planet candidate at 88 AU orbital radius",
-        "question": "Could heated circumplanetary disks be organic chemistry factories in space?"
+        "hook": "🪐 Why are only some planetary resonances astronomically important?",
+        "claim": "New physical explanation reveals why higher-order orbital resonances are systematically weaker",
+        "evidence": "Multiple conjunctions in high-order resonances cancel each other out more precisely",
+        "question": "What other celestial mechanics mysteries need intuitive explanations?"
       },
-      "figure_url": "https://arxiv.org/html/2601.10631v1/x1.png"
+      "figure_url": "https://arxiv.org/html/2601.10585v1/x1.png"
     },
     {
       "id": "2601.10666v1",
@@ -313,34 +341,6 @@
         "question": "Ready to witness the most powerful lunar impact in human history?"
       },
       "figure_url": "https://arxiv.org/html/2601.10666v1/Fig1.png"
-    },
-    {
-      "id": "2601.10585v1",
-      "title": "Canceling Effects of Conjunctions Render Higher Order Mean Motion Resonances Weak",
-      "abstract": "Mean motion resonances (MMRs) are a key phenomenon in orbital dynamics. The traditional disturbing function expansion in celestial mechanics shows that, at low eccentricities, $p$:$p-q$ MMRs exhibit a clear hierarchy of strengths, scaling as $e^q$, where $q$ is the order of the resonance. This explains why first-order MMRs (e.g., 3:2 and 4:3) are important, while the infinite number of higher order integer ratios are not. However, this relationship derived from a technical perturbation series expansion provides little physical intuition. In this paper, we provide a simple physical explanation of this result for closely spaced orbits. In this limit, interplanetary interactions are negligible except during close encounters at conjunction, where the planets impart a gravitational \"kick\" to each other's mean motion. We show that while first-order MMRs involve a single conjunction before the configuration repeats, higher order MMRs involve multiple conjunctions per cycle, whose effects cancel out more precisely the higher the order of the resonance. Starting from the effects of a single conjunction, we provide an alternate, physically motivated derivation of MMRs' $e^q$ strength scaling.",
-      "authors": [
-        "Elizabeth K Jones",
-        "Samuel Hadden",
-        "Daniel Tamayo"
-      ],
-      "categories": [
-        "astro-ph.EP"
-      ],
-      "published": "2026-01-15T16:55:40Z",
-      "updated": "2026-01-15T16:55:40Z",
-      "pdf_link": "https://arxiv.org/pdf/2601.10585v1.pdf",
-      "abs_link": "https://arxiv.org/abs/2601.10585v1",
-      "is_exoplanet_focused": false,
-      "tweetability_score": 0,
-      "summary": "**Why It Matters**\nThis research provides a clearer physical understanding of why certain planetary orbital relationships dominate our solar system while others remain weak. Mean motion resonances—where planets' orbital periods form simple mathematical ratios—are fundamental to explaining how planetary systems form and remain stable over billions of years.\n\n**What They Did**\nInstead of relying on complex mathematical equations that have been used for centuries, the researchers developed a simpler, more intuitive approach to explain orbital resonances. They focused on what happens when planets come closest to each other (conjunctions), treating these encounters as gravitational \"kicks\" that slightly alter each planet's motion.\n\n**Key Findings**\nThe study reveals why first-order resonances (like 3:2 ratios) are much stronger than higher-order ones in shaping planetary systems. In first-order resonances, planets experience only one close encounter per cycle before their configuration repeats, creating a cumulative effect over time. Higher-order resonances involve multiple conjunctions per cycle, but these gravitational kicks tend to cancel each other out—and this cancellation becomes more precise as the resonance order increases. This elegant explanation confirms the mathematical relationship that resonance strength decreases dramatically with higher orders, following a pattern based on orbital eccentricity.\n\n**Looking Forward**\nThis physically intuitive framework could make orbital dynamics more accessible to students and researchers, potentially accelerating discoveries in planetary science. The clearer understanding of resonance mechanics may also improve our ability to predict the long-term evolution of both our solar system and newly discovered exoplanetary systems.",
-      "summary_html": "<h4>Why It Matters</h4>\nThis research provides a clearer physical understanding of why certain planetary orbital relationships dominate our solar system while others remain weak. Mean motion resonances—where planets' orbital periods form simple mathematical ratios—are fundamental to explaining how planetary systems form and remain stable over billions of years.\n<h4>What They Did</h4>\nInstead of relying on complex mathematical equations that have been used for centuries, the researchers developed a simpler, more intuitive approach to explain orbital resonances. They focused on what happens when planets come closest to each other (conjunctions), treating these encounters as gravitational \"kicks\" that slightly alter each planet's motion.\n<h4>Key Findings</h4>\nThe study reveals why first-order resonances (like 3:2 ratios) are much stronger than higher-order ones in shaping planetary systems. In first-order resonances, planets experience only one close encounter per cycle before their configuration repeats, creating a cumulative effect over time. Higher-order resonances involve multiple conjunctions per cycle, but these gravitational kicks tend to cancel each other out—and this cancellation becomes more precise as the resonance order increases. This elegant explanation confirms the mathematical relationship that resonance strength decreases dramatically with higher orders, following a pattern based on orbital eccentricity.\n<h4>Looking Forward</h4>\nThis physically intuitive framework could make orbital dynamics more accessible to students and researchers, potentially accelerating discoveries in planetary science. The clearer understanding of resonance mechanics may also improve our ability to predict the long-term evolution of both our solar system and newly discovered exoplanetary systems.",
-      "tweet_hook": {
-        "hook": "🪐 Why are only some planetary resonances astronomically important?",
-        "claim": "New physical explanation reveals why higher-order orbital resonances are systematically weaker",
-        "evidence": "Multiple conjunctions in high-order resonances cancel each other out more precisely",
-        "question": "What other celestial mechanics mysteries need intuitive explanations?"
-      },
-      "figure_url": "https://arxiv.org/html/2601.10585v1/x1.png"
     },
     {
       "id": "2601.10439v1",
