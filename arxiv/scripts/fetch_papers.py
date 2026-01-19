@@ -236,35 +236,62 @@ def fetch_arxiv_papers(max_results: int = 25) -> list[dict]:
 
 
 def fetch_arxiv_figure(paper_id: str) -> str | None:
-    """Try to fetch figure from arXiv HTML."""
-    try:
-        url = f"https://arxiv.org/html/{paper_id}"
-        response = requests.get(url, timeout=10, headers={'User-Agent': 'Mozilla/5.0'})
-        
-        if response.status_code != 200:
-            return None
-        
-        html = response.text
-        
-        patterns = [
-            r'<figure[^>]*>.*?<img[^>]+src=["\']([^"\']+)["\']',
-            r'<img[^>]+class=["\'][^"\']*ltx_graphics[^"\']*["\'][^>]+src=["\']([^"\']+)["\']',
-        ]
-        
-        for pattern in patterns:
-            matches = re.findall(pattern, html, re.IGNORECASE | re.DOTALL)
-            if matches:
-                img_path = matches[0] if isinstance(matches[0], str) else matches[0][0]
-                if img_path.startswith('/'):
-                    return f"https://arxiv.org{img_path}"
-                elif img_path.startswith('http'):
-                    return img_path
-                else:
-                    return f"https://arxiv.org/html/{paper_id}/{img_path}"
-        
-        return None
-    except Exception:
-        return None
+    """Try to fetch figure from arXiv HTML with improved patterns."""
+    
+    urls_to_try = [
+        f"https://arxiv.org/html/{paper_id}",
+        f"https://ar5iv.labs.arxiv.org/html/{paper_id}",
+    ]
+    
+    for url in urls_to_try:
+        try:
+            response = requests.get(url, timeout=15, headers={
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+            })
+            
+            if response.status_code != 200:
+                continue
+            
+            html = response.text
+            
+            # Multiple patterns to try (ordered by specificity)
+            patterns = [
+                # arXiv HTML beta - figures with ltx_figure class
+                r'<figure[^>]*class="[^"]*ltx_figure[^"]*"[^>]*>.*?<img[^>]+src=["\']([^"\']+)["\']',
+                # Standard figure with img inside
+                r'<figure[^>]*>.*?<img[^>]+src=["\']([^"\']+\.(?:png|jpg|jpeg|gif|svg))["\']',
+                # Images with ltx_graphics class
+                r'<img[^>]+class=["\'][^"\']*ltx_graphics[^"\']*["\'][^>]+src=["\']([^"\']+)["\']',
+                # Any img with figure-like filename
+                r'<img[^>]+src=["\']([^"\']*(?:x\d+|figure|fig)[^"\']*\.(?:png|jpg|jpeg|gif|svg))["\']',
+            ]
+            
+            for pattern in patterns:
+                matches = re.findall(pattern, html, re.IGNORECASE | re.DOTALL)
+                if matches:
+                    img_path = matches[0] if isinstance(matches[0], str) else matches[0][0]
+                    
+                    # Skip icons/logos
+                    skip_patterns = ['icon', 'logo', 'arrow', 'button', 'nav', 'menu', '1x1', 'pixel']
+                    if any(skip in img_path.lower() for skip in skip_patterns):
+                        continue
+                    
+                    # Convert to absolute URL
+                    if img_path.startswith('//'):
+                        return f"https:{img_path}"
+                    elif img_path.startswith('/'):
+                        base = url.split('/html/')[0]
+                        return f"{base}{img_path}"
+                    elif img_path.startswith('http'):
+                        return img_path
+                    else:
+                        # Relative path - include paper ID folder
+                        return f"{url}/{img_path}"
+            
+        except Exception:
+            continue
+    
+    return None
 
 
 def get_topic_fallback_image(title: str, abstract: str) -> str:

@@ -1,0 +1,406 @@
+{
+  "date": "2026-01-16",
+  "updated_at": "2026-01-19T04:32:47.696456+00:00",
+  "category": "astro-ph.EP",
+  "paper_count": 10,
+  "papers": [
+    {
+      "id": "2601.10508v1",
+      "title": "sponchpop II: Population Synthesis to Investigate Volatile Sulfur as a Fingerprint of Gas Giant Formation Histories",
+      "abstract": "Planet population synthesis is an integral tool for linking exoplanets to their formation environments. Most planet population synthesis studies have focused on the carbon-to-oxygen ratio (C/O) in gas or solids, yet more insight into planet formation may be afforded by considering a wider suite of elements. Sulfur is one such key element. It has been assumed to be entirely refractory in population synthesis models, restricting it to being a tracer of accreted rocky solids. However, sulfur also has a volatile reservoir dominant at the onset of star and planet formation. We investigate sulfur's wider potential as a formation history tracer by implementing the first multi-phase treatment of S in a planet population synthesis model. We present the planet formation module of \\textsc{sponchpop} and its first predicted planet growth tracks and populations. We explore the diversity of planet compositions in terms of their sulfur budget, including both refractory and volatile components, and apply a novel gas-grain conversion of sulfur to study how formation trajectories of giant planets relate to final core and envelope compositions. We show that planets inherit a wide range of core and envelope sulfur content related to accretion history while considering late-stage planetesimal infall, providing a new diagnostic tool for planet formation. The diverse sulfur content of planet cores suggests some rocky planets may be born sulfur-poor, with implications for their geochemistry and habitability. Enhanced sulfur abundances in gas-giant atmospheres can be attributed to formation beyond the H2S iceline, such as the giants in our Solar System.",
+      "authors": [
+        "Anna Sommerville-Thomas",
+        "Mihkel Kama",
+        "Oliver Shottle",
+        "Jason Ran"
+      ],
+      "categories": [
+        "astro-ph.EP"
+      ],
+      "published": "2026-01-15T15:34:21Z",
+      "updated": "2026-01-15T15:34:21Z",
+      "pdf_link": "https://arxiv.org/pdf/2601.10508v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2601.10508v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 50,
+      "summary": "**Why It Matters**\n\nWhen astronomers discover new planets beyond our solar system, they're not just collecting cosmic stamps—they're trying to solve one of science's biggest puzzles: how do planets form, and could any of them harbor life? Understanding what planets are made of offers crucial clues to their birth stories and their potential to support life as we know it. This research focuses on sulfur, a common element that's been largely overlooked in planet formation studies. By tracking sulfur through the planet-building process, scientists can now read the chemical \"fingerprints\" that reveal where and how giant planets formed billions of years ago.\n\n**What They Did**\n\nThe researchers created a sophisticated computer simulation that models how planets grow from tiny dust grains to massive worlds over millions of years. Think of it like a cosmic recipe simulator that tracks not just the main ingredients, but also traces the journey of sulfur through different phases of planet formation. Previous studies treated sulfur as if it only existed in solid, rocky form—like assuming flour only exists as bread. But sulfur also exists as a gas or ice depending on temperature, so the team built the first model that follows sulfur through all its different states as planets assemble. They ran thousands of virtual planet formation scenarios to see how different conditions affect the final sulfur content of planets.\n\n**Key Findings**\n\nThe simulations revealed that planets end up with wildly different amounts of sulfur depending on their formation history. Gas giants that formed in the cold outer regions of their stellar systems—beyond where hydrogen sulfide freezes into ice—contain much more sulfur in their atmospheres, similar to Jupiter and Saturn in our solar system. Meanwhile, some rocky planets could be born surprisingly sulfur-poor, which would dramatically affect their geology and potentially their ability to support life, since sulfur plays important roles in atmospheric chemistry and biological processes.\n\n**Looking Forward**\n\nThis research provides astronomers with a new diagnostic tool for understanding exoplanet origins. By measuring sulfur content in planet atmospheres using space telescopes, scientists can now work backwards to determine where those planets likely formed and how they migrated to their current positions. This could revolutionize our understanding of planetary system architecture and help identify which worlds might be most suitable for life.",
+      "summary_html": "<h4>Why It Matters</h4>\n<p>When astronomers discover new planets beyond our solar system, they're not just collecting cosmic stamps—they're trying to solve one of science's biggest puzzles: how do planets form, and could any of them harbor life? Understanding what planets are made of offers crucial clues to their birth stories and their potential to support life as we know it. This research focuses on sulfur, a common element that's been largely overlooked in planet formation studies. By tracking sulfur through the planet-building process, scientists can now read the chemical \"fingerprints\" that reveal where and how giant planets formed billions of years ago.</p>\n<h4>What They Did</h4>\n<p>The researchers created a sophisticated computer simulation that models how planets grow from tiny dust grains to massive worlds over millions of years. Think of it like a cosmic recipe simulator that tracks not just the main ingredients, but also traces the journey of sulfur through different phases of planet formation. Previous studies treated sulfur as if it only existed in solid, rocky form—like assuming flour only exists as bread. But sulfur also exists as a gas or ice depending on temperature, so the team built the first model that follows sulfur through all its different states as planets assemble. They ran thousands of virtual planet formation scenarios to see how different conditions affect the final sulfur content of planets.</p>\n<h4>Key Findings</h4>\n<p>The simulations revealed that planets end up with wildly different amounts of sulfur depending on their formation history. Gas giants that formed in the cold outer regions of their stellar systems—beyond where hydrogen sulfide freezes into ice—contain much more sulfur in their atmospheres, similar to Jupiter and Saturn in our solar system. Meanwhile, some rocky planets could be born surprisingly sulfur-poor, which would dramatically affect their geology and potentially their ability to support life, since sulfur plays important roles in atmospheric chemistry and biological processes.</p>\n<h4>Looking Forward</h4>\n<p>This research provides astronomers with a new diagnostic tool for understanding exoplanet origins. By measuring sulfur content in planet atmospheres using space telescopes, scientists can now work backwards to determine where those planets likely formed and how they migrated to their current positions. This could revolutionize our understanding of planetary system architecture and help identify which worlds might be most suitable for life.</p>",
+      "tweet_hook": {
+        "hook": "Some rocky planets may be born sulfur-poor, affecting their geochemistry and potential for life",
+        "claim": "First population synthesis model tracks both solid and gas-phase sulfur in planet formation",
+        "evidence": "Method: Novel gas-grain sulfur conversion reveals how formation beyond H2S iceline shapes composition",
+        "question": "Could sulfur abundance be a better formation tracer than C/O ratios for gas giants?"
+      },
+      "figure_url": "https://arxiv.org/html/2601.10508v1/kama2019.png"
+    },
+    {
+      "id": "2601.10450v1",
+      "title": "TOI-3862 b: A dense super-Neptune deep in the hot Neptune desert",
+      "abstract": "The structure and evolution of close-in exoplanets are shaped by atmospheric loss and migration processes, which give rise to key population features such as the hot Neptune desert, ridge, and savanna - regions of the period-radius space whose boundaries offer critical insights into planetary formation and survival. As part of the KESPRINT collaboration, we selected the TESS transiting planet candidate TOI-3862.01 for radial velocity follow-up to confirm its planetary nature and characterize its mass and bulk properties. This planet candidate is of particular interest due to its position in the middle of the hot Neptune desert, making it a valuable probe for testing theories of planet migration and atmospheric loss. We confirmed the planetary nature and determined the mass of TOI-3862.01 (hereinafter TOI-3862b) by performing a joint fit with both transit and radial velocity data, precisely characterizing the bulk properties of this planet. TOI-3862b is a super-Neptune on a 1.56-day orbit around a Sun-like star with an effective temperature of 5300$\\pm$50K. It has a mass of 53.7$_{-2.9}^{+2.8}$ M$_{\\oplus}$ and a radius of 5.53$\\pm$0.18 R$_{\\oplus}$, corresponding to a density of 1.7$\\pm$0.2 g/cm^3. This places it among the rare population of hot and dense super-Neptune desert planets. TOI-3862b, residing deep in the hot Neptune desert, represents a rare occurrence in an otherwise sparsely populated region, offering a valuable opportunity to probe the processes that may allow planets to survive in such environments.",
+      "authors": [
+        "Ilaria Carleo",
+        "Amadeo Castro-González",
+        "Enric Pallé",
+        "Felipe Murgas",
+        "Grzegorz Nowak",
+        "Gaia Lacedelli",
+        "Thomas Masseron",
+        "Emily W. Wong",
+        "Patrick Eggenberger",
+        "Vincent Bourrier",
+        "Dawid Jankowski",
+        "Krzysztof Goździewski",
+        "Douglas R. Alves",
+        "James S. Jenkins",
+        "Sergio Messina",
+        "Keivan G. Stassun",
+        "Jose I. Vines",
+        "Matteo Brogi",
+        "David R. Ciardi",
+        "Catherine A. Clark",
+        "William Cochran",
+        "Karen A. Collins",
+        "Hans J. Deeg",
+        "Elise Furlan",
+        "Davide Gandolfi",
+        "Samuel Geraldía González",
+        "Artie P. Hatzes",
+        "Coel Hellier",
+        "Steve B. Howell",
+        "Judith Korth",
+        "Jorge Lillo-Box",
+        "John H. Livingston",
+        "Jaume Orell-Miquel",
+        "Carina M. Persson",
+        "Seth Redfield",
+        "Boris Safonov",
+        "David Baker",
+        "Rafael Delfin Barrena Delgado",
+        "Allyson Bieryla",
+        "Andrew Boyle",
+        "Pau Bosch-Cabot",
+        "Núria Casasayas Barris",
+        "Stavros Chairetas",
+        "Jerome P. de Leon",
+        "Izuru Fukuda",
+        "Akihiko Fukui",
+        "Pere Guerra",
+        "Kai Ikuta",
+        "Kiyoe Kawauchi",
+        "Emil Knudstrup",
+        "Florence Libotte",
+        "Michael B. Lund",
+        "Rafael Luque",
+        "Eduardo Lorenzo Martín Guerrero de Escalante",
+        "Bob Massey",
+        "Edward J. Michaels",
+        "Giuseppe Morello",
+        "Norio Narita",
+        "Hannu Parvianien",
+        "Richard P. Schwarz",
+        "Avi Shporer",
+        "Monika Stangret",
+        "Noriharu Watanabe",
+        "Cristilyn N. Watkins"
+      ],
+      "categories": [
+        "astro-ph.EP"
+      ],
+      "published": "2026-01-15T14:39:32Z",
+      "updated": "2026-01-15T14:39:32Z",
+      "pdf_link": "https://arxiv.org/pdf/2601.10450v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2601.10450v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 20,
+      "summary": "**Why It Matters**\n\nImagine trying to understand how neighborhoods form by studying only the houses that survived natural disasters. That's essentially what astronomers face when studying planets close to their stars. Most planets that orbit extremely close to their host stars have either been stripped down to rocky cores or puffed up into gas giants—creating what scientists call the \"hot Neptune desert,\" a region where medium-sized planets are mysteriously rare. Finding planets in this cosmic wasteland helps us understand the violent processes that shape planetary systems, including our own. By studying these survivors, we gain crucial insights into how planets migrate, evolve, and sometimes endure in the harshest environments imaginable.\n\n**What They Did**\n\nResearchers used NASA's planet-hunting telescope TESS (Transiting Exoplanet Survey Satellite) to spot a potential planet candidate called TOI-3862.01. When a planet crosses in front of its star from our perspective, it creates a tiny dimming—like a moth passing in front of a streetlight. But seeing this dimming isn't enough to confirm it's actually a planet. The team then used ground-based telescopes to measure how the planet's gravity tugs on its star, causing the star to wobble slightly. By combining both techniques—watching the planet block starlight and measuring the star's wobble—they could determine both the planet's size and mass, giving them a complete picture of this cosmic oddball.\n\n**Key Findings**\n\nTOI-3862b is truly exceptional. This \"super-Neptune\" is about 5.5 times wider than Earth but packs 54 times Earth's mass, making it surprisingly dense for a planet of its type. It races around its Sun-like star in just 1.56 days—imagine a year lasting less than two Earth days! The planet sits right in the middle of the hot Neptune desert, where planets this size simply shouldn't exist. Its density suggests it's managed to hold onto a substantial atmosphere despite being bombarded by intense radiation from its nearby star.\n\n**Looking Forward**\n\nThis discovery challenges our understanding of planetary survival. How did TOI-3862b keep its thick atmosphere in such a hostile environment? Future observations with powerful telescopes like the James Webb Space Telescope could reveal the composition of its atmosphere, potentially showing us new ways planets can endure extreme conditions. Each planet found in the hot Neptune desert helps refine our models of planetary evolution and might even inform our search for habitable worlds in other star systems.",
+      "summary_html": "<h4>Why It Matters</h4>\n<p>Imagine trying to understand how neighborhoods form by studying only the houses that survived natural disasters. That's essentially what astronomers face when studying planets close to their stars. Most planets that orbit extremely close to their host stars have either been stripped down to rocky cores or puffed up into gas giants—creating what scientists call the \"hot Neptune desert,\" a region where medium-sized planets are mysteriously rare. Finding planets in this cosmic wasteland helps us understand the violent processes that shape planetary systems, including our own. By studying these survivors, we gain crucial insights into how planets migrate, evolve, and sometimes endure in the harshest environments imaginable.</p>\n<h4>What They Did</h4>\n<p>Researchers used NASA's planet-hunting telescope TESS (Transiting Exoplanet Survey Satellite) to spot a potential planet candidate called TOI-3862.01. When a planet crosses in front of its star from our perspective, it creates a tiny dimming—like a moth passing in front of a streetlight. But seeing this dimming isn't enough to confirm it's actually a planet. The team then used ground-based telescopes to measure how the planet's gravity tugs on its star, causing the star to wobble slightly. By combining both techniques—watching the planet block starlight and measuring the star's wobble—they could determine both the planet's size and mass, giving them a complete picture of this cosmic oddball.</p>\n<h4>Key Findings</h4>\n<p>TOI-3862b is truly exceptional. This \"super-Neptune\" is about 5.5 times wider than Earth but packs 54 times Earth's mass, making it surprisingly dense for a planet of its type. It races around its Sun-like star in just 1.56 days—imagine a year lasting less than two Earth days! The planet sits right in the middle of the hot Neptune desert, where planets this size simply shouldn't exist. Its density suggests it's managed to hold onto a substantial atmosphere despite being bombarded by intense radiation from its nearby star.</p>\n<h4>Looking Forward</h4>\n<p>This discovery challenges our understanding of planetary survival. How did TOI-3862b keep its thick atmosphere in such a hostile environment? Future observations with powerful telescopes like the James Webb Space Telescope could reveal the composition of its atmosphere, potentially showing us new ways planets can endure extreme conditions. Each planet found in the hot Neptune desert helps refine our models of planetary evolution and might even inform our search for habitable worlds in other star systems.</p>",
+      "tweet_hook": {
+        "hook": "A super-Neptune survived in the \"hot Neptune desert\" where planets aren't supposed to exist",
+        "claim": "TOI-3862b challenges our understanding of how close-in planets avoid atmospheric destruction",
+        "evidence": "Dense 1.7 g/cm³ planet orbits every 1.56 days in the sparsely populated hot Neptune desert region",
+        "question": "What mechanisms allow some Neptunes to keep their atmospheres so close to their stars?"
+      },
+      "figure_url": "https://arxiv.org/html/2601.10450v1/x1.png"
+    },
+    {
+      "id": "2601.10285v1",
+      "title": "How disc initial conditions sculpt the atmospheric composition of giant planets",
+      "abstract": "Past studies have revealed the dependency of the disc parameters (mass, radius, viscosity, grain fragmentation velocity, dust-to-gas ratio) on the formation of giant planets, where more massive discs seem beneficial for giant planet formation. It is unclear how the different disc properties influence the composition of forming giant planets. The idea that the atmospheric abundances can trace directly the formation location of planets is put into question, due to the chemical evolution of the disc, caused by inward drifting and evaporating pebbles. This complicates the idea of a relation between atmospheric abundances and planet formation locations. We use planet formation simulations that include the effects of pebble drift and evaporation and investigate how the different disc parameters influence the atmospheric composition of giant planets. We focus on the atmospheric C/O, C/H, O/H and S/H ratios allowing us to probe tracers for volatiles and refractories and thus different accretion pathways of giant planets. We find that most of the disc parameters have only a limited influence on the atmospheric abundances of gas giants, except for the dust-to-gas ratio, where a larger value results in higher atmospheric abundances. However the atmospheric abundances are determined by the planetary formation location, even in the pebble drift and evaporation scenario. Our study suggests that volatile-rich giant exoplanets predominantly form in the inner disc regions, where they can accrete large fractions of vapour-enhanced gas. Our study shows that simulations that try to trace the origin of giant planets via their atmospheric abundances do not have to probe all disc parameters, as long as the disc parameters allow the formation of giant planets. Our study thus suggests that the diversity of observed planetary compositions is a direct consequence of their formation location and migration history.",
+      "authors": [
+        "Angie Daniela Guzmán Franco",
+        "Sofia Savvidou",
+        "Bertram Bitsch"
+      ],
+      "categories": [
+        "astro-ph.EP"
+      ],
+      "published": "2026-01-15T11:01:08Z",
+      "updated": "2026-01-15T11:01:08Z",
+      "pdf_link": "https://arxiv.org/pdf/2601.10285v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2601.10285v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 10,
+      "summary": "**Why It Matters**\n\nWhen we look up at the night sky, we're seeing just a tiny fraction of the planets that exist in our galaxy. Scientists have discovered thousands of exoplanets—worlds orbiting other stars—and many are giant planets like Jupiter and Saturn. But here's the fascinating puzzle: these distant worlds have wildly different atmospheric compositions, even when they're similar in size. Some are rich in carbon, others in oxygen, and still others contain surprising amounts of sulfur. Understanding why planets turn out so different helps us piece together the story of how planetary systems form, including our own. It also guides our search for worlds that might harbor life, since a planet's atmosphere largely determines whether it could support the chemistry of living things.\n\n**What They Did**\n\nThe researchers created detailed computer simulations to watch giant planets form from scratch. Think of a planetary system's birth like a cosmic construction site: there's a spinning disk of gas and dust around a young star, and within this disk, planets slowly assemble themselves. The team focused on tiny particles called pebbles—cosmic dust grains that drift inward toward the star, picking up and releasing different chemical ingredients as they travel. As these pebbles encounter temperature changes, they evaporate and enrich the surrounding gas with various elements. The scientists then tracked how forming giant planets gobble up this chemically-evolving gas, testing different starting conditions for their cosmic construction sites to see how each scenario affected the final planetary recipes.\n\n**Key Findings**\n\nThe study revealed that most factors affecting planet formation—like how massive or viscous the initial disk is—barely influence what ends up in a giant planet's atmosphere. However, one factor made a huge difference: the amount of dust compared to gas in the original disk. More dust means richer planetary atmospheres. Surprisingly, even though the disk's chemistry constantly changes as material moves around, a planet's location during formation still acts like its postal code—planets forming closer to their star end up with more volatile-rich atmospheres because they can feast on gas that's been enriched by evaporating materials.\n\n**Looking Forward**\n\nThese findings simplify the detective work of tracing exoplanets back to their origins. Scientists studying distant worlds through their atmospheric fingerprints now know they don't need to worry about every possible formation scenario—location is king. This research suggests that the incredible diversity we observe in exoplanet atmospheres isn't random but tells a coherent story of where and how these worlds formed. As next-generation telescopes come online, astronomers will be able to analyze many more exoplanet atmospheres, using these insights to map out the formation histories of entire planetary systems and better understand the cosmic processes that create worlds like our own.",
+      "summary_html": "<h4>Why It Matters</h4>\n<p>When we look up at the night sky, we're seeing just a tiny fraction of the planets that exist in our galaxy. Scientists have discovered thousands of exoplanets—worlds orbiting other stars—and many are giant planets like Jupiter and Saturn. But here's the fascinating puzzle: these distant worlds have wildly different atmospheric compositions, even when they're similar in size. Some are rich in carbon, others in oxygen, and still others contain surprising amounts of sulfur. Understanding why planets turn out so different helps us piece together the story of how planetary systems form, including our own. It also guides our search for worlds that might harbor life, since a planet's atmosphere largely determines whether it could support the chemistry of living things.</p>\n<h4>What They Did</h4>\n<p>The researchers created detailed computer simulations to watch giant planets form from scratch. Think of a planetary system's birth like a cosmic construction site: there's a spinning disk of gas and dust around a young star, and within this disk, planets slowly assemble themselves. The team focused on tiny particles called pebbles—cosmic dust grains that drift inward toward the star, picking up and releasing different chemical ingredients as they travel. As these pebbles encounter temperature changes, they evaporate and enrich the surrounding gas with various elements. The scientists then tracked how forming giant planets gobble up this chemically-evolving gas, testing different starting conditions for their cosmic construction sites to see how each scenario affected the final planetary recipes.</p>\n<h4>Key Findings</h4>\n<p>The study revealed that most factors affecting planet formation—like how massive or viscous the initial disk is—barely influence what ends up in a giant planet's atmosphere. However, one factor made a huge difference: the amount of dust compared to gas in the original disk. More dust means richer planetary atmospheres. Surprisingly, even though the disk's chemistry constantly changes as material moves around, a planet's location during formation still acts like its postal code—planets forming closer to their star end up with more volatile-rich atmospheres because they can feast on gas that's been enriched by evaporating materials.</p>\n<h4>Looking Forward</h4>\n<p>These findings simplify the detective work of tracing exoplanets back to their origins. Scientists studying distant worlds through their atmospheric fingerprints now know they don't need to worry about every possible formation scenario—location is king. This research suggests that the incredible diversity we observe in exoplanet atmospheres isn't random but tells a coherent story of where and how these worlds formed. As next-generation telescopes come online, astronomers will be able to analyze many more exoplanet atmospheres, using these insights to map out the formation histories of entire planetary systems and better understand the cosmic processes that create worlds like our own.</p>",
+      "tweet_hook": {
+        "hook": "Giant planets get their weird atmospheric chemistry from where they form, not how much dust was in their birth disk",
+        "claim": "Planet formation location determines atmospheric composition even when pebbles drift and evaporate",
+        "evidence": "Only dust-to-gas ratio significantly affects atmospheric abundances; other disc parameters have limited impact",
+        "question": "Could JWST atmospheric surveys map out the original formation zones of migrated hot Jupiters?"
+      },
+      "figure_url": "https://arxiv.org/html/2601.10285v1/Plots/growth_ratios_ufrag.png"
+    },
+    {
+      "id": "2601.10598v1",
+      "title": "A young progenitor for the most common planetary systems in the Galaxy",
+      "abstract": "The Galaxy's most common known planetary systems have several Earth-to-Neptune-size planets in compact orbits. At small orbital separations, larger planets are less common than their smaller counterparts by an order of magnitude. The young star V1298 Tau hosts one such compact planetary system, albeit with four planets that are uncommonly large (5 to 10 Earth radii). The planets form a chain of near-resonances that result in transit-timing variations of several hours. Here we present a multi-year campaign to characterize this system with transit-timing variations, a method insensitive to the intense magnetic activity of the star. Through targeted observations, we first resolved the previously unknown orbital period of the outermost planet. The full 9-year baseline from these and archival data then enabled robust determination of the masses and orbital parameters for all four planets. We find the planets have low, sub-Neptune masses and nearly circular orbits, implying a dynamically tranquil history. Their low masses and large radii indicate that the inner planets underwent a period of rapid cooling immediately after dispersal of the protoplanetary disk. Still, they are much less dense than mature planets of comparable size. We predict the planets will contract to 1.5-4.0 Earth radii and join the population of super-Earths and sub-Neptunes that nature produces in abundance.",
+      "authors": [
+        "John H. Livingston",
+        "Erik A. Petigura",
+        "Trevor J. David",
+        "Kento Masuda",
+        "James Owen",
+        "David Nesvorný",
+        "Konstantin Batygin",
+        "Jerome de Leon",
+        "Mayuko Mori",
+        "Kai Ikuta",
+        "Akihiko Fukui",
+        "Noriharu Watanabe",
+        "Jaume Orell Miquel",
+        "Felipe Murgas",
+        "Hannu Parviainen",
+        "Judith Korth",
+        "Florence Libotte",
+        "Néstor Abreu García",
+        "Pedro Pablo Meni Gallardo",
+        "Norio Narita",
+        "Enric Pallé",
+        "Motohide Tamura",
+        "Atsunori Yonehara",
+        "Andrew Ridden-Harper",
+        "Allyson Bieryla",
+        "Alessandro A. Trani",
+        "Eric E. Mamajek",
+        "David R. Ciardi",
+        "Varoujan Gorjian",
+        "Lynne A. Hillenbrand",
+        "Luisa M. Rebull",
+        "Elisabeth R. Newton",
+        "Andrew W. Mann",
+        "Andrew Vanderburg",
+        "Guðmundur Stefánsson",
+        "Suvrath Mahadevan",
+        "Caleb Cañas",
+        "Joe Ninan",
+        "Jesus Higuera",
+        "Kamen Todorov",
+        "Jean-Michel Désert",
+        "Lorenzo Pino"
+      ],
+      "categories": [
+        "astro-ph.EP"
+      ],
+      "published": "2026-01-15T17:07:23Z",
+      "updated": "2026-01-15T17:07:23Z",
+      "pdf_link": "https://arxiv.org/pdf/2601.10598v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2601.10598v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 0,
+      "summary": "**Why It Matters**\n\nMost planetary systems in our galaxy look nothing like our own solar system. While we have small, rocky planets close to the Sun and gas giants farther out, the most common arrangement elsewhere features several medium-sized planets packed tightly around their star. Understanding how these systems form and evolve helps us grasp how planetary systems—including potentially habitable ones—come to be. This research gives us a rare glimpse at what these common systems look like in their youth, before billions of years of evolution shape their final form.\n\n**What They Did**\n\nThe researchers studied a young star called V1298 Tau, which hosts four unusually puffy planets. Because this star is extremely active—constantly flaring and changing brightness—traditional methods of studying planets wouldn't work. Instead, they used a clever technique called transit timing variations. Imagine planets as runners on a track, each in their own lane but gravitationally tugging on each other as they pass by. These tiny tugs cause the planets to arrive at their \"finish line\" (crossing in front of their star) slightly early or late. By precisely timing these transits over nine years, the team could weigh each planet and map their orbits without interference from the star's chaotic behavior.\n\n**Key Findings**\n\nThe four planets are surprisingly light for their size—each about 5 to 10 times wider than Earth but with masses closer to Neptune than Jupiter. They're essentially cosmic balloons, puffed up with thick atmospheres. The planets orbit in nearly perfect circles and maintain a delicate gravitational dance, suggesting their system formed peacefully without major collisions or disruptions. Most importantly, the researchers discovered these bloated worlds are rapidly shrinking as they cool down from their formation.\n\n**Looking Forward**\n\nThis discovery provides a missing piece of the planetary evolution puzzle. The team predicts these puffy planets will eventually shrink to become the compact, medium-sized worlds that dominate our galaxy. By watching this transformation in real-time, astronomers can better understand how the universe's most common planetary systems reach their mature state—and whether any might harbor conditions suitable for life.",
+      "summary_html": "<h4>Why It Matters</h4>\n<p>Most planetary systems in our galaxy look nothing like our own solar system. While we have small, rocky planets close to the Sun and gas giants farther out, the most common arrangement elsewhere features several medium-sized planets packed tightly around their star. Understanding how these systems form and evolve helps us grasp how planetary systems—including potentially habitable ones—come to be. This research gives us a rare glimpse at what these common systems look like in their youth, before billions of years of evolution shape their final form.</p>\n<h4>What They Did</h4>\n<p>The researchers studied a young star called V1298 Tau, which hosts four unusually puffy planets. Because this star is extremely active—constantly flaring and changing brightness—traditional methods of studying planets wouldn't work. Instead, they used a clever technique called transit timing variations. Imagine planets as runners on a track, each in their own lane but gravitationally tugging on each other as they pass by. These tiny tugs cause the planets to arrive at their \"finish line\" (crossing in front of their star) slightly early or late. By precisely timing these transits over nine years, the team could weigh each planet and map their orbits without interference from the star's chaotic behavior.</p>\n<h4>Key Findings</h4>\n<p>The four planets are surprisingly light for their size—each about 5 to 10 times wider than Earth but with masses closer to Neptune than Jupiter. They're essentially cosmic balloons, puffed up with thick atmospheres. The planets orbit in nearly perfect circles and maintain a delicate gravitational dance, suggesting their system formed peacefully without major collisions or disruptions. Most importantly, the researchers discovered these bloated worlds are rapidly shrinking as they cool down from their formation.</p>\n<h4>Looking Forward</h4>\n<p>This discovery provides a missing piece of the planetary evolution puzzle. The team predicts these puffy planets will eventually shrink to become the compact, medium-sized worlds that dominate our galaxy. By watching this transformation in real-time, astronomers can better understand how the universe's most common planetary systems reach their mature state—and whether any might harbor conditions suitable for life.</p>",
+      "tweet_hook": {
+        "hook": "These puffy young planets will shrink to become the Galaxy's most common planetary type",
+        "claim": "First mass measurements show how super-Earths and sub-Neptunes form from inflated precursors",
+        "evidence": "V1298 Tau's planets are 5-10 Earth radii now but will contract to just 1.5-4.0 Earth radii",
+        "question": "Why does nature produce compact multi-planet systems so abundantly?"
+      },
+      "figure_url": "https://arxiv.org/html/2601.10598v1/x1.png"
+    },
+    {
+      "id": "2601.09835v1",
+      "title": "A Robust Launching Mechanism for Freely-Floating Planets from Host Stars with Close-in Planets",
+      "abstract": "Secular perturbations from binary stars and distant massive planets can drive cold planets onto nearly parabolic orbits with pericenter passages extremely close to their host stars. Meanwhile, short-period super-Earths are frequently observed around nearby stars. Gravitational scattering between these two distinct populations can lead to substantial orbital energy exchange, liberating some intruders from the gravitational confinement of their host systems. This process offers a robust formation channel for a subset of the abundant freely floating planet population. It may also significantly perturb the original orbits of close-in planets, induce collisional trajectories between close-in planets and their host stars, and disrupt the dynamical evolution of cold planets toward close stellar encounters.",
+      "authors": [
+        "Xiaochen Zheng",
+        "Zhuoya Cao",
+        "Shigeru Ida",
+        "Douglas N. C. Lin",
+        "Shude Mao"
+      ],
+      "categories": [
+        "astro-ph.EP"
+      ],
+      "published": "2026-01-14T19:49:45Z",
+      "updated": "2026-01-14T19:49:45Z",
+      "pdf_link": "https://arxiv.org/pdf/2601.09835v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2601.09835v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 0,
+      "summary": "# Cosmic Billiards: How Planets Get Kicked Out of Their Solar Systems\n\n**Why It Matters**\n\nImagine entire planets—some potentially Earth-like—wandering alone through the darkness of space, untethered to any star. These \"rogue planets\" have fascinated astronomers for years, and we now know there could be billions of them drifting through our galaxy. But how do planets get ejected from their home solar systems in the first place? This research tackles that mystery and reveals a surprisingly common cosmic process that reshapes planetary systems throughout the universe. Understanding how planets get displaced helps us grasp how rare or common stable, life-friendly solar systems like ours might be—a question central to our search for life beyond Earth.\n\n**What They Did**\n\nThe researchers used computer simulations to model a cosmic game of billiards happening in distant solar systems. They focused on systems with two key ingredients: planets orbiting very close to their stars (closer than Mercury orbits our Sun) and distant, massive planets that occasionally get nudged toward the inner solar system by gravitational influences from companion stars or other distant planets. Think of it like a bowling ball rolling down a lane toward tightly clustered pins. When these distant intruder planets swing close to their star, they can gravitationally scatter the close-in planets, sometimes with enough force to fling them completely out of the solar system.\n\n**Key Findings**\n\nThe team discovered that this planetary billiards process is remarkably efficient at creating rogue planets. When a massive intruder planet swoops through the inner regions of a solar system, it can transfer enough gravitational energy to permanently eject smaller planets from their orbits. The process doesn't just create wandering planets—it also disrupts entire planetary systems, potentially sending some planets crashing into their host stars while dramatically altering the orbits of survivors.\n\n**Looking Forward**\n\nThis research provides a compelling explanation for the abundance of free-floating planets that upcoming space telescopes are expected to discover. It also suggests that planetary systems might be far more dynamic and unstable than previously thought, with major reshuffling events occurring throughout their lifetimes. Future observations of rogue planets and disrupted solar systems could help astronomers test these predictions and better understand how common stable, potentially habitable worlds really are.",
+      "summary_html": "<p># Cosmic Billiards: How Planets Get Kicked Out of Their Solar Systems</p>\n<h4>Why It Matters</h4>\n<p>Imagine entire planets—some potentially Earth-like—wandering alone through the darkness of space, untethered to any star. These \"rogue planets\" have fascinated astronomers for years, and we now know there could be billions of them drifting through our galaxy. But how do planets get ejected from their home solar systems in the first place? This research tackles that mystery and reveals a surprisingly common cosmic process that reshapes planetary systems throughout the universe. Understanding how planets get displaced helps us grasp how rare or common stable, life-friendly solar systems like ours might be—a question central to our search for life beyond Earth.</p>\n<h4>What They Did</h4>\n<p>The researchers used computer simulations to model a cosmic game of billiards happening in distant solar systems. They focused on systems with two key ingredients: planets orbiting very close to their stars (closer than Mercury orbits our Sun) and distant, massive planets that occasionally get nudged toward the inner solar system by gravitational influences from companion stars or other distant planets. Think of it like a bowling ball rolling down a lane toward tightly clustered pins. When these distant intruder planets swing close to their star, they can gravitationally scatter the close-in planets, sometimes with enough force to fling them completely out of the solar system.</p>\n<h4>Key Findings</h4>\n<p>The team discovered that this planetary billiards process is remarkably efficient at creating rogue planets. When a massive intruder planet swoops through the inner regions of a solar system, it can transfer enough gravitational energy to permanently eject smaller planets from their orbits. The process doesn't just create wandering planets—it also disrupts entire planetary systems, potentially sending some planets crashing into their host stars while dramatically altering the orbits of survivors.</p>\n<h4>Looking Forward</h4>\n<p>This research provides a compelling explanation for the abundance of free-floating planets that upcoming space telescopes are expected to discover. It also suggests that planetary systems might be far more dynamic and unstable than previously thought, with major reshuffling events occurring throughout their lifetimes. Future observations of rogue planets and disrupted solar systems could help astronomers test these predictions and better understand how common stable, potentially habitable worlds really are.</p>",
+      "tweet_hook": {
+        "hook": "Planets can get ejected into interstellar space when cold worlds dive close to their stars and slam into hot super-Earths",
+        "claim": "Gravitational scattering between these populations creates freely floating planets robustly",
+        "evidence": "Method: Secular perturbations drive cold planets onto parabolic orbits with extreme stellar pericenters",
+        "question": "How many rogue planets in our galaxy formed this way versus in stellar nurseries?"
+      },
+      "figure_url": "https://arxiv.org/html/2601.09835v1/scenario.png"
+    },
+    {
+      "id": "2601.10631v1",
+      "title": "Circumplanetary Disk Candidate in the Disk of HD 163296 Traced by Localized Emission from Simple Organics",
+      "abstract": "Atacama Large Millimeter/submillimeter Array observations suggest that the disc of HD 163296 is being actively shaped by embedded, yet unseen protoplanets, as indicated by numerous gas and dust substructures consistent with planet-disc interaction models. We report the first detection of simple organic molecules, HCN and C2H, tracing a candidate circumplanetary disc (CPD) in the HD 163296 system, located at an orbital radius of $R=88\\pm7$ au and azimuth $φ=46\\pm3^\\circ$ (or $R=0.75''$, $\\rm{PA}=350^\\circ$ in projected sky coordinates), and originating near the midplane of the circumstellar disc. The signature is localised but spectrally resolved, and it overlaps with a previously reported planet candidate, P94, identified through kinematic perturbations traced by CO lines. We propose a scenario in which the observed chemical anomalies arise from increased heating driven by the forming planet and ongoing accretion through its CPD, facilitating the thermal desorption of species that would otherwise remain frozen out in the disc midplane, and potentially triggering the activation barriers of chemical reactions that lead to enhanced molecular production. Based on a first-order dynamical analysis of the HCN spectrum from the CPD--isolated with a 7$σ$ significance--we infer an upper limit on the planet mass of 1.8 $M_{\\rm Jup}$, consistent with predictions from CO kinematics and constraints from direct imaging studies. By comparing the CPD sizes derived from our models with theoretical expectations where the CPD radius corresponds to roughly one-third of the planet's Hill radius, we favor CPD gas temperatures $T > 150$ K, planet masses $M_{\\rm p} < 1.0$ $M_{\\rm Jup}$, and CPD radii $R_{\\rm CPD} < 2$ au.",
+      "authors": [
+        "Andres F. Izquierdo",
+        "Jaehan Bae",
+        "Maria Galloway-Sprietsma",
+        "Ewine F. van Dishoeck",
+        "Stefano Facchini",
+        "Giovanni Rosotti",
+        "Jochen Stadler",
+        "Myriam Benisty",
+        "Leonardo Testi"
+      ],
+      "categories": [
+        "astro-ph.EP",
+        "astro-ph.SR"
+      ],
+      "published": "2026-01-15T17:50:13Z",
+      "updated": "2026-01-15T17:50:13Z",
+      "pdf_link": "https://arxiv.org/pdf/2601.10631v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2601.10631v1",
+      "is_exoplanet_focused": false,
+      "tweetability_score": 30,
+      "summary": "**Why It Matters**\nScientists have discovered the first chemical fingerprint of a disk of gas and dust swirling around a forming planet, providing unprecedented insight into how planets grow and evolve. This breakthrough offers a new way to study planets that are still forming and too faint to see directly, potentially revolutionizing our understanding of planetary birth.\n\n**What They Did**\nResearchers used the powerful Atacama Large Millimeter/submillimeter Array (ALMA) telescope to analyze the disk around HD 163296, a young star located about 330 light-years away. They detected specific organic molecules—hydrogen cyanide (HCN) and a simple hydrocarbon (C2H)—in a small, localized region that appears to be orbiting the star at roughly the same distance as Neptune orbits our Sun.\n\n**Key Findings**\nThe organic molecules are concentrated in a tiny disk around what appears to be a forming planet about the size of Jupiter, creating the first chemical evidence of a \"circumplanetary disk\"—essentially a mini version of the larger disk surrounding the parent star. This chemical signature matches the location of a previously suspected planet detected through subtle motions in the surrounding gas. The heat from the forming planet and its feeding process is warming the surrounding material to over 150 Kelvin (about -190°F), causing frozen molecules to vaporize and become detectable. The planet appears to be less massive than Jupiter, with its surrounding disk spanning less than twice the distance from Earth to the Sun.\n\n**Looking Forward**\nThis discovery opens a new chapter in planet-hunting techniques, allowing astronomers to study forming planets through their chemical signatures even when they're too dim to photograph directly. Future observations could reveal how planets accumulate their atmospheres and potentially identify the building blocks of life forming around other worlds.",
+      "summary_html": "<h4>Why It Matters</h4>\nScientists have discovered the first chemical fingerprint of a disk of gas and dust swirling around a forming planet, providing unprecedented insight into how planets grow and evolve. This breakthrough offers a new way to study planets that are still forming and too faint to see directly, potentially revolutionizing our understanding of planetary birth.\n<h4>What They Did</h4>\nResearchers used the powerful Atacama Large Millimeter/submillimeter Array (ALMA) telescope to analyze the disk around HD 163296, a young star located about 330 light-years away. They detected specific organic molecules—hydrogen cyanide (HCN) and a simple hydrocarbon (C2H)—in a small, localized region that appears to be orbiting the star at roughly the same distance as Neptune orbits our Sun.\n<h4>Key Findings</h4>\nThe organic molecules are concentrated in a tiny disk around what appears to be a forming planet about the size of Jupiter, creating the first chemical evidence of a \"circumplanetary disk\"—essentially a mini version of the larger disk surrounding the parent star. This chemical signature matches the location of a previously suspected planet detected through subtle motions in the surrounding gas. The heat from the forming planet and its feeding process is warming the surrounding material to over 150 Kelvin (about -190°F), causing frozen molecules to vaporize and become detectable. The planet appears to be less massive than Jupiter, with its surrounding disk spanning less than twice the distance from Earth to the Sun.\n<h4>Looking Forward</h4>\nThis discovery opens a new chapter in planet-hunting techniques, allowing astronomers to study forming planets through their chemical signatures even when they're too dim to photograph directly. Future observations could reveal how planets accumulate their atmospheres and potentially identify the building blocks of life forming around other worlds.",
+      "tweet_hook": {
+        "hook": "First detection of organic molecules around forming planet discovered",
+        "claim": "Simple organics HCN and C2H reveal circumplanetary disk in HD 163296 system",
+        "evidence": "Localized chemical signatures trace Jupiter-mass planet candidate at 88 AU orbital radius",
+        "question": "Could heated circumplanetary disks be organic chemistry factories in space?"
+      },
+      "figure_url": "https://arxiv.org/html/2601.10631v1/x1.png"
+    },
+    {
+      "id": "2601.10666v1",
+      "title": "Observation Timelines for the Potential Lunar Impact of Asteroid 2024 YR4",
+      "abstract": "The near-Earth asteroid 2024 YR4 -- a $\\sim$60 m rocky object that was once considered a potential Earth impactor -- has since been ruled out for Earth but retained a $\\sim$4.3% probability of striking the Moon in 2032. Such an impact, with equivalent kinetic energy of $\\sim$6.5 Mt TNT, is expected to produce a $\\sim$1 km crater on the Moon, and will be the most energetic lunar impact event ever recorded in human history. Despite the associated risk, this scenario offers a rare and valuable scientific opportunity. Using a hybrid framework combining Monte Carlo orbital propagation, smoothed particle hydrodynamics (SPH) impact modeling, and N-body ejecta dynamics, we evaluate the physical outcomes and propose the observation timelines of this rare event. Our results suggest an optical flash of visual magnitude from -2.5 to -3 lasting several minutes directly after the impact, followed by hours of infrared afterglow from $\\sim$2000 K molten rock cooling to a few hundred K. The associated seismic energy release would lead to a global-scale lunar reverberation (magnitude $\\sim$5.0) that can be detectable by modern seismometers. Furthermore, the impact would eject $\\sim$10$^8$ kg of debris that escapes the lunar gravity, with a small fraction reaching Earth to produce a lunar meteor outburst within 100 years. Finally, we integrate these results into a coordinated observation timeline, identifying the best detection windows for ground-based telescopes, lunar orbiters, and surface stations.",
+      "authors": [
+        "Yifan He",
+        "Yixuan Wu",
+        "Yifei Jiao",
+        "Wen-Yue Dai",
+        "Xin Liu",
+        "Bin Cheng",
+        "Hexi Baoyin"
+      ],
+      "categories": [
+        "astro-ph.EP"
+      ],
+      "published": "2026-01-15T18:33:03Z",
+      "updated": "2026-01-15T18:33:03Z",
+      "pdf_link": "https://arxiv.org/pdf/2601.10666v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2601.10666v1",
+      "is_exoplanet_focused": false,
+      "tweetability_score": 0,
+      "summary": "**Why It Matters**\nAsteroid 2024 YR4 has a small but real chance (4.3%) of hitting the Moon in 2032, which would create the most powerful lunar impact ever witnessed by humans. This rare cosmic collision would offer scientists an unprecedented opportunity to study planetary impacts in real-time and better understand how these violent events shape worlds throughout the solar system.\n\n**What They Did**\nResearchers used computer simulations to model what would happen if this 60-meter space rock actually strikes the Moon. They combined three different modeling techniques: tracking the asteroid's orbit, simulating the physics of the high-speed collision, and calculating how debris would fly through space after impact.\n\n**Key Findings**\nThe impact would pack the punch of 6.5 million tons of TNT, carving out a crater roughly one kilometer wide on the Moon's surface. Observers on Earth would see a brilliant flash lasting several minutes (brighter than the planet Venus), followed by hours of infrared glow as molten rock slowly cools. The collision would trigger moonquakes detectable by seismometers, sending vibrations rippling across the entire lunar surface. Most dramatically, the impact would blast about 100 million kilograms of lunar material into space, with some debris eventually reaching Earth as a shower of \"lunar meteors\" within the next century.\n\n**Looking Forward**\nScientists have created a detailed observation timeline to help telescopes, lunar satellites, and monitoring stations capture this potential cosmic spectacle from multiple angles. If the impact occurs, it would provide invaluable data about planetary defense, impact physics, and the Moon's internal structure—turning a potentially concerning asteroid encounter into a goldmine of scientific discovery.",
+      "summary_html": "<h4>Why It Matters</h4>\nAsteroid 2024 YR4 has a small but real chance (4.3%) of hitting the Moon in 2032, which would create the most powerful lunar impact ever witnessed by humans. This rare cosmic collision would offer scientists an unprecedented opportunity to study planetary impacts in real-time and better understand how these violent events shape worlds throughout the solar system.\n<h4>What They Did</h4>\nResearchers used computer simulations to model what would happen if this 60-meter space rock actually strikes the Moon. They combined three different modeling techniques: tracking the asteroid's orbit, simulating the physics of the high-speed collision, and calculating how debris would fly through space after impact.\n<h4>Key Findings</h4>\nThe impact would pack the punch of 6.5 million tons of TNT, carving out a crater roughly one kilometer wide on the Moon's surface. Observers on Earth would see a brilliant flash lasting several minutes (brighter than the planet Venus), followed by hours of infrared glow as molten rock slowly cools. The collision would trigger moonquakes detectable by seismometers, sending vibrations rippling across the entire lunar surface. Most dramatically, the impact would blast about 100 million kilograms of lunar material into space, with some debris eventually reaching Earth as a shower of \"lunar meteors\" within the next century.\n<h4>Looking Forward</h4>\nScientists have created a detailed observation timeline to help telescopes, lunar satellites, and monitoring stations capture this potential cosmic spectacle from multiple angles. If the impact occurs, it would provide invaluable data about planetary defense, impact physics, and the Moon's internal structure—turning a potentially concerning asteroid encounter into a goldmine of scientific discovery.",
+      "tweet_hook": {
+        "hook": "60-meter asteroid has 4.3% chance of creating Moon's most energetic recorded impact",
+        "claim": "First comprehensive observation timeline predicts unprecedented scientific opportunities from potential 2032 lunar collision",
+        "evidence": "Impact would create magnitude -3 optical flash, global moonquakes, and meteor shower reaching Earth",
+        "question": "Ready to witness the most powerful lunar impact in human history?"
+      },
+      "figure_url": "https://arxiv.org/html/2601.10666v1/Fig1.png"
+    },
+    {
+      "id": "2601.10585v1",
+      "title": "Canceling Effects of Conjunctions Render Higher Order Mean Motion Resonances Weak",
+      "abstract": "Mean motion resonances (MMRs) are a key phenomenon in orbital dynamics. The traditional disturbing function expansion in celestial mechanics shows that, at low eccentricities, $p$:$p-q$ MMRs exhibit a clear hierarchy of strengths, scaling as $e^q$, where $q$ is the order of the resonance. This explains why first-order MMRs (e.g., 3:2 and 4:3) are important, while the infinite number of higher order integer ratios are not. However, this relationship derived from a technical perturbation series expansion provides little physical intuition. In this paper, we provide a simple physical explanation of this result for closely spaced orbits. In this limit, interplanetary interactions are negligible except during close encounters at conjunction, where the planets impart a gravitational \"kick\" to each other's mean motion. We show that while first-order MMRs involve a single conjunction before the configuration repeats, higher order MMRs involve multiple conjunctions per cycle, whose effects cancel out more precisely the higher the order of the resonance. Starting from the effects of a single conjunction, we provide an alternate, physically motivated derivation of MMRs' $e^q$ strength scaling.",
+      "authors": [
+        "Elizabeth K Jones",
+        "Samuel Hadden",
+        "Daniel Tamayo"
+      ],
+      "categories": [
+        "astro-ph.EP"
+      ],
+      "published": "2026-01-15T16:55:40Z",
+      "updated": "2026-01-15T16:55:40Z",
+      "pdf_link": "https://arxiv.org/pdf/2601.10585v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2601.10585v1",
+      "is_exoplanet_focused": false,
+      "tweetability_score": 0,
+      "summary": "**Why It Matters**\nThis research provides a clearer physical understanding of why certain planetary orbital relationships dominate our solar system while others remain weak. Mean motion resonances—where planets' orbital periods form simple mathematical ratios—are fundamental to explaining how planetary systems form and remain stable over billions of years.\n\n**What They Did**\nInstead of relying on complex mathematical equations that have been used for centuries, the researchers developed a simpler, more intuitive approach to explain orbital resonances. They focused on what happens when planets come closest to each other (conjunctions), treating these encounters as gravitational \"kicks\" that slightly alter each planet's motion.\n\n**Key Findings**\nThe study reveals why first-order resonances (like 3:2 ratios) are much stronger than higher-order ones in shaping planetary systems. In first-order resonances, planets experience only one close encounter per cycle before their configuration repeats, creating a cumulative effect over time. Higher-order resonances involve multiple conjunctions per cycle, but these gravitational kicks tend to cancel each other out—and this cancellation becomes more precise as the resonance order increases. This elegant explanation confirms the mathematical relationship that resonance strength decreases dramatically with higher orders, following a pattern based on orbital eccentricity.\n\n**Looking Forward**\nThis physically intuitive framework could make orbital dynamics more accessible to students and researchers, potentially accelerating discoveries in planetary science. The clearer understanding of resonance mechanics may also improve our ability to predict the long-term evolution of both our solar system and newly discovered exoplanetary systems.",
+      "summary_html": "<h4>Why It Matters</h4>\nThis research provides a clearer physical understanding of why certain planetary orbital relationships dominate our solar system while others remain weak. Mean motion resonances—where planets' orbital periods form simple mathematical ratios—are fundamental to explaining how planetary systems form and remain stable over billions of years.\n<h4>What They Did</h4>\nInstead of relying on complex mathematical equations that have been used for centuries, the researchers developed a simpler, more intuitive approach to explain orbital resonances. They focused on what happens when planets come closest to each other (conjunctions), treating these encounters as gravitational \"kicks\" that slightly alter each planet's motion.\n<h4>Key Findings</h4>\nThe study reveals why first-order resonances (like 3:2 ratios) are much stronger than higher-order ones in shaping planetary systems. In first-order resonances, planets experience only one close encounter per cycle before their configuration repeats, creating a cumulative effect over time. Higher-order resonances involve multiple conjunctions per cycle, but these gravitational kicks tend to cancel each other out—and this cancellation becomes more precise as the resonance order increases. This elegant explanation confirms the mathematical relationship that resonance strength decreases dramatically with higher orders, following a pattern based on orbital eccentricity.\n<h4>Looking Forward</h4>\nThis physically intuitive framework could make orbital dynamics more accessible to students and researchers, potentially accelerating discoveries in planetary science. The clearer understanding of resonance mechanics may also improve our ability to predict the long-term evolution of both our solar system and newly discovered exoplanetary systems.",
+      "tweet_hook": {
+        "hook": "🪐 Why are only some planetary resonances astronomically important?",
+        "claim": "New physical explanation reveals why higher-order orbital resonances are systematically weaker",
+        "evidence": "Multiple conjunctions in high-order resonances cancel each other out more precisely",
+        "question": "What other celestial mechanics mysteries need intuitive explanations?"
+      },
+      "figure_url": "https://arxiv.org/html/2601.10585v1/x1.png"
+    },
+    {
+      "id": "2601.10439v1",
+      "title": "ASTRA: A Python Package for Cross-Instrument Stellar and Telluric Template Construction",
+      "abstract": "ASTRA is a Python package that provides a modular, instrument-independent interface for working with high-resolution stellar spectra. Designed to support data from multiple spectrographs, including ESPRESSO (Pepe et al., 2021), HARPS (Mayor et al., 2003; Pepe et al., 2002), MAROON-X (Seifahrt et al., 2022), and CARMENES (Quirrenbach et al., 2014). ASTRA offers a unified abstraction over their data formats, enabling consistent access to fluxes, wavelengths, uncertainties, and metadata across instruments. Furthermore, it applies the necessary wavelength and flux calibrations that are needed, as described by the official pipelines of each instrument.",
+      "authors": [
+        "André M. Silva",
+        "J. P. Faria",
+        "N. C. Santos",
+        "S. G. Sousa",
+        "P. T. P. Viana",
+        "J. H. C. Martins"
+      ],
+      "categories": [
+        "astro-ph.IM",
+        "astro-ph.EP",
+        "astro-ph.SR"
+      ],
+      "published": "2026-01-15T14:31:56Z",
+      "updated": "2026-01-15T14:31:56Z",
+      "pdf_link": "https://arxiv.org/pdf/2601.10439v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2601.10439v1",
+      "is_exoplanet_focused": false,
+      "tweetability_score": 0,
+      "summary": "**Why It Matters**\nAstronomers use different telescopes and instruments around the world to study stars, but each one saves and formats its data differently, making it difficult to combine observations or compare results. ASTRA solves this problem by creating a universal translator that allows researchers to work seamlessly with data from multiple major telescopes, potentially accelerating discoveries about stellar properties and exoplanets.\n\n**What They Did**\nThe researchers developed ASTRA, a Python software package that acts like a universal adapter for high-resolution stellar spectroscopy data from four major instruments: ESPRESSO, HARPS, MAROON-X, and CARMENES. The software automatically handles the complex technical details of each instrument's data format and applies the proper calibrations, giving astronomers a single, consistent way to access wavelengths, light intensities, uncertainties, and other crucial information regardless of which telescope collected the data.\n\n**Key Findings**\nASTRA successfully creates a unified interface that eliminates the technical barriers between different spectrograph data formats. The package handles all the behind-the-scenes calibrations and corrections that each instrument requires, ensuring data quality remains high. By abstracting away instrument-specific complexities, ASTRA allows researchers to focus on the science rather than wrestling with technical data formatting issues. The modular design means new instruments can be easily added to the system as they come online.\n\n**Looking Forward**\nThis tool could significantly streamline stellar research by making it easier to combine observations from multiple world-class facilities, potentially leading to more comprehensive studies of stellar atmospheres and exoplanet detection. As more telescopes and instruments are added to ASTRA's capabilities, it may become an essential tool for the global astronomy community working with high-resolution stellar spectra.",
+      "summary_html": "<h4>Why It Matters</h4>\nAstronomers use different telescopes and instruments around the world to study stars, but each one saves and formats its data differently, making it difficult to combine observations or compare results. ASTRA solves this problem by creating a universal translator that allows researchers to work seamlessly with data from multiple major telescopes, potentially accelerating discoveries about stellar properties and exoplanets.\n<h4>What They Did</h4>\nThe researchers developed ASTRA, a Python software package that acts like a universal adapter for high-resolution stellar spectroscopy data from four major instruments: ESPRESSO, HARPS, MAROON-X, and CARMENES. The software automatically handles the complex technical details of each instrument's data format and applies the proper calibrations, giving astronomers a single, consistent way to access wavelengths, light intensities, uncertainties, and other crucial information regardless of which telescope collected the data.\n<h4>Key Findings</h4>\nASTRA successfully creates a unified interface that eliminates the technical barriers between different spectrograph data formats. The package handles all the behind-the-scenes calibrations and corrections that each instrument requires, ensuring data quality remains high. By abstracting away instrument-specific complexities, ASTRA allows researchers to focus on the science rather than wrestling with technical data formatting issues. The modular design means new instruments can be easily added to the system as they come online.\n<h4>Looking Forward</h4>\nThis tool could significantly streamline stellar research by making it easier to combine observations from multiple world-class facilities, potentially leading to more comprehensive studies of stellar atmospheres and exoplanet detection. As more telescopes and instruments are added to ASTRA's capabilities, it may become an essential tool for the global astronomy community working with high-resolution stellar spectra.",
+      "tweet_hook": {
+        "hook": "New Python package unifies stellar spectroscopy across multiple instruments! 🔭",
+        "claim": "ASTRA provides instrument-independent interface for high-resolution stellar spectra analysis workflows",
+        "evidence": "Supports ESPRESSO, HARPS, MAROON-X, CARMENES with unified data format abstraction",
+        "question": "Could this standardization accelerate your spectroscopy research?"
+      },
+      "figure_url": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Exoplanet_Comparison_Kepler-22_b.jpg"
+    },
+    {
+      "id": "2601.10181v2",
+      "title": "Reinforcement Learning to Discover a NorthEast Monsoon Index for Monthly Rainfall Prediction in Thailand",
+      "abstract": "Climate prediction is a challenge due to the intricate spatiotemporal patterns within Earth systems. Global climate indices, such as the El Niño Southern Oscillation, are standard input features for long-term rainfall prediction. However, a significant gap persists regarding local-scale indices capable of improving predictive accuracy in specific regions of Thailand. This paper introduces a novel NorthEast monsoon climate index calculated from sea surface temperature to reflect the climatology of the boreal winter monsoon. To optimise the calculated areas used for this index, a Deep Q-Network reinforcement learning agent explores and selects the most effective rectangles based on their correlation with seasonal rainfall. Rainfall stations were classified into 12 distinct clusters to distinguish rainfall patterns between southern and upper Thailand. Experimental results show that incorporating the optimised index into Long Short-Term Memory models significantly improves long-term monthly rainfall prediction skill in most cluster areas. This approach effectively reduces the Root Mean Square Error for 12-month-ahead forecasts.",
+      "authors": [
+        "Kiattikun Chobtham"
+      ],
+      "categories": [
+        "cs.LG",
+        "astro-ph.EP"
+      ],
+      "published": "2026-01-15T08:40:01Z",
+      "updated": "2026-01-16T01:49:39Z",
+      "pdf_link": "https://arxiv.org/pdf/2601.10181v2.pdf",
+      "abs_link": "https://arxiv.org/abs/2601.10181v2",
+      "is_exoplanet_focused": false,
+      "tweetability_score": 0,
+      "summary": "**Why It Matters**\nPredicting rainfall months in advance is crucial for agriculture, water management, and disaster preparedness, but current climate models struggle with local-scale accuracy. While global climate patterns like El Niño help forecast weather worldwide, scientists need region-specific indicators to better predict rainfall in places like Thailand, where millions depend on monsoon patterns for farming and water supply.\n\n**What They Did**\nThe researchers developed a new climate index based on sea surface temperatures in the northeast monsoon region to better predict Thailand's winter rainfall patterns. They used an AI technique called reinforcement learning—similar to how computers learn to play games—to automatically find the ocean areas whose temperatures best correlate with Thailand's seasonal rainfall, then grouped rainfall stations across the country into 12 distinct climate zones.\n\n**Key Findings**\nThe AI successfully identified optimal ocean regions whose temperature patterns strongly influence Thailand's rainfall, creating a new \"NorthEast monsoon index\" tailored specifically for the region. When scientists incorporated this custom index into their rainfall prediction models, forecast accuracy improved significantly across most of Thailand's climate zones. The enhanced models showed substantially lower prediction errors for 12-month rainfall forecasts compared to previous methods. This demonstrates that locally-optimized climate indices can outperform relying solely on global climate patterns like El Niño.\n\n**Looking Forward**\nThis breakthrough approach could be applied to develop custom climate indices for other regions worldwide, potentially revolutionizing long-term weather forecasting globally. Better rainfall predictions will help farmers plan crop cycles more effectively, enable governments to prepare for droughts or floods, and support more sustainable water resource management across Southeast Asia.",
+      "summary_html": "<h4>Why It Matters</h4>\nPredicting rainfall months in advance is crucial for agriculture, water management, and disaster preparedness, but current climate models struggle with local-scale accuracy. While global climate patterns like El Niño help forecast weather worldwide, scientists need region-specific indicators to better predict rainfall in places like Thailand, where millions depend on monsoon patterns for farming and water supply.\n<h4>What They Did</h4>\nThe researchers developed a new climate index based on sea surface temperatures in the northeast monsoon region to better predict Thailand's winter rainfall patterns. They used an AI technique called reinforcement learning—similar to how computers learn to play games—to automatically find the ocean areas whose temperatures best correlate with Thailand's seasonal rainfall, then grouped rainfall stations across the country into 12 distinct climate zones.\n<h4>Key Findings</h4>\nThe AI successfully identified optimal ocean regions whose temperature patterns strongly influence Thailand's rainfall, creating a new \"NorthEast monsoon index\" tailored specifically for the region. When scientists incorporated this custom index into their rainfall prediction models, forecast accuracy improved significantly across most of Thailand's climate zones. The enhanced models showed substantially lower prediction errors for 12-month rainfall forecasts compared to previous methods. This demonstrates that locally-optimized climate indices can outperform relying solely on global climate patterns like El Niño.\n<h4>Looking Forward</h4>\nThis breakthrough approach could be applied to develop custom climate indices for other regions worldwide, potentially revolutionizing long-term weather forecasting globally. Better rainfall predictions will help farmers plan crop cycles more effectively, enable governments to prepare for droughts or floods, and support more sustainable water resource management across Southeast Asia.",
+      "tweet_hook": {
+        "hook": "AI discovers new climate index for Thailand rainfall prediction 🌧️",
+        "claim": "Deep reinforcement learning identifies optimal sea surface temperature patterns for monsoon forecasting",
+        "evidence": "Novel NorthEast monsoon index significantly reduces forecast errors for 12-month-ahead predictions",
+        "question": "Could AI-discovered climate indices revolutionize regional weather forecasting globally?"
+      },
+      "figure_url": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Exoplanet_Comparison_Kepler-22_b.jpg"
+    }
+  ]
+}

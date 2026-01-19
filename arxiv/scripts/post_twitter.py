@@ -148,19 +148,87 @@ BASE_HASHTAGS_GENERAL = ["#Astronomy", "#PlanetaryScience"]
 MAX_HASHTAGS = 4
 
 
-def fetch_paper_figure(paper_id: str) -> str | None:
+def fetch_paper_figure(paper_id: str, stored_url: str = None) -> str | None:
     """
     Attempt to fetch Figure 1 from a paper.
     Returns the local file path if successful, None otherwise.
     
-    Tries multiple sources:
-    1. arXiv HTML page (og:image meta tag)
-    2. ar5iv.org HTML rendering
+    Args:
+        paper_id: The arXiv paper ID
+        stored_url: Optional pre-stored figure URL from papers.json
     """
     
     print(f"  Attempting to fetch figure for {paper_id}...")
     
-    # Method 1: Try arXiv abstract page og:image (often contains a figure preview)
+    # Method 0: Try stored URL first (if it's a real figure, not a fallback)
+    if stored_url and not stored_url.startswith("https://upload.wikimedia"):
+        print(f"    Trying stored URL: {stored_url[:60]}...")
+        img_path = download_image(stored_url, paper_id)
+        if img_path:
+            print(f"    ✓ Downloaded from stored URL")
+            return img_path
+    
+    # Method 1: Try arXiv HTML beta (most reliable for new papers)
+    urls_to_try = [
+        f"https://arxiv.org/html/{paper_id}",
+        f"https://ar5iv.labs.arxiv.org/html/{paper_id}",
+    ]
+    
+    for base_url in urls_to_try:
+        try:
+            print(f"    Trying: {base_url}")
+            response = requests.get(base_url, timeout=15, headers={
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+            })
+            
+            if response.status_code != 200:
+                continue
+            
+            html = response.text
+            
+            # Multiple patterns to try (ordered by specificity)
+            patterns = [
+                # arXiv HTML beta - figures with ltx_figure class
+                r'<figure[^>]*class="[^"]*ltx_figure[^"]*"[^>]*>.*?<img[^>]+src=["\']([^"\']+)["\']',
+                # Standard figure with img inside
+                r'<figure[^>]*>.*?<img[^>]+src=["\']([^"\']+\.(?:png|jpg|jpeg|gif|svg))["\']',
+                # Images with ltx_graphics class
+                r'<img[^>]+class=["\'][^"\']*ltx_graphics[^"\']*["\'][^>]+src=["\']([^"\']+)["\']',
+                # Any img with figure-like filename
+                r'<img[^>]+src=["\']([^"\']*(?:x\d+|figure|fig)[^"\']*\.(?:png|jpg|jpeg|gif|svg))["\']',
+            ]
+            
+            for pattern in patterns:
+                matches = re.findall(pattern, html, re.IGNORECASE | re.DOTALL)
+                if matches:
+                    img_path_rel = matches[0] if isinstance(matches[0], str) else matches[0][0]
+                    
+                    # Skip icons/logos
+                    skip_patterns = ['icon', 'logo', 'arrow', 'button', 'nav', 'menu', '1x1', 'pixel']
+                    if any(skip in img_path_rel.lower() for skip in skip_patterns):
+                        continue
+                    
+                    # Convert to absolute URL
+                    if img_path_rel.startswith('//'):
+                        img_url = f"https:{img_path_rel}"
+                    elif img_path_rel.startswith('/'):
+                        domain = base_url.split('/html/')[0]
+                        img_url = f"{domain}{img_path_rel}"
+                    elif img_path_rel.startswith('http'):
+                        img_url = img_path_rel
+                    else:
+                        # Relative path - include paper ID folder
+                        img_url = f"{base_url}/{img_path_rel}"
+                    
+                    print(f"    Found: {img_url[:70]}...")
+                    img_path = download_image(img_url, paper_id)
+                    if img_path:
+                        return img_path
+                        
+        except Exception as e:
+            print(f"    Error: {e}")
+    
+    # Method 2: Try arXiv abstract page og:image
     try:
         abs_url = f"https://arxiv.org/abs/{paper_id}"
         response = requests.get(abs_url, timeout=15, headers={
@@ -168,47 +236,15 @@ def fetch_paper_figure(paper_id: str) -> str | None:
         })
         
         if response.status_code == 200:
-            # Look for og:image meta tag
             og_match = re.search(r'<meta\s+property="og:image"\s+content="([^"]+)"', response.text)
             if og_match:
                 img_url = og_match.group(1)
-                # Skip placeholder images
                 if 'arxiv-logo' not in img_url and 'static' not in img_url:
                     img_path = download_image(img_url, paper_id)
                     if img_path:
                         return img_path
     except Exception as e:
-        print(f"    arXiv page fetch failed: {e}")
-    
-    # Method 2: Try ar5iv (HTML rendering of papers)
-    try:
-        ar5iv_url = f"https://ar5iv.labs.arxiv.org/html/{paper_id}"
-        response = requests.get(ar5iv_url, timeout=20, headers={
-            'User-Agent': 'Mozilla/5.0 (compatible; ExoplanetBot/1.0)'
-        })
-        
-        if response.status_code == 200:
-            # Look for figure images
-            patterns = [
-                r'<img[^>]+src="([^"]+)"[^>]*class="[^"]*ltx_graphics[^"]*"',
-                r'<figure[^>]*>.*?<img[^>]+src="([^"]+)".*?</figure>',
-                r'<img[^>]+src="(/html/[^"]+\.(?:png|jpg|jpeg|gif))"',
-            ]
-            
-            for pattern in patterns:
-                matches = re.findall(pattern, response.text, re.IGNORECASE | re.DOTALL)
-                for match in matches[:3]:  # Try first 3 matches
-                    img_url = match
-                    if img_url.startswith('/'):
-                        img_url = f"https://ar5iv.labs.arxiv.org{img_url}"
-                    elif not img_url.startswith('http'):
-                        img_url = f"https://ar5iv.labs.arxiv.org/html/{paper_id}/{img_url}"
-                    
-                    img_path = download_image(img_url, paper_id)
-                    if img_path:
-                        return img_path
-    except Exception as e:
-        print(f"    ar5iv fetch failed: {e}")
+        print(f"    og:image fetch failed: {e}")
     
     print(f"    No figure found for {paper_id}")
     return None
@@ -801,8 +837,9 @@ def main():
     media_ids = None
     
     if api_v1:  # Only try if we have v1.1 API for media upload
-        # Try to fetch actual figure first
-        figure_path = fetch_paper_figure(paper_to_tweet["id"])
+        # Try to fetch actual figure first (pass stored URL if available)
+        stored_figure_url = paper_to_tweet.get("figure_url", "")
+        figure_path = fetch_paper_figure(paper_to_tweet["id"], stored_figure_url)
         
         # If no figure, generate a paper card
         if not figure_path:
