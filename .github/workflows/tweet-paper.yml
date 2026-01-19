@@ -2,15 +2,9 @@ name: Tweet Paper Thread
 
 on:
   schedule:
-    # Full PST day: 7 AM - 11:59 PM PST
-    # PST = UTC - 8, so this spans across UTC midnight
-    
-    # Part 1: 15:00-23:00 UTC Mon-Fri (7 AM - 3:59 PM PST same day)
     - cron: '0 15-23 * * 1-5'
-    
-    # Part 2: 00:00-07:00 UTC Tue-Sat (4 PM - 11 PM PST previous day = Mon-Fri PST)
     - cron: '0 0-7 * * 2-6'
-  workflow_dispatch:  # Allow manual trigger
+  workflow_dispatch:
 
 jobs:
   tweet-paper:
@@ -26,8 +20,7 @@ jobs:
           python-version: '3.11'
       
       - name: Install dependencies
-        run: |
-          pip install requests tweepy pillow
+        run: pip install requests tweepy pillow
       
       - name: Tweet paper thread
         id: tweet
@@ -41,15 +34,35 @@ jobs:
         run: |
           python arxiv/scripts/post_twitter.py 2>&1 | tee tweet_output.log
           
+          echo "=== Full output ==="
+          cat tweet_output.log
+          echo "==================="
+          
           if grep -q "Thread posted successfully" tweet_output.log; then
             echo "tweeted=true" >> $GITHUB_OUTPUT
             PAPER_ID=$(grep "Selected paper:" tweet_output.log | sed 's/.*Selected paper: //' | head -1)
             echo "paper_id=$PAPER_ID" >> $GITHUB_OUTPUT
             TWEET_URL=$(grep "Tweet 1:" tweet_output.log | grep -oE 'https://[^ ]+' | head -1)
             echo "tweet_url=$TWEET_URL" >> $GITHUB_OUTPUT
+            echo "Extracted: PAPER_ID=$PAPER_ID, TWEET_URL=$TWEET_URL"
           else
             echo "tweeted=false" >> $GITHUB_OUTPUT
+            echo "No successful tweet detected in output"
           fi
+      
+      - name: Debug Telegram secrets
+        run: |
+          if [ -n "${{ secrets.TELEGRAM_BOT_TOKEN }}" ]; then
+            echo "✅ TELEGRAM_BOT_TOKEN is set"
+          else
+            echo "❌ TELEGRAM_BOT_TOKEN is NOT set"
+          fi
+          if [ -n "${{ secrets.TELEGRAM_CHAT_ID }}" ]; then
+            echo "✅ TELEGRAM_CHAT_ID is set"
+          else
+            echo "❌ TELEGRAM_CHAT_ID is NOT set"
+          fi
+          echo "Tweet output tweeted=${{ steps.tweet.outputs.tweeted }}"
       
       - name: Send Telegram notification
         if: steps.tweet.outputs.tweeted == 'true'
@@ -59,10 +72,21 @@ jobs:
           PAPER_ID: ${{ steps.tweet.outputs.paper_id }}
           TWEET_URL: ${{ steps.tweet.outputs.tweet_url }}
         run: |
-          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+          echo "Sending Telegram notification..."
+          echo "PAPER_ID: $PAPER_ID"
+          echo "TWEET_URL: $TWEET_URL"
+          
+          RESPONSE=$(curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
             -d chat_id="${TELEGRAM_CHAT_ID}" \
-            -d text="🐦 Tweet posted! 📄 ${PAPER_ID} 🔗 ${TWEET_URL}"
-          echo "Telegram notification sent"
+            -d text="🐦 Tweet posted! 📄 ${PAPER_ID} 🔗 ${TWEET_URL}")
+          
+          echo "Telegram API response: $RESPONSE"
+          
+          if echo "$RESPONSE" | grep -q '"ok":true'; then
+            echo "✅ Telegram notification sent successfully"
+          else
+            echo "❌ Telegram notification failed"
+          fi
       
       - name: Commit tweeted tracking
         run: |
