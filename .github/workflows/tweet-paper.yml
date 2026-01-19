@@ -2,10 +2,8 @@ name: Tweet Paper Thread
 
 on:
   schedule:
-    # Run every 30 minutes from 03:00-23:30 UTC (06:00-02:30 Istanbul)
-    # Script has smart timing - only tweets when it's the right time
     - cron: '0,30 3-23 * * 1-5'
-  workflow_dispatch:  # Allow manual trigger
+  workflow_dispatch:
 
 jobs:
   tweet-paper:
@@ -21,8 +19,7 @@ jobs:
           python-version: '3.11'
       
       - name: Install dependencies
-        run: |
-          pip install requests tweepy pillow
+        run: pip install requests tweepy pillow
       
       - name: Tweet paper thread
         id: tweet
@@ -33,31 +30,20 @@ jobs:
           TWITTER_ACCESS_SECRET: ${{ secrets.TWITTER_ACCESS_SECRET }}
           TWITTER_PREMIUM: ${{ vars.TWITTER_PREMIUM }}
           PAGE_URL: "https://arifsolmaz.github.io/arxiv"
-        run: |
-          python arxiv/scripts/post_twitter.py 2>&1 | tee tweet_output.txt
-          
-          # Extract paper info for notification
-          if grep -q "Thread posted successfully" tweet_output.txt; then
-            echo "TWEET_SUCCESS=true" >> $GITHUB_OUTPUT
-            PAPER_ID=$(grep "Selected paper:" tweet_output.txt | awk '{print $3}' || echo "Unknown")
-            TWEET_URL=$(grep "Tweet 1:" tweet_output.txt | grep -oE 'https://[^ ]+' | head -1 || echo "")
-            echo "PAPER_ID=$PAPER_ID" >> $GITHUB_OUTPUT
-            echo "TWEET_URL=$TWEET_URL" >> $GITHUB_OUTPUT
-          else
-            echo "TWEET_SUCCESS=false" >> $GITHUB_OUTPUT
-          fi
-      
-      - name: Send Telegram notification
-        if: steps.tweet.outputs.TWEET_SUCCESS == 'true'
-        env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          PAPER_ID: ${{ steps.tweet.outputs.PAPER_ID }}
-          TWEET_URL: ${{ steps.tweet.outputs.TWEET_URL }}
         run: |
-          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
-            -d chat_id="${TELEGRAM_CHAT_ID}" \
-            -d text="🐦 Tweet posted! 📄 ${PAPER_ID} 🔗 ${TWEET_URL}"
+          python arxiv/scripts/post_twitter.py 2>&1 | tee output.log
+          
+          # Send Telegram notification if tweet was posted
+          if grep -q "Thread posted successfully" output.log; then
+            PAPER_ID=$(grep "Selected paper:" output.log | awk '{print $3}')
+            TWEET_URL=$(grep "Tweet 1:" output.log | grep -oE 'https://[^ ]+' | head -1)
+            
+            curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+              -d chat_id="${TELEGRAM_CHAT_ID}" \
+              -d text="🐦 Tweet posted! Paper: ${PAPER_ID} - ${TWEET_URL}"
+          fi
       
       - name: Commit tweeted tracking
         run: |
