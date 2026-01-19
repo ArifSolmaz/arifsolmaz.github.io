@@ -2,14 +2,11 @@ name: Tweet Paper Thread
 
 on:
   schedule:
-    # Full PST day: 7 AM - 11:59 PM PST
-    # PST = UTC - 8, so this spans across UTC midnight
-    
-    # Part 1: 15:00-23:00 UTC Mon-Fri (7 AM - 3:59 PM PST same day)
-    - cron: '0 15-23 * * 1-5'
-    
-    # Part 2: 00:00-07:00 UTC Tue-Sat (4 PM - 11 PM PST previous day = Mon-Fri PST)
-    - cron: '0 0-7 * * 2-6'
+    # Every 45 minutes from 03:00-23:45 UTC, Mon-Fri
+    # 03:00 UTC = 06:00 Istanbul (1 hour after paper fetch at 02:00 UTC)
+    # This gives 42 slots/day - enough for 25+ papers
+    - cron: '0 3-23 * * 1-5'     # On the hour: 03:00, 04:00, ... 23:00 UTC
+    - cron: '45 3-23 * * 1-5'    # At :45: 03:45, 04:45, ... 23:45 UTC
   workflow_dispatch:  # Allow manual trigger
 
 jobs:
@@ -46,4 +43,5 @@ jobs:
           git config --local user.name "github-actions[bot]"
           git add arxiv/data/tweeted.json
           git diff --staged --quiet || git commit -m "Update tweeted papers tracking"
-          git push
+          git pull --rebase origin main || true
+          git push || true
