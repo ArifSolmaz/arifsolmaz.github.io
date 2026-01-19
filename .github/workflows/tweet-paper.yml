@@ -39,9 +39,9 @@ jobs:
           # Extract paper info for notification
           if grep -q "Thread posted successfully" tweet_output.txt; then
             echo "TWEET_SUCCESS=true" >> $GITHUB_OUTPUT
-            PAPER_TITLE=$(grep "Selected paper:" tweet_output.txt | head -1 || echo "Unknown")
-            TWEET_URL=$(grep "Tweet 1:" tweet_output.txt | grep -oP 'https://[^\s]+' | head -1 || echo "")
-            echo "PAPER_TITLE=$PAPER_TITLE" >> $GITHUB_OUTPUT
+            PAPER_ID=$(grep "Selected paper:" tweet_output.txt | awk '{print $3}' || echo "Unknown")
+            TWEET_URL=$(grep "Tweet 1:" tweet_output.txt | grep -oE 'https://[^ ]+' | head -1 || echo "")
+            echo "PAPER_ID=$PAPER_ID" >> $GITHUB_OUTPUT
             echo "TWEET_URL=$TWEET_URL" >> $GITHUB_OUTPUT
           else
             echo "TWEET_SUCCESS=false" >> $GITHUB_OUTPUT
@@ -52,19 +52,12 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          PAPER_ID: ${{ steps.tweet.outputs.PAPER_ID }}
+          TWEET_URL: ${{ steps.tweet.outputs.TWEET_URL }}
         run: |
-          PAPER_INFO="${{ steps.tweet.outputs.PAPER_TITLE }}"
-          TWEET_URL="${{ steps.tweet.outputs.TWEET_URL }}"
-          MESSAGE="🐦 Tweet posted!
-          
-📄 ${PAPER_INFO}
-
-🔗 ${TWEET_URL}"
-          
           curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
             -d chat_id="${TELEGRAM_CHAT_ID}" \
-            -d text="${MESSAGE}" \
-            -d parse_mode="HTML"
+            -d text="🐦 Tweet posted! 📄 ${PAPER_ID} 🔗 ${TWEET_URL}"
       
       - name: Commit tweeted tracking
         run: |
