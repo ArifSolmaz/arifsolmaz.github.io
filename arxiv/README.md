@@ -1,155 +1,123 @@
 # 🪐 Exoplanet Papers - Daily arXiv Digest with AI Summaries
 
-A beautiful, automated daily digest of exoplanet research papers from arXiv with **AI-generated summaries** written for general audiences, and **optimized Twitter engagement**.
+A beautiful, automated daily digest of exoplanet research papers from arXiv with **AI-generated summaries** written for general audiences, **Turkish news translations**, and **optimized Twitter engagement**.
+
+🌐 **Live Site**: [arifsolmaz.github.io/arxiv](https://arifsolmaz.github.io/arxiv)  
+🇹🇷 **Turkish News**: [arifsolmaz.github.io/news.html](https://arifsolmaz.github.io/news.html)
 
 ## ✨ Features
 
-- **Daily Updates**: Automatically fetches the latest papers from arXiv astro-ph.EP
+### 📰 Daily Paper Digest
+- **Daily Updates**: Automatically fetches papers from arXiv astro-ph.EP RSS feed
+- **Archive System**: Browse papers by date with Prev/Next navigation
+- **Smart Classification**: Improved detection of exoplanet-focused papers
 - **AI Summaries**: Each paper gets a ~300 word summary explaining:
   - Why It Matters (big picture significance)
   - What They Did (methods in plain language)
   - Key Findings (main discoveries)
   - Looking Forward (implications)
-- **Optimized Tweets**: 2-tweet threads with:
-  - Tweet 1: Hook + claim + evidence + question (with image, no links)
-  - Tweet 2: arXiv link + summary link + hashtags
-- **Smart Paper Selection**: Papers ranked by "tweetability" score (JWST, habitability, biosignatures get priority)
-- **Dynamic Hashtags**: Auto-extracts relevant hashtags (2-4 max, fixed lowercase matching)
-- **Fallback Images**: Generates branded "paper card" when no figure available
-- **Share Button**: Website visitors can easily share papers on Twitter
-- **Beautiful UI**: Clean design with responsive 3-column grid
-- **Mobile Friendly**: Fully responsive design
-- **Zero Maintenance**: GitHub Actions handles everything automatically
 
-## 🆕 Recent Improvements
+### 🇹🇷 Turkish News Page
+- **Auto-Translation**: Generates Turkish press-release style news articles
+- **Terminology**: Proper Turkish terms (ötegezegen, atmosfer, etc.)
+- **Tag-based Filtering**: Filter news by topic tags
+- **Admin Panel**: Direct editing via GitHub API
 
-### Twitter Engagement Optimization
+### 🐦 Twitter Integration
+- **2-Tweet Threads**: Hook + content (with image), then links + hashtags
+- **Smart Selection**: Papers ranked by "tweetability" score
+- **Time-Based Posting**: Exoplanet papers during PST prime time
+- **Real Figures**: Fetches actual paper figures from arXiv HTML
+- **Fallback Cards**: Generates branded cards when no figure available
 
-| Before | After |
-|--------|-------|
-| Generic analogies in tweets | Hook → Claim → Evidence → Question format |
-| 8+ hashtags (looked like spam) | 2-4 relevant hashtags max |
-| Single tweet with links | 2-tweet thread (content then links) |
-| Random paper selection | Tweetability-scored selection |
-| No image if figure missing | Fallback paper card image |
-| Hashtag matching bug | Fixed lowercase key matching |
-
-### Website Features
-
-- **"Tweet This" button** in paper modal
-- **"Copy Link" button** for easy sharing
-- Pre-filled tweet text with hook + question
-
-## 🏷️ Dynamic Hashtags
-
-Hashtags are automatically extracted based on paper content (limited to 2-4):
-
-| Category | Example Hashtags |
-|----------|------------------|
-| Telescopes | #JWST #TESS #Kepler #Hubble |
-| Planet Types | #HotJupiter #SuperEarth #SubNeptune |
-| Habitability | #HabitableZone #Biosignatures |
-| Systems | #TRAPPIST1 #ProximaCentauri |
-
-Base hashtag always included: `#Exoplanets`
+### 🖼️ Figure Detection
+- Fetches Figure 1 from arXiv HTML beta pages
+- Falls back to ar5iv.org rendering
+- Topic-based fallback images (JWST, habitable zones, etc.)
+- Correct URL construction for relative paths
 
 ## 📁 File Structure
 
 ```
-your-repo/
+arifsolmaz.github.io/
 ├── .github/
 │   └── workflows/
-│       ├── update-papers.yml    # Fetches papers daily at 08:00 UTC
-│       └── tweet-paper.yml      # Tweets one paper hourly (09:00-23:00 UTC)
+│       ├── update-papers.yml        # Fetches papers daily at 02:00 UTC
+│       ├── tweet-paper.yml          # Tweets hourly during prime time
+│       └── generate-turkish-news.yml # Turkish news at 03:00 UTC
 ├── arxiv/
-│   ├── index.html               # Main webpage (with share buttons)
-│   ├── test_local.py            # Local testing script
+│   ├── index.html                   # Main webpage with date picker
 │   ├── data/
-│   │   ├── papers.json          # Cached paper data + tweet hooks
-│   │   └── tweeted.json         # Tracks tweeted papers
+│   │   ├── papers.json              # Current day's papers
+│   │   ├── tweeted.json             # Tracks tweeted papers
+│   │   └── archive/
+│   │       ├── index.json           # List of available dates
+│   │       ├── 2026-01-19.json      # Papers for specific date
+│   │       └── ...                  # Up to 90 days history
 │   └── scripts/
-│       ├── fetch_papers.py      # Fetches papers, generates summaries + tweet hooks
-│       └── post_twitter.py      # Posts paper as 2-tweet thread
+│       ├── fetch_papers.py          # Fetches papers, generates summaries
+│       ├── post_twitter.py          # Posts as 2-tweet thread
+│       ├── generate_turkish_news.py # Creates Turkish news articles
+│       └── split_archive.py         # Utility: split papers by date
+├── news.html                        # Turkish news page
+└── admin.html                       # Admin panel for editing
 ```
 
 ## 🚀 Setup Instructions
 
-### Step 1: Add Files to Your Repository
+### Step 1: Add Repository Secrets
 
-1. Copy the entire `arxiv/` folder to your `arifsolmaz.github.io` repository
-2. Copy the `.github/` folder to your repository root
+Go to **Settings** → **Secrets and variables** → **Actions** and add:
 
-### Step 2: Add Your Anthropic API Key
+| Secret Name | Required | Description |
+|-------------|----------|-------------|
+| `ANTHROPIC_API_KEY` | ✅ | For AI summaries |
+| `TWITTER_API_KEY` | Optional | For Twitter posting |
+| `TWITTER_API_SECRET` | Optional | For Twitter posting |
+| `TWITTER_ACCESS_TOKEN` | Optional | For Twitter posting |
+| `TWITTER_ACCESS_SECRET` | Optional | For Twitter posting |
 
-1. Go to your repository on GitHub
-2. Click **Settings** → **Secrets and variables** → **Actions**
-3. Click **New repository secret**
-4. Name: `ANTHROPIC_API_KEY`
-5. Value: Your Anthropic API key
+### Step 2: Enable Workflows
 
-### Step 3: Set Up Twitter/X Posting
+1. Go to **Actions** tab
+2. Enable workflows if prompted
+3. Run **Update Exoplanet Papers** manually for first run
 
-Add these 4 secrets to your repository:
+### Step 3: (Optional) Twitter Premium
 
-| Secret Name | Value |
-|-------------|-------|
-| `TWITTER_API_KEY` | Your API Key |
-| `TWITTER_API_SECRET` | Your API Secret |
-| `TWITTER_ACCESS_TOKEN` | Your Access Token |
-| `TWITTER_ACCESS_SECRET` | Your Access Token Secret |
+Add repository variable `TWITTER_PREMIUM` = `true` for longer tweets.
 
-⚠️ **Important**: Make sure your app has **Read and Write** permissions!
+## 🔄 Workflow Schedule
 
-### Step 4: Enable Twitter Premium (Optional)
+| Workflow | Schedule (UTC) | Description |
+|----------|----------------|-------------|
+| Update Papers | 02:00 Mon-Fri | Fetch new papers after arXiv announces |
+| Tweet Paper | Hourly 9-23 | Tweet one paper per hour |
+| Turkish News | 03:00 Mon-Fri | Generate Turkish translations |
 
-If you have Twitter Premium, enable longer tweets:
+*Note: arXiv announces papers at 20:00 ET (01:00 UTC), Mon-Fri only.*
 
-1. Go to Settings → Variables → Actions
-2. Add variable: `TWITTER_PREMIUM` = `true` (or `plus` for Premium+)
+## 🏷️ Exoplanet Classification
 
-### Step 5: Run the First Update
+Papers are classified as "exoplanet-focused" based on keywords:
 
-1. Go to **Actions** → **Update Exoplanet Papers**
-2. Click **Run workflow**
+| Category | Keywords |
+|----------|----------|
+| Core Terms | exoplanet, extrasolar planet |
+| Planet Types | hot jupiter, super-earth, sub-neptune |
+| Habitability | habitable zone, biosignature |
+| Methods | microlensing planet, transiting planet, radial velocity |
+| Systems | TRAPPIST-1, WASP-, TOI-, Kepler- |
+| Atmospheres | transmission spectrum, planetary atmosphere |
 
-## 🧪 Testing Locally
+## 🐦 Tweet Format
 
-```bash
-# Install dependencies
-pip install requests anthropic tweepy pillow
-
-# Set environment variables
-export ANTHROPIC_API_KEY='your-key'
-export TWITTER_API_KEY='...'  # Optional for testing
-
-# Run tests
-cd arxiv
-python test_local.py
-
-# Test with more papers
-python test_local.py --papers 5 --summaries 2 --hooks 2
-
-# Actually post (requires confirmation)
-python test_local.py --post
+### Tweet 1 (with figure image)
 ```
+[Paper Title]
 
-### What the test checks:
+[Author et al.]
 
-| Test | What it verifies |
-|------|------------------|
-| 📡 Fetch papers | arXiv API connection |
-| 🤖 Generate summaries | Anthropic API key |
-| 🎣 Generate tweet hooks | Hook/claim/evidence/question format |
-| 📊 Tweetability scoring | Paper ranking for engagement |
-| 🏷️ Hashtag extraction | Lowercase matching fix |
-| 📝 Thread formatting | 2-tweet structure |
-| 🖼️ Paper card generation | Fallback image creation |
-| 🐦 Twitter connection | API credentials |
-
-## 📝 Tweet Format
-
-### Tweet 1 (with image, no links)
-```
 [Hook: attention-grabbing finding]
 
 [Claim: what's new]
@@ -159,32 +127,58 @@ python test_local.py --post
 [Question: invite discussion]
 ```
 
-### Tweet 2 (reply with links)
+### Tweet 2 (reply)
 ```
-📄 [arXiv link]
+📄 arXiv: [link]
 📖 Full summary: [page link]
 
-#Exoplanets #JWST
+#Exoplanets #Astronomy #JWST
+```
+
+## 🧪 Local Testing
+
+```bash
+# Install dependencies
+pip install requests anthropic tweepy pillow
+
+# Set API key
+export ANTHROPIC_API_KEY='your-key'
+
+# Fetch papers
+cd arxiv/scripts
+python fetch_papers.py
+
+# Test figure detection
+python test_figure_fetch.py
+
+# Split existing papers into daily archives
+python split_archive.py
 ```
 
 ## 💰 Cost Estimate
 
 - ~$0.003-0.005 per paper summary
 - ~$0.001-0.002 per tweet hook
-- **~$1.50-2.50 per month** total
+- ~$0.002-0.004 per Turkish news article
+- **~$2-4 per month** total (typical usage)
 
 ## 🔧 Troubleshooting
 
-### Hashtags not matching
-- Fixed in this version: all keyword keys are now lowercase
+### Papers from wrong date showing
+- The fetch script now uses RSS feed only (today's papers)
+- API fallback only if RSS fails completely
 
-### Twitter showing "403 Forbidden"
-- Your app needs Read and Write permissions
+### Figures not loading
+- Check if arXiv has HTML version: `arxiv.org/html/[paper_id]`
+- Script tries arxiv.org/html first, then ar5iv.org
+
+### Twitter 403 error
+- App needs Read and Write permissions
 - Regenerate tokens after changing permissions
 
-### Paper cards not generating
-- Install PIL: `pip install pillow`
-- Check font availability in your environment
+### Turkish translation issues
+- Check admin panel to fix terminology
+- "ötegezegen" should be one word
 
 ## 📄 License
 
@@ -194,4 +188,4 @@ MIT License - Feel free to use and modify!
 
 - Paper data from [arXiv.org](https://arxiv.org)
 - AI summaries by [Claude](https://anthropic.com) (Anthropic)
-- Built for the exoplanet research community
+- Built for the exoplanet research community 🪐
