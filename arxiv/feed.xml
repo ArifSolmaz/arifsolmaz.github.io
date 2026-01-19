@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" 
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Exoplanet Papers | Daily arXiv Summaries</title>
+    <link>https://arifsolmaz.github.io/arxiv</link>
+    <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 19 Jan 2026 11:11:57 +0000</lastBuildDate>
+    <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
+    <image>
+      <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
+      <title>Exoplanet Papers | Daily arXiv Summaries</title>
+      <link>https://arifsolmaz.github.io/arxiv</link>
+    </image>
+    <item>
+      <title>KMT-2025-BLG-1616Lb: First Microlensing Bound Planet From DREAMS</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-11469</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-11469</guid>
+      <pubDate>Mon, 19 Jan 2026 11:11:57 +0000</pubDate>
+      <dc:creator>Hongjing Yang, Weicheng Zang, Yoon-Hyun Ryu, Takahiro Sumi, Jiyuan Zhang, Hongyu Li, Cheongho Han, Yuchen Tang, Qiyue Qian, Zhixing Li, Yuxin Shang, Xikai Shan, Shude Mao, Guillermo Damke, Alfredo Zenteno, Steve Heathcote, Konstantina Boutsia, Przemek Mr\&#x27;oz, Xiurui Zhao, Matthew Penny, Sean Terry, Patrick Tamburo, Timothy Cunningham, Quanzhi Ye, Eric W. Peng, Rachel Street, Katarzyna Kruszy\&#x27;nska, Etienne Bachelet, Yiannis Tsapras, Markus Hundertmark, Michael D. Albrow, Sun-Ju Chung, Andrew Gould, Kyu-Ha Hwang, Youn Kil Jung, In-Gu Shin, Yossi Shvartzvald, Jennifer C. Yee, Dong-Jin Kim, Chung-Uk Lee, Byeong-Gon Park, David P. Bennett, Ian A. Bond, Giuseppe Cataldo, Ryusei Hamada, Yuki Hirao, Asahi Idei, Shuma Makida, Shota Miyazaki, Tutumi Nagai, Togo Nagano, Seiya Nakayama, Mayu Nishio, Kansuke Nunota, Ryo Ogawa, Ryunosuke Oishi, Yui Okumoto, Nicholas J. Rattenbury, Yuki K. Satoh, Daisuke Suzuki, Motohide Tamura, Takuto Tamaoki, Hibiki Yama</dc:creator>
+      <description><![CDATA[Why It Matters
+This discovery represents a major milestone in planet hunting, marking the first bound planet detected by the new DREAMS survey using gravitational microlensing. The technique allows astronomers to find planets around distant stars that would be impossible to detect with traditional methods, opening up new frontiers in understanding planetary systems throughout our galaxy.
+What They Did
+Researchers used two telescope networks—the Korea Microlensing Telescope Network (KMTNet) and the DECam Rogue Earths and Mars Survey (DREAMS)—to observe a rare gravitational lensing event where a distant star's light was magnified by a planetary system passing in front of it. DREAMS's rapid-fire observations, taking images every minute, provided crucial data that resolved uncertainties in the planetary models and determined key characteristics of both the planet and its host star.
+Key Findings
+The discovered planet, designated KMT-2025-BLG-1616Lb, is a "super-Earth" with about 40 times the mass of our planet, orbiting a small red dwarf star roughly one-third the mass of our Sun. The planet sits approximately 1.6 astronomical units from its host star (comparable to the distance between our Sun and Mars), and the entire system is located about 7,500 parsecs away toward the center of our galaxy. The host star is extremely faint, demonstrating DREAMS's impressive ability to study very distant and dim stellar systems.
+Looking Forward
+This success proves that DREAMS can detect much smaller free-floating planets—those not bound to any star—including Mars-sized planets in the galaxy's central region and even Moon-sized planets in our local galactic neighborhood. This capability promises to revolutionize our understanding of planetary formation and the population of rogue planets drifting alone through space.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Central flashes during stellar occultations. Effects of diffraction, interferences, and stellar diameter</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-11380</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-11380</guid>
+      <pubDate>Mon, 19 Jan 2026 11:11:57 +0000</pubDate>
+      <dc:creator>Bruno Sicardy, Luc Dettwiller</dc:creator>
+      <description><![CDATA[Why It Matters
+When a distant star passes behind a planet or moon, astronomers can study the object's atmosphere by watching how the starlight dims and flickers. This research reveals why these events sometimes produce surprising bright flashes at the center of the shadow—a phenomenon that could significantly improve our ability to probe the atmospheres of worlds throughout our solar system.
+What They Did
+The researchers used advanced physics principles to model what happens to starlight as it bends around planets and moons with atmospheres, particularly focusing on wave effects like diffraction and interference. They calculated how factors like atmospheric density, the size of the star, and the wavelength of light affect the intensity and shape of the central flash that can appear in the shadow.
+Key Findings
+The team discovered that central flashes can be dramatically amplified—sometimes becoming 10,000 to 100,000 times brighter than expected for distant worlds like Pluto and Triton when observed with point-like stars. The flash intensity depends heavily on atmospheric properties: thinner atmospheres create one type of amplification, while denser atmospheres that can focus starlight create even more intense flashes. The size of the star itself acts as a smoothing factor, reducing the flash intensity but still leaving it remarkably bright—about 50 times normal brightness for Pluto occultations and 200 times for Triton. These flashes are concentrated in extremely small areas, just meters wide in the shadow.
+Looking Forward
+This research provides astronomers with better tools to predict and interpret stellar occultation observations, potentially leading to more precise measurements of planetary atmospheres. The findings suggest that using longer wavelengths like radio waves could enhance these diffraction effects, opening new possibilities for studying the atmospheric structure of distant worlds in our solar system.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Aligned, Misaligned and Polar Orbits of Hot Jupiters: Measuring Spin-Orbit Angles via Doppler Tomography with HARPS-N</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-11313</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-11313</guid>
+      <pubDate>Mon, 19 Jan 2026 11:11:57 +0000</pubDate>
+      <dc:creator>Z. Balk\&#x27;oov\&#x27;a, J. \v{Z}\&#x27;ak, M. Skarka, E. Knudstrup, P. Gajdo\v{s}, A. Bignamini, P. Kab\&#x27;ath</dc:creator>
+      <description><![CDATA[Why It Matters
+Hot Jupiters—massive planets that orbit extremely close to their stars—are cosmic puzzles that challenge our understanding of how planetary systems form and evolve. By measuring how these planets' orbits align with their host stars' rotation, astronomers can piece together the dramatic migration stories that brought these giants so close to their suns.
+What They Did
+The researchers used a technique called Doppler tomography to study three hot Jupiter systems, measuring how each planet's orbit is tilted relative to its star's equator. They employed multiple independent analysis methods using the HARPS-N spectrograph to detect tiny "shadows" in starlight caused by planets crossing in front of their rotating host stars, ensuring their measurements were robust and reliable.
+Key Findings
+The team discovered a fascinating variety of orbital configurations among the three systems studied. HAT-P-49b travels in a dramatic polar orbit, circling nearly perpendicular to its star's equator at an angle of about 85 degrees—like a planet going "over the poles" rather than around the equator. HAT-P-57Ab follows a perfectly aligned orbit, staying close to its star's equatorial plane. Most intriguingly, XO-3Ab occupies a middle ground with a 38-degree tilt—an orientation that's relatively rare among known hot Jupiters. The study also revealed that different analysis techniques can sometimes produce varying results, highlighting the importance of using multiple approaches.
+Looking Forward
+These diverse orbital alignments provide crucial clues about the violent histories that shaped these planetary systems, from gravitational battles with other planets to interactions with stellar companions. As astronomers continue mapping spin-orbit angles across more hot Jupiter systems, they'll build a clearer picture of the chaotic processes that sculpt planetary architectures throughout the universe.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Detection of four cold Jupiters through combined analyses of radial velocity and astrometry data</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-11280</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-11280</guid>
+      <pubDate>Mon, 19 Jan 2026 11:11:57 +0000</pubDate>
+      <dc:creator>Yiyun Wu, Guang-Yao Xiao, R. Paul Butler, Fabo Feng, Stephen A. Shectman, Jeffrey D. Crane, Johanna K. Teske, Sharon X. Wang, Yuri Beletsky, Jennifer A. Burt, Tansu Daylan, Matias Diaz, Diana Dragomir, Erin Flowers, Sydney Jenkins, Shubham Kanodia, Sangeetha Nandakumar, Malena Rice, Avi Shporer, Sam Yee, George Zhou, Zitao Lin</dc:creator>
+      <description><![CDATA[Why It Matters
+Cold Jupiters—giant planets that orbit far from their stars like our own Jupiter—are key to understanding how planetary systems form and evolve over billions of years. Despite decades of planet hunting, we've found relatively few of these distant giants, making it crucial to discover more to understand whether systems like our own Solar System are common or rare.
+What They Did
+Researchers combined two powerful planet-detection techniques: radial velocity measurements (which detect the tiny wobble a planet causes in its star) and astrometry from the Gaia space telescope (which precisely tracks stellar positions over time). By analyzing 25 years of data together using advanced computer modeling, they could determine not just that planets exist, but also their true masses and three-dimensional orbital paths—information that's impossible to get from either method alone.
+Key Findings
+The team discovered four new cold Jupiters orbiting their stars at distances comparable to or greater than Jupiter's orbit around our Sun. Two of these planets are the first confirmed worlds in their respective systems, with masses ranging from about one to five times Jupiter's mass. One system contains two planets that may have tilted, misaligned orbits—a rare configuration that could reveal how gravitational interactions reshape planetary systems over time. Most remarkably, they found what appears to be the longest-period Jupiter-like planet ever discovered, taking over 28 years to complete one orbit.
+Looking Forward
+These discoveries suggest that many more cold Jupiters remain hidden, waiting to be found as the Gaia telescope continues its mission. One of the newly discovered planets may even be bright enough for future ground-based telescopes to photograph directly, potentially allowing astronomers to study its atmosphere and composition in unprecedented detail.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Rotation Period of 3I/ATLAS After Perihelion from Jet Position Angle Wobble and Photometric Variability</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-10860</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-10860</guid>
+      <pubDate>Mon, 19 Jan 2026 11:11:57 +0000</pubDate>
+      <dc:creator>Toni Scarmato, Abraham Loeb</dc:creator>
+      <description><![CDATA[Why It Matters
+Scientists have successfully measured how fast a mysterious interstellar visitor is spinning after it swung around our Sun. This comet, called 3I/ATLAS, came from outside our solar system, and understanding its rotation helps us learn about objects from other star systems and how they behave when heated by our Sun.
+What They Did
+Researchers used two different methods to clock the comet's spin rate: they tracked how a jet of gas and dust streaming from the comet wobbled over time using Hubble Space Telescope images, and they measured how the comet's brightness changed as it rotated using ground-based telescopes. They analyzed data collected between November and December 2025, applying mathematical techniques to find repeating patterns that would reveal the rotation period.
+Key Findings
+The team found that 3I/ATLAS completes one full rotation approximately every 7.1 hours after passing closest to the Sun. The jet-wobble method gave a period of 7.20 hours, while the brightness measurements yielded 7.136 hours – remarkably close agreement between two independent techniques. The small difference likely comes from measurement uncertainties and the complex way the comet's surface reflects sunlight. The prominent jet feature appears to wobble about 20 degrees around the comet's main rotation axis, and this axis points roughly toward the Sun.
+Looking Forward
+These precise rotation measurements will help astronomers better understand how interstellar comets respond to solar heating and how their shape and internal structure affect their spin. As more interstellar visitors are discovered, this research provides a template for studying these rare cosmic messengers and comparing objects from different stellar neighborhoods.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>The impact of disc photoevaporation on the long-term evolution of giant planets in mean motion resonances</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-10811</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-10811</guid>
+      <pubDate>Mon, 19 Jan 2026 11:11:57 +0000</pubDate>
+      <dc:creator>Emmanuel J. Greenfield, James E. Owen</dc:creator>
+      <description><![CDATA[Why It Matters
+Giant planets in distant solar systems often orbit in synchronized patterns called "resonances," where their orbital periods are linked in simple ratios like 2:1 or 3:2. Understanding how these delicate cosmic dances survive or break apart helps explain why we see certain planetary arrangements in the universe and not others, with direct implications for detecting these worlds with current and future space missions.
+What They Did
+The researchers used sophisticated computer simulations to model how intense radiation from young stars—called photoevaporation—affects pairs of giant planets locked in orbital resonances. They tested various scenarios by adjusting factors like disk mass, planet size, and the strength of the stellar radiation to see how these cosmic partnerships evolve over millions of years.
+Key Findings
+Photoevaporation acts like a cosmic game-changer, creating opposite effects depending on the situation. When stellar radiation strips away gas from the space between planets, it can actually stabilize some resonances that would normally fall apart by reducing the gravitational interactions that typically break these partnerships. However, this same process can destabilize other resonance types through uneven gravitational forces. The 3:2 resonances (where one planet completes three orbits for every two of its partner) benefit most from this stabilizing effect, while 2:1 resonances can become more vulnerable under certain conditions. Regardless of whether resonances survive, the planets typically end up with more stretched, elliptical orbits.
+Looking Forward
+These findings reveal that predicting planetary system evolution is more complex than previously thought, as the same physical process can either preserve or destroy orbital partnerships depending on the specific circumstances. This research will help astronomers better interpret observations from the Gaia space telescope and other missions hunting for exoplanets by providing more accurate predictions of what planetary arrangements we should expect to find.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Metal Pipe: A Broadly-Applicable Stellar Abundance Pipeline Using Isochronal Parameters</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-10794</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-10794</guid>
+      <pubDate>Mon, 19 Jan 2026 11:11:57 +0000</pubDate>
+      <dc:creator>Jared R. Kolecki, Lauren M. Weiss</dc:creator>
+      <description><![CDATA[Why It Matters
+Understanding the chemical makeup of stars that host planets is crucial for learning how planetary systems form and evolve. Current methods for measuring stellar properties work well for Sun-like stars but struggle with cooler, smaller stars that make up the majority of our galaxy, limiting our ability to study exoplanet populations comprehensively.
+What They Did
+The researchers developed "Metal Pipe," a new computer program that analyzes high-resolution starlight spectra to determine stellar properties like temperature, mass, and chemical abundances. They combined existing stellar analysis tools with photometric data (brightness measurements) and carefully selected spectral lines to create a method that works across different types of stars, then tested it on 503 previously studied stars.
+Key Findings
+Metal Pipe successfully measured key stellar properties including temperature, surface gravity, mass, radius, and luminosity, plus the abundances of 10 important chemical elements including carbon, oxygen, iron, and others. When compared to previous measurements of the same stars, the new method showed excellent agreement, with typical uncertainties of about 100 Kelvin in temperature and small fractional errors in chemical abundances. The accuracy achieved matches the expected measurement uncertainties, demonstrating the reliability of their approach. Most importantly, the method is designed to work across a broader range of star types than existing tools.
+Looking Forward
+The team plans to extend Metal Pipe's capabilities to cooler M dwarf stars, which are the most common type in our galaxy and frequent hosts of potentially habitable planets. This advancement will enable astronomers to build comprehensive catalogs of stellar chemical compositions across the full range of exoplanet host stars, providing crucial data for understanding planet formation processes.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Reinforcement Learning to Discover a NorthEast Monsoon Index for Monthly Rainfall Prediction in Thailand</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-10181</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-10181</guid>
+      <pubDate>Mon, 19 Jan 2026 11:11:57 +0000</pubDate>
+      <dc:creator>Kiattikun Chobtham</dc:creator>
+      <description><![CDATA[Why It Matters
+Predicting rainfall months in advance is crucial for agriculture, water management, and disaster preparation, but current methods struggle with local weather patterns. While global climate patterns like El Niño help forecast weather worldwide, scientists need more precise tools to predict rainfall in specific regions like Thailand, where monsoons dramatically affect millions of people's lives and livelihoods.
+What They Did
+The researchers used artificial intelligence to create a new "NorthEast monsoon index" by analyzing sea surface temperatures during winter monsoon seasons. They employed a sophisticated AI system called Deep Q-Network (like the AI that learned to play video games) to automatically explore different ocean areas and identify which regions' temperatures best predict Thailand's rainfall patterns. The team also grouped Thailand's weather stations into 12 clusters to account for different regional climate behaviors.
+Key Findings
+The AI successfully discovered optimal ocean regions whose temperatures strongly correlate with Thailand's seasonal rainfall patterns. When scientists incorporated this new monsoon index into their rainfall prediction models, forecast accuracy improved significantly across most of Thailand. The enhanced system substantially reduced prediction errors for 12-month rainfall forecasts, making long-term weather predictions more reliable. This improvement was particularly notable because it addressed the gap between broad global climate indices and the specific local weather patterns that matter most for regional planning.
+Looking Forward
+This breakthrough demonstrates how AI can discover new climate relationships that human scientists might miss, potentially revolutionizing regional weather forecasting. The approach could be adapted to develop specialized climate indices for other regions worldwide, improving agricultural planning and disaster preparedness globally.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Water Production of Interstellar Comet 3I/ATLAS from SOHO/SWAN Observations after Perihelion</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2512-22354</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2512-22354</guid>
+      <pubDate>Mon, 19 Jan 2026 11:11:57 +0000</pubDate>
+      <dc:creator>M. R. Combi, T. M\^akinen, J. -L. Bertaux, E. Quemerais, S. Ferron, R. Lallement, W. Schmidt</dc:creator>
+      <description><![CDATA[Why It Matters
+Scientists have successfully measured water production from 3I/ATLAS, only the second confirmed interstellar comet ever discovered, providing rare insights into objects from beyond our solar system. Understanding how these cosmic visitors behave helps us learn about the composition and conditions in other star systems, offering clues about planetary formation throughout the galaxy.
+What They Did
+Researchers used the SWAN camera aboard the SOHO spacecraft to observe hydrogen gas surrounding comet 3I/ATLAS starting nine days after its closest approach to the Sun in November 2025. They applied a well-tested method used on over 90 previous comets to calculate how much water the comet was producing by measuring the hydrogen atoms released when water molecules break apart in space.
+Key Findings
+The interstellar comet was producing water at a rate of 3.17 × 10²⁹ molecules per second when first observed at 1.4 times Earth's distance from the Sun—that's roughly 300 billion billion billion water molecules every second. This production rate steadily declined over the following weeks, dropping to about one-tenth that amount by early December as the comet moved farther from the Sun's heat. The decrease followed expected patterns seen in comets from our own solar system, suggesting similar composition and behavior. These measurements represent the first detailed water production analysis of this particular interstellar visitor.
+Looking Forward
+This successful observation demonstrates that we can study interstellar comets using existing space-based instruments, setting the stage for more comprehensive analysis of future visitors from other star systems. As we detect more interstellar objects, these techniques will help build a catalog of compositions from different regions of the galaxy, potentially revealing how planetary systems form under varying cosmic conditions.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>A JWST Transit of a Jupiter Analog I: Constraints on the Oblateness of Kepler-167e</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2511-02067</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2511-02067</guid>
+      <pubDate>Mon, 19 Jan 2026 11:11:57 +0000</pubDate>
+      <dc:creator>Ben Cassese, David Kipping, Quentin Changeat, Daniel A. Yahalomi, Justin Vega, Yayaati Chachan, Billy Edwards, Alex Teachey</dc:creator>
+      <description><![CDATA[Why It Matters
+Scientists used the James Webb Space Telescope to study whether a distant Jupiter-like planet is flattened at its poles due to rotation, just like our own gas giant planets. This represents one of the first attempts to measure such subtle planetary shapes outside our solar system, opening new ways to understand how these distant worlds spin and evolved.
+What They Did
+Researchers observed Kepler-167e, a Jupiter-sized planet located over 1,000 light-years away, as it passed in front of its star during a nearly 60-hour observation period in October 2024. They developed multiple independent analysis methods, including a new data processing pipeline called "katahdin," to search for tiny variations in the transit that would reveal if the planet is squashed into an oval shape rather than perfectly round.
+Key Findings
+The team couldn't definitively determine whether Kepler-167e is oblate (flattened) or spherical, as both models fit the data equally well. They established that if the planet is flattened, it's spinning no faster than once every 7.11 hours - much quicker than Jupiter's 10-hour day. The most conservative analysis suggests the planet's oblateness is less than 9.7%, though some methods yielded tighter constraints of 6.5%. Technical challenges from long-term trends in the telescope data limited their ability to make more precise measurements.
+Looking Forward
+This pioneering study demonstrates that JWST has the potential to measure planetary shapes beyond our solar system, but reveals that better techniques for handling telescope systematics will be needed for more precise results. Future observations could eventually tell us how fast distant planets rotate and provide insights into their formation and internal structure.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Leveraging Photometry for Deconfusion of Directly Imaged Multi-Planet Systems</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2510-09841</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2510-09841</guid>
+      <pubDate>Mon, 19 Jan 2026 11:11:57 +0000</pubDate>
+      <dc:creator>Samantha N. Hasler, Leonid Pogorelyuk, Riley Fitzgerald, Kerri Cahoy, Rhonda Morgan</dc:creator>
+      <description><![CDATA[Why It Matters
+Future space telescopes like the Habitable Worlds Observatory will directly photograph Earth-like planets around other stars to search for signs of life. However, when multiple planets orbit the same star, astronomers face a challenging puzzle: they can see the planets as tiny dots of light, but they don't know which dot corresponds to which planet or which ones might be in the "habitable zone" where liquid water could exist.
+What They Did
+The researchers developed a new method to solve this cosmic identity crisis by carefully measuring how bright each planet appears over time as it orbits its star. Just like our Moon goes through phases, these distant planets also appear brighter or dimmer depending on their position in their orbit and how much starlight they reflect back toward Earth.
+Key Findings
+The team tested their brightness-measuring technique on computer simulations of particularly tricky multi-planet systems where traditional methods struggled to identify which planet was which. They found that incorporating these brightness measurements successfully solved the confusion problem in more than half of the most challenging cases. The method worked across different viewing angles, from systems we see edge-on to those we view from above. By tracking how each planet's brightness changes over time, astronomers can create unique "fingerprints" that help distinguish one world from another.
+Looking Forward
+This breakthrough will be crucial for upcoming missions designed to find potentially habitable worlds around other stars. When astronomers can properly identify which planet is which, they can determine which ones orbit in the habitable zone and focus their limited observing time on the most promising candidates for finding Earth-like conditions and possibly even signs of life.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>The ExoGRAVITY survey: A K-band spectral library of giant exoplanet and brown dwarf companions</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2510-08691</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2510-08691</guid>
+      <pubDate>Mon, 19 Jan 2026 11:11:57 +0000</pubDate>
+      <dc:creator>J. Kammerer, T. O. Winterhalder, S. Lacour, T. Stolker, G. -D. Marleau, W. O. Balmer, A. F. Moore, L. Piscarreta, C. Toci, A. M\&#x27;erand, M. Nowak, E. L. Rickman, L. Pueyo, N. Pourr\&#x27;e, E. Nasedkin, J. J. Wang, G. Bourdarot, F. Eisenhauer, Th. Henning, R. Garcia Lopez, E. F. van Dishoeck, T. Forveille, J. D. Monnier, R. Abuter, A. Amorim, M. Benisty, J. -P. Berger, H. Beust, S. Blunt, A. Boccaletti, M. Bonnefoy, H. Bonnet, M. S. Bordoni, W. Brandner, F. Cantalloube, P. Caselli, W. Ceva, B. Charnay, G. Chauvin, A. Chavez, A. Chomez, E. Choquet, V. Christiaens, Y. Cl\&#x27;enet, V. Coud\&#x27;e du Foresto, A. Cridland, R. Davies, R. Dembet, J. Dexter, A. Drescher, G. Duvert, A. Eckart, C. Fontanive, N. M. F\&quot;orster Schreiber, P. Garcia, E. Gendron, R. Genzel, S. Gillessen, J. H. Girard, S. Grant, J. Hagelberg, X. Haubois, G. Hei{\ss}el, S. Hinkley, S. Hippler, M. Houll\&#x27;e, Z. Hubert, L. Jocou, M. Keppler, P. Kervella, L. Kreidberg, N. T. Kurtovic, A. -M. Lagrange, V. Lapeyr\`ere, J. -B. Le Bouquin, D. Lutz, A. -L. Maire, F. Mang, E. C. Matthews, P. Molli\`ere, C. Mordasini, D. Mouillet, T. Ott, G. P. P. L. Otten, C. Paladini, T. Paumard, K. Perraut, G. Perrin, O. Pfuhl, D. C. Ribeiro, Z. Rustamkulov, D. S\&#x27;egransan, J. Shangguan, T. Shimizu, M. Samland, D. Sing, J. Stadler, O. Straub, C. Straubmeier, E. Sturm, L. J. Tacconi, S. Udry, A. Vigan, F. Vincent, S. D. von Fellenberg, F. Widmann, J. Woillez, S. Yazici, the GRAVITY Collaboration</dc:creator>
+      <description><![CDATA[Why It Matters
+Scientists have created the first comprehensive library of detailed spectra from giant exoplanets and brown dwarfs (failed stars) using cutting-edge interferometry technology. This breakthrough allows astronomers to directly study the atmospheric chemistry and physical properties of these distant worlds, providing crucial insights into how planetary systems form and evolve.
+What They Did
+Researchers used GRAVITY, a sophisticated instrument that combines light from multiple telescopes at the Very Large Telescope Interferometer, to directly observe 39 substellar companions orbiting other stars. They analyzed infrared light in the K-band (around 2.0-2.4 micrometers) to extract detailed spectra that reveal the chemical fingerprints of these objects' atmospheres.
+Key Findings
+The study captured objects ranging from late M-type to late T-type brown dwarfs, including the complete L-T transition sequence where atmospheric chemistry dramatically changes. In cooler objects, the team observed a shift from carbon monoxide-dominated atmospheres in M and L dwarfs to methane-dominated atmospheres in T dwarfs. The spectra alone could determine these objects' total energy output (bolometric luminosity) within about 35% accuracy. Most importantly, the derived masses matched previous measurements, validating this technique for studying distant worlds, though one object (HD 4113 c) appears unusually dim for its estimated mass.
+Looking Forward
+This spectral library establishes a powerful new method for studying exoplanet atmospheres and brown dwarf properties through direct observation rather than indirect detection methods. When combined with precise mass measurements from future observations, these spectra could reveal how much heat these objects retained from their formation, providing key insights into planetary formation processes across the galaxy.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Dual-Backend Multibeam Position Switching Targeted SETI Observations toward Nearby Active Planet-Hosting Systems with FAST</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2509-09654</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2509-09654</guid>
+      <pubDate>Mon, 19 Jan 2026 11:11:57 +0000</pubDate>
+      <dc:creator>Jian-Kang Li, Zhen-Zhao Tao, Pei Wang, Tong-Jie Zhang</dc:creator>
+      <description><![CDATA[Why It Matters
+Scientists used the world's largest radio telescope to listen for alien radio signals from nearby star systems that host planets, marking one of the most sensitive searches ever conducted for extraterrestrial technology. This research helps establish scientific limits on how powerful alien transmitters might be in our cosmic neighborhood, advancing our understanding of whether we're alone in the universe.
+What They Did
+Researchers employed China's massive FAST telescope, spanning 500 meters across, to monitor 7 nearby "active" stars known to have planetary systems for potential alien radio transmissions. They used sophisticated techniques to track multiple sky positions simultaneously while searching for two types of artificial signals: narrow radio beams that might drift in frequency (like tuning a radio) and repetitive pulsed signals similar to lighthouse beams.
+Key Findings
+The team detected no credible alien radio signatures from any of the target star systems during their observations. However, this "null result" allowed them to set important scientific boundaries on what kinds of alien transmitters could exist undetected in these systems. They determined that any narrow-beam alien transmitters would need to be less powerful than about 400 million watts, while any pulsed beacon transmitters would need to be weaker than 18 billion watts to have escaped detection. These power limits are remarkably sensitive, roughly equivalent to detecting transmitters thousands of times more powerful than Earth's strongest radio broadcasts from distances of many light-years.
+Looking Forward
+These results provide crucial data points for the ongoing scientific search for extraterrestrial intelligence, helping researchers refine their search strategies and understand the detection limits of current technology. As FAST continues similar observations of more star systems, astronomers will build a comprehensive map of where powerful alien transmitters definitely don't exist, ultimately helping focus future searches on the most promising cosmic targets.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Discovery of a dwarf planet candidate in an extremely wide orbit: 2017 OF201</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2505-15806</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2505-15806</guid>
+      <pubDate>Mon, 19 Jan 2026 11:11:57 +0000</pubDate>
+      <dc:creator>Sihao Cheng, Jiaxuan Li, Eritas Yang</dc:creator>
+      <description><![CDATA[Why It Matters
+Astronomers have discovered one of the most distant objects ever found in our solar system—a dwarf planet candidate that travels so far out it reaches the inner edge of the mysterious Oort cloud, where comets originate. This discovery challenges existing theories about a hypothetical ninth planet and suggests there may be many more large, hidden objects lurking in the outer reaches of our solar system.
+What They Did
+Researchers tracked the object called 2017 OF201 for over two decades, taking 24 precise measurements to map its incredibly stretched-out orbit around the Sun. They used these observations to calculate the object's size, distance, and orbital path, comparing its characteristics to other known distant solar system objects.
+Key Findings
+The dwarf planet candidate is currently about 90 times farther from the Sun than Earth is, but its extreme oval-shaped orbit carries it as close as 45 times Earth's distance and as far as 830 times that distance. At an estimated 700 kilometers in diameter, it's roughly the size of Texas and among the largest objects known in this remote region. The object's orbital pattern doesn't match the clustering seen in other extremely distant objects, which weakens evidence for the proposed Planet Nine. If similar objects exist throughout this region, they could collectively contain as much material as 1% of Earth's mass.
+Looking Forward
+This discovery suggests our solar system's outer edges harbor many more large objects than previously thought, potentially revolutionizing our understanding of how the solar system formed and evolved. As astronomers continue searching these distant regions, they may uncover an entirely new population of dwarf planets that could help explain the mysterious gravitational influences shaping the outer solar system.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Current Theories of Lunar Ice</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2502-06056</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2502-06056</guid>
+      <pubDate>Mon, 19 Jan 2026 11:11:57 +0000</pubDate>
+      <dc:creator>Norbert Schorghofer</dc:creator>
+      <description><![CDATA[Why It Matters
+Understanding where water ice exists on the Moon is crucial for future human exploration and potential lunar bases, as this ice could provide drinking water, oxygen for breathing, and hydrogen for rocket fuel. The Moon's polar regions may harbor billions of tons of frozen water in permanently shadowed craters, making them prime targets for upcoming missions.
+What They Did
+The researchers conducted a comprehensive review of different scientific theories about how water ice forms and survives on the Moon, comparing these theoretical models with actual observations from spacecraft and lunar missions. They focused on examining the widely-accepted "standard model" that explains ice accumulation in permanently shadowed polar craters against various observational evidence collected over recent decades.
+Key Findings
+The standard theory holds up remarkably well against most observational data, supporting the idea that water ice began accumulating in polar craters once the Moon's axis tilted to its current position, creating permanent shadows. This model successfully explains the major patterns scientists observe in lunar ice distribution and behavior. However, the review identified a few unexplained observational claims that don't quite fit the standard model, suggesting our understanding may need some refinement. Overall, the evidence strongly supports the existence of substantial ice deposits in the Moon's polar cold traps.
+Looking Forward
+These findings validate current mission planning strategies that target permanently shadowed regions for ice extraction and utilization. As more sophisticated instruments visit the Moon in coming years, scientists will be able to test the remaining uncertainties in lunar ice theory and refine our understanding of these valuable resources.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+  </channel>
+</rss>
