@@ -1,11 +1,8 @@
 #!/usr/bin/env python3
 """
-Fetch exoplanet papers from arXiv and generate AI summaries.
+Fetch exoplanet papers from arXiv RSS feed and generate AI summaries.
 
-FIXED: Now uses actual arXiv announcement dates instead of script run time.
-- Detects when no new papers (holidays, weekends)
-- Uses most recent paper's published date as the announcement date
-- Preserves existing data when arXiv has no new announcements
+Uses RSS feed to get actual daily announcement batches (not API which mixes dates).
 """
 
 import json
@@ -14,7 +11,7 @@ import re
 import time
 import requests
 import xml.etree.ElementTree as ET
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, timezone
 from pathlib import Path
 
 try:
@@ -25,42 +22,32 @@ except ImportError:
 # Configuration
 ARXIV_CATEGORY = "astro-ph.EP"
 MAX_PAPERS = 25
-FETCH_MULTIPLIER = 3  # Fetch 3x more to ensure enough after filtering
 
 SCRIPT_DIR = Path(__file__).parent
 OUTPUT_FILE = SCRIPT_DIR / "data" / "papers.json"
 ARCHIVE_DIR = SCRIPT_DIR / "data" / "archive"
 ARCHIVE_INDEX = ARCHIVE_DIR / "index.json"
 
-# Tweetability scoring - higher = more tweetable
+# Tweetability scoring
 TWEETABILITY_KEYWORDS = {
-    # High interest discoveries
     "habitable": 15, "earth-like": 15, "earth-sized": 12, "potentially habitable": 20,
     "water": 8, "ocean": 10, "life": 12, "biosignature": 15, "oxygen": 10,
     "jwst": 12, "james webb": 12, "webb telescope": 12,
     "first": 10, "discovery": 8, "detected": 6, "confirmed": 8,
     "nearest": 10, "closest": 10, "proxima": 8,
     "trappist": 10, "kepler": 5, "tess": 5,
-    
-    # Interesting planet types
     "hot jupiter": 6, "super-earth": 8, "mini-neptune": 6,
     "rogue planet": 12, "free-floating": 10,
-    
-    # Atmosphere studies
     "atmosphere": 5, "spectrum": 4, "spectroscopy": 4,
     "clouds": 5, "weather": 6, "climate": 5,
-    
-    # Orbital dynamics
     "migration": 4, "resonance": 4, "tidal": 4,
-    
-    # Lower interest (but still astro-ph.EP)
     "asteroid": -2, "comet": -2, "kuiper": -3, "debris disk": -2,
     "solar system": -5, "mars": -5, "venus": -3, "jupiter": -2,
 }
 
 
 def clean_latex_name(name: str) -> str:
-    """Convert LaTeX escapes to Unicode characters in author names."""
+    """Convert LaTeX escapes to Unicode characters."""
     latex_map = {
         r"\'a": "á", r"\'e": "é", r"\'i": "í", r"\'o": "ó", r"\'u": "ú",
         r'\"a': "ä", r'\"e': "ë", r'\"i': "ï", r'\"o': "ö", r'\"u': "ü",
@@ -78,10 +65,7 @@ def clean_latex_name(name: str) -> str:
 
 
 def is_exoplanet_paper(title: str, abstract: str) -> bool:
-    """
-    Determine if a paper is specifically about exoplanets.
-    Uses strict matching to separate exoplanet papers from general planetary science.
-    """
+    """Determine if a paper is specifically about exoplanets."""
     text = f"{title} {abstract}".lower()
     
     strict_exoplanet_keywords = [
@@ -108,127 +92,117 @@ def is_exoplanet_paper(title: str, abstract: str) -> bool:
     for keyword in strict_exoplanet_keywords:
         if keyword in text:
             return True
-    
     return False
 
 
 def calculate_tweetability_score(paper: dict) -> int:
-    """Calculate how 'tweetable' a paper is based on keywords."""
+    """Calculate how 'tweetable' a paper is."""
     text = f"{paper['title']} {paper['abstract']}".lower()
     score = 0
-    
     for keyword, points in TWEETABILITY_KEYWORDS.items():
         if keyword.lower() in text:
             score += points
-    
     return score
 
 
-def get_announcement_date_from_papers(papers: list[dict]) -> str:
+def fetch_rss_papers(category: str) -> tuple[list[dict], str]:
     """
-    Determine the arXiv announcement date from paper metadata.
+    Fetch papers from arXiv RSS feed.
+    Returns (papers, announcement_date).
     
-    arXiv announces papers at 20:00 ET (01:00 UTC next day).
-    The 'published' field gives us when papers were made public.
+    RSS feed contains ONLY the most recent announcement batch.
     """
-    if not papers:
-        return datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    rss_url = f"http://export.arxiv.org/rss/{category}"
     
-    # Get the most recent paper's published date
-    # This represents the arXiv announcement batch
-    latest_published = None
-    for paper in papers:
-        pub_str = paper.get("published", "")
-        if pub_str:
-            try:
-                pub_date = datetime.fromisoformat(pub_str.replace("Z", "+00:00"))
-                if latest_published is None or pub_date > latest_published:
-                    latest_published = pub_date
-            except ValueError:
-                continue
-    
-    if latest_published:
-        # Return just the date part (YYYY-MM-DD)
-        return latest_published.strftime("%Y-%m-%d")
-    
-    return datetime.now(timezone.utc).strftime("%Y-%m-%d")
-
-
-def fetch_arxiv_papers(category: str, max_results: int = 15) -> list[dict]:
-    """Fetch recent papers from arXiv API and filter for exoplanet content."""
-    
-    fetch_count = max_results * FETCH_MULTIPLIER
-    
-    base_url = "http://export.arxiv.org/api/query"
-    params = {
-        "search_query": f"cat:{category}",
-        "start": 0,
-        "max_results": fetch_count,
-        "sortBy": "submittedDate",
-        "sortOrder": "descending"
-    }
-    
-    response = requests.get(base_url, params=params, timeout=30)
+    response = requests.get(rss_url, timeout=30)
     response.raise_for_status()
     
     root = ET.fromstring(response.content)
-    ns = {"atom": "http://www.w3.org/2005/Atom", "arxiv": "http://arxiv.org/schemas/atom"}
     
-    all_papers = []
-    for entry in root.findall("atom:entry", ns):
-        arxiv_id = entry.find("atom:id", ns).text
-        paper_id = arxiv_id.split("/abs/")[-1]
+    # Get announcement date from channel
+    # RSS format: <dc:date>2026-01-19</dc:date>
+    namespaces = {
+        'dc': 'http://purl.org/dc/elements/1.1/',
+        'rdf': 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'
+    }
+    
+    # Try to get date from dc:date
+    date_elem = root.find('.//dc:date', namespaces)
+    if date_elem is not None and date_elem.text:
+        announcement_date = date_elem.text[:10]  # Get YYYY-MM-DD part
+    else:
+        # Fallback: use today
+        announcement_date = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    
+    papers = []
+    
+    # Parse items (papers)
+    for item in root.findall('.//item'):
+        # Get link and extract paper ID
+        link = item.find('link')
+        if link is None or link.text is None:
+            continue
         
-        title = entry.find("atom:title", ns).text
-        title = " ".join(title.split())
+        # Link format: http://arxiv.org/abs/2601.12345
+        paper_id = link.text.split('/abs/')[-1]
         
-        abstract = entry.find("atom:summary", ns).text
+        # Get title (remove "arXiv:" prefix if present)
+        title_elem = item.find('title')
+        title = title_elem.text if title_elem is not None else ""
+        title = re.sub(r'^arXiv:\d+\.\d+\s*', '', title)  # Remove arXiv ID prefix
+        title = " ".join(title.split())  # Clean whitespace
+        
+        # Get description (abstract)
+        desc_elem = item.find('description')
+        abstract = desc_elem.text if desc_elem is not None else ""
+        # Clean HTML tags and extra whitespace
+        abstract = re.sub(r'<[^>]+>', '', abstract)
         abstract = " ".join(abstract.split())
         
-        authors = [
-            clean_latex_name(author.find("atom:name", ns).text)
-            for author in entry.findall("atom:author", ns)
-        ]
+        # Get authors from dc:creator
+        creator_elem = item.find('dc:creator', namespaces)
+        if creator_elem is not None and creator_elem.text:
+            # Format: "Author1, Author2, Author3"
+            authors = [clean_latex_name(a.strip()) for a in creator_elem.text.split(',')]
+        else:
+            authors = []
         
-        categories = [
-            cat.get("term") 
-            for cat in entry.findall("atom:category", ns)
-        ]
-        
-        published = entry.find("atom:published", ns).text
-        updated = entry.find("atom:updated", ns).text
-        
+        # Build links
         pdf_link = f"https://arxiv.org/pdf/{paper_id}.pdf"
         abs_link = f"https://arxiv.org/abs/{paper_id}"
         
-        all_papers.append({
+        papers.append({
             "id": paper_id,
             "title": title,
             "abstract": abstract,
             "authors": authors,
-            "categories": categories,
-            "published": published,
-            "updated": updated,
+            "categories": [category],
+            "published": announcement_date,
+            "updated": announcement_date,
             "pdf_link": pdf_link,
             "abs_link": abs_link
         })
     
-    for paper in all_papers:
+    # Add metadata
+    for paper in papers:
         paper["is_exoplanet_focused"] = is_exoplanet_paper(paper["title"], paper["abstract"])
         paper["tweetability_score"] = calculate_tweetability_score(paper)
     
-    exoplanet_papers = [p for p in all_papers if p["is_exoplanet_focused"]]
-    general_papers = [p for p in all_papers if not p["is_exoplanet_focused"]]
-    
-    print(f"Fetched {len(all_papers)} total papers:")
-    print(f"  🪐 Exoplanet-focused: {len(exoplanet_papers)}")
-    print(f"  🔭 General astro-ph.EP: {len(general_papers)}")
+    # Sort: exoplanet papers first, then by tweetability
+    exoplanet_papers = [p for p in papers if p["is_exoplanet_focused"]]
+    general_papers = [p for p in papers if not p["is_exoplanet_focused"]]
     
     exoplanet_papers.sort(key=lambda p: -p["tweetability_score"])
     general_papers.sort(key=lambda p: -p["tweetability_score"])
     
     all_sorted = exoplanet_papers + general_papers
-    return all_sorted[:max_results]
+    
+    print(f"📅 Announcement date: {announcement_date}")
+    print(f"📰 RSS returned {len(papers)} papers:")
+    print(f"   🪐 Exoplanet-focused: {len(exoplanet_papers)}")
+    print(f"   🔭 General astro-ph.EP: {len(general_papers)}")
+    
+    return all_sorted, announcement_date
 
 
 def fetch_arxiv_figure(paper_id: str) -> str | None:
@@ -258,11 +232,8 @@ def fetch_arxiv_figure(paper_id: str) -> str | None:
                 
                 if any(skip in img_src.lower() for skip in ['logo', 'icon', 'badge', 'button']):
                     continue
-                    
                 return img_src
-        
         return None
-        
     except Exception as e:
         print(f"  Could not fetch figure for {paper_id}: {e}")
         return None
@@ -287,13 +258,11 @@ def get_topic_fallback_image(title: str, abstract: str) -> str:
     for keyword, url in topic_images.items():
         if keyword in text:
             return url
-    
     return "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=800"
 
 
 def generate_summary(client, paper: dict) -> str:
-    """Generate an accessible summary for a paper using Claude."""
-    
+    """Generate an accessible summary using Claude."""
     prompt = f"""You are a science communicator writing for a general audience. Summarize this exoplanet research paper in an accessible, engaging way.
 
 PAPER TITLE: {paper['title']}
@@ -303,23 +272,22 @@ ABSTRACT: {paper['abstract']}
 Write an extended summary (250-350 words) with these exact section headers:
 
 **Why It Matters**
-Open with the big picture significance—why should a general reader care about this research? Connect it to broader questions about planets, the search for life, or understanding our place in the universe.
+Open with the big picture significance—why should a general reader care about this research?
 
 **What They Did**
-Explain the research methods in simple terms. Avoid jargon entirely, or if you must use a technical term, explain it immediately. Use analogies to everyday concepts when helpful.
+Explain the research methods in simple terms. Avoid jargon entirely.
 
 **Key Findings**
-Describe the main discoveries. What did they actually find? Use concrete numbers or comparisons when possible to make the findings tangible.
+Describe the main discoveries. Use concrete numbers or comparisons when possible.
 
 **Looking Forward**
-End with implications—what does this mean for exoplanet science? What questions does it open up? How might this lead to future discoveries?
+End with implications—what does this mean for exoplanet science?
 
 Guidelines:
 - Write for someone curious about space but with no astronomy background
-- Use analogies (e.g., "about the size of Neptune" or "orbiting closer than Mercury does to our Sun")
+- Use analogies to everyday concepts
 - Avoid acronyms unless you spell them out
-- Be engaging and convey the excitement of discovery
-- Keep paragraphs short and readable"""
+- Be engaging and convey the excitement of discovery"""
 
     try:
         response = client.messages.create(
@@ -334,29 +302,17 @@ Guidelines:
 
 
 def generate_tweet_hook(client, paper: dict) -> dict:
-    """Generate tweet-optimized hook, evidence, and question for a paper."""
-    
+    """Generate tweet-optimized hook for a paper."""
     prompt = f"""You are writing a Twitter thread hook for an exoplanet research paper.
 
 PAPER TITLE: {paper['title']}
-
 ABSTRACT: {paper['abstract']}
 
-Generate a compelling tweet thread opener. Return JSON with these fields:
-
-1. "hook" - A single attention-grabbing sentence (max 100 chars) that makes someone want to read more. Start with something surprising or intriguing from the paper.
-
-2. "claim" - A clear, specific claim about what the paper found (max 150 chars). Be concrete.
-
-3. "evidence" - One key piece of evidence or number that supports the claim (max 150 chars).
-
-4. "question" - An engaging question that invites discussion (max 100 chars).
-
-Guidelines:
-- Be accurate to the paper's actual findings
-- Avoid clickbait but do make it compelling
-- Use plain language, no jargon
-- Numbers and specifics are good
+Generate a compelling tweet thread opener. Return JSON with:
+1. "hook" - Attention-grabbing sentence (max 100 chars)
+2. "claim" - Clear, specific claim about findings (max 150 chars)
+3. "evidence" - One key piece of evidence (max 150 chars)
+4. "question" - Engaging question for discussion (max 100 chars)
 
 Return ONLY valid JSON, no other text."""
 
@@ -366,12 +322,10 @@ Return ONLY valid JSON, no other text."""
             max_tokens=500,
             messages=[{"role": "user", "content": prompt}]
         )
-        
         content = response.content[0].text.strip()
         if content.startswith("```"):
             content = re.sub(r"^```json?\n?", "", content)
             content = re.sub(r"\n?```$", "", content)
-        
         return json.loads(content)
     except Exception as e:
         print(f"Error generating tweet hook for {paper['id']}: {e}")
@@ -405,17 +359,6 @@ def format_summary_html(summary: str) -> str:
     return '\n'.join(formatted)
 
 
-def paper_needs_summary(paper: dict) -> bool:
-    """Check if a paper is missing its summary or tweet hook."""
-    summary_html = paper.get("summary_html", "")
-    has_summary = summary_html and summary_html != "<p><em>Summary unavailable.</em></p>"
-    
-    tweet_hook = paper.get("tweet_hook", {})
-    has_hook = tweet_hook and tweet_hook.get("hook")
-    
-    return not has_summary or not has_hook
-
-
 def save_to_archive(papers: list[dict], announcement_date: str):
     """Save papers to the date-based archive."""
     ARCHIVE_DIR.mkdir(parents=True, exist_ok=True)
@@ -444,61 +387,55 @@ def save_to_archive(papers: list[dict], announcement_date: str):
         with open(ARCHIVE_INDEX, "w", encoding="utf-8") as f:
             json.dump(index, f, indent=2)
     
-    print(f"Archived to {archive_file}")
+    print(f"📁 Archived to {archive_file}")
 
 
 def main():
     """Main function to fetch papers and generate summaries."""
     
-    print(f"Fetching papers from arXiv {ARXIV_CATEGORY}...")
-    papers = fetch_arxiv_papers(ARXIV_CATEGORY, MAX_PAPERS)
-    print(f"Found {len(papers)} papers")
+    print(f"🔍 Fetching papers from arXiv RSS feed ({ARXIV_CATEGORY})...")
+    
+    # Use RSS feed - gets actual announcement batch
+    papers, announcement_date = fetch_rss_papers(ARXIV_CATEGORY)
     
     if len(papers) == 0:
-        print("No papers found. Exiting.")
+        print("❌ No papers found in RSS feed. Exiting.")
         return
     
-    # Determine the actual announcement date from paper metadata
-    announcement_date = get_announcement_date_from_papers(papers)
-    print(f"📅 Announcement date (from papers): {announcement_date}")
-    
-    # Load existing data
+    # Load existing data to check if same batch
     existing_papers = {}
-    existing_ids = set()
     existing_date = None
     
     if OUTPUT_FILE.exists():
         try:
             with open(OUTPUT_FILE, "r", encoding="utf-8") as f:
                 existing_data = json.load(f)
-                existing_ids = {p["id"] for p in existing_data.get("papers", [])}
                 existing_papers = {p["id"]: p for p in existing_data.get("papers", [])}
-                existing_date = existing_data.get("announcement_date") or existing_data.get("updated_at", "")[:10]
+                existing_date = existing_data.get("announcement_date")
         except (json.JSONDecodeError, KeyError):
             pass
     
-    new_paper_ids = {p["id"] for p in papers}
-    
-    # Check if these are actually new papers or the same batch
-    if new_paper_ids == existing_ids:
-        # Check if any papers are missing summaries
-        papers_missing_summaries = [
-            p_id for p_id in new_paper_ids 
-            if p_id in existing_papers and paper_needs_summary(existing_papers[p_id])
-        ]
+    # Check if this is the same announcement batch
+    if existing_date == announcement_date:
+        print(f"⏸️  Same announcement date ({announcement_date}). Checking for missing summaries...")
         
-        if not papers_missing_summaries:
-            print("⏸️  No new papers since last update. Same batch as before.")
-            print(f"   Previous date: {existing_date}")
-            print(f"   Current papers date: {announcement_date}")
-            print("   Keeping existing data unchanged (no arXiv announcement today).")
+        # Check if any papers need summaries
+        needs_work = False
+        for paper in papers:
+            if paper["id"] in existing_papers:
+                existing = existing_papers[paper["id"]]
+                if not existing.get("summary_html") or existing["summary_html"] == "<p><em>Summary unavailable.</em></p>":
+                    needs_work = True
+                    break
+            else:
+                needs_work = True
+                break
+        
+        if not needs_work:
+            print("✅ All papers already have summaries. No changes needed.")
             return
-        else:
-            print(f"Found {len(papers_missing_summaries)} papers missing summaries. Regenerating...")
-    else:
-        # New papers detected
-        new_count = len(new_paper_ids - existing_ids)
-        print(f"📰 Found {new_count} new papers!")
+    
+    print(f"📝 Processing {len(papers)} papers for {announcement_date}...")
     
     # Initialize Anthropic client
     client = None
@@ -509,22 +446,23 @@ def main():
     else:
         print("⚠ No ANTHROPIC_API_KEY - summaries will be empty")
     
-    # Generate summaries
+    # Generate content for each paper
     for i, paper in enumerate(papers):
-        # Check if we already have this paper with content
+        # Reuse existing content if available
         if paper["id"] in existing_papers:
             existing = existing_papers[paper["id"]]
-            has_valid_summary = existing.get("summary_html") and existing["summary_html"] != "<p><em>Summary unavailable.</em></p>"
-            has_valid_hook = existing.get("tweet_hook", {}).get("hook")
+            has_summary = existing.get("summary_html") and existing["summary_html"] != "<p><em>Summary unavailable.</em></p>"
+            has_hook = existing.get("tweet_hook", {}).get("hook")
             
-            if has_valid_summary and has_valid_hook:
+            if has_summary and has_hook:
                 paper["summary"] = existing.get("summary", "")
                 paper["summary_html"] = existing["summary_html"]
                 paper["tweet_hook"] = existing["tweet_hook"]
                 paper["figure_url"] = existing.get("figure_url")
+                print(f"  [{i+1}/{len(papers)}] {paper['id']} - reusing existing content")
                 continue
         
-        print(f"Generating content {i+1}/{len(papers)}: {paper['id']}")
+        print(f"  [{i+1}/{len(papers)}] {paper['id']} - generating new content...")
         
         if client:
             summary = generate_summary(client, paper)
@@ -543,7 +481,7 @@ def main():
             paper["tweet_hook"] = {"hook": "", "claim": "", "evidence": "", "question": ""}
     
     # Fetch figures
-    print("\nFetching figures for papers...")
+    print("\n🖼️  Fetching figures...")
     for i, paper in enumerate(papers):
         if paper.get("figure_url"):
             continue
@@ -552,23 +490,18 @@ def main():
             paper["figure_url"] = existing_papers[paper["id"]]["figure_url"]
             continue
         
-        print(f"  [{i+1}/{len(papers)}] Fetching figure for {paper['id']}...")
-        
         figure_url = fetch_arxiv_figure(paper["id"])
-        
         if figure_url:
-            print(f"    ✓ Found arXiv figure")
             paper["figure_url"] = figure_url
         else:
             paper["figure_url"] = get_topic_fallback_image(paper["title"], paper["abstract"])
-            print(f"    → Using topic-based fallback")
         
         time.sleep(0.3)
     
-    # Prepare output - use announcement_date instead of current time
+    # Save output
     output = {
-        "updated_at": f"{announcement_date}T20:00:00Z",  # Standard arXiv announcement time
         "announcement_date": announcement_date,
+        "updated_at": datetime.now(timezone.utc).isoformat(),
         "category": ARXIV_CATEGORY,
         "paper_count": len(papers),
         "papers": papers
@@ -580,7 +513,7 @@ def main():
         json.dump(output, f, indent=2, ensure_ascii=False)
     
     print(f"\n✅ Saved {len(papers)} papers to {OUTPUT_FILE}")
-    print(f"   Announcement date: {announcement_date}")
+    print(f"   📅 Announcement date: {announcement_date}")
     
     # Save to archive
     save_to_archive(papers, announcement_date)
