@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 20 Jan 2026 21:38:19 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 20 Jan 2026 21:57:11 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -18,7 +18,7 @@
       <title>Detection of four cold Jupiters through combined analyses of radial velocity and astrometry data</title>
       <link>https://arifsolmaz.github.io/arxiv#paper-2601-11280v1</link>
       <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-11280v1</guid>
-      <pubDate>Tue, 20 Jan 2026 21:38:19 +0000</pubDate>
+      <pubDate>Tue, 20 Jan 2026 21:57:11 +0000</pubDate>
       <dc:creator>Yiyun Wu et al.</dc:creator>
       <description><![CDATA[Why It Matters
 Imagine trying to understand how our solar system formed by only studying Earth and Mars—you'd miss the crucial role that Jupiter played in shaping everything around it. That's exactly the challenge astronomers face when studying distant planetary systems. Jupiter-like planets that orbit far from their stars, called "cold Jupiters," are cosmic architects that influence how entire planetary systems develop. Yet these distant giants are notoriously difficult to spot and study. This research tackles that challenge head-on, uncovering four new cold Jupiters and demonstrating a powerful new method for finding many more. Understanding these distant worlds helps us piece together the story of how planetary systems—including our own—came to be.
@@ -34,7 +34,7 @@ This research opens a new chapter in exoplanet discovery. The success of combini
       <title>Aligned, Misaligned and Polar Orbits of Hot Jupiters: Measuring Spin-Orbit Angles via Doppler Tomography with HARPS-N</title>
       <link>https://arifsolmaz.github.io/arxiv#paper-2601-11313v1</link>
       <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-11313v1</guid>
-      <pubDate>Tue, 20 Jan 2026 21:38:19 +0000</pubDate>
+      <pubDate>Tue, 20 Jan 2026 21:57:11 +0000</pubDate>
       <dc:creator>Z. Balkóová et al.</dc:creator>
       <description><![CDATA[Why It Matters
 Imagine throwing a baseball perfectly straight while spinning like a top—that's how we'd expect planets to orbit their stars, moving in the same direction as the star's rotation. But the universe loves to surprise us. Scientists have discovered that many "hot Jupiters"—massive planets that orbit incredibly close to their stars—move in bizarre ways: some travel backward, others loop around their star's poles like a Ferris wheel. These strange orbits hold crucial clues about how planetary systems form and evolve, helping us understand whether our own solar system's neat, orderly arrangement is common or remarkably special.
@@ -48,10 +48,43 @@ These findings add to growing evidence that planetary systems can be far more ch
         <category>astro-ph.SR</category>
     </item>
     <item>
+      <title>KMT-2025-BLG-1616Lb: First Microlensing Bound Planet From DREAMS</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-11469v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-11469v1</guid>
+      <pubDate>Tue, 20 Jan 2026 21:57:11 +0000</pubDate>
+      <dc:creator>Hongjing Yang et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+Imagine trying to spot a firefly dancing around a lighthouse beam from thousands of miles away—that's essentially what astronomers face when hunting for planets beyond our solar system. Most exoplanets are discovered when they pass directly in front of their host stars, but this method only works for planets whose orbits align perfectly with our view from Earth. This new research demonstrates a completely different technique called gravitational microlensing, which can detect planets we'd never find otherwise. It's like having a cosmic magnifying glass that reveals hidden worlds, opening up entirely new regions of space for planet hunting.
+What They Did
+The researchers used two telescope networks—one in South Korea and another called DREAMS (DECam Rogue Earths and Mars Survey)—to watch for a rare cosmic phenomenon. When a star passes precisely in front of another, more distant star, gravity acts like a natural lens, temporarily brightening the background star's light. If the foreground star has a planet, that planet creates a distinctive blip in the brightness pattern. Think of it like watching shadows on a wall—the planet's gravitational "shadow" briefly distorts the light in a telltale way. The DREAMS telescopes took pictures every minute, providing incredibly detailed measurements that helped the team distinguish between different possible explanations for what they observed.
+Key Findings
+The astronomers discovered a Neptune-sized world about 40 times more massive than Earth, orbiting a small red dwarf star roughly one-third the mass of our Sun. This planetary system sits about 25,000 light-years away in the direction of our galaxy's central bulge. The planet orbits at roughly 1.6 times the Earth-Sun distance—placing it in the outer regions of its solar system, similar to where we'd find asteroids in our own cosmic neighborhood.
+Looking Forward
+This discovery proves that the DREAMS survey can detect planets as small as Mars floating freely through space without any host star, and even Moon-sized objects in certain regions of our galaxy. This capability could revolutionize our understanding of planetary formation and help answer whether rogue planets—worlds ejected from their birth systems—are common throughout the cosmos.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.GA</category>
+    </item>
+    <item>
+      <title>The impact of disc photoevaporation on the long-term evolution of giant planets in mean motion resonances</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-10811v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-10811v1</guid>
+      <pubDate>Tue, 20 Jan 2026 21:57:11 +0000</pubDate>
+      <dc:creator>Emmanuel J. Greenfield, James E. Owen</dc:creator>
+      <description><![CDATA[Why It Matters
+Imagine two giant planets locked in a cosmic dance, orbiting their star in perfect sync—one completing exactly two orbits for every three of its companion, or three orbits for every four. These "resonant" relationships are surprisingly common among the thousands of exoplanets we've discovered, but scientists have struggled to understand how they form and why some survive while others fall apart. This research tackles a crucial missing piece of the puzzle: how intense starlight strips away the gas disks where planets are born, fundamentally changing their orbital evolution and potentially explaining the diverse planetary systems we observe throughout our galaxy.
+What They Did
+The researchers created detailed computer simulations of planetary systems during their birth phase, when giant planets are still embedded in swirling disks of gas and dust around young stars. They modeled a process called photoevaporation, where intense ultraviolet radiation from the central star heats up and blows away the surrounding gas—like how a hair dryer can scatter lightweight particles. By running dozens of simulations with different combinations of disk mass, planet size, and resonance types, they tracked how this gas loss affects the delicate gravitational relationships between planet pairs over millions of years.
+Key Findings
+The team discovered that photoevaporation acts like a cosmic mediator, sometimes saving planetary relationships and sometimes destroying them. When starlight strips away gas from the region between two planets, it can actually stabilize their orbital dance by reducing disruptive gravitational interactions. This effect is strongest for tightly-spaced planet pairs. However, the same process can destabilize other systems by creating uneven gravitational forces. Surprisingly, even when planetary orbits remain stable, photoevaporation typically makes them more elliptical rather than circular.
+Looking Forward
+These findings could revolutionize our understanding of planetary system architecture throughout the universe. They suggest that the intense radiation environments around young stars play a previously underappreciated role in sculpting the final arrangements of planets. This research will help astronomers interpret observations from missions like Gaia, which precisely measures stellar movements caused by orbiting planets, potentially revealing countless new resonant systems shaped by these ancient processes.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
       <title>Metal Pipe: A Broadly-Applicable Stellar Abundance Pipeline Using Isochronal Parameters</title>
       <link>https://arifsolmaz.github.io/arxiv#paper-2601-10794v1</link>
       <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-10794v1</guid>
-      <pubDate>Tue, 20 Jan 2026 21:38:19 +0000</pubDate>
+      <pubDate>Tue, 20 Jan 2026 21:57:11 +0000</pubDate>
       <dc:creator>Jared R. Kolecki, Lauren M. Weiss</dc:creator>
       <description><![CDATA[# Scientists Develop New Tool to Better Study Stars That Host Other Worlds
 Why It Matters
