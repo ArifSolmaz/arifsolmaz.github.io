@@ -1,21 +1,24 @@
 #!/usr/bin/env python3
 """
 Fetch exoplanet papers from arXiv and generate accessible AI summaries.
-Saves daily archives + updates main papers.json for the current day.
+Uses RSS feed to get actual arXiv announcement dates.
 
 Archive structure:
   data/papers.json          - Current day (for backwards compatibility)
   data/archive/index.json   - List of all available dates
   data/archive/2026-01-19.json - Papers for specific date
+
+Key feature: announcement_date from RSS pubDate matches arXiv's display exactly.
 """
 
 import json
 import os
 import re
 import time
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from xml.etree import ElementTree as ET
+from email.utils import parsedate_to_datetime
 
 import anthropic
 import requests
@@ -28,6 +31,24 @@ DATA_DIR = Path(__file__).parent.parent / "data"
 OUTPUT_FILE = DATA_DIR / "papers.json"
 ARCHIVE_DIR = DATA_DIR / "archive"
 ARCHIVE_INDEX = ARCHIVE_DIR / "index.json"
+
+# arXiv RSS feed URL
+ARXIV_RSS_URL = f"https://rss.arxiv.org/rss/{ARXIV_CATEGORY}"
+
+# 2026 US Federal Holidays (arXiv follows these)
+ARXIV_HOLIDAYS_2026 = {
+    "2026-01-01",  # New Year's Day
+    "2026-01-19",  # MLK Day
+    "2026-02-16",  # Presidents' Day
+    "2026-05-25",  # Memorial Day
+    "2026-06-19",  # Juneteenth
+    "2026-07-03",  # Independence Day (observed)
+    "2026-09-07",  # Labor Day
+    "2026-11-26",  # Thanksgiving
+    "2026-11-27",  # Day after Thanksgiving
+    "2026-12-25",  # Christmas
+    "2026-12-31",  # New Year's Eve (usually closed)
+}
 
 # Tweetability scoring
 TWEETABILITY_KEYWORDS = {
@@ -44,6 +65,79 @@ TWEETABILITY_KEYWORDS = {
     "transmission spectrum": 8, "emission spectrum": 8,
     "direct imaging": 10,
 }
+
+
+def clean_abstract(abstract: str) -> str:
+    """
+    Remove arXiv metadata prefix from abstract.
+    RSS feed often includes: 'arXiv:XXXX.XXXXXvN Announce Type: new/replace Abstract: ...'
+    """
+    if not abstract:
+        return ""
+    
+    # Pattern to match arXiv metadata prefix
+    # Examples:
+    #   "arXiv:2510.09841v2 Announce Type: replace Abstract: Planned and future..."
+    #   "arXiv:2601.12345 Announce Type: new Abstract: We present..."
+    pattern = r'^arXiv:\d+\.\d+(?:v\d+)?\s+Announce Type:\s*(?:new|replace|cross)\s+Abstract:\s*'
+    
+    cleaned = re.sub(pattern, '', abstract, flags=re.IGNORECASE)
+    
+    # Also handle case where just "Abstract:" appears at start
+    cleaned = re.sub(r'^Abstract:\s*', '', cleaned, flags=re.IGNORECASE)
+    
+    return cleaned.strip()
+
+
+def clean_latex(text: str) -> str:
+    """
+    Clean LaTeX escape sequences from author names.
+    Examples: Z. Balk\'oov\'a → Z. Balková, M\"uller → Müller
+    """
+    if not text:
+        return ""
+    
+    # Common LaTeX accent sequences
+    replacements = [
+        # Acute accents (\'X)
+        (r"\'a", "á"), (r"\'e", "é"), (r"\'i", "í"), (r"\'o", "ó"), (r"\'u", "ú"), (r"\'y", "ý"),
+        (r"\'A", "Á"), (r"\'E", "É"), (r"\'I", "Í"), (r"\'O", "Ó"), (r"\'U", "Ú"), (r"\'Y", "Ý"),
+        (r"\'n", "ń"), (r"\'c", "ć"), (r"\'s", "ś"), (r"\'z", "ź"),
+        (r"\'N", "Ń"), (r"\'C", "Ć"), (r"\'S", "Ś"), (r"\'Z", "Ź"),
+        # Umlaut/diaeresis (\"X)
+        (r"\"a", "ä"), (r"\"e", "ë"), (r"\"i", "ï"), (r"\"o", "ö"), (r"\"u", "ü"), (r"\"y", "ÿ"),
+        (r"\"A", "Ä"), (r"\"E", "Ë"), (r"\"I", "Ï"), (r"\"O", "Ö"), (r"\"U", "Ü"), (r"\"Y", "Ÿ"),
+        # Grave accents (\`X)
+        (r"\`a", "à"), (r"\`e", "è"), (r"\`i", "ì"), (r"\`o", "ò"), (r"\`u", "ù"),
+        (r"\`A", "À"), (r"\`E", "È"), (r"\`I", "Ì"), (r"\`O", "Ò"), (r"\`U", "Ù"),
+        # Tilde (\~X)
+        (r"\~n", "ñ"), (r"\~N", "Ñ"), (r"\~a", "ã"), (r"\~o", "õ"),
+        (r"\~A", "Ã"), (r"\~O", "Õ"),
+        # Circumflex (\^X)
+        (r"\^a", "â"), (r"\^e", "ê"), (r"\^i", "î"), (r"\^o", "ô"), (r"\^u", "û"),
+        (r"\^A", "Â"), (r"\^E", "Ê"), (r"\^I", "Î"), (r"\^O", "Ô"), (r"\^U", "Û"),
+        # Cedilla (\c{X})
+        (r"\c{c}", "ç"), (r"\c{C}", "Ç"),
+        # Caron/háček (\v{X})
+        (r"\v{c}", "č"), (r"\v{s}", "š"), (r"\v{z}", "ž"), (r"\v{r}", "ř"),
+        (r"\v{C}", "Č"), (r"\v{S}", "Š"), (r"\v{Z}", "Ž"), (r"\v{R}", "Ř"),
+        # Polish L
+        (r"\l", "ł"), (r"\L", "Ł"),
+        # Scandinavian
+        (r"\o", "ø"), (r"\O", "Ø"), (r"\aa", "å"), (r"\AA", "Å"),
+        (r"\ae", "æ"), (r"\AE", "Æ"), (r"\oe", "œ"), (r"\OE", "Œ"),
+        # German sharp s
+        (r"\ss", "ß"),
+    ]
+    
+    result = text
+    for latex, unicode_char in replacements:
+        result = result.replace(latex, unicode_char)
+    
+    # Remove any remaining braces
+    result = result.replace("{", "").replace("}", "")
+    
+    return result
 
 
 def is_exoplanet_focused(title: str, abstract: str) -> bool:
@@ -125,13 +219,27 @@ def calculate_tweetability_score(paper: dict) -> int:
     return sum(points for keyword, points in TWEETABILITY_KEYWORDS.items() if keyword.lower() in text)
 
 
-def fetch_via_rss() -> list[dict]:
-    """Fetch from RSS feed using requests."""
-    print("Trying RSS feed...")
-    url = f"https://rss.arxiv.org/rss/{ARXIV_CATEGORY}"
+def parse_rss_date(date_str: str) -> str:
+    """Parse RSS pubDate to YYYY-MM-DD format."""
+    try:
+        # RSS date format: "Mon, 19 Jan 2026 00:30:00 -0500"
+        dt = parsedate_to_datetime(date_str)
+        return dt.strftime("%Y-%m-%d")
+    except Exception as e:
+        print(f"  Warning: Could not parse date '{date_str}': {e}")
+        return datetime.now(timezone.utc).strftime("%Y-%m-%d")
+
+
+def fetch_via_rss() -> tuple[list[dict], str]:
+    """
+    Fetch from RSS feed using requests.
+    Returns (papers, announcement_date) tuple.
+    """
+    print("Fetching from RSS feed...")
+    print(f"  URL: {ARXIV_RSS_URL}")
     
     try:
-        response = requests.get(url, timeout=30, headers={'User-Agent': 'ExoplanetBot/1.0'})
+        response = requests.get(ARXIV_RSS_URL, timeout=30, headers={'User-Agent': 'ExoplanetBot/1.0'})
         response.raise_for_status()
         
         root = ET.fromstring(response.content)
@@ -139,7 +247,15 @@ def fetch_via_rss() -> list[dict]:
         
         if channel is None:
             print("  No channel in RSS")
-            return []
+            return [], ""
+        
+        # Get announcement date from channel pubDate (RSS feed's date)
+        announcement_date = ""
+        pub_date_elem = channel.find('pubDate')
+        if pub_date_elem is not None and pub_date_elem.text:
+            announcement_date = parse_rss_date(pub_date_elem.text)
+            print(f"  RSS pubDate: {pub_date_elem.text}")
+            print(f"  Announcement date: {announcement_date}")
         
         papers = []
         for item in channel.findall('item'):
@@ -157,14 +273,16 @@ def fetch_via_rss() -> list[dict]:
             if desc_elem is not None and desc_elem.text:
                 abstract = re.sub(r'<[^>]+>', '', desc_elem.text)
                 abstract = " ".join(abstract.split())
+                abstract = clean_abstract(abstract)  # Remove arXiv metadata prefix
             
             authors = []
             for creator in item.findall('.//{http://purl.org/dc/elements/1.1/}creator'):
                 if creator.text:
-                    authors.append(creator.text)
+                    authors.append(clean_latex(creator.text))  # Clean LaTeX in author names
             
-            pub_date = item.find('pubDate')
-            published = pub_date.text if pub_date is not None else ""
+            # Item's pubDate (same as channel for new announcements)
+            item_pub_date = item.find('pubDate')
+            published = item_pub_date.text if item_pub_date is not None else ""
             
             papers.append({
                 "id": paper_id,
@@ -179,15 +297,15 @@ def fetch_via_rss() -> list[dict]:
             })
         
         print(f"  RSS returned {len(papers)} papers")
-        return papers
+        return papers, announcement_date
         
     except Exception as e:
         print(f"  RSS failed: {e}")
-        return []
+        return [], ""
 
 
 def fetch_via_api(max_results: int) -> list[dict]:
-    """Fetch from arXiv API."""
+    """Fetch from arXiv API (fallback)."""
     print("Fetching from API...")
     
     url = "http://export.arxiv.org/api/query"
@@ -215,9 +333,10 @@ def fetch_via_api(max_results: int) -> list[dict]:
             
             abstract = entry.find("atom:summary", ns).text
             abstract = " ".join(abstract.split())
+            abstract = clean_abstract(abstract)  # Remove arXiv metadata prefix if present
             
             authors = [
-                author.find("atom:name", ns).text 
+                clean_latex(author.find("atom:name", ns).text)
                 for author in entry.findall("atom:author", ns)
             ]
             
@@ -246,28 +365,79 @@ def fetch_via_api(max_results: int) -> list[dict]:
         return []
 
 
-def fetch_arxiv_papers(max_results: int = 25) -> list[dict]:
-    """Fetch papers from RSS feed only (today's announcements)."""
+def get_last_announcement_date() -> str:
+    """Calculate the last valid arXiv announcement date based on schedule."""
+    now = datetime.now(timezone.utc)
+    
+    # arXiv announces at 20:00 ET (01:00 UTC next day)
+    # So if it's before 01:00 UTC, the last announcement was yesterday's date
+    
+    # For calculation purposes, work backwards from current UTC time
+    check_date = now.date()
+    
+    for _ in range(14):  # Check up to 2 weeks back
+        date_str = check_date.strftime("%Y-%m-%d")
+        weekday = check_date.weekday()
+        
+        # arXiv doesn't announce on Saturday (5) or Sunday (6)
+        # Also no announcements on Friday night (announced papers) or Saturday night
+        if weekday in [5, 6]:  # Saturday, Sunday
+            check_date -= timedelta(days=1)
+            continue
+        
+        # Check holidays
+        if date_str in ARXIV_HOLIDAYS_2026:
+            check_date -= timedelta(days=1)
+            continue
+        
+        return date_str
+    
+    # Fallback to today
+    return now.strftime("%Y-%m-%d")
+
+
+def fetch_arxiv_papers(max_results: int = 25) -> tuple[list[dict], str]:
+    """
+    Fetch papers from RSS feed (today's announcements).
+    Returns (papers, announcement_date) tuple.
+    
+    IMPORTANT: Only returns papers that pass exoplanet filtering!
+    """
     
     # RSS feed contains ONLY papers announced today
-    papers = fetch_via_rss()
+    papers, announcement_date = fetch_via_rss()
+    
+    # If RSS failed or returned no date, calculate it
+    if not announcement_date:
+        announcement_date = get_last_announcement_date()
+        print(f"  Using calculated announcement date: {announcement_date}")
     
     # Only use API as fallback if RSS completely fails
     if not papers:
         print("RSS failed, falling back to API...")
         papers = fetch_via_api(max_results)
-        # API returns mixed dates, so limit results
         papers = papers[:max_results]
     
     if not papers:
         print("WARNING: No papers from RSS or API!")
-        return []
+        return [], announcement_date
     
+    # First pass: tag all papers
     for paper in papers:
         paper["is_exoplanet_focused"] = is_exoplanet_focused(paper["title"], paper["abstract"])
         paper["tweetability_score"] = calculate_tweetability_score(paper)
     
-    # Sort by recency (higher arXiv ID = more recent), then exoplanet focus
+    # STRICT FILTERING: Only keep papers that are about exoplanets
+    # This prevents random machine learning or climate papers from being included
+    total_before = len(papers)
+    papers = [p for p in papers if p["is_exoplanet_focused"]]
+    
+    print(f"\n🔬 EXOPLANET FILTER: {total_before} papers → {len(papers)} exoplanet papers")
+    if total_before > len(papers):
+        excluded = total_before - len(papers)
+        print(f"   Excluded {excluded} non-exoplanet papers")
+    
+    # Sort by tweetability score (most engaging first)
     def get_arxiv_sortkey(paper):
         try:
             id_part = paper["id"].split("v")[0]
@@ -276,9 +446,9 @@ def fetch_arxiv_papers(max_results: int = 25) -> list[dict]:
         except:
             return 0
     
-    papers.sort(key=lambda p: (-get_arxiv_sortkey(p), not p["is_exoplanet_focused"], -p["tweetability_score"]))
+    papers.sort(key=lambda p: (-p["tweetability_score"], -get_arxiv_sortkey(p)))
     
-    return papers
+    return papers, announcement_date
 
 
 def fetch_arxiv_figure(paper_id: str) -> str | None:
@@ -480,15 +650,42 @@ def load_all_existing_papers() -> dict:
 def main():
     """Main function."""
     print("=" * 60)
-    print(f"arXiv {ARXIV_CATEGORY} Paper Fetcher (with Archive)")
+    print(f"arXiv {ARXIV_CATEGORY} Paper Fetcher (with Announcement Date)")
     print(f"Time: {datetime.now(timezone.utc).isoformat()}")
     print("=" * 60)
     
-    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    # CLEANUP: First, check if existing papers.json has non-exoplanet papers and clean them
+    if OUTPUT_FILE.exists():
+        try:
+            with open(OUTPUT_FILE, "r", encoding="utf-8") as f:
+                existing_data = json.load(f)
+            existing_list = existing_data.get("papers", [])
+            
+            # Re-check all papers for exoplanet focus
+            for p in existing_list:
+                p["is_exoplanet_focused"] = is_exoplanet_focused(p["title"], p["abstract"])
+            
+            non_exo = [p for p in existing_list if not p.get("is_exoplanet_focused", False)]
+            if non_exo:
+                print(f"\n🧹 CLEANUP: Found {len(non_exo)} non-exoplanet papers in existing data:")
+                for p in non_exo:
+                    print(f"   ❌ {p['id']}: {p['title'][:50]}...")
+                
+                # Filter them out and save immediately
+                clean_papers = [p for p in existing_list if p.get("is_exoplanet_focused", False)]
+                existing_data["papers"] = clean_papers
+                existing_data["paper_count"] = len(clean_papers)
+                
+                with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+                    json.dump(existing_data, f, indent=2, ensure_ascii=False)
+                print(f"   ✅ Cleaned papers.json: {len(existing_list)} → {len(clean_papers)} papers")
+        except Exception as e:
+            print(f"  Warning: Could not clean existing data: {e}")
     
-    # Fetch papers
-    papers = fetch_arxiv_papers(MAX_PAPERS)
-    print(f"\nTotal papers: {len(papers)}")
+    # Fetch papers with announcement date
+    papers, announcement_date = fetch_arxiv_papers(MAX_PAPERS)
+    print(f"\nAnnouncement date: {announcement_date}")
+    print(f"Total papers: {len(papers)}")
     
     if not papers:
         print("No papers found. Exiting.")
@@ -551,10 +748,10 @@ def main():
         paper["figure_url"] = figure_url or get_topic_fallback_image(paper["title"], paper["abstract"])
         time.sleep(0.2)
     
-    # Prepare output data
+    # Prepare output data with announcement_date
     output = {
-        "date": today,
-        "updated_at": datetime.now(timezone.utc).isoformat(),
+        "announcement_date": announcement_date,  # NEW: arXiv announcement date
+        "updated_at": datetime.now(timezone.utc).isoformat(),  # When we fetched
         "category": ARXIV_CATEGORY,
         "paper_count": len(papers),
         "papers": papers
@@ -566,18 +763,19 @@ def main():
         json.dump(output, f, indent=2, ensure_ascii=False)
     print(f"\n✅ Saved to {OUTPUT_FILE}")
     
-    # Save to archive
+    # Save to archive using announcement_date (not today's date!)
     ARCHIVE_DIR.mkdir(parents=True, exist_ok=True)
-    archive_file = ARCHIVE_DIR / f"{today}.json"
+    archive_file = ARCHIVE_DIR / f"{announcement_date}.json"
     with open(archive_file, "w", encoding="utf-8") as f:
         json.dump(output, f, indent=2, ensure_ascii=False)
     print(f"✅ Archived to {archive_file}")
     
     # Update archive index
     index = load_archive_index()
-    if today not in index["dates"]:
-        index["dates"].insert(0, today)  # Newest first
-    index["dates"] = index["dates"][:90]  # Keep last 90 days
+    if announcement_date not in index["dates"]:
+        index["dates"].insert(0, announcement_date)  # Newest first
+    # Sort dates in reverse chronological order
+    index["dates"] = sorted(list(set(index["dates"])), reverse=True)[:90]
     index["last_updated"] = datetime.now(timezone.utc).isoformat()
     save_archive_index(index)
     print(f"✅ Updated archive index ({len(index['dates'])} dates)")
@@ -585,6 +783,7 @@ def main():
     # Summary stats
     exo_count = sum(1 for p in papers if p["is_exoplanet_focused"])
     print(f"\n📊 Summary:")
+    print(f"   📅 Announcement: {announcement_date}")
     print(f"   🪐 Exoplanet-focused: {exo_count}")
     print(f"   📄 General astro-ph.EP: {len(papers) - exo_count}")
 

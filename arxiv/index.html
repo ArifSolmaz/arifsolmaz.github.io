@@ -8,26 +8,26 @@
     <link rel="alternate" type="application/rss+xml" title="Exoplanet Papers RSS Feed" href="feed.xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-page: #faf9f7;
-            --bg-card: #ffffff;
-            --bg-summary: #f5f3f0;
-            --bg-highlight: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --accent-primary: #6366f1;
-            --accent-secondary: #8b5cf6;
-            --accent-warm: #d97706;
-            --accent-teal: #0d9488;
-            --accent-green: #059669;
-            --text-primary: #1e293b;
-            --text-secondary: #475569;
-            --text-muted: #64748b;
-            --border: #e5e5e5;
-            --border-accent: rgba(99, 102, 241, 0.3);
-            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04);
-            --shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-            --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.1);
+            --bg: #fcfcfa;
+            --bg-alt: #f5f4f0;
+            --bg-summary: #f9f8f5;
+            --card: #ffffff;
+            --text: #1a1a1a;
+            --text-secondary: #3d3d3d;
+            --text-muted: #6b6b6b;
+            --text-light: #999;
+            --accent: #c41e3a;
+            --accent-hover: #a01830;
+            --accent-light: rgba(196, 30, 58, 0.08);
+            --border: #e8e6e1;
+            --border-dark: #d4d2cc;
+            --shadow: 0 1px 3px rgba(0,0,0,0.04);
+            --shadow-lg: 0 4px 12px rgba(0,0,0,0.08);
+            --radius: 8px;
+            --transition: 0.2s ease;
         }
 
         * {
@@ -36,410 +36,403 @@
             box-sizing: border-box;
         }
 
-        body {
-            font-family: 'DM Sans', sans-serif;
-            background: var(--bg-page);
-            color: var(--text-primary);
-            min-height: 100vh;
-            line-height: 1.6;
+        html {
+            scroll-behavior: smooth;
         }
 
+        body {
+            font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.65;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Container */
         .container {
-            max-width: 900px;
+            width: 100%;
+            max-width: 720px;
             margin: 0 auto;
-            padding: 1.5rem;
+            padding: 0 1.25rem;
         }
 
         /* Header */
         header {
-            text-align: center;
             padding: 2rem 0 1.5rem;
+            border-bottom: 1px solid var(--border);
         }
 
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.3rem;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            text-decoration: none;
-            margin-bottom: 1rem;
-            transition: color 0.2s;
-        }
-
-        .back-link:hover {
-            color: var(--accent-primary);
-        }
-
-        .logo-icon {
-            width: 56px;
-            height: 56px;
-            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.25);
-            margin: 0 auto 1rem;
-        }
-
-        h1 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.2rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 0.25rem;
-        }
-
-        .subtitle {
-            font-size: 1rem;
-            color: var(--text-secondary);
-        }
-
-        .subscribe-links {
-            display: flex;
-            justify-content: center;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-
-        .subscribe-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.3rem;
-            padding: 0.4rem 0.75rem;
-            border-radius: 6px;
-            font-size: 0.75rem;
-            font-weight: 500;
-            text-decoration: none;
-            transition: all 0.2s;
-        }
-
-        .subscribe-btn.rss {
-            background: rgba(249, 115, 22, 0.1);
-            color: #ea580c;
-        }
-
-        .subscribe-btn.rss:hover {
-            background: rgba(249, 115, 22, 0.2);
-        }
-
-        .subscribe-btn.twitter {
-            background: rgba(29, 161, 242, 0.1);
-            color: #1d9bf0;
-        }
-
-        .subscribe-btn.twitter:hover {
-            background: rgba(29, 161, 242, 0.2);
-        }
-
-        .subscribe-btn.bluesky {
-            background: rgba(0, 133, 255, 0.1);
-            color: #0085ff;
-        }
-
-        .subscribe-btn.bluesky:hover {
-            background: rgba(0, 133, 255, 0.2);
-        }
-
-        /* Date Navigation */
-        .date-nav {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1rem 1.5rem;
-            margin: 1.5rem 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .date-nav-left {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .nav-btn {
-            background: var(--bg-summary);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 0.5rem 0.75rem;
-            cursor: pointer;
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            transition: all 0.2s;
-        }
-
-        .nav-btn:hover:not(:disabled) {
-            background: var(--accent-primary);
-            color: white;
-            border-color: var(--accent-primary);
-        }
-
-        .nav-btn:disabled {
-            opacity: 0.4;
-            cursor: not-allowed;
-        }
-
-        .date-selector {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .date-select {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.9rem;
-            padding: 0.5rem 0.75rem;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            background: var(--bg-card);
-            color: var(--text-primary);
-            cursor: pointer;
-        }
-
-        .date-select:focus {
-            outline: none;
-            border-color: var(--accent-primary);
-        }
-
-        .today-btn {
-            background: var(--accent-primary);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            padding: 0.5rem 1rem;
-            font-size: 0.85rem;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-
-        .today-btn:hover {
-            background: var(--accent-secondary);
-        }
-
-        .stats {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .stat {
+        .masthead {
             text-align: center;
-            padding: 0.25rem 0.75rem;
-            background: var(--bg-summary);
-            border-radius: 8px;
+            margin-bottom: 1.25rem;
         }
 
-        .stat-number {
-            font-family: 'JetBrains Mono', monospace;
+        .logo {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(2rem, 8vw, 2.75rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--text);
+            line-height: 1.1;
+        }
+
+        .tagline {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-top: 0.35rem;
+        }
+
+        /* Subscribe Row - Minimal */
+        .subscribe-row {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 0.75rem;
+        }
+
+        .subscribe-row a {
+            font-size: 0.85rem;
+            color: var(--accent);
+            text-decoration: none;
+            transition: color var(--transition);
+        }
+
+        .subscribe-row a:hover {
+            text-decoration: underline;
+        }
+
+        /* Date Navigation - Simple arXiv Style */
+        .date-nav {
+            padding: 1.25rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .date-nav-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        .date-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .date-link {
+            font-size: 0.95rem;
+            color: var(--accent);
+            text-decoration: none;
+            padding: 0.2rem 0;
+            border-bottom: 1px solid transparent;
+            transition: all var(--transition);
+        }
+
+        .date-link:hover {
+            border-bottom-color: var(--accent);
+        }
+
+        .date-link.active {
+            color: var(--text);
+            font-weight: 600;
+            border-bottom-color: var(--text);
+        }
+
+        .date-more {
+            font-size: 0.9rem;
+            color: var(--accent);
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0.2rem 0;
+        }
+
+        .date-more:focus {
+            outline: none;
+        }
+
+        .date-current {
+            display: flex;
+            align-items: baseline;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            padding-top: 0.5rem;
+        }
+
+        .date-current-label {
+            font-family: 'Playfair Display', serif;
             font-size: 1.1rem;
             font-weight: 600;
-            color: var(--accent-primary);
         }
 
-        .stat-label {
-            font-size: 0.65rem;
+        .date-current-count {
+            font-size: 0.85rem;
             color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
+        }
+
+        .date-current-count strong {
+            color: var(--accent);
         }
 
         /* Archive Notice */
         .archive-notice {
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
-            border: 1px solid var(--border-accent);
-            border-radius: 8px;
-            padding: 0.75rem 1rem;
-            margin-bottom: 1rem;
+            padding: 0.5rem 0;
             font-size: 0.85rem;
-            color: var(--text-secondary);
+            color: var(--text-muted);
             display: none;
         }
 
         .archive-notice.visible {
             display: block;
         }
+        
+        .archive-notice strong {
+            color: var(--text);
+        }
 
-        /* Section Title */
-        .section-title {
-            font-size: 0.75rem;
-            font-weight: 600;
+        /* Main Content */
+        main {
+            padding: 1.5rem 0 3rem;
+        }
+
+        /* Lead Story */
+        .lead-story {
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+            cursor: pointer;
+        }
+
+        .lead-story:hover .lead-title {
+            color: var(--accent);
+        }
+
+        .lead-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 0.75rem;
+        }
+
+        @media (min-width: 640px) {
+            .lead-grid {
+                grid-template-columns: 1fr 280px;
+                align-items: start;
+            }
+        }
+
+        .lead-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            background: var(--bg-alt);
+            order: -1;
+        }
+
+        @media (min-width: 640px) {
+            .lead-image {
+                height: 200px;
+                order: 1;
+            }
+        }
+
+        .lead-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .lead-label {
+            font-size: 0.7rem;
             text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--text-muted);
+            letter-spacing: 0.12em;
+            color: var(--accent);
+            font-weight: 600;
             margin-bottom: 0.75rem;
-            margin-top: 1.5rem;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.4rem;
         }
 
-        /* Highlight Card */
-        .highlight-card {
-            background: var(--bg-highlight);
-            border-radius: 16px;
-            padding: 1.5rem;
-            color: white;
-            cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
-            margin-bottom: 1.5rem;
-        }
-
-        .highlight-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 40px rgba(99, 102, 241, 0.3);
-        }
-
-        .highlight-category {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.65rem;
-            padding: 0.2rem 0.5rem;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 4px;
-            display: inline-block;
-            margin-bottom: 0.75rem;
-        }
-
-        .highlight-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.4rem;
+        .lead-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.5rem, 5vw, 2rem);
             font-weight: 600;
-            line-height: 1.3;
-            margin-bottom: 0.5rem;
+            line-height: 1.25;
+            margin-bottom: 0.75rem;
+            transition: color var(--transition);
         }
 
-        .highlight-authors {
-            font-size: 0.85rem;
-            opacity: 0.9;
+        .lead-byline {
+            font-size: 0.9rem;
+            color: var(--text-muted);
             margin-bottom: 1rem;
         }
 
-        .highlight-teaser {
-            font-size: 0.9rem;
-            opacity: 0.85;
-            line-height: 1.5;
+        .lead-byline .authors {
+            font-weight: 600;
+            color: var(--text-secondary);
         }
 
-        .highlight-cta {
+        .lead-byline .arxiv-id {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+        }
+
+        .lead-excerpt {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .lead-cta {
             display: inline-flex;
             align-items: center;
             gap: 0.3rem;
             margin-top: 1rem;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             font-weight: 500;
+            color: var(--accent);
         }
 
-        /* Papers List */
-        .papers-list {
+        /* Section Header */
+        .section-header {
             display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--text);
         }
 
-        .paper-item {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1rem;
-            display: flex;
-            gap: 1rem;
-            cursor: pointer;
-            transition: all 0.2s;
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            font-weight: 600;
         }
 
-        .paper-item:hover {
-            border-color: var(--border-accent);
-            box-shadow: var(--shadow);
-        }
-
-        .paper-thumb {
-            width: 80px;
-            height: 60px;
-            border-radius: 8px;
-            overflow: hidden;
-            flex-shrink: 0;
-        }
-
-        .paper-thumb img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .paper-content {
-            flex: 1;
-            min-width: 0;
-        }
-
-        .paper-meta {
-            display: flex;
-            gap: 0.5rem;
-            margin-bottom: 0.3rem;
-            flex-wrap: wrap;
-        }
-
-        .paper-category {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.6rem;
-            padding: 0.15rem 0.4rem;
-            background: var(--bg-summary);
-            border-radius: 4px;
-            color: var(--text-muted);
-        }
-
-        .paper-type-badge {
-            font-size: 0.6rem;
-            padding: 0.15rem 0.4rem;
-            border-radius: 4px;
-        }
-
-        .paper-type-badge.exoplanet {
-            background: rgba(99, 102, 241, 0.1);
-            color: var(--accent-primary);
-        }
-
-        .paper-type-badge.general {
-            background: rgba(100, 116, 139, 0.1);
-            color: var(--text-muted);
-        }
-
-        .paper-title {
-            font-size: 0.95rem;
-            font-weight: 500;
-            line-height: 1.3;
-            margin-bottom: 0.25rem;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-
-        .paper-authors {
+        .section-count {
             font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* Papers Grid */
+        .papers-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0;
+        }
+
+        @media (min-width: 540px) {
+            .papers-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 1.5rem 2rem;
+            }
+        }
+
+        .paper-article {
+            padding: 1.25rem 0;
+            border-bottom: 1px solid var(--border);
+            cursor: pointer;
+            transition: background var(--transition);
+        }
+
+        @media (min-width: 540px) {
+            .paper-article {
+                padding: 0 0 1.25rem 0;
+                border-bottom: 1px solid var(--border);
+            }
+        }
+
+        .paper-article:hover {
+            background: transparent;
+        }
+
+        .paper-article:hover .article-title {
+            color: var(--accent);
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .article-category {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-light);
+        }
+
+        .article-badge {
+            font-size: 0.65rem;
+            font-weight: 600;
+            padding: 0.15rem 0.4rem;
+            border-radius: 4px;
+            background: var(--accent-light);
+            color: var(--accent);
+        }
+
+        .article-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            line-height: 1.35;
+            margin-bottom: 0.35rem;
+            transition: color var(--transition);
+        }
+
+        .article-byline {
+            font-size: 0.85rem;
             color: var(--text-muted);
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+            max-width: 100%;
+        }
+
+        /* Loading & Empty States */
+        .loading, .empty-state, .error-state {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: var(--text-muted);
+        }
+
+        .spinner {
+            width: 32px;
+            height: 32px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
         }
 
         /* Modal */
         .modal-overlay {
             position: fixed;
             inset: 0;
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(0, 0, 0, 0.5);
             backdrop-filter: blur(4px);
             z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem;
             opacity: 0;
             visibility: hidden;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
+            overflow-y: auto;
+            padding: 1rem;
         }
 
         .modal-overlay.active {
@@ -448,13 +441,12 @@
         }
 
         .modal {
-            background: var(--bg-card);
-            border-radius: 16px;
-            max-width: 700px;
-            width: 100%;
-            max-height: 90vh;
-            overflow-y: auto;
+            background: var(--card);
+            border-radius: 12px;
+            max-width: 640px;
+            margin: 2rem auto;
             position: relative;
+            box-shadow: var(--shadow-lg);
         }
 
         .modal-close {
@@ -464,22 +456,35 @@
             width: 36px;
             height: 36px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.9);
-            border: none;
+            background: var(--card);
+            border: 1px solid var(--border);
             cursor: pointer;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             z-index: 10;
             display: flex;
             align-items: center;
             justify-content: center;
             box-shadow: var(--shadow);
+            transition: all var(--transition);
+        }
+
+        .modal-close:hover {
+            background: var(--text);
+            color: white;
+            border-color: var(--text);
         }
 
         .modal-image {
             width: 100%;
             height: 200px;
             object-fit: cover;
-            border-radius: 16px 16px 0 0;
+            border-radius: 12px 12px 0 0;
+        }
+
+        @media (min-width: 540px) {
+            .modal-image {
+                height: 260px;
+            }
         }
 
         .modal-header {
@@ -489,14 +494,20 @@
 
         .modal-meta {
             display: flex;
+            flex-wrap: wrap;
             gap: 0.5rem;
             margin-bottom: 0.75rem;
-            flex-wrap: wrap;
+        }
+
+        .modal-meta .article-category {
+            background: var(--bg-alt);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
         }
 
         .modal-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5rem;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.25rem, 4vw, 1.5rem);
             font-weight: 600;
             line-height: 1.3;
             margin-bottom: 0.5rem;
@@ -504,7 +515,7 @@
 
         .modal-authors {
             font-size: 0.9rem;
-            color: var(--text-secondary);
+            color: var(--text-muted);
         }
 
         .modal-summary {
@@ -516,16 +527,20 @@
             font-size: 0.75rem;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--accent-primary);
+            letter-spacing: 0.08em;
+            color: var(--accent);
             margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
         }
 
         .summary-content h4 {
-            font-size: 0.9rem;
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 0.95rem;
             font-weight: 600;
-            color: var(--text-primary);
-            margin: 1rem 0 0.5rem;
+            color: var(--text);
+            margin: 1.25rem 0 0.5rem;
         }
 
         .summary-content h4:first-child {
@@ -533,31 +548,40 @@
         }
 
         .summary-content p {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: var(--text-secondary);
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         .modal-abstract {
-            padding: 1.5rem;
+            padding: 1.25rem 1.5rem;
             border-top: 1px solid var(--border);
         }
 
         .abstract-toggle {
             background: none;
             border: none;
-            color: var(--accent-primary);
+            color: var(--accent);
             font-size: 0.85rem;
+            font-weight: 500;
             cursor: pointer;
             padding: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .abstract-toggle:hover {
+            text-decoration: underline;
         }
 
         .abstract-content {
             display: none;
             margin-top: 1rem;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             color: var(--text-secondary);
-            line-height: 1.6;
+            line-height: 1.7;
+            font-style: italic;
         }
 
         .abstract-content.visible {
@@ -568,153 +592,178 @@
             padding: 1rem 1.5rem;
             border-top: 1px solid var(--border);
             display: flex;
-            gap: 0.75rem;
             flex-wrap: wrap;
+            gap: 0.5rem;
         }
 
         .modal-link {
             display: inline-flex;
             align-items: center;
             gap: 0.3rem;
-            padding: 0.5rem 1rem;
-            background: var(--bg-summary);
+            padding: 0.5rem 0.85rem;
+            background: var(--bg-alt);
             border: 1px solid var(--border);
-            border-radius: 8px;
+            border-radius: var(--radius);
+            font-size: 0.8rem;
+            font-weight: 500;
             color: var(--text-secondary);
             text-decoration: none;
-            font-size: 0.85rem;
-            transition: all 0.2s;
             cursor: pointer;
+            transition: all var(--transition);
         }
 
         .modal-link:hover {
-            background: var(--accent-primary);
+            background: var(--text);
             color: white;
-            border-color: var(--accent-primary);
+            border-color: var(--text);
         }
 
-        /* Loading & Empty States */
-        .loading, .empty-state, .error-box {
+        /* Footer */
+        footer {
+            border-top: 3px double var(--border-dark);
+            padding: 2rem 0;
             text-align: center;
-            padding: 3rem;
+        }
+
+        .footer-content {
+            font-size: 0.85rem;
             color: var(--text-muted);
         }
 
-        .spinner {
-            width: 40px;
-            height: 40px;
-            border: 3px solid var(--border);
-            border-top-color: var(--accent-primary);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 1rem;
+        .footer-content a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
         }
 
-        @keyframes spin {
-            to { transform: rotate(360deg); }
+        .footer-content a:hover {
+            text-decoration: underline;
         }
 
-        /* Responsive */
-        @media (max-width: 640px) {
-            h1 { font-size: 1.8rem; }
-            .date-nav { flex-direction: column; align-items: stretch; }
-            .date-nav-left { justify-content: center; }
-            .stats { justify-content: center; }
-            .paper-thumb { width: 60px; height: 45px; }
-            .modal { margin: 0.5rem; max-height: 95vh; }
+        .footer-note {
+            font-size: 0.8rem;
+            font-style: italic;
+            margin-top: 0.5rem;
+            color: var(--text-light);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            header {
+                padding: 1.5rem 0 1.25rem;
+            }
+            
+            .subscribe-row {
+                gap: 0.4rem 1rem;
+            }
+            
+            .date-bar {
+                padding: 1rem 0;
+            }
+            
+            .modal {
+                margin: 1rem auto;
+                border-radius: 10px;
+            }
+            
+            .modal-header,
+            .modal-summary,
+            .modal-abstract,
+            .modal-footer {
+                padding: 1.25rem;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            .subscribe-row,
+            .nav-controls,
+            .modal-overlay {
+                display: none !important;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <a href="https://arifsolmaz.github.io" class="back-link">← Back to main site</a>
-            <div class="logo-icon">🪐</div>
-            <h1>Exoplanet Papers</h1>
-            <p class="subtitle">Daily arXiv astro-ph.EP summaries</p>
-            <div class="subscribe-links">
-                <a href="feed.xml" class="subscribe-btn rss" title="Subscribe via RSS">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6.18 15.64a2.18 2.18 0 0 1 2.18 2.18C8.36 19 7.38 20 6.18 20C5 20 4 19 4 17.82a2.18 2.18 0 0 1 2.18-2.18M4 4.44A15.56 15.56 0 0 1 19.56 20h-2.83A12.73 12.73 0 0 0 4 7.27V4.44m0 5.66a9.9 9.9 0 0 1 9.9 9.9h-2.83A7.07 7.07 0 0 0 4 12.93V10.1Z"/></svg>
-                    RSS
-                </a>
-                <a href="https://x.com/arifsolmaz" target="_blank" class="subscribe-btn twitter" title="Follow on X/Twitter">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                    X
-                </a>
-                <a href="https://bsky.app/profile/arifsolmaz.bsky.social" target="_blank" class="subscribe-btn bluesky" title="Follow on Bluesky">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.815 2.736 3.713 3.66 6.383 3.364.136-.02.275-.039.415-.056-.138.022-.276.04-.415.056-3.912.58-7.387 2.005-2.83 7.078 5.013 5.19 6.87-1.113 7.823-4.308.953 3.195 2.05 9.271 7.733 4.308 4.267-4.308 1.172-6.498-2.74-7.078a8.741 8.741 0 0 1-.415-.056c.14.017.279.036.415.056 2.67.297 5.568-.628 6.383-3.364.246-.828.624-5.79.624-6.478 0-.69-.139-1.861-.902-2.206-.659-.298-1.664-.62-4.3 1.24C16.046 4.748 13.087 8.687 12 10.8Z"/></svg>
-                    Bluesky
-                </a>
+            <div class="masthead">
+                <h1 class="logo">Exoplanet Papers</h1>
+                <p class="tagline">Daily discoveries from arXiv astro-ph.EP</p>
+            </div>
+            <div class="subscribe-row">
+                <a href="feed.xml">RSS Feed</a>
+                <a href="https://twitter.com/arifsolmaz" target="_blank">Twitter</a>
+                <a href="https://bsky.app/profile/arifsolmaz.bsky.social" target="_blank">Bluesky</a>
             </div>
         </header>
 
-        <!-- Date Navigation -->
-        <div class="date-nav">
-            <div class="date-nav-left">
-                <button class="nav-btn" id="prevBtn" onclick="navigateDate(-1)">← Prev</button>
-                <div class="date-selector">
-                    <select class="date-select" id="dateSelect" onchange="loadDate(this.value)">
-                        <option value="">Loading...</option>
-                    </select>
-                </div>
-                <button class="nav-btn" id="nextBtn" onclick="navigateDate(1)">Next →</button>
-                <button class="today-btn" onclick="loadToday()">Today</button>
+        <nav class="date-nav">
+            <div class="date-nav-label">Recent submissions</div>
+            <div class="date-list" id="dateList">
+                <span class="date-link active">Loading...</span>
             </div>
-            <div class="stats">
-                <div class="stat">
-                    <div class="stat-number" id="exoplanetCount">-</div>
-                    <div class="stat-label">Exoplanet</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number" id="totalCount">-</div>
-                    <div class="stat-label">Total</div>
-                </div>
+            <div class="date-current">
+                <span class="date-current-label" id="currentDateLabel">—</span>
+                <span class="date-current-count">(<strong id="paperCount">0</strong> papers)</span>
             </div>
-        </div>
+        </nav>
 
-        <!-- Archive Notice -->
         <div class="archive-notice" id="archiveNotice">
-            📚 Viewing archive from <strong id="archiveDate"></strong>
+            Viewing archive: <strong id="archiveDate"></strong>
         </div>
 
-        <!-- Main Content -->
-        <div id="content">
+        <main id="content">
             <div class="loading">
                 <div class="spinner"></div>
-                <p>Loading papers...</p>
+                <p>Loading today's papers...</p>
             </div>
-        </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                Curated by <a href="https://arifsolmaz.github.io">Arif Solmaz</a>
+            </div>
+            <div class="footer-note">
+                Summaries generated with Claude AI • Data from arXiv.org
+            </div>
+        </footer>
     </div>
 
     <!-- Modal -->
     <div class="modal-overlay" id="modalOverlay">
         <div class="modal">
-            <button class="modal-close" onclick="closeModal()">×</button>
+            <button class="modal-close" onclick="closeModal()">✕</button>
             <div id="modalContent"></div>
         </div>
     </div>
 
     <script>
-        const PAGE_URL = "https://arifsolmaz.github.io/arxiv";
-        const ARCHIVE_INDEX_URL = "data/archive/index.json";
+        // Configuration
+        const PAGE_URL = 'https://arifsolmaz.github.io/arxiv/';
+        const ARCHIVE_INDEX_URL = 'data/archive/index.json';
         
         let papersData = [];
         let archiveIndex = { dates: [] };
         let currentDate = null;
 
-        // Format date for display
+        // Utility functions
         function formatDate(dateStr) {
-            const date = new Date(dateStr);
+            const date = new Date(dateStr + 'T12:00:00');
             return date.toLocaleDateString('en-US', { 
-                weekday: 'short', 
+                weekday: 'long',
                 year: 'numeric', 
-                month: 'short', 
+                month: 'long', 
                 day: 'numeric' 
             });
         }
 
         function formatDateShort(dateStr) {
-            const date = new Date(dateStr + 'T00:00:00');
+            const date = new Date(dateStr + 'T12:00:00');
             return date.toLocaleDateString('en-US', { 
                 month: 'short', 
                 day: 'numeric',
@@ -722,25 +771,69 @@
             });
         }
 
-        // Format authors
+        function cleanLatex(text) {
+            if (!text) return '';
+            return text
+                // Common LaTeX accent sequences
+                .replace(/\\'a/g, 'á').replace(/\\'e/g, 'é').replace(/\\'i/g, 'í')
+                .replace(/\\'o/g, 'ó').replace(/\\'u/g, 'ú').replace(/\\'y/g, 'ý')
+                .replace(/\\'A/g, 'Á').replace(/\\'E/g, 'É').replace(/\\'I/g, 'Í')
+                .replace(/\\'O/g, 'Ó').replace(/\\'U/g, 'Ú').replace(/\\'Y/g, 'Ý')
+                .replace(/\\"a/g, 'ä').replace(/\\"e/g, 'ë').replace(/\\"i/g, 'ï')
+                .replace(/\\"o/g, 'ö').replace(/\\"u/g, 'ü').replace(/\\"y/g, 'ÿ')
+                .replace(/\\"A/g, 'Ä').replace(/\\"O/g, 'Ö').replace(/\\"U/g, 'Ü')
+                .replace(/\\`a/g, 'à').replace(/\\`e/g, 'è').replace(/\\`i/g, 'ì')
+                .replace(/\\`o/g, 'ò').replace(/\\`u/g, 'ù')
+                .replace(/\\~n/g, 'ñ').replace(/\\~N/g, 'Ñ')
+                .replace(/\\~a/g, 'ã').replace(/\\~o/g, 'õ')
+                .replace(/\\c\{c\}/g, 'ç').replace(/\\c\{C\}/g, 'Ç')
+                .replace(/\\v\{c\}/g, 'č').replace(/\\v\{s\}/g, 'š').replace(/\\v\{z\}/g, 'ž')
+                .replace(/\\v\{C\}/g, 'Č').replace(/\\v\{S\}/g, 'Š').replace(/\\v\{Z\}/g, 'Ž')
+                .replace(/\\\^a/g, 'â').replace(/\\\^e/g, 'ê').replace(/\\\^i/g, 'î')
+                .replace(/\\\^o/g, 'ô').replace(/\\\^u/g, 'û')
+                // Handle remaining backslash escapes
+                .replace(/\\([a-zA-Z])/g, '$1')
+                .replace(/[{}]/g, '');
+        }
+
         function formatAuthors(authors) {
             if (!authors || authors.length === 0) return 'Unknown authors';
+            // Handle if authors is a string
+            if (typeof authors === 'string') {
+                authors = authors.split(',').map(a => a.trim());
+            }
+            // Handle if first element contains commas (all authors in one string)
+            if (authors.length === 1 && authors[0].includes(',')) {
+                authors = authors[0].split(',').map(a => a.trim());
+            }
+            // Clean LaTeX from all authors
+            authors = authors.map(a => cleanLatex(a));
             if (authors.length <= 3) return authors.join(', ');
             return `${authors.slice(0, 3).join(', ')} +${authors.length - 3} more`;
         }
 
         function formatAuthorsShort(authors) {
             if (!authors || authors.length === 0) return '';
-            if (authors.length === 1) return authors[0];
-            return `${authors[0]} et al.`;
+            // Handle if authors is a string
+            if (typeof authors === 'string') {
+                authors = authors.split(',').map(a => a.trim());
+            }
+            // Handle if first element contains commas (all authors in one string)
+            if (authors.length === 1 && authors[0].includes(',')) {
+                authors = authors[0].split(',').map(a => a.trim());
+            }
+            // Clean LaTeX from first author
+            const firstAuthor = cleanLatex(authors[0]);
+            if (authors.length === 1) return firstAuthor;
+            // Return first author + et al.
+            return `${firstAuthor} et al.`;
         }
 
-        // Get safe ID for HTML
         function getSafeId(id) {
             return id.replace(/[^a-zA-Z0-9]/g, '-');
         }
 
-        // Load archive index
+        // Archive & Navigation
         async function loadArchiveIndex() {
             try {
                 const response = await fetch(ARCHIVE_INDEX_URL);
@@ -748,91 +841,79 @@
                     archiveIndex = await response.json();
                 }
             } catch (e) {
-                console.log('No archive index found, using today only');
+                console.log('No archive index found');
             }
             
-            // Populate date selector
-            const select = document.getElementById('dateSelect');
-            select.innerHTML = '';
+            renderDateList();
+        }
+
+        function renderDateList() {
+            const container = document.getElementById('dateList');
             
             if (archiveIndex.dates && archiveIndex.dates.length > 0) {
-                archiveIndex.dates.forEach(date => {
-                    const option = document.createElement('option');
-                    option.value = date;
-                    option.textContent = formatDateShort(date);
-                    select.appendChild(option);
-                });
+                // Show up to 5 recent dates
+                const recentDates = archiveIndex.dates.slice(0, 5);
+                let html = recentDates.map(date => {
+                    const isActive = date === currentDate;
+                    return `<a href="#" class="date-link ${isActive ? 'active' : ''}" onclick="loadDate('${date}'); return false;">${formatDateNav(date)}</a>`;
+                }).join('');
+                
+                // Add "more" dropdown if there are more dates
+                if (archiveIndex.dates.length > 5) {
+                    html += `<select class="date-more" onchange="if(this.value) loadDate(this.value)">
+                        <option value="">more...</option>
+                        ${archiveIndex.dates.slice(5).map(d => `<option value="${d}">${formatDateNav(d)}</option>`).join('')}
+                    </select>`;
+                }
+                
+                container.innerHTML = html;
             } else {
-                // Fallback to today
-                const today = new Date().toISOString().split('T')[0];
-                const option = document.createElement('option');
-                option.value = 'today';
-                option.textContent = 'Today';
-                select.appendChild(option);
+                container.innerHTML = '<span class="date-link active">Today</span>';
             }
         }
 
-        // Navigate between dates
-        function navigateDate(direction) {
-            const select = document.getElementById('dateSelect');
-            const currentIndex = select.selectedIndex;
-            const newIndex = currentIndex - direction; // Reversed because dates are newest-first
-            
-            if (newIndex >= 0 && newIndex < select.options.length) {
-                select.selectedIndex = newIndex;
-                loadDate(select.value);
-            }
+        function formatDateNav(dateStr) {
+            const date = new Date(dateStr + 'T12:00:00');
+            return date.toLocaleDateString('en-US', { 
+                weekday: 'short',
+                day: 'numeric',
+                month: 'short',
+                year: 'numeric'
+            });
         }
 
-        // Update navigation buttons
-        function updateNavButtons() {
-            const select = document.getElementById('dateSelect');
-            const currentIndex = select.selectedIndex;
-            
-            document.getElementById('prevBtn').disabled = currentIndex >= select.options.length - 1;
-            document.getElementById('nextBtn').disabled = currentIndex <= 0;
-        }
-
-        // Load today's papers
         function loadToday() {
-            const select = document.getElementById('dateSelect');
-            if (select.options.length > 0) {
-                select.selectedIndex = 0;
-                loadDate(select.value);
+            if (archiveIndex.dates && archiveIndex.dates.length > 0) {
+                loadDate(archiveIndex.dates[0]);
             } else {
                 loadPapers('data/papers.json');
             }
         }
 
-        // Load papers for a specific date
         async function loadDate(date) {
             currentDate = date;
             
-            // Determine URL
-            let url;
-            if (date === 'today' || !date) {
-                url = 'data/papers.json';
-            } else {
-                url = `data/archive/${date}.json`;
-            }
+            let url = (date === 'today' || !date) 
+                ? 'data/papers.json' 
+                : `data/archive/${date}.json`;
+            
+            // Update active state in date list
+            renderDateList();
             
             // Show/hide archive notice
             const notice = document.getElementById('archiveNotice');
-            const select = document.getElementById('dateSelect');
-            const isToday = select.selectedIndex === 0;
+            const isToday = archiveIndex.dates && archiveIndex.dates[0] === date;
             
             if (!isToday && date) {
                 notice.classList.add('visible');
-                document.getElementById('archiveDate').textContent = formatDateShort(date);
+                document.getElementById('archiveDate').textContent = formatDateNav(date);
             } else {
                 notice.classList.remove('visible');
             }
             
-            updateNavButtons();
             await loadPapers(url);
         }
 
-        // Load papers from URL
         async function loadPapers(url) {
             const content = document.getElementById('content');
             content.innerHTML = '<div class="loading"><div class="spinner"></div><p>Loading papers...</p></div>';
@@ -844,16 +925,14 @@
                 const data = await response.json();
                 papersData = data.papers || [];
                 
-                // Update stats
-                const exoCount = papersData.filter(p => p.is_exoplanet_focused !== false).length;
-                document.getElementById('exoplanetCount').textContent = exoCount;
-                document.getElementById('totalCount').textContent = papersData.length;
+                // Update current date display
+                const displayDate = data.announcement_date || data.updated_at?.split('T')[0] || currentDate;
+                document.getElementById('currentDateLabel').textContent = formatDateNav(displayDate);
+                document.getElementById('paperCount').textContent = papersData.length;
                 
-                // Render content
                 if (papersData.length > 0) {
                     content.innerHTML = renderPapersList(papersData);
                     
-                    // Check for hash and open modal
                     if (window.location.hash) {
                         const safeId = window.location.hash.replace('#paper-', '');
                         setTimeout(() => openModal(safeId), 100);
@@ -865,117 +944,104 @@
                         </div>
                     `;
                 }
-                
             } catch (error) {
                 console.error('Error:', error);
                 
-                // If archive file not found, try main papers.json
                 if (url.includes('archive/')) {
-                    console.log('Archive not found, falling back to today');
                     await loadPapers('data/papers.json');
                     return;
                 }
                 
                 content.innerHTML = `
-                    <div class="error-box">
-                        <p>⚠️ Error loading papers data.</p>
+                    <div class="error-state">
+                        <p>⚠️ Error loading papers.</p>
                     </div>
                 `;
             }
         }
 
-        // Render highlight card
-        function renderHighlight(paper) {
+        // Rendering
+        function renderLeadStory(paper) {
             const safeId = getSafeId(paper.id);
             const imageUrl = paper.figure_url || 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=800&q=80';
             
-            // Get teaser from tweet hook or summary
             let teaser = '';
-            if (paper.tweet_hook && paper.tweet_hook.hook) {
+            if (paper.tweet_hook?.hook) {
                 teaser = paper.tweet_hook.hook;
             } else if (paper.summary) {
-                teaser = paper.summary.substring(0, 150) + '...';
+                teaser = paper.summary.replace(/\*\*/g, '').substring(0, 200) + '...';
             }
             
             return `
-                <div class="section-title">⭐ Today's Highlight</div>
-                <div class="highlight-card" onclick="openModal('${safeId}')" style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.9), rgba(139, 92, 246, 0.9)), url('${imageUrl}'); background-size: cover; background-position: center;">
-                    <span class="highlight-category">${(paper.categories || ['astro-ph.EP'])[0]}</span>
-                    <div class="highlight-title">${paper.title}</div>
-                    <div class="highlight-authors">${formatAuthorsShort(paper.authors)}</div>
-                    <div class="highlight-teaser">${teaser}</div>
-                    <div class="highlight-cta">Read summary →</div>
-                </div>
+                <article class="lead-story" onclick="openModal('${safeId}')">
+                    <div class="lead-label">⭐ Featured Research</div>
+                    <div class="lead-grid">
+                        <div class="lead-content">
+                            <h2 class="lead-title">${paper.title}</h2>
+                            <p class="lead-byline">
+                                <span class="authors">${formatAuthorsShort(paper.authors)}</span>
+                                <span class="arxiv-id">• arXiv:${paper.id}</span>
+                            </p>
+                            <p class="lead-excerpt">${teaser}</p>
+                            <span class="lead-cta">Read full summary →</span>
+                        </div>
+                        <img class="lead-image" src="${imageUrl}" alt="" onerror="this.src='https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=800&q=80'" />
+                    </div>
+                </article>
             `;
         }
 
-        // Render paper list item
-        function renderPaperItem(paper, index) {
+        function renderPaperItem(paper) {
             const safeId = getSafeId(paper.id);
-            const isExoplanet = paper.is_exoplanet_focused !== false;
-            const imageUrl = paper.figure_url || 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=400&q=80';
+            const isExo = paper.is_exoplanet_focused !== false;
             
             return `
-                <div class="paper-item" onclick="openModal('${safeId}')">
-                    <div class="paper-thumb">
-                        <img src="${imageUrl}" alt="" onerror="this.src='https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=400&q=80'" />
+                <article class="paper-article" onclick="openModal('${safeId}')">
+                    <div class="article-meta">
+                        <span class="article-category">${(paper.categories || ['astro-ph.EP'])[0]}</span>
+                        ${isExo ? '<span class="article-badge">🪐 Exoplanet</span>' : ''}
                     </div>
-                    <div class="paper-content">
-                        <div class="paper-meta">
-                            <span class="paper-category">${(paper.categories || ['astro-ph.EP'])[0]}</span>
-                            ${isExoplanet ? 
-                                '<span class="paper-type-badge exoplanet">🪐 Exoplanet</span>' : 
-                                '<span class="paper-type-badge general">🔭 General</span>'
-                            }
-                        </div>
-                        <div class="paper-title">${paper.title}</div>
-                        <div class="paper-authors">${formatAuthorsShort(paper.authors)}</div>
-                    </div>
-                </div>
+                    <h3 class="article-title">${paper.title}</h3>
+                    <p class="article-byline">${formatAuthorsShort(paper.authors)}</p>
+                </article>
             `;
         }
 
-        // Render papers list
         function renderPapersList(papers) {
-            const exoplanetPapers = papers.filter(p => p.is_exoplanet_focused !== false);
-            const generalPapers = papers.filter(p => p.is_exoplanet_focused === false);
+            const exoPapers = papers.filter(p => p.is_exoplanet_focused !== false);
             
-            // Find best paper for highlight (highest tweetability score among exoplanet papers)
-            let highlightPaper = null;
-            if (exoplanetPapers.length > 0) {
-                highlightPaper = exoplanetPapers.reduce((best, p) => 
+            let leadPaper = null;
+            if (exoPapers.length > 0) {
+                leadPaper = exoPapers.reduce((best, p) => 
                     (p.tweetability_score || 0) > (best.tweetability_score || 0) ? p : best
                 );
             }
             
-            // Remaining papers (exclude highlight)
-            const remainingExo = exoplanetPapers.filter(p => p.id !== highlightPaper?.id);
-            const allRemaining = [...remainingExo, ...generalPapers];
+            const remainingPapers = papers.filter(p => p.id !== leadPaper?.id);
             
             let html = '';
             
-            // Highlight section
-            if (highlightPaper) {
-                html += renderHighlight(highlightPaper);
+            if (leadPaper) {
+                html += renderLeadStory(leadPaper);
             }
             
-            // Section title
-            html += `<div class="section-title">📄 All Papers (${allRemaining.length})</div>`;
-            
-            // Papers list
-            html += '<div class="papers-list">';
-            allRemaining.forEach((paper, index) => {
-                html += renderPaperItem(paper, index);
-            });
-            html += '</div>';
+            html += `
+                <div class="section-header">
+                    <h2 class="section-title">All Papers</h2>
+                    <span class="section-count">${remainingPapers.length} articles</span>
+                </div>
+                <div class="papers-grid">
+                    ${remainingPapers.map(p => renderPaperItem(p)).join('')}
+                </div>
+            `;
             
             return html;
         }
 
-        // Render modal content
+        // Modal
         function renderModalContent(paper) {
             const safeId = getSafeId(paper.id);
-            const isExoplanet = paper.is_exoplanet_focused !== false;
+            const isExo = paper.is_exoplanet_focused !== false;
             const imageUrl = paper.figure_url || 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=800&q=80';
             
             return `
@@ -983,12 +1049,9 @@
                 <div class="modal-header">
                     <div class="modal-meta">
                         ${(paper.categories || []).slice(0, 2).map(cat => 
-                            `<span class="paper-category">${cat}</span>`
+                            `<span class="article-category">${cat}</span>`
                         ).join('')}
-                        ${isExoplanet ? 
-                            '<span class="paper-type-badge exoplanet">🪐 Exoplanet</span>' : 
-                            '<span class="paper-type-badge general">🔭 General</span>'
-                        }
+                        ${isExo ? '<span class="article-badge">🪐 Exoplanet</span>' : ''}
                     </div>
                     <h2 class="modal-title">${paper.title}</h2>
                     <p class="modal-authors">${formatAuthors(paper.authors)}</p>
@@ -1011,18 +1074,10 @@
                 </div>
                 
                 <div class="modal-footer">
-                    <a href="${paper.abs_link}" target="_blank" class="modal-link">
-                        📄 arXiv Page
-                    </a>
-                    <a href="${paper.pdf_link}" target="_blank" class="modal-link">
-                        📥 Download PDF
-                    </a>
-                    <button class="modal-link" onclick="shareOnTwitter('${safeId}', event)">
-                        🐦 Tweet This
-                    </button>
-                    <button class="modal-link" onclick="copyLink('${safeId}', event)">
-                        🔗 Copy Link
-                    </button>
+                    <a href="${paper.abs_link}" target="_blank" class="modal-link">📄 arXiv</a>
+                    <a href="${paper.pdf_link}" target="_blank" class="modal-link">📥 PDF</a>
+                    <button class="modal-link" onclick="shareOnTwitter('${safeId}', event)">𝕏 Tweet</button>
+                    <button class="modal-link" onclick="copyLink('${safeId}', event)">🔗 Copy Link</button>
                 </div>
             `;
         }
@@ -1034,7 +1089,6 @@
             document.getElementById('modalContent').innerHTML = renderModalContent(paper);
             document.getElementById('modalOverlay').classList.add('active');
             document.body.style.overflow = 'hidden';
-            
             history.replaceState(null, null, `#paper-${safeId}`);
         }
 
@@ -1058,27 +1112,23 @@
             }
         }
 
-        // Hashtag extraction for sharing
-        const EXOPLANET_KEYWORDS = {
+        // Sharing
+        const HASHTAG_MAP = {
             "jwst": "#JWST", "james webb": "#JWST",
             "habitable zone": "#HabitableZone",
             "biosignature": "#Biosignatures",
             "trappist-1": "#TRAPPIST1",
             "hot jupiter": "#HotJupiter",
-            "super-earth": "#SuperEarth",
-            "transmission spectrum": "#TransmissionSpectroscopy"
+            "super-earth": "#SuperEarth"
         };
 
         function extractHashtags(paper) {
             const text = `${paper.title} ${paper.abstract}`.toLowerCase();
-            const isExo = paper.is_exoplanet_focused !== false;
-            const base = isExo ? ["#Exoplanets", "#Astronomy"] : ["#Astronomy", "#PlanetaryScience"];
-            
+            const base = ["#Exoplanets", "#Astronomy"];
             const found = [];
-            for (const [kw, tag] of Object.entries(EXOPLANET_KEYWORDS)) {
-                if (text.includes(kw) && !found.includes(tag)) {
-                    found.push(tag);
-                }
+            
+            for (const [kw, tag] of Object.entries(HASHTAG_MAP)) {
+                if (text.includes(kw) && !found.includes(tag)) found.push(tag);
             }
             
             return [...base, ...found.slice(0, 2)];
@@ -1090,39 +1140,44 @@
             const paper = papersData.find(p => getSafeId(p.id) === safeId);
             if (!paper) return;
             
-            const paperUrl = `${PAGE_URL}#paper-${safeId}`;
+            const url = `${PAGE_URL}#paper-${safeId}`;
             const hashtags = extractHashtags(paper);
+            const text = `${paper.title}\n\n${url}\n\n${hashtags.join(' ')}`;
             
-            let text = paper.title;
-            text += `\n\n${paperUrl}`;
-            text += `\n\n${hashtags.join(' ')}`;
-            
-            const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`;
-            window.open(tweetUrl, '_blank', 'width=550,height=420');
+            window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`, '_blank');
         }
 
         function copyLink(safeId, event) {
             if (event) event.stopPropagation();
             
-            const paperUrl = `${PAGE_URL}#paper-${safeId}`;
-            navigator.clipboard.writeText(paperUrl).then(() => {
+            const url = `${PAGE_URL}#paper-${safeId}`;
+            navigator.clipboard.writeText(url).then(() => {
                 const btn = event.target;
-                const originalText = btn.innerHTML;
+                const original = btn.innerHTML;
                 btn.innerHTML = '✓ Copied!';
-                setTimeout(() => btn.innerHTML = originalText, 2000);
+                setTimeout(() => btn.innerHTML = original, 2000);
             });
         }
 
-        // Close modal handlers
+        // Event Listeners
         document.getElementById('modalOverlay').addEventListener('click', (e) => {
-            if (e.target === document.getElementById('modalOverlay')) {
-                closeModal();
-            }
+            if (e.target === document.getElementById('modalOverlay')) closeModal();
         });
 
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') closeModal();
         });
+
+        // Touch swipe for modal close
+        let touchStartX = 0;
+        document.getElementById('modalOverlay').addEventListener('touchstart', (e) => {
+            touchStartX = e.touches[0].clientX;
+        }, { passive: true });
+
+        document.getElementById('modalOverlay').addEventListener('touchend', (e) => {
+            const touchEndX = e.changedTouches[0].clientX;
+            if (Math.abs(touchEndX - touchStartX) > 100) closeModal();
+        }, { passive: true });
 
         // Initialize
         async function init() {

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Post exoplanet papers to Bluesky.
-Similar to Twitter posting but for Bluesky/AT Protocol.
+Uses announcement_date from papers.json to track which papers have been posted.
 
 Requires:
     pip install atproto requests pillow
@@ -47,6 +47,62 @@ MAX_IMAGES = 4
 
 # Hashtags (Bluesky doesn't have real hashtags, but we can use them in text)
 BASE_TAGS = ["exoplanets", "astronomy", "arxiv"]
+
+
+def is_placeholder_image(url: str) -> bool:
+    """Check if URL is a placeholder/stock image."""
+    placeholders = [
+        "unsplash.com",
+        "placeholder",
+        "stock",
+        "generic",
+        "default"
+    ]
+    return any(p in url.lower() for p in placeholders)
+
+
+def download_image(url: str, paper_id: str) -> str | None:
+    """Download image to temp file. Returns path or None."""
+    if not url or is_placeholder_image(url):
+        return None
+    
+    try:
+        response = requests.get(url, timeout=15, headers={
+            "User-Agent": "Mozilla/5.0 (compatible; ExoplanetBot/1.0)"
+        })
+        
+        if response.status_code == 200:
+            # Determine extension
+            content_type = response.headers.get("content-type", "")
+            if "png" in content_type:
+                ext = ".png"
+            elif "gif" in content_type:
+                ext = ".gif"
+            else:
+                ext = ".jpg"
+            
+            # Save to temp file
+            safe_id = paper_id.replace("/", "-").replace(".", "-")
+            temp_path = os.path.join(tempfile.gettempdir(), f"bsky_{safe_id}{ext}")
+            
+            with open(temp_path, "wb") as f:
+                f.write(response.content)
+            
+            print(f"📸 Downloaded image: {temp_path}")
+            return temp_path
+    except Exception as e:
+        print(f"Image download failed: {e}")
+    
+    return None
+
+
+def cleanup_temp_file(filepath: str):
+    """Remove temporary file."""
+    try:
+        if filepath and os.path.exists(filepath):
+            os.remove(filepath)
+    except:
+        pass
 
 
 def load_papers():
@@ -244,21 +300,20 @@ def select_paper(papers: list, posted_ids: set) -> dict | None:
     if not unposted:
         return None
     
-    # Prioritize exoplanet papers
-    exo = [p for p in unposted if p.get("is_exoplanet_focused", True)]
-    gen = [p for p in unposted if not p.get("is_exoplanet_focused", True)]
+    # STRICT FILTER: Only post exoplanet papers!
+    exo = [p for p in unposted if p.get("is_exoplanet_focused", False)]
+    
+    if not exo:
+        non_exo_count = len([p for p in unposted if not p.get("is_exoplanet_focused", False)])
+        if non_exo_count > 0:
+            print(f"⚠️ {non_exo_count} non-exoplanet papers skipped (strict mode)")
+        print("No exoplanet papers to post")
+        return None
     
     # Sort by tweetability
     exo.sort(key=lambda p: p.get("tweetability_score", 0), reverse=True)
-    gen.sort(key=lambda p: p.get("tweetability_score", 0), reverse=True)
     
-    # Return best exoplanet paper, or best general
-    if exo:
-        return exo[0]
-    elif gen:
-        return gen[0]
-    
-    return unposted[0]
+    return exo[0]
 
 
 def main():
@@ -271,16 +326,19 @@ def main():
         return
     
     papers = data["papers"]
-    papers_date = data.get("updated_at", "")[:10]
+    
+    # Use announcement_date for tracking (fallback to updated_at for backwards compatibility)
+    papers_date = data.get("announcement_date") or data.get("updated_at", "")[:10]
+    print(f"Papers announcement date: {papers_date}")
     
     # Load posted tracking
     posted_data = load_posted()
     posted_ids = set(posted_data.get("posted_ids", []))
     last_reset = posted_data.get("last_reset")
     
-    # Reset if new day
+    # Reset if new announcement
     if last_reset != papers_date:
-        print(f"New papers (date: {papers_date}). Resetting posted list.")
+        print(f"New papers (announcement: {papers_date}). Resetting posted list.")
         posted_ids = set()
         posted_data = {"posted_ids": [], "last_reset": papers_date}
     
@@ -309,8 +367,26 @@ def main():
     print(post_text)
     print("-" * 40)
     
-    # Post
-    uri = post_to_bluesky(client, post_text)
+    # Download image if available
+    image_path = None
+    figure_url = paper.get("figure_url", "")
+    
+    if figure_url and not is_placeholder_image(figure_url):
+        print(f"\n📷 Downloading image from: {figure_url[:60]}...")
+        image_path = download_image(figure_url, paper["id"])
+        if image_path:
+            print(f"   ✓ Image ready for upload")
+        else:
+            print(f"   ⚠ Could not download image, posting without")
+    else:
+        print("\n📄 No figure available, posting text only")
+    
+    # Post with image
+    uri = post_to_bluesky(client, post_text, image_path)
+    
+    # Cleanup temp file
+    if image_path:
+        cleanup_temp_file(image_path)
     
     if uri:
         posted_ids.add(paper["id"])

@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """
 Post exoplanet papers to Twitter/X as 2-tweet threads.
-Improved version with better figure fetching.
+Uses announcement_date from papers.json to track which papers have been tweeted.
 
 Changes:
+- Uses announcement_date instead of updated_at for tracking
 - Uses pre-fetched figure_url from papers.json first
 - Falls back to fresh fetch only if needed
 - Skips Unsplash placeholders (uses paper card instead)
@@ -158,6 +159,20 @@ EXOPLANET_HASHTAGS = {
     "protoplanetary disc": "#ProtoplanetaryDisk",
     "planet migration": "#PlanetMigration",
     "planetary migration": "#PlanetMigration",
+    
+    # Additional common terms
+    "photometry": "#Photometry",
+    "spectroscopy": "#Spectroscopy",
+    "transit timing": "#TransitTiming",
+    "ttv": "#TransitTiming",
+    "habitable worlds observatory": "#HWO",
+    "hwo": "#HWO",
+    "characterization": "#Characterization",
+    "atmospheric characterization": "#Characterization",
+    "metallicity": "#Metallicity",
+    "spin-orbit": "#SpinOrbit",
+    "obliquity": "#SpinOrbit",
+    "rossiter-mclaughlin": "#SpinOrbit",
 }
 
 # Hashtags for general astro-ph.EP papers
@@ -546,7 +561,9 @@ def truncate_text(text: str, max_length: int, suffix: str = "...") -> str:
 
 
 def extract_hashtags(paper: dict, max_hashtags: int = MAX_HASHTAGS) -> list[str]:
-    """Extract relevant hashtags from paper title and abstract."""
+    """Extract relevant hashtags from paper title and abstract.
+    Prioritizes paper-specific hashtags over generic base hashtags.
+    """
     title = paper.get("title", "").lower()
     abstract = paper.get("abstract", "").lower()
     content = f"{title} {abstract}"
@@ -555,16 +572,24 @@ def extract_hashtags(paper: dict, max_hashtags: int = MAX_HASHTAGS) -> list[str]
     hashtag_map = EXOPLANET_HASHTAGS if is_exoplanet else GENERAL_HASHTAGS
     base_hashtags = BASE_HASHTAGS_EXOPLANET if is_exoplanet else BASE_HASHTAGS_GENERAL
     
+    # Find hashtags from paper content
     found_hashtags = []
     for keyword, hashtag in hashtag_map.items():
         if keyword in content and hashtag not in found_hashtags:
             found_hashtags.append(hashtag)
     
-    # Combine base + found, limit to max
-    all_hashtags = base_hashtags.copy()
-    for h in found_hashtags:
-        if h not in all_hashtags:
-            all_hashtags.append(h)
+    # PRIORITIZE paper-specific hashtags, then fill with base
+    # This ensures hashtags are relevant to the actual paper
+    if found_hashtags:
+        # Start with paper-specific hashtags
+        all_hashtags = found_hashtags[:max_hashtags]
+        # Add base hashtags only if we have room
+        for h in base_hashtags:
+            if h not in all_hashtags and len(all_hashtags) < max_hashtags:
+                all_hashtags.append(h)
+    else:
+        # No paper-specific hashtags found, use base
+        all_hashtags = base_hashtags[:max_hashtags]
     
     return all_hashtags[:max_hashtags]
 
@@ -766,28 +791,25 @@ def select_best_paper(papers: list, tweeted_ids: set) -> dict | None:
     if not untweeted:
         return None
     
-    # Sort by exoplanet focus first, then tweetability
-    exo_papers = [p for p in untweeted if p.get("is_exoplanet_focused", True)]
-    gen_papers = [p for p in untweeted if not p.get("is_exoplanet_focused", True)]
+    # STRICT FILTER: Only tweet exoplanet papers!
+    # This prevents accidental tweets of non-exoplanet content
+    exo_papers = [p for p in untweeted if p.get("is_exoplanet_focused", False)]
     
+    if not exo_papers:
+        non_exo_count = len([p for p in untweeted if not p.get("is_exoplanet_focused", False)])
+        if non_exo_count > 0:
+            print(f"⚠️ {non_exo_count} non-exoplanet papers skipped (strict mode)")
+        print("No exoplanet papers to tweet")
+        return None
+    
+    # Sort by tweetability score
     exo_papers.sort(key=lambda p: p.get("tweetability_score", 0), reverse=True)
-    gen_papers.sort(key=lambda p: p.get("tweetability_score", 0), reverse=True)
-    
-    # Prime time (8 AM - 12 PM, 5 PM - 11 PM Istanbul): exoplanet papers
-    # Off-peak: general papers
-    is_prime_time = (8 <= current_hour < 12) or (17 <= current_hour < 23)
-    
-    if is_prime_time and exo_papers:
-        pool = exo_papers
-    elif gen_papers:
-        pool = gen_papers
-    else:
-        pool = exo_papers if exo_papers else untweeted
+    pool = exo_papers
     
     # Smart timing: spread tweets throughout the day
-    total_papers = len(papers)
+    total_papers = len(exo_papers) + len(tweeted_ids)  # Only count exoplanet papers
     tweeted_count = len(tweeted_ids)
-    remaining = total_papers - tweeted_count
+    remaining = len(exo_papers)
     
     if remaining <= 0:
         return None
@@ -800,7 +822,7 @@ def select_best_paper(papers: list, tweeted_ids: set) -> dict | None:
     expected_tweets = int(minutes_elapsed / interval) if interval > 0 else tweeted_count
     
     print(f"📊 Smart timing:")
-    print(f"   Papers: {total_papers}, Tweeted: {tweeted_count}")
+    print(f"   Exoplanet papers: {total_papers}, Tweeted: {tweeted_count}")
     print(f"   Interval: {interval:.0f} min (~{interval/60:.1f} hours)")
     print(f"   Time: {now.strftime('%H:%M')} Istanbul ({minutes_elapsed:.0f} min into window)")
     print(f"   Expected tweets by now: {expected_tweets}")
@@ -824,16 +846,19 @@ def main():
         return
     
     papers = data["papers"]
-    papers_date = data.get("updated_at", "")[:10]
+    
+    # Use announcement_date for tracking (fallback to updated_at for backwards compatibility)
+    papers_date = data.get("announcement_date") or data.get("updated_at", "")[:10]
+    print(f"Papers announcement date: {papers_date}")
     
     # Load tweeted tracking
     tweeted_data = load_tweeted()
     tweeted_ids = set(tweeted_data.get("tweeted_ids", []))
     last_reset = tweeted_data.get("last_reset")
     
-    # Reset tweeted list if papers were updated (new day)
+    # Reset tweeted list if papers were updated (new announcement)
     if last_reset != papers_date:
-        print(f"New papers detected (date: {papers_date}). Resetting tweeted list.")
+        print(f"New papers detected (announcement: {papers_date}). Resetting tweeted list.")
         tweeted_ids = set()
         tweeted_data = {
             "tweeted_ids": [],

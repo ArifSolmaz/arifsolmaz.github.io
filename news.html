@@ -1,635 +1,643 @@
 <!DOCTYPE html>
 <html lang="tr">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Bilim Haberleri | Arif Solmaz</title>
-  <meta name="description" content="Ötegezegen araştırmalarından güncel bilim haberleri, arXiv makalelerinden Türkçe özetler.">
-  
-  <link rel="icon" href="favicon.ico">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  
-  <style>
-    :root {
-      --color-bg: #0a0a0f;
-      --color-surface: #12121a;
-      --color-border: #1e1e2d;
-      --color-text: #e5e5e5;
-      --color-text-muted: #888;
-      --color-accent: #60a5fa;
-      --color-accent-dim: #3b82f6;
-      --font-sans: 'Inter', system-ui, sans-serif;
-      --radius: 12px;
-      --shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilim Haberleri | Arif Solmaz</title>
+    <meta name="description" content="Ötegezegen araştırmalarından güncel bilim haberleri, arXiv makalelerinden Türkçe özetler.">
+    <link rel="icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #fcfcfa;
+            --bg-alt: #f5f4f0;
+            --card: #ffffff;
+            --text: #1a1a1a;
+            --text-secondary: #3d3d3d;
+            --text-muted: #6b6b6b;
+            --text-light: #999;
+            --accent: #c41e3a;
+            --accent-hover: #a01830;
+            --accent-light: rgba(196, 30, 58, 0.08);
+            --border: #e8e6e1;
+            --border-dark: #d4d2cc;
+            --shadow: 0 1px 3px rgba(0,0,0,0.04);
+            --shadow-lg: 0 4px 12px rgba(0,0,0,0.08);
+            --radius: 8px;
+            --transition: 0.2s ease;
+        }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    body {
-      font-family: var(--font-sans);
-      background: var(--color-bg);
-      color: var(--color-text);
-      line-height: 1.6;
-      min-height: 100vh;
-    }
+        html { scroll-behavior: smooth; }
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      background: var(--color-surface);
-      border-bottom: 1px solid var(--color-border);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
+        body {
+            font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.65;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+        }
 
-    .brand {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--color-text);
-      text-decoration: none;
-    }
+        /* Header */
+        header {
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--card);
+        }
 
-    .brand span { color: var(--color-accent); }
+        .brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--text);
+            text-decoration: none;
+        }
 
-    .nav-link {
-      color: var(--color-text-muted);
-      text-decoration: none;
-      font-size: 0.9rem;
-      transition: color 0.2s;
-    }
+        .brand span { color: var(--accent); }
 
-    .nav-link:hover { color: var(--color-accent); }
+        .nav-link {
+            font-size: 0.9rem;
+            color: var(--accent);
+            text-decoration: none;
+        }
 
-    .page-header {
-      text-align: center;
-      padding: 3rem 2rem 2rem;
-      max-width: 800px;
-      margin: 0 auto;
-    }
+        .nav-link:hover { text-decoration: underline; }
 
-    .page-title {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      background: linear-gradient(135deg, var(--color-text), var(--color-accent));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
+        /* Page Header */
+        .page-header {
+            text-align: center;
+            padding: 2.5rem 1.5rem 2rem;
+            border-bottom: 1px solid var(--border);
+            max-width: 720px;
+            margin: 0 auto;
+        }
 
-    .page-subtitle {
-      color: var(--color-text-muted);
-      font-size: 1.1rem;
-    }
+        .page-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.75rem, 6vw, 2.25rem);
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 0.35rem;
+        }
 
-    .header-line {
-      width: 60px;
-      height: 3px;
-      background: var(--color-accent);
-      margin: 1.5rem auto 0;
-      border-radius: 2px;
-    }
+        .page-subtitle {
+            font-size: 1rem;
+            color: var(--text-muted);
+            font-style: italic;
+        }
 
-    .container {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 0 2rem 3rem;
-    }
+        /* Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1.5rem;
+        }
 
-    .filter-info {
-      display: none;
-      align-items: center;
-      gap: 1rem;
-      padding: 0.75rem 1rem;
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius);
-      margin-bottom: 1.5rem;
-    }
+        /* Filter Info */
+        .filter-info {
+            display: none;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.75rem 1rem;
+            background: var(--accent-light);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
 
-    .clear-btn {
-      padding: 0.4rem 0.8rem;
-      background: transparent;
-      border: 1px solid var(--color-accent);
-      color: var(--color-accent);
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 0.85rem;
-      transition: all 0.2s;
-    }
+        .filter-info strong { color: var(--accent); }
 
-    .clear-btn:hover {
-      background: var(--color-accent);
-      color: var(--color-bg);
-    }
+        .clear-btn {
+            padding: 0.35rem 0.7rem;
+            background: transparent;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: all var(--transition);
+        }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-      gap: 1.5rem;
-    }
+        .clear-btn:hover {
+            background: var(--accent);
+            color: white;
+        }
 
-    .card {
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      cursor: pointer;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
+        /* News Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
 
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow);
-    }
+        @media (min-width: 600px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
 
-    .card-img {
-      height: 180px;
-      overflow: hidden;
-    }
+        /* Card */
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            cursor: pointer;
+            transition: all var(--transition);
+        }
 
-    .card-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.3s;
-    }
+        .card:hover {
+            box-shadow: var(--shadow-lg);
+            border-color: var(--border-dark);
+        }
 
-    .card:hover .card-img img { transform: scale(1.05); }
+        .card:hover .title { color: var(--accent); }
 
-    .card-body { padding: 1.25rem; }
+        .card-img {
+            height: 160px;
+            overflow: hidden;
+            background: var(--bg-alt);
+        }
 
-    .card .date {
-      font-size: 0.8rem;
-      color: var(--color-text-muted);
-      margin-bottom: 0.5rem;
-    }
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
 
-    .card .title {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: 0.75rem;
-      line-height: 1.4;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
+        .card:hover .card-img img { transform: scale(1.03); }
 
-    .card .summary {
-      font-size: 0.9rem;
-      color: var(--color-text-muted);
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      margin-bottom: 1rem;
-    }
+        .card-body { padding: 1.25rem; }
 
-    .card .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-bottom: 0.75rem;
-    }
+        .card .date {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
 
-    .tag {
-      display: inline-block;
-      padding: 0.25rem 0.6rem;
-      background: rgba(96, 165, 250, 0.1);
-      color: var(--color-accent);
-      border-radius: 4px;
-      font-size: 0.75rem;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
+        .card .title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            line-height: 1.35;
+            margin-bottom: 0.5rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            transition: color var(--transition);
+        }
 
-    .tag:hover { background: rgba(96, 165, 250, 0.2); }
+        .card .summary {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            margin-bottom: 0.75rem;
+            line-height: 1.5;
+        }
 
-    .read-more {
-      color: var(--color-accent);
-      font-size: 0.85rem;
-      font-weight: 500;
-    }
+        .card .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.35rem;
+            margin-bottom: 0.5rem;
+        }
 
-    .arxiv-badge {
-      background: rgba(180, 83, 9, 0.2);
-      color: #f59e0b;
-    }
+        .tag {
+            display: inline-block;
+            padding: 0.2rem 0.5rem;
+            background: var(--bg-alt);
+            color: var(--text-muted);
+            border-radius: 4px;
+            font-size: 0.7rem;
+            cursor: pointer;
+            transition: all var(--transition);
+            border: 1px solid var(--border);
+        }
 
-    .modal-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.85);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 1000;
-      padding: 2rem;
-      overflow-y: auto;
-    }
+        .tag:hover {
+            background: var(--accent-light);
+            color: var(--accent);
+            border-color: var(--accent-light);
+        }
 
-    .modal-overlay.active { display: flex; }
+        .arxiv-badge {
+            background: var(--accent-light);
+            color: var(--accent);
+            border-color: transparent;
+        }
 
-    .modal-content {
-      background: var(--color-surface);
-      border-radius: var(--radius);
-      max-width: 800px;
-      width: 100%;
-      max-height: 90vh;
-      overflow-y: auto;
-      position: relative;
-    }
+        .read-more {
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-weight: 500;
+        }
 
-    .close-btn {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      width: 36px;
-      height: 36px;
-      border: none;
-      background: rgba(0, 0, 0, 0.5);
-      color: white;
-      border-radius: 50%;
-      font-size: 1.5rem;
-      cursor: pointer;
-      z-index: 10;
-    }
+        /* Loading */
+        .loading-spinner {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-muted);
+        }
 
-    .close-btn:hover { background: rgba(0, 0, 0, 0.7); }
+        .spinner {
+            width: 32px;
+            height: 32px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 1rem;
+        }
 
-    .modal-img {
-      width: 100%;
-      max-height: 400px;
-      object-fit: cover;
-    }
+        @keyframes spin { to { transform: rotate(360deg); } }
 
-    .modal-body { padding: 1.5rem 2rem 2rem; }
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
+            display: none;
+            align-items: flex-start;
+            justify-content: center;
+            z-index: 1000;
+            padding: 2rem 1rem;
+            overflow-y: auto;
+        }
 
-    .modal-date {
-      font-size: 0.85rem;
-      color: var(--color-text-muted);
-    }
+        .modal-overlay.active { display: flex; }
 
-    .modal-title {
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin-bottom: 1.5rem;
-      line-height: 1.3;
-    }
+        .modal-content {
+            background: var(--card);
+            border-radius: 12px;
+            max-width: 640px;
+            width: 100%;
+            position: relative;
+            box-shadow: var(--shadow-lg);
+            margin: auto;
+        }
 
-    .modal-text {
-      color: var(--color-text);
-      line-height: 1.8;
-    }
+        .close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 36px;
+            height: 36px;
+            border: 1px solid var(--border);
+            background: var(--card);
+            color: var(--text-secondary);
+            border-radius: 50%;
+            font-size: 1.25rem;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow);
+            transition: all var(--transition);
+        }
 
-    .modal-text p { margin-bottom: 1rem; }
-    .modal-text strong { color: var(--color-accent); }
-    .modal-text a { color: var(--color-accent); text-decoration: underline; }
+        .close-btn:hover {
+            background: var(--text);
+            color: white;
+            border-color: var(--text);
+        }
 
-    .modal-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 1.5rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid var(--color-border);
-    }
+        .modal-img {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 12px 12px 0 0;
+        }
 
-    .modal-links {
-      display: flex;
-      gap: 0.75rem;
-      margin-top: 1rem;
-    }
+        .modal-body { padding: 1.5rem; }
 
-    .modal-share {
-      display: flex;
-      gap: 0.5rem;
-      margin-top: 1rem;
-      padding-top: 1rem;
-      border-top: 1px solid var(--color-border);
-    }
+        .modal-date {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
 
-    .share-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: 8px;
-      color: var(--color-text-muted);
-      cursor: pointer;
-      transition: all 0.2s;
-      text-decoration: none;
-    }
+        .modal-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            line-height: 1.3;
+            margin: 0.5rem 0 1.25rem;
+        }
 
-    .share-btn:hover {
-      background: var(--color-accent);
-      border-color: var(--color-accent);
-      color: var(--color-bg);
-    }
+        .modal-text {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
 
-    .modal-link-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.5rem 1rem;
-      background: var(--color-accent-dim);
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-size: 0.85rem;
-    }
+        .modal-text p { margin-bottom: 1rem; }
+        .modal-text strong { color: var(--text); font-weight: 600; }
+        .modal-text a { color: var(--accent); }
 
-    .modal-link-btn:hover { background: var(--color-accent); }
+        .modal-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
 
-    .modal-link-btn.secondary {
-      background: transparent;
-      border: 1px solid var(--color-border);
-      color: var(--color-text-muted);
-    }
+        .modal-link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 0.5rem 0.85rem;
+            background: var(--bg-alt);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            text-decoration: none;
+            cursor: pointer;
+            transition: all var(--transition);
+        }
 
-    .modal-link-btn.secondary:hover {
-      border-color: var(--color-accent);
-      color: var(--color-accent);
-    }
+        .modal-link-btn:hover {
+            background: var(--text);
+            color: white;
+            border-color: var(--text);
+        }
 
-    .loading-spinner {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 4rem;
-      color: var(--color-text-muted);
-    }
+        .modal-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: 1rem;
+        }
 
-    .spinner {
-      width: 40px;
-      height: 40px;
-      border: 3px solid var(--color-border);
-      border-top-color: var(--color-accent);
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-      margin-bottom: 1rem;
-    }
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
 
-    @keyframes spin { to { transform: rotate(360deg); } }
+        .footer-content {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
 
-    @media (max-width: 768px) {
-      header { padding: 1rem; }
-      .page-header { padding: 2rem 1rem 1.5rem; }
-      .page-title { font-size: 1.8rem; }
-      .container { padding: 0 1rem 2rem; }
-      .grid { grid-template-columns: 1fr; }
-      .modal-overlay { padding: 0; align-items: flex-start; }
-      .modal-content { border-radius: 0; max-height: 100vh; }
-      .modal-body { padding: 1rem 1.25rem 1.5rem; }
-    }
-  </style>
+        .footer-content a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .footer-content a:hover { text-decoration: underline; }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .container { padding: 1rem; }
+            .page-header { padding: 2rem 1rem 1.5rem; }
+            .modal-body { padding: 1.25rem; }
+            .grid { gap: 1rem; }
+        }
+    </style>
 </head>
-
 <body>
-  <header>
-    <a href="index.html" class="brand">Arif <span>Solmaz</span></a>
-    <a href="index.html" class="nav-link">← Ana Sayfa</a>
-  </header>
+    <header>
+        <a href="index.html" class="brand">Arif <span>Solmaz</span></a>
+        <a href="index.html" class="nav-link">← Ana Sayfa</a>
+    </header>
 
-  <div class="page-header">
-    <h1 class="page-title">Bilim Haberleri</h1>
-    <p class="page-subtitle">arXiv ötegezegen makalelerinden günlük Türkçe özetler</p>
-    <div class="header-line"></div>
-  </div>
-
-  <div class="container">
-    <div class="filter-info" id="filter-box">
-      <span>Filtreleniyor: <strong id="active-tag-name"></strong></span>
-      <button class="clear-btn" onclick="resetFilter()">Temizle</button>
+    <div class="page-header">
+        <h1 class="page-title">Bilim Haberleri</h1>
+        <p class="page-subtitle">arXiv ötegezegen makalelerinden günlük Türkçe özetler</p>
     </div>
-    <div class="grid" id="news-grid">
-      <div class="loading-spinner">
-        <div class="spinner"></div>
-        <span>Haberler yükleniyor...</span>
-      </div>
+
+    <div class="container">
+        <div class="filter-info" id="filter-box">
+            <span>Filtreleniyor: <strong id="active-tag-name"></strong></span>
+            <button class="clear-btn" onclick="resetFilter()">Temizle</button>
+        </div>
+        <div class="grid" id="news-grid">
+            <div class="loading-spinner">
+                <div class="spinner"></div>
+                <span>Haberler yükleniyor...</span>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <div class="modal-overlay" id="modal">
-    <div class="modal-content">
-      <button class="close-btn" onclick="closeModal()">×</button>
-      <img src="" alt="" class="modal-img" id="m-img" referrerpolicy="no-referrer">
-      <div class="modal-body">
-        <span class="modal-date" id="m-date"></span>
-        <h2 class="modal-title" id="m-title"></h2>
-        <div class="modal-text" id="m-text"></div>
-        <div class="modal-links" id="m-links"></div>
-        <div class="modal-share" id="m-share"></div>
-        <div class="modal-tags" id="m-tags"></div>
-      </div>
+    <footer>
+        <div class="footer-content">
+            <a href="https://arifsolmaz.github.io">Arif Solmaz</a> · Claude AI ile oluşturuldu
+        </div>
+    </footer>
+
+    <div class="modal-overlay" id="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal()">×</button>
+            <img src="" alt="" class="modal-img" id="m-img" referrerpolicy="no-referrer">
+            <div class="modal-body">
+                <span class="modal-date" id="m-date"></span>
+                <h2 class="modal-title" id="m-title"></h2>
+                <div class="modal-text" id="m-text"></div>
+                <div class="modal-links" id="m-links"></div>
+                <div class="modal-tags" id="m-tags"></div>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <script>
-    const ARXIV_NEWS_URL = "arxiv/data/arxiv_news.json";
-    
-    let newsData = [];
-    const grid = document.getElementById('news-grid');
-    const filterBox = document.getElementById('filter-box');
-    const activeTagName = document.getElementById('active-tag-name');
-    const modal = document.getElementById('modal');
-
-    function stripMarkdown(text) {
-      if (!text) return '';
-      let result = text;
-      // Remove asterisks (all unicode variants)
-      result = result.replace(/[\*\u002A\uFE61\uFF0A]/g, '');
-      // Remove markdown links
-      result = result.replace(/\[([^\]]*)\]\([^)]*\)/g, '$1');
-      // Remove headers
-      result = result.replace(/#{1,6}\s*/g, '');
-      // Clean whitespace
-      result = result.replace(/\\n/g, ' ').replace(/\n/g, ' ').replace(/\s+/g, ' ').trim();
-      return result;
-    }
-
-    async function loadNews() {
-      try {
-        const response = await fetch(ARXIV_NEWS_URL);
-        if (!response.ok) throw new Error('Not found');
-        const data = await response.json();
+    <script>
+        const ARXIV_NEWS_URL = "arxiv/data/arxiv_news.json";
         
-        newsData = data.map(item => ({
-          ...item,
-          tags: item.tags ? (typeof item.tags === 'string' ? item.tags.split(',').map(t => t.trim()) : item.tags) : []
-        }));
-        
-        renderNews(newsData);
-        
-        // Check for deep link hash
-        checkHash();
-      } catch (e) {
-        grid.innerHTML = `<p style="color:var(--color-text-muted); grid-column:1/-1; text-align:center; padding:3rem;">
-          Henüz haber yok. Haberler otomatik olarak her gün oluşturulacak.
-        </p>`;
-      }
-    }
+        let newsData = [];
+        const grid = document.getElementById('news-grid');
+        const filterBox = document.getElementById('filter-box');
+        const activeTagName = document.getElementById('active-tag-name');
+        const modal = document.getElementById('modal');
 
-    function renderNews(data) {
-      grid.innerHTML = "";
-      
-      if (data.length === 0) {
-        grid.innerHTML = `<p style="color:var(--color-text-muted); grid-column:1/-1; text-align:center; padding:3rem;">Haber bulunamadı.</p>`;
-        return;
-      }
+        function stripMarkdown(text) {
+            if (!text) return '';
+            let result = text;
+            result = result.replace(/[\*\u002A\uFE61\uFF0A]/g, '');
+            result = result.replace(/\[([^\]]*)\]\([^)]*\)/g, '$1');
+            result = result.replace(/#{1,6}\s*/g, '');
+            result = result.replace(/\\n/g, ' ').replace(/\n/g, ' ').replace(/\s+/g, ' ').trim();
+            return result;
+        }
 
-      data.forEach((item, index) => {
-        const cleanTitle = stripMarkdown(item.title);
-        const cleanText = stripMarkdown(item.text);
-        
-        let tagsHtml = '<span class="tag arxiv-badge">arXiv</span>';
-        const uniqTags = [...new Set(item.tags || [])].slice(0, 4);
-        uniqTags.forEach(t => {
-          if (t && t !== 'arXiv') {
-            tagsHtml += `<span class="tag" onclick="event.stopPropagation(); filterByTag('${t}')">${t}</span>`;
-          }
+        async function loadNews() {
+            try {
+                const response = await fetch(ARXIV_NEWS_URL);
+                if (!response.ok) throw new Error('Not found');
+                const data = await response.json();
+                
+                newsData = data.map(item => ({
+                    ...item,
+                    tags: item.tags ? (typeof item.tags === 'string' ? item.tags.split(',').map(t => t.trim()) : item.tags) : []
+                }));
+                
+                renderNews(newsData);
+                checkHash();
+            } catch (e) {
+                grid.innerHTML = `<p style="color:var(--text-muted); grid-column:1/-1; text-align:center; padding:3rem;">
+                    Henüz haber yok. Haberler otomatik olarak her gün oluşturulacak.
+                </p>`;
+            }
+        }
+
+        function renderNews(data) {
+            grid.innerHTML = "";
+            
+            if (data.length === 0) {
+                grid.innerHTML = `<p style="color:var(--text-muted); grid-column:1/-1; text-align:center; padding:3rem;">Haber bulunamadı.</p>`;
+                return;
+            }
+
+            data.forEach((item, index) => {
+                const cleanTitle = stripMarkdown(item.title);
+                const cleanText = stripMarkdown(item.text);
+                
+                let tagsHtml = '<span class="tag arxiv-badge">arXiv</span>';
+                const uniqTags = [...new Set(item.tags || [])].slice(0, 3);
+                uniqTags.forEach(t => {
+                    if (t && t !== 'arXiv') {
+                        tagsHtml += `<span class="tag" onclick="event.stopPropagation(); filterByTag('${t}')">${t}</span>`;
+                    }
+                });
+
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.id = item.id;
+                card.innerHTML = `
+                    <div class="card-img">
+                        <img src="${item.image || 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=600&q=80'}" 
+                             alt="" referrerpolicy="no-referrer" 
+                             onerror="this.src='https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=600&q=80'">
+                    </div>
+                    <div class="card-body">
+                        <span class="date">${item.date}</span>
+                        <div class="title">${cleanTitle}</div>
+                        <div class="summary">${cleanText}</div>
+                        <div class="tags">${tagsHtml}</div>
+                        <div class="read-more">Devamını Oku →</div>
+                    </div>
+                `;
+                card.onclick = () => openModalById(item.id);
+                grid.appendChild(card);
+            });
+        }
+
+        function filterByTag(tagName) {
+            const filtered = newsData.filter(item => item.tags && item.tags.includes(tagName));
+            renderNews(filtered);
+            filterBox.style.display = 'flex';
+            activeTagName.textContent = tagName;
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function resetFilter() {
+            renderNews(newsData);
+            filterBox.style.display = 'none';
+        }
+
+        function openModalById(itemId) {
+            const item = newsData.find(n => n.id === itemId);
+            if (!item) return;
+            
+            history.replaceState(null, null, '#' + itemId);
+            
+            document.getElementById('m-img').src = item.image || 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=600&q=80';
+            document.getElementById('m-date').textContent = item.date;
+            document.getElementById('m-title').textContent = stripMarkdown(item.title);
+
+            // Render text
+            let textHtml = item.text || '';
+            textHtml = textHtml.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+            textHtml = textHtml.replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br>');
+            textHtml = '<p>' + textHtml + '</p>';
+            document.getElementById('m-text').innerHTML = textHtml;
+
+            // Links
+            let linksHtml = '';
+            if (item.arxiv_id) {
+                linksHtml += `<a href="https://arxiv.org/abs/${item.arxiv_id}" target="_blank" class="modal-link-btn">📄 arXiv</a>`;
+                linksHtml += `<a href="https://arxiv.org/pdf/${item.arxiv_id}.pdf" target="_blank" class="modal-link-btn">📥 PDF</a>`;
+            }
+            linksHtml += `<button class="modal-link-btn" onclick="shareTwitter()">𝕏 Paylaş</button>`;
+            linksHtml += `<button class="modal-link-btn" onclick="copyLink()">🔗 Kopyala</button>`;
+            document.getElementById('m-links').innerHTML = linksHtml;
+
+            // Tags
+            let tagsHtml = '<span class="tag arxiv-badge">arXiv</span>';
+            const uniqTags = [...new Set(item.tags || [])];
+            uniqTags.forEach(t => {
+                if (t && t !== 'arXiv') {
+                    tagsHtml += `<span class="tag" onclick="closeModal(); filterByTag('${t}')">${t}</span>`;
+                }
+            });
+            document.getElementById('m-tags').innerHTML = tagsHtml;
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+            history.replaceState(null, null, window.location.pathname);
+        }
+
+        function shareTwitter() {
+            const title = document.getElementById('m-title').textContent;
+            const url = window.location.href;
+            const text = `${title}\n\n${url}\n\n#Bilim #Uzay #Ötegezegen`;
+            window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`, '_blank');
+        }
+
+        function copyLink() {
+            navigator.clipboard.writeText(window.location.href).then(() => {
+                const btn = event.target;
+                const original = btn.innerHTML;
+                btn.innerHTML = '✓ Kopyalandı!';
+                setTimeout(() => btn.innerHTML = original, 2000);
+            });
+        }
+
+        function checkHash() {
+            const hash = window.location.hash.slice(1);
+            if (hash) {
+                const item = newsData.find(n => n.id === hash);
+                if (item) openModalById(hash);
+            }
+        }
+
+        // Close modal on overlay click
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
         });
 
-        const card = document.createElement('div');
-        card.className = 'card';
-        card.id = item.id;  // Add ID for deep linking
-        card.innerHTML = `
-          <div class="card-img">
-            <img src="${item.image || 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=600&q=80'}" 
-                 alt="" referrerpolicy="no-referrer" 
-                 onerror="this.src='https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=600&q=80'">
-          </div>
-          <div class="card-body">
-            <span class="date">${item.date}</span>
-            <div class="title">${cleanTitle}</div>
-            <div class="summary">${cleanText}</div>
-            <div class="tags">${tagsHtml}</div>
-            <div class="read-more">Devamını Oku →</div>
-          </div>
-        `;
-        card.onclick = () => openModalById(item.id);
-        grid.appendChild(card);
-      });
-    }
+        // Close on Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
 
-    function filterByTag(tagName) {
-      const filtered = newsData.filter(item => item.tags && item.tags.includes(tagName));
-      renderNews(filtered);
-      filterBox.style.display = 'flex';
-      activeTagName.textContent = tagName;
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    function resetFilter() {
-      renderNews(newsData);
-      filterBox.style.display = 'none';
-    }
-
-    function openModalById(itemId) {
-      const item = newsData.find(n => n.id === itemId);
-      if (!item) return;
-      
-      // Update URL hash
-      history.replaceState(null, null, '#' + itemId);
-      
-      document.getElementById('m-img').src = item.image || 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=600&q=80';
-      document.getElementById('m-date').textContent = item.date;
-      document.getElementById('m-title').textContent = stripMarkdown(item.title);
-
-      let textContent = (item.text || '').replace(/\\n/g, '\n');
-      document.getElementById('m-text').innerHTML = marked.parse(textContent);
-
-      const mLinks = document.getElementById('m-links');
-      mLinks.innerHTML = '';
-      if (item.abs_link) {
-        mLinks.innerHTML = `
-          <a href="${item.pdf_link || item.abs_link.replace('/abs/', '/pdf/') + '.pdf'}" target="_blank" rel="noopener" class="modal-link-btn">📥 PDF İndir</a>
-        `;
-      }
-
-      // Share buttons - use item.id for permanent links
-      const shareUrl = encodeURIComponent(window.location.origin + window.location.pathname + '#' + itemId);
-      const shareTitle = encodeURIComponent(stripMarkdown(item.title));
-      const shareText = encodeURIComponent(stripMarkdown(item.title) + ' - arXiv ötegezegen haberleri');
-      
-      const mShare = document.getElementById('m-share');
-      mShare.innerHTML = `
-        <a href="https://twitter.com/intent/tweet?text=${shareText}&url=${shareUrl}" target="_blank" rel="noopener" class="share-btn" title="Twitter'da Paylaş">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-        </a>
-        <a href="https://bsky.app/intent/compose?text=${shareText}%20${shareUrl}" target="_blank" rel="noopener" class="share-btn" title="Bluesky'da Paylaş">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489-.094-.777-.18-1.97.038-2.819.197-.763 1.27-5.393 1.27-5.393s-.324-.65-.324-1.61c0-1.508.874-2.634 1.963-2.634.926 0 1.373.695 1.373 1.528 0 .931-.593 2.323-.899 3.614-.255 1.08.542 1.96 1.607 1.96 1.93 0 3.415-2.035 3.415-4.974 0-2.6-1.869-4.417-4.536-4.417-3.089 0-4.902 2.316-4.902 4.713 0 .933.36 1.936.807 2.48.089.108.102.202.076.312l-.3 1.227c-.048.196-.157.237-.363.143-1.353-.63-2.2-2.609-2.2-4.198 0-3.418 2.484-6.56 7.165-6.56 3.763 0 6.688 2.681 6.688 6.263 0 3.739-2.358 6.748-5.63 6.748-1.1 0-2.132-.571-2.485-1.246l-.676 2.577c-.244.937-.904 2.11-1.346 2.824A10.001 10.001 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
-        </a>
-        <a href="mailto:?subject=${shareTitle}&body=${shareText}%0A%0A${shareUrl}" class="share-btn" title="E-posta ile Paylaş">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
-        </a>
-        <button onclick="copyNewsLink('${itemId}')" class="share-btn" title="Linki Kopyala">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
-        </button>
-      `;
-
-      const mTags = document.getElementById('m-tags');
-      mTags.innerHTML = '<span class="tag arxiv-badge">arXiv</span>';
-      (item.tags || []).forEach(t => {
-        if (t && t !== 'arXiv') {
-          mTags.innerHTML += `<span class="tag" onclick="filterByTag('${t}'); closeModal();">${t}</span>`;
-        }
-      });
-
-      modal.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeModal() {
-      modal.classList.remove('active');
-      document.body.style.overflow = '';
-      history.replaceState(null, null, window.location.pathname);
-    }
-
-    function copyNewsLink(itemId) {
-      const url = window.location.origin + window.location.pathname + '#' + itemId;
-      navigator.clipboard.writeText(url).then(() => {
-        alert('Link kopyalandı!');
-      });
-    }
-
-    // Handle deep linking - open modal if hash present
-    function checkHash() {
-      const hash = window.location.hash.slice(1);
-      if (hash && newsData.length > 0) {
-        const item = newsData.find(n => n.id === hash);
-        if (item) {
-          openModalById(hash);
-        }
-      }
-    }
-
-    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
-    
-    // Handle back/forward button navigation
-    window.addEventListener('hashchange', () => {
-      const hash = window.location.hash.slice(1);
-      if (hash) {
-        openModalById(hash);
-      } else {
-        closeModal();
-      }
-    });
-
-    loadNews();
-  </script>
+        // Initialize
+        loadNews();
+    </script>
 </body>
 </html>
