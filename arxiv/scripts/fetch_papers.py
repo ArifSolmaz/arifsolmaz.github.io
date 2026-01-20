@@ -498,7 +498,7 @@ def main():
     exoplanet_papers.sort(key=lambda p: -p["tweetability_score"])
     general_papers.sort(key=lambda p: -p["tweetability_score"])
     
-    papers = exoplanet_papers + general_papers
+    papers = exoplanet_papers  # Only exoplanet papers
     
     print(f"\n📊 Paper breakdown:")
     print(f"   🪐 Exoplanet-focused: {len(exoplanet_papers)}")
