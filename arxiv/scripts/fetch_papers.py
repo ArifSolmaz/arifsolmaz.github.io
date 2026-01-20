@@ -23,7 +23,7 @@ except ImportError:
 ARXIV_CATEGORY = "astro-ph.EP"
 RECENT_URL = f"https://arxiv.org/list/{ARXIV_CATEGORY}/recent"
 
-SCRIPT_DIR = Path(__file__).parent
+SCRIPT_DIR = Path(__file__).parent.parent  # Go up to arxiv/
 OUTPUT_FILE = SCRIPT_DIR / "data" / "papers.json"
 ARCHIVE_DIR = SCRIPT_DIR / "data" / "archive"
 ARCHIVE_INDEX = ARCHIVE_DIR / "index.json"
