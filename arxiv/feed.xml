@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 20 Jan 2026 19:36:26 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 20 Jan 2026 21:08:58 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,284 +15,121 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>sponchpop II: Population Synthesis to Investigate Volatile Sulfur as a Fingerprint of Gas Giant Formation Histories</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2601-10508v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-10508v1</guid>
-      <pubDate>Tue, 20 Jan 2026 19:36:26 +0000</pubDate>
-      <dc:creator>Anna Sommerville-Thomas et al.</dc:creator>
-      <description><![CDATA[Why It Matters
-When astronomers discover new planets beyond our solar system, they're not just collecting cosmic stamps—they're trying to solve one of science's biggest puzzles: how do planets form, and could any of them harbor life? Understanding what planets are made of offers crucial clues to their birth stories and their potential to support life as we know it. This research focuses on sulfur, a common element that's been largely overlooked in planet formation studies. By tracking sulfur through the planet-building process, scientists can now read the chemical "fingerprints" that reveal where and how giant planets formed billions of years ago.
-What They Did
-The researchers created a sophisticated computer simulation that models how planets grow from tiny dust grains to massive worlds over millions of years. Think of it like a cosmic recipe simulator that tracks not just the main ingredients, but also traces the journey of sulfur through different phases of planet formation. Previous studies treated sulfur as if it only existed in solid, rocky form—like assuming flour only exists as bread. But sulfur also exists as a gas or ice depending on temperature, so the team built the first model that follows sulfur through all its different states as planets assemble. They ran thousands of virtual planet formation scenarios to see how different conditions affect the final sulfur content of planets.
-Key Findings
-The simulations revealed that planets end up with wildly different amounts of sulfur depending on their formation history. Gas giants that formed in the cold outer regions of their stellar systems—beyond where hydrogen sulfide freezes into ice—contain much more sulfur in their atmospheres, similar to Jupiter and Saturn in our solar system. Meanwhile, some rocky planets could be born surprisingly sulfur-poor, which would dramatically affect their geology and potentially their ability to support life, since sulfur plays important roles in atmospheric chemistry and biological processes.
-Looking Forward
-This research provides astronomers with a new diagnostic tool for understanding exoplanet origins. By measuring sulfur content in planet atmospheres using space telescopes, scientists can now work backwards to determine where those planets likely formed and how they migrated to their current positions. This could revolutionize our understanding of planetary system architecture and help identify which worlds might be most suitable for life.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Demographics of Close-In TESS Exoplanets Orbiting FGK Main-sequence Stars</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2601-09492v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-09492v1</guid>
-      <pubDate>Tue, 20 Jan 2026 19:36:26 +0000</pubDate>
-      <dc:creator>Kaiming Cui et al.</dc:creator>
-      <description><![CDATA[Why It Matters
-For centuries, we wondered if planets like Earth were rare cosmic accidents or common features of the universe. Thanks to powerful space telescopes, we now know that planets are everywhere—but we're still figuring out what kinds of planets are most common and where they tend to form. This research tackles a particularly intriguing puzzle: the strange worlds that orbit incredibly close to their stars, completing full "years" in just days or weeks. These scorching planets, which include everything from super-sized Earths to gas giants larger than Jupiter, hold crucial clues about how planetary systems form and evolve. Understanding their abundance helps us piece together the story of planet formation—including how rare or common Earth-like worlds might be.
-What They Did
-The researchers analyzed four years of data from TESS (Transiting Exoplanet Survey Satellite), a space telescope that watches for the tiny dimming that occurs when a planet passes in front of its star. Think of it like watching for the shadow of a moth crossing a distant streetlight. They focused on planets orbiting sun-like stars and took orbits lasting between half a day and 16 days—imagine worlds where a "year" is shorter than a typical vacation. The team then used sophisticated statistical methods to account for the planets they might have missed, similar to how pollsters adjust their samples to represent the broader population. This allowed them to calculate what percentage of sun-like stars actually host these close-orbiting worlds.
-Key Findings
-The results reveal that close-in planets are surprisingly common. Overall, about 9.4% of sun-like stars host at least one planet orbiting closer than Mercury does to our Sun. The famous "hot Jupiters"—gas giants that complete their orbits in days—appear around roughly 0.4% of stars, confirming previous estimates. Perhaps most intriguingly, they found that planets in the so-called "Neptunian desert"—a mysterious gap where Neptune-sized planets seem to avoid forming—occur around just 0.08% of stars, providing the first precise measurement of this cosmic rarity.
-Looking Forward
-These findings provide astronomers with a detailed census that will help refine theories about how planets form and migrate to their final orbits. The data suggests that the processes creating close-in planets are remarkably consistent across our galaxy. This work sets the stage for future missions that will study these worlds' atmospheres and compositions, potentially revealing how planetary systems evolve and what conditions might favor the formation of habitable worlds like Earth.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>NIRPS tightens the mass estimate of GJ 3090 b and detects a planet near the stellar rotation period</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2601-09330v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-09330v1</guid>
-      <pubDate>Tue, 20 Jan 2026 19:36:26 +0000</pubDate>
-      <dc:creator>Pierrot Lamontagne et al.</dc:creator>
-      <description><![CDATA[Why It Matters
-This research advances our ability to find and characterize potentially habitable worlds around nearby red dwarf stars, which make up about 75% of all stars in our galaxy. The study also demonstrates crucial new techniques for distinguishing real planetary signals from confusing stellar noise, a major challenge that has limited planet discovery efforts.
-What They Did
-Astronomers used two high-precision instruments, NIRPS and HARPS, to measure tiny wobbles in a nearby red dwarf star called GJ 3090, located just 22 light-years away. They employed sophisticated computer modeling that simultaneously analyzed the star's motion, brightness changes, and temperature variations to separate genuine planetary signals from the star's own magnetic activity.
-Key Findings
-The team refined measurements of a known sub-Neptune planet (GJ 3090 b) that's about 4.5 times Earth's mass and likely a "water world" with significant water content in its atmosphere. They confirmed a second, larger planet (GJ 3090 c) that's about 10 times Earth's mass and orbits every 16 days—remarkably close to the star's 18-day rotation period. This second planet was particularly challenging to detect because stellar rotation can mimic planetary signals. The researchers also identified hints of a possible third planet that warrants future investigation.
-Looking Forward
-These advanced analysis techniques will be essential for future planet-hunting missions, especially when searching for Earth-like worlds around active stars where traditional methods often fail. The confirmed water-world candidate adds to our growing catalog of potentially habitable planets, while the methodology opens new possibilities for detecting planets in previously inaccessible orbital configurations around nearby stars.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Circumplanetary Disk Candidate in the Disk of HD 163296 Traced by Localized Emission from Simple Organics</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2601-10631v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-10631v1</guid>
-      <pubDate>Tue, 20 Jan 2026 19:36:26 +0000</pubDate>
-      <dc:creator>Andres F. Izquierdo et al.</dc:creator>
-      <description><![CDATA[Why It Matters
-Scientists have discovered the first chemical fingerprint of a disk of gas and dust swirling around a forming planet, providing unprecedented insight into how planets grow and evolve. This breakthrough offers a new way to study planets that are still forming and too faint to see directly, potentially revolutionizing our understanding of planetary birth.
-What They Did
-Researchers used the powerful Atacama Large Millimeter/submillimeter Array (ALMA) telescope to analyze the disk around HD 163296, a young star located about 330 light-years away. They detected specific organic molecules—hydrogen cyanide (HCN) and a simple hydrocarbon (C2H)—in a small, localized region that appears to be orbiting the star at roughly the same distance as Neptune orbits our Sun.
-Key Findings
-The organic molecules are concentrated in a tiny disk around what appears to be a forming planet about the size of Jupiter, creating the first chemical evidence of a "circumplanetary disk"—essentially a mini version of the larger disk surrounding the parent star. This chemical signature matches the location of a previously suspected planet detected through subtle motions in the surrounding gas. The heat from the forming planet and its feeding process is warming the surrounding material to over 150 Kelvin (about -190°F), causing frozen molecules to vaporize and become detectable. The planet appears to be less massive than Jupiter, with its surrounding disk spanning less than twice the distance from Earth to the Sun.
-Looking Forward
-This discovery opens a new chapter in planet-hunting techniques, allowing astronomers to study forming planets through their chemical signatures even when they're too dim to photograph directly. Future observations could reveal how planets accumulate their atmospheres and potentially identify the building blocks of life forming around other worlds.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.SR</category>
-    </item>
-    <item>
-      <title>Mass estimates of the young TOI-451 transiting planets: Multidimensional Gaussian Process on stellar spectroscopic and photometric signals</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2601-09438v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-09438v1</guid>
-      <pubDate>Tue, 20 Jan 2026 19:36:26 +0000</pubDate>
-      <dc:creator>Oscar Barragán et al.</dc:creator>
-      <description><![CDATA[Why It Matters
-Imagine catching a glimpse of our solar system when it was just a baby—that's essentially what astronomers have done with TOI-451, a planetary system only 125 million years old. While that sounds ancient, it's practically infantile compared to our 4.6-billion-year-old solar system. This cosmic nursery gives us a rare window into how planets evolve, lose their atmospheres, and transform over time. Understanding these young worlds helps answer fundamental questions: How do planets like Earth form? What makes some planets keep their atmospheres while others lose them to space? By studying TOI-451, we're essentially looking at planetary adolescence—a crucial period that shaped the worlds we see today.
-What They Did
-The research team used advanced telescopes to measure tiny wobbles in the star TOI-451 as its three planets tug on it gravitationally—like watching a person being gently pulled back and forth by invisible dance partners. This technique, called the radial velocity method, reveals how massive each planet is. The challenge was separating the planets' gravitational signals from the star's own natural brightness fluctuations, which can mask planetary signatures. To solve this, the researchers used sophisticated computer modeling that simultaneously analyzed the star's light patterns and its wobbling motion, essentially teaching their software to distinguish between stellar hiccups and genuine planetary pulls.
-Key Findings
-The team successfully weighed all three planets in this young system. The innermost planet, TOI-451 b, weighs about 4.7 times more than Earth and could be either a rocky world with a thin atmosphere or a "water world" rich in H2O. The middle planet, TOI-451 c, proved more elusive—they could only establish it weighs less than 11.5 Earth masses. The outermost planet, TOI-451 d, tips the scales at roughly 10 Earth masses and likely sports a thick, hydrogen-rich atmosphere that makes it puffy and Neptune-like.
-Looking Forward
-This research transforms TOI-451 into a cosmic laboratory for studying planetary evolution. Since these worlds are young, astronomers can potentially observe atmospheric loss in real-time and test theories about how planets shed their gaseous envelopes. Future observations with advanced telescopes could reveal the atmospheric compositions of these planets and catch them in the act of losing gas to space, providing unprecedented insights into the forces that sculpt planetary systems over cosmic time.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.SR</category>
-    </item>
-    <item>
-      <title>TOI-3862 b: A dense super-Neptune deep in the hot Neptune desert</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2601-10450v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-10450v1</guid>
-      <pubDate>Tue, 20 Jan 2026 19:36:26 +0000</pubDate>
-      <dc:creator>Ilaria Carleo et al.</dc:creator>
-      <description><![CDATA[Why It Matters
-Imagine trying to understand how neighborhoods form by studying only the houses that survived natural disasters. That's essentially what astronomers face when studying planets close to their stars. Most planets that orbit extremely close to their host stars have either been stripped down to rocky cores or puffed up into gas giants—creating what scientists call the "hot Neptune desert," a region where medium-sized planets are mysteriously rare. Finding planets in this cosmic wasteland helps us understand the violent processes that shape planetary systems, including our own. By studying these survivors, we gain crucial insights into how planets migrate, evolve, and sometimes endure in the harshest environments imaginable.
-What They Did
-Researchers used NASA's planet-hunting telescope TESS (Transiting Exoplanet Survey Satellite) to spot a potential planet candidate called TOI-3862.01. When a planet crosses in front of its star from our perspective, it creates a tiny dimming—like a moth passing in front of a streetlight. But seeing this dimming isn't enough to confirm it's actually a planet. The team then used ground-based telescopes to measure how the planet's gravity tugs on its star, causing the star to wobble slightly. By combining both techniques—watching the planet block starlight and measuring the star's wobble—they could determine both the planet's size and mass, giving them a complete picture of this cosmic oddball.
-Key Findings
-TOI-3862b is truly exceptional. This "super-Neptune" is about 5.5 times wider than Earth but packs 54 times Earth's mass, making it surprisingly dense for a planet of its type. It races around its Sun-like star in just 1.56 days—imagine a year lasting less than two Earth days! The planet sits right in the middle of the hot Neptune desert, where planets this size simply shouldn't exist. Its density suggests it's managed to hold onto a substantial atmosphere despite being bombarded by intense radiation from its nearby star.
-Looking Forward
-This discovery challenges our understanding of planetary survival. How did TOI-3862b keep its thick atmosphere in such a hostile environment? Future observations with powerful telescopes like the James Webb Space Telescope could reveal the composition of its atmosphere, potentially showing us new ways planets can endure extreme conditions. Each planet found in the hot Neptune desert helps refine our models of planetary evolution and might even inform our search for habitable worlds in other star systems.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>High-fidelity lunar topographic reconstruction across diverse terrain and illumination environments using deep learning</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2601-09468v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-09468v1</guid>
-      <pubDate>Tue, 20 Jan 2026 19:36:26 +0000</pubDate>
-      <dc:creator>Hao Chen et al.</dc:creator>
-      <description><![CDATA[Why It Matters
-Creating detailed 3D maps of planetary surfaces is crucial for understanding how worlds like the Moon formed and evolved over billions of years. Despite having thousands of high-resolution photos of the Moon, scientists still lack the meter-scale topographic data needed for detailed geological investigations and planning future landing missions.
-What They Did
-The researchers developed an advanced artificial intelligence system that can create highly detailed 3D terrain maps using just single photographs of the lunar surface. They trained their deep learning model to work across different types of lunar landscapes and lighting conditions, including the challenging permanently shadowed regions near the Moon's south pole where future missions may land.
-Key Findings
-The AI system proved remarkably robust, successfully reconstructing fine-scale topography across diverse lunar features regardless of their size, shape, or geological age. Unlike traditional methods that struggle with varying sunlight conditions, this approach maintained consistent accuracy even in areas with poor illumination. The system generated high-quality 3D models of the lunar south polar regions, including areas that never see direct sunlight. Most impressively, it outperformed existing single-image reconstruction techniques while being much faster and more flexible than conventional methods.
-Looking Forward
-This breakthrough could revolutionize how we map not just the Moon, but other planetary bodies throughout the solar system. With vast archives of orbital imagery already available, scientists could rapidly generate unprecedented high-resolution topographic maps to support upcoming lunar missions and advance our understanding of planetary geology at scales never before possible.]]></description>
-        <category>astro-ph.EP</category>
-        <category>cs.LG</category>
-    </item>
-    <item>
       <title>Detection of four cold Jupiters through combined analyses of radial velocity and astrometry data</title>
       <link>https://arifsolmaz.github.io/arxiv#paper-2601-11280v1</link>
       <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-11280v1</guid>
-      <pubDate>Tue, 20 Jan 2026 19:36:26 +0000</pubDate>
+      <pubDate>Tue, 20 Jan 2026 21:08:58 +0000</pubDate>
       <dc:creator>Yiyun Wu et al.</dc:creator>
       <description><![CDATA[Why It Matters
-Cold Jupiters—gas giant planets that orbit far from their stars like our own Jupiter—are key to understanding how planetary systems form and evolve over billions of years. Despite decades of planet hunting, scientists still don't fully understand how these distant giants come to exist, making it crucial to find more examples to study.
+Imagine trying to understand how our solar system formed by only studying Earth and Mars—you'd miss the crucial role that Jupiter played in shaping everything around it. That's exactly the challenge astronomers face when studying distant planetary systems. Jupiter-like planets that orbit far from their stars, called "cold Jupiters," are cosmic architects that influence how entire planetary systems develop. Yet these distant giants are notoriously difficult to spot and study. This research tackles that challenge head-on, uncovering four new cold Jupiters and demonstrating a powerful new method for finding many more. Understanding these distant worlds helps us piece together the story of how planetary systems—including our own—came to be.
 What They Did
-Researchers combined two powerful planet-detection techniques: measuring how stars wobble due to gravitational tugs from orbiting planets (radial velocity), and tracking tiny changes in stellar positions across the sky over 25 years using space telescopes (astrometry). By analyzing both datasets together using advanced computer modeling, they could determine not just that planets exist, but also their true masses and three-dimensional orbital shapes—something that's typically very difficult to measure.
+The researchers combined two detective techniques to hunt for these elusive planets. First, they used radial velocity measurements, which detect the tiny wobble a planet causes as it tugs on its host star—like watching a dog walker get pulled back and forth by an invisible leash. Second, they incorporated data from the Gaia space telescope, which precisely tracks how stars move across the sky over decades. When a star has a hidden planetary companion, its motion becomes slightly erratic, like a person walking while carrying an invisible, shifting weight. By combining these two approaches over a 25-year period, the team could determine not just that planets exist, but their exact masses, orbital tilts, and three-dimensional paths through space.
 Key Findings
-The team discovered four new cold Jupiter planets orbiting distant stars, with orbital periods ranging from about 1.2 to 28 years. Two of these represent the first confirmed planets in their respective star systems, while the other two add to already-known multi-planet systems. The masses range from about one-third to five times the mass of Jupiter, with one planet (HD 68475 b) having the longest orbital period ever found for planets in its mass range. Intriguingly, two planets in the HD 48265 system may have tilted orbits relative to each other, offering a rare laboratory for testing theories about planetary dynamics.
+The team discovered four cold Jupiters, each taking years to decades to complete a single orbit around their stars. The most extreme, dubbed HD 68475 b, takes over 21 years to circle its star and weighs about five times more than Jupiter. Another standout is HD 100508 b, which completes its 15-year orbit while weighing slightly more than Jupiter. Two others were found in multi-planet systems, including one that may be tilted dramatically compared to its planetary neighbor—a configuration that could reveal how planetary systems can become dynamically unstable over time. Remarkably, one of these worlds holds the record for the longest orbital period among planets in its mass range.
 Looking Forward
-These discoveries suggest that many more cold Jupiters are waiting to be found as space-based telescopes like Gaia continue their surveys. One of the newly discovered planets may even be bright enough for future ground-based telescopes to photograph directly, potentially revealing details about its atmosphere and composition.]]></description>
+This research opens a new chapter in exoplanet discovery. The success of combining stellar wobbles with precise positional measurements suggests that thousands more cold Jupiters are waiting to be found in existing Gaia data. Some of these newly discovered worlds, particularly HD 68475 b, are prime candidates for direct imaging with next-generation telescopes, potentially allowing astronomers to study their atmospheres and compositions directly. As more cold Jupiters are uncovered, scientists will finally have the large sample sizes needed to solve long-standing mysteries about how these cosmic architects form and sculpt planetary systems across the galaxy.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>How disc initial conditions sculpt the atmospheric composition of giant planets</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2601-10285v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-10285v1</guid>
-      <pubDate>Tue, 20 Jan 2026 19:36:26 +0000</pubDate>
-      <dc:creator>Angie Daniela Guzmán Franco, Sofia Savvidou, Bertram Bitsch</dc:creator>
+      <title>Aligned, Misaligned and Polar Orbits of Hot Jupiters: Measuring Spin-Orbit Angles via Doppler Tomography with HARPS-N</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-11313v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-11313v1</guid>
+      <pubDate>Tue, 20 Jan 2026 21:08:58 +0000</pubDate>
+      <dc:creator>Z. Balkóová et al.</dc:creator>
       <description><![CDATA[Why It Matters
-When we look up at the night sky, we're seeing just a tiny fraction of the planets that exist in our galaxy. Scientists have discovered thousands of exoplanets—worlds orbiting other stars—and many are giant planets like Jupiter and Saturn. But here's the fascinating puzzle: these distant worlds have wildly different atmospheric compositions, even when they're similar in size. Some are rich in carbon, others in oxygen, and still others contain surprising amounts of sulfur. Understanding why planets turn out so different helps us piece together the story of how planetary systems form, including our own. It also guides our search for worlds that might harbor life, since a planet's atmosphere largely determines whether it could support the chemistry of living things.
+Imagine throwing a baseball perfectly straight while spinning like a top—that's how we'd expect planets to orbit their stars, moving in the same direction as the star's rotation. But the universe loves to surprise us. Scientists have discovered that many "hot Jupiters"—massive planets that orbit incredibly close to their stars—move in bizarre ways: some travel backward, others loop around their star's poles like a Ferris wheel. These strange orbits hold crucial clues about how planetary systems form and evolve, helping us understand whether our own solar system's neat, orderly arrangement is common or remarkably special.
 What They Did
-The researchers created detailed computer simulations to watch giant planets form from scratch. Think of a planetary system's birth like a cosmic construction site: there's a spinning disk of gas and dust around a young star, and within this disk, planets slowly assemble themselves. The team focused on tiny particles called pebbles—cosmic dust grains that drift inward toward the star, picking up and releasing different chemical ingredients as they travel. As these pebbles encounter temperature changes, they evaporate and enrich the surrounding gas with various elements. The scientists then tracked how forming giant planets gobble up this chemically-evolving gas, testing different starting conditions for their cosmic construction sites to see how each scenario affected the final planetary recipes.
+The researchers used a clever technique called Doppler tomography to study three hot Jupiter planets. When a planet passes in front of its star (like a tiny eclipse), it blocks different parts of the star's spinning surface. Since one side of a spinning star moves toward us and the other moves away, this creates a distinctive signature in the star's light—like a shadow moving across the star's face. By carefully analyzing this shadow using three different computer programs and a sensitive instrument called HARPS-N, the scientists could determine exactly how each planet's orbit is tilted compared to its star's rotation. Think of it like figuring out whether a marble rolling around a spinning basketball follows the equator, goes over the poles, or takes some other crazy path.
 Key Findings
-The study revealed that most factors affecting planet formation—like how massive or viscous the initial disk is—barely influence what ends up in a giant planet's atmosphere. However, one factor made a huge difference: the amount of dust compared to gas in the original disk. More dust means richer planetary atmospheres. Surprisingly, even though the disk's chemistry constantly changes as material moves around, a planet's location during formation still acts like its postal code—planets forming closer to their star end up with more volatile-rich atmospheres because they can feast on gas that's been enriched by evaporating materials.
+The three planets showed dramatically different behaviors. HAT-P-57A b is the "well-behaved" one, orbiting almost perfectly aligned with its star's equator. XO-3A b is moderately tilted at 38 degrees—imagine a planet taking a diagonal path around its star. Most remarkably, HAT-P-49 b is nearly polar, orbiting at 85 degrees—essentially going over its star's north and south poles rather than around its equator. This polar orbit is like a planet doing loop-the-loops instead of following a normal circular track.
 Looking Forward
-These findings simplify the detective work of tracing exoplanets back to their origins. Scientists studying distant worlds through their atmospheric fingerprints now know they don't need to worry about every possible formation scenario—location is king. This research suggests that the incredible diversity we observe in exoplanet atmospheres isn't random but tells a coherent story of where and how these worlds formed. As next-generation telescopes come online, astronomers will be able to analyze many more exoplanet atmospheres, using these insights to map out the formation histories of entire planetary systems and better understand the cosmic processes that create worlds like our own.]]></description>
+These findings add to growing evidence that planetary systems can be far more chaotic than our own solar system suggests. Understanding why some hot Jupiters end up in such extreme orbits helps scientists piece together the violent early histories of planetary systems—including whether planets migrate inward through gentle gravitational interactions or dramatic collisions and ejections. This research brings us closer to answering fundamental questions about how common Earth-like, stable planetary systems truly are in our galaxy.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>Metal Pipe: A Broadly-Applicable Stellar Abundance Pipeline Using Isochronal Parameters</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-10794v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-10794v1</guid>
+      <pubDate>Tue, 20 Jan 2026 21:08:58 +0000</pubDate>
+      <dc:creator>Jared R. Kolecki, Lauren M. Weiss</dc:creator>
+      <description><![CDATA[# Scientists Develop New Tool to Better Study Stars That Host Other Worlds
+Why It Matters
+When astronomers discover planets orbiting distant stars, they want to know what those stars are made of—because a star's composition tells us a lot about the planets around it. Think of it like studying a baker to understand their cookies: the ingredients available shape what gets made. But analyzing thousands of different stars consistently has been like trying to use the same recipe in kitchens with completely different equipment. This research tackles that problem by creating a universal tool that can study the chemical makeup of many different types of stars in the same reliable way, helping us better understand the diverse worlds beyond our solar system.
+What They Did
+The researchers built a new computer program called Metal Pipe that works like a sophisticated chemical analyzer for stars. Just as a food scientist might use consistent methods to analyze the nutritional content of different recipes, this tool takes the rainbow of light from any star (captured by powerful telescopes) and figures out what elements are present and in what amounts. The program combines existing stellar analysis software with carefully selected reference data and a curated list of specific wavelengths of light that reveal different chemical elements. They tested their tool on 503 sun-like stars to make sure it worked accurately across different star types.
+Key Findings
+Metal Pipe successfully measured ten different elements in stars, including carbon, oxygen, silicon, and iron. When the researchers compared their results to previous measurements of the same stars, they found their tool was remarkably consistent—typically within about 100 degrees when measuring star temperatures (out of thousands of degrees total) and within 10% when measuring chemical abundances. This level of precision matches what scientists expect from measurement uncertainties, proving the tool works as intended.
+Looking Forward
+This standardized approach means astronomers can now build comprehensive chemical catalogs of planet-hosting stars, revealing patterns about how different stellar environments lead to different types of planetary systems. Future research will extend this tool to analyze cooler, smaller stars that are prime targets for finding potentially habitable worlds.]]></description>
+        <category>astro-ph.SR</category>
         <category>astro-ph.EP</category>
     </item>
     <item>
       <title>KMT-2025-BLG-1616Lb: First Microlensing Bound Planet From DREAMS</title>
       <link>https://arifsolmaz.github.io/arxiv#paper-2601-11469v1</link>
       <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-11469v1</guid>
-      <pubDate>Tue, 20 Jan 2026 19:36:26 +0000</pubDate>
+      <pubDate>Tue, 20 Jan 2026 21:08:58 +0000</pubDate>
       <dc:creator>Hongjing Yang et al.</dc:creator>
       <description><![CDATA[Why It Matters
-Scientists have discovered a new planet using gravitational microlensing—a technique that detects planets by observing how their gravity bends light from distant stars. This marks the first successful planetary detection by the DREAMS survey, demonstrating that we can now find much smaller "rogue" planets floating freely through space, potentially down to the mass of our Moon.
+Imagine trying to spot a firefly buzzing around a lighthouse from thousands of miles away—that's essentially the challenge astronomers face when hunting for planets orbiting distant stars. This research represents a breakthrough in our ability to find these elusive worlds using a technique called gravitational microlensing, which acts like a natural magnifying glass in space. What makes this discovery particularly exciting is that it demonstrates how new technology can reveal planets we could never detect before, including potentially "rogue" planets drifting alone through the galaxy without any star to call home.
 What They Did
-Researchers used two telescope networks—the Korea Microlensing Telescope Network (KMTNet) and the DECam Rogue Earths and Mars Survey (DREAMS)—to monitor a microlensing event where a star's light was magnified by an intervening planetary system. DREAMS took extremely frequent observations (every minute) to capture precise details of how the light changed over time, allowing scientists to break through mathematical ambiguities that usually plague these measurements.
+The researchers used two telescope networks—one in Korea and another called DREAMS—to monitor millions of stars simultaneously, watching for a telltale brightening that occurs when a closer star (and any planets around it) passes directly in front of a more distant star. Think of it like watching someone walk in front of a streetlight: the person's gravity acts as a lens, bending and focusing the light to make it appear brighter. The Korean telescopes spotted the initial signal, but DREAMS's rapid-fire observations—taking pictures every minute—provided the crucial detail needed to confirm that a planet was responsible for a subtle blip in the brightness pattern.
 Key Findings
-The newly discovered planet, designated KMT-2025-BLG-1616Lb, orbits a small red dwarf star about 7,500 light-years away in our galaxy. The planet weighs roughly 40 times more than Earth (similar to Neptune) and orbits its host star at about 1.6 times the Earth-Sun distance. The host star itself is quite small, containing only about 30% of our Sun's mass. Most excitingly, the study shows that DREAMS can detect free-floating planets as small as Mars in the central bulge of our galaxy and even Moon-sized worlds in our local galactic neighborhood.
+The team discovered a Neptune-sized planet about 40 times more massive than Earth, orbiting a small red dwarf star roughly 25,000 light-years away toward the center of our galaxy. The planet sits about 1.6 times farther from its star than Earth does from the Sun—roughly the distance of Mars from our Sun. The host star itself is quite modest, weighing only about one-third as much as our Sun.
 Looking Forward
-This discovery proves that minute-by-minute monitoring can dramatically improve our ability to characterize distant planetary systems through microlensing. The demonstrated sensitivity to incredibly small rogue planets opens up an entirely new frontier for discovering the countless worlds that may be drifting freely through interstellar space, untethered to any star.]]></description>
+This success proves that DREAMS can detect incredibly small planets, potentially down to the mass of Mars around distant stars, and even Moon-sized rogue planets wandering the galaxy alone. This opens an entirely new window for discovering the smallest worlds in our cosmic neighborhood and understanding how common planetary systems really are.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.GA</category>
-    </item>
-    <item>
-      <title>Aligned, Misaligned and Polar Orbits of Hot Jupiters: Measuring Spin-Orbit Angles via Doppler Tomography with HARPS-N</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2601-11313v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-11313v1</guid>
-      <pubDate>Tue, 20 Jan 2026 19:36:26 +0000</pubDate>
-      <dc:creator>Z. Balkóová et al.</dc:creator>
-      <description><![CDATA[Why It Matters
-Hot Jupiters—massive planets orbiting extremely close to their stars—shouldn't exist where we find them based on our understanding of planetary formation, so scientists study how these worlds ended up in such extreme locations. By measuring whether a planet's orbit is aligned with its star's rotation or tilted at odd angles, astronomers can piece together the violent or gentle processes that moved these giants from where they formed to their current scorching positions.
-What They Did
-The researchers used a technique called Doppler tomography, which tracks tiny changes in starlight as a planet passes in front of its host star, creating a "shadow" in the star's spectrum that reveals the angle between the planet's orbit and the star's spin. They studied three known hot Jupiter systems using the HARPS-N spectrograph and tested three different data analysis methods to ensure their measurements were reliable and to understand how different approaches might affect results.
-Key Findings
-The team discovered remarkably diverse orbital arrangements among the three planets they studied. HAT-P-49b travels on a polar orbit, essentially circling its star from pole to pole rather than around the equator—a highly unusual configuration. HAT-P-57Ab follows a perfectly aligned orbit, matching its star's equatorial plane exactly as theories of gentle migration would predict. XO-3Ab occupies a middle ground with a moderately tilted orbit, representing a less common arrangement that falls between the typical aligned and misaligned categories. The study also revealed that different data analysis methods can produce varying results, highlighting the importance of using multiple approaches.
-Looking Forward
-These findings add crucial data points to the growing catalog of spin-orbit measurements, helping astronomers understand the full range of migration mechanisms that shuffle planets around their systems. The research also demonstrates the need for standardized analysis techniques to ensure consistent and reliable measurements as astronomers continue mapping the complex evolutionary histories of planetary systems.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.SR</category>
     </item>
     <item>
       <title>The impact of disc photoevaporation on the long-term evolution of giant planets in mean motion resonances</title>
       <link>https://arifsolmaz.github.io/arxiv#paper-2601-10811v1</link>
       <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-10811v1</guid>
-      <pubDate>Tue, 20 Jan 2026 19:36:26 +0000</pubDate>
+      <pubDate>Tue, 20 Jan 2026 21:08:58 +0000</pubDate>
       <dc:creator>Emmanuel J. Greenfield, James E. Owen</dc:creator>
       <description><![CDATA[Why It Matters
-Understanding how giant planets end up in their final orbits is crucial for explaining the diverse planetary systems we observe today. This research reveals how the evaporation of planet-forming disks by stellar radiation can dramatically alter the fate of planet pairs, potentially explaining why some systems have stable resonant orbits while others don't.
+When planets form around distant stars, they don't always stay where they started. Like dancers moving to cosmic music, planets can migrate inward toward their host stars and sometimes get locked into synchronized orbits called "resonances"—where one planet completes exactly two or three orbits for every orbit of its neighbor. Understanding what makes these planetary partnerships stable or causes them to fall apart helps us explain why planetary systems look so different from each other, and why our own solar system might be unusual. This research tackles a crucial missing piece: how the gradual evaporation of planet-forming discs affects these delicate orbital relationships.
 What They Did
-The researchers used advanced computer simulations to model how pairs of giant planets behave when their surrounding gas disk gradually evaporates due to radiation from their host star. They tested various scenarios by changing factors like disk mass, planet mass, and the specific orbital resonance (mathematical relationships where planets complete orbits in simple ratios like 2:1 or 3:2).
+The researchers created detailed computer simulations to watch how pairs of giant planets behave as the gas disc around their star slowly disappears. Think of it like studying how ice dancers perform as the rink gradually melts beneath them. They used a sophisticated program called FARGO3D to model the physics of gas swirling around stars, adding in the effects of high-energy radiation that gradually strips away the disc material—a process called photoevaporation. The team tested different scenarios by varying the disc's mass, how thick or thin the gas was, the sizes of the planets, and the types of orbital resonances to see what happened in each case.
 Key Findings
-The study found that disk evaporation has opposing effects depending on the situation: it can either stabilize planet pairs that would normally drift apart, or destabilize pairs that should remain locked together. When gas between the planets gets stripped away, it reduces the gravitational interactions that normally cause orbital relationships to break down, particularly benefiting the more fragile 3:2 resonances. However, the same process can sometimes create uneven forces that push apart the more stable 2:1 resonances. Regardless of stability effects, disk evaporation consistently makes planetary orbits more stretched and elliptical.
+The results revealed surprising complexity. Strong photoevaporation actually helps stabilize the more fragile 3:2 resonances (where the inner planet completes three orbits for every two of the outer planet) by removing gas between the planets and reducing disruptive forces. However, the more naturally stable 2:1 resonances can paradoxically become unstable under certain conditions when photoevaporation creates uneven gravitational tugs. In nearly all cases, planets ended up on more stretched-out, oval-shaped orbits rather than circular ones.
 Looking Forward
-These findings suggest that the final arrangement of giant planet systems depends heavily on the complex interplay between disk properties and stellar radiation, making each system's evolution highly unique. This research will help astronomers better interpret observations from space missions like Gaia and predict which types of planetary systems are most likely to be detected.]]></description>
+These findings suggest that planetary system architecture depends heavily on how and when the birth disc disappears—meaning identical starting conditions can produce dramatically different outcomes. This helps explain the incredible diversity of exoplanetary systems we observe and provides crucial context for upcoming space missions like Gaia, which will measure the subtle wobbles of nearby stars caused by orbiting planets.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>Metal Pipe: A Broadly-Applicable Stellar Abundance Pipeline Using Isochronal Parameters</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2601-10794v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-10794v1</guid>
-      <pubDate>Tue, 20 Jan 2026 19:36:26 +0000</pubDate>
-      <dc:creator>Jared R. Kolecki, Lauren M. Weiss</dc:creator>
+      <title>Central flashes during stellar occultations. Effects of diffraction, interferences, and stellar diameter</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-11380v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-11380v1</guid>
+      <pubDate>Tue, 20 Jan 2026 21:08:58 +0000</pubDate>
+      <dc:creator>Bruno Sicardy, Luc Dettwiller</dc:creator>
       <description><![CDATA[Why It Matters
-Understanding the chemical makeup of stars that host planets is crucial for learning how planetary systems form and evolve. However, current tools for measuring stellar compositions work well only for certain types of stars, limiting our ability to study the full diversity of planetary systems across the galaxy.
+When distant worlds pass in front of stars, they create cosmic shadow shows that reveal secrets about their atmospheres. These events, called stellar occultations, are like natural laboratories that let astronomers study planets and moons throughout our solar system—and potentially beyond. But there's a surprising twist: sometimes these shadows aren't completely dark. Instead, they can produce brilliant flashes of light right at their centers, creating what scientists call "central flashes." Understanding these flashes is crucial because they contain detailed information about atmospheric conditions on distant worlds, helping us learn about places we may never visit in person.
 What They Did
-Researchers developed "Metal Pipe," a new computer program that can determine the chemical abundances and physical properties of a much wider variety of stars than existing tools. The program combines stellar brightness measurements with detailed spectra (the rainbow of light from stars) and uses a carefully selected list of spectral features to measure the amounts of 10 different chemical elements.
+The researchers created detailed mathematical models to understand exactly how these mysterious flashes form. Think of it like figuring out why you sometimes see bright spots in shadows cast by curved glass—the physics is similar but much more complex. They examined how starlight bends and interferes when it passes through the thin atmospheres of distant objects like Pluto and Neptune's moon Triton. The team considered various factors: whether the star appears as a single point of light or has measurable width, how thick the atmosphere is, and how light waves interact with each other after passing through the atmospheric "lens."
 Key Findings
-When tested on 503 sun-like stars, Metal Pipe successfully measured stellar temperatures, surface gravity, mass, radius, and brightness with high precision. The program accurately determined the abundances of essential elements including carbon, oxygen, sodium, magnesium, aluminum, silicon, sulfur, calcium, titanium, and iron. The measurements were consistent with previous studies, with typical uncertainties of about 100 degrees Kelvin for temperature and small fractional errors for chemical abundances. These precision levels match the estimated measurement limits, confirming the tool works as intended.
+The research revealed that these central flashes can be incredibly intense—potentially 10,000 to 100,000 times brighter than normal in ideal conditions, though usually reduced to more modest levels of 50 to 200 times brighter in real observations. The flashes are remarkably tiny, appearing in regions just meters wide on Earth despite originating from events millions of miles away. Denser atmospheres create more focused, intense flashes, while thinner atmospheres produce broader, dimmer ones. The exact shape and brightness depend on the size of the star and the wavelength of light being observed.
 Looking Forward
-Metal Pipe will enable astronomers to create comprehensive chemical catalogs of planet-hosting stars across different stellar types, providing insights into how stellar composition influences planet formation. The researchers plan to extend the program's capabilities to cooler, smaller stars and continue refining the tool, potentially revolutionizing our understanding of the relationship between stellar chemistry and planetary system architecture.]]></description>
-        <category>astro-ph.SR</category>
+These findings could revolutionize how we study not just objects in our solar system, but potentially exoplanets orbiting other stars. By precisely understanding central flashes, astronomers can extract far more detailed information about atmospheric composition, density, and structure from occultation events, turning these cosmic alignments into powerful tools for exploring distant worlds.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>A young progenitor for the most common planetary systems in the Galaxy</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2601-10598v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-10598v1</guid>
-      <pubDate>Tue, 20 Jan 2026 19:36:26 +0000</pubDate>
-      <dc:creator>John H. Livingston et al.</dc:creator>
+      <title>Rotation Period of 3I/ATLAS After Perihelion from Jet Position Angle Wobble and Photometric Variability</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-10860v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-10860v1</guid>
+      <pubDate>Tue, 20 Jan 2026 21:08:58 +0000</pubDate>
+      <dc:creator>Toni Scarmato, Abraham Loeb</dc:creator>
       <description><![CDATA[Why It Matters
-Most planetary systems in our galaxy look nothing like our own solar system. While we have small, rocky planets close to the Sun and gas giants farther out, the most common arrangement elsewhere features several medium-sized planets packed tightly around their star. Understanding how these systems form and evolve helps us grasp how planetary systems—including potentially habitable ones—come to be. This research gives us a rare glimpse at what these common systems look like in their youth, before billions of years of evolution shape their final form.
+When mysterious visitors from other star systems zip through our solar neighborhood, scientists race to learn everything they can before they disappear forever. The object 3I/ATLAS is only the third known interstellar visitor we've detected—a cosmic wanderer that originated somewhere beyond our Sun's influence and is now heading back to deep space. Understanding how fast these objects spin and how they behave gives us rare glimpses into the conditions around distant stars, potentially revealing clues about how planetary systems form and evolve throughout the galaxy. It's like having an alien postcard delivered directly to our doorstep.
 What They Did
-The researchers studied a young star called V1298 Tau, which hosts four unusually puffy planets. Because this star is extremely active—constantly flaring and changing brightness—traditional methods of studying planets wouldn't work. Instead, they used a clever technique called transit timing variations. Imagine planets as runners on a track, each in their own lane but gravitationally tugging on each other as they pass by. These tiny tugs cause the planets to arrive at their "finish line" (crossing in front of their star) slightly early or late. By precisely timing these transits over nine years, the team could weigh each planet and map their orbits without interference from the star's chaotic behavior.
+Researchers used two clever detective methods to figure out how fast 3I/ATLAS spins. First, they tracked a jet of gas and dust shooting out from the object using the Hubble Space Telescope, watching how this jet wobbled back and forth like a spinning garden sprinkler. They photographed the object repeatedly over more than a month and measured how the jet's direction changed over time. Second, they used a ground-based telescope to monitor how bright the object appeared, looking for regular dimming and brightening patterns—similar to how a lighthouse beam appears to pulse as it rotates. They then used mathematical techniques to find repeating patterns in both the jet wobbling and brightness changes.
 Key Findings
-The four planets are surprisingly light for their size—each about 5 to 10 times wider than Earth but with masses closer to Neptune than Jupiter. They're essentially cosmic balloons, puffed up with thick atmospheres. The planets orbit in nearly perfect circles and maintain a delicate gravitational dance, suggesting their system formed peacefully without major collisions or disruptions. Most importantly, the researchers discovered these bloated worlds are rapidly shrinking as they cool down from their formation.
+The two methods revealed that 3I/ATLAS completes one full rotation in approximately 7.1 hours—about four times faster than Earth's 24-hour day. The jet measurement suggested 7.2 hours, while the brightness variations indicated 7.136 hours. This slight difference likely comes from measurement uncertainties rather than representing two different phenomena. The researchers also discovered that the jet doesn't shoot straight out from the object's north or south pole, but instead sweeps around in a cone-like pattern, tilted about 20 degrees from the rotation axis.
 Looking Forward
-This discovery provides a missing piece of the planetary evolution puzzle. The team predicts these puffy planets will eventually shrink to become the compact, medium-sized worlds that dominate our galaxy. By watching this transformation in real-time, astronomers can better understand how the universe's most common planetary systems reach their mature state—and whether any might harbor conditions suitable for life.]]></description>
+While this research focuses on an interstellar object rather than an exoplanet, the techniques developed here advance our ability to study distant spinning bodies throughout the universe. These methods could help astronomers better understand how planets and asteroids rotate in other star systems, providing crucial data for determining whether distant worlds might be habitable or how planetary systems evolve over billions of years.]]></description>
         <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Canceling Effects of Conjunctions Render Higher Order Mean Motion Resonances Weak</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2601-10585v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-10585v1</guid>
-      <pubDate>Tue, 20 Jan 2026 19:36:26 +0000</pubDate>
-      <dc:creator>Elizabeth K Jones, Samuel Hadden, Daniel Tamayo</dc:creator>
-      <description><![CDATA[Why It Matters
-This research provides a clearer physical understanding of why certain planetary orbital relationships dominate our solar system while others remain weak. Mean motion resonances—where planets' orbital periods form simple mathematical ratios—are fundamental to explaining how planetary systems form and remain stable over billions of years.
-What They Did
-Instead of relying on complex mathematical equations that have been used for centuries, the researchers developed a simpler, more intuitive approach to explain orbital resonances. They focused on what happens when planets come closest to each other (conjunctions), treating these encounters as gravitational "kicks" that slightly alter each planet's motion.
-Key Findings
-The study reveals why first-order resonances (like 3:2 ratios) are much stronger than higher-order ones in shaping planetary systems. In first-order resonances, planets experience only one close encounter per cycle before their configuration repeats, creating a cumulative effect over time. Higher-order resonances involve multiple conjunctions per cycle, but these gravitational kicks tend to cancel each other out—and this cancellation becomes more precise as the resonance order increases. This elegant explanation confirms the mathematical relationship that resonance strength decreases dramatically with higher orders, following a pattern based on orbital eccentricity.
-Looking Forward
-This physically intuitive framework could make orbital dynamics more accessible to students and researchers, potentially accelerating discoveries in planetary science. The clearer understanding of resonance mechanics may also improve our ability to predict the long-term evolution of both our solar system and newly discovered exoplanetary systems.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>A Robust Launching Mechanism for Freely-Floating Planets from Host Stars with Close-in Planets</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2601-09835v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-09835v1</guid>
-      <pubDate>Tue, 20 Jan 2026 19:36:26 +0000</pubDate>
-      <dc:creator>Xiaochen Zheng et al.</dc:creator>
-      <description><![CDATA[# Cosmic Billiards: How Planets Get Kicked Out of Their Solar Systems
-Why It Matters
-Imagine entire planets—some potentially Earth-like—wandering alone through the darkness of space, untethered to any star. These "rogue planets" have fascinated astronomers for years, and we now know there could be billions of them drifting through our galaxy. But how do planets get ejected from their home solar systems in the first place? This research tackles that mystery and reveals a surprisingly common cosmic process that reshapes planetary systems throughout the universe. Understanding how planets get displaced helps us grasp how rare or common stable, life-friendly solar systems like ours might be—a question central to our search for life beyond Earth.
-What They Did
-The researchers used computer simulations to model a cosmic game of billiards happening in distant solar systems. They focused on systems with two key ingredients: planets orbiting very close to their stars (closer than Mercury orbits our Sun) and distant, massive planets that occasionally get nudged toward the inner solar system by gravitational influences from companion stars or other distant planets. Think of it like a bowling ball rolling down a lane toward tightly clustered pins. When these distant intruder planets swing close to their star, they can gravitationally scatter the close-in planets, sometimes with enough force to fling them completely out of the solar system.
-Key Findings
-The team discovered that this planetary billiards process is remarkably efficient at creating rogue planets. When a massive intruder planet swoops through the inner regions of a solar system, it can transfer enough gravitational energy to permanently eject smaller planets from their orbits. The process doesn't just create wandering planets—it also disrupts entire planetary systems, potentially sending some planets crashing into their host stars while dramatically altering the orbits of survivors.
-Looking Forward
-This research provides a compelling explanation for the abundance of free-floating planets that upcoming space telescopes are expected to discover. It also suggests that planetary systems might be far more dynamic and unstable than previously thought, with major reshuffling events occurring throughout their lifetimes. Future observations of rogue planets and disrupted solar systems could help astronomers test these predictions and better understand how common stable, potentially habitable worlds really are.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>True Masses using RV data with Hipparcos and Gaia Astrometry</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2601-09401v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-09401v1</guid>
-      <pubDate>Tue, 20 Jan 2026 19:36:26 +0000</pubDate>
-      <dc:creator>G. Piccinini et al.</dc:creator>
-      <description><![CDATA[Why It Matters
-Imagine trying to weigh an invisible bowling ball by watching how it makes a rope swing when tied to the other end. That's essentially the challenge astronomers face when studying distant planets orbiting other stars. For decades, we've been finding these "exoplanets" by detecting their gravitational tugs on their host stars, but determining their actual masses—a crucial detail for understanding what they're made of and whether they could support life—has remained frustratingly difficult. This research tackles that fundamental problem, helping us distinguish between true planets, failed stars called brown dwarfs, and small stellar companions. Getting these classifications right is essential for understanding how planetary systems form and for identifying worlds that might be habitable.
-What They Did
-The researchers combined two powerful detective techniques to solve the mass mystery. First, they used radial velocity measurements—essentially watching stars wobble back and forth as unseen companions orbit them, like watching a parent spin around while holding a child's hands. Second, they analyzed tiny changes in how stars move across the sky over decades, comparing ultra-precise measurements from two space missions: Hipparcos (launched in 1989) and Gaia (launched in 2013). By combining these complementary approaches, they could determine not just that something was orbiting these stars, but also the angle at which we're viewing the orbit—the key missing piece needed to calculate true masses rather than just minimum estimates.
-Key Findings
-The team re-examined eight mysterious objects and discovered that some previously misclassified companions are actually planets in disguise. Two objects around stars HD 5388 and HD 6718 turned out to be planets rather than brown dwarfs. Another companion around HD 141937 likely falls into the planetary category, though more data is needed for certainty. However, HD 16760's companion confirmed its status as a brown dwarf—a "failed star" too small to sustain nuclear fusion—and revealed hints of a second hidden companion in the system.
-Looking Forward
-This work demonstrates how combining different observational techniques can revolutionize our understanding of distant worlds. As Gaia continues collecting data and future space missions provide even more precise measurements, we'll be able to determine true masses for thousands of exoplanets. This will help astronomers better understand how planetary systems form and evolve, and more accurately identify Earth-like worlds that might harbor life.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
+        <category>astro-ph.GA</category>
         <category>astro-ph.SR</category>
     </item>
   </channel>
