@@ -2,7 +2,7 @@
 """
 Fetch exoplanet papers from arXiv RSS feed and generate AI summaries.
 
-Uses RSS feed to get actual daily announcement batches (not API which mixes dates).
+Uses RSS feed to get actual daily announcement batches.
 """
 
 import json
@@ -22,6 +22,9 @@ except ImportError:
 # Configuration
 ARXIV_CATEGORY = "astro-ph.EP"
 MAX_PAPERS = 25
+
+# CORRECT RSS URL - rss.arxiv.org, not export.arxiv.org
+RSS_URL = f"https://rss.arxiv.org/rss/{ARXIV_CATEGORY}"
 
 SCRIPT_DIR = Path(__file__).parent
 OUTPUT_FILE = SCRIPT_DIR / "data" / "papers.json"
@@ -105,67 +108,107 @@ def calculate_tweetability_score(paper: dict) -> int:
     return score
 
 
-def fetch_rss_papers(category: str) -> tuple[list[dict], str]:
+def fetch_rss_papers() -> tuple[list[dict], str]:
     """
     Fetch papers from arXiv RSS feed.
     Returns (papers, announcement_date).
-    
-    RSS feed contains ONLY the most recent announcement batch.
     """
-    rss_url = f"http://export.arxiv.org/rss/{category}"
+    print(f"📡 Fetching from: {RSS_URL}")
     
-    response = requests.get(rss_url, timeout=30)
+    response = requests.get(RSS_URL, timeout=30)
     response.raise_for_status()
+    
+    # Debug: print first 500 chars of response
+    print(f"📄 Response length: {len(response.text)} chars")
     
     root = ET.fromstring(response.content)
     
-    # Get announcement date from channel
-    # RSS format: <dc:date>2026-01-19</dc:date>
-    namespaces = {
-        'dc': 'http://purl.org/dc/elements/1.1/',
-        'rdf': 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'
-    }
+    # arXiv RSS 2.0 format
+    # Find channel
+    channel = root.find('channel')
+    if channel is None:
+        print("⚠️ No channel found, trying root")
+        channel = root
     
-    # Try to get date from dc:date
-    date_elem = root.find('.//dc:date', namespaces)
-    if date_elem is not None and date_elem.text:
-        announcement_date = date_elem.text[:10]  # Get YYYY-MM-DD part
-    else:
-        # Fallback: use today
-        announcement_date = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    # Get announcement date from lastBuildDate or pubDate
+    announcement_date = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    
+    for date_tag in ['lastBuildDate', 'pubDate', 'dc:date']:
+        date_elem = channel.find(date_tag)
+        if date_elem is not None and date_elem.text:
+            # Parse date like "Mon, 20 Jan 2026 00:30:00 GMT"
+            try:
+                # Try RFC 822 format
+                parsed = datetime.strptime(date_elem.text.strip(), "%a, %d %b %Y %H:%M:%S %Z")
+                announcement_date = parsed.strftime("%Y-%m-%d")
+                print(f"📅 Found date from {date_tag}: {announcement_date}")
+                break
+            except ValueError:
+                # Try ISO format
+                try:
+                    announcement_date = date_elem.text.strip()[:10]
+                    print(f"📅 Found date from {date_tag}: {announcement_date}")
+                    break
+                except:
+                    pass
     
     papers = []
     
-    # Parse items (papers)
-    for item in root.findall('.//item'):
+    # Find all items
+    items = channel.findall('item') or root.findall('.//item')
+    print(f"📰 Found {len(items)} items in feed")
+    
+    for item in items:
         # Get link and extract paper ID
-        link = item.find('link')
-        if link is None or link.text is None:
+        link_elem = item.find('link')
+        if link_elem is None or not link_elem.text:
             continue
         
+        link = link_elem.text.strip()
         # Link format: http://arxiv.org/abs/2601.12345
-        paper_id = link.text.split('/abs/')[-1]
+        paper_id = link.split('/abs/')[-1] if '/abs/' in link else link.split('/')[-1]
         
-        # Get title (remove "arXiv:" prefix if present)
+        # Get title
         title_elem = item.find('title')
-        title = title_elem.text if title_elem is not None else ""
-        title = re.sub(r'^arXiv:\d+\.\d+\s*', '', title)  # Remove arXiv ID prefix
+        title = title_elem.text if title_elem is not None and title_elem.text else ""
         title = " ".join(title.split())  # Clean whitespace
         
-        # Get description (abstract)
+        # Get description (contains abstract)
         desc_elem = item.find('description')
-        abstract = desc_elem.text if desc_elem is not None else ""
-        # Clean HTML tags and extra whitespace
+        description = desc_elem.text if desc_elem is not None and desc_elem.text else ""
+        
+        # Parse description - arXiv format includes metadata
+        # Format: "<p>arXiv:2601.12345 Announce Type: new\nAbstract: ...</p>"
+        abstract = description
+        
+        # Extract just the abstract part
+        if 'Abstract:' in abstract:
+            abstract = abstract.split('Abstract:', 1)[-1]
+        
+        # Clean HTML tags
         abstract = re.sub(r'<[^>]+>', '', abstract)
         abstract = " ".join(abstract.split())
         
-        # Get authors from dc:creator
-        creator_elem = item.find('dc:creator', namespaces)
-        if creator_elem is not None and creator_elem.text:
-            # Format: "Author1, Author2, Author3"
-            authors = [clean_latex_name(a.strip()) for a in creator_elem.text.split(',')]
-        else:
-            authors = []
+        # Get authors from dc:creator if available
+        authors = []
+        # Check for dc:creator with namespace
+        for ns_prefix in ['dc:', '{http://purl.org/dc/elements/1.1/}', '']:
+            creator_tag = f"{ns_prefix}creator"
+            creator_elem = item.find(creator_tag)
+            if creator_elem is not None and creator_elem.text:
+                # Authors might be comma or semicolon separated
+                author_text = creator_elem.text
+                if ';' in author_text:
+                    authors = [clean_latex_name(a.strip()) for a in author_text.split(';')]
+                elif ',' in author_text and author_text.count(',') > 2:
+                    authors = [clean_latex_name(a.strip()) for a in author_text.split(',')]
+                else:
+                    authors = [clean_latex_name(author_text.strip())]
+                break
+        
+        # Skip if we couldn't get essential info
+        if not title or not paper_id:
+            continue
         
         # Build links
         pdf_link = f"https://arxiv.org/pdf/{paper_id}.pdf"
@@ -176,19 +219,18 @@ def fetch_rss_papers(category: str) -> tuple[list[dict], str]:
             "title": title,
             "abstract": abstract,
             "authors": authors,
-            "categories": [category],
+            "categories": [ARXIV_CATEGORY],
             "published": announcement_date,
             "updated": announcement_date,
             "pdf_link": pdf_link,
             "abs_link": abs_link
         })
     
-    # Add metadata
+    # Add metadata and sort
     for paper in papers:
         paper["is_exoplanet_focused"] = is_exoplanet_paper(paper["title"], paper["abstract"])
         paper["tweetability_score"] = calculate_tweetability_score(paper)
     
-    # Sort: exoplanet papers first, then by tweetability
     exoplanet_papers = [p for p in papers if p["is_exoplanet_focused"]]
     general_papers = [p for p in papers if not p["is_exoplanet_focused"]]
     
@@ -198,7 +240,7 @@ def fetch_rss_papers(category: str) -> tuple[list[dict], str]:
     all_sorted = exoplanet_papers + general_papers
     
     print(f"📅 Announcement date: {announcement_date}")
-    print(f"📰 RSS returned {len(papers)} papers:")
+    print(f"📰 Parsed {len(papers)} papers:")
     print(f"   🪐 Exoplanet-focused: {len(exoplanet_papers)}")
     print(f"   🔭 General astro-ph.EP: {len(general_papers)}")
     
@@ -396,10 +438,12 @@ def main():
     print(f"🔍 Fetching papers from arXiv RSS feed ({ARXIV_CATEGORY})...")
     
     # Use RSS feed - gets actual announcement batch
-    papers, announcement_date = fetch_rss_papers(ARXIV_CATEGORY)
+    papers, announcement_date = fetch_rss_papers()
     
     if len(papers) == 0:
-        print("❌ No papers found in RSS feed. Exiting.")
+        print("❌ No papers found in RSS feed.")
+        print("   This may be normal if arXiv had no announcements (holiday/weekend).")
+        print("   Keeping existing data unchanged.")
         return
     
     # Load existing data to check if same batch
@@ -419,7 +463,6 @@ def main():
     if existing_date == announcement_date:
         print(f"⏸️  Same announcement date ({announcement_date}). Checking for missing summaries...")
         
-        # Check if any papers need summaries
         needs_work = False
         for paper in papers:
             if paper["id"] in existing_papers:
