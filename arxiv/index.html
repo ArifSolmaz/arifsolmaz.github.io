@@ -999,7 +999,6 @@
                 <article class="paper-article" onclick="openModal('${safeId}')">
                     <div class="article-meta">
                         <span class="article-category">${(paper.categories || ['astro-ph.EP'])[0]}</span>
-                        ${isExo ? '<span class="article-badge">🪐 Exoplanet</span>' : ''}
                     </div>
                     <h3 class="article-title">${paper.title}</h3>
                     <p class="article-byline">${formatAuthorsShort(paper.authors)}</p>
