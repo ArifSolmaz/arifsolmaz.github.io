@@ -41,8 +41,6 @@ TWEETABILITY_KEYWORDS = {
     "atmosphere": 5, "spectrum": 4, "spectroscopy": 4,
     "clouds": 5, "weather": 6, "climate": 5,
     "migration": 4, "resonance": 4, "tidal": 4,
-    "asteroid": -2, "comet": -2, "kuiper": -3, "debris disk": -2,
-    "solar system": -5, "mars": -5, "venus": -3, "jupiter": -2,
 }
 
 
@@ -65,33 +63,88 @@ def clean_latex_name(name: str) -> str:
 
 
 def is_exoplanet_paper(title: str, abstract: str) -> bool:
-    """Determine if a paper is specifically about exoplanets."""
+    """
+    Determine if a paper is about exoplanets.
+    Be INCLUSIVE - astro-ph.EP is already planet-focused.
+    Only exclude obvious non-exoplanet topics.
+    """
     text = f"{title} {abstract}".lower()
     
-    strict_exoplanet_keywords = [
-        "exoplanet", "exoplanets", "exoplanetary",
-        "extrasolar planet", "extrasolar planets",
-        "hot jupiter", "warm jupiter", "cold jupiter",
-        "super-earth", "super earth", "mini-neptune", "sub-neptune",
-        "habitable zone", "habitable exoplanet", "habitability",
-        "biosignature", "biosignatures",
-        "tess planet", "tess candidate", "toi-",
-        "kepler planet", "kepler candidate", "kepler-",
-        "k2 planet", "k2-",
-        "wasp-", "hat-p-", "hatp-",
-        "trappist-1", "trappist",
-        "proxima centauri b", "proxima b",
-        "gj 1214", "gj 436", "hd 189733", "hd 209458",
-        "55 cancri", "tau ceti",
-        "exoplanet atmosphere", "exoplanetary atmosphere",
-        "transmission spectrum", "transmission spectroscopy",
-        "planet occurrence", "planet frequency",
-        "planet host star", "planet-hosting star",
+    # EXCLUDE: obvious non-exoplanet topics in astro-ph.EP
+    exclude_keywords = [
+        # Solar system specific
+        "solar wind", "solar flare", "solar corona", "solar cycle",
+        "martian surface", "mars rover", "mars atmosphere",
+        "lunar surface", "moon crater", "apollo",
+        "venus surface", "venusian",
+        "mercury surface",
+        "titan lake", "titan atmosphere",
+        "io volcano", "europa ocean",
+        "saturn ring", "jupiter storm", "jupiter magnetosphere",
+        # Small bodies (not planets)
+        "asteroid belt", "asteroid family", "near-earth asteroid",
+        "meteorite", "meteorites", "meteor shower",
+        "kuiper belt object", "trans-neptunian object", "tno",
+        "oort cloud",
+        # Interstellar objects (not exoplanets)
+        "interstellar object", "1i/", "2i/", "3i/",
+        "oumuamua", "borisov",
+        # Stellar only (no planet connection)
+        "stellar occultation", "occultation by",
+        "stellar wind", "stellar flare",
+        "stellar abundance", "stellar pipeline", "stellar parameter",
+        # Debris/dust only
+        "debris disk", "dust disk", "zodiacal",
     ]
     
-    for keyword in strict_exoplanet_keywords:
-        if keyword in text:
+    for kw in exclude_keywords:
+        if kw in text:
+            # Double-check: if it also mentions exoplanet keywords, include it
+            if any(inc in text for inc in ["exoplanet", "extrasolar", "planet formation", "protoplanet"]):
+                return True
+            return False
+    
+    # INCLUDE: broad planet-related keywords
+    include_keywords = [
+        # Direct exoplanet terms
+        "exoplanet", "exoplanets", "exoplanetary", "extrasolar",
+        # Planet types
+        "planet", "planets", "planetary system",
+        "jupiter", "neptune", "earth-like", "earth-sized",
+        "super-earth", "mini-neptune", "sub-neptune",
+        "hot jupiter", "warm jupiter", "cold jupiter",
+        "gas giant", "ice giant", "rocky planet", "terrestrial planet",
+        "giant planet", "bound planet",
+        # Detection methods
+        "transit", "transiting", "radial velocity", "rv measurement",
+        "microlensing", "direct imaging", "astrometry",
+        "planet detection", "planet discovery",
+        # Surveys and missions
+        "tess", "kepler", "k2", "jwst", "plato", "ariel",
+        "toi-", "koi-", "wasp-", "hat-p", "hd ", "gj ", "hip ",
+        "trappist", "proxima",
+        # Planet properties
+        "habitable", "habitability", "biosignature",
+        "planet atmosphere", "planetary atmosphere",
+        "transmission spectrum", "emission spectrum",
+        "planet mass", "planet radius",
+        "orbital period", "semi-major axis",
+        # Formation and dynamics
+        "planet formation", "protoplanet", "planetesimal",
+        "planet migration", "orbital migration",
+        "mean motion resonance", "orbital resonance",
+        "planet-disk", "circumstellar disk",
+        "photoevaporation",
+        # Host stars
+        "planet host", "planet-hosting", "host star",
+    ]
+    
+    for kw in include_keywords:
+        if kw in text:
             return True
+    
+    # Default: if in astro-ph.EP and not excluded, likely relevant
+    # But be conservative - require at least some planet connection
     return False
 
 
@@ -117,18 +170,15 @@ def scrape_recent_listings() -> tuple[str, list[str]]:
     html = response.text
     
     # Find the first date header: "Mon, 19 Jan 2026" or similar
-    # Format: <h3>Mon, 19 Jan 2026</h3> or within date listing
     date_pattern = r'<h3[^>]*>([A-Za-z]{3},\s+\d{1,2}\s+[A-Za-z]{3}\s+\d{4})'
     date_match = re.search(date_pattern, html)
     
     if not date_match:
-        # Try alternative pattern from the bullet list
         date_pattern2 = r'<li><a[^>]*>([A-Za-z]{3},\s+\d{1,2}\s+[A-Za-z]{3}\s+\d{4})</a>'
         date_match = re.search(date_pattern2, html)
     
     if date_match:
         date_str = date_match.group(1)
-        # Parse "Mon, 19 Jan 2026" to "2026-01-19"
         try:
             parsed = datetime.strptime(date_str, "%a, %d %b %Y")
             announcement_date = parsed.strftime("%Y-%m-%d")
@@ -140,40 +190,28 @@ def scrape_recent_listings() -> tuple[str, list[str]]:
         announcement_date = datetime.now(timezone.utc).strftime("%Y-%m-%d")
         print(f"⚠️ No date found in HTML, using today: {announcement_date}")
     
-    # Find paper count for the first (most recent) date
-    # Pattern: "(showing X of Y entries)" right after the date
+    # Find paper count
     count_pattern = r'\(showing\s+(\d+)\s+of\s+(\d+)\s+entries?\)'
     count_match = re.search(count_pattern, html)
     
     if count_match:
-        showing = int(count_match.group(1))
         total = int(count_match.group(2))
         print(f"📊 Papers for this date: {total}")
     
     # Extract paper IDs from the first date's section
-    # arXiv IDs look like: arXiv:2601.12345 or just 2601.12345
-    # They appear in links like: /abs/2601.12345
-    
-    # Find the section for the most recent date (before the next date header)
-    # Split by date headers
     sections = re.split(r'<h3[^>]*>[A-Za-z]{3},\s+\d{1,2}\s+[A-Za-z]{3}\s+\d{4}', html)
     
     if len(sections) >= 2:
-        # First section after split is the content for the first date
         first_section = sections[1]
     else:
         first_section = html
     
-    # Extract all arXiv IDs from this section
-    # Pattern matches: /abs/2601.12345 or arXiv:2601.12345
     id_pattern = r'/abs/(\d{4}\.\d{4,5}(?:v\d+)?)'
     paper_ids = re.findall(id_pattern, first_section)
     
-    # Remove duplicates while preserving order
     seen = set()
     unique_ids = []
     for pid in paper_ids:
-        # Normalize: remove version suffix for deduplication
         base_id = re.sub(r'v\d+$', '', pid)
         if base_id not in seen:
             seen.add(base_id)
@@ -185,14 +223,10 @@ def scrape_recent_listings() -> tuple[str, list[str]]:
 
 
 def fetch_paper_details(paper_ids: list[str]) -> list[dict]:
-    """
-    Fetch full paper details from arXiv API for given paper IDs.
-    """
+    """Fetch full paper details from arXiv API for given paper IDs."""
     if not paper_ids:
         return []
     
-    # arXiv API accepts comma-separated IDs
-    # Limit to batches of 50
     papers = []
     
     for i in range(0, len(paper_ids), 50):
@@ -205,14 +239,12 @@ def fetch_paper_details(paper_ids: list[str]) -> list[dict]:
         response = requests.get(api_url, timeout=30)
         response.raise_for_status()
         
-        # Parse XML response
         import xml.etree.ElementTree as ET
         root = ET.fromstring(response.content)
         
         ns = {'atom': 'http://www.w3.org/2005/Atom', 'arxiv': 'http://arxiv.org/schemas/atom'}
         
         for entry in root.findall('atom:entry', ns):
-            # Get paper ID
             id_elem = entry.find('atom:id', ns)
             if id_elem is None:
                 continue
@@ -220,24 +252,20 @@ def fetch_paper_details(paper_ids: list[str]) -> list[dict]:
             full_id = id_elem.text
             paper_id = full_id.split('/abs/')[-1] if '/abs/' in full_id else full_id.split('/')[-1]
             
-            # Get title
             title_elem = entry.find('atom:title', ns)
             title = title_elem.text if title_elem is not None else ""
             title = " ".join(title.split())
             
-            # Get abstract
             abstract_elem = entry.find('atom:summary', ns)
             abstract = abstract_elem.text if abstract_elem is not None else ""
             abstract = " ".join(abstract.split())
             
-            # Get authors
             authors = []
             for author in entry.findall('atom:author', ns):
                 name_elem = author.find('atom:name', ns)
                 if name_elem is not None and name_elem.text:
                     authors.append(clean_latex_name(name_elem.text))
             
-            # Get categories
             categories = []
             for cat in entry.findall('arxiv:primary_category', ns):
                 term = cat.get('term')
@@ -248,14 +276,12 @@ def fetch_paper_details(paper_ids: list[str]) -> list[dict]:
                 if term and term not in categories:
                     categories.append(term)
             
-            # Get dates
             published_elem = entry.find('atom:published', ns)
             published = published_elem.text[:10] if published_elem is not None else ""
             
             updated_elem = entry.find('atom:updated', ns)
             updated = updated_elem.text[:10] if updated_elem is not None else ""
             
-            # Build links
             pdf_link = f"https://arxiv.org/pdf/{paper_id}.pdf"
             abs_link = f"https://arxiv.org/abs/{paper_id}"
             
@@ -272,7 +298,7 @@ def fetch_paper_details(paper_ids: list[str]) -> list[dict]:
             })
         
         if i + 50 < len(paper_ids):
-            time.sleep(0.5)  # Be nice to the API
+            time.sleep(0.5)
     
     return papers
 
@@ -452,12 +478,19 @@ def save_to_archive(papers: list[dict], announcement_date: str):
     else:
         index = {"dates": []}
     
+    # Ensure dates is a list
+    if "dates" not in index or not isinstance(index["dates"], list):
+        index["dates"] = []
+    
     if announcement_date not in index["dates"]:
         index["dates"].append(announcement_date)
         index["dates"].sort(reverse=True)
-        
-        with open(ARCHIVE_INDEX, "w", encoding="utf-8") as f:
-            json.dump(index, f, indent=2)
+    
+    # Clean output
+    clean_index = {"dates": index["dates"]}
+    
+    with open(ARCHIVE_INDEX, "w", encoding="utf-8") as f:
+        json.dump(clean_index, f, indent=2)
     
     print(f"📁 Archived to {archive_file}")
 
@@ -467,16 +500,14 @@ def main():
     
     print(f"🔍 Fetching papers from arXiv ({ARXIV_CATEGORY})...")
     
-    # Step 1: Scrape recent listings to get actual announcement date and paper IDs
+    # Step 1: Scrape recent listings
     announcement_date, paper_ids = scrape_recent_listings()
     
     if len(paper_ids) == 0:
         print("❌ No papers found on recent listings page.")
-        print("   This may be normal if arXiv had no announcements (holiday/weekend).")
-        print("   Keeping existing data unchanged.")
         return
     
-    # Step 2: Fetch full paper details from API
+    # Step 2: Fetch full paper details
     print(f"\n📥 Fetching details for {len(paper_ids)} papers...")
     papers = fetch_paper_details(paper_ids)
     
@@ -491,18 +522,26 @@ def main():
         paper["is_exoplanet_focused"] = is_exoplanet_paper(paper["title"], paper["abstract"])
         paper["tweetability_score"] = calculate_tweetability_score(paper)
     
-    # Sort: exoplanet papers first, then by tweetability
+    # Filter to exoplanet papers only
     exoplanet_papers = [p for p in papers if p["is_exoplanet_focused"]]
-    general_papers = [p for p in papers if not p["is_exoplanet_focused"]]
+    excluded_papers = [p for p in papers if not p["is_exoplanet_focused"]]
     
+    # Sort by tweetability
     exoplanet_papers.sort(key=lambda p: -p["tweetability_score"])
-    general_papers.sort(key=lambda p: -p["tweetability_score"])
     
-    papers = exoplanet_papers  # Only exoplanet papers
+    # Only keep exoplanet papers
+    papers = exoplanet_papers
     
     print(f"\n📊 Paper breakdown:")
-    print(f"   🪐 Exoplanet-focused: {len(exoplanet_papers)}")
-    print(f"   🔭 General astro-ph.EP: {len(general_papers)}")
+    print(f"   🪐 Exoplanet papers: {len(exoplanet_papers)}")
+    print(f"   ❌ Excluded: {len(excluded_papers)}")
+    if excluded_papers:
+        for p in excluded_papers:
+            print(f"      - {p['title'][:60]}...")
+    
+    if len(papers) == 0:
+        print("⚠️ No exoplanet papers found in this batch.")
+        return
     
     # Load existing data
     existing_papers = {}
@@ -550,9 +589,8 @@ def main():
     else:
         print("⚠ No ANTHROPIC_API_KEY - summaries will be empty")
     
-    # Generate content for each paper
+    # Generate content
     for i, paper in enumerate(papers):
-        # Reuse existing content if available
         if paper["id"] in existing_papers:
             existing = existing_papers[paper["id"]]
             has_summary = existing.get("summary_html") and existing["summary_html"] != "<p><em>Summary unavailable.</em></p>"
