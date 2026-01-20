@@ -62,6 +62,112 @@ def clean_latex_name(name: str) -> str:
     return name.strip()
 
 
+def clean_latex_abstract(text: str) -> str:
+    """Convert LaTeX math notation in abstracts to readable text."""
+    if not text:
+        return text
+    
+    # Remove $ delimiters
+    text = re.sub(r'\$([^$]+)\$', r'\1', text)
+    
+    # Handle uncertainty notation: _{-0.47}^{+0.53} -> (+0.53/-0.47)
+    def format_uncertainty(m):
+        sub = m.group(1) if m.group(1) else ''
+        sup = m.group(2) if m.group(2) else ''
+        if sub and sup:
+            return f" ({sup}/{sub})"
+        elif sup:
+            return f"^{sup}"
+        elif sub:
+            return f"_{sub}"
+        return ''
+    
+    text = re.sub(r'_\{([^}]*)\}\^\{([^}]*)\}', format_uncertainty, text)
+    text = re.sub(r'\^\{([^}]*)\}_\{([^}]*)\}', lambda m: f" ({m.group(1)}/{m.group(2)})", text)
+    
+    # Simple superscripts/subscripts with braces
+    text = re.sub(r'\^\{([^}]+)\}', r'^(\1)', text)
+    text = re.sub(r'_\{([^}]+)\}', r'_(\1)', text)
+    
+    # \text{Jup} -> Jup
+    text = re.sub(r'\\text\{([^}]+)\}', r'\1', text)
+    text = re.sub(r'\\mathrm\{([^}]+)\}', r'\1', text)
+    text = re.sub(r'\\rm\{([^}]+)\}', r'\1', text)
+    
+    # Common math symbols
+    replacements = {
+        r'\pm': '±',
+        r'\mp': '∓',
+        r'\times': '×',
+        r'\cdot': '·',
+        r'\div': '÷',
+        r'\sim': '~',
+        r'\approx': '≈',
+        r'\simeq': '≃',
+        r'\neq': '≠',
+        r'\leq': '≤',
+        r'\geq': '≥',
+        r'\ll': '≪',
+        r'\gg': '≫',
+        r'\infty': '∞',
+        r'\propto': '∝',
+        r'\degree': '°',
+        r'\deg': '°',
+        r'\circ': '°',
+        # Greek letters
+        r'\alpha': 'α', r'\Alpha': 'Α',
+        r'\beta': 'β', r'\Beta': 'Β',
+        r'\gamma': 'γ', r'\Gamma': 'Γ',
+        r'\delta': 'δ', r'\Delta': 'Δ',
+        r'\epsilon': 'ε', r'\varepsilon': 'ε',
+        r'\zeta': 'ζ',
+        r'\eta': 'η',
+        r'\theta': 'θ', r'\Theta': 'Θ',
+        r'\iota': 'ι',
+        r'\kappa': 'κ',
+        r'\lambda': 'λ', r'\Lambda': 'Λ',
+        r'\mu': 'μ',
+        r'\nu': 'ν',
+        r'\xi': 'ξ', r'\Xi': 'Ξ',
+        r'\pi': 'π', r'\Pi': 'Π',
+        r'\rho': 'ρ',
+        r'\sigma': 'σ', r'\Sigma': 'Σ',
+        r'\tau': 'τ',
+        r'\upsilon': 'υ',
+        r'\phi': 'φ', r'\Phi': 'Φ', r'\varphi': 'φ',
+        r'\chi': 'χ',
+        r'\psi': 'ψ', r'\Psi': 'Ψ',
+        r'\omega': 'ω', r'\Omega': 'Ω',
+        # Astronomy symbols
+        r'\odot': '☉',
+        r'\oplus': '⊕',
+        r'\otimes': '⊗',
+        r'\star': '★',
+        # Arrows
+        r'\rightarrow': '→',
+        r'\leftarrow': '←',
+        r'\leftrightarrow': '↔',
+        r'\Rightarrow': '⇒',
+        # Other
+        r'\&': '&',
+        r'\ ': ' ',
+    }
+    
+    for latex, symbol in replacements.items():
+        text = text.replace(latex, symbol)
+    
+    # Clean remaining LaTeX commands
+    text = re.sub(r'\\[a-zA-Z]+\s*', '', text)
+    
+    # Remove remaining braces
+    text = re.sub(r'[{}]', '', text)
+    
+    # Clean up multiple spaces
+    text = re.sub(r'\s+', ' ', text)
+    
+    return text.strip()
+
+
 def is_exoplanet_paper(title: str, abstract: str) -> bool:
     """
     Determine if a paper is about exoplanets.
@@ -259,6 +365,10 @@ def fetch_paper_details(paper_ids: list[str]) -> list[dict]:
             abstract_elem = entry.find('atom:summary', ns)
             abstract = abstract_elem.text if abstract_elem is not None else ""
             abstract = " ".join(abstract.split())
+            abstract = clean_latex_abstract(abstract)
+            
+            # Also clean title
+            title = clean_latex_abstract(title)
             
             authors = []
             for author in entry.findall('atom:author', ns):

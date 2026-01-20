@@ -230,7 +230,7 @@
         .lead-image {
             width: 100%;
             height: 180px;
-            object-fit: contain;
+            object-fit: cover;
             border-radius: 8px;
             background: var(--bg-alt);
             order: -1;
@@ -477,7 +477,7 @@
         .modal-image {
             width: 100%;
             height: 200px;
-            object-fit: contain;
+            object-fit: cover;
             border-radius: 12px 12px 0 0;
         }
 
@@ -851,24 +851,24 @@
             const container = document.getElementById('dateList');
             
             if (archiveIndex.dates && archiveIndex.dates.length > 0) {
-                // Only show dates that exist in archive
-                const recentDates = archiveIndex.dates.slice(0, 4);
+                // Show up to 5 recent dates
+                const recentDates = archiveIndex.dates.slice(0, 5);
                 let html = recentDates.map(date => {
                     const isActive = date === currentDate;
                     return `<a href="#" class="date-link ${isActive ? 'active' : ''}" onclick="loadDate('${date}'); return false;">${formatDateNav(date)}</a>`;
                 }).join('');
                 
                 // Add "more" dropdown if there are more dates
-                if (archiveIndex.dates.length > 4) {
+                if (archiveIndex.dates.length > 5) {
                     html += `<select class="date-more" onchange="if(this.value) loadDate(this.value)">
                         <option value="">more...</option>
-                        ${archiveIndex.dates.slice(4).map(d => `<option value="${d}">${formatDateNav(d)}</option>`).join('')}
+                        ${archiveIndex.dates.slice(5).map(d => `<option value="${d}">${formatDateNav(d)}</option>`).join('')}
                     </select>`;
                 }
                 
                 container.innerHTML = html;
             } else {
-                container.innerHTML = '<span class="date-link">No papers yet</span>';
+                container.innerHTML = '<span class="date-link active">Today</span>';
             }
         }
 
@@ -925,8 +925,8 @@
                 const data = await response.json();
                 papersData = data.papers || [];
                 
-                // Use currentDate (the selected date) for display, not data.announcement_date
-                const displayDate = currentDate || data.announcement_date || data.updated_at?.split('T')[0];
+                // Update current date display
+                const displayDate = data.announcement_date || data.updated_at?.split('T')[0] || currentDate;
                 document.getElementById('currentDateLabel').textContent = formatDateNav(displayDate);
                 document.getElementById('paperCount').textContent = papersData.length;
                 
@@ -999,6 +999,7 @@
                 <article class="paper-article" onclick="openModal('${safeId}')">
                     <div class="article-meta">
                         <span class="article-category">${(paper.categories || ['astro-ph.EP'])[0]}</span>
+                        
                     </div>
                     <h3 class="article-title">${paper.title}</h3>
                     <p class="article-byline">${formatAuthorsShort(paper.authors)}</p>
@@ -1050,7 +1051,7 @@
                         ${(paper.categories || []).slice(0, 2).map(cat => 
                             `<span class="article-category">${cat}</span>`
                         ).join('')}
-                        ${isExo ? '<span class="article-badge">🪐 Exoplanet</span>' : ''}
+                        
                     </div>
                     <h2 class="modal-title">${paper.title}</h2>
                     <p class="modal-authors">${formatAuthors(paper.authors)}</p>
@@ -1188,4 +1189,3 @@
     </script>
 </body>
 </html>
-
