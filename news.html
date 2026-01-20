@@ -568,6 +568,7 @@
             // Render text
             let textHtml = item.text || '';
             textHtml = textHtml.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+            textHtml = textHtml.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank">$1</a>');
             textHtml = textHtml.replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br>');
             textHtml = '<p>' + textHtml + '</p>';
             document.getElementById('m-text').innerHTML = textHtml;
@@ -641,3 +642,4 @@
     </script>
 </body>
 </html>
+
