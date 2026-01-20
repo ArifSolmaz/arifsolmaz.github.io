@@ -851,24 +851,24 @@
             const container = document.getElementById('dateList');
             
             if (archiveIndex.dates && archiveIndex.dates.length > 0) {
-                // Show up to 5 recent dates
-                const recentDates = archiveIndex.dates.slice(0, 5);
+                // Only show dates that exist in archive
+                const recentDates = archiveIndex.dates.slice(0, 4);
                 let html = recentDates.map(date => {
                     const isActive = date === currentDate;
                     return `<a href="#" class="date-link ${isActive ? 'active' : ''}" onclick="loadDate('${date}'); return false;">${formatDateNav(date)}</a>`;
                 }).join('');
                 
                 // Add "more" dropdown if there are more dates
-                if (archiveIndex.dates.length > 5) {
+                if (archiveIndex.dates.length > 4) {
                     html += `<select class="date-more" onchange="if(this.value) loadDate(this.value)">
                         <option value="">more...</option>
-                        ${archiveIndex.dates.slice(5).map(d => `<option value="${d}">${formatDateNav(d)}</option>`).join('')}
+                        ${archiveIndex.dates.slice(4).map(d => `<option value="${d}">${formatDateNav(d)}</option>`).join('')}
                     </select>`;
                 }
                 
                 container.innerHTML = html;
             } else {
-                container.innerHTML = '<span class="date-link active">Today</span>';
+                container.innerHTML = '<span class="date-link">No papers yet</span>';
             }
         }
 
@@ -925,8 +925,8 @@
                 const data = await response.json();
                 papersData = data.papers || [];
                 
-                // Update current date display
-                const displayDate = data.announcement_date || data.updated_at?.split('T')[0] || currentDate;
+                // Use currentDate (the selected date) for display, not data.announcement_date
+                const displayDate = currentDate || data.announcement_date || data.updated_at?.split('T')[0];
                 document.getElementById('currentDateLabel').textContent = formatDateNav(displayDate);
                 document.getElementById('paperCount').textContent = papersData.length;
                 
