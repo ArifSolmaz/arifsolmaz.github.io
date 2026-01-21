@@ -2,6 +2,8 @@
 """
 Generate RSS feed from papers.json
 Run after fetch_papers.py to create feed.xml
+
+FIX: Now uses announcement_date (actual arXiv date) instead of updated_at (processing time)
 """
 
 import json
@@ -50,15 +52,37 @@ def generate_rss():
         data = json.load(f)
     
     papers = data.get("papers", [])
+    
+    # FIX: Use announcement_date (actual arXiv date) instead of updated_at (processing time)
+    # This ensures dates match arXiv's actual announcement schedule
+    announcement_date = data.get("announcement_date")
     updated_at = data.get("updated_at", datetime.now(timezone.utc).isoformat())
     
-    # Parse date for RSS
-    try:
-        pub_date = datetime.fromisoformat(updated_at.replace('Z', '+00:00'))
-    except:
-        pub_date = datetime.now(timezone.utc)
+    # Parse the announcement date for RSS pubDate
+    if announcement_date:
+        try:
+            # announcement_date is YYYY-MM-DD format
+            pub_date = datetime.strptime(announcement_date, "%Y-%m-%d")
+            # Set time to 20:00 UTC (arXiv announces at 20:00 Eastern during standard time)
+            pub_date = pub_date.replace(hour=20, minute=0, second=0, tzinfo=timezone.utc)
+        except ValueError:
+            # Fallback to updated_at if parsing fails
+            pub_date = datetime.fromisoformat(updated_at.replace('Z', '+00:00'))
+    else:
+        # Fallback to updated_at for backwards compatibility
+        try:
+            pub_date = datetime.fromisoformat(updated_at.replace('Z', '+00:00'))
+        except:
+            pub_date = datetime.now(timezone.utc)
     
     rss_date = pub_date.strftime("%a, %d %b %Y %H:%M:%S %z")
+    
+    # Build date for lastBuildDate (use actual processing time)
+    try:
+        build_date = datetime.fromisoformat(updated_at.replace('Z', '+00:00'))
+    except:
+        build_date = datetime.now(timezone.utc)
+    build_date_str = build_date.strftime("%a, %d %b %Y %H:%M:%S %z")
     
     # Build RSS XML
     items = []
@@ -105,7 +129,7 @@ def generate_rss():
     <link>{SITE_URL}</link>
     <description>{escape_xml(FEED_DESCRIPTION)}</description>
     <language>en-us</language>
-    <lastBuildDate>{rss_date}</lastBuildDate>
+    <lastBuildDate>{build_date_str}</lastBuildDate>
     <atom:link href="{SITE_URL}/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>{SITE_URL}/icon.png</url>
@@ -122,6 +146,8 @@ def generate_rss():
         f.write(rss)
     
     print(f"Generated RSS feed with {len(items)} items: {FEED_FILE}")
+    print(f"   📅 Announcement date: {announcement_date}")
+    print(f"   🕐 Build time: {updated_at}")
 
 
 if __name__ == "__main__":

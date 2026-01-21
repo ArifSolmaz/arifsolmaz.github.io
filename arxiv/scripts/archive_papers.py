@@ -6,6 +6,8 @@ Run after fetch_papers.py to maintain paper history.
 Creates:
 - data/archive/YYYY-MM-DD.json (copy of today's papers)
 - data/archive/index.json (list of available dates)
+
+FIX: Now uses announcement_date (actual arXiv date) instead of updated_at (processing time)
 """
 
 import json
@@ -39,15 +41,22 @@ def archive_papers():
         print("No papers to archive")
         return
     
-    # Get date from updated_at or use today
-    updated_at = data.get("updated_at", "")
-    if updated_at:
-        try:
-            date_str = updated_at[:10]  # YYYY-MM-DD
-        except:
+    # FIX: Use announcement_date (actual arXiv date) instead of updated_at (processing time)
+    # This ensures archive files match arXiv's actual announcement schedule
+    date_str = data.get("announcement_date")
+    
+    # Fallback to updated_at for backwards compatibility with old data
+    if not date_str:
+        updated_at = data.get("updated_at", "")
+        if updated_at:
+            try:
+                date_str = updated_at[:10]  # YYYY-MM-DD
+            except:
+                date_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+        else:
             date_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    else:
-        date_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    
+    print(f"📅 Archiving papers for announcement date: {date_str}")
     
     # Create archive directory
     ARCHIVE_DIR.mkdir(parents=True, exist_ok=True)
@@ -106,10 +115,9 @@ def cleanup_old_archives():
     files_to_remove = archive_files[:-MAX_ARCHIVE_DAYS]
     
     for f in files_to_remove:
-        f.unlink()
-        print(f"Removed old archive: {f.name}")
-    
-    print(f"Cleaned up {len(files_to_remove)} old archives")
+        if f.name != "index.json":
+            f.unlink()
+            print(f"Removed old archive: {f.name}")
 
 
 if __name__ == "__main__":
