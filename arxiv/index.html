@@ -919,7 +919,9 @@
             content.innerHTML = '<div class="loading"><div class="spinner"></div><p>Loading papers...</p></div>';
             
             try {
-                const response = await fetch(url);
+                // Add cache-busting parameter
+                const cacheBuster = url.includes('?') ? '&_=' : '?_=';
+                const response = await fetch(url + cacheBuster + Date.now());
                 if (!response.ok) throw new Error('Failed to load');
                 
                 const data = await response.json();
