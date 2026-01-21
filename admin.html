@@ -945,10 +945,20 @@ async function loadTrData() {
   try {
     const res = await fetch('https://arifsolmaz.github.io/arxiv/data/arxiv_news.json');
     if (!res.ok) throw new Error('Failed to load');
-    trData = await res.json();
+    const rawData = await res.json();
+    
+    // Normalize tags: convert string to array if needed
+    trData = rawData.map(item => ({
+      ...item,
+      tags: typeof item.tags === 'string' 
+        ? item.tags.split(',').map(t => t.trim()).filter(t => t)
+        : (item.tags || [])
+    }));
+    
     renderTrList();
     updateTrStats();
   } catch (e) {
+    console.error('Load TR error:', e);
     list.innerHTML = '<div class="empty-state"><div class="icon">📭</div><p>No news found</p></div>';
   }
 }
@@ -1497,8 +1507,14 @@ async function saveTrToGitHub() {
       sha = fileData.sha;
     }
     
+    // Convert tags array back to comma-separated string for storage
+    const dataToSave = trData.map(item => ({
+      ...item,
+      tags: Array.isArray(item.tags) ? item.tags.join(',') : item.tags
+    }));
+    
     // Prepare content
-    const content = JSON.stringify(trData, null, 2);
+    const content = JSON.stringify(dataToSave, null, 2);
     const encoded = btoa(unescape(encodeURIComponent(content)));
     
     // Save
