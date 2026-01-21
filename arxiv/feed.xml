@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 20 Jan 2026 22:36:41 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 21 Jan 2026 06:19:00 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,86 +15,564 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>Detection of four cold Jupiters through combined analyses of radial velocity and astrometry data</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2601-11280v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-11280v1</guid>
-      <pubDate>Tue, 20 Jan 2026 22:36:41 +0000</pubDate>
-      <dc:creator>Yiyun Wu et al.</dc:creator>
+      <title>The Occurrence Rate of Nearby Planetary Companions to Hot Jupiters</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-13302v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-13302v1</guid>
+      <pubDate>Wed, 21 Jan 2026 06:19:00 +0000</pubDate>
+      <dc:creator>Lizhou Sha et al.</dc:creator>
       <description><![CDATA[Why It Matters
-Imagine if we could only see the shadow of a person walking by a streetlight, never the person themselves. That's essentially how astronomers have been finding planets around other stars—detecting their subtle effects rather than seeing them directly. This research represents a major step forward in our ability to understand distant worlds, particularly "cold Jupiters"—giant planets that orbit far from their host stars, much like our own Jupiter. These distant giants are crucial pieces in the cosmic puzzle of how planetary systems form and evolve, yet we've found surprisingly few of them. Understanding why could reshape our knowledge of how common solar systems like ours really are.
+Hot Jupiters are some of the most extreme worlds we've discovered—massive gas giants that orbit incredibly close to their stars, completing a full year in just a few days. These scorching worlds shouldn't exist where we find them, since planets this large typically form much farther from their stars. Understanding how hot Jupiters ended up in such unlikely places is one of astronomy's biggest puzzles, and solving it could reveal fundamental truths about how planetary systems throughout the galaxy come to be. The key lies in studying their neighboring planets, which act like cosmic breadcrumbs telling the story of each system's violent or gentle past.
 What They Did
-The researchers combined two different planet-hunting techniques to get a more complete picture of these distant worlds. First, they used the "wobble method," which detects how a planet's gravity causes its host star to move slightly back and forth. Second, they analyzed precise measurements of star positions from the European Space Agency's Gaia spacecraft, which can detect the tiny shifts in a star's position caused by an orbiting planet. By combining data spanning 25 years and using sophisticated computer modeling, they could determine not just that planets exist, but also their actual masses and the shapes of their orbits—information that's usually difficult or impossible to obtain.
+The researchers analyzed five years of data from TESS, NASA's planet-hunting space telescope, which watches for the tiny dips in starlight that occur when planets pass in front of their stars. They focused specifically on stars already known to host hot Jupiters and searched for signs of additional planets orbiting nearby. Think of it like being a detective examining a crime scene—in this case, looking for witnesses (companion planets) that survived whatever dramatic events moved these gas giants so close to their stars. The team then carefully calculated how often such companion planets actually exist, accounting for the limitations of their detection methods.
 Key Findings
-The team discovered four new cold Jupiter planets orbiting distant stars. Two of these worlds are the first planets ever confirmed in their respective systems. The most impressive find is a Jupiter-like planet that takes over 21 years to complete one orbit—the longest orbital period ever found for a planet in this mass range. These planets range from about one-third the mass of Jupiter to over five times Jupiter's mass, showing the diversity of giant worlds that exist beyond our solar system.
+The study found that roughly 8% of hot Jupiters have nearby planetary companions—a surprisingly small number that represents only ten confirmed cases out of hundreds of known hot Jupiter systems. This low occurrence rate suggests that most hot Jupiters likely experienced violent migrations that would have ejected or destroyed any neighboring worlds. The researchers also discovered that these rare companion planets tend to orbit in the same plane as their hot Jupiter neighbors, indicating relatively peaceful coexistence.
 Looking Forward
-This research demonstrates that many more cold Jupiters are likely waiting to be discovered as our technology improves. Some of these newly found worlds may even be candidates for direct imaging with next-generation telescopes, potentially allowing us to study their atmospheres and compositions directly—a major leap toward understanding planetary formation throughout the galaxy.]]></description>
+This research provides crucial evidence that there are at least two distinct pathways for creating hot Jupiters: a gentle process that preserves companion planets, and a more destructive process that eliminates them. As astronomers discover more of these systems and study them in greater detail, we'll gain deeper insights into the chaotic early lives of planetary systems—including our own solar system's formation billions of years ago.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>Aligned, Misaligned and Polar Orbits of Hot Jupiters: Measuring Spin-Orbit Angles via Doppler Tomography with HARPS-N</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2601-11313v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-11313v1</guid>
-      <pubDate>Tue, 20 Jan 2026 22:36:41 +0000</pubDate>
-      <dc:creator>Z. Balkóová et al.</dc:creator>
+      <title>Analytic Modeling of Tidally Locked Rocky Planet Atmospheres Across Dynamical Regimes</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-12556v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-12556v1</guid>
+      <pubDate>Wed, 21 Jan 2026 06:19:00 +0000</pubDate>
+      <dc:creator>Christopher P. Wirth, Diana Powell, Robin Wordsworth</dc:creator>
       <description><![CDATA[Why It Matters
-Imagine spinning a basketball on your finger while a marble orbits around it. Now picture that marble's orbit tilted at a crazy angle—maybe even going over the poles instead of around the equator. This bizarre scenario actually happens with some of the most extreme planets we've discovered: hot Jupiters. These are gas giant planets that orbit incredibly close to their stars, completing a full year in just days. By measuring how tilted these planetary orbits are compared to their star's rotation, astronomers can piece together the violent history of how these worlds ended up in such extreme locations. It's like being a cosmic detective, using clues from today to understand dramatic events that happened billions of years ago.
+Imagine trying to determine if a distant house has heating by measuring its temperature from miles away—that's essentially what astronomers face when studying planets around other stars. With the James Webb Space Telescope now peering at rocky planets similar to Earth, we're getting our first real glimpse of what these distant worlds might be like. But here's the problem: many of these planets appear to be "bare rock" with no atmospheres at all. This research suggests we might be drawing the wrong conclusions because we're using the wrong tools to interpret what we're seeing. Understanding whether rocky planets can hold onto their atmospheres is crucial for determining if any of them could potentially support life.
 What They Did
-The researchers used a technique called Doppler tomography to study three hot Jupiter systems. Think of it like taking an X-ray of starlight. When a planet crosses in front of its star, it blocks light from different parts of the star's surface as it moves. Since stars rotate, different parts move toward or away from us at different speeds, slightly changing the color of their light. By carefully analyzing these tiny color changes during planetary transits, scientists can map how the planet's orbit is oriented relative to the star's spin. The team used three different computer programs to analyze their data, ensuring their results were reliable and not dependent on any single method.
+The researchers developed a new mathematical model to better understand the climates of tidally locked planets—worlds where one side always faces their star (like how one side of the Moon always faces Earth). Previous models made simplifying assumptions that work well for slowly rotating planets like Earth, but break down for these extreme worlds that whip around their stars in just days or weeks. Instead of relying on these outdated assumptions, the team created a "four-box model" that treats the planet like four connected regions and allows heat to move between them more realistically. They tested this model against computer simulations and observations from the James Webb Space Telescope.
 Key Findings
-The three planets showed dramatically different orbital orientations. HAT-P-49 b orbits over its star's poles—imagine the marble going from north pole to south pole instead of around the equator. HAT-P-57A b follows a perfectly normal equatorial orbit, like planets in our solar system. Most intriguingly, XO-3A b sits at a 38-degree tilt, occupying a middle ground that few hot Jupiters inhabit. This is like finding a planet that's neither perfectly aligned nor completely sideways—a rare configuration that challenges our understanding of planetary migration.
+The results were striking: a planet's nightside temperature could vary by hundreds of degrees Kelvin depending on how efficiently its atmosphere transports heat—the difference between being detectable by our telescopes or completely invisible. The team found that over 40% of rocky planets observed by James Webb, including several in the famous TRAPPIST-1 system, might be misunderstood by current models. Most surprisingly, atmospheric assumptions could throw off temperature estimates by order-of-magnitude levels, meaning some planets we've labeled as "airless" might actually have substantial atmospheres.
 Looking Forward
-These findings add crucial pieces to the puzzle of hot Jupiter formation. The diversity of orientations suggests multiple pathways brought these planets so close to their stars—some migrated gently through their birth disks, others were violently scattered by gravitational interactions. Understanding these processes helps astronomers predict what kinds of planetary systems exist throughout our galaxy.]]></description>
+This research could revolutionize how we interpret observations of rocky exoplanets. Rather than hastily concluding that most hot rocky planets are bare, astronomers now have better tools to detect thin atmospheres that might have been missed. This is particularly exciting for studying potentially habitable worlds, as it suggests atmospheres might survive in places we didn't expect—expanding our search for planets that could support life.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>BOWIE-ALIGN: Sub-solar C/O ratio and metallicity atmosphere of the misaligned hot Jupiter HAT-P-30b</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-13104v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-13104v1</guid>
+      <pubDate>Wed, 21 Jan 2026 06:19:00 +0000</pubDate>
+      <dc:creator>Alastair B. Claringbold et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+Imagine trying to solve a cosmic mystery: how do planets form around distant stars? Scientists are getting closer to cracking this puzzle by studying the atmospheres of "hot Jupiters"—massive planets that orbit extremely close to their stars. These scorching worlds act like time capsules, preserving clues about their birth billions of years ago. By analyzing what gases make up their atmospheres, astronomers can work backwards to understand where and how these planets originally formed, then trace their dramatic journey to their current positions. This research helps us understand not just alien worlds, but the fundamental processes that shape planetary systems throughout our galaxy.
+What They Did
+Researchers used the James Webb Space Telescope, humanity's most powerful space observatory, to peer into the atmosphere of a distant planet called HAT-P-30b. This hot Jupiter is located about 700 light-years away and has an unusual characteristic—it orbits its star at a tilted angle, like a spinning top that's been knocked askew. The team captured starlight filtering through the planet's atmosphere as it passed in front of its star, similar to how we might study a soap bubble by looking at light shining through it. By breaking this light into its component colors and examining which wavelengths were absorbed, they could identify specific molecules floating in the planet's atmospheric layers.
+Key Findings
+The atmosphere contains water vapor and carbon dioxide, but in unexpected proportions. The planet has a surprisingly low ratio of carbon to oxygen—between 16% and 45% of what we see in our Sun—and overall contains fewer heavy elements than expected. Most intriguingly, the planet's atmosphere is actually less metal-rich than its host star, which is quite unusual since planets typically form from the same material as their stars.
+Looking Forward
+These findings challenge current theories about how hot Jupiters form and migrate. The unusual atmospheric composition suggests this planet may have formed in the cooler, outer regions of its solar system before spiraling inward, gathering specific types of materials along the way. This research is part of a larger survey comparing tilted and aligned hot Jupiters, which could revolutionize our understanding of planetary formation and the incredible journeys these worlds take through space.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Architectures of Exoplanetary Systems. IV: A Multi-planet Model for Reproducing the Radius Valley and Intra-system Size Similarity of Planets around Kepler&#x27;s FGK Dwarfs</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-13480v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-13480v1</guid>
+      <pubDate>Wed, 21 Jan 2026 06:19:00 +0000</pubDate>
+      <dc:creator>Matthias Y. He, Eric B. Ford</dc:creator>
+      <description><![CDATA[Why It Matters
+When we look up at the night sky, one of humanity's most profound questions is whether Earth-like worlds exist around other stars. NASA's Kepler Space Telescope has discovered thousands of planets orbiting distant stars, revealing surprising patterns that challenge our understanding of how planetary systems form. This research tackles two major mysteries: why planets seem to come in preferred sizes with a conspicuous gap between them, and why planets within the same star system tend to be remarkably similar to each other—unlike our own solar system where tiny Mercury sits alongside giant Jupiter.
+What They Did
+The researchers created a sophisticated computer model that acts like a planetary system simulator. Think of it as a cosmic recipe book that starts with the "ingredients" of planet formation—dust, gas, and rocky cores around young stars—then follows what happens over millions of years. Their model combines two key processes: how planets initially cluster together during formation, and how intense starlight later strips away the thick atmospheres of planets that venture too close to their host stars. By running thousands of simulations with different starting conditions, they could test which scenarios best match what Kepler actually observed in our galaxy.
+Key Findings
+The model reveals that planets originally formed with radii around 2.1 times Earth's size—bigger than our home planet but smaller than Neptune. Over time, stellar radiation sculpted this single population into two distinct groups: smaller "super-Earths" and larger "sub-Neptunes," creating the mysterious gap we observe today. The research also confirms that planets born in the same system start with very similar masses, explaining why they end up looking like siblings. Importantly, the model predicts that truly Earth-like and Venus-like worlds are 2-4 times rarer than previous estimates suggested.
+Looking Forward
+This breakthrough gives astronomers their first comprehensive framework for understanding planetary diversity across the galaxy. As next-generation telescopes like the James Webb Space Telescope examine these distant worlds in greater detail, this model will help predict which systems are most likely to harbor potentially habitable planets, guiding our search for life beyond Earth.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Toward Reliable Interpretations of Small Exoplanet Compositions: Comparisons and Considerations of Equations of State and Materials Used in Common Rocky Planet Models</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-13176v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-13176v1</guid>
+      <pubDate>Wed, 21 Jan 2026 06:19:00 +0000</pubDate>
+      <dc:creator>Joseph Schulze et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+Imagine trying to figure out what's inside a wrapped present just by weighing it and measuring its size. That's essentially what astronomers do when studying small, rocky planets beyond our solar system—called exoplanets. Understanding what these distant worlds are made of is crucial because their composition tells the story of how they formed billions of years ago. With thousands of these planets now discovered, and with the tantalizing possibility that some might harbor life, getting their makeup right has never been more important. But here's the problem: different scientific teams are using different methods to analyze the same planets, and they're reaching conflicting conclusions about what these worlds are actually made of.
+What They Did
+The researchers acted like scientific detectives, comparing the various "recipe books" that astronomers use to interpret exoplanet data. These recipe books contain mathematical descriptions of how different materials—like iron, rock, and ice—behave under the extreme pressures and temperatures found deep inside planets. Think of it like comparing different conversion charts that translate a planet's weight and size into its likely composition. The team gathered several of these widely-used recipe books and tested them on the same set of small planets to see if they would reach similar conclusions about what these worlds contain.
+Key Findings
+The results were troubling: the different recipe books gave conflicting answers about the same planets. The differences in predicted compositions were large enough to matter—comparable to the uncertainties in our current measurements. This means that when one research team concludes a planet is mostly rocky while another says it's rich in water, both might be "right" according to their chosen methods. The researchers found that these disagreements affect not just individual planets, but our understanding of planet populations as a whole.
+Looking Forward
+This research serves as a wake-up call for the exoplanet community. As we enter an era of discovering potentially habitable worlds, astronomers need to standardize their analysis methods to ensure reliable results. The study provides a roadmap for developing better, more consistent approaches to studying these distant worlds, ultimately improving our ability to identify truly Earth-like planets in our cosmic neighborhood.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>JWST COMPASS: Insights into the Systematic Noise Properties of NIRSpec/G395H From a Uniform Reanalysis of Seven Transmission Spectra</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2511-18196v2</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2511-18196v2</guid>
+      <pubDate>Wed, 21 Jan 2026 06:19:00 +0000</pubDate>
+      <dc:creator>Tyler A. Gordon et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+Imagine trying to study a firefly's glow while looking through a dirty, shifting window—that's essentially the challenge astronomers face when studying the atmospheres of distant planets. The James Webb Space Telescope has opened an incredible new window into worlds beyond our solar system, particularly small planets similar in size to Earth and Neptune. Understanding these planets' atmospheres could help us learn how planets form, evolve, and potentially support life. But to unlock these secrets, scientists first need to understand and correct for the "noise" that interferes with their observations, much like cleaning that dirty window to see the firefly more clearly.
+What They Did
+Researchers analyzed observations from seven small exoplanets using Webb's powerful infrared vision. When these planets pass in front of their host stars, starlight filters through their atmospheres, creating a unique fingerprint that reveals what gases are present. However, the telescope itself introduces unwanted variations—like static on a radio—that can mask the real atmospheric signals. The team developed a new method to identify and remove this interference by studying how the light detector behaves during observations. They also tested whether combining data from multiple planets would make faint atmospheric features easier to detect, similar to how multiple voices singing the same song become easier to hear above background noise.
+Key Findings
+The researchers discovered that the telescope's interference is strongest in a specific wavelength range and affects shorter observations more severely. Despite these challenges, the telescope performs almost as well as predicted, with error margins only 5-12% larger than expected. Unfortunately, combining observations from different planets didn't reveal any common atmospheric features. However, the team successfully improved their measurements of each planet's atmospheric properties, including how much metal content they contain and how cloudy they are.
+Looking Forward
+This work provides a roadmap for improving future exoplanet observations. The researchers determined that just a few additional observations of each planet would dramatically improve our understanding of their atmospheres, potentially resolving longstanding questions about these mysterious worlds and bringing us closer to understanding planetary formation across the universe.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+    </item>
+    <item>
+      <title>Discovery and characterisation of two exoplanets orbiting the metal-poor, solar-type star TOI-5788 with TESS, CHEOPS, and HARPS-N</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-14045v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-14045v1</guid>
+      <pubDate>Wed, 21 Jan 2026 06:19:00 +0000</pubDate>
+      <dc:creator>Ben S. Lakeland et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+Imagine finding two siblings in space—one rocky like Earth, the other more like Neptune—orbiting around a star that's quite different from our Sun. That's exactly what astronomers have discovered with the TOI-5788 system, and it's helping us solve one of the biggest puzzles in planet formation. This star is "metal-poor," meaning it has fewer heavy elements than our Sun, yet it managed to create two fascinating worlds. Understanding how planets form around different types of stars gives us crucial insights into how common Earth-like worlds might be throughout the galaxy, and ultimately, how special our own solar system really is.
+What They Did
+The research team used three powerful space-based and ground-based telescopes working together like a cosmic detective squad. First, NASA's TESS satellite spotted tiny dips in starlight as the planets crossed in front of their star—think of it like watching the shadow of a moth flying past a streetlight. The European CHEOPS mission provided additional observations to nail down the planets' sizes with precision. Finally, the HARPS-N instrument measured the subtle wobble these planets create in their star's motion as they orbit, allowing scientists to calculate their masses. It's like determining someone's weight by watching how much they make a seesaw tip.
+Key Findings
+The team discovered two remarkable worlds: TOI-5788 b, the inner planet, is about 1.5 times Earth's width and nearly four times its mass—making it a "super-Earth" that's likely rocky with little to no atmosphere. The outer planet, TOI-5788 c, is over twice Earth's size and six times heavier, placing it in the "mini-Neptune" category. What makes this discovery special is that these planets straddle the mysterious "radius gap"—a size range where few planets are found, suggesting something dramatic happens during planet formation.
+Looking Forward
+This system is a natural laboratory for testing our theories about how planets evolve. Scientists can now study whether mini-Neptunes like TOI-5788 c formed as gas-rich worlds or water-rich "ocean planets," and why some planets retain thick atmospheres while others lose them entirely. With future observations, this system could help us predict what types of planets form around the most common stars in our galaxy.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.SR</category>
     </item>
     <item>
-      <title>KMT-2025-BLG-1616Lb: First Microlensing Bound Planet From DREAMS</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2601-11469v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-11469v1</guid>
-      <pubDate>Tue, 20 Jan 2026 22:36:41 +0000</pubDate>
-      <dc:creator>Hongjing Yang et al.</dc:creator>
+      <title>Clouds and Chemistry Across the Brown Dwarf T-Y Sequence: Insights from JWST Atmospheric Retrievals</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-12575v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-12575v1</guid>
+      <pubDate>Wed, 21 Jan 2026 06:19:00 +0000</pubDate>
+      <dc:creator>A. Lueber, D. Kitzmann, K. Heng</dc:creator>
       <description><![CDATA[Why It Matters
-Imagine trying to spot a firefly buzzing around a lighthouse from thousands of miles away—that's essentially what astronomers face when hunting for planets orbiting distant stars. Most exoplanet detection methods only work for massive planets orbiting close to their stars, leaving smaller, more distant worlds largely invisible. This research demonstrates a powerful technique called microlensing that can find these elusive planets, including ones that might be similar to Earth or Mars. Understanding what types of planets exist throughout our galaxy helps us piece together how planetary systems form and whether Earth-like worlds are common or rare.
+Imagine trying to understand Earth's weather by studying it from trillions of miles away—that's essentially what astronomers do when they peer into the atmospheres of distant worlds. This research focuses on brown dwarfs, mysterious objects that are too small to be stars but too large to be planets. Think of them as "failed stars" that never quite ignited. The coldest brown dwarfs are surprisingly similar to giant planets like Jupiter, making them perfect laboratories for understanding atmospheric processes that occur on worlds beyond our solar system. By studying these objects, we're essentially getting a preview of what we might find when we examine the atmospheres of distant planets orbiting other stars.
 What They Did
-The team used a cosmic magnifying glass effect called gravitational microlensing. When a star passes directly in front of another star from our perspective, its gravity bends light like a lens, temporarily brightening the background star. If the foreground star has a planet, it creates a distinctive blip in this brightening pattern—like a signature that reveals the planet's presence. Two telescope networks worked together: the Korea Microlensing Telescope Network spotted the initial signal, while the DECam Rogue Earths and Mars Survey (DREAMS) took ultra-frequent observations—one measurement per minute—to capture crucial details that resolved ambiguities in the data.
+Scientists used the James Webb Space Telescope—our most powerful space observatory—to analyze the light from 22 extremely cold brown dwarfs. When these objects emit infrared light, different chemicals in their atmospheres absorb specific wavelengths, creating a unique fingerprint. It's like identifying ingredients in a soup by taste, except astronomers identify atmospheric components by analyzing light. The team used two complementary approaches: a statistical method called Bayesian analysis that weighs different atmospheric models against the data, and machine learning algorithms that can spot patterns humans might miss. This dual approach helped them determine whether these objects have cloudy or clear atmospheres and what chemicals are floating around in their skies.
 Key Findings
-The researchers discovered a Neptune-sized planet roughly 40 times more massive than Earth, orbiting a small red dwarf star about one-third the mass of our Sun. The planet sits approximately 1.6 times farther from its star than Earth does from the Sun, and the entire system lies about 7,500 light-years away toward the center of our galaxy. This marks the first planet discovery for the DREAMS survey, proving the technique works exceptionally well for finding smaller worlds.
+The research revealed that atmospheric conditions change dramatically across different temperature ranges. The warmer brown dwarfs (still incredibly cold by our standards) tend to have clear, cloud-free atmospheres, while the coldest objects show mixed results—some have clouds, others don't. Most intriguingly, the scientists found evidence of atmospheric mixing and chemical imbalances in several objects, particularly in an ultra-cool brown dwarf called WISEPAJ1541-22. This object showed unexpectedly high levels of both carbon monoxide and carbon dioxide, suggesting active atmospheric processes are stirring up chemicals that shouldn't coexist under normal conditions.
 Looking Forward
-This success suggests DREAMS could detect free-floating planets—worlds ejected from their star systems and wandering alone through space. The survey appears sensitive enough to spot Mars-sized wanderers and possibly even Moon-sized objects, opening an entirely new window into planetary populations across our galaxy.]]></description>
+These findings provide crucial insights for future exoplanet research. As we develop more sensitive instruments capable of analyzing the atmospheres of Earth-like planets around other stars, understanding atmospheric processes in these brown dwarf "test cases" will help us interpret what we find. The techniques pioneered here will be essential for determining whether distant worlds have the right atmospheric conditions to support life.]]></description>
+        <category>astro-ph.SR</category>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Pre-computed aerosol extinction, scattering and asymmetry grids for scalable atmospheric retrievals</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-14177v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-14177v1</guid>
+      <pubDate>Wed, 21 Jan 2026 06:19:00 +0000</pubDate>
+      <dc:creator>Maël M. Voyer, Quentin Changeat</dc:creator>
+      <description><![CDATA[Why It Matters
+Imagine trying to figure out what clouds are made of by looking at them from hundreds of miles away—that's essentially what scientists do when studying planets outside our solar system. The James Webb Space Telescope, our most powerful space observatory, can detect incredibly faint light from these distant worlds and reveal what's floating in their atmospheres. These alien clouds might contain exotic materials like liquid glass droplets or complex organic compounds similar to the hazy particles on Saturn's moon Titan. Understanding these atmospheric ingredients helps us learn how planets form and whether they might be suitable for life. But there's a catch: analyzing this data requires enormous amounts of computer processing power, often taking so long that scientists can only study a few planets at a time.
+What They Did
+The researchers tackled this computational bottleneck by creating a cosmic shortcut. Instead of having computers calculate the light-scattering properties of cloud particles from scratch every single time they analyze a planet, they pre-calculated these properties for seven important types of space dust and stored them in ready-to-use digital tables. Think of it like meal prepping for science—instead of cooking from scratch each time you're hungry, you prepare ingredients in advance and just heat them up when needed. These materials include various forms of silicates (similar to volcanic glass) and organic compounds that could exist in alien atmospheres. The team then made these computational tools freely available to other researchers worldwide.
+Key Findings
+The pre-computed tables dramatically sped up the analysis process, making calculations between 1.4 and 17 times faster depending on the specific material being studied. Most importantly, this speed boost came with virtually no loss in accuracy—the results were essentially identical to the slower, traditional methods. The system also scales efficiently, meaning scientists can now study multiple types of atmospheric particles simultaneously without exponentially increasing computation time.
+Looking Forward
+This breakthrough means astronomers can now conduct broader surveys of exoplanet atmospheres and study multiple worlds in the time it previously took to analyze just one. As James Webb continues discovering new planets, scientists will be better equipped to quickly identify patterns across different atmospheric compositions, potentially revealing new insights about planetary formation and the prevalence of potentially habitable worlds.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+    </item>
+    <item>
+      <title>Orbital Stability of Closely-Spaced Four-planet Systems</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-11692v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-11692v1</guid>
+      <pubDate>Wed, 21 Jan 2026 06:19:00 +0000</pubDate>
+      <dc:creator>Bennet Outland et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+Astronomers have discovered thousands of planets orbiting other stars, and many of these worlds are packed surprisingly close together—much closer than the planets in our own solar system. Understanding whether these crowded planetary neighborhoods can remain stable over billions of years is crucial for determining where life might have a chance to evolve. If planets are constantly crashing into each other or getting flung out of their systems, any potential life would face an apocalyptic future. This research helps us predict which of the real exoplanet systems we've found might be stable enough to host life for the long haul.
+What They Did
+The researchers created computer simulations of imaginary solar systems, each containing four Earth-sized planets orbiting a Sun-like star. They placed these planets at different distances from each other and watched what happened over extremely long periods—up to 10 billion orbits, which represents many billions of years. Think of it like a cosmic video game where you can fast-forward through geological time scales. The scientists started some planets lined up like cars at a traffic light, while others began spread out around their orbits. They then tracked whether the planets would eventually collide, get ejected into deep space, or maintain stable orbits.
+Key Findings
+The simulations revealed that spacing is everything. When planets are placed farther apart, their systems survive exponentially longer—a small increase in distance can mean the difference between millions and billions of years of stability. Four-planet systems behaved more like five-planet systems than three-planet systems, suggesting that once you pack four or more worlds together, the gravitational chaos follows similar rules. Surprisingly, certain orbital arrangements called resonances—where planets complete their orbits in simple mathematical ratios—actually made systems less stable, not more.
+Looking Forward
+These findings provide astronomers with a roadmap for identifying which real exoplanet systems discovered by telescopes like Kepler and TESS are likely to be stable over cosmic time. This research brings us closer to answering one of humanity's most profound questions: where else in the universe might conditions remain stable enough for life to flourish?]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Is the high-energy environment of K2-18b special?</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2510-06939v2</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2510-06939v2</guid>
+      <pubDate>Wed, 21 Jan 2026 06:19:00 +0000</pubDate>
+      <dc:creator>S. Rukdee et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+Imagine finding a planet that sits right on the boundary between two completely different types of worlds—one rocky like Earth, another puffy like a mini-Neptune. That's exactly what K2-18b represents, and it's recently made headlines for possibly having water vapor in its atmosphere. But here's the catch: this planet orbits an M-dwarf star, a type of red star known for unleashing powerful bursts of X-ray radiation that could strip away a planet's atmosphere entirely. Understanding whether K2-18b can actually keep its atmosphere intact is crucial for determining if such worlds could potentially harbor life. This research tackles a fundamental question: can planets around these common but temperamental stars maintain the atmospheric conditions necessary for habitability?
+What They Did
+The researchers turned their attention to K2-18, the host star, using three different space-based X-ray telescopes to measure how much high-energy radiation it pumps out. Think of it like using multiple specialized cameras to photograph the same lightning storm from different angles—each telescope provided a unique view of the star's X-ray emissions. They spent 100,000 seconds (about 28 hours) carefully observing the star with one telescope, looking for both steady X-ray output and sudden flares. Using this data, they calculated how much X-ray radiation actually reaches the planet's atmosphere and then ran computer models to predict whether this radiation would cause the atmosphere to evaporate away into space.
+Key Findings
+Surprisingly, K2-18 turned out to be remarkably well-behaved for an M-dwarf star. The team found it emits X-rays at a very low level—about 100,000 times dimmer in X-rays compared to its visible light output. They detected only one small flare during their entire observation period. The planet receives roughly 12 units of X-ray energy per second per square centimeter (a relatively gentle dose by cosmic standards). This low-energy environment suggests that K2-18b's atmosphere isn't being violently stripped away, contradicting expectations about planets around M-dwarf stars.
+Looking Forward
+These findings provide crucial support for recent tentative detections of water vapor and other atmospheric components around K2-18b. The research suggests that planets in similar situations—orbiting calm M-dwarf stars—might be better candidates for habitability studies than previously thought. With next-generation telescopes coming online, astronomers now have a clearer framework for understanding which planets around red dwarf stars are worth investigating for signs of life, potentially expanding our cosmic neighborhood of potentially habitable worlds.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.HE</category>
+        <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>Using observations of escaping H/He to constrain the atmospheric composition of sub-Neptunes</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-14254v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-14254v1</guid>
+      <pubDate>Wed, 21 Jan 2026 06:19:00 +0000</pubDate>
+      <dc:creator>James G. Rogers et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+Imagine trying to figure out what's inside a wrapped gift just by watching steam escape from it. That's essentially what astronomers are doing with a mysterious class of planets called sub-Neptunes—worlds larger than Earth but smaller than Neptune that are surprisingly common throughout our galaxy, yet completely absent from our own solar system. Understanding what these alien worlds are made of is crucial because they represent the most abundant type of planet we've discovered so far. Are they rocky planets with thick atmospheres, or mini gas giants? The answer could reshape our understanding of how planetary systems form and evolve.
+What They Did
+The researchers developed a clever detective technique by studying hydrogen and helium gas streaming away from these planets into space—like observing steam rising from a hot cup of coffee. When planets lose atmosphere to space, they need a large reservoir of light gases to sustain this escape over long periods. The team used this principle as a cosmic scale: if a planet is losing gas at the rates we observe, it must contain enough hydrogen and helium to keep this process going. They then applied this method to several well-studied sub-Neptunes, including planets orbiting stars called GJ-436, TOI-776, and the intriguing world K2-18 b, which some scientists thought might be an ocean planet with a habitable environment.
+Key Findings
+The analysis revealed that these sub-Neptunes likely have atmospheres dominated by lightweight hydrogen and helium, rather than heavier gases like water vapor or carbon dioxide. For the TOI-776 planets, the evidence strongly suggests their atmospheres are hydrogen-rich but obscured by high-altitude clouds or hazes that hide their true composition from our telescopes. Most surprisingly, the results cast serious doubt on K2-18 b being a habitable ocean world—if the hydrogen loss measurements are accurate, this planet appears to have far too much hydrogen in its atmosphere to support the watery environment scientists had hoped for.
+Looking Forward
+This research provides astronomers with a powerful new tool for studying distant worlds by connecting atmospheric escape with planetary composition. As we discover more sub-Neptunes and observe them with advanced telescopes, this technique could help solve one of exoplanet science's biggest puzzles: understanding the nature of the galaxy's most common planets and how they fit into the story of planetary formation.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>A Multi-Wavelength Study of Comet C/2022 E3 (ZTF): Complementary ALMA and JWST Investigations of Water and Methanol in Cometary Comae</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-11767v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-11767v1</guid>
+      <pubDate>Wed, 21 Jan 2026 06:19:00 +0000</pubDate>
+      <dc:creator>K. D. Foster et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+Comets are like cosmic time capsules, preserving the original ingredients that formed our solar system 4.6 billion years ago. When scientists study these ancient wanderers, they're essentially reading a recipe book from the birth of planets. Comet C/2022 E3 (ZTF), which visited our inner solar system in early 2023, offered researchers a rare opportunity to peer into this primordial chemistry using humanity's most powerful space telescopes. Understanding what comets are made of helps us piece together how Earth got its water and organic compounds—and potentially, how life itself began.
+What They Did
+Scientists pointed two of our most advanced telescopes at this visiting comet: the James Webb Space Telescope (JWST), floating in space, and the Atacama Large Millimeter Array (ALMA), a collection of radio dishes high in Chile's desert. Think of it like using two different types of cameras to photograph the same subject—each telescope "sees" different wavelengths of light that reveal different chemicals. They focused on detecting water and methanol (a simple alcohol) in the comet's glowing tail, called the coma. By analyzing how these molecules absorb and emit light, researchers could map their temperatures and concentrations like taking the comet's chemical fingerprint.
+Key Findings
+The team discovered that both water and methanol were most concentrated near the comet's center, as expected, but they also found something intriguing: the side of the comet facing away from the Sun was noticeably warmer than other regions. The measurements from both telescopes matched remarkably well, confirming their accuracy. As they tracked these molecules farther from the comet's core, they watched the water molecules cool down—like watching your breath dissipate and cool in winter air.
+Looking Forward
+While this study focused on our own solar system, it's building crucial groundwork for exoplanet research. By understanding the chemical signatures of comets in our cosmic backyard, scientists are developing the tools and knowledge needed to identify similar processes around other stars, potentially revealing how common Earth-like chemistry might be throughout the universe.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>The PAIRS project: a global formation model for planets in binaries. I. Effect of disc truncation on the growth of S-type planets</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-14214v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-14214v1</guid>
+      <pubDate>Wed, 21 Jan 2026 06:19:00 +0000</pubDate>
+      <dc:creator>Julia Venturini et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+When we think of planets like Earth, we picture them orbiting a single star like our Sun. But here's a cosmic plot twist: about half of all stars in our galaxy actually come in pairs, dancing around each other in what astronomers call binary star systems. As our planet-hunting telescopes get better, we're discovering more and more worlds orbiting these stellar duos. Yet scientists have struggled to understand how planets actually form in these crowded cosmic neighborhoods. This research tackles that puzzle, helping us understand whether Earth-like worlds could exist in the most common type of star system in our galaxy—and what that might mean for life beyond our solar system.
+What They Did
+The researchers created a sophisticated computer model to simulate how planets grow around binary stars, focusing on "S-type" planets—worlds that orbit just one star in the pair, like the fictional planet Tatooine from Star Wars (though Tatooine actually orbits both stars). Think of it like modeling how a garden grows when there's a neighbor's house casting shade and creating wind—the second star disrupts the disk of dust and gas around the first star, much like that neighbor affects growing conditions. The team used something called the Bern Model, adapting it to account for how the second star truncates (cuts short) and heats up the planet-forming disk, limiting the raw materials available for building worlds.
+Key Findings
+The results reveal just how dramatically a stellar companion can crash the planet-formation party. When the two stars are closer than 160 astronomical units apart (about four times the distance from our Sun to Pluto), planet formation gets seriously hampered. The second star essentially steals building materials—tiny particles called pebbles that would normally clump together to form planetary cores. The closer the stellar pair, the more severe this cosmic interference becomes. Interestingly, the planets that do manage to form tend to huddle close to their host star, staying as far as possible from the disruptive influence of the stellar neighbor.
+Looking Forward
+This breakthrough model opens the door to predicting what kinds of planet populations we should expect to find around binary stars. As space missions like TESS and future telescopes discover more of these worlds, scientists will finally have a theoretical framework to make sense of the observations and determine whether planets in binary systems could harbor the conditions necessary for life.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>A Joint Mass-Radius-Period Distribution of Exoplanets</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-1911-03582v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-1911-03582v1</guid>
+      <pubDate>Wed, 21 Jan 2026 06:19:00 +0000</pubDate>
+      <dc:creator>Andrew R. Neil, Leslie A. Rogers</dc:creator>
+      <description><![CDATA[Why It Matters
+Imagine trying to understand all the different types of cars on Earth by only looking at a small parking lot. That's essentially the challenge astronomers face when studying planets beyond our solar system. The Kepler Space Telescope has discovered thousands of these "exoplanets," but we're still piecing together the big picture: what types of planets are most common, and how do they form and evolve? This research tackles one of astronomy's most fundamental questions—are Earth-like worlds rare cosmic accidents, or are they abundant throughout the galaxy? The answer could reshape our understanding of how common life might be in the universe.
+What They Did
+The researchers combined two key pieces of information about exoplanets: how big they are (radius) and how heavy they are (mass), along with how long they take to orbit their stars (period). Think of it like creating a comprehensive catalog that lists the height, weight, and running speed of every athlete in multiple sports. They used advanced statistical techniques—essentially sophisticated pattern-recognition software—to group planets into different "families" based on their shared characteristics. This approach is similar to how a zoologist might classify animals into species by looking at multiple traits simultaneously rather than just one feature at a time.
+Key Findings
+The analysis revealed that planets fall into three distinct groups, like different breeds of dogs that initially look similar. There are rocky planets (like Earth), planets with thick gaseous atmospheres, and a surprising third category: planets that used to have thick atmospheres but lost them over time, leaving behind just their rocky cores. This discovery suggests that many planets we thought were naturally Earth-sized might actually be "stripped" versions of larger worlds. The researchers found that when accounting for this atmospheric loss, the number of truly Earth-like planets drops by nearly ten times—a dramatic revision to previous estimates.
+Looking Forward
+This research provides a new framework for understanding planetary diversity and evolution. It suggests that the galaxy might be less populated with Earth-twins than we hoped, but it also reveals that planetary systems are more dynamic than previously thought, with atmospheres being lost and gained over billions of years. This work will help guide future space missions in their search for potentially habitable worlds and refine our estimates for how common life-supporting planets might be.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>The ALMA survey to Resolve exoKuiper belt Substructures (ARKS). X. Interpreting the peculiar dust rings around HD 131835</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-11732v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-11732v1</guid>
+      <pubDate>Wed, 21 Jan 2026 06:19:00 +0000</pubDate>
+      <dc:creator>M. R. Jankovic et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+When astronomers discover planets orbiting other stars, they're often looking at mature solar systems. But to truly understand how planets form, we need to catch star systems in the act—while they're still building their planetary families. That's exactly what researchers have done with HD 131835, a young star surrounded by dusty rings that might be the birthplace of future planets. These cosmic construction zones, filled with colliding rocks and swirling dust, offer us a window into how our own solar system might have looked billions of years ago. By studying these dusty discs, we can piece together the story of planetary birth and understand why some star systems end up with rocky planets like Earth while others develop gas giants or remain barren.
+What They Did
+The research team used the powerful ALMA telescope array in Chile to peer through space at HD 131835, a star about 400 light-years away that's roughly twice as massive as our Sun. They discovered something puzzling: two distinct rings of dust circling the star, one at about 65 times the Earth-Sun distance and another at 100 times that distance. What made this discovery strange was that the inner ring appeared brighter than expected compared to previous observations. To solve this mystery, the scientists ran two different computer simulations. The first modeled what would happen if both rings contained rocky debris constantly smashing together, like cosmic demolition zones. The second explored whether gas in the system might be pushing dust outward from the inner ring to create the outer one.
+Key Findings
+The team's detective work revealed that this star system doesn't behave like a typical dusty disc. The inner dust ring burns brighter than the outer one when viewed through ALMA's sub-millimeter vision, but previous observations using scattered light showed the opposite pattern. Neither of their proposed explanations perfectly matched what they observed. The collision scenario would require the two rings to be made of dramatically different materials—so different it seems almost impossible. The gas-pushing-dust scenario could explain where the outer ring sits and why it appears dimmer, but it predicts the ring should be much fainter overall than what they actually see.
+Looking Forward
+This cosmic puzzle suggests that planet-forming discs are far more complex and varied than scientists previously thought. HD 131835 might represent a completely new type of planetary construction zone that challenges our current understanding of how dust and gas interact around young stars. Future observations with even more powerful telescopes could help astronomers determine whether this system is a rare oddball or represents a common stage in planetary system evolution that we've simply missed before. Understanding these dusty rings better will ultimately help us predict what kinds of planets might form around different types of stars—and perhaps even help us understand why Earth turned out to be such a perfect home for life.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>The ALMA survey to Resolve exoKuiper belt Substructures (ARKS) V: Comparison between scattered light and thermal emission</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-12586v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-12586v1</guid>
+      <pubDate>Wed, 21 Jan 2026 06:19:00 +0000</pubDate>
+      <dc:creator>J. Milli et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+Imagine if we could peer into other star systems and see cosmic debris fields similar to the icy region beyond Neptune in our own solar system. That's exactly what astronomers are doing when they study "debris discs"—the leftover material orbiting distant stars that represents alien versions of our Kuiper Belt. These cosmic junkyards aren't just space curiosities; they're treasure troves of information about how planetary systems form and evolve. By studying the dust and debris swirling around other stars, we can better understand the forces that shaped our own cosmic neighborhood billions of years ago, and potentially discover hidden planets that are stirring up the debris.
+What They Did
+Researchers used a clever detective approach, studying the same debris discs with different types of "space eyes" to see what secrets they might reveal. Think of it like examining a dusty room with both a flashlight and a thermal camera—each tool shows you different things. They used powerful telescopes to capture light reflected off tiny dust particles (like seeing dust motes in sunlight), and also used radio telescopes to detect heat given off by larger pebble-sized chunks. By comparing these two views across 24 different star systems, they could map where different sizes of debris were located and see if the patterns matched up or told different stories.
+Key Findings
+The results were surprising: in 6 out of 15 systems where both types of dust could be seen, the smaller particles were scattered much farther from their stars than the larger chunks—like finding that powder from a demolished building had blown much farther than the rubble. Even more intriguingly, nearly all of these mismatched systems also contained gas, while the systems where small and large debris stayed together were mostly gas-free. This suggests that gas in these debris discs acts like a cosmic wind, pushing lightweight dust particles to the outer edges while leaving heavier material closer in.
+Looking Forward
+These findings could revolutionize how we search for planets around other stars. Gas-filled debris discs might be cosmic signposts pointing to planetary systems in the making, or indicating invisible planets whose gravity influences how dust and gas move through space. This research brings us closer to understanding the messy, dynamic process of planetary system evolution—and perhaps finding more worlds like our own.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Turbulence Can Persist in the Inner Regions of Weakly-Ionized Planet Forming Disks</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-13391v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-13391v1</guid>
+      <pubDate>Wed, 21 Jan 2026 06:19:00 +0000</pubDate>
+      <dc:creator>David G. Rea, Jacob B. Simon</dc:creator>
+      <description><![CDATA[Why It Matters
+Picture a cosmic construction zone where planets are being built from scratch. These "planet-forming disks" are spinning clouds of gas and dust that surround young stars, and they're the birthplaces of every planet in the universe—including the thousands of exoplanets we've discovered orbiting other stars. But there's a fundamental mystery: how does the material in these disks move around and clump together to actually form planets? Understanding this process is crucial because it tells us not only how our own solar system came to be, but also why exoplanetary systems can look so dramatically different from ours. Some have giant planets orbiting closer to their stars than Mercury does to our Sun, while others have Earth-like worlds in completely unexpected arrangements.
+What They Did
+The researchers used powerful computer simulations to model a slice of a planet-forming disk, like studying a small section of a spinning pizza to understand how the whole thing behaves. They focused on conditions similar to what you'd find about 5 astronomical units from a young star—roughly where Jupiter sits in our solar system. The key was examining how the gas behaves when it's only weakly electrified (ionized), which is the normal state for most of the material in these disks. They ran their virtual experiments twice: once including two important physical effects called Ohmic diffusion and ambipolar diffusion, and once adding a third effect called the Hall effect.
+Key Findings
+The team discovered that these weakly-ionized conditions don't just calm things down as previously thought—they can actually create their own form of turbulence. Specifically, they found that ambipolar diffusion combined with the disk's rotation can trigger something called the "ambipolar diffusion shear instability," which makes the gas churn and mix rather than settle into smooth layers. This was the first time researchers demonstrated this effect working in realistic disk conditions. Additionally, they found that even when the main turbulence-driving mechanism (called magnetorotational instability) is weakened, pockets of turbulence can persist in regions between strong magnetic field concentrations.
+Looking Forward
+This research reshapes how we think about planet formation. Turbulence in these disks acts like a cosmic mixer, stirring up dust and gas in ways that directly affect how and where planets can form. The discovery that turbulence can persist even in the inner regions of these disks—where rocky planets like Earth typically form—suggests that planet formation might be more dynamic and complex than our current models predict. This could help explain the incredible diversity of exoplanetary systems we observe and guide us toward better understanding which types of systems are most likely to harbor Earth-like worlds.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>The ALMA survey to Resolve exoKuiper belt Substructures (ARKS) I: Motivation, sample, data reduction, and results overview</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-11708v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-11708v1</guid>
+      <pubDate>Wed, 21 Jan 2026 06:19:00 +0000</pubDate>
+      <dc:creator>S. Marino et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+Imagine if alien astronomers looked at our solar system from far away—they might spot the Kuiper Belt, that ring of icy debris beyond Neptune where Pluto lives. Now astronomers have found similar belts around other stars, called "exoKuiper belts," and they're like cosmic archaeology sites. These dusty rings tell us the story of how planets formed billions of years ago and how they've been reshaping their neighborhoods ever since. Understanding these distant debris discs helps us piece together not just how other worlds came to be, but also how common planetary systems like our own might be throughout the galaxy.
+What They Did
+Researchers used ALMA—a network of powerful radio telescopes in Chile—to take the most detailed pictures ever captured of 24 promising debris belts around other stars. Think of it like upgrading from a blurry cell phone camera to a high-definition telescope when trying to photograph distant mountains. They specifically chose the most interesting targets that previous, lower-quality observations had hinted might have complex structures. The team measured where dust particles were located, how they moved through space, and whether these belts contained gases like carbon monoxide. They also created computer models to help explain what forces might be sculpting these distant rings.
+Key Findings
+The results revealed that these cosmic debris belts are far more complex than anyone expected. About one-third of the belts contained multiple rings, like a cosmic record player with several tracks. Ten of the 24 systems showed lopsided, asymmetrical shapes—imagine a hula hoop that's been dented on one side. In systems tilted nearly edge-on from our perspective, the researchers found that dust doesn't always settle into neat, flat pancakes but instead forms more complicated three-dimensional structures. Most surprisingly, they discovered that in some systems, invisible planets or swirling gas vortices might be acting like cosmic shepherds, corralling dust into arcs and controlling how particles move.
+Looking Forward
+These discoveries suggest that planetary systems are dynamic, ever-changing environments where planets continue to influence their surroundings long after formation. The intricate structures could help astronomers identify hidden planets that are too faint to see directly but leave their gravitational fingerprints on surrounding debris. This research opens new avenues for understanding how planetary systems evolve and mature, ultimately helping us better understand our own solar system's history and the potential for finding Earth-like worlds elsewhere.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>On the importance of geometry in exoplanet irradiation : Implications for the day-night contrast</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2406-15021v2</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2406-15021v2</guid>
+      <pubDate>Wed, 21 Jan 2026 06:19:00 +0000</pubDate>
+      <dc:creator>Mradumay Sadh, Lorenzo Gavassino</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>Revisiting the exoplanet radius valley with host stars from SWEET-Cat</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-12396v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-12396v1</guid>
+      <pubDate>Wed, 21 Jan 2026 06:19:00 +0000</pubDate>
+      <dc:creator>Juma Kamulali et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>Timescales diagnostics for saving viscous and MHD-driven dusty discs from external photoevaporation</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-13200v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-13200v1</guid>
+      <pubDate>Wed, 21 Jan 2026 06:19:00 +0000</pubDate>
+      <dc:creator>Gabriele Pichierri et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>The PAIRS project: a global formation model for planets in binaries. II. Gravitational perturbation effects from secondary stars</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-14215v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-14215v1</guid>
+      <pubDate>Wed, 21 Jan 2026 06:19:00 +0000</pubDate>
+      <dc:creator>Arianna Nigioni et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>The ALMA survey to Resolve exoKuiper belt Substructures (ARKS) VII: Optically thick gas with broad CO gaussian local line profiles in the HD 121617 disc</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-11824v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-11824v1</guid>
+      <pubDate>Wed, 21 Jan 2026 06:19:00 +0000</pubDate>
+      <dc:creator>A. Brennan et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Architectures of Exoplanetary Systems. III: Eccentricity and Mutual Inclination Distributions of AMD-stable Planetary Systems</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2007-14473v2</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2007-14473v2</guid>
+      <pubDate>Wed, 21 Jan 2026 06:19:00 +0000</pubDate>
+      <dc:creator>Matthias Y. He et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>The ALMA survey to Resolve exoKuiper belt Substructures (ARKS) III: The vertical structure of debris disks</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-12128v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-12128v1</guid>
+      <pubDate>Wed, 21 Jan 2026 06:19:00 +0000</pubDate>
+      <dc:creator>Brianna Zawadzki et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>The ALMA survey to Resolve exoKuiper belt Substructures (ARKS) VIII: A dust arc and non-Keplerian gas kinematics in HD 121617</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-11711v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-11711v1</guid>
+      <pubDate>Wed, 21 Jan 2026 06:19:00 +0000</pubDate>
+      <dc:creator>S. Marino et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Interior dynamics of envelopes around disk-embedded planets</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-12074v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-12074v1</guid>
+      <pubDate>Wed, 21 Jan 2026 06:19:00 +0000</pubDate>
+      <dc:creator>Ayumu Kuwahara, Michiel Lambrechts</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Four Cold Super-Jupiters Revealed by Extended and Complex Microlensing Signals</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-13450v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-13450v1</guid>
+      <pubDate>Wed, 21 Jan 2026 06:19:00 +0000</pubDate>
+      <dc:creator>Cheongho Han et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.GA</category>
     </item>
     <item>
+      <title>The Feasibility of Potentially Hazardous Asteroids Flybys Using Multiple Venus Gravity Assists</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-12759v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-12759v1</guid>
+      <pubDate>Wed, 21 Jan 2026 06:19:00 +0000</pubDate>
+      <dc:creator>Vladislav Zubko</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+        <category>physics.space-ph</category>
+    </item>
+    <item>
       <title>The impact of disc photoevaporation on the long-term evolution of giant planets in mean motion resonances</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2601-10811v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-10811v1</guid>
-      <pubDate>Tue, 20 Jan 2026 22:36:41 +0000</pubDate>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-10811v2</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-10811v2</guid>
+      <pubDate>Wed, 21 Jan 2026 06:19:00 +0000</pubDate>
       <dc:creator>Emmanuel J. Greenfield, James E. Owen</dc:creator>
-      <description><![CDATA[Why It Matters
-Imagine two massive planets locked in a cosmic dance, orbiting their star in perfect synchronization—one completes exactly two orbits for every three of its neighbor, like clockwork that's been running for millions of years. These "resonant" relationships are surprisingly common among the thousands of exoplanets we've discovered, but scientists have struggled to understand how they form and why some survive while others fall apart. This research tackles a crucial missing piece of the puzzle: how intense stellar radiation that strips away the gas disk around young stars affects these delicate planetary partnerships. Understanding this process helps us decode the life stories of planetary systems and explains why we see such diverse arrangements of worlds beyond our solar system.
-What They Did
-The researchers created detailed computer simulations to watch planetary systems evolve over millions of years. They modeled young star systems where two giant planets (similar to Jupiter) orbit in lockstep while embedded in a disk of gas and dust. In their virtual laboratory, they cranked up the intensity of a process called photoevaporation—where the star's intense radiation essentially boils away the surrounding gas disk. They tested different scenarios by varying the disk's mass, how thick or thin the gas was, the planets' weights, and how tightly synchronized the planetary orbits were. Think of it like running multiple experiments to see how different cooking temperatures and ingredient amounts affect the final recipe.
-Key Findings
-The results revealed a surprising twist: intense stellar radiation can actually stabilize some planetary partnerships that would otherwise break apart. When radiation strips gas from the space between planets, it reduces the gravitational forces that normally push planets out of sync. This stabilizing effect works best for planets in 3:2 resonances (three orbits to two), which are naturally more fragile. However, the process can backfire for planets in 2:1 resonances (two orbits to one), sometimes destabilizing these normally robust relationships. In all cases, the planets end up with more stretched, oval-shaped orbits rather than circular ones.
-Looking Forward
-These discoveries help explain the incredible diversity of planetary systems we observe today. The research suggests that a star's radiation environment during a system's youth plays a crucial role in sculpting the final arrangement of planets. This has practical implications for upcoming space missions like the European Space Agency's Gaia telescope, which will measure tiny stellar wobbles caused by orbiting planets. By understanding how these resonant relationships evolve, astronomers can better predict which types of planetary systems to look for and refine their detection strategies, bringing us closer to finding Earth-like worlds in stable, long-lasting orbits.]]></description>
+      <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>Metal Pipe: A Broadly-Applicable Stellar Abundance Pipeline Using Isochronal Parameters</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2601-10794v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-10794v1</guid>
-      <pubDate>Tue, 20 Jan 2026 22:36:41 +0000</pubDate>
-      <dc:creator>Jared R. Kolecki, Lauren M. Weiss</dc:creator>
-      <description><![CDATA[Why It Matters
-Imagine trying to understand different neighborhoods by studying the houses in them—but each house was analyzed by a different inspector using different methods. That's the challenge astronomers face when studying stars that host planets outside our solar system. With thousands of exoplanets discovered, scientists need a consistent way to analyze their host stars across the galaxy. Understanding what these stars are made of helps us learn how planetary systems form and whether they might harbor worlds similar to Earth. This research tackles that challenge by creating a universal tool for analyzing stellar chemistry.
-What They Did
-Researchers developed a new computer program called "Metal Pipe" that works like a standardized recipe for analyzing stars. The program takes high-quality light measurements from telescopes—essentially stellar fingerprints that reveal what elements are inside each star—and processes them using consistent methods. Think of it as creating a universal translator that can read the chemical signatures of different types of stars, from those slightly smaller than our Sun to those much larger. The team tested their new tool on 503 previously studied stars to make sure it produced reliable results compared to earlier measurements.
-Key Findings
-The new tool successfully measured ten different chemical elements in stars, including carbon, oxygen, iron, and others that are crucial for planet formation. When compared to previous measurements, Metal Pipe's results were remarkably consistent—temperature measurements differed by only about 100 degrees Kelvin (roughly equivalent to the difference between a warm day and a hot day), while chemical abundance measurements were accurate to within 10% margins. This level of precision means astronomers can now confidently compare stars across large populations.
-Looking Forward
-This standardized approach will help astronomers build comprehensive catalogs of exoplanet host stars, potentially revealing patterns about which types of stars are most likely to form Earth-like planets. As the tool gets refined for smaller, cooler stars, it could unlock insights about the most common planetary systems in our galaxy.]]></description>
+      <title>Project FOSSO I: Fates of the Known BDs in MS-BD Binaries</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-12861v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-12861v1</guid>
+      <pubDate>Wed, 21 Jan 2026 06:19:00 +0000</pubDate>
+      <dc:creator>Zhangliang Chen et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.SR</category>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>RV×TESS I: Modeling Asteroseismic Signals with Simultaneous Photometry and RVs</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-14076v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-14076v1</guid>
+      <pubDate>Wed, 21 Jan 2026 06:19:00 +0000</pubDate>
+      <dc:creator>Jiaxin Tang et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+    </item>
+    <item>
+      <title>PyIRD: A Python-Based Data Reduction Pipeline for Subaru/IRD and REACH</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-12669v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-12669v1</guid>
+      <pubDate>Wed, 21 Jan 2026 06:19:00 +0000</pubDate>
+      <dc:creator>Yui Kasagi et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.IM</category>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Exoplanet atmospheres and demographics in the 2040s</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-11695v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-11695v1</guid>
+      <pubDate>Wed, 21 Jan 2026 06:19:00 +0000</pubDate>
+      <dc:creator>Jens Kammerer et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.IM</category>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Primitive asteroids in the main belt, Cybele, and Hilda populations from Gaia DR3</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-13925v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-13925v1</guid>
+      <pubDate>Wed, 21 Jan 2026 06:19:00 +0000</pubDate>
+      <dc:creator>Noemie El-Bez-Sebastien et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Dynamical Origin of (469219) Kamo`oalewa of Tianwen-2 Mission from the Main-Belt: ν_6 Secular Resonance, Flora Family or 3:1 Resonance with Jupiter</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-13585v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-13585v1</guid>
+      <pubDate>Wed, 21 Jan 2026 06:19:00 +0000</pubDate>
+      <dc:creator>Yandong Wang et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.SR</category>
+        <category>physics.space-ph</category>
+    </item>
+    <item>
+      <title>The ALMA survey to Resolve exoKuiper belt Substructures (ARKS) II. The radial structure of debris discs</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-13670v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-13670v1</guid>
+      <pubDate>Wed, 21 Jan 2026 06:19:00 +0000</pubDate>
+      <dc:creator>Yinuo Han et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+        <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>Data Mining-Based Cislunar Escape-Family Analysis in The Multi-Body Models</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-11881v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-11881v1</guid>
+      <pubDate>Wed, 21 Jan 2026 06:19:00 +0000</pubDate>
+      <dc:creator>Shuyue Fu et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>On the accuracy of mass and size measurements of young protoplanetary disks</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-12578v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-12578v1</guid>
+      <pubDate>Wed, 21 Jan 2026 06:19:00 +0000</pubDate>
+      <dc:creator>Eduard I. Vorobyov et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>The ALMA survey to Resolve exoKuiper belt Substructures (ARKS): VI. Asymmetries and offsets</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-11766v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-11766v1</guid>
+      <pubDate>Wed, 21 Jan 2026 06:19:00 +0000</pubDate>
+      <dc:creator>J. B. Lovell et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Using Astrometry to Break Degeneracies in Stellar Surface Mapping</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-11737v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-11737v1</guid>
+      <pubDate>Wed, 21 Jan 2026 06:19:00 +0000</pubDate>
+      <dc:creator>Jamila Taaki, Lia Corrales, Alfred O. Hero</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.SR</category>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+    </item>
+    <item>
+      <title>Exploring rotational properties and the YORP effect in asteroid families</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-12972v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-12972v1</guid>
+      <pubDate>Wed, 21 Jan 2026 06:19:00 +0000</pubDate>
+      <dc:creator>Gabriele Bertinelli, Wen-Han Zhou, Paolo Tanga</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>A Newly Identified Degeneracy Keeps the Planetary Interpretation Viable for OGLE-2011-BLG-0950</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-13276v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-13276v1</guid>
+      <pubDate>Wed, 21 Jan 2026 06:19:00 +0000</pubDate>
+      <dc:creator>Jiyuan Zhang et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.GA</category>
+        <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>The ALMA survey to Resolve exoKuiper belt Substructures (ARKS) IX: Gas-driven origin for the continuum arc in the debris disc of HD 121617</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-11709v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-11709v1</guid>
+      <pubDate>Wed, 21 Jan 2026 06:19:00 +0000</pubDate>
+      <dc:creator>Philipp Weber et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
     </item>
   </channel>
