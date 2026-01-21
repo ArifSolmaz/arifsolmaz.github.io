@@ -1430,53 +1430,72 @@ async function saveEnToGitHub() {
   try {
     // Determine which file to save (today's or archive)
     const selectedDate = document.getElementById('enDateSelect').value;
-    const isToday = !selectedDate || selectedDate === 'today' || 
-      (archiveIndex.dates && archiveIndex.dates[0] === selectedDate);
-    
-    const filePath = isToday ? CONFIG.paths.enPapers : `${CONFIG.paths.enArchive}/${selectedDate}.json`;
-    
-    // Get current SHA
-    const getRes = await fetch(
-      `https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/contents/${filePath}?ref=${CONFIG.branch}`,
-      { headers: { 'Authorization': `Bearer ${token}`, 'Accept': 'application/vnd.github.v3+json' } }
-    );
-    
-    let sha = '';
-    if (getRes.ok) {
-      const fileData = await getRes.json();
-      sha = fileData.sha;
-    }
+    const todayDate = archiveIndex.dates ? archiveIndex.dates[0] : new Date().toISOString().slice(0, 10);
+    const isToday = !selectedDate || selectedDate === 'today' || selectedDate === todayDate;
     
     // Prepare content
     const content = JSON.stringify(enData, null, 2);
     const encoded = btoa(unescape(encodeURIComponent(content)));
     
-    // Save
-    const saveRes = await fetch(
-      `https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/contents/${filePath}`,
-      {
-        method: 'PUT',
-        headers: {
-          'Authorization': `Bearer ${token}`,
-          'Accept': 'application/vnd.github.v3+json',
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          message: `Update EN papers via admin panel - ${new Date().toISOString().slice(0, 10)}`,
-          content: encoded,
-          sha: sha,
-          branch: CONFIG.branch
-        })
+    // Helper function to save to a file
+    async function saveToFile(filePath) {
+      const getRes = await fetch(
+        `https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/contents/${filePath}?ref=${CONFIG.branch}`,
+        { headers: { 'Authorization': `Bearer ${token}`, 'Accept': 'application/vnd.github.v3+json' } }
+      );
+      
+      let sha = '';
+      if (getRes.ok) {
+        const fileData = await getRes.json();
+        sha = fileData.sha;
       }
-    );
+      
+      return fetch(
+        `https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/contents/${filePath}`,
+        {
+          method: 'PUT',
+          headers: {
+            'Authorization': `Bearer ${token}`,
+            'Accept': 'application/vnd.github.v3+json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            message: `Update ${filePath} via admin panel`,
+            content: encoded,
+            sha: sha,
+            branch: CONFIG.branch
+          })
+        }
+      );
+    }
     
-    if (saveRes.ok) {
-      enUnsaved = false;
-      updateEnStats();
-      showToast('✅ Saved to GitHub! Page updates in 1-2 min.', 'success');
+    if (isToday) {
+      // Save to BOTH papers.json AND today's archive file
+      const papersResult = await saveToFile(CONFIG.paths.enPapers);
+      const archivePath = `${CONFIG.paths.enArchive}/${todayDate}.json`;
+      const archiveResult = await saveToFile(archivePath);
+      
+      if (papersResult.ok && archiveResult.ok) {
+        enUnsaved = false;
+        updateEnStats();
+        showToast('✅ Saved to GitHub! Page updates in 1-2 min.', 'success');
+      } else {
+        const err = await (papersResult.ok ? archiveResult : papersResult).json();
+        handleGitHubError(papersResult.status || archiveResult.status, err);
+      }
     } else {
-      const err = await saveRes.json();
-      handleGitHubError(saveRes.status, err);
+      // Save to archive file only
+      const archivePath = `${CONFIG.paths.enArchive}/${selectedDate}.json`;
+      const saveRes = await saveToFile(archivePath);
+      
+      if (saveRes.ok) {
+        enUnsaved = false;
+        updateEnStats();
+        showToast('✅ Saved to GitHub! Page updates in 1-2 min.', 'success');
+      } else {
+        const err = await saveRes.json();
+        handleGitHubError(saveRes.status, err);
+      }
     }
   } catch (e) {
     showToast('Connection error: ' + e.message, 'error');
