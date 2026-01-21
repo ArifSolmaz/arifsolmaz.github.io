@@ -663,6 +663,27 @@ def main():
     
     print(f"✓ Got details for {len(papers)} papers")
     
+    # Filter out old papers (replacements/cross-lists from previous months)
+    # arXiv ID format: YYMM.XXXXX, so 2026-01-21 should have IDs starting with "2601."
+    expected_prefix = announcement_date[2:4] + announcement_date[5:7]  # "2026-01-21" -> "2601"
+    
+    new_papers = []
+    old_papers = []
+    for paper in papers:
+        paper_prefix = paper["id"][:4]  # e.g., "2601" from "2601.12345v1"
+        if paper_prefix == expected_prefix:
+            new_papers.append(paper)
+        else:
+            old_papers.append(paper)
+    
+    if old_papers:
+        print(f"\n🔄 Filtered out {len(old_papers)} old/replacement papers:")
+        for p in old_papers:
+            print(f"   - {p['id']}: {p['title'][:50]}...")
+    
+    papers = new_papers
+    print(f"📰 Keeping {len(papers)} new papers from {announcement_date}")
+    
     # Add metadata
     for paper in papers:
         paper["is_exoplanet_focused"] = is_exoplanet_paper(paper["title"], paper["abstract"])
