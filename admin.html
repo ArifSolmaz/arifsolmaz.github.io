@@ -1,229 +1,363 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>News Admin Panel</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>📰 Arxiv Admin Panel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0f0f14;
-      --surface: #1a1a24;
-      --border: #2a2a3a;
-      --text: #e5e5e5;
-      --text-muted: #888;
-      --accent: #60a5fa;
-      --success: #22c55e;
+      --bg: #0a0a0f;
+      --surface: #12121a;
+      --surface-hover: #1a1a26;
+      --border: #252532;
+      --border-light: #3a3a4a;
+      --text: #e8e8ec;
+      --text-muted: #8888a0;
+      --text-dim: #555568;
+      --accent: #6366f1;
+      --accent-hover: #818cf8;
+      --success: #10b981;
       --warning: #f59e0b;
       --error: #ef4444;
+      --info: #3b82f6;
+      --en-color: #6366f1;
+      --tr-color: #ef4444;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Inter', -apple-system, sans-serif;
       background: var(--bg);
       color: var(--text);
+      min-height: 100vh;
+      line-height: 1.5;
+    }
+
+    /* Login */
+    .login-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       min-height: 100vh;
       padding: 2rem;
     }
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
+    .login-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 3rem;
+      max-width: 400px;
+      text-align: center;
     }
 
-    header {
+    .login-box h1 {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .login-box p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* Admin Panel */
+    .admin-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 1.5rem;
+    }
+
+    /* Header */
+    .admin-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
       flex-wrap: wrap;
       gap: 1rem;
     }
 
-    h1 {
+    .admin-title {
       font-size: 1.5rem;
+      font-weight: 700;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.75rem;
     }
 
+    .header-actions {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    /* Buttons */
     .btn {
-      padding: 0.6rem 1.2rem;
-      border: none;
-      border-radius: 8px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: all 0.2s;
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
+      padding: 0.6rem 1rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.15s;
+      font-family: inherit;
     }
 
-    .btn-primary {
-      background: var(--accent);
-      color: #000;
-    }
-
-    .btn-primary:hover {
-      background: #3b82f6;
-    }
-
-    .btn-success {
-      background: var(--success);
-      color: #000;
-    }
-
-    .btn-warning {
-      background: var(--warning);
-      color: #000;
-    }
-
-    .btn-outline {
-      background: transparent;
+    .btn-primary { background: var(--accent); color: white; }
+    .btn-primary:hover { background: var(--accent-hover); }
+    .btn-success { background: var(--success); color: white; }
+    .btn-success:hover { opacity: 0.9; }
+    .btn-warning { background: var(--warning); color: #000; }
+    .btn-warning:hover { opacity: 0.9; }
+    .btn-danger { background: var(--error); color: white; }
+    .btn-danger:hover { opacity: 0.9; }
+    .btn-ghost { 
+      background: transparent; 
+      color: var(--text-muted); 
       border: 1px solid var(--border);
+    }
+    .btn-ghost:hover { 
+      background: var(--surface-hover); 
       color: var(--text);
     }
 
-    .btn-outline:hover {
-      background: var(--surface);
-    }
+    .btn-sm { padding: 0.4rem 0.75rem; font-size: 0.8rem; }
+    .btn-icon { padding: 0.5rem; min-width: 36px; justify-content: center; }
 
-    .toolbar {
+    /* Tabs */
+    .tabs {
       display: flex;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-    }
-
-    .stats {
-      display: flex;
-      gap: 1.5rem;
+      gap: 0.25rem;
       margin-bottom: 1.5rem;
-      flex-wrap: wrap;
+      background: var(--surface);
+      padding: 0.25rem;
+      border-radius: 10px;
+      width: fit-content;
     }
 
-    .stat {
+    .tab {
+      padding: 0.75rem 1.5rem;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: all 0.15s;
+      font-family: inherit;
+    }
+
+    .tab:hover { color: var(--text); }
+    .tab.active {
+      background: var(--accent);
+      color: white;
+    }
+
+    .tab.en-tab.active { background: var(--en-color); }
+    .tab.tr-tab.active { background: var(--tr-color); }
+
+    /* Stats */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .stat-card {
       background: var(--surface);
-      padding: 1rem 1.5rem;
-      border-radius: 10px;
       border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
     }
 
     .stat-value {
-      font-size: 1.5rem;
+      font-size: 1.75rem;
       font-weight: 700;
-      color: var(--accent);
+      font-family: 'JetBrains Mono', monospace;
     }
 
     .stat-label {
       font-size: 0.75rem;
       color: var(--text-muted);
       text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
     }
 
-    .search-box {
-      margin-bottom: 1.5rem;
+    .stat-card.warning { border-color: var(--warning); }
+    .stat-card.warning .stat-value { color: var(--warning); }
+
+    /* Search & Filters */
+    .toolbar {
+      display: flex;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
     }
 
-    .search-box input {
-      width: 100%;
-      max-width: 400px;
-      padding: 0.75rem 1rem;
+    .search-input {
+      flex: 1;
+      min-width: 200px;
+      padding: 0.65rem 1rem;
+      background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 8px;
-      background: var(--surface);
       color: var(--text);
       font-size: 0.9rem;
+      font-family: inherit;
     }
 
-    .search-box input:focus {
+    .search-input:focus {
       outline: none;
       border-color: var(--accent);
     }
 
-    .news-list {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
+    .search-input::placeholder { color: var(--text-dim); }
 
-    .news-item {
+    .filter-select {
+      padding: 0.65rem 1rem;
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.25rem;
+      border-radius: 8px;
+      color: var(--text);
+      font-size: 0.9rem;
       cursor: pointer;
-      transition: all 0.2s;
+      font-family: inherit;
     }
 
-    .news-item:hover {
-      border-color: var(--accent);
-    }
-
-    .news-item.has-errors {
-      border-color: var(--warning);
-    }
-
-    .news-header {
+    /* Paper/News List */
+    .content-list {
       display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .content-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
       gap: 1rem;
-      margin-bottom: 0.5rem;
+      align-items: center;
+      transition: all 0.15s;
     }
 
-    .news-title {
+    .content-item:hover {
+      border-color: var(--border-light);
+      background: var(--surface-hover);
+    }
+
+    .content-item.hidden {
+      opacity: 0.5;
+      border-style: dashed;
+    }
+
+    .content-item.has-errors {
+      border-left: 3px solid var(--warning);
+    }
+
+    .item-checkbox {
+      width: 20px;
+      height: 20px;
+      accent-color: var(--accent);
+      cursor: pointer;
+    }
+
+    .item-info {
+      min-width: 0;
+    }
+
+    .item-title {
       font-weight: 600;
-      font-size: 1rem;
-      line-height: 1.4;
-    }
-
-    .news-date {
-      font-size: 0.75rem;
-      color: var(--text-muted);
+      margin-bottom: 0.25rem;
       white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
-    .news-preview {
-      font-size: 0.85rem;
+    .item-meta {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.8rem;
       color: var(--text-muted);
-      line-height: 1.5;
+      flex-wrap: wrap;
+    }
+
+    .item-meta span {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .item-preview {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      margin-top: 0.5rem;
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
     }
 
-    .news-tags {
+    .item-actions {
       display: flex;
-      gap: 0.5rem;
-      margin-top: 0.75rem;
-      flex-wrap: wrap;
+      gap: 0.35rem;
+      flex-shrink: 0;
     }
 
-    .tag {
-      font-size: 0.7rem;
-      padding: 0.2rem 0.5rem;
-      background: rgba(96, 165, 250, 0.1);
+    .badge {
+      display: inline-block;
+      padding: 0.15rem 0.5rem;
       border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .badge-hidden { background: var(--text-dim); color: var(--bg); }
+    .badge-exo { background: var(--success); color: white; }
+    .badge-error { background: var(--warning); color: #000; }
+
+    /* Bulk Actions */
+    .bulk-bar {
+      position: fixed;
+      bottom: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 0.75rem 1.25rem;
+      display: none;
+      align-items: center;
+      gap: 1rem;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+      z-index: 100;
+    }
+
+    .bulk-bar.active { display: flex; }
+
+    .bulk-count {
+      font-weight: 600;
       color: var(--accent);
-    }
-
-    .error-indicator {
-      font-size: 0.7rem;
-      padding: 0.2rem 0.5rem;
-      background: rgba(245, 158, 11, 0.2);
-      border-radius: 4px;
-      color: var(--warning);
     }
 
     /* Modal */
     .modal-overlay {
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.8);
+      background: rgba(0,0,0,0.8);
       display: none;
       align-items: center;
       justify-content: center;
@@ -232,50 +366,69 @@
       overflow-y: auto;
     }
 
-    .modal-overlay.active {
-      display: flex;
-    }
+    .modal-overlay.active { display: flex; }
 
     .modal {
       background: var(--surface);
+      border: 1px solid var(--border);
       border-radius: 16px;
       width: 100%;
-      max-width: 800px;
+      max-width: 700px;
       max-height: 90vh;
       overflow-y: auto;
     }
 
     .modal-header {
-      padding: 1.5rem;
-      border-bottom: 1px solid var(--border);
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: var(--surface);
+      z-index: 1;
     }
 
     .modal-header h2 {
-      font-size: 1.1rem;
+      font-size: 1.15rem;
+      font-weight: 600;
     }
 
     .modal-close {
       background: none;
       border: none;
-      color: var(--text-muted);
       font-size: 1.5rem;
+      color: var(--text-muted);
       cursor: pointer;
+      padding: 0.25rem;
+      line-height: 1;
     }
+
+    .modal-close:hover { color: var(--text); }
 
     .modal-body {
       padding: 1.5rem;
     }
 
+    .modal-footer {
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.75rem;
+      padding: 1rem 1.5rem;
+      border-top: 1px solid var(--border);
+      background: var(--bg);
+      border-radius: 0 0 16px 16px;
+    }
+
+    /* Form */
     .form-group {
       margin-bottom: 1.25rem;
     }
 
     .form-group label {
       display: block;
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       font-weight: 500;
       margin-bottom: 0.5rem;
       color: var(--text-muted);
@@ -284,18 +437,20 @@
     .form-group input,
     .form-group textarea {
       width: 100%;
-      padding: 0.75rem;
+      padding: 0.75rem 1rem;
+      background: var(--bg);
       border: 1px solid var(--border);
       border-radius: 8px;
-      background: var(--bg);
       color: var(--text);
       font-size: 0.9rem;
       font-family: inherit;
     }
 
     .form-group textarea {
-      min-height: 200px;
+      min-height: 150px;
       resize: vertical;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
       line-height: 1.6;
     }
 
@@ -305,690 +460,1177 @@
       border-color: var(--accent);
     }
 
-    .error-highlight {
-      background: rgba(245, 158, 11, 0.2);
-      padding: 0 2px;
-      border-radius: 2px;
-    }
-
-    .modal-footer {
-      padding: 1rem 1.5rem;
-      border-top: 1px solid var(--border);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       gap: 1rem;
     }
 
-    .corrections-panel {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1rem;
-      margin-top: 1rem;
-    }
-
-    .corrections-panel h4 {
-      font-size: 0.85rem;
-      margin-bottom: 0.75rem;
-      color: var(--warning);
-    }
-
-    .correction-item {
+    .form-toggle {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-      font-size: 0.85rem;
-      padding: 0.5rem 0;
-      border-bottom: 1px solid var(--border);
+      gap: 0.75rem;
+      margin-top: 1rem;
+      padding: 1rem;
+      background: var(--bg);
+      border-radius: 8px;
     }
 
-    .correction-item:last-child {
-      border-bottom: none;
+    .toggle-switch {
+      position: relative;
+      width: 48px;
+      height: 26px;
     }
 
-    .correction-old {
-      color: var(--error);
-      text-decoration: line-through;
+    .toggle-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
     }
 
-    .correction-new {
-      color: var(--success);
+    .toggle-slider {
+      position: absolute;
+      inset: 0;
+      background: var(--border);
+      border-radius: 13px;
+      cursor: pointer;
+      transition: 0.2s;
     }
 
-    .correction-arrow {
-      color: var(--text-muted);
+    .toggle-slider::before {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      left: 3px;
+      bottom: 3px;
+      background: white;
+      border-radius: 50%;
+      transition: 0.2s;
     }
 
-    /* Toast notifications */
+    .toggle-switch input:checked + .toggle-slider {
+      background: var(--success);
+    }
+
+    .toggle-switch input:checked + .toggle-slider::before {
+      transform: translateX(22px);
+    }
+
+    .toggle-label {
+      font-size: 0.9rem;
+    }
+
+    /* Toast */
     .toast {
       position: fixed;
       bottom: 2rem;
       right: 2rem;
-      padding: 1rem 1.5rem;
+      padding: 0.875rem 1.25rem;
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 10px;
-      display: none;
+      font-size: 0.9rem;
+      z-index: 2000;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s;
+      display: flex;
       align-items: center;
       gap: 0.75rem;
-      z-index: 2000;
-      animation: slideIn 0.3s ease;
     }
 
     .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .toast.success { border-color: var(--success); }
+    .toast.error { border-color: var(--error); }
+
+    /* Date Picker */
+    .date-select {
       display: flex;
-    }
-
-    .toast.success {
-      border-color: var(--success);
-    }
-
-    .toast.error {
-      border-color: var(--error);
-    }
-
-    @keyframes slideIn {
-      from { transform: translateY(20px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-
-    /* Login */
-    .login-container {
-      max-width: 400px;
-      margin: 4rem auto;
-      text-align: center;
-    }
-
-    .login-container h1 {
-      justify-content: center;
-      margin-bottom: 2rem;
-    }
-
-    .login-box {
+      align-items: center;
+      gap: 0.5rem;
       background: var(--surface);
-      padding: 2rem;
-      border-radius: 16px;
-      border: 1px solid var(--border);
-    }
-
-    .login-box input {
-      width: 100%;
-      padding: 0.75rem;
-      margin-bottom: 1rem;
       border: 1px solid var(--border);
       border-radius: 8px;
-      background: var(--bg);
+      padding: 0.25rem 0.5rem;
+    }
+
+    .date-select select {
+      padding: 0.4rem 0.75rem;
+      background: transparent;
+      border: none;
       color: var(--text);
-      font-size: 1rem;
+      font-size: 0.85rem;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .date-select select:focus { outline: none; }
+
+    /* Loading */
+    .loading {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 2rem;
+      color: var(--text-muted);
+    }
+
+    .spinner {
+      width: 32px;
+      height: 32px;
+      border: 3px solid var(--border);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin-bottom: 1rem;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Empty State */
+    .empty-state {
       text-align: center;
+      padding: 4rem 2rem;
+      color: var(--text-muted);
     }
 
-    .login-box .btn {
-      width: 100%;
+    .empty-state .icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      opacity: 0.5;
     }
 
-    @media (max-width: 640px) {
-      body { padding: 1rem; }
-      .stats { gap: 0.75rem; }
-      .stat { padding: 0.75rem 1rem; }
+    /* Responsive */
+    @media (max-width: 768px) {
+      .admin-header { flex-direction: column; align-items: flex-start; }
+      .content-item { grid-template-columns: 1fr; }
+      .item-actions { margin-top: 0.75rem; justify-content: flex-end; }
+      .form-row { grid-template-columns: 1fr; }
+      .modal { max-height: 95vh; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Admin Panel -->
-  <div id="adminPanel" style="display: none;">
-    <div class="container">
-      <header>
-        <h1>📰 Haber Yönetimi</h1>
-        <div class="toolbar">
-          <button class="btn btn-warning" onclick="autoFixAll()">🔧 Tümünü Otomatik Düzelt</button>
-          <button class="btn btn-success" onclick="saveToGitHub()">🚀 GitHub'a Kaydet</button>
-          <button class="btn btn-outline" onclick="downloadJSON()">💾 JSON İndir</button>
-          <button class="btn btn-outline" onclick="showTokenModal()">⚙️ Ayarlar</button>
-        </div>
-      </header>
+<!-- Login Screen -->
+<div id="loginScreen" class="login-container">
+  <div class="login-box">
+    <h1>🔒 Access Denied</h1>
+    <p>This page requires a special access link.</p>
+  </div>
+</div>
 
-      <div class="stats">
-        <div class="stat">
-          <div class="stat-value" id="totalCount">0</div>
-          <div class="stat-label">Toplam Haber</div>
+<!-- Admin Panel -->
+<div id="adminPanel" style="display: none;">
+  <div class="admin-container">
+    
+    <!-- Header -->
+    <header class="admin-header">
+      <h1 class="admin-title">
+        📰 Arxiv Admin Panel
+      </h1>
+      <div class="header-actions">
+        <button class="btn btn-ghost" onclick="refreshData()">🔄 Refresh</button>
+        <button class="btn btn-ghost" onclick="showSettingsModal()">⚙️ Settings</button>
+        <button class="btn btn-success" onclick="saveCurrentTab()">🚀 Save to GitHub</button>
+      </div>
+    </header>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab en-tab active" onclick="switchTab('en')">🇬🇧 English Papers</button>
+      <button class="tab tr-tab" onclick="switchTab('tr')">🇹🇷 Turkish News</button>
+    </div>
+
+    <!-- EN Tab Content -->
+    <div id="enContent" class="tab-content">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value" id="enTotal">0</div>
+          <div class="stat-label">Total Papers</div>
         </div>
-        <div class="stat">
-          <div class="stat-value" id="errorCount">0</div>
-          <div class="stat-label">Hatalı</div>
+        <div class="stat-card">
+          <div class="stat-value" id="enVisible">0</div>
+          <div class="stat-label">Visible</div>
         </div>
-        <div class="stat">
-          <div class="stat-value" id="fixedCount">0</div>
-          <div class="stat-label">Düzeltildi</div>
+        <div class="stat-card">
+          <div class="stat-value" id="enHidden">0</div>
+          <div class="stat-label">Hidden</div>
         </div>
-        <div class="stat" id="unsavedIndicator" style="display: none; border-color: var(--warning);">
-          <div class="stat-value" style="color: var(--warning);">!</div>
-          <div class="stat-label">Kaydedilmedi</div>
+        <div class="stat-card">
+          <div class="stat-value" id="enExo">0</div>
+          <div class="stat-label">Exoplanet</div>
+        </div>
+        <div class="stat-card warning" id="enUnsavedCard" style="display: none;">
+          <div class="stat-value">!</div>
+          <div class="stat-label">Unsaved</div>
         </div>
       </div>
 
-      <div class="search-box">
-        <input type="text" id="searchInput" placeholder="Haber ara..." oninput="filterNews()">
+      <div class="toolbar">
+        <input type="text" class="search-input" id="enSearch" placeholder="Search papers..." oninput="filterPapers()">
+        <div class="date-select">
+          <span>📅</span>
+          <select id="enDateSelect" onchange="loadEnDate()">
+            <option value="today">Today</option>
+          </select>
+        </div>
+        <select class="filter-select" id="enFilter" onchange="filterPapers()">
+          <option value="all">All Papers</option>
+          <option value="visible">Visible Only</option>
+          <option value="hidden">Hidden Only</option>
+          <option value="exo">Exoplanet Focused</option>
+        </select>
       </div>
 
-      <div class="news-list" id="newsList"></div>
+      <div class="content-list" id="enList">
+        <div class="loading">
+          <div class="spinner"></div>
+          <span>Loading papers...</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- TR Tab Content -->
+    <div id="trContent" class="tab-content" style="display: none;">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value" id="trTotal">0</div>
+          <div class="stat-label">Total News</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="trVisible">0</div>
+          <div class="stat-label">Visible</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="trHidden">0</div>
+          <div class="stat-label">Hidden</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="trErrors">0</div>
+          <div class="stat-label">Has Errors</div>
+        </div>
+        <div class="stat-card warning" id="trUnsavedCard" style="display: none;">
+          <div class="stat-value">!</div>
+          <div class="stat-label">Unsaved</div>
+        </div>
+      </div>
+
+      <div class="toolbar">
+        <input type="text" class="search-input" id="trSearch" placeholder="Search news..." oninput="filterNews()">
+        <select class="filter-select" id="trFilter" onchange="filterNews()">
+          <option value="all">All News</option>
+          <option value="visible">Visible Only</option>
+          <option value="hidden">Hidden Only</option>
+          <option value="errors">Has Errors</option>
+        </select>
+        <button class="btn btn-warning btn-sm" onclick="autoFixAllTR()">🔧 Auto-Fix All</button>
+      </div>
+
+      <div class="content-list" id="trList">
+        <div class="loading">
+          <div class="spinner"></div>
+          <span>Loading news...</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Bulk Actions Bar -->
+<div class="bulk-bar" id="bulkBar">
+  <span class="bulk-count"><span id="selectedCount">0</span> selected</span>
+  <button class="btn btn-ghost btn-sm" onclick="bulkShow()">👁 Show</button>
+  <button class="btn btn-ghost btn-sm" onclick="bulkHide()">🙈 Hide</button>
+  <button class="btn btn-ghost btn-sm" onclick="clearSelection()">✕ Cancel</button>
+</div>
+
+<!-- Edit Modal -->
+<div class="modal-overlay" id="editModal">
+  <div class="modal">
+    <div class="modal-header">
+      <h2 id="editModalTitle">Edit Paper</h2>
+      <button class="modal-close" onclick="closeEditModal()">&times;</button>
+    </div>
+    <div class="modal-body" id="editModalBody">
+      <!-- Dynamic content -->
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" onclick="closeEditModal()">Cancel</button>
+      <button class="btn btn-primary" onclick="saveEdit()">💾 Save Changes</button>
     </div>
   </div>
+</div>
 
-  <!-- Access Denied -->
-  <div id="accessDenied" style="display: none;">
-    <div class="login-container">
-      <h1>🔒 Erişim Engellendi</h1>
-      <div class="login-box">
-        <p style="color: var(--text-muted); margin-bottom: 1rem;">
-          Bu sayfaya erişmek için özel link gerekiyor.
+<!-- Settings Modal -->
+<div class="modal-overlay" id="settingsModal">
+  <div class="modal" style="max-width: 500px;">
+    <div class="modal-header">
+      <h2>⚙️ Settings</h2>
+      <button class="modal-close" onclick="closeSettingsModal()">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="form-group">
+        <label>GitHub Personal Access Token</label>
+        <input type="password" id="githubToken" placeholder="ghp_xxxxxxxxxxxx">
+        <p style="font-size: 0.75rem; color: var(--text-dim); margin-top: 0.5rem;">
+          Token is stored locally in your browser. Never shared.
         </p>
       </div>
-    </div>
-  </div>
-
-  <!-- Edit Modal -->
-  <div class="modal-overlay" id="editModal">
-    <div class="modal">
-      <div class="modal-header">
-        <h2>✏️ Haberi Düzenle</h2>
-        <button class="modal-close" onclick="closeModal()">&times;</button>
-      </div>
-      <div class="modal-body">
-        <div class="form-group">
-          <label>Başlık</label>
-          <input type="text" id="editTitle">
-        </div>
-        <div class="form-group">
-          <label>İçerik (Markdown)</label>
-          <textarea id="editText"></textarea>
-        </div>
-        <div class="form-group">
-          <label>Etiketler (virgülle ayırın)</label>
-          <input type="text" id="editTags">
-        </div>
-        <div id="suggestedCorrections"></div>
-      </div>
-      <div class="modal-footer">
-        <button class="btn btn-warning" onclick="applyCorrections()">🔧 Düzeltmeleri Uygula</button>
-        <div>
-          <button class="btn btn-outline" onclick="closeModal()">İptal</button>
-          <button class="btn btn-primary" onclick="saveEdit()">💾 Kaydet</button>
-        </div>
+      
+      <div style="background: var(--bg); border-radius: 8px; padding: 1rem; margin-top: 1rem;">
+        <h4 style="color: var(--accent); margin-bottom: 0.75rem;">📋 How to Create Token</h4>
+        <ol style="font-size: 0.85rem; color: var(--text-muted); padding-left: 1.2rem; line-height: 1.8;">
+          <li><a href="https://github.com/settings/tokens/new" target="_blank" style="color: var(--accent);">GitHub Token Page</a></li>
+          <li>Note: <code style="background: var(--surface); padding: 0.15rem 0.4rem; border-radius: 4px;">admin-panel</code></li>
+          <li>Expiration: Choose duration</li>
+          <li>Scope: Check <strong>repo</strong></li>
+          <li>Click "Generate token"</li>
+          <li>Copy and paste here</li>
+        </ol>
       </div>
     </div>
-  </div>
-
-  <!-- Toast -->
-  <div class="toast" id="toast">
-    <span id="toastMessage"></span>
-  </div>
-
-  <!-- Token Settings Modal -->
-  <div class="modal-overlay" id="tokenModal">
-    <div class="modal" style="max-width: 500px;">
-      <div class="modal-header">
-        <h2>⚙️ GitHub Ayarları</h2>
-        <button class="modal-close" onclick="closeTokenModal()">&times;</button>
-      </div>
-      <div class="modal-body">
-        <div class="form-group">
-          <label>GitHub Personal Access Token</label>
-          <input type="password" id="githubToken" placeholder="ghp_xxxxxxxxxxxx">
-          <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem;">
-            Token tarayıcınızda saklanır, kimseyle paylaşılmaz.
-          </p>
-        </div>
-        
-        <div class="corrections-panel" style="margin-top: 1rem;">
-          <h4 style="color: var(--accent);">📋 Token Nasıl Oluşturulur?</h4>
-          <ol style="font-size: 0.85rem; color: var(--text-muted); padding-left: 1.2rem; line-height: 1.8;">
-            <li><a href="https://github.com/settings/tokens/new" target="_blank" style="color: var(--accent);">GitHub Token Sayfası</a>'na gidin</li>
-            <li>Note: <code>admin-panel</code> yazın</li>
-            <li>Expiration: İstediğiniz süreyi seçin</li>
-            <li>Scope: <strong>repo</strong> kutusunu işaretleyin</li>
-            <li>"Generate token" tıklayın</li>
-            <li>Token'ı kopyalayıp buraya yapıştırın</li>
-          </ol>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button class="btn btn-outline" onclick="clearToken()">🗑️ Token'ı Sil</button>
-        <button class="btn btn-primary" onclick="saveToken()">💾 Kaydet</button>
-      </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" onclick="clearToken()">🗑️ Clear Token</button>
+      <button class="btn btn-primary" onclick="saveSettings()">💾 Save</button>
     </div>
   </div>
+</div>
 
-  <script>
-    // Common Turkish spelling/grammar errors and their corrections
-    const CORRECTIONS = {
-      // Specific errors you mentioned
-      "zuyereya": "süreye",
-      "Zuyereya": "Süreye",
-      "ötegezegenların": "ötegezegenlerin",
-      "Ötegezegenların": "Ötegezegenlerin",
-      "ötegezegenlar": "ötegezegenler",
-      "Ötegezegenlar": "Ötegezegenler",
-      
-      // Common Turkish grammar fixes
-      "ötegezegen'in": "ötegezegenin",
-      "ötegezegen'ler": "ötegezegenler",
-      "ötegezegen'e": "ötegezegene",
-      
-      // Spacing issues
-      "öte gezegen": "ötegezegen",
-      "Öte Gezegen": "Ötegezegen",
-      "öte-gezegen": "ötegezegen",
-      
-      // Common typos in astronomy terms
-      "atmospher": "atmosfer",
-      "spectroscopi": "spektroskopi",
-      "teleskob": "teleskop",
-      "yörünğe": "yörünge",
-      "güneş sistemi dışı": "ötegezegen",
-      
-      // Grammar suffixes
-      "gezegenlerin'in": "gezegenlerin",
-      "yıldızların'ın": "yıldızların",
-      
-      // Capitalization
-      "jwst": "JWST",
-      "nasa": "NASA",
-      "tess": "TESS",
-      "esa": "ESA",
-      
-      // Word spacing
-      "birkaç yıl önce": "birkaç yıl önce",
-      " ,": ",",
-      " .": ".",
-      "  ": " ",
-    };
+<!-- Toast -->
+<div class="toast" id="toast">
+  <span id="toastMessage"></span>
+</div>
 
-    // GitHub configuration
-    const GITHUB_OWNER = 'ArifSolmaz';
-    const GITHUB_REPO = 'arifsolmaz.github.io';
-    const GITHUB_FILE_PATH = 'arxiv/data/arxiv_news.json';
-    const GITHUB_BRANCH = 'main';
+<script>
+// ====== CONFIGURATION ======
+const CONFIG = {
+  owner: 'ArifSolmaz',
+  repo: 'arifsolmaz.github.io',
+  branch: 'main',
+  paths: {
+    enPapers: 'arxiv/data/papers.json',
+    enArchive: 'arxiv/data/archive',
+    enArchiveIndex: 'arxiv/data/archive/index.json',
+    trNews: 'arxiv/data/arxiv_news.json'
+  }
+};
 
-    // Token management
-    function getToken() {
-      return localStorage.getItem('github_admin_token') || '';
+// Access control hash (change via: console.log(simpleHash("your-new-secret")))
+const EXPECTED_HASH = "25057508";
+
+// Turkish corrections
+const TR_CORRECTIONS = {
+  "zuyereya": "süreye", "Zuyereya": "Süreye",
+  "ötegezegenların": "ötegezegenlerin", "Ötegezegenların": "Ötegezegenlerin",
+  "ötegezegenlar": "ötegezegenler", "Ötegezegenlar": "Ötegezegenler",
+  "ötegezegen'in": "ötegezegenin", "ötegezegen'ler": "ötegezegenler",
+  "öte gezegen": "ötegezegen", "Öte Gezegen": "Ötegezegen",
+  "öte-gezegen": "ötegezegen",
+  "atmospher": "atmosfer", "spectroscopi": "spektroskopi",
+  "teleskob": "teleskop", "yörünğe": "yörünge",
+  "jwst": "JWST", "nasa": "NASA", "tess": "TESS", "esa": "ESA",
+  " ,": ",", " .": ".", "  ": " "
+};
+
+// ====== STATE ======
+let currentTab = 'en';
+let enData = { papers: [], announcement_date: '' };
+let trData = [];
+let enUnsaved = false;
+let trUnsaved = false;
+let editingItem = null;
+let editingType = '';
+let selectedItems = new Set();
+let archiveIndex = { dates: [] };
+
+// ====== ACCESS CONTROL ======
+function simpleHash(str) {
+  let hash = 0;
+  for (let i = 0; i < str.length; i++) {
+    hash = ((hash << 5) - hash) + str.charCodeAt(i);
+    hash = hash & hash;
+  }
+  return Math.abs(hash).toString(16);
+}
+
+function checkAccess() {
+  const key = window.location.hash.slice(1);
+  if (!key || simpleHash(key) !== EXPECTED_HASH) {
+    document.getElementById('loginScreen').style.display = 'flex';
+    return false;
+  }
+  document.getElementById('loginScreen').style.display = 'none';
+  document.getElementById('adminPanel').style.display = 'block';
+  init();
+  return true;
+}
+
+// ====== INITIALIZATION ======
+async function init() {
+  await loadArchiveIndex();
+  await loadEnData();
+  await loadTrData();
+}
+
+async function loadArchiveIndex() {
+  try {
+    const res = await fetch(`https://arifsolmaz.github.io/${CONFIG.paths.enArchiveIndex}`);
+    if (res.ok) {
+      archiveIndex = await res.json();
+      populateDateSelect();
     }
+  } catch (e) {
+    console.log('No archive index');
+  }
+}
 
-    function showTokenModal() {
-      document.getElementById('githubToken').value = getToken();
-      document.getElementById('tokenModal').classList.add('active');
-    }
+function populateDateSelect() {
+  const select = document.getElementById('enDateSelect');
+  select.innerHTML = '';
+  
+  if (archiveIndex.dates && archiveIndex.dates.length > 0) {
+    archiveIndex.dates.forEach((date, i) => {
+      const opt = document.createElement('option');
+      opt.value = date;
+      opt.textContent = formatDate(date);
+      select.appendChild(opt);
+    });
+  } else {
+    select.innerHTML = '<option value="today">Today</option>';
+  }
+}
 
-    function closeTokenModal() {
-      document.getElementById('tokenModal').classList.remove('active');
-    }
+async function loadEnDate() {
+  const date = document.getElementById('enDateSelect').value;
+  let url = 'https://arifsolmaz.github.io/arxiv/data/papers.json';
+  
+  if (date && date !== 'today' && archiveIndex.dates && archiveIndex.dates[0] !== date) {
+    url = `https://arifsolmaz.github.io/arxiv/data/archive/${date}.json`;
+  }
+  
+  await loadEnData(url);
+}
 
-    function saveToken() {
-      const token = document.getElementById('githubToken').value.trim();
-      if (token) {
-        localStorage.setItem('github_admin_token', token);
-        showToast('Token kaydedildi!', 'success');
-        closeTokenModal();
-      } else {
-        showToast('Token boş olamaz', 'error');
-      }
-    }
+async function loadEnData(url = null) {
+  const list = document.getElementById('enList');
+  list.innerHTML = '<div class="loading"><div class="spinner"></div><span>Loading papers...</span></div>';
+  
+  try {
+    url = url || 'https://arifsolmaz.github.io/arxiv/data/papers.json';
+    const res = await fetch(url);
+    if (!res.ok) throw new Error('Failed to load');
+    enData = await res.json();
+    if (!enData.papers) enData = { papers: enData, announcement_date: '' };
+    renderEnList();
+    updateEnStats();
+  } catch (e) {
+    list.innerHTML = '<div class="empty-state"><div class="icon">📭</div><p>No papers found</p></div>';
+  }
+}
 
-    function clearToken() {
-      localStorage.removeItem('github_admin_token');
-      document.getElementById('githubToken').value = '';
-      showToast('Token silindi', 'success');
-    }
+async function loadTrData() {
+  const list = document.getElementById('trList');
+  list.innerHTML = '<div class="loading"><div class="spinner"></div><span>Loading news...</span></div>';
+  
+  try {
+    const res = await fetch('https://arifsolmaz.github.io/arxiv/data/arxiv_news.json');
+    if (!res.ok) throw new Error('Failed to load');
+    trData = await res.json();
+    renderTrList();
+    updateTrStats();
+  } catch (e) {
+    list.innerHTML = '<div class="empty-state"><div class="icon">📭</div><p>No news found</p></div>';
+  }
+}
 
-    // Save to GitHub
-    async function saveToGitHub() {
-      const token = getToken();
-      
-      if (!token) {
-        showToast('Önce GitHub token ayarlayın (⚙️ Ayarlar)', 'error');
-        showTokenModal();
-        return;
-      }
-
-      try {
-        showToast('GitHub\'a kaydediliyor...', 'success');
-
-        // First, get the current file's SHA (required for updates)
-        const getResponse = await fetch(
-          `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${GITHUB_FILE_PATH}?ref=${GITHUB_BRANCH}`,
-          {
-            headers: {
-              'Authorization': `Bearer ${token}`,
-              'Accept': 'application/vnd.github.v3+json'
-            }
-          }
-        );
-
-        let sha = '';
-        if (getResponse.ok) {
-          const fileData = await getResponse.json();
-          sha = fileData.sha;
-        }
-
-        // Prepare the content
-        const content = JSON.stringify(newsData, null, 2);
-        const encodedContent = btoa(unescape(encodeURIComponent(content)));
-
-        // Update the file
-        const updateResponse = await fetch(
-          `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${GITHUB_FILE_PATH}`,
-          {
-            method: 'PUT',
-            headers: {
-              'Authorization': `Bearer ${token}`,
-              'Accept': 'application/vnd.github.v3+json',
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-              message: `Update Turkish news via admin panel - ${new Date().toISOString().slice(0, 10)}`,
-              content: encodedContent,
-              sha: sha,
-              branch: GITHUB_BRANCH
-            })
-          }
-        );
-
-        if (updateResponse.ok) {
-          showToast('✅ GitHub\'a kaydedildi! Sayfa 1-2 dakika içinde güncellenecek.', 'success');
-          fixedCount = 0;
-          updateStats();
-        } else {
-          const errorData = await updateResponse.json();
-          console.error('GitHub error:', errorData);
-          
-          if (updateResponse.status === 401) {
-            showToast('Token geçersiz veya süresi dolmuş', 'error');
-            showTokenModal();
-          } else if (updateResponse.status === 404) {
-            showToast('Dosya bulunamadı veya repo erişim yok', 'error');
-          } else {
-            showToast(`Hata: ${errorData.message || 'Bilinmeyen hata'}`, 'error');
-          }
-        }
-      } catch (error) {
-        console.error('Save error:', error);
-        showToast('Bağlantı hatası: ' + error.message, 'error');
-      }
-    }
-
-    let newsData = [];
-    let editingIndex = -1;
-    let fixedCount = 0;
-
-    // Simple hash function for URL key verification
-    function simpleHash(str) {
-      let hash = 0;
-      for (let i = 0; i < str.length; i++) {
-        const char = str.charCodeAt(i);
-        hash = ((hash << 5) - hash) + char;
-        hash = hash & hash;
-      }
-      return Math.abs(hash).toString(16);
-    }
-
-    // Expected hash of your secret key (not the key itself!)
-    // To change: pick a new secret phrase, run simpleHash("your-phrase") in console, update this value
-    const EXPECTED_HASH = "30dc4688";  // Hash of "exoplanet-arif-2026"
-
-    function checkAccess() {
-      const urlKey = window.location.hash.slice(1);  // Remove #
-      
-      if (!urlKey) {
-        document.getElementById('accessDenied').style.display = 'block';
-        return false;
-      }
-      
-      const keyHash = simpleHash(urlKey);
-      
-      if (keyHash === EXPECTED_HASH) {
-        document.getElementById('adminPanel').style.display = 'block';
-        loadNews();
-        return true;
-      } else {
-        document.getElementById('accessDenied').style.display = 'block';
-        return false;
-      }
-    }
-
-    // Run on page load
-    checkAccess();
-
-    async function loadNews() {
-      try {
-        const response = await fetch('arxiv/data/arxiv_news.json');
-        newsData = await response.json();
-        renderNewsList();
-        updateStats();
-      } catch (error) {
-        console.error('Error loading news:', error);
-        showToast('Haberler yüklenemedi', 'error');
-      }
-    }
-
-    function findErrors(text) {
-      const errors = [];
-      for (const [wrong, correct] of Object.entries(CORRECTIONS)) {
-        if (text.includes(wrong)) {
-          errors.push({ wrong, correct });
-        }
-      }
-      return errors;
-    }
-
-    function applyCorrectionsToText(text) {
-      let corrected = text;
-      for (const [wrong, correct] of Object.entries(CORRECTIONS)) {
-        corrected = corrected.split(wrong).join(correct);
-      }
-      return corrected;
-    }
-
-    function renderNewsList() {
-      const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-      const container = document.getElementById('newsList');
-      
-      let html = '';
-      newsData.forEach((item, index) => {
-        const title = item.title || '';
-        const text = item.text || '';
-        const fullText = title + ' ' + text;
-        
-        // Filter by search
-        if (searchTerm && !fullText.toLowerCase().includes(searchTerm)) {
-          return;
-        }
-        
-        const errors = findErrors(fullText);
-        const hasErrors = errors.length > 0;
-        
-        html += `
-          <div class="news-item ${hasErrors ? 'has-errors' : ''}" onclick="openEdit(${index})">
-            <div class="news-header">
-              <div class="news-title">${title}</div>
-              <div class="news-date">${item.date || ''}</div>
-            </div>
-            <div class="news-preview">${text.substring(0, 200)}...</div>
-            <div class="news-tags">
-              ${hasErrors ? `<span class="error-indicator">⚠️ ${errors.length} hata</span>` : ''}
-              ${(item.tags || '').split(',').slice(0, 4).map(t => `<span class="tag">${t.trim()}</span>`).join('')}
-            </div>
+// ====== RENDERING ======
+function renderEnList() {
+  const list = document.getElementById('enList');
+  const search = document.getElementById('enSearch').value.toLowerCase();
+  const filter = document.getElementById('enFilter').value;
+  
+  let papers = enData.papers || [];
+  
+  // Apply filters
+  if (search) {
+    papers = papers.filter(p => 
+      (p.title || '').toLowerCase().includes(search) ||
+      (p.id || '').toLowerCase().includes(search)
+    );
+  }
+  
+  if (filter === 'visible') papers = papers.filter(p => !p.hidden);
+  else if (filter === 'hidden') papers = papers.filter(p => p.hidden);
+  else if (filter === 'exo') papers = papers.filter(p => p.is_exoplanet_focused !== false);
+  
+  if (papers.length === 0) {
+    list.innerHTML = '<div class="empty-state"><div class="icon">🔍</div><p>No papers match your criteria</p></div>';
+    return;
+  }
+  
+  list.innerHTML = papers.map((paper, idx) => {
+    const originalIdx = enData.papers.indexOf(paper);
+    const isHidden = paper.hidden;
+    const isExo = paper.is_exoplanet_focused !== false;
+    
+    return `
+      <div class="content-item ${isHidden ? 'hidden' : ''}" data-idx="${originalIdx}">
+        <input type="checkbox" class="item-checkbox" 
+          ${selectedItems.has('en-' + originalIdx) ? 'checked' : ''}
+          onchange="toggleSelect('en', ${originalIdx})">
+        <div class="item-info">
+          <div class="item-title">
+            ${isHidden ? '<span class="badge badge-hidden">Hidden</span>' : ''}
+            ${isExo ? '<span class="badge badge-exo">Exo</span>' : ''}
+            ${paper.title || 'Untitled'}
           </div>
-        `;
-      });
-      
-      container.innerHTML = html || '<p style="text-align:center;color:var(--text-muted)">Haber bulunamadı</p>';
-    }
-
-    function filterNews() {
-      renderNewsList();
-    }
-
-    function updateStats() {
-      document.getElementById('totalCount').textContent = newsData.length;
-      
-      let errorCount = 0;
-      newsData.forEach(item => {
-        const fullText = (item.title || '') + ' ' + (item.text || '');
-        if (findErrors(fullText).length > 0) errorCount++;
-      });
-      
-      document.getElementById('errorCount').textContent = errorCount;
-      document.getElementById('fixedCount').textContent = fixedCount;
-      
-      // Show/hide unsaved indicator
-      const unsavedIndicator = document.getElementById('unsavedIndicator');
-      if (fixedCount > 0) {
-        unsavedIndicator.style.display = 'block';
-      } else {
-        unsavedIndicator.style.display = 'none';
-      }
-    }
-
-    function openEdit(index) {
-      editingIndex = index;
-      const item = newsData[index];
-      
-      document.getElementById('editTitle').value = item.title || '';
-      document.getElementById('editText').value = item.text || '';
-      document.getElementById('editTags').value = item.tags || '';
-      
-      // Show suggested corrections
-      const fullText = (item.title || '') + ' ' + (item.text || '');
-      const errors = findErrors(fullText);
-      
-      const correctionsDiv = document.getElementById('suggestedCorrections');
-      if (errors.length > 0) {
-        correctionsDiv.innerHTML = `
-          <div class="corrections-panel">
-            <h4>⚠️ Bulunan Hatalar (${errors.length})</h4>
-            ${errors.map(e => `
-              <div class="correction-item">
-                <span class="correction-old">${e.wrong}</span>
-                <span class="correction-arrow">→</span>
-                <span class="correction-new">${e.correct}</span>
-              </div>
-            `).join('')}
+          <div class="item-meta">
+            <span>📄 ${paper.id || 'N/A'}</span>
+            <span>👤 ${formatAuthors(paper.authors)}</span>
+            <span>📂 ${(paper.categories || []).slice(0, 2).join(', ')}</span>
           </div>
-        `;
-      } else {
-        correctionsDiv.innerHTML = '<p style="color: var(--success); margin-top: 1rem;">✅ Hata bulunamadı</p>';
+          <div class="item-preview">${stripTags(paper.summary || paper.abstract || '').substring(0, 150)}...</div>
+        </div>
+        <div class="item-actions">
+          <button class="btn btn-ghost btn-icon btn-sm" onclick="openEnEdit(${originalIdx})" title="Edit">✏️</button>
+          <button class="btn btn-ghost btn-icon btn-sm" onclick="toggleEnVisibility(${originalIdx})" title="${isHidden ? 'Show' : 'Hide'}">
+            ${isHidden ? '👁' : '🙈'}
+          </button>
+          <a href="https://arxiv.org/abs/${paper.id}" target="_blank" class="btn btn-ghost btn-icon btn-sm" title="View on arXiv">🔗</a>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+function renderTrList() {
+  const list = document.getElementById('trList');
+  const search = document.getElementById('trSearch').value.toLowerCase();
+  const filter = document.getElementById('trFilter').value;
+  
+  let news = [...trData];
+  
+  // Apply filters
+  if (search) {
+    news = news.filter(n => 
+      (n.title || '').toLowerCase().includes(search) ||
+      (n.text || '').toLowerCase().includes(search)
+    );
+  }
+  
+  if (filter === 'visible') news = news.filter(n => !n.hidden);
+  else if (filter === 'hidden') news = news.filter(n => n.hidden);
+  else if (filter === 'errors') news = news.filter(n => findTrErrors(n).length > 0);
+  
+  if (news.length === 0) {
+    list.innerHTML = '<div class="empty-state"><div class="icon">🔍</div><p>No news match your criteria</p></div>';
+    return;
+  }
+  
+  list.innerHTML = news.map((item, idx) => {
+    const originalIdx = trData.indexOf(item);
+    const isHidden = item.hidden;
+    const errors = findTrErrors(item);
+    const hasErrors = errors.length > 0;
+    
+    return `
+      <div class="content-item ${isHidden ? 'hidden' : ''} ${hasErrors ? 'has-errors' : ''}" data-idx="${originalIdx}">
+        <input type="checkbox" class="item-checkbox"
+          ${selectedItems.has('tr-' + originalIdx) ? 'checked' : ''}
+          onchange="toggleSelect('tr', ${originalIdx})">
+        <div class="item-info">
+          <div class="item-title">
+            ${isHidden ? '<span class="badge badge-hidden">Hidden</span>' : ''}
+            ${hasErrors ? '<span class="badge badge-error">' + errors.length + ' errors</span>' : ''}
+            ${stripMarkdown(item.title || 'Untitled')}
+          </div>
+          <div class="item-meta">
+            <span>📅 ${item.date || 'N/A'}</span>
+            <span>📄 ${item.arxiv_id || 'N/A'}</span>
+            <span>🏷️ ${(item.tags || []).slice(0, 3).join(', ')}</span>
+          </div>
+          <div class="item-preview">${stripMarkdown(item.text || '').substring(0, 150)}...</div>
+        </div>
+        <div class="item-actions">
+          <button class="btn btn-ghost btn-icon btn-sm" onclick="openTrEdit(${originalIdx})" title="Edit">✏️</button>
+          ${hasErrors ? `<button class="btn btn-warning btn-icon btn-sm" onclick="autoFixTr(${originalIdx})" title="Auto-fix">🔧</button>` : ''}
+          <button class="btn btn-ghost btn-icon btn-sm" onclick="toggleTrVisibility(${originalIdx})" title="${isHidden ? 'Show' : 'Hide'}">
+            ${isHidden ? '👁' : '🙈'}
+          </button>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+// ====== STATS ======
+function updateEnStats() {
+  const papers = enData.papers || [];
+  const visible = papers.filter(p => !p.hidden).length;
+  const hidden = papers.filter(p => p.hidden).length;
+  const exo = papers.filter(p => p.is_exoplanet_focused !== false).length;
+  
+  document.getElementById('enTotal').textContent = papers.length;
+  document.getElementById('enVisible').textContent = visible;
+  document.getElementById('enHidden').textContent = hidden;
+  document.getElementById('enExo').textContent = exo;
+  
+  document.getElementById('enUnsavedCard').style.display = enUnsaved ? 'block' : 'none';
+}
+
+function updateTrStats() {
+  const visible = trData.filter(n => !n.hidden).length;
+  const hidden = trData.filter(n => n.hidden).length;
+  const errors = trData.filter(n => findTrErrors(n).length > 0).length;
+  
+  document.getElementById('trTotal').textContent = trData.length;
+  document.getElementById('trVisible').textContent = visible;
+  document.getElementById('trHidden').textContent = hidden;
+  document.getElementById('trErrors').textContent = errors;
+  
+  document.getElementById('trUnsavedCard').style.display = trUnsaved ? 'block' : 'none';
+}
+
+// ====== TABS ======
+function switchTab(tab) {
+  currentTab = tab;
+  
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelector(`.${tab}-tab`).classList.add('active');
+  
+  document.getElementById('enContent').style.display = tab === 'en' ? 'block' : 'none';
+  document.getElementById('trContent').style.display = tab === 'tr' ? 'block' : 'none';
+  
+  clearSelection();
+}
+
+// ====== FILTERING ======
+function filterPapers() {
+  renderEnList();
+}
+
+function filterNews() {
+  renderTrList();
+}
+
+// ====== VISIBILITY ======
+function toggleEnVisibility(idx) {
+  enData.papers[idx].hidden = !enData.papers[idx].hidden;
+  enUnsaved = true;
+  renderEnList();
+  updateEnStats();
+  showToast(enData.papers[idx].hidden ? 'Paper hidden' : 'Paper visible', 'success');
+}
+
+function toggleTrVisibility(idx) {
+  trData[idx].hidden = !trData[idx].hidden;
+  trUnsaved = true;
+  renderTrList();
+  updateTrStats();
+  showToast(trData[idx].hidden ? 'News hidden' : 'News visible', 'success');
+}
+
+// ====== EDITING ======
+function openEnEdit(idx) {
+  editingItem = idx;
+  editingType = 'en';
+  const paper = enData.papers[idx];
+  
+  document.getElementById('editModalTitle').textContent = 'Edit Paper';
+  document.getElementById('editModalBody').innerHTML = `
+    <div class="form-group">
+      <label>Title</label>
+      <input type="text" id="editTitle" value="${escapeHtml(paper.title || '')}">
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>arXiv ID</label>
+        <input type="text" id="editId" value="${escapeHtml(paper.id || '')}" readonly style="opacity: 0.6;">
+      </div>
+      <div class="form-group">
+        <label>Categories</label>
+        <input type="text" id="editCategories" value="${(paper.categories || []).join(', ')}">
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Summary (Markdown)</label>
+      <textarea id="editSummary">${escapeHtml(paper.summary || '')}</textarea>
+    </div>
+    <div class="form-group">
+      <label>Abstract (Original)</label>
+      <textarea id="editAbstract" style="min-height: 100px;">${escapeHtml(paper.abstract || '')}</textarea>
+    </div>
+    <div class="form-toggle">
+      <label class="toggle-switch">
+        <input type="checkbox" id="editExo" ${paper.is_exoplanet_focused !== false ? 'checked' : ''}>
+        <span class="toggle-slider"></span>
+      </label>
+      <span class="toggle-label">Exoplanet Focused</span>
+    </div>
+    <div class="form-toggle">
+      <label class="toggle-switch">
+        <input type="checkbox" id="editHidden" ${paper.hidden ? 'checked' : ''}>
+        <span class="toggle-slider"></span>
+      </label>
+      <span class="toggle-label">Hidden from page</span>
+    </div>
+  `;
+  
+  document.getElementById('editModal').classList.add('active');
+}
+
+function openTrEdit(idx) {
+  editingItem = idx;
+  editingType = 'tr';
+  const item = trData[idx];
+  const errors = findTrErrors(item);
+  
+  document.getElementById('editModalTitle').textContent = 'Edit News';
+  document.getElementById('editModalBody').innerHTML = `
+    <div class="form-group">
+      <label>Title</label>
+      <input type="text" id="editTitle" value="${escapeHtml(stripMarkdown(item.title || ''))}">
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Date</label>
+        <input type="text" id="editDate" value="${escapeHtml(item.date || '')}">
+      </div>
+      <div class="form-group">
+        <label>arXiv ID</label>
+        <input type="text" id="editArxivId" value="${escapeHtml(item.arxiv_id || '')}">
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Text (Markdown)</label>
+      <textarea id="editText">${escapeHtml(item.text || '')}</textarea>
+    </div>
+    <div class="form-group">
+      <label>Tags (comma-separated)</label>
+      <input type="text" id="editTags" value="${(item.tags || []).join(', ')}">
+    </div>
+    <div class="form-group">
+      <label>Image URL</label>
+      <input type="text" id="editImage" value="${escapeHtml(item.image || '')}">
+    </div>
+    ${errors.length > 0 ? `
+      <div style="background: rgba(245, 158, 11, 0.1); border: 1px solid var(--warning); border-radius: 8px; padding: 1rem; margin-top: 1rem;">
+        <h4 style="color: var(--warning); margin-bottom: 0.5rem;">⚠️ Found ${errors.length} error(s)</h4>
+        <ul style="font-size: 0.85rem; padding-left: 1.2rem; color: var(--text-muted);">
+          ${errors.map(e => `<li>"${e.wrong}" → "${e.correct}"</li>`).join('')}
+        </ul>
+        <button class="btn btn-warning btn-sm" style="margin-top: 0.75rem;" onclick="applyTrCorrections()">🔧 Apply Corrections</button>
+      </div>
+    ` : ''}
+    <div class="form-toggle">
+      <label class="toggle-switch">
+        <input type="checkbox" id="editHidden" ${item.hidden ? 'checked' : ''}>
+        <span class="toggle-slider"></span>
+      </label>
+      <span class="toggle-label">Hidden from page</span>
+    </div>
+  `;
+  
+  document.getElementById('editModal').classList.add('active');
+}
+
+function saveEdit() {
+  if (editingType === 'en') {
+    const paper = enData.papers[editingItem];
+    paper.title = document.getElementById('editTitle').value;
+    paper.summary = document.getElementById('editSummary').value;
+    paper.abstract = document.getElementById('editAbstract').value;
+    paper.categories = document.getElementById('editCategories').value.split(',').map(c => c.trim()).filter(c => c);
+    paper.is_exoplanet_focused = document.getElementById('editExo').checked;
+    paper.hidden = document.getElementById('editHidden').checked;
+    
+    enUnsaved = true;
+    renderEnList();
+    updateEnStats();
+  } else {
+    const item = trData[editingItem];
+    item.title = document.getElementById('editTitle').value;
+    item.date = document.getElementById('editDate').value;
+    item.arxiv_id = document.getElementById('editArxivId').value;
+    item.text = document.getElementById('editText').value;
+    item.tags = document.getElementById('editTags').value.split(',').map(t => t.trim()).filter(t => t);
+    item.image = document.getElementById('editImage').value;
+    item.hidden = document.getElementById('editHidden').checked;
+    
+    trUnsaved = true;
+    renderTrList();
+    updateTrStats();
+  }
+  
+  closeEditModal();
+  showToast('Changes saved locally', 'success');
+}
+
+function closeEditModal() {
+  document.getElementById('editModal').classList.remove('active');
+  editingItem = null;
+  editingType = '';
+}
+
+// ====== TR CORRECTIONS ======
+function findTrErrors(item) {
+  const text = (item.title || '') + ' ' + (item.text || '');
+  const errors = [];
+  for (const [wrong, correct] of Object.entries(TR_CORRECTIONS)) {
+    if (text.includes(wrong)) {
+      errors.push({ wrong, correct });
+    }
+  }
+  return errors;
+}
+
+function applyTrCorrectionsToText(text) {
+  let result = text;
+  for (const [wrong, correct] of Object.entries(TR_CORRECTIONS)) {
+    result = result.split(wrong).join(correct);
+  }
+  return result;
+}
+
+function applyTrCorrections() {
+  document.getElementById('editTitle').value = applyTrCorrectionsToText(document.getElementById('editTitle').value);
+  document.getElementById('editText').value = applyTrCorrectionsToText(document.getElementById('editText').value);
+  showToast('Corrections applied', 'success');
+}
+
+function autoFixTr(idx) {
+  const item = trData[idx];
+  item.title = applyTrCorrectionsToText(item.title || '');
+  item.text = applyTrCorrectionsToText(item.text || '');
+  trUnsaved = true;
+  renderTrList();
+  updateTrStats();
+  showToast('Auto-fixed!', 'success');
+}
+
+function autoFixAllTR() {
+  let fixed = 0;
+  trData.forEach(item => {
+    const errors = findTrErrors(item);
+    if (errors.length > 0) {
+      item.title = applyTrCorrectionsToText(item.title || '');
+      item.text = applyTrCorrectionsToText(item.text || '');
+      fixed++;
+    }
+  });
+  
+  if (fixed > 0) {
+    trUnsaved = true;
+    renderTrList();
+    updateTrStats();
+  }
+  
+  showToast(`Fixed ${fixed} item(s)`, 'success');
+}
+
+// ====== SELECTION ======
+function toggleSelect(type, idx) {
+  const key = `${type}-${idx}`;
+  if (selectedItems.has(key)) {
+    selectedItems.delete(key);
+  } else {
+    selectedItems.add(key);
+  }
+  updateBulkBar();
+}
+
+function clearSelection() {
+  selectedItems.clear();
+  updateBulkBar();
+  if (currentTab === 'en') renderEnList();
+  else renderTrList();
+}
+
+function updateBulkBar() {
+  const count = selectedItems.size;
+  document.getElementById('selectedCount').textContent = count;
+  document.getElementById('bulkBar').classList.toggle('active', count > 0);
+}
+
+function bulkShow() {
+  selectedItems.forEach(key => {
+    const [type, idx] = key.split('-');
+    if (type === 'en') {
+      enData.papers[parseInt(idx)].hidden = false;
+      enUnsaved = true;
+    } else {
+      trData[parseInt(idx)].hidden = false;
+      trUnsaved = true;
+    }
+  });
+  
+  clearSelection();
+  if (currentTab === 'en') { renderEnList(); updateEnStats(); }
+  else { renderTrList(); updateTrStats(); }
+  showToast('Items shown', 'success');
+}
+
+function bulkHide() {
+  selectedItems.forEach(key => {
+    const [type, idx] = key.split('-');
+    if (type === 'en') {
+      enData.papers[parseInt(idx)].hidden = true;
+      enUnsaved = true;
+    } else {
+      trData[parseInt(idx)].hidden = true;
+      trUnsaved = true;
+    }
+  });
+  
+  clearSelection();
+  if (currentTab === 'en') { renderEnList(); updateEnStats(); }
+  else { renderTrList(); updateTrStats(); }
+  showToast('Items hidden', 'success');
+}
+
+// ====== GITHUB SAVE ======
+function getToken() {
+  return localStorage.getItem('github_admin_token') || '';
+}
+
+async function saveCurrentTab() {
+  if (currentTab === 'en') await saveEnToGitHub();
+  else await saveTrToGitHub();
+}
+
+async function saveEnToGitHub() {
+  const token = getToken();
+  if (!token) {
+    showToast('Set GitHub token first (Settings)', 'error');
+    showSettingsModal();
+    return;
+  }
+  
+  showToast('Saving to GitHub...', 'success');
+  
+  try {
+    // Determine which file to save (today's or archive)
+    const selectedDate = document.getElementById('enDateSelect').value;
+    const isToday = !selectedDate || selectedDate === 'today' || 
+      (archiveIndex.dates && archiveIndex.dates[0] === selectedDate);
+    
+    const filePath = isToday ? CONFIG.paths.enPapers : `${CONFIG.paths.enArchive}/${selectedDate}.json`;
+    
+    // Get current SHA
+    const getRes = await fetch(
+      `https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/contents/${filePath}?ref=${CONFIG.branch}`,
+      { headers: { 'Authorization': `Bearer ${token}`, 'Accept': 'application/vnd.github.v3+json' } }
+    );
+    
+    let sha = '';
+    if (getRes.ok) {
+      const fileData = await getRes.json();
+      sha = fileData.sha;
+    }
+    
+    // Prepare content
+    const content = JSON.stringify(enData, null, 2);
+    const encoded = btoa(unescape(encodeURIComponent(content)));
+    
+    // Save
+    const saveRes = await fetch(
+      `https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/contents/${filePath}`,
+      {
+        method: 'PUT',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Accept': 'application/vnd.github.v3+json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          message: `Update EN papers via admin panel - ${new Date().toISOString().slice(0, 10)}`,
+          content: encoded,
+          sha: sha,
+          branch: CONFIG.branch
+        })
       }
-      
-      document.getElementById('editModal').classList.add('active');
+    );
+    
+    if (saveRes.ok) {
+      enUnsaved = false;
+      updateEnStats();
+      showToast('✅ Saved to GitHub! Page updates in 1-2 min.', 'success');
+    } else {
+      const err = await saveRes.json();
+      handleGitHubError(saveRes.status, err);
     }
+  } catch (e) {
+    showToast('Connection error: ' + e.message, 'error');
+  }
+}
 
-    function closeModal() {
-      document.getElementById('editModal').classList.remove('active');
-      editingIndex = -1;
+async function saveTrToGitHub() {
+  const token = getToken();
+  if (!token) {
+    showToast('Set GitHub token first (Settings)', 'error');
+    showSettingsModal();
+    return;
+  }
+  
+  showToast('Saving to GitHub...', 'success');
+  
+  try {
+    // Get current SHA
+    const getRes = await fetch(
+      `https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/contents/${CONFIG.paths.trNews}?ref=${CONFIG.branch}`,
+      { headers: { 'Authorization': `Bearer ${token}`, 'Accept': 'application/vnd.github.v3+json' } }
+    );
+    
+    let sha = '';
+    if (getRes.ok) {
+      const fileData = await getRes.json();
+      sha = fileData.sha;
     }
-
-    function applyCorrections() {
-      const titleInput = document.getElementById('editTitle');
-      const textInput = document.getElementById('editText');
-      
-      titleInput.value = applyCorrectionsToText(titleInput.value);
-      textInput.value = applyCorrectionsToText(textInput.value);
-      
-      // Update suggested corrections display
-      const fullText = titleInput.value + ' ' + textInput.value;
-      const errors = findErrors(fullText);
-      
-      const correctionsDiv = document.getElementById('suggestedCorrections');
-      if (errors.length === 0) {
-        correctionsDiv.innerHTML = '<p style="color: var(--success); margin-top: 1rem;">✅ Tüm hatalar düzeltildi!</p>';
+    
+    // Prepare content
+    const content = JSON.stringify(trData, null, 2);
+    const encoded = btoa(unescape(encodeURIComponent(content)));
+    
+    // Save
+    const saveRes = await fetch(
+      `https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/contents/${CONFIG.paths.trNews}`,
+      {
+        method: 'PUT',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Accept': 'application/vnd.github.v3+json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          message: `Update TR news via admin panel - ${new Date().toISOString().slice(0, 10)}`,
+          content: encoded,
+          sha: sha,
+          branch: CONFIG.branch
+        })
       }
-      
-      showToast('Düzeltmeler uygulandı', 'success');
+    );
+    
+    if (saveRes.ok) {
+      trUnsaved = false;
+      updateTrStats();
+      showToast('✅ Saved to GitHub! Page updates in 1-2 min.', 'success');
+    } else {
+      const err = await saveRes.json();
+      handleGitHubError(saveRes.status, err);
     }
+  } catch (e) {
+    showToast('Connection error: ' + e.message, 'error');
+  }
+}
 
-    function saveEdit() {
-      if (editingIndex < 0) return;
-      
-      newsData[editingIndex].title = document.getElementById('editTitle').value;
-      newsData[editingIndex].text = document.getElementById('editText').value;
-      newsData[editingIndex].tags = document.getElementById('editTags').value;
-      
-      fixedCount++;
-      closeModal();
-      renderNewsList();
-      updateStats();
-      showToast('Haber kaydedildi', 'success');
-    }
+function handleGitHubError(status, err) {
+  if (status === 401) {
+    showToast('Token invalid or expired', 'error');
+    showSettingsModal();
+  } else if (status === 404) {
+    showToast('File not found or no repo access', 'error');
+  } else {
+    showToast(`Error: ${err.message || 'Unknown'}`, 'error');
+  }
+}
 
-    function autoFixAll() {
-      let totalFixed = 0;
-      
-      newsData.forEach(item => {
-        const originalTitle = item.title || '';
-        const originalText = item.text || '';
-        
-        item.title = applyCorrectionsToText(originalTitle);
-        item.text = applyCorrectionsToText(originalText);
-        
-        if (item.title !== originalTitle || item.text !== originalText) {
-          totalFixed++;
-        }
-      });
-      
-      fixedCount += totalFixed;
-      renderNewsList();
-      updateStats();
-      showToast(`${totalFixed} haber otomatik düzeltildi`, 'success');
-    }
+// ====== SETTINGS ======
+function showSettingsModal() {
+  document.getElementById('githubToken').value = getToken();
+  document.getElementById('settingsModal').classList.add('active');
+}
 
-    function downloadJSON() {
-      const dataStr = JSON.stringify(newsData, null, 2);
-      const blob = new Blob([dataStr], { type: 'application/json' });
-      const url = URL.createObjectURL(blob);
-      
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'arxiv_news.json';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
-      
-      showToast('JSON indirildi! Dosyayı arxiv/data/ klasörüne kopyalayın.', 'success');
-    }
+function closeSettingsModal() {
+  document.getElementById('settingsModal').classList.remove('active');
+}
 
-    function showToast(message, type = 'success') {
-      const toast = document.getElementById('toast');
-      const toastMessage = document.getElementById('toastMessage');
-      
-      toast.className = `toast show ${type}`;
-      toastMessage.textContent = message;
-      
-      setTimeout(() => {
-        toast.classList.remove('show');
-      }, 3000);
-    }
+function saveSettings() {
+  const token = document.getElementById('githubToken').value.trim();
+  if (token) {
+    localStorage.setItem('github_admin_token', token);
+    showToast('Token saved!', 'success');
+    closeSettingsModal();
+  } else {
+    showToast('Token cannot be empty', 'error');
+  }
+}
 
-    // Close modal on escape
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        closeModal();
-        closeTokenModal();
-      }
-    });
+function clearToken() {
+  localStorage.removeItem('github_admin_token');
+  document.getElementById('githubToken').value = '';
+  showToast('Token cleared', 'success');
+}
 
-    // Close modal on overlay click
-    document.getElementById('editModal').addEventListener('click', (e) => {
-      if (e.target === document.getElementById('editModal')) closeModal();
-    });
+// ====== UTILITIES ======
+function refreshData() {
+  if (currentTab === 'en') loadEnData();
+  else loadTrData();
+  showToast('Refreshed!', 'success');
+}
 
-    document.getElementById('tokenModal').addEventListener('click', (e) => {
-      if (e.target === document.getElementById('tokenModal')) closeTokenModal();
-    });
-  </script>
+function showToast(message, type = 'success') {
+  const toast = document.getElementById('toast');
+  const msgEl = document.getElementById('toastMessage');
+  
+  msgEl.textContent = message;
+  toast.className = `toast show ${type}`;
+  
+  setTimeout(() => {
+    toast.classList.remove('show');
+  }, 3000);
+}
+
+function formatDate(dateStr) {
+  const date = new Date(dateStr + 'T12:00:00');
+  return date.toLocaleDateString('en-US', { 
+    weekday: 'short', day: 'numeric', month: 'short', year: 'numeric'
+  });
+}
+
+function formatAuthors(authors) {
+  if (!authors || authors.length === 0) return 'Unknown';
+  const first = typeof authors[0] === 'string' ? authors[0] : authors[0].name || 'Unknown';
+  const lastName = first.split(' ').pop();
+  return authors.length > 1 ? `${lastName} et al.` : lastName;
+}
+
+function stripTags(html) {
+  const tmp = document.createElement('div');
+  tmp.innerHTML = html;
+  return tmp.textContent || tmp.innerText || '';
+}
+
+function stripMarkdown(text) {
+  if (!text) return '';
+  return text
+    .replace(/[\*\u002A\uFE61\uFF0A]/g, '')
+    .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1')
+    .replace(/#{1,6}\s*/g, '')
+    .replace(/\\n/g, ' ')
+    .replace(/\n/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function escapeHtml(str) {
+  if (!str) return '';
+  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+// ====== INIT ======
+window.addEventListener('hashchange', checkAccess);
+checkAccess();
+</script>
+
 </body>
 </html>

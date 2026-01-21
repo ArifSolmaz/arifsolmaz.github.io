@@ -925,12 +925,15 @@
                 const data = await response.json();
                 papersData = data.papers || [];
                 
+                // Count only visible papers (not hidden)
+                const visibleCount = papersData.filter(p => !p.hidden).length;
+                
                 // Update current date display
                 const displayDate = data.announcement_date || data.updated_at?.split('T')[0] || currentDate;
                 document.getElementById('currentDateLabel').textContent = formatDateNav(displayDate);
-                document.getElementById('paperCount').textContent = papersData.length;
+                document.getElementById('paperCount').textContent = visibleCount;
                 
-                if (papersData.length > 0) {
+                if (visibleCount > 0) {
                     content.innerHTML = renderPapersList(papersData);
                     
                     if (window.location.hash) {
@@ -1008,7 +1011,10 @@
         }
 
         function renderPapersList(papers) {
-            const exoPapers = papers.filter(p => p.is_exoplanet_focused !== false);
+            // Filter out hidden papers first
+            const visiblePapers = papers.filter(p => !p.hidden);
+            
+            const exoPapers = visiblePapers.filter(p => p.is_exoplanet_focused !== false);
             
             let leadPaper = null;
             if (exoPapers.length > 0) {
@@ -1017,7 +1023,7 @@
                 );
             }
             
-            const remainingPapers = papers.filter(p => p.id !== leadPaper?.id);
+            const remainingPapers = visiblePapers.filter(p => p.id !== leadPaper?.id);
             
             let html = '';
             

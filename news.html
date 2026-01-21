@@ -503,12 +503,15 @@
         function renderNews(data) {
             grid.innerHTML = "";
             
-            if (data.length === 0) {
+            // Filter out hidden items
+            const visibleData = data.filter(item => !item.hidden);
+            
+            if (visibleData.length === 0) {
                 grid.innerHTML = `<p style="color:var(--text-muted); grid-column:1/-1; text-align:center; padding:3rem;">Haber bulunamadı.</p>`;
                 return;
             }
 
-            data.forEach((item, index) => {
+            visibleData.forEach((item, index) => {
                 const cleanTitle = stripMarkdown(item.title);
                 const cleanText = stripMarkdown(item.text);
                 
