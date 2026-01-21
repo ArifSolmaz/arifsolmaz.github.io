@@ -21,7 +21,7 @@ except ImportError:
 
 # Configuration
 ARXIV_CATEGORY = "astro-ph.EP"
-RECENT_URL = f"https://arxiv.org/list/{ARXIV_CATEGORY}/recent"
+RECENT_URL = f"https://arxiv.org/list/{ARXIV_CATEGORY}/new"
 
 SCRIPT_DIR = Path(__file__).parent.parent  # Go up to arxiv/
 OUTPUT_FILE = SCRIPT_DIR / "data" / "papers.json"
@@ -275,11 +275,17 @@ def scrape_recent_listings() -> tuple[str, list[str]]:
     response.raise_for_status()
     html = response.text
     
-    # Find the first date header: "Mon, 19 Jan 2026" or similar
-    date_pattern = r'<h3[^>]*>([A-Za-z]{3},\s+\d{1,2}\s+[A-Za-z]{3}\s+\d{4})'
+    # Find the date header that has "(showing X of Y entries)" - this is the actual content section
+    date_pattern = r'<h3[^>]*>([A-Za-z]{3},\s+\d{1,2}\s+[A-Za-z]{3}\s+\d{4})\s*\(showing'
     date_match = re.search(date_pattern, html)
     
     if not date_match:
+        # Fallback: find any h3 with a date
+        date_pattern = r'<h3[^>]*>([A-Za-z]{3},\s+\d{1,2}\s+[A-Za-z]{3}\s+\d{4})'
+        date_match = re.search(date_pattern, html)
+    
+    if not date_match:
+        # Last fallback: navigation links
         date_pattern2 = r'<li><a[^>]*>([A-Za-z]{3},\s+\d{1,2}\s+[A-Za-z]{3}\s+\d{4})</a>'
         date_match = re.search(date_pattern2, html)
     
@@ -304,13 +310,19 @@ def scrape_recent_listings() -> tuple[str, list[str]]:
         total = int(count_match.group(2))
         print(f"📊 Papers for this date: {total}")
     
-    # Extract paper IDs from the first date's section
-    sections = re.split(r'<h3[^>]*>[A-Za-z]{3},\s+\d{1,2}\s+[A-Za-z]{3}\s+\d{4}', html)
+    # Extract paper IDs from the first date's section (the one with "showing X of Y entries")
+    # Split by h3 date headers that contain the paper count
+    sections = re.split(r'<h3[^>]*>[A-Za-z]{3},\s+\d{1,2}\s+[A-Za-z]{3}\s+\d{4}\s*\(showing', html)
     
     if len(sections) >= 2:
         first_section = sections[1]
     else:
-        first_section = html
+        # Fallback: split by any h3 date header
+        sections = re.split(r'<h3[^>]*>[A-Za-z]{3},\s+\d{1,2}\s+[A-Za-z]{3}\s+\d{4}', html)
+        if len(sections) >= 2:
+            first_section = sections[1]
+        else:
+            first_section = html
     
     id_pattern = r'/abs/(\d{4}\.\d{4,5}(?:v\d+)?)'
     paper_ids = re.findall(id_pattern, first_section)
