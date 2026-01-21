@@ -171,86 +171,110 @@ def clean_latex_abstract(text: str) -> str:
 def is_exoplanet_paper(title: str, abstract: str) -> bool:
     """
     Determine if a paper is about exoplanets.
-    Be INCLUSIVE - astro-ph.EP is already planet-focused.
-    Only exclude obvious non-exoplanet topics.
+    Be STRICT - only include papers clearly about exoplanets, not solar system.
     """
     text = f"{title} {abstract}".lower()
     
-    # EXCLUDE: obvious non-exoplanet topics in astro-ph.EP
+    # STRONG EXOPLANET INDICATORS - if present, almost certainly exoplanet paper
+    strong_indicators = [
+        "exoplanet", "exoplanets", "exoplanetary", "extrasolar planet",
+        "hot jupiter", "warm jupiter", "cold jupiter",
+        "super-earth", "super earth", "mini-neptune", "sub-neptune",
+        "earth-like planet", "earth-sized planet", "earthlike",
+        "habitable zone", "habitable planet", "potentially habitable",
+        "biosignature", "biomarker",
+        # Exoplanet survey targets (these are definitive)
+        "toi-", "koi-", "wasp-", "hat-p-", "hats-", "hatp-",
+        "trappist-1", "proxima b", "proxima c",
+        "55 cancri", "51 pegasi", "51 peg",
+        "gj 1214", "gj 436", "gj 357", "gj 876",
+        "hd 189733", "hd 209458", "hd 80606",
+        "lhs 1140", "l 98-59", "toi 700",
+        # Detection context
+        "planet candidate", "planet detection", "planet discovery",
+        "confirmed planet", "validated planet",
+        "transit detection", "transit survey", "transiting planet",
+        "radial velocity planet", "rv planet",
+        "directly imaged planet", "imaged exoplanet",
+    ]
+    
+    for kw in strong_indicators:
+        if kw in text:
+            return True
+    
+    # EXCLUDE: solar system and non-exoplanet topics
     exclude_keywords = [
+        # Our solar system planets by name in certain contexts
+        "mercury's", "venus's", "earth's moon", "mars's", "martian",
+        "jupiter's moon", "saturn's moon", "uranus's", "neptune's moon",
+        "ganymede", "callisto", "io's", "europa's",
+        "titan's", "enceladus", "triton",
+        "pluto", "ceres", "eris", "makemake", "haumea",
         # Solar system specific
-        "solar wind", "solar flare", "solar corona", "solar cycle",
-        "martian surface", "mars rover", "mars atmosphere",
-        "lunar surface", "moon crater", "apollo",
-        "venus surface", "venusian",
-        "mercury surface",
-        "titan lake", "titan atmosphere",
-        "io volcano", "europa ocean",
-        "saturn ring", "jupiter storm", "jupiter magnetosphere",
-        # Small bodies (not planets)
-        "asteroid belt", "asteroid family", "near-earth asteroid",
-        "meteorite", "meteorites", "meteor shower",
-        "kuiper belt object", "trans-neptunian object", "tno",
-        "oort cloud",
-        # Interstellar objects (not exoplanets)
+        "solar wind", "solar flare", "solar corona", "solar cycle", "solar system",
+        "mars rover", "mars surface", "mars polar",
+        "lunar", "moon crater", "apollo", "artemis",
+        "venus atmosphere", "venusian cloud",
+        "mercury magnetosphere",
+        "jupiter magnetosphere", "jupiter storm", "great red spot",
+        "saturn ring", "cassini",
+        "voyager", "new horizons", "juno mission",
+        # Small bodies
+        "asteroid", "asteroids", "near-earth object", "neo",
+        "comet", "cometary", "meteorite", "meteorites", "meteor shower",
+        "kuiper belt", "trans-neptunian", "tno", "centaur",
+        "oort cloud", "scattered disk",
+        # Interstellar objects
         "interstellar object", "1i/", "2i/", "3i/",
-        "oumuamua", "borisov",
-        # Stellar only (no planet connection)
+        "oumuamua", "'oumuamua", "borisov",
+        # Stellar only
         "stellar occultation", "occultation by",
-        "stellar wind", "stellar flare",
+        "stellar wind", "stellar flare", "stellar rotation period",
         "stellar abundance", "stellar pipeline", "stellar parameter",
-        # Debris/dust only
-        "debris disk", "dust disk", "zodiacal",
+        "binary star", "eclipsing binary",
+        # Disk-only papers
+        "debris disk", "dust disk", "zodiacal", "protostellar",
+        # Other non-exoplanet
+        "galaxy cluster", "black hole", "neutron star", "pulsar",
+        "gravitational wave", "supernova", "gamma-ray burst",
     ]
     
     for kw in exclude_keywords:
         if kw in text:
-            # Double-check: if it also mentions exoplanet keywords, include it
-            if any(inc in text for inc in ["exoplanet", "extrasolar", "planet formation", "protoplanet"]):
+            # Exception: if it ALSO has strong exoplanet context, keep it
+            if any(strong in text for strong in ["exoplanet", "extrasolar", "toi-", "wasp-", "hat-p", "koi-"]):
                 return True
             return False
     
-    # INCLUDE: broad planet-related keywords
-    include_keywords = [
-        # Direct exoplanet terms
-        "exoplanet", "exoplanets", "exoplanetary", "extrasolar",
-        # Planet types
-        "planet", "planets", "planetary system",
-        "jupiter", "neptune", "earth-like", "earth-sized",
-        "super-earth", "mini-neptune", "sub-neptune",
-        "hot jupiter", "warm jupiter", "cold jupiter",
-        "gas giant", "ice giant", "rocky planet", "terrestrial planet",
-        "giant planet", "bound planet",
-        # Detection methods
-        "transit", "transiting", "radial velocity", "rv measurement",
-        "microlensing", "direct imaging", "astrometry",
-        "planet detection", "planet discovery",
-        # Surveys and missions
-        "tess", "kepler", "k2", "jwst", "plato", "ariel",
-        "toi-", "koi-", "wasp-", "hat-p", "hd ", "gj ", "hip ",
-        "trappist", "proxima",
-        # Planet properties
-        "habitable", "habitability", "biosignature",
-        "planet atmosphere", "planetary atmosphere",
+    # MODERATE INDICATORS - need multiple or combined with context
+    moderate_indicators = [
+        "transiting", "transit timing", "ttv",
+        "radial velocity", "doppler",
         "transmission spectrum", "emission spectrum",
-        "planet mass", "planet radius",
-        "orbital period", "semi-major axis",
-        # Formation and dynamics
-        "planet formation", "protoplanet", "planetesimal",
-        "planet migration", "orbital migration",
+        "planet mass", "planet radius", "planetary mass", "planetary radius",
+        "orbital architecture", "planet migration", "orbital migration",
         "mean motion resonance", "orbital resonance",
-        "planet-disk", "circumstellar disk",
-        "photoevaporation",
-        # Host stars
-        "planet host", "planet-hosting", "host star",
+        "planet formation", "protoplanet", "planetesimal",
+        "circumstellar", "protoplanetary disk",
+        "planet-disk interaction", "disk-planet",
+        "host star", "planet host", "planet-hosting",
+        "m dwarf planet", "m-dwarf planet",
+        "photoevaporation", "atmospheric escape",
     ]
     
-    for kw in include_keywords:
-        if kw in text:
-            return True
+    # Count moderate indicators
+    moderate_count = sum(1 for kw in moderate_indicators if kw in text)
     
-    # Default: if in astro-ph.EP and not excluded, likely relevant
-    # But be conservative - require at least some planet connection
+    # Need at least 2 moderate indicators, or 1 moderate + mission name
+    missions = ["tess", "kepler", "k2 mission", "jwst", "plato mission", "ariel mission", "cheops"]
+    has_mission = any(m in text for m in missions)
+    
+    if moderate_count >= 2:
+        return True
+    if moderate_count >= 1 and has_mission:
+        return True
+    
+    # Default: reject - be conservative
     return False
 
 
