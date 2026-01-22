@@ -29,30 +29,30 @@ def clean_latex_name(name: str) -> str:
     # Common LaTeX accent replacements
     replacements = {
         # Acute accents \'
-        "\\'a": "+í", "\\'e": "+®", "\\'i": "+¡", "\\'o": "+-", "\\'u": "+¦",
-        "\\'A": "+ü", "\\'E": "+ë", "\\'I": "+ı", "\\'O": "+ô", "\\'U": "+Ü",
-        "\\'n": "+ä", "\\'c": "¦ç", "\\'s": "+ø", "\\'z": "+¦",
+        "\\'a": "Ã¡", "\\'e": "Ã©", "\\'i": "Ã­", "\\'o": "Ã³", "\\'u": "Ãº",
+        "\\'A": "Ã", "\\'E": "Ã‰", "\\'I": "Ã", "\\'O": "Ã“", "\\'U": "Ãš",
+        "\\'n": "Å„", "\\'c": "Ä‡", "\\'s": "Å›", "\\'z": "Åº",
         # Grave accents \`
-        "\\`a": "+á", "\\`e": "+¿", "\\`i": "+¼", "\\`o": "+-", "\\`u": "+¦",
+        "\\`a": "Ã ", "\\`e": "Ã¨", "\\`i": "Ã¬", "\\`o": "Ã²", "\\`u": "Ã¹",
         # Umlaut \"
-        '\\"a': "+ñ", '\\"e': "+½", '\\"i': "+»", '\\"o': "+Â", '\\"u': "+-",
-        '\\"A': "+ä", '\\"E': "+ï", '\\"I': "+Å", '\\"O': "+û", '\\"U': "+£",
+        '\\"a': "Ã¤", '\\"e': "Ã«", '\\"i': "Ã¯", '\\"o': "Ã¶", '\\"u': "Ã¼",
+        '\\"A': "Ã„", '\\"E': "Ã‹", '\\"I': "Ã", '\\"O': "Ã–", '\\"U': "Ãœ",
         # Caron \v{}
-        "\\v{c}": "¦ı", "\\v{C}": "¦î", "\\v{s}": "+í", "\\v{S}": "+á",
-        "\\v{z}": "+¥", "\\v{Z}": "+¢", "\\v{r}": "+Ö", "\\v{R}": "+İ",
-        "\\v{e}": "¦ø", "\\v{E}": "¦Ü", "\\v{n}": "+ê", "\\v{N}": "+ç",
+        "\\v{c}": "Ä", "\\v{C}": "ÄŒ", "\\v{s}": "Å¡", "\\v{S}": "Å ",
+        "\\v{z}": "Å¾", "\\v{Z}": "Å½", "\\v{r}": "Å™", "\\v{R}": "Å˜",
+        "\\v{e}": "Ä›", "\\v{E}": "Äš", "\\v{n}": "Åˆ", "\\v{N}": "Å‡",
         # Cedilla \c{}
-        "\\c{c}": "+ğ", "\\c{C}": "+ç",
+        "\\c{c}": "Ã§", "\\c{C}": "Ã‡",
         # Tilde \~
-        "\\~n": "+-", "\\~N": "+æ", "\\~a": "+ú", "\\~o": "+Á",
+        "\\~n": "Ã±", "\\~N": "Ã‘", "\\~a": "Ã£", "\\~o": "Ãµ",
         # Circumflex \^
-        "\\^a": "+ó", "\\^e": "+¬", "\\^i": "+«", "\\^o": "++", "\\^u": "+¬",
+        "\\^a": "Ã¢", "\\^e": "Ãª", "\\^i": "Ã®", "\\^o": "Ã´", "\\^u": "Ã»",
         # Polish l
-        "\\l": "+é", "\\L": "+ü",
+        "\\l": "Å‚", "\\L": "Å",
         # German sharp s
-        "\\ss": "+ş",
+        "\\ss": "ÃŸ",
         # Scandinavian
-        "\\aa": "+Ñ", "\\AA": "+à", "\\o": "+©", "\\O": "+İ", "\\ae": "+Ğ", "\\AE": "+å",
+        "\\aa": "Ã¥", "\\AA": "Ã…", "\\o": "Ã¸", "\\O": "Ã˜", "\\ae": "Ã¦", "\\AE": "Ã†",
     }
     
     result = name
@@ -243,7 +243,7 @@ def download_image(url: str, paper_id: str) -> str | None:
         with open(temp_path, 'wb') as f:
             f.write(response.content)
         
-        print(f"    Ô£ô Downloaded: {temp_path} ({size/1024:.1f} KB)")
+        print(f"    âœ“ Downloaded: {temp_path} ({size/1024:.1f} KB)")
         return temp_path
         
     except Exception as e:
@@ -351,7 +351,7 @@ def get_figure_for_paper(paper: dict) -> str | None:
     paper_id = paper["id"]
     stored_url = paper.get("figure_url", "")
     
-    print(f"­şôÀ Getting image for {paper_id}...")
+    print(f"ğŸ“· Getting image for {paper_id}...")
     
     # Step 1: Check stored URL
     if stored_url and not is_placeholder_image(stored_url):
@@ -455,7 +455,7 @@ def generate_paper_card(paper: dict) -> str | None:
         temp_path = os.path.join(temp_dir, f"arxiv_card_{safe_id}.png")
         img.save(temp_path, 'PNG')
         
-        print(f"    Ô£ô Generated paper card: {temp_path}")
+        print(f"    âœ“ Generated paper card: {temp_path}")
         return temp_path
         
     except Exception as e:
@@ -600,8 +600,8 @@ def format_tweet_thread_premium(paper: dict, page_url: str, hashtags: list[str],
         parts.append(hook)
         parts.append("")
     
-    parts.append(f"­şôä {title}")
-    parts.append(f"­şæñ {author_str}")
+    parts.append(f"ğŸ“„ {title}")
+    parts.append(f"ğŸ‘¤ {author_str}")
     
     if question:
         parts.append("")
@@ -619,7 +619,7 @@ def format_tweet_thread_premium(paper: dict, page_url: str, hashtags: list[str],
     summary_link = f"{page_url}#paper-{safe_id}"
     hashtag_str = " ".join(hashtags)
     
-    tweet2 = f"­şôä arXiv: {link}\n­şôû Full summary: {summary_link}\n\n{hashtag_str}"
+    tweet2 = f"ğŸ“„ arXiv: {link}\nğŸ“– Full summary: {summary_link}\n\n{hashtag_str}"
     
     return tweet1, tweet2
 
@@ -654,8 +654,8 @@ def format_tweet_thread_free(paper: dict, page_url: str, hashtags: list[str]) ->
         parts.append(hook)
         parts.append("")
     
-    parts.append(f"­şôä {title}")
-    parts.append(f"­şæñ {author_str}")
+    parts.append(f"ğŸ“„ {title}")
+    parts.append(f"ğŸ‘¤ {author_str}")
     
     if question:
         parts.append("")
@@ -669,13 +669,13 @@ def format_tweet_thread_free(paper: dict, page_url: str, hashtags: list[str]) ->
         if hook:
             parts.append(hook)
             parts.append("")
-        parts.append(f"­şôä {title}")
-        parts.append(f"­şæñ {author_str}")
+        parts.append(f"ğŸ“„ {title}")
+        parts.append(f"ğŸ‘¤ {author_str}")
         tweet1 = "\n".join(parts)
     
     # If still too long, try without hook
     if len(tweet1) > 280:
-        tweet1 = f"­şôä {title}\n­şæñ {author_str}"
+        tweet1 = f"ğŸ“„ {title}\nğŸ‘¤ {author_str}"
     
     # Final truncate if needed
     if len(tweet1) > 280:
@@ -688,7 +688,7 @@ def format_tweet_thread_free(paper: dict, page_url: str, hashtags: list[str]) ->
     summary_link = f"{page_url}#paper-{safe_id}"
     hashtag_str = " ".join(hashtags[:3])
     
-    tweet2 = f"­şôä {link}\n­şôû {summary_link}\n\n{hashtag_str}"
+    tweet2 = f"ğŸ“„ {link}\nğŸ“– {summary_link}\n\n{hashtag_str}"
     
     return tweet1, tweet2
 
@@ -761,10 +761,9 @@ def select_best_paper(papers: list, tweeted_ids: set) -> dict | None:
         print(f"Outside tweet window ({tweet_start_hour}:00-{tweet_end_hour}:00 Istanbul)")
         return None
     
-    # Filter untweeted papers
     # Filter out hidden papers first
     visible = [p for p in papers if not p.get("hidden", False)]
-    
+
     # Filter untweeted papers
     untweeted = [p for p in visible if p["id"] not in tweeted_ids]
     if not untweeted:
@@ -803,7 +802,7 @@ def select_best_paper(papers: list, tweeted_ids: set) -> dict | None:
     
     expected_tweets = int(minutes_elapsed / interval) if interval > 0 else tweeted_count
     
-    print(f"­şôè Smart timing:")
+    print(f"ğŸ“Š Smart timing:")
     print(f"   Papers: {total_papers}, Tweeted: {tweeted_count}")
     print(f"   Interval: {interval:.0f} min (~{interval/60:.1f} hours)")
     print(f"   Time: {now.strftime('%H:%M')} Istanbul ({minutes_elapsed:.0f} min into window)")
@@ -811,7 +810,7 @@ def select_best_paper(papers: list, tweeted_ids: set) -> dict | None:
     
     if tweeted_count >= expected_tweets:
         next_tweet_min = int((tweeted_count + 1) * interval - minutes_elapsed)
-        print(f"   ÔÅ- Next tweet in ~{next_tweet_min} min")
+        print(f"   â³ Next tweet in ~{next_tweet_min} min")
         print("Not time to tweet yet. Exiting.")
         sys.exit(0)
     
@@ -851,7 +850,7 @@ def main():
         print("All papers have been tweeted today!")
         return
     
-    paper_type = "­ş¬É EXOPLANET" if paper_to_tweet.get("is_exoplanet_focused", True) else "­şö¡ GENERAL"
+    paper_type = "ğŸª EXOPLANET" if paper_to_tweet.get("is_exoplanet_focused", True) else "ğŸ”­ GENERAL"
     print(f"Selected paper: {paper_to_tweet['id']}")
     print(f"  Type: {paper_type}")
     print(f"  Tweetability: {paper_to_tweet.get('tweetability_score', 0)}")
@@ -876,11 +875,11 @@ def main():
             media_id = upload_media(api_v1, figure_path)
             if media_id:
                 media_ids = [media_id]
-                print(f"­şô© Image will be attached to tweet!")
+                print(f"ğŸ“¸ Image will be attached to tweet!")
             else:
-                print("ÔÜá´©Å Image upload failed, tweeting without image")
+                print("âš ï¸ Image upload failed, tweeting without image")
         else:
-            print("­şôä No image available, tweeting text only")
+            print("ğŸ“„ No image available, tweeting text only")
     
     # Format the thread
     tweet1_text, tweet2_text = format_paper_thread(paper_to_tweet, page_url)
@@ -910,17 +909,17 @@ def main():
             tweeted_ids.add(paper_to_tweet["id"])
             tweeted_data["tweeted_ids"] = list(tweeted_ids)
             save_tweeted(tweeted_data)
-            print(f"\nÔ£à Thread posted successfully!")
+            print(f"\nâœ… Thread posted successfully!")
             print(f"   Tweet 1: https://twitter.com/i/status/{tweet1_id}")
             print(f"   Tweet 2: https://twitter.com/i/status/{tweet2_id}")
             print(f"   Remaining papers: {len(papers) - len(tweeted_ids)}")
         else:
-            print("\nÔÜá´©Å Tweet 1 posted but Tweet 2 failed")
+            print("\nâš ï¸ Tweet 1 posted but Tweet 2 failed")
             tweeted_ids.add(paper_to_tweet["id"])
             tweeted_data["tweeted_ids"] = list(tweeted_ids)
             save_tweeted(tweeted_data)
     else:
-        print("\nÔØî Failed to post tweet")
+        print("\nâŒ Failed to post tweet")
         sys.exit(1)
 
 
