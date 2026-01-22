@@ -240,8 +240,8 @@ def post_to_bluesky(client, text: str, image_path: str = None) -> str | None:
                 else:
                     mime = "image/jpeg"
                 
-                # Upload blob
-                upload = client.upload_blob(img_data, mime)
+                # Upload blob (new atproto API - mime type auto-detected)
+                upload = client.upload_blob(img_data)
                 
                 # Create post with image
                 embed = models.AppBskyEmbedImages.Main(
@@ -294,8 +294,11 @@ def post_to_bluesky(client, text: str, image_path: str = None) -> str | None:
 def select_paper(papers: list, posted_ids: set) -> dict | None:
     """Select best unposted paper."""
     
+    # Filter out hidden papers first
+    visible = [p for p in papers if not p.get("hidden", False)]
+    
     # Filter unposted
-    unposted = [p for p in papers if p["id"] not in posted_ids]
+    unposted = [p for p in visible if p["id"] not in posted_ids]
     
     if not unposted:
         return None
