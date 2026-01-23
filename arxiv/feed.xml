@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 22 Jan 2026 03:44:40 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 23 Jan 2026 03:29:21 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,91 +15,53 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>Most Hot Jupiters Were Cool Giant Planets for More Than 1 Gyr</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2601-14367v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-14367v1</guid>
-      <pubDate>Thu, 22 Jan 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Stephen P. Schmidt, Kevin C. Schlaufman</dc:creator>
+      <title>Modeling the Impact of Unresolved Stellar Companions on Detection Sensitivity in Kepler&#x27;s Small Planet Occurrence Rates</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-16031v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-16031v1</guid>
+      <pubDate>Fri, 23 Jan 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Galen J. Bergsten et al.</dc:creator>
       <description><![CDATA[Why It Matters
-Hot Jupiters are among the most puzzling planets in our galaxy. These massive worlds orbit so close to their stars that their surfaces reach scorching temperatures of over 1,000°C, completing a full orbit in just days. For over two decades, astronomers have debated how these planets ended up in such extreme locations—did they form there, or did they migrate inward from cooler, more distant orbits? This question goes to the heart of how planetary systems evolve and helps us understand whether our own solar system, with its giant planets safely positioned far from the Sun, is typical or unusual. Solving this mystery could reveal fundamental truths about planet formation throughout the universe.
+For decades, astronomers have been trying to answer one of humanity's most profound questions: How common are Earth-like planets that could potentially harbor life? NASA's Kepler Space Telescope revolutionized this search by discovering thousands of planets orbiting distant stars. But there's been a hidden problem affecting our cosmic census—many stars that appear single actually have companion stars lurking nearby, invisible to Kepler's eyes. This stellar hide-and-seek has been quietly skewing our calculations about how many Earth-sized worlds exist in the "Goldilocks zone" where liquid water could survive. Getting these numbers right isn't just academic—it helps us understand whether Earth-like worlds are cosmic rarities or surprisingly common neighbors.
 What They Did
-Since measuring the exact ages of distant stars is notoriously difficult, the researchers devised a clever workaround using stellar motion as a cosmic clock. Just as older drivers tend to drive more cautiously while younger ones speed and weave through traffic, older stars in our galaxy move more chaotically through space due to gravitational encounters accumulated over billions of years. The team studied the motion patterns of stars hosting hot Jupiters at different orbital distances, then calibrated this relationship using stars with well-known ages. By comparing how fast these stellar systems move through space, they could determine which hot Jupiter populations are older or younger than others.
+The research team tackled this problem like cosmic detectives. They selected 198 stars from Kepler's catalog—stars that should be sensitive enough to spot Earth-like planets if they were truly alone in space. Then, using powerful ground-based telescopes equipped with adaptive optics (technology that removes atmospheric blur, like cosmic glasses), they took ultra-sharp images of each star. This technique can reveal companion stars that Kepler couldn't distinguish from the main star because they appear too close together. Think of it like using a magnifying glass to discover that what looked like one distant streetlight is actually two lights standing side by side. The team then ran computer simulations to account for even fainter companions their instruments couldn't detect, creating a complete picture of stellar multiplicity.
 Key Findings
-The research reveals that most hot Jupiters didn't start where we find them today. At least 40% to 70% of these planets began as "cool giants" orbiting far from their stars for over a billion years before spiraling inward. The planets closest to their stars are actually the oldest, suggesting they've had more time to complete their inward journey. This pattern strongly supports the idea that gravitational battles between planets or interactions with distant companion stars gradually push these worlds into their current hellish orbits over vast timescales.
+The results were eye-opening: one in five stars (20%) had hidden companions close enough to fool Kepler. These unseen stellar sidekicks were systematically throwing off planet measurements in two ways—making planets appear smaller than they actually are and making Kepler think it should have spotted planets more easily than it actually could. When the researchers corrected for these effects, they found that small planets are more common than previously thought. Most significantly, their calculations suggest Earth-sized planets in habitable zones are 18% to 46% more frequent than earlier estimates indicated.
 Looking Forward
-This discovery reshapes our understanding of planetary system evolution, suggesting that the architecture we observe today often results from billions of years of dynamic changes rather than the original formation process. As upcoming space missions discover thousands more exoplanets, astronomers can now better interpret these findings within the context of long-term planetary migration, bringing us closer to understanding how common stable systems like our own might be.]]></description>
+This discovery means the universe might be more planet-rich than we realized, particularly for worlds resembling our own. As next-generation telescopes like the James Webb Space Telescope begin studying planetary atmospheres, these refined occurrence rates will help astronomers better target their searches for potentially habitable worlds. The findings also highlight the importance of ground-based observations working hand-in-hand with space missions—sometimes the biggest discoveries come from looking more carefully at what we thought we already knew.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Hot and cloudy: High temperature clouds in super-Earths and sub-Neptunes</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-15927v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-15927v1</guid>
+      <pubDate>Fri, 23 Jan 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Leoni J. Janssen et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+For the first time, scientists have detected an atmosphere around a rocky planet outside our solar system—a milestone that brings us closer to understanding whether Earth-like worlds might harbor life. The planet, called 55 Cancri e, is what astronomers call a "super-Earth," roughly twice our planet's size but orbiting so close to its star that its surface reaches scorching temperatures of over 3,600°F. This discovery opens a new chapter in exoplanet research, showing we can now study the atmospheres of rocky worlds beyond our solar system and understand how planets form clouds under extreme conditions that don't exist anywhere in our solar system.
+What They Did
+Using NASA's powerful James Webb Space Telescope, researchers confirmed that 55 Cancri e has an atmosphere, then created detailed computer models to understand what kinds of clouds might form on such hellishly hot worlds. Think of it like creating a weather forecast, but for an alien planet where the "rain" might be made of titanium dioxide—the same compound found in sunscreen. They tested four different atmospheric recipes: atmospheres dominated by nitrogen (like Earth), oxygen, carbon, or hydrogen, then simulated how clouds would behave at temperatures between 1,300°F and 4,900°F—hot enough to melt copper.
+Key Findings
+The research revealed that a planet's ability to form clouds depends heavily on how much oxygen is in its atmosphere. Oxygen-rich atmospheres stay cooler and are excellent cloud factories, while oxygen-poor atmospheres get superheated by ultraviolet light, creating temperature inversions that prevent cloud formation—imagine trying to make rain in a furnace. On oxygen-rich super-Earths, the main cloud ingredient would be solid titanium dioxide, creating alien weather systems unlike anything on Earth. These clouds would be most visible when the planet passes in front of its star, blocking specific colors of light.
+Looking Forward
+This research provides astronomers with a roadmap for interpreting future observations of hot, rocky exoplanets. As the James Webb Space Telescope continues surveying these worlds, scientists will be able to identify cloud compositions and atmospheric types, bringing us closer to understanding how rocky planets evolve and potentially finding worlds with conditions suitable for life.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Evidence for stellar contamination and water absorption in NGTS-5b&#x27;s transmission spectra with GTC/OSIRIS</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-15704v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-15704v1</guid>
+      <pubDate>Fri, 23 Jan 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Wan-Hao Wang et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+Imagine trying to study the air around a distant city by watching how its lights dim when clouds pass overhead. That's essentially what astronomers do when they study the atmospheres of planets orbiting other stars. These "exoplanets" offer our best chance to understand whether worlds like Earth—with breathable air and perhaps even life—might exist elsewhere in the universe. But there's a major challenge: the host stars themselves can play tricks on our observations, making it incredibly difficult to distinguish between what's actually in a planet's atmosphere versus contamination from the star's own surface features, like sunspots.
+What They Did
+Researchers focused on NGTS-5b, a planet roughly the size of Saturn but much closer to its star, making it quite warm. They used one of the world's largest telescopes—the 10.4-meter Gran Telescopio Canarias in Spain—to watch the planet pass in front of its star twice. As the planet crossed the star's face, some starlight filtered through the planet's atmosphere before reaching Earth. By carefully analyzing how different colors of light were absorbed during these transits, scientists could decode what gases might be floating in this distant world's air. They then used sophisticated computer models to interpret these cosmic fingerprints.
+Key Findings
+The team discovered strong evidence for water vapor in NGTS-5b's atmosphere—a crucial ingredient for life as we know it. The planet appears to have a relatively clear, thin atmosphere with low levels of heavy elements and an unusual carbon-to-oxygen ratio less than 22% of what we see in our Sun. However, the star itself proved problematic, with surface spots contaminating the observations and making the two transit measurements inconsistent with each other.
+Looking Forward
+This research highlights both the promise and challenges of studying exoplanet atmospheres. While the detection of water is exciting, the stellar contamination issue underscores why astronomers need multiple observations and better techniques to truly understand these distant worlds.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.SR</category>
-    </item>
-    <item>
-      <title>A Theory of transmission spectroscopy of planetary winds: Spectral-line saturation and limits on mass-loss inference</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2601-15152v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-15152v1</guid>
-      <pubDate>Thu, 22 Jan 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Leonardos Gkouvelis</dc:creator>
-      <description><![CDATA[Why It Matters
-Imagine trying to understand a distant world by studying the light that passes through its atmosphere as it crosses in front of its star. This technique, called transmission spectroscopy, has become our most powerful tool for learning what exoplanet atmospheres are made of and how they behave. Some planets are so hot that their atmospheres are literally boiling away into space—a dramatic process that could determine whether these worlds can retain any atmosphere at all. Understanding how much atmosphere these planets are losing is crucial for predicting their fate and finding worlds that might harbor life. Until now, scientists have struggled to accurately measure these atmospheric escape rates, often getting confusing or contradictory results from their observations.
-What They Did
-The researchers developed a mathematical theory to explain how light behaves when it passes through an atmosphere that's actively escaping into space. Think of it like trying to see through steam rising from a boiling pot—the moving gas affects how light travels through it. Previous studies relied on complex computer simulations to interpret these observations, but this team created simple equations that describe the physics directly. They modeled the escaping atmosphere as a steady wind flowing outward from the planet, then calculated how this wind would absorb starlight at different wavelengths. This approach allowed them to derive clear, mathematical relationships between what telescopes observe and the actual rate at which the planet loses its atmosphere.
-Key Findings
-The team discovered that atmospheric measurements fall into two distinct categories, separated by a sharp boundary. When atmospheric escape is moderate, telescopes can accurately measure how fast the planet is losing gas. But beyond a critical threshold, the absorption lines become "saturated"—like trying to see through fog so thick that adding more fog doesn't make it any more opaque. At this point, the observations no longer reveal the escape rate but instead just show the physical size of the escaping gas cloud. This explains why astronomers sometimes get reliable measurements from faint spectral features while stronger signals paradoxically provide no useful information about mass loss.
-Looking Forward
-This breakthrough provides astronomers with a roadmap for interpreting their observations more accurately. Instead of being puzzled by strong but uninformative signals, researchers now know to focus on weaker spectral lines that still retain sensitivity to atmospheric escape rates. This will lead to better estimates of how quickly exoplanets lose their atmospheres, helping us understand which worlds can maintain stable atmospheres over billions of years—a key factor in the search for potentially habitable planets.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Closed-Form Statistical Relations Between Projected Separation, Semimajor Axis, Companion Mass, and Host Acceleration</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2601-14688v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-14688v1</guid>
-      <pubDate>Thu, 22 Jan 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Timothy D Brandt</dc:creator>
-      <description><![CDATA[Why It Matters
-Imagine trying to study a distant lighthouse by watching how its beam affects nearby boats—this is essentially how astronomers hunt for planets around other stars. When we can't see these "exoplanets" directly, we detect them by observing how their gravity tugs on their host stars, causing subtle wobbles or gradual shifts in the star's motion. However, translating these tiny movements into useful information about the planet—like its mass, distance from the star, and orbital path—requires complex mathematical relationships. This research provides astronomers with a powerful new toolkit: simplified equations that make it much faster and easier to extract crucial details about distant worlds from the signals we observe.
-What They Did
-The researcher developed mathematical shortcuts for connecting the dots between what telescopes can measure and what astronomers want to know about exoplanets. Think of it like creating a universal translator between two languages: the language of stellar wobbles (what we observe) and the language of planetary properties (what we want to understand). Instead of using complicated, multi-step calculations that astronomers have relied on for decades, this work produced clean, direct formulas. The researcher also created computer simulations to double-check that these new equations give the same answers as the traditional methods, ensuring the shortcuts don't sacrifice accuracy for convenience.
-Key Findings
-The new equations work regardless of how a planet's orbit is tilted relative to Earth, making them universally applicable to exoplanet discoveries. Most importantly, these formulas are "closed-form," meaning they give direct answers without requiring computers to crunch through multiple iterative steps. The researcher verified that these simplified equations produce identical results to existing methods while being significantly more efficient to calculate.
-Looking Forward
-This mathematical toolkit will accelerate exoplanet research by making data analysis faster and more efficient. The streamlined calculations are particularly valuable for advanced statistical methods that require thousands of repetitive computations, potentially helping astronomers characterize exoplanets more quickly and discover subtle patterns in planetary systems across our galaxy.]]></description>
-        <category>astro-ph.SR</category>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
-    </item>
-    <item>
-      <title>ExoMiner++ 2.0: Vetting TESS Full-Frame Image Transit Signals</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2601-14877v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-14877v1</guid>
-      <pubDate>Thu, 22 Jan 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Miguel J. S. Martinho et al.</dc:creator>
-      <description><![CDATA[Why It Matters
-Imagine trying to spot a firefly blinking in front of a distant streetlight—that's essentially what astronomers do when hunting for planets around other stars. When a planet crosses in front of its star, it creates a tiny dip in brightness that space telescopes can detect. NASA's TESS (Transiting Exoplanet Survey Satellite) has revolutionized this cosmic game of hide-and-seek by monitoring hundreds of thousands of stars simultaneously. However, buried within TESS's treasure trove of data are millions more stars that could harbor planets—we just needed better tools to sift through all that information. This research matters because it dramatically expands our ability to find new worlds, bringing us closer to answering one of humanity's most profound questions: How common are planets like Earth?
-What They Did
-The researchers upgraded an artificial intelligence system called ExoMiner++ to work like a highly trained detective specializing in planet detection. Think of it as teaching a computer to distinguish between genuine planet signals and imposters—things like double stars, instrument glitches, or other cosmic phenomena that can masquerade as planets. The original ExoMiner++ was designed to analyze TESS's highest-quality data, taken every two minutes for specially selected stars. The new version, ExoMiner++ 2.0, learned to work with lower-quality data captured every 30 minutes for millions of additional stars. Like training a detective to solve cases with grainier security footage, this required teaching the AI to recognize planetary signatures even in noisier, less detailed observations.
-Key Findings
-The upgraded AI system proved remarkably adaptable, successfully distinguishing real planet candidates from false alarms even when working with the more challenging 30-minute data. ExoMiner++ 2.0 maintained its detective skills across different observing conditions, reliably identifying which signals deserved further investigation and which could be dismissed as false positives. The system created a comprehensive catalog of vetted signals, essentially building a reliable database of potential planet discoveries from previously untapped TESS observations.
-Looking Forward
-This breakthrough means astronomers can now mine the full TESS dataset for planets, potentially discovering thousands of new worlds that were previously hidden in unanalyzed data. These discoveries will fuel future studies of planetary populations and help prioritize which candidates deserve follow-up observations with other telescopes, accelerating our understanding of how planetary systems form and evolve throughout the universe.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
-        <category>cs.LG</category>
-    </item>
-    <item>
-      <title>A nomenclature for individual exocomets</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2601-15176v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-15176v1</guid>
-      <pubDate>Thu, 22 Jan 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Alain Lecavelier des Etangs, Paul A. Strøm, Darryl Z. Seligman</dc:creator>
-      <description><![CDATA[# Scientists Create the First "Phone Book" for Comets Beyond Our Solar System
-Why It Matters
-Imagine trying to organize your contacts without names—just descriptions like "tall person from coffee shop" or "friend with red car." That's essentially the problem astronomers have been facing with exocomets, the icy cosmic wanderers orbiting stars beyond our Sun. As our telescopes become more powerful, we're not just spotting these distant comets anymore—we're studying them individually, tracking their unique behaviors and characteristics. Without a proper naming system, it's like trying to manage a growing library where every book is simply called "that story about the detective." This research matters because it establishes the foundation for organizing and understanding an entirely new category of cosmic objects that could tell us how planetary systems form and evolve.
-What They Did
-The researchers didn't point telescopes at the sky or crunch observational data. Instead, they tackled a more fundamental challenge: creating a systematic way to name individual exocomets. Think of it like developing the rules for street addresses in a rapidly expanding city. They examined what information we can gather about each exocomet—such as which star it orbits, when it was discovered, and its observable characteristics. Then they designed a naming scheme that would work not just for the handful of exocomets we know today, but for the thousands we expect to discover in the coming decades.
-Key Findings
-The team successfully developed a comprehensive naming system that can accommodate the unique properties of exocomets while remaining practical for astronomers to use. They demonstrated their system by applying it to several well-studied exocomets, showing how each would receive a distinct identifier. While the paper doesn't provide specific numbers of exocomets catalogued, it represents the first standardized approach to organizing these distant objects, much like how we systematically name hurricanes or catalog asteroids in our own solar system.
-Looking Forward
-This naming system arrives at a pivotal moment in exoplanet science. As next-generation telescopes come online, we'll likely discover exocomets by the hundreds or thousands. Having a standardized naming system means astronomers worldwide can communicate clearly about specific objects, track their behavior over time, and build comprehensive databases. This could accelerate our understanding of how comets—which are essentially frozen time capsules from the early solar system—reveal the history and composition of distant planetary systems, potentially bringing us closer to understanding how common Earth-like worlds might be.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
     </item>
   </channel>
 </rss>
