@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 23 Jan 2026 03:29:21 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 26 Jan 2026 03:53:19 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,52 +15,75 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>Modeling the Impact of Unresolved Stellar Companions on Detection Sensitivity in Kepler&#x27;s Small Planet Occurrence Rates</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2601-16031v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-16031v1</guid>
-      <pubDate>Fri, 23 Jan 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Galen J. Bergsten et al.</dc:creator>
+      <title>TOI-6692b: An eccentric 130 day period giant planet with a single transit from TESS</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-16357v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-16357v1</guid>
+      <pubDate>Mon, 26 Jan 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Allyson Bieryla et al.</dc:creator>
       <description><![CDATA[Why It Matters
-For decades, astronomers have been trying to answer one of humanity's most profound questions: How common are Earth-like planets that could potentially harbor life? NASA's Kepler Space Telescope revolutionized this search by discovering thousands of planets orbiting distant stars. But there's been a hidden problem affecting our cosmic census—many stars that appear single actually have companion stars lurking nearby, invisible to Kepler's eyes. This stellar hide-and-seek has been quietly skewing our calculations about how many Earth-sized worlds exist in the "Goldilocks zone" where liquid water could survive. Getting these numbers right isn't just academic—it helps us understand whether Earth-like worlds are cosmic rarities or surprisingly common neighbors.
+Imagine trying to solve a jigsaw puzzle with only one piece visible for a brief moment every four months. That's essentially what astronomers faced when they spotted a single, mysterious signal from a distant world called TOI-6692b. This discovery matters because it showcases how modern astronomy can piece together the story of an entire planet from just fleeting glimpses. Finding planets with such long orbital periods—those that take months to complete one "year"—helps us understand how planetary systems like our own solar system form and evolve over billions of years.
 What They Did
-The research team tackled this problem like cosmic detectives. They selected 198 stars from Kepler's catalog—stars that should be sensitive enough to spot Earth-like planets if they were truly alone in space. Then, using powerful ground-based telescopes equipped with adaptive optics (technology that removes atmospheric blur, like cosmic glasses), they took ultra-sharp images of each star. This technique can reveal companion stars that Kepler couldn't distinguish from the main star because they appear too close together. Think of it like using a magnifying glass to discover that what looked like one distant streetlight is actually two lights standing side by side. The team then ran computer simulations to account for even fainter companions their instruments couldn't detect, creating a complete picture of stellar multiplicity.
+The planet was first spotted by citizen scientists volunteers who comb through data from TESS, NASA's planet-hunting telescope. They noticed a single dimming event as the planet passed in front of its star—like watching a moth briefly cross a distant streetlight. To confirm this wasn't just a fluke, astronomers used multiple ground-based telescopes around the world to measure tiny wobbles in the star caused by the planet's gravitational pull. They also attempted to catch the planet crossing its star again by timing their observations to coincide with when they predicted the next transit would occur, despite having only one previous sighting to work with.
 Key Findings
-The results were eye-opening: one in five stars (20%) had hidden companions close enough to fool Kepler. These unseen stellar sidekicks were systematically throwing off planet measurements in two ways—making planets appear smaller than they actually are and making Kepler think it should have spotted planets more easily than it actually could. When the researchers corrected for these effects, they found that small planets are more common than previously thought. Most significantly, their calculations suggest Earth-sized planets in habitable zones are 18% to 46% more frequent than earlier estimates indicated.
+TOI-6692b is a gas giant similar to Jupiter but follows a highly stretched-out, oval-shaped orbit that takes 130 days to complete. Its path is so eccentric that it swings much closer and farther from its star during each orbit—imagine Earth having summers hot enough to melt lead and winters colder than Mars. The planet's 11-hour-long transit makes it one of the few distant worlds where astronomers have nailed down its mass, size, and orbital shape with confidence.
 Looking Forward
-This discovery means the universe might be more planet-rich than we realized, particularly for worlds resembling our own. As next-generation telescopes like the James Webb Space Telescope begin studying planetary atmospheres, these refined occurrence rates will help astronomers better target their searches for potentially habitable worlds. The findings also highlight the importance of ground-based observations working hand-in-hand with space missions—sometimes the biggest discoveries come from looking more carefully at what we thought we already knew.]]></description>
+This discovery demonstrates that even single, brief observations can unlock planetary secrets when combined with persistent follow-up work. The techniques used here will help astronomers find more distant worlds and better understand how planets get kicked into such extreme orbits.]]></description>
         <category>astro-ph.EP</category>
+        <category>astro-ph.SR</category>
     </item>
     <item>
-      <title>Hot and cloudy: High temperature clouds in super-Earths and sub-Neptunes</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2601-15927v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-15927v1</guid>
-      <pubDate>Fri, 23 Jan 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Leoni J. Janssen et al.</dc:creator>
+      <title>Mercury-Arχes: a high-performance n-body code for planet formation studies</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-16791v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-16791v1</guid>
+      <pubDate>Mon, 26 Jan 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Diego Turrini et al.</dc:creator>
       <description><![CDATA[Why It Matters
-For the first time, scientists have detected an atmosphere around a rocky planet outside our solar system—a milestone that brings us closer to understanding whether Earth-like worlds might harbor life. The planet, called 55 Cancri e, is what astronomers call a "super-Earth," roughly twice our planet's size but orbiting so close to its star that its surface reaches scorching temperatures of over 3,600°F. This discovery opens a new chapter in exoplanet research, showing we can now study the atmospheres of rocky worlds beyond our solar system and understand how planets form clouds under extreme conditions that don't exist anywhere in our solar system.
+Imagine trying to understand how a bustling city develops by watching it in fast-forward over centuries—that's essentially what scientists are doing when they study how planets form around distant stars. This research matters because it helps us answer one of humanity's most profound questions: How common are planetary systems like our own? By creating more powerful computer simulations of planet formation, researchers can better predict what kinds of worlds exist beyond our solar system and whether Earth-like planets capable of supporting life are rare cosmic accidents or common occurrences throughout the galaxy.
 What They Did
-Using NASA's powerful James Webb Space Telescope, researchers confirmed that 55 Cancri e has an atmosphere, then created detailed computer models to understand what kinds of clouds might form on such hellishly hot worlds. Think of it like creating a weather forecast, but for an alien planet where the "rain" might be made of titanium dioxide—the same compound found in sunscreen. They tested four different atmospheric recipes: atmospheres dominated by nitrogen (like Earth), oxygen, carbon, or hydrogen, then simulated how clouds would behave at temperatures between 1,300°F and 4,900°F—hot enough to melt copper.
+The researchers developed a sophisticated computer program called Mercury-Arχes that acts like a cosmic flight simulator for planet formation. Just as flight simulators must track thousands of variables simultaneously—weather, physics, mechanical systems—this program tracks the gravitational dance between countless objects in a young solar system: massive gas giant planets, rocky worlds like Earth, and swarms of smaller bodies like asteroids and comets. The challenge is that these simulations must also account for the swirling disk of gas that surrounds young stars, which pushes and pulls on forming planets like a cosmic wind. To handle these incredibly complex calculations, the team optimized their program to run on multiple computer processors simultaneously, like having dozens of calculators working together on the same massive equation.
 Key Findings
-The research revealed that a planet's ability to form clouds depends heavily on how much oxygen is in its atmosphere. Oxygen-rich atmospheres stay cooler and are excellent cloud factories, while oxygen-poor atmospheres get superheated by ultraviolet light, creating temperature inversions that prevent cloud formation—imagine trying to make rain in a furnace. On oxygen-rich super-Earths, the main cloud ingredient would be solid titanium dioxide, creating alien weather systems unlike anything on Earth. These clouds would be most visible when the planet passes in front of its star, blocking specific colors of light.
+The main achievement is a dramatically more efficient simulation tool that can model planet formation with unprecedented detail and speed. By using parallel processing techniques, the program can simultaneously track the interactions between thousands of planetary bodies while accounting for gas disk effects—something that would have taken prohibitively long with older methods.
 Looking Forward
-This research provides astronomers with a roadmap for interpreting future observations of hot, rocky exoplanets. As the James Webb Space Telescope continues surveying these worlds, scientists will be able to identify cloud compositions and atmospheric types, bringing us closer to understanding how rocky planets evolve and potentially finding worlds with conditions suitable for life.]]></description>
+This computational breakthrough will allow scientists to run more comprehensive simulations of how different types of planetary systems form, helping us understand why some stars host multiple Earth-sized worlds while others have only gas giants. These insights will prove invaluable as next-generation telescopes discover thousands of new exoplanets.]]></description>
         <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+        <category>physics.comp-ph</category>
     </item>
     <item>
-      <title>Evidence for stellar contamination and water absorption in NGTS-5b&#x27;s transmission spectra with GTC/OSIRIS</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2601-15704v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-15704v1</guid>
-      <pubDate>Fri, 23 Jan 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Wan-Hao Wang et al.</dc:creator>
+      <title>The Origins of Planets for ArieL (OPAL) Key Science Project: the end-to-end planet formation campaign for the ESA space mission Ariel</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-16841v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-16841v1</guid>
+      <pubDate>Mon, 26 Jan 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Danae Polychroni et al.</dc:creator>
       <description><![CDATA[Why It Matters
-Imagine trying to study the air around a distant city by watching how its lights dim when clouds pass overhead. That's essentially what astronomers do when they study the atmospheres of planets orbiting other stars. These "exoplanets" offer our best chance to understand whether worlds like Earth—with breathable air and perhaps even life—might exist elsewhere in the universe. But there's a major challenge: the host stars themselves can play tricks on our observations, making it incredibly difficult to distinguish between what's actually in a planet's atmosphere versus contamination from the star's own surface features, like sunspots.
+Imagine if every person on Earth had wildly different air to breathe—some with oxygen-rich atmospheres, others thick with methane, and still others as thin as mountaintop air. This is exactly what scientists are discovering about planets beyond our solar system. Thousands of exoplanets have been found, and they show an incredible diversity not just in size and temperature, but in the very air that surrounds them. Understanding why these planetary atmospheres are so different could unlock the secrets of how planets form and whether any might harbor life. It's like having a cosmic detective story where the atmosphere holds the clues to each planet's origin story.
 What They Did
-Researchers focused on NGTS-5b, a planet roughly the size of Saturn but much closer to its star, making it quite warm. They used one of the world's largest telescopes—the 10.4-meter Gran Telescopio Canarias in Spain—to watch the planet pass in front of its star twice. As the planet crossed the star's face, some starlight filtered through the planet's atmosphere before reaching Earth. By carefully analyzing how different colors of light were absorbed during these transits, scientists could decode what gases might be floating in this distant world's air. They then used sophisticated computer models to interpret these cosmic fingerprints.
+To prepare for Ariel, an upcoming European space telescope that will study hundreds of exoplanet atmospheres, researchers created something like a massive recipe book for planetary atmospheres. They built computer simulations that follow the entire "life story" of a planet—starting from the swirling disk of gas and dust around a young star, through the planet's formation, and ending with its final atmospheric composition. Think of it as creating a family tree that connects each planet to its birthplace. Their simulations track dozens of chemical elements and hundreds of different molecules, creating a library of realistic artificial atmospheres that spans the full range of possibilities scientists expect to find in space.
 Key Findings
-The team discovered strong evidence for water vapor in NGTS-5b's atmosphere—a crucial ingredient for life as we know it. The planet appears to have a relatively clear, thin atmosphere with low levels of heavy elements and an unusual carbon-to-oxygen ratio less than 22% of what we see in our Sun. However, the star itself proved problematic, with surface spots contaminating the observations and making the two transit measurements inconsistent with each other.
+The research revealed that even tiny differences in starting conditions can lead to dramatically different planetary outcomes. Like how small changes in a recipe can completely alter the final dish, minor variations in the original disk of material around a star can produce planets with vastly different atmospheric compositions. This helps explain the stunning diversity scientists observe in real exoplanets and shows that the universe is capable of creating an almost endless variety of worlds.
 Looking Forward
-This research highlights both the promise and challenges of studying exoplanet atmospheres. While the detection of water is exciting, the stellar contamination issue underscores why astronomers need multiple observations and better techniques to truly understand these distant worlds.]]></description>
+This work provides the essential groundwork for interpreting future discoveries from the Ariel mission. When the telescope begins observing real exoplanets, scientists will have this comprehensive library to compare against, helping them decode what each atmosphere reveals about its planet's formation history and potential for supporting life.]]></description>
         <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+        <category>physics.comp-ph</category>
+    </item>
+    <item>
+      <title>proto-Lightspeed: a high-speed, ultra-low read noise imager on the Magellan Clay Telescope</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-16268v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-16268v1</guid>
+      <pubDate>Mon, 26 Jan 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Christopher Layden et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+Imagine trying to photograph a firefly blinking on and off in your backyard while standing a mile away. That's essentially what astronomers face when studying rapidly changing events in space—like planets passing in front of distant stars, or explosive flares from cosmic objects. These fleeting celestial events happen incredibly fast and are extremely faint, making them nearly impossible to capture with traditional telescopes. Missing these brief moments means losing crucial clues about how planets form, how stars behave, and what strange objects lurk in the outer reaches of our solar system. This is why astronomers desperately needed a new kind of cosmic camera.
+What They Did
+Scientists built an ultra-fast space camera called proto-Lightspeed and attached it to one of the world's most powerful telescopes in Chile. Think of it as upgrading from an old film camera to the most advanced high-speed digital camera imaginable. This new instrument can take up to 200 pictures per second of the entire viewing area, or an incredible 6,600 pictures per second when focused on smaller regions of sky. The camera is so sensitive it can detect almost individual particles of light, with virtually no background noise that typically ruins faint astronomical images. The team used commercially available lenses combined with cutting-edge Japanese camera technology, proving that sometimes the best scientific tools come from clever combinations of existing technology.
+Key Findings
+The camera successfully captured razor-sharp images during its test runs, proving it can spot the kinds of rapid changes astronomers have been trying to study for years. It can photograph objects across different colors of light simultaneously and adjust its magnification like a zoom lens. The instrument works so well that it will become available to the international astronomy community in 2026, giving researchers worldwide access to this powerful new tool.
+Looking Forward
+This technology opens entirely new windows into the universe's most dynamic events. Astronomers will finally be able to study how planets affect their host stars during transits, catch mysterious objects in the outer solar system as they briefly block background starlight, and witness the split-second flares that reveal secrets about cosmic collisions and explosions. The team is already planning an even more advanced version that could revolutionize how we discover and study exoplanets.]]></description>
+        <category>astro-ph.IM</category>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.HE</category>
         <category>astro-ph.SR</category>
     </item>
   </channel>
