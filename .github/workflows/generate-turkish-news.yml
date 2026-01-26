@@ -1,19 +1,35 @@
 name: Generate Turkish News from arXiv Papers
 
 on:
+  # Trigger after Update Exoplanet Papers workflow completes
+  workflow_run:
+    workflows: ["Update Exoplanet Papers"]
+    types:
+      - completed
+  
+  # Keep schedule as backup (weekdays 06:00 Istanbul / 03:00 UTC)
   schedule:
-    # Run at 03:00 UTC on weekdays (1 hour after papers are fetched at 02:00 UTC)
-    # This is 06:00 Istanbul time
     - cron: '0 3 * * 1-5'
-  workflow_dispatch:  # Allow manual trigger
+  
+  # Allow manual trigger
+  workflow_dispatch:
 
 jobs:
   generate-news:
     runs-on: ubuntu-latest
+    # Only run if triggered manually, by schedule, or if the triggering workflow succeeded
+    if: |
+      github.event_name == 'workflow_dispatch' ||
+      github.event_name == 'schedule' ||
+      (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success')
     
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          # Get latest changes (important when triggered by workflow_run)
+          ref: main
+          fetch-depth: 1
       
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -28,6 +44,7 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
+          cd $GITHUB_WORKSPACE
           python arxiv/scripts/generate_turkish_news.py
       
       - name: Commit and push if changed
