@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 26 Jan 2026 03:53:19 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 Jan 2026 03:44:22 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,76 +15,68 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>TOI-6692b: An eccentric 130 day period giant planet with a single transit from TESS</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2601-16357v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-16357v1</guid>
-      <pubDate>Mon, 26 Jan 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Allyson Bieryla et al.</dc:creator>
+      <title>Possible favored Great Oxidation Event scenario on exoplanets around M-Stars with the example of TRAPPIST-1e</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-18324v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-18324v1</guid>
+      <pubDate>Tue, 27 Jan 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Adam Y. Jaziri, Nathalie Carrasco, Benjamin Charnay</dc:creator>
       <description><![CDATA[Why It Matters
-Imagine trying to solve a jigsaw puzzle with only one piece visible for a brief moment every four months. That's essentially what astronomers faced when they spotted a single, mysterious signal from a distant world called TOI-6692b. This discovery matters because it showcases how modern astronomy can piece together the story of an entire planet from just fleeting glimpses. Finding planets with such long orbital periods—those that take months to complete one "year"—helps us understand how planetary systems like our own solar system form and evolve over billions of years.
+Earth's history includes a dramatic transformation that made complex life possible: the Great Oxidation Event. About 2.4 billion years ago, our planet's atmosphere suddenly filled with oxygen, paving the way for animals to eventually evolve. But this transition took hundreds of millions of years after oxygen-producing life first appeared, suggesting the process requires very specific conditions. Scientists have wondered whether planets orbiting other stars could undergo similar transformations—and if so, how we might detect them. This research explores whether Earth-like planets around the most common type of star in our galaxy, called M dwarfs, might actually have an easier path to developing oxygen-rich atmospheres than Earth did.
 What They Did
-The planet was first spotted by citizen scientists volunteers who comb through data from TESS, NASA's planet-hunting telescope. They noticed a single dimming event as the planet passed in front of its star—like watching a moth briefly cross a distant streetlight. To confirm this wasn't just a fluke, astronomers used multiple ground-based telescopes around the world to measure tiny wobbles in the star caused by the planet's gravitational pull. They also attempted to catch the planet crossing its star again by timing their observations to coincide with when they predicted the next transit would occur, despite having only one previous sighting to work with.
+The researchers used computer models to simulate the atmospheric evolution of TRAPPIST-1 e, a potentially habitable planet orbiting a red dwarf star about 40 light-years away. Think of it like creating a detailed weather forecast, but instead of predicting tomorrow's conditions, they're modeling how a planet's entire atmosphere might change over billions of years. They fed their model different scenarios for how oxygen could accumulate—either from photosynthetic life or from non-biological processes—and tracked how the atmosphere would respond. Their simulation account for the unique conditions around red dwarf stars, which emit different types of light than our Sun.
 Key Findings
-TOI-6692b is a gas giant similar to Jupiter but follows a highly stretched-out, oval-shaped orbit that takes 130 days to complete. Its path is so eccentric that it swings much closer and farther from its star during each orbit—imagine Earth having summers hot enough to melt lead and winters colder than Mars. The planet's 11-hour-long transit makes it one of the few distant worlds where astronomers have nailed down its mass, size, and orbital shape with confidence.
+The results were striking: TRAPPIST-1 e could develop its oxygen revolution up to a billion years faster than Earth did. The key lies in ozone formation. The planet's star emits more ultraviolet light in certain wavelengths, which helps create ozone more efficiently from smaller amounts of oxygen. This ozone layer acts like a protective shield, allowing oxygen to build up in the atmosphere much more quickly. The researchers found that oxygen levels could rise high enough to support animal-like life forms in a fraction of the time it took on Earth.
 Looking Forward
-This discovery demonstrates that even single, brief observations can unlock planetary secrets when combined with persistent follow-up work. The techniques used here will help astronomers find more distant worlds and better understand how planets get kicked into such extreme orbits.]]></description>
+This research suggests that potentially habitable worlds around red dwarf stars—which make up about 75% of all stars—might be more likely to develop oxygen-rich atmospheres than previously thought. Even more exciting, the enhanced ozone production means the James Webb Space Telescope could detect these atmospheric signatures with far fewer observations than expected, possibly giving us our first glimpse of biological activity on distant worlds within the coming decade.]]></description>
         <category>astro-ph.EP</category>
-        <category>astro-ph.SR</category>
     </item>
     <item>
-      <title>Mercury-Arχes: a high-performance n-body code for planet formation studies</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2601-16791v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-16791v1</guid>
-      <pubDate>Mon, 26 Jan 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Diego Turrini et al.</dc:creator>
+      <title>The Role of Intrinsic Temperature and Vertical Mixing in Characterizing Sub-Neptune Atmospheres</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-18769v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-18769v1</guid>
+      <pubDate>Tue, 27 Jan 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Neha Dushyantha Kumar et al.</dc:creator>
       <description><![CDATA[Why It Matters
-Imagine trying to understand how a bustling city develops by watching it in fast-forward over centuries—that's essentially what scientists are doing when they study how planets form around distant stars. This research matters because it helps us answer one of humanity's most profound questions: How common are planetary systems like our own? By creating more powerful computer simulations of planet formation, researchers can better predict what kinds of worlds exist beyond our solar system and whether Earth-like planets capable of supporting life are rare cosmic accidents or common occurrences throughout the galaxy.
+Imagine trying to figure out what's inside a wrapped gift just by weighing it and looking at its size. That's essentially the challenge astronomers face when studying sub-Neptune planets—worlds larger than Earth but smaller than Neptune that are among the most common planets in our galaxy. These mysterious worlds could be ocean planets with thin atmospheres, or rocky planets wrapped in thick blankets of hydrogen and helium gas. The difference matters enormously: it tells us whether Earth-like worlds with vast oceans might be common throughout the universe, potentially harboring life as we know it.
 What They Did
-The researchers developed a sophisticated computer program called Mercury-Arχes that acts like a cosmic flight simulator for planet formation. Just as flight simulators must track thousands of variables simultaneously—weather, physics, mechanical systems—this program tracks the gravitational dance between countless objects in a young solar system: massive gas giant planets, rocky worlds like Earth, and swarms of smaller bodies like asteroids and comets. The challenge is that these simulations must also account for the swirling disk of gas that surrounds young stars, which pushes and pulls on forming planets like a cosmic wind. To handle these incredibly complex calculations, the team optimized their program to run on multiple computer processors simultaneously, like having dozens of calculators working together on the same massive equation.
+The researchers used computer models to simulate the atmospheres of sub-Neptune planets, much like meteorologists model Earth's weather but for alien worlds. They focused on two critical factors that previous studies had largely ignored: the planet's internal heat (like a fever temperature from within) and how vigorously gases mix in the atmosphere (imagine stirring soup—some planets might have calm, layered atmospheres while others churn violently). Using advanced software, they created hundreds of different atmospheric scenarios, testing temperatures ranging from Antarctic-cold to oven-warm, and mixing rates spanning seven orders of magnitude. They then examined how these conditions would affect the chemical signatures we could detect with the James Webb Space Telescope.
 Key Findings
-The main achievement is a dramatically more efficient simulation tool that can model planet formation with unprecedented detail and speed. By using parallel processing techniques, the program can simultaneously track the interactions between thousands of planetary bodies while accounting for gas disk effects—something that would have taken prohibitively long with older methods.
+The team discovered that a planet's internal temperature and atmospheric mixing dramatically change which molecules appear in its atmosphere. Methane, carbon dioxide, carbon monoxide, ammonia, and hydrogen cyanide levels varied significantly across different scenarios, while water vapor remained relatively stable. Most importantly, they found that making simple assumptions about these factors—as previous studies had done—could lead scientists to completely misidentify what these planets are made of, potentially mistaking a rocky world for an ocean planet or vice versa.
 Looking Forward
-This computational breakthrough will allow scientists to run more comprehensive simulations of how different types of planetary systems form, helping us understand why some stars host multiple Earth-sized worlds while others have only gas giants. These insights will prove invaluable as next-generation telescopes discover thousands of new exoplanets.]]></description>
+This research provides astronomers with a new toolkit for interpreting observations from the James Webb Space Telescope. By considering the full range of possible atmospheric conditions rather than making simplified assumptions, scientists can now make more accurate determinations about whether sub-Neptune planets are ocean worlds or rocky planets with thick atmospheres. This improved understanding brings us closer to answering one of astronomy's biggest questions: how common are potentially habitable worlds in our galaxy?]]></description>
         <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
-        <category>physics.comp-ph</category>
     </item>
     <item>
-      <title>The Origins of Planets for ArieL (OPAL) Key Science Project: the end-to-end planet formation campaign for the ESA space mission Ariel</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2601-16841v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-16841v1</guid>
-      <pubDate>Mon, 26 Jan 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Danae Polychroni et al.</dc:creator>
+      <title>Atmospheric Circulation of High-Obliquity Mini-Neptunes</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-18606v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-18606v1</guid>
+      <pubDate>Tue, 27 Jan 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Yanhong Lai, Xianyu Tan, Yubo Su</dc:creator>
       <description><![CDATA[Why It Matters
-Imagine if every person on Earth had wildly different air to breathe—some with oxygen-rich atmospheres, others thick with methane, and still others as thin as mountaintop air. This is exactly what scientists are discovering about planets beyond our solar system. Thousands of exoplanets have been found, and they show an incredible diversity not just in size and temperature, but in the very air that surrounds them. Understanding why these planetary atmospheres are so different could unlock the secrets of how planets form and whether any might harbor life. It's like having a cosmic detective story where the atmosphere holds the clues to each planet's origin story.
+Imagine a planet tilted so far on its side that it essentially rolls around its star instead of spinning like a top. Scientists have discovered that some distant worlds called mini-Neptunes—planets larger than Earth but smaller than Neptune—might be tilted at extreme angles, creating bizarre weather patterns unlike anything in our solar system. With NASA's powerful James Webb Space Telescope now able to study the atmospheres of these far-off worlds, we're getting our first glimpse of truly alien meteorology. Understanding these tilted planets helps us grasp the incredible diversity of worlds beyond our solar system and challenges our assumptions about how planetary atmospheres behave.
 What They Did
-To prepare for Ariel, an upcoming European space telescope that will study hundreds of exoplanet atmospheres, researchers created something like a massive recipe book for planetary atmospheres. They built computer simulations that follow the entire "life story" of a planet—starting from the swirling disk of gas and dust around a young star, through the planet's formation, and ending with its final atmospheric composition. Think of it as creating a family tree that connects each planet to its birthplace. Their simulations track dozens of chemical elements and hundreds of different molecules, creating a library of realistic artificial atmospheres that spans the full range of possibilities scientists expect to find in space.
+Researchers used computer simulations to model the weather patterns on K2-290 b, a mini-Neptune located about 897 light-years away that may be tilted at a dramatic 67-degree angle (imagine Earth tilted so far that the North Pole points toward the sun during summer). They created detailed three-dimensional models of the planet's atmosphere, like sophisticated weather forecasting software, to predict wind patterns, temperature distributions, and seasonal changes. The team ran different scenarios—some assuming the planet always shows the same face to its star (like our Moon does to Earth), and others where it rotates independently while orbiting.
 Key Findings
-The research revealed that even tiny differences in starting conditions can lead to dramatically different planetary outcomes. Like how small changes in a recipe can completely alter the final dish, minor variations in the original disk of material around a star can produce planets with vastly different atmospheric compositions. This helps explain the stunning diversity scientists observe in real exoplanets and shows that the universe is capable of creating an almost endless variety of worlds.
+The simulations revealed that these tilted mini-Neptunes develop remarkably uniform temperatures across their surfaces, with only moderate hot and cold spots. When the planet is locked to show one side to its star, powerful eastward winds create a "superrotation" that efficiently spreads heat around the globe. For freely rotating tilted planets, the researchers discovered something extraordinary: the atmosphere oscillates in roughly 70-day cycles, creating a complex seasonal pattern driven by the extreme tilt. These weather signals would be detectable by our best telescopes, though the signatures are subtle—about 100 parts per million in atmospheric measurements.
 Looking Forward
-This work provides the essential groundwork for interpreting future discoveries from the Ariel mission. When the telescope begins observing real exoplanets, scientists will have this comprehensive library to compare against, helping them decode what each atmosphere reveals about its planet's formation history and potential for supporting life.]]></description>
+This research opens a new frontier in exoplanet science, showing that worlds can have atmospheric behaviors far more exotic than previously imagined. As the James Webb Space Telescope continues observing mini-Neptunes, astronomers now know what signatures to look for when hunting for these dramatically tilted worlds, potentially revealing an entire class of planets with seasons and weather patterns that would make science fiction writers envious.]]></description>
         <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
-        <category>physics.comp-ph</category>
     </item>
     <item>
-      <title>proto-Lightspeed: a high-speed, ultra-low read noise imager on the Magellan Clay Telescope</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2601-16268v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-16268v1</guid>
-      <pubDate>Mon, 26 Jan 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Christopher Layden et al.</dc:creator>
+      <title>Timescales diagnostics for saving viscous and MHD-driven dusty discs from external photoevaporation</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-13200v2</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-13200v2</guid>
+      <pubDate>Tue, 27 Jan 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Gabriele Pichierri et al.</dc:creator>
       <description><![CDATA[Why It Matters
-Imagine trying to photograph a firefly blinking on and off in your backyard while standing a mile away. That's essentially what astronomers face when studying rapidly changing events in space—like planets passing in front of distant stars, or explosive flares from cosmic objects. These fleeting celestial events happen incredibly fast and are extremely faint, making them nearly impossible to capture with traditional telescopes. Missing these brief moments means losing crucial clues about how planets form, how stars behave, and what strange objects lurk in the outer reaches of our solar system. This is why astronomers desperately needed a new kind of cosmic camera.
+Imagine trying to build a sandcastle while ocean waves constantly wash away your progress. That's essentially what happens when planets try to form around young stars—they need enough time and material to come together before powerful stellar radiation blows everything away. This research tackles one of astronomy's biggest puzzles: how do planets manage to form at all? Understanding this process helps us explain not only how our own Solar System came to be, but also why we see such incredible diversity among the thousands of exoplanets discovered orbiting other stars. The answer lies in the delicate dance between the forces that help planetary building blocks survive and those that destroy them.
 What They Did
-Scientists built an ultra-fast space camera called proto-Lightspeed and attached it to one of the world's most powerful telescopes in Chile. Think of it as upgrading from an old film camera to the most advanced high-speed digital camera imaginable. This new instrument can take up to 200 pictures per second of the entire viewing area, or an incredible 6,600 pictures per second when focused on smaller regions of sky. The camera is so sensitive it can detect almost individual particles of light, with virtually no background noise that typically ruins faint astronomical images. The team used commercially available lenses combined with cutting-edge Japanese camera technology, proving that sometimes the best scientific tools come from clever combinations of existing technology.
+The researchers created computer simulations of protoplanetary discs—the spinning pancakes of gas and dust that surround newborn stars and serve as planet-forming nurseries. They tested different scenarios to see what happens when these discs face various challenges. Think of it like testing different recipes under different conditions: some discs spread outward due to internal friction (like honey slowly spreading on toast), others are pushed around by magnetic forces (like iron filings near a magnet), and some experience both effects. Meanwhile, they subjected these virtual discs to different levels of harsh ultraviolet radiation from nearby massive stars—the cosmic equivalent of a blowtorch trying to evaporate the disc material.
 Key Findings
-The camera successfully captured razor-sharp images during its test runs, proving it can spot the kinds of rapid changes astronomers have been trying to study for years. It can photograph objects across different colors of light simultaneously and adjust its magnification like a zoom lens. The instrument works so well that it will become available to the international astronomy community in 2026, giving researchers worldwide access to this powerful new tool.
+The team discovered that a disc's survival depends on a crucial balance between two competing factors: its ability to spread outward and the strength of destructive radiation it faces. Surprisingly, discs driven by magnetic winds, while better protected from radiation damage, don't actually live longer than those evolving through friction. At high radiation levels, it doesn't matter which mechanism drives the disc—they all face similar lifetimes. For the dust particles that eventually become planets, the biggest threats are drifting inward toward the star and being swept away by radiation-driven winds.
 Looking Forward
-This technology opens entirely new windows into the universe's most dynamic events. Astronomers will finally be able to study how planets affect their host stars during transits, catch mysterious objects in the outer solar system as they briefly block background starlight, and witness the split-second flares that reveal secrets about cosmic collisions and explosions. The team is already planning an even more advanced version that could revolutionize how we discover and study exoplanets.]]></description>
-        <category>astro-ph.IM</category>
+These findings suggest that planet formation requires more than just the right balance of forces—it likely needs special structures within discs to trap and protect planet-building materials. This research provides a roadmap for understanding why some stellar systems successfully form planets while others remain barren, ultimately helping us piece together the cosmic story of how worlds like Earth come to exist.]]></description>
         <category>astro-ph.EP</category>
-        <category>astro-ph.HE</category>
-        <category>astro-ph.SR</category>
     </item>
   </channel>
 </rss>
