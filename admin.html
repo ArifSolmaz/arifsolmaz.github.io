@@ -616,6 +616,25 @@
       .form-row { grid-template-columns: 1fr; }
       .modal { max-height: 95vh; }
     }
+
+    /* Save button saving state */
+    .btn.saving {
+      opacity: 0.7;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+    
+    .btn.saving::after {
+      content: '';
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      margin-left: 8px;
+      border: 2px solid transparent;
+      border-top-color: currentColor;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
   </style>
 </head>
 <body>
@@ -640,7 +659,7 @@
       <div class="header-actions">
         <button class="btn btn-ghost" onclick="refreshData()">🔄 Refresh</button>
         <button class="btn btn-ghost" onclick="showSettingsModal()">⚙️ Settings</button>
-        <button class="btn btn-success" onclick="saveCurrentTab()">🚀 Save to GitHub</button>
+        <button class="btn btn-success" id="saveBtn" onclick="saveCurrentTab()">🚀 Save to GitHub</button>
       </div>
     </header>
 
@@ -851,6 +870,7 @@ let editingItem = null;
 let editingType = '';
 let selectedItems = new Set();
 let archiveIndex = { dates: [] };
+let isSaving = false;
 
 // ====== ACCESS CONTROL ======
 function simpleHash(str) {
@@ -1413,8 +1433,29 @@ function getToken() {
 }
 
 async function saveCurrentTab() {
-  if (currentTab === 'en') await saveEnToGitHub();
-  else await saveTrToGitHub();
+  if (isSaving) {
+    showToast('⏳ Save already in progress...', 'warning');
+    return;
+  }
+  
+  const saveBtn = document.getElementById('saveBtn');
+  const originalText = saveBtn.innerHTML;
+  
+  try {
+    isSaving = true;
+    saveBtn.classList.add('saving');
+    saveBtn.innerHTML = '⏳ Saving...';
+    
+    if (currentTab === 'en') {
+      await saveEnToGitHub();
+    } else {
+      await saveTrToGitHub();
+    }
+  } finally {
+    isSaving = false;
+    saveBtn.classList.remove('saving');
+    saveBtn.innerHTML = originalText;
+  }
 }
 
 async function saveEnToGitHub() {
@@ -1424,8 +1465,6 @@ async function saveEnToGitHub() {
     showSettingsModal();
     return;
   }
-  
-  showToast('Saving to GitHub...', 'success');
   
   try {
     // Determine which file to save (today's or archive)
@@ -1509,8 +1548,6 @@ async function saveTrToGitHub() {
     showSettingsModal();
     return;
   }
-  
-  showToast('Saving to GitHub...', 'success');
   
   try {
     // Get current SHA
