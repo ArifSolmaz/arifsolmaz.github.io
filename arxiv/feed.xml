@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 27 Jan 2026 03:44:22 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 28 Jan 2026 03:41:30 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,67 +15,52 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>Possible favored Great Oxidation Event scenario on exoplanets around M-Stars with the example of TRAPPIST-1e</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2601-18324v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-18324v1</guid>
-      <pubDate>Tue, 27 Jan 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Adam Y. Jaziri, Nathalie Carrasco, Benjamin Charnay</dc:creator>
+      <title>A Cool Earth-sized Planet Candidate Transiting a Tenth Magnitude K-dwarf From K2</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-19870v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-19870v1</guid>
+      <pubDate>Wed, 28 Jan 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Alexander Venner et al.</dc:creator>
       <description><![CDATA[Why It Matters
-Earth's history includes a dramatic transformation that made complex life possible: the Great Oxidation Event. About 2.4 billion years ago, our planet's atmosphere suddenly filled with oxygen, paving the way for animals to eventually evolve. But this transition took hundreds of millions of years after oxygen-producing life first appeared, suggesting the process requires very specific conditions. Scientists have wondered whether planets orbiting other stars could undergo similar transformations—and if so, how we might detect them. This research explores whether Earth-like planets around the most common type of star in our galaxy, called M dwarfs, might actually have an easier path to developing oxygen-rich atmospheres than Earth did.
+Finding planets like Earth around other stars is one of astronomy's greatest quests—and it's much harder than you might think. Most Earth-like worlds are too small and dim to detect with current technology, like trying to spot a firefly next to a searchlight from miles away. This discovery represents a major breakthrough: astronomers have found what appears to be an Earth-sized planet in the habitable zone around a Sun-like star, and crucially, the star is bright enough that we can study this world in detail with future telescopes.
 What They Did
-The researchers used computer models to simulate the atmospheric evolution of TRAPPIST-1 e, a potentially habitable planet orbiting a red dwarf star about 40 light-years away. Think of it like creating a detailed weather forecast, but instead of predicting tomorrow's conditions, they're modeling how a planet's entire atmosphere might change over billions of years. They fed their model different scenarios for how oxygen could accumulate—either from photosynthetic life or from non-biological processes—and tracked how the atmosphere would respond. Their simulation account for the unique conditions around red dwarf stars, which emit different types of light than our Sun.
+The researchers used NASA's K2 space telescope to monitor the brightness of thousands of stars, watching for tiny dips in light that occur when a planet passes in front of its host star—like a solar eclipse, but much smaller. They focused on a star called HD 137010, similar to our Sun but slightly cooler. During their observations in 2017, they detected a single, 10-hour-long dimming event where the star's brightness dropped by just 0.0225%—an incredibly subtle change that required extraordinary precision to detect. The team then analyzed years of additional data from ground-based telescopes and satellites to confirm this wasn't a false alarm caused by other astronomical phenomena.
 Key Findings
-The results were striking: TRAPPIST-1 e could develop its oxygen revolution up to a billion years faster than Earth did. The key lies in ozone formation. The planet's star emits more ultraviolet light in certain wavelengths, which helps create ozone more efficiently from smaller amounts of oxygen. This ozone layer acts like a protective shield, allowing oxygen to build up in the atmosphere much more quickly. The researchers found that oxygen levels could rise high enough to support animal-like life forms in a fraction of the time it took on Earth.
+The planet candidate, dubbed HD 137010 b, is remarkably Earth-like. It's just 6% larger than Earth and orbits its star roughly once every 355 days (compared to Earth's 365-day year). The planet sits about 88% of Earth's distance from its star and receives about 29% of the sunlight Earth gets—placing it near the outer edge of the "habitable zone" where liquid water could potentially exist on its surface.
 Looking Forward
-This research suggests that potentially habitable worlds around red dwarf stars—which make up about 75% of all stars—might be more likely to develop oxygen-rich atmospheres than previously thought. Even more exciting, the enhanced ozone production means the James Webb Space Telescope could detect these atmospheric signatures with far fewer observations than expected, possibly giving us our first glimpse of biological activity on distant worlds within the coming decade.]]></description>
+This discovery opens an exciting new chapter in exoplanet science. Because the host star is relatively bright and nearby, future space telescopes like the James Webb Space Telescope could potentially analyze the planet's atmosphere for signs of water vapor, oxygen, or other molecules that might indicate habitability—or even life.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>The Role of Intrinsic Temperature and Vertical Mixing in Characterizing Sub-Neptune Atmospheres</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2601-18769v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-18769v1</guid>
-      <pubDate>Tue, 27 Jan 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Neha Dushyantha Kumar et al.</dc:creator>
+      <title>Towards a Comprehensive Understanding of Planetary Systems through Population-Level, Large-Scale Surveys</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-18841v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-18841v1</guid>
+      <pubDate>Wed, 28 Jan 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Francisco J. Pozuelos et al.</dc:creator>
       <description><![CDATA[Why It Matters
-Imagine trying to figure out what's inside a wrapped gift just by weighing it and looking at its size. That's essentially the challenge astronomers face when studying sub-Neptune planets—worlds larger than Earth but smaller than Neptune that are among the most common planets in our galaxy. These mysterious worlds could be ocean planets with thin atmospheres, or rocky planets wrapped in thick blankets of hydrogen and helium gas. The difference matters enormously: it tells us whether Earth-like worlds with vast oceans might be common throughout the universe, potentially harboring life as we know it.
+Imagine trying to understand all animals on Earth by only knowing where they live, but nothing about their size, diet, or behavior. That's essentially where we stand with planets beyond our solar system. Over 30 years of planet hunting has revealed thousands of these "exoplanets," but we know surprisingly little about what they're actually like. Are they rocky like Earth or gassy like Jupiter? Do they have atmospheres that could support life? These aren't just academic questions—understanding planetary diversity is key to knowing whether Earth-like worlds are common or incredibly rare, and whether we might find life elsewhere in the universe.
 What They Did
-The researchers used computer models to simulate the atmospheres of sub-Neptune planets, much like meteorologists model Earth's weather but for alien worlds. They focused on two critical factors that previous studies had largely ignored: the planet's internal heat (like a fever temperature from within) and how vigorously gases mix in the atmosphere (imagine stirring soup—some planets might have calm, layered atmospheres while others churn violently). Using advanced software, they created hundreds of different atmospheric scenarios, testing temperatures ranging from Antarctic-cold to oven-warm, and mixing rates spanning seven orders of magnitude. They then examined how these conditions would affect the chemical signatures we could detect with the James Webb Space Telescope.
+This research is actually a comprehensive review and roadmap rather than a single study. The authors analyzed the current state of exoplanet research, examining thousands of discovered planets to understand what we know versus what we don't. They compared our detection capabilities—which are excellent at finding planets—with our characterization abilities, which tell us what those planets are actually like. Think of it as the difference between spotting distant ships on the horizon versus being able to determine their size, cargo, and destination.
 Key Findings
-The team discovered that a planet's internal temperature and atmospheric mixing dramatically change which molecules appear in its atmosphere. Methane, carbon dioxide, carbon monoxide, ammonia, and hydrogen cyanide levels varied significantly across different scenarios, while water vapor remained relatively stable. Most importantly, they found that making simple assumptions about these factors—as previous studies had done—could lead scientists to completely misidentify what these planets are made of, potentially mistaking a rocky world for an ocean planet or vice versa.
+The results reveal a striking imbalance: while we've discovered over 5,000 exoplanets, we have detailed physical information for only a tiny fraction. Most discovered planets remain "physically ambiguous"—we might know they exist and roughly how big they are, but we can't distinguish between fundamentally different types of worlds. Current cutting-edge telescopes like the James Webb Space Telescope excel at studying individual planets in extraordinary detail, but they're too slow to characterize the hundreds or thousands of planets needed to understand broader patterns.
 Looking Forward
-This research provides astronomers with a new toolkit for interpreting observations from the James Webb Space Telescope. By considering the full range of possible atmospheric conditions rather than making simplified assumptions, scientists can now make more accurate determinations about whether sub-Neptune planets are ocean worlds or rocky planets with thick atmospheres. This improved understanding brings us closer to answering one of astronomy's biggest questions: how common are potentially habitable worlds in our galaxy?]]></description>
+The authors argue we need a revolutionary new approach for the 2040s: networks of smaller, specialized telescopes that can rapidly study planetary atmospheres and interiors across large samples. This would transform exoplanet science from a field focused on individual discoveries to one that understands planetary systems as a whole—finally answering whether worlds like Earth are cosmic commonalities or extraordinary exceptions.]]></description>
+        <category>astro-ph.IM</category>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>Atmospheric Circulation of High-Obliquity Mini-Neptunes</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2601-18606v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-18606v1</guid>
-      <pubDate>Tue, 27 Jan 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Yanhong Lai, Xianyu Tan, Yubo Su</dc:creator>
+      <title>Evidence for a Peak at ~0.3 in the Eccentricity Distribution of Typical Super-Jovian Exoplanets</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-18877v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-18877v1</guid>
+      <pubDate>Wed, 28 Jan 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Sarah Blunt et al.</dc:creator>
       <description><![CDATA[Why It Matters
-Imagine a planet tilted so far on its side that it essentially rolls around its star instead of spinning like a top. Scientists have discovered that some distant worlds called mini-Neptunes—planets larger than Earth but smaller than Neptune—might be tilted at extreme angles, creating bizarre weather patterns unlike anything in our solar system. With NASA's powerful James Webb Space Telescope now able to study the atmospheres of these far-off worlds, we're getting our first glimpse of truly alien meteorology. Understanding these tilted planets helps us grasp the incredible diversity of worlds beyond our solar system and challenges our assumptions about how planetary atmospheres behave.
+For decades, astronomers have been discovering planets beyond our solar system, revealing that the universe is teeming with worlds vastly different from our own. Among the most intriguing are "super-Jovian" planets—gas giants that dwarf even Jupiter, our solar system's largest planet. Understanding how these massive worlds move through space tells us the story of planetary systems: were they born in peaceful, orderly nurseries, or did they survive chaotic, violent histories? This research helps us decode those origin stories by examining the stretched-out, oval-shaped orbits that many of these giant planets follow around their stars.
 What They Did
-Researchers used computer simulations to model the weather patterns on K2-290 b, a mini-Neptune located about 897 light-years away that may be tilted at a dramatic 67-degree angle (imagine Earth tilted so far that the North Pole points toward the sun during summer). They created detailed three-dimensional models of the planet's atmosphere, like sophisticated weather forecasting software, to predict wind patterns, temperature distributions, and seasonal changes. The team ran different scenarios—some assuming the planet always shows the same face to its star (like our Moon does to Earth), and others where it rotates independently while orbiting.
+The researchers analyzed data from the California Legacy Survey, which tracked hundreds of exoplanets discovered by watching how their gravity makes their host stars wobble slightly. Think of it like watching someone spin around while holding an invisible partner—you can tell something is there by the motion. The team focused on the most massive planets, those three to twenty times heavier than Jupiter, and carefully measured how "stretched out" their orbits are. They used sophisticated statistical methods to account for the fact that some types of planets are easier to detect than others, ensuring their results reflected the true population of these worlds rather than just the ones we happen to spot most easily.
 Key Findings
-The simulations revealed that these tilted mini-Neptunes develop remarkably uniform temperatures across their surfaces, with only moderate hot and cold spots. When the planet is locked to show one side to its star, powerful eastward winds create a "superrotation" that efficiently spreads heat around the globe. For freely rotating tilted planets, the researchers discovered something extraordinary: the atmosphere oscillates in roughly 70-day cycles, creating a complex seasonal pattern driven by the extreme tilt. These weather signals would be detectable by our best telescopes, though the signatures are subtle—about 100 parts per million in atmospheric measurements.
+The most striking discovery is that super-Jovian planets have a strong preference for moderately stretched orbits. While planets in perfectly circular orbits have an eccentricity of 0, and highly elongated orbits approach 1, these massive planets cluster around an eccentricity of 0.3. About 92% of their statistical models showed this clear peak, meaning these giants are much more likely to travel in somewhat oval-shaped paths rather than nearly circular ones. This pattern was distinctly different from smaller giant planets, suggesting that the most massive worlds experienced different formation histories.
 Looking Forward
-This research opens a new frontier in exoplanet science, showing that worlds can have atmospheric behaviors far more exotic than previously imagined. As the James Webb Space Telescope continues observing mini-Neptunes, astronomers now know what signatures to look for when hunting for these dramatically tilted worlds, potentially revealing an entire class of planets with seasons and weather patterns that would make science fiction writers envious.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Timescales diagnostics for saving viscous and MHD-driven dusty discs from external photoevaporation</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2601-13200v2</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-13200v2</guid>
-      <pubDate>Tue, 27 Jan 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Gabriele Pichierri et al.</dc:creator>
-      <description><![CDATA[Why It Matters
-Imagine trying to build a sandcastle while ocean waves constantly wash away your progress. That's essentially what happens when planets try to form around young stars—they need enough time and material to come together before powerful stellar radiation blows everything away. This research tackles one of astronomy's biggest puzzles: how do planets manage to form at all? Understanding this process helps us explain not only how our own Solar System came to be, but also why we see such incredible diversity among the thousands of exoplanets discovered orbiting other stars. The answer lies in the delicate dance between the forces that help planetary building blocks survive and those that destroy them.
-What They Did
-The researchers created computer simulations of protoplanetary discs—the spinning pancakes of gas and dust that surround newborn stars and serve as planet-forming nurseries. They tested different scenarios to see what happens when these discs face various challenges. Think of it like testing different recipes under different conditions: some discs spread outward due to internal friction (like honey slowly spreading on toast), others are pushed around by magnetic forces (like iron filings near a magnet), and some experience both effects. Meanwhile, they subjected these virtual discs to different levels of harsh ultraviolet radiation from nearby massive stars—the cosmic equivalent of a blowtorch trying to evaporate the disc material.
-Key Findings
-The team discovered that a disc's survival depends on a crucial balance between two competing factors: its ability to spread outward and the strength of destructive radiation it faces. Surprisingly, discs driven by magnetic winds, while better protected from radiation damage, don't actually live longer than those evolving through friction. At high radiation levels, it doesn't matter which mechanism drives the disc—they all face similar lifetimes. For the dust particles that eventually become planets, the biggest threats are drifting inward toward the star and being swept away by radiation-driven winds.
-Looking Forward
-These findings suggest that planet formation requires more than just the right balance of forces—it likely needs special structures within discs to trap and protect planet-building materials. This research provides a roadmap for understanding why some stellar systems successfully form planets while others remain barren, ultimately helping us piece together the cosmic story of how worlds like Earth come to exist.]]></description>
+This finding points toward dramatic origins for the universe's most massive planets. The moderately stretched orbits suggest these worlds survived violent early histories—perhaps including collisions with other massive objects or gravitational battles between multiple giant planets. As we discover more exoplanets with upcoming space missions, astronomers can test whether this pattern holds true across different types of planetary systems, ultimately helping us understand whether our own solar system's relatively calm arrangement is typical or remarkably peaceful.]]></description>
         <category>astro-ph.EP</category>
     </item>
   </channel>
