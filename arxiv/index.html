@@ -834,21 +834,25 @@
             const urlDate = getDateFromUrl();
             const urlHash = window.location.hash;
             
+            console.log('[init] URL date:', urlDate, 'hash:', urlHash);
+            console.log('[init] Archive index dates:', archiveIndex.dates);
+            
             if (urlDate) {
                 // URL has date parameter - try to load that date
-                console.log(`URL has date parameter: ${urlDate}`);
+                console.log(`[init] Loading date from URL: ${urlDate}`);
                 await loadDateFromUrl(urlDate, urlHash);
             } else if (archiveIndex.dates && archiveIndex.dates.length > 0) {
                 // No date in URL - load latest
+                console.log(`[init] No date in URL, loading latest: ${archiveIndex.dates[0]}`);
                 await loadDate(archiveIndex.dates[0], urlHash);
             } else {
                 // Fallback to papers.json
+                console.log('[init] No archive index, loading papers.json');
                 await loadPapersWithHash('data/papers.json', urlHash);
             }
         }
 
         async function loadDateFromUrl(date, hash) {
-            // Try archive first, then papers.json
             currentDate = date;
             renderDateList();
             
@@ -865,12 +869,18 @@
             
             // Try archive file first
             const archiveUrl = `data/archive/${date}.json`;
+            console.log(`[loadDateFromUrl] Trying archive: ${archiveUrl}`);
+            
             const success = await loadPapersWithHash(archiveUrl, hash);
             
             if (!success) {
-                // Archive failed, try papers.json and check if date matches
-                console.log(`Archive not found for ${date}, trying papers.json`);
-                await loadPapersWithHash('data/papers.json', hash);
+                // Archive failed, try papers.json
+                console.log(`[loadDateFromUrl] Archive failed for ${date}, trying papers.json`);
+                const fallbackSuccess = await loadPapersWithHash('data/papers.json', hash);
+                
+                if (!fallbackSuccess) {
+                    console.error('[loadDateFromUrl] Both archive and papers.json failed');
+                }
             }
         }
 
@@ -905,19 +915,30 @@
             const content = document.getElementById('content');
             content.innerHTML = '<div class="loading"><div class="spinner"></div><p>Loading papers...</p></div>';
             
+            console.log(`[loadPapersWithHash] Loading: ${url}, hash: ${hash}`);
+            
             try {
                 // Add cache-busting parameter
                 const cacheBuster = url.includes('?') ? '&_=' : '?_=';
                 const response = await fetch(url + cacheBuster + Date.now());
-                if (!response.ok) throw new Error('Failed to load');
+                
+                console.log(`[loadPapersWithHash] Response status: ${response.status}`);
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}`);
+                }
                 
                 const data = await response.json();
                 papersData = data.papers || [];
+                
+                console.log(`[loadPapersWithHash] Loaded ${papersData.length} papers`);
+                console.log(`[loadPapersWithHash] Paper IDs:`, papersData.map(p => p.id));
                 
                 // Update currentDate from loaded data
                 const loadedDate = data.announcement_date || data.updated_at?.split('T')[0];
                 if (loadedDate) {
                     currentDate = loadedDate;
+                    console.log(`[loadPapersWithHash] Set currentDate to: ${currentDate}`);
                 }
                 
                 // Count only visible papers (not hidden)
@@ -932,10 +953,60 @@
                     
                     // Check hash from parameter or current URL
                     const hashToCheck = hash || window.location.hash;
+                    console.log(`[loadPapersWithHash] Hash to check: ${hashToCheck}`);
+                    
                     if (hashToCheck && hashToCheck.includes('paper-')) {
                         const safeId = hashToCheck.replace('#paper-', '').replace('paper-', '');
-                        console.log(`Opening modal for paper: ${safeId}`);
-                        setTimeout(() => openModal(safeId), 100);
+                        console.log(`[loadPapersWithHash] Attempting to open modal for: ${safeId}`);
+                        
+                        // Check if paper exists
+                        const paperExists = papersData.find(p => getSafeId(p.id) === safeId);
+                        console.log(`[loadPapersWithHash] Paper found:`, paperExists ? paperExists.id : 'NOT FOUND');
+                        
+                        if (paperExists) {
+                            setTimeout(() => openModal(safeId), 150);
+                        } else {
+                            console.log(`[loadPapersWithHash] Paper ${safeId} not in current data, searching archive...`);
+                            
+                            // Show searching message
+                            content.innerHTML = `
+                                <div class="loading">
+                                    <div class="spinner"></div>
+                                    <p>Paper not found in today's list. Searching archive...</p>
+                                </div>
+                            `;
+                            
+                            // Search in archive
+                            const archiveResult = await searchPaperInArchive(safeId);
+                            if (archiveResult) {
+                                console.log(`[loadPapersWithHash] Found in archive! Redirecting to ${archiveResult.date}`);
+                                
+                                // Update state with found data
+                                currentDate = archiveResult.date;
+                                papersData = archiveResult.papers;
+                                
+                                // Update UI
+                                renderDateList();
+                                const notice = document.getElementById('archiveNotice');
+                                notice.classList.add('visible');
+                                document.getElementById('archiveDate').textContent = formatDateNav(archiveResult.date);
+                                document.getElementById('currentDateLabel').textContent = formatDateNav(archiveResult.date);
+                                document.getElementById('paperCount').textContent = papersData.filter(p => !p.hidden).length;
+                                
+                                // Re-render papers list
+                                content.innerHTML = renderPapersList(papersData);
+                                
+                                // Open modal
+                                setTimeout(() => openModal(safeId), 150);
+                                
+                                // Update URL
+                                updateUrlWithDate(archiveResult.date, `#paper-${safeId}`);
+                            } else {
+                                console.warn(`[loadPapersWithHash] Paper ${safeId} not found anywhere`);
+                                // Restore papers list
+                                content.innerHTML = renderPapersList(papersData);
+                            }
+                        }
                     }
                 } else {
                     content.innerHTML = `
@@ -947,7 +1018,7 @@
                 
                 return true; // Success
             } catch (error) {
-                console.error('Error loading papers:', error);
+                console.error(`[loadPapersWithHash] Error loading ${url}:`, error);
                 
                 if (url.includes('archive/')) {
                     // Don't retry here - let caller handle fallback
@@ -966,6 +1037,42 @@
         // Legacy wrapper for date navigation clicks
         async function loadPapers(url) {
             return await loadPapersWithHash(url, '');
+        }
+
+        // Smart paper search - searches archive if paper not found in current date
+        async function searchPaperInArchive(safeId) {
+            console.log(`[searchPaperInArchive] Searching for ${safeId} in archive...`);
+            
+            if (!archiveIndex.dates || archiveIndex.dates.length === 0) {
+                console.log('[searchPaperInArchive] No archive dates available');
+                return null;
+            }
+            
+            // Search through archive dates (skip first one, we already checked it)
+            for (const date of archiveIndex.dates.slice(1)) {
+                const archiveUrl = `data/archive/${date}.json`;
+                console.log(`[searchPaperInArchive] Checking ${date}...`);
+                
+                try {
+                    const response = await fetch(archiveUrl + '?_=' + Date.now());
+                    if (!response.ok) continue;
+                    
+                    const data = await response.json();
+                    const papers = data.papers || [];
+                    
+                    const found = papers.find(p => getSafeId(p.id) === safeId);
+                    if (found) {
+                        console.log(`[searchPaperInArchive] Found in ${date}!`);
+                        return { date, papers, paper: found };
+                    }
+                } catch (e) {
+                    console.log(`[searchPaperInArchive] Error loading ${date}:`, e);
+                    continue;
+                }
+            }
+            
+            console.log('[searchPaperInArchive] Paper not found in any archive');
+            return null;
         }
 
         // Rendering
@@ -1094,8 +1201,15 @@
         }
 
         function openModal(safeId) {
+            console.log(`[openModal] Looking for paper with safeId: ${safeId}`);
             const paper = papersData.find(p => getSafeId(p.id) === safeId);
-            if (!paper) return;
+            
+            if (!paper) {
+                console.error(`[openModal] Paper not found: ${safeId}`);
+                return;
+            }
+            
+            console.log(`[openModal] Found paper: ${paper.id} - ${paper.title.substring(0, 50)}...`);
             
             document.getElementById('modalContent').innerHTML = renderModalContent(paper);
             document.getElementById('modalOverlay').classList.add('active');
