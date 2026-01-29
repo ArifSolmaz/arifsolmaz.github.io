@@ -829,20 +829,52 @@
             });
         }
 
-        function loadToday() {
+        async function loadToday() {
             // Check URL for date parameter first
             const urlDate = getDateFromUrl();
+            const urlHash = window.location.hash;
             
-            if (urlDate && archiveIndex.dates && archiveIndex.dates.includes(urlDate)) {
-                loadDate(urlDate);
+            if (urlDate) {
+                // URL has date parameter - try to load that date
+                console.log(`URL has date parameter: ${urlDate}`);
+                await loadDateFromUrl(urlDate, urlHash);
             } else if (archiveIndex.dates && archiveIndex.dates.length > 0) {
-                loadDate(archiveIndex.dates[0]);
+                // No date in URL - load latest
+                await loadDate(archiveIndex.dates[0], urlHash);
             } else {
-                loadPapers('data/papers.json');
+                // Fallback to papers.json
+                await loadPapersWithHash('data/papers.json', urlHash);
             }
         }
 
-        async function loadDate(date) {
+        async function loadDateFromUrl(date, hash) {
+            // Try archive first, then papers.json
+            currentDate = date;
+            renderDateList();
+            
+            // Show archive notice
+            const notice = document.getElementById('archiveNotice');
+            const isLatest = archiveIndex.dates && archiveIndex.dates[0] === date;
+            
+            if (!isLatest) {
+                notice.classList.add('visible');
+                document.getElementById('archiveDate').textContent = formatDateNav(date);
+            } else {
+                notice.classList.remove('visible');
+            }
+            
+            // Try archive file first
+            const archiveUrl = `data/archive/${date}.json`;
+            const success = await loadPapersWithHash(archiveUrl, hash);
+            
+            if (!success) {
+                // Archive failed, try papers.json and check if date matches
+                console.log(`Archive not found for ${date}, trying papers.json`);
+                await loadPapersWithHash('data/papers.json', hash);
+            }
+        }
+
+        async function loadDate(date, hash = '') {
             currentDate = date;
             
             let url = (date === 'today' || !date) 
@@ -866,10 +898,10 @@
             // Update URL (without hash for now)
             updateUrlWithDate(date);
             
-            await loadPapers(url);
+            await loadPapersWithHash(url, hash);
         }
 
-        async function loadPapers(url) {
+        async function loadPapersWithHash(url, hash = '') {
             const content = document.getElementById('content');
             content.innerHTML = '<div class="loading"><div class="spinner"></div><p>Loading papers...</p></div>';
             
@@ -882,19 +914,27 @@
                 const data = await response.json();
                 papersData = data.papers || [];
                 
+                // Update currentDate from loaded data
+                const loadedDate = data.announcement_date || data.updated_at?.split('T')[0];
+                if (loadedDate) {
+                    currentDate = loadedDate;
+                }
+                
                 // Count only visible papers (not hidden)
                 const visibleCount = papersData.filter(p => !p.hidden).length;
                 
                 // Update current date display
-                const displayDate = data.announcement_date || data.updated_at?.split('T')[0] || currentDate;
-                document.getElementById('currentDateLabel').textContent = formatDateNav(displayDate);
+                document.getElementById('currentDateLabel').textContent = formatDateNav(currentDate);
                 document.getElementById('paperCount').textContent = visibleCount;
                 
                 if (visibleCount > 0) {
                     content.innerHTML = renderPapersList(papersData);
                     
-                    if (window.location.hash) {
-                        const safeId = window.location.hash.replace('#paper-', '');
+                    // Check hash from parameter or current URL
+                    const hashToCheck = hash || window.location.hash;
+                    if (hashToCheck && hashToCheck.includes('paper-')) {
+                        const safeId = hashToCheck.replace('#paper-', '').replace('paper-', '');
+                        console.log(`Opening modal for paper: ${safeId}`);
                         setTimeout(() => openModal(safeId), 100);
                     }
                 } else {
@@ -904,12 +944,14 @@
                         </div>
                     `;
                 }
+                
+                return true; // Success
             } catch (error) {
-                console.error('Error:', error);
+                console.error('Error loading papers:', error);
                 
                 if (url.includes('archive/')) {
-                    await loadPapers('data/papers.json');
-                    return;
+                    // Don't retry here - let caller handle fallback
+                    return false;
                 }
                 
                 content.innerHTML = `
@@ -917,7 +959,13 @@
                         <p>⚠️ Error loading papers.</p>
                     </div>
                 `;
+                return false;
             }
+        }
+        
+        // Legacy wrapper for date navigation clicks
+        async function loadPapers(url) {
+            return await loadPapersWithHash(url, '');
         }
 
         // Rendering
