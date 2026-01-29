@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 28 Jan 2026 03:41:30 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 29 Jan 2026 04:06:02 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,53 +15,154 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>A Cool Earth-sized Planet Candidate Transiting a Tenth Magnitude K-dwarf From K2</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2601-19870v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-19870v1</guid>
-      <pubDate>Wed, 28 Jan 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Alexander Venner et al.</dc:creator>
+      <title>Climates of Terrestrial Exoplanets and Biosignatures</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-20620v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-20620v1</guid>
+      <pubDate>Thu, 29 Jan 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Siddharth Bhatnagar et al.</dc:creator>
       <description><![CDATA[Why It Matters
-Finding planets like Earth around other stars is one of astronomy's greatest quests—and it's much harder than you might think. Most Earth-like worlds are too small and dim to detect with current technology, like trying to spot a firefly next to a searchlight from miles away. This discovery represents a major breakthrough: astronomers have found what appears to be an Earth-sized planet in the habitable zone around a Sun-like star, and crucially, the star is bright enough that we can study this world in detail with future telescopes.
+Imagine trying to identify signs of life on a distant world you can never visit—that's the extraordinary challenge facing astronomers hunting for life beyond Earth. With thousands of planets discovered orbiting other stars, scientists are racing to develop the tools and techniques needed to study these alien worlds from trillions of miles away. This research represents a major leap forward in our ability to detect whether any of these distant planets might harbor life, potentially answering one of humanity's most profound questions: Are we alone in the universe?
 What They Did
-The researchers used NASA's K2 space telescope to monitor the brightness of thousands of stars, watching for tiny dips in light that occur when a planet passes in front of its host star—like a solar eclipse, but much smaller. They focused on a star called HD 137010, similar to our Sun but slightly cooler. During their observations in 2017, they detected a single, 10-hour-long dimming event where the star's brightness dropped by just 0.0225%—an incredibly subtle change that required extraordinary precision to detect. The team then analyzed years of additional data from ground-based telescopes and satellites to confirm this wasn't a false alarm caused by other astronomical phenomena.
+An international team of researchers spent seven years building a comprehensive toolkit for studying distant planets and searching for signs of life. Think of it like developing a detective kit for cosmic CSI work. They created computer models that can simulate weather and climate on alien worlds—imagine trying to predict the weather on a planet you've never seen, orbiting a completely different type of star. They also developed new ways to analyze the faint light that filters through distant planetary atmospheres, much like how you might identify ingredients in a soup by smelling the steam. Additionally, they built innovative instruments capable of detecting organic molecules and other potential signs of life, both for future space missions and ground-based telescopes.
 Key Findings
-The planet candidate, dubbed HD 137010 b, is remarkably Earth-like. It's just 6% larger than Earth and orbits its star roughly once every 355 days (compared to Earth's 365-day year). The planet sits about 88% of Earth's distance from its star and receives about 29% of the sunlight Earth gets—placing it near the outer edge of the "habitable zone" where liquid water could potentially exist on its surface.
+The team successfully modeled climates for planets ranging from hellish Venus-like worlds to potentially habitable planets like Proxima b, our nearest exoplanet neighbor just 4.2 light-years away. Their atmospheric analysis techniques can now identify specific gases in alien atmospheres that might indicate biological processes. They've also contributed crucial technology for upcoming mega-telescopes and space missions, including instruments for the James Webb Space Telescope and the future Extremely Large Telescope, which will have a mirror nearly 130 feet across.
 Looking Forward
-This discovery opens an exciting new chapter in exoplanet science. Because the host star is relatively bright and nearby, future space telescopes like the James Webb Space Telescope could potentially analyze the planet's atmosphere for signs of water vapor, oxygen, or other molecules that might indicate habitability—or even life.]]></description>
+This research lays the groundwork for the next generation of life-hunting missions. Within the next two decades, these tools and techniques could help identify the first confirmed signs of life on worlds beyond our solar system, marking a pivotal moment in human history.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>Towards a Comprehensive Understanding of Planetary Systems through Population-Level, Large-Scale Surveys</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2601-18841v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-18841v1</guid>
-      <pubDate>Wed, 28 Jan 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Francisco J. Pozuelos et al.</dc:creator>
+      <title>Exomoons and Exorings with the Habitable Worlds Observatory II: Finding Endor with Lunar Eclipses</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-20002v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-20002v1</guid>
+      <pubDate>Thu, 29 Jan 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Mary Anne Limbach et al.</dc:creator>
       <description><![CDATA[Why It Matters
-Imagine trying to understand all animals on Earth by only knowing where they live, but nothing about their size, diet, or behavior. That's essentially where we stand with planets beyond our solar system. Over 30 years of planet hunting has revealed thousands of these "exoplanets," but we know surprisingly little about what they're actually like. Are they rocky like Earth or gassy like Jupiter? Do they have atmospheres that could support life? These aren't just academic questions—understanding planetary diversity is key to knowing whether Earth-like worlds are common or incredibly rare, and whether we might find life elsewhere in the universe.
+Science fiction has long captivated us with the forest moon of Endor from Star Wars—a habitable world orbiting a giant planet. Now, real astronomers are figuring out how to find such places in our galaxy. If large planets like Jupiter can host Earth-sized moons in the "Goldilocks zone" where liquid water exists, we could dramatically expand the number of potentially life-supporting worlds in the universe. This matters because it means habitable real estate might be far more common than we think, giving life many more chances to emerge and thrive beyond our solar system.
 What They Did
-This research is actually a comprehensive review and roadmap rather than a single study. The authors analyzed the current state of exoplanet research, examining thousands of discovered planets to understand what we know versus what we don't. They compared our detection capabilities—which are excellent at finding planets—with our characterization abilities, which tell us what those planets are actually like. Think of it as the difference between spotting distant ships on the horizon versus being able to determine their size, cargo, and destination.
+The researchers developed a clever new way to spot moons around distant planets using the upcoming Habitable Worlds Observatory, a powerful space telescope planned for the 2040s. Their method works like watching lunar eclipses in reverse—instead of Earth's moon disappearing into our planet's shadow, they'd watch for the light signature when an exomoon passes into its giant planet's shadow. When this happens, the moon's reflected starlight suddenly vanishes, creating a distinctive dimming pattern that telescopes can detect. It's like noticing when someone turns off a flashlight in a dark room—the sudden change in brightness gives away the presence of something that was there before.
 Key Findings
-The results reveal a striking imbalance: while we've discovered over 5,000 exoplanets, we have detailed physical information for only a tiny fraction. Most discovered planets remain "physically ambiguous"—we might know they exist and roughly how big they are, but we can't distinguish between fundamentally different types of worlds. Current cutting-edge telescopes like the James Webb Space Telescope excel at studying individual planets in extraordinary detail, but they're too slow to characterize the hundreds or thousands of planets needed to understand broader patterns.
+The team discovered that Earth-sized moons orbiting Jupiter-like planets could actually outshine their host planets at certain wavelengths, making them surprisingly easy to spot. These lunar eclipses would happen frequently—every few days—and cause dramatic 50% drops in brightness that last several hours. The telescope could detect moons as small as 90% of Earth's size around planets up to 39 light-years away, and possibly even Mars-sized moons with repeated observations.
 Looking Forward
-The authors argue we need a revolutionary new approach for the 2040s: networks of smaller, specialized telescopes that can rapidly study planetary atmospheres and interiors across large samples. This would transform exoplanet science from a field focused on individual discoveries to one that understands planetary systems as a whole—finally answering whether worlds like Earth are cosmic commonalities or extraordinary exceptions.]]></description>
-        <category>astro-ph.IM</category>
+This research provides the first realistic roadmap for discovering habitable moons beyond our solar system. While we don't yet know how common such moons are, the Habitable Worlds Observatory could finally answer this fundamental question and potentially even analyze their atmospheres for signs of life.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>Evidence for a Peak at ~0.3 in the Eccentricity Distribution of Typical Super-Jovian Exoplanets</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2601-18877v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-18877v1</guid>
-      <pubDate>Wed, 28 Jan 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Sarah Blunt et al.</dc:creator>
+      <title>The RoPES project with HARPS and HARPS-N II. A third planet in the multi-planet system HD 176986</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-20559v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-20559v1</guid>
+      <pubDate>Thu, 29 Jan 2026 20:00:00 +0000</pubDate>
+      <dc:creator>N. Nari et al.</dc:creator>
       <description><![CDATA[Why It Matters
-For decades, astronomers have been discovering planets beyond our solar system, revealing that the universe is teeming with worlds vastly different from our own. Among the most intriguing are "super-Jovian" planets—gas giants that dwarf even Jupiter, our solar system's largest planet. Understanding how these massive worlds move through space tells us the story of planetary systems: were they born in peaceful, orderly nurseries, or did they survive chaotic, violent histories? This research helps us decode those origin stories by examining the stretched-out, oval-shaped orbits that many of these giant planets follow around their stars.
+Imagine trying to spot a firefly circling a lighthouse from hundreds of miles away—that's essentially what astronomers face when hunting for Earth-like planets around distant stars. This challenge becomes even more daunting when searching for planets that might harbor life, as these worlds orbit in the "Goldilocks zone" where water could exist as a liquid. This new research represents a major step forward in our ability to detect these elusive worlds, demonstrating that patient, long-term observations can reveal planetary systems remarkably similar to our own solar system's architecture.
 What They Did
-The researchers analyzed data from the California Legacy Survey, which tracked hundreds of exoplanets discovered by watching how their gravity makes their host stars wobble slightly. Think of it like watching someone spin around while holding an invisible partner—you can tell something is there by the motion. The team focused on the most massive planets, those three to twenty times heavier than Jupiter, and carefully measured how "stretched out" their orbits are. They used sophisticated statistical methods to account for the fact that some types of planets are easier to detect than others, ensuring their results reflected the true population of these worlds rather than just the ones we happen to spot most easily.
+The research team spent years monitoring a star called HD 176986, located about 91 light-years from Earth, using ultra-precise instruments that can detect the tiny wobbles a star makes when planets orbit around it. Think of it like watching a dancer spin with invisible partners—you can't see the partners directly, but their gravitational pull causes telltale movements in the dancer's motion. The team combined historical observations with new data, using advanced computer techniques to filter out the "noise" caused by the star's own magnetic activity and rotation, which can mask the subtle signals from orbiting planets.
 Key Findings
-The most striking discovery is that super-Jovian planets have a strong preference for moderately stretched orbits. While planets in perfectly circular orbits have an eccentricity of 0, and highly elongated orbits approach 1, these massive planets cluster around an eccentricity of 0.3. About 92% of their statistical models showed this clear peak, meaning these giants are much more likely to travel in somewhat oval-shaped paths rather than nearly circular ones. This pattern was distinctly different from smaller giant planets, suggesting that the most massive worlds experienced different formation histories.
+The astronomers discovered a third planet in what was previously known to be a two-planet system. All three worlds are "super-Earths"—planets larger than Earth but smaller than Neptune. The innermost planet completes an orbit every 6.5 days and has at least 5.4 times Earth's mass. The middle planet orbits every 16.8 days with 9.8 Earth masses, while the newly discovered outermost planet takes 61.4 days to orbit and weighs in at 6.8 Earth masses. They also determined that the host star rotates once every 36 days and experiences magnetic cycles lasting about 6.7 years.
 Looking Forward
-This finding points toward dramatic origins for the universe's most massive planets. The moderately stretched orbits suggest these worlds survived violent early histories—perhaps including collisions with other massive objects or gravitational battles between multiple giant planets. As we discover more exoplanets with upcoming space missions, astronomers can test whether this pattern holds true across different types of planetary systems, ultimately helping us understand whether our own solar system's relatively calm arrangement is typical or remarkably peaceful.]]></description>
+This discovery showcases how advanced detection methods can unveil complex planetary systems that were previously hidden. As these techniques improve, astronomers will be better equipped to find Earth-sized planets in habitable zones around sun-like stars, bringing us closer to answering whether worlds like ours—and potentially life itself—are common in the galaxy.]]></description>
         <category>astro-ph.EP</category>
+        <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>Self-consistent N-body simulation of Planetesimal-Driven Migration. II. The effect of PDM on planet formation from a planetesimal disk</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-20348v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-20348v1</guid>
+      <pubDate>Thu, 29 Jan 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Tenri Jinno et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+For decades, astronomers have puzzled over how planets form and end up where they do. Our solar system has small, rocky planets close to the Sun and giant gas planets farther out—but many alien solar systems look completely different, with massive planets hugging their stars or unusual arrangements we can't easily explain. This research tackles one of astronomy's biggest questions: how do planets move around during their birth, and why do we see such incredible diversity among planetary systems throughout the galaxy?
+What They Did
+The researchers created the most detailed computer simulation ever made of how planets form from cosmic debris. Think of it like modeling a cosmic construction site where billions of space rocks—called planetesimals—slowly clump together under gravity to build planets. Their virtual universe included all the key players: the gravitational pull between every piece of debris, collisions between rocks, the gas swirling around young stars, and most importantly, how growing planets can migrate by essentially playing gravitational pinball with the surrounding rubble. Previous studies had to simplify this process, but these scientists included all the messy, complex interactions happening simultaneously.
+Key Findings
+The simulations revealed that baby planets don't just grow quietly in place—they're constantly on the move. As these "protoplanets" sweep up surrounding debris through gravitational interactions, they get pushed around like cosmic bumper cars. The researchers discovered that inner planets tend to spiral inward toward their star, while outer planets migrate outward. This dynamic shuffling happens early in planetary formation and creates two distinct groups of planets with very different destinies.
+Looking Forward
+This research offers a elegant solution to long-standing mysteries in planetary science. The migration process could explain how ice giants like Neptune formed quickly enough and why we see such bizarre exoplanetary arrangements. Most excitingly, it suggests that the standard model of planet formation can account for the wild diversity we observe without requiring exotic scenarios—the universe's planetary systems might be more predictable than we thought.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Stellar and orbital characterization of three low mass M dwarf binary stars with dynamical spectroscopy from the Habitable Zone Planet Finder</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-19996v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-19996v1</guid>
+      <pubDate>Thu, 29 Jan 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Suhani Surana et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+When astronomers search for planets beyond our solar system—called exoplanets—they often look around small, dim stars called M dwarfs. These stars are much smaller and cooler than our Sun, but they're incredibly important because they make up about 75% of all stars in our galaxy. Many potentially habitable planets have been discovered orbiting these stellar neighbors. However, there's a problem: our computer models that predict how these stars should behave don't match what we actually observe when we study them in detail. It's like having a recipe that doesn't produce the cake you expect. To find and understand planets around these stars—especially planets that might support life—scientists need to get their models right first.
+What They Did
+Researchers used a powerful instrument called the Habitable-zone Planet Finder, which can detect incredibly subtle changes in starlight, to study pairs of M dwarf stars orbiting each other (called binary stars). Think of it like using a super-sensitive microphone to hear two dancers' footsteps as they waltz—by listening carefully to the rhythm, you can figure out how heavy each dancer is and how they're moving. The team collected dozens of observations of three different star pairs over several years, measuring tiny shifts in the light that reveal how fast the stars are moving toward or away from us as they orbit each other.
+Key Findings
+The scientists successfully measured the orbital characteristics of all three binary systems. One pair, LSPM J0515+5911, completes an orbit every 127 days, with the stars weighing about 6% and 5% of our Sun's mass respectively—making them incredibly lightweight by stellar standards. Another pair, NLTT 43564, takes over five years to complete one orbit, while the third system, NLTT 45468, whips around in less than 10 days. These measurements provide crucial "ground truth" data that can help correct theoretical models of how small stars work.
+Looking Forward
+This research provides the precise stellar measurements needed to improve computer models of M dwarf stars. Better models mean more accurate characterizations of planets orbiting these stars, bringing us closer to identifying worlds that might harbor life. As our stellar understanding improves, so does our ability to determine which exoplanets have the right conditions for habitability.]]></description>
+        <category>astro-ph.SR</category>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Orbital stability of compact three-planet systems III. The role of three-body resonances</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-20220v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-20220v1</guid>
+      <pubDate>Thu, 29 Jan 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Sacha Gavino, Jack J. Lissauer</dc:creator>
+      <description><![CDATA[Why It Matters
+Imagine three planets orbiting so close to each other that they should, by all rights, crash into one another or get flung out of their solar system entirely. Yet astronomers have discovered that roughly 30% of planetary systems beyond our solar system contain exactly these kinds of tightly packed worlds—and somehow, they've remained stable for billions of years. Understanding how these cosmic juggling acts work helps us grasp the incredible diversity of planetary systems in our galaxy and sheds light on how planets form and evolve. These findings also help astronomers predict which newly discovered exoplanets might have stayed stable long enough to potentially harbor life.
+What They Did
+The researchers created detailed computer simulations of three-planet systems, like building virtual solar systems on a computer. They started with three planets of equal mass orbiting in perfect circles around a star, then placed them at various distances from each other—some farther apart, others packed incredibly tightly together. Think of it like testing different arrangements of spinning tops on a table to see which ones keep spinning without knocking each other over. The scientists then let these virtual planets orbit for timescales equivalent to the entire lifetime of a star—billions of years—to see which arrangements would survive and which would fall apart.
+Key Findings
+The study revealed a surprising discovery: some extremely tightly packed three-planet systems can survive thousands or even millions of times longer than scientists expected. This happens when the planets get locked into special gravitational dance patterns called "resonances"—imagine three dancers moving in perfect synchronization so they never collide. Unlike larger planetary systems with more planets, three-planet systems have unique stable zones that don't exist when more worlds are involved. The exact starting positions of the planets also matter tremendously, with some arrangements leading to billion-year stability while others cause rapid chaos.
+Looking Forward
+These results could revolutionize how astronomers search for and study compact planetary systems. By understanding which configurations remain stable over cosmic timescales, scientists can better predict where to look for potentially habitable worlds and interpret observations of real exoplanet systems. This research also provides crucial insights into planetary system architecture, helping explain why certain arrangements of planets are common in nature while others are rare.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Extreme winds on the emerging dayside of an ultrahot Jupiter</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-20849v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-20849v1</guid>
+      <pubDate>Thu, 29 Jan 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Yapeng Zhang et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+Imagine trying to understand Earth's climate by only studying one spot at one time—you'd miss hurricanes, jet streams, and all the dynamic weather that shapes our world. Until recently, scientists studying planets beyond our solar system faced a similar challenge. This groundbreaking research changes that by giving us the first detailed look at extreme weather patterns on an alien world called KELT-9 b, one of the hottest planets ever discovered. Understanding how atmospheres behave on these exotic worlds doesn't just satisfy our curiosity—it helps us better comprehend how planetary climates work in general, including our own.
+What They Did
+The researchers used a powerful new instrument called the Keck Planet Finder, essentially a ultra-sensitive light detector that can pick up incredibly subtle changes in starlight. As KELT-9 b orbits its star, different parts of the planet rotate into view, like watching someone slowly turn around. The team tracked how light from different atmospheric gases shifted in color due to the planet's rotation and wind movement—similar to how an ambulance siren changes pitch as it moves toward or away from you. By monitoring these tiny shifts over several hours, they could map the planet's atmospheric motion in unprecedented detail.
+Key Findings
+The winds on KELT-9 b are absolutely ferocious—reaching speeds of nearly 12 kilometers per second, or about 26,000 miles per hour. To put that in perspective, that's roughly 35 times faster than the strongest hurricane winds on Earth and actually faster than the speed of sound in the planet's atmosphere. These supersonic winds race from the planet's scorching dayside (which faces its star) toward the cooler nightside. The researchers also identified the chemical fingerprints of various metals vaporized in the extreme heat, including iron, titanium, and calcium floating as gases in the atmosphere.
+Looking Forward
+This research opens a new era of exoplanet meteorology, proving we can now study alien weather patterns in real-time. These extreme measurements will help scientists refine computer models that predict how heat and chemicals move through planetary atmospheres, improving our understanding of potentially habitable worlds and the diverse climates that exist throughout our galaxy.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>The CO snow line favours strong clumping by the streaming instability in protoplanetary discs with porous grains</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-19985v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-19985v1</guid>
+      <pubDate>Thu, 29 Jan 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Jean-François Gonzalez, Stéphane Michoulier</dc:creator>
+      <description><![CDATA[Why It Matters
+Understanding how planets form is one of astronomy's greatest puzzles—and it directly helps us understand how our own solar system, including Earth, came to exist. For decades, scientists have struggled to explain a major roadblock in planet formation: how tiny dust grains in space manage to stick together and grow into the building blocks of planets. It's like trying to build a sandcastle where the sand keeps blowing away before you can pack it together. This research tackles that fundamental question by studying the conditions that allow dust to clump together in the swirling discs of gas and dust that surround young stars.
+What They Did
+The researchers used computer simulations to model what happens inside protoplanetary discs—the spinning pancakes of material around newborn stars where planets eventually form. They focused on "porous grains," which are fluffy dust particles with lots of empty space inside them, like cosmic cotton balls. The team tracked how these particles grow, break apart, get compressed, and bounce off each other over time. They then identified regions where dust becomes concentrated enough to trigger something called the "streaming instability"—a process that causes dust to spontaneously clump together into dense patches, like cream separating in coffee.
+Key Findings
+The breakthrough discovery involves the "CO snow line"—the invisible boundary in space where carbon monoxide gas freezes into ice, similar to how water vapor becomes snow on a cold day. When the researchers included this boundary in their models, they found that conditions favorable for dust clumping occurred within the first 100,000 years across large regions of the disc. Without considering this snow line, dust only clumped near the very center early on, or required more than 200,000 years to clump elsewhere.
+Looking Forward
+This research provides a crucial piece of the planet formation puzzle, showing how the streaming instability can work much more efficiently than previously thought when realistic dust properties are considered. It suggests that planetesimal formation—the first major step toward building planets—can happen relatively quickly and in many locations within protoplanetary discs, making planetary systems like ours more likely to form.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.GA</category>
+        <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>Spatial distribution of organics in the Horsehead nebula: signposts of chemistry driven by atomic carbon</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2601-20146v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2601-20146v1</guid>
+      <pubDate>Thu, 29 Jan 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Claudio Hernández-Vera et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+Life as we know it depends on complex organic molecules—the carbon-based building blocks that eventually form proteins, DNA, and other essential components of living organisms. For decades, scientists have been searching for these molecular precursors in space to understand how the ingredients for life might spread throughout the universe and seed new worlds. This research tackles a fundamental puzzle: how do these delicate organic molecules survive and even thrive in the harsh, radiation-soaked regions of space where ultraviolet light should theoretically destroy them? The answer could reshape our understanding of how life's building blocks form and persist in the cosmos, including around other stars where planets might be forming.
+What They Did
+The research team used powerful radio telescopes—including the Atacama Large Millimeter Array (ALMA) in Chile—to create detailed maps of the famous Horsehead Nebula. Think of it like using a specialized camera that can detect the "fingerprints" of different molecules floating in space. They focused on the nebula's edge, where intense ultraviolet radiation from nearby hot stars creates conditions similar to a cosmic chemistry lab. By measuring various organic molecules at different distances from the radiation source, they could track how these chemicals behave under increasingly harsh conditions—like studying how ingredients in a recipe change as you move closer to a heat source.
+Key Findings
+Surprisingly, most organic molecules didn't just survive the ultraviolet bombardment—they actually became more abundant near the radiation source. Molecules like formaldehyde and acetaldehyde showed enhanced concentrations at the nebula's illuminated edge compared to its protected interior. The researchers discovered this happens because the radiation breaks apart simpler molecules like carbon monoxide, creating reactive atomic carbon that then combines with other elements on the surfaces of tiny dust grains to build more complex organic compounds.
+Looking Forward
+These findings suggest that planets forming around young, energetic stars—rather than being sterilized by radiation—might actually receive more organic building blocks than previously thought. This research could help scientists identify which exoplanets are most likely to develop the chemistry necessary for life, expanding our search for habitable worlds beyond our solar system.]]></description>
+        <category>astro-ph.GA</category>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.SR</category>
     </item>
   </channel>
 </rss>
