@@ -3,6 +3,9 @@
 Post exoplanet papers to Bluesky.
 Uses announcement_date from papers.json to track which papers have been posted.
 
+Changes:
+- Links now include ?date=YYYY-MM-DD for archive compatibility
+
 Requires:
     pip install atproto requests pillow
     
@@ -149,12 +152,18 @@ def truncate_text(text: str, max_length: int) -> str:
     return truncated + "..."
 
 
-def format_post(paper: dict, page_url: str) -> str:
+def build_summary_link(page_url: str, paper_id: str, papers_date: str) -> str:
+    """Build summary link with date parameter for archive compatibility."""
+    safe_id = get_safe_id(paper_id)
+    # Always include date parameter so links work even after new papers are posted
+    return f"{page_url}?date={papers_date}#paper-{safe_id}"
+
+
+def format_post(paper: dict, page_url: str, papers_date: str) -> str:
     """Format a Bluesky post for a paper."""
     
     title = paper["title"]
     paper_id = paper["id"]
-    safe_id = get_safe_id(paper_id)
     
     # Get hook if available
     hook = ""
@@ -164,7 +173,7 @@ def format_post(paper: dict, page_url: str) -> str:
     
     # Build post
     arxiv_link = paper["abs_link"]
-    summary_link = f"{page_url}#paper-{safe_id}"
+    summary_link = build_summary_link(page_url, paper_id, papers_date)
     
     # Format: Title + hook + links
     post = f"{title}\n\n"
@@ -361,9 +370,9 @@ def main():
         print("Could not authenticate with Bluesky")
         return
     
-    # Format post
+    # Format post (now with papers_date)
     page_url = os.environ.get("PAGE_URL", "https://arifsolmaz.github.io/arxiv")
-    post_text = format_post(paper, page_url)
+    post_text = format_post(paper, page_url, papers_date)
     
     print(f"\nPost ({len(post_text)} chars):")
     print("-" * 40)

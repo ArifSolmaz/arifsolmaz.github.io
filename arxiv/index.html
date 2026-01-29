@@ -231,22 +231,16 @@
         .lead-image {
             width: 100%;
             height: 180px;
-            object-fit: contain;
-            border-radius: 8px;
-            background: var(--bg-alt);
+            object-fit: cover;
+            border-radius: var(--radius);
             order: -1;
         }
 
         @media (min-width: 640px) {
             .lead-image {
-                height: 200px;
                 order: 1;
+                height: 200px;
             }
-        }
-
-        .lead-content {
-            display: flex;
-            flex-direction: column;
         }
 
         .lead-label {
@@ -255,66 +249,55 @@
             letter-spacing: 0.12em;
             color: var(--accent);
             font-weight: 600;
-            margin-bottom: 0.75rem;
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
         }
 
         .lead-title {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(1.5rem, 5vw, 2rem);
+            font-size: clamp(1.4rem, 5vw, 1.75rem);
             font-weight: 600;
-            line-height: 1.25;
-            margin-bottom: 0.75rem;
+            line-height: 1.3;
+            margin-top: 0.5rem;
             transition: color var(--transition);
         }
 
         .lead-byline {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: var(--text-muted);
-            margin-bottom: 1rem;
+            margin-top: 0.5rem;
         }
 
         .lead-byline .authors {
-            font-weight: 600;
             color: var(--text-secondary);
-        }
-
-        .lead-byline .arxiv-id {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.8rem;
         }
 
         .lead-excerpt {
-            font-size: 1.05rem;
+            font-size: 1rem;
             color: var(--text-secondary);
-            line-height: 1.7;
+            margin-top: 0.75rem;
+            line-height: 1.6;
         }
 
         .lead-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.3rem;
-            margin-top: 1rem;
+            display: inline-block;
+            margin-top: 0.75rem;
             font-size: 0.9rem;
-            font-weight: 500;
             color: var(--accent);
+            font-weight: 500;
         }
 
         /* Section Header */
         .section-header {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.25rem;
-            padding-bottom: 0.75rem;
-            border-bottom: 2px solid var(--text);
+            align-items: baseline;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
         }
 
         .section-title {
             font-family: 'Playfair Display', serif;
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-weight: 600;
         }
 
@@ -325,34 +308,22 @@
 
         /* Papers Grid */
         .papers-grid {
-            display: grid;
-            grid-template-columns: 1fr;
+            display: flex;
+            flex-direction: column;
             gap: 0;
         }
 
-        @media (min-width: 540px) {
-            .papers-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 1.5rem 2rem;
-            }
-        }
-
         .paper-article {
-            padding: 1.25rem 0;
+            padding: 1rem 0;
             border-bottom: 1px solid var(--border);
             cursor: pointer;
             transition: background var(--transition);
         }
 
-        @media (min-width: 540px) {
-            .paper-article {
-                padding: 0 0 1.25rem 0;
-                border-bottom: 1px solid var(--border);
-            }
-        }
-
         .paper-article:hover {
-            background: transparent;
+            background: var(--bg-alt);
+            margin: 0 -1rem;
+            padding: 1rem;
         }
 
         .paper-article:hover .article-title {
@@ -362,49 +333,46 @@
         .article-meta {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 0.5rem;
+            gap: 0.75rem;
+            margin-bottom: 0.35rem;
         }
 
         .article-category {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.65rem;
+            font-size: 0.7rem;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--text-light);
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+            background: var(--bg-alt);
+            padding: 0.15rem 0.5rem;
+            border-radius: 3px;
         }
 
-        .article-badge {
-            font-size: 0.65rem;
-            font-weight: 600;
-            padding: 0.15rem 0.4rem;
-            border-radius: 4px;
-            background: var(--accent-light);
+        .exo-badge {
+            font-size: 0.7rem;
             color: var(--accent);
+            background: var(--accent-light);
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
         }
 
         .article-title {
-            font-family: 'Playfair Display', serif;
             font-size: 1.05rem;
-            font-weight: 600;
-            line-height: 1.35;
-            margin-bottom: 0.35rem;
+            font-weight: 500;
+            line-height: 1.4;
+            color: var(--text);
             transition: color var(--transition);
         }
 
         .article-byline {
             font-size: 0.85rem;
             color: var(--text-muted);
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            max-width: 100%;
+            margin-top: 0.25rem;
         }
 
         /* Loading & Empty States */
         .loading, .empty-state, .error-state {
             text-align: center;
-            padding: 3rem 1rem;
+            padding: 4rem 2rem;
             color: var(--text-muted);
         }
 
@@ -426,14 +394,16 @@
         .modal-overlay {
             position: fixed;
             inset: 0;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0,0,0,0.6);
             backdrop-filter: blur(4px);
             z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
             opacity: 0;
             visibility: hidden;
-            transition: all 0.3s ease;
-            overflow-y: auto;
-            padding: 1rem;
+            transition: all 0.25s ease;
         }
 
         .modal-overlay.active {
@@ -443,9 +413,11 @@
 
         .modal {
             background: var(--card);
-            border-radius: 12px;
-            max-width: 640px;
-            margin: 2rem auto;
+            border-radius: var(--radius);
+            max-width: 680px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
             position: relative;
             box-shadow: var(--shadow-lg);
         }
@@ -454,135 +426,115 @@
             position: absolute;
             top: 1rem;
             right: 1rem;
-            width: 36px;
-            height: 36px;
+            width: 32px;
+            height: 32px;
+            border: none;
+            background: var(--bg-alt);
             border-radius: 50%;
-            background: var(--card);
-            border: 1px solid var(--border);
             cursor: pointer;
-            font-size: 1.1rem;
+            font-size: 1rem;
+            color: var(--text-muted);
             z-index: 10;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: var(--shadow);
             transition: all var(--transition);
         }
 
         .modal-close:hover {
-            background: var(--text);
-            color: white;
-            border-color: var(--text);
+            background: var(--border);
+            color: var(--text);
         }
 
         .modal-image {
             width: 100%;
-            height: 200px;
-            object-fit: contain;
-            border-radius: 12px 12px 0 0;
-        }
-
-        @media (min-width: 540px) {
-            .modal-image {
-                height: 260px;
-            }
+            height: 220px;
+            object-fit: cover;
+            border-radius: var(--radius) var(--radius) 0 0;
         }
 
         .modal-header {
-            padding: 1.5rem;
-            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 1.5rem 0;
         }
 
         .modal-meta {
             display: flex;
-            flex-wrap: wrap;
             gap: 0.5rem;
+            flex-wrap: wrap;
             margin-bottom: 0.75rem;
-        }
-
-        .modal-meta .article-category {
-            background: var(--bg-alt);
-            padding: 0.2rem 0.5rem;
-            border-radius: 4px;
         }
 
         .modal-title {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(1.25rem, 4vw, 1.5rem);
+            font-size: 1.5rem;
             font-weight: 600;
             line-height: 1.3;
-            margin-bottom: 0.5rem;
         }
 
         .modal-authors {
             font-size: 0.9rem;
             color: var(--text-muted);
+            margin-top: 0.5rem;
+            line-height: 1.5;
         }
 
         .modal-summary {
             padding: 1.5rem;
-            background: var(--bg-summary);
         }
 
         .summary-label {
             font-size: 0.75rem;
-            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.08em;
             color: var(--accent);
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-
-        .summary-content h4 {
-            font-family: 'Source Sans 3', sans-serif;
-            font-size: 0.95rem;
             font-weight: 600;
-            color: var(--text);
-            margin: 1.25rem 0 0.5rem;
+            margin-bottom: 0.75rem;
         }
 
-        .summary-content h4:first-child {
-            margin-top: 0;
+        .summary-content {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            background: var(--bg-summary);
+            padding: 1.25rem;
+            border-radius: var(--radius);
+            border-left: 3px solid var(--accent);
         }
 
         .summary-content p {
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            line-height: 1.7;
+            margin-bottom: 0.75rem;
+        }
+
+        .summary-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .summary-content strong {
+            color: var(--text);
+            font-weight: 600;
         }
 
         .modal-abstract {
-            padding: 1.25rem 1.5rem;
-            border-top: 1px solid var(--border);
+            padding: 0 1.5rem;
         }
 
         .abstract-toggle {
             background: none;
             border: none;
             color: var(--accent);
-            font-size: 0.85rem;
-            font-weight: 500;
             cursor: pointer;
-            padding: 0;
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
+            font-size: 0.85rem;
+            padding: 0.5rem 0;
+            transition: opacity var(--transition);
         }
 
         .abstract-toggle:hover {
-            text-decoration: underline;
+            opacity: 0.8;
         }
 
         .abstract-content {
-            display: none;
-            margin-top: 1rem;
             font-size: 0.9rem;
-            color: var(--text-secondary);
-            line-height: 1.7;
-            font-style: italic;
+            line-height: 1.6;
+            color: var(--text-muted);
+            padding: 0.75rem 0;
+            display: none;
         }
 
         .abstract-content.visible {
@@ -590,39 +542,35 @@
         }
 
         .modal-footer {
-            padding: 1rem 1.5rem;
-            border-top: 1px solid var(--border);
             display: flex;
+            gap: 0.75rem;
+            padding: 1.5rem;
+            border-top: 1px solid var(--border);
             flex-wrap: wrap;
-            gap: 0.5rem;
         }
 
         .modal-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.3rem;
-            padding: 0.5rem 0.85rem;
-            background: var(--bg-alt);
+            font-size: 0.85rem;
+            color: var(--accent);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
             border: 1px solid var(--border);
             border-radius: var(--radius);
-            font-size: 0.8rem;
-            font-weight: 500;
-            color: var(--text-secondary);
-            text-decoration: none;
-            cursor: pointer;
             transition: all var(--transition);
+            background: none;
+            cursor: pointer;
+            font-family: inherit;
         }
 
         .modal-link:hover {
-            background: var(--text);
-            color: white;
-            border-color: var(--text);
+            background: var(--bg-alt);
+            border-color: var(--border-dark);
         }
 
         /* Footer */
         footer {
-            border-top: 3px double var(--border-dark);
             padding: 2rem 0;
+            border-top: 1px solid var(--border);
             text-align: center;
         }
 
@@ -632,9 +580,8 @@
         }
 
         .footer-content a {
-            color: var(--text);
+            color: var(--accent);
             text-decoration: none;
-            font-weight: 500;
         }
 
         .footer-content a:hover {
@@ -642,48 +589,35 @@
         }
 
         .footer-note {
-            font-size: 0.8rem;
-            font-style: italic;
-            margin-top: 0.5rem;
+            font-size: 0.75rem;
             color: var(--text-light);
+            margin-top: 0.35rem;
         }
 
-        /* Responsive Adjustments */
-        @media (max-width: 480px) {
-            .container {
-                padding: 0 1rem;
-            }
-            
-            header {
-                padding: 1.5rem 0 1.25rem;
-            }
-            
-            .subscribe-row {
-                gap: 0.4rem 1rem;
-            }
-            
-            .date-bar {
-                padding: 1rem 0;
-            }
-            
-            .modal {
-                margin: 1rem auto;
-                border-radius: 10px;
-            }
-            
-            .modal-header,
-            .modal-summary,
-            .modal-abstract,
-            .modal-footer {
-                padding: 1.25rem;
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #121212;
+                --bg-alt: #1e1e1e;
+                --bg-summary: #1a1a1a;
+                --card: #1e1e1e;
+                --text: #e8e8e8;
+                --text-secondary: #b8b8b8;
+                --text-muted: #888;
+                --text-light: #666;
+                --accent: #e85d75;
+                --accent-hover: #d44d65;
+                --accent-light: rgba(232, 93, 117, 0.15);
+                --border: #2a2a2a;
+                --border-dark: #3a3a3a;
+                --shadow: 0 1px 3px rgba(0,0,0,0.3);
+                --shadow-lg: 0 4px 12px rgba(0,0,0,0.4);
             }
         }
 
-        /* Print Styles */
+        /* Print styles */
         @media print {
-            .subscribe-row,
-            .nav-controls,
-            .modal-overlay {
+            .modal-overlay, .subscribe-row, .date-nav {
                 display: none !important;
             }
         }
@@ -694,17 +628,17 @@
         <header>
             <div class="masthead">
                 <h1 class="logo">Exoplanet Papers</h1>
-                <p class="tagline">Daily discoveries from arXiv astro-ph.EP</p>
+                <p class="tagline">Daily research summaries for general audiences</p>
             </div>
             <div class="subscribe-row">
-                <a href="feed.xml">RSS Feed</a>
-                <a href="https://twitter.com/arifsolmaz" target="_blank">Twitter</a>
-                <a href="https://bsky.app/profile/arifsolmaz.bsky.social" target="_blank">Bluesky</a>
+                <a href="feed.xml">📡 RSS Feed</a>
+                <a href="https://twitter.com/arifsolmaz" target="_blank">𝕏 @arifsolmaz</a>
+                <a href="https://bsky.app/profile/arifsolmaz.bsky.social" target="_blank">🦋 Bluesky</a>
             </div>
         </header>
 
         <nav class="date-nav">
-            <div class="date-nav-label">Recent submissions</div>
+            <div class="date-nav-label">Browse by date</div>
             <div class="date-list" id="dateList">
                 <span class="date-link active">Loading...</span>
             </div>
@@ -780,58 +714,70 @@
                 .replace(/\\'o/g, 'ó').replace(/\\'u/g, 'ú').replace(/\\'y/g, 'ý')
                 .replace(/\\'A/g, 'Á').replace(/\\'E/g, 'É').replace(/\\'I/g, 'Í')
                 .replace(/\\'O/g, 'Ó').replace(/\\'U/g, 'Ú').replace(/\\'Y/g, 'Ý')
-                .replace(/\\"a/g, 'ä').replace(/\\"e/g, 'ë').replace(/\\"i/g, 'ï')
-                .replace(/\\"o/g, 'ö').replace(/\\"u/g, 'ü').replace(/\\"y/g, 'ÿ')
-                .replace(/\\"A/g, 'Ä').replace(/\\"O/g, 'Ö').replace(/\\"U/g, 'Ü')
                 .replace(/\\`a/g, 'à').replace(/\\`e/g, 'è').replace(/\\`i/g, 'ì')
                 .replace(/\\`o/g, 'ò').replace(/\\`u/g, 'ù')
+                .replace(/\\"a/g, 'ä').replace(/\\"e/g, 'ë').replace(/\\"i/g, 'ï')
+                .replace(/\\"o/g, 'ö').replace(/\\"u/g, 'ü').replace(/\\"y/g, 'ÿ')
+                .replace(/\\"A/g, 'Ä').replace(/\\"E/g, 'Ë').replace(/\\"I/g, 'Ï')
+                .replace(/\\"O/g, 'Ö').replace(/\\"U/g, 'Ü')
+                .replace(/\\v\{c\}/g, 'č').replace(/\\v\{C\}/g, 'Č')
+                .replace(/\\v\{s\}/g, 'š').replace(/\\v\{S\}/g, 'Š')
+                .replace(/\\v\{z\}/g, 'ž').replace(/\\v\{Z\}/g, 'Ž')
+                .replace(/\\v\{r\}/g, 'ř').replace(/\\v\{R\}/g, 'Ř')
+                .replace(/\\v\{e\}/g, 'ě').replace(/\\v\{n\}/g, 'ň')
+                .replace(/\\c\{c\}/g, 'ç').replace(/\\c\{C\}/g, 'Ç')
                 .replace(/\\~n/g, 'ñ').replace(/\\~N/g, 'Ñ')
                 .replace(/\\~a/g, 'ã').replace(/\\~o/g, 'õ')
-                .replace(/\\c\{c\}/g, 'ç').replace(/\\c\{C\}/g, 'Ç')
-                .replace(/\\v\{c\}/g, 'č').replace(/\\v\{s\}/g, 'š').replace(/\\v\{z\}/g, 'ž')
-                .replace(/\\v\{C\}/g, 'Č').replace(/\\v\{S\}/g, 'Š').replace(/\\v\{Z\}/g, 'Ž')
                 .replace(/\\\^a/g, 'â').replace(/\\\^e/g, 'ê').replace(/\\\^i/g, 'î')
                 .replace(/\\\^o/g, 'ô').replace(/\\\^u/g, 'û')
-                // Handle remaining backslash escapes
-                .replace(/\\([a-zA-Z])/g, '$1')
-                .replace(/[{}]/g, '');
+                .replace(/\\l/g, 'ł').replace(/\\L/g, 'Ł')
+                .replace(/\\ss/g, 'ß')
+                .replace(/\\aa/g, 'å').replace(/\\AA/g, 'Å')
+                .replace(/\\o/g, 'ø').replace(/\\O/g, 'Ø')
+                .replace(/\\ae/g, 'æ').replace(/\\AE/g, 'Æ')
+                // Generic cleanup
+                .replace(/\\['"`^~]\{?(\w)\}?/g, '$1')
+                .replace(/\{|\}/g, '');
         }
 
         function formatAuthors(authors) {
-            if (!authors || authors.length === 0) return 'Unknown authors';
-            // Handle if authors is a string
-            if (typeof authors === 'string') {
-                authors = authors.split(',').map(a => a.trim());
-            }
-            // Handle if first element contains commas (all authors in one string)
-            if (authors.length === 1 && authors[0].includes(',')) {
-                authors = authors[0].split(',').map(a => a.trim());
-            }
-            // Clean LaTeX from all authors
-            authors = authors.map(a => cleanLatex(a));
-            if (authors.length <= 3) return authors.join(', ');
-            return `${authors.slice(0, 3).join(', ')} +${authors.length - 3} more`;
+            if (!authors || !authors.length) return 'Unknown authors';
+            const cleaned = authors.map(a => cleanLatex(a));
+            if (cleaned.length <= 3) return cleaned.join(', ');
+            return `${cleaned.slice(0, 3).join(', ')} +${cleaned.length - 3} more`;
         }
 
         function formatAuthorsShort(authors) {
-            if (!authors || authors.length === 0) return '';
-            // Handle if authors is a string
-            if (typeof authors === 'string') {
-                authors = authors.split(',').map(a => a.trim());
-            }
-            // Handle if first element contains commas (all authors in one string)
-            if (authors.length === 1 && authors[0].includes(',')) {
-                authors = authors[0].split(',').map(a => a.trim());
-            }
-            // Clean LaTeX from first author
+            if (!authors || !authors.length) return 'Unknown';
             const firstAuthor = cleanLatex(authors[0]);
             if (authors.length === 1) return firstAuthor;
-            // Return first author + et al.
             return `${firstAuthor} et al.`;
         }
 
         function getSafeId(id) {
             return id.replace(/[^a-zA-Z0-9]/g, '-');
+        }
+
+        // URL Parameter handling
+        function getDateFromUrl() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get('date');
+        }
+
+        function updateUrlWithDate(date, hash = '') {
+            const isLatest = archiveIndex.dates && archiveIndex.dates[0] === date;
+            let newUrl = window.location.pathname;
+            
+            // Only add date parameter if not latest
+            if (date && !isLatest) {
+                newUrl += `?date=${date}`;
+            }
+            
+            if (hash) {
+                newUrl += hash;
+            }
+            
+            history.replaceState(null, null, newUrl);
         }
 
         // Archive & Navigation
@@ -884,7 +830,12 @@
         }
 
         function loadToday() {
-            if (archiveIndex.dates && archiveIndex.dates.length > 0) {
+            // Check URL for date parameter first
+            const urlDate = getDateFromUrl();
+            
+            if (urlDate && archiveIndex.dates && archiveIndex.dates.includes(urlDate)) {
+                loadDate(urlDate);
+            } else if (archiveIndex.dates && archiveIndex.dates.length > 0) {
                 loadDate(archiveIndex.dates[0]);
             } else {
                 loadPapers('data/papers.json');
@@ -911,6 +862,9 @@
             } else {
                 notice.classList.remove('visible');
             }
+            
+            // Update URL (without hash for now)
+            updateUrlWithDate(date);
             
             await loadPapers(url);
         }
@@ -1098,13 +1052,17 @@
             document.getElementById('modalContent').innerHTML = renderModalContent(paper);
             document.getElementById('modalOverlay').classList.add('active');
             document.body.style.overflow = 'hidden';
-            history.replaceState(null, null, `#paper-${safeId}`);
+            
+            // Update URL with date parameter and hash
+            updateUrlWithDate(currentDate, `#paper-${safeId}`);
         }
 
         function closeModal() {
             document.getElementById('modalOverlay').classList.remove('active');
             document.body.style.overflow = '';
-            history.replaceState(null, null, window.location.pathname);
+            
+            // Update URL - keep date parameter, remove hash
+            updateUrlWithDate(currentDate);
         }
 
         function toggleAbstract(event) {
@@ -1121,7 +1079,7 @@
             }
         }
 
-        // Sharing
+        // Sharing - now includes date parameter
         const HASHTAG_MAP = {
             "jwst": "#JWST", "james webb": "#JWST",
             "habitable zone": "#HabitableZone",
@@ -1143,13 +1101,23 @@
             return [...base, ...found.slice(0, 2)];
         }
 
+        function buildPaperUrl(safeId) {
+            // Build URL with date parameter if viewing archive
+            const isLatest = archiveIndex.dates && archiveIndex.dates[0] === currentDate;
+            
+            if (currentDate && !isLatest) {
+                return `${PAGE_URL}?date=${currentDate}#paper-${safeId}`;
+            }
+            return `${PAGE_URL}#paper-${safeId}`;
+        }
+
         function shareOnTwitter(safeId, event) {
             if (event) event.stopPropagation();
             
             const paper = papersData.find(p => getSafeId(p.id) === safeId);
             if (!paper) return;
             
-            const url = `${PAGE_URL}#paper-${safeId}`;
+            const url = buildPaperUrl(safeId);
             const hashtags = extractHashtags(paper);
             const text = `${paper.title}\n\n${url}\n\n${hashtags.join(' ')}`;
             
@@ -1159,7 +1127,7 @@
         function copyLink(safeId, event) {
             if (event) event.stopPropagation();
             
-            const url = `${PAGE_URL}#paper-${safeId}`;
+            const url = buildPaperUrl(safeId);
             navigator.clipboard.writeText(url).then(() => {
                 const btn = event.target;
                 const original = btn.innerHTML;

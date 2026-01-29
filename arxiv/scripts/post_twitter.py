@@ -8,6 +8,7 @@ Changes:
 - Falls back to fresh fetch only if needed
 - Skips Unsplash placeholders (uses paper card instead)
 - Better logging for debugging
+- Links now include ?date=YYYY-MM-DD for archive compatibility
 """
 
 import json
@@ -238,12 +239,12 @@ def download_image(url: str, paper_id: str) -> str | None:
         # Save to temp directory
         safe_id = paper_id.replace('/', '_').replace('.', '_')
         temp_dir = tempfile.gettempdir()
-        temp_path = os.path.join(temp_dir, f"arxiv_fig_{safe_id}{ext}")
+        temp_path = os.path.join(temp_dir, f"arxiv_{safe_id}{ext}")
         
         with open(temp_path, 'wb') as f:
             f.write(response.content)
         
-        print(f"    ✓ Downloaded: {temp_path} ({size/1024:.1f} KB)")
+        print(f"    ✓ Saved: {temp_path}")
         return temp_path
         
     except Exception as e:
@@ -251,143 +252,93 @@ def download_image(url: str, paper_id: str) -> str | None:
         return None
 
 
-def fetch_paper_figure_fresh(paper_id: str) -> str | None:
-    """
-    Attempt to fetch Figure 1 from a paper (fresh fetch, not cached).
-    Returns the local file path if successful, None otherwise.
-    """
-    print(f"  Fresh fetch for {paper_id}...")
-    
-    # Method 1: Try arXiv abstract page og:image
-    try:
-        abs_url = f"https://arxiv.org/abs/{paper_id}"
-        response = requests.get(abs_url, timeout=15, headers={
-            'User-Agent': 'Mozilla/5.0 (compatible; ExoplanetBot/1.0)'
-        })
-        
-        if response.status_code == 200:
-            og_match = re.search(r'<meta\s+property="og:image"\s+content="([^"]+)"', response.text)
-            if og_match:
-                img_url = og_match.group(1)
-                if 'arxiv-logo' not in img_url and 'static' not in img_url:
-                    img_path = download_image(img_url, paper_id)
-                    if img_path:
-                        return img_path
-    except Exception as e:
-        print(f"    arXiv page failed: {e}")
-    
-    # Method 2: Try ar5iv (HTML rendering)
-    try:
-        ar5iv_url = f"https://ar5iv.labs.arxiv.org/html/{paper_id}"
-        response = requests.get(ar5iv_url, timeout=20, headers={
-            'User-Agent': 'Mozilla/5.0 (compatible; ExoplanetBot/1.0)'
-        })
-        
-        if response.status_code == 200:
-            patterns = [
-                r'<img[^>]+src="([^"]+)"[^>]*class="[^"]*ltx_graphics[^"]*"',
-                r'<figure[^>]*>.*?<img[^>]+src="([^"]+)".*?</figure>',
-                r'<img[^>]+src="(/html/[^"]+\.(?:png|jpg|jpeg|gif))"',
-            ]
-            
-            for pattern in patterns:
-                matches = re.findall(pattern, response.text, re.IGNORECASE | re.DOTALL)
-                for match in matches[:3]:
-                    img_url = match
-                    if img_url.startswith('/'):
-                        img_url = f"https://ar5iv.labs.arxiv.org{img_url}"
-                    elif not img_url.startswith('http'):
-                        img_url = f"https://ar5iv.labs.arxiv.org/html/{paper_id}/{img_url}"
-                    
-                    img_path = download_image(img_url, paper_id)
-                    if img_path:
-                        return img_path
-    except Exception as e:
-        print(f"    ar5iv failed: {e}")
-    
-    # Method 3: Try arXiv HTML directly
-    try:
-        html_url = f"https://arxiv.org/html/{paper_id}"
-        response = requests.get(html_url, timeout=15, headers={
-            'User-Agent': 'Mozilla/5.0 (compatible; ExoplanetBot/1.0)'
-        })
-        
-        if response.status_code == 200:
-            patterns = [
-                r'<figure[^>]*>.*?<img[^>]+src=["\']([^"\']+)["\']',
-                r'<img[^>]+class=["\'][^"\']*ltx_graphics[^"\']*["\'][^>]+src=["\']([^"\']+)["\']',
-            ]
-            
-            for pattern in patterns:
-                matches = re.findall(pattern, response.text, re.IGNORECASE | re.DOTALL)
-                if matches:
-                    img_path = matches[0] if isinstance(matches[0], str) else matches[0][0]
-                    if img_path.startswith('/'):
-                        img_url = f"https://arxiv.org{img_path}"
-                    elif img_path.startswith('http'):
-                        img_url = img_path
-                    else:
-                        img_url = f"https://arxiv.org/html/{paper_id}/{img_path}"
-                    
-                    result = download_image(img_url, paper_id)
-                    if result:
-                        return result
-    except Exception as e:
-        print(f"    arXiv HTML failed: {e}")
-    
-    print(f"    No figure found via fresh fetch")
-    return None
-
-
 def get_figure_for_paper(paper: dict) -> str | None:
-    """
-    Get figure for a paper with smart fallback chain:
-    1. Use stored figure_url if it's a real figure (not Unsplash)
-    2. Try fresh fetch if no stored URL or stored URL is placeholder
-    3. Generate paper card as last resort
-    
-    Returns local file path or None.
-    """
+    """Get figure image for a paper using improved fallback chain."""
     paper_id = paper["id"]
-    stored_url = paper.get("figure_url", "")
     
-    print(f"📷 Getting image for {paper_id}...")
+    print(f"\n🖼️ Getting figure for {paper_id}:")
     
-    # Step 1: Check stored URL
-    if stored_url and not is_placeholder_image(stored_url):
-        print(f"  Using stored figure_url")
-        result = download_image(stored_url, paper_id)
+    # Strategy 1: Use pre-fetched figure_url (if not placeholder)
+    figure_url = paper.get("figure_url", "")
+    if figure_url and not is_placeholder_image(figure_url):
+        print(f"  1. Trying pre-fetched URL: {figure_url[:60]}...")
+        result = download_image(figure_url, paper_id)
         if result:
             return result
-        print(f"  Stored URL failed, trying fresh fetch...")
+        print("     Failed, trying next...")
+    else:
+        print(f"  1. No valid pre-fetched URL (placeholder or missing)")
     
-    # Step 2: Try fresh fetch
-    result = fetch_paper_figure_fresh(paper_id)
-    if result:
-        return result
+    # Strategy 2: Try arxiv HTML page for figure
+    print(f"  2. Trying fresh fetch from arXiv HTML...")
+    fresh_url = fetch_figure_url_from_arxiv(paper_id)
+    if fresh_url and fresh_url != figure_url:
+        print(f"     Found: {fresh_url[:60]}...")
+        result = download_image(fresh_url, paper_id)
+        if result:
+            return result
+        print("     Failed, trying next...")
+    else:
+        print("     No figure found on arXiv page")
     
-    # Step 3: Generate paper card as fallback
-    print(f"  Generating paper card fallback...")
+    # Strategy 3: Generate paper card
+    print(f"  3. Generating paper card...")
     return generate_paper_card(paper)
 
 
-def generate_paper_card(paper: dict) -> str | None:
-    """Generate a branded paper card image as fallback."""
+def fetch_figure_url_from_arxiv(paper_id: str) -> str | None:
+    """Fetch figure URL directly from arXiv HTML page."""
     try:
-        # Card dimensions (Twitter optimal: 1200x675 for 16:9)
-        width, height = 1200, 675
+        abs_url = f"https://arxiv.org/abs/{paper_id}"
+        response = requests.get(abs_url, timeout=10, headers={
+            'User-Agent': 'Mozilla/5.0 (compatible; ExoplanetBot/1.0)'
+        })
+        
+        if response.status_code != 200:
+            return None
+        
+        html = response.text
+        
+        # Look for figure preview images
+        patterns = [
+            r'<img[^>]+src="(https://arxiv\.org/html/[^"]+/extracted/[^"]+\.(?:png|jpg|jpeg))"',
+            r'<img[^>]+src="(/html/[^"]+/extracted/[^"]+\.(?:png|jpg|jpeg))"',
+            r'<meta[^>]+property="og:image"[^>]+content="([^"]+)"',
+        ]
+        
+        for pattern in patterns:
+            match = re.search(pattern, html)
+            if match:
+                url = match.group(1)
+                if url.startswith('/'):
+                    url = f"https://arxiv.org{url}"
+                if 'arxiv' in url and not is_placeholder_image(url):
+                    return url
+        
+        return None
+        
+    except Exception as e:
+        print(f"     Error fetching arXiv page: {e}")
+        return None
+
+
+def generate_paper_card(paper: dict) -> str | None:
+    """Generate a simple paper card image with title and hook."""
+    try:
+        # Card dimensions (Twitter recommends 1200x628 for summary cards)
+        width, height = 1200, 628
         
         # Colors
         bg_color = (15, 23, 42)  # Dark blue
-        title_color = (248, 250, 252)  # White
-        accent_color = (99, 102, 241)  # Indigo
-        muted_color = (148, 163, 184)  # Gray
+        accent_color = (196, 30, 58)  # Red accent
+        text_color = (255, 255, 255)
+        muted_color = (148, 163, 184)
         
         # Create image
         img = Image.new('RGB', (width, height), bg_color)
         draw = ImageDraw.Draw(img)
         
-        # Try to load fonts (fallback to default)
+        # Try to use system fonts
         try:
             title_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 42)
             body_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 28)
@@ -398,33 +349,35 @@ def generate_paper_card(paper: dict) -> str | None:
             small_font = ImageFont.load_default()
         
         # Draw accent bar at top
-        draw.rectangle([(0, 0), (width, 8)], fill=accent_color)
+        draw.rectangle([(0, 0), (width, 6)], fill=accent_color)
         
-        # Draw title (wrap text)
-        title = paper.get("title", "Untitled")
-        words = title.split()
-        lines = []
+        # Draw "EXOPLANET PAPERS" label
+        draw.text((50, 40), "EXOPLANET PAPERS", fill=accent_color, font=small_font)
+        
+        # Draw title (word wrap)
+        title = paper["title"]
+        title_words = title.split()
+        title_lines = []
         current_line = []
         
-        for word in words:
+        for word in title_words:
             current_line.append(word)
             test_line = " ".join(current_line)
             bbox = draw.textbbox((0, 0), test_line, font=title_font)
             if bbox[2] > width - 100:
                 current_line.pop()
-                lines.append(" ".join(current_line))
+                title_lines.append(" ".join(current_line))
                 current_line = [word]
         if current_line:
-            lines.append(" ".join(current_line))
+            title_lines.append(" ".join(current_line))
         
-        y_pos = 60
-        for line in lines[:3]:  # Max 3 lines
-            draw.text((50, y_pos), line, fill=title_color, font=title_font)
-            y_pos += 55
+        y_pos = 100
+        for line in title_lines[:4]:  # Max 4 lines
+            draw.text((50, y_pos), line, fill=text_color, font=title_font)
+            y_pos += 52
         
         # Draw hook if available
-        tweet_hook = paper.get("tweet_hook", {})
-        hook = tweet_hook.get("hook", "")
+        hook = paper.get("tweet_hook", {}).get("hook", "")
         if hook:
             hook_words = hook.split()
             hook_lines = []
@@ -491,98 +444,93 @@ def save_tweeted(data):
 
 def create_twitter_client():
     """Create authenticated Twitter API v2 client and v1.1 API for media uploads."""
-    required_keys = [
-        "TWITTER_API_KEY",
-        "TWITTER_API_SECRET",
-        "TWITTER_ACCESS_TOKEN",
-        "TWITTER_ACCESS_SECRET"
-    ]
+    api_key = os.environ.get("TWITTER_API_KEY")
+    api_secret = os.environ.get("TWITTER_API_SECRET")
+    access_token = os.environ.get("TWITTER_ACCESS_TOKEN")
+    access_secret = os.environ.get("TWITTER_ACCESS_SECRET")
     
-    missing = [k for k in required_keys if not os.environ.get(k)]
-    if missing:
-        print(f"Missing Twitter credentials: {', '.join(missing)}")
+    if not all([api_key, api_secret, access_token, access_secret]):
+        print("Missing Twitter credentials")
         return None, None
     
+    # API v2 client for posting
     client = tweepy.Client(
-        consumer_key=os.environ["TWITTER_API_KEY"],
-        consumer_secret=os.environ["TWITTER_API_SECRET"],
-        access_token=os.environ["TWITTER_ACCESS_TOKEN"],
-        access_token_secret=os.environ["TWITTER_ACCESS_SECRET"]
+        consumer_key=api_key,
+        consumer_secret=api_secret,
+        access_token=access_token,
+        access_token_secret=access_secret
     )
     
-    auth = tweepy.OAuth1UserHandler(
-        os.environ["TWITTER_API_KEY"],
-        os.environ["TWITTER_API_SECRET"],
-        os.environ["TWITTER_ACCESS_TOKEN"],
-        os.environ["TWITTER_ACCESS_SECRET"]
-    )
+    # API v1.1 for media uploads
+    auth = tweepy.OAuth1UserHandler(api_key, api_secret, access_token, access_secret)
     api_v1 = tweepy.API(auth)
     
     return client, api_v1
 
 
-def get_tweet_limit():
-    """Get tweet character limit based on account type."""
-    premium = os.environ.get("TWITTER_PREMIUM", "").lower()
-    if premium == "plus":
-        return TWEET_LIMITS["plus"]
-    elif premium == "true" or premium == "premium":
-        return TWEET_LIMITS["premium"]
-    else:
-        return TWEET_LIMITS["free"]
+def get_tweet_limit() -> int:
+    """Get tweet character limit based on account tier."""
+    tier = os.environ.get("TWITTER_TIER", "free").lower()
+    return TWEET_LIMITS.get(tier, 280)
 
 
-def truncate_text(text: str, max_length: int, suffix: str = "...") -> str:
-    """Truncate text to max length, preserving words."""
+def truncate_text(text: str, max_length: int) -> str:
+    """Truncate text to max length, trying to preserve word boundaries."""
     if len(text) <= max_length:
         return text
     
-    truncated = text[:max_length - len(suffix)]
+    truncated = text[:max_length - 3]
     last_space = truncated.rfind(" ")
     if last_space > max_length // 2:
         truncated = truncated[:last_space]
     
-    return truncated + suffix
+    return truncated + "..."
 
 
-def extract_hashtags(paper: dict, max_hashtags: int = MAX_HASHTAGS) -> list[str]:
-    """Extract relevant hashtags from paper title and abstract."""
-    title = paper.get("title", "").lower()
-    abstract = paper.get("abstract", "").lower()
-    content = f"{title} {abstract}"
-    
+def extract_hashtags(paper: dict) -> list[str]:
+    """Extract relevant hashtags based on paper content."""
+    text = f"{paper.get('title', '')} {paper.get('abstract', '')}".lower()
     is_exoplanet = paper.get("is_exoplanet_focused", True)
+    
+    # Start with base hashtags
+    base = BASE_HASHTAGS_EXOPLANET if is_exoplanet else BASE_HASHTAGS_GENERAL
+    found = []
+    
+    # Choose hashtag map based on paper type
     hashtag_map = EXOPLANET_HASHTAGS if is_exoplanet else GENERAL_HASHTAGS
-    base_hashtags = BASE_HASHTAGS_EXOPLANET if is_exoplanet else BASE_HASHTAGS_GENERAL
     
-    found_hashtags = []
     for keyword, hashtag in hashtag_map.items():
-        if keyword in content and hashtag not in found_hashtags:
-            found_hashtags.append(hashtag)
+        if keyword in text and hashtag not in found:
+            found.append(hashtag)
     
-    # Combine base + found, limit to max
-    all_hashtags = base_hashtags.copy()
-    for h in found_hashtags:
-        if h not in all_hashtags:
-            all_hashtags.append(h)
+    # Combine: base + found (up to MAX_HASHTAGS total)
+    result = list(base)
+    for tag in found:
+        if tag not in result and len(result) < MAX_HASHTAGS:
+            result.append(tag)
     
-    return all_hashtags[:max_hashtags]
+    return result[:MAX_HASHTAGS]
 
 
-def format_tweet_thread_premium(paper: dict, page_url: str, hashtags: list[str], limit: int) -> tuple[str, str]:
-    """Format for premium accounts (longer tweets). Hook-first format."""
+def build_summary_link(page_url: str, paper_id: str, papers_date: str) -> str:
+    """Build summary link with date parameter for archive compatibility."""
+    safe_id = re.sub(r'[^a-zA-Z0-9]', '-', paper_id)
+    # Always include date parameter so links work even after new papers are posted
+    return f"{page_url}?date={papers_date}#paper-{safe_id}"
+
+
+def format_tweet_thread_premium(paper: dict, page_url: str, hashtags: list[str], limit: int, papers_date: str) -> tuple[str, str]:
+    """Format for premium accounts (25000 chars). Hook-first format with rich content."""
     tweet_hook = paper.get("tweet_hook", {})
     hook = tweet_hook.get("hook", "")
     question = tweet_hook.get("question", "")
-    
     title = paper["title"]
     authors = paper.get("authors", [])
     
-    # Parse first author - authors might be a list of names or a list with one comma-separated string
+    # Parse first author
     if not authors:
         author_str = "Unknown"
     else:
-        # If first element contains comma, it's all authors in one string
         first_item = authors[0]
         if "," in first_item:
             first_author = first_item.split(",")[0].strip()
@@ -614,9 +562,7 @@ def format_tweet_thread_premium(paper: dict, page_url: str, hashtags: list[str],
         tweet1 = truncate_text(tweet1, limit - 3)
     
     link = paper["abs_link"]
-    paper_id = paper["id"]
-    safe_id = re.sub(r'[^a-zA-Z0-9]', '-', paper_id)
-    summary_link = f"{page_url}#paper-{safe_id}"
+    summary_link = build_summary_link(page_url, paper["id"], papers_date)
     hashtag_str = " ".join(hashtags)
     
     tweet2 = f"📄 arXiv: {link}\n📖 Full summary: {summary_link}\n\n{hashtag_str}"
@@ -624,7 +570,7 @@ def format_tweet_thread_premium(paper: dict, page_url: str, hashtags: list[str],
     return tweet1, tweet2
 
 
-def format_tweet_thread_free(paper: dict, page_url: str, hashtags: list[str]) -> tuple[str, str]:
+def format_tweet_thread_free(paper: dict, page_url: str, hashtags: list[str], papers_date: str) -> tuple[str, str]:
     """Format for free accounts (280 chars). Hook-first format."""
     tweet_hook = paper.get("tweet_hook", {})
     hook = tweet_hook.get("hook", "")
@@ -683,9 +629,7 @@ def format_tweet_thread_free(paper: dict, page_url: str, hashtags: list[str]) ->
     
     # Tweet 2: Links + hashtags
     link = paper["abs_link"]
-    paper_id = paper["id"]
-    safe_id = re.sub(r'[^a-zA-Z0-9]', '-', paper_id)
-    summary_link = f"{page_url}#paper-{safe_id}"
+    summary_link = build_summary_link(page_url, paper["id"], papers_date)
     hashtag_str = " ".join(hashtags[:3])
     
     tweet2 = f"📄 {link}\n📖 {summary_link}\n\n{hashtag_str}"
@@ -693,7 +637,7 @@ def format_tweet_thread_free(paper: dict, page_url: str, hashtags: list[str]) ->
     return tweet1, tweet2
 
 
-def format_paper_thread(paper: dict, page_url: str) -> tuple[str, str]:
+def format_paper_thread(paper: dict, page_url: str, papers_date: str) -> tuple[str, str]:
     """Create a 2-tweet thread for a paper."""
     limit = get_tweet_limit()
     hashtags = extract_hashtags(paper)
@@ -702,9 +646,9 @@ def format_paper_thread(paper: dict, page_url: str) -> tuple[str, str]:
     print(f"Extracted hashtags: {hashtags}")
     
     if limit > 280:
-        return format_tweet_thread_premium(paper, page_url, hashtags, limit)
+        return format_tweet_thread_premium(paper, page_url, hashtags, limit, papers_date)
     else:
-        return format_tweet_thread_free(paper, page_url, hashtags)
+        return format_tweet_thread_free(paper, page_url, hashtags, papers_date)
 
 
 def upload_media(api_v1: tweepy.API, image_path: str) -> str | None:
@@ -881,8 +825,8 @@ def main():
         else:
             print("📄 No image available, tweeting text only")
     
-    # Format the thread
-    tweet1_text, tweet2_text = format_paper_thread(paper_to_tweet, page_url)
+    # Format the thread (now with papers_date)
+    tweet1_text, tweet2_text = format_paper_thread(paper_to_tweet, page_url, papers_date)
     
     print(f"\nTweeting paper: {paper_to_tweet['id']}")
     print(f"\nTweet 1 ({len(tweet1_text)} chars):")
