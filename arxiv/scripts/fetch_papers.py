@@ -684,6 +684,38 @@ def main():
     papers = new_papers
     print(f"📰 Keeping {len(papers)} new papers from {announcement_date}")
     
+    # Filter out REVISED papers (v2, v3, etc.) - only keep first-time publications (v1)
+    # A paper is revised if: published date != updated date, OR version > 1
+    first_time_papers = []
+    revised_papers = []
+    
+    for paper in papers:
+        paper_id = paper["id"]
+        published = paper.get("published", "")[:10]  # YYYY-MM-DD
+        updated = paper.get("updated", "")[:10]
+        
+        # Check version number in ID (e.g., "2601.12345v2" -> v2 = revision)
+        version_match = re.search(r'v(\d+)$', paper_id)
+        version = int(version_match.group(1)) if version_match else 1
+        
+        # Paper is revised if version > 1 OR published date differs from updated date
+        is_revised = version > 1 or (published and updated and published != updated)
+        
+        if is_revised:
+            revised_papers.append(paper)
+        else:
+            first_time_papers.append(paper)
+    
+    if revised_papers:
+        print(f"\n🔄 Filtered out {len(revised_papers)} revised/updated papers:")
+        for p in revised_papers:
+            version_match = re.search(r'v(\d+)$', p["id"])
+            version = version_match.group(1) if version_match else "1"
+            print(f"   - {p['id']} (v{version}, pub: {p.get('published', '')[:10]}, upd: {p.get('updated', '')[:10]}): {p['title'][:40]}...")
+    
+    papers = first_time_papers
+    print(f"📰 Keeping {len(papers)} first-time publications")
+    
     # Add metadata
     for paper in papers:
         paper["is_exoplanet_focused"] = is_exoplanet_paper(paper["title"], paper["abstract"])

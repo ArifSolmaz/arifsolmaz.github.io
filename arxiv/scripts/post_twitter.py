@@ -427,12 +427,20 @@ def load_papers():
 
 
 def load_tweeted():
-    """Load list of already tweeted paper IDs."""
+    """Load list of already tweeted paper IDs (keeps 7 days of history)."""
     if not TWEETED_FILE.exists():
-        return {"tweeted_ids": [], "last_reset": None}
+        return {"tweeted_ids": [], "history": {}, "last_reset": None}
     
     with open(TWEETED_FILE, "r", encoding="utf-8") as f:
-        return json.load(f)
+        data = json.load(f)
+    
+    # Migrate old format to new format
+    if "history" not in data:
+        data["history"] = {}
+        if data.get("tweeted_ids") and data.get("last_reset"):
+            data["history"][data["last_reset"]] = data["tweeted_ids"]
+    
+    return data
 
 
 def save_tweeted(data):
@@ -440,6 +448,35 @@ def save_tweeted(data):
     TWEETED_FILE.parent.mkdir(parents=True, exist_ok=True)
     with open(TWEETED_FILE, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2)
+
+
+def get_all_tweeted_ids(tweeted_data: dict, days: int = 7) -> set:
+    """Get all tweeted paper IDs from the last N days."""
+    all_ids = set()
+    history = tweeted_data.get("history", {})
+    
+    # Get IDs from history
+    for date, ids in history.items():
+        all_ids.update(ids)
+    
+    # Also include current tweeted_ids for backwards compatibility
+    all_ids.update(tweeted_data.get("tweeted_ids", []))
+    
+    return all_ids
+
+
+def cleanup_old_history(tweeted_data: dict, days: int = 7) -> dict:
+    """Remove history older than N days."""
+    from datetime import datetime, timedelta
+    
+    cutoff = (datetime.now() - timedelta(days=days)).strftime("%Y-%m-%d")
+    history = tweeted_data.get("history", {})
+    
+    # Keep only recent dates
+    new_history = {date: ids for date, ids in history.items() if date >= cutoff}
+    tweeted_data["history"] = new_history
+    
+    return tweeted_data
 
 
 def create_twitter_client():
@@ -773,25 +810,43 @@ def main():
     papers = data["papers"]
     papers_date = data.get("announcement_date") or data.get("updated_at", "")[:10]
     
+    print(f"Papers date: {papers_date}")
+    print(f"Total papers: {len(papers)}")
+    
     # Load tweeted tracking
     tweeted_data = load_tweeted()
-    tweeted_ids = set(tweeted_data.get("tweeted_ids", []))
     last_reset = tweeted_data.get("last_reset")
     
-    # Reset tweeted list if papers were updated (new day)
-    if last_reset != papers_date:
-        print(f"New papers detected (date: {papers_date}). Resetting tweeted list.")
-        tweeted_ids = set()
-        tweeted_data = {
-            "tweeted_ids": [],
-            "last_reset": papers_date
-        }
+    # Get ALL tweeted IDs from last 7 days (not just today)
+    all_tweeted_ids = get_all_tweeted_ids(tweeted_data, days=7)
+    print(f"Papers tweeted in last 7 days: {len(all_tweeted_ids)}")
     
-    # Select the best paper to tweet
-    paper_to_tweet = select_best_paper(papers, tweeted_ids)
+    # If new day, update tracking structure
+    if last_reset != papers_date:
+        print(f"New day detected (was: {last_reset}, now: {papers_date})")
+        
+        # Save yesterday's tweets to history before resetting
+        if last_reset and tweeted_data.get("tweeted_ids"):
+            if "history" not in tweeted_data:
+                tweeted_data["history"] = {}
+            tweeted_data["history"][last_reset] = tweeted_data.get("tweeted_ids", [])
+        
+        # Reset today's list but keep history
+        tweeted_data["tweeted_ids"] = []
+        tweeted_data["last_reset"] = papers_date
+        
+        # Cleanup old history (older than 7 days)
+        tweeted_data = cleanup_old_history(tweeted_data, days=7)
+        save_tweeted(tweeted_data)
+    
+    # Today's tweeted IDs (for counting remaining)
+    todays_tweeted_ids = set(tweeted_data.get("tweeted_ids", []))
+    
+    # Select the best paper to tweet (check against ALL recent tweets)
+    paper_to_tweet = select_best_paper(papers, all_tweeted_ids)
     
     if not paper_to_tweet:
-        print("All papers have been tweeted today!")
+        print("All papers have been tweeted (or were tweeted recently)!")
         return
     
     paper_type = "🪐 EXOPLANET" if paper_to_tweet.get("is_exoplanet_focused", True) else "🔭 GENERAL"
@@ -850,17 +905,20 @@ def main():
         tweet2_id = post_tweet(client, tweet2_text, reply_to=tweet1_id)
         
         if tweet2_id:
-            tweeted_ids.add(paper_to_tweet["id"])
-            tweeted_data["tweeted_ids"] = list(tweeted_ids)
+            # Add to today's list
+            todays_tweeted_ids.add(paper_to_tweet["id"])
+            tweeted_data["tweeted_ids"] = list(todays_tweeted_ids)
             save_tweeted(tweeted_data)
+            
             print(f"\n✅ Thread posted successfully!")
             print(f"   Tweet 1: https://twitter.com/i/status/{tweet1_id}")
             print(f"   Tweet 2: https://twitter.com/i/status/{tweet2_id}")
-            print(f"   Remaining papers: {len(papers) - len(tweeted_ids)}")
+            print(f"   Tweeted today: {len(todays_tweeted_ids)}")
+            print(f"   Remaining today: {len(papers) - len(todays_tweeted_ids)}")
         else:
             print("\n⚠️ Tweet 1 posted but Tweet 2 failed")
-            tweeted_ids.add(paper_to_tweet["id"])
-            tweeted_data["tweeted_ids"] = list(tweeted_ids)
+            todays_tweeted_ids.add(paper_to_tweet["id"])
+            tweeted_data["tweeted_ids"] = list(todays_tweeted_ids)
             save_tweeted(tweeted_data)
     else:
         print("\n❌ Failed to post tweet")

@@ -119,12 +119,20 @@ def load_papers():
 
 
 def load_posted():
-    """Load list of already posted paper IDs."""
+    """Load list of already posted paper IDs (keeps 7 days of history)."""
     if not POSTED_FILE.exists():
-        return {"posted_ids": [], "last_reset": None}
+        return {"posted_ids": [], "history": {}, "last_reset": None}
     
     with open(POSTED_FILE, "r", encoding="utf-8") as f:
-        return json.load(f)
+        data = json.load(f)
+    
+    # Migrate old format to new format
+    if "history" not in data:
+        data["history"] = {}
+        if data.get("posted_ids") and data.get("last_reset"):
+            data["history"][data["last_reset"]] = data["posted_ids"]
+    
+    return data
 
 
 def save_posted(data):
@@ -132,6 +140,35 @@ def save_posted(data):
     POSTED_FILE.parent.mkdir(parents=True, exist_ok=True)
     with open(POSTED_FILE, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2)
+
+
+def get_all_posted_ids(posted_data: dict, days: int = 7) -> set:
+    """Get all posted paper IDs from the last N days."""
+    all_ids = set()
+    history = posted_data.get("history", {})
+    
+    # Get IDs from history
+    for date, ids in history.items():
+        all_ids.update(ids)
+    
+    # Also include current posted_ids for backwards compatibility
+    all_ids.update(posted_data.get("posted_ids", []))
+    
+    return all_ids
+
+
+def cleanup_old_history(posted_data: dict, days: int = 7) -> dict:
+    """Remove history older than N days."""
+    from datetime import timedelta
+    
+    cutoff = (datetime.now() - timedelta(days=days)).strftime("%Y-%m-%d")
+    history = posted_data.get("history", {})
+    
+    # Keep only recent dates
+    new_history = {date: ids for date, ids in history.items() if date >= cutoff}
+    posted_data["history"] = new_history
+    
+    return posted_data
 
 
 def get_safe_id(paper_id: str) -> str:
@@ -342,23 +379,42 @@ def main():
     # Use announcement_date for tracking (fallback to updated_at for backwards compatibility)
     papers_date = data.get("announcement_date") or data.get("updated_at", "")[:10]
     print(f"Papers announcement date: {papers_date}")
+    print(f"Total papers: {len(papers)}")
     
     # Load posted tracking
     posted_data = load_posted()
-    posted_ids = set(posted_data.get("posted_ids", []))
     last_reset = posted_data.get("last_reset")
     
-    # Reset if new announcement
-    if last_reset != papers_date:
-        print(f"New papers (announcement: {papers_date}). Resetting posted list.")
-        posted_ids = set()
-        posted_data = {"posted_ids": [], "last_reset": papers_date}
+    # Get ALL posted IDs from last 7 days (not just today)
+    all_posted_ids = get_all_posted_ids(posted_data, days=7)
+    print(f"Papers posted in last 7 days: {len(all_posted_ids)}")
     
-    # Select paper
-    paper = select_paper(papers, posted_ids)
+    # If new day, update tracking structure
+    if last_reset != papers_date:
+        print(f"New day detected (was: {last_reset}, now: {papers_date})")
+        
+        # Save yesterday's posts to history before resetting
+        if last_reset and posted_data.get("posted_ids"):
+            if "history" not in posted_data:
+                posted_data["history"] = {}
+            posted_data["history"][last_reset] = posted_data.get("posted_ids", [])
+        
+        # Reset today's list but keep history
+        posted_data["posted_ids"] = []
+        posted_data["last_reset"] = papers_date
+        
+        # Cleanup old history (older than 7 days)
+        posted_data = cleanup_old_history(posted_data, days=7)
+        save_posted(posted_data)
+    
+    # Today's posted IDs (for counting remaining)
+    todays_posted_ids = set(posted_data.get("posted_ids", []))
+    
+    # Select paper (check against ALL recent posts)
+    paper = select_paper(papers, all_posted_ids)
     
     if not paper:
-        print("All papers have been posted today!")
+        print("All papers have been posted (or were posted recently)!")
         return
     
     print(f"Selected paper: {paper['id']}")
@@ -401,11 +457,12 @@ def main():
         cleanup_temp_file(image_path)
     
     if uri:
-        posted_ids.add(paper["id"])
-        posted_data["posted_ids"] = list(posted_ids)
+        todays_posted_ids.add(paper["id"])
+        posted_data["posted_ids"] = list(todays_posted_ids)
         save_posted(posted_data)
         print(f"\n✅ Posted successfully!")
-        print(f"   Remaining papers: {len(papers) - len(posted_ids)}")
+        print(f"   Posted today: {len(todays_posted_ids)}")
+        print(f"   Remaining today: {len(papers) - len(todays_posted_ids)}")
     else:
         print("\n❌ Failed to post")
         sys.exit(1)
