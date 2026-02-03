@@ -448,26 +448,37 @@ def get_topic_fallback_image(title: str, abstract: str) -> str:
 
 
 def generate_summary(client, paper: dict) -> str:
-    """Generate a summary using Claude API."""
-    prompt = f"""You are an expert science communicator writing for astronomy enthusiasts.
+    """Generate an accessible summary using Claude."""
+    prompt = f"""You are a science communicator writing for a general audience. Summarize this exoplanet research paper in an accessible, engaging way.
 
-Summarize this astronomy paper in 3-4 sentences for a general audience interested in space.
+PAPER TITLE: {paper['title']}
 
-Title: {paper['title']}
-Authors: {', '.join(paper['authors'][:5])}
-Abstract: {paper['abstract']}
+ABSTRACT: {paper['abstract']}
 
-Requirements:
-- Start directly with the key finding or discovery
-- Explain why this matters for our understanding of planets/space
-- Avoid jargon - explain technical terms briefly if needed
-- Be engaging but accurate
-- Keep to 3-4 sentences total"""
+Write an extended summary (250-350 words) with these exact section headers:
+
+**Why It Matters**
+Open with the big picture significance—why should a general reader care about this research?
+
+**What They Did**
+Explain the research methods in simple terms. Avoid jargon entirely.
+
+**Key Findings**
+Describe the main discoveries. Use concrete numbers or comparisons when possible.
+
+**Looking Forward**
+End with implications—what does this mean for exoplanet science?
+
+Guidelines:
+- Write for someone curious about space but with no astronomy background
+- Use analogies to everyday concepts
+- Avoid acronyms unless you spell them out
+- Be engaging and convey the excitement of discovery"""
 
     try:
         response = client.messages.create(
             model="claude-sonnet-4-20250514",
-            max_tokens=300,
+            max_tokens=1000,
             messages=[{"role": "user", "content": prompt}]
         )
         return response.content[0].text.strip()
@@ -477,23 +488,32 @@ Requirements:
 
 
 def format_summary_html(summary: str) -> str:
-    """Convert summary to HTML with bold terms."""
+    """Convert markdown summary to HTML."""
     if not summary:
         return "<p><em>Summary unavailable.</em></p>"
     
-    html = summary
-    bold_terms = [
-        "exoplanet", "exoplanets", "JWST", "James Webb",
-        "habitable", "atmosphere", "transit", "spectrum",
-        "TESS", "Kepler", "hot Jupiter", "super-Earth",
-    ]
-    for term in bold_terms:
-        html = re.sub(rf'\b({re.escape(term)})\b', r'<strong>\1</strong>', html, flags=re.IGNORECASE)
+    # Convert **Section Header** to <h4>
+    html = re.sub(
+        r'\*\*(Why It Matters|What They Did|Key Findings|Looking Forward)\*\*',
+        r'<h4>\1</h4>',
+        summary
+    )
     
+    # Split into paragraphs and format
     paragraphs = html.split('\n\n')
-    html = ''.join(f'<p>{p.strip()}</p>' for p in paragraphs if p.strip())
+    formatted = []
     
-    return html
+    for p in paragraphs:
+        p = p.strip()
+        if not p:
+            continue
+        if p.startswith('<h4>'):
+            formatted.append(p)
+        else:
+            p = p.replace('\n', ' ')
+            formatted.append(f'<p>{p}</p>')
+    
+    return '\n'.join(formatted)
 
 
 def generate_tweet_hook(client, paper: dict) -> dict:
