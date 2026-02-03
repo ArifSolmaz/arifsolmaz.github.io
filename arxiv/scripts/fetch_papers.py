@@ -4,6 +4,9 @@ Fetch exoplanet papers from arXiv and generate AI summaries.
 
 Scrapes the arXiv recent listings page to get actual announcement dates,
 then fetches full paper details from the API.
+
+FIXED: Month transition handling - papers submitted in late month X can be
+announced in early month Y. The ID prefix filter now allows both months.
 """
 
 import json
@@ -11,7 +14,7 @@ import os
 import re
 import time
 import requests
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
 try:
@@ -64,187 +67,90 @@ def clean_latex_name(name: str) -> str:
 
 def clean_latex_abstract(text: str) -> str:
     """Convert LaTeX math notation in abstracts to readable text."""
-    if not text:
-        return text
-    
-    # Remove $ delimiters
+    replacements = [
+        (r'\sim', '~'),
+        (r'\times', '×'),
+        (r'\pm', '±'),
+        (r'\leq', '≤'),
+        (r'\geq', '≥'),
+        (r'\approx', '≈'),
+        (r'\infty', '∞'),
+        (r'\alpha', 'α'),
+        (r'\beta', 'β'),
+        (r'\gamma', 'γ'),
+        (r'\delta', 'δ'),
+        (r'\lambda', 'λ'),
+        (r'\mu', 'μ'),
+        (r'\nu', 'ν'),
+        (r'\pi', 'π'),
+        (r'\sigma', 'σ'),
+        (r'\tau', 'τ'),
+        (r'\omega', 'ω'),
+        (r'\odot', '☉'),
+        (r'\oplus', '⊕'),
+        (r'\deg', '°'),
+        (r'\AA', 'Å'),
+    ]
+    for latex, char in replacements:
+        text = text.replace(latex, char)
     text = re.sub(r'\$([^$]+)\$', r'\1', text)
-    
-    # Handle uncertainty notation: _{-0.47}^{+0.53} -> (+0.53/-0.47)
-    def format_uncertainty(m):
-        sub = m.group(1) if m.group(1) else ''
-        sup = m.group(2) if m.group(2) else ''
-        if sub and sup:
-            return f" ({sup}/{sub})"
-        elif sup:
-            return f"^{sup}"
-        elif sub:
-            return f"_{sub}"
-        return ''
-    
-    text = re.sub(r'_\{([^}]*)\}\^\{([^}]*)\}', format_uncertainty, text)
-    text = re.sub(r'\^\{([^}]*)\}_\{([^}]*)\}', lambda m: f" ({m.group(1)}/{m.group(2)})", text)
-    
-    # Simple superscripts/subscripts with braces
-    text = re.sub(r'\^\{([^}]+)\}', r'^(\1)', text)
-    text = re.sub(r'_\{([^}]+)\}', r'_(\1)', text)
-    
-    # \text{Jup} -> Jup
-    text = re.sub(r'\\text\{([^}]+)\}', r'\1', text)
-    text = re.sub(r'\\mathrm\{([^}]+)\}', r'\1', text)
-    text = re.sub(r'\\rm\{([^}]+)\}', r'\1', text)
-    
-    # Common math symbols
-    replacements = {
-        r'\pm': '±',
-        r'\mp': '∓',
-        r'\times': '×',
-        r'\cdot': '·',
-        r'\div': '÷',
-        r'\sim': '~',
-        r'\approx': '≈',
-        r'\simeq': '≃',
-        r'\neq': '≠',
-        r'\leq': '≤',
-        r'\geq': '≥',
-        r'\ll': '≪',
-        r'\gg': '≫',
-        r'\infty': '∞',
-        r'\propto': '∝',
-        r'\degree': '°',
-        r'\deg': '°',
-        r'\circ': '°',
-        # Greek letters
-        r'\alpha': 'α', r'\Alpha': 'Α',
-        r'\beta': 'β', r'\Beta': 'Β',
-        r'\gamma': 'γ', r'\Gamma': 'Γ',
-        r'\delta': 'δ', r'\Delta': 'Δ',
-        r'\epsilon': 'ε', r'\varepsilon': 'ε',
-        r'\zeta': 'ζ',
-        r'\eta': 'η',
-        r'\theta': 'θ', r'\Theta': 'Θ',
-        r'\iota': 'ι',
-        r'\kappa': 'κ',
-        r'\lambda': 'λ', r'\Lambda': 'Λ',
-        r'\mu': 'μ',
-        r'\nu': 'ν',
-        r'\xi': 'ξ', r'\Xi': 'Ξ',
-        r'\pi': 'π', r'\Pi': 'Π',
-        r'\rho': 'ρ',
-        r'\sigma': 'σ', r'\Sigma': 'Σ',
-        r'\tau': 'τ',
-        r'\upsilon': 'υ',
-        r'\phi': 'φ', r'\Phi': 'Φ', r'\varphi': 'φ',
-        r'\chi': 'χ',
-        r'\psi': 'ψ', r'\Psi': 'Ψ',
-        r'\omega': 'ω', r'\Omega': 'Ω',
-        # Astronomy symbols
-        r'\odot': '☉',
-        r'\oplus': '⊕',
-        r'\otimes': '⊗',
-        r'\star': '★',
-        # Arrows
-        r'\rightarrow': '→',
-        r'\leftarrow': '←',
-        r'\leftrightarrow': '↔',
-        r'\Rightarrow': '⇒',
-        # Other
-        r'\&': '&',
-        r'\ ': ' ',
-    }
-    
-    for latex, symbol in replacements.items():
-        text = text.replace(latex, symbol)
-    
-    # Clean remaining LaTeX commands
-    text = re.sub(r'\\[a-zA-Z]+\s*', '', text)
-    
-    # Remove remaining braces
+    text = re.sub(r'\\[a-zA-Z]+\{([^}]*)\}', r'\1', text)
+    text = re.sub(r'\\[a-zA-Z]+', '', text)
     text = re.sub(r'[{}]', '', text)
-    
-    # Clean up multiple spaces
     text = re.sub(r'\s+', ' ', text)
-    
     return text.strip()
 
 
-def is_exoplanet_paper(title: str, abstract: str) -> bool:
+def is_exoplanet_focused(paper: dict) -> bool:
     """
-    Determine if a paper is about exoplanets.
-    Be STRICT - only include papers clearly about exoplanets, not solar system.
-    """
-    text = f"{title} {abstract}".lower()
+    STRICT filter: Return True only if paper is genuinely about exoplanets.
     
-    # STRONG EXOPLANET INDICATORS - if present, almost certainly exoplanet paper
-    strong_indicators = [
-        "exoplanet", "exoplanets", "exoplanetary", "extrasolar planet",
+    Excludes:
+    - Solar system studies (Mars, Venus, asteroids, comets, etc.)
+    - Pure disk/ISM chemistry without planet connection
+    - Star-only studies
+    """
+    title = paper.get("title", "").lower()
+    abstract = paper.get("abstract", "").lower()
+    text = f"{title} {abstract}"
+    
+    # STRONG INDICATORS - paper is definitely about exoplanets
+    strong_exoplanet_terms = [
+        "exoplanet", "exoplanetary", "extrasolar planet",
         "hot jupiter", "warm jupiter", "cold jupiter",
         "super-earth", "super earth", "mini-neptune", "sub-neptune",
-        "earth-like planet", "earth-sized planet", "earthlike",
-        "habitable zone", "habitable planet", "potentially habitable",
-        "biosignature", "biomarker",
-        # Exoplanet survey targets (these are definitive)
-        "toi-", "koi-", "wasp-", "hat-p-", "hats-", "hatp-",
-        "trappist-1", "proxima b", "proxima c",
-        "55 cancri", "51 pegasi", "51 peg",
-        "gj 1214", "gj 436", "gj 357", "gj 876",
-        "hd 189733", "hd 209458", "hd 80606",
-        "lhs 1140", "l 98-59", "toi 700",
-        # Detection context
-        "planet candidate", "planet detection", "planet discovery",
-        "confirmed planet", "validated planet",
-        "transit detection", "transit survey", "transiting planet",
-        "radial velocity planet", "rv planet",
-        "directly imaged planet", "imaged exoplanet",
+        "earth-like planet", "earth-sized planet", "earth-mass planet",
+        "habitable zone planet", "habitable exoplanet",
+        "transiting planet", "transiting exoplanet",
+        "directly imaged planet", "directly-imaged planet",
+        "circumbinary planet",
+        "toi-", "wasp-", "hat-p-", "hatp-", "hd ", "gj ", "gl ",
+        "kepler-", "k2-", "trappist-", "proxima b", "proxima c",
+        "koi-", "epic ", "tic ",
+        "55 cnc", "55 cancri",
     ]
     
-    for kw in strong_indicators:
-        if kw in text:
+    if any(term in text for term in strong_exoplanet_terms):
+        return True
+    
+    # EXCLUSION: Solar system objects (even if they mention "planet")
+    solar_system_terms = [
+        "mars", "martian", "venus", "venusian", "mercury", "mercurian",
+        "jupiter", "jovian", "saturn", "saturnian", "uranus", "neptune",
+        "pluto", "ceres", "vesta", "asteroid", "comet", "kuiper belt",
+        "oort cloud", "trans-neptunian", "tno", "centaur",
+        "moon", "lunar", "titan", "europa", "enceladus", "ganymede", "io",
+        "phobos", "deimos", "triton", "charon",
+        "meteor", "meteorite", "bolide", "fireball",
+        "9p/tempel", "67p/", "c/2", "p/",
+        "interplanetary dust", "zodiacal",
+    ]
+    
+    if any(term in text for term in solar_system_terms):
+        # Exception: if it also has strong exoplanet context, keep it
+        if any(strong in text for strong in ["exoplanet", "extrasolar", "toi-", "wasp-", "hat-p", "koi-"]):
             return True
-    
-    # EXCLUDE: solar system and non-exoplanet topics
-    exclude_keywords = [
-        # Our solar system planets by name in certain contexts
-        "mercury's", "venus's", "earth's moon", "mars's", "martian",
-        "jupiter's moon", "saturn's moon", "uranus's", "neptune's moon",
-        "ganymede", "callisto", "io's", "europa's",
-        "titan's", "enceladus", "triton",
-        "pluto", "ceres", "eris", "makemake", "haumea",
-        # Solar system specific
-        "solar wind", "solar flare", "solar corona", "solar cycle", "solar system",
-        "mars rover", "mars surface", "mars polar",
-        "lunar", "moon crater", "apollo", "artemis",
-        "venus atmosphere", "venusian cloud",
-        "mercury magnetosphere",
-        "jupiter magnetosphere", "jupiter storm", "great red spot",
-        "saturn ring", "cassini",
-        "voyager", "new horizons", "juno mission",
-        # Small bodies
-        "asteroid", "asteroids", "near-earth object", "neo",
-        "comet", "cometary", "meteorite", "meteorites", "meteor shower",
-        "kuiper belt", "trans-neptunian", "tno", "centaur",
-        "oort cloud", "scattered disk",
-        # Interstellar objects
-        "interstellar object", "1i/", "2i/", "3i/",
-        "oumuamua", "'oumuamua", "borisov",
-        # Stellar only
-        "stellar occultation", "occultation by",
-        "stellar wind", "stellar flare", "stellar rotation period",
-        "stellar abundance", "stellar pipeline", "stellar parameter",
-        "binary star", "eclipsing binary",
-        # Disk-only papers
-        "debris disk", "dust disk", "zodiacal", "protostellar",
-        # Other non-exoplanet
-        "galaxy cluster", "black hole", "neutron star", "pulsar",
-        "gravitational wave", "supernova", "gamma-ray burst",
-    ]
-    
-    for kw in exclude_keywords:
-        if kw in text:
-            # Exception: if it ALSO has strong exoplanet context, keep it
-            if any(strong in text for strong in ["exoplanet", "extrasolar", "toi-", "wasp-", "hat-p", "koi-"]):
-                return True
-            return False
+        return False
     
     # MODERATE INDICATORS - need multiple or combined with context
     moderate_indicators = [
@@ -262,7 +168,6 @@ def is_exoplanet_paper(title: str, abstract: str) -> bool:
         "photoevaporation", "atmospheric escape",
     ]
     
-    # Count moderate indicators
     moderate_count = sum(1 for kw in moderate_indicators if kw in text)
     
     # Need at least 2 moderate indicators, or 1 moderate + mission name
@@ -274,7 +179,6 @@ def is_exoplanet_paper(title: str, abstract: str) -> bool:
     if moderate_count >= 1 and has_mission:
         return True
     
-    # Default: reject - be conservative
     return False
 
 
@@ -286,6 +190,48 @@ def calculate_tweetability_score(paper: dict) -> int:
         if keyword.lower() in text:
             score += points
     return score
+
+
+def get_valid_id_prefixes(announcement_date: str) -> list[str]:
+    """
+    Get valid arXiv ID prefixes for a given announcement date.
+    
+    CRITICAL FIX: Papers submitted in late month X can be announced in early month Y.
+    For example, papers submitted Jan 30-31 might be announced Feb 2-3.
+    
+    arXiv ID format: YYMM.NNNNN
+    - Papers submitted Jan 30, 2026 → 2601.xxxxx
+    - But announced Feb 2, 2026 (after weekend)
+    
+    This function returns both current and previous month prefixes for
+    the first 5 days of any month.
+    """
+    try:
+        date_obj = datetime.strptime(announcement_date, "%Y-%m-%d")
+    except ValueError:
+        # Fallback: just use current date
+        date_obj = datetime.now(timezone.utc)
+    
+    year = date_obj.year
+    month = date_obj.month
+    day = date_obj.day
+    
+    # Current month prefix
+    current_prefix = f"{year % 100:02d}{month:02d}"
+    prefixes = [current_prefix]
+    
+    # If we're in the first 5 days of the month, also allow previous month
+    # This handles weekend/holiday gaps at month boundaries
+    if day <= 5:
+        prev_month = month - 1
+        prev_year = year
+        if prev_month < 1:
+            prev_month = 12
+            prev_year -= 1
+        prev_prefix = f"{prev_year % 100:02d}{prev_month:02d}"
+        prefixes.append(prev_prefix)
+    
+    return prefixes
 
 
 def scrape_recent_listings() -> tuple[str, list[str]]:
@@ -334,14 +280,12 @@ def scrape_recent_listings() -> tuple[str, list[str]]:
         total = int(count_match.group(2))
         print(f"📊 Papers for this date: {total}")
     
-    # Extract paper IDs from the first date's section (the one with "showing X of Y entries")
-    # Split by h3 date headers that contain the paper count
+    # Extract paper IDs from the first date's section
     sections = re.split(r'<h3[^>]*>[A-Za-z]{3},\s+\d{1,2}\s+[A-Za-z]{3}\s+\d{4}\s*\(showing', html)
     
     if len(sections) >= 2:
         first_section = sections[1]
     else:
-        # Fallback: split by any h3 date header
         sections = re.split(r'<h3[^>]*>[A-Za-z]{3},\s+\d{1,2}\s+[A-Za-z]{3}\s+\d{4}', html)
         if len(sections) >= 2:
             first_section = sections[1]
@@ -397,14 +341,12 @@ def fetch_paper_details(paper_ids: list[str]) -> list[dict]:
             title_elem = entry.find('atom:title', ns)
             title = title_elem.text if title_elem is not None else ""
             title = " ".join(title.split())
+            title = clean_latex_abstract(title)
             
             abstract_elem = entry.find('atom:summary', ns)
             abstract = abstract_elem.text if abstract_elem is not None else ""
             abstract = " ".join(abstract.split())
             abstract = clean_latex_abstract(abstract)
-            
-            # Also clean title
-            title = clean_latex_abstract(title)
             
             authors = []
             for author in entry.findall('atom:author', ns):
@@ -487,124 +429,124 @@ def get_topic_fallback_image(title: str, abstract: str) -> str:
     """Return a topic-appropriate fallback image URL."""
     text = f"{title} {abstract}".lower()
     
-    topic_images = {
-        "jwst": "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=800",
-        "james webb": "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=800",
-        "atmosphere": "https://images.unsplash.com/photo-1614642264762-d0a3b8bf3700?w=800",
-        "habitable": "https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?w=800",
-        "earth-like": "https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?w=800",
-        "hot jupiter": "https://images.unsplash.com/photo-1630839437035-dac17da580d0?w=800",
-        "transit": "https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?w=800",
-        "spectrum": "https://images.unsplash.com/photo-1507400492013-162706c8c05e?w=800",
-        "star": "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=800",
-    }
-    
-    for keyword, url in topic_images.items():
-        if keyword in text:
-            return url
-    return "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=800"
+    if any(word in text for word in ['habitable', 'life', 'biosignature', 'oxygen', 'water', 'ocean']):
+        return "https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?w=800&q=80"
+    elif any(word in text for word in ['jwst', 'james webb', 'webb telescope', 'infrared']):
+        return "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=800&q=80"
+    elif any(word in text for word in ['hot jupiter', 'gas giant', 'giant planet']):
+        return "https://images.unsplash.com/photo-1614732414444-096e5f1122d5?w=800&q=80"
+    elif any(word in text for word in ['rocky', 'terrestrial', 'earth-like', 'super-earth']):
+        return "https://images.unsplash.com/photo-1614728263952-84ea256f9679?w=800&q=80"
+    elif any(word in text for word in ['transit', 'light curve', 'photometry']):
+        return "https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?w=800&q=80"
+    elif any(word in text for word in ['atmosphere', 'spectrum', 'spectroscopy']):
+        return "https://images.unsplash.com/photo-1543722530-d2c3201371e7?w=800&q=80"
+    elif any(word in text for word in ['disk', 'protoplanetary', 'debris']):
+        return "https://images.unsplash.com/photo-1465101162946-4377e57745c3?w=800&q=80"
+    else:
+        return "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=800&q=80"
 
 
 def generate_summary(client, paper: dict) -> str:
-    """Generate an accessible summary using Claude."""
-    prompt = f"""You are a science communicator writing for a general audience. Summarize this exoplanet research paper in an accessible, engaging way.
+    """Generate a summary using Claude API."""
+    prompt = f"""You are an expert science communicator writing for astronomy enthusiasts.
 
-PAPER TITLE: {paper['title']}
+Summarize this astronomy paper in 3-4 sentences for a general audience interested in space.
 
-ABSTRACT: {paper['abstract']}
+Title: {paper['title']}
+Authors: {', '.join(paper['authors'][:5])}
+Abstract: {paper['abstract']}
 
-Write an extended summary (250-350 words) with these exact section headers:
-
-**Why It Matters**
-Open with the big picture significance—why should a general reader care about this research?
-
-**What They Did**
-Explain the research methods in simple terms. Avoid jargon entirely.
-
-**Key Findings**
-Describe the main discoveries. Use concrete numbers or comparisons when possible.
-
-**Looking Forward**
-End with implications—what does this mean for exoplanet science?
-
-Guidelines:
-- Write for someone curious about space but with no astronomy background
-- Use analogies to everyday concepts
-- Avoid acronyms unless you spell them out
-- Be engaging and convey the excitement of discovery"""
+Requirements:
+- Start directly with the key finding or discovery
+- Explain why this matters for our understanding of planets/space
+- Avoid jargon - explain technical terms briefly if needed
+- Be engaging but accurate
+- Keep to 3-4 sentences total"""
 
     try:
         response = client.messages.create(
             model="claude-sonnet-4-20250514",
-            max_tokens=1000,
+            max_tokens=300,
             messages=[{"role": "user", "content": prompt}]
         )
-        return response.content[0].text
+        return response.content[0].text.strip()
     except Exception as e:
-        print(f"Error generating summary for {paper['id']}: {e}")
+        print(f"    Error generating summary: {e}")
         return ""
 
 
+def format_summary_html(summary: str) -> str:
+    """Convert summary to HTML with bold terms."""
+    if not summary:
+        return "<p><em>Summary unavailable.</em></p>"
+    
+    html = summary
+    bold_terms = [
+        "exoplanet", "exoplanets", "JWST", "James Webb",
+        "habitable", "atmosphere", "transit", "spectrum",
+        "TESS", "Kepler", "hot Jupiter", "super-Earth",
+    ]
+    for term in bold_terms:
+        html = re.sub(rf'\b({re.escape(term)})\b', r'<strong>\1</strong>', html, flags=re.IGNORECASE)
+    
+    paragraphs = html.split('\n\n')
+    html = ''.join(f'<p>{p.strip()}</p>' for p in paragraphs if p.strip())
+    
+    return html
+
+
 def generate_tweet_hook(client, paper: dict) -> dict:
-    """Generate tweet-optimized hook for a paper."""
-    prompt = f"""You are writing a Twitter thread hook for an exoplanet research paper.
+    """Generate tweet hook content using Claude API."""
+    prompt = f"""You are a science communicator creating a compelling social media hook.
 
-PAPER TITLE: {paper['title']}
-ABSTRACT: {paper['abstract']}
+Paper title: {paper['title']}
+Abstract: {paper['abstract'][:500]}
 
-Generate a compelling tweet thread opener. Return JSON with:
-1. "hook" - Attention-grabbing sentence (max 100 chars)
-2. "claim" - Clear, specific claim about findings (max 150 chars)
-3. "evidence" - One key piece of evidence (max 150 chars)
-4. "question" - Engaging question for discussion (max 100 chars)
+Create a tweet hook that will make people want to learn more. Return JSON:
+{{
+  "hook": "An attention-grabbing first line (max 100 chars)",
+  "claim": "The main finding in plain language (max 200 chars)", 
+  "evidence": "Key supporting detail (max 150 chars)",
+  "question": "An engaging question for readers (max 100 chars)"
+}}
 
-Return ONLY valid JSON, no other text."""
+Requirements:
+- Make it exciting but accurate
+- Use everyday language
+- Include specific numbers/findings when possible
+- The hook should create curiosity"""
 
     try:
         response = client.messages.create(
             model="claude-sonnet-4-20250514",
-            max_tokens=500,
+            max_tokens=400,
             messages=[{"role": "user", "content": prompt}]
         )
-        content = response.content[0].text.strip()
-        if content.startswith("```"):
-            content = re.sub(r"^```json?\n?", "", content)
-            content = re.sub(r"\n?```$", "", content)
-        return json.loads(content)
+        text = response.content[0].text.strip()
+        json_match = re.search(r'\{[^}]+\}', text, re.DOTALL)
+        if json_match:
+            return json.loads(json_match.group())
+        return {"hook": "", "claim": "", "evidence": "", "question": ""}
     except Exception as e:
-        print(f"Error generating tweet hook for {paper['id']}: {e}")
+        print(f"    Error generating tweet hook: {e}")
         return {"hook": "", "claim": "", "evidence": "", "question": ""}
 
 
-def format_summary_html(summary: str) -> str:
-    """Convert markdown summary to HTML."""
-    if not summary:
-        return "<p><em>Summary unavailable.</em></p>"
-    
-    html = re.sub(
-        r'\*\*(Why It Matters|What They Did|Key Findings|Looking Forward)\*\*',
-        r'<h4>\1</h4>',
-        summary
-    )
-    
-    paragraphs = html.split('\n\n')
-    formatted = []
-    
-    for p in paragraphs:
-        p = p.strip()
-        if not p:
-            continue
-        if p.startswith('<h4>'):
-            formatted.append(p)
-        else:
-            p = p.replace('\n', ' ')
-            formatted.append(f'<p>{p}</p>')
-    
-    return '\n'.join(formatted)
+def load_existing_papers() -> dict:
+    """Load existing papers.json to preserve summaries."""
+    if OUTPUT_FILE.exists():
+        try:
+            with open(OUTPUT_FILE, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                return {p["id"]: p for p in data.get("papers", [])}
+        except Exception:
+            pass
+    return {}
 
 
 def save_to_archive(papers: list[dict], announcement_date: str):
-    """Save papers to the date-based archive."""
+    """Save papers to the archive."""
     ARCHIVE_DIR.mkdir(parents=True, exist_ok=True)
     
     archive_file = ARCHIVE_DIR / f"{announcement_date}.json"
@@ -624,7 +566,6 @@ def save_to_archive(papers: list[dict], announcement_date: str):
     else:
         index = {"dates": []}
     
-    # Ensure dates is a list
     if "dates" not in index or not isinstance(index["dates"], list):
         index["dates"] = []
     
@@ -632,11 +573,12 @@ def save_to_archive(papers: list[dict], announcement_date: str):
         index["dates"].append(announcement_date)
         index["dates"].sort(reverse=True)
     
-    # Clean output
-    clean_index = {"dates": index["dates"]}
+    # Update metadata
+    index["updated_at"] = datetime.now(timezone.utc).isoformat()
+    index["count"] = len(index["dates"])
     
     with open(ARCHIVE_INDEX, "w", encoding="utf-8") as f:
-        json.dump(clean_index, f, indent=2)
+        json.dump(index, f, indent=2)
     
     print(f"📁 Archived to {archive_file}")
 
@@ -663,143 +605,84 @@ def main():
     
     print(f"✓ Got details for {len(papers)} papers")
     
-    # Filter out old papers (replacements/cross-lists from previous months)
-    # arXiv ID format: YYMM.XXXXX, so 2026-01-21 should have IDs starting with "2601."
-    expected_prefix = announcement_date[2:4] + announcement_date[5:7]  # "2026-01-21" -> "2601"
+    # FIXED: Allow papers from current OR previous month (for month transitions)
+    valid_prefixes = get_valid_id_prefixes(announcement_date)
+    print(f"📆 Valid ID prefixes: {valid_prefixes}")
     
     new_papers = []
     old_papers = []
     for paper in papers:
         paper_prefix = paper["id"][:4]  # e.g., "2601" from "2601.12345v1"
-        if paper_prefix == expected_prefix:
+        if paper_prefix in valid_prefixes:
             new_papers.append(paper)
         else:
             old_papers.append(paper)
     
     if old_papers:
         print(f"\n🔄 Filtered out {len(old_papers)} old/replacement papers:")
-        for p in old_papers:
+        for p in old_papers[:5]:
             print(f"   - {p['id']}: {p['title'][:50]}...")
+        if len(old_papers) > 5:
+            print(f"   ... and {len(old_papers) - 5} more")
     
     papers = new_papers
     print(f"📰 Keeping {len(papers)} new papers from {announcement_date}")
     
-    # Filter out REVISED papers (v2, v3, etc.) - only keep first-time publications (v1)
-    # A paper is revised if: published date != updated date, OR version > 1
-    first_time_papers = []
-    revised_papers = []
-    
-    for paper in papers:
-        paper_id = paper["id"]
-        published = paper.get("published", "")[:10]  # YYYY-MM-DD
-        updated = paper.get("updated", "")[:10]
-        
-        # Check version number in ID (e.g., "2601.12345v2" -> v2 = revision)
-        version_match = re.search(r'v(\d+)$', paper_id)
-        version = int(version_match.group(1)) if version_match else 1
-        
-        # Paper is revised if version > 1 OR published date differs from updated date
-        is_revised = version > 1 or (published and updated and published != updated)
-        
-        if is_revised:
-            revised_papers.append(paper)
-        else:
-            first_time_papers.append(paper)
-    
+    # Filter out REVISED papers (v2, v3, etc.)
+    revised_papers = [p for p in papers if re.search(r'v[2-9]$', p["id"])]
     if revised_papers:
-        print(f"\n🔄 Filtered out {len(revised_papers)} revised/updated papers:")
-        for p in revised_papers:
-            version_match = re.search(r'v(\d+)$', p["id"])
-            version = version_match.group(1) if version_match else "1"
-            print(f"   - {p['id']} (v{version}, pub: {p.get('published', '')[:10]}, upd: {p.get('updated', '')[:10]}): {p['title'][:40]}...")
-    
-    papers = first_time_papers
-    print(f"📰 Keeping {len(papers)} first-time publications")
-    
-    # Add metadata
-    for paper in papers:
-        paper["is_exoplanet_focused"] = is_exoplanet_paper(paper["title"], paper["abstract"])
-        paper["tweetability_score"] = calculate_tweetability_score(paper)
-    
-    # Filter to exoplanet papers only
-    exoplanet_papers = [p for p in papers if p["is_exoplanet_focused"]]
-    excluded_papers = [p for p in papers if not p["is_exoplanet_focused"]]
-    
-    # Sort by tweetability
-    exoplanet_papers.sort(key=lambda p: -p["tweetability_score"])
-    
-    # Only keep exoplanet papers
-    papers = exoplanet_papers
-    
-    print(f"\n📊 Paper breakdown:")
-    print(f"   🪐 Exoplanet papers: {len(exoplanet_papers)}")
-    print(f"   ❌ Excluded: {len(excluded_papers)}")
-    if excluded_papers:
-        for p in excluded_papers:
-            print(f"      - {p['title'][:60]}...")
+        print(f"\n🔄 Filtered out {len(revised_papers)} revised papers:")
+        for p in revised_papers[:3]:
+            print(f"   - {p['id']}: {p['title'][:50]}...")
+        papers = [p for p in papers if not re.search(r'v[2-9]$', p["id"])]
     
     if len(papers) == 0:
-        print("⚠️ No exoplanet papers found in this batch.")
+        print("❌ No new papers after filtering.")
         return
     
-    # Load existing data
-    existing_papers = {}
-    existing_date = None
+    # Classify papers
+    print("\n🔬 Classifying papers...")
+    for paper in papers:
+        paper["is_exoplanet_focused"] = is_exoplanet_focused(paper)
+        paper["tweetability_score"] = calculate_tweetability_score(paper)
     
-    if OUTPUT_FILE.exists():
-        try:
-            with open(OUTPUT_FILE, "r", encoding="utf-8") as f:
-                existing_data = json.load(f)
-                existing_papers = {p["id"]: p for p in existing_data.get("papers", [])}
-                existing_date = existing_data.get("announcement_date")
-        except (json.JSONDecodeError, KeyError):
-            pass
+    exo_count = sum(1 for p in papers if p["is_exoplanet_focused"])
+    print(f"   🪐 Exoplanet-focused: {exo_count}")
+    print(f"   📊 Other astro-ph.EP: {len(papers) - exo_count}")
     
-    # Check if same batch
-    if existing_date == announcement_date:
-        new_ids = set(p["id"] for p in papers)
-        old_ids = set(existing_papers.keys())
-        if new_ids == old_ids:
-            print(f"\n⏸️  Same papers as before ({announcement_date}). Checking for missing summaries...")
-            
-            needs_work = False
-            for paper in papers:
-                if paper["id"] in existing_papers:
-                    existing = existing_papers[paper["id"]]
-                    if not existing.get("summary_html") or existing["summary_html"] == "<p><em>Summary unavailable.</em></p>":
-                        needs_work = True
-                        break
-                else:
-                    needs_work = True
-                    break
-            
-            if not needs_work:
-                print("✅ All papers already have summaries. No changes needed.")
-                return
+    # Sort by tweetability
+    papers.sort(key=lambda p: (p["is_exoplanet_focused"], p["tweetability_score"]), reverse=True)
     
-    print(f"\n📝 Processing {len(papers)} papers for {announcement_date}...")
+    # Load existing papers to reuse summaries
+    existing_papers = load_existing_papers()
     
-    # Initialize Anthropic client
+    # Initialize Claude client
     client = None
     api_key = os.environ.get("ANTHROPIC_API_KEY")
     if api_key and anthropic:
         client = anthropic.Anthropic(api_key=api_key)
-        print("✓ Anthropic client initialized")
+        print("\n✅ Claude API ready")
     else:
-        print("⚠ No ANTHROPIC_API_KEY - summaries will be empty")
+        print("\n⚠️ No API key - summaries will be skipped")
     
-    # Generate content
+    # Generate summaries
+    print("\n📝 Processing papers...")
     for i, paper in enumerate(papers):
+        # Reuse existing content if available
         if paper["id"] in existing_papers:
             existing = existing_papers[paper["id"]]
-            has_summary = existing.get("summary_html") and existing["summary_html"] != "<p><em>Summary unavailable.</em></p>"
-            has_hook = existing.get("tweet_hook", {}).get("hook")
+            has_summary = existing.get("summary_html", "").strip() not in ["", "<p><em>Summary unavailable.</em></p>"]
+            has_hook = bool(existing.get("tweet_hook", {}).get("hook"))
             
-            if has_summary and has_hook:
+            if has_summary:
                 paper["summary"] = existing.get("summary", "")
                 paper["summary_html"] = existing["summary_html"]
+            if has_hook:
                 paper["tweet_hook"] = existing["tweet_hook"]
-                paper["figure_url"] = existing.get("figure_url")
+            if existing.get("figure_url"):
+                paper["figure_url"] = existing["figure_url"]
+            
+            if has_summary and has_hook:
                 print(f"  [{i+1}/{len(papers)}] {paper['id']} - reusing existing content")
                 continue
         
