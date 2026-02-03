@@ -9,7 +9,6 @@ Automated daily digest of exoplanet research from arXiv with AI summaries, socia
 - **Daily arXiv fetch** from astro-ph.EP (exoplanet papers only)
 - **AI summaries** for general audiences (Claude)
 - **Auto-posting** to Twitter/X and Bluesky
-- **Turkish news** generation
 - **RSS feed** at `/arxiv/feed.xml`
 - **Paper archive** with date navigation
 
@@ -18,7 +17,6 @@ Automated daily digest of exoplanet research from arXiv with AI summaries, socia
 | Time | Action |
 |------|--------|
 | 05:00 | Fetch & summarize papers |
-| 06:00 | Generate Turkish news |
 | 07:00-23:00 | Post to Twitter/Bluesky |
 
 ## Quick Setup
@@ -44,17 +42,14 @@ Then run **Actions → Update Exoplanet Papers**.
 ```
 arxiv/
 ├── index.html              # Main page
-├── news.html               # Turkish news
 ├── feed.xml                # RSS feed
 ├── data/
 │   ├── papers.json         # Current papers
-│   ├── arxiv_news.json     # Turkish articles
 │   └── archive/            # Past days
 └── scripts/
     ├── fetch_papers.py     # Fetch & summarize
     ├── post_twitter.py     # Twitter posting
     ├── post_bluesky.py     # Bluesky posting
-    └── generate_turkish_news.py
 ```
 
 ## License
