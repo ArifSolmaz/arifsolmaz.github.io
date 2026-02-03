@@ -103,82 +103,214 @@ def clean_latex_abstract(text: str) -> str:
 
 def is_exoplanet_focused(paper: dict) -> bool:
     """
-    STRICT filter: Return True only if paper is genuinely about exoplanets.
-    
-    Excludes:
-    - Solar system studies (Mars, Venus, asteroids, comets, etc.)
-    - Pure disk/ISM chemistry without planet connection
-    - Star-only studies
+    Determine if a paper is about exoplanets.
+    Uses comprehensive keyword matching based on exoplanet research taxonomy.
     """
     title = paper.get("title", "").lower()
     abstract = paper.get("abstract", "").lower()
     text = f"{title} {abstract}"
     
-    # STRONG INDICATORS - paper is definitely about exoplanets
-    strong_exoplanet_terms = [
-        "exoplanet", "exoplanetary", "extrasolar planet",
-        "hot jupiter", "warm jupiter", "cold jupiter",
-        "super-earth", "super earth", "mini-neptune", "sub-neptune",
-        "earth-like planet", "earth-sized planet", "earth-mass planet",
-        "habitable zone planet", "habitable exoplanet",
+    # ===========================================
+    # STRONG INDICATORS - any one = INCLUDE
+    # ===========================================
+    
+    # 1) Core exoplanet terms
+    core_terms = [
+        "exoplanet", "exoplanets", "exoplanetary",
+        "extrasolar planet", "extra-solar planet",
+        "planetary system", "exoplanet system",
+        "planet candidate", "planet candidates",
         "transiting planet", "transiting exoplanet",
-        "directly imaged planet", "directly-imaged planet",
-        "circumbinary planet",
-        "toi-", "wasp-", "hat-p-", "hatp-", "hd ", "gj ", "gl ",
-        "kepler-", "k2-", "trappist-", "proxima b", "proxima c",
-        "koi-", "epic ", "tic ",
+        "confirmed planet", "validated planet",
+    ]
+    
+    # Known exoplanet naming conventions
+    exoplanet_names = [
+        "toi-", "toi ", "koi-", "koi ",
+        "wasp-", "hat-p-", "hats-", "hatp-",
+        "kepler-", "k2-", "trappist-",
+        "gj ", "gl ", "hd ", "hip ",
+        "proxima b", "proxima c",
         "55 cnc", "55 cancri",
     ]
     
-    if any(term in text for term in strong_exoplanet_terms):
-        return True
+    # Check core terms
+    for term in core_terms:
+        if term in text:
+            return True
     
-    # EXCLUSION: Solar system objects (even if they mention "planet")
-    solar_system_terms = [
-        "mars", "martian", "venus", "venusian", "mercury", "mercurian",
-        "jupiter", "jovian", "saturn", "saturnian", "uranus", "neptune",
-        "pluto", "ceres", "vesta", "asteroid", "comet", "kuiper belt",
-        "oort cloud", "trans-neptunian", "tno", "centaur",
-        "moon", "lunar", "titan", "europa", "enceladus", "ganymede", "io",
-        "phobos", "deimos", "triton", "charon",
-        "meteor", "meteorite", "bolide", "fireball",
-        "9p/tempel", "67p/", "c/2", "p/",
-        "interplanetary dust", "zodiacal",
+    # Check exoplanet names
+    for name in exoplanet_names:
+        if name in text:
+            return True
+    
+    # 2) Planet types (strong indicators)
+    planet_types = [
+        "hot jupiter", "warm jupiter", "cold jupiter",
+        "super-earth", "super earth", "sub-neptune", "mini-neptune",
+        "terrestrial planet", "rocky planet", "earth-like planet",
+        "gas giant exo", "ice giant exo",  # "exo" to avoid solar system
+        "ultra-short period planet", "usp planet",
+        "compact multiplanet",
     ]
     
-    if any(term in text for term in solar_system_terms):
-        # Exception: if it also has strong exoplanet context, keep it
-        if any(strong in text for strong in ["exoplanet", "extrasolar", "toi-", "wasp-", "hat-p", "koi-"]):
+    for ptype in planet_types:
+        if ptype in text:
             return True
+    
+    # 3) Habitability / biosignatures (strong indicators)
+    habitability_terms = [
+        "habitable zone", "habitable planet", "habitable world",
+        "habitability", "biosignature", "technosignature",
+        "eta-earth", "η⊕",
+    ]
+    
+    for term in habitability_terms:
+        if term in text:
+            return True
+    
+    # ===========================================
+    # EXCLUDE - Solar system topics
+    # ===========================================
+    
+    solar_system_exclude = [
+        # Planets by name (in solar system context)
+        "mars", "martian", "venus", "venusian", "mercury", "mercurian",
+        "lunar", "moon", "titan", "europa", "enceladus", "ganymede", "io",
+        "phobos", "deimos", "triton", "charon",
+        # Small bodies
+        "asteroid", "comet", "meteoroid", "meteorite",
+        "kuiper belt", "tno", "trans-neptunian",
+        "centaur", "trojan",
+        # Solar system specific
+        "interplanetary dust", "zodiacal",
+        "juno mission", "cassini", "voyager",
+        "perseverance", "curiosity", "insight",
+    ]
+    
+    # Check for solar system - but allow if also has strong exoplanet term
+    has_solar_system = any(term in text for term in solar_system_exclude)
+    
+    if has_solar_system:
+        # Exception: "Jupiter" or "Saturn" with "hot" or "warm" prefix
+        if ("hot jupiter" in text or "warm jupiter" in text or 
+            "hot saturn" in text or "warm saturn" in text):
+            return True
+        # Exception: has explicit exoplanet context
+        if any(term in text for term in ["exoplanet", "extrasolar", "toi-", "wasp-", "kepler-"]):
+            return True
+        # Otherwise exclude
         return False
     
-    # MODERATE INDICATORS - need multiple or combined with context
-    moderate_indicators = [
-        "transiting", "transit timing", "ttv",
-        "radial velocity", "doppler",
+    # ===========================================
+    # MODERATE INDICATORS - need 2+, or 1 + mission
+    # ===========================================
+    
+    # Detection methods
+    detection_methods = [
+        # Transits
+        "transit", "transits", "transiting",
+        "transit photometry", "light curve", "lightcurve",
+        "transit timing variation", "ttv",
+        "secondary eclipse", "phase curve",
+        # Radial velocity
+        "radial velocity", "doppler spectroscopy",
+        "spectroscopic orbit", "rv detection",
+        # Direct imaging
+        "direct imaging", "high-contrast imaging", "hci",
+        "coronagraph", "coronagraphy",
+        "angular differential imaging", "adi",
+        # Microlensing / astrometry
+        "microlensing", "gravitational microlensing",
+        "astrometric detection",
+        # Other
+        "rossiter-mclaughlin", "rm effect",
         "transmission spectrum", "emission spectrum",
-        "planet mass", "planet radius", "planetary mass", "planetary radius",
-        "orbital architecture", "planet migration", "orbital migration",
-        "mean motion resonance", "orbital resonance",
-        "planet formation", "protoplanet", "planetesimal",
-        "circumstellar", "protoplanetary disk",
-        "planet-disk interaction", "disk-planet",
-        "host star", "planet host", "planet-hosting",
-        "m dwarf planet", "m-dwarf planet",
-        "photoevaporation", "atmospheric escape",
+        "occultation spectroscopy",
     ]
     
-    moderate_count = sum(1 for kw in moderate_indicators if kw in text)
+    # Atmospheres / spectra
+    atmosphere_terms = [
+        "exoplanet atmosphere", "planetary atmosphere",
+        "atmospheric retrieval", "retrieval",
+        "transmission spectroscopy", "emission spectroscopy",
+        "high-resolution spectroscopy",
+        "molecular abundance", "photochemistry",
+        "clouds", "hazes", "aerosol",
+        "thermal emission", "brightness temperature",
+        "circulation", "gcm", "general circulation model",
+        "radiative transfer",
+    ]
     
-    # Need at least 2 moderate indicators, or 1 moderate + mission name
-    missions = ["tess", "kepler", "k2 mission", "jwst", "plato mission", "ariel mission", "cheops"]
-    has_mission = any(m in text for m in missions)
+    # Formation / evolution / dynamics
+    formation_terms = [
+        "planet formation", "planet migration",
+        "protoplanetary disk", "circumstellar disk",
+        "core accretion", "pebble accretion",
+        "disk migration", "type i migration", "type ii migration",
+        "orbital dynamics", "tidal evolution",
+        "atmospheric escape", "evaporation", "photoevaporation",
+        "radius valley", "photoevaporation valley",
+        "mass-radius relation",
+    ]
     
+    # Demographics / architecture
+    demographics_terms = [
+        "occurrence rate", "planet occurrence",
+        "system architecture", "orbital architecture",
+        "mean-motion resonance", "resonant chain",
+        "metallicity correlation",
+    ]
+    
+    # Host stars context
+    host_star_terms = [
+        "m dwarf planet", "k dwarf planet",
+        "planet host", "planet-hosting",
+        "star-planet interaction",
+    ]
+    
+    # Combine all moderate indicators
+    moderate_indicators = (detection_methods + atmosphere_terms + 
+                          formation_terms + demographics_terms + host_star_terms)
+    
+    # Count moderate indicator matches
+    moderate_count = sum(1 for term in moderate_indicators if term in text)
+    
+    # Space missions (boost signal)
+    space_missions = [
+        "tess", "kepler", "k2 mission", "corot", "cheops", "plato",
+        "jwst", "james webb", "hst", "hubble", "spitzer",
+        "roman", "nancy grace roman", "ariel", "gaia",
+    ]
+    
+    # Ground surveys
+    ground_surveys = [
+        "wasp survey", "hatnet", "hatsouth", "ngts", "kelt",
+        "trappist survey", "speculoos", "mearth",
+        "ogle", "moa",
+    ]
+    
+    # Instruments (RV spectrographs, imagers)
+    instruments = [
+        "harps", "espresso", "carmenes", "neid", "nirps", "spirou",
+        "expres", "sophie", "maroon-x",
+        "sphere", "gpi", "scexao", "nirc2",
+    ]
+    
+    has_mission = any(m in text for m in space_missions + ground_surveys + instruments)
+    
+    # Decision logic for moderate indicators
     if moderate_count >= 2:
         return True
     if moderate_count >= 1 and has_mission:
         return True
+    if has_mission:
+        # Check if mission is in exoplanet context
+        exo_context = ["planet", "transit", "atmosphere", "spectrum", "detection", "orbit"]
+        if any(ctx in text for ctx in exo_context):
+            return True
     
+    # Default: not exoplanet focused
     return False
 
 
@@ -238,6 +370,12 @@ def scrape_recent_listings() -> tuple[str, list[str]]:
     """
     Scrape arXiv recent listings page to get actual announcement date and paper IDs.
     Returns (announcement_date, list_of_paper_ids).
+    
+    arXiv HTML structure:
+    - <h3>Showing new listings for Tuesday, 3 February 2026</h3>
+    - <h3>New submissions (showing 14 of 14 entries)</h3>
+    - <h3>Cross submissions (showing 4 of 4 entries)</h3>
+    - <h3>Replacement submissions (showing 8 of 8 entries)</h3>
     """
     print(f"📡 Fetching: {RECENT_URL}")
     
@@ -245,56 +383,75 @@ def scrape_recent_listings() -> tuple[str, list[str]]:
     response.raise_for_status()
     html = response.text
     
-    # Find the date header that has "(showing X of Y entries)" - this is the actual content section
-    date_pattern = r'<h3[^>]*>([A-Za-z]{3},\s+\d{1,2}\s+[A-Za-z]{3}\s+\d{4})\s*\(showing'
-    date_match = re.search(date_pattern, html)
+    # Find all h3 tags
+    h3_pattern = r'<h3[^>]*>(.*?)</h3>'
+    h3_matches = re.findall(h3_pattern, html, re.DOTALL | re.IGNORECASE)
     
-    if not date_match:
-        # Fallback: find any h3 with a date
-        date_pattern = r'<h3[^>]*>([A-Za-z]{3},\s+\d{1,2}\s+[A-Za-z]{3}\s+\d{4})'
-        date_match = re.search(date_pattern, html)
+    announcement_date = None
+    new_submissions_count = None
     
-    if not date_match:
-        # Last fallback: navigation links
-        date_pattern2 = r'<li><a[^>]*>([A-Za-z]{3},\s+\d{1,2}\s+[A-Za-z]{3}\s+\d{4})</a>'
-        date_match = re.search(date_pattern2, html)
+    for h3_content in h3_matches:
+        h3_clean = ' '.join(h3_content.split())
+        
+        # Date pattern: "Showing new listings for Tuesday, 3 February 2026"
+        date_match = re.search(
+            r'new listings for\s+([A-Za-z]+),?\s*(\d{1,2})\s+([A-Za-z]+)\s+(\d{4})',
+            h3_clean, re.IGNORECASE
+        )
+        if date_match:
+            day = int(date_match.group(2))
+            month_name = date_match.group(3)
+            year = int(date_match.group(4))
+            
+            # Parse month name
+            months = {'january': 1, 'february': 2, 'march': 3, 'april': 4,
+                      'may': 5, 'june': 6, 'july': 7, 'august': 8,
+                      'september': 9, 'october': 10, 'november': 11, 'december': 12}
+            month = months.get(month_name.lower(), 1)
+            
+            announcement_date = f"{year}-{month:02d}-{day:02d}"
+            print(f"📅 Found announcement date: {announcement_date}")
+        
+        # New submissions count: "New submissions (showing 14 of 14 entries)"
+        new_match = re.search(r'New submissions.*?showing\s+(\d+)\s+of\s+(\d+)', h3_clean, re.IGNORECASE)
+        if new_match:
+            new_submissions_count = int(new_match.group(2))
+            print(f"📊 New submissions: {new_submissions_count}")
     
-    if date_match:
-        date_str = date_match.group(1)
-        try:
-            parsed = datetime.strptime(date_str, "%a, %d %b %Y")
-            announcement_date = parsed.strftime("%Y-%m-%d")
-            print(f"📅 Found announcement date: {announcement_date} ({date_str})")
-        except ValueError:
-            announcement_date = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-            print(f"⚠️ Could not parse date '{date_str}', using today")
-    else:
+    if not announcement_date:
         announcement_date = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-        print(f"⚠️ No date found in HTML, using today: {announcement_date}")
+        print(f"⚠️ No date found, using today: {announcement_date}")
     
-    # Find paper count
-    count_pattern = r'\(showing\s+(\d+)\s+of\s+(\d+)\s+entries?\)'
-    count_match = re.search(count_pattern, html)
+    # Extract paper IDs - only from NEW submissions section
+    # The new submissions section comes after "New submissions" h3 and before "Cross submissions" h3
     
-    if count_match:
-        total = int(count_match.group(2))
-        print(f"📊 Papers for this date: {total}")
+    # Split by h3 tags to isolate sections
+    sections = re.split(r'<h3[^>]*>.*?</h3>', html, flags=re.DOTALL | re.IGNORECASE)
     
-    # Extract paper IDs from the first date's section
-    sections = re.split(r'<h3[^>]*>[A-Za-z]{3},\s+\d{1,2}\s+[A-Za-z]{3}\s+\d{4}\s*\(showing', html)
+    # Find the "New submissions" section by looking at what comes after that h3
+    new_section = None
+    h3_positions = list(re.finditer(r'<h3[^>]*>(.*?)</h3>', html, re.DOTALL | re.IGNORECASE))
     
-    if len(sections) >= 2:
-        first_section = sections[1]
+    for i, match in enumerate(h3_positions):
+        h3_text = ' '.join(match.group(1).split())
+        if 'new submissions' in h3_text.lower() and 'showing' in h3_text.lower():
+            # Get content between this h3 and the next h3
+            start = match.end()
+            end = h3_positions[i + 1].start() if i + 1 < len(h3_positions) else len(html)
+            new_section = html[start:end]
+            break
+    
+    if new_section:
+        # Extract paper IDs from new submissions section only
+        id_pattern = r'/abs/(\d{4}\.\d{4,5}(?:v\d+)?)'
+        paper_ids = re.findall(id_pattern, new_section)
     else:
-        sections = re.split(r'<h3[^>]*>[A-Za-z]{3},\s+\d{1,2}\s+[A-Za-z]{3}\s+\d{4}', html)
-        if len(sections) >= 2:
-            first_section = sections[1]
-        else:
-            first_section = html
+        # Fallback: get all paper IDs
+        print("⚠️ Could not isolate New submissions section, using all papers")
+        id_pattern = r'/abs/(\d{4}\.\d{4,5}(?:v\d+)?)'
+        paper_ids = re.findall(id_pattern, html)
     
-    id_pattern = r'/abs/(\d{4}\.\d{4,5}(?:v\d+)?)'
-    paper_ids = re.findall(id_pattern, first_section)
-    
+    # Deduplicate while preserving order
     seen = set()
     unique_ids = []
     for pid in paper_ids:
@@ -303,7 +460,15 @@ def scrape_recent_listings() -> tuple[str, list[str]]:
             seen.add(base_id)
             unique_ids.append(pid)
     
-    print(f"📰 Found {len(unique_ids)} unique paper IDs")
+    # Verify count matches
+    if new_submissions_count and len(unique_ids) != new_submissions_count:
+        print(f"⚠️ Found {len(unique_ids)} IDs but expected {new_submissions_count}")
+    
+    print(f"📰 Found {len(unique_ids)} new paper IDs for {announcement_date}")
+    
+    return announcement_date, unique_ids
+    
+    print(f"📰 Found {len(unique_ids)} unique paper IDs for {announcement_date}")
     
     return announcement_date, unique_ids
 
@@ -667,11 +832,24 @@ def main():
         paper["tweetability_score"] = calculate_tweetability_score(paper)
     
     exo_count = sum(1 for p in papers if p["is_exoplanet_focused"])
+    other_count = len(papers) - exo_count
     print(f"   🪐 Exoplanet-focused: {exo_count}")
-    print(f"   📊 Other astro-ph.EP: {len(papers) - exo_count}")
+    print(f"   📊 Other astro-ph.EP: {other_count}")
+    
+    # FILTER: Only keep exoplanet-focused papers
+    if other_count > 0:
+        print(f"\n🚫 Excluding {other_count} non-exoplanet papers:")
+        for p in papers:
+            if not p["is_exoplanet_focused"]:
+                print(f"   - {p['id']}: {p['title'][:50]}...")
+        papers = [p for p in papers if p["is_exoplanet_focused"]]
+    
+    if len(papers) == 0:
+        print("❌ No exoplanet papers found in this batch.")
+        return
     
     # Sort by tweetability
-    papers.sort(key=lambda p: (p["is_exoplanet_focused"], p["tweetability_score"]), reverse=True)
+    papers.sort(key=lambda p: p["tweetability_score"], reverse=True)
     
     # Load existing papers to reuse summaries
     existing_papers = load_existing_papers()
