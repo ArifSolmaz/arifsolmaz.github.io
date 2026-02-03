@@ -67,6 +67,8 @@ def clean_latex_name(name: str) -> str:
 
 def clean_latex_abstract(text: str) -> str:
     """Convert LaTeX math notation in abstracts to readable text."""
+    
+    # Symbol replacements
     replacements = [
         (r'\sim', '~'),
         (r'\times', '×'),
@@ -79,25 +81,86 @@ def clean_latex_abstract(text: str) -> str:
         (r'\beta', 'β'),
         (r'\gamma', 'γ'),
         (r'\delta', 'δ'),
+        (r'\eta', 'η'),
         (r'\lambda', 'λ'),
         (r'\mu', 'μ'),
         (r'\nu', 'ν'),
         (r'\pi', 'π'),
+        (r'\rho', 'ρ'),
         (r'\sigma', 'σ'),
         (r'\tau', 'τ'),
         (r'\omega', 'ω'),
+        (r'\Omega', 'Ω'),
         (r'\odot', '☉'),
         (r'\oplus', '⊕'),
         (r'\deg', '°'),
         (r'\AA', 'Å'),
+        (r'\prime', '′'),
+        (r'\dot', ''),
     ]
     for latex, char in replacements:
         text = text.replace(latex, char)
+    
+    # LaTeX tilde is non-breaking space - convert to regular space
+    text = text.replace('~', ' ')
+    
+    # Handle superscripts: ^{-1} or ^-1 or ^{5} or ^5
+    superscript_map = {
+        '0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴',
+        '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹',
+        '+': '⁺', '-': '⁻', '=': '⁼', '(': '⁽', ')': '⁾',
+        'n': 'ⁿ', 'i': 'ⁱ',
+    }
+    
+    def convert_superscript(match):
+        content = match.group(1)
+        result = ''
+        for char in content:
+            result += superscript_map.get(char, char)
+        return result
+    
+    # Match ^{...} or ^X (single char) or ^-1 (negative exponent)
+    text = re.sub(r'\^{([^}]+)}', convert_superscript, text)
+    text = re.sub(r'\^(-?[0-9]+)', convert_superscript, text)  # Handle ^-1, ^2, ^-2, etc.
+    
+    # Handle subscripts: _{*} or _* or _{text}
+    subscript_map = {
+        '0': '₀', '1': '₁', '2': '₂', '3': '₃', '4': '₄',
+        '5': '₅', '6': '₆', '7': '₇', '8': '₈', '9': '₉',
+        '+': '₊', '-': '₋', '=': '₌', '(': '₍', ')': '₎',
+        'a': 'ₐ', 'e': 'ₑ', 'o': 'ₒ', 'x': 'ₓ',
+        '*': '∗', 'p': 'ₚ', 'n': 'ₙ',
+    }
+    
+    def convert_subscript(match):
+        content = match.group(1)
+        result = ''
+        for char in content:
+            result += subscript_map.get(char, char)
+        return result
+    
+    # Match _{...} or _X (single char)
+    text = re.sub(r'_{([^}]+)}', convert_subscript, text)
+    text = re.sub(r'_([0-9*a-z])', convert_subscript, text)
+    
+    # Handle standalone ^ as prime symbol (common in astronomy: Q_*^ means Q_*')
+    text = re.sub(r'\^(?![0-9{\-+])', '′', text)
+    
+    # Remove $ delimiters
     text = re.sub(r'\$([^$]+)\$', r'\1', text)
-    text = re.sub(r'\\[a-zA-Z]+\{([^}]*)\}', r'\1', text)
+    
+    # Remove remaining LaTeX commands like \mathrm{...}, \text{...}
+    text = re.sub(r'\\(?:mathrm|text|rm|bf|it|textit|textbf)\{([^}]*)\}', r'\1', text)
+    
+    # Remove any remaining backslash commands
     text = re.sub(r'\\[a-zA-Z]+', '', text)
+    
+    # Remove remaining braces
     text = re.sub(r'[{}]', '', text)
+    
+    # Clean up multiple spaces
     text = re.sub(r'\s+', ' ', text)
+    
     return text.strip()
 
 
