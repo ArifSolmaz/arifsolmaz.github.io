@@ -726,8 +726,14 @@ def cleanup_temp_file(filepath: str):
         pass
 
 
-def select_best_paper(papers: list, tweeted_ids: set) -> dict | None:
-    """Select the best paper to tweet based on time of day and tweetability."""
+def select_best_paper(papers: list, tweeted_ids: set, todays_count: int = None) -> dict | None:
+    """Select the best paper to tweet based on time of day and tweetability.
+    
+    Args:
+        papers: List of papers from papers.json
+        tweeted_ids: Set of paper IDs tweeted in last 7 days (for duplicate prevention)
+        todays_count: Number of papers tweeted TODAY (for smart timing). If None, uses len(tweeted_ids).
+    """
     # Get current time in Istanbul
     istanbul_tz = ZoneInfo("Europe/Istanbul")
     now = datetime.now(istanbul_tz)
@@ -770,7 +776,8 @@ def select_best_paper(papers: list, tweeted_ids: set) -> dict | None:
     
     # Smart timing: spread tweets throughout the day
     total_papers = len(papers)
-    tweeted_count = len(tweeted_ids)
+    # FIX: Use today's count for timing, not 7-day count
+    tweeted_count = todays_count if todays_count is not None else len(tweeted_ids)
     remaining = total_papers - tweeted_count
     
     if remaining <= 0:
@@ -784,7 +791,7 @@ def select_best_paper(papers: list, tweeted_ids: set) -> dict | None:
     expected_tweets = int(minutes_elapsed / interval) if interval > 0 else tweeted_count
     
     print(f"📊 Smart timing:")
-    print(f"   Papers: {total_papers}, Tweeted: {tweeted_count}")
+    print(f"   Papers: {total_papers}, Tweeted today: {tweeted_count}")
     print(f"   Interval: {interval:.0f} min (~{interval/60:.1f} hours)")
     print(f"   Time: {now.strftime('%H:%M')} Istanbul ({minutes_elapsed:.0f} min into window)")
     print(f"   Expected tweets by now: {expected_tweets}")
@@ -843,7 +850,9 @@ def main():
     todays_tweeted_ids = set(tweeted_data.get("tweeted_ids", []))
     
     # Select the best paper to tweet (check against ALL recent tweets)
-    paper_to_tweet = select_best_paper(papers, all_tweeted_ids)
+    # Pass today's count separately for smart timing
+    todays_count = len(tweeted_data.get("tweeted_ids", []))
+    paper_to_tweet = select_best_paper(papers, all_tweeted_ids, todays_count=todays_count)
     
     if not paper_to_tweet:
         print("All papers have been tweeted (or were tweeted recently)!")
