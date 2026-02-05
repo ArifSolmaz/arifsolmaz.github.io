@@ -1,8 +1,8 @@
 {
   "announcement_date": "2026-02-05",
-  "updated_at": "2026-02-05T09:29:43.094554+00:00",
+  "updated_at": "2026-02-05T09:44:12.796377+00:00",
   "category": "astro-ph.EP",
-  "paper_count": 2,
+  "paper_count": 3,
   "papers": [
     {
       "id": "2602.04198v1",
@@ -59,6 +59,61 @@
         "question": "What other interstellar visitors might be heading our way right now? 🌌"
       },
       "figure_url": "https://arxiv.org/html/2602.04806v1/jupiter_beta_heatmap_b=10.png"
+    },
+    {
+      "id": "2602.04840v1",
+      "title": "The EXoplanet Climate Infrared TElescope (EXCITE): A balloon-borne mission to measure spectroscopic phase curves of transiting hot Jupiters",
+      "abstract": "The EXoplanet Climate Infrared TElescope (EXCITE) is a balloon-borne mission dedicated to measuring spectroscopic phase curves of hot Jupiter-type exoplanets. Phase curve measurements can be used to characterize an exoplanet's longitude-dependent atmospheric composition and energy circulation patterns. EXCITE carries a 0.5 m primary mirror and moderate resolution diffraction-limited spectrograph with spectral coverage from 0.8--3.5 um. EXCITE is designed to fly from a long-duration balloon (LDB). EXCITE will observe through the peak of a target's spectral energy distribution (SED) and through spectral signatures of hydrogen and carbon-containing molecules. In this paper, we present the science goals of EXCITE, detail the as-built instrument, and discuss its performance during a 2024 engineering flight from Fort Sumner, New Mexico.",
+      "authors": [
+        "Timothy D. Rehm",
+        "Caitlyn Altermatt",
+        "Lee Bernard",
+        "Andrea Bocchieri",
+        "Nathaniel Butler",
+        "Oliver Carey",
+        "Ryan C. Challener",
+        "John Hartley",
+        "Kyle R. Helson",
+        "Daniel P. Kelly",
+        "Kanchita Klangboonkrong",
+        "Andrei L. Korotkov",
+        "Maura Lally",
+        "Edward Leong",
+        "Nikole K. Lewis",
+        "Steven Li",
+        "Michael Line",
+        "Stephen F. Maher",
+        "Ryan McClelland",
+        "Lorenzo V. Mugnai",
+        "Peter C. Nagler",
+        "C. Barth Netterfield",
+        "Vivien Parmentier",
+        "Enzo Pascale",
+        "Jennifer Patience",
+        "L. Javier Romualdez",
+        "Paul A. Scowen",
+        "Gregory S. Tucker",
+        "Ingo Waldmann"
+      ],
+      "categories": [
+        "astro-ph.IM",
+        "astro-ph.EP"
+      ],
+      "published": "2026-02-04",
+      "updated": "2026-02-04",
+      "pdf_link": "https://arxiv.org/pdf/2602.04840v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2602.04840v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 11,
+      "summary": "**Why It Matters**\n\nImagine trying to understand Earth's weather and climate by only looking at one side of our planet. That's essentially what astronomers have been doing with distant worlds called exoplanets—planets orbiting other stars. Scientists have discovered thousands of these alien worlds, but most observations capture just snapshots, like photographing only the sunny side of a beach ball. The EXCITE mission represents a major leap forward in our ability to study the full \"weather map\" of distant planets, potentially revealing how alien atmospheres work and whether any might harbor conditions suitable for life. This research helps us understand not just other worlds, but also gives us perspective on what makes Earth special.\n\n**What They Did**\n\nThe research team built a specialized telescope called EXCITE (The EXoplanet Climate Infrared TElescope) that rides beneath a massive balloon high in Earth's atmosphere—about 25 miles up, where the air is thin enough to get clear views of space without the interference that ground-based telescopes face. Think of it as a space telescope that doesn't actually go to space. The telescope uses infrared light (heat radiation invisible to our eyes) to watch planets as they orbit their stars, creating what scientists call \"phase curves\"—essentially time-lapse movies showing how the planet's temperature and atmospheric composition change as different sides face toward or away from their star, just like how Earth experiences day and night.\n\n**Key Findings**\n\nThis paper primarily describes the instrument's design and a 2024 test flight from New Mexico, rather than presenting discoveries about specific exoplanets. The engineering flight successfully demonstrated that the balloon-borne telescope can achieve the precision needed for its scientific mission. The telescope's 0.5-meter mirror (about 20 inches across) performed well in the challenging high-altitude environment, proving it can detect the subtle infrared signals from distant hot Jupiter planets—gas giants that orbit extremely close to their stars, with temperatures reaching thousands of degrees.\n\n**Looking Forward**\n\nEXCITE opens a new window into understanding alien atmospheres by providing the first detailed \"weather maps\" of distant worlds. This capability will help scientists determine how heat moves around these planets, what chemicals exist in their atmospheres, and how similar or different they are from planets in our solar system. The mission could reveal whether hot Jupiter planets have violent storms, extreme temperature differences between day and night sides, or unexpected atmospheric chemistry. These insights will improve our models of planetary formation and evolution, ultimately helping us better understand the incredible diversity of worlds throughout our galaxy.",
+      "summary_html": "<h4>Why It Matters</h4>\n<p>Imagine trying to understand Earth's weather and climate by only looking at one side of our planet. That's essentially what astronomers have been doing with distant worlds called exoplanets—planets orbiting other stars. Scientists have discovered thousands of these alien worlds, but most observations capture just snapshots, like photographing only the sunny side of a beach ball. The EXCITE mission represents a major leap forward in our ability to study the full \"weather map\" of distant planets, potentially revealing how alien atmospheres work and whether any might harbor conditions suitable for life. This research helps us understand not just other worlds, but also gives us perspective on what makes Earth special.</p>\n<h4>What They Did</h4>\n<p>The research team built a specialized telescope called EXCITE (The EXoplanet Climate Infrared TElescope) that rides beneath a massive balloon high in Earth's atmosphere—about 25 miles up, where the air is thin enough to get clear views of space without the interference that ground-based telescopes face. Think of it as a space telescope that doesn't actually go to space. The telescope uses infrared light (heat radiation invisible to our eyes) to watch planets as they orbit their stars, creating what scientists call \"phase curves\"—essentially time-lapse movies showing how the planet's temperature and atmospheric composition change as different sides face toward or away from their star, just like how Earth experiences day and night.</p>\n<h4>Key Findings</h4>\n<p>This paper primarily describes the instrument's design and a 2024 test flight from New Mexico, rather than presenting discoveries about specific exoplanets. The engineering flight successfully demonstrated that the balloon-borne telescope can achieve the precision needed for its scientific mission. The telescope's 0.5-meter mirror (about 20 inches across) performed well in the challenging high-altitude environment, proving it can detect the subtle infrared signals from distant hot Jupiter planets—gas giants that orbit extremely close to their stars, with temperatures reaching thousands of degrees.</p>\n<h4>Looking Forward</h4>\n<p>EXCITE opens a new window into understanding alien atmospheres by providing the first detailed \"weather maps\" of distant worlds. This capability will help scientists determine how heat moves around these planets, what chemicals exist in their atmospheres, and how similar or different they are from planets in our solar system. The mission could reveal whether hot Jupiter planets have violent storms, extreme temperature differences between day and night sides, or unexpected atmospheric chemistry. These insights will improve our models of planetary formation and evolution, ultimately helping us better understand the incredible diversity of worlds throughout our galaxy.</p>",
+      "tweet_hook": {
+        "hook": "🎈 Scientists are launching a telescope on a BALLOON to spy on alien worlds! 🌍",
+        "claim": "EXCITE will map weather patterns and atmospheric chemistry on scorching hot Jupiter-like planets orbiting other stars by watching how their light changes as they spin.",
+        "evidence": "The balloon-borne telescope has a 0.5m mirror and can detect infrared light from 0.8-3.5 micrometers to track temperature shifts across entire planets.",
+        "question": "What wild weather might we discover on planets where it rains liquid metal? ⛈️"
+      },
+      "figure_url": "https://arxiv.org/html/2602.04840v1/Figures/parameter_space.png"
     }
   ]
 }

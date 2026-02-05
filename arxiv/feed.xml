@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 05 Feb 2026 09:29:43 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Feb 2026 09:44:12 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -48,6 +48,23 @@ Looking Forward
 This research gives astronomers a powerful shortcut for identifying which regions of any planetary system are most likely to produce interstellar objects. Instead of running lengthy computer simulations, scientists can now use these formulas to quickly map ejection zones around different types of planets and stars. This could help us predict how many interstellar visitors we might expect to see, understand the cosmic recycling of planetary building blocks, and even estimate how often potentially life-bearing material gets shared between star systems across the galaxy.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.GA</category>
+    </item>
+    <item>
+      <title>The EXoplanet Climate Infrared TElescope (EXCITE): A balloon-borne mission to measure spectroscopic phase curves of transiting hot Jupiters</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-04840v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-04840v1</guid>
+      <pubDate>Thu, 05 Feb 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Timothy D. Rehm et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+Imagine trying to understand Earth's weather and climate by only looking at one side of our planet. That's essentially what astronomers have been doing with distant worlds called exoplanets—planets orbiting other stars. Scientists have discovered thousands of these alien worlds, but most observations capture just snapshots, like photographing only the sunny side of a beach ball. The EXCITE mission represents a major leap forward in our ability to study the full "weather map" of distant planets, potentially revealing how alien atmospheres work and whether any might harbor conditions suitable for life. This research helps us understand not just other worlds, but also gives us perspective on what makes Earth special.
+What They Did
+The research team built a specialized telescope called EXCITE (The EXoplanet Climate Infrared TElescope) that rides beneath a massive balloon high in Earth's atmosphere—about 25 miles up, where the air is thin enough to get clear views of space without the interference that ground-based telescopes face. Think of it as a space telescope that doesn't actually go to space. The telescope uses infrared light (heat radiation invisible to our eyes) to watch planets as they orbit their stars, creating what scientists call "phase curves"—essentially time-lapse movies showing how the planet's temperature and atmospheric composition change as different sides face toward or away from their star, just like how Earth experiences day and night.
+Key Findings
+This paper primarily describes the instrument's design and a 2024 test flight from New Mexico, rather than presenting discoveries about specific exoplanets. The engineering flight successfully demonstrated that the balloon-borne telescope can achieve the precision needed for its scientific mission. The telescope's 0.5-meter mirror (about 20 inches across) performed well in the challenging high-altitude environment, proving it can detect the subtle infrared signals from distant hot Jupiter planets—gas giants that orbit extremely close to their stars, with temperatures reaching thousands of degrees.
+Looking Forward
+EXCITE opens a new window into understanding alien atmospheres by providing the first detailed "weather maps" of distant worlds. This capability will help scientists determine how heat moves around these planets, what chemicals exist in their atmospheres, and how similar or different they are from planets in our solar system. The mission could reveal whether hot Jupiter planets have violent storms, extreme temperature differences between day and night sides, or unexpected atmospheric chemistry. These insights will improve our models of planetary formation and evolution, ultimately helping us better understand the incredible diversity of worlds throughout our galaxy.]]></description>
+        <category>astro-ph.IM</category>
+        <category>astro-ph.EP</category>
     </item>
   </channel>
 </rss>
