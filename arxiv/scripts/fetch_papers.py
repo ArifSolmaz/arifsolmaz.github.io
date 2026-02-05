@@ -497,7 +497,7 @@ def scrape_recent_listings() -> tuple[str, list[str]]:
     
     for i, match in enumerate(h3_positions):
         h3_text = ' '.join(match.group(1).split())
-        if 'new submissions' in h3_text.lower() and 'showing' in h3_text.lower():
+        if ('new submissions' in h3_text.lower() or 'cross submissions' in h3_text.lower()) and 'showing' in h3_text.lower():
             # Get content between this h3 and the next h3
             start = match.end()
             end = h3_positions[i + 1].start() if i + 1 < len(h3_positions) else len(html)
