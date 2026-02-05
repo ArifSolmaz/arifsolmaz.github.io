@@ -170,14 +170,20 @@ def fetch_arxiv_figure(paper_id: str) -> str | None:
 def scrape_papers_for_date(target_date: str) -> list[str]:
     """
     Scrape arXiv pastweek page and extract paper IDs for a specific date.
+    Includes both new submissions AND cross-listed papers.
+    
+    arXiv pastweek page structure has separate h3 headers:
+    - "Mon, 03 Feb 2026 (showing 14 of 14 entries)"  <- new submissions
+    - "Cross-listings for Mon, 03 Feb 2026"            <- cross-listed papers
+    - "Replacements for Mon, 03 Feb 2026"              <- replacements (skipped)
     
     Args:
         target_date: Date in YYYY-MM-DD format (e.g., "2026-02-02")
     
     Returns:
-        List of paper IDs announced on that date
+        List of paper IDs announced on that date (new + cross-listings)
     """
-    print(f"📡 Fetching: {PASTWEEK_URL}")
+    print(f"\U0001f4e1 Fetching: {PASTWEEK_URL}")
     
     response = requests.get(PASTWEEK_URL, timeout=60)
     response.raise_for_status()
@@ -185,66 +191,103 @@ def scrape_papers_for_date(target_date: str) -> list[str]:
     
     # Parse target date
     target_dt = datetime.strptime(target_date, "%Y-%m-%d")
-    target_str = target_dt.strftime("%a, %d %b %Y")  # e.g., "Mon, 02 Feb 2026"
-    # Also try alternate format with single digit day
-    target_str_alt = target_dt.strftime("%a, %-d %b %Y") if os.name != 'nt' else target_dt.strftime("%a, %#d %b %Y")
     
-    print(f"🔍 Looking for date: {target_str}")
+    print(f"\U0001f50d Looking for date: {target_date}")
     
-    # Find all date headers in the HTML
-    date_pattern = r'<h3[^>]*>([A-Za-z]{3},\s+\d{1,2}\s+[A-Za-z]{3}\s+\d{4})\s*(?:\(showing[^)]+\))?</h3>'
-    date_matches = list(re.finditer(date_pattern, html))
+    # Find ALL h3 headers in the HTML
+    all_h3 = list(re.finditer(r'<h3[^>]*>(.*?)</h3>', html, re.DOTALL | re.IGNORECASE))
     
-    if not date_matches:
-        print("❌ No date headers found in HTML")
+    if not all_h3:
+        print("\u274c No h3 headers found in HTML")
         return []
     
-    print(f"📅 Found {len(date_matches)} date sections:")
-    for m in date_matches:
-        print(f"   - {m.group(1)}")
+    # Date pattern that appears inside h3 text
+    date_in_h3 = r'([A-Za-z]{3},\s+\d{1,2}\s+[A-Za-z]{3}\s+\d{4})'
     
-    # Find our target date section
-    target_start = None
-    target_end = None
+    # Categorize each h3 header by type and date
+    new_headers = []        # date headers for new submissions
+    cross_headers = []      # "Cross-listings for ..." headers
+    replacement_headers = [] # "Replacements for ..." headers (skipped)
     
-    for i, match in enumerate(date_matches):
-        date_str = match.group(1)
-        # Normalize date string for comparison
+    for match in all_h3:
+        h3_text = ' '.join(match.group(1).split())
+        date_match = re.search(date_in_h3, h3_text)
+        if not date_match:
+            continue
+        
+        date_str = date_match.group(1)
         try:
             parsed = datetime.strptime(date_str, "%a, %d %b %Y")
-            if parsed.strftime("%Y-%m-%d") == target_date:
-                target_start = match.end()
-                # End is either next date header or end of file
-                if i + 1 < len(date_matches):
-                    target_end = date_matches[i + 1].start()
-                else:
-                    target_end = len(html)
-                print(f"✅ Found target date section!")
-                break
+            parsed_ymd = parsed.strftime("%Y-%m-%d")
         except ValueError:
             continue
+        
+        h3_lower = h3_text.lower()
+        if 'cross' in h3_lower:
+            cross_headers.append((match, parsed_ymd))
+        elif 'replacement' in h3_lower:
+            replacement_headers.append((match, parsed_ymd))
+        else:
+            new_headers.append((match, parsed_ymd))
     
-    if target_start is None:
-        print(f"❌ Date {target_date} not found in pastweek page")
+    print(f"\U0001f4c5 Found {len(new_headers)} new-submission sections, "
+          f"{len(cross_headers)} cross-listing sections")
+    for m, d in new_headers:
+        print(f"   - New: {d}")
+    for m, d in cross_headers:
+        print(f"   - Cross: {d}")
+    
+    def get_section_content(header_match):
+        """Get HTML between this h3 and the next h3."""
+        start = header_match.end()
+        # Find the next h3 after this one
+        next_h3 = None
+        for h3 in all_h3:
+            if h3.start() > header_match.start() and h3 is not header_match:
+                next_h3 = h3
+                break
+        end = next_h3.start() if next_h3 else len(html)
+        return html[start:end]
+    
+    # Collect paper IDs from new submissions + cross-listings for target date
+    all_paper_ids = []
+    found_any = False
+    
+    for match, date_str in new_headers:
+        if date_str == target_date:
+            section = get_section_content(match)
+            ids = re.findall(r'/abs/(\d{4}\.\d{4,5}(?:v\d+)?)', section)
+            print(f"\u2705 New submissions section: {len(ids)} paper IDs")
+            all_paper_ids.extend(ids)
+            found_any = True
+            break
+    
+    for match, date_str in cross_headers:
+        if date_str == target_date:
+            section = get_section_content(match)
+            ids = re.findall(r'/abs/(\d{4}\.\d{4,5}(?:v\d+)?)', section)
+            print(f"\u2705 Cross-listings section: {len(ids)} paper IDs")
+            all_paper_ids.extend(ids)
+            found_any = True
+            break
+    
+    # We intentionally skip replacement sections
+    
+    if not found_any:
+        print(f"\u274c Date {target_date} not found in pastweek page")
         print("   This date may be too old (arXiv only shows ~1 week)")
         return []
-    
-    # Extract paper IDs from this section
-    section_html = html[target_start:target_end]
-    
-    id_pattern = r'/abs/(\d{4}\.\d{4,5}(?:v\d+)?)'
-    paper_ids = re.findall(id_pattern, section_html)
     
     # Deduplicate while preserving order
     seen = set()
     unique_ids = []
-    for pid in paper_ids:
+    for pid in all_paper_ids:
         base_id = re.sub(r'v\d+$', '', pid)
         if base_id not in seen:
             seen.add(base_id)
             unique_ids.append(pid)
     
-    print(f"📰 Found {len(unique_ids)} papers for {target_date}")
+    print(f"\U0001f4f0 Found {len(unique_ids)} total papers for {target_date} (new + cross-listings)")
     
     return unique_ids
 
