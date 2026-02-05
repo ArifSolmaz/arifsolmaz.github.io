@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 04 Feb 2026 04:10:32 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Feb 2026 04:09:38 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,188 +15,39 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>Atmospheric characterization of HIP 67522 b with VLT/CRIRES+. VLT/CRIRES+ suggests a heavier planet and hints at deuterium fractionation</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-03498v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-03498v1</guid>
-      <pubDate>Wed, 04 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>A. Lavail et al.</dc:creator>
+      <title>Propulsion Trades for a 2035-2040 Solar Gravitational Lens Mission</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-04198v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-04198v1</guid>
+      <pubDate>Thu, 05 Feb 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Slava G. Turyshev</dc:creator>
       <description><![CDATA[Why It Matters
-Imagine catching a planet in its cosmic infancy—that's exactly what astronomers have done with HIP 67522 b, a "baby" Jupiter that's only 17 million years old. In cosmic terms, this planet is practically a newborn, giving scientists a rare window into how giant planets evolve during their most dramatic early years. What makes this discovery especially intriguing is that this young world appears to be a cosmic oddball: it's incredibly puffy, with a density so low it would float on water like a beach ball. Understanding planets like this helps us piece together the story of how planetary systems—including our own—formed and changed over billions of years.
+Imagine being able to take detailed photos of planets orbiting other stars—not just detecting them, but actually seeing their surfaces, weather patterns, and atmospheric composition. This breakthrough could help us answer one of humanity's most profound questions: Are we alone? Scientists have identified a clever way to use our own Sun as a giant magnifying glass to photograph Earth-like planets around nearby stars. The catch? We'd need to send a spacecraft farther from home than anything we've ever launched before, traveling over 20 times the distance to Pluto. This research tackles the engineering challenge of how to get there fast enough to make such a mission worthwhile.
 What They Did
-The research team used the Very Large Telescope in Chile, equipped with an ultra-sensitive instrument called CRIRES+, to analyze starlight filtering through the planet's atmosphere as it passed in front of its host star. Think of it like studying a shadow puppet show—as the planet blocks some of the star's light, different molecules in its atmosphere absorb specific colors, creating a unique fingerprint. The astronomers collected this light and broke it down into its component colors with incredible precision, then used computer models to decode what those patterns reveal about the planet's atmospheric makeup, temperature, and even its winds.
+The researchers studied three different ways to propel a spacecraft on this epic journey to a point roughly 650 times Earth's distance from the Sun. They compared ultra-lightweight solar sails that would dive dangerously close to the Sun to catch maximum sunlight, nuclear-powered electric engines that would push steadily for decades, and hybrid approaches combining different propulsion methods. Using mathematical models, they calculated how long each approach would take and what technologies would be needed, focusing on realistic engineering constraints rather than science fiction concepts.
 Key Findings
-The team made several groundbreaking discoveries. They detected water vapor with extraordinary confidence and found carbon monoxide as well, confirming this planet has an extremely extended, puffy atmosphere. Surprisingly, their analysis suggests the planet is actually twice as heavy as previously thought—about 30 times Earth's mass instead of 15. They discovered winds blowing at nearly 3 kilometers per second from the planet's day side to its night side. Most remarkably, they found tentative evidence of "heavy water" containing deuterium, which would be the first time this has been detected in any exoplanet atmosphere.
+To reach the target distance in under 20 years, a solar sail would need to be incredibly thin—lighter than tissue paper—and survive a scorching close approach to the Sun at just one-twentieth Earth's distance. Nuclear electric propulsion alone would take 27-33 years with current technology, requiring massive power systems weighing 20 tons but producing thrust gentler than the weight of an apple. The most promising approach combines an initial high-speed boost with nuclear-powered cruising, potentially cutting the journey to under 20 years if the technology advances sufficiently.
 Looking Forward
-This research opens exciting new frontiers in exoplanet science. The possible deuterium detection, if confirmed, could revolutionize our understanding of how planets lose their atmospheres over time. The conflicting mass measurements highlight how much we still have to learn about these distant worlds, promising that future observations will continue surprising us and reshaping our cosmic perspective.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>The ESO SupJup Survey IX: Isotopic evidence of a recent formation for Luhman 16AB</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-03409v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-03409v1</guid>
-      <pubDate>Wed, 04 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>S. de Regt et al.</dc:creator>
-      <description><![CDATA[Why It Matters
-Imagine trying to solve a cosmic mystery: How do you tell the difference between a massive planet that formed around a star versus a "failed star" called a brown dwarf that formed on its own in space? Scientists have discovered they can act like stellar detectives, analyzing the chemical fingerprints in these objects' atmospheres to reveal their origin stories. This matters because understanding how planets and brown dwarfs form helps us piece together how solar systems—including our own—come to be. By studying the nearest brown dwarfs to Earth, researchers are developing techniques that could eventually help us understand the formation of giant planets around other stars.
-What They Did
-The research team focused on Luhman 16A and B, a pair of brown dwarfs that are our closest neighbors of their kind, located just 6.5 light-years away. Using a powerful telescope in Chile equipped with specialized instruments, they collected incredibly detailed rainbow-like spectra of light from these objects. Think of it like analyzing the unique "barcode" of light that each object produces—different molecules in their atmospheres absorb specific colors, creating distinct patterns. The scientists then used computer models to decode these light patterns, much like translating a foreign language, to determine what gases are present and in what amounts. They paid special attention to different versions of carbon molecules, called isotopes, which act like cosmic timestamps revealing when and where these objects formed.
-Key Findings
-The team discovered that both brown dwarfs have atmospheres churning with chemical activity, like giant atmospheric washing machines mixing gases up and down. Most significantly, they measured the ratio of two carbon types and found it matches what we see in space today—but differs from our solar system's 4.6-billion-year-old signature. The carbon ratio suggests these brown dwarfs formed relatively recently in cosmic terms, around 500 million years ago, when the galaxy had a different chemical composition. Both objects show nearly identical chemical fingerprints, confirming they formed together as a pair and share the same cosmic heritage.
-Looking Forward
-This research demonstrates that atmospheric chemistry can serve as a cosmic birth certificate, revealing not just how old celestial objects are, but when they formed relative to our solar system's history. As telescopes become more powerful, scientists will apply these techniques to study giant planets orbiting other stars, helping us understand whether planets like Jupiter are common or rare in the universe.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Visual inspection of potential exocomet transits identified through machine learning and statistical methods</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-02701v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-02701v1</guid>
-      <pubDate>Wed, 04 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>D. V. Dobrycheva et al.</dc:creator>
-      <description><![CDATA[Why It Matters
-While astronomers have discovered thousands of planets orbiting distant stars, we know much less about the smaller objects in these alien solar systems—like comets. These icy wanderers are fascinating because they're leftovers from planetary formation, essentially fossils that can tell us how solar systems are born and evolve. Finding comets around other stars (called "exocomets") is incredibly difficult because they're tiny and unpredictable, but they could hold crucial clues about whether other planetary systems formed like ours did. Understanding exocomets also helps us learn about the chaotic early days of solar systems, when comets bombarded young planets and possibly delivered water and organic compounds necessary for life.
-What They Did
-The researchers developed a clever detective system to spot exocomets using NASA's planet-hunting satellite TESS. Just like how a planet can briefly dim a star's light when it passes in front of it, a comet creates a similar but distinctive signature—an asymmetric dip that looks different from the symmetric dimming caused by planets. Think of it like the difference between a round ball's shadow versus an irregular cloud's shadow passing across a flashlight. The team trained a computer algorithm called Random Forest (like teaching a very fast pattern-recognition system) to identify these comet-like signatures in the brightness measurements of thousands of stars. They also used statistical methods to double-check their findings and employed human eyes to carefully inspect each candidate to rule out false alarms from instrument glitches.
-Key Findings
-The machine learning system identified 32 potential exocomet candidates from their initial survey, showing weak and irregular dimming events that match what astronomers expect from comet transits. When they tested their method on a star called eta Pictoris—already known to host exocomets—their algorithm successfully detected nearly all previously known comet events that caused the star's brightness to drop by more than 0.03%. This success rate demonstrates that their detection system works effectively even for incredibly faint signals that would be nearly impossible to spot by eye alone.
-Looking Forward
-This research represents a major step toward systematically discovering exocomets throughout our galaxy. As more space telescopes collect data and these detection methods improve, astronomers expect to find exocomets in many young planetary systems. This could revolutionize our understanding of how solar systems evolve and help answer fundamental questions about whether the chaotic, comet-filled early history of our own solar system is typical or unusual in the universe.]]></description>
+This research provides the first realistic roadmap for humanity's most ambitious space mission. Success would revolutionize exoplanet science, potentially revealing alien continents, oceans, and atmospheres in unprecedented detail. The timeline is tight—key technologies must be demonstrated by the early 2030s for a launch later that decade.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.IM</category>
+        <category>gr-qc</category>
     </item>
     <item>
-      <title>Imaging Venus-like Worlds: Spectral, Polarimetric, and UV Diagnostics for the Habitable Worlds Observatory</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-02728v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-02728v1</guid>
-      <pubDate>Wed, 04 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Stephen R. Kane et al.</dc:creator>
+      <title>A Two-Dimensional Analytic Solution for the Generation of Hyperbolic Trajectories Via A Single Close Encounter with Applications To Interstellar Objects</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-04806v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-04806v1</guid>
+      <pubDate>Thu, 05 Feb 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Hayden Monk, Darryl Z. Seligman</dc:creator>
       <description><![CDATA[Why It Matters
-Imagine if Earth had turned out like Venus—a scorching hellscape with crushing atmospheric pressure and clouds made of sulfuric acid. This isn't just science fiction; it's a real possibility that almost happened to our own planet. By studying "exoVenuses"—Venus-like planets orbiting other stars—scientists can unlock the secrets of why some worlds become paradise while others become purgatory. This research is crucial for understanding what makes a planet truly habitable and could help us identify which of the thousands of discovered exoplanets might actually support life.
+In recent years, astronomers have spotted mysterious visitors racing through our solar system—objects like 'Oumuamua and Borisov that came from other star systems entirely. These "interstellar interlopers" raise a fascinating question: how do rocks, asteroids, and comets get kicked out of their home solar systems and sent flying through the galaxy? Understanding this cosmic game of pinball isn't just academic curiosity—it helps us piece together how planetary systems form, evolve, and interact. Plus, if objects are being ejected from other systems and landing in ours, our solar system is likely doing the same thing, flinging material toward distant stars and potentially spreading the ingredients for life across the galaxy.
 What They Did
-The researchers created a comprehensive plan for studying Venus-like exoplanets using NASA's upcoming Habitable Worlds Observatory, a powerful space telescope designed to directly image planets around other stars. Think of it like having a super-advanced camera that can not only take pictures of distant worlds but also analyze their atmospheres by splitting their light into a rainbow of colors, much like a prism. The team compiled a catalog of 370 known Venus-zone planets—worlds that orbit close enough to their stars to potentially experience the same runaway greenhouse effect that turned Venus into an oven. They outlined specific techniques to detect telltale signs of Venus-like conditions, including sulfur compounds and sulfuric acid clouds.
+The researchers created mathematical formulas to predict how small objects like asteroids get ejected from solar systems. Think of it like working out the physics of a billiard shot—if you know the speed and angle of the cue ball hitting another ball, you can predict where that second ball will go. Here, the "cue ball" is a massive planet, and the target is a much smaller asteroid or comet. The team developed equations that can quickly calculate what happens when a planet's gravity gives a small object such a powerful kick that it escapes the star system entirely. They tested these formulas against computer simulations and applied them to our solar system and two other known planetary systems.
 Key Findings
-The study identified 370 potential Venus-like worlds that could be studied with the new observatory—nearly doubling previous estimates. The researchers determined exactly what the telescope needs to accomplish this ambitious survey: it must be able to detect ultraviolet light and distinguish planets that are extremely close to their stars, sometimes just one-third the distance between Earth and the Sun. They also identified specific chemical signatures that would reveal whether a planet has gone down Venus's apocalyptic path.
+The research revealed that ejection works best when the small object already has a stretched-out, oval-shaped orbit—specifically, when its "eccentricity" (a measure of how oval vs. circular an orbit is) exceeds 0.4. Objects on more circular orbits rarely get ejected. The final speed and direction of ejected objects depends heavily on how the planet and asteroid are moving relative to each other during their close encounter. The team's equations successfully predicted ejection patterns in multiple star systems, providing a cosmic "recipe" for creating interstellar wanderers.
 Looking Forward
-This research provides a roadmap for one of the most important questions in astronomy: what determines a planet's fate? By studying both failed worlds like exoVenuses and potentially habitable ones, scientists will finally understand the delicate balance that keeps Earth livable, helping us better assess which distant worlds might harbor life.]]></description>
+This research gives astronomers a powerful shortcut for identifying which regions of any planetary system are most likely to produce interstellar objects. Instead of running lengthy computer simulations, scientists can now use these formulas to quickly map ejection zones around different types of planets and stars. This could help us predict how many interstellar visitors we might expect to see, understand the cosmic recycling of planetary building blocks, and even estimate how often potentially life-bearing material gets shared between star systems across the galaxy.]]></description>
         <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
-    </item>
-    <item>
-      <title>Ultra-hot Jupiter atmospheres at high spectral resolution</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-02845v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-02845v1</guid>
-      <pubDate>Wed, 04 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Stefan Pelletier et al.</dc:creator>
-      <description><![CDATA[Why It Matters
-Imagine planets so scorching hot that metals literally float through their skies like clouds. These alien worlds, called ultra-hot Jupiters, are some of the most extreme places in the universe—and they're teaching us incredible things about how planets can form and survive in conditions that would instantly vaporize anything we know on Earth. By studying these cosmic furnaces, scientists are pushing the boundaries of what we thought was possible for planetary atmospheres, while developing techniques that will eventually help us analyze more Earth-like worlds and perhaps even detect signs of life elsewhere in the galaxy.
-What They Did
-The researchers used a sophisticated technique called high-resolution spectroscopy—essentially a super-powered method of analyzing light. Think of it like using a prism to split sunlight into a rainbow, but far more precise. When starlight passes through an exoplanet's atmosphere, different chemicals absorb specific colors of light, creating a unique "fingerprint." The challenge is separating these faint planetary signals from much brighter interference from Earth's atmosphere and the host star. The key breakthrough is that planets orbit their stars, so their chemical signatures shift slightly in wavelength due to their motion—like how an ambulance siren changes pitch as it moves toward or away from you. This allows scientists to isolate the planetary signals with remarkable precision.
-Key Findings
-Ultra-hot Jupiters are truly alien worlds where familiar rules break down. Their dayside temperatures reach 2,000-3,000°C—hot enough to melt copper—while their nightsides remain relatively cool. This extreme temperature difference creates powerful winds and completely different atmospheric chemistry on each hemisphere. Most remarkably, metals that would normally form solid particles or clouds in cooler planets instead exist as gases in these furnaces, floating freely through the atmosphere and creating detectable signatures that reveal the planet's composition and weather patterns.
-Looking Forward
-These extreme laboratories are perfect testing grounds for atmospheric analysis techniques that will eventually be applied to potentially habitable planets. As we refine our ability to detect and analyze atmospheric gases on ultra-hot Jupiters, we're developing the tools needed to search for water vapor, oxygen, and other biosignatures on Earth-like exoplanets—bringing us closer to answering whether we're alone in the universe.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Probing Atmospheric Escape Through the Near-Infrared Helium Triplet</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-03667v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-03667v1</guid>
-      <pubDate>Wed, 04 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>C. Farret Jentink, V. Bourrier, Y. Carteret</dc:creator>
-      <description><![CDATA[Why It Matters
-Imagine planets slowly bleeding their atmospheres into space—this isn't science fiction, but reality for many worlds orbiting close to their stars. Scientists have discovered that some exoplanets are literally losing their air, and this process might explain major mysteries in our cosmic neighborhood. Why do we see so few medium-sized planets? Why are certain regions around stars seemingly empty of Neptune-like worlds? The answers may lie in atmospheric escape—a process that could reshape entire planetary populations over millions of years. Understanding how planets lose their atmospheres helps us piece together the life stories of worlds beyond our solar system and reveals why planetary systems look the way they do.
-What They Did
-Researchers developed sophisticated new tools to catch planets in the act of losing their atmospheres. They focus on helium—a lightweight gas that glows with a distinct infrared signature when heated by starlight. Think of it like a cosmic fingerprint that becomes visible when a planet's atmosphere is being stripped away. The team created a new instrument called NIGHT specifically designed to survey escaping atmospheres across many different planets. They also developed advanced computer software called ANTARESS to process the incredibly faint signals captured during planetary transits—those brief moments when planets pass in front of their stars. The challenge is enormous: scientists must separate the tiny atmospheric signals from the much brighter stellar background, like trying to detect a whisper during a thunderstorm.
-Key Findings
-While this paper focuses on developing methods rather than reporting specific discoveries, the helium detection technique has already proven remarkably successful. The near-infrared helium signal provides the most reliable way to spot escaping atmospheres, acting like a cosmic smoke detector for planetary air loss. The researchers created sophisticated computer models that can distinguish between signals from the planet's atmosphere and confusing effects from the star's surface—a crucial breakthrough that makes reliable measurements possible.
-Looking Forward
-These new tools promise to revolutionize our understanding of planetary evolution. The NIGHT survey will create the first comprehensive census of atmospheric escape, potentially revealing which types of planets are most vulnerable to losing their air. This research could finally explain the mysterious gaps in planetary populations and help us understand whether Earth-like worlds can maintain their atmospheres around different types of stars—crucial knowledge for the search for life beyond our solar system.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
-        <category>astro-ph.SR</category>
-    </item>
-    <item>
-      <title>Unraveling the Brown Dwarf Desert: Four New Discoveries and a Unifying, Period-Coded Picture</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-02836v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-02836v1</guid>
-      <pubDate>Wed, 04 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Ján Šubjak et al.</dc:creator>
-      <description><![CDATA[Why It Matters
-Imagine trying to solve a cosmic mystery: why are brown dwarfs—objects too big to be planets but too small to be stars—so rare around other stars? This puzzle, known as the "brown dwarf desert," has intrigued astronomers for decades. These cosmic oddities are like failed stars that never quite ignited, sitting in a middle ground between giant planets and true stars. Understanding where they come from and why they're so scarce helps us piece together how planetary systems like our own solar system form and evolve. This research doesn't just catalog new discoveries—it reveals fundamental patterns about how different types of companions end up orbiting stars.
-What They Did
-The research team used NASA's planet-hunting telescope called TESS (Transiting Exoplanet Survey Satellite) to spot four new brown dwarfs by watching for tiny dips in starlight as these objects crossed in front of their host stars. Think of it like watching a moth fly in front of a streetlight—the light dims briefly as the moth passes by. To confirm these discoveries, the scientists used powerful ground-based telescopes to measure how the host stars wobble slightly due to the gravitational tug of their brown dwarf companions. They then compared their findings with existing catalogs of giant planets, brown dwarfs, and small stars to look for broader patterns in how these different types of companions behave.
-Key Findings
-The team discovered four new brown dwarfs, with three taking more than 100 days to complete their orbits—relatively leisurely compared to many known exoplanets. This discovery more than doubled the number of known long-period brown dwarfs from two to five systems. Most surprisingly, they uncovered a clear pattern: brown dwarfs with short, quick orbits tend to circle metal-rich stars (those with lots of heavy elements), while those with longer orbits prefer metal-poor stars. The researchers also found that brown dwarfs behave more like small stars than giant planets when it comes to their orbital shapes and the types of stars they orbit.
-Looking Forward
-These discoveries suggest that brown dwarfs form through two different pathways, like taking different routes to the same destination. Long-period brown dwarfs likely formed far from their stars through a process similar to how binary star systems form, while short-period ones may have started life in the thick, metal-rich disks of material that also birth giant planets. This research helps astronomers better understand the diverse family tree of objects that can orbit stars, ultimately improving our knowledge of how solar systems form and providing context for our own cosmic neighborhood.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.SR</category>
-    </item>
-    <item>
-      <title>Observational imprints of tidal internal gravity wave dissipation in star-planet systems</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-03723v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-03723v1</guid>
-      <pubDate>Wed, 04 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Yaroslav A. Lazovik, Adrian J. Barker</dc:creator>
-      <description><![CDATA[Why It Matters
-Hot Jupiters—giant planets that orbit extremely close to their stars—have puzzled astronomers since their discovery. These worlds complete an orbit in just days, enduring temperatures that would vaporize metal. But here's the mystery: they shouldn't stay there forever. New research reveals that many of these planets are actually spiraling into their stars and getting devoured, fundamentally changing how we understand planetary system evolution. This cosmic dance between stars and planets helps explain why we see certain patterns in exoplanet populations and suggests that many stars may be hiding evidence of consumed worlds.
-What They Did
-The researchers studied how invisible waves within stars can doom nearby planets. When a hot Jupiter orbits close to its star, it creates internal waves—like ripples in a pond—that travel through the star's interior. These waves eventually break apart or get absorbed, which steals energy from the planet's orbit. Think of it like friction gradually slowing down a spinning top. The team used computer models to simulate this process across thousands of star-planet systems, then compared their predictions to real observations of known hot Jupiter systems and rapidly spinning stars.
-Key Findings
-The evidence points to widespread planetary cannibalism. The researchers found that up to 20% of sun-like stars may have already swallowed a hot Jupiter during their lifetime. They discovered that hot Jupiter populations split into two distinct groups: young systems where planets haven't had time to spiral inward, and older systems where many planets have already been consumed. The smoking gun comes from certain fast-spinning stars that likely gained their rotation from gobbling up planets, including specific examples like TOI-2458 and GJ 504.
-Looking Forward
-This research transforms our understanding of planetary system evolution from a static picture to a dynamic one where planets regularly meet fiery ends. It suggests that hot Jupiters represent survivors in a cosmic elimination game, with many of their siblings already lost to stellar appetites. Future telescopes may help us identify more "guilty" stars that bear the rotational signatures of their planetary meals.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Architectures of Planetary Systems II: Trends with Host Star Mass and Metallicity</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-03657v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-03657v1</guid>
-      <pubDate>Wed, 04 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Alex R. Howe, Juliette C. Becker, Fred C. Adams</dc:creator>
-      <description><![CDATA[Why It Matters
-Imagine trying to understand why neighborhoods look different across a city—some have mansions, others have apartments, and many have a mix of housing types. Astronomers face a similar puzzle when studying planetary systems beyond our solar system. With over 5,000 confirmed exoplanets discovered, we see an amazing variety: some systems pack multiple planets closer to their star than Mercury is to our Sun, while others host lonely giant planets in distant orbits. Understanding what shapes these cosmic neighborhoods helps us figure out how planetary systems form and whether Earth-like worlds are common or rare in our galaxy.
-What They Did
-The research team analyzed data from hundreds of known planetary systems, acting like cosmic census takers. They looked for patterns by comparing two key properties of the host stars: their mass (how heavy they are compared to our Sun) and their metallicity (how much of elements heavier than hydrogen and helium they contain). Think of metallicity as the star's "recipe"—stars with more heavy elements are considered metal-rich. The astronomers then examined how these stellar properties relate to the types of planets orbiting around them, much like urban planners studying how neighborhood characteristics influence housing development.
-Key Findings
-The study confirmed that massive Jupiter-like planets strongly prefer metal-rich, heavier stars as hosts—a trend astronomers had suspected. More surprisingly, they discovered that more massive stars tend to have planetary systems with greater total mass, suggesting bigger stars can support more substantial planetary families. The researchers also found that there appears to be an upper limit to how massive planetary systems can become, which matches theoretical predictions about disk stability. They identified intriguing hints that ultra-low-density "super-puff" planets and close-orbiting hot Jupiters might prefer specific types of host stars.
-Looking Forward
-These findings provide crucial clues for the next generation of planet hunters. By understanding which stars are most likely to host different types of planets, astronomers can better target their searches for Earth-like worlds and optimize precious telescope time, bringing us closer to answering whether we're alone in the universe.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>The asymmetric structure of the inner disc around HD 142527 A with VLTI/MATISSE</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-03393v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-03393v1</guid>
-      <pubDate>Wed, 04 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>M. B. Scheuck et al.</dc:creator>
-      <description><![CDATA[Why It Matters
-Imagine trying to understand how Earth formed by studying our solar system today—you'd miss the crucial early stages when planets were actually taking shape. That's the challenge astronomers face when studying planet formation around other stars. This research tackles that problem by peering into the cosmic nursery where Earth-like planets are born: the inner regions of dusty discs around young stars. Understanding these planet-forming environments helps us grasp not only how alien worlds come to be, but also the origin story of our own solar system. It's like having a time machine to witness planetary birth in action.
-What They Did
-The researchers studied HD 142527, a young star system about 450 light-years away, using powerful telescopes that work together like a giant magnifying glass. They combined multiple telescopes in Chile to create incredibly detailed images—a technique called interferometry that's like using several cameras simultaneously to capture fine details invisible to any single telescope. Over multiple years, they observed the star at different wavelengths of infrared light, which reveals the warm dust and gas swirling around the star. Think of it as taking thermal photographs that show heat signatures from the planet-forming material.
-Key Findings
-The team discovered a remarkably chaotic and dynamic disc around this young star. Most surprisingly, they found hot material extremely close to the star—just 0.1 astronomical units away (about one-tenth the distance from Earth to our Sun). That's much closer than expected, like finding ice surviving next to a campfire. The disc showed dramatic changes from year to year, with lopsided, asymmetric structures constantly shifting. This turbulent behavior likely results from a companion star that swoops close every 24 years, gravitationally stirring up the planet-forming material like a cosmic egg beater.
-Looking Forward
-These findings suggest that planet formation might be far more chaotic and dynamic than previously thought. If similar disruption occurs in other young star systems, it could explain why we see such diverse types of exoplanets—from super-Earths to hot Jupiters in unusual orbits. This research provides a crucial piece of the puzzle for understanding how planetary systems evolve and why each one ends up so unique.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.SR</category>
-    </item>
-    <item>
-      <title>ExoDNN: Boosting exoplanet detection with artificial intelligence. Application to Gaia Data Release 3</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-02910v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-02910v1</guid>
-      <pubDate>Wed, 04 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>A. Abreu et al.</dc:creator>
-      <description><![CDATA[Why It Matters
-Finding planets beyond our solar system—called exoplanets—is one of astronomy's most exciting frontiers. These distant worlds could hold clues about how planetary systems form and whether life exists elsewhere in the universe. However, detecting exoplanets is incredibly challenging because they're tiny and dim compared to their host stars. It's like trying to spot a firefly next to a stadium floodlight from across the country. Current detection methods work well for certain types of planets but miss many others, leaving huge gaps in our cosmic census. This research represents a breakthrough in filling those gaps by using artificial intelligence to find hidden planetary companions.
-What They Did
-The researchers turned to data from Gaia, a European space telescope that has been precisely measuring the positions and movements of over a billion stars. When a star has an orbiting planet, the planet's gravity causes the star to wobble slightly—like a person spinning while holding a heavy ball on a string. These tiny wobbles show up as subtle irregularities in Gaia's measurements. The team trained a deep neural network (a type of AI similar to what recognizes faces in photos) to spot the telltale patterns in measurement quality that indicate a star is being tugged around by an unseen companion. They called their AI system ExoDNN and fed it data from hundreds of thousands of stars to teach it what to look for.
-Key Findings
-ExoDNN identified 7,414 stars that likely host planetary or other substellar companions—a massive haul from a single analysis. These candidate systems have similar characteristics to already-confirmed multi-star systems, which gives confidence in the AI's predictions. Importantly, this method can detect types of planets that traditional techniques often miss, particularly those in longer orbits around their stars. The AI essentially created a new treasure map of potential exoplanet locations across our galaxy.
-Looking Forward
-This research demonstrates how artificial intelligence can revolutionize exoplanet hunting by finding needles in cosmic haystacks. The 7,414 candidates provide astronomers with prime targets for follow-up observations using ground-based telescopes and future space missions like PLATO. As AI techniques improve and more Gaia data becomes available, we can expect even more sophisticated planet-hunting algorithms that will dramatically expand our catalog of known worlds.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
-        <category>astro-ph.SR</category>
+        <category>astro-ph.GA</category>
     </item>
   </channel>
 </rss>
