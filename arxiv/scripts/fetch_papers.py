@@ -485,33 +485,31 @@ def scrape_recent_listings() -> tuple[str, list[str]]:
         announcement_date = datetime.now(timezone.utc).strftime("%Y-%m-%d")
         print(f"⚠️ No date found, using today: {announcement_date}")
     
-    # Extract paper IDs - only from NEW submissions section
-    # The new submissions section comes after "New submissions" h3 and before "Cross submissions" h3
-    
-    # Split by h3 tags to isolate sections
-    sections = re.split(r'<h3[^>]*>.*?</h3>', html, flags=re.DOTALL | re.IGNORECASE)
-    
-    # Find the "New submissions" section by looking at what comes after that h3
-    new_section = None
+    # Extract paper IDs from New + Cross submissions (not Replacements)
+    # FIXED: Previously only scraped "New submissions", missing all cross-listed papers
     h3_positions = list(re.finditer(r'<h3[^>]*>(.*?)</h3>', html, re.DOTALL | re.IGNORECASE))
     
+    paper_ids = []
+    id_pattern = r'/abs/(\d{4}\.\d{4,5}(?:v\d+)?)'
+    
     for i, match in enumerate(h3_positions):
-        h3_text = ' '.join(match.group(1).split())
-        if ('new submissions' in h3_text.lower() or 'cross submissions' in h3_text.lower()) and 'showing' in h3_text.lower():
-            # Get content between this h3 and the next h3
+        h3_text = ' '.join(match.group(1).split()).lower()
+        
+        # Include both "New submissions" and "Cross submissions"
+        # Skip "Replacement submissions"
+        if ('new submissions' in h3_text or 'cross submissions' in h3_text) and 'showing' in h3_text:
             start = match.end()
             end = h3_positions[i + 1].start() if i + 1 < len(h3_positions) else len(html)
-            new_section = html[start:end]
-            break
+            section_ids = re.findall(id_pattern, html[start:end])
+            paper_ids.extend(section_ids)
+            
+            if 'new submissions' in h3_text:
+                print(f"   📄 New submissions: {len(section_ids)} papers")
+            else:
+                print(f"   🔀 Cross submissions: {len(section_ids)} papers")
     
-    if new_section:
-        # Extract paper IDs from new submissions section only
-        id_pattern = r'/abs/(\d{4}\.\d{4,5}(?:v\d+)?)'
-        paper_ids = re.findall(id_pattern, new_section)
-    else:
-        # Fallback: get all paper IDs
-        print("⚠️ Could not isolate New submissions section, using all papers")
-        id_pattern = r'/abs/(\d{4}\.\d{4,5}(?:v\d+)?)'
+    if not paper_ids:
+        print("⚠️ Could not isolate submission sections, using all papers")
         paper_ids = re.findall(id_pattern, html)
     
     # Deduplicate while preserving order
@@ -523,15 +521,7 @@ def scrape_recent_listings() -> tuple[str, list[str]]:
             seen.add(base_id)
             unique_ids.append(pid)
     
-    # Verify count matches
-    if new_submissions_count and len(unique_ids) != new_submissions_count:
-        print(f"⚠️ Found {len(unique_ids)} IDs but expected {new_submissions_count}")
-    
-    print(f"📰 Found {len(unique_ids)} new paper IDs for {announcement_date}")
-    
-    return announcement_date, unique_ids
-    
-    print(f"📰 Found {len(unique_ids)} unique paper IDs for {announcement_date}")
+    print(f"📰 Found {len(unique_ids)} paper IDs for {announcement_date}")
     
     return announcement_date, unique_ids
 
