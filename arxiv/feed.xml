@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 06 Feb 2026 04:10:21 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 09 Feb 2026 04:23:48 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,53 +15,90 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>The Effects of Non-ideal Mixing in Planetary Magma Oceans and Atmospheres</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-05917v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-05917v1</guid>
-      <pubDate>Fri, 06 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Aaron Werlen et al.</dc:creator>
+      <title>Probing habitable regions with SRG/eROSITA</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-06124v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-06124v1</guid>
+      <pubDate>Mon, 09 Feb 2026 20:00:00 +0000</pubDate>
+      <dc:creator>E. Gatuzz et al.</dc:creator>
       <description><![CDATA[Why It Matters
-Imagine trying to understand a distant world where the surface is an ocean of molten rock constantly exchanging gases with a thick atmosphere above. This isn't science fiction—it's the reality for many planets orbiting other stars. These "sub-Neptunes" are among the most common planets in our galaxy, yet we're only beginning to understand how their rocky interiors and gaseous atmospheres interact. With powerful new space telescopes like the James Webb Space Telescope now able to analyze the atmospheres of distant worlds, scientists need better models to interpret what they're seeing. This research helps us decode the chemical fingerprints of alien worlds and understand how planets evolve over billions of years.
+When we search for life beyond Earth, we're not just looking for planets in the right place—we need to know if they can actually keep their atmospheres. Think of a planet's atmosphere like a protective blanket that makes life possible. But stars aren't always gentle neighbors. They blast nearby planets with intense radiation that can strip away these atmospheric blankets over millions of years, leaving behind barren, Mars-like worlds. Understanding which stars are "atmosphere killers" versus "life nurturers" is crucial for knowing where to focus our search for alien life and whether Earth-like worlds can truly stay Earth-like over cosmic time.
 What They Did
-The researchers built a sophisticated computer model that tracks how gases, molten rock, and liquid metals interact on these distant worlds. Think of it like creating a recipe that accounts for how different ingredients behave when mixed together under extreme conditions—temperatures hot enough to melt rock and pressures hundreds of times greater than Earth's surface. Previous models treated these materials as if they mixed perfectly, like salt dissolving in water. But in reality, materials often behave unexpectedly when combined, especially under such extreme conditions. The team incorporated these "non-ideal" behaviors into their model, creating a more realistic picture of how volatiles like water vapor move between a planet's molten surface and its atmosphere.
+Scientists used a powerful space-based X-ray telescope called eROSITA to study the radiation environments around 3,750 nearby stars. They measured how much high-energy radiation—X-rays and extreme ultraviolet light—each star produces. Then, like cosmic real estate agents, they calculated how much of this dangerous radiation would hit a planet located in each star's "habitable zone"—the just-right distance where liquid water could exist on a planet's surface. Finally, they used computer models to estimate how quickly this radiation would strip away the atmosphere of an Earth-like planet orbiting each star.
 Key Findings
-For smaller, cooler planetary embryos (about half Earth's mass at 2,350 Kelvin), these realistic mixing effects made only small differences in their calculations. However, for larger sub-Neptunes with scorching temperatures around 3,000 Kelvin, the effects became more significant—though still relatively modest, typically changing results by about 20% and at most doubling certain values. Importantly, when they accounted for realistic behavior in all materials simultaneously, they found these planets could hold onto more water in both their rocky mantles and gaseous envelopes. The researchers discovered that applying corrections to only one type of material gave incomplete or even misleading results—you need to consider the whole system together.
+The results were sobering: most stars in our cosmic neighborhood are far more violent than our Sun. While our Sun provides a relatively gentle radiation environment, many nearby stars bombard their habitable zones with radiation levels ranging from equal to our Sun's output up to 100,000 times more intense. The research revealed that smaller, cooler stars—which make up the majority of stars in our galaxy—are often the worst offenders, creating "hazard zones" where Earth-like atmospheres would be stripped away relatively quickly.
 Looking Forward
-These findings provide astronomers with more accurate tools for interpreting observations from space telescopes. As we detect the atmospheric compositions of more distant worlds, this research helps us understand what those chemical signatures really tell us about a planet's interior structure and evolutionary history. This could be crucial for identifying potentially habitable worlds and understanding how planets like Earth formed and evolved.]]></description>
+This research provides astronomers with a cosmic roadmap for prioritizing exoplanet targets. Rather than assuming all stars are equally hospitable, we now know which stellar neighborhoods offer the best chances for long-term habitability, helping focus future telescope observations on the most promising worlds.]]></description>
         <category>astro-ph.EP</category>
-        <category>physics.geo-ph</category>
+        <category>astro-ph.HE</category>
+        <category>astro-ph.SR</category>
     </item>
     <item>
-      <title>Habitability of Tidally Heated H₂-Dominated Exomoons around Free-Floating Planets</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-05378v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-05378v1</guid>
-      <pubDate>Fri, 06 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>David Dahlbüdding et al.</dc:creator>
+      <title>The effect of JWST/NIRSpec data reduction on the retrieval of WASP-39b atmospheric properties</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-06722v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-06722v1</guid>
+      <pubDate>Mon, 09 Feb 2026 20:00:00 +0000</pubDate>
+      <dc:creator>J. Roy-Perez et al.</dc:creator>
       <description><![CDATA[Why It Matters
-When we think about alien life, we usually picture planets orbiting stars like our Sun. But scientists have discovered something remarkable: there are "rogue planets" drifting alone through space, kicked out of their original solar systems like cosmic castaways. Even more intriguing, some of these wandering worlds might have moons—and those moons could potentially harbor life, even in the cold darkness between stars. This research explores one of the most exotic scenarios for habitability in our universe, expanding our understanding of where life might exist far beyond the traditional "Goldilocks zone" around stars.
+Imagine trying to diagnose a patient's health, but getting wildly different results depending on which lab processes your blood sample. That's essentially what's happening with our most powerful space telescope as it studies distant worlds. The James Webb Space Telescope (JWST) can peer into the atmospheres of planets orbiting other stars—called exoplanets—with incredible detail, potentially revealing which worlds might harbor life. But this groundbreaking research has uncovered a troubling problem: the way scientists process the telescope's raw data dramatically affects what we think we know about these alien worlds. Getting this right isn't just about scientific accuracy—it could determine whether we correctly identify potentially habitable planets or miss them entirely.
 What They Did
-The researchers used sophisticated computer models to simulate conditions on moons orbiting these rogue planets. Think of it like creating a detailed weather forecast, but for an alien world. They focused on a crucial energy source: tidal heating, which works like repeatedly squeezing a stress ball—the constant stretching and compressing of the moon as it orbits generates internal heat. The team modeled different types of atmospheres, particularly those dominated by hydrogen gas, to see if they could trap enough of this tidal heat to keep water liquid on the surface. They also included complex chemistry to understand how different gases would behave under these extreme conditions.
+The researchers focused on WASP-39b, a well-studied planet about 700 light-years away that's roughly the size of Saturn but orbits much closer to its star. When this planet passes in front of its star, the telescope can analyze starlight filtering through the planet's atmosphere, like studying a sunset through Earth's air. Six different research teams processed the same telescope observations using their own methods, like six photographers developing the same film negative with different techniques. The scientists then used computer models to interpret what gases and clouds might exist in the planet's atmosphere based on each processed dataset. They also tested what happened when they excluded data from parts of the detector that were overwhelmed by bright light.
 Key Findings
-The results are striking: hydrogen-rich atmospheres could keep these rogue moons warm enough for liquid water for up to 4.3 billion years—nearly as long as Earth has existed. Unlike previous models using carbon dioxide atmospheres, which would freeze and collapse in the frigid conditions, hydrogen atmospheres remain stable. The powerful tides would create dramatic wet-dry cycles on the surface, and when combined with dissolved ammonia making the water alkaline, these conditions might actually help complex molecules like RNA form—a crucial step toward life.
+The results were shocking: depending on which team processed the data, the estimated amounts of atmospheric components varied by more than ten times. This is like six labs analyzing the same blood sample and one finding normal cholesterol while another finds dangerously high levels. Even more concerning, these processing differences created uncertainties just as large as those from the assumptions scientists make about how clouds and hazes behave in alien atmospheres. When the researchers excluded the problematic bright-light data, the results became more consistent between teams, but they lost some ability to distinguish between different atmospheric possibilities.
 Looking Forward
-This research dramatically expands the number of potentially habitable worlds in our galaxy. If confirmed, it means life could exist in the vast spaces between stars, completely independent of stellar energy—a paradigm shift for astrobiology and our search for extraterrestrial life.]]></description>
+This research sounds an important alarm for exoplanet science. As we search for signs of life on distant worlds, we need to ensure our tools are giving us accurate readings. The study shows that JWST has the sensitivity to detect the subtle signatures of clouds and hazes in alien atmospheres—a crucial capability for understanding these worlds. However, the astronomical community must develop standardized methods for processing telescope data, much like medical labs follow strict protocols to ensure reliable results. Without this consistency, we risk drawing incorrect conclusions about potentially life-bearing worlds, making this technical challenge one of the most important hurdles in our quest to find life beyond Earth.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+    </item>
+    <item>
+      <title>Dilution of accreted planetary matter in hot DA white dwarfs according to their mass</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-06738v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-06738v1</guid>
+      <pubDate>Mon, 09 Feb 2026 20:00:00 +0000</pubDate>
+      <dc:creator>M. Deal et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+When stars like our Sun die, they become white dwarfs—incredibly dense, Earth-sized remnants that slowly cool over billions of years. These stellar corpses offer us a unique window into the fate of planetary systems, including what might happen to our own solar system in about 5 billion years. Many white dwarfs show signs of "pollution"—heavy elements like calcium and iron in their atmospheres that shouldn't be there. These elements are like cosmic fingerprints, revealing that the white dwarf has been feeding on the remnants of destroyed planets, asteroids, and comets from its former planetary system. Understanding this process helps us learn how common planetary systems are and what ultimately happens to the rocky worlds orbiting dying stars.
+What They Did
+The researchers used computer models to simulate what happens when planetary debris falls onto white dwarfs of different masses. Think of it like dropping food coloring into different containers of water—some might mix the color throughout quickly, while others might keep it concentrated near the surface. The scientists specifically looked at two mixing processes: atomic diffusion (like slow stirring) and thermohaline convection (like the vigorous mixing that happens when you pour cold cream into hot coffee). They tested these processes across white dwarfs with various masses, temperatures, and hydrogen content to see how efficiently each type would dilute the incoming planetary material throughout their interior.
+Key Findings
+The results revealed a cosmic paradox. Previous observations showed that more massive white dwarfs appear less polluted by planetary debris than their lighter counterparts. Scientists initially thought this might be because more massive stars had fewer planets to begin with. However, this study found the opposite should be true: massive white dwarfs are actually worse at mixing planetary material throughout their interiors due to their higher internal density. This means pollution should be more easily detectable in massive white dwarfs, not less. The mixing process that dominates—thermohaline convection—works less efficiently in dense, massive white dwarfs, like trying to stir thick honey versus water.
+Looking Forward
+This discovery means we need to rethink our understanding of planetary system evolution around dying stars. Since internal mixing processes can't explain why massive white dwarfs appear less polluted, other factors must be at play. Perhaps more massive stars really did have fewer planets during their lifetimes, or maybe the planetary destruction process itself works differently around various types of white dwarfs. This research pushes scientists to develop more sophisticated models of how planetary systems meet their end, ultimately helping us better predict the long-term fate of worlds throughout the galaxy.]]></description>
+        <category>astro-ph.SR</category>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>Sulfur Enrichment in Close-in Exoplanet Atmospheres Induced by Pebble Drift across the Salt Line</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-05300v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-05300v1</guid>
-      <pubDate>Fri, 06 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Kanon Nakazawa, Ohno Kazumasa</dc:creator>
+      <title>Satellites and small bodies with ALMA: Insights into Solar System formation &amp; evolution</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-06126v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-06126v1</guid>
+      <pubDate>Mon, 09 Feb 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Katherine de Kleer et al.</dc:creator>
       <description><![CDATA[Why It Matters
-The James Webb Space Telescope has been spotting something unexpected in the atmospheres of distant planets: surprisingly high amounts of sulfur compounds. This discovery is forcing scientists to rethink how planets form and develop their atmospheres. Understanding what makes up these alien worlds helps us piece together the story of how planetary systems—including our own—came to be. It's like being a cosmic detective, using chemical clues to solve mysteries about worlds trillions of miles away.
+Imagine trying to understand how your family formed by studying both old family photos and meeting distant relatives. That's essentially what astronomers are doing to understand how planetary systems—including our own Solar System—come to be. By studying the moons, comets, and asteroids in our cosmic backyard alongside forming planetary systems around other stars, scientists are piecing together the epic story of how worlds are born. This research matters because it helps us understand our own origins and whether Earth-like planets might be common or rare in the universe. Every small body in our Solar System is like a time capsule, preserving clues about conditions billions of years ago when the planets were first forming from a swirling disk of gas and dust.
 What They Did
-The researchers built computer models to simulate how planets get their atmospheric ingredients during formation. They focused on a special type of compound called ammonium salts—think of them as cosmic "salt crystals" made of nitrogen, sulfur, and hydrogen that have been spotted in comets and space clouds. The team tracked how tiny particles containing these salts would drift inward through a planet-forming disk (imagine a spinning disk of dust and gas around a young star), break apart, and then influence what gases a growing planet would eventually swallow up. They then predicted what telescopes would see when looking at planets that formed this way.
+Researchers used the Atacama Large Millimeter/submillimeter Array—a collection of 66 radio telescopes in Chile's desert that work together like one giant eye in the sky. Think of it as a cosmic thermometer and chemical detector rolled into one. The team pointed these telescopes at various moons and comets in our Solar System, measuring the heat they give off and analyzing the unique fingerprints of different molecules in space. By detecting these faint signals, they could identify specific chemicals and even different versions of the same molecules (called isotopes) that reveal where and how these objects formed. They then compared these local discoveries with observations of young planetary systems around other stars to find common patterns.
 Key Findings
-The models revealed that these drifting salt particles could boost sulfur and nitrogen levels in the gas disk to 2-10 times higher than what we see in our Sun. When planets form by gobbling up this enriched gas, their atmospheres become loaded with sulfur compounds like sulfur dioxide—exactly what Webb has been detecting. Most importantly, this process can create sulfur-rich atmospheres without the planet needing to eat solid materials, which was the previous leading explanation.
+The research revealed new molecules and chemical variants never before detected on Solar System moons and comets, essentially expanding our cosmic periodic table. These discoveries showed that small bodies preserve a much richer chemical record than previously thought, with some molecules acting like frozen-in-time signatures of the ancient Solar System's temperature and chemistry. The observations also revealed that the thermal properties of asteroids and comets provide new constraints on their internal structure and composition—imagine using a thermometer to figure out what's inside a wrapped present. Perhaps most excitingly, the chemical fingerprints found in our Solar System's small bodies match patterns seen in the dusty disks where new planets are currently forming around young stars.
 Looking Forward
-This research offers a completely new explanation for the chemical makeup of exoplanet atmospheres. Scientists can now test this theory by measuring specific ratios of elements like nitrogen to sulfur in these distant worlds. These measurements will help determine whether planets got their atmospheres from gas or solid materials—a fundamental question about how worlds like ours come to exist.]]></description>
+This research transforms how scientists search for and study exoplanets by providing a detailed reference guide of what planetary system formation looks like up close. Just as detectives use local crime scene evidence to solve cases elsewhere, astronomers can now use our Solar System's chemical clues to better interpret observations of distant planetary systems. This could help identify which young star systems are most likely to develop Earth-like worlds and guide future space missions to the most promising targets in our search for life beyond Earth.]]></description>
         <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Real time, cross platform visualizations with zero dependencies for the N-body package REBOUND</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-06735v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-06735v1</guid>
+      <pubDate>Mon, 09 Feb 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Hanno Rein</dc:creator>
+      <description><![CDATA[Why It Matters
+When astronomers discover new planets orbiting distant stars, they don't just want to crunch numbers—they want to see these alien worlds in action. Imagine trying to understand how our solar system works by only reading spreadsheets instead of watching planets actually orbit the Sun. Scientists studying exoplanets face a similar challenge when running complex computer simulations that predict how these distant planetary systems behave over millions of years. This research tackles a surprisingly practical problem: how to create stunning, real-time visualizations of planetary motion that work on any computer, anywhere in the world, without the technical headaches that usually come with sophisticated graphics software.
+What They Did
+The researchers developed a clever new approach to visualizing planetary simulations using an unlikely tool: web browsers. Instead of relying on specialized graphics software that only works on certain computers or requires complex installation, they figured out how to make any standard web browser—the same one you use to check email—display interactive 3D animations of planets orbiting their stars. Think of it like turning your browser into a personal planetarium. They built this system for REBOUND, a popular software package that simulates how gravitational forces move planets around over time. The key innovation was creating a system with "zero dependencies"—meaning it works immediately without users having to install additional software or worry about compatibility issues.
+Key Findings
+The team successfully created a visualization system that runs on all major operating systems and devices without requiring any external software libraries. Their approach offers multiple viewing options: scientists can watch simulations in real-time on their local computer, access them remotely through any web browser, or even run entire planetary simulations directly within the browser itself. The system also works seamlessly within Jupyter notebooks, a popular tool among researchers.
+Looking Forward
+This breakthrough could democratize access to sophisticated planetary science tools, allowing students, educators, and researchers worldwide to explore exoplanetary systems without technical barriers. As we discover thousands more exoplanets, having user-friendly visualization tools will help scientists better understand these alien worlds and communicate their findings to the public.]]></description>
+        <category>cs.GR</category>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
     </item>
   </channel>
 </rss>
