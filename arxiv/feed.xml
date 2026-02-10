@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 09 Feb 2026 04:23:48 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 10 Feb 2026 04:30:02 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,90 +15,94 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>Probing habitable regions with SRG/eROSITA</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-06124v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-06124v1</guid>
-      <pubDate>Mon, 09 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>E. Gatuzz et al.</dc:creator>
+      <title>A New Strategy for Using Spectroscopic Phase Curves to Characterize Non-Transiting Planets</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-07127v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-07127v1</guid>
+      <pubDate>Tue, 10 Feb 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Ted M. Johnson, Avi M. Mandell</dc:creator>
       <description><![CDATA[Why It Matters
-When we search for life beyond Earth, we're not just looking for planets in the right place—we need to know if they can actually keep their atmospheres. Think of a planet's atmosphere like a protective blanket that makes life possible. But stars aren't always gentle neighbors. They blast nearby planets with intense radiation that can strip away these atmospheric blankets over millions of years, leaving behind barren, Mars-like worlds. Understanding which stars are "atmosphere killers" versus "life nurturers" is crucial for knowing where to focus our search for alien life and whether Earth-like worlds can truly stay Earth-like over cosmic time.
+Imagine trying to study a firefly's glow while it circles a blazing campfire—that's essentially the challenge astronomers face when studying planets orbiting other stars. Most of what we know about exoplanets comes from watching them pass in front of their host stars, like tiny shadows blocking starlight. But the vast majority of planets never cross our line of sight this way, leaving them largely mysterious. This research introduces a clever new method that could unlock the secrets of thousands of previously unstudable worlds, including some that might be suitable for life.
 What They Did
-Scientists used a powerful space-based X-ray telescope called eROSITA to study the radiation environments around 3,750 nearby stars. They measured how much high-energy radiation—X-rays and extreme ultraviolet light—each star produces. Then, like cosmic real estate agents, they calculated how much of this dangerous radiation would hit a planet located in each star's "habitable zone"—the just-right distance where liquid water could exist on a planet's surface. Finally, they used computer models to estimate how quickly this radiation would strip away the atmosphere of an Earth-like planet orbiting each star.
+The researchers developed a technique they call VPIE (Variable Planetary Infrared Excess) that works like a cosmic game of "spot the difference." As a planet orbits its star, we see different amounts of heat radiating from its day and night sides—sometimes we see the hot day side, sometimes the cooler night side. This creates a subtle flickering pattern in the combined light from the star-planet system. The VPIE method uses mathematical tools to separate the steady starlight from these tiny planetary heat signatures, like isolating a whispered conversation in a noisy room. They tested their approach using computer simulations of three real planets that the James Webb Space Telescope could observe: a large hot planet, a medium-sized warm planet, and a smaller planet in the habitable zone around our nearest stellar neighbor, Proxima Centauri.
 Key Findings
-The results were sobering: most stars in our cosmic neighborhood are far more violent than our Sun. While our Sun provides a relatively gentle radiation environment, many nearby stars bombard their habitable zones with radiation levels ranging from equal to our Sun's output up to 100,000 times more intense. The research revealed that smaller, cooler stars—which make up the majority of stars in our galaxy—are often the worst offenders, creating "hazard zones" where Earth-like atmospheres would be stripped away relatively quickly.
+The simulations showed that VPIE can successfully distinguish between planets with different atmospheric behaviors—those that efficiently transport heat from day to night versus those that don't. The method can also estimate planetary sizes and temperatures without needing the planet to transit its star. While it works best for warmer planets that give off more infrared heat, the technique showed promise even for cooler, potentially habitable worlds.
 Looking Forward
-This research provides astronomers with a cosmic roadmap for prioritizing exoplanet targets. Rather than assuming all stars are equally hospitable, we now know which stellar neighborhoods offer the best chances for long-term habitability, helping focus future telescope observations on the most promising worlds.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.HE</category>
-        <category>astro-ph.SR</category>
-    </item>
-    <item>
-      <title>The effect of JWST/NIRSpec data reduction on the retrieval of WASP-39b atmospheric properties</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-06722v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-06722v1</guid>
-      <pubDate>Mon, 09 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>J. Roy-Perez et al.</dc:creator>
-      <description><![CDATA[Why It Matters
-Imagine trying to diagnose a patient's health, but getting wildly different results depending on which lab processes your blood sample. That's essentially what's happening with our most powerful space telescope as it studies distant worlds. The James Webb Space Telescope (JWST) can peer into the atmospheres of planets orbiting other stars—called exoplanets—with incredible detail, potentially revealing which worlds might harbor life. But this groundbreaking research has uncovered a troubling problem: the way scientists process the telescope's raw data dramatically affects what we think we know about these alien worlds. Getting this right isn't just about scientific accuracy—it could determine whether we correctly identify potentially habitable planets or miss them entirely.
-What They Did
-The researchers focused on WASP-39b, a well-studied planet about 700 light-years away that's roughly the size of Saturn but orbits much closer to its star. When this planet passes in front of its star, the telescope can analyze starlight filtering through the planet's atmosphere, like studying a sunset through Earth's air. Six different research teams processed the same telescope observations using their own methods, like six photographers developing the same film negative with different techniques. The scientists then used computer models to interpret what gases and clouds might exist in the planet's atmosphere based on each processed dataset. They also tested what happened when they excluded data from parts of the detector that were overwhelmed by bright light.
-Key Findings
-The results were shocking: depending on which team processed the data, the estimated amounts of atmospheric components varied by more than ten times. This is like six labs analyzing the same blood sample and one finding normal cholesterol while another finds dangerously high levels. Even more concerning, these processing differences created uncertainties just as large as those from the assumptions scientists make about how clouds and hazes behave in alien atmospheres. When the researchers excluded the problematic bright-light data, the results became more consistent between teams, but they lost some ability to distinguish between different atmospheric possibilities.
-Looking Forward
-This research sounds an important alarm for exoplanet science. As we search for signs of life on distant worlds, we need to ensure our tools are giving us accurate readings. The study shows that JWST has the sensitivity to detect the subtle signatures of clouds and hazes in alien atmospheres—a crucial capability for understanding these worlds. However, the astronomical community must develop standardized methods for processing telescope data, much like medical labs follow strict protocols to ensure reliable results. Without this consistency, we risk drawing incorrect conclusions about potentially life-bearing worlds, making this technical challenge one of the most important hurdles in our quest to find life beyond Earth.]]></description>
+This breakthrough could dramatically expand our ability to study exoplanets, potentially opening up thousands of new worlds for investigation. Future improvements to the technique or more sensitive telescopes could make it possible to study the atmospheres of Earth-like planets around nearby stars, bringing us closer to answering whether we're alone in the universe.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.IM</category>
     </item>
     <item>
-      <title>Dilution of accreted planetary matter in hot DA white dwarfs according to their mass</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-06738v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-06738v1</guid>
-      <pubDate>Mon, 09 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>M. Deal et al.</dc:creator>
+      <title>RedDots: Multiplanet system around M dwarf GJ 887 in the solar neighborhood</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-08929v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-08929v1</guid>
+      <pubDate>Tue, 10 Feb 2026 20:00:00 +0000</pubDate>
+      <dc:creator>C. Hartogh et al.</dc:creator>
       <description><![CDATA[Why It Matters
-When stars like our Sun die, they become white dwarfs—incredibly dense, Earth-sized remnants that slowly cool over billions of years. These stellar corpses offer us a unique window into the fate of planetary systems, including what might happen to our own solar system in about 5 billion years. Many white dwarfs show signs of "pollution"—heavy elements like calcium and iron in their atmospheres that shouldn't be there. These elements are like cosmic fingerprints, revealing that the white dwarf has been feeding on the remnants of destroyed planets, asteroids, and comets from its former planetary system. Understanding this process helps us learn how common planetary systems are and what ultimately happens to the rocky worlds orbiting dying stars.
+Finding planets around nearby stars isn't just an academic exercise—it's our best shot at discovering worlds that might harbor life. GJ 887, a small red star just 11 light-years from Earth, has become one of the most exciting planetary systems in our cosmic neighborhood. With multiple planets orbiting this dim but long-lived star, including one in the "Goldilocks zone" where liquid water could exist, this system offers a tantalizing glimpse of potentially habitable worlds practically next door in galactic terms.
 What They Did
-The researchers used computer models to simulate what happens when planetary debris falls onto white dwarfs of different masses. Think of it like dropping food coloring into different containers of water—some might mix the color throughout quickly, while others might keep it concentrated near the surface. The scientists specifically looked at two mixing processes: atomic diffusion (like slow stirring) and thermohaline convection (like the vigorous mixing that happens when you pour cold cream into hot coffee). They tested these processes across white dwarfs with various masses, temperatures, and hydrogen content to see how efficiently each type would dilute the incoming planetary material throughout their interior.
+Astronomers used a clever detective technique to find these hidden planets. Since planets are too faint to see directly next to their bright parent stars, researchers instead watched for tiny wobbles in the star's motion. As planets orbit, their gravity tugs on their host star, causing it to move back and forth by mere meters per second—about walking speed. Using ultra-precise instruments called spectrographs at observatories in Chile, the team measured these minuscule stellar movements over many nights. The tricky part was separating genuine planet signals from the star's own natural variability, like stellar weather patterns. They used sophisticated computer modeling to filter out these stellar hiccups and reveal the gravitational signatures of orbiting worlds.
 Key Findings
-The results revealed a cosmic paradox. Previous observations showed that more massive white dwarfs appear less polluted by planetary debris than their lighter counterparts. Scientists initially thought this might be because more massive stars had fewer planets to begin with. However, this study found the opposite should be true: massive white dwarfs are actually worse at mixing planetary material throughout their interiors due to their higher internal density. This means pollution should be more easily detectable in massive white dwarfs, not less. The mixing process that dominates—thermohaline convection—works less efficiently in dense, massive white dwarfs, like trying to stir thick honey versus water.
+The team confirmed four planets around GJ 887, with a possible fifth awaiting verification. The most exciting discovery is a "super-Earth"—a rocky planet about twice our planet's mass—that orbits every 51 days in the habitable zone. This makes it the second-closest potentially habitable planet ever found, after Proxima Centauri b. The system also contains an Earth-mass planet whipping around its star every 4.4 days, plus two other confirmed worlds with 9-day and 22-day orbits. If the fifth planet candidate proves real, it would be smaller than Earth.
 Looking Forward
-This discovery means we need to rethink our understanding of planetary system evolution around dying stars. Since internal mixing processes can't explain why massive white dwarfs appear less polluted, other factors must be at play. Perhaps more massive stars really did have fewer planets during their lifetimes, or maybe the planetary destruction process itself works differently around various types of white dwarfs. This research pushes scientists to develop more sophisticated models of how planetary systems meet their end, ultimately helping us better predict the long-term fate of worlds throughout the galaxy.]]></description>
-        <category>astro-ph.SR</category>
+This discovery transforms our understanding of planetary systems around red dwarf stars, which make up 75% of all stars in our galaxy. Having multiple planets so close to Earth makes GJ 887 a prime target for future space telescopes that might detect atmospheres or even signs of life on these distant worlds.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>Satellites and small bodies with ALMA: Insights into Solar System formation &amp; evolution</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-06126v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-06126v1</guid>
-      <pubDate>Mon, 09 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Katherine de Kleer et al.</dc:creator>
+      <title>JWST spectral retrieval of cold directly imaged planet WD0806 b and the first measurement of altitude-dependent Kzz in exoplanet atmospheres</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-08200v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-08200v1</guid>
+      <pubDate>Tue, 10 Feb 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Ben W. P. Lew et al.</dc:creator>
       <description><![CDATA[Why It Matters
-Imagine trying to understand how your family formed by studying both old family photos and meeting distant relatives. That's essentially what astronomers are doing to understand how planetary systems—including our own Solar System—come to be. By studying the moons, comets, and asteroids in our cosmic backyard alongside forming planetary systems around other stars, scientists are piecing together the epic story of how worlds are born. This research matters because it helps us understand our own origins and whether Earth-like planets might be common or rare in the universe. Every small body in our Solar System is like a time capsule, preserving clues about conditions billions of years ago when the planets were first forming from a swirling disk of gas and dust.
+Imagine trying to study the atmosphere of a world so distant and cold that it's barely detectable—that's exactly what scientists have accomplished with WD0806 b, one of the most extreme planets we've ever observed. This frozen world orbits a dead star called a white dwarf at a staggering distance 2,500 times farther than Earth is from our Sun. At just 350 Kelvin (about 170°F), it's one of the coldest planets we can directly observe, making it a unique laboratory for understanding how planetary atmospheres work under extreme conditions. This research matters because it pushes the boundaries of what's possible in studying distant worlds and gives us insights into atmospheric physics that we simply can't get anywhere else.
 What They Did
-Researchers used the Atacama Large Millimeter/submillimeter Array—a collection of 66 radio telescopes in Chile's desert that work together like one giant eye in the sky. Think of it as a cosmic thermometer and chemical detector rolled into one. The team pointed these telescopes at various moons and comets in our Solar System, measuring the heat they give off and analyzing the unique fingerprints of different molecules in space. By detecting these faint signals, they could identify specific chemicals and even different versions of the same molecules (called isotopes) that reveal where and how these objects formed. They then compared these local discoveries with observations of young planetary systems around other stars to find common patterns.
+Using the James Webb Space Telescope—our most powerful space observatory—researchers captured both images and detailed light measurements of this frigid planet. Think of it like taking both a photograph and analyzing the "fingerprint" of light coming from the planet. Just as different materials absorb specific colors of light, different gases in the planet's atmosphere absorb specific wavelengths, creating a unique signature. The team developed new computer models to decode these light signatures, much like a detective analyzing clues to reconstruct what happened at a crime scene. They could then determine what gases are present and how the atmosphere moves and mixes at different altitudes.
 Key Findings
-The research revealed new molecules and chemical variants never before detected on Solar System moons and comets, essentially expanding our cosmic periodic table. These discoveries showed that small bodies preserve a much richer chemical record than previously thought, with some molecules acting like frozen-in-time signatures of the ancient Solar System's temperature and chemistry. The observations also revealed that the thermal properties of asteroids and comets provide new constraints on their internal structure and composition—imagine using a thermometer to figure out what's inside a wrapped present. Perhaps most excitingly, the chemical fingerprints found in our Solar System's small bodies match patterns seen in the dusty disks where new planets are currently forming around young stars.
+The researchers made several groundbreaking discoveries. They found six different gases in the atmosphere—including water vapor, methane, and carbon monoxide—and measured how efficiently the atmosphere mixes at different heights. Surprisingly, mixing happens 100 times more vigorously deep in the atmosphere than at higher altitudes. The planet weighs about eight times more than Jupiter and has unusual chemistry: it's carbon-rich compared to our solar system's typical composition. This is the first time scientists have measured how atmospheric mixing changes with altitude on any exoplanet.
 Looking Forward
-This research transforms how scientists search for and study exoplanets by providing a detailed reference guide of what planetary system formation looks like up close. Just as detectives use local crime scene evidence to solve cases elsewhere, astronomers can now use our Solar System's chemical clues to better interpret observations of distant planetary systems. This could help identify which young star systems are most likely to develop Earth-like worlds and guide future space missions to the most promising targets in our search for life beyond Earth.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Real time, cross platform visualizations with zero dependencies for the N-body package REBOUND</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-06735v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-06735v1</guid>
-      <pubDate>Mon, 09 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Hanno Rein</dc:creator>
-      <description><![CDATA[Why It Matters
-When astronomers discover new planets orbiting distant stars, they don't just want to crunch numbers—they want to see these alien worlds in action. Imagine trying to understand how our solar system works by only reading spreadsheets instead of watching planets actually orbit the Sun. Scientists studying exoplanets face a similar challenge when running complex computer simulations that predict how these distant planetary systems behave over millions of years. This research tackles a surprisingly practical problem: how to create stunning, real-time visualizations of planetary motion that work on any computer, anywhere in the world, without the technical headaches that usually come with sophisticated graphics software.
-What They Did
-The researchers developed a clever new approach to visualizing planetary simulations using an unlikely tool: web browsers. Instead of relying on specialized graphics software that only works on certain computers or requires complex installation, they figured out how to make any standard web browser—the same one you use to check email—display interactive 3D animations of planets orbiting their stars. Think of it like turning your browser into a personal planetarium. They built this system for REBOUND, a popular software package that simulates how gravitational forces move planets around over time. The key innovation was creating a system with "zero dependencies"—meaning it works immediately without users having to install additional software or worry about compatibility issues.
-Key Findings
-The team successfully created a visualization system that runs on all major operating systems and devices without requiring any external software libraries. Their approach offers multiple viewing options: scientists can watch simulations in real-time on their local computer, access them remotely through any web browser, or even run entire planetary simulations directly within the browser itself. The system also works seamlessly within Jupyter notebooks, a popular tool among researchers.
-Looking Forward
-This breakthrough could democratize access to sophisticated planetary science tools, allowing students, educators, and researchers worldwide to explore exoplanetary systems without technical barriers. As we discover thousands more exoplanets, having user-friendly visualization tools will help scientists better understand these alien worlds and communicate their findings to the public.]]></description>
-        <category>cs.GR</category>
+This breakthrough demonstrates that we can now study atmospheric dynamics on distant worlds with unprecedented detail. These techniques will help us understand how weather and chemistry work on other planets, potentially including Earth-like worlds that might harbor life.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.IM</category>
+        <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>Two-Dimensional Kelvin-Helmholtz Instability with Anisotropic Pressure</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-08806v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-08806v1</guid>
+      <pubDate>Tue, 10 Feb 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Shishir Biswas et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+Space isn't empty—it's filled with hot, electrically charged gas called plasma that flows like invisible rivers throughout our solar system and beyond. When these cosmic streams move at different speeds, they create a phenomenon called the Kelvin-Helmholtz instability, which works like ocean waves forming where fast and slow currents meet. This process shapes everything from the boundaries of planetary magnetic fields to the swirling disks around newborn stars where planets form. Understanding how these cosmic "waves" behave helps us decode the fundamental physics governing star systems like our own and the distant worlds orbiting other stars.
+What They Did
+The researchers used computer simulations to study what happens when cosmic plasma streams flow past each other at different speeds, creating turbulent mixing zones. They compared two different scenarios: one where the plasma behaves like a simple fluid with uniform pressure in all directions, and another more realistic case where the pressure varies depending on direction—imagine a balloon that's easier to squeeze from the sides than from the top. By running these digital experiments with identical starting conditions but different physics rules, they could isolate exactly how pressure differences affect the cosmic wave formation.
+Key Findings
+The team discovered that when plasma pressure is uniform in all directions, it creates the most dramatic effects—stronger currents, larger swirling magnetic structures, and more chaotic mixing. When pressure becomes uneven, some energy gets "trapped" in maintaining these pressure differences rather than bending magnetic field lines, resulting in gentler, less turbulent behavior. This finding challenges assumptions about how violently these cosmic boundaries actually churn and mix.
+Looking Forward
+These results could reshape how we understand planetary system formation and evolution. The turbulent mixing at stream boundaries affects how material flows in planet-forming disks around young stars, potentially influencing where planets can form and what they're made of. For exoplanet hunters, this research provides better models for predicting the magnetic environments that might protect—or threaten—potentially habitable worlds orbiting distant stars.]]></description>
+        <category>astro-ph.SR</category>
+        <category>astro-ph.EP</category>
+        <category>physics.comp-ph</category>
+        <category>physics.flu-dyn</category>
+        <category>physics.plasm-ph</category>
+        <category>physics.space-ph</category>
+    </item>
+    <item>
+      <title>Dynamical Mass Constraints on Transition Disk Perturbers with the G23H Catalog</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-07731v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-07731v1</guid>
+      <pubDate>Tue, 10 Feb 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Dori Blakely et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+Imagine trying to spot a firefly next to a stadium floodlight from miles away—that's essentially the challenge astronomers face when hunting for planets around other stars. Most exoplanets are discovered indirectly, but scientists desperately want to weigh these distant worlds to understand what they're made of and how they formed. This research represents a breakthrough in cosmic detective work, using the tiny wobbles that unseen companions cause in their host stars to reveal hidden planets and small stars in young solar systems still under construction.
+What They Did
+The researchers acted like cosmic motion detectors, using data from two European space telescopes—Hipparcos and Gaia—that precisely track star positions over decades. When a star has an orbiting companion, gravity causes both objects to dance around their shared center of mass, making the star appear to wiggle slightly in the sky. By measuring these incredibly subtle movements (imagine detecting motion smaller than the width of a human hair from 25 miles away), the team could infer the presence and mass of invisible companions. They focused on 11 young star systems surrounded by "transition disks"—dusty, planet-forming disks with suspicious gaps that might indicate hidden planets are carving out space as they orbit.
+Key Findings
+The cosmic hunt proved remarkably successful. The team found evidence for companions in seven of the 11 systems they studied, with rock-solid detections in three cases. They confirmed a known small star companion, discovered what's likely a "failed star" called a brown dwarf, and detected another mysterious companion that could be a massive planet. In systems where they found nothing, they could confidently rule out planets heavier than Jupiter within certain distances—like declaring a forest definitely has no elephants after a thorough search.
+Looking Forward
+This technique opens a new window into planet formation, potentially allowing astronomers to weigh planets while they're still growing in their dusty nurseries. Future space telescope data could reveal dozens more hidden worlds, transforming our understanding of how solar systems are born.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+        <category>astro-ph.SR</category>
     </item>
   </channel>
 </rss>
