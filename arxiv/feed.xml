@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 10 Feb 2026 04:30:02 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 11 Feb 2026 04:27:22 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,94 +15,71 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>A New Strategy for Using Spectroscopic Phase Curves to Characterize Non-Transiting Planets</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-07127v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-07127v1</guid>
-      <pubDate>Tue, 10 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Ted M. Johnson, Avi M. Mandell</dc:creator>
+      <title>A Narrowband Technosignature Search Toward the Hycean Candidate K2-18b Using the VLA and MeerKAT</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-09553v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-09553v1</guid>
+      <pubDate>Wed, 11 Feb 2026 20:00:00 +0000</pubDate>
+      <dc:creator>C. D. Tremblay et al.</dc:creator>
       <description><![CDATA[Why It Matters
-Imagine trying to study a firefly's glow while it circles a blazing campfire—that's essentially the challenge astronomers face when studying planets orbiting other stars. Most of what we know about exoplanets comes from watching them pass in front of their host stars, like tiny shadows blocking starlight. But the vast majority of planets never cross our line of sight this way, leaving them largely mysterious. This research introduces a clever new method that could unlock the secrets of thousands of previously unstudable worlds, including some that might be suitable for life.
+Scientists have discovered thousands of planets orbiting other stars, but finding signs of life—or even intelligent life—remains one of astronomy's greatest challenges. K2-18b, a planet about twice Earth's size located 120 light-years away, has captured attention as a potentially habitable world with a hydrogen-rich atmosphere and possible water vapor. If advanced civilizations exist on such planets, they might be broadcasting radio signals into space, just as humans have been doing for over a century. This study represents humanity's first serious attempt to "listen" for artificial radio transmissions from this promising world, marking a new chapter in our search for cosmic neighbors.
 What They Did
-The researchers developed a technique they call VPIE (Variable Planetary Infrared Excess) that works like a cosmic game of "spot the difference." As a planet orbits its star, we see different amounts of heat radiating from its day and night sides—sometimes we see the hot day side, sometimes the cooler night side. This creates a subtle flickering pattern in the combined light from the star-planet system. The VPIE method uses mathematical tools to separate the steady starlight from these tiny planetary heat signatures, like isolating a whispered conversation in a noisy room. They tested their approach using computer simulations of three real planets that the James Webb Space Telescope could observe: a large hot planet, a medium-sized warm planet, and a smaller planet in the habitable zone around our nearest stellar neighbor, Proxima Centauri.
+Researchers used two of the world's most powerful radio telescope arrays—the Very Large Array in New Mexico and MeerKAT in South Africa—to scan K2-18b for artificial radio signals. Think of it like tuning across a cosmic radio dial, searching for narrow-frequency broadcasts that could only come from technology, not natural sources. They observed the planet system multiple times over several months, covering a complete orbit of K2-18b around its star. The team developed sophisticated computer programs to filter out Earth-based interference from cell towers, satellites, and other human technology, while specifically looking for signals that would move in sync with the planet's motion through space—a telltale sign of an extraterrestrial origin.
 Key Findings
-The simulations showed that VPIE can successfully distinguish between planets with different atmospheric behaviors—those that efficiently transport heat from day to night versus those that don't. The method can also estimate planetary sizes and temperatures without needing the planet to transit its star. While it works best for warmer planets that give off more infrared heat, the technique showed promise even for cooler, potentially habitable worlds.
+The search came up empty—no artificial signals were detected from K2-18b. However, this non-detection is scientifically valuable, allowing researchers to rule out the presence of powerful radio transmitters broadcasting at least 10 trillion watts of power (roughly equivalent to all of Earth's current electrical power generation). Any civilization using radio technology at this level or higher would have been spotted by the telescopes.
 Looking Forward
-This breakthrough could dramatically expand our ability to study exoplanets, potentially opening up thousands of new worlds for investigation. Future improvements to the technique or more sensitive telescopes could make it possible to study the atmospheres of Earth-like planets around nearby stars, bringing us closer to answering whether we're alone in the universe.]]></description>
+While this study found no evidence of alien technology, it established a crucial methodology for future searches around other potentially habitable worlds. As more Earth-like planets are discovered and our radio telescopes become more sensitive, this systematic approach brings us closer to answering one of humanity's most profound questions: are we alone?]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.IM</category>
     </item>
     <item>
-      <title>RedDots: Multiplanet system around M dwarf GJ 887 in the solar neighborhood</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-08929v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-08929v1</guid>
-      <pubDate>Tue, 10 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>C. Hartogh et al.</dc:creator>
+      <title>Limits on the Post-eclipse Emission Spectrum of HD 80606 b From High-Resolution Spectroscop</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-09129v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-09129v1</guid>
+      <pubDate>Wed, 11 Feb 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Luke Finnerty et al.</dc:creator>
       <description><![CDATA[Why It Matters
-Finding planets around nearby stars isn't just an academic exercise—it's our best shot at discovering worlds that might harbor life. GJ 887, a small red star just 11 light-years from Earth, has become one of the most exciting planetary systems in our cosmic neighborhood. With multiple planets orbiting this dim but long-lived star, including one in the "Goldilocks zone" where liquid water could exist, this system offers a tantalizing glimpse of potentially habitable worlds practically next door in galactic terms.
+Imagine a planet so close to its star that its surface could melt lead, then so far away it becomes a frozen wasteland—all within the same year. HD 80606 b is one of the most extreme worlds we know, following a wildly stretched orbit that makes it a natural laboratory for understanding how planetary atmospheres respond to dramatic temperature swings. By studying this cosmic oddball, scientists can learn how weather and chemistry work on planets unlike anything in our solar system. This research helps us understand the incredible diversity of worlds beyond Earth and pushes the boundaries of our planet-hunting technology.
 What They Did
-Astronomers used a clever detective technique to find these hidden planets. Since planets are too faint to see directly next to their bright parent stars, researchers instead watched for tiny wobbles in the star's motion. As planets orbit, their gravity tugs on their host star, causing it to move back and forth by mere meters per second—about walking speed. Using ultra-precise instruments called spectrographs at observatories in Chile, the team measured these minuscule stellar movements over many nights. The tricky part was separating genuine planet signals from the star's own natural variability, like stellar weather patterns. They used sophisticated computer modeling to filter out these stellar hiccups and reveal the gravitational signatures of orbiting worlds.
+The researchers used one of the world's most powerful telescopes—the Keck Observatory in Hawaii—to analyze infrared light from HD 80606 b just after it passed behind its star (called a secondary eclipse). They focused on the moment when the planet was closest to its star, experiencing scorching temperatures that could fundamentally alter its atmosphere. Using a technique called high-resolution cross-correlation spectroscopy, they essentially created a chemical fingerprint of the planet's atmosphere by examining how different molecules absorb specific wavelengths of light. Think of it like using a prism to split sunlight into a rainbow, but looking for tiny dark lines that reveal what gases are present in the planet's air.
 Key Findings
-The team confirmed four planets around GJ 887, with a possible fifth awaiting verification. The most exciting discovery is a "super-Earth"—a rocky planet about twice our planet's mass—that orbits every 51 days in the habitable zone. This makes it the second-closest potentially habitable planet ever found, after Proxima Centauri b. The system also contains an Earth-mass planet whipping around its star every 4.4 days, plus two other confirmed worlds with 9-day and 22-day orbits. If the fifth planet candidate proves real, it would be smaller than Earth.
+The team found tentative evidence of the planet's atmosphere, though the signal was relatively weak. Their analysis suggests the presence of methane and carbon monoxide in the planet's atmosphere, which aligns with recent observations from the James Webb Space Telescope. Importantly, they found no evidence of a "thermal inversion"—a phenomenon where upper atmospheric layers become hotter than lower ones, like Earth's ozone layer but more extreme. This finding contradicts some predictions about what should happen when this planet gets blasted by intense stellar radiation during its close approach.
 Looking Forward
-This discovery transforms our understanding of planetary systems around red dwarf stars, which make up 75% of all stars in our galaxy. Having multiple planets so close to Earth makes GJ 887 a prime target for future space telescopes that might detect atmospheres or even signs of life on these distant worlds.]]></description>
+These results demonstrate both the potential and challenges of studying extreme exoplanets. While the findings align with cutting-edge space telescope observations, they highlight the need for even more sensitive instruments to definitively characterize such distant worlds. Future observations could reveal how planetary atmospheres evolve in real-time under extreme conditions, offering insights that could reshape our understanding of planetary science and guide the search for habitable worlds.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>JWST spectral retrieval of cold directly imaged planet WD0806 b and the first measurement of altitude-dependent Kzz in exoplanet atmospheres</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-08200v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-08200v1</guid>
-      <pubDate>Tue, 10 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Ben W. P. Lew et al.</dc:creator>
+      <title>Characterisation of starspot structure and differential rotation of Kepler-411</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-09224v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-09224v1</guid>
+      <pubDate>Wed, 11 Feb 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Mikko Tuomi, András Haris, Thomas Hackman</dc:creator>
       <description><![CDATA[Why It Matters
-Imagine trying to study the atmosphere of a world so distant and cold that it's barely detectable—that's exactly what scientists have accomplished with WD0806 b, one of the most extreme planets we've ever observed. This frozen world orbits a dead star called a white dwarf at a staggering distance 2,500 times farther than Earth is from our Sun. At just 350 Kelvin (about 170°F), it's one of the coldest planets we can directly observe, making it a unique laboratory for understanding how planetary atmospheres work under extreme conditions. This research matters because it pushes the boundaries of what's possible in studying distant worlds and gives us insights into atmospheric physics that we simply can't get anywhere else.
+Just like our Sun has dark spots that move across its surface, other stars throughout the galaxy also have these mysterious features. Scientists are fascinated by starspots because they're like windows into a star's magnetic personality—revealing how its magnetic field behaves and changes over time. When these spotted stars happen to host planets, researchers get a unique opportunity to study both the star and its planetary system together. Understanding how stars work is crucial because they power all life as we know it, and their behavior directly affects any planets orbiting around them, including whether those worlds could potentially support life.
 What They Did
-Using the James Webb Space Telescope—our most powerful space observatory—researchers captured both images and detailed light measurements of this frigid planet. Think of it like taking both a photograph and analyzing the "fingerprint" of light coming from the planet. Just as different materials absorb specific colors of light, different gases in the planet's atmosphere absorb specific wavelengths, creating a unique signature. The team developed new computer models to decode these light signatures, much like a detective analyzing clues to reconstruct what happened at a crime scene. They could then determine what gases are present and how the atmosphere moves and mixes at different altitudes.
+The research team studied a star called Kepler-411, which is known to have at least two planets orbiting around it. They used data from NASA's Kepler Space Telescope, which watched this star continuously for years, measuring tiny changes in its brightness. Think of it like having a super-sensitive light meter pointed at the star 24/7. The scientists used two clever detective methods: first, they tracked how the star's brightness flickered as dark spots rotated in and out of view, like watching shadows move across a spinning ball. Second, they looked for brief dimming events when the star's planets passed in front of spots during their regular orbits—essentially using the planets as scanning devices to map where spots were located on the star's surface.
 Key Findings
-The researchers made several groundbreaking discoveries. They found six different gases in the atmosphere—including water vapor, methane, and carbon monoxide—and measured how efficiently the atmosphere mixes at different heights. Surprisingly, mixing happens 100 times more vigorously deep in the atmosphere than at higher altitudes. The planet weighs about eight times more than Jupiter and has unusual chemistry: it's carbon-rich compared to our solar system's typical composition. This is the first time scientists have measured how atmospheric mixing changes with altitude on any exoplanet.
+The team discovered that Kepler-411 rotates like a rigid spinning top, completing one full rotation every 10.52 days (compared to our Sun's 25-day rotation period). Surprisingly, they found no evidence that different parts of the star rotate at different speeds, which is common in stars like our Sun. They successfully caught three instances where one of the planets, called planet c, passed directly over starspots, causing tiny but measurable dips in brightness. These spot locations matched perfectly with their computer models, confirming their mapping technique works.
 Looking Forward
-This breakthrough demonstrates that we can now study atmospheric dynamics on distant worlds with unprecedented detail. These techniques will help us understand how weather and chemistry work on other planets, potentially including Earth-like worlds that might harbor life.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
+This research demonstrates powerful new ways to study distant stars and their planets simultaneously. By understanding how starspots behave, scientists can better predict how stellar activity might affect planetary atmospheres and climates—crucial information for assessing whether exoplanets could harbor life.]]></description>
         <category>astro-ph.SR</category>
+        <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>Two-Dimensional Kelvin-Helmholtz Instability with Anisotropic Pressure</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-08806v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-08806v1</guid>
-      <pubDate>Tue, 10 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Shishir Biswas et al.</dc:creator>
+      <title>The Y Dwarf Population with HST: unlocking the secrets of our coolest neighbours -- III. Near-Infrared Photometry</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-09160v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-09160v1</guid>
+      <pubDate>Wed, 11 Feb 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Clémence Fontanive et al.</dc:creator>
       <description><![CDATA[Why It Matters
-Space isn't empty—it's filled with hot, electrically charged gas called plasma that flows like invisible rivers throughout our solar system and beyond. When these cosmic streams move at different speeds, they create a phenomenon called the Kelvin-Helmholtz instability, which works like ocean waves forming where fast and slow currents meet. This process shapes everything from the boundaries of planetary magnetic fields to the swirling disks around newborn stars where planets form. Understanding how these cosmic "waves" behave helps us decode the fundamental physics governing star systems like our own and the distant worlds orbiting other stars.
+Imagine trying to understand distant worlds by studying the coldest, faintest objects in our cosmic neighborhood. Y dwarfs are "failed stars"—objects too small to ignite nuclear fusion—with surface temperatures cooler than your kitchen oven. These dim brown dwarfs are cosmic laboratories that help us understand giant planets orbiting other stars, since they share similar temperatures and atmospheric conditions. By studying these nearby examples in detail, astronomers can better interpret the faint signals we detect from actual exoplanets billions of miles away. It's like having a reference library of planetary atmospheres right in our galactic backyard.
 What They Did
-The researchers used computer simulations to study what happens when cosmic plasma streams flow past each other at different speeds, creating turbulent mixing zones. They compared two different scenarios: one where the plasma behaves like a simple fluid with uniform pressure in all directions, and another more realistic case where the pressure varies depending on direction—imagine a balloon that's easier to squeeze from the sides than from the top. By running these digital experiments with identical starting conditions but different physics rules, they could isolate exactly how pressure differences affect the cosmic wave formation.
+The research team used the Hubble Space Telescope to take extremely precise photographs of 21 Y dwarfs through different infrared filters—essentially cosmic color filters that reveal how bright these objects appear in specific wavelengths of light invisible to human eyes. Think of it like photographing the same object through red, green, and blue filters to understand its true colors. They developed sophisticated techniques to measure the brightness of these incredibly faint objects with remarkable precision, achieving accuracy levels comparable to distinguishing between a 100-watt and 102-watt lightbulb from across a football field. They also used precise distance measurements to create detailed charts showing how these objects' colors and brightness relate to their temperatures.
 Key Findings
-The team discovered that when plasma pressure is uniform in all directions, it creates the most dramatic effects—stronger currents, larger swirling magnetic structures, and more chaotic mixing. When pressure becomes uneven, some energy gets "trapped" in maintaining these pressure differences rather than bending magnetic field lines, resulting in gentler, less turbulent behavior. This finding challenges assumptions about how violently these cosmic boundaries actually churn and mix.
+The team discovered that Y dwarfs follow surprisingly predictable patterns when organized by temperature and color, forming tight sequences on astronomical charts with far less scatter than previously observed. However, when they compared their measurements to theoretical models—computer simulations that predict how these objects should appear—they found systematic mismatches. The models consistently predicted colors that were too red compared to reality, suggesting our understanding of atmospheric physics at these extreme cold temperatures remains incomplete.
 Looking Forward
-These results could reshape how we understand planetary system formation and evolution. The turbulent mixing at stream boundaries affects how material flows in planet-forming disks around young stars, potentially influencing where planets can form and what they're made of. For exoplanet hunters, this research provides better models for predicting the magnetic environments that might protect—or threaten—potentially habitable worlds orbiting distant stars.]]></description>
+These precise measurements provide a crucial reality check for atmospheric models used to interpret exoplanet observations. As next-generation telescopes prepare to study Earth-like worlds around other stars, having accurate models becomes essential for determining which planets might harbor conditions suitable for life.]]></description>
         <category>astro-ph.SR</category>
         <category>astro-ph.EP</category>
-        <category>physics.comp-ph</category>
-        <category>physics.flu-dyn</category>
-        <category>physics.plasm-ph</category>
-        <category>physics.space-ph</category>
-    </item>
-    <item>
-      <title>Dynamical Mass Constraints on Transition Disk Perturbers with the G23H Catalog</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-07731v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-07731v1</guid>
-      <pubDate>Tue, 10 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Dori Blakely et al.</dc:creator>
-      <description><![CDATA[Why It Matters
-Imagine trying to spot a firefly next to a stadium floodlight from miles away—that's essentially the challenge astronomers face when hunting for planets around other stars. Most exoplanets are discovered indirectly, but scientists desperately want to weigh these distant worlds to understand what they're made of and how they formed. This research represents a breakthrough in cosmic detective work, using the tiny wobbles that unseen companions cause in their host stars to reveal hidden planets and small stars in young solar systems still under construction.
-What They Did
-The researchers acted like cosmic motion detectors, using data from two European space telescopes—Hipparcos and Gaia—that precisely track star positions over decades. When a star has an orbiting companion, gravity causes both objects to dance around their shared center of mass, making the star appear to wiggle slightly in the sky. By measuring these incredibly subtle movements (imagine detecting motion smaller than the width of a human hair from 25 miles away), the team could infer the presence and mass of invisible companions. They focused on 11 young star systems surrounded by "transition disks"—dusty, planet-forming disks with suspicious gaps that might indicate hidden planets are carving out space as they orbit.
-Key Findings
-The cosmic hunt proved remarkably successful. The team found evidence for companions in seven of the 11 systems they studied, with rock-solid detections in three cases. They confirmed a known small star companion, discovered what's likely a "failed star" called a brown dwarf, and detected another mysterious companion that could be a massive planet. In systems where they found nothing, they could confidently rule out planets heavier than Jupiter within certain distances—like declaring a forest definitely has no elephants after a thorough search.
-Looking Forward
-This technique opens a new window into planet formation, potentially allowing astronomers to weigh planets while they're still growing in their dusty nurseries. Future space telescope data could reveal dozens more hidden worlds, transforming our understanding of how solar systems are born.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
-        <category>astro-ph.SR</category>
     </item>
   </channel>
 </rss>
