@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 11 Feb 2026 04:27:22 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 12 Feb 2026 04:22:47 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,71 +15,172 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>A Narrowband Technosignature Search Toward the Hycean Candidate K2-18b Using the VLA and MeerKAT</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-09553v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-09553v1</guid>
-      <pubDate>Wed, 11 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>C. D. Tremblay et al.</dc:creator>
+      <title>Not Earth-like Yet Temperate? More Generic Climate Feedback Configurations Still Allow Temperate Climates in Habitable Zone Exo-Earth Candidates</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-10369v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-10369v1</guid>
+      <pubDate>Thu, 12 Feb 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Chaucer Langbert, Dániel Apai</dc:creator>
       <description><![CDATA[Why It Matters
-Scientists have discovered thousands of planets orbiting other stars, but finding signs of life—or even intelligent life—remains one of astronomy's greatest challenges. K2-18b, a planet about twice Earth's size located 120 light-years away, has captured attention as a potentially habitable world with a hydrogen-rich atmosphere and possible water vapor. If advanced civilizations exist on such planets, they might be broadcasting radio signals into space, just as humans have been doing for over a century. This study represents humanity's first serious attempt to "listen" for artificial radio transmissions from this promising world, marking a new chapter in our search for cosmic neighbors.
+For decades, astronomers have been hunting for planets like Earth—rocky worlds orbiting at just the right distance from their stars to have liquid water and potentially life. But here's the catch: we've been assuming that alien worlds work just like Earth when it comes to climate. This new research suggests that assumption might be dangerously optimistic. Understanding how many truly habitable planets exist out there isn't just about satisfying cosmic curiosity—it helps us grasp how special (or common) life-bearing worlds might be, and guides where we should point our most powerful telescopes in the search for life beyond our solar system.
 What They Did
-Researchers used two of the world's most powerful radio telescope arrays—the Very Large Array in New Mexico and MeerKAT in South Africa—to scan K2-18b for artificial radio signals. Think of it like tuning across a cosmic radio dial, searching for narrow-frequency broadcasts that could only come from technology, not natural sources. They observed the planet system multiple times over several months, covering a complete orbit of K2-18b around its star. The team developed sophisticated computer programs to filter out Earth-based interference from cell towers, satellites, and other human technology, while specifically looking for signals that would move in sync with the planet's motion through space—a telltale sign of an extraterrestrial origin.
+Think of Earth's climate like a thermostat system with three main dials that keep temperatures stable over millions of years. These researchers asked: what happens if alien planets have a fourth dial that we don't? They ran over 20,000 computer simulations of Earth-like planets, systematically adding this hypothetical fourth climate control mechanism and watching what happened to planetary temperatures over long time periods. It's like testing thousands of different thermostat configurations to see which ones keep a house comfortable versus those that spiral into freezing cold or scorching heat.
 Key Findings
-The search came up empty—no artificial signals were detected from K2-18b. However, this non-detection is scientifically valuable, allowing researchers to rule out the presence of powerful radio transmitters broadcasting at least 10 trillion watts of power (roughly equivalent to all of Earth's current electrical power generation). Any civilization using radio technology at this level or higher would have been spotted by the telescopes.
+The results were dramatic. Planets with this fourth climate mechanism showed wild, unpredictable behaviors that Earth never experiences—some spiraled into permanent deep freezes or became blazing hot, while others flip-flopped chaotically between temperature extremes. Crucially, if this fourth mechanism pushes temperatures upward (like a broken heater), it significantly reduces the number of planets that stay comfortably temperate. This means the "habitable zone"—that Goldilocks region around stars where liquid water can exist—might be much smaller than we thought.
 Looking Forward
-While this study found no evidence of alien technology, it established a crucial methodology for future searches around other potentially habitable worlds. As more Earth-like planets are discovered and our radio telescopes become more sensitive, this systematic approach brings us closer to answering one of humanity's most profound questions: are we alone?]]></description>
+This research suggests we may have been overly optimistic about finding habitable worlds. The galaxy might host far fewer truly temperate planets than current estimates predict. For upcoming space missions designed to study potentially habitable exoplanets, this means we might need larger sample sizes and more careful target selection to find worlds that could actually harbor life.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>TESS planets in known radial velocity cold Jupiter systems: Hot super Earth occurrence is enhanced by cold Jupiters</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-11017v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-11017v1</guid>
+      <pubDate>Thu, 12 Feb 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Quanyi Liu et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+Imagine if every neighborhood with a mansion also had several small apartments nearby—that would tell us something important about how communities develop. Scientists have discovered something remarkably similar in planetary systems across our galaxy. This research helps us understand whether there are hidden patterns in how planets form and arrange themselves around stars, which could revolutionize our understanding of planetary systems—including whether arrangements like our own solar system are common or rare in the universe.
+What They Did
+The research team studied 132 star systems that were already known to host large, distant planets similar to Jupiter (called "cold Jupiters" because they orbit far from their stars). They used data from TESS, NASA's planet-hunting space telescope, to search for smaller planets close to these same stars. TESS detects planets by watching for tiny dips in starlight when planets cross in front of their host stars—like watching a fly pass in front of a flashlight. The researchers then had to account for the fact that TESS can only spot planets that happen to cross directly between us and their star, which is like trying to see coins flipped in the air from far away—you only catch the ones that line up just right.
+Key Findings
+The results were striking: stars with large outer planets are eight times more likely to also have small inner planets compared to typical stars. The team found five small planets orbiting close to four different stars, including one completely new discovery. After crunching the numbers, they calculated that roughly 87% of systems with distant giant planets also host at least one small planet hugging close to its star. This connection is so strong that there's only a 0.1% chance it happened by random coincidence.
+Looking Forward
+This discovery suggests that planetary systems follow predictable patterns, like cosmic recipes. Understanding these relationships could help scientists predict where to find potentially habitable worlds and refine theories about how planets form from swirling disks of dust and gas around young stars.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Efficient reduction of stellar contamination and noise in planetary transmission spectra using neural networks</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-10330v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-10330v1</guid>
+      <pubDate>Thu, 12 Feb 2026 20:00:00 +0000</pubDate>
+      <dc:creator>David S. Duque-Castaño, Lauren Flor-Torres, Jorge I. Zuluaga</dc:creator>
+      <description><![CDATA[Why It Matters
+When astronomers study the atmospheres of distant planets, they're essentially playing detective with starlight. As a planet passes in front of its star, some of that light filters through the planet's atmosphere before reaching us, carrying chemical fingerprints that reveal what gases are present—potentially even signs of life. But there's a major problem: stars aren't perfect, smooth balls of light. They have dark spots and bright patches (like extreme versions of sunspots) that create false signals, making it nearly impossible to distinguish between what's coming from the planet's atmosphere versus contamination from the star itself. This stellar "noise" can completely throw off our measurements, leading scientists to wrong conclusions about these distant worlds.
+What They Did
+The researchers developed an artificial intelligence system called a "denoising autoencoder"—think of it as a sophisticated photo editor for space data. Just like photo software can remove unwanted objects from images, this AI learns to identify and remove stellar contamination from atmospheric measurements while preserving the genuine planetary signals. They trained their system using thousands of simulated examples of both contaminated and clean atmospheric data from two types of planets: rocky worlds similar to Earth and larger "sub-Neptune" planets with thick atmospheres. The AI essentially learned to recognize patterns, distinguishing between real atmospheric features and stellar interference.
+Key Findings
+The results were impressive: the AI system successfully cleaned up contaminated atmospheric data while preserving the important chemical signatures scientists need. When tested against traditional correction methods, the new approach was just as accurate but dramatically faster—reducing processing time by three to six times. Most remarkably, it worked well even when the signals were very weak and noisy, situations where conventional methods often fail.
+Looking Forward
+This breakthrough could revolutionize how we study exoplanet atmospheres, making the process faster, more reliable, and accessible to more research teams. As the James Webb Space Telescope continues gathering unprecedented data about distant worlds, tools like this will be crucial for accurately identifying potentially habitable planets and maybe even detecting signs of life.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.IM</category>
+        <category>cs.LG</category>
     </item>
     <item>
-      <title>Limits on the Post-eclipse Emission Spectrum of HD 80606 b From High-Resolution Spectroscop</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-09129v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-09129v1</guid>
-      <pubDate>Wed, 11 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Luke Finnerty et al.</dc:creator>
+      <title>Carbon from Interstellar Clouds to Habitable Worlds</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-10308v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-10308v1</guid>
+      <pubDate>Thu, 12 Feb 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Edwin A. Bergin, Marc M. Hirschmann, Andre Izidoro</dc:creator>
       <description><![CDATA[Why It Matters
-Imagine a planet so close to its star that its surface could melt lead, then so far away it becomes a frozen wasteland—all within the same year. HD 80606 b is one of the most extreme worlds we know, following a wildly stretched orbit that makes it a natural laboratory for understanding how planetary atmospheres respond to dramatic temperature swings. By studying this cosmic oddball, scientists can learn how weather and chemistry work on planets unlike anything in our solar system. This research helps us understand the incredible diversity of worlds beyond Earth and pushes the boundaries of our planet-hunting technology.
+When we search for life beyond Earth, one element stands above all others: carbon. It's the backbone of every living thing we know, from the smallest bacteria to blue whales. But where does the carbon in planets come from, and how much do different worlds actually get? This research tackles one of the most fundamental questions in our search for habitable planets—understanding how carbon travels from the depths of space to become part of rocky worlds like Earth. The answer could determine whether the universe is teeming with carbon-rich, potentially habitable planets, or whether Earth-like worlds are incredibly rare cosmic accidents.
 What They Did
-The researchers used one of the world's most powerful telescopes—the Keck Observatory in Hawaii—to analyze infrared light from HD 80606 b just after it passed behind its star (called a secondary eclipse). They focused on the moment when the planet was closest to its star, experiencing scorching temperatures that could fundamentally alter its atmosphere. Using a technique called high-resolution cross-correlation spectroscopy, they essentially created a chemical fingerprint of the planet's atmosphere by examining how different molecules absorb specific wavelengths of light. Think of it like using a prism to split sunlight into a rainbow, but looking for tiny dark lines that reveal what gases are present in the planet's air.
+Rather than studying one specific planet or star system, these scientists took a "big picture" approach, tracing carbon's epic journey across the cosmos. They followed this essential element from its origins in dying stars and dense clouds of gas and dust, through the swirling disks where planets are born, and finally into the rocky worlds themselves. Think of it like following a river from its mountain source to the sea, but instead of water, they're tracking carbon atoms across billions of years. The researchers combined observations of our own solar system with computer models of how planets form, creating a comprehensive story of how carbon gets distributed during planet formation.
 Key Findings
-The team found tentative evidence of the planet's atmosphere, though the signal was relatively weak. Their analysis suggests the presence of methane and carbon monoxide in the planet's atmosphere, which aligns with recent observations from the James Webb Space Telescope. Importantly, they found no evidence of a "thermal inversion"—a phenomenon where upper atmospheric layers become hotter than lower ones, like Earth's ozone layer but more extreme. This finding contradicts some predictions about what should happen when this planet gets blasted by intense stellar radiation during its close approach.
+The research reveals that our solar system might be unusual in how little carbon its inner planets received. The key culprit? Jupiter and the other giant planets, which act like cosmic vacuum cleaners, disrupting the flow of carbon-rich pebbles toward the inner solar system. In planetary systems without these giant guardians, rocky planets could end up dramatically more carbon-rich than Earth. The timing matters too—if a giant planet forms within the first half-million years, it can drastically reduce carbon delivery to inner worlds. This suggests that carbon-rich rocky planets and "sub-Neptune" worlds (larger than Earth but smaller than Neptune) might actually be common throughout the galaxy.
 Looking Forward
-These results demonstrate both the potential and challenges of studying extreme exoplanets. While the findings align with cutting-edge space telescope observations, they highlight the need for even more sensitive instruments to definitively characterize such distant worlds. Future observations could reveal how planetary atmospheres evolve in real-time under extreme conditions, offering insights that could reshape our understanding of planetary science and guide the search for habitable worlds.]]></description>
+This research fundamentally changes how we think about planetary diversity. If most rocky exoplanets are more carbon-rich than Earth, they might have thick atmospheres and different types of geology than we're familiar with. Some might even have surfaces covered in graphite or diamond! For astrobiology, this opens exciting new possibilities—these carbon-rich worlds could potentially support life forms very different from what we know on Earth, expanding our definition of habitability across the cosmos.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.GA</category>
+        <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>HD 164604 c: a second giant planet on a 15-yr orbit and the constraint of the planet-planet mutual inclination</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-10919v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-10919v1</guid>
+      <pubDate>Thu, 12 Feb 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Guang-Yao Xiao et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+Imagine discovering not just one, but two giant worlds orbiting a distant star—and finding they might be locked in a cosmic dance that tells the story of violence and chaos from billions of years ago. That's exactly what astronomers have uncovered around a star called HD 164604, located about 75 light-years from Earth. This discovery matters because it's like finding a fossilized crime scene in space, offering clues about how planetary systems form and sometimes tear themselves apart. Understanding these distant worlds helps us piece together whether our own solar system's relatively peaceful arrangement is common or extraordinarily lucky.
+What They Did
+The research team played cosmic detective using multiple space-based tools to track down these hidden planets. They measured tiny wobbles in the star's motion—imagine watching a figure skater spinning with weights in their hands, causing them to sway slightly. These wobbles, detected through changes in starlight, revealed the gravitational tug of orbiting planets. The scientists combined data from ground-based telescopes that measured the star's back-and-forth motion with ultra-precise position measurements from European space observatories spanning decades. By analyzing these movements together, they could determine not just that planets exist, but calculate their sizes, distances, and orbital paths.
+Key Findings
+The team discovered a second giant planet in this system, roughly 7-10 times more massive than Jupiter, taking about 15 years to complete one orbit. The previously known inner planet is even heftier—about 9-13 Jupiter masses—and completes its orbit in roughly 1.2 years. Most intriguingly, these two giants appear to orbit in dramatically different planes, either nearly aligned or almost completely backwards relative to each other. Computer simulations suggest the backwards configuration would be more stable, hinting at a violent past involving gravitational battles that flipped one planet's orbit.
+Looking Forward
+This discovery opens a window into planetary system evolution, showing how gravitational interactions can reshape entire worlds. Future observations from upcoming space missions will determine which orbital configuration is correct, potentially confirming whether this system experienced the cosmic equivalent of a multi-car pileup that somehow resulted in long-term stability.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>Characterisation of starspot structure and differential rotation of Kepler-411</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-09224v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-09224v1</guid>
-      <pubDate>Wed, 11 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Mikko Tuomi, András Haris, Thomas Hackman</dc:creator>
+      <title>Long-Term Evolution of Close-in Sub-Neptunes and Outer Planetary Embryos: Atmospheric Mass Loss and Origin of Planets Inside and Outside the Radius Gap</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-10245v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-10245v1</guid>
+      <pubDate>Thu, 12 Feb 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Yaxing He, Masahiro Ogihara, Kangrou Guo</dc:creator>
       <description><![CDATA[Why It Matters
-Just like our Sun has dark spots that move across its surface, other stars throughout the galaxy also have these mysterious features. Scientists are fascinated by starspots because they're like windows into a star's magnetic personality—revealing how its magnetic field behaves and changes over time. When these spotted stars happen to host planets, researchers get a unique opportunity to study both the star and its planetary system together. Understanding how stars work is crucial because they power all life as we know it, and their behavior directly affects any planets orbiting around them, including whether those worlds could potentially support life.
+Scientists have discovered thousands of planets orbiting other stars, and they've noticed something puzzling: there's a strange gap in planet sizes. We find lots of small, rocky planets similar to Earth, and plenty of larger planets with thick, puffy atmospheres—but relatively few planets of medium size. It's like finding a neighborhood with many small houses and many mansions, but hardly any mid-sized homes. Understanding why this "radius gap" exists helps us piece together how planetary systems form and evolve, including potentially habitable worlds like our own Earth.
 What They Did
-The research team studied a star called Kepler-411, which is known to have at least two planets orbiting around it. They used data from NASA's Kepler Space Telescope, which watched this star continuously for years, measuring tiny changes in its brightness. Think of it like having a super-sensitive light meter pointed at the star 24/7. The scientists used two clever detective methods: first, they tracked how the star's brightness flickered as dark spots rotated in and out of view, like watching shadows move across a spinning ball. Second, they looked for brief dimming events when the star's planets passed in front of spots during their regular orbits—essentially using the planets as scanning devices to map where spots were located on the star's surface.
+The researchers used computer simulations to model what happens when small planetary building blocks—leftover "embryos" from planet formation—crash into medium-sized planets called sub-Neptunes. Think of it like a cosmic demolition derby spanning millions of years. They created virtual solar systems with close-orbiting sub-Neptunes (planets with thick atmospheres circling near their stars) and distant planetary embryos following highly stretched, oval-shaped orbits. Then they let these simulations run to see what collisions would occur and how they might strip away the atmospheres of the sub-Neptunes.
 Key Findings
-The team discovered that Kepler-411 rotates like a rigid spinning top, completing one full rotation every 10.52 days (compared to our Sun's 25-day rotation period). Surprisingly, they found no evidence that different parts of the star rotate at different speeds, which is common in stars like our Sun. They successfully caught three instances where one of the planets, called planet c, passed directly over starspots, causing tiny but measurable dips in brightness. These spot locations matched perfectly with their computer models, confirming their mapping technique works.
+The collisions are absolutely devastating. When embryos slam into sub-Neptunes, they're traveling at incredible speeds—two to five times faster than the planet's escape velocity. Each impact strips away roughly 15-30% of the planet's atmosphere, like peeling layers off an onion. After just three to six major collisions over several million years, a puffy sub-Neptune loses about two-thirds of its original atmosphere, transforming it into a smaller, rockier world. This cosmic violence happens regularly because the embryos' eccentric orbits repeatedly bring them dangerously close to the inner planets.
 Looking Forward
-This research demonstrates powerful new ways to study distant stars and their planets simultaneously. By understanding how starspots behave, scientists can better predict how stellar activity might affect planetary atmospheres and climates—crucial information for assessing whether exoplanets could harbor life.]]></description>
+This research provides a compelling explanation for the mysterious radius gap in exoplanets. It suggests that atmospheric stripping through collisions is a major force shaping planetary systems, helping explain why we see so few medium-sized planets with thick atmospheres. This understanding could help astronomers better predict which distant worlds might be potentially habitable by revealing how planetary atmospheres—essential for life as we know it—survive or disappear over cosmic time.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Cold and eccentric: a high-spectral resolution view of 51 Eri b with VLT/HiRISE</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-10260v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-10260v1</guid>
+      <pubDate>Thu, 12 Feb 2026 20:00:00 +0000</pubDate>
+      <dc:creator>A. Denis et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+Imagine trying to study a firefly buzzing around a lighthouse from thousands of miles away—that's essentially what astronomers face when studying planets orbiting other stars. Most exoplanets are discovered indirectly, through their gravitational effects or by blocking starlight as they pass in front of their host stars. But 51 Eridani b is special: it's one of the rare exoplanets we can actually see directly, making it a cosmic laboratory for understanding how giant planets form and evolve. This research helps us piece together the dynamic history of planetary systems and could reveal clues about how our own solar system came to be.
+What They Did
+The research team used cutting-edge instruments at the Very Large Telescope in Chile to measure something incredibly challenging: how fast this distant planet is moving toward or away from us. Think of it like using the Doppler effect—the same phenomenon that makes an ambulance siren change pitch as it approaches and then recedes. By collecting light from the planet over two years and analyzing it with extraordinary precision, they could detect tiny shifts in the planet's light that reveal its motion. They then combined these measurements with previous observations tracking the planet's position in the sky, like assembling puzzle pieces to reveal the complete picture of its orbit.
+Key Findings
+The planet follows a highly stretched, oval-shaped orbit with an eccentricity of 0.55—meaning its distance from its star varies dramatically as it travels around. For comparison, Earth's nearly circular orbit has an eccentricity of just 0.017. This extreme orbital shape suggests the planet's peaceful existence was disrupted by gravitational bullying from another, unseen planet lurking in the outer reaches of the system.
+Looking Forward
+This discovery opens new possibilities for understanding planetary system architecture. The techniques demonstrated here could help astronomers find hidden planets and unravel the chaotic histories that shaped planetary systems throughout the galaxy, bringing us closer to understanding our place in the cosmic neighborhood.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Searching for radio emission from stellar wind-magnetosphere interaction or co-rotation breakdown in brown dwarfs</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-10333v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-10333v1</guid>
+      <pubDate>Thu, 12 Feb 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Rebeca Pirvu Malanda et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+Imagine trying to detect the magnetic field of a distant planet—it's like trying to sense the magnetism of a refrigerator magnet from across the country. Yet this is exactly what astronomers are attempting to do as they search for radio signals from exotic celestial objects called brown dwarfs. These "failed stars" are too small to shine like our Sun but too large to be planets, making them cosmic oddballs that could unlock secrets about magnetic fields beyond our solar system. Understanding magnetic fields is crucial because they protect planets from harmful radiation and may be essential for life as we know it.
+What They Did
+The research team used two of the world's most powerful radio telescope arrays—one in India and one in New Mexico—to listen for radio waves from six brown dwarf companions orbiting nearby stars. Think of it like using extremely sensitive radio receivers to eavesdrop on cosmic conversations. They spent 60 hours monitoring these systems, searching for two types of radio signals: those created by the brown dwarfs spinning rapidly on their axes (like a cosmic lighthouse), and those generated when the magnetic bubble surrounding each brown dwarf collides with the stream of particles flowing from its host star—similar to how Earth's magnetic field interacts with solar wind to create auroras.
+Key Findings
+Despite their powerful equipment and careful listening, the astronomers didn't detect any radio signals from their targets. However, this "non-detection" is still scientifically valuable. They were able to set strict limits on how strong any radio emissions could be—down to incredibly faint levels equivalent to detecting a signal 40,000 times weaker than a typical cell phone transmission from the distance of these stars.
+Looking Forward
+While this study didn't find the radio signals scientists hoped for, it's laying crucial groundwork for future discoveries. Next-generation radio telescopes currently under construction will be even more sensitive, potentially capable of detecting the faint magnetic whispers from these distant worlds and bringing us closer to understanding planetary magnetic fields throughout the galaxy.]]></description>
         <category>astro-ph.SR</category>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>The Y Dwarf Population with HST: unlocking the secrets of our coolest neighbours -- III. Near-Infrared Photometry</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-09160v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-09160v1</guid>
-      <pubDate>Wed, 11 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Clémence Fontanive et al.</dc:creator>
+      <title>Keck Observations in the INfrared of Taurus and ρ Oph Exoplanets And Ultracool dwarfs (KOINTREAU) II: Two Young Bound Companions to Ophiuchus Stars</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-10198v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-10198v1</guid>
+      <pubDate>Thu, 12 Feb 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Samuel Walker et al.</dc:creator>
       <description><![CDATA[Why It Matters
-Imagine trying to understand distant worlds by studying the coldest, faintest objects in our cosmic neighborhood. Y dwarfs are "failed stars"—objects too small to ignite nuclear fusion—with surface temperatures cooler than your kitchen oven. These dim brown dwarfs are cosmic laboratories that help us understand giant planets orbiting other stars, since they share similar temperatures and atmospheric conditions. By studying these nearby examples in detail, astronomers can better interpret the faint signals we detect from actual exoplanets billions of miles away. It's like having a reference library of planetary atmospheres right in our galactic backyard.
+Imagine trying to spot a firefly next to a blazing stadium light from miles away—that's essentially what astronomers face when hunting for planets around other stars. This challenge becomes even trickier when searching around very young stars that are still forming, but the payoff is enormous. Finding planets in stellar nurseries helps us understand how planetary systems like our own came to be. These cosmic baby pictures reveal whether the planets we see today formed where we find them, or whether they migrated vast distances from their birthplaces.
 What They Did
-The research team used the Hubble Space Telescope to take extremely precise photographs of 21 Y dwarfs through different infrared filters—essentially cosmic color filters that reveal how bright these objects appear in specific wavelengths of light invisible to human eyes. Think of it like photographing the same object through red, green, and blue filters to understand its true colors. They developed sophisticated techniques to measure the brightness of these incredibly faint objects with remarkable precision, achieving accuracy levels comparable to distinguishing between a 100-watt and 102-watt lightbulb from across a football field. They also used precise distance measurements to create detailed charts showing how these objects' colors and brightness relate to their temperatures.
+Scientists used one of the world's most powerful telescopes—the Keck Observatory in Hawaii—equipped with advanced technology that corrects for the blurring effects of Earth's atmosphere. Think of it like having super-precise glasses that can focus on incredibly faint objects in space. They pointed this setup at two stellar nurseries called Taurus and Ophiuchus, where stars are still young and hot from their recent formation. Rather than looking for planets crossing in front of their stars, they searched for the faint glow of massive planets orbiting far from their host stars, where they're easier to detect directly.
 Key Findings
-The team discovered that Y dwarfs follow surprisingly predictable patterns when organized by temperature and color, forming tight sequences on astronomical charts with far less scatter than previously observed. However, when they compared their measurements to theoretical models—computer simulations that predict how these objects should appear—they found systematic mismatches. The models consistently predicted colors that were too red compared to reality, suggesting our understanding of atmospheric physics at these extreme cold temperatures remains incomplete.
+The team discovered two previously unknown companion objects orbiting young stars. The first, nicknamed KOINTREAU-3b, weighs about 3.4 times as much as Jupiter and orbits its star at roughly eight times the distance between Earth and the Sun. The second companion, KOINTREAU-4b, is much heftier—between 11 and 15 Jupiter masses—and sits about four times farther from its star than Earth is from the Sun. Both objects are so massive they blur the line between giant planets and failed stars called brown dwarfs.
 Looking Forward
-These precise measurements provide a crucial reality check for atmospheric models used to interpret exoplanet observations. As next-generation telescopes prepare to study Earth-like worlds around other stars, having accurate models becomes essential for determining which planets might harbor conditions suitable for life.]]></description>
-        <category>astro-ph.SR</category>
+These discoveries add crucial pieces to the puzzle of how planetary systems form and evolve. By studying these young, massive companions, astronomers can test theories about whether giant planets form close to their stars and migrate outward, or begin life in these distant orbits. Each new find brings us closer to understanding our own solar system's origin story.]]></description>
         <category>astro-ph.EP</category>
+        <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>Shocks, compressible perturbations, and intermittency in the very local interstellar medium: Voyager 1 and 2 observations and numerical modeling</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-10446v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-10446v1</guid>
+      <pubDate>Thu, 12 Feb 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Federico Fraternale et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+Imagine Earth as a ship sailing through an ocean of charged particles that fills the space between stars. Our Sun acts like a giant lighthouse, constantly blowing a "wind" of particles that creates a protective bubble around our solar system. Understanding what happens at the edge of this bubble—where our solar system meets true interstellar space—is crucial for grasping how planetary systems like ours interact with the broader galaxy. This research helps us understand the cosmic environment that has shaped Earth's evolution and could influence other worlds beyond our solar system.
+What They Did
+Scientists analyzed data from the Voyager 1 and 2 spacecraft, humanity's most distant explorers, which have traveled beyond our solar system's protective bubble into interstellar space. They combined these real observations with computer simulations that model how our Sun's particle wind interacts with the interstellar medium—the sparse gas and magnetic fields between stars. Think of it like studying how a boat's wake behaves when it hits different water conditions, except the "boat" is our entire solar system moving through space.
+Key Findings
+The team solved a puzzle from 2020 when Voyager 1, located 149 times farther from the Sun than Earth, detected a sudden jump in magnetic field strength followed by persistently strong readings. Their analysis revealed this wasn't caused by interstellar phenomena, but rather by our own Sun's 11-year activity cycle creating compression waves that ripple outward and affect the boundary of our solar system. They also discovered that magnetic turbulence persists much farther into interstellar space than expected—up to 165 times Earth's distance from the Sun.
+Looking Forward
+This research transforms our understanding of how star systems interact with their galactic neighborhoods. For exoplanet science, it suggests that the magnetic and particle environment around other stars may be far more dynamic and extensive than previously thought. These findings could help explain how stellar activity affects the habitability of distant worlds and provide insights into the cosmic conditions that planets throughout the galaxy experience as their star systems journey through interstellar space.]]></description>
+        <category>physics.space-ph</category>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.SR</category>
     </item>
   </channel>
 </rss>
