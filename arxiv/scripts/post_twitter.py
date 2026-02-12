@@ -578,7 +578,11 @@ def format_tweet_thread_premium(paper: dict, page_url: str, hashtags: list[str],
         else:
             author_str = f"{clean_latex_name(authors[0])} et al."
     
-    # Build tweet: Hook first, then title + author, then question
+    # Build tweet: Hook first, then title + author, then question, then summary link
+    link = paper["abs_link"]
+    summary_link = build_summary_link(page_url, paper["id"], papers_date)
+    hashtag_str = " ".join(hashtags)
+    
     parts = []
     
     if hook:
@@ -592,17 +596,16 @@ def format_tweet_thread_premium(paper: dict, page_url: str, hashtags: list[str],
         parts.append("")
         parts.append(question)
     
+    parts.append("")
+    parts.append(f"📖 {summary_link}")
+    
     tweet1 = "\n".join(parts)
     tweet1 = tweet1.strip()
     
     if len(tweet1) > limit:
         tweet1 = truncate_text(tweet1, limit - 3)
     
-    link = paper["abs_link"]
-    summary_link = build_summary_link(page_url, paper["id"], papers_date)
-    hashtag_str = " ".join(hashtags)
-    
-    tweet2 = f"📄 arXiv: {link}\n📖 Full summary: {summary_link}\n\n{hashtag_str}"
+    tweet2 = f"📄 arXiv: {link}\n\n{hashtag_str}"
     
     return tweet1, tweet2
 
@@ -630,7 +633,12 @@ def format_tweet_thread_free(paper: dict, page_url: str, hashtags: list[str], pa
         else:
             author_str = f"{clean_latex_name(authors[0])} et al."
     
-    # Build tweet: Hook first (if fits), then title + author, then question
+    # Tweet 2: arxiv link + hashtags
+    link = paper["abs_link"]
+    summary_link = build_summary_link(page_url, paper["id"], papers_date)
+    hashtag_str = " ".join(hashtags[:3])
+    
+    # Build tweet 1: Hook first (if fits), then title + author, then question, then summary link
     parts = []
     
     if hook:
@@ -644,6 +652,9 @@ def format_tweet_thread_free(paper: dict, page_url: str, hashtags: list[str], pa
         parts.append("")
         parts.append(question)
     
+    parts.append("")
+    parts.append(f"📖 {summary_link}")
+    
     tweet1 = "\n".join(parts)
     
     # If too long, try without question
@@ -654,22 +665,27 @@ def format_tweet_thread_free(paper: dict, page_url: str, hashtags: list[str], pa
             parts.append("")
         parts.append(f"📄 {title}")
         parts.append(f"👤 {author_str}")
+        parts.append("")
+        parts.append(f"📖 {summary_link}")
         tweet1 = "\n".join(parts)
     
     # If still too long, try without hook
     if len(tweet1) > 280:
+        tweet1 = f"📄 {title}\n👤 {author_str}\n\n📖 {summary_link}"
+    
+    # If still too long, drop summary link from tweet1 and keep in tweet2
+    if len(tweet1) > 280:
         tweet1 = f"📄 {title}\n👤 {author_str}"
+        if len(tweet1) > 280:
+            tweet1 = truncate_text(tweet1, 277)
+        tweet2 = f"📄 {link}\n📖 {summary_link}\n\n{hashtag_str}"
+        return tweet1, tweet2
     
     # Final truncate if needed
     if len(tweet1) > 280:
         tweet1 = truncate_text(tweet1, 277)
     
-    # Tweet 2: Links + hashtags
-    link = paper["abs_link"]
-    summary_link = build_summary_link(page_url, paper["id"], papers_date)
-    hashtag_str = " ".join(hashtags[:3])
-    
-    tweet2 = f"📄 {link}\n📖 {summary_link}\n\n{hashtag_str}"
+    tweet2 = f"📄 {link}\n\n{hashtag_str}"
     
     return tweet1, tweet2
 
