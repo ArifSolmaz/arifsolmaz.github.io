@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 16 Feb 2026 04:22:14 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 17 Feb 2026 04:16:34 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,124 +15,158 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>Bayesian Analysis for Remote Biosignature Identification on exoEarths (BARBIE) IV: Analyzing CO2 Detections in the Near-IR to Determine the Long-Wavelength Cut-off for the Habitable Worlds Observatory Coronagraph</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-12353v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-12353v1</guid>
-      <pubDate>Mon, 16 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Celeste Hagee et al.</dc:creator>
+      <title>Habitable Zones Around Massive Stars: From the Main Sequence to Supergiants</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-13875v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-13875v1</guid>
+      <pubDate>Tue, 17 Feb 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Devesh Nandal, Abraham Loeb</dc:creator>
       <description><![CDATA[Why It Matters
-Imagine trying to determine if a distant house has people living in it by analyzing the light coming through its windows. That's essentially what astronomers are attempting with planets orbiting other stars—searching for signs of life by studying the gases in their atmospheres. Carbon dioxide is one of the most important clues we can look for, as it tells us about a planet's climate, geology, and potentially its ability to support life. This research is crucial because NASA is planning to build the Habitable Worlds Observatory, a revolutionary space telescope designed to hunt for Earth-like worlds. Getting the telescope's design right the first time is essential, since this billion-dollar instrument will be our best shot at finding life beyond our solar system.
+When we think about planets that could support life, we usually focus on stars like our Sun. But what about the universe's most massive, brilliant stars—the stellar giants that burn thousands of times brighter? These cosmic powerhouses have largely been written off as too violent and short-lived to nurture life. This new research challenges that assumption, asking a fascinating question: could these stellar behemoths actually host habitable worlds, even if only briefly? The answer could reshape how we search for life in the galaxy and reveal entirely new categories of potentially habitable planets we've never seriously considered.
 What They Did
-The researchers used computer simulations to test how well we could detect carbon dioxide in the atmospheres of Earth-like planets around other stars. They created virtual observations using different telescope settings, much like a photographer testing various camera filters to get the best shot. Specifically, they tested 25 different "filters" that would capture light at wavelengths between 0.8 and 2.0 micrometers—a range that includes near-infrared light just beyond what our eyes can see. They simulated planets with different amounts of carbon dioxide, from levels found on ancient Earth to those on Venus today, and calculated how clear the detection signals would be under various conditions.
+The researchers created detailed computer models tracking the life cycles of stars ranging from slightly smaller than our Sun to monsters 120 times more massive. For each star, they calculated where the "habitable zone"—the orbital sweet spot where liquid water could exist—would be located throughout the star's lifetime. Think of it like mapping where you'd need to stand around different campfires to stay comfortably warm as they burn and change over time. They also factored in the harsh realities of massive stars: their intense ultraviolet radiation that can strip away planetary atmospheres, and their powerful stellar winds that can literally blow atmospheres into space.
 Key Findings
-The team discovered that the telescope should focus on light up to 1.68 micrometers for optimal carbon dioxide detection—this specific wavelength range provides the best balance of signal strength and clarity. They found that other gases significantly affect carbon dioxide detection: methane and water vapor can either help or hinder the process, while carbon monoxide proved nearly impossible to detect reliably regardless of its abundance levels.
+The results reveal a cosmic trade-off. A star nine times our Sun's mass can maintain a habitable zone for 30 million years, but you'd need to be much farther away—70 to 130 times Earth's distance from the Sun. Stars 15 times more massive than our Sun can't sustain habitable zones at all during their main lifetime. However, there's a twist: when these giants enter their final phases, habitable zones can briefly reappear for up to 1.5 million years, though at enormous distances. While massive stars contribute less than 0.01% of the galaxy's total "habitable time," they still could host around 100,000 potentially habitable Earth-like worlds right now.
 Looking Forward
-These findings will directly influence the design of humanity's next great planet-hunting telescope. By knowing exactly which wavelengths of light to prioritize, engineers can optimize the observatory's instruments for the best chance of detecting potentially habitable worlds and signs of life beyond Earth.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>TIC-65910228 b / NGTS-38 b, a 180 day transiting warm super-Jupiter</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-12977v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-12977v1</guid>
-      <pubDate>Mon, 16 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Toby Rodel et al.</dc:creator>
-      <description><![CDATA[Why It Matters
-Most planets we've discovered orbiting other stars fall into two categories: scorching hot worlds that race around their stars in days, or distant, cold planets that take years to complete an orbit. But there's a fascinating middle ground—warm planets with moderate orbital periods—that could teach us crucial lessons about how planetary systems form and evolve. These "warm Jupiters" might represent a missing link in our understanding of planetary migration, helping explain how giant planets end up in such diverse configurations throughout the galaxy.
-What They Did
-This discovery began when NASA's planet-hunting telescope TESS spotted a single, mysterious dip in starlight—the signature of a planet crossing in front of its star. But with only one transit observed, astronomers faced a puzzle: when would this planet pass by again? The research team launched an ambitious monitoring campaign using ground-based telescopes, essentially playing cosmic detective. They watched the target star for 228 nights using the Next-Generation Transit Survey, while simultaneously measuring tiny wobbles in the star's motion using specialized instruments that can detect movement as small as a person walking on a distant mountaintop.
-Key Findings
-The planet, designated NGTS-38 b, is truly remarkable. It's a "super-Jupiter"—nearly five times more massive than Jupiter but only slightly larger, making it incredibly dense. The planet takes 180 days to orbit its star (compared to Jupiter's 12 years), placing it in the rare category of warm Jupiters. Its orbit is noticeably oval-shaped rather than circular, and the planet experiences temperatures around 185°C (365°F)—hot enough to melt lead, but relatively cool by exoplanet standards. The host star is metal-rich and bright enough to study in detail from Earth.
-Looking Forward
-NGTS-38 b represents a crucial piece in the planetary formation puzzle. Its unique properties make it an excellent target for future studies that could reveal whether it has moons, rings, or unusual atmospheric compositions. The upcoming PLATO space mission will monitor this system continuously, potentially discovering additional planets and refining our understanding of this intriguing world.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>A Protoplanet Candidate in the PDS 66 Disk Indicated by Silicon Sulfide Isotopologues</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-12522v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-12522v1</guid>
-      <pubDate>Mon, 16 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Tomohiro C. Yoshida et al.</dc:creator>
-      <description><![CDATA[Why It Matters
-Scientists have long wondered how tiny space pebbles grow into massive planets like Jupiter or Earth. While we can observe the building blocks of planets—dust and gas swirling around young stars—catching planets in the act of forming has proven incredibly difficult. It's like trying to photograph a child growing up by taking just one snapshot. This research represents a potential breakthrough: astronomers may have found chemical fingerprints of a planet still under construction, giving us a rare glimpse into one of the universe's most fundamental processes.
-What They Did
-The research team used the Atacama Large Millimeter/submillimeter Array, a collection of radio telescopes in Chile that can detect molecules in space by their unique chemical signatures. They pointed these telescopes at PDS 66, a young star system located about 370 light-years away, and searched for specific molecules containing silicon and sulfur. Think of it like using a very sensitive nose to detect the aroma of baking bread wafting from a kitchen—except they were "smelling" molecules around a distant star to understand what's happening there.
-Key Findings
-The team detected silicon sulfide molecules in a surprisingly small, hot region about 60 times farther from the star than Earth is from our Sun. What makes this discovery remarkable is the sheer quantity: they found enough silicon to account for at least 10% of all the silicon normally locked up in dust grains in that area. Since dust grains don't typically release this much silicon unless something dramatic happens, the researchers believe they're seeing evidence of a forming planet. This protoplanet would be gobbling up space pebbles and heating them so intensely that they vaporize, releasing their silicon into the surrounding gas.
-Looking Forward
-This detection opens a new window into planet formation. If confirmed, it demonstrates that we can use molecular chemistry as a tool to find planets still in their cosmic cribs. Future observations could reveal how common this process is and help astronomers understand whether our own solar system formed through similar mechanisms billions of years ago.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.GA</category>
-    </item>
-    <item>
-      <title>TSSC comet-centered data products from TESS 3I/ATLAS observations</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-12364v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-12364v1</guid>
-      <pubDate>Mon, 16 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Jorge Martinez-Palomera, Amy Tuson, TESS Science Support Center</dc:creator>
-      <description><![CDATA[Why It Matters
-Imagine a cosmic visitor from another star system racing through our solar neighborhood—that's exactly what happened with 3I/ATLAS, only the third interstellar object ever discovered passing through our Solar System. These rare cosmic wanderers offer scientists an extraordinary opportunity to study material that formed around distant stars billions of years ago. Unlike asteroids and comets born in our own solar system, interstellar objects carry secrets from alien worlds, potentially revealing how other planetary systems formed and evolved. By studying 3I/ATLAS, we're essentially getting a free sample delivery from deep space—no expensive interstellar mission required.
-What They Did
-NASA's planet-hunting telescope TESS (Transiting Exoplanet Survey Satellite) turned its powerful eye toward this interstellar visitor during a week-long observation campaign in January 2026. Think of TESS as a cosmic photographer taking pictures every 20 to 200 seconds—incredibly fast for space observations. The research team created two specialized data sets: first, a series of images that track the comet's movement across the sky while filtering out interfering starlight and background noise, and second, measurements of how bright the comet appeared over time. They've made these processed observations freely available to scientists worldwide, essentially creating a detailed photo album and brightness diary of this rare visitor.
-Key Findings
-This paper primarily presents the observational data rather than scientific discoveries, but the achievement itself is remarkable. TESS captured unprecedented high-precision, nearly continuous observations of 3I/ATLAS just after its closest approach to our Sun—the most active period in any comet's journey when solar heating causes dramatic changes in brightness and activity.
-Looking Forward
-While TESS specializes in finding exoplanets, this research demonstrates how planet-hunting tools can unlock secrets about interstellar visitors. These detailed observations will help scientists understand how comets from other star systems behave, potentially revealing differences from our local comets and providing clues about the conditions around distant stars where planets might form.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.GA</category>
-        <category>astro-ph.IM</category>
-    </item>
-    <item>
-      <title>TIC65910228b: A single-transit discovery of a massive long-period warm Jupiter with TESS</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-13125v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-13125v1</guid>
-      <pubDate>Mon, 16 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Felipe I. Rojas et al.</dc:creator>
-      <description><![CDATA[Why It Matters
-Imagine trying to understand how our solar system formed by studying only Earth and Mars. That's essentially the challenge astronomers face when studying giant planets like Jupiter. Most exoplanets we've discovered orbit extremely close to their stars, completing their "years" in just days or weeks. But these scorching hot worlds tell us little about planets like Jupiter, which takes 12 Earth years to complete one orbit. This new discovery helps fill a crucial gap in our understanding of how giant planets form and evolve, particularly those that orbit at moderate distances from their stars—close enough to be warm, but not so close that they're roasted.
-What They Did
-The team started with a single snapshot of a planet crossing in front of its star, captured by NASA's planet-hunting TESS telescope. Think of it like seeing someone walk past a streetlight just once—you know something passed by, but you need more information to figure out what it was. The researchers then used ground-based telescopes around the world to gather additional clues. They measured how the star wobbled due to the planet's gravitational pull (like a dog walker being tugged by their pet) and watched for additional transits to nail down the planet's orbital period. By combining these different types of observations, they could determine the planet's size, mass, and orbital characteristics.
-Key Findings
-Meet TIC65910228b: a behemoth planet that weighs four and a half times more than Jupiter but is surprisingly compact—only slightly larger than Jupiter in size. This makes it incredibly dense, like a bowling ball compared to a basketball. The planet orbits its star every 180 days (roughly six Earth months) in an oval-shaped path, coming closer and farther from its star during each orbit. It circles an evolved star similar to our Sun but older and slightly more massive.
-Looking Forward
-This discovery demonstrates that single transit detections—previously considered too uncertain to pursue—can yield significant scientific discoveries. As more of these "one-shot" planets are confirmed, astronomers will build a better census of long-period giant planets, helping us understand whether our solar system's architecture is common or unusual in the cosmic neighborhood.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>GAMERA-OP: A three-dimensional finite-volume MHD solver for orthogonal curvilinear geometries</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-12307v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-12307v1</guid>
-      <pubDate>Mon, 16 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Hongyang Luo et al.</dc:creator>
-      <description><![CDATA[Why It Matters
-Imagine trying to understand how planets form around distant stars, or how the magnetic fields around these worlds behave—it's like trying to predict weather patterns in a hurricane while sitting thousands of miles away. Scientists studying exoplanets (planets orbiting other stars) face exactly this challenge. They need powerful computer simulations to model the complex magnetic and fluid dynamics happening around these distant worlds. This research introduces a new computational tool that could revolutionize how we study the magnetic environments of exoplanets, potentially helping us understand which worlds might be habitable.
-What They Did
-The researchers built a sophisticated computer program called GAMERA-OP—think of it as a virtual laboratory for studying plasma (super-hot, electrically charged gas) in space. Just as video games need powerful graphics engines to render realistic 3D worlds, scientists need specialized software to simulate the invisible magnetic fields and swirling gases around planets and stars. Their program is like upgrading from basic 2D drawings to high-definition 3D movies. It can handle curved coordinate systems (imagine mapping weather on a sphere rather than a flat surface) and maintains mathematical precision that previous tools struggled with. The team rewrote the entire program in a more efficient computer language and designed it like LEGO blocks—modular pieces that can be easily combined or modified for different research questions.
-Key Findings
-The new tool passed all standard accuracy tests while using significantly less computational power than previous methods. It maintains perfect mathematical precision for magnetic field calculations—something that sounds technical but is crucial for realistic simulations. The program excels at handling rotating systems and complex geometries, making it particularly valuable for studying spinning planets and their magnetic fields.
-Looking Forward
-This advancement could accelerate discoveries about exoplanet atmospheres and magnetic shields—factors that determine whether distant worlds could potentially support life. Better simulations mean better predictions about which exoplanets deserve closer study with future space telescopes.]]></description>
-        <category>astro-ph.IM</category>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Astrophysics Wrapped 2025: Year-in-Review of Every Astrophysics arXiv Paper from 2025</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-12303v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-12303v1</guid>
-      <pubDate>Mon, 16 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Rommulus Francis Lewis, Hetansh Shah, Amruth Alfred</dc:creator>
-      <description><![CDATA[Why It Matters
-Imagine trying to keep up with every conversation happening at a massive scientific conference with thousands of researchers all talking at once. That's essentially what's happening in astronomy today—so many discoveries are being made that even professional astronomers struggle to stay informed about breakthroughs outside their specialty. This research tackles that overwhelming flood of information by creating the ultimate "year in review" for space science, analyzing every single astronomy paper published in 2025. For anyone curious about where we stand in our quest to understand the universe, this study reveals which cosmic mysteries are capturing scientists' attention most and how our knowledge is expanding.
-What They Did
-The researchers acted like cosmic librarians, systematically cataloging and analyzing thousands of astronomy research papers from 2025. Instead of reading every paper word-for-word—which would take lifetimes—they examined the "metadata," or basic information about each study: how many pages long they were, which keywords appeared most frequently, what telescopes were used, and which cosmic objects were studied most. They also tracked where the researchers worked around the globe and how often their papers were cited by other scientists, creating a comprehensive snapshot of the entire field's activity over one year.
-Key Findings
-The study revealed fascinating patterns in modern astronomy research. Certain "hot topics" dominated the field, with exoplanets, gravitational waves, gamma-ray bursts, and fast radio bursts capturing significant attention. The research mapped out which telescopes were workhorses of discovery and identified the most-studied cosmic objects. They also uncovered the global nature of modern astronomy, showing how researchers from different continents collaborate and which institutions are leading various types of research.
-Looking Forward
-This bird's-eye view of astronomy helps both students and seasoned researchers navigate the field more strategically. For exoplanet science specifically, understanding these broader trends means researchers can identify emerging techniques, popular targets for study, and collaboration opportunities that might accelerate the discovery of potentially habitable worlds beyond our solar system.]]></description>
-        <category>astro-ph.IM</category>
-        <category>astro-ph.CO</category>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.GA</category>
+This research opens an intriguing new frontier for planet hunters. While these massive star systems won't dominate our search for life, they offer a unique opportunity to study how life might emerge and evolve under extreme conditions and accelerated timescales. Future telescopes could potentially detect signs of life on these distant, exotic worlds, giving us glimpses into alternative pathways for habitability we never imagined possible.]]></description>
         <category>astro-ph.SR</category>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.GA</category>
+    </item>
+    <item>
+      <title>The Interplanetary Habitable Zone</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-13404v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-13404v1</guid>
+      <pubDate>Tue, 17 Feb 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Caleb Scharf</dc:creator>
+      <description><![CDATA[Why It Matters
+Imagine humanity becoming a truly spacefaring civilization, hopping between planets and moons like islands in a cosmic archipelago. Scientists have now developed a groundbreaking way to evaluate which star systems would be most hospitable for such interplanetary societies. While astronomers have long focused on individual planets that might harbor life, this research takes a giant leap forward by asking: which entire solar systems would best support a civilization that travels between multiple worlds? This isn't just science fiction—it's a serious attempt to understand how advanced civilizations might thrive across whole planetary systems, and it could help us identify the most promising places to search for spacefaring alien life.
+What They Did
+The researchers created a cosmic "report card" system for rating entire planetary systems. Think of it like evaluating a chain of islands for their potential to support a seafaring civilization—you'd consider not just each island individually, but also the distances between them, available resources, and dangers like storms. The scientists built computer models that simulate how a space-traveling species might spread through a solar system, weighing factors like energy costs of traveling between worlds, radiation hazards, and resource availability on different planets and moons. They tested their system on our own solar system and compared it to TRAPPIST-1, a famous system with seven Earth-sized planets packed closely together.
+Key Findings
+The results reveal that our solar system might be surprisingly well-suited for interplanetary civilization. The models predict that spacefaring humans would likely expand in a specific sequence: first to the Moon, then Mars, and finally to the resource-rich asteroid belt. Surprisingly, our solar system appears to have significant advantages over TRAPPIST-1, despite that system's fame for having multiple Earth-sized worlds. The key difference lies in the balance between travel costs and radiation risks—TRAPPIST-1's planets may be closer together, but they face much harsher radiation from their red dwarf star.
+Looking Forward
+This research opens an entirely new frontier in the search for extraterrestrial life. Instead of just looking for individual habitable planets, astronomers can now evaluate which star systems might host advanced, spacefaring civilizations. This could revolutionize how we prioritize targets for future telescopes and SETI searches, focusing our limited resources on the systems most likely to support interplanetary societies.]]></description>
+        <category>astro-ph.EP</category>
+        <category>physics.pop-ph</category>
+    </item>
+    <item>
+      <title>Infrared spectra of methane-containing ice mixtures for JWST data analysis</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-14604v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-14604v1</guid>
+      <pubDate>Tue, 17 Feb 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Varvara Karteyeva et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+When astronomers search for life beyond Earth, they look for chemical clues in the atmospheres and surfaces of distant planets. One of these important clues is methane—a simple molecule that can be produced by living organisms or geological processes. The James Webb Space Telescope (JWST), our most powerful space observatory, can detect methane on exoplanets by analyzing how starlight filters through their atmospheres. However, to accurately interpret these cosmic signals, scientists need precise laboratory measurements of how methane behaves under the extreme cold conditions found in space. This research provides crucial reference data that helps astronomers distinguish between different sources of methane and better understand what they're seeing in telescope observations.
+What They Did
+The research team created methane ice in their laboratory under conditions that mimic the frigid environments of space—temperatures around -440°F (-263°C), which is nearly 50 degrees colder than the surface of Pluto. They froze pure methane as well as mixtures of methane with other common space molecules like water, carbon dioxide, methanol, and ammonia. Using infrared spectroscopy (a technique that identifies molecules by how they absorb different wavelengths of light), they measured the unique "fingerprints" each mixture produces. Think of it like creating a reference library of how different frozen cocktails would look under a special light—except these cocktails exist in the depths of space.
+Key Findings
+The team discovered that methane's spectral signature changes significantly when mixed with other molecules, showing a 20% increase in intensity compared to pure methane measurements commonly used by astronomers. They also found that methane behaves differently at slightly different temperatures, transitioning between distinct phases. To test their laboratory data, they successfully applied it to actual JWST observations of B335, a stellar nursery, and mapped where methane exists in that cosmic region.
+Looking Forward
+This research gives astronomers a more accurate decoder ring for interpreting JWST's observations of exoplanets and star-forming regions. With better laboratory references, scientists can more confidently identify methane in alien atmospheres and determine whether it might indicate biological activity or geological processes—bringing us closer to answering whether life exists elsewhere in the universe.]]></description>
+        <category>astro-ph.SR</category>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.GA</category>
+    </item>
+    <item>
+      <title>Atmospheric constraints on GJ 1214 b from CRIRES+ and prospects for characterisation with ANDES</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-14343v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-14343v1</guid>
+      <pubDate>Tue, 17 Feb 2026 20:00:00 +0000</pubDate>
+      <dc:creator>A. Peláez-Torres et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+Imagine trying to figure out what's in a distant friend's house by examining the light coming through their windows—that's essentially what astronomers do when studying exoplanet atmospheres. GJ 1214 b, a mysterious world about 48 light-years away, has been puzzling scientists for years. It's what we call a "sub-Neptune"—bigger than Earth but smaller than Neptune—and represents the most common type of planet in our galaxy, even though we don't have anything like it in our own solar system. Understanding what this world's atmosphere contains could unlock secrets about how planets form and whether similar worlds might host life.
+What They Did
+The research team used one of the world's most powerful telescopes—the Very Large Telescope in Chile—equipped with an ultra-precise instrument called CRIRES+ that can detect incredibly subtle changes in starlight. They watched GJ 1214 b cross in front of its star eight different times, like observing someone walk in front of a flashlight. During these "transits," they analyzed how the planet's atmosphere filtered the starlight, looking for the chemical fingerprints of water vapor, methane, and carbon dioxide. Think of it like using a prism to split sunlight into a rainbow—different gases absorb specific colors, creating a unique signature that reveals their presence.
+Key Findings
+Surprisingly, the team found no clear signs of any of the three gases they were hunting for. But in science, non-detections can be just as revealing as discoveries. Their results suggest that GJ 1214 b either has an atmosphere loaded with heavy elements (about 100 times more metal-rich than our Sun) or is shrouded in high-altitude clouds that obscure the chemical signatures below—like trying to study a house through frosted windows.
+Looking Forward
+These findings align with recent observations from the James Webb Space Telescope, building a consistent picture of this enigmatic world. The team also showed that future observations with the upcoming Extremely Large Telescope could dramatically improve our ability to peer through these atmospheric mysteries, particularly for detecting carbon dioxide in metal-rich atmospheres.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Diversities and similarities exhibited by multi-planetary systems and their architectures: II. Radii of singles and multis</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-14194v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-14194v1</guid>
+      <pubDate>Tue, 17 Feb 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Alexandra Muresan, Carina M. Persson, Malcolm Fridlund</dc:creator>
+      <description><![CDATA[Why It Matters
+Imagine if we discovered that houses on streets with multiple homes were systematically different from houses that stood alone—that would tell us something important about how neighborhoods develop. That's essentially what astronomers are doing with planets beyond our solar system. By comparing planets that exist alone around their stars versus those in crowded planetary families, we can unlock secrets about how planetary systems form and evolve. This research helps us understand whether our own solar system is typical or unusual, and what conditions lead to the incredible diversity of worlds we're discovering throughout the galaxy.
+What They Did
+The researchers acted like cosmic census-takers, analyzing data from over 3,200 confirmed planets orbiting sun-like stars. They divided these worlds into two groups: "singles" (planets that appear to be alone around their star) and "multis" (planets with detected siblings). The team measured each planet's size and compared how big planets tend to be in single-planet systems versus multi-planet families. They also looked at different types of host stars, from small, cool red dwarfs to larger, hotter stars similar to our Sun, to see if the star type influenced planetary characteristics.
+Key Findings
+The biggest surprise was that planets in multi-planet systems aren't dramatically different from lone planets—especially around sun-like stars. After removing hot Jupiters (massive planets that orbit extremely close to their stars), single and multiple-planet systems showed remarkably similar planet types and size ranges. However, the researchers discovered an intriguing anomaly: there's an unexpected abundance of planets about 1.4 to 1.6 times Earth's size specifically in multi-planet systems. For the smallest, coolest stars, the patterns were less clear due to limited data.
+Looking Forward
+These findings suggest that single and multiple-planet systems might form through similar processes, challenging some theories about planetary formation. The mysterious overabundance of Earth-sized-plus planets in multi-planet systems opens new questions about what makes certain planetary architectures more common. As upcoming telescopes discover thousands more exoplanets, astronomers will be able to test these patterns and better understand the cosmic forces that shape the incredible variety of worlds orbiting distant stars.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Formation and Survival of Complex Organic Molecules in the Jovian Circumplanetary Disk</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-14334v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-14334v1</guid>
+      <pubDate>Tue, 17 Feb 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Olivier Mousis et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+Jupiter's moons Europa, Ganymede, and Callisto aren't just frozen rocks—they're among the most promising places to search for life beyond Earth. These icy worlds likely harbor vast oceans beneath their frozen surfaces, potentially containing more water than all Earth's oceans combined. But water alone isn't enough for life. Scientists need to find complex organic molecules—the carbon-based building blocks that could eventually lead to biology. This research tackles a fundamental question: could these life-essential molecules have been present from the very beginning, built into these moons as they formed billions of years ago?
+What They Did
+The researchers created a computer simulation to recreate the ancient environment around Jupiter when its major moons were still forming. Picture a swirling disk of gas, dust, and ice particles spinning around the young planet—like a miniature version of the disk that formed our solar system. The team tracked how ice particles of different sizes moved through this disk over time, experiencing different temperatures and radiation levels. They then calculated whether two key processes could create complex organic molecules: gentle heating (like slow-cooking) that transforms simple ices into more complex compounds, or ultraviolet radiation acting like a chemical catalyst to forge new molecular bonds.
+Key Findings
+Heat wins over radiation as the primary chef for cooking up organic molecules in Jupiter's ancient disk. The slow warming of ice particles—particularly those containing ammonia and carbon dioxide—proved far more effective at creating complex organics than bombardment by ultraviolet light. Europa likely experienced warmer conditions during formation, potentially destroying some organics, while Ganymede and Callisto formed in cooler, more preserving environments—like cosmic freezers that kept these molecular ingredients fresh for billions of years.
+Looking Forward
+This research provides a roadmap for two upcoming missions: Europe's JUICE probe and NASA's Europa Clipper, both launching to study Jupiter's moons in unprecedented detail. If these missions detect the predicted organic molecules, it would confirm that the ingredients for life were delivered during the moons' birth—making them even more compelling targets in our search for life beyond Earth.]]></description>
+        <category>astro-ph.EP</category>
+        <category>physics.atm-clus</category>
+    </item>
+    <item>
+      <title>Modelling the Break in the Specific Angular Momentum within the Envelope-Disk Transition Zone</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-13683v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-13683v1</guid>
+      <pubDate>Tue, 17 Feb 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Indrani Das et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+When stars are born, they don't form alone—they create spinning disks of material around them, and these disks eventually become the birthplaces of planets. Understanding how these stellar nurseries work is crucial for explaining how our own solar system formed and why we see such incredible diversity among the thousands of exoplanets discovered so far. This research tackles a fundamental puzzle: how does the swirling cloud of gas and dust that surrounds a newborn star transform into the flat, organized disk where planets are born?
+What They Did
+The researchers used powerful computer simulations to model what happens when a massive cloud of gas collapses under its own gravity to form a star. Think of it like watching a figure skater pull in their arms—as the cloud shrinks, it spins faster and faster. But unlike a skater, this cosmic dance involves complex magnetic forces and gravity working together. The team also analyzed real observations from the ALMA telescope array in Chile, studying a young star system called L1527 to see if their computer models matched reality.
+Key Findings
+The simulations revealed a distinct "transition zone" where the physics dramatically changes. In the outer envelope, material falls straight inward while maintaining constant spin. But closer to the star, within this transition zone, something remarkable happens: the material suddenly shifts into a different spinning pattern that follows what astronomers call "Keplerian motion"—the same type of orbital dance that governs our planets around the Sun. For the first time, the team spotted this transition in real telescope data from L1527, confirming that their computer models accurately capture nature's behavior.
+Looking Forward
+This discovery gives astronomers a new tool for studying planet formation. By identifying these transition zones around young stars, scientists can better understand how raw stellar material gets organized into the structured disks where planets form. This could help explain why some star systems produce rocky planets like Earth while others create gas giants or bizarre worlds unlike anything in our solar system.]]></description>
+        <category>astro-ph.SR</category>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.GA</category>
+        <category>astro-ph.HE</category>
+    </item>
+    <item>
+      <title>Statistical Validation and Vetting of Exoplanet Candidate TOI 7475.01</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-14840v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-14840v1</guid>
+      <pubDate>Tue, 17 Feb 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Biel Escolà-Rodrigo</dc:creator>
+      <description><![CDATA[# Scientists Confirm Discovery of New World Beyond Our Solar System
+Why It Matters
+Every time astronomers confirm a new exoplanet—a world orbiting a distant star—we add another piece to the cosmic puzzle of how common planets like Earth might be. This latest discovery helps us understand the incredible diversity of worlds scattered throughout our galaxy. For anyone who's ever wondered "Are we alone?" or gazed up at the night sky curious about what's out there, each new confirmed planet brings us closer to answering these profound questions. Plus, the detective work required to prove these distant worlds actually exist showcases the remarkable precision of modern space science.
+What They Did
+Think of planet hunting like being a cosmic detective. Scientists used data from TESS, a space telescope that acts like a super-sensitive light meter, constantly measuring the brightness of thousands of stars. When a planet crosses in front of its star—like a tiny eclipse—it blocks a small amount of starlight, creating a telltale dimming pattern. The researchers developed sophisticated computer programs to sift through mountains of data, looking for these subtle brightness dips that repeat in regular patterns. But finding the signal was just the beginning. They then had to rule out "false alarms"—other phenomena that could mimic a planet's signature, like background stars or instrument glitches.
+Key Findings
+The newly confirmed planet, dubbed TOI 7475.01, completes an orbit around its star every 3.25 days—making its "year" shorter than a week on Earth. The planet blocks about 0.46% of its star's light during each transit, suggesting it's significantly larger than Earth. The signal was remarkably strong and clean, giving scientists extremely high confidence in their detection. After rigorous testing, they determined the chance this is a false alarm is essentially zero.
+Looking Forward
+This discovery demonstrates how our planet-finding techniques are becoming increasingly sophisticated and reliable. As we confirm more worlds orbiting other stars, we're building a census of planetary systems that will help us understand how common Earth-like conditions might be in our galaxy.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Microphysical Model of Jupiter&#x27;s Great Red Spot Upper Chromophore Haze</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-14911v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-14911v1</guid>
+      <pubDate>Tue, 17 Feb 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Asier Anguiano-Arteaga et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+Jupiter's Great Red Spot is one of the most iconic features in our solar system—a massive storm that has been raging for centuries and is large enough to swallow Earth whole. Yet scientists have long been puzzled by a deceptively simple question: why is it red? Understanding what creates this distinctive coloration isn't just about solving a cosmic mystery. The chemicals responsible for the red hue, called chromophores, act like atmospheric fingerprints that reveal how Jupiter's complex weather systems work. Since we're discovering thousands of giant planets around other stars, learning how atmospheres create and maintain colorful features helps us interpret what we might see on distant worlds.
+What They Did
+The researchers created detailed computer simulations to model how tiny particles form and behave in the upper atmosphere above the Great Red Spot. Think of it like creating a virtual laboratory where they could test different recipes for making red particles and see which ones matched what telescopes actually observe. They varied factors like how fast new particles are created, how quickly atmospheric currents carry them around, and how electrically charged they become. By running these simulations with different conditions, they could determine what combination of factors would produce the right amount and size of red particles to match real observations of the storm.
+Key Findings
+The simulations revealed that sustaining the Great Red Spot's red color requires a surprisingly large and constant supply of new particles—like trying to maintain a fog that's constantly being blown away. The atmosphere needs to inject red particles at specific rates that are actually higher than what current models of Jupiter's atmospheric chemistry can easily explain. The team also discovered that it takes at least seven years for the reddish haze to fully form, suggesting this isn't a quick process but rather a slow, steady accumulation of colored material.
+Looking Forward
+These findings suggest that our current understanding of how giant planet atmospheres create colored compounds may be incomplete. As we study the atmospheres of exoplanets orbiting other stars, this research provides crucial insights into how long-lasting atmospheric features form and what chemical processes might be creating the colors we observe on distant worlds.]]></description>
+        <category>astro-ph.EP</category>
     </item>
   </channel>
 </rss>
