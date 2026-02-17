@@ -234,6 +234,38 @@ def format_post(paper: dict, page_url: str, papers_date: str) -> str:
     return post
 
 
+def parse_urls_to_facets(text: str) -> list:
+    """Parse URLs from text and create Bluesky facets with correct UTF-8 byte offsets.
+    
+    Bluesky requires byte offsets (not character offsets) for rich text facets.
+    This is critical when text contains multi-byte characters like emojis.
+    """
+    url_pattern = re.compile(r'https?://[^\s\)]+')
+    facets = []
+    
+    for match in url_pattern.finditer(text):
+        url = match.group()
+        start_char = match.start()
+        end_char = match.end()
+        
+        # Convert character offsets to byte offsets
+        byte_start = len(text[:start_char].encode('utf-8'))
+        byte_end = len(text[:end_char].encode('utf-8'))
+        
+        facets.append({
+            "index": {
+                "byteStart": byte_start,
+                "byteEnd": byte_end,
+            },
+            "features": [{
+                "$type": "app.bsky.richtext.facet#link",
+                "uri": url,
+            }]
+        })
+    
+    return facets
+
+
 def create_bluesky_session():
     """Create authenticated Bluesky session."""
     handle = os.environ.get("BLUESKY_HANDLE")
@@ -269,40 +301,79 @@ def create_bluesky_session():
 
 
 def post_to_bluesky(client, text: str, image_path: str = None) -> str | None:
-    """Post to Bluesky. Returns post URI on success."""
+    """Post to Bluesky with clickable links. Returns post URI on success."""
+    
+    facets = parse_urls_to_facets(text)
+    if facets:
+        print(f"  📎 {len(facets)} clickable link(s) detected")
     
     if HAS_ATPROTO:
         try:
             # Upload image if provided
+            embed = None
             if image_path and os.path.exists(image_path):
                 with open(image_path, "rb") as f:
                     img_data = f.read()
                 
-                # Detect mime type
-                if image_path.endswith(".png"):
-                    mime = "image/png"
-                elif image_path.endswith(".gif"):
-                    mime = "image/gif"
-                else:
-                    mime = "image/jpeg"
-                
-                # Upload blob (new atproto API - mime type auto-detected)
                 upload = client.upload_blob(img_data)
-                
-                # Create post with image
                 embed = models.AppBskyEmbedImages.Main(
                     images=[models.AppBskyEmbedImages.Image(
                         alt="Paper figure",
                         image=upload.blob
                     )]
                 )
-                
-                response = client.send_post(text=text, embed=embed)
-            else:
-                response = client.send_post(text=text)
             
-            print(f"Posted: {response.uri}")
-            return response.uri
+            # Build facet model objects for atproto SDK
+            facet_models = None
+            if facets:
+                try:
+                    facet_models = [models.AppBskyRichtextFacet.Main(
+                        index=models.AppBskyRichtextFacet.ByteSlice(
+                            byte_start=f["index"]["byteStart"],
+                            byte_end=f["index"]["byteEnd"],
+                        ),
+                        features=[models.AppBskyRichtextFacet.Link(
+                            uri=f["features"][0]["uri"]
+                        )]
+                    ) for f in facets]
+                except (AttributeError, TypeError) as e:
+                    print(f"  ⚠️ Facet model creation failed ({e}), falling back to raw API")
+                    facet_models = None
+            
+            if facet_models is not None or not facets:
+                # Use send_post with explicit facets
+                response = client.send_post(
+                    text=text,
+                    embed=embed,
+                    facets=facet_models
+                )
+                print(f"Posted: {response.uri}")
+                return response.uri
+            else:
+                # Fallback: use raw record creation for guaranteed facet support
+                now = datetime.utcnow().isoformat() + "Z"
+                record = {
+                    "$type": "app.bsky.feed.post",
+                    "text": text,
+                    "createdAt": now,
+                    "facets": facets,
+                }
+                if embed:
+                    # Can't easily mix raw record with model embed, try send_post without facets
+                    print("  ⚠️ Posting with image but without clickable links (model fallback)")
+                    response = client.send_post(text=text, embed=embed)
+                    print(f"Posted: {response.uri}")
+                    return response.uri
+                
+                response = client.com.atproto.repo.create_record(
+                    models.ComAtprotoRepoCreateRecord.Data(
+                        repo=client.me.did,
+                        collection="app.bsky.feed.post",
+                        record=record,
+                    )
+                )
+                print(f"Posted: {response.uri}")
+                return response.uri
             
         except Exception as e:
             print(f"Post failed: {e}")
@@ -311,8 +382,16 @@ def post_to_bluesky(client, text: str, image_path: str = None) -> str | None:
         # Manual API (no image support without atproto)
         try:
             session = client  # client is session dict in this case
-            
             now = datetime.utcnow().isoformat() + "Z"
+            
+            record = {
+                "$type": "app.bsky.feed.post",
+                "text": text,
+                "createdAt": now,
+            }
+            
+            if facets:
+                record["facets"] = facets
             
             resp = requests.post(
                 "https://bsky.social/xrpc/com.atproto.repo.createRecord",
@@ -320,11 +399,7 @@ def post_to_bluesky(client, text: str, image_path: str = None) -> str | None:
                 json={
                     "repo": session["did"],
                     "collection": "app.bsky.feed.post",
-                    "record": {
-                        "$type": "app.bsky.feed.post",
-                        "text": text,
-                        "createdAt": now,
-                    }
+                    "record": record
                 }
             )
             resp.raise_for_status()
