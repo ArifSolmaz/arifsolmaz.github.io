@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 18 Feb 2026 04:17:14 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 19 Feb 2026 04:15:59 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,92 +15,71 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>Searching for Extragalactic Exoplanets: A Survey of the Sagittarius Dwarf Galaxy Stream with TESS</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-15105v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-15105v1</guid>
-      <pubDate>Wed, 18 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>William Schap, Jason Dittmann, Elizabeth Lada</dc:creator>
+      <title>Planet-Disk Interactions and the Convective Overstability. I. Low Mass Planets</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-15978v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-15978v1</guid>
+      <pubDate>Thu, 19 Feb 2026 20:00:00 +0000</pubDate>
+      <dc:creator>M. Lehmann, M. K. Lin</dc:creator>
       <description><![CDATA[Why It Matters
-For decades, astronomers have discovered thousands of planets orbiting stars in our own galaxy, the Milky Way. But what about planets in other galaxies entirely? This groundbreaking research represents humanity's first systematic attempt to find planets beyond our galactic neighborhood—a quest that could reveal whether planetary systems are truly universal phenomena or if conditions in different galaxies produce dramatically different results. The answer could fundamentally change our understanding of how common planets are in the universe and whether the building blocks of life exist everywhere or just in special cosmic neighborhoods like our own.
+Imagine you're building a sandcastle right at the water's edge—the waves keep washing away your work before you can finish. Baby planets face a similar problem in the swirling disks of gas and dust around young stars. These newborn worlds tend to spiral inward toward their host stars so quickly that they should be destroyed before they can grow into the diverse array of planets we observe today. Yet somehow, planets do survive and thrive. This research tackles one of astronomy's biggest puzzles: how do small planets avoid this deadly spiral and live long enough to become the rocky worlds like Earth that populate our universe?
 What They Did
-The researchers turned their attention to the Sagittarius dwarf galaxy, a smaller galaxy that's currently being torn apart and absorbed by our Milky Way. They used NASA's planet-hunting telescope TESS (Transiting Exoplanet Survey Satellite) to monitor over 15,000 stars from this disrupted galaxy. Like celestial detectives, they watched for tiny, periodic dips in starlight that occur when a planet crosses in front of its host star—imagine watching for the shadow of a fly passing in front of a distant lighthouse. They specifically searched for "hot Jupiters"—massive planets that orbit extremely close to their stars, completing their years in just days rather than the 11 years our Jupiter takes.
+The researchers created detailed computer simulations of protoplanetary disks—the spinning pancakes of material around young stars where planets form. Think of these simulations like sophisticated weather models, but instead of predicting rain, they track how gas swirls around and interacts with embedded baby planets. They ran both simplified 2D versions (like looking at the disk from the side) and more complex 3D models that included realistic heating and cooling effects. By comparing these different approaches, they could isolate what happens when the disk develops a particular type of instability called the Convective Overstability, which creates large, persistent whirlpools in the gas.
 Key Findings
-Despite monitoring thousands of stars, the team found exactly zero planets. While this might seem disappointing, it's actually scientifically valuable information. Based on their observations, they calculated that fewer than 1% of stars in this extragalactic stream likely host hot Jupiter planets. This rate appears even lower than what's been observed in ancient star clusters within our own galaxy, suggesting that stars from different galactic environments might indeed have fewer large planets.
+The simulations revealed that these cosmic whirlpools act like lifeguards for baby planets. When the swirling vortices encounter a small planet, they typically give it a gravitational "kick" outward, counteracting the inward death spiral. This effect can extend a planet's survival time by roughly 10 times—potentially allowing planets to live for 0.1 to 5 million years, which gives them enough time to grow into "Super-Earths" (planets larger than Earth but smaller than Neptune). Without these helpful vortices, planets would spiral into their stars in just tens of thousands of years.
 Looking Forward
-This research blazes the trail for extragalactic planet hunting. The team estimates that monitoring over 11,000 additional extragalactic stars could either yield the first confirmed planet from another galaxy or provide strong evidence that older, metal-poor galactic environments simply don't produce as many giant planets as our relatively young, metal-rich Milky Way does.]]></description>
+This discovery suggests that the chaotic, turbulent environment of planet formation might actually help planets survive rather than destroy them. It provides a potential solution to the long-standing mystery of why we see so many planets in the universe when theory suggests they should have been consumed by their stars long ago. Future observations of young planetary systems may be able to detect these protective vortices directly, giving us new insights into how planetary systems like our own solar system came to be.]]></description>
         <category>astro-ph.EP</category>
-        <category>astro-ph.GA</category>
-        <category>astro-ph.IM</category>
-        <category>astro-ph.SR</category>
     </item>
     <item>
-      <title>Upper atmosphere dynamics and drivers of volatiles loss from terrestrial-type (exo)planets</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-15507v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-15507v1</guid>
-      <pubDate>Wed, 18 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Daria Kubyshkina et al.</dc:creator>
-      <description><![CDATA[# Could Earth-like Worlds Around Smaller Stars Keep Their Air?
+      <title>Two warm sub-Saturn mass planets identified from the TESS Full Frame Images</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-16646v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-16646v1</guid>
+      <pubDate>Thu, 19 Feb 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Felipe I. Rojas et al.</dc:creator>
+      <description><![CDATA[# Scientists Discover Two Mysterious "Sub-Saturn" Worlds That Challenge Planet Formation Theories
 Why It Matters
-Imagine finding a planet that looks just like Earth—the right size, the right distance from its star, potentially the right conditions for liquid water. But what if that planet has no atmosphere at all? This research tackles one of the biggest questions in our search for life beyond Earth: whether planets orbiting smaller, dimmer stars can actually hold onto the air that makes life possible. Since most of the potentially habitable worlds we've discovered orbit these smaller stars rather than Sun-like ones, understanding atmospheric loss could determine whether we're looking for life in the right places—or if these worlds are actually barren, airless rocks.
+Imagine trying to understand how cars are built by only studying vehicles parked in your neighborhood. That's similar to the challenge astronomers face when studying how planets form—we've been limited to our own solar system for most of human history. Every new planet we discover around other stars is like finding a completely different type of vehicle, giving us clues about the cosmic "assembly line" that creates worlds. These two newly discovered planets are particularly intriguing because they're caught in a cosmic mystery: despite being remarkably similar in many ways, they appear to have completely different internal structures, suggesting the universe has multiple recipes for building planets.
 What They Did
-The researchers studied how planets lose their atmospheres by examining what happens in the upper layers of planetary air, where space meets atmosphere. Think of it like studying how a hot cup of coffee loses steam—but instead of water vapor escaping, entire atmospheres can be stripped away by intense radiation from nearby stars. They compared conditions around different types of stars: our Sun (a medium-sized G-dwarf), and the smaller, cooler K-dwarf and M-dwarf stars that most Earth-like exoplanets orbit. They analyzed how X-ray and ultraviolet radiation from these stars affects planetary atmospheres over billions of years.
+The research team used NASA's Transiting Exoplanet Survey Satellite (TESS), a space telescope that acts like a cosmic detective, watching for the tiny dimming that occurs when planets cross in front of their host stars. Think of it like watching someone walk in front of a streetlight—the light briefly dims, revealing the person's presence. Once TESS spotted these planetary shadows, astronomers used ground-based telescopes to measure how the planets' gravity tugs on their stars, causing them to wobble slightly. By combining these techniques—like measuring both a person's shadow and how much they make a seesaw tip—scientists could determine each planet's size and weight.
 Key Findings
-The research reveals a cosmic catch-22. While smaller M-dwarf and K-dwarf stars are dimmer overall, planets must orbit much closer to them to stay warm enough for liquid water—sometimes ten times closer than Earth orbits the Sun. At these close distances, planets receive intense X-ray and ultraviolet bombardment that can blast away their atmospheres. Making matters worse, these smaller stars stay active and energetic for billions of years longer than Sun-like stars, potentially stripping atmospheres throughout a planet's entire lifetime.
+The two planets, designated TOI-883 b and TOI-899 b, are both "sub-Saturns"—meaning they're smaller than Saturn but larger than Neptune. TOI-883 b weighs about 12% as much as Jupiter but is surprisingly compact, while TOI-899 b is nearly twice as heavy but much puffier, almost Jupiter's size. Both orbit their Sun-like stars in roughly 10-13 days, making them scorching hot worlds with temperatures around 1,040-1,086 Kelvin (about 1,400-1,500°F). Despite their similar masses and orbital characteristics, their dramatically different densities suggest they're made of different materials entirely.
 Looking Forward
-This research highlights the central debate in exoplanet science: are most potentially habitable worlds actually uninhabitable? The answer depends on whether these planets started with thick enough atmospheres to survive the bombardment, or whether they can replenish lost air through volcanic activity. Future space telescopes will test these predictions by directly measuring the atmospheres of nearby exoplanets, finally revealing whether our cosmic neighbors have managed to keep their air.]]></description>
+These planets represent perfect laboratories for testing our theories about how worlds form. Their similar orbits but different compositions suggest that planetary formation might be more varied and complex than we previously thought. Because they're relatively close to Earth and orbit bright stars, future telescopes will be able to analyze their atmospheres in detail, potentially revealing whether one formed closer to its star while the other migrated inward, or whether they represent entirely different planetary formation pathways in the vast cosmic cookbook.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>Precise measurement of WASP-31 b&#x27;s Rossiter-McLaughlin effect and characterization of the planet transmission spectra</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-15501v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-15501v1</guid>
-      <pubDate>Wed, 18 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>M. Steiner et al.</dc:creator>
+      <title>Multiwavelength Campaign Observations of a Young Solar-type Star, EK Draconis. III. Comparison between Starspot Mapping, Zeeman Doppler Imaging, and Multiwavelength Variability</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-15979v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-15979v1</guid>
+      <pubDate>Thu, 19 Feb 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Kai Ikuta et al.</dc:creator>
       <description><![CDATA[Why It Matters
-Imagine trying to analyze the air quality in a distant city by studying how sunlight changes as it passes through the atmosphere—except the city is orbiting another star 1,200 light-years away. That's essentially what astronomers are attempting when they study exoplanet atmospheres. WASP-31 b, a "hot Jupiter" roughly the size of our solar system's largest planet but scorching hot from orbiting extremely close to its star, offers a perfect natural laboratory for understanding alien worlds. These atmospheric studies could eventually help us identify planets with conditions suitable for life, making this research a crucial stepping stone toward answering whether we're alone in the universe.
+Imagine if our Sun suddenly unleashed a solar flare thousands of times more powerful than anything we've ever recorded—that's what scientists call a "superflare." While our middle-aged Sun is relatively well-behaved, younger stars like EK Draconis regularly produce these monster eruptions that could strip away a planet's atmosphere entirely. Understanding these stellar tantrums is crucial because they help us predict which exoplanets might still have the protective atmospheres needed to support life. By studying this young, Sun-like star located just 111 light-years away, researchers are essentially looking back in time to see what our own solar system was like 4.5 billion years ago.
 What They Did
-Using one of the world's most advanced telescopes in Chile, researchers observed WASP-31 b as it passed in front of its host star multiple times. Think of it like watching a soap bubble drift across a flashlight beam—the light changes slightly as it filters through the bubble, revealing what the bubble is made of. The team used an ultra-precise instrument called ESPRESSO to split the starlight into its component colors, creating a cosmic fingerprint. They also measured how the planet's orbit affects the star's rotation, like watching a spotlight wobble slightly as an object passes in front of it. The challenge was separating the planet's faint atmospheric signature from much stronger contamination caused by the star's own light.
+The research team conducted an ambitious stellar surveillance operation, monitoring EK Draconis simultaneously with multiple types of telescopes and instruments. They used NASA's planet-hunting TESS satellite to track brightness changes as dark spots rotated across the star's surface—like watching sunspots, but much larger. Meanwhile, they employed a technique called Zeeman Doppler Imaging, which reads the magnetic fingerprints in starlight to map the star's invisible magnetic field. They also observed the star in X-ray light and through a specific red wavelength called H-alpha, which reveals activity in the star's upper atmosphere. This multi-pronged approach allowed them to build a comprehensive picture of how the star's surface features, magnetic fields, and atmospheric eruptions all connect.
 Key Findings
-The researchers confirmed that WASP-31 b orbits almost perfectly aligned with its star's equator, with a tilt of just -0.09 degrees—imagine a coin spinning on a table that's nearly perfectly flat. However, they couldn't detect any specific chemicals in the planet's atmosphere, including potassium and chromium hydride that other studies had previously identified. This wasn't necessarily because these substances aren't there, but because contamination from the star's own light was too overwhelming, like trying to hear a whisper next to a roaring waterfall.
+The team discovered that their different observation methods painted remarkably consistent pictures of where active regions exist on the star's surface. The dark spots visible in ordinary light lined up almost perfectly with the magnetic field maps, confirming that these features are intimately connected. They found that eruptions in the star's upper atmosphere follow a clear rhythm that matches the star's 2.6-day rotation period, suggesting these explosive events are tied to specific active regions spinning in and out of view. However, X-ray observations showed more chaotic patterns, likely because the star's outer atmosphere is so violently active that multiple overlapping events obscure any simple relationship.
 Looking Forward
-This study highlights a major challenge facing exoplanet science: current technology struggles to separate planetary atmospheric signals from stellar contamination, especially for planets in well-aligned orbits like WASP-31 b. However, this limitation is temporary. Next-generation telescopes currently under construction will be dramatically more powerful, potentially overcoming these obstacles and opening a new era of detailed atmospheric analysis of distant worlds.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Searching for Axion-like particle Dark Matter with Time-domain Polarization: Constraints from a protoplanetary disk</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-15611v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-15611v1</guid>
-      <pubDate>Wed, 18 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Kanako Narita et al.</dc:creator>
-      <description><![CDATA[Why It Matters
-Scientists are hunting for one of the universe's greatest mysteries: dark matter, the invisible substance that makes up most of our cosmos. While we can't see dark matter directly, it might reveal itself by subtly twisting starlight as it travels through space—like how polarized sunglasses filter light in a specific direction. Researchers have now turned to young solar systems still forming around distant stars, using these cosmic nurseries as natural laboratories to search for dark matter's fingerprints in polarized light.
-What They Did
-The team studied HD 163296, a young star surrounded by a swirling disk of gas and dust where planets are likely forming—similar to how our own solar system looked billions of years ago. Using powerful telescopes, they measured how light from this disk was polarized (oriented in specific directions) and tracked these measurements across six different observations over roughly a year. Think of it like taking multiple photos of the same scene with polarized sunglasses, then checking if the light's orientation changed between shots. If hypothetical particles called axion-like particles—a leading dark matter candidate—exist, they should cause this polarized light to slowly rotate over time, like a cosmic polarizing filter spinning in space.
-Key Findings
-The polarized light showed no detectable rotation over the 170-400 day observation period, remaining steady within measurement uncertainties of about 1.6 to 6.4 degrees. While this might sound like a null result, it actually provides valuable constraints—the researchers could rule out certain types of dark matter particles and set the first-ever limits on how strongly these hypothetical particles interact with light using data from planet-forming disks.
-Looking Forward
-This technique opens an entirely new window for dark matter detection using the numerous planet-forming disks astronomers observe. With more precise measurements—achieving uncertainties of just 0.1 degrees—future observations could provide world-leading sensitivity to dark matter, potentially solving one of physics' biggest puzzles while simultaneously studying how planetary systems form.]]></description>
-        <category>astro-ph.CO</category>
-        <category>astro-ph.EP</category>
-        <category>hep-ph</category>
-    </item>
-    <item>
-      <title>The Montreal Open Clusters and Associations (MOCA) Database: A Census of Nearby Associations, Open Clusters, and Young Substellar Objects within 500 pc of the Sun</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-15695v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-15695v1</guid>
-      <pubDate>Wed, 18 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Jonathan Gagné et al.</dc:creator>
-      <description><![CDATA[Why It Matters
-Imagine trying to determine someone's age just by looking at them—it's tricky, right? The same challenge exists when studying planets orbiting other stars. To truly understand how planets form and evolve, astronomers need to know their ages. The key lies in studying young star clusters and associations—cosmic neighborhoods where stars are born together and share the same age. This research creates the most comprehensive catalog yet of these stellar neighborhoods near Earth, opening new windows into planetary science and helping us understand how planetary systems like our own come to be.
-What They Did
-Researchers built a massive digital library called the Montreal Open Clusters and Associations database, or MOCAdb for short. Think of it as a cosmic census that catalogs over 10,000 star groups within 500 light-years of Earth—our local galactic neighborhood. They gathered information from hundreds of scientific papers, recording everything from star types to how fast they spin. The team also improved a tool called BANYAN Σ (pronounced "sigma"), which works like facial recognition software for stars, identifying which cosmic neighborhood each star belongs to by analyzing how it moves through space.
-Key Findings
-The database revealed some exciting discoveries. The researchers identified nearly 11,500 previously unknown candidate members of young star groups, mostly small, dim stars called M dwarfs. They cataloged 134 planetary systems with known ages, plus 121 potential new ones spotted by NASA's planet-hunting telescope TESS. Perhaps most intriguingly, they found 101 "rogue" objects that appear to be planet-sized but float freely through space without orbiting any star—cosmic orphans that challenge our understanding of how planets form.
-Looking Forward
-This treasure trove of data will revolutionize exoplanet science. With precise ages for these stellar neighborhoods, astronomers can now study how planets change over millions of years, track atmospheric evolution, and better understand which types of planets might harbor life. It's like having a cosmic time machine that lets us see planets at different stages of their lives.]]></description>
+This research provides a crucial missing piece in understanding how stellar radiation affects planetary atmospheres. By connecting a star's magnetic activity to its high-energy output, scientists can better predict which exoplanets might retain their atmospheres over billions of years—a key requirement for habitability.]]></description>
         <category>astro-ph.SR</category>
         <category>astro-ph.EP</category>
-        <category>astro-ph.GA</category>
+        <category>astro-ph.IM</category>
+    </item>
+    <item>
+      <title>Benchmarking Photolysis Rates with Socrates (24.11): Species for Earth and Exoplanets</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-16453v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-16453v1</guid>
+      <pubDate>Thu, 19 Feb 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Sophia M. Adams et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+Imagine trying to understand how a recipe works without knowing what happens when you mix the ingredients. That's the challenge scientists face when studying atmospheres on distant planets called exoplanets. When starlight hits a planet's atmosphere, it breaks apart molecules in a process called photolysis—like how sunlight can fade your car's paint over time, but much more dramatic. Understanding these reactions is crucial because they determine whether a planet could support life, what gases we might detect in its atmosphere, and how similar or different it might be from Earth. This research helps scientists decode the "chemical recipes" happening in alien skies.
+What They Did
+The researchers used a sophisticated computer program called Socrates to calculate how quickly different molecules break apart when hit by light from two types of stars: our Sun and smaller, cooler stars called M dwarfs. Think of it like figuring out how fast different materials would dissolve under different colored lights. They tested their calculations against previous scientific work to make sure their results were accurate, similar to how a chef might compare their recipe against a trusted cookbook. They examined dozens of different atmospheric molecules, including some found in Earth's air and others that might exist in the exotic atmospheres of distant worlds.
+Key Findings
+The team discovered that planets orbiting M dwarf stars—the most common type of star in our galaxy—experience much more intense molecular breakup than Earth does. M dwarfs emit more high-energy ultraviolet light, which acts like a stronger "molecular sledgehammer" compared to our gentler Sun. This means atmospheres around these stars undergo faster and more dramatic chemical changes. The researchers also found that their new calculations largely agreed with previous work, but revealed some important differences when accounting for how temperature and pressure affect these reactions.
+Looking Forward
+This research provides scientists with a crucial toolkit for interpreting observations from space telescopes like the James Webb Space Telescope. When we detect gases in exoplanet atmospheres, understanding photolysis rates helps determine whether we're seeing a stable atmosphere or one being rapidly transformed by its star's radiation—critical information in the search for potentially habitable worlds.]]></description>
+        <category>astro-ph.EP</category>
     </item>
   </channel>
 </rss>
