@@ -511,6 +511,17 @@ def get_tweet_limit() -> int:
     return TWEET_LIMITS.get(tier, 280)
 
 
+def is_image_enabled() -> bool:
+    """Check if image uploads are enabled via TWITTER_IMAGE_ENABLED env var.
+    
+    Set TWITTER_IMAGE_ENABLED=false to disable image uploads.
+    Required for Twitter Free API tier (no v1.1 media upload access).
+    Defaults to true for backward compatibility.
+    """
+    val = os.environ.get("TWITTER_IMAGE_ENABLED", "true").lower()
+    return val not in ("false", "0", "no", "off")
+
+
 def truncate_text(text: str, max_length: int) -> str:
     """Truncate text to max length, trying to preserve word boundaries."""
     if len(text) <= max_length:
@@ -892,7 +903,7 @@ def main():
     figure_path = None
     media_ids = None
     
-    if api_v1:
+    if api_v1 and is_image_enabled():
         figure_path = get_figure_for_paper(paper_to_tweet)
         
         if figure_path:
@@ -904,6 +915,8 @@ def main():
                 print("⚠️ Image upload failed, tweeting without image")
         else:
             print("📄 No image available, tweeting text only")
+    elif not is_image_enabled():
+        print("📄 Image uploads disabled (TWITTER_IMAGE_ENABLED=false), tweeting text only")
     
     # Format the thread (now with papers_date)
     tweet1_text, tweet2_text = format_paper_thread(paper_to_tweet, page_url, papers_date)
