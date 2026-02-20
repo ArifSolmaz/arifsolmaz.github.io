@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 19 Feb 2026 04:15:59 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 20 Feb 2026 04:12:01 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,70 +15,116 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>Planet-Disk Interactions and the Convective Overstability. I. Low Mass Planets</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-15978v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-15978v1</guid>
-      <pubDate>Thu, 19 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>M. Lehmann, M. K. Lin</dc:creator>
+      <title>Asteroidal activity amongst meteor datasets: Confirmed new &quot;rock-comet&quot; stream and search for a tidal disruption signature</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-16845v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-16845v1</guid>
+      <pubDate>Fri, 20 Feb 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Patrick M. Shober</dc:creator>
       <description><![CDATA[Why It Matters
-Imagine you're building a sandcastle right at the water's edge—the waves keep washing away your work before you can finish. Baby planets face a similar problem in the swirling disks of gas and dust around young stars. These newborn worlds tend to spiral inward toward their host stars so quickly that they should be destroyed before they can grow into the diverse array of planets we observe today. Yet somehow, planets do survive and thrive. This research tackles one of astronomy's biggest puzzles: how do small planets avoid this deadly spiral and live long enough to become the rocky worlds like Earth that populate our universe?
+When asteroids break apart in space, they create streams of rocky debris that can tell us fascinating stories about what's happening in our solar system. Just like forensic investigators piece together evidence at a crime scene, astronomers can analyze meteor showers to understand how asteroids are destroyed—whether they're torn apart by gravitational forces, shattered by impacts, or slowly crumbling from the heat of the Sun. This research helps us understand the dynamic, ever-changing nature of our cosmic neighborhood and could even help us prepare for potentially hazardous asteroid encounters with Earth.
 What They Did
-The researchers created detailed computer simulations of protoplanetary disks—the spinning pancakes of material around young stars where planets form. Think of these simulations like sophisticated weather models, but instead of predicting rain, they track how gas swirls around and interacts with embedded baby planets. They ran both simplified 2D versions (like looking at the disk from the side) and more complex 3D models that included realistic heating and cooling effects. By comparing these different approaches, they could isolate what happens when the disk develops a particular type of instability called the Convective Overstability, which creates large, persistent whirlpools in the gas.
+The researchers acted like cosmic detectives, analyzing over 235,000 meteors captured by four different camera networks that continuously monitor the night sky. Think of these networks as security cameras for space, recording every streak of light that burns up in our atmosphere. The team used sophisticated statistical methods to sort through this massive dataset, separating known meteor showers from random background meteors. They then searched for unusual patterns that might reveal recent asteroid breakups, much like looking for clusters of similar fingerprints in a database to identify related crimes.
 Key Findings
-The simulations revealed that these cosmic whirlpools act like lifeguards for baby planets. When the swirling vortices encounter a small planet, they typically give it a gravitational "kick" outward, counteracting the inward death spiral. This effect can extend a planet's survival time by roughly 10 times—potentially allowing planets to live for 0.1 to 5 million years, which gives them enough time to grow into "Super-Earths" (planets larger than Earth but smaller than Neptune). Without these helpful vortices, planets would spiral into their stars in just tens of thousands of years.
+The scientists made two major discoveries. First, they found no evidence of a recent large-scale asteroid destruction event near Earth—such an event would have left a distinctive signature of similar meteor orbits, but none was detected. However, they did discover something exciting: a previously unknown meteor stream in the southern sky. This stream contains 282 meteors following nearly identical paths through space, originating from an asteroid that ventures very close to the Sun—just one-fifth of Earth's distance. The extreme solar heat likely causes this "rock-comet" to shed material like a slowly melting ice cube.
 Looking Forward
-This discovery suggests that the chaotic, turbulent environment of planet formation might actually help planets survive rather than destroy them. It provides a potential solution to the long-standing mystery of why we see so many planets in the universe when theory suggests they should have been consumed by their stars long ago. Future observations of young planetary systems may be able to detect these protective vortices directly, giving us new insights into how planetary systems like our own solar system came to be.]]></description>
+While this research focuses on our solar system, it provides crucial insights for exoplanet science. Understanding how rocky bodies break apart and distribute debris helps astronomers interpret similar processes around other stars, where young planetary systems are still forming and asteroid collisions are common. This knowledge will prove invaluable as we study dusty disks around distant stars and search for signs of planetary formation.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>Two warm sub-Saturn mass planets identified from the TESS Full Frame Images</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-16646v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-16646v1</guid>
-      <pubDate>Thu, 19 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Felipe I. Rojas et al.</dc:creator>
-      <description><![CDATA[# Scientists Discover Two Mysterious "Sub-Saturn" Worlds That Challenge Planet Formation Theories
-Why It Matters
-Imagine trying to understand how cars are built by only studying vehicles parked in your neighborhood. That's similar to the challenge astronomers face when studying how planets form—we've been limited to our own solar system for most of human history. Every new planet we discover around other stars is like finding a completely different type of vehicle, giving us clues about the cosmic "assembly line" that creates worlds. These two newly discovered planets are particularly intriguing because they're caught in a cosmic mystery: despite being remarkably similar in many ways, they appear to have completely different internal structures, suggesting the universe has multiple recipes for building planets.
+      <title>On Eccentric Protoplanetary Disks I -- How Eccentric are Planet-Perturbed Disks?</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-16769v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-16769v1</guid>
+      <pubDate>Fri, 20 Feb 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Cory Padgett, Jeffrey Fung</dc:creator>
+      <description><![CDATA[Why It Matters
+Imagine a cosmic dance where massive planets sculpt the very disks of gas and dust from which they formed. These "protoplanetary disks" are stellar nurseries where planets are born, and understanding their shapes tells us how solar systems—including our own—came to be. When astronomers peer through powerful telescopes at these distant disk systems, they sometimes see something unexpected: disks that aren't perfect circles, but stretched into oval shapes. This discovery has puzzled scientists because it suggests that hidden planets might be warping these cosmic cradles in ways we're only beginning to understand. By figuring out exactly how "eccentric" or oval-shaped these disks become, we can work backward to identify planets that are otherwise invisible to our instruments.
 What They Did
-The research team used NASA's Transiting Exoplanet Survey Satellite (TESS), a space telescope that acts like a cosmic detective, watching for the tiny dimming that occurs when planets cross in front of their host stars. Think of it like watching someone walk in front of a streetlight—the light briefly dims, revealing the person's presence. Once TESS spotted these planetary shadows, astronomers used ground-based telescopes to measure how the planets' gravity tugs on their stars, causing them to wobble slightly. By combining these techniques—like measuring both a person's shadow and how much they make a seesaw tip—scientists could determine each planet's size and weight.
+The research team created detailed computer simulations—think of them as cosmic video games where the physics are perfectly realistic. They modeled how a planet interacts with the surrounding disk of gas and dust, watching what happens when the planet becomes massive enough to carve out a deep gap, like a snowplow clearing a path through cosmic material. The scientists ran these simulations repeatedly, adjusting variables like planet size and disk properties, then measured how oval-shaped the outer regions of the disk became. They focused on a specific gravitational effect called the "1:3 eccentric Lindblad resonance"—essentially a gravitational tug-of-war between the planet and the outer disk material that occurs at a precise distance ratio.
 Key Findings
-The two planets, designated TOI-883 b and TOI-899 b, are both "sub-Saturns"—meaning they're smaller than Saturn but larger than Neptune. TOI-883 b weighs about 12% as much as Jupiter but is surprisingly compact, while TOI-899 b is nearly twice as heavy but much puffier, almost Jupiter's size. Both orbit their Sun-like stars in roughly 10-13 days, making them scorching hot worlds with temperatures around 1,040-1,086 Kelvin (about 1,400-1,500°F). Despite their similar masses and orbital characteristics, their dramatically different densities suggest they're made of different materials entirely.
+The team discovered a mathematical recipe that predicts exactly how oval-shaped these disks become. The eccentricity depends on several factors: heavier planets create more eccentric disks, while thicker disks resist becoming oval. Their formula matched their computer simulations with impressive accuracy—within 30% in most cases. This means astronomers now have a reliable tool to estimate the mass and properties of hidden planets just by measuring how stretched a protoplanetary disk appears. The research provides the first quantitative framework for interpreting observations of notably eccentric disks like MWC 758 and HD 142527, which have long intrigued astronomers with their unusual shapes.
 Looking Forward
-These planets represent perfect laboratories for testing our theories about how worlds form. Their similar orbits but different compositions suggest that planetary formation might be more varied and complex than we previously thought. Because they're relatively close to Earth and orbit bright stars, future telescopes will be able to analyze their atmospheres in detail, potentially revealing whether one formed closer to its star while the other migrated inward, or whether they represent entirely different planetary formation pathways in the vast cosmic cookbook.]]></description>
+This breakthrough gives astronomers a new detective tool for finding planets that are too small, distant, or obscured to see directly. As next-generation telescopes come online, scientists will be able to measure disk shapes with unprecedented precision, potentially discovering countless hidden worlds. This research also helps us understand how planetary systems evolve and why they end up with such diverse architectures—from tightly packed systems to spread-out arrangements like our solar system.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>Multiwavelength Campaign Observations of a Young Solar-type Star, EK Draconis. III. Comparison between Starspot Mapping, Zeeman Doppler Imaging, and Multiwavelength Variability</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-15979v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-15979v1</guid>
-      <pubDate>Thu, 19 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Kai Ikuta et al.</dc:creator>
+      <title>Analytical modeling of helium absorption signals of isothermal atmospheric escape</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-17408v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-17408v1</guid>
+      <pubDate>Fri, 20 Feb 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Hiroto Mitani, Rolf Kuiper</dc:creator>
       <description><![CDATA[Why It Matters
-Imagine if our Sun suddenly unleashed a solar flare thousands of times more powerful than anything we've ever recorded—that's what scientists call a "superflare." While our middle-aged Sun is relatively well-behaved, younger stars like EK Draconis regularly produce these monster eruptions that could strip away a planet's atmosphere entirely. Understanding these stellar tantrums is crucial because they help us predict which exoplanets might still have the protective atmospheres needed to support life. By studying this young, Sun-like star located just 111 light-years away, researchers are essentially looking back in time to see what our own solar system was like 4.5 billion years ago.
+Imagine Earth sitting so close to the Sun that our oceans would boil away in minutes. Thousands of planets like this exist throughout our galaxy, orbiting their stars at scorching distances. These "hot" planets are literally losing their atmospheres to space, stripped away by intense stellar radiation like steam rising from a kettle. Understanding how and why atmospheres escape helps us piece together the story of planetary evolution—including why Earth kept its protective blanket of air while other worlds didn't. This research focuses on helium, a key tracer that acts like a cosmic fingerprint, revealing the hidden processes happening in these vanishing atmospheres.
 What They Did
-The research team conducted an ambitious stellar surveillance operation, monitoring EK Draconis simultaneously with multiple types of telescopes and instruments. They used NASA's planet-hunting TESS satellite to track brightness changes as dark spots rotated across the star's surface—like watching sunspots, but much larger. Meanwhile, they employed a technique called Zeeman Doppler Imaging, which reads the magnetic fingerprints in starlight to map the star's invisible magnetic field. They also observed the star in X-ray light and through a specific red wavelength called H-alpha, which reveals activity in the star's upper atmosphere. This multi-pronged approach allowed them to build a comprehensive picture of how the star's surface features, magnetic fields, and atmospheric eruptions all connect.
+The researchers developed a mathematical formula—think of it as a recipe—to predict how much helium absorption astronomers should see when they observe these planets. Just as a chef might create a simplified recipe that captures the essence of a complex dish, the scientists built a streamlined model that accurately describes the relationship between a planet's atmospheric temperature, its metal content, and the helium signals we can detect from Earth. They combined this analytical approach with computer simulations that model how stellar radiation heats atmospheres and drives gas into space, similar to how weather models predict storms.
 Key Findings
-The team discovered that their different observation methods painted remarkably consistent pictures of where active regions exist on the star's surface. The dark spots visible in ordinary light lined up almost perfectly with the magnetic field maps, confirming that these features are intimately connected. They found that eruptions in the star's upper atmosphere follow a clear rhythm that matches the star's 2.6-day rotation period, suggesting these explosive events are tied to specific active regions spinning in and out of view. However, X-ray observations showed more chaotic patterns, likely because the star's outer atmosphere is so violently active that multiple overlapping events obscure any simple relationship.
+The team discovered a fascinating paradox: planets with metal-rich, cooler atmospheres lose mass more slowly than their metal-poor counterparts, yet both types produce similar helium absorption signals. This happens because cooler temperatures actually enhance helium's ability to absorb light, compensating for the reduced atmospheric escape. It's like how a dimmer light bulb in a darker room can still create the same shadow as a brighter bulb in daylight.
 Looking Forward
-This research provides a crucial missing piece in understanding how stellar radiation affects planetary atmospheres. By connecting a star's magnetic activity to its high-energy output, scientists can better predict which exoplanets might retain their atmospheres over billions of years—a key requirement for habitability.]]></description>
+This research provides astronomers with a powerful new tool for interpreting observations of disappearing atmospheres. As next-generation telescopes come online, scientists will be able to use this framework to better understand which planets can hold onto their atmospheres and which are doomed to become barren rocks—crucial insights for finding potentially habitable worlds.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Observational Signatures of Circumstellar Gas Tori Formed by Planetary Mass-Loss from Close-In Exoplanets</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-16816v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-16816v1</guid>
+      <pubDate>Fri, 20 Feb 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Ethan Schreyer, Ruth Murray-Clay</dc:creator>
+      <description><![CDATA[Why It Matters
+Imagine if Earth's atmosphere was slowly being stripped away and flung into space, eventually forming a ghostly ring around our Sun. This fantastical scenario is actually happening right now around distant stars, where planets orbiting dangerously close to their host stars are literally evaporating. Understanding this cosmic phenomenon helps us piece together how planetary systems evolve and survive—or don't survive—the intense radiation from their stars. It also gives us new ways to detect the signatures of dying worlds that might otherwise remain invisible to our telescopes.
+What They Did
+The research team built a computer model to simulate what happens when a planet's atmosphere escapes and wraps around its star like a donut-shaped cloud of gas. Think of it like steam rising from a hot cup of coffee, but instead of dissipating, the "steam" gets caught in orbit around the "cup." The scientists then calculated how this ring of escaped planetary material would affect the light we see from the star. Specifically, they focused on how certain wavelengths of light—particularly from helium and calcium—would be absorbed as starlight passes through these ghostly rings on its way to Earth.
+Key Findings
+The simulations revealed that these planetary "exhaust clouds" create distinctive fingerprints in starlight that astronomers can detect from Earth. The helium signature becomes significantly stronger when a circumstellar torus is present, creating a telltale sign that distinguishes these systems from ordinary stars. By combining observations of both helium and calcium absorption lines, researchers can reliably identify stars surrounded by the remnants of evaporating planets.
+Looking Forward
+This research opens up an entirely new method for discovering and studying planetary destruction in real-time. The team proposes conducting a systematic survey of stars with close-in planets, essentially creating a census of worlds in their death throes. This could revolutionize our understanding of how common planetary evaporation is and help us identify which types of planets are most vulnerable to atmospheric loss—crucial knowledge as we search for potentially habitable worlds.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Bridging Solar and Stellar Physics: Role of SDO in Understanding Stellar Active Regions and Atmospheric Heating</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-16779v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-16779v1</guid>
+      <pubDate>Fri, 20 Feb 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Shin Toriumi</dc:creator>
+      <description><![CDATA[Why It Matters
+Stars across the galaxy are magnetic powerhouses, generating powerful energy fields that can make or break the chances for life on nearby planets. But studying these distant stellar magnetic fields directly is nearly impossible—imagine trying to examine a lightbulb's filament from across town. That's where our Sun becomes invaluable. As the only star we can study up close, our Sun serves as a cosmic laboratory, helping scientists understand how all stars work and what this means for planets orbiting them. This research matters because it helps us predict which exoplanets might have protective atmospheres and stable climates suitable for life.
+What They Did
+Researchers used NASA's Solar Dynamics Observatory, a space-based telescope that watches our Sun 24/7, to create a clever experimental setup. Think of it like using a high-powered microscope to study individual cells, then stepping back to see how the whole organism behaves. The scientists took detailed, close-up images of specific active regions on the Sun—areas crackling with magnetic energy like cosmic storms—and then combined this data to simulate what distant telescopes would see when looking at other stars. This "Sun-as-a-star" approach allowed them to connect the dots between what happens in small magnetic regions and the overall energy output we observe from faraway stars.
+Key Findings
+The research revealed universal patterns in how stars heat their atmospheres through magnetic activity. Scientists discovered reliable relationships between a star's magnetic field strength and the amount of high-energy radiation it produces—crucial information for understanding stellar behavior across the galaxy. They successfully reconstructed the types of X-ray and ultraviolet light that stars emit, creating a kind of stellar energy fingerprint that can be applied to stars we've never seen up close.
+Looking Forward
+These findings provide astronomers with powerful new tools for assessing exoplanetary environments. By understanding stellar magnetic activity patterns, scientists can better predict which planets might retain their atmospheres and which might be stripped bare by stellar radiation—a key factor in determining habitability beyond our solar system.]]></description>
         <category>astro-ph.SR</category>
         <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
     </item>
     <item>
-      <title>Benchmarking Photolysis Rates with Socrates (24.11): Species for Earth and Exoplanets</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-16453v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-16453v1</guid>
-      <pubDate>Thu, 19 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Sophia M. Adams et al.</dc:creator>
+      <title>Using EUV driven external photoevaporation to test viscous evolution of protoplanetary discs</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-16801v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-16801v1</guid>
+      <pubDate>Fri, 20 Feb 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Giulia Ballabio, James E. Owen</dc:creator>
       <description><![CDATA[Why It Matters
-Imagine trying to understand how a recipe works without knowing what happens when you mix the ingredients. That's the challenge scientists face when studying atmospheres on distant planets called exoplanets. When starlight hits a planet's atmosphere, it breaks apart molecules in a process called photolysis—like how sunlight can fade your car's paint over time, but much more dramatic. Understanding these reactions is crucial because they determine whether a planet could support life, what gases we might detect in its atmosphere, and how similar or different it might be from Earth. This research helps scientists decode the "chemical recipes" happening in alien skies.
+Planets are born in spinning disks of gas and dust that surround young stars, but scientists have been puzzled about exactly how these "protoplanetary disks" evolve and eventually form planets. Think of it like trying to understand how a pizza chef spins dough into a perfect circle—we can see the end result, but the underlying mechanics matter enormously. Two competing theories explain how material in these disks moves around: either through internal friction (like honey slowly flowing) or through magnetic winds that blow material away (like a hair dryer dispersing dust). Understanding which process dominates could revolutionize how we think planets form, including Earth-like worlds that might harbor life.
 What They Did
-The researchers used a sophisticated computer program called Socrates to calculate how quickly different molecules break apart when hit by light from two types of stars: our Sun and smaller, cooler stars called M dwarfs. Think of it like figuring out how fast different materials would dissolve under different colored lights. They tested their calculations against previous scientific work to make sure their results were accurate, similar to how a chef might compare their recipe against a trusted cookbook. They examined dozens of different atmospheric molecules, including some found in Earth's air and others that might exist in the exotic atmospheres of distant worlds.
+The researchers developed a clever new test to distinguish between these two theories by studying what happens when intense ultraviolet radiation from nearby massive stars hits these planet-forming disks—a process called external photoevaporation. They used computer simulations and mathematical models to track how this external "cosmic sunburn" affects disk behavior in regions like the Orion Nebula, where many young stars are packed closely together. By measuring two key rates—how fast material falls onto the central star versus how fast it gets blown away by the external radiation—they could create a diagnostic fingerprint for each evolutionary pathway.
 Key Findings
-The team discovered that planets orbiting M dwarf stars—the most common type of star in our galaxy—experience much more intense molecular breakup than Earth does. M dwarfs emit more high-energy ultraviolet light, which acts like a stronger "molecular sledgehammer" compared to our gentler Sun. This means atmospheres around these stars undergo faster and more dramatic chemical changes. The researchers also found that their new calculations largely agreed with previous work, but revealed some important differences when accounting for how temperature and pressure affect these reactions.
+The team discovered a striking difference between the two scenarios. When disks evolve through internal friction, there's an almost perfect one-to-one relationship between how fast material gets stripped away and how fast it falls onto the star—like two gears turning in sync. However, disks driven by magnetic winds show no such correlation, creating completely different evolutionary signatures. This relationship provides astronomers with a reliable tool to determine which process actually governs disk evolution in nature.
 Looking Forward
-This research provides scientists with a crucial toolkit for interpreting observations from space telescopes like the James Webb Space Telescope. When we detect gases in exoplanet atmospheres, understanding photolysis rates helps determine whether we're seeing a stable atmosphere or one being rapidly transformed by its star's radiation—critical information in the search for potentially habitable worlds.]]></description>
+This breakthrough offers astronomers a new roadmap for understanding planet formation. By measuring both rates for the same disks—though current observations are challenging in bright stellar nurseries—scientists can finally resolve this fundamental debate. The answer will help predict where and how efficiently planets form, bringing us closer to understanding the cosmic conditions that create worlds like our own.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>A Collective Trigger for Widespread Planetesimal Formation Revealed by Accretion Ages</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-17367v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-17367v1</guid>
+      <pubDate>Fri, 20 Feb 2026 20:00:00 +0000</pubDate>
+      <dc:creator>James Bryson et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+Understanding how planets form isn't just academic curiosity—it's the key to knowing whether Earth-like worlds are common throughout the universe. Before planets can exist, they need building blocks called planetesimals, which are essentially cosmic pebbles that clump together over millions of years. Think of planetesimals as the Lego blocks of planet formation: without understanding how these fundamental pieces come together, we can't grasp how worlds like Earth—or potentially habitable exoplanets—emerge from swirling clouds of dust and gas around young stars.
+What They Did
+The researchers acted like cosmic detectives, studying ancient meteorites that have fallen to Earth. These space rocks are actually fragments of planetesimals that formed over 4.5 billion years ago in our early solar system. By developing sophisticated computer models that account for heating, chemical reactions, and composition changes over time, they could work backwards to determine exactly when these planetesimals originally formed. It's similar to how forensic scientists might analyze evidence to reconstruct the timeline of past events, except these scientists were reconstructing events that happened billions of years ago.
+Key Findings
+The team discovered something remarkable: planetesimal formation wasn't a gradual, random process. Instead, there was a sudden, coordinated trigger that caused widespread planetesimal formation to begin almost simultaneously across different regions of the early solar system, starting about 0.95 million years after the solar system's birth. Different types of meteorite parent bodies formed in distinct waves—iron meteorite parents formed first during overlapping time periods, while rocky meteorite parents formed later in separate, non-overlapping windows.
+Looking Forward
+This research provides a crucial blueprint for understanding planet formation around other stars. By identifying the specific timing and triggers for planetesimal formation, scientists now have benchmarks to test their theories about how planetary systems develop. This knowledge will help us better predict where and when Earth-like planets might form around distant stars, ultimately informing our search for potentially habitable worlds beyond our solar system.]]></description>
         <category>astro-ph.EP</category>
     </item>
   </channel>
