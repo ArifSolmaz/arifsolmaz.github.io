@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 24 Feb 2026 04:16:02 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 25 Feb 2026 04:15:32 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,138 +15,68 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>Topography-Induced Stationary Waves and the Onset of Nightside Warming on Rocky Planets around M-dwarf Stars</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-20155v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-20155v1</guid>
-      <pubDate>Tue, 24 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Howard Chen, Aida Ildirimzade, Evelyn Macdonald</dc:creator>
+      <title>Photosynthetic exergy I. Thermodynamic limits for habitable-zone planets</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-20789v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-20789v1</guid>
+      <pubDate>Wed, 25 Feb 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Giovanni Covone, Amedeo Balbi</dc:creator>
       <description><![CDATA[Why It Matters
-Imagine a world where one side always faces the sun, like the Moon does to Earth, creating a scorching hot day side and a frozen night side. These "tidally locked" planets are common around red dwarf stars—the most abundant stars in our galaxy. Since red dwarfs live for trillions of years, any life-supporting planets around them could potentially harbor life for far longer than Earth will remain habitable. But here's the catch: the permanent dark side of these worlds might be so cold that all water freezes solid, making the entire planet uninhabitable. Understanding what factors could warm up these frozen night sides is crucial for identifying which of the thousands of discovered exoplanets might actually support life.
+When we search for life beyond Earth, we're essentially looking for planets that could sustain complex ecosystems like our own. On Earth, photosynthesis—the process plants use to convert sunlight into energy—is the foundation of nearly all life. But here's the key question: could photosynthesis work around other types of stars? This research tackles that fundamental question by developing a new way to measure how much useful energy different star systems could provide to alien plant life. Understanding these limits helps us identify which of the thousands of discovered exoplanets might actually support thriving biospheres, making our search for life in the universe much more targeted and effective.
 What They Did
-The researchers created detailed computer simulations of rocky planets orbiting red dwarf stars, similar to how meteorologists model Earth's weather but for alien worlds. They experimented with different planetary features—some worlds had towering mountain ranges like the Himalayas, others had broad elevated plateaus like Tibet, and some were relatively flat. They also varied the thickness of each planet's atmosphere and how much starlight it receives. By running dozens of these virtual experiments, they could see how mountains and other landscape features affect global air circulation and heat distribution on these permanently day-night divided worlds.
+The researchers created a sophisticated energy accounting system to measure the "work potential" of starlight—essentially, how much useful energy photosynthesis could extract from different types of stars. Think of it like comparing the efficiency of solar panels under different lighting conditions. They focused on three main star types: Sun-like stars (called FGK stars) and cooler, dimmer red dwarf stars (M stars). Using physics principles, they calculated theoretical limits for how well Earth-like plants could perform photosynthesis around each star type, paying special attention to oxygen-producing photosynthesis like we see on Earth. They also determined which wavelengths of light would be most useful for alien photosynthesis.
 Key Findings
-Mountains change everything. On flat tidally locked planets, air circulates in simple, predictable patterns. But add mountain ranges, and the atmosphere becomes far more dynamic. Steep mountains create powerful standing wave patterns in the atmosphere—like rapids in a river—that dramatically boost the transport of water vapor from the hot day side to the cold night side. This extra moisture forms clouds that act like a blanket, trapping heat and warming the night side. The researchers found that mountainous planets need significantly less stellar energy to avoid becoming completely frozen compared to flat worlds.
+The results reveal a clear winner: Sun-like stars are photosynthetic powerhouses compared to red dwarfs. Plants around Sun-like stars would have access to five times more usable energy than those around cool red dwarf stars. Red dwarfs face a double disadvantage—they produce fewer high-energy photons that plants can use, and a smaller fraction of their total energy comes in the useful wavelengths. Interestingly, the researchers found that Earth's actual photosynthesis operates far below the theoretical maximum, suggesting there's room for even more efficient alien photosynthesis. Around Sun-like stars, photosynthesis would work best in near-infrared wavelengths, while around red dwarfs, slightly bluer light would be optimal.
 Looking Forward
-This research reveals that a planet's geography—something we currently can't observe on distant exoplanets—might be just as important as its size and distance from its star in determining habitability. As next-generation space telescopes come online, astronomers will need to consider that two seemingly identical exoplanets could have vastly different climates simply based on their hidden mountain ranges and continental layouts.]]></description>
+This framework gives astronomers a powerful new tool for prioritizing which exoplanets deserve closer study in our search for life. Rather than assuming all "habitable zone" planets are equally promising, we can now rank them by their photosynthetic potential. This research suggests that planets around Sun-like stars should be our top targets for finding complex, oxygen-producing life. As next-generation telescopes come online, this work will help guide where we point them first.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>Tempawral: A Time-Resolved Retrieval Framework for Variable Brown Dwarfs and Exoplanets</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-18984v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-18984v1</guid>
-      <pubDate>Tue, 24 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Fei Wang et al.</dc:creator>
+      <title>PLATOSpec&#x27;s first results: Three new transiting warm Jupiters from the WINE survey TIC 147027702, TIC 245076932 and TIC 87422071</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-20654v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-20654v1</guid>
+      <pubDate>Wed, 25 Feb 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Pavol Gajdoš et al.</dc:creator>
       <description><![CDATA[Why It Matters
-Imagine trying to understand Earth's weather by looking at our planet from trillions of miles away—so far that you can't see individual storms, just subtle changes in the overall light coming from our world. That's essentially the challenge astronomers face when studying the atmospheres of brown dwarfs and exoplanets. These distant worlds likely have their own versions of weather—swirling storms, shifting clouds, and changing temperatures—but they're too far away to photograph directly. Understanding these atmospheric dynamics is crucial because it helps us learn how planets form, evolve, and potentially support life.
+Imagine trying to understand how our entire solar system formed with only eight planets as examples. That's the challenge astronomers face when studying planetary formation across the universe. Every new planet we discover beyond our solar system—called an exoplanet—adds a crucial piece to this cosmic puzzle. This research is particularly exciting because it found three "warm Jupiters," a relatively rare type of planet that sits in the sweet spot between scorching hot worlds and frigid distant ones. These planets are like missing links that help us understand how giant gas planets move and evolve over billions of years.
 What They Did
-The research team developed a new technique called "Tempawral" (a clever combination of "temporal" and "retrieval") that works like a sophisticated weather tracking system for distant worlds. Instead of taking a single snapshot of an object's light, they analyzed how that light changes over time, much like watching a movie instead of looking at a photograph. Using data from the James Webb Space Telescope, they studied the light patterns from a brown dwarf—an object larger than a planet but smaller than a star. By breaking down this light into its component colors and tracking how those colors shifted over hours, they could detect atmospheric changes happening on this distant world.
+The team acted like cosmic detectives, using multiple telescopes as their investigative tools. They started by analyzing data from TESS, a space telescope that watches for tiny dips in starlight that occur when planets cross in front of their host stars—like watching a moth pass in front of a streetlight. When they spotted promising candidates, they followed up with ground-based telescopes in Chile and around the world. These telescopes measured how the stars wobble slightly due to the gravitational pull of their orbiting planets, confirming these worlds actually exist and aren't just false alarms. By combining these different observation techniques, they could determine each planet's size, weight, and orbital characteristics.
 Key Findings
-The team discovered dramatic weather patterns on a brown dwarf located light-years from Earth. They found temperature swings of 300 degrees Kelvin (about 540 degrees Fahrenheit)—imagine if Earth's temperature suddenly jumped from freezing to oven-hot! They also detected changing concentrations of water vapor, carbon monoxide, and iron-containing molecules, plus variations in cloud thickness made of actual iron particles floating in the atmosphere.
+The three newly discovered worlds are all roughly Jupiter-sized but each has its own personality. The first planet takes 44 days to orbit its star and weighs about the same as Jupiter. The second is a lightweight—only half of Jupiter's mass—but follows a highly stretched-out, oval-shaped orbit every 22 days. The third is actually more massive than Jupiter and races around its star in just 11 days. All three are significantly warmer than Jupiter due to their closer proximity to their stars.
 Looking Forward
-This breakthrough gives astronomers their first quantitative tool for studying weather on worlds beyond our solar system. As more powerful telescopes come online, scientists will be able to create detailed weather maps of exoplanets, potentially identifying worlds with stable climates suitable for life.]]></description>
+These discoveries expand our limited collection of warm Jupiters, giving scientists better data to test theories about how giant planets form and migrate through their solar systems. Understanding these processes helps us piece together the story of how planetary systems—including our own—came to be arranged the way they are today.]]></description>
         <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
+    </item>
+    <item>
+      <title>Time-variable Scattered Light in Herbig Disks Observed with Subaru/SCExAO</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-20346v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-20346v1</guid>
+      <pubDate>Wed, 25 Feb 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Camryn Mullin et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+Imagine trying to watch a movie while someone constantly adjusts the lighting—that's similar to what astronomers face when studying the dusty disks around young stars where planets are born. These "protoplanetary disks" are cosmic nurseries where rocky worlds like Earth first take shape, but they're incredibly difficult to observe directly. Now, scientists have captured something remarkable: these disks actually change their brightness patterns over time, flickering and shifting like shadows dancing across their surfaces. Understanding these changes could reveal how planets form and why some star systems end up with planets while others remain barren.
+What They Did
+Researchers used an advanced telescope system in Japan called Subaru, equipped with special technology that blocks out the blinding light from stars to reveal the much fainter disks surrounding them. Think of it like using your hand to block the sun so you can see clouds nearby—except a million times more precise. The team studied nine young stars within 200 light-years of Earth, taking detailed pictures that show polarized light (light waves oriented in specific directions) bouncing off dust particles in the disks. They then compared these images with older observations to spot any changes over months and years.
+Key Findings
+The scientists successfully imaged three disks and discovered that two of them were literally changing before their eyes. Around a star called MWC 480, dark spots in the disk shifted position between 2021 and 2022. Even more dramatic, the disk around HD 163296 showed a bright feature moving along its outer edge over 15 months—but moving far too fast to be actual dust particles orbiting the star. Instead, this appears to be a "shadow" created by changing patterns of starlight illumination, like watching sunlight move across your wall as clouds pass overhead.
+Looking Forward
+These observations suggest that protoplanetary disks are far more dynamic than previously thought. The moving shadows might indicate warped or twisted inner regions of disks, potentially revealing where giant planets are already forming and gravitationally disturbing the surrounding material. This research opens a new window into planet formation, showing that we can now watch these cosmic nurseries evolve in real-time rather than taking static snapshots.]]></description>
+        <category>astro-ph.EP</category>
         <category>astro-ph.SR</category>
     </item>
     <item>
-      <title>Distinguishing life from non-life via molecular frontier orbital energy gaps</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-18490v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-18490v1</guid>
-      <pubDate>Tue, 24 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>José L. Ramírez-Colón, Ziqin Ni, Christopher E. Carr</dc:creator>
+      <title>A Census Before Rubin of Asteroid Families in the Main Belt</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-20382v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-20382v1</guid>
+      <pubDate>Wed, 25 Feb 2026 20:00:00 +0000</pubDate>
+      <dc:creator>David Nesvorny</dc:creator>
       <description><![CDATA[Why It Matters
-Finding life beyond Earth is one of humanity's greatest quests, but it faces a fundamental challenge: how do you prove something is alive when you can't see it moving or breathing? Scientists have long looked for amino acids—the building blocks of proteins—as signs of life. But here's the problem: these same molecules can form naturally in space without any living creatures involved. NASA's recent mission to asteroid Bennu found 33 different amino acids, including many that are essential to life on Earth. This discovery was exciting, but it also highlighted a crucial question: if we find amino acids on Mars or another planet, how can we tell if they came from alien life or just natural chemistry?
+Imagine cosmic car crashes happening in slow motion over millions of years—that's essentially what creates asteroid families. When large asteroids smash into each other, they shatter into hundreds or thousands of smaller pieces that continue orbiting the Sun together like a scattered family. Understanding these collisions helps us piece together the violent history of our solar system and reveals clues about how planets formed billions of years ago. This research also has practical importance: many asteroids that could potentially threaten Earth likely came from these ancient cosmic pile-ups.
 What They Did
-The researchers developed a clever new approach called LUMOS (Life Unveiled via Molecular Orbital Signatures) that works like a molecular fingerprint scanner. Instead of just identifying which amino acids are present, they analyzed a property called the energy gap—essentially how much energy it takes to make each molecule react chemically. Think of it like measuring how easily different ingredients mix in cooking: some blend effortlessly while others need heat or stirring. The team collected amino acid samples from many different sources—some from living things like bacteria and plants, others from non-living sources like meteorites and laboratory experiments. They then compared the patterns of energy gaps across these samples using statistical analysis.
+Scientists created the most comprehensive family tree of asteroid families ever assembled, identifying 335 distinct groups in the main asteroid belt—the rocky debris field between Mars and Jupiter. Think of it like being a detective examining crime scenes scattered across space. The researchers analyzed the orbits, sizes, colors, and compositions of thousands of asteroids to determine which ones likely came from the same original "parent" asteroid. They also estimated when these collisions happened and how big the original asteroids were before they were destroyed. It's like reconstructing a broken vase by carefully studying each scattered piece.
 Key Findings
-The results revealed a striking difference between life and non-life. Samples from non-living sources showed very uniform, predictable patterns—like ingredients randomly scattered in a kitchen. But samples from living organisms displayed much more varied and selective patterns, with a clear preference for amino acids that react more easily. This makes biological sense: life needs precise control over chemical reactions, so it favors molecules that can be activated when and where needed. The LUMOS method achieved over 95% accuracy in correctly identifying whether a sample came from living or non-living sources, even when tested on diverse environments including extreme conditions similar to other planets.
+The team discovered a fascinating pattern: asteroid families younger than 10 million years typically came from smaller parent bodies less than 6 miles across, while evidence of older collisions involving small asteroids has largely vanished. This happens because of something called the Yarkovsky effect—sunlight gently pushes small asteroid fragments around over millions of years, eventually scattering them so widely that scientists can no longer tell they're related. Larger asteroids, meanwhile, are tough enough that they rarely get completely destroyed in collisions.
 Looking Forward
-This breakthrough could revolutionize how we search for life on other worlds. Unlike previous methods that rely on specific Earth-like characteristics, LUMOS identifies a potentially universal feature of life: the need for controlled chemical reactivity. The technique works with existing space mission instruments and could be applied to samples returned from Mars or used by future rovers. As we prepare for increasingly sophisticated missions to Mars, Jupiter's moon Europa, and other potentially habitable worlds, LUMOS offers a powerful new tool to answer the age-old question: are we alone?]]></description>
-        <category>astro-ph.EP</category>
-        <category>physics.chem-ph</category>
-        <category>q-bio.BM</category>
-    </item>
-    <item>
-      <title>LRG-BEASTS: Detection of sodium and evidence for water absorption in the hot Saturn HAT-P-44b</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-19986v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-19986v1</guid>
-      <pubDate>Tue, 24 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Alastair B. Claringbold et al.</dc:creator>
-      <description><![CDATA[Why It Matters
-Imagine being able to analyze the air on a distant world orbiting another star, detecting the same elements found in our own atmosphere. That's exactly what astronomers have accomplished with a planet called HAT-P-44b, located hundreds of light-years from Earth. This research matters because it brings us closer to understanding whether planets like ours—with water and breathable atmospheres—might exist elsewhere in the universe. By studying the atmospheres of distant worlds, we're essentially taking the first steps toward answering one of humanity's biggest questions: Are we alone?
-What They Did
-The research team used a technique similar to how we see a sunset through Earth's atmosphere—when light passes through air, certain colors get absorbed or scattered, telling us what's in that air. They observed HAT-P-44b as it passed in front of its host star, like a cosmic eclipse. As starlight filtered through the planet's atmosphere, they captured this light using a telescope in the Canary Islands and split it into different colors, much like a prism creates a rainbow. By analyzing which colors were missing or dimmed, they could identify the chemical fingerprints of gases in the planet's atmosphere. This process required incredible precision—they needed to detect changes in brightness smaller than what your eye could notice.
-Key Findings
-The team discovered sodium in HAT-P-44b's atmosphere with high confidence and found evidence of water vapor. The planet itself is fascinating: it's about 24% larger than Jupiter but only one-third as heavy, making it a "puffy" world with an atmosphere heated to roughly 1,500°F. Surprisingly, they found the atmosphere contains about seven times more heavy elements than our Sun, suggesting this world formed differently than planets in our solar system. The planet closely resembles another well-studied world called WASP-39b, giving scientists two similar laboratories for comparison.
-Looking Forward
-This discovery adds HAT-P-44b to a growing catalog of worlds where we can study atmospheric chemistry from Earth-based telescopes. Having two similar planets—HAT-P-44b and WASP-39b—allows scientists to test whether planets with comparable sizes and temperatures develop similar atmospheres. This research demonstrates that even with ground-based telescopes, we can achieve remarkable precision in studying distant worlds, complementing space-based observations and accelerating our understanding of planetary atmospheres across the galaxy.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Exo Skryer: A JAX-accelerated sub-stellar atmospheric retrieval framework</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-19687v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-19687v1</guid>
-      <pubDate>Tue, 24 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Elspeth K. H. Lee</dc:creator>
-      <description><![CDATA[# New Tool Makes Studying Alien Worlds Much Faster and Easier
-Why It Matters
-Imagine trying to figure out what's in a distant friend's kitchen by analyzing the smells wafting from their window. That's essentially what astronomers do when studying exoplanets—worlds orbiting other stars. They analyze starlight that has passed through these distant atmospheres to understand what gases and particles exist there. This detective work helps us learn whether these alien worlds might harbor conditions suitable for life. However, this analysis has become incredibly slow and computationally demanding, especially with new powerful telescopes like the James Webb Space Telescope producing massive amounts of detailed data. When it takes weeks or months to analyze a single planet, scientific progress crawls.
-What They Did
-Researchers developed a new computer program called "Exo Skryer" that acts like a supercharged calculator for analyzing exoplanet atmospheres. Think of it as upgrading from an old desktop computer to a modern gaming machine—everything runs much faster and smoother. The tool uses advanced programming techniques called JAX (originally developed by Google) that can harness multiple computer processors simultaneously, like having many workers tackle a problem together instead of just one. The software takes telescope observations of starlight and reverse-engineers what the planet's atmosphere must contain to create those specific light patterns.
-Key Findings
-The new tool successfully analyzed several well-studied exoplanets and brown dwarfs (failed stars), producing results that matched previous studies—proving it works correctly. Most notably, it includes a groundbreaking feature that can directly identify the optical properties of mysterious particles floating in these atmospheres, something like determining whether distant clouds contain water droplets or ice crystals. The dramatic speed improvement means analyses that once took weeks can now be completed much faster.
-Looking Forward
-This computational breakthrough opens exciting possibilities for exoplanet science. Astronomers can now tackle more complex questions about alien worlds, analyze larger datasets from cutting-edge telescopes, and potentially study multiple planets simultaneously. As we discover thousands more exoplanets, tools like Exo Skryer will be essential for understanding which of these distant worlds might be Earth-like.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
-        <category>astro-ph.SR</category>
-    </item>
-    <item>
-      <title>POSEIDON I: The Dynamical Origins of Transiting Neptunes</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-18553v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-18553v1</guid>
-      <pubDate>Tue, 24 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Juan I. Espinoza-Retamal et al.</dc:creator>
-      <description><![CDATA[Why It Matters
-Imagine if Earth orbited the Sun at a crazy angle, spinning sideways like a tilted top. This would tell us something dramatic happened in our solar system's past—perhaps a violent collision or gravitational tug-of-war. Scientists are now using this same logic to solve one of astronomy's biggest puzzles: how do planets end up so close to their stars? Many exoplanets orbit their suns in just days, far closer than Mercury orbits our Sun. These "hot" planets couldn't have formed there—it's too scorching for planet-building materials to stick together. So they must have migrated inward from cooler, distant birthplaces. But did they drift in gently over millions of years, or get violently flung inward by gravitational battles with other planets? The answer lies in measuring how tilted these planetary orbits are.
-What They Did
-Researchers used powerful telescopes in Chile and Arizona to study two Neptune-sized exoplanets during rare moments when they passed in front of their host stars. During these "transits," the planets block some starlight and create a subtle effect: they make the star appear to wobble slightly due to the Doppler effect (the same phenomenon that makes an ambulance siren change pitch as it drives by). By carefully measuring this wobble with high-precision instruments, astronomers can determine whether the planet's orbit is aligned with its star's rotation—like a well-behaved planet in our solar system—or tilted at odd angles, suggesting a violent past.
-Key Findings
-Both Neptune-sized worlds showed signs of turbulent histories. The first planet, TOI-181 b, whips around its star every 4.5 days on an orbit tilted 32 degrees from its star's equator—imagine Earth orbiting at the angle of a steep roof. The second, TOI-883 b, takes 10 days per orbit and follows an oval-shaped path rather than a perfect circle. When combined with previous discoveries, these measurements reveal that Neptune-sized exoplanets don't fall into two neat categories as once thought, but rather show a mix of well-behaved and chaotically-tilted orbits.
-Looking Forward
-This research suggests that both Jupiter-sized and Neptune-sized exoplanets experienced similar violent journeys to reach their current homes—likely involving planetary billiards matches that scattered worlds throughout their solar systems. As astronomers discover more of these tilted worlds, they're piecing together the chaotic story of how planetary systems evolve, helping us understand whether our own solar system's orderly arrangement is typical or remarkably rare in the cosmic neighborhood.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>The Orbital Eccentricity--Radius Distribution for Warm, Single Planets in TESS</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-20015v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-20015v1</guid>
-      <pubDate>Tue, 24 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Tyler R. Fairnington et al.</dc:creator>
-      <description><![CDATA[Why It Matters
-Imagine trying to understand how neighborhoods form by studying where houses end up and how they got there. That's essentially what astronomers are doing with planets beyond our solar system. This research reveals a fascinating pattern: larger planets that orbit moderately close to their stars tend to have much more oval-shaped, stretched-out orbits than smaller ones. This discovery is like finding that mansion-sized houses in the suburbs are more likely to sit on winding, irregular lots while smaller homes tend to occupy neat, circular plots. Understanding these patterns helps us piece together the chaotic, violent, and surprising ways that planetary systems form and evolve over billions of years.
-What They Did
-The researchers studied 347 "warm" planets—those that orbit their stars every 8 to 200 days, making them closer than Earth is to the Sun but not scorchingly hot. They used data from TESS, a space telescope that detects planets by watching for tiny dips in starlight when planets pass in front of their stars. By carefully measuring how these dips change over time, scientists can determine whether a planet travels in a circular orbit or a more elongated, oval-shaped path. They grouped planets by size and used sophisticated statistical techniques to identify patterns across the entire population, like analyzing traffic patterns across a whole city rather than just individual intersections.
-Key Findings
-The team discovered that planet orbits fall into two distinct categories: a calm group with nearly circular orbits and a "dynamically excited" group with highly stretched, oval orbits. Here's the surprising part—a planet's size dramatically affects which group it belongs to. Among the smallest planets studied (similar to Neptune), only about 15% have wild, eccentric orbits. But for the largest gas giants (similar to Jupiter), a whopping 59% follow these extreme oval paths. The transition happens around planets that are roughly 10 times Earth's radius.
-Looking Forward
-This size-dependent pattern suggests that large and small planets form through different processes or experience different fates after formation. It's evidence that planetary systems are far more dynamic and violent than once thought, with gravitational battles between planets potentially flinging some into extreme orbits. This research will help astronomers refine theories about how planetary systems evolve and predict what kinds of worlds we might find around other stars.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Apophis source population and Earth encounter frequency of Apophis-like bodies</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-19849v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-19849v1</guid>
-      <pubDate>Tue, 24 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>M. Brož et al.</dc:creator>
-      <description><![CDATA[Why It Matters
-In 2029, a massive asteroid named Apophis—roughly the size of the Empire State Building—will pass closer to Earth than our communication satellites. While this particular flyby poses no danger, it raises a crucial question: how often do such large space rocks threaten our planet? This research helps us understand the cosmic neighborhood we live in and the long-term risks Earth faces from asteroid impacts. By studying where Apophis came from and how objects like it behave over millions of years, scientists can better prepare for future threats and understand the forces that have shaped our solar system throughout its history.
-What They Did
-The researchers traced Apophis back to its likely birthplace: the Flora family, a group of asteroids between Mars and Jupiter that share similar rocky composition, like cosmic siblings born from the same parent asteroid. They ran computer simulations spanning one billion years, tracking thousands of asteroid-like objects as they orbit the Sun and occasionally venture near Earth. Think of it like running a cosmic pinball machine simulation, watching how these space rocks bounce around the solar system over enormous timescales. The team calculated how often these objects come dangerously close to Earth and what ultimately happens to them.
-Key Findings
-The results reveal that Earth encounters a large Apophis-sized asteroid from this family about once every 13,000 years on average. However, there's always at least one "Apophis-like" object lurking in near-Earth space at any given time—we're never completely safe from these cosmic visitors. Over their typical 30-million-year lifespan, these asteroids face grim odds: roughly 1 in 5 will eventually collide with Earth, while others either crash into the Sun or hit other planets. Some even become temporary companions to Earth, orbiting alongside our planet before continuing their journey.
-Looking Forward
-Wait, this research is about asteroids, not exoplanets! The abstract clearly discusses Apophis, which is an asteroid, not a planet outside our solar system. This appears to be a mismatch between the paper content and the instruction to write about exoplanet research. Could you clarify whether you'd like me to summarize this asteroid research or provide a different paper about exoplanets?]]></description>
+While this study focused on asteroids rather than exoplanets, it provides crucial insights into planetary system evolution. The collision patterns observed in our asteroid belt likely occurred in planetary systems throughout the galaxy, helping scientists understand how rocky planets and debris disks form around other stars.]]></description>
         <category>astro-ph.EP</category>
     </item>
   </channel>
