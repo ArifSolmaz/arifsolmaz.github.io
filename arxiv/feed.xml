@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 25 Feb 2026 04:15:32 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 26 Feb 2026 04:12:04 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,68 +15,52 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>Photosynthetic exergy I. Thermodynamic limits for habitable-zone planets</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-20789v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-20789v1</guid>
-      <pubDate>Wed, 25 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Giovanni Covone, Amedeo Balbi</dc:creator>
+      <title>Rattle-and-Break: the Impact of Planetesimal Scattering on Super-Earth Resonant Chains</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-21349v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-21349v1</guid>
+      <pubDate>Thu, 26 Feb 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Sam Hadden, Yanqin Wu</dc:creator>
       <description><![CDATA[Why It Matters
-When we search for life beyond Earth, we're essentially looking for planets that could sustain complex ecosystems like our own. On Earth, photosynthesis—the process plants use to convert sunlight into energy—is the foundation of nearly all life. But here's the key question: could photosynthesis work around other types of stars? This research tackles that fundamental question by developing a new way to measure how much useful energy different star systems could provide to alien plant life. Understanding these limits helps us identify which of the thousands of discovered exoplanets might actually support thriving biospheres, making our search for life in the universe much more targeted and effective.
+When astronomers first began discovering planets orbiting other stars, they expected to find solar systems much like our own. Instead, they found something fascinating and puzzling: chains of "super-Earths"—planets larger than Earth but smaller than Neptune—packed tightly together around their host stars. These planetary systems look nothing like ours, and understanding how they formed could reveal whether Earth-like worlds are common or rare in the universe. This research tackles a key mystery: why do these alien solar systems have such messy, irregular spacing between planets when they should have formed in neat, orderly chains?
 What They Did
-The researchers created a sophisticated energy accounting system to measure the "work potential" of starlight—essentially, how much useful energy photosynthesis could extract from different types of stars. Think of it like comparing the efficiency of solar panels under different lighting conditions. They focused on three main star types: Sun-like stars (called FGK stars) and cooler, dimmer red dwarf stars (M stars). Using physics principles, they calculated theoretical limits for how well Earth-like plants could perform photosynthesis around each star type, paying special attention to oxygen-producing photosynthesis like we see on Earth. They also determined which wavelengths of light would be most useful for alien photosynthesis.
+The researchers used computer simulations to model what happens to planetary systems over millions of years. They started with planets arranged in perfect resonant chains—think of planets locked in a cosmic dance where their orbits are mathematically synchronized, like musicians keeping perfect time. Then they introduced a wild card: leftover chunks of rock and ice called planetesimals, each roughly the size of Pluto, scattered throughout the system. These cosmic debris pieces make up only a few percent of the system's total mass, but the team wanted to see if even this small amount could disrupt the planetary harmony.
 Key Findings
-The results reveal a clear winner: Sun-like stars are photosynthetic powerhouses compared to red dwarfs. Plants around Sun-like stars would have access to five times more usable energy than those around cool red dwarf stars. Red dwarfs face a double disadvantage—they produce fewer high-energy photons that plants can use, and a smaller fraction of their total energy comes in the useful wavelengths. Interestingly, the researchers found that Earth's actual photosynthesis operates far below the theoretical maximum, suggesting there's room for even more efficient alien photosynthesis. Around Sun-like stars, photosynthesis would work best in near-infrared wavelengths, while around red dwarfs, slightly bluer light would be optimal.
+The simulations revealed a dramatic "rattle-and-break" process. The planetesimals act like cosmic troublemakers, gravitationally nudging the synchronized planets just slightly out of step. Some planetary chains survive this rattling, ending up with the slightly-off spacing astronomers actually observe. But in other cases, this initial disruption plants the seeds of chaos. Over tens or hundreds of millions of years, the rattled planets gradually destabilize each other, completely destroying their original orderly arrangement and creating the messy spacing we see today.
 Looking Forward
-This framework gives astronomers a powerful new tool for prioritizing which exoplanets deserve closer study in our search for life. Rather than assuming all "habitable zone" planets are equally promising, we can now rank them by their photosynthetic potential. This research suggests that planets around Sun-like stars should be our top targets for finding complex, oxygen-producing life. As next-generation telescopes come online, this work will help guide where we point them first.]]></description>
+This research provides a compelling explanation for why alien solar systems look so different from ours. It suggests that planetary systems go through dramatic growing pains that can last hundreds of millions of years. Understanding this process helps astronomers predict which types of systems might harbor stable, potentially habitable worlds—crucial knowledge as we search for Earth's cosmic cousins.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>PLATOSpec&#x27;s first results: Three new transiting warm Jupiters from the WINE survey TIC 147027702, TIC 245076932 and TIC 87422071</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-20654v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-20654v1</guid>
-      <pubDate>Wed, 25 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Pavol Gajdoš et al.</dc:creator>
+      <title>Survival of Protoplanetary Disks in Upper Scorpius from Population Synthesis Models with External Photoevaporation</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-22050v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-22050v1</guid>
+      <pubDate>Thu, 26 Feb 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Jingyi Ping et al.</dc:creator>
       <description><![CDATA[Why It Matters
-Imagine trying to understand how our entire solar system formed with only eight planets as examples. That's the challenge astronomers face when studying planetary formation across the universe. Every new planet we discover beyond our solar system—called an exoplanet—adds a crucial piece to this cosmic puzzle. This research is particularly exciting because it found three "warm Jupiters," a relatively rare type of planet that sits in the sweet spot between scorching hot worlds and frigid distant ones. These planets are like missing links that help us understand how giant gas planets move and evolve over billions of years.
+Planet formation is one of the universe's most fundamental processes, yet we're still unraveling how it works. Planets are born within swirling disks of gas and dust that surround young stars—imagine a cosmic pizza of material that gradually clumps together to form worlds like Earth. But these "protoplanetary disks" don't last forever. Understanding what destroys them and when is crucial because it determines whether planets have enough time to form. This research tackles a key mystery: how does radiation from nearby bright stars affect the survival of these planet-forming disks? The answer helps explain why we see the variety of planetary systems we do, both in our galaxy and around stars similar to our Sun.
 What They Did
-The team acted like cosmic detectives, using multiple telescopes as their investigative tools. They started by analyzing data from TESS, a space telescope that watches for tiny dips in starlight that occur when planets cross in front of their host stars—like watching a moth pass in front of a streetlight. When they spotted promising candidates, they followed up with ground-based telescopes in Chile and around the world. These telescopes measured how the stars wobble slightly due to the gravitational pull of their orbiting planets, confirming these worlds actually exist and aren't just false alarms. By combining these different observation techniques, they could determine each planet's size, weight, and orbital characteristics.
+The researchers created computer simulations that act like time-lapse movies of disk evolution, following hundreds of virtual protoplanetary disks over 10 million years. They focused on a real star-forming region called Upper Scorpius, where young stars experience mild doses of ultraviolet radiation from their neighbors—not the intense radiation found in densely packed star clusters, but a gentle cosmic sunbath. The simulations tracked how these disks shrink and lose material over time due to two main factors: internal friction (called viscous evolution) that causes material to spiral inward, and external radiation that heats and strips away the outer layers of the disk.
 Key Findings
-The three newly discovered worlds are all roughly Jupiter-sized but each has its own personality. The first planet takes 44 days to orbit its star and weighs about the same as Jupiter. The second is a lightweight—only half of Jupiter's mass—but follows a highly stretched-out, oval-shaped orbit every 22 days. The third is actually more massive than Jupiter and races around its star in just 11 days. All three are significantly warmer than Jupiter due to their closer proximity to their stars.
+The simulations revealed that most planet-forming disks survive only 3-7 million years under these conditions—a relatively short window in cosmic terms. Smaller, lightweight stars are hit hardest: their weaker gravity makes it easier for radiation to strip away their disks. While low-mass stars make up 76% of newborn systems, they represent only 51% of systems that still have disks after 10 million years. The longest-surviving disks tend to be compact (less than 125 times the Earth-Sun distance across) and have low internal friction, allowing them to resist both internal changes and external radiation damage.
 Looking Forward
-These discoveries expand our limited collection of warm Jupiters, giving scientists better data to test theories about how giant planets form and migrate through their solar systems. Understanding these processes helps us piece together the story of how planetary systems—including our own—came to be arranged the way they are today.]]></description>
+These findings provide a cosmic reality check for planet formation theories. They suggest that even moderate levels of stellar radiation significantly impact where and when planets can form, potentially explaining why certain types of planetary systems are rare while others are common. This research will help astronomers better interpret observations of young star systems and refine our understanding of how planetary neighborhoods—including our own solar system—came to be.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>Time-variable Scattered Light in Herbig Disks Observed with Subaru/SCExAO</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-20346v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-20346v1</guid>
-      <pubDate>Wed, 25 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Camryn Mullin et al.</dc:creator>
-      <description><![CDATA[Why It Matters
-Imagine trying to watch a movie while someone constantly adjusts the lighting—that's similar to what astronomers face when studying the dusty disks around young stars where planets are born. These "protoplanetary disks" are cosmic nurseries where rocky worlds like Earth first take shape, but they're incredibly difficult to observe directly. Now, scientists have captured something remarkable: these disks actually change their brightness patterns over time, flickering and shifting like shadows dancing across their surfaces. Understanding these changes could reveal how planets form and why some star systems end up with planets while others remain barren.
+      <title>Exocometary physics: material release and tails</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-22180v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-22180v1</guid>
+      <pubDate>Thu, 26 Feb 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Théo Vrignaud et al.</dc:creator>
+      <description><![CDATA[# Cosmic Snowballs in Alien Solar Systems
+Why It Matters
+Imagine throwing a snowball near a campfire versus near a blowtorch—it would behave very differently in each scenario. The same principle applies to comets, those "dirty snowballs" of ice and rock that streak across space with glowing tails. While we've studied comets in our own solar system for centuries, we're now discovering them around other stars, called exocomets. Understanding how these cosmic visitors behave in alien environments helps us piece together how planetary systems form and evolve. It's like having a universal laboratory where we can test the same physics under wildly different conditions—from gentle sun-like stars to scorching hot giants and even dead stellar remnants.
 What They Did
-Researchers used an advanced telescope system in Japan called Subaru, equipped with special technology that blocks out the blinding light from stars to reveal the much fainter disks surrounding them. Think of it like using your hand to block the sun so you can see clouds nearby—except a million times more precise. The team studied nine young stars within 200 light-years of Earth, taking detailed pictures that show polarized light (light waves oriented in specific directions) bouncing off dust particles in the disks. They then compared these images with older observations to spot any changes over months and years.
+Rather than making new observations, this research team conducted a comprehensive review of existing knowledge about how comets lose material and form their iconic tails. They compared the physics of comet behavior around four very different types of stars: our Sun, the young hot star β Pictoris, the active red dwarf AU Microscopii, and a white dwarf star designated WD 1145+017. The scientists examined how various stellar environments—with different brightness levels, temperatures, and stellar wind strengths—would affect the same basic processes that create comet tails: ice turning to gas, dust being blown away, and material getting electrically charged.
 Key Findings
-The scientists successfully imaged three disks and discovered that two of them were literally changing before their eyes. Around a star called MWC 480, dark spots in the disk shifted position between 2021 and 2022. Even more dramatic, the disk around HD 163296 showed a bright feature moving along its outer edge over 15 months—but moving far too fast to be actual dust particles orbiting the star. Instead, this appears to be a "shadow" created by changing patterns of starlight illumination, like watching sunlight move across your wall as clouds pass overhead.
+The research revealed that exocomets can behave dramatically differently depending on their stellar neighborhood. Around hot, bright stars like β Pictoris, comets experience radiation hundreds of times more intense than those near our Sun, causing them to shed material much more vigorously and from greater distances. This explains why these hot stars are champions at hosting detectable exocomets—their intense light makes comet tails much more prominent and easier to spot. The team found that the same comet would develop vastly different tail compositions and behaviors depending on whether it orbited a young, energetic star or an older, calmer one.
 Looking Forward
-These observations suggest that protoplanetary disks are far more dynamic than previously thought. The moving shadows might indicate warped or twisted inner regions of disks, potentially revealing where giant planets are already forming and gravitationally disturbing the surrounding material. This research opens a new window into planet formation, showing that we can now watch these cosmic nurseries evolve in real-time rather than taking static snapshots.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.SR</category>
-    </item>
-    <item>
-      <title>A Census Before Rubin of Asteroid Families in the Main Belt</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-20382v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-20382v1</guid>
-      <pubDate>Wed, 25 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>David Nesvorny</dc:creator>
-      <description><![CDATA[Why It Matters
-Imagine cosmic car crashes happening in slow motion over millions of years—that's essentially what creates asteroid families. When large asteroids smash into each other, they shatter into hundreds or thousands of smaller pieces that continue orbiting the Sun together like a scattered family. Understanding these collisions helps us piece together the violent history of our solar system and reveals clues about how planets formed billions of years ago. This research also has practical importance: many asteroids that could potentially threaten Earth likely came from these ancient cosmic pile-ups.
-What They Did
-Scientists created the most comprehensive family tree of asteroid families ever assembled, identifying 335 distinct groups in the main asteroid belt—the rocky debris field between Mars and Jupiter. Think of it like being a detective examining crime scenes scattered across space. The researchers analyzed the orbits, sizes, colors, and compositions of thousands of asteroids to determine which ones likely came from the same original "parent" asteroid. They also estimated when these collisions happened and how big the original asteroids were before they were destroyed. It's like reconstructing a broken vase by carefully studying each scattered piece.
-Key Findings
-The team discovered a fascinating pattern: asteroid families younger than 10 million years typically came from smaller parent bodies less than 6 miles across, while evidence of older collisions involving small asteroids has largely vanished. This happens because of something called the Yarkovsky effect—sunlight gently pushes small asteroid fragments around over millions of years, eventually scattering them so widely that scientists can no longer tell they're related. Larger asteroids, meanwhile, are tough enough that they rarely get completely destroyed in collisions.
-Looking Forward
-While this study focused on asteroids rather than exoplanets, it provides crucial insights into planetary system evolution. The collision patterns observed in our asteroid belt likely occurred in planetary systems throughout the galaxy, helping scientists understand how rocky planets and debris disks form around other stars.]]></description>
+This framework gives astronomers a roadmap for interpreting future exocomet discoveries and understanding why certain types of stars seem to host more visible comets. As our detection methods improve, we'll be able to test these predictions and gain deeper insights into how planetary systems across the galaxy form and change over time.]]></description>
         <category>astro-ph.EP</category>
     </item>
   </channel>
