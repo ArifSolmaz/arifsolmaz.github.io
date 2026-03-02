@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 27 Feb 2026 04:11:57 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 02 Mar 2026 04:09:10 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,205 +15,56 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>Constraining the Lifespan of Intelligent Technological Civilization in the Galaxy</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-22252v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-22252v1</guid>
-      <pubDate>Fri, 27 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Sohrab Rahvar, Shahin Rouhani</dc:creator>
+      <title>Worlds Next Door. III. Indirect Evidence for Enhanced Atmospheric Metallicity and/or the Presence of Water Clouds in the Nearest Jupiter-analog ε Eri b</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-23423v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-23423v1</guid>
+      <pubDate>Mon, 02 Mar 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Aniket Sanghi et al.</dc:creator>
       <description><![CDATA[Why It Matters
-Where is everybody? This famous question, known as the Fermi paradox, has puzzled scientists for decades. Our galaxy contains hundreds of billions of stars, many with planets that could potentially harbor life. Yet despite our best efforts to listen for signals from space, we haven't heard a peep from alien civilizations. This research tackles one of humanity's most profound questions: are we alone, or do alien civilizations exist but face challenges that limit how long they survive? Understanding this could reveal crucial insights about our own future and the fate of intelligent life throughout the universe.
+Imagine having a neighbor just down the street who might be eerily similar to someone in your own family. That's essentially what astronomers have discovered about a planet called ε Eri b—our closest Jupiter-like neighbor in space. At just 3.2 parsecs away (about 10 light-years), this planet offers scientists their best chance to study a world that could be remarkably similar to Jupiter. Understanding planets like this helps us learn whether solar systems like ours are common in the universe, and whether the ingredients for planetary formation follow similar patterns everywhere. This research represents humanity's most detailed attempt yet to peer at this nearby world using the most powerful space telescope ever built.
 What They Did
-The researchers approached this puzzle like detectives working backward from a crime scene. Instead of trying to predict where alien civilizations might be, they started with what we observe: complete silence from space. They then used mathematical models to explore what this silence tells us about alien civilizations. The scientists considered optimistic scenarios where life and intelligence emerge relatively easily on Earth-like planets scattered throughout our galaxy. They then calculated what the lack of contact implies about how long these civilizations might survive once they develop technology capable of interstellar communication.
+The research team used the James Webb Space Telescope—NASA's newest and most sensitive space observatory—to try to photograph ε Eri b directly. This is incredibly challenging, like trying to spot a firefly next to a searchlight from hundreds of miles away. They used special equipment called a coronagraph, which blocks out the overwhelming brightness of the star so they can search for the much dimmer planet nearby. They focused their observations on infrared light (heat radiation) that the planet should be giving off, looking in a specific wavelength band around 4-5 micrometers. The team also updated their estimates of how old the star system is by studying how fast the star spins—a technique called gyrochronology.
 Key Findings
-The results are sobering. If alien civilizations are common in our galaxy, then our failure to detect them suggests they don't last very long. Under the most optimistic assumptions about how frequently intelligent life emerges, technological civilizations would survive for only about 5,000 years on average. To put this in perspective, human civilization has been around for roughly 10,000 years, and we've only had radio technology for about 130 years. The researchers also noted that any signals broadcast in the past 100,000 years should have reached us by now, making the cosmic silence even more mysterious.
+Despite achieving record-breaking sensitivity—10 times better than ground-based telescopes—the planet remained hidden from view. This non-detection actually tells us something fascinating: the planet is much dimmer than expected, suggesting its atmosphere is either enriched with heavy metals or filled with water ice clouds, just like Jupiter. The star system is older than previously thought (1.1 billion years), which means the planet is cooler—somewhere between 150-200 Kelvin (about -190 to -100°F). The team also ruled out the possibility of large ring systems around the planet.
 Looking Forward
-This research doesn't predict doom, but rather sets important boundaries for our expectations about alien contact. As we continue searching for extraterrestrial intelligence and develop more sensitive detection methods, these findings help calibrate our efforts and remind us that the development of long-lasting technological civilizations—including our own—may be one of the universe's greatest challenges.]]></description>
-        <category>astro-ph.GA</category>
+This research sets the stage for future breakthrough observations with upcoming telescopes and instruments. The findings suggest that Jupiter-like planets might commonly develop atmospheres similar to our own Jupiter, hinting at universal patterns in planetary evolution. Future missions may finally capture the first direct image of this elusive neighbor, potentially revolutionizing our understanding of planetary atmospheres beyond our solar system.]]></description>
         <category>astro-ph.EP</category>
-        <category>physics.pop-ph</category>
+        <category>astro-ph.SR</category>
     </item>
     <item>
-      <title>JWST COMPASS: NIRSpec/G395H Transmission Observations of the Sub-Neptune HD 15337 c</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-22327v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-22327v1</guid>
-      <pubDate>Fri, 27 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Nicole L. Wallack et al.</dc:creator>
+      <title>Active Learning for Planet Habitability Classification under Extreme Class Imbalance</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-23666v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-23666v1</guid>
+      <pubDate>Mon, 02 Mar 2026 20:00:00 +0000</pubDate>
+      <dc:creator>R. I. El-Kholy, Z. M. Hayman</dc:creator>
       <description><![CDATA[Why It Matters
-Imagine trying to understand what makes up the air on a distant world by studying how starlight filters through it—that's exactly what astronomers are doing with the James Webb Space Telescope (JWST). This research helps us understand how planets form and evolve, particularly those mysterious "sub-Neptunes"—worlds larger than Earth but smaller than Neptune that don't exist in our solar system. By studying these alien atmospheres, we're piecing together the cosmic recipe book that determines what makes planets habitable or hostile, bringing us closer to answering whether Earth-like worlds are common in the universe.
+Imagine trying to find a needle in a haystack—except the haystack contains thousands of planets, and you're looking for worlds that could potentially support life. That's the challenge astronomers face today. We've discovered over 5,000 planets orbiting other stars, but only a tiny fraction might be habitable. With limited telescope time and resources, scientists need a smart way to decide which planets deserve closer study. This research tackles that problem by teaching computers to identify the most promising candidates for life, potentially helping us discover our cosmic neighbors more efficiently.
 What They Did
-Scientists used JWST's powerful infrared vision to peer at a planet called HD 15337 c as it passed in front of its star, like watching a solar eclipse from billions of miles away. When a planet transits its star this way, some starlight passes through the planet's atmosphere before reaching us. Different gases absorb specific colors of light, creating a kind of atmospheric fingerprint. The researchers captured this light in incredible detail, measuring tiny changes—just 30-70 parts per million—in the star's brightness across different infrared wavelengths. They also discovered the planet arrived earlier than expected, suggesting another unseen planet might be gravitationally tugging on it.
+The researchers created a computer system that learns to spot potentially habitable planets, similar to how email filters learn to identify spam. They fed the computer data about known planets—things like their size, temperature, and distance from their stars—and taught it to distinguish between habitable and non-habitable worlds. But here's the clever part: instead of showing the computer all the data at once, they used a technique called "active learning," where the computer asks questions about the planets it's most uncertain about. It's like having a student who knows exactly what to ask the teacher to learn most efficiently.
 Key Findings
-HD 15337 c revealed a surprisingly bland atmospheric signature—essentially a flat line where scientists expected to see peaks and valleys indicating different gases. This "featureless" spectrum suggests the planet either has an atmosphere incredibly rich in heavy elements (600 times more metallic than our Sun) or is shrouded in high-altitude clouds and haze that block deeper atmospheric features. The planet itself is about 2.5 times Earth's width, nearly 7 times its mass, and experiences scorching 656-degree temperatures.
+The active learning approach was remarkably effective, requiring far fewer examples to achieve the same accuracy as traditional methods. Most importantly, the system identified one previously overlooked planet that deserved a second look for potential habitability. The computer didn't just randomly guess—it provided confidence levels for its predictions, allowing astronomers to make informed decisions about which discoveries to trust and which to investigate further.
 Looking Forward
-This discovery adds to growing evidence that planets with temperatures between 500-700 Kelvin are particularly prone to atmospheric opacity, whether from clouds or heavy atmospheres. Understanding why these mid-temperature worlds seem so hazy could reveal crucial details about planetary evolution and help astronomers know where to focus future searches for clearer, more Earth-like atmospheres.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>PICASO 4.0: Clouds and Photochemistry in Climate Models of Brown Dwarfs and Exoplanets</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-22468v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-22468v1</guid>
-      <pubDate>Fri, 27 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>James Mang et al.</dc:creator>
-      <description><![CDATA[Why It Matters
-Imagine trying to predict the weather on a planet orbiting another star, hundreds of light-years away. That's essentially what astronomers are doing as they discover thousands of exoplanets and try to understand what these alien worlds are really like. With powerful new space telescopes like the James Webb Space Telescope peering into the atmospheres of distant planets, scientists need better computer models to make sense of what they're seeing. This research matters because understanding exoplanet atmospheres is our key to finding potentially habitable worlds and answering the age-old question: are we alone in the universe?
-What They Did
-The researchers created an upgraded version of a computer program called PICASO that acts like a sophisticated weather simulator for alien worlds. Think of it as the ultimate climate modeling software, but instead of predicting Earth's weather, it simulates the atmospheric conditions on brown dwarfs (failed stars) and gas giant exoplanets. The new version can model how clouds form and behave, how chemical reactions occur when starlight hits the atmosphere, and how heat moves through these alien skies. It's like having a virtual laboratory where scientists can test different atmospheric recipes and see what kinds of weather patterns and chemical signatures would result.
-Key Findings
-The team successfully benchmarked their new simulator against real observations and previous studies, showing it can accurately reproduce the complex atmospheric behavior seen on planets like WASP-39b, a hot gas giant that has been extensively studied. The model can now simulate the intricate dance between clouds, chemistry, and temperature that creates each planet's unique atmospheric fingerprint—the specific way it absorbs and emits different wavelengths of light that telescopes can detect.
-Looking Forward
-This improved modeling capability arrives at a perfect time, as the James Webb Space Telescope is revolutionizing our ability to study exoplanet atmospheres in unprecedented detail. Better models mean astronomers can more accurately interpret telescope observations, leading to a deeper understanding of how planets form and evolve, and ultimately helping identify which worlds might harbor the right conditions for life.]]></description>
+This research offers a roadmap for making exoplanet exploration more strategic and cost-effective. As new space telescopes come online and discover thousands more worlds, smart algorithms like this could help astronomers focus their limited observation time on the most promising targets. Rather than studying planets randomly, we could systematically work our way through the cosmos, increasing our chances of finding that elusive second Earth.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.IM</category>
-        <category>astro-ph.SR</category>
+        <category>cs.LG</category>
     </item>
     <item>
-      <title>TESS Planet Occurrence Rates Reveal the Disappearance of the Radius Valley Around Mid-to-Late M Dwarfs</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-23364v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-23364v1</guid>
-      <pubDate>Fri, 27 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Erik Gillis, Ryan Cloutier, Emily Pass</dc:creator>
+      <title>Tri-coupler geometries for achromatic nulling interferometry in the near infrared</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2602-23693v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-23693v1</guid>
+      <pubDate>Mon, 02 Mar 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Harry-Dean Kenchington Goldsmith et al.</dc:creator>
       <description><![CDATA[Why It Matters
-Imagine trying to understand neighborhoods by only studying mansions while ignoring apartments—that's been our challenge with exoplanets. Most planet-hunting has focused on Sun-like stars, but the universe is actually dominated by much smaller, dimmer stars called M dwarfs. These cosmic "red dots" make up about 75% of all stars in our galaxy, making them the most common stellar neighbors we have. If we want to truly understand how planets form and where life might exist, we need to know what kinds of worlds orbit these abundant little stars. This research provides our deepest look yet at the planetary systems around the smallest, coolest stars in the universe.
+Imagine trying to spot a firefly hovering next to a blazing searchlight from miles away—that's essentially what astronomers face when hunting for planets around other stars. The parent star is billions of times brighter than any planet orbiting it, making these "exoplanets" nearly impossible to detect directly. This research tackles one of astronomy's greatest technical challenges: developing new ways to block out overwhelming starlight so we can finally see the faint worlds hiding in the glare. Success could revolutionize our ability to study distant planets, potentially identifying worlds that might harbor life.
 What They Did
-The researchers used NASA's Transiting Exoplanet Survey Satellite (TESS) to monitor over 8,000 of these small red stars, watching for tiny dips in brightness that occur when planets cross in front of their host stars—like watching a moth fly past a distant streetlight. They built custom software to sift through all this data, looking for the telltale signatures of orbiting worlds. To make sure their results were accurate, they also ran simulations by artificially inserting fake planet signals into their data to test how well their methods could find them. This painstaking process helped them discover 77 new planet candidates and, more importantly, figure out how common different types of planets really are around these stars.
+The researchers designed and tested miniature light-manipulation devices called photonic chips—think of them as incredibly sophisticated versions of the optical fibers that carry internet signals. These chips can combine light beams from multiple telescopes and use a clever trick called "nulling interferometry" to cancel out the star's brightness while preserving light from nearby planets. The team compared three different chip designs: a standard three-channel device, an improved tapered version, and one called a multimode interference coupler. Using computer simulations, they tested how well each design could detect planets across different wavelengths of infrared light, mimicking real observing conditions.
 Key Findings
-The team uncovered a surprising pattern that challenges our understanding of how planets form. Around Sun-like stars, planets come in two distinct sizes—there's a clear "gap" between smaller rocky worlds and larger, gassy mini-Neptunes, like having lots of studio apartments and three-bedroom houses but very few two-bedrooms. But around the smallest M dwarf stars, this gap completely disappears. Instead, there's a smooth distribution of planet sizes, with most planets being about 25% larger than Earth. These small stars are incredibly prolific planet hosts, with roughly one planet larger than Earth orbiting close-in for every star surveyed. Remarkably, rocky super-Earths outnumber gassy sub-Neptunes by more than 5 to 1 around these stars.
+Two of the three designs showed remarkable promise. The tapered device and the multimode interference coupler both captured more than 85% of planet light across the entire infrared range tested, while the standard design dropped to just 50% effectiveness at certain wavelengths. The multimode design proved most forgiving of manufacturing imperfections—crucial for real-world applications—though it could only dim starlight by a factor of 10,000. The tapered design achieved better starlight suppression while maintaining excellent planet detection capabilities.
 Looking Forward
-This discovery is reshaping our understanding of planet formation and the potential for life in the universe. The disappearing size gap suggests that planets around small stars form differently than those around Sun-like stars, possibly in water-rich environments that could create ocean worlds. Since M dwarfs are so numerous and long-lived—burning for trillions of years compared to our Sun's 10-billion-year lifespan—they represent the universe's best bet for hosting life over cosmic timescales. These findings will guide future missions like the James Webb Space Telescope in selecting the most promising targets for studying planetary atmospheres and searching for signs of life.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Elevated Eccentricities in the Radius Valley Hint at Water-Rich Mini-Neptunes</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-23250v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-23250v1</guid>
-      <pubDate>Fri, 27 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Sho Shibata, Andre Izidoro</dc:creator>
-      <description><![CDATA[Why It Matters
-Imagine discovering that what you thought were two similar neighborhoods actually have completely different foundations—one built on rock, the other on ice. That's essentially what astronomers are uncovering about planets beyond our solar system. For years, scientists have puzzled over two mysterious groups of planets: super-Earths (slightly bigger than Earth) and mini-Neptunes (smaller than Neptune but larger than Earth). Understanding what these planets are made of isn't just academic curiosity—it tells us whether water-rich worlds that could potentially harbor life are common or rare in our galaxy, and it reveals how planetary systems like ours actually form.
-What They Did
-The researchers acted like cosmic detectives, using computer simulations to recreate how planetary systems evolve over millions of years. They focused on a curious pattern called the "radius valley"—a gap in planet sizes where fewer planets exist, like a missing middle size between small rocky worlds and larger puffy planets. The key was examining how elliptical (oval-shaped) the planets' orbits become as they gravitationally tug on each other during formation. By running thousands of virtual planetary systems through their digital time machine, they could test different theories about what these mysterious planets are actually made of.
-Key Findings
-The simulations revealed a smoking gun: when water-rich "icy" planets and rocky planets form in the same system, they create a distinctive signature. The more massive icy planets tend to bully their rocky neighbors during formation, creating a spike in elliptical orbits right at the radius valley. This pattern matches what telescopes actually observe in real planetary systems. Crucially, this signature only appears when planets have genuinely different compositions—not when they're all rocky planets that simply gained or lost atmospheres over time.
-Looking Forward
-These results suggest that many mini-Neptunes might actually be "water worlds"—planets where water makes up a significant fraction of their mass. This discovery could reshape our understanding of how common potentially habitable environments are in the universe and provides astronomers with a new tool for identifying water-rich planets using orbital patterns rather than just size and mass measurements.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Probing the Atmospheres of Young Long-Period Sub-Neptune Progenitors with ELT/ANDES</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-22830v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-22830v1</guid>
-      <pubDate>Fri, 27 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Spandan Dash, Dwaipayan Dubey, Liton Majumdar</dc:creator>
-      <description><![CDATA[Why It Matters
-Imagine trying to smell the aroma of a distant campfire while standing next to a busy highway—that's similar to the challenge astronomers face when studying the atmospheres of planets orbiting other stars. Most exoplanet atmosphere research has focused on scorching hot worlds that orbit incredibly close to their stars, but these represent just a fraction of the planetary diversity in our galaxy. The real prize is studying cooler, more distant planets that might be more representative of typical worlds—including young planets that are still evolving and could teach us about how planetary systems form. This research pushes the boundaries of what's possible, developing techniques to peer into the atmospheres of these elusive, Earth-sized to Neptune-sized worlds.
-What They Did
-The researchers used computer simulations to test whether a revolutionary new telescope system—the Extremely Large Telescope paired with an instrument called ANDES—could detect the chemical fingerprints of gases in the atmospheres of two specific planets: V1298Tau b and TOI-451c. These planets are roughly the size of Neptune but orbit much farther from their stars than the typical "hot" planets we usually study. The team simulated observations using a technique that looks for tiny shifts in light wavelengths as planets move toward and away from us during their orbits—like hearing the pitch change of an ambulance siren as it passes by. They tested different observation strategies and mathematical approaches to separate the faint planetary signals from interference caused by Earth's own atmosphere.
-Key Findings
-The simulations showed remarkably promising results. For V1298Tau b, the telescope system could detect water vapor, hydrogen sulfide, and carbon monoxide in just 10 hours of observation time spread over two nights—achieving detection confidence levels greater than 99.9999%. For the more challenging TOI-451c, the system could distinguish between different atmospheric compositions (specifically, whether carbon or oxygen is more abundant) with about 18 hours of observations. Crucially, the team discovered that including observations taken when the planet isn't crossing in front of its star dramatically improves detection success, but only if the data processing accounts for this properly.
-Looking Forward
-This research opens a new frontier in exoplanet science. When the Extremely Large Telescope begins operations later this decade, astronomers will finally be able to study the atmospheric chemistry of smaller, cooler planets that may be more similar to worlds in our own solar system. Understanding these young planetary atmospheres will help us piece together how planets form and evolve, potentially revealing whether the ingredients for life are common throughout the galaxy.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>KMT-2024-BLG-3237: Another Free-Floating Planet Candidate with Angular Einstein Radius Measurement</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-22709v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-22709v1</guid>
-      <pubDate>Fri, 27 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Tanagodchaporn Inyanya et al.</dc:creator>
-      <description><![CDATA[Why It Matters
-Imagine planets wandering through space completely alone—no star to orbit, no warmth to sustain them, just drifting endlessly through the cosmic dark. These "rogue planets" were once theoretical outcasts, predicted by computer models but nearly impossible to find. Now, astronomers are discovering them using a clever detective technique, and each new find helps us understand how violent and chaotic planet formation can be. These cosmic orphans tell the story of planetary systems gone wrong, where gravitational battles ejected worlds into the void. Understanding how many rogue planets exist could revolutionize our picture of how common planets really are in our galaxy.
-What They Did
-The research team used a technique called gravitational microlensing, which works like a cosmic magnifying glass. When a massive object passes between Earth and a distant background star, the object's gravity bends and focuses the starlight, making the star appear brighter for a brief period. It's similar to how a glass lens can focus sunlight, except gravity does the focusing. The astronomers monitored millions of stars, waiting for these telltale brightening events. When they spotted one lasting just three days with very specific characteristics—particularly the way the brightness changed—they knew they had found something special: a planet with no host star.
-Key Findings
-The newly discovered rogue planet, designated KMT-2024-BLG-3237, weighs somewhere between 67 Earth masses (about twice as heavy as Neptune) and could be as massive as Saturn. It's located roughly 24,000 light-years away, drifting alone in the direction of our galaxy's center. The planet is completely dark and cold, receiving no energy from a nearby star. This discovery marks the eleventh isolated planet found using this ultra-precise measurement technique, adding to a growing census of cosmic wanderers.
-Looking Forward
-Each rogue planet discovery brings us closer to answering a fundamental question: just how many planets are out there? Some estimates suggest rogue planets might outnumber stars in our galaxy. Future space telescopes designed specifically for microlensing surveys could reveal thousands more, transforming our understanding of planetary formation and potentially showing us that planets—even lonely ones—are everywhere.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.GA</category>
-    </item>
-    <item>
-      <title>Detection of circumstellar disks around nearby young brown dwarf candidates</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-22832v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-22832v1</guid>
-      <pubDate>Fri, 27 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>N. Phan-Bao, M. S. Bessell, E. L. Martín</dc:creator>
-      <description><![CDATA[Why It Matters
-Brown dwarfs are fascinating cosmic oddities—they're too small to be stars but too big to be planets, earning them the nickname "failed stars." These dim objects might seem insignificant, but they could hold crucial clues about how planets form around the smallest, coolest objects in our universe. Understanding whether rocky planets like Earth can form around brown dwarfs would expand our ideas about where life might exist. Since brown dwarfs are incredibly common throughout the galaxy, discovering that they can host planetary systems would dramatically increase the number of potential worlds where life could take hold.
-What They Did
-The research team acted like cosmic detectives, searching through a database of nearly 4,000 suspicious objects to find brown dwarfs surrounded by disks of dust and gas—the raw materials from which planets form. They used multiple space telescopes to measure the brightness of these objects at different wavelengths of light, like taking their temperature from afar. When an object appeared brighter in infrared light than expected, it suggested warm dust swirling around it. The researchers then used ground-based telescopes to take detailed spectra—essentially breaking apart the light like a prism to reveal chemical fingerprints. They looked for lithium, which acts like a cosmic birth certificate since young objects haven't had time to destroy it yet.
-Key Findings
-The team discovered 23 brown dwarf candidates with circumstellar disks, including 10 completely new finds. Most exciting was their detection of ongoing accretion—material actively falling from the disk onto the brown dwarf—in several objects. One brown dwarf, despite being a relatively ancient 20 million years old, is still hungrily consuming material from its surrounding disk, suggesting these disks can persist much longer than scientists expected.
-Looking Forward
-These long-lived disks around brown dwarfs suggest that rocky planets might indeed form around these failed stars. This discovery could revolutionize our understanding of planetary formation and expand the definition of habitable systems throughout our galaxy.]]></description>
-        <category>astro-ph.SR</category>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>JWST COMPASS: A NIRSpec G395H Transmission Spectrum of Radius Valley-Dweller TOI-260 b</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-22329v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-22329v1</guid>
-      <pubDate>Fri, 27 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Annabella Meech et al.</dc:creator>
-      <description><![CDATA[Why It Matters
-Imagine finding a planet that's bigger than Earth but smaller than Neptune—a world that sits right in the sweet spot astronomers call the "radius valley." These mysterious planets don't exist in our solar system, yet they're incredibly common throughout the galaxy. Scientists are racing to understand what these worlds are like because they might represent an entirely different class of planet, with atmospheres and compositions unlike anything we know. By studying TOI-260 b, a planet 1.76 times Earth's radius orbiting a distant star, researchers are helping solve one of the biggest puzzles in planetary science: what are these in-between worlds really made of?
-What They Did
-The team used the James Webb Space Telescope, humanity's most powerful space observatory, to watch TOI-260 b cross in front of its host star twice. Think of it like watching a shadow pass across a bright light—as the planet blocks some starlight, different colors of light are absorbed by its atmosphere. By carefully measuring which colors get dimmed and by how much, scientists can determine what gases exist in the planet's air. They focused on infrared light, which is invisible to our eyes but reveals the chemical fingerprints of atmospheric molecules. The observations were incredibly precise, detecting changes in brightness of just 37 parts per million—like noticing if a single lightbulb dimmed in a stadium of 27,000 lights.
-Key Findings
-The planet's atmosphere appears surprisingly bland. Instead of the clear chemical signatures scientists hoped to find, TOI-260 b's atmosphere seems mostly featureless, possibly shrouded in thick haze or clouds. However, the data revealed that if the planet does have a clear atmosphere, it must be extremely metal-rich—at least 200 times more metallic than our Sun. There was one intriguing possible feature detected around a specific wavelength, but researchers suspect this might be an instrumental quirk rather than a real atmospheric signal.
-Looking Forward
-This study adds another piece to the radius valley puzzle, showing these worlds have surprisingly diverse atmospheres. Some are clear, others are hazy, and each seems to tell a different story about how medium-sized planets form and evolve. Understanding these planets will require many more observations, but each new world studied brings us closer to understanding this mysterious class of planets that dominates our galaxy.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Eating planets makes you younger: The magnetic dynamo rejuvenation of GJ 504 by planetary engulfment</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-22979v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-22979v1</guid>
-      <pubDate>Fri, 27 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>S. Bellotti et al.</dc:creator>
-      <description><![CDATA[Why It Matters
-Stars are supposed to slow down as they age, like spinning tops gradually losing momentum. But astronomers have discovered something puzzling: some old stars are spinning surprisingly fast and behaving like they're much younger than they should be. This mystery matters because it suggests dramatic events can completely reshape a star's life story—including the possibility that stars sometimes devour their own planets. Understanding these cosmic cannibalistic events helps us piece together how planetary systems evolve and survive, including what might happen to planets in our own solar system billions of years from now.
-What They Did
-The research team focused on a star called GJ 504, located about 57 light-years away. This star is roughly 2 billion years old (middle-aged by stellar standards) but spins once every 3.4 days—incredibly fast for its age. The researchers used a specialized instrument in Hawaii to study the star's magnetic field by analyzing how light from the star becomes polarized. Think of it like using special glasses to see the invisible magnetic forces surrounding the star. They then fed this magnetic field data into computer simulations to model how the star's magnetic field controls the flow of charged particles streaming away from it, similar to how our Sun creates the solar wind.
-Key Findings
-The star's magnetic field strength measures about 5.3 Gauss—roughly ten times stronger than Earth's magnetic field. Most importantly, the team's simulations revealed that only one scenario could explain all of GJ 504's unusual properties: the star must have swallowed a Jupiter-sized planet sometime in its past. This planetary meal would have spun up the star like a figure skater pulling in their arms, rejuvenating its magnetic activity and making it behave decades younger than its actual age.
-Looking Forward
-This research suggests that planetary engulfment might be more common than previously thought. The team identified another star, HD 75332, as a potential second case. As we discover more exoplanets, understanding these star-planet interactions becomes crucial for predicting which planetary systems will survive intact and which might experience such dramatic cosmic consumption events.]]></description>
-        <category>astro-ph.SR</category>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Warm Debris Disk Candidates around Nearby FGK Stars from LAMOST DR12</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-23004v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-23004v1</guid>
-      <pubDate>Fri, 27 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Xing Luo, Qiong Liu</dc:creator>
-      <description><![CDATA[Why It Matters
-Imagine the aftermath of a cosmic construction project—dust and debris scattered around a star where rocky planets like Earth are still forming or have recently formed. These "debris disks" are like celestial breadcrumbs that help astronomers understand how planetary systems evolve over billions of years. By studying these dusty rings around other stars, scientists can piece together the violent, chaotic process that created our own solar system. This research is particularly exciting because it focuses on "warm" debris disks around stars similar to our Sun, offering clues about how Earth-like worlds come to be and what our solar system might have looked like in its youth.
-What They Did
-The research team acted like cosmic detectives, sifting through data from multiple space surveys to find hidden treasure. They started with information from LAMOST, a Chinese telescope that analyzes the light from hundreds of thousands of stars to determine their properties. Then they combined this with precise distance measurements from the European Gaia spacecraft and infrared observations that can detect the warm glow of dust around stars. Think of it like using multiple filters to pan for gold—each dataset helped them eliminate false alarms and focus on genuine debris disk candidates. They specifically looked at stars similar to our Sun within 150 light-years of Earth, close enough for detailed follow-up studies.
-Key Findings
-The team discovered 12 debris disk candidates, with 10 being completely new finds—like uncovering a dozen previously unknown archaeological sites. Most of these dusty systems orbit stars that are several billion years old, suggesting we're seeing the late stages of planet formation when rocky worlds have mostly finished assembling. Importantly, the dust showed steady infrared glow rather than flickering, confirming it truly surrounds these stars rather than coming from background sources.
-Looking Forward
-This catalog provides astronomers with prime targets for future observations using advanced telescopes, potentially revealing the birth pangs of distant Earth-like worlds and helping us understand our place in the cosmic story of planet formation.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>TEPCat: The Transiting Extrasolar Planet Catalogue</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2602-23102v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2602-23102v1</guid>
-      <pubDate>Fri, 27 Feb 2026 20:00:00 +0000</pubDate>
-      <dc:creator>John Southworth</dc:creator>
-      <description><![CDATA[Why It Matters
-Imagine trying to study a distant city by only observing the lights in its windows—that's essentially what astronomers face when studying planets orbiting other stars. Most of the thousands of exoplanets we've discovered are invisible dots of light next to their blazingly bright parent stars. But a special group of these alien worlds occasionally pass directly in front of their stars as seen from Earth, creating tiny eclipses that reveal incredible secrets about their size, mass, atmosphere, and composition. These "transiting" planets are astronomical goldmines, offering our best chance to truly understand what other worlds are like and how planetary systems form and evolve throughout the universe.
-What They Did
-The researchers created something like a comprehensive phone book for transiting exoplanets—a detailed online database called TEPCat that catalogs every known planet that eclipses its star. Just as you might organize your music collection by artist, album, and genre, they systematically gathered and organized thousands of measurements about each planet system: how big the planets are, how much they weigh, how close they orbit to their stars, what their atmospheres might contain, and dozens of other crucial characteristics. They also classified different types of eclipse patterns in the brightness measurements, creating a standardized system that astronomers worldwide can use to compare planets and identify the most interesting targets for further study.
-Key Findings
-While this paper primarily introduces the database rather than announcing new discoveries, TEPCat reveals fascinating patterns across the thousands of transiting worlds now catalogued. The database encompasses planets ranging from scorching hot gas giants larger than Jupiter that complete their orbits in just days, to small rocky worlds that might harbor conditions suitable for life. By organizing all this information in one accessible place, the catalogue enables scientists to spot trends and relationships that would be impossible to see when studying planets individually—like noticing that certain types of stars tend to host particular kinds of planetary systems.
-Looking Forward
-TEPCat serves as mission control for the golden age of exoplanet discovery we're entering. With powerful new telescopes like the James Webb Space Telescope now operational and future missions being planned, astronomers will soon be able to analyze the atmospheres of Earth-like worlds in unprecedented detail. This database ensures that scientists can quickly identify the most promising candidates for these detailed studies, potentially leading us to worlds with signs of water, oxygen, or even life itself.]]></description>
-        <category>astro-ph.EP</category>
+This research brings us closer to space-based telescopes that could directly image Earth-like planets around nearby stars. Future improvements combining the best features of each design could lead to instruments capable of not just detecting these worlds, but analyzing their atmospheres for signs of water, oxygen, and potentially even life itself.]]></description>
         <category>astro-ph.IM</category>
-        <category>astro-ph.SR</category>
+        <category>astro-ph.EP</category>
     </item>
   </channel>
 </rss>
