@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 05 Mar 2026 04:07:06 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 06 Mar 2026 04:04:33 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,33 +15,59 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>Long-term activity cycles in planetary M stars observed with SOPHIE</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2603-03643v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-03643v1</guid>
-      <pubDate>Thu, 05 Mar 2026 20:00:00 +0000</pubDate>
-      <dc:creator>C. G. Oviedo et al.</dc:creator>
+      <title>NASA&#x27;s Pandora SmallSat Mission: Simulated Modeling and Retrieval of Near-Infrared Exoplanet Transmission Spectra</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2603-04488v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-04488v1</guid>
+      <pubDate>Fri, 06 Mar 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Yoav Rotman et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
         <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>Long-period magnetic activity in the K dwarf GJ 1137 and a new super-Earth on a 9-day orbit</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2603-04919v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-04919v1</guid>
+      <pubDate>Fri, 06 Mar 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Denitza Stoeva et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>The Effect of Planetary Rotation Period on Clouds in a Global Climate Model with a Bin Microphysics Scheme</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2603-03767v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-03767v1</guid>
-      <pubDate>Thu, 05 Mar 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Huanzhou Yang et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>The multi-wavelength vertical structure of the archetypal β Pictoris debris disk</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2603-03540v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-03540v1</guid>
-      <pubDate>Thu, 05 Mar 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Yinuo Han et al.</dc:creator>
+      <title>Detection of C3 in Titan with VLT-ESPRESSO</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2603-05365v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-05365v1</guid>
+      <pubDate>Fri, 06 Mar 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Rafael Rianço-Silva et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.SR</category>
+        <category>physics.ao-ph</category>
+        <category>physics.chem-ph</category>
+        <category>physics.space-ph</category>
+    </item>
+    <item>
+      <title>NASA&#x27;s Pandora SmallSat Mission: Simulating the Impact of Stellar Photospheric Heterogeneity and Its Correction</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2603-04519v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-04519v1</guid>
+      <pubDate>Fri, 06 Mar 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Benjamin V. Rackham et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+        <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>TILARA: Template-Independent Line-by-line Algorithm for Radial velocity Analysis. I. Description of the code and application on a Sun-like star</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2603-05445v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-05445v1</guid>
+      <pubDate>Fri, 06 Mar 2026 20:00:00 +0000</pubDate>
+      <dc:creator>C. San Nicolas Martinez et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.SR</category>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
     </item>
   </channel>
 </rss>
