@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 06 Mar 2026 04:04:33 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 09 Mar 2026 04:11:31 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,59 +15,50 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>NASA&#x27;s Pandora SmallSat Mission: Simulated Modeling and Retrieval of Near-Infrared Exoplanet Transmission Spectra</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2603-04488v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-04488v1</guid>
-      <pubDate>Fri, 06 Mar 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Yoav Rotman et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
-        <category>astro-ph.SR</category>
-    </item>
-    <item>
-      <title>Long-period magnetic activity in the K dwarf GJ 1137 and a new super-Earth on a 9-day orbit</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2603-04919v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-04919v1</guid>
-      <pubDate>Fri, 06 Mar 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Denitza Stoeva et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Detection of C3 in Titan with VLT-ESPRESSO</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2603-05365v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-05365v1</guid>
-      <pubDate>Fri, 06 Mar 2026 20:00:00 +0000</pubDate>
+      <title>Global Abiotic Sulfur Cycling on Earth-like Terrestrial Planets</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2603-06124v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-06124v1</guid>
+      <pubDate>Mon, 09 Mar 2026 20:00:00 +0000</pubDate>
       <dc:creator>Rafael Rianço-Silva et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
-        <category>astro-ph.SR</category>
         <category>physics.ao-ph</category>
         <category>physics.chem-ph</category>
+        <category>physics.geo-ph</category>
         <category>physics.space-ph</category>
     </item>
     <item>
-      <title>NASA&#x27;s Pandora SmallSat Mission: Simulating the Impact of Stellar Photospheric Heterogeneity and Its Correction</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2603-04519v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-04519v1</guid>
-      <pubDate>Fri, 06 Mar 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Benjamin V. Rackham et al.</dc:creator>
+      <title>Photodynamical modeling of TOI-4504 reveals its deeply resonant state and similarity to GJ 876</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2603-05720v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-05720v1</guid>
+      <pubDate>Mon, 09 Mar 2026 20:00:00 +0000</pubDate>
+      <dc:creator>J. M. Almenara et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
-        <category>astro-ph.SR</category>
     </item>
     <item>
-      <title>TILARA: Template-Independent Line-by-line Algorithm for Radial velocity Analysis. I. Description of the code and application on a Sun-like star</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2603-05445v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-05445v1</guid>
-      <pubDate>Fri, 06 Mar 2026 20:00:00 +0000</pubDate>
-      <dc:creator>C. San Nicolas Martinez et al.</dc:creator>
+      <title>UK White Paper on Magnetohydrodynamic (MHD) seismology of solar and heliospheric plasmas</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2603-05571v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-05571v1</guid>
+      <pubDate>Mon, 09 Mar 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Valery M. Nakariakov et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.IM</category>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.SR</category>
+        <category>physics.plasm-ph</category>
+        <category>physics.space-ph</category>
+    </item>
+    <item>
+      <title>The TESS All-Sky Rotation Survey: Periods for 944,056 Stars Within 500 pc</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2603-05586v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-05586v1</guid>
+      <pubDate>Mon, 09 Mar 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Andrew W. Boyle, Luke G. Bouma, Andrew W. Mann</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.SR</category>
         <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
+        <category>astro-ph.GA</category>
     </item>
   </channel>
 </rss>
