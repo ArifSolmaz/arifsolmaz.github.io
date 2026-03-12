@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 11 Mar 2026 04:04:42 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 12 Mar 2026 04:09:00 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,70 +15,73 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>The Key to Unlocking Exoplanet Biosignatures: a UK-led IR Spectrograph for the Habitable Worlds Observatory Coronagraph</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2603-09321v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-09321v1</guid>
-      <pubDate>Wed, 11 Mar 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Beth Biller et al.</dc:creator>
+      <title>Oxygenated False Positive Biosignatures in Mars-like Exoplanet Atmospheres</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2603-11017v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-11017v1</guid>
+      <pubDate>Thu, 12 Mar 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Margaret Turcotte Seavey et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>TOI-4616 b: a benchmark Earth-sized planet transiting a nearby M4 dwarf</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2603-10905v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-10905v1</guid>
+      <pubDate>Thu, 12 Mar 2026 20:00:00 +0000</pubDate>
+      <dc:creator>F. Zong Lang et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Spectral Decomposition Reveals Surface Processes on Europa</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2603-10520v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-10520v1</guid>
+      <pubDate>Thu, 12 Mar 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Gideon Yoffe, Sahar Shahaf</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
         <category>astro-ph.IM</category>
-        <category>astro-ph.EP</category>
+        <category>stat.AP</category>
     </item>
     <item>
-      <title>A second visit to Eps Ind Ab with JWST: new photometry confirms ammonia and suggests thick clouds in the exoplanet atmosphere of the closest super-Jupiter</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2603-08780v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-08780v1</guid>
-      <pubDate>Wed, 11 Mar 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Elisabeth C. Matthews et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Atmospheric Collapse and Habitability on Tidally-Locked Exoplanets</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2603-09260v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-09260v1</guid>
-      <pubDate>Wed, 11 Mar 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Keigo Taniguchi et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Worlds Next Door. IV. Mapping the Late Stages of Giant Planet Evolution with a Precise Dynamical Mass and Luminosity for ε Ind Ab</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2603-08787v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-08787v1</guid>
-      <pubDate>Wed, 11 Mar 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Aniket Sanghi et al.</dc:creator>
+      <title>Gaia-GIC-1: An Evolving Catastrophic Planetesimal Collision Candidate</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2603-10952v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-10952v1</guid>
+      <pubDate>Thu, 12 Mar 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Anastasios Tzanidakis, James R. A. Davenport</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.SR</category>
     </item>
     <item>
-      <title>The Influence of Clouds and Deuterium-Burning on Brown Dwarf Habitable Zones</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2603-09068v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-09068v1</guid>
-      <pubDate>Wed, 11 Mar 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Kayla J. Smith, Mark S. Marley</dc:creator>
+      <title>Detection of periodic transit timing variations in warm sub-Saturn HD 332231 b</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2603-10497v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-10497v1</guid>
+      <pubDate>Thu, 12 Mar 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Gracjan Maciejewski</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>Two Low Mass-Ratio Microlensing Planets and Two Types of Central-Resonant Degeneracy</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2603-09045v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-09045v1</guid>
-      <pubDate>Wed, 11 Mar 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Yuchen Tang et al.</dc:creator>
+      <title>At the stellar noise frontier: a transit survey of 121 TESS M3--M6 dwarfs</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2603-10247v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-10247v1</guid>
+      <pubDate>Thu, 12 Mar 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Yohann Tschudi</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+        <category>astro-ph.SR</category>
     </item>
     <item>
-      <title>Mass Production of 2023 KMTNet Microlensing Planets I: Low Mass Ratio</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2603-09239v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-09239v1</guid>
-      <pubDate>Wed, 11 Mar 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Yoon-Hyun Ryu et al.</dc:creator>
+      <title>A test of the Dedalus software for exoplanet atmospheric dynamics</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2603-10076v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-10076v1</guid>
+      <pubDate>Thu, 12 Mar 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Rick Bonhof, Quentin Changeat, James Y-K. Cho</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
-        <category>astro-ph.GA</category>
+        <category>astro-ph.IM</category>
     </item>
   </channel>
 </rss>
