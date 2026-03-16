@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 13 Mar 2026 04:06:57 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 16 Mar 2026 04:35:51 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,62 +15,82 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>Masses of Potentially Habitable Planets Characterized by the Habitable Worlds Observatory</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2603-11146v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-11146v1</guid>
-      <pubDate>Fri, 13 Mar 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Kaz Gary et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.IM</category>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Searching for Life-As-We-Don&#x27;t-Know-It: Mission-relevant Application of Assembly Theory for Exoplanet Life Detection</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2603-11086v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-11086v1</guid>
-      <pubDate>Fri, 13 Mar 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Sara Walker et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.IM</category>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>The ocean worlds science case for the Pollux spectropolarimeter</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2603-11112v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-11112v1</guid>
-      <pubDate>Fri, 13 Mar 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Vincent Hue et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.IM</category>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>A Cloudy Fit to the Atmosphere of WASP-107 b</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2603-12047v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-12047v1</guid>
-      <pubDate>Fri, 13 Mar 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Helong Huang et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Atmospheric Escape Rates from Mars - If it Orbited an Old M-Dwarf Star</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2603-11561v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-11561v1</guid>
-      <pubDate>Fri, 13 Mar 2026 20:00:00 +0000</pubDate>
-      <dc:creator>David A. Brain et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Cold giant discoveries from a joint radial-velocity and astrometry framework</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2603-11202v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-11202v1</guid>
-      <pubDate>Fri, 13 Mar 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Pablo A. Peña et al.</dc:creator>
+      <title>Connecting JWST Silicate Cloud Observations to Exoplanet Cloud Microphysics with Nimbus</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2603-13167v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-13167v1</guid>
+      <pubDate>Mon, 16 Mar 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Sven Kiefer, Caroline V. Morley, Melanie Rowland</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.IM</category>
+    </item>
+    <item>
+      <title>Bridging the Gap: Using Brown Dwarfs to Examine Silicate Clouds in Giant Exoplanet Atmospheres</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2603-12479v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-12479v1</guid>
+      <pubDate>Mon, 16 Mar 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Emily Calamari et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>Confirmation of the hot super-Neptune TOI-672 b with NIRPS and HARPS and Insights into the Neptunian desert around M dwarfs</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2603-12345v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-12345v1</guid>
+      <pubDate>Mon, 16 Mar 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Ares Osborn et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>exoALMA XXII: A Two-dimensional Atlas of Deviations from Keplerian Disks</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2603-13015v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-13015v1</guid>
+      <pubDate>Mon, 16 Mar 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Misato Fukagawa et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>Long-term monitoring of WASP-19 b: Signs of apsidal precession and molecular signatures</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2603-12395v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-12395v1</guid>
+      <pubDate>Mon, 16 Mar 2026 20:00:00 +0000</pubDate>
+      <dc:creator>A. R. Rajkumar et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Impact of stellar spots on the high-resolution transmission spectra of a giant planet around a Sun-like star</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2603-13075v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-13075v1</guid>
+      <pubDate>Mon, 16 Mar 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Jennifer P. Lucero et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+        <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>Hot Jupiter - Cold Jupiter: A complex sibling relation</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2603-12568v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-12568v1</guid>
+      <pubDate>Mon, 16 Mar 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Adriana Errico et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>exoALMA XX: Tomographic Detection of Embedded Planets in Protoplanetary Disks</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2603-13157v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-13157v1</guid>
+      <pubDate>Mon, 16 Mar 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Andres F. Izquierdo et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.SR</category>
     </item>
   </channel>
 </rss>
