@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 17 Mar 2026 04:12:24 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 18 Mar 2026 04:19:36 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,92 +15,40 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>The JWST Early Release Science Program for Direct Observations of Exoplanetary Systems. VIII. Molecular Mapping Performance with JWST/MIRI MRS: VHS 1256 b as a case study</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2603-13543v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-13543v1</guid>
-      <pubDate>Tue, 17 Mar 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Mathilde Mâlin et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
-    </item>
-    <item>
-      <title>A Panchromatic JWST Spectrum of a Giant Starspot on the Fully Convective M-dwarf TOI-3884</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2603-15414v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-15414v1</guid>
-      <pubDate>Tue, 17 Mar 2026 20:00:00 +0000</pubDate>
-      <dc:creator>C. A. Murray et al.</dc:creator>
+      <title>GEMS JWST: A sub-Solar metallicity atmosphere for giant planet TOI-5293Ab orbiting a rapidly changing M-dwarf</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2603-16464v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-16464v1</guid>
+      <pubDate>Wed, 18 Mar 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Shubham Kanodia et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.SR</category>
     </item>
     <item>
-      <title>SIMTERFERE: An optical interferometry simulator for quantifying the coherent flux stability of VLTI/GRAVITY+. Reaching per mill stability: Application to exoplanet spectroscopy</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2603-15499v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-15499v1</guid>
-      <pubDate>Tue, 17 Mar 2026 20:00:00 +0000</pubDate>
-      <dc:creator>J. R. Sauter et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.IM</category>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>HAT-P-32 b: what can be deduced from transit observations in Hα and He I lines?</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2603-14059v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-14059v1</guid>
-      <pubDate>Tue, 17 Mar 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Shaikhislamov I. F. et al.</dc:creator>
+      <title>A Search for the Lost Comet P/2010 H2 (Vales)</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2603-16579v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-16579v1</guid>
+      <pubDate>Wed, 18 Mar 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Quanzhi Ye et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>Exploring the surface of HD 189733 via Doppler shadow analysis of planetary transits</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2603-13463v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-13463v1</guid>
-      <pubDate>Tue, 17 Mar 2026 20:00:00 +0000</pubDate>
-      <dc:creator>E. C. Gonçalves et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.SR</category>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Constraining Small Planet Compositions for Future Missions</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2603-14552v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-14552v1</guid>
-      <pubDate>Tue, 17 Mar 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Larissa Palethorpe et al.</dc:creator>
+      <title>A chemical perspective on planet formation in reduced systems</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2603-15955v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-15955v1</guid>
+      <pubDate>Wed, 18 Mar 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Urja Zaveri, Haiyang S. Wang, Paolo A. Sossi</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>Mass Production of 2023 KMTNet Microlensing Planets. II: Two Planets and A Brown Dwarf</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2603-13887v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-13887v1</guid>
-      <pubDate>Tue, 17 Mar 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Zhixing Li et al.</dc:creator>
+      <title>Laplace-Legendre expansion of the planar planetary Hamiltonian</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2603-16528v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-16528v1</guid>
+      <pubDate>Wed, 18 Mar 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Aya Alnajjarine, Jacques Laskar, Federico Mogavero</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.GA</category>
-    </item>
-    <item>
-      <title>The TOLIMAN mission: A low-cost space telescope for high precision narrow-angle astrometry</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2603-14683v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-14683v1</guid>
-      <pubDate>Tue, 17 Mar 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Peter Tuthill et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.IM</category>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.SR</category>
-    </item>
-    <item>
-      <title>Dust traps and gas kinematic signatures in a crescent structure of a planet-forming disk</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2603-13510v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-13510v1</guid>
-      <pubDate>Tue, 17 Mar 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Greta Guidi et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.SR</category>
         <category>astro-ph.EP</category>
     </item>
   </channel>
