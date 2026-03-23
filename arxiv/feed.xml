@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 20 Mar 2026 04:08:55 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 23 Mar 2026 04:25:42 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,96 +15,105 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>Organosulfur Chemistry on sub-Neptunes: Implications for hazes and biosignatures</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2603-18923v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-18923v1</guid>
-      <pubDate>Fri, 20 Mar 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Sean Jordan et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
+      <title>Retrieving the Red Edge on Earth-like Planets with Heterogeneous Clouds and Surfaces</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2603-20033v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-20033v1</guid>
+      <pubDate>Mon, 23 Mar 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Zachary Burr et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+Imagine trying to figure out if a distant house is inhabited by looking at it through a telescope from miles away. That's essentially what astronomers face when searching for life on planets orbiting other stars. This research tackles one of humanity's most profound questions: Are we alone in the universe? Scientists are preparing for next-generation space telescopes that will be powerful enough to study the light reflected from Earth-like planets around other stars. By analyzing this light, they hope to detect signs of life—but first, they need to know what to look for and how reliably they can spot it.
+What They Did
+The researchers created virtual versions of Earth as it would appear from space, complete with realistic clouds, oceans, and continents in different arrangements. Think of it like creating a detailed movie of Earth from an alien's perspective. They then used computer models to simulate how starlight would bounce off these virtual Earths and what the reflected light would tell us. Crucially, they made their models messy and realistic—unlike previous studies that assumed planets would look uniform, they included patchy clouds and mixed surface types, just like our own planet. They developed new techniques to analyze the light signatures, specifically looking for the "red edge"—a telltale change in how vegetation reflects light that could indicate plant life.
+Key Findings
+Even with realistic, messy conditions including clouds and mixed surfaces, the team successfully identified Earth-like characteristics in every test case. Most importantly, they detected the vegetation red edge—the light signature of plant life—at wavelengths of 0.7 and 1.1 micrometers, even when clouds partially obscured the surface. This signal appeared both when continents dominated the view and when they averaged the light over longer observation periods, mimicking how real telescope observations would work.
+Looking Forward
+These results are encouraging news for the upcoming Habitable Worlds Observatory, a proposed space telescope designed to search for life on distant planets. The research suggests that this vegetation signature could serve as a reliable "biosignature"—a sign of life that we can detect from light-years away, opening new possibilities for discovering life beyond Earth.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>TOI-4552 b: A new ultra-short period rocky world revealed by NIRPS and TESS</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2603-18233v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-18233v1</guid>
-      <pubDate>Fri, 20 Mar 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Avidaan Srivastava et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
+      <title>Three outstanding physical questions for K2-18 b and other temperate sub-Neptunes</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2603-19803v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-19803v1</guid>
+      <pubDate>Mon, 23 Mar 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Shang-Min Tsai et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+Imagine finding a world that sits right in the "Goldilocks zone" around its star—not too hot, not too cold, but just right for liquid water to exist. That's exactly what astronomers thought they had with K2-18 b, a planet about 120 light-years away that's roughly twice the size of Earth. Recent observations using the James Webb Space Telescope sparked intense debate when scientists claimed to detect dimethyl sulfide—a gas that, on Earth, is only produced by living organisms. The discovery would be groundbreaking, potentially representing our first detection of biological activity beyond our solar system. But extraordinary claims require extraordinary evidence, and this new research takes a closer look at whether these exciting conclusions hold up under scrutiny.
+What They Did
+The research team acted like cosmic detectives, using computer models to simulate K2-18 b's atmosphere and climate under different conditions. They combined weather models (similar to those used for Earth's climate predictions) with chemistry models that track how different gases interact in the planet's atmosphere. The scientists also conducted new laboratory experiments, measuring how dimethyl sulfide and other molecules absorb infrared light—the same type of light the space telescope detected. Think of it like creating a reference library of molecular "fingerprints" to better identify what gases are actually present in the planet's atmosphere.
+Key Findings
+The team found three crucial problems with the biological interpretation. First, the planet's slightly oval orbit should create enough temperature variation to form water clouds, but the telescope data shows surprisingly little water vapor. Second, the atmospheric chemistry doesn't add up—the gases that were detected and those that weren't don't form a consistent chemical picture. Most importantly, their models suggest it's extremely difficult, if not impossible, for dimethyl sulfide to form naturally in this planet's atmospheric conditions, even without biological processes.
+Looking Forward
+This research demonstrates both the promise and challenges of searching for life beyond Earth. While K2-18 b may not harbor the biological signatures initially claimed, the study advances our understanding of sub-Neptune planets—a common type of world with no equivalent in our solar system. As telescope technology improves, scientists are developing more sophisticated tools to distinguish between genuine biosignatures and misleading atmospheric phenomena, bringing us closer to answering one of humanity's most profound questions: are we alone?]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>Gamma Ray Bursts Effects on Extinction and Survivability in the Galaxy</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2603-18250v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-18250v1</guid>
-      <pubDate>Fri, 20 Mar 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Matan Sade, Aviv Tsarfati, Ofek Birnholtz</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
+      <title>A Planetary Illusion&#x27;s Funeral: Non-detection of a Gaia DR3 Exoplanet Candidate, and the Role of Intermediate-precision Radial Velocities in Gaia Exoplanet Follow-up</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2603-19402v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-19402v1</guid>
+      <pubDate>Mon, 23 Mar 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Alexander Venner et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+Finding planets around other stars is one of the most exciting frontiers in astronomy, helping us understand how common Earth-like worlds might be in our galaxy. The European Space Agency's Gaia spacecraft has been revolutionizing this hunt by measuring the tiny wobbles that planets cause in their host stars' positions—like detecting how a person might sway slightly while walking a large, energetic dog on a leash. When Gaia announced its first exoplanet discoveries in 2022, including a potential planet around a Sun-like star called HD 12800, it marked a major milestone. However, science is self-correcting, and sometimes what initially looks like a groundbreaking discovery turns out to be an illusion—which is exactly what happened here.
+What They Did
+The researchers used a ground-based telescope spectrograph called TRES to take a completely different kind of measurement of HD 12800. While Gaia watches for tiny changes in a star's position in the sky, TRES measures changes in the star's motion toward or away from Earth by analyzing how the star's light shifts color—similar to how an ambulance siren changes pitch as it moves toward or away from you. If a planet was really orbiting HD 12800, it would cause the star to move in a predictable pattern that both techniques should detect. The team collected observations over time to see if they could confirm the planet's existence using this independent method.
+Key Findings
+The ground-based observations delivered disappointing but scientifically important news: there was no sign of the proposed planet around HD 12800. The researchers were confident they would have easily spotted the planet if it existed as originally described. This confirms that Gaia's initial detection was likely a false alarm—what astronomers call a "planetary illusion." The original candidate has since been officially retracted from the scientific literature.
+Looking Forward
+This work isn't just about one failed planet detection; it's about improving how we confirm future discoveries. The researchers demonstrate that medium-precision ground-based telescopes will be crucial for verifying the flood of potential planets that Gaia will announce in its next data release. This combination of space-based detection and ground-based confirmation represents the future of reliable exoplanet discovery.]]></description>
         <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Proton Irradiation of Primitive Atmospheres of Young Exoplanets and early Earth: Nₐthrm₂O Greenhouse Warming and Prebiotic Synthesis</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2603-18206v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-18206v1</guid>
-      <pubDate>Fri, 20 Mar 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Kensei Kobayashi et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
+        <category>astro-ph.GA</category>
         <category>astro-ph.IM</category>
+    </item>
+    <item>
+      <title>A Century of Radial Velocity and Astrometric Monitoring of 70 Oph AB: New PFS Data and Constraints on Planetary Companions</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2603-20044v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-20044v1</guid>
+      <pubDate>Mon, 23 Mar 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Yiting Li et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+Imagine having cosmic neighbors just down the street—that's essentially what the 70 Ophiuchi star system represents to astronomers. Located a mere 17 light-years away (practically next door in space terms), this pair of stars has captivated scientists for over a century. Why the fascination? This system sits in the perfect sweet spot for future space missions designed to directly photograph Earth-like planets orbiting other stars—something we've never achieved before. Understanding what kinds of planets might exist there helps scientists plan these ambitious missions and brings us closer to answering one of humanity's biggest questions: Are there other worlds like Earth?
+What They Did
+For nearly three decades, astronomers have been playing cosmic detective with this star system, using a technique called radial velocity monitoring. Picture how an ambulance siren changes pitch as it moves toward or away from you—stars do something similar with light when planets orbit them. The gravitational tug of orbiting planets causes stars to wobble ever so slightly, shifting their light toward red or blue. Using the powerful Planet Finder Spectrograph in Chile, researchers collected hundreds of precise measurements of both stars between 2023-2025, combining this fresh data with decades of previous observations to create the most complete picture yet of this stellar duo.
+Key Findings
+The good news and bad news came hand in hand. The bad news: despite a century of searching, no planets have been definitively detected around either star. However, the researchers didn't come away empty-handed. They've now ruled out the presence of Jupiter-sized planets close to both stars and determined that any planets larger than about one-third of Jupiter's mass simply don't exist in the inner regions. Most intriguingly, they confirmed that Saturn-sized planets or smaller could still be hiding in the "habitable zone" around the brighter star—the region where liquid water could exist on a planet's surface.
+Looking Forward
+This research provides a crucial roadmap for upcoming space telescopes designed to directly image exoplanets. Knowing that smaller, potentially habitable worlds might exist around 70 Ophiuchi A makes this system a prime target for these next-generation missions, bringing us one step closer to finding another Earth.]]></description>
+        <category>astro-ph.EP</category>
         <category>astro-ph.SR</category>
     </item>
     <item>
-      <title>BOWIE-ALIGN: Exploring degeneracies in the muted transmission spectrum of the aligned hot Jupiter NGTS-2b with NIRSpec/G395H</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2603-18332v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-18332v1</guid>
-      <pubDate>Fri, 20 Mar 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Charlotte Fairman et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
+      <title>Observations of Exocomets</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2603-19978v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-19978v1</guid>
+      <pubDate>Mon, 23 Mar 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Judith Korth et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+Imagine trying to understand how neighborhoods form and change over time by studying not just the houses, but also the delivery trucks, stray cats, and scattered newspapers that move between them. That's essentially what astronomers are doing when they study exocomets—icy, rocky chunks that zip around distant star systems like cosmic messengers. These "dirty snowballs," as comets are often called, carry crucial clues about how planets form and migrate over millions of years. Just as studying the small details of a neighborhood reveals hidden patterns of life, observing these tiny wanderers helps us understand the grand story of how solar systems evolve. Since we've only got one solar system to study up close—our own—finding and analyzing exocomets around other stars gives us a much broader perspective on whether our cosmic neighborhood is typical or wonderfully weird.
+What They Did
+This research reviews the detective work astronomers use to spot exocomets, which is like trying to identify individual raindrops during a storm while standing miles away. Scientists employ two main techniques: watching for tiny dips in starlight when comets pass in front of their stars (like noticing a moth briefly blocking a distant streetlight), and analyzing the "fingerprints" of gases that comets release as they heat up near their stars. These fingerprints appear as dark lines in the star's light spectrum, created when comet gases absorb specific colors of starlight. The challenge is enormous—these icy bodies are incredibly small and faint compared to the blazing stars they orbit.
+Key Findings
+The first exocomet was discovered around Beta Pictoris, a young star about 63 light-years away, opening an entirely new field of study. Since then, astronomers have detected exocomets in several star systems, though the exact count remains uncertain due to the difficulty of confirming these observations. The research reveals that current methods can detect large swarms of comets, particularly around young stars where comet activity tends to be more dramatic. However, scientists still can't definitively answer fundamental questions: How common are exocomets? Are they similar to the comets in our solar system? The data suggests these cosmic wanderers are more common than previously thought, especially in younger star systems.
+Looking Forward
+This research sets the stage for a revolution in understanding planetary systems. As telescope technology advances, astronomers expect to detect exocomets around many more stars, potentially revealing universal patterns in how solar systems develop. These discoveries could help answer whether our solar system's structure—with its neat arrangement of rocky inner planets and gas giant outer planets—is common or rare in the universe, ultimately informing our understanding of how likely Earth-like worlds might be.]]></description>
         <category>astro-ph.EP</category>
+        <category>astro-ph.SR</category>
     </item>
     <item>
-      <title>Atmospheric supply of HCN is not the rate limiting step for prebiotic chemistry across rocky exoplanets</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2603-18769v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-18769v1</guid>
-      <pubDate>Fri, 20 Mar 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Gergely Friss et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
+      <title>The Arc in the DX Cha Circumbinary System: Evidence For a Retrograde Circumbinary Disk</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2603-19983v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-19983v1</guid>
+      <pubDate>Mon, 23 Mar 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Cheng Chen et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+Imagine a cosmic dance where planets and stars spin in opposite directions—like figure skaters rotating against each other rather than in harmony. This unusual scenario might be happening in a stellar system called DX Cha, located about 600 light-years from Earth. Understanding how planets form around pairs of stars (called binary systems) is crucial because roughly half of all star systems in our galaxy contain multiple stars. If this system is indeed spinning "backward," it could revolutionize our understanding of how planets are born and challenge our assumptions about the cosmic choreography that creates new worlds.
+What They Did
+Scientists studied DX Cha, a system containing two stars orbiting each other, surrounded by a disk of gas and dust—the raw material from which planets eventually form. Using powerful telescopes, they measured the disk's structure and compared their observations to computer simulations. They ran two different scenarios: one where the disk spins in the same direction as the binary stars (called "prograde"), and another where it spins in the opposite direction ("retrograde"). Think of it like testing whether a merry-go-round works better when spinning the same way as nearby playground equipment, or in the opposite direction.
+Key Findings
+The disk sits remarkably close to the binary stars—just 1.2 times farther than the stars' most distant point from each other. This proximity was puzzling because gravitational forces from spinning binary stars typically clear out nearby space, like a cosmic vacuum cleaner. However, when researchers modeled a backward-spinning disk, everything clicked into place. The retrograde scenario perfectly explained both the disk's compact size and its distinctive arc-like shape, which wouldn't exist if the disk spun in the same direction as the stars.
+Looking Forward
+This discovery suggests we may need to rethink planet formation around binary stars. If confirmed, retrograde disks could form planets with completely different characteristics than previously thought. Future telescope observations of similar compact disks around binary systems could reveal whether DX Cha is unique or part of a previously unknown class of planetary nurseries spinning against the cosmic tide.]]></description>
         <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Investigation of Venus&#x27; thermal history, crustal evolution, and core dynamics with a coupled interior-lithosphere-atmosphere model</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2603-18070v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-18070v1</guid>
-      <pubDate>Fri, 20 Mar 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Rodolfo Garcia et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>A Warm Massive Pair of Planets around TOI-1232 Revealed with Transit-timing Variations and Doppler Spectroscopy</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2603-18395v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-18395v1</guid>
-      <pubDate>Fri, 20 Mar 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Deyan P. Mihaylov et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>The influence of hypothetical exomoons on planetary thermal phase curves</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2603-18437v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-18437v1</guid>
-      <pubDate>Fri, 20 Mar 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Xinyi Song, Jun Yang, Yueyun Ouyang</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>TOI-1333Ab is on a well-aligned orbit. An aligned hot Jupiter around an F-type star with a mutually inclined stellar companion</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2603-19129v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-19129v1</guid>
-      <pubDate>Fri, 20 Mar 2026 20:00:00 +0000</pubDate>
-      <dc:creator>E. Knudstrup et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
+        <category>astro-ph.SR</category>
     </item>
   </channel>
 </rss>
