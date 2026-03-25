@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 24 Mar 2026 04:14:36 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 25 Mar 2026 04:16:11 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,103 +15,102 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>Insights into the Exoplanet Radius Valley from Host-Star Ages, Activity, Chemistry, and Birth Radius</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2603-21581v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-21581v1</guid>
-      <pubDate>Tue, 24 Mar 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Xunzhou Chen et al.</dc:creator>
+      <title>Ecological modelling of hycean worlds</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2603-22491v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-22491v1</guid>
+      <pubDate>Wed, 25 Mar 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Gregory J. Cooke, Nikku Madhusudhan, Emily G. Mitchell</dc:creator>
       <description><![CDATA[Why It Matters
-Imagine if you lined up all the planets we've discovered beyond our solar system by size—you'd notice something peculiar. There's a strange gap where medium-sized planets should be, like finding plenty of compact cars and SUVs but hardly any sedans in a parking lot. This "radius valley" has puzzled astronomers because it hints at a dramatic process that either shrinks larger planets or prevents smaller ones from growing. Understanding this gap could reveal fundamental secrets about how planets form and evolve, including what makes worlds like Earth possible. Since we've now found thousands of these distant worlds, this research helps us understand whether our solar system is typical or special.
+Scientists have discovered thousands of planets orbiting other stars, and some might harbor life. Among the most promising are "hycean worlds"—planets with deep, hydrogen-rich atmospheres sitting atop vast global oceans. Think of them as water worlds wrapped in thick, alien air. The James Webb Space Telescope recently studied one such planet, K2-18 b, sparking excitement about finding life beyond Earth. But here's the catch: even if we detect signs of life on these distant worlds, how do we understand what kinds of creatures might actually be living there? This groundbreaking research takes the first step toward answering that question by modeling entire ecosystems on alien ocean worlds.
 What They Did
-The research team studied 769 planets orbiting 558 different stars, essentially building a comprehensive family tree for these distant worlds. They investigated not just the planets themselves, but their host stars—measuring the stars' ages, chemical makeup, magnetic activity levels, and even determining where in our galaxy each star originally formed billions of years ago. Think of it like being a detective who examines not just a crime scene, but also investigates the neighborhood, the family history, and the local environment to understand what really happened. This approach allowed them to see patterns that emerge when you look at planetary systems as products of their stellar environments.
+The researchers essentially played SimCity with alien bacteria. They used mathematical equations originally developed to study predator-prey relationships—like wolves and rabbits—but applied them to microscopic life in alien oceans. They created computer simulations of vertical slices of these alien seas, like looking at a cross-section of a fish tank, and populated them with one to five different types of bacteria similar to those found in Earth's oxygen-free environments. They tested various scenarios: some bacteria that need sunlight living near the surface, others dwelling in the depths, and even alien viruses that attack bacteria. They compared planets with constant daylight (tidally locked worlds that always show the same face to their star) versus those with day-night cycles.
 Key Findings
-The radius gap isn't permanent—it develops slowly over billions of years and isn't fully formed until stars reach 3 billion years old. Surprisingly, the gap appears most clearly around metal-poor stars and shows up strongly in systems born about 4.5 billion kilometers from our galaxy's center—exactly where our solar system originated. The pattern suggests that planets are losing their atmospheres through internal heat rather than simply being stripped away by their star's radiation, like a slow leak from within rather than being sandblasted from outside.
+The simulations revealed that alien oceans could support remarkably diverse microbial ecosystems. Surface-dwelling bacteria that harvest starlight consistently outcompeted deeper bacteria for resources, creating the alien equivalent of algae blooms. When the researchers introduced bacteriophages (viruses that eat bacteria), the results were dramatic: depending on timing, these viral invaders either collapsed entire ecosystems or actually boosted diversity by keeping dominant species in check. Surprisingly, planets with permanent daylight created more stable bacterial communities, though with smaller population peaks compared to worlds with changing seasons.
 Looking Forward
-These discoveries suggest our solar system formed in a cosmic "sweet spot" particularly good at producing Earth-sized planets. This research provides a new roadmap for finding potentially habitable worlds by identifying which types of star systems are most likely to host planets similar to our own.]]></description>
-        <category>astro-ph.SR</category>
+This research provides our first glimpse into how life might organize itself on alien water worlds. As our telescopes become more powerful and detect potential biosignatures in alien atmospheres, we'll need this kind of ecological modeling to interpret what we're seeing. Are we detecting a thriving, diverse ecosystem or one on the brink of collapse? This work lays the foundation for understanding not just whether life exists elsewhere, but how it might live, compete, and evolve in environments vastly different from Earth.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>Isotopic Signature of Organic Molecules from Beyond the Solar System: An Enriched Methane D/H Ratio in the Interstellar Object 3I/ATLAS</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2603-20445v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-20445v1</guid>
-      <pubDate>Tue, 24 Mar 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Nathan X. Roth et al.</dc:creator>
+      <title>Automatic search for transiting planets in TESS-SPOC FFIs with RAVEN: over 100 newly validated planets and over 2000 vetted candidates</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2603-22597v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-22597v1</guid>
+      <pubDate>Wed, 25 Mar 2026 20:00:00 +0000</pubDate>
+      <dc:creator>M. Lafarga et al.</dc:creator>
       <description><![CDATA[Why It Matters
-Imagine finding a message in a bottle that traveled across the ocean from a distant, unknown land. That's essentially what astronomers have discovered with 3I/ATLAS—a visitor from another star system that's giving us our first detailed chemical fingerprint of how planets form around other stars. This cosmic traveler is like a time capsule, preserving the original ingredients from its home solar system and allowing us to peek into the recipe that built worlds we'll never be able to visit. Understanding these alien building blocks helps us answer one of humanity's biggest questions: how common are planetary systems like ours, and what other kinds of worlds might exist in our galaxy?
+Imagine trying to count all the fireflies in a vast forest at night—you'd miss many hiding behind leaves or blinking at just the wrong moment. That's the challenge astronomers face when hunting for planets orbiting other stars. While NASA's TESS space telescope has revolutionized planet hunting by spotting thousands of potential worlds, many discoveries remain buried in the overwhelming flood of data. This research matters because finding and confirming these hidden planets helps us understand how common Earth-like worlds might be in our galaxy, and whether our solar system is typical or unusual.
 What They Did
-Scientists used the James Webb Space Telescope, our most powerful space observatory, to study the faint glow surrounding this interstellar visitor as it heated up while passing through our solar system. They focused on identifying specific molecules in its "coma"—the cloud of gas and dust that forms around these icy objects when they warm up, much like how your breath becomes visible on a cold day. The researchers were particularly interested in measuring different versions of methane molecules, specifically looking for "heavy" methane that contains deuterium—a rare, heavier cousin of regular hydrogen.
+The research team created a powerful automated detective called RAVEN to sift through four years of telescope data from over 2.2 million nearby stars. Like a cosmic sleuth, RAVEN searches for the tiny dimming that occurs when a planet passes in front of its star—similar to watching a moth cross in front of a streetlight. The system uses artificial intelligence trained on realistic simulations to distinguish between genuine planet signals and imposters like double stars or instrumental glitches. Think of it as teaching a computer to recognize the difference between a real diamond and convincing fakes by showing it thousands of examples.
 Key Findings
-The team discovered that this alien object contains an extraordinarily high amount of heavy methane—about 14 times more than what we see in comets from our own solar system. This is like finding that water from a foreign country contains dramatically different minerals than your local tap water, immediately telling you it came from a very different environment. The discovery represents only the second time scientists have ever detected this type of heavy methane in any comet, making it an extremely rare find.
+RAVEN struck gold, discovering 118 newly confirmed planets, including 31 that had never been detected before. Beyond these confirmed worlds, the system identified over 2,000 additional candidates with strong planet-like signatures—including 1,000 completely new discoveries. Among the most intriguing finds are dozens of unusually large planets, some more than eight times wider than Earth, which make excellent targets for detailed follow-up studies.
 Looking Forward
-This discovery suggests that planetary systems can form under wildly different conditions than our own, potentially creating entirely different types of worlds. As more interstellar visitors arrive, each one could reveal new secrets about planet formation across the galaxy.]]></description>
+This research represents a major leap toward completing our census of nearby planets, especially those whipping around their stars in just days or weeks. These validated discoveries will help astronomers understand planetary formation and evolution, while the robust candidate list provides a treasure trove for future observations that could reveal atmospheric compositions and potential habitability.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+    </item>
+    <item>
+      <title>Subsurface ocean salinity and dissipation rate inferred from Enceladus ice shell morphology</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2603-22602v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-22602v1</guid>
+      <pubDate>Wed, 25 Mar 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Wanying Kang, Yixiao Zhang</dc:creator>
+      <description><![CDATA[Why It Matters
+Saturn's moon Enceladus harbors a hidden ocean beneath its icy surface—one of the most promising places in our solar system to search for alien life. This underground sea shoots spectacular geysers through cracks in the ice, offering tantalizing glimpses of what lies beneath. But whether this ocean could actually support life depends on how well it circulates and what conditions exist in its depths. Since we can't dive down through miles of ice to explore directly, scientists must play detective, using clues from the ice shell above to piece together what's happening in the mysterious ocean below.
+What They Did
+The researchers acted like cosmic archaeologists, studying the thickness of Enceladus' ice shell across different regions of the moon. They knew that ocean currents below influence how thick or thin the ice becomes at the surface—warmer ocean water keeps ice thinner, while colder areas allow thicker ice to form. Using computer simulations and mathematical models, they tested how different ocean conditions—particularly how salty the water is and how much it gets stirred up by Saturn's gravitational pull—would affect circulation patterns and heat transport in the hidden sea.
+Key Findings
+The team discovered that Enceladus' ocean acts like a remarkably efficient natural heat pump, potentially moving 1,000 times more heat energy than it actually consumes in the process. Surprisingly, the ocean circulates most vigorously when it's either extremely salty or nearly fresh—not somewhere in between. The pattern of ice thickness we observe today suggests the ocean has moderate salinity and circulation, creating a delicate balance that maintains the current ice shell structure.
+Looking Forward
+These findings help scientists narrow down the conditions in Enceladus' ocean, bringing us closer to understanding whether it could host life. The research also provides a new toolkit for studying other icy moons like Jupiter's Europa, where similar hidden oceans might exist. As future missions prepare to sample the geysers or even drill through the ice, this work helps guide where to look and what to expect.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>3D NLTE Sodium abundances in late-type stars. Abundance corrections and synthetic spectra</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2603-22975v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-22975v1</guid>
+      <pubDate>Wed, 25 Mar 2026 20:00:00 +0000</pubDate>
+      <dc:creator>G. Canocchi et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+When astronomers study distant worlds orbiting other stars, they're like detectives analyzing fingerprints left in starlight. One crucial clue comes from sodium—the same element that makes table salt—which creates distinctive signatures when light passes through a planet's atmosphere. But there's a problem: scientists have been using simplified computer models to interpret these cosmic fingerprints, potentially leading to incorrect conclusions about what exoplanet atmospheres actually contain. This new research provides a more accurate cosmic decoder ring, helping us better understand both the chemical makeup of stars in our galaxy and the atmospheres of planets beyond our solar system.
+What They Did
+The researchers created sophisticated 3D computer simulations of stellar atmospheres—imagine modeling every swirl and temperature variation in a star's outer layers, like creating a detailed weather map for a star's surface. They focused on nine specific wavelengths of light that sodium atoms emit, studying how this light behaves in different types of stars ranging from relatively cool red giants to hotter, sun-like stars. Previous studies used simplified 1D models (like assuming a star's atmosphere has uniform layers, similar to a layered cake) and made assumptions about how atoms behave in extreme stellar conditions. The new approach accounts for the chaotic, three-dimensional nature of stellar atmospheres and the complex physics of how sodium atoms interact with intense radiation.
+Key Findings
+The team discovered that older methods consistently overestimated sodium abundances in most stars. The corrections needed were typically small for weak spectral lines—less than 10% error—but became dramatically larger for certain types of stars. In low-gravity giant stars, the errors could reach 70%, meaning previous estimates were wildly off. Surprisingly, for the most metal-poor stars in the galaxy (ancient stars with very few heavy elements), the corrections flipped direction, suggesting previous methods slightly underestimated sodium content by about 5%.
+Looking Forward
+These findings will revolutionize how scientists interpret the atmospheres of exoplanets. When starlight filters through an exoplanet's atmosphere during transit, sodium signatures help reveal the planet's composition, temperature, and weather patterns. With more accurate stellar models, astronomers can now distinguish between signals from the host star and the planet itself, leading to more reliable characterizations of alien worlds and bringing us closer to finding potentially habitable planets.]]></description>
+        <category>astro-ph.SR</category>
         <category>astro-ph.EP</category>
         <category>astro-ph.GA</category>
     </item>
     <item>
-      <title>Modelling solar radial velocities and photometric variability with SOAPv4</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2603-21413v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-21413v1</guid>
-      <pubDate>Tue, 24 Mar 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Alba Barka et al.</dc:creator>
+      <title>Planet-Planet Scattering Explains the Mass-Eccentricity Relation of Warm Jupiters</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2603-22426v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-22426v1</guid>
+      <pubDate>Wed, 25 Mar 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Jiayin Dong et al.</dc:creator>
       <description><![CDATA[Why It Matters
-Finding Earth-like planets around other stars is one of astronomy's greatest quests, but stars themselves keep getting in the way. When astronomers hunt for planets, they look for tiny wobbles in a star's motion caused by an orbiting planet's gravitational pull. The problem? Stars are dynamic, bubbling spheres covered in dark spots and bright patches that create their own wobbles, potentially masking the signals from small, rocky planets like Earth. Since we can't see the surfaces of distant stars in detail, scientists are turning to the one star we know intimately—our Sun—as a testing ground to understand how stellar activity interferes with planet detection.
+Imagine trying to understand how our solar system's neighborhood formed by studying thousands of other planetary families across the galaxy. That's exactly what astronomers are doing with exoplanets—worlds orbiting distant stars. This research tackles a fascinating puzzle: why do some giant planets end up in highly stretched, oval-shaped orbits while others follow nearly perfect circles? Understanding these cosmic migration patterns helps us piece together the chaotic early history of planetary systems, including our own. It's like being a detective, using clues from today's planetary arrangements to solve ancient cosmic mysteries about how worlds are born, survive, and sometimes get kicked out of their original homes.
 What They Did
-The researchers created a sophisticated computer model to simulate how the Sun's surface features affect the signals astronomers use to find planets. They used detailed images from space-based solar observatories to map every spot and bright region on the Sun's surface over long periods. Think of it like creating a constantly updated weather map, but for solar storms and eruptions. They then fed this data into a program called SOAP (which models how stellar surfaces appear from far away) to predict what wobbles and brightness changes an alien astronomer would see if they were studying our Sun from light-years away. Finally, they compared their predictions with actual measurements taken by sensitive instruments here on Earth.
+The researchers focused on "warm Jupiters"—gas giant planets similar to Jupiter but orbiting much closer to their stars, completing one orbit in just tens of days rather than years. They analyzed data from many of these worlds, looking specifically at two key characteristics: how heavy each planet is and how stretched or circular its orbit appears. By comparing these properties across dozens of planetary systems, they searched for patterns that could reveal the violent histories these worlds experienced. Think of it like examining car crash damage to reconstruct what happened during the collision—except the "crashes" occurred between planets billions of years ago.
 Key Findings
-The model successfully reproduced the Sun's behavior with remarkable accuracy. The computer simulation matched real observations so well that the leftover differences had a precision of just 0.91 meters per second—incredibly small considering planets like Earth cause wobbles of only about 10 centimeters per second. This precision came from using a mathematical technique called morphological transforms to identify active regions, which outperformed other current methods. The model also accurately captured how the Sun's brightness varies over time due to surface activity.
+The team discovered a clear relationship: heavier warm Jupiters tend to have more stretched, oval-shaped orbits, while lighter ones typically follow more circular paths. Their explanation involves planetary billiards—when multiple giant planets form close together, they gravitationally shove each other around. Lighter planets are more likely to actually collide and merge, while heavier planets tend to fling each other into eccentric orbits or eject one another from the system entirely. This cosmic game of bumper cars can also explain why some warm Jupiters eventually spiral inward to become "hot Jupiters" hugging their stars.
 Looking Forward
-This research provides astronomers with a powerful tool to separate real planetary signals from stellar noise. By understanding exactly how our Sun's activity creates false signals, scientists can better design strategies to find Earth-sized planets around Sun-like stars, bringing us closer to discovering potentially habitable worlds.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
-        <category>astro-ph.SR</category>
-    </item>
-    <item>
-      <title>Planetary Architectures of Kepler Compact Multis with Binary Star Companions</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2603-21897v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-21897v1</guid>
-      <pubDate>Tue, 24 Mar 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Kendall Sullivan, Gregory J. Gilbert</dc:creator>
-      <description><![CDATA[Why It Matters
-Most stars in our galaxy have companion stars, making binary star systems incredibly common. Yet we know surprisingly little about how planets form and arrange themselves around these stellar pairs. Understanding planetary systems in binary star environments isn't just academic curiosity—it doubles the cosmic real estate where we might find habitable worlds. This research helps us grasp how the dance between two stars shapes the birth and evolution of entire planetary families, giving us crucial insights into how common Earth-like worlds might be throughout the universe.
-What They Did
-The researchers analyzed data from NASA's Kepler Space Telescope, studying over 1,000 planets across nearly 700 star systems. Think of it like comparing two different neighborhoods: one where houses sit on single lots (planets around lone stars) and another where houses share property with a neighbor (planets in binary star systems). They measured planet sizes—from super-Earths slightly bigger than our home to mini-Neptunes several times larger—and carefully mapped how these worlds are spaced in their orbits. By comparing the "architecture" or layout of these two types of planetary neighborhoods, they could see how having a stellar companion affects planet formation.
-Key Findings
-Planets around binary stars are surprisingly similar to those around single stars in many ways. Both follow a "peas-in-a-pod" pattern, where planets in the same system tend to be similar sizes with relatively even spacing—like pearls on a necklace. However, binary star systems show subtle but important differences: they're more likely to host solitary planets, and when they do have multiple planets, the spacing between worlds is more irregular. The gravitational influence of that second star appears to disrupt the planet-forming disk early on, leading to these architectural quirks.
-Looking Forward
-These findings suggest that while binary stars don't completely prevent planet formation, they do leave their fingerprints on planetary system design. As we discover more exoplanets around binary stars, this research provides a roadmap for understanding what we're seeing and helps refine our models of how planetary systems emerge from the cosmic chaos of star formation.]]></description>
+This research predicts that many warm Jupiters—both circular and eccentric—should have hidden planetary siblings that advanced telescopes could detect. These findings also suggest that planetary violence is more common than previously thought, reshaping our understanding of how planetary systems evolve and helping astronomers know where to look for Earth-like worlds in more stable, peaceful neighborhoods.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>High-resolution spectroscopic atmospheric studies of 5 hot Jupiters across the edge of the Neptune desert</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2603-21273v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-21273v1</guid>
-      <pubDate>Tue, 24 Mar 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Zewen Jiang et al.</dc:creator>
+      <title>Unified Formation Channel of Hot and Warm Jupiters via Planet-Planet Scattering</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2603-22409v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-22409v1</guid>
+      <pubDate>Wed, 25 Mar 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Julia Esposito, Gongjie Li, Songhu Wang</dc:creator>
       <description><![CDATA[Why It Matters
-Imagine trying to understand Earth's atmosphere by studying it from another solar system—that's essentially what astronomers are doing with planets orbiting distant stars. This research helps us understand how planetary atmospheres work under extreme conditions, which not only reveals the incredible diversity of worlds beyond our solar system but also provides crucial insights into how planets form and evolve. By studying these cosmic laboratories, scientists can better understand the fundamental processes that shape all planetary atmospheres, including our own.
+Imagine trying to solve a cosmic mystery: why do some giant planets orbit scorchingly close to their stars while others maintain a more comfortable distance? For decades, astronomers have puzzled over "hot Jupiters" and "warm Jupiters"—massive planets that seem to follow completely different rules about where they live and how they behave around their stars. Understanding how these planetary giants end up in such different situations helps us piece together the chaotic story of how planetary systems form and evolve. This research matters because it reveals that the universe's planetary neighborhoods are shaped by dramatic collisions and near-misses that can completely reshape entire solar systems.
 What They Did
-The researchers studied five "hot Jupiter" planets—gas giants that orbit incredibly close to their stars, making them scorchingly hot. Think of these worlds as cosmic furnaces, with temperatures reaching thousands of degrees. Using powerful telescopes, the team analyzed starlight filtering through these planets' atmospheres as they passed in front of their host stars. This technique is like examining a lamp's light through colored glass—different atmospheric gases absorb specific colors of light, creating a unique fingerprint that reveals what's floating in these alien skies. The planets they studied sit in an interesting region called the "Neptune desert," where few planets of this size are typically found.
+The research team used powerful computer simulations to recreate the violent dance of giant planets in young solar systems. Think of it like a cosmic game of billiards, where massive planets occasionally bump into each other and get flung into new orbits. The scientists modeled thousands of these planetary encounters, tracking what happens when planets scatter each other around their star. They divided these encounters into three categories based on how close to the star the action happens: "hot" scattering very close to the star, "cold" scattering far away, and "warm" scattering at intermediate distances. Their simulations included the effects of tidal forces—the same gravitational stretching that causes ocean tides on Earth, but strong enough to dramatically change planetary orbits.
 Key Findings
-The results varied dramatically between planets. Three of the cooler, denser worlds showed no detectable atmospheric signals—their atmospheres remained hidden from view. However, the hottest planet, WASP-167b, revealed a treasure trove of information. The researchers detected iron, magnesium, calcium, titanium, and vanadium in its atmosphere, with temperatures reaching a blistering 4,500 degrees Fahrenheit. Surprisingly, they found that atmospheric detectability seems to have a sharp cutoff—planets hotter than about 4,100 degrees Fahrenheit show clear atmospheric signatures, while cooler ones remain largely invisible to current techniques.
+The simulations revealed that planetary scattering acts like a sorting machine, creating the distinct populations we observe today. When planets scatter each other in the cold, outer regions of solar systems, they often create hot Jupiters that orbit their stars backward—the opposite direction of most planets. However, this process rarely produces warm Jupiters in the inner region between 0.1 and 0.3 times Earth's distance from the Sun. The key breakthrough was discovering that warm scattering fills this gap perfectly. When planetary encounters happen at intermediate distances, they create warm Jupiters, but with a twist: the most tilted ones eventually spiral inward to become hot Jupiters, leaving behind only the more well-behaved, aligned warm Jupiters that we actually observe.
 Looking Forward
-This research suggests there's a critical temperature threshold that determines whether we can easily study exoplanet atmospheres with current technology. This finding will help astronomers prioritize which planets to study and refine techniques for detecting atmospheres around cooler worlds, ultimately expanding our ability to characterize the vast menagerie of planets throughout the galaxy.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Lava Lakes on Io: crust age and implications for thermal output</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2603-22062v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-22062v1</guid>
-      <pubDate>Tue, 24 Mar 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Alessandro Mura et al.</dc:creator>
-      <description><![CDATA[Why It Matters
-Jupiter's moon Io is the most volcanically active world in our solar system, with hundreds of erupting volcanoes painting its surface in brilliant yellows and reds. Understanding Io's extreme volcanism helps scientists learn how tidal forces—the gravitational squeezing from Jupiter and other moons—can power geological activity on distant worlds. This research has profound implications beyond our solar system: as we discover thousands of exoplanets, many orbiting close to their stars or in complex multi-planet systems, Io serves as our laboratory for understanding how gravitational forces might create habitable conditions or drive dramatic surface changes on alien worlds.
-What They Did
-Scientists analyzed infrared images from NASA's Juno spacecraft, which has been orbiting Jupiter since 2016. They studied thirty volcanic lakes on Io—imagine giant calderas filled with molten rock, similar to lava lakes in Hawaii but much larger and more violent. Using thermal imaging (like a high-tech heat camera), they measured temperatures across these lava lakes, paying special attention to the cooler, solidified crusts in the centers versus the hotter, glowing edges where fresh lava breaks through.
-Key Findings
-The research revealed a surprising discovery: most of the heat from Io's lava lakes actually comes from their cooler crusted surfaces, not the dramatically hot molten edges. This means previous estimates severely underestimated Io's total heat output—by up to ten times! The team also found that these volcanic lakes follow unpredictable cycles, completely resurfacing themselves roughly every decade as old crusts break apart and new lava emerges.
-Looking Forward
-This dramatically revised understanding of Io's heat budget changes how we think about tidal heating throughout the universe. Many exoplanets experience similar gravitational squeezing from their host stars or neighboring planets. By better understanding how much energy these forces can generate, scientists can more accurately predict which distant worlds might have active surfaces, atmospheres, or even conditions suitable for life.]]></description>
+This unified theory makes specific predictions that astronomers can test with current and future telescopes. If the model is correct, warm Jupiters farther from their stars should sometimes be misaligned, and warm Jupiter systems should contain companion planets tilted up to 30 degrees relative to each other. These predictions will help astronomers verify whether this violent scattering process really is the architect behind the diverse planetary systems we see across our galaxy.]]></description>
         <category>astro-ph.EP</category>
     </item>
   </channel>
