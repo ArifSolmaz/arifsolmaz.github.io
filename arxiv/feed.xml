@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 01 Apr 2026 04:43:49 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 02 Apr 2026 04:25:16 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,82 +15,53 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>First Detection of Exoplanetary Cannabinoids: Evidence for THC and CBD in the Atmosphere of K2-18b</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2603-29700v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-29700v1</guid>
-      <pubDate>Wed, 01 Apr 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Amie J. Chism et al.</dc:creator>
+      <title>Information content of JWST transmission spectroscopy of the exoplanet HAT-P-12b from the optical to the mid-infrared</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2604-01219v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-01219v1</guid>
+      <pubDate>Thu, 02 Apr 2026 20:00:00 +0000</pubDate>
+      <dc:creator>L. Heinke et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>Plan 9: Detecting Atmospheric Deterrence Against Interstellar Monsters</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2603-28895v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-28895v1</guid>
-      <pubDate>Wed, 01 Apr 2026 20:00:00 +0000</pubDate>
-      <dc:creator>David R. Rice, Michael J. Radke</dc:creator>
+      <title>Optical frequency comb Fourier transform spectroscopy of the CH₂⁷⁹Br⁸¹Br, CH₂⁷⁹Br₂, and CH₂⁸¹Br₂ isotopologues in the 1180-1210 cm⁻¹ region</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2604-00244v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-00244v1</guid>
+      <pubDate>Thu, 02 Apr 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Ibrahim Sadiek et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
+        <category>physics.chem-ph</category>
         <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Where to Search For Life: Evidence from narrative sources with established predictive efficacy</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2603-28883v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-28883v1</guid>
-      <pubDate>Wed, 01 Apr 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Elizabeth R Stanway</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.IM</category>
-        <category>astro-ph.EP</category>
-        <category>physics.ed-ph</category>
     </item>
     <item>
-      <title>New Constraints on the M Dwarf Cosmic Shoreline from a Galaxy Far, Far Away</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2603-29743v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-29743v1</guid>
-      <pubDate>Wed, 01 Apr 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Michael Radica</dc:creator>
+      <title>Resistive MHD Simulations of Stellar Wind-Magnetosphere Coupling in TRAPPIST-1e</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2604-00191v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-00191v1</guid>
+      <pubDate>Thu, 02 Apr 2026 20:00:00 +0000</pubDate>
+      <dc:creator>J. J. González-Avilés, N. Baltazar Pérez-Negrón, A. Segura</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Cloudy With a Chance of Meatballs</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2603-29883v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-29883v1</guid>
-      <pubDate>Wed, 01 Apr 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Wolf Cukier et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Homogeneous stellar parameters for 717,807 TESS FGK stars using Gaia DR3</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2603-29817v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-29817v1</guid>
-      <pubDate>Wed, 01 Apr 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Francesca Waines, Angharad Weeks, Vincent Van Eylen</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.SR</category>
-        <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>Gaia DR3 IDs for TESS Input Catalog Targets</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2603-28850v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-28850v1</guid>
-      <pubDate>Wed, 01 Apr 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Kevin K. Hardegree-Ullman et al.</dc:creator>
+      <title>Planetary Radar at the Arecibo Observatory</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2604-00332v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-00332v1</guid>
+      <pubDate>Thu, 02 Apr 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Michael C Nolan, Lynn M. Carter, Edgard G. Rivera-Valentín</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.IM</category>
-        <category>astro-ph.SR</category>
     </item>
     <item>
-      <title>Large Dust Grains and a Possible Dust Trap in the Polar Circumbinary Disc of HD 98800B</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2603-28867v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2603-28867v1</guid>
-      <pubDate>Wed, 01 Apr 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Álvaro Ribas et al.</dc:creator>
+      <title>Predictions of the LSST Solar System (non-)Yield</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2604-00206v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-00206v1</guid>
+      <pubDate>Thu, 02 Apr 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Joseph Murtagh, Ian Chow</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
-        <category>astro-ph.SR</category>
     </item>
   </channel>
 </rss>
