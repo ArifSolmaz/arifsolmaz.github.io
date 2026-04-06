@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 03 Apr 2026 04:25:24 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 06 Apr 2026 04:40:39 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,22 +15,29 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>Unusually Hot Interiors Could Reconcile the Missing Methane Problem for Warm-to-Hot Exoplanets with Hydrogen Atmospheres</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2604-01672v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-01672v1</guid>
-      <pubDate>Fri, 03 Apr 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Xinting Yu et al.</dc:creator>
+      <title>What Are Pulsar Companions Made of? Using Gravitational Tides to Probe Their Compositions</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2604-02725v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-02725v1</guid>
+      <pubDate>Mon, 06 Apr 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Liam Colombo-Murphy et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.HE</category>
         <category>astro-ph.EP</category>
+        <category>astro-ph.SR</category>
+        <category>hep-ph</category>
     </item>
     <item>
-      <title>Hot Rocks Survey V: Secondary Eclipse Photometry of GJ 3473 b with JWST/MIRI</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2604-02332v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-02332v1</guid>
-      <pubDate>Fri, 03 Apr 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Måns Holmberg et al.</dc:creator>
+      <title>Proton Temperature Anisotropy Across Interplanetary Shocks: A Statistical Analysis with WIND observations</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2604-02452v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-02452v1</guid>
+      <pubDate>Mon, 06 Apr 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Zeping Jin et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
+        <category>physics.space-ph</category>
         <category>astro-ph.EP</category>
+        <category>astro-ph.SR</category>
+        <category>physics.geo-ph</category>
+        <category>physics.plasm-ph</category>
     </item>
   </channel>
 </rss>
