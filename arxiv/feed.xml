@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 09 Apr 2026 04:29:26 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 10 Apr 2026 04:43:26 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,90 +15,98 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>Habitability Study of Terrestrial Planets: Application to Venus-like Worlds</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2604-06792v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-06792v1</guid>
-      <pubDate>Thu, 09 Apr 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Swathi Raviprakash et al.</dc:creator>
+      <title>The Goldilocks problem for detecting water in terrestrial planets: Constraining water abundances in the mid-IR with LIFE</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2604-07461v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-07461v1</guid>
+      <pubDate>Fri, 10 Apr 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Sarah Rugheimer et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>GEMS JWST: HATS-75 b -- A giant planet with a sub-solar metallicity atmosphere orbiting an M-dwarf</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2604-07268v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-07268v1</guid>
-      <pubDate>Thu, 09 Apr 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Reza Ashtari et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>UMI: A GPU-Accelerated Asymmetric Robust Estimator for Photometric Detrending in Exoplanet Transit Searches</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2604-06602v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-06602v1</guid>
-      <pubDate>Thu, 09 Apr 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Omar Khan</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.IM</category>
-        <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>Panchromatic View of the Frigid Jovian Exoplanet COCONUTS-2 b</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2604-07176v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-07176v1</guid>
-      <pubDate>Thu, 09 Apr 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Matthieu Ravet et al.</dc:creator>
+      <title>Three-dimensional transport-induced chemistry on temperate sub-Neptune K2-18b, Part II: the combined effects of atmospheric dynamics and chemical reactions</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2604-07987v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-07987v1</guid>
+      <pubDate>Fri, 10 Apr 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Jiachen Liu et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>An Aligned Very-Low-Mass Star Orbiting an M dwarf and Obliquity Patterns Across Giant Planets, Brown Dwarfs, and Binary Stars</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2604-06595v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-06595v1</guid>
-      <pubDate>Thu, 09 Apr 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Tianjun Gan et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.SR</category>
-    </item>
-    <item>
-      <title>Chemical Abundances Shape History (CASH). I. A Link between Giant Planets Orbital Periods and Host Stellar C/O Ratios</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2604-06809v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-06809v1</guid>
-      <pubDate>Thu, 09 Apr 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Ruisheng Zhang et al.</dc:creator>
+      <title>Super-Earth masses and stellar abundances from NIRPS reveal tentative evidence for water-rich formation around M dwarfs</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2604-07447v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-07447v1</guid>
+      <pubDate>Fri, 10 Apr 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Drew Weisserman et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.SR</category>
     </item>
     <item>
-      <title>Planet-induced Periodic Modulation of Stellar Activity in GJ 436: Insights into a Warm Neptune&#x27;s Magnetic Field</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2604-06969v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-06969v1</guid>
-      <pubDate>Thu, 09 Apr 2026 20:00:00 +0000</pubDate>
-      <dc:creator>D. Revilla et al.</dc:creator>
+      <title>Hydrolyzed Hazes on Water-rich Exoplanets: Optical Constants and Detectability</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2604-07498v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-07498v1</guid>
+      <pubDate>Fri, 10 Apr 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Cara Pesciotta et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>An astrometric search for planets in debris disk systems</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2604-07068v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-07068v1</guid>
-      <pubDate>Thu, 09 Apr 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Elisabeth M. Penderghast et al.</dc:creator>
+      <title>A Search for Wide-orbit Planets Around M-dwarfs using Deep MIRI 15-micron Images</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2604-07703v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-07703v1</guid>
+      <pubDate>Fri, 10 Apr 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Yihan Li et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
-        <category>astro-ph.SR</category>
     </item>
     <item>
-      <title>Determining the Host Stars of Planets in Binary Star Systems with Asterodensity Profiling: Investigating the Canonical Radius Gap</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2604-06388v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-06388v1</guid>
-      <pubDate>Thu, 09 Apr 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Nathanael Burns-Watson, Kendall Sullivan, Adam Kraus</dc:creator>
+      <title>Planetesimal-Driven Instabilities in Resonant Chains of Cold Neptunes and Their Dynamical Outcomes</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2604-08383v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-08383v1</guid>
+      <pubDate>Fri, 10 Apr 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Ryan LoRusso, Cristobal Petrovich, Hareesh Gautham Bhaskar</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
-        <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>Exoplanet Orbital Distribution around FGK Sun-like Host Stars I: planet occurrence rate derived from the Kepler Mission and theoretical interpretations from planet formation</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2604-08406v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-08406v1</guid>
+      <pubDate>Fri, 10 Apr 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Li Zeng et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>On the Information Content of Ariel Transmission Spectra: Reassessing the Tier System</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2604-07598v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-07598v1</guid>
+      <pubDate>Fri, 10 Apr 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Michael Radica et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+    </item>
+    <item>
+      <title>What&#x27;s the (RV) Point? A 3.5× Enhancement in Super-Jupiters with Saturn-like Periods from a Critical Observation</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2604-07505v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-07505v1</guid>
+      <pubDate>Fri, 10 Apr 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Marie C. Tagliavia, Lauren M. Weiss</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+    </item>
+    <item>
+      <title>Exoplanet Orbital Distribution around FGK Sun-like Host Stars II: a valley in the orbital semi-major axis distribution of sub-Neptunes</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2604-08428v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-08428v1</guid>
+      <pubDate>Fri, 10 Apr 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Li Zeng et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
     </item>
   </channel>
 </rss>
