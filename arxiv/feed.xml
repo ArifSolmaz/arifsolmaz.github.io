@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 10 Apr 2026 04:43:26 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 13 Apr 2026 04:54:27 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,98 +15,139 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>The Goldilocks problem for detecting water in terrestrial planets: Constraining water abundances in the mid-IR with LIFE</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2604-07461v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-07461v1</guid>
-      <pubDate>Fri, 10 Apr 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Sarah Rugheimer et al.</dc:creator>
+      <title>Spectral signatures from the habitable zone</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2604-08993v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-08993v1</guid>
+      <pubDate>Mon, 13 Apr 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Vincent Kofman</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Detecting nitrogen-carriers in the inner regions of protoplanetary disks</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2604-09269v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-09269v1</guid>
+      <pubDate>Mon, 13 Apr 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Marissa Vlasblom et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Long-period transiting exoplanets: advances in detection and characterization</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2604-09254v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-09254v1</guid>
+      <pubDate>Mon, 13 Apr 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Solène Ulmer-Moll, Babatunde Akinsanmi, Simon Müller</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.IM</category>
     </item>
     <item>
-      <title>Three-dimensional transport-induced chemistry on temperate sub-Neptune K2-18b, Part II: the combined effects of atmospheric dynamics and chemical reactions</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2604-07987v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-07987v1</guid>
-      <pubDate>Fri, 10 Apr 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Jiachen Liu et al.</dc:creator>
+      <title>Finding Circumbinary Planets: A Semi-Automated Transit Search of TESS Eclipsing Binaries</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2604-09435v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-09435v1</guid>
+      <pubDate>Mon, 13 Apr 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Benjamin D. R. Davies et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Super-Earth masses and stellar abundances from NIRPS reveal tentative evidence for water-rich formation around M dwarfs</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2604-07447v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-07447v1</guid>
-      <pubDate>Fri, 10 Apr 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Drew Weisserman et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
         <category>astro-ph.SR</category>
     </item>
     <item>
-      <title>Hydrolyzed Hazes on Water-rich Exoplanets: Optical Constants and Detectability</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2604-07498v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-07498v1</guid>
-      <pubDate>Fri, 10 Apr 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Cara Pesciotta et al.</dc:creator>
+      <title>NCCR PlanetS: Observational and computational characterization of exoplanet atmospheres</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2604-09385v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-09385v1</guid>
+      <pubDate>Mon, 13 Apr 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Daniel Kitzmann et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>A Search for Wide-orbit Planets Around M-dwarfs using Deep MIRI 15-micron Images</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2604-07703v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-07703v1</guid>
-      <pubDate>Fri, 10 Apr 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Yihan Li et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Planetesimal-Driven Instabilities in Resonant Chains of Cold Neptunes and Their Dynamical Outcomes</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2604-08383v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-08383v1</guid>
-      <pubDate>Fri, 10 Apr 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Ryan LoRusso, Cristobal Petrovich, Hareesh Gautham Bhaskar</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Exoplanet Orbital Distribution around FGK Sun-like Host Stars I: planet occurrence rate derived from the Kepler Mission and theoretical interpretations from planet formation</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2604-08406v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-08406v1</guid>
-      <pubDate>Fri, 10 Apr 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Li Zeng et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>On the Information Content of Ariel Transmission Spectra: Reassessing the Tier System</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2604-07598v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-07598v1</guid>
-      <pubDate>Fri, 10 Apr 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Michael Radica et al.</dc:creator>
+      <title>The Illusory Precision of TTV Masses: Hidden Solutions Behind Kepler-9&#x27;s Tight Mass Ratio</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2604-09268v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-09268v1</guid>
+      <pubDate>Mon, 13 Apr 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Sheng Jin et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.IM</category>
     </item>
     <item>
-      <title>What&#x27;s the (RV) Point? A 3.5× Enhancement in Super-Jupiters with Saturn-like Periods from a Critical Observation</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2604-07505v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-07505v1</guid>
-      <pubDate>Fri, 10 Apr 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Marie C. Tagliavia, Lauren M. Weiss</dc:creator>
+      <title>High-Contrast Imaging of Forming Protoplanets: VLTs, JWST, and the Promise of ELT</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2604-09526v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-09526v1</guid>
+      <pubDate>Mon, 13 Apr 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Gabriele Cugno, Michael R. Meyer</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Polarimetry in Planetary Sciences and Astronomy</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2604-08975v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-08975v1</guid>
+      <pubDate>Mon, 13 Apr 2026 20:00:00 +0000</pubDate>
+      <dc:creator>C. H. Lucas Patty et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.IM</category>
     </item>
     <item>
-      <title>Exoplanet Orbital Distribution around FGK Sun-like Host Stars II: a valley in the orbital semi-major axis distribution of sub-Neptunes</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2604-08428v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-08428v1</guid>
-      <pubDate>Fri, 10 Apr 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Li Zeng et al.</dc:creator>
+      <title>Machine Learning as a Transformative Tool for (Exo-)Planetary Science</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2604-09152v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-09152v1</guid>
+      <pubDate>Mon, 13 Apr 2026 20:00:00 +0000</pubDate>
+      <dc:creator>J. Davoult et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>The formation of planetary systems: physics, populations, and architectures</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2604-09011v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-09011v1</guid>
+      <pubDate>Mon, 13 Apr 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Andrin Kessler et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Nii-body: Bayesian Inference of Multiplanet Dynamics via N-body Simulations</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2604-09383v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-09383v1</guid>
+      <pubDate>Mon, 13 Apr 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Hong-Fei Jia et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+    </item>
+    <item>
+      <title>Terrestrial planet formation in the era of GPU computing</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2604-09184v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-09184v1</guid>
+      <pubDate>Mon, 13 Apr 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Simon L. Grimm, Joachim G. Stadel</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+    </item>
+    <item>
+      <title>Recent development in high-precision high-fidelity spectrographs for exoplanet research and characterization</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2604-09020v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-09020v1</guid>
+      <pubDate>Mon, 13 Apr 2026 20:00:00 +0000</pubDate>
+      <dc:creator>François Bouchy et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.IM</category>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Overview of Hayabusa2 extended mission&#x27;s flyby of Near-Earth Asteroid (98943) Torifune</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2604-08832v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-08832v1</guid>
+      <pubDate>Mon, 13 Apr 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Masatoshi Hirabayashi et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
     </item>
   </channel>
 </rss>
