@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 15 Apr 2026 04:42:02 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 16 Apr 2026 04:47:31 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,61 +15,35 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>An Atmosphere on the Ultra-Short Period super-Earth HD 3167 b</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2604-11911v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-11911v1</guid>
-      <pubDate>Wed, 15 Apr 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Brandon Park Coy et al.</dc:creator>
+      <title>The Identification of CS2 and Evidence for Carbon-Sulfur Chemical Coupling in a Warm Giant Exoplanet Atmosphere</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2604-13168v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-13168v1</guid>
+      <pubDate>Thu, 16 Apr 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Anastasia Triantafillides et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>Active moons in our Solar System and beyond -- Io, Europa, Enceladus, Triton, and exomoons</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2604-12104v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-12104v1</guid>
-      <pubDate>Wed, 15 Apr 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Caroline Haslebacher et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Sub-Neptunes as Soot Factories: Deep Atmosphere Hydrocarbon Formation and Quenching as the Origin of Sub-Neptune Aerosol Trends</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2604-11919v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-11919v1</guid>
-      <pubDate>Wed, 15 Apr 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Jeehyun Yang, Eliza M. -R. Kempton, Arjun B. Savel</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Inspecting Cloudy Substellar Atmospheres with JWST MIRI Synthetic Magnitudes from Spitzer Mid-infrared Spectra</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2604-12132v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-12132v1</guid>
-      <pubDate>Wed, 15 Apr 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Jolie LHeureux et al.</dc:creator>
+      <title>JOYS+: A JWST/MIRI survey of the evolution of H₂ winds and jets from low-mass protostars</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2604-13773v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-13773v1</guid>
+      <pubDate>Thu, 16 Apr 2026 20:00:00 +0000</pubDate>
+      <dc:creator>L. Francis et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.SR</category>
         <category>astro-ph.EP</category>
+        <category>astro-ph.GA</category>
     </item>
     <item>
-      <title>Variability classification of TESS targets in LOPS2, the first long-term pointing field of PLATO. Version 1 of the public variability catalogue</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2604-12758v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-12758v1</guid>
-      <pubDate>Wed, 15 Apr 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Mykyta Kliapets et al.</dc:creator>
+      <title>Solar photospheric spectrum microvariability III. Radial velocities and line profiles in magnetic active-region granulation</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2604-13166v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-13166v1</guid>
+      <pubDate>Thu, 16 Apr 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Dainis Dravins et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.SR</category>
         <category>astro-ph.EP</category>
         <category>astro-ph.IM</category>
-    </item>
-    <item>
-      <title>Homogeneous accretion of the Earth in the inner Solar System</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2604-12039v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-12039v1</guid>
-      <pubDate>Wed, 15 Apr 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Paolo A. Sossi, Dan J. Bower</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
     </item>
   </channel>
 </rss>
