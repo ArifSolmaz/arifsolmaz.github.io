@@ -1,7 +1,7 @@
 \documentclass[11pt,a4paper]{article}
 
 % ---- Packages ----
-\usepackage[margin=1.6cm]{geometry}
+\usepackage[margin=1.8cm, top=1.6cm, bottom=1.6cm]{geometry} % Slightly adjusted for balance
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[scaled=0.95]{helvet}
@@ -10,7 +10,6 @@
 \usepackage{hyperref}
 \usepackage{enumitem}
 \usepackage{titlesec}
-% fontawesome5 not available; use text symbols
 \usepackage{setspace}
 \usepackage{fancyhdr}
 \usepackage{lastpage}
@@ -27,7 +26,7 @@
 }
 
 \setlength{\parindent}{0pt}
-\setstretch{1.08}
+\setstretch{1.04} % Subtle reduction in line height to save space globally
 
 % Page numbering
 \pagestyle{fancy}
@@ -38,37 +37,37 @@
 % ---- Custom Commands ----
 \newcommand{\makeheader}[3]{
     \begin{center}
-        {\Huge\bfseries\color{accentcolor} #1} \\[0.3em]
-        {\Large\color{darkgray} #2} \\[0.5em]
+        {\Huge\bfseries\color{accentcolor} #1} \\[0.2em]
+        {\Large\color{darkgray} #2} \\[0.4em]
         \small
         Email: \href{mailto:#3}{#3} \quad
         Web: \href{https://arifsolmaz.github.io}{arifsolmaz.github.io} \quad
-        Tel: (+90) 538 614 29 38 \\[0.2em]
+        Tel: (+90) 538 614 29 38 \\[0.1em]
         Location: Istanbul, Turkey
     \end{center}
-    \vspace{-0.4em}
+    \vspace{-1.0em}
 }
 
 \titleformat{\section}
   {\Large\bfseries\color{accentcolor}\uppercase}
   {}{0em}{}
   [\titlerule]
-\titlespacing*{\section}{0pt}{12pt}{8pt}
+\titlespacing*{\section}{0pt}{10pt}{6pt} % Tightened section spacing
 
 \newcommand{\cventry}[4]{
-  \vspace{6pt}
+  \vspace{4pt}
   \textbf{#1} \hfill \textit{#3} \\
   \textbf{\color{darkgray} #2} \hfill #4 \\
 }
 
 \newcommand{\cvdesc}[1]{
-  \vspace{-2pt}
+  \vspace{-1pt}
   \begin{itemize}[leftmargin=12pt, nosep, label=\small\textbullet]
     \small #1
   \end{itemize}
 }
 
-\setlist[itemize]{leftmargin=*, labelsep=3mm, itemsep=3pt, topsep=2pt}
+\setlist[itemize]{leftmargin=*, labelsep=3mm, itemsep=2pt, topsep=1pt}
 
 % ---- DOCUMENT START ----
 \begin{document}
@@ -76,12 +75,12 @@
 % ===================== HEADER =====================
 \makeheader
     {Arif Solmaz, PhD}
-    {Assistant Professor --- Exoplanet Science, Computational Astrophysics \& Scientific ML}
+    {Assistant Professor --- Exoplanet Science \& Scientific ML}
     {arif.solmaz@istun.edu.tr}
 
 % ===================== PROFILE =====================
 \section{Profile}
-Astronomer specializing in exoplanet transit photometry and timing analysis, with emphasis on characterizing systematic effects from stellar activity. I develop Bayesian and machine learning pipelines to extract precise transit parameters from TESS, JWST, and ground-based data, with particular focus on transit timing variations (TTVs) and starspot-induced biases. I contribute to international collaborations including the ExoClock Project and EXPLORE, coordinating multi-site observing campaigns across 50+ countries. I teach computational methods and programming at the undergraduate level and maintain reproducible, open-source research workflows.
+Astronomer specializing in exoplanet transit photometry and timing analysis, with emphasis on characterizing systematic effects from stellar activity. I develop Bayesian and machine learning pipelines to extract precise transit parameters from TESS, JWST, and ground-based data, specializing in transit timing variations (TTVs) and starspot-induced biases. As a lead contributor to international collaborations including the ExoClock Project and EXPLORE, I coordinate multi-site observing campaigns across 50+ countries. I teach computational methods and programming at the undergraduate level and maintain reproducible, open-source research workflows.
 
 % ===================== EDUCATION =====================
 \section{Education}
@@ -107,14 +106,11 @@ Astronomer specializing in exoplanet transit photometry and timing analysis, wit
 \section{Academic Appointments}
 
 \cventry{Assistant Professor}{İstanbul Health and Technology University (İSTÜN)}{May 2024 -- Present}{Istanbul, Turkey}
-Department of Mechatronics Engineering, Faculty of Engineering \& Natural Sciences.
-Teaching programming, data structures, and machine learning courses; leading research in exoplanet science and applied ML.
+Department of Mechatronics Engineering, Faculty of Engineering \& Natural Sciences. Teaching programming, data structures, and machine learning courses; leading research in exoplanet science and applied ML.
 
-\vspace{4pt}
 \cventry{Lecturer}{Çağ University, Faculty of Arts and Sciences}{Sep 2015 -- Jun 2023}{Mersin, Turkey}
 Taught statistics, programming, and quantitative methods while completing PhD in parallel. Developed digital learning materials and supervised student projects.
 
-\vspace{4pt}
 \cventry{Research Assistant}{Çağ University, Faculty of Arts and Sciences}{Feb 2011 -- Sep 2015}{Mersin, Turkey}
 Supported teaching and observational research activities; contributed to TÜBİTAK-funded meteor monitoring and stellar astrophysics programs.
 
@@ -123,42 +119,32 @@ Supported teaching and observational research activities; contributed to TÜBİT
 
 \textit{Complete list at \href{https://arifsolmaz.github.io}{arifsolmaz.github.io}.}
 
-\vspace{0.3em}
+\vspace{0.2em}
 \textbf{Peer-Reviewed Journal Articles:}
 \begin{itemize}
-\item \href{https://doi.org/10.1051/0004-6361/202556498}{A high geometric albedo and small size for the Haumea cluster member (24835) 1995 SM55 determined from a stellar occultation and photometric observations}\\
-\textit{Astronomy \& Astrophysics}, 703, A147, 2025
+\item \href{https://doi.org/10.1051/0004-6361/202556498}{A high geometric albedo and small size for the Haumea cluster member (24835) 1995 SM55 determined from a stellar occultation and photometric observations}. \textit{Astronomy \& Astrophysics}, 703, A147, 2025
 
-\item \href{https://doi.org/10.1093/mnras/staf1659}{Testing the performance of cross-correlation techniques to search for molecular features in JWST NIRSpec G395H observations of transiting exoplanets}\\
-\textit{Monthly Notices of the Royal Astronomical Society}, 543, 3456, 2025
+\item \href{https://doi.org/10.1093/mnras/staf1659}{Testing the performance of cross-correlation techniques to search for molecular features in JWST NIRSpec G395H observations of transiting exoplanets}. \textit{MNRAS}, 543, 3456, 2025
 
-\item \href{https://ui.adsabs.harvard.edu/abs/2025arXiv251114407K/abstract}{ExoClock Project IV: A homogeneous catalogue of 620 updated exoplanet ephemerides}\\
-\textit{The Astrophysical Journal Supplement Series}, 283, 5, 2026 $\cdot$ 100+ authors
+\item \href{https://ui.adsabs.harvard.edu/abs/2025arXiv251114407K/abstract}{ExoClock Project IV: A homogeneous catalogue of 620 updated exoplanet ephemerides}. \textit{ApJS}, 283, 5, 2026 $\cdot$ 100+ authors
 
-\item \href{https://doi.org/10.3847/1538-4365/ac9da4}{ExoClock Project III: 450 New Exoplanet Ephemerides from Ground and Space Observations}\\
-\textit{The Astrophysical Journal Supplement Series}, 265, 4, 2023 $\cdot$ 60+ authors
+\item \href{https://doi.org/10.3847/1538-4365/ac9da4}{ExoClock Project III: 450 New Exoplanet Ephemerides from Ground and Space Observations}. \textit{ApJS}, 265, 4, 2023 $\cdot$ 60+ authors
 
-\item \href{https://doi.org/10.55064/tjaa.1203704}{Leke Örtülmelerinin Ötegezegen Geçiş Ortası Zaman Ölçümlerine Etkisi}\\
-\textit{Turkish Journal of Astronomy and Astrophysics}, 4, 147, 2023
+\item \href{https://doi.org/10.55064/tjaa.1203704}{Leke Örtülmelerinin Ötegezegen Geçiş Ortası Zaman Ölçümlerine Etkisi}. \textit{Turkish Journal of Astronomy and Astrophysics}, 4, 147, 2023
 
-\item \href{https://doi.org/10.1051/0004-6361/202141546}{Physical properties of the trans-Neptunian object (38628) Huya from a multi-chord stellar occultation}\\
-\textit{Astronomy \& Astrophysics}, 664, A130, 2022
+\item \href{https://doi.org/10.1051/0004-6361/202141546}{Physical properties of the trans-Neptunian object (38628) Huya from a multi-chord stellar occultation}. \textit{A\&A}, 664, A130, 2022
 
-\item \href{https://doi.org/10.1016/j.newast.2021.101571}{BO Ari Light Curve Analysis using Ground-Based and TESS Data}\\
-\textit{New Astronomy}, 86, 101571, 2021
+\item \href{https://doi.org/10.1016/j.newast.2021.101571}{BO Ari Light Curve Analysis using Ground-Based and TESS Data}. \textit{New Astronomy}, 86, 101571, 2021
 
-\item \href{https://doi.org/10.1134/S1063773721060050}{The First Light Curve Solutions and Period Study of BQ Ari}\\
-\textit{Astronomy Letters}, 47, 402, 2021
+\item \href{https://doi.org/10.1134/S1063773721060050}{The First Light Curve Solutions and Period Study of BQ Ari}. \textit{Astronomy Letters}, 47, 402, 2021
 \end{itemize}
 
-\vspace{0.3em}
+\vspace{0.2em}
 \textbf{Selected Conference Contributions:}
 \begin{itemize}
-\item \href{https://doi.org/10.5194/epsc-dps2025-1467}{Artificial Intelligence in Planetary Science and Astronomy: Applications and Research Potential}\\
-EPSC-DPS Joint Meeting 2025 $\cdot$ Invited presentation
+\item \href{https://doi.org/10.5194/epsc-dps2025-1467}{Artificial Intelligence in Planetary Science and Astronomy: Applications and Research Potential}. EPSC-DPS Joint Meeting 2025 $\cdot$ Invited presentation
 
-\item \href{https://doi.org/10.5194/epsc-dps2025-1815}{Europlanet Machine Learning Working Group: a year of progress}\\
-EPSC-DPS Joint Meeting 2025
+\item \href{https://doi.org/10.5194/epsc-dps2025-1815}{Europlanet Machine Learning Working Group: a year of progress}. EPSC-DPS Joint Meeting 2025
 \end{itemize}
 
 % ===================== FUNDED PROJECTS =====================
@@ -179,6 +165,9 @@ EPSC-DPS Joint Meeting 2025
 
 \textbf{As Team Member:}
 \begin{itemize}
+    \item \textbf{The Impact of Non-Markovian Memory Effects on the Learning Dynamics of Quantum Neural Networks} --- TÜBİTAK. \textit{Submitted / Under Review.}\\
+    Investigation of non-Markovianity and memory effects in the optimization and training trajectories of quantum machine learning models.
+
     \item \textbf{ML-Based Microscopic Wood Species Identification System} --- TÜBİTAK-1002. \textit{Ongoing.}\\
     Deep learning models for automated classification from microscopic images.
 
@@ -216,10 +205,10 @@ EPSC-DPS Joint Meeting 2025
 % ===================== TEACHING =====================
 \section{Teaching}
 
-\textbf{Current (2025--2026, İSTÜN):} Computer Programming I \& II, Object-Oriented Programming, Data Structures \& Algorithms, Robotics, Machine Learning --- all in English.
+\textbf{Current (2024--2025, İSTÜN):} Physics I \& II, Computer Programming I \& II, Object-Oriented Programming, Data Structures \& Algorithms, Robotics, Machine Learning --- all in English and/or Turkish.
 
-\vspace{4pt}
-\textbf{Previous (Çağ University):} Statistics, Quantitative Methods, introductory--advanced Programming.
+\vspace{2pt}
+\textbf{Previous (Çağ University):} Statistics, Quantitative Methods, Introductory--Advanced Programming.
 
 % ===================== OUTREACH =====================
 \section{Outreach \& Leadership}
@@ -235,7 +224,7 @@ EPSC-DPS Joint Meeting 2025
 \section{Professional Memberships}
 International Astronomical Union (IAU), European Astronomical Society (EAS), Turkish Astronomical Society (TAD), European Association for Astronomy Education (EAAE --- Board Member).
 
-\vspace{0.8em}
+\vspace{0.6em}
 \begin{center}
 \hrule
 \vspace{0.4em}
