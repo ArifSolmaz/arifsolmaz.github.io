@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 20 Apr 2026 04:54:08 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 21 Apr 2026 04:44:52 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,93 +15,100 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>Beyond the mass-radius plane: Integrated radiative-convective and interior structure simulations of the exoplanet continuum</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2604-15891v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-15891v1</guid>
-      <pubDate>Mon, 20 Apr 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Harrison Nicholls et al.</dc:creator>
+      <title>Carbon Cycle Imbalances on Arid Terrestrial Planets with Implications for Venus</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2604-16846v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-16846v1</guid>
+      <pubDate>Tue, 21 Apr 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Haskelle T. White-Gianella, Joshua Krissansen-Totton</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>ExoNet: Multimodal Deep Learning for TESS Exoplanet Candidate Identification via Phase-Folded Light Curves, Stellar Parameters, and Multi-Head Attention Fusion</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2604-15560v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-15560v1</guid>
-      <pubDate>Mon, 20 Apr 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Md. Rashadul Islam</dc:creator>
+      <title>Characterizing Earth analogs may require a moderate or high-resolution spectrograph</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2604-17554v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-17554v1</guid>
+      <pubDate>Tue, 21 Apr 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Jean-Baptiste Ruffio et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
         <category>astro-ph.IM</category>
-        <category>cs.LG</category>
-    </item>
-    <item>
-      <title>A gem system with a lava world and a habitable zone sub-Neptune orbiting TOI-1752</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2604-15816v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-15816v1</guid>
-      <pubDate>Mon, 20 Apr 2026 20:00:00 +0000</pubDate>
-      <dc:creator>A. Peláez-Torres et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>Machine learning isotope shifts in molecular energy levels</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2604-16073v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-16073v1</guid>
-      <pubDate>Mon, 20 Apr 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Marco G. Barnfield et al.</dc:creator>
+      <title>Stellar Coronal Mass Ejections with HWO: A Science Case Concept</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2604-16746v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-16746v1</guid>
+      <pubDate>Tue, 21 Apr 2026 20:00:00 +0000</pubDate>
+      <dc:creator>R. O. Parke Loyd et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
         <category>astro-ph.IM</category>
-        <category>physics.chem-ph</category>
-        <category>physics.comp-ph</category>
-    </item>
-    <item>
-      <title>The Neptunian ridge as a natural outcome of high-eccentricity tidal migration</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2604-16300v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-16300v1</guid>
-      <pubDate>Mon, 20 Apr 2026 20:00:00 +0000</pubDate>
-      <dc:creator>A. Castro-González et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Benchmarking Two Chemical Networks used in General Circulation Models of Hot Jupiters</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2604-15850v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-15850v1</guid>
-      <pubDate>Mon, 20 Apr 2026 20:00:00 +0000</pubDate>
-      <dc:creator>D. A. Christie et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Uniform Reinterpretation of Rocky Exoplanet Secondary Eclipse Observations and the Impact of Stellar and Orbital Uncertainties</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2604-15421v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-15421v1</guid>
-      <pubDate>Mon, 20 Apr 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Christopher Monaghan et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
-    </item>
-    <item>
-      <title>TTV-Not-So-Fast: Uniqueness and Degeneracy in Perturbing Planet Parameters</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2604-16297v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-16297v1</guid>
-      <pubDate>Mon, 20 Apr 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Caleb Lammers, Joshua N. Winn</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
-    </item>
-    <item>
-      <title>The CARMENES search for exoplanets around M dwarfs. A homogeneous catalogue of projected rotational velocities accounting for limb-darkening</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2604-15428v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-15428v1</guid>
-      <pubDate>Mon, 20 Apr 2026 20:00:00 +0000</pubDate>
-      <dc:creator>R. Varas et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>Sensitivity of Dry Lava Planet Atmospheric Emission Spectra to Changes in Lava Compositions</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2604-18301v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-18301v1</guid>
+      <pubDate>Tue, 21 Apr 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Christiaan P. A. van Buchem et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Rapid and Predictive Planet Population Synthesis Model (RAPPS) I. Upgraded model and resulting synthetic populations</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2604-18273v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-18273v1</guid>
+      <pubDate>Tue, 21 Apr 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Tadahiro Kimura, Masahiro Ikoma</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>heliostack: A Novel Approach to Minor Planet Discovery</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2604-16731v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-16731v1</guid>
+      <pubDate>Tue, 21 Apr 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Kevin J Napier et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+    </item>
+    <item>
+      <title>Impact of Cold Jupiter Scattering on the Mean-Motion Resonance of Inner Small Planets</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2604-18252v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-18252v1</guid>
+      <pubDate>Tue, 21 Apr 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Kangrou Guo, Xiumin Huang, Dong Lai</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>JWST Exoplanetary Worlds and Elemental Survey (JEWELS) II: Condensation Temperature Trends and Galactic Chemical Evolution in JWST Planet-Hosting Stars</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2604-18115v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-18115v1</guid>
+      <pubDate>Tue, 21 Apr 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Qinghui Sun et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>The T16 Planet Hunt: 10,000 New Planet Candidates from TESS Cycle 1 and the Confirmation of a Hot Jupiter Around TIC 183374187</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2604-18579v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-18579v1</guid>
+      <pubDate>Tue, 21 Apr 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Joshua T. Roth et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Two Potential Exoplanets around A-type Stars Selected from 18 Planetary Candidates</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2604-18281v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-18281v1</guid>
+      <pubDate>Tue, 21 Apr 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Yi-fan Luo et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.SR</category>
     </item>
   </channel>
 </rss>
