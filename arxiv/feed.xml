@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 22 Apr 2026 04:42:37 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 23 Apr 2026 04:46:38 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,54 +15,51 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>Laser-based mass spectrometry for the detection of signatures of life within our Solar System</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2604-18749v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-18749v1</guid>
-      <pubDate>Wed, 22 Apr 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Andreas Riedo et al.</dc:creator>
+      <title>Science from the In Situ Exploration of the Proxima Centauri System</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2604-20182v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-20182v1</guid>
+      <pubDate>Thu, 23 Apr 2026 20:00:00 +0000</pubDate>
+      <dc:creator>T. Marshall Eubanks et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
         <category>astro-ph.IM</category>
-    </item>
-    <item>
-      <title>Coupled orbital and interior structure evolution of lava planets</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2604-18682v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-18682v1</guid>
-      <pubDate>Wed, 22 Apr 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Mahesh Herath et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>A tidally detached super Neptune on a strongly misaligned retrograde orbit</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2604-19179v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-19179v1</guid>
-      <pubDate>Wed, 22 Apr 2026 20:00:00 +0000</pubDate>
-      <dc:creator>G. Mantovan et al.</dc:creator>
+      <title>Stellar flare-driven evolution of primordial early exo-Earth atmospheres: Insights from a Young M Dwarf Flare model</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2604-20325v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-20325v1</guid>
+      <pubDate>Thu, 23 Apr 2026 20:00:00 +0000</pubDate>
+      <dc:creator>E. Mamonova et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Conceptual Design and Analysis of a NanoTug Swarm for Active Debris Removal</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2604-19214v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-19214v1</guid>
-      <pubDate>Wed, 22 Apr 2026 20:00:00 +0000</pubDate>
-      <dc:creator>F. Alnaqbi, S. Biktimirov, G. Gaias</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
-        <category>physics.space-ph</category>
-    </item>
-    <item>
-      <title>Oort Cloud Ecology - IV. Exchanging Asteroids</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2604-19413v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-19413v1</guid>
-      <pubDate>Wed, 22 Apr 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Erwan Hochart, Simon Portegies Zwart</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.GA</category>
         <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>Stability of Multiplanet Systems Through Hot Jupiter Destruction</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2604-19918v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-19918v1</guid>
+      <pubDate>Thu, 23 Apr 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Donald Liveoak, Tim Hallatt, Sarah Millholland</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Sub-Neptunes Show a Stronger Correlation with Cold Jupiters than Super-Earths Especially in Metal-rich Systems</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2604-20203v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-20203v1</guid>
+      <pubDate>Thu, 23 Apr 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Di-Chang Chen et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>A giant solution to the disk mass budget problem of planet formation</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2604-19917v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-19917v1</guid>
+      <pubDate>Thu, 23 Apr 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Sofia Savvidou</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
     </item>
   </channel>
 </rss>
