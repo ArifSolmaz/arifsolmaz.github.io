@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 Apr 2026 04:50:38 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 27 Apr 2026 05:18:26 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,12 +15,13 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>Toward Inferring the Surface Fluxes of Biosignature Gases on Rocky Exoplanets from Telescope Spectra</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2604-21848v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-21848v1</guid>
-      <pubDate>Fri, 24 Apr 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Nicholas F. Wogan et al.</dc:creator>
+      <title>Understanding HWO&#x27;s Field of Regard and Characterization Requirement Trade Space with a Dynamic Observation Scheduling Algorithm</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2604-22023v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-22023v1</guid>
+      <pubDate>Mon, 27 Apr 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Corey Spohn et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.IM</category>
         <category>astro-ph.EP</category>
     </item>
   </channel>
