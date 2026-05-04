@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 01 May 2026 05:37:20 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 04 May 2026 05:29:35 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,41 +15,51 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>Searching for GEMS: Three warm Saturns and a super-Jupiter orbiting four early M-dwarfs</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2604-27064v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-27064v1</guid>
-      <pubDate>Fri, 01 May 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Pranav H. Premnath et al.</dc:creator>
+      <title>Smaller Than Earth Habitability Model (STEHM): The Lower Size Limit for Atmosphere Retention in the Habitable Zone</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2605-00170v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2605-00170v1</guid>
+      <pubDate>Mon, 04 May 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Michelle L. Hill et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>The Influences of Hydrogen-Silicate-Iron Miscibility on the Demographics of Sub-Neptunes and Super-Earths</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2604-28135v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-28135v1</guid>
-      <pubDate>Fri, 01 May 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Edward D. Young, Aaron Werlen</dc:creator>
+      <title>The dark and featureless surface of rocky exoplanet LHS 3844 b from JWST mid-infrared spectroscopy</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2605-00100v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2605-00100v1</guid>
+      <pubDate>Mon, 04 May 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Sebastian Zieba et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>Asteroseismic modelling of main-sequence solar-like stars and Kepler exoplanet host stars with the FICO procedure I. Catalogue of fundamental stellar properties</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2604-27842v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-27842v1</guid>
-      <pubDate>Fri, 01 May 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Jérôme Bétrisey et al.</dc:creator>
+      <title>The Rocky Planet Picture Show: Implementation of Surface Reflection and Emission in POSEIDON with Application to and Interpretation of JWST Data</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2605-00700v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2605-00700v1</guid>
+      <pubDate>Mon, 04 May 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Elijah Mullens et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+    </item>
+    <item>
+      <title>Confirmation of Fe I on MASCARA-5 b&#x27;s Dayside Observed With EXPRES</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2605-00154v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2605-00154v1</guid>
+      <pubDate>Mon, 04 May 2026 20:00:00 +0000</pubDate>
+      <dc:creator>James T. Sikora et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>ExoplaNeT accRetion mOnitoring sPectroscopic surveY (ENTROPY) III. Optical He I line profiles of the accreting super Jupiter Delorme 1 (AB)b</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2605-00289v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2605-00289v1</guid>
+      <pubDate>Mon, 04 May 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Gayathri Viswanath et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
         <category>astro-ph.SR</category>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Thermal instability and rocky planetesimal formation in the inner regions of protoplanetary disks</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2604-27581v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2604-27581v1</guid>
-      <pubDate>Fri, 01 May 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Ryo Kato, Takahiro Ueda, Satoshi Okuzumi</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
     </item>
   </channel>
 </rss>
