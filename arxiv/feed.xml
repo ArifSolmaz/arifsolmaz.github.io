@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 06 May 2026 05:24:20 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 07 May 2026 05:26:44 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,63 +15,99 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>Synergistic Effects of Ocean Salinity and Planetary Obliquity Enhance Habitability of Cold Exo-Earths</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2605-03994v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2605-03994v1</guid>
-      <pubDate>Wed, 06 May 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Kyle Batra, Stephanie Olson, Edward Schwieterman</dc:creator>
+      <title>Impact of Climate States and Seasons on Future Exo-Earth Observations</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2605-04187v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2605-04187v1</guid>
+      <pubDate>Thu, 07 May 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Kyle Batra, Stephanie Olson, Vincent Kofman</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>PALEOS: Multiphase Equations of State and Mass-Radius Relations for Exoplanet Interiors</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2605-03741v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2605-03741v1</guid>
-      <pubDate>Wed, 06 May 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Mara Attia et al.</dc:creator>
+      <title>Modeling Volcanic Plume Heights Across Exoplanet Atmospheres: Insights from TRAPPIST-1</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2605-04423v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2605-04423v1</guid>
+      <pubDate>Thu, 07 May 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Prabal Saxena, Thomas Fauchez</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>The Range of Cumulative XUV Flux on GJ 1132 b</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2605-03939v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2605-03939v1</guid>
-      <pubDate>Wed, 06 May 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Rory Barnes et al.</dc:creator>
+      <title>The NUV transit of XO-3 b</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2605-05068v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2605-05068v1</guid>
+      <pubDate>Thu, 07 May 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Raven Cilley et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>TOI-159 b: an eccentric hot-Jupiter planet around a young, pulsating γ Doradus star</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2605-04149v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2605-04149v1</guid>
+      <pubDate>Thu, 07 May 2026 20:00:00 +0000</pubDate>
+      <dc:creator>G. Mantovan et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.SR</category>
     </item>
     <item>
-      <title>A public dataset of Ariel simulated observations for developing exoplanetary atmosphere data reduction pipelines</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2605-03719v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2605-03719v1</guid>
-      <pubDate>Wed, 06 May 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Lorenzo V. Mugnai et al.</dc:creator>
+      <title>Exploration of the inner region of the system HD 142527</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2605-04869v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2605-04869v1</guid>
+      <pubDate>Thu, 07 May 2026 20:00:00 +0000</pubDate>
+      <dc:creator>T. M. H. Tran et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Horizontal transport as a source of disequilibrium chemistry on the nightside of a hot exoplanet</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2605-04936v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2605-04936v1</guid>
+      <pubDate>Thu, 07 May 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Vivien Parmentier et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Mitigating stellar radial velocity jitter using orthogonal activity indices and a time-aware neural network</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2605-04587v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2605-04587v1</guid>
+      <pubDate>Thu, 07 May 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Jordi Blanco-Pozo et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.IM</category>
-    </item>
-    <item>
-      <title>The ESO SupJup Survey. X. A carbon isotope contrast in the young ROXs 12 system</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2605-03508v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2605-03508v1</guid>
-      <pubDate>Wed, 06 May 2026 20:00:00 +0000</pubDate>
-      <dc:creator>N. Grasser et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
         <category>astro-ph.SR</category>
     </item>
     <item>
-      <title>COCONUT: Toward practical time-evolving Sun-to-Earth magnetohydrodynamic modeling</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2605-03330v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2605-03330v1</guid>
-      <pubDate>Wed, 06 May 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Haopeng Wang et al.</dc:creator>
+      <title>Earth and Mars interior structures set by re-melting of the first solid mantle</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2605-04840v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2605-04840v1</guid>
+      <pubDate>Thu, 07 May 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Antonio Manjón-Cabeza Córdoba, Maxim D. Ballmer, Oliver Shorttle</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>physics.geo-ph</category>
+    </item>
+    <item>
+      <title>The Tale of a Hungry Subgiant and Its Brown Dwarf: Interior Radiative Damping Dominates the Tidal Evolution of TOI-5882</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2605-04141v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2605-04141v1</guid>
+      <pubDate>Thu, 07 May 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Ritvik Sai Narayan, Melinda Soares-Furtado, Richard H. D. Townsend</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.SR</category>
         <category>astro-ph.EP</category>
-        <category>physics.plasm-ph</category>
+    </item>
+    <item>
+      <title>Beyond the α model: scaling the wind-driven accretion rate in protoplanetary disks using systematic non-ideal magnetohydrodynamical simulations</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2605-04456v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2605-04456v1</guid>
+      <pubDate>Thu, 07 May 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Haruhi Enomoto, Shoji Mori, Satoshi Okuzumi</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
     </item>
   </channel>
 </rss>
