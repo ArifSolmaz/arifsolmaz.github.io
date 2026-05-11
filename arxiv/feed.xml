@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 07 May 2026 05:26:44 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 11 May 2026 05:53:49 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,99 +15,65 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>Impact of Climate States and Seasons on Future Exo-Earth Observations</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2605-04187v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2605-04187v1</guid>
-      <pubDate>Thu, 07 May 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Kyle Batra, Stephanie Olson, Vincent Kofman</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Modeling Volcanic Plume Heights Across Exoplanet Atmospheres: Insights from TRAPPIST-1</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2605-04423v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2605-04423v1</guid>
-      <pubDate>Thu, 07 May 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Prabal Saxena, Thomas Fauchez</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>The NUV transit of XO-3 b</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2605-05068v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2605-05068v1</guid>
-      <pubDate>Thu, 07 May 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Raven Cilley et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>TOI-159 b: an eccentric hot-Jupiter planet around a young, pulsating γ Doradus star</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2605-04149v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2605-04149v1</guid>
-      <pubDate>Thu, 07 May 2026 20:00:00 +0000</pubDate>
-      <dc:creator>G. Mantovan et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.SR</category>
-    </item>
-    <item>
-      <title>Exploration of the inner region of the system HD 142527</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2605-04869v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2605-04869v1</guid>
-      <pubDate>Thu, 07 May 2026 20:00:00 +0000</pubDate>
-      <dc:creator>T. M. H. Tran et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Horizontal transport as a source of disequilibrium chemistry on the nightside of a hot exoplanet</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2605-04936v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2605-04936v1</guid>
-      <pubDate>Thu, 07 May 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Vivien Parmentier et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Mitigating stellar radial velocity jitter using orthogonal activity indices and a time-aware neural network</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2605-04587v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2605-04587v1</guid>
-      <pubDate>Thu, 07 May 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Jordi Blanco-Pozo et al.</dc:creator>
+      <title>Exploring TRAPPIST-1 Climate States with an Energy Balance Model</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2605-06964v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2605-06964v1</guid>
+      <pubDate>Mon, 11 May 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Jacob Haqq-Misra</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.IM</category>
+    </item>
+    <item>
+      <title>A New Global Chemical Equilibrium Code: Refractory Element Signatures in Super-Earths and Sub-Neptunes</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2605-07833v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2605-07833v1</guid>
+      <pubDate>Mon, 11 May 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Simon Grimm et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+    </item>
+    <item>
+      <title>An HST Wide Field Survey of the Galactic Bulge: Overview, Strategy, and First Results</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2605-06778v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2605-06778v1</guid>
+      <pubDate>Mon, 11 May 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Sean K. Terry et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.GA</category>
+        <category>astro-ph.EP</category>
         <category>astro-ph.SR</category>
     </item>
     <item>
-      <title>Earth and Mars interior structures set by re-melting of the first solid mantle</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2605-04840v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2605-04840v1</guid>
-      <pubDate>Thu, 07 May 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Antonio Manjón-Cabeza Córdoba, Maxim D. Ballmer, Oliver Shorttle</dc:creator>
+      <title>Mass Production of 2023 KMTNet Microlensing Planets. III: Three Planets from the Subprime Field</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2605-07392v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2605-07392v1</guid>
+      <pubDate>Mon, 11 May 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Hongyu Li et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
-        <category>physics.geo-ph</category>
+        <category>astro-ph.GA</category>
     </item>
     <item>
-      <title>The Tale of a Hungry Subgiant and Its Brown Dwarf: Interior Radiative Damping Dominates the Tidal Evolution of TOI-5882</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2605-04141v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2605-04141v1</guid>
-      <pubDate>Thu, 07 May 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Ritvik Sai Narayan, Melinda Soares-Furtado, Richard H. D. Townsend</dc:creator>
+      <title>HAT-P-70b through the Eyes of MAROON-X: Constraining Elemental Abundances of Metals and Insights on Atmosphere Dynamics</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2605-07873v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2605-07873v1</guid>
+      <pubDate>Mon, 11 May 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Shi Lin Sun et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.SR</category>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>Beyond the α model: scaling the wind-driven accretion rate in protoplanetary disks using systematic non-ideal magnetohydrodynamical simulations</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2605-04456v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2605-04456v1</guid>
-      <pubDate>Thu, 07 May 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Haruhi Enomoto, Shoji Mori, Satoshi Okuzumi</dc:creator>
+      <title>You Only Stack Once (YOSO): A Motion-Filtered, Deep-Learning Framework for Detecting Faint Moving Sources</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2605-06913v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2605-06913v1</guid>
+      <pubDate>Mon, 11 May 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Nitya Pandey et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+        <category>cs.LG</category>
     </item>
   </channel>
 </rss>
