@@ -587,6 +587,22 @@
         </div>
       </div>
 
+      <!-- Idea of the day -->
+<div class="info-section">
+  <p class="info-label">Idea of the day</p>
+  <div class="links">
+    <a href="/daily-idea/widget.html" target="_blank" rel="noopener" class="link featured">
+      <span id="exo-daily-title">Loading today's idea…</span>
+      <span class="link-arrow">→</span>
+    </a>
+  </div>
+</div>
+<script>
+  fetch('/daily-idea/state.json')
+    .then(r => r.json())
+    .then(s => { document.getElementById('exo-daily-title').textContent = s.picked_title; });
+</script>
+
       <div class="info-section">
         <p class="info-label">Contact</p>
         <div class="contact-grid">

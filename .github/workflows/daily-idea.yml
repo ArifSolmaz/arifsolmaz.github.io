@@ -1,0 +1,50 @@
+name: Daily exoplanet idea
+
+# Runs once a day at 06:00 UTC (09:00 Istanbul time) and commits the freshly
+# rendered widget back to the repo. You can also trigger it manually from the
+# Actions tab via "Run workflow".
+
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+  push:
+    paths:
+      # Re-render whenever ideas or scripts change on main
+      - "ideas/**"
+      - "scripts/**"
+      - ".github/workflows/daily-idea.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  rotate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Rebuild catalog
+        run: python scripts/parse_ideas.py
+
+      - name: Pick today's idea and render widget
+        run: python scripts/update_widget.py
+
+      - name: Commit updated widget
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/projects.json daily-idea/
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore(daily): rotate idea for $(date -u +%F)"
+            git push
+          fi
