@@ -3,58 +3,60 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Idea of the day &mdash; Tidal Spin-Up Archaeology: Using Kepler/TESS Rotation Periods to Date Planet-Induced Stellar Rejuvenation</title>
+<title>Idea of the day &mdash; Tidal Decay Chronometry — Using Hot Jupiter Orbital Period Derivatives as Independent Stellar Age Clocks</title>
 <link rel="stylesheet" href="widget.css"/>
 </head>
 <body>
 <section class="exo-daily" aria-label="Exoplanet idea of the day">
   <header class="exo-daily__head">
     <span class="exo-daily__eyebrow">Exoplanet idea of the day</span>
-    <time class="exo-daily__date" datetime="2026-05-18">2026-05-18</time>
+    <time class="exo-daily__date" datetime="2026-05-19">2026-05-19</time>
   </header>
-  <h2 class="exo-daily__title">Tidal Spin-Up Archaeology: Using Kepler/TESS Rotation Periods to Date Planet-Induced Stellar Rejuvenation</h2>
+  <h2 class="exo-daily__title">Tidal Decay Chronometry — Using Hot Jupiter Orbital Period Derivatives as Independent Stellar Age Clocks</h2>
   <div class="exo-daily__premise">
-    <p>Stars spin down over time via magnetic braking (gyrochronology). But a sufficiently massive, close-in planet can tidally transfer orbital angular momentum into the star, spinning it up and making it appear younger than its true age. This "tidal rejuvenation" has been theoretically predicted and tentatively observed in a few individual hot-Jupiter hosts, but no one has conducted a controlled, population-level test across a large uniform sample.</p>
-<p>The idea: compare the photometric rotation periods of confirmed hot-Jupiter host stars to those of a control sample of similar stars <em>without</em> close-in giant planets, drawn from the same Kepler/TESS fields and matched in effective temperature, metallicity, and galactic kinematics (as a proxy for age). A systematic offset toward faster rotation in the hot-Jupiter hosts would constitute population-level evidence for tidal spin-up, and the magnitude of the offset as a function of planet mass and orbital period would constrain tidal dissipation efficiency (the stellar tidal quality factor Q'★).</p>
+    <p>Hot Jupiters on very tight orbits (P &lt; 2 days) are expected to undergo measurable tidal orbital decay, where energy dissipation inside the host star causes the planet to spiral inward. The rate of this inspiral is governed by the stellar tidal quality factor Q'★, which itself depends on the star's internal structure — and therefore its evolutionary state and age. The key insight is that if you can measure the period derivative ∂P/∂t for a sample of ultra-short-period hot Jupiters, you can invert the tidal decay rate to obtain an independent, dynamical age estimate for the host star. This would create a wholly new stellar age-dating method, complementary to gyrochronology, isochrone fitting, and asteroseismology.</p>
+<p>WASP-12b's confirmed orbital decay (period decreasing at ~29 ms/yr) demonstrated this is measurable. But no one has systematically attempted to build a <strong>calibrated age ladder</strong> from tidal decay rates across a population.</p>
   </div>
   <details class="exo-daily__more">
     <summary>Read the full proposal</summary>
     <div class="exo-daily__full">
       <h3>Scientific Premise</h3>
-<p>Stars spin down over time via magnetic braking (gyrochronology). But a sufficiently massive, close-in planet can tidally transfer orbital angular momentum into the star, spinning it up and making it appear younger than its true age. This "tidal rejuvenation" has been theoretically predicted and tentatively observed in a few individual hot-Jupiter hosts, but no one has conducted a controlled, population-level test across a large uniform sample.</p>
-<p>The idea: compare the photometric rotation periods of confirmed hot-Jupiter host stars to those of a control sample of similar stars <em>without</em> close-in giant planets, drawn from the same Kepler/TESS fields and matched in effective temperature, metallicity, and galactic kinematics (as a proxy for age). A systematic offset toward faster rotation in the hot-Jupiter hosts would constitute population-level evidence for tidal spin-up, and the magnitude of the offset as a function of planet mass and orbital period would constrain tidal dissipation efficiency (the stellar tidal quality factor Q'★).</p>
+<p>Hot Jupiters on very tight orbits (P &lt; 2 days) are expected to undergo measurable tidal orbital decay, where energy dissipation inside the host star causes the planet to spiral inward. The rate of this inspiral is governed by the stellar tidal quality factor Q'★, which itself depends on the star's internal structure — and therefore its evolutionary state and age. The key insight is that if you can measure the period derivative ∂P/∂t for a sample of ultra-short-period hot Jupiters, you can invert the tidal decay rate to obtain an independent, dynamical age estimate for the host star. This would create a wholly new stellar age-dating method, complementary to gyrochronology, isochrone fitting, and asteroseismology.</p>
+<p>WASP-12b's confirmed orbital decay (period decreasing at ~29 ms/yr) demonstrated this is measurable. But no one has systematically attempted to build a <strong>calibrated age ladder</strong> from tidal decay rates across a population.</p>
 <h3>Target Datasets</h3>
 <ul>
-<li><strong>Kepler stellar rotation period catalogs</strong> (McQuillan et al. 2014; Santos et al. 2019, 2021) — ~34,000 FGK dwarfs with measured P_rot.</li>
-<li><strong>TESS rotation periods</strong> from ongoing community catalogs for southern-sky hosts.</li>
-<li><strong>NASA Exoplanet Archive</strong> for confirmed planet parameters (mass, period, eccentricity).</li>
-<li><strong>Gaia DR3</strong> astrometry and radial velocities for kinematic age proxies (UVW velocities, galactic action-angle variables).</li>
-<li><strong>LAMOST / GALAH / APOGEE</strong> spectroscopic surveys for T_eff, [Fe/H], and [α/Fe] matching.</li>
+<li><strong>Kepler/K2 long-baseline photometry</strong> for ultra-short-period giant planets (WASP-18b, WASP-19b, WASP-43b, KELT-16b, and others with P &lt; 2 days)</li>
+<li><strong>TESS</strong> multi-sector observations extending the time baseline by 6+ years beyond Kepler</li>
+<li><strong>Archival ground-based transit times</strong> from ETD (Exoplanet Transit Database) and literature, some stretching back 15+ years</li>
+<li><strong>Gaia DR4</strong> parallaxes and stellar parameters for host star characterization</li>
+<li><strong>ESPRESSO/HARPS</strong> RV archives for refining orbital eccentricities (needed to disentangle tidal circularization from decay)</li>
 </ul>
 <h3>Novelty</h3>
-<p>Individual tidal-interaction case studies exist (e.g., WASP-18, τ Boo), and some theoretical population-synthesis work has been done. But a clean, observationally controlled comparison — hot-Jupiter hosts vs. matched non-hosts, with kinematic age control — has not been carried out at scale using the now-mature Kepler rotation catalogs and Gaia kinematics together. The key advance is using galactic kinematics as an age proxy independent of gyrochronology itself, breaking the circularity.</p>
+<p>While individual period derivative measurements exist for a handful of systems, and tidal theory papers model decay rates, the specific idea of <strong>inverting measured ∂P/∂t values into a population-level stellar age calibration</strong> is underexplored. Most tidal decay papers focus on predicting remaining lifetimes or constraining Q'★. Flipping the problem — treating Q'★ as a known function of stellar type (calibrated on the few well-characterized systems) and then solving for age — has not been systematically pursued as an age-dating technique. This is distinct from mainstream work because it reframes tidal decay from an orbital evolution problem into a stellar astrophysics tool.</p>
 <h3>Concrete Workflow</h3>
 <ol>
-<li>Cross-match Kepler rotation period catalogs with the confirmed planet catalog; identify ~200–400 hot-Jupiter hosts (P_orb &lt; 10 d, M_p &gt; 0.3 M_Jup) with measured stellar P_rot.</li>
-<li>For each host, select 5–10 control stars from the same Kepler rotation catalog matched in T_eff (±100 K), [Fe/H] (±0.1 dex), and Gaia-derived galactic velocity dispersion (as age proxy).</li>
-<li>Compare the P_rot distributions of hosts vs. controls using a hierarchical Bayesian model that accounts for measurement uncertainties and selection effects.</li>
-<li>Parameterize the tidal spin-up signal as a function of planet mass, orbital period, and stellar convective envelope depth; infer Q'★ posteriors.</li>
-<li>Validate by checking that the signal disappears for long-period giant planets (P_orb &gt; 100 d), which should produce negligible tidal torque.</li>
+<li>Compile a master catalog of all hot Jupiters with P &lt; 2.5 days that have transit timing observations spanning &gt;8 years (combining Kepler, TESS, and ground-based).</li>
+<li>For each system, perform a uniform O-C (observed minus calculated) transit timing analysis using a quadratic ephemeris model (linear decay) and compare against constant-period and apsidal precession models via Bayesian model selection (BIC/Bayes factors).</li>
+<li>For systems with significant ∂P/∂t detections (or informative upper limits), compute the implied Q'★ using standard equilibrium tidal theory.</li>
+<li>Cross-match with independently age-dated host stars (via asteroseismology from Kepler, gyrochronology, or cluster membership) to calibrate the Q'★–age–spectral-type relation.</li>
+<li>Apply the calibrated relation to the remaining systems to predict ages; compare against isochrone ages to assess systematic offsets and scatter.</li>
+<li>Quantify the method's precision and identify the stellar parameter regime where tidal decay chronometry is most powerful.</li>
 </ol>
 <h3>Expected Signal / Observable</h3>
-<p>A statistically significant shift (perhaps 10–30%) toward shorter rotation periods in hot-Jupiter hosts relative to controls of the same kinematic age. The shift should scale with the tidal forcing parameter (M_p / a^3), providing a functional form that can be compared to theoretical tidal models.</p>
+<p>For WASP-12b-like systems, period shifts of ~30 ms/yr accumulate to ~0.5 seconds over a 15-year baseline — easily detectable with modern transit photometry (timing precision ~10–30 seconds for ground-based, ~5 seconds for TESS, sub-second for Kepler). For less extreme systems (WASP-18b, WASP-43b), expected shifts are smaller (a few ms/yr) but may be detectable with the now-available ~10–15 year baselines. The "signal" for the age calibration is a correlation between the measured decay rate residuals (after removing the spectral-type dependence of Q'★) and independently determined stellar ages.</p>
 <h3>Possible False Positives</h3>
 <ul>
-<li>Selection bias: stars with shorter rotation periods have less stellar jitter, making planet detection easier. Mitigated by using only confirmed (not candidate) planets and by including jitter-based detection-efficiency corrections.</li>
-<li>Metallicity–rotation correlations: higher metallicity stars may have different angular momentum histories. Mitigated by tight [Fe/H] matching.</li>
-<li>Binarity: unresolved binary companions can bias rotation measurements. Mitigated by excluding known binaries and flagging anomalous Gaia RUWE values.</li>
+<li><strong>Apsidal precession</strong> can mimic a quadratic O-C trend over limited baselines. Mitigation: include precession as an alternative model; use RV eccentricity constraints.</li>
+<li><strong>Rømer delay</strong> from a long-period companion can produce apparent period changes. Mitigation: check for RV trends and Gaia astrometric acceleration.</li>
+<li><strong>Stellar magnetic activity cycles</strong> (Applegate mechanism) can modulate transit times quasi-periodically. Mitigation: monitor stellar activity indicators; the Applegate effect is typically periodic, not secular.</li>
+<li><strong>Systematics in heterogeneous timing datasets</strong> from combining space and ground photometry. Mitigation: use a hierarchical model with per-instrument timing offsets.</li>
 </ul>
 <h3>Why It Could Matter</h3>
-<p>Tidal dissipation in stars is one of the least constrained parameters in all of stellar/planetary astrophysics. An empirical, population-level measurement of Q'★ from rotation period offsets would provide a calibration point that feeds into models of tidal orbital decay (relevant to the inspiral of hot Jupiters), spin–orbit alignment evolution, and the long-term fate of close-in planets — topics central to current JWST and upcoming PLATO science.</p>
+<p>Stellar ages are one of the most poorly constrained fundamental parameters in astrophysics. Gyrochronology breaks down for old and hot stars; isochrone fitting is degenerate on the main sequence; asteroseismology requires specific data. A tidal decay–based age clock would be completely independent of these methods, working best for F- and early G-type stars hosting ultra-short-period giants — a regime where other techniques struggle. Even if the precision is moderate (±1–2 Gyr), the independence of the method makes it valuable for cross-calibrating the stellar age ladder.</p>
     </div>
   </details>
   <footer class="exo-daily__foot">
-    <span class="exo-daily__meta">Source brief: 2026-03-08</span>
+    <span class="exo-daily__meta">Source brief: 2026-04-29</span>
     <span class="exo-daily__meta">Rotates daily &middot; 66 ideas in the pool</span>
   </footer>
 </section>
