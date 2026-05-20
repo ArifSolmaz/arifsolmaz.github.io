@@ -1,53 +1,64 @@
 <section class="exo-daily" aria-label="Exoplanet idea of the day">
   <header class="exo-daily__head">
     <span class="exo-daily__eyebrow">Exoplanet idea of the day</span>
-    <time class="exo-daily__date" datetime="2026-05-19">2026-05-19</time>
+    <time class="exo-daily__date" datetime="2026-05-20">2026-05-20</time>
   </header>
-  <h2 class="exo-daily__title">Tidal Decay Chronometry — Using Hot Jupiter Orbital Period Derivatives as Independent Stellar Age Clocks</h2>
+  <h2 class="exo-daily__title">Secular Transit Depth Drift as a Probe of Circumplanetary Rings, Obliquity Precession, and Atmospheric Mass Loss Over Decadal Baselines</h2>
   <div class="exo-daily__premise">
-    <p>Hot Jupiters on very tight orbits (P &lt; 2 days) are expected to undergo measurable tidal orbital decay, where energy dissipation inside the host star causes the planet to spiral inward. The rate of this inspiral is governed by the stellar tidal quality factor Q'★, which itself depends on the star's internal structure — and therefore its evolutionary state and age. The key insight is that if you can measure the period derivative ∂P/∂t for a sample of ultra-short-period hot Jupiters, you can invert the tidal decay rate to obtain an independent, dynamical age estimate for the host star. This would create a wholly new stellar age-dating method, complementary to gyrochronology, isochrone fitting, and asteroseismology.</p>
-<p>WASP-12b's confirmed orbital decay (period decreasing at ~29 ms/yr) demonstrated this is measurable. But no one has systematically attempted to build a <strong>calibrated age ladder</strong> from tidal decay rates across a population.</p>
+    <p>The apparent transit depth of an exoplanet should be constant if the planet is a static sphere. But several physical processes can cause the <em>measured</em> depth to change slowly over years or decades:</p>
+<ul>
+<li><strong>Circumplanetary ring precession.</strong> A ringed planet's projected cross-section changes as the ring plane precesses relative to our line of sight, modulating the transit depth on timescales of years to decades. Theoretical estimates suggest ~10–13 systems in the Kepler/TESS archive could show detectable depth variations from this effect.</li>
+<li><strong>Planetary obliquity precession.</strong> An oblate, tilted planet presents a varying projected area as its spin axis precesses.</li>
+<li><strong>Atmospheric escape / mass loss.</strong> Young, close-in planets actively losing their atmospheres (e.g., sub-Neptunes in the "radius valley") could show a <em>shrinking</em> transit depth over decades as the opaque atmospheric envelope deflates.</li>
+</ul>
+<p>A recent systematic search (arXiv 2505.05948, May 2025) examined 308 close-in TESS planets for ring signatures in individual transits and found no clear detections. However, the <em>decadal baseline</em> approach — comparing Kepler-era depths to TESS-era depths for the same planet — has not been exploited as a blind survey. The 8–12 year lever arm between Kepler (2009–2013) and TESS extended mission (2021–2026+) is now long enough to be sensitive to precession periods of ~50–200 years.</p>
   </div>
   <details class="exo-daily__more">
     <summary>Read the full proposal</summary>
     <div class="exo-daily__full">
       <h3>Scientific Premise</h3>
-<p>Hot Jupiters on very tight orbits (P &lt; 2 days) are expected to undergo measurable tidal orbital decay, where energy dissipation inside the host star causes the planet to spiral inward. The rate of this inspiral is governed by the stellar tidal quality factor Q'★, which itself depends on the star's internal structure — and therefore its evolutionary state and age. The key insight is that if you can measure the period derivative ∂P/∂t for a sample of ultra-short-period hot Jupiters, you can invert the tidal decay rate to obtain an independent, dynamical age estimate for the host star. This would create a wholly new stellar age-dating method, complementary to gyrochronology, isochrone fitting, and asteroseismology.</p>
-<p>WASP-12b's confirmed orbital decay (period decreasing at ~29 ms/yr) demonstrated this is measurable. But no one has systematically attempted to build a <strong>calibrated age ladder</strong> from tidal decay rates across a population.</p>
+<p>The apparent transit depth of an exoplanet should be constant if the planet is a static sphere. But several physical processes can cause the <em>measured</em> depth to change slowly over years or decades:</p>
+<ul>
+<li><strong>Circumplanetary ring precession.</strong> A ringed planet's projected cross-section changes as the ring plane precesses relative to our line of sight, modulating the transit depth on timescales of years to decades. Theoretical estimates suggest ~10–13 systems in the Kepler/TESS archive could show detectable depth variations from this effect.</li>
+<li><strong>Planetary obliquity precession.</strong> An oblate, tilted planet presents a varying projected area as its spin axis precesses.</li>
+<li><strong>Atmospheric escape / mass loss.</strong> Young, close-in planets actively losing their atmospheres (e.g., sub-Neptunes in the "radius valley") could show a <em>shrinking</em> transit depth over decades as the opaque atmospheric envelope deflates.</li>
+</ul>
+<p>A recent systematic search (arXiv 2505.05948, May 2025) examined 308 close-in TESS planets for ring signatures in individual transits and found no clear detections. However, the <em>decadal baseline</em> approach — comparing Kepler-era depths to TESS-era depths for the same planet — has not been exploited as a blind survey. The 8–12 year lever arm between Kepler (2009–2013) and TESS extended mission (2021–2026+) is now long enough to be sensitive to precession periods of ~50–200 years.</p>
 <h3>Target Datasets</h3>
 <ul>
-<li><strong>Kepler/K2 long-baseline photometry</strong> for ultra-short-period giant planets (WASP-18b, WASP-19b, WASP-43b, KELT-16b, and others with P &lt; 2 days)</li>
-<li><strong>TESS</strong> multi-sector observations extending the time baseline by 6+ years beyond Kepler</li>
-<li><strong>Archival ground-based transit times</strong> from ETD (Exoplanet Transit Database) and literature, some stretching back 15+ years</li>
-<li><strong>Gaia DR4</strong> parallaxes and stellar parameters for host star characterization</li>
-<li><strong>ESPRESSO/HARPS</strong> RV archives for refining orbital eccentricities (needed to disentangle tidal circularization from decay)</li>
+<li><strong>Kepler long-cadence and short-cadence light curves</strong> for all confirmed transiting planets.</li>
+<li><strong>TESS light curves</strong> (2-minute cadence, extended mission) for overlapping Kepler targets — roughly 500+ planets observed by both missions.</li>
+<li><strong>CHEOPS pointed observations</strong> for high-priority targets with apparent depth changes.</li>
+<li><strong>Spitzer 4.5μm archival transits</strong> (where available) to separate chromatic effects from geometric ones.</li>
 </ul>
 <h3>Novelty</h3>
-<p>While individual period derivative measurements exist for a handful of systems, and tidal theory papers model decay rates, the specific idea of <strong>inverting measured ∂P/∂t values into a population-level stellar age calibration</strong> is underexplored. Most tidal decay papers focus on predicting remaining lifetimes or constraining Q'★. Flipping the problem — treating Q'★ as a known function of stellar type (calibrated on the few well-characterized systems) and then solving for age — has not been systematically pursued as an age-dating technique. This is distinct from mainstream work because it reframes tidal decay from an orbital evolution problem into a stellar astrophysics tool.</p>
+<p>Individual ring searches (fitting asymmetric transit models to single light curves) have been tried and have come up empty for close-in planets, consistent with tidal stripping of rings at small orbital separations. But the <em>depth drift</em> approach is geometrically distinct: it does not require resolving the ring in a single transit. Instead, it detects the integrated change in projected area over time. This makes it sensitive to rings (or obliquity) even when the ring signal is below the noise floor in any single epoch. Additionally, using depth drift to flag atmospheric mass loss in real time is a genuinely novel observable — current mass-loss studies rely on spectroscopic proxies (Lyα, He 10830 Å) rather than photometric shrinkage.</p>
 <h3>Concrete Workflow</h3>
 <ol>
-<li>Compile a master catalog of all hot Jupiters with P &lt; 2.5 days that have transit timing observations spanning &gt;8 years (combining Kepler, TESS, and ground-based).</li>
-<li>For each system, perform a uniform O-C (observed minus calculated) transit timing analysis using a quadratic ephemeris model (linear decay) and compare against constant-period and apsidal precession models via Bayesian model selection (BIC/Bayes factors).</li>
-<li>For systems with significant ∂P/∂t detections (or informative upper limits), compute the implied Q'★ using standard equilibrium tidal theory.</li>
-<li>Cross-match with independently age-dated host stars (via asteroseismology from Kepler, gyrochronology, or cluster membership) to calibrate the Q'★–age–spectral-type relation.</li>
-<li>Apply the calibrated relation to the remaining systems to predict ages; compare against isochrone ages to assess systematic offsets and scatter.</li>
-<li>Quantify the method's precision and identify the stellar parameter regime where tidal decay chronometry is most powerful.</li>
+<li><strong>Homogeneous re-reduction.</strong> Uniformly extract transit depths for all ~500 Kepler/TESS overlap planets using identical detrending and fitting pipelines (e.g., <code>juliet</code> or <code>exoplanet</code> with the same limb-darkening treatment and stellar parameters) to eliminate systematic depth offsets between missions.</li>
+<li><strong>Bandpass correction.</strong> The Kepler and TESS bandpasses differ (430–890 nm vs. 600–1000 nm). Compute expected chromatic depth differences using stellar models + planetary atmosphere models and subtract them, isolating the <em>achromatic</em> (geometric) depth change.</li>
+<li><strong>Statistical screen.</strong> Flag all planets whose Kepler-to-TESS depth change exceeds 3σ after corrections. Separate the sample into close-in (a &lt; 0.1 AU, rings unlikely) and longer-period (a &gt; 0.1 AU, rings plausible) subsamples.</li>
+<li><strong>Physical modeling of flagged systems.</strong> For each outlier, fit three competing models: (a) ringed planet with precessing ring plane, (b) oblate planet with precessing spin axis, (c) atmospheric radius evolution (mass loss or inflation). Use Bayesian model comparison.</li>
+<li><strong>Population-level upper limits.</strong> Even non-detections constrain the prevalence and geometry of exoplanetary ring systems, obliquity distributions, and atmospheric loss timescales.</li>
 </ol>
 <h3>Expected Signal / Observable</h3>
-<p>For WASP-12b-like systems, period shifts of ~30 ms/yr accumulate to ~0.5 seconds over a 15-year baseline — easily detectable with modern transit photometry (timing precision ~10–30 seconds for ground-based, ~5 seconds for TESS, sub-second for Kepler). For less extreme systems (WASP-18b, WASP-43b), expected shifts are smaller (a few ms/yr) but may be detectable with the now-available ~10–15 year baselines. The "signal" for the age calibration is a correlation between the measured decay rate residuals (after removing the spectral-type dependence of Q'★) and independently determined stellar ages.</p>
-<h3>Possible False Positives</h3>
 <ul>
-<li><strong>Apsidal precession</strong> can mimic a quadratic O-C trend over limited baselines. Mitigation: include precession as an alternative model; use RV eccentricity constraints.</li>
-<li><strong>Rømer delay</strong> from a long-period companion can produce apparent period changes. Mitigation: check for RV trends and Gaia astrometric acceleration.</li>
-<li><strong>Stellar magnetic activity cycles</strong> (Applegate mechanism) can modulate transit times quasi-periodically. Mitigation: monitor stellar activity indicators; the Applegate effect is typically periodic, not secular.</li>
-<li><strong>Systematics in heterogeneous timing datasets</strong> from combining space and ground photometry. Mitigation: use a hierarchical model with per-instrument timing offsets.</li>
+<li>Ring precession: depth changes of ~100–500 ppm over a decade for Saturn-analog rings at moderate inclinations, detectable for ~10 favorable systems.</li>
+<li>Atmospheric shrinkage: depth decreases of ~50–200 ppm per decade for young sub-Neptunes undergoing photoevaporation (e.g., Kepler-36c-like planets around young stars).</li>
+<li>Null results still yield the first population-level upper limits on ring prevalence beyond the tidal disruption radius.</li>
 </ul>
-<h3>Why It Could Matter</h3>
-<p>Stellar ages are one of the most poorly constrained fundamental parameters in astrophysics. Gyrochronology breaks down for old and hot stars; isochrone fitting is degenerate on the main sequence; asteroseismology requires specific data. A tidal decay–based age clock would be completely independent of these methods, working best for F- and early G-type stars hosting ultra-short-period giants — a regime where other techniques struggle. Even if the precision is moderate (±1–2 Gyr), the independence of the method makes it valuable for cross-calibrating the stellar age ladder.</p>
+<h3>Possible False Positives / Pitfalls</h3>
+<ul>
+<li><strong>Stellar variability.</strong> Evolving starspot coverage changes the apparent transit depth (the transit light source effect). This is chromatic and can be partially corrected using the bandpass difference, but it remains the dominant systematic.</li>
+<li><strong>Instrumental systematics.</strong> Kepler and TESS have different pixel scales, PSFs, and contamination levels. Imperfect dilution corrections could create spurious depth changes. Mitigation: use high-resolution imaging (Gaia, speckle) to update dilution corrections.</li>
+<li><strong>Third-light contamination evolution.</strong> A background eclipsing binary blended with the target could produce depth changes if its own eclipse depth varies. Cross-check with Gaia astrometry and centroid analysis.</li>
+</ul>
+<h3>Why This Could Matter</h3>
+<p>The detection of a circumplanetary ring system would be a landmark discovery — no exoplanet ring has been confirmed despite decades of searching. Even upper limits would constrain theories of ring formation, tidal disruption, and satellite accretion. The atmospheric mass-loss channel connects to one of the hottest topics in exoplanet science (the radius valley and its origins), and a photometric detection of real-time atmospheric shrinkage would provide a direct, model-independent constraint on mass-loss rates.</p>
     </div>
   </details>
   <footer class="exo-daily__foot">
-    <span class="exo-daily__meta">Source brief: 2026-04-29</span>
+    <span class="exo-daily__meta">Source brief: 2026-05-04</span>
     <span class="exo-daily__meta">Rotates daily &middot; 66 ideas in the pool</span>
   </footer>
 </section>
