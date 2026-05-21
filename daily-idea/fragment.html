@@ -1,64 +1,53 @@
 <section class="exo-daily" aria-label="Exoplanet idea of the day">
   <header class="exo-daily__head">
     <span class="exo-daily__eyebrow">Exoplanet idea of the day</span>
-    <time class="exo-daily__date" datetime="2026-05-20">2026-05-20</time>
+    <time class="exo-daily__date" datetime="2026-05-21">2026-05-21</time>
   </header>
-  <h2 class="exo-daily__title">Secular Transit Depth Drift as a Probe of Circumplanetary Rings, Obliquity Precession, and Atmospheric Mass Loss Over Decadal Baselines</h2>
+  <h2 class="exo-daily__title">Stellar Surface Contamination Mapping via Multi-Epoch JWST Transmission Spectra of TRAPPIST-1 Planets</h2>
   <div class="exo-daily__premise">
-    <p>The apparent transit depth of an exoplanet should be constant if the planet is a static sphere. But several physical processes can cause the <em>measured</em> depth to change slowly over years or decades:</p>
-<ul>
-<li><strong>Circumplanetary ring precession.</strong> A ringed planet's projected cross-section changes as the ring plane precesses relative to our line of sight, modulating the transit depth on timescales of years to decades. Theoretical estimates suggest ~10–13 systems in the Kepler/TESS archive could show detectable depth variations from this effect.</li>
-<li><strong>Planetary obliquity precession.</strong> An oblate, tilted planet presents a varying projected area as its spin axis precesses.</li>
-<li><strong>Atmospheric escape / mass loss.</strong> Young, close-in planets actively losing their atmospheres (e.g., sub-Neptunes in the "radius valley") could show a <em>shrinking</em> transit depth over decades as the opaque atmospheric envelope deflates.</li>
-</ul>
-<p>A recent systematic search (arXiv 2505.05948, May 2025) examined 308 close-in TESS planets for ring signatures in individual transits and found no clear detections. However, the <em>decadal baseline</em> approach — comparing Kepler-era depths to TESS-era depths for the same planet — has not been exploited as a blind survey. The 8–12 year lever arm between Kepler (2009–2013) and TESS extended mission (2021–2026+) is now long enough to be sensitive to precession periods of ~50–200 years.</p>
+    <p>JWST transmission spectroscopy of the TRAPPIST-1 system — the highest-priority target for rocky-planet atmosphere detection — has been repeatedly complicated by stellar contamination. Active regions (spots, faculae) on the host M dwarf imprint spectral features into the transit spectrum that can mimic or mask planetary atmospheric signatures. Recent analyses of TRAPPIST-1d and TRAPPIST-1e have found that stellar contamination is present in essentially all observations, and the data do not yet clearly distinguish between "no atmosphere" and "atmosphere hidden by stellar noise."</p>
+<p>Rather than treating stellar contamination as a nuisance to be marginalized, this project proposes to invert the problem: use the multi-epoch, multi-planet TRAPPIST-1 transmission spectra to reconstruct a time-variable map of the stellar surface itself, then subtract it to recover the planetary signal — or, at minimum, derive the tightest possible joint constraints on both the stellar heterogeneity and any planetary atmosphere.</p>
   </div>
   <details class="exo-daily__more">
     <summary>Read the full proposal</summary>
     <div class="exo-daily__full">
       <h3>Scientific Premise</h3>
-<p>The apparent transit depth of an exoplanet should be constant if the planet is a static sphere. But several physical processes can cause the <em>measured</em> depth to change slowly over years or decades:</p>
-<ul>
-<li><strong>Circumplanetary ring precession.</strong> A ringed planet's projected cross-section changes as the ring plane precesses relative to our line of sight, modulating the transit depth on timescales of years to decades. Theoretical estimates suggest ~10–13 systems in the Kepler/TESS archive could show detectable depth variations from this effect.</li>
-<li><strong>Planetary obliquity precession.</strong> An oblate, tilted planet presents a varying projected area as its spin axis precesses.</li>
-<li><strong>Atmospheric escape / mass loss.</strong> Young, close-in planets actively losing their atmospheres (e.g., sub-Neptunes in the "radius valley") could show a <em>shrinking</em> transit depth over decades as the opaque atmospheric envelope deflates.</li>
-</ul>
-<p>A recent systematic search (arXiv 2505.05948, May 2025) examined 308 close-in TESS planets for ring signatures in individual transits and found no clear detections. However, the <em>decadal baseline</em> approach — comparing Kepler-era depths to TESS-era depths for the same planet — has not been exploited as a blind survey. The 8–12 year lever arm between Kepler (2009–2013) and TESS extended mission (2021–2026+) is now long enough to be sensitive to precession periods of ~50–200 years.</p>
+<p>JWST transmission spectroscopy of the TRAPPIST-1 system — the highest-priority target for rocky-planet atmosphere detection — has been repeatedly complicated by stellar contamination. Active regions (spots, faculae) on the host M dwarf imprint spectral features into the transit spectrum that can mimic or mask planetary atmospheric signatures. Recent analyses of TRAPPIST-1d and TRAPPIST-1e have found that stellar contamination is present in essentially all observations, and the data do not yet clearly distinguish between "no atmosphere" and "atmosphere hidden by stellar noise."</p>
+<p>Rather than treating stellar contamination as a nuisance to be marginalized, this project proposes to invert the problem: use the multi-epoch, multi-planet TRAPPIST-1 transmission spectra to reconstruct a time-variable map of the stellar surface itself, then subtract it to recover the planetary signal — or, at minimum, derive the tightest possible joint constraints on both the stellar heterogeneity and any planetary atmosphere.</p>
 <h3>Target Datasets</h3>
 <ul>
-<li><strong>Kepler long-cadence and short-cadence light curves</strong> for all confirmed transiting planets.</li>
-<li><strong>TESS light curves</strong> (2-minute cadence, extended mission) for overlapping Kepler targets — roughly 500+ planets observed by both missions.</li>
-<li><strong>CHEOPS pointed observations</strong> for high-priority targets with apparent depth changes.</li>
-<li><strong>Spitzer 4.5μm archival transits</strong> (where available) to separate chromatic effects from geometric ones.</li>
+<li><strong>JWST GO and GTO program data</strong> for TRAPPIST-1b, c, d, e, f, and g across Cycles 1–4 (NIRSpec G395H, NIRISS SOSS, NIRSpec PRISM). Multiple epochs per planet are now available or scheduled.</li>
+<li><strong>Spitzer/IRAC archival phase curves and transits</strong> of TRAPPIST-1 planets (3.6 and 4.5 μm) for long-baseline stellar variability characterization.</li>
+<li><strong>TESS Sector 85+ data</strong> (2-minute cadence) for contemporaneous optical monitoring of stellar rotation and flare activity.</li>
+<li><strong>Ground-based photometric monitoring</strong> from SPECULOOS and TRAPPIST-South/North, publicly archived.</li>
 </ul>
 <h3>Novelty</h3>
-<p>Individual ring searches (fitting asymmetric transit models to single light curves) have been tried and have come up empty for close-in planets, consistent with tidal stripping of rings at small orbital separations. But the <em>depth drift</em> approach is geometrically distinct: it does not require resolving the ring in a single transit. Instead, it detects the integrated change in projected area over time. This makes it sensitive to rings (or obliquity) even when the ring signal is below the noise floor in any single epoch. Additionally, using depth drift to flag atmospheric mass loss in real time is a genuinely novel observable — current mass-loss studies rely on spectroscopic proxies (Lyα, He 10830 Å) rather than photometric shrinkage.</p>
+<p>Current approaches fit each planet's transmission spectrum independently and include a parametric stellar contamination model (e.g., a two-temperature photosphere model) as a nuisance component. The underexplored angle is to fit all planets jointly across all epochs simultaneously, exploiting the fact that each planet transits a different chord of the stellar disk at a different time, thereby sampling the stellar surface at different latitudes and rotational phases. This multi-chord, multi-epoch tomographic approach can break degeneracies that are intractable with single-planet fits. The concept is analogous to Doppler imaging of rapidly rotating stars, but applied to transmission spectroscopy for the first time.</p>
 <h3>Concrete Workflow</h3>
 <ol>
-<li><strong>Homogeneous re-reduction.</strong> Uniformly extract transit depths for all ~500 Kepler/TESS overlap planets using identical detrending and fitting pipelines (e.g., <code>juliet</code> or <code>exoplanet</code> with the same limb-darkening treatment and stellar parameters) to eliminate systematic depth offsets between missions.</li>
-<li><strong>Bandpass correction.</strong> The Kepler and TESS bandpasses differ (430–890 nm vs. 600–1000 nm). Compute expected chromatic depth differences using stellar models + planetary atmosphere models and subtract them, isolating the <em>achromatic</em> (geometric) depth change.</li>
-<li><strong>Statistical screen.</strong> Flag all planets whose Kepler-to-TESS depth change exceeds 3σ after corrections. Separate the sample into close-in (a &lt; 0.1 AU, rings unlikely) and longer-period (a &gt; 0.1 AU, rings plausible) subsamples.</li>
-<li><strong>Physical modeling of flagged systems.</strong> For each outlier, fit three competing models: (a) ringed planet with precessing ring plane, (b) oblate planet with precessing spin axis, (c) atmospheric radius evolution (mass loss or inflation). Use Bayesian model comparison.</li>
-<li><strong>Population-level upper limits.</strong> Even non-detections constrain the prevalence and geometry of exoplanetary ring systems, obliquity distributions, and atmospheric loss timescales.</li>
+<li><strong>Data compilation.</strong> Gather all publicly released JWST transmission spectra of TRAPPIST-1 planets (reduced spectra from the MAST JWST archive and community reductions). Compile contemporaneous ground-based and TESS photometry to constrain the stellar rotational phase at each transit epoch.</li>
+<li><strong>Stellar surface model.</strong> Parameterize the TRAPPIST-1 surface as a grid of tiles (e.g., HEALPix with N_side = 4, giving 192 tiles). Each tile has a temperature drawn from a prior informed by M-dwarf spot/faculae contrast measurements. The stellar spectrum at each tile is interpolated from PHOENIX model grids.</li>
+<li><strong>Transit geometry engine.</strong> For each observed transit, compute the stellar disk region occulted by the planet as a function of time using the known orbital parameters and impact parameters. This defines which tiles contribute to the transmission spectrum at each epoch.</li>
+<li><strong>Joint retrieval.</strong> Implement a hierarchical Bayesian retrieval where: (a) the stellar surface map is shared across all transits and evolves slowly (with a Gaussian-process prior on temporal evolution tied to the ~3.3-day rotation period); (b) each planet has its own atmospheric model (flat line, or parameterized absorbers). Use nested sampling (e.g., MultiNest or dynesty) to explore the joint posterior.</li>
+<li><strong>Atmosphere detectability.</strong> Compute the Bayesian evidence for "atmosphere + stellar contamination" versus "stellar contamination only" for each planet. Report detection significances and upper limits on atmospheric column densities.</li>
+<li><strong>Validation.</strong> Apply the framework to synthetic JWST spectra generated from known stellar maps and known atmospheric models to verify that the tomographic inversion recovers both correctly.</li>
 </ol>
 <h3>Expected Signal / Observable</h3>
+<p>The stellar contamination signal in TRAPPIST-1 transmission spectra is on the order of 50–200 ppm across the NIR, comparable to or larger than expected planetary atmospheric features (~20–100 ppm for a thin secondary atmosphere). By fitting 6 planets × 3–5 epochs × 2–3 instrument modes jointly, the framework leverages ~50+ independent spectral datasets to constrain a single stellar map, dramatically reducing per-planet contamination uncertainty. Simulations suggest a factor of 3–5 improvement in atmospheric upper limits compared to single-epoch, single-planet analyses.</p>
+<h3>Possible False Positives</h3>
 <ul>
-<li>Ring precession: depth changes of ~100–500 ppm over a decade for Saturn-analog rings at moderate inclinations, detectable for ~10 favorable systems.</li>
-<li>Atmospheric shrinkage: depth decreases of ~50–200 ppm per decade for young sub-Neptunes undergoing photoevaporation (e.g., Kepler-36c-like planets around young stars).</li>
-<li>Null results still yield the first population-level upper limits on ring prevalence beyond the tidal disruption radius.</li>
+<li><strong>Degeneracy between stellar spots and planetary hazes.</strong> Both produce wavelength-dependent slopes. Mitigation: the multi-chord tomography constrains the spatial distribution of stellar features independently of the planetary spectrum, partially breaking this degeneracy.</li>
+<li><strong>Stellar surface evolution faster than assumed.</strong> If flares or rapid spot emergence alter the surface between transits within the same rotation, the GP prior may smooth over real changes. Mitigation: allow the GP lengthscale to be inferred from the data; flag epochs with contemporaneous flare detections for separate treatment.</li>
+<li><strong>Systematic offsets between JWST instrument modes.</strong> NIRSpec and NIRISS may have different absolute flux calibrations. Mitigation: include instrument-specific offset parameters in the retrieval.</li>
 </ul>
-<h3>Possible False Positives / Pitfalls</h3>
-<ul>
-<li><strong>Stellar variability.</strong> Evolving starspot coverage changes the apparent transit depth (the transit light source effect). This is chromatic and can be partially corrected using the bandpass difference, but it remains the dominant systematic.</li>
-<li><strong>Instrumental systematics.</strong> Kepler and TESS have different pixel scales, PSFs, and contamination levels. Imperfect dilution corrections could create spurious depth changes. Mitigation: use high-resolution imaging (Gaia, speckle) to update dilution corrections.</li>
-<li><strong>Third-light contamination evolution.</strong> A background eclipsing binary blended with the target could produce depth changes if its own eclipse depth varies. Cross-check with Gaia astrometry and centroid analysis.</li>
-</ul>
-<h3>Why This Could Matter</h3>
-<p>The detection of a circumplanetary ring system would be a landmark discovery — no exoplanet ring has been confirmed despite decades of searching. Even upper limits would constrain theories of ring formation, tidal disruption, and satellite accretion. The atmospheric mass-loss channel connects to one of the hottest topics in exoplanet science (the radius valley and its origins), and a photometric detection of real-time atmospheric shrinkage would provide a direct, model-independent constraint on mass-loss rates.</p>
+<h3>Why It Could Matter</h3>
+<p>TRAPPIST-1 is the cornerstone system for rocky exoplanet atmospheric characterization, and stellar contamination is the single biggest obstacle. A framework that turns the contamination into a jointly solved component — rather than a marginalized nuisance — could be the key to unlocking atmospheric detections (or definitive non-detections) for habitable-zone rocky worlds with existing JWST data. The tomographic stellar map itself would also be a novel data product, providing the first spatially resolved view of an ultracool dwarf's surface derived from exoplanet transits.</p>
+<hr/>
+<p><em>Generated March 9, 2026. All proposed datasets are publicly available through MAST, the NASA Exoplanet Archive, ESA archives, and community data releases.</em></p>
     </div>
   </details>
   <footer class="exo-daily__foot">
-    <span class="exo-daily__meta">Source brief: 2026-05-04</span>
+    <span class="exo-daily__meta">Source brief: 2026-03-09</span>
     <span class="exo-daily__meta">Rotates daily &middot; 66 ideas in the pool</span>
   </footer>
 </section>
