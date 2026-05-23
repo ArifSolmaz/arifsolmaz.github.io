@@ -1,51 +1,52 @@
 <section class="exo-daily" aria-label="Exoplanet idea of the day">
   <header class="exo-daily__head">
     <span class="exo-daily__eyebrow">Exoplanet idea of the day</span>
-    <time class="exo-daily__date" datetime="2026-05-22">2026-05-22</time>
+    <time class="exo-daily__date" datetime="2026-05-23">2026-05-23</time>
   </header>
-  <h2 class="exo-daily__title">The Phantom Radius Valley — Recharting Exoplanet Demographics After Correcting TESS Flux Dilution</h2>
+  <h2 class="exo-daily__title">Lava World Atmosphere Demographics — Mining the Ultra-Short-Period Population for Magma-Ocean Volatile Fingerprints</h2>
   <div class="exo-daily__premise">
-    <p>The "radius valley" — the observed dearth of planets between ~1.5 and 2.0 R⊕ — is one of the most important features in exoplanet demographics, interpreted as evidence for atmospheric mass loss (photoevaporation or core-powered mass loss) sculpting the transition from rocky super-Earths to volatile-rich sub-Neptunes. However, a June 2025 study demonstrated that TESS planet radii are systematically underestimated by a weighted median of ~6% due to unresolved flux contamination from background stars, translating to a ~20% overestimation of bulk density. This means a significant fraction of planets currently classified as dense super-Earths sitting just below the valley may actually be lower-density sub-Neptunes sitting <em>within or above</em> it. The radius valley's location, depth, and slope with stellar mass may all be artifacts of this uncorrected bias — and by extension, the theoretical models (photoevaporation vs. core-powered mass loss vs. water-world migration) calibrated against the observed valley could be fitting a phantom feature.</p>
+    <p>JWST recently detected a thick atmosphere on TOI-561b, a small, scorching-hot rocky planet orbiting one of the oldest stars in the Milky Way — a planet that, under prevailing models, should have been stripped bare long ago. This discovery, alongside the confirmed atmosphere on 55 Cancri e, suggests that magma-ocean outgassing can sustain secondary atmospheres even under extreme irradiation. Yet no systematic demographic study has asked: across the full population of known ultra-short-period (USP) planets, which ones should harbor magma-ocean atmospheres, and what does the presence or absence of such atmospheres tell us about interior composition and mantle volatile budgets?</p>
+<p>The idea is to build a predictive framework — grounded in bulk density, irradiation environment, and host-star age/activity — and test it against JWST secondary eclipse and phase curve observations as they accumulate. The key scientific leverage is that magma-ocean atmospheres are not primordial. Their composition (SiO, Na, K, SiO₂, FeO vapors) is set by the rock vapor equilibrium of the mantle, making them direct probes of interior mineralogy in a way that no other technique currently achieves.</p>
   </div>
   <details class="exo-daily__more">
     <summary>Read the full proposal</summary>
     <div class="exo-daily__full">
       <h3>Scientific Premise</h3>
-<p>The "radius valley" — the observed dearth of planets between ~1.5 and 2.0 R⊕ — is one of the most important features in exoplanet demographics, interpreted as evidence for atmospheric mass loss (photoevaporation or core-powered mass loss) sculpting the transition from rocky super-Earths to volatile-rich sub-Neptunes. However, a June 2025 study demonstrated that TESS planet radii are systematically underestimated by a weighted median of ~6% due to unresolved flux contamination from background stars, translating to a ~20% overestimation of bulk density. This means a significant fraction of planets currently classified as dense super-Earths sitting just below the valley may actually be lower-density sub-Neptunes sitting <em>within or above</em> it. The radius valley's location, depth, and slope with stellar mass may all be artifacts of this uncorrected bias — and by extension, the theoretical models (photoevaporation vs. core-powered mass loss vs. water-world migration) calibrated against the observed valley could be fitting a phantom feature.</p>
-<h3>What Makes It Distinct</h3>
-<p>The June 2025 paper identified and quantified the bias but did not propagate it through the full demographic machinery — occurrence rate calculations, the radius valley's dependence on stellar type, or the Bayesian model comparisons used to distinguish between formation/evolution theories. This project would do exactly that: take the corrected radii, recompute occurrence rates and valley parameters, and re-run the theory discrimination analysis to see which (if any) formation model is actually favored once the systematics are removed.</p>
+<p>JWST recently detected a thick atmosphere on TOI-561b, a small, scorching-hot rocky planet orbiting one of the oldest stars in the Milky Way — a planet that, under prevailing models, should have been stripped bare long ago. This discovery, alongside the confirmed atmosphere on 55 Cancri e, suggests that magma-ocean outgassing can sustain secondary atmospheres even under extreme irradiation. Yet no systematic demographic study has asked: across the full population of known ultra-short-period (USP) planets, which ones should harbor magma-ocean atmospheres, and what does the presence or absence of such atmospheres tell us about interior composition and mantle volatile budgets?</p>
+<p>The idea is to build a predictive framework — grounded in bulk density, irradiation environment, and host-star age/activity — and test it against JWST secondary eclipse and phase curve observations as they accumulate. The key scientific leverage is that magma-ocean atmospheres are not primordial. Their composition (SiO, Na, K, SiO₂, FeO vapors) is set by the rock vapor equilibrium of the mantle, making them direct probes of interior mineralogy in a way that no other technique currently achieves.</p>
 <h3>Target Datasets</h3>
 <ul>
-<li><strong>TESS-SPOC and QLP light curves</strong> with TGLC-corrected photometry (Bouma et al.)</li>
-<li><strong>Gaia DR3 + TIC v8.2</strong> for high-resolution imaging constraints and dilution estimates</li>
-<li><strong>NASA Exoplanet Archive</strong> confirmed planet and candidate tables</li>
-<li><strong>California-Kepler Survey (CKS)</strong> and <strong>TESS-Keck Survey</strong> for precise stellar parameters and RV masses</li>
-<li><strong>Kepler DR25</strong> occurrence rate products as the "ground truth" comparison sample (less affected by dilution due to Kepler's smaller pixel scale)</li>
+<li><strong>NASA Exoplanet Archive</strong> for the full USP planet catalog (P &lt; 1 day): masses, radii, densities, host-star properties.</li>
+<li><strong>JWST Cycle 1–4 archival spectra</strong> (NIRSpec, MIRI) for secondary eclipses and thermal emission of USP rocky planets (55 Cnc e, TOI-561b, GJ 367b, K2-141b, LHS 3844b, and others observed as part of GO programs).</li>
+<li><strong>TESS phase curves</strong> of USP planets — even non-detections constrain dayside brightness temperatures and therefore surface/atmospheric thermal budgets.</li>
+<li><strong>Spitzer 4.5 μm archival eclipses</strong> for supplementary thermal constraints.</li>
 </ul>
 <h3>Novelty</h3>
-<p>A full end-to-end reassessment of the radius valley's demographics and theoretical implications after correcting a now-documented systematic bias. This goes beyond the original bias paper (which focused on individual planet characterization) to ask: does the radius valley itself change shape, and do our theoretical conclusions about atmospheric loss still hold?</p>
+<p>Individual lava-world atmosphere detections are being published one at a time. What is missing is a population-level analysis that asks: given interior structure models and magma-ocean thermochemistry, can we predict which USP planets should retain rock-vapor atmospheres and which should not? The detection of an atmosphere on TOI-561b (an ancient, metal-poor star) immediately challenges the expectation that old, heavily irradiated planets lose atmospheres. A systematic census would turn individual surprises into a testable demographic trend linking mantle composition, stellar environment, and atmospheric retention.</p>
 <h3>Concrete Workflow</h3>
 <ol>
-<li><strong>Dilution correction.</strong> For every confirmed TESS planet with R &lt; 4 R⊕, compute the flux contamination ratio using Gaia DR3 source catalogs within the TESS aperture. Apply the TGLC-calibrated correction to obtain revised transit depths and planet radii. Propagate uncertainties via MCMC.</li>
-<li><strong>Revised occurrence rates.</strong> Using the corrected radii, recompute planet occurrence rates as a function of radius and orbital period using the inverse-detection-efficiency method (e.g., Fulton &amp; Petigura 2018 framework). Compare TESS-derived rates to Kepler-derived rates (which serve as a less-contaminated benchmark).</li>
-<li><strong>Valley characterization.</strong> Fit the radius distribution with a mixture model (two Gaussians + gap, or a broken power law) to extract the valley center, width, and depth as functions of stellar mass, metallicity, and insolation flux. Compare pre- and post-correction valley parameters.</li>
-<li><strong>Theory discrimination.</strong> Generate synthetic planet populations from three competing models: (a) XUV photoevaporation (Owen &amp; Wu), (b) core-powered mass loss (Ginzburg, Gupta &amp; Schlichting), and (c) water-world formation (Venturini et al., Burn et al.). Forward-model each population through TESS detection biases. Compare to the <em>corrected</em> observed distribution using hierarchical Bayesian inference.</li>
-<li><strong>Stellar-type dependence.</strong> Examine how the corrected valley parameters vary from F to mid-M dwarfs. Recent work (March 2026) shows the valley disappears around mid-to-late M dwarfs in TESS data — does this result survive the dilution correction, or was it partially driven by the larger contamination typical of fainter M-dwarf fields?</li>
+<li>Compile the complete USP planet sample (~40–50 planets with measured masses and radii) from the NASA Exoplanet Archive.</li>
+<li>For each planet, compute the expected magma-ocean vapor pressure and atmospheric scale height using published rock-vapor-equilibrium codes (e.g., MAGMA, VapoRock), parameterized by plausible mantle compositions (Earth-like BSE, Mg-rich, Fe-rich).</li>
+<li>Model atmospheric escape rates under each planet's XUV environment using host-star activity proxies (rotation period, X-ray luminosity from eROSITA or archival XMM/Chandra).</li>
+<li>Predict a binary outcome (atmosphere-retaining vs. stripped) for each target and rank by observational accessibility (emission signal-to-noise in MIRI/NIRSpec).</li>
+<li>Cross-match predictions against existing JWST and Spitzer secondary eclipse detections and non-detections.</li>
+<li>Perform a Bayesian hierarchical analysis: what mantle composition distribution across the USP population best explains the observed detection/non-detection pattern?</li>
 </ol>
 <h3>Expected Signal / Observable</h3>
-<p>If the bias is propagated correctly, the radius valley should shift upward by roughly 0.05–0.15 R⊕ in the TESS sample, narrow or potentially partially fill in. The occurrence rate ratio of super-Earths to sub-Neptunes should decrease (some super-Earths "promoted" to sub-Neptunes). The slope of the valley with stellar mass may change, potentially disfavoring or favoring one atmospheric-loss mechanism over another.</p>
+<p>Secondary eclipse depths of 50–200 ppm in MIRI bands for planets with rock-vapor atmospheres (SiO, Na features), versus bare-rock blackbody emission for stripped surfaces. The key discriminant is the ratio of optical (TESS) to infrared (MIRI 15 μm) eclipse depths: a planet with a greenhouse atmosphere will show a steeper spectral slope than a bare rock.</p>
 <h3>Possible False Positives</h3>
 <ul>
-<li><strong>Overcorrection of dilution:</strong> If the TGLC contamination model overestimates background flux for some targets (e.g., in sparse fields), radii could be artificially inflated. Mitigated by validating against high-resolution imaging (speckle, AO) and Kepler overlap targets.</li>
-<li><strong>Selection effects:</strong> Correcting radii changes which planets fall in which bins, potentially introducing Eddington-like bias at bin edges. Mitigated by using a continuous mixture model rather than binned histograms.</li>
-<li><strong>Sample heterogeneity:</strong> TESS targets span a wider range of stellar types and distances than Kepler. Mitigated by analyzing stellar-type subsamples independently and by including stellar parameter uncertainties in the hierarchical model.</li>
+<li>Residual stellar variability mimicking shallow eclipse depth variations.</li>
+<li>Instrumental systematics in MIRI at the ~50 ppm level for faint targets.</li>
+<li>Degeneracy between thin rock-vapor atmospheres and high-albedo bare surfaces (both reduce dayside brightness temperature relative to a zero-albedo blackbody).</li>
+<li>Uncertainty in XUV flux histories, which propagates into escape-rate predictions.</li>
 </ul>
-<h3>Why It Matters</h3>
-<p>The radius valley is the Rosetta Stone of small-planet formation and evolution. If its observed properties are significantly altered by a correctable systematic, then a decade of theoretical interpretation may need revision. This project directly tests whether our leading theories of planetary atmospheric loss survive contact with corrected data — a question with implications for predicting which small planets retain atmospheres and are viable targets for habitability studies with JWST and future observatories.</p>
+<h3>Why This Matters</h3>
+<p>This would be the first population-level test of magma-ocean atmospheric theory. It directly constrains mantle volatile inventories — a fundamental unknown in rocky planet geophysics — using only photometric data. If the detection pattern correlates with host-star metallicity or age, it opens a window into how rocky planet interiors evolve on Gyr timescales, which is central to understanding habitability.</p>
     </div>
   </details>
   <footer class="exo-daily__foot">
-    <span class="exo-daily__meta">Source brief: 2026-03-12</span>
+    <span class="exo-daily__meta">Source brief: 2026-04-01</span>
     <span class="exo-daily__meta">Rotates daily &middot; 66 ideas in the pool</span>
   </footer>
 </section>
