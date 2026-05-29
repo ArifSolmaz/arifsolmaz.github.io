@@ -3,57 +3,64 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Idea of the day &mdash; Population-Level Atmospheric Mass-Loss Demographics Across the Radius Valley Using TESS + Archival UV/X-ray Data</title>
+<title>Idea of the day &mdash; Secular Brightness Trends in Hot Jupiters — Hunting for Real-Time Orbital Decay and Tidal Inflation Using Decade-Long Phase Curve Baselines</title>
 <link rel="stylesheet" href="widget.css"/>
 </head>
 <body>
 <section class="exo-daily" aria-label="Exoplanet idea of the day">
   <header class="exo-daily__head">
     <span class="exo-daily__eyebrow">Exoplanet idea of the day</span>
-    <time class="exo-daily__date" datetime="2026-05-28">2026-05-28</time>
+    <time class="exo-daily__date" datetime="2026-05-29">2026-05-29</time>
   </header>
-  <h2 class="exo-daily__title">Population-Level Atmospheric Mass-Loss Demographics Across the Radius Valley Using TESS + Archival UV/X-ray Data</h2>
+  <h2 class="exo-daily__title">Secular Brightness Trends in Hot Jupiters — Hunting for Real-Time Orbital Decay and Tidal Inflation Using Decade-Long Phase Curve Baselines</h2>
   <div class="exo-daily__premise">
-    <p>The "radius valley" — the observed dearth of planets between ~1.5 and 2.0 Earth radii — is one of the most important features in the exoplanet size distribution. Two leading hypotheses explain it: photoevaporation (XUV-driven atmospheric escape) and core-powered mass loss (residual heat from formation driving envelope loss). Both predict the valley's location should shift with stellar mass, age, and irradiation level, but in subtly different ways. Distinguishing them requires mapping the valley's dependence on these parameters across large samples. While individual atmospheric escape detections are now being made with JWST (e.g., the helium outflows from WASP-121b), no one has yet attempted a statistical, population-level study correlating observed escape signatures with the planet's position relative to the radius valley.</p>
+    <p>Hot Jupiters on very short-period orbits are expected to undergo orbital decay via tidal dissipation in the host star, spiraling inward on timescales of ~10 Myr to ~1 Gyr depending on the stellar tidal quality factor Q'<em>. WASP-12b is the only confirmed case where a period decrease has been measured, now refined to −30.23 ± 0.82 ms/yr by CHEOPS observations (2025). However, orbital decay should also produce a </em>secular change in the planet's thermal emission* — as the orbit shrinks, tidal heating increases, the planet inflates, and its dayside brightness temperature rises. This is a second observable of the same physical process, and it has never been searched for systematically.</p>
+<p>The idea is to leverage the extraordinary baseline now available — Spitzer observed hot Jupiter phase curves from 2005–2020, TESS has been monitoring many of the same targets since 2018, and JWST has added high-precision eclipse measurements from 2022 onward. For the most tidally stressed systems, the predicted brightness change over a 15–20 year baseline may be measurable.</p>
   </div>
   <details class="exo-daily__more">
     <summary>Read the full proposal</summary>
     <div class="exo-daily__full">
       <h3>Scientific Premise</h3>
-<p>The "radius valley" — the observed dearth of planets between ~1.5 and 2.0 Earth radii — is one of the most important features in the exoplanet size distribution. Two leading hypotheses explain it: photoevaporation (XUV-driven atmospheric escape) and core-powered mass loss (residual heat from formation driving envelope loss). Both predict the valley's location should shift with stellar mass, age, and irradiation level, but in subtly different ways. Distinguishing them requires mapping the valley's dependence on these parameters across large samples. While individual atmospheric escape detections are now being made with JWST (e.g., the helium outflows from WASP-121b), no one has yet attempted a statistical, population-level study correlating observed escape signatures with the planet's position relative to the radius valley.</p>
+<p>Hot Jupiters on very short-period orbits are expected to undergo orbital decay via tidal dissipation in the host star, spiraling inward on timescales of ~10 Myr to ~1 Gyr depending on the stellar tidal quality factor Q'<em>. WASP-12b is the only confirmed case where a period decrease has been measured, now refined to −30.23 ± 0.82 ms/yr by CHEOPS observations (2025). However, orbital decay should also produce a </em>secular change in the planet's thermal emission* — as the orbit shrinks, tidal heating increases, the planet inflates, and its dayside brightness temperature rises. This is a second observable of the same physical process, and it has never been searched for systematically.</p>
+<p>The idea is to leverage the extraordinary baseline now available — Spitzer observed hot Jupiter phase curves from 2005–2020, TESS has been monitoring many of the same targets since 2018, and JWST has added high-precision eclipse measurements from 2022 onward. For the most tidally stressed systems, the predicted brightness change over a 15–20 year baseline may be measurable.</p>
 <h3>Target Datasets</h3>
 <ul>
-<li><strong>TESS confirmed and candidate planet catalog</strong> with updated radii from TESS-SPOC and community follow-up.</li>
-<li><strong>XMM-Newton Serendipitous Source Catalogue (4XMM-DR14)</strong> and <strong>Chandra Source Catalog (CSC 2.1)</strong> for X-ray luminosities of planet host stars.</li>
-<li><strong>GALEX GR7</strong> archive for near-UV and far-UV fluxes.</li>
-<li><strong>Gaia DR3</strong> for precise stellar parameters (T_eff, luminosity, age proxies via gyrochronology and isochrone fitting).</li>
-<li><strong>JWST archival spectra</strong> (where available) from GO programs targeting helium 10830 Å absorption in sub-Neptune atmospheres.</li>
+<li><strong>Spitzer 3.6 and 4.5 µm secondary eclipse and phase curve measurements</strong> (2005–2020) from the full Spitzer archive for ~50 hot Jupiters</li>
+<li><strong>TESS secondary eclipse depths</strong> measured from stacked 2-minute cadence photometry (2018–2026, multiple sectors)</li>
+<li><strong>JWST MIRI and NIRCam eclipse photometry</strong> (Cycles 1–4, archival) for overlap targets</li>
+<li><strong>Transit timing databases</strong> (ETD, ExoClock) for independent orbital period derivative constraints</li>
 </ul>
 <h3>Novelty</h3>
-<p>Individual atmospheric escape studies focus on one system at a time. Radius-valley studies focus on occurrence rates from transit surveys without incorporating direct mass-loss observables. This project bridges the two by constructing, for the first time, a "mass-loss landscape" — a two-dimensional map of XUV irradiation environment versus planetary radius — and populating it with both the statistical radius distribution and the handful of systems with direct escape measurements, then using the combined constraints to discriminate between photoevaporation and core-powered mass loss at the population level.</p>
+<p>The transit timing approach to detecting orbital decay is well-established but measures only the period change. This project adds a <em>completely independent observable</em> — the secular trend in thermal emission — which probes a different aspect of the physics (tidal heating and radius inflation rather than just angular momentum transfer). No one has performed a systematic search for long-term brightness trends in hot Jupiter eclipses across the Spitzer-to-JWST era. The 15+ year baseline available for the brightest systems (HD 189733b, HD 209458b, WASP-12b, WASP-43b, WASP-18b) is unprecedented and will never be available again at these wavelengths (Spitzer is retired).</p>
+<p>Furthermore, this project can detect tidal heating even in systems where period decay is too slow to measure via transit timing — because the brightness change depends on the <em>rate of tidal energy dissipation in the planet</em> (related to Q'p), while the orbital decay rate depends on dissipation in the <em>star</em> (Q'*). These are independent quantities, so a brightness trend without a timing trend (or vice versa) would break a fundamental degeneracy in tidal theory.</p>
 <h3>Concrete Workflow</h3>
 <ol>
-<li><strong>Build the parent sample.</strong> Cross-match the TESS Objects of Interest (TOI) catalog against Gaia DR3 to obtain homogeneous stellar parameters. Apply quality cuts (RUWE &lt; 1.4, parallax S/N &gt; 20).</li>
-<li><strong>Estimate XUV irradiation.</strong> Cross-match host stars with 4XMM-DR14 and CSC 2.1. For the majority without X-ray detections, estimate X-ray luminosity from age-activity relations calibrated on Gaia-derived gyrochronological ages. Use GALEX FUV/NUV to fill in the EUV regime via empirical scaling laws.</li>
-<li><strong>Construct the mass-loss landscape.</strong> Place every planet on a (log L_XUV / a², R_p) plane, where L_XUV is the stellar high-energy luminosity and a is the semi-major axis. Bin and smooth to construct the empirical radius distribution as a function of irradiation.</li>
-<li><strong>Forward-model both hypotheses.</strong> Run photoevaporation (using the Owen &amp; Wu or Rogers &amp; Owen frameworks) and core-powered mass loss (Gupta &amp; Schlichting) evolutionary tracks across the same parameter space. Generate predicted radius distributions at each irradiation level.</li>
-<li><strong>Statistical comparison.</strong> Use hierarchical Bayesian inference (e.g., via PyMC or NumPyro) to determine which mass-loss mechanism (or mixture) best reproduces the observed two-dimensional distribution. Incorporate the ~15–20 systems with direct helium escape detections as additional likelihood terms.</li>
-<li><strong>Predict JWST targets.</strong> Identify planets sitting precisely on the predicted "stripping boundary" where the two models diverge most — these are the highest-value targets for future JWST helium surveys.</li>
+<li>Compile a master list of hot Jupiters with both Spitzer-era (pre-2020) and TESS/JWST-era (post-2020) secondary eclipse measurements at overlapping or comparable wavelengths.</li>
+<li>Perform homogeneous re-reduction of Spitzer 3.6/4.5 µm eclipse photometry using state-of-the-art detector models (BLISS, PLD) to minimize systematic offsets between epochs.</li>
+<li>Measure TESS-band eclipse depths from stacked sector data, and compile JWST eclipse depths from the literature and archive.</li>
+<li>For each planet, fit a linear trend (dTb/dt) to the brightness temperature time series, accounting for systematic offsets between instruments using a hierarchical Bayesian framework.</li>
+<li>Compare measured dTb/dt against predictions from coupled tidal-thermal evolution models (Leconte et al. 2010, Millholland 2019) as a function of assumed Q'p, and cross-reference with transit timing constraints on Q'*.</li>
+<li>Identify outlier systems where brightness is changing faster or slower than expected, flagging candidates for enhanced tidal dissipation or recent dynamical perturbations.</li>
 </ol>
 <h3>Expected Signal / Observable</h3>
-<p>The photoevaporation model predicts the radius valley should shift to larger radii at higher XUV irradiation, while core-powered mass loss predicts a weaker irradiation dependence but a stronger dependence on stellar mass. With ~5,000 TESS planets and candidates, the sample should be large enough to detect the differential slope of the valley boundary at 3–5σ significance.</p>
+<p>For WASP-12b (the strongest case), the predicted brightness temperature increase due to tidal heating as the orbit decays requires careful modeling: the secular component from changing orbital distance is modest (~5–20 K over 15 years), but note that observed eclipse depth variations for WASP-12b already span ~3σ between different Spitzer epochs (0.97 ± 0.14 vs. 0.44 ± 0.21 mmag), with attributions split between systematic errors and genuine atmospheric variability. The challenge — and the opportunity — is to disentangle the <em>monotonic secular trend</em> from stochastic atmospheric and instrumental variability. This requires careful epoch-binned analysis: averaging over the ~10 eclipses observed at each Spitzer epoch yields ~50 ppm effective precision, and the JWST-era measurements provide an independent anchor at the long-baseline end. For less extreme systems, the signal will be smaller, but the population approach (stacking non-detections) constrains the average Q'p.</p>
 <h3>Possible False Positives</h3>
 <ul>
-<li><strong>Systematic radius errors</strong> from imprecise stellar radii could blur the valley. Mitigation: restrict to the Gaia-calibrated subsample with radius uncertainties &lt; 10%.</li>
-<li><strong>Age estimation biases</strong> from gyrochronology, particularly for M dwarfs. Mitigation: use age only as a secondary variable; the primary test (valley slope versus irradiation) is age-independent.</li>
-<li><strong>Selection effects</strong> in X-ray catalogs (only active stars detected). Mitigation: use upper limits via survival analysis for non-detections and validate with the GALEX-based EUV estimates.</li>
+<li><strong>Spitzer detector systematics</strong>: The InSb and Si:As detectors had well-documented intrapixel sensitivity variations and ramp effects that evolved over the mission. Mitigation: use multiple independent reduction pipelines (BLISS, PLD, BiLinearly-Interpolated Subpixel Sensitivity) and check for pipeline-dependent trends.</li>
+<li><strong>Stellar magnetic activity cycles</strong>: G/K star hosts may have brightness variations at the ~0.1% level over decade timescales due to magnetic cycles, altering the eclipse depth baseline. Mitigation: use long-baseline ground-based photometric monitoring to track stellar variability independently.</li>
+<li><strong>Weather variability on the planet</strong>: GCM simulations predict stochastic dayside temperature fluctuations at the ~50–100 ppm level in broadband photometry. Mitigation: averaging over multiple eclipses at each epoch suppresses stochastic variability; the key test is whether the trend is monotonic (as expected for tidal heating) rather than random.</li>
 </ul>
-<h3>Why It Could Matter</h3>
-<p>Resolving the physical origin of the radius valley would fundamentally clarify how close-in planets evolve after formation. The "mass-loss landscape" framework could become a standard diagnostic tool, and the predicted JWST target list would directly enable follow-up observations during Cycles 5–6.</p>
+<h3>Why This Could Matter</h3>
+<p>Detecting a secular brightness trend in a hot Jupiter would be a landmark result — the first real-time observation of tidal heating reshaping a planet. It would provide a direct measurement of the planetary tidal quality factor Q'p, a quantity that is essentially unconstrained observationally but is central to understanding the thermal histories, radii, and survival of close-in planets. Combined with transit timing, it would allow simultaneous constraints on both stellar and planetary tidal dissipation — disentangling a degeneracy that has plagued the field for two decades. The Spitzer archive is a non-renewable resource; this analysis should be done before the community loses institutional knowledge of Spitzer systematics.</p>
+<hr/>
+<p>## Summary Comparison</p>
+<p>| Criterion | Project 1: Oblateness Archaeology | Project 2: Disintegrating Mineralogy | Project 3: Secular Brightness Trends | |---|---|---|---| | <strong>Primary observable</strong> | Ingress/egress asymmetry | Wavelength-dependent transit depth | Eclipse depth time series | | <strong>Key instrument(s)</strong> | Kepler, TESS, JWST | JWST MIRI + NIRSpec, TESS | Spitzer archive + TESS + JWST | | <strong>Population or individual</strong> | Population survey | Individual systems (5–8) | Population + flagship individuals | | <strong>Physical quantity probed</strong> | Rotation, interior viscosity, Q'p | Mantle mineralogy, Mg/Si, Fe/Mg | Tidal heating rate, Q'p, Q'* | | <strong>Novelty level</strong> | First population oblateness survey | First exoplanet mineral identification | First brightness trend search across eras | | <strong>Risk level</strong> | Medium (signals may be below threshold) | Medium-high (few targets, complex models) | Medium (systematic offsets between instruments) | | <strong>Publishability</strong> | High even with non-detections | High if any mineral ID succeeds | High — unique use of Spitzer legacy |</p>
+<hr/>
+<p><em>Note: All three projects rely entirely on public archival data (Kepler, TESS, Spitzer, JWST) accessible through MAST, the NASA Exoplanet Archive, and the IRSA Spitzer Heritage Archive. No new observations are required to begin.</em></p>
     </div>
   </details>
   <footer class="exo-daily__foot">
-    <span class="exo-daily__meta">Source brief: 2026-03-09</span>
+    <span class="exo-daily__meta">Source brief: 2026-04-08</span>
     <span class="exo-daily__meta">Rotates daily &middot; 66 ideas in the pool</span>
   </footer>
 </section>
