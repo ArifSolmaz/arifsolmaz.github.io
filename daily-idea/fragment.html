@@ -1,50 +1,53 @@
 <section class="exo-daily" aria-label="Exoplanet idea of the day">
   <header class="exo-daily__head">
     <span class="exo-daily__eyebrow">Exoplanet idea of the day</span>
-    <time class="exo-daily__date" datetime="2026-05-31">2026-05-31</time>
+    <time class="exo-daily__date" datetime="2026-06-01">2026-06-01</time>
   </header>
-  <h2 class="exo-daily__title">The Nightside Rotation Signal: Detecting Atmospheric Super-Rotation and Jet Structure from TESS Phase Curve Residuals</h2>
+  <h2 class="exo-daily__title">Decade-Baseline TTV Archaeology — Hunting Habitable-Zone Ghosts in the Kepler–TESS Overlap</h2>
   <div class="exo-daily__premise">
-    <p>Full-orbit phase curves from Spitzer and TESS have revealed that many hot Jupiters have their brightest hemisphere shifted eastward from the substellar point — the canonical signature of equatorial super-rotation. But the <em>amplitude and phase offset of higher-order harmonics</em> in the phase curve (beyond the fundamental sinusoid) encode information about the latitudinal and vertical structure of atmospheric jets. General circulation models (GCMs) predict that the second harmonic (C₂) should be sensitive to the presence of mid-latitude jets, polar vortices, and day-night asymmetries in cloud coverage. Yet most observational phase-curve analyses stop at the first harmonic (C₁) because the signal-to-noise in individual systems is marginal for higher orders. This project would stack phase curves across the TESS hot Jupiter population to extract the <em>population-averaged</em> second-harmonic signal and its dependence on equilibrium temperature and surface gravity.</p>
+    <p>Transit timing variations (TTVs) reveal unseen companion planets through gravitational perturbations of a transiting world's orbit. The ~decade gap between Kepler/K2 observations (2009–2018) and ongoing TESS coverage of the same fields creates an extraordinarily long timing baseline — long enough that perturbations from companions on <em>year-scale</em> orbits, including orbits within stellar habitable zones, could accumulate to detectable amplitudes. Recent work (Kokori et al. 2025, MNRAS 538) refined ephemerides for 111 Kepler/K2 planets re-observed by TESS and found evidence for previously undetected timing anomalies in 22 of them. A separate homogeneous survey (A&amp;A, 2026) examined 423 single-transiting TESS systems for TTV signals from non-transiting companions. But neither study systematically exploited the full Kepler-to-TESS baseline specifically targeting the <em>habitable-zone period range</em> for each host star, nor combined TTVs with transit duration variations (TDVs) to break mass–eccentricity degeneracies for those candidate companions.</p>
   </div>
   <details class="exo-daily__more">
     <summary>Read the full proposal</summary>
     <div class="exo-daily__full">
       <h3>Scientific Premise</h3>
-<p>Full-orbit phase curves from Spitzer and TESS have revealed that many hot Jupiters have their brightest hemisphere shifted eastward from the substellar point — the canonical signature of equatorial super-rotation. But the <em>amplitude and phase offset of higher-order harmonics</em> in the phase curve (beyond the fundamental sinusoid) encode information about the latitudinal and vertical structure of atmospheric jets. General circulation models (GCMs) predict that the second harmonic (C₂) should be sensitive to the presence of mid-latitude jets, polar vortices, and day-night asymmetries in cloud coverage. Yet most observational phase-curve analyses stop at the first harmonic (C₁) because the signal-to-noise in individual systems is marginal for higher orders. This project would stack phase curves across the TESS hot Jupiter population to extract the <em>population-averaged</em> second-harmonic signal and its dependence on equilibrium temperature and surface gravity.</p>
+<p>Transit timing variations (TTVs) reveal unseen companion planets through gravitational perturbations of a transiting world's orbit. The ~decade gap between Kepler/K2 observations (2009–2018) and ongoing TESS coverage of the same fields creates an extraordinarily long timing baseline — long enough that perturbations from companions on <em>year-scale</em> orbits, including orbits within stellar habitable zones, could accumulate to detectable amplitudes. Recent work (Kokori et al. 2025, MNRAS 538) refined ephemerides for 111 Kepler/K2 planets re-observed by TESS and found evidence for previously undetected timing anomalies in 22 of them. A separate homogeneous survey (A&amp;A, 2026) examined 423 single-transiting TESS systems for TTV signals from non-transiting companions. But neither study systematically exploited the full Kepler-to-TESS baseline specifically targeting the <em>habitable-zone period range</em> for each host star, nor combined TTVs with transit duration variations (TDVs) to break mass–eccentricity degeneracies for those candidate companions.</p>
+<h3>What Makes It Distinct</h3>
+<p>Most TTV studies focus on compact multi-transiting systems or hot-Jupiter companions. This project would flip the target selection: start from the habitable zone of each host star, compute the expected TTV super-period and amplitude for plausible Earth-to-Neptune-mass companions at those separations, and then search the Kepler-to-TESS residuals for signals matching those predictions. It is a targeted, theory-guided search rather than an agnostic signal hunt.</p>
 <h3>Target Datasets</h3>
 <ul>
-<li>TESS 2-minute and 20-second cadence light curves for all confirmed transiting hot Jupiters with T_eq &gt; 1500 K and orbital periods &lt; 3 days (estimated ~40–60 systems with sufficient TESS coverage)</li>
-<li>Spitzer 3.6 and 4.5 μm full-orbit phase curves (archival; ~30 systems from the "Ultimate Spitzer Phase Curve Survey")</li>
-<li>Published GCM outputs for comparison (e.g., from the SPARC/MITgcm grid)</li>
+<li><strong>Kepler DR25 long-cadence and short-cadence light curves</strong> (MAST archive)</li>
+<li><strong>K2 Campaign light curves</strong> for fields re-observed by TESS</li>
+<li><strong>TESS 2-min and 30-min cadence FFI light curves</strong> (Sectors covering Kepler/K2 footprints, including TESS Extended Mission sectors through 2025)</li>
+<li><strong>ExoFOP-TESS</strong> stellar parameters for updated host-star HZ boundaries</li>
+<li><strong>NASA Exoplanet Archive</strong> composite planet table for known system architectures</li>
 </ul>
 <h3>Novelty</h3>
-<p>Population-level phase-curve stacking to extract higher-order harmonics is, to my knowledge, potentially underexplored. Individual high-SNR systems (WASP-18 b, WASP-121 b) have had their phase curves decomposed into harmonics, but no one has combined the full TESS sample to beat down photon noise and measure the <em>mean</em> C₂ amplitude and phase as a function of planetary parameters. This is analogous to what galaxy surveys do with stacking — trading individual detail for statistical power. The result would be a direct, model-independent constraint on the prevalence and structure of non-axisymmetric atmospheric circulation patterns.</p>
+<p>Theory-guided TTV+TDV search explicitly optimized for habitable-zone companions using the full decade baseline. Existing TTV catalogues either use short baselines (TESS-only) or long baselines without HZ-targeted sensitivity maps. This fills a specific gap.</p>
 <h3>Concrete Workflow</h3>
 <ol>
-<li>Select all hot Jupiters with T_eq &gt; 1500 K, measured masses, and ≥ 2 TESS sectors of continuous coverage.</li>
-<li>Detrend each light curve for stellar variability and instrument systematics using a Gaussian process with a Matérn-3/2 kernel.</li>
-<li>Phase-fold each system on its known ephemeris; fit a two-harmonic Fourier model: F(φ) = F₀ + C₁ cos(φ − δ₁) + C₂ cos(2φ − δ₂), where φ is orbital phase.</li>
-<li>Normalize C₁ and C₂ by the secondary eclipse depth (dayside flux) to obtain fractional harmonic amplitudes.</li>
-<li>Bin systems by T_eq (1500–2000 K, 2000–2500 K, 2500+ K) and by log(g). Compute the weighted-mean C₂/C₁ ratio and δ₂ offset in each bin.</li>
-<li>Compare the population-averaged C₂/C₁ and δ₂ to predictions from a grid of GCM simulations spanning the same parameter space.</li>
+<li><strong>Sample selection.</strong> Cross-match Kepler/K2 confirmed single-transiting planets with TESS observed sectors. Require ≥ 3 TESS transits and ≥ 10 Kepler transits. Compute the habitable-zone inner and outer boundaries for each host using Kopparapu et al. (2013) relations and updated stellar parameters from Gaia DR3 + TIC v8.2.</li>
+<li><strong>Uniform transit fitting.</strong> Re-extract individual transit mid-times and durations from both Kepler and TESS photometry using a common GP-detrended model (e.g., <code>exoplanet</code> + <code>celerite2</code>). Propagate correlated noise into timing uncertainties.</li>
+<li><strong>HZ-targeted sensitivity mapping.</strong> For each system, inject synthetic TTV signals from companions at 10 trial periods spanning the HZ, with masses from 1–20 M⊕ and eccentricities 0–0.3. Determine the 3σ detection threshold as a function of companion mass and period.</li>
+<li><strong>Residual search.</strong> Fit a linear ephemeris to each planet's combined Kepler+TESS transit times. Compute O–C (observed minus calculated) residuals. Search for periodic signals using a Lomb-Scargle periodogram and a Bayesian sinusoidal model comparison (evidence ratio vs. linear trend vs. quadratic drift).</li>
+<li><strong>TDV cross-check.</strong> For any TTV candidate, independently measure transit duration variations. A correlated TTV+TDV signal with the correct phase offset strengthens the companion hypothesis and breaks the mass–eccentricity degeneracy.</li>
+<li><strong>Dynamical modeling.</strong> For strong candidates, run full N-body photodynamical fits (e.g., <code>TTVFast</code> or <code>Rebound</code>) to constrain the companion's mass, period, eccentricity, and mutual inclination.</li>
 </ol>
 <h3>Expected Signal / Observable</h3>
-<p>GCMs predict C₂/C₁ ratios of ~0.05–0.20 for hot Jupiters, with the second harmonic phase offset δ₂ shifting from ~0° (symmetric day-night contrast) to ~45° (jet-driven asymmetry) as T_eq increases and clouds dissipate. In individual TESS systems, C₂ is typically detected at only 1–2σ; stacking ~20 systems per bin should push this to 4–6σ.</p>
+<p>A companion of ~5 M⊕ at 1 AU around a solar-type star perturbing a hot Jupiter on a 3-day orbit produces TTV amplitudes of ~10–100 seconds over a super-period of years — well within the precision of Kepler (~15 s per transit) and TESS (~30–60 s for bright targets) when accumulated over a decade baseline. The signal is a quasi-sinusoidal O–C pattern with a period related to the companion's orbital period and the near-resonance super-period.</p>
 <h3>Possible False Positives</h3>
 <ul>
-<li>Ellipsoidal variations from tidal distortion produce a C₂ signal at fixed phase. Mitigation: model and subtract the ellipsoidal + Doppler beaming contribution using the known planet mass and stellar density.</li>
-<li>Residual stellar variability at the second harmonic of the orbital period. Mitigation: verify that out-of-transit variability does not show power at 2/P_orb; exclude systems with significant stellar rotation signals near this frequency.</li>
-<li>Inhomogeneous detrending across systems could introduce a spurious stacked signal. Mitigation: use a uniform pipeline and perform a null test by stacking phase curves at a randomized phase offset.</li>
+<li><strong>Stellar activity (starspot crossing):</strong> Produces asymmetric transit distortions that mimic timing offsets. Mitigated by fitting spot-crossing events and by requiring correlated TTV+TDV signals (spot crossings produce uncorrelated noise in TDVs).</li>
+<li><strong>Instrumental systematics:</strong> TESS and Kepler have different cadences, bandpasses, and systematics. Mitigated by the uniform detrending framework and by Monte Carlo injection-recovery tests.</li>
+<li><strong>Apsidal precession:</strong> A single eccentric planet can show quadratic TTVs. Mitigated by the Bayesian model comparison (sinusoidal vs. quadratic).</li>
+<li><strong>Light-time effect from a distant stellar companion:</strong> Produces long-term TTVs proportional to the binary orbit. Mitigated by checking Gaia RUWE and Hipparcos–Gaia proper-motion anomalies for bound stellar companions.</li>
 </ul>
 <h3>Why It Matters</h3>
-<p>Atmospheric circulation is the engine that redistributes energy on tidally locked worlds, governing their climate, chemistry, and observational appearance. The second harmonic of the phase curve is a direct diagnostic of jet structure that GCMs make specific predictions about but that has never been tested at the population level. A detection (or meaningful upper limit) would constrain the physics of atmospheric drag, magnetic braking, and cloud radiative feedback in a regime with no Solar System analog — information that feeds directly into interpreting JWST transmission and emission spectra.</p>
-<hr/>
-<p><em>Generated on March 10, 2026. Sources include the NASA Exoplanet Archive, TESS/Kepler/Spitzer archival data holdings, and recent literature.</em></p>
+<p>Detecting non-transiting habitable-zone planets around stars <em>already known to host transiting worlds</em> would provide direct constraints on the architecture and multiplicity of planetary systems in their temperate regions — a regime where radial-velocity surveys are sensitivity-limited and direct imaging cannot yet reach. It would also produce high-value targets for JWST reflected-light searches and future missions like the Habitable Worlds Observatory.</p>
     </div>
   </details>
   <footer class="exo-daily__foot">
-    <span class="exo-daily__meta">Source brief: 2026-03-10</span>
+    <span class="exo-daily__meta">Source brief: 2026-03-12</span>
     <span class="exo-daily__meta">Rotates daily &middot; 66 ideas in the pool</span>
   </footer>
 </section>
