@@ -1,53 +1,56 @@
 <section class="exo-daily" aria-label="Exoplanet idea of the day">
   <header class="exo-daily__head">
     <span class="exo-daily__eyebrow">Exoplanet idea of the day</span>
-    <time class="exo-daily__date" datetime="2026-06-04">2026-06-04</time>
+    <time class="exo-daily__date" datetime="2026-06-05">2026-06-05</time>
   </header>
-  <h2 class="exo-daily__title">A Gaia-Informed Census of Single-Transit Habitable Zone Candidates in the Kepler/K2 Archive</h2>
+  <h2 class="exo-daily__title">Detecting Planetary Orbital Decay Rate Variations Across Resonant Chain Systems as a Probe of Interior Dissipation Hierarchies</h2>
   <div class="exo-daily__premise">
-    <p>The Kepler mission's greatest unfulfilled promise lies in the detection of Earth-analog planets: rocky worlds on ~1-year orbits in the habitable zones of Sun-like stars. The 4-year Kepler baseline should have captured 3–4 transits of such planets, but most automated pipelines (BLS, TLS, even ExoMiner++) require at least 3 periodic transits for reliable detection. Planets showing only 1–2 transits — due to TTVs, grazing geometry, instrumental gaps, or genuinely long periods — are systematically lost. A recent reassessment found that of 47 proposed habitable-zone Earth-like candidates, only 29 survive modern vetting, and newer pipelines fail to independently recover many candidates at low SNR and long periods. Meanwhile, K2's 75-day campaigns are even more prone to yielding single-transit events for HZ planets.</p>
-<p>The key insight is that Gaia DR3 now provides precise stellar radii, masses, and luminosities for nearly all Kepler/K2 targets, enabling much tighter constraints on planetary parameters from single-transit events than was possible when these data were first collected.</p>
+    <p>Transit timing variations (TTVs) in resonant multi-planet systems are routinely used to measure planet masses. But an underexplored signal lies in the <em>secular trend</em> of TTV residuals once the dominant near-resonant perturbation is removed: a slow, monotonic drift in orbital period that encodes tidal orbital decay. In a resonant chain (e.g., TRAPPIST-1, TOI-178, Kepler-223, HD 110067), each planet's tidal decay rate depends on its own tidal quality factor Q and the chain's collective dissipation dynamics. By measuring <em>differential</em> decay rates across planets in the same chain — subtracting the well-modeled gravitational TTVs — one can extract the <em>relative</em> tidal Q values of multiple planets in a single system without needing absolute calibration. This has not been attempted for any resonant chain to date, despite the fact that Kepler and TESS together now provide 12+ year timing baselines for several key systems.</p>
   </div>
   <details class="exo-daily__more">
     <summary>Read the full proposal</summary>
     <div class="exo-daily__full">
       <h3>Scientific Premise</h3>
-<p>The Kepler mission's greatest unfulfilled promise lies in the detection of Earth-analog planets: rocky worlds on ~1-year orbits in the habitable zones of Sun-like stars. The 4-year Kepler baseline should have captured 3–4 transits of such planets, but most automated pipelines (BLS, TLS, even ExoMiner++) require at least 3 periodic transits for reliable detection. Planets showing only 1–2 transits — due to TTVs, grazing geometry, instrumental gaps, or genuinely long periods — are systematically lost. A recent reassessment found that of 47 proposed habitable-zone Earth-like candidates, only 29 survive modern vetting, and newer pipelines fail to independently recover many candidates at low SNR and long periods. Meanwhile, K2's 75-day campaigns are even more prone to yielding single-transit events for HZ planets.</p>
-<p>The key insight is that Gaia DR3 now provides precise stellar radii, masses, and luminosities for nearly all Kepler/K2 targets, enabling much tighter constraints on planetary parameters from single-transit events than was possible when these data were first collected.</p>
+<p>Transit timing variations (TTVs) in resonant multi-planet systems are routinely used to measure planet masses. But an underexplored signal lies in the <em>secular trend</em> of TTV residuals once the dominant near-resonant perturbation is removed: a slow, monotonic drift in orbital period that encodes tidal orbital decay. In a resonant chain (e.g., TRAPPIST-1, TOI-178, Kepler-223, HD 110067), each planet's tidal decay rate depends on its own tidal quality factor Q and the chain's collective dissipation dynamics. By measuring <em>differential</em> decay rates across planets in the same chain — subtracting the well-modeled gravitational TTVs — one can extract the <em>relative</em> tidal Q values of multiple planets in a single system without needing absolute calibration. This has not been attempted for any resonant chain to date, despite the fact that Kepler and TESS together now provide 12+ year timing baselines for several key systems.</p>
 <h3>Target Datasets</h3>
 <ul>
-<li><strong>Kepler long-cadence light curves</strong> (Q0–Q17) from MAST, including the DR25 pixel-level data</li>
-<li><strong>K2 light curves</strong> from Campaigns 1–19 (EVEREST or K2SFF detrended)</li>
-<li><strong>Gaia DR3 stellar parameters</strong> cross-matched to the Kepler Input Catalog and EPIC</li>
-<li><strong>TESS Sector overlaps</strong> with the Kepler/K2 fields for additional transit epoch constraints</li>
-<li><strong>NASA Exoplanet Archive</strong> dispositions and threshold crossing events</li>
+<li>Kepler DR25 transit times for all confirmed resonant chain systems in the Kepler field (Kepler-60, Kepler-80, Kepler-223, Kepler-444)</li>
+<li>TESS transit times for TRAPPIST-1 (Sectors 1–83+), TOI-178, HD 110067</li>
+<li>Ground-based transit times from literature compilations (e.g., ExoClock, ETD) extending the baseline</li>
+<li>Spitzer transit times for TRAPPIST-1 (archival, 2016–2019 campaigns)</li>
+<li>Gaia DR3/DR4 stellar parameters for precise system age estimates</li>
 </ul>
 <h3>Novelty</h3>
-<p>Prior single-transit searches in K2 (e.g., Osborn et al. 2016) were conducted before Gaia DR3 was available, meaning stellar parameters had large uncertainties that propagated into planetary radius estimates. Furthermore, no published work has systematically combined single-transit Kepler events with Gaia-informed priors and TESS overlap data to constrain orbital periods. The recent development of transformer-based transit detection that does not require phase folding opens a new avenue for identifying aperiodic signals. This project would be the first to apply these three advances jointly — Gaia priors, transformer detection, and TESS cross-matching — to build a complete census of long-period HZ candidates in the Kepler/K2 archive, explicitly targeting the population that PLATO is designed to confirm.</p>
+<p>Individual tidal decay searches have been performed for isolated hot Jupiters (WASP-12b being the canonical detection). But in a resonant chain, the planets are gravitationally coupled, and the resonance itself acts as a "flywheel" that can either amplify or suppress tidal decay. The novel angle is to exploit this coupling: rather than searching for period decay in a single planet (where the signal is degenerate with apsidal precession and other effects), one measures the <em>pattern</em> of decay rates across the chain. The chain's topology constrains which planets should decay fastest (the innermost, typically) and by how much, providing a built-in consistency check. A mismatch between predicted and observed differential decay rates would reveal anomalous dissipation — possibly indicating a magma ocean, enhanced rheological dissipation, or even an undetected non-transiting companion perturbing the chain.</p>
 <h3>Concrete Workflow</h3>
 <ol>
-<li><strong>Stellar parameter update:</strong> Cross-match all Kepler and K2 targets with Gaia DR3 to obtain precise R★, M★, L★, and distances. Recompute habitable zone boundaries for each star using the Kopparapu et al. (2013) parameterization.</li>
-<li><strong>Single-transit search:</strong> Apply a modified BLS and the new transformer-based algorithm (Pérez-González et al. 2025) to all Kepler long-cadence and K2 light curves, optimized for single-event detection rather than periodic signals. Set a detection threshold based on injection-recovery tests.</li>
-<li><strong>Vetting cascade:</strong> For each candidate single-transit event, apply centroid analysis, odd/even depth tests (where applicable), ghost diagnostic tests, and the Kepler DR25 data validation suite to reject instrumental artifacts, eclipsing binaries, and background blends.</li>
-<li><strong>Gaia-constrained parameter estimation:</strong> Use a Bayesian transit-fitting framework (e.g., juliet or allesfitter) with Gaia stellar priors to derive posterior distributions on R_p, a/R★, impact parameter, and allowed period ranges from the single-transit duration.</li>
-<li><strong>TESS cross-match:</strong> For candidates in TESS-observed sectors, search for additional transit epochs that could constrain the period. Even a non-detection provides an upper limit on transit probability for certain period ranges.</li>
-<li><strong>HZ candidate catalog:</strong> Compile a ranked list of single-transit HZ candidates with period posteriors, planetary radii, and predicted transit times for PLATO and ground-based follow-up.</li>
+<li>Compile all available transit mid-times for 5–8 resonant chain systems (Kepler-80, Kepler-223, TRAPPIST-1, TOI-178, HD 110067, Kepler-60, TOI-1136, Kepler-444) from Kepler, TESS, Spitzer, and ground-based archives.</li>
+<li>Fit a full N-body TTV model (using TTVFast or TTVFaster) to each system, accounting for all known resonant perturbations, eccentricities, and masses.</li>
+<li>Extract the O−C (observed minus computed) residuals after subtracting the best-fit gravitational TTV model.</li>
+<li>Fit a quadratic (parabolic) trend to the O−C residuals for each planet independently: a negative quadratic coefficient indicates orbital decay (dP/dt &lt; 0).</li>
+<li>Compare the measured dP/dt values across planets within each chain to theoretical predictions from constant-Q tidal models, viscoelastic tidal models (Andrade rheology), and resonant-locking tidal models.</li>
+<li>Perform injection-recovery tests: inject synthetic decay signals into the real timing data to calibrate sensitivity and false-alarm probability.</li>
 </ol>
-<h3>Expected Signal/Observable</h3>
-<p>An Earth-sized planet transiting a Sun-like star at 1 AU produces a ~84 ppm transit lasting ~13 hours. In Kepler long-cadence data (30-min integration), this is detectable at SNR ~7–10 for quiet stars with Kp &lt; 14. The expected yield from single-transit events is 5–20 new HZ candidates in Kepler and 2–10 in K2, based on occurrence rate extrapolations from known shorter-period planets and the geometric transit probability (~0.5% at 1 AU).</p>
+<h3>Expected Signal / Observable</h3>
+<p>For TRAPPIST-1b (the innermost planet in the chain), tidal theory predicts dP/dt ~ −10⁻¹⁰ to −10⁻⁹ days/day for plausible rocky-planet Q values (10–100). Over a 12-year Kepler+TESS+Spitzer baseline, this produces a cumulative timing shift of ~0.5–5 seconds — at the edge of detectability with current timing precision (~5–30 sec per transit for TESS, ~1–5 sec for Spitzer). For the Kepler resonant chains, the 17-year baseline (Kepler 2009–2013 + TESS 2018–2026) provides even longer leverage, though individual transit timing precision is typically ~30 sec. The differential signal — the <em>ratio</em> of decay rates between planets b and c, for instance — may be more robust than absolute decay rate measurements because correlated systematic errors (e.g., clock drift, stellar activity) largely cancel.</p>
 <h3>Possible False Positives</h3>
 <ul>
-<li><strong>Instrumental systematics:</strong> Kepler's pointing jitter, especially after reaction wheel failures, produces single-event artifacts that can mimic shallow, long-duration transits. Rigorous injection-recovery testing is essential.</li>
-<li><strong>Stellar variability:</strong> Starspot crossings during transit can distort the light curve shape, and granulation-driven red noise can create spurious dips on ~10-hour timescales.</li>
-<li><strong>Background eclipsing binaries:</strong> Without a second epoch, confirming that the signal is on-target (not a blended background EB) relies on centroid analysis and Gaia-informed dilution modeling.</li>
-<li><strong>Grazing eclipsing binaries:</strong> A grazing EB can produce a shallow, V-shaped dip resembling a planetary transit; the single-event nature makes it harder to distinguish from a planet with a high impact parameter.</li>
+<li>Apsidal precession: secular changes in the argument of pericenter can mimic a parabolic O−C trend. This is partially mitigated by the N-body model, but imperfect eccentricity constraints can leave residual precession signals.</li>
+<li>Stellar activity: spot-crossing events shift the apparent transit midpoint by ~10–60 sec for active M dwarfs, introducing correlated noise in timing residuals.</li>
+<li>Inadequate TTV model: if the gravitational N-body model does not capture all relevant perturbations (e.g., due to an unknown non-transiting planet), the residual "decay" could be a gravitational artifact.</li>
+<li>Rømer delay: light-travel-time variations due to the system's barycentric motion (from an outer companion) can produce a parabolic O−C signal.</li>
 </ul>
-<h3>Why It Matters</h3>
-<p>Every confirmed exoplanet catalog is biased toward short-period planets because they transit more frequently. The most scientifically valuable planets — temperate, potentially habitable worlds on year-long orbits around Sun-like stars — are precisely those most likely to appear as single-transit events. This project would provide the first comprehensive target list for PLATO's primary science goal, potentially identifying the next generation of Earth-analog candidates years before PLATO launches. It also provides ground truth for occurrence rate estimates of η⊕, one of the most important numbers in exoplanet science.</p>
+<h3>Why This Could Matter</h3>
+<p>This project would provide the first comparative measurement of tidal dissipation efficiency across multiple planets in the same system, directly constraining interior structure models. If the innermost planet in TRAPPIST-1 shows anomalously high dissipation (low Q), it would suggest a partially molten interior — a prediction tied to the habitability debate, since tidal heating can drive volcanic outgassing that sustains secondary atmospheres. More broadly, measuring Q for multiple rocky planets in a single system would break the degeneracy between Q and stellar tidal parameters that plagues single-planet studies, and would test whether resonant chains are truly in long-term equilibrium or are slowly evolving toward disruption.</p>
+<hr/>
+<p>## Summary Comparison</p>
+<p>| Feature | Project 1: Contamination Graveyard | Project 2: USP Oblateness | Project 3: Resonant Chain Decay | |---|---|---|---| | Primary data | HST/WFC3 + TESS activity | Kepler + TESS transits | Kepler + TESS + Spitzer times | | Key signal | Revised molecular significances | Ingress/egress shape (~5–20 ppm) | O−C quadratic drift (~1–5 sec) | | Novelty type | Meta-analysis / forensic audit | Population-level shape search | Differential tidal dissipation | | Biggest risk | Uncertain spot fractions | Correlated stellar noise | N-body model incompleteness | | Impact if successful | Reliability index for legacy spectra | First rotation-state constraints | First comparative Q measurements |</p>
+<hr/>
+<p><em>Notes: All datasets referenced are publicly available. These ideas are identified as potentially underexplored based on current literature review; related work exists in adjacent areas as discussed above. Each project is designed to be tractable for a small team (1–3 researchers) within 1–2 years.</em></p>
     </div>
   </details>
   <footer class="exo-daily__foot">
-    <span class="exo-daily__meta">Source brief: 2026-03-14</span>
+    <span class="exo-daily__meta">Source brief: 2026-05-12</span>
     <span class="exo-daily__meta">Rotates daily &middot; 66 ideas in the pool</span>
   </footer>
 </section>
