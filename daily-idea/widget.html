@@ -3,59 +3,73 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Idea of the day &mdash; Exoplanet Obliquity Census via Phase-Curve Asymmetry Systematics in TESS Full-Frame Images</title>
+<title>Idea of the day &mdash; Orbital Decay Rate Anomalies as Probes of Exoplanet Interior Phase Transitions</title>
 <link rel="stylesheet" href="widget.css"/>
 </head>
 <body>
 <section class="exo-daily" aria-label="Exoplanet idea of the day">
   <header class="exo-daily__head">
     <span class="exo-daily__eyebrow">Exoplanet idea of the day</span>
-    <time class="exo-daily__date" datetime="2026-06-06">2026-06-06</time>
+    <time class="exo-daily__date" datetime="2026-06-07">2026-06-07</time>
   </header>
-  <h2 class="exo-daily__title">Exoplanet Obliquity Census via Phase-Curve Asymmetry Systematics in TESS Full-Frame Images</h2>
+  <h2 class="exo-daily__title">Orbital Decay Rate Anomalies as Probes of Exoplanet Interior Phase Transitions</h2>
   <div class="exo-daily__premise">
-    <p>A planet's obliquity (the tilt of its spin axis relative to its orbital axis) profoundly affects its climate and atmospheric circulation, but measuring exoplanet obliquity is extraordinarily difficult. For tidally locked hot Jupiters, obliquity is assumed to be zero — but for warm Jupiters and sub-Neptunes at wider separations, obliquity could be significant and is essentially unconstrained observationally.</p>
-<p>Here is the underexplored angle: a planet with nonzero obliquity will have a <strong>seasonally modulated</strong> thermal phase curve. Over the course of its orbit, the substellar point drifts in latitude, changing the planet's disk-integrated thermal emission in a way that breaks the symmetry of the standard (zero-obliquity) phase curve. For eccentric warm Jupiters observed over multiple orbits by TESS, the <strong>orbit-to-orbit variability in phase curve shape</strong> — specifically, the amplitude and phase offset of the thermal peak — encodes obliquity information.</p>
+    <p>Tidal orbital decay — the inspiral of a close-in planet due to energy dissipation inside its host star — has been measured for a handful of ultra-short-period planets, most famously WASP-12b (period decrease of ~29 ms/yr). The decay rate depends on the stellar tidal quality factor Q'*, which encodes how efficiently the star dissipates tidal energy. But there is a less-explored flip side: tidal dissipation also occurs <strong>inside the planet</strong>, and the planetary tidal quality factor Q'_p depends sensitively on the planet's interior structure — specifically, on whether dissipation occurs in a deep convective envelope, a solid/liquid core, or at phase boundaries (e.g., metallic hydrogen transitions, magma ocean surfaces).</p>
+<p>The key insight is that Q'_p is not a single number but a <strong>frequency-dependent quantity</strong> that changes dramatically at interior phase transitions. If a planet's interior is undergoing a gradual structural change (e.g., core erosion, envelope mass loss shifting the metallic-hydrogen boundary), its contribution to orbital evolution changes over time in ways that differ qualitatively from the smooth Q'* decay driven by the star.</p>
   </div>
   <details class="exo-daily__more">
     <summary>Read the full proposal</summary>
     <div class="exo-daily__full">
       <h3>Scientific Premise</h3>
-<p>A planet's obliquity (the tilt of its spin axis relative to its orbital axis) profoundly affects its climate and atmospheric circulation, but measuring exoplanet obliquity is extraordinarily difficult. For tidally locked hot Jupiters, obliquity is assumed to be zero — but for warm Jupiters and sub-Neptunes at wider separations, obliquity could be significant and is essentially unconstrained observationally.</p>
-<p>Here is the underexplored angle: a planet with nonzero obliquity will have a <strong>seasonally modulated</strong> thermal phase curve. Over the course of its orbit, the substellar point drifts in latitude, changing the planet's disk-integrated thermal emission in a way that breaks the symmetry of the standard (zero-obliquity) phase curve. For eccentric warm Jupiters observed over multiple orbits by TESS, the <strong>orbit-to-orbit variability in phase curve shape</strong> — specifically, the amplitude and phase offset of the thermal peak — encodes obliquity information.</p>
+<p>Tidal orbital decay — the inspiral of a close-in planet due to energy dissipation inside its host star — has been measured for a handful of ultra-short-period planets, most famously WASP-12b (period decrease of ~29 ms/yr). The decay rate depends on the stellar tidal quality factor Q'*, which encodes how efficiently the star dissipates tidal energy. But there is a less-explored flip side: tidal dissipation also occurs <strong>inside the planet</strong>, and the planetary tidal quality factor Q'_p depends sensitively on the planet's interior structure — specifically, on whether dissipation occurs in a deep convective envelope, a solid/liquid core, or at phase boundaries (e.g., metallic hydrogen transitions, magma ocean surfaces).</p>
+<p>The key insight is that Q'_p is not a single number but a <strong>frequency-dependent quantity</strong> that changes dramatically at interior phase transitions. If a planet's interior is undergoing a gradual structural change (e.g., core erosion, envelope mass loss shifting the metallic-hydrogen boundary), its contribution to orbital evolution changes over time in ways that differ qualitatively from the smooth Q'* decay driven by the star.</p>
 <h3>Target Datasets</h3>
 <ul>
-<li><strong>TESS Full-Frame Images (FFIs)</strong> at 200-second cadence (from Extended Mission onward) for bright (T &lt; 10 mag) warm Jupiters with periods 5–30 days observed across multiple TESS sectors spanning different orbital epochs</li>
-<li>Prime targets: HAT-P-17b, HAT-P-11b, Kepler-419b (if in TESS CVZ), TOI-4600b, and eccentric warm Jupiters from the TESS Objects of Interest catalog</li>
-<li><strong>Spitzer 4.5 µm archival phase curves</strong> for cross-validation on the few systems with Spitzer full-orbit observations</li>
-<li><strong>JWST Cycle 1–4 phase curve programs</strong> (publicly available) for high-SNR benchmarking</li>
+<li><strong>Kepler long-cadence transit times</strong> for ultra-short-period (USP) planets (P &lt; 1 day) and very hot Jupiters (P &lt; 3 days) — roughly 30 systems with &gt;1,000 individual transits.</li>
+<li><strong>TESS transit times</strong> for the same systems, extending the baseline to 13+ years.</li>
+<li><strong>Ground-based transit archives</strong> (ETD, ExoClock, TRESCA) providing additional mid-transit times spanning 2005–present for the brightest systems.</li>
+<li><strong>Published radial velocity time series</strong> to independently constrain or rule out companions that could mimic decay signatures.</li>
+<li><strong>JWST secondary eclipse timing</strong> (where available) as an independent orbital period measurement at a different orbital phase.</li>
 </ul>
 <h3>Novelty</h3>
-<p>Phase curve analysis is a mature field, but it has focused almost exclusively on <strong>tidally locked hot Jupiters assumed to have zero obliquity</strong>. The idea of using <strong>multi-epoch phase curve comparisons</strong> to detect obliquity-driven seasonal variability in warm Jupiters is distinct from standard phase curve work. A few theoretical papers (e.g., Rauscher 2017, Ohno &amp; Zhang 2019) have modeled oblique phase curves, but observational searches using TESS's growing multi-year baseline to look for <strong>epoch-dependent phase curve shape changes</strong> as a systematic obliquity signal have not been conducted. This is partly because individual TESS phase curves of warm Jupiters are low-SNR — the key methodological innovation is to treat the problem statistically across a population, looking for excess variance in phase curve parameters relative to the null (zero-obliquity) expectation.</p>
+<p>Current orbital decay analyses fit a single quadratic (constant dP/dt) to the O–C diagram. This project goes further by searching for <strong>deviations from a constant decay rate</strong> — cubic or higher-order terms in the O–C curve — which would indicate time-variable tidal dissipation. No systematic search for such higher-order terms has been published.</p>
+<p>Additionally, this project reframes orbital decay measurements not merely as probes of stellar interiors (the standard interpretation) but as <strong>joint constraints on planetary interior structure</strong>. By modeling the coupled star+planet tidal evolution with realistic interior models, one can break the Q'* / Q'_p degeneracy that plagues single-parameter fits, particularly for systems where the planet's contribution to dissipation is non-negligible (e.g., massive hot Jupiters with deep convective envelopes, or rocky USP planets with magma oceans).</p>
 <h3>Concrete Workflow</h3>
 <ol>
-<li>Select all confirmed planets with 5 &lt; P &lt; 30 days, host star T_mag &lt; 10, and TESS observations spanning ≥3 distinct sectors (ideally non-consecutive, to sample different seasonal phases).</li>
-<li>Extract systematics-corrected photometry from TESS FFIs using established pipelines (eleanor, SPOC, or custom PSF photometry), carefully detrending stellar variability and instrumental systematics.</li>
-<li>For each planet and each sector, fit a standard sinusoidal phase curve model (with secondary eclipse, ellipsoidal variation, and Doppler boosting components) and record the best-fit thermal amplitude A_therm and phase offset φ.</li>
-<li>For the zero-obliquity null hypothesis, A_therm and φ should be constant across epochs (modulo noise). Compute the reduced chi-squared of the multi-epoch parameter set against constancy.</li>
-<li>For systems showing significant epoch-to-epoch scatter in (A_therm, φ) beyond the photometric noise floor, fit an oblique-planet seasonal model parameterized by obliquity ε and precession rate, and compare against the constant model via Bayesian evidence.</li>
-<li>Stack the population-level results: even if no individual detection is significant, a systematic excess of phase curve variability in warm Jupiters (relative to control hot Jupiters expected to have ε ≈ 0) would constitute a statistical detection of nonzero obliquities in the population.</li>
+<li><strong>Comprehensive timing catalog.</strong> Assemble all published and archival mid-transit times for ~30 USP and very-hot-Jupiter systems. Re-extract Kepler and TESS transit times with uniform methodology. Cross-validate with ground-based archives.</li>
+<li><strong>Polynomial O–C fitting.</strong> For each system, fit O–C models of increasing complexity: linear (constant period), quadratic (constant dP/dt), cubic (linearly changing dP/dt). Use Bayesian information criterion to identify systems where the cubic term is statistically justified.</li>
+<li><strong>Coupled tidal evolution modeling.</strong> For systems with significant cubic terms, run coupled star-planet tidal evolution models using the MESA stellar evolution code (for Q'* as a function of stellar structure and age) and interior structure models (for Q'_p as a function of planetary mass, radius, composition, and thermal state). Explore whether the observed decay rate curvature is consistent with planetary interior evolution (core erosion, thermal contraction) or requires invoking stellar evolution alone.</li>
+<li><strong>Population constraints on Q'_p.</strong> For systems without significant cubic terms, the upper limits on decay rate variation still constrain Q'_p and its frequency dependence. Combine these into a population-level inference on the distribution of planetary tidal quality factors as a function of planet mass, radius, and equilibrium temperature.</li>
+<li><strong>Forward predictions.</strong> For the most promising systems, predict the expected O–C curvature over the next 5–10 years and identify the observations most likely to distinguish between planetary and stellar dissipation hypotheses.</li>
 </ol>
 <h3>Expected Signal / Observable</h3>
-<p>For a warm Jupiter with obliquity ~30° and a dayside temperature contrast of ~500 K, the seasonal modulation of the thermal phase curve amplitude is expected to be ~10–20% of the mean amplitude. For a bright host (T_mag ~ 8), TESS phase curve amplitudes for warm Jupiters are typically ~50–200 ppm, so the seasonal signal would be ~5–40 ppm — challenging but potentially detectable when stacking multiple sectors. The population-level test (excess variance) is more powerful than individual detections and could reveal obliquity as a class property of warm Jupiters even if no single system yields a confident measurement.</p>
+<p>For WASP-12b (the best-characterized decaying system), a 10% change in effective Q' over the 18-year observational baseline produces a cubic O–C term of ~5–15 seconds at the endpoints, detectable at 2–4σ given current timing precision (~10 s per epoch from TESS, ~3 s from ground-based facilities). For rocky USP planets like Kepler-78b, the planetary tidal contribution is proportionally larger (rock dissipates energy more efficiently than gas), and magma ocean dynamics could produce detectable O–C curvature on similar timescales.</p>
 <h3>Possible False Positives</h3>
 <ul>
-<li><strong>Stellar variability</strong> (spots, faculae) evolving between sectors can change the apparent phase curve shape. Mitigation: model stellar variability independently using out-of-phase-curve portions of the light curve; compare against a control sample of planet-free stars with similar variability properties.</li>
-<li><strong>Instrumental systematics</strong> varying between TESS sectors (different camera, CCD position). Mitigation: use injection-recovery tests on nearby comparison stars to quantify sector-dependent systematic floors.</li>
-<li><strong>Weather/cloud variability</strong> on the planet could produce epoch-to-epoch phase curve changes unrelated to obliquity. Mitigation: this is actually scientifically interesting in its own right, but can be distinguished from obliquity by its expected timescale (stochastic vs. periodic with the precession period).</li>
-<li><strong>Eccentricity effects</strong> in systems with poorly constrained orbits. Mitigation: use RV-constrained eccentricities and include eccentric phase curve models.</li>
+<li><strong>Rømer delay from unseen companions.</strong> A long-period companion causes a light-travel-time effect that mimics a cubic O–C term. Mitigation: radial velocities constrain companions; the Rømer effect is strictly periodic, not monotonic.</li>
+<li><strong>Stellar magnetic activity cycles.</strong> Stellar activity can subtly modulate the apparent transit times via the starspot-crossing mechanism. If the activity cycle period is comparable to the observational baseline, this produces curvature in the O–C diagram. Mitigation: correlate O–C residuals with stellar activity proxies (S-index, photometric variability); model and subtract the expected activity-induced timing offset.</li>
+<li><strong>Applegate mechanism.</strong> Magnetic activity-driven changes in the star's quadrupole moment modulate the orbital period. Mitigation: the Applegate effect produces periodic, not secular, O–C variations; it also predicts correlated changes in transit duration, which can be tested.</li>
+<li><strong>Apsidal precession.</strong> For eccentric orbits, apsidal precession produces O–C curvature. Mitigation: most USP planets have circularized orbits; for the few with residual eccentricity, apsidal precession also produces predictable TDV patterns.</li>
 </ul>
-<h3>Why It Could Matter</h3>
-<p>Obliquity is a fundamental but almost completely unconstrained property of exoplanets. It directly affects habitability (Earth's 23.4° obliquity is crucial for moderate seasons), atmospheric dynamics, and tidal evolution. A first population-level constraint — even a statistical upper limit — on warm Jupiter obliquities would test tidal evolution theories (which predict rapid obliquity damping for close-in planets but allow nonzero obliquities for wider orbits) and inform GCM modeling of exoplanet climates. It would also pioneer a technique extensible to PLATO-era photometry, where the precision will be much higher.</p>
+<h3>Why It Matters</h3>
+<p>Planetary interior structure remains one of the least constrained properties of exoplanets. Mass and radius give mean density, but degeneracies between composition and structure are severe. Tidal dissipation provides an independent window into interior properties because Q'_p depends on the planet's rheology, phase state, and layered structure in ways that mass and radius alone cannot capture. Detecting time-variable orbital decay would be the first direct evidence for evolving planetary interiors — a fundamentally new observable in exoplanet science. Even non-detections yield the first population-level constraints on planetary Q' values, with implications for the long-term orbital stability of close-in planetary systems and the ultimate fate of hot Jupiters.</p>
+<hr/>
+<p>## Summary Table</p>
+<p>| Project | Key Data | Primary Observable | Detection Threshold | Impact if Successful | |---|---|---|---|---| | Warm Jupiter Exo-Trojans | Kepler + TESS TTVs | O–C curvature with Trojan libration signature | ~30–90 s TTV over 13-yr baseline | First confirmed exo-Trojan; migration theory test | | Multi-Mission Chromatic Depths | Kepler + TESS + CHEOPS photometry | Δ(R_p/R*)² between bandpasses | ~200 ppm per planet; 7–14σ stacked | Demographic atmospheric characterization for hundreds of planets | | Orbital Decay Rate Anomalies | Kepler + TESS + ground-based transit times | Cubic O–C terms in decaying systems | ~5–15 s curvature over 18-yr baseline | First probe of evolving planetary interiors via tidal dissipation |</p>
+<hr/>
+<p><em>Note: All datasets referenced are publicly available. Kepler data are hosted at MAST (archive.stsci.edu). TESS data are at MAST and MIT's TESS archive. CHEOPS data are accessible via the CHEOPS Data Analysis Portal after the proprietary period. Ground-based transit times are available through ExoClock and the Exoplanet Transit Database.</em></p>
+<h3>Key References and Further Reading</h3>
+<ul>
+<li>Barragán et al. 2026, "Constraining exotrojans in hot Jupiter systems using TESS TTVs" (<a href="https://arxiv.org/html/2603.27215">arXiv:2603.27215</a>)</li>
+<li>Kokori et al. 2025, "Transit ephemerides and timing variations from Kepler and K2 to TESS" (<a href="https://academic.oup.com/mnras/article/538/4/2283/8093570">MNRAS 538, 2283</a>)</li>
+<li>Biersteker &amp; Schlichting 2017, "Determining Exoplanetary Oblateness Using Transit Depth Variations" (<a href="https://arxiv.org/abs/1708.08990">arXiv:1708.08990</a>)</li>
+<li>Boyd et al. 2021, "Systematic Phase Curve Study from Year One of TESS" (<a href="https://ntrs.nasa.gov/api/citations/20210011500/downloads/Boyd_Systematic%20Phase%20Curve%20Study%20of%20Known%20Transiting%20Systems%20from%20Year%20One%20of%20the%20TESS%20Mission.pdf">NASA NTRS</a>)</li>
+<li>Barnes &amp; Fortney 2004, "Transit Detectability of Ring Systems around Extrasolar Giant Planets" (<a href="https://aasnova.org/2017/04/07/the-search-for-ringed-exoplanets/">AAS Nova summary</a>)</li>
+</ul>
     </div>
   </details>
   <footer class="exo-daily__foot">
-    <span class="exo-daily__meta">Source brief: 2026-04-29</span>
+    <span class="exo-daily__meta">Source brief: 2026-04-06</span>
     <span class="exo-daily__meta">Rotates daily &middot; 66 ideas in the pool</span>
   </footer>
 </section>
