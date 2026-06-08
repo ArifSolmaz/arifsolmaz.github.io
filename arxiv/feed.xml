@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 02 Jun 2026 06:37:09 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 08 Jun 2026 06:37:20 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,115 +15,64 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>Magnesium Silicate Clouds in the Atmosphere of HD 209458b from a Rule-Based Tree-Structured Data Reduction</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2606-00177v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-00177v1</guid>
-      <pubDate>Tue, 02 Jun 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Katy L. Chubb et al.</dc:creator>
+      <title>Ultraviolet Radiation Effects on the Optical Properties of Water-Dominated Exoplanet Hazes</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2606-06691v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-06691v1</guid>
+      <pubDate>Mon, 08 Jun 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Lori Huseby et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>GJ 3929 b as the First Complete Rocky Worlds DDT Data Set</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2606-07511v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-07511v1</guid>
+      <pubDate>Mon, 08 Jun 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Nicholas J. Connors et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>The mass of TOI-1883 b: A low density super-Neptune in the ridge regime transiting an early-M dwarf</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2606-06868v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-06868v1</guid>
+      <pubDate>Mon, 08 Jun 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Izuru Fukuda et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Gaussian Process Latent Factor Regression for Low-Data, High-Dimensional Output Problems</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2606-06576v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-06576v1</guid>
+      <pubDate>Mon, 08 Jun 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Edward T. Stevenson et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>cs.LG</category>
         <category>astro-ph.EP</category>
         <category>astro-ph.IM</category>
+        <category>stat.ML</category>
     </item>
     <item>
-      <title>Photochemical CS₂ Gas Detected on a 20-Myr-old Exoplanet</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2606-00974v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-00974v1</guid>
-      <pubDate>Tue, 02 Jun 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Fei Dai et al.</dc:creator>
+      <title>The Roasting Marshmallows Program with IGRINS on Gemini South V: Atmosphere of MASCARA-1b is Enriched in Refractory Elements</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2606-07497v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-07497v1</guid>
+      <pubDate>Mon, 08 Jun 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Krishna Kanumalla et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>Size limits on tidal debris around white dwarfs: the km-size barrier</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2606-02457v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-02457v1</guid>
-      <pubDate>Tue, 02 Jun 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Jordan K. Steckloff, Dimitri Veras, Kathryn Volk</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.SR</category>
-    </item>
-    <item>
-      <title>Some Thoughts on the Future of Technosignature Searches: Constraining the Fermi Paradox</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2606-00463v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-00463v1</guid>
-      <pubDate>Tue, 02 Jun 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Ian A. Crawford</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.IM</category>
-        <category>astro-ph.EP</category>
-        <category>physics.pop-ph</category>
-    </item>
-    <item>
-      <title>Hubble Science in the 2030s White Paper: High-Contrast Optical and UV Spectroscopy with HST/STIS</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2606-00217v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-00217v1</guid>
-      <pubDate>Tue, 02 Jun 2026 20:00:00 +0000</pubDate>
-      <dc:creator>K. Ward-Duong et al.</dc:creator>
+      <title>Where Not to Look: A Parametric Avoidance Model for SETI Target Selection</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2606-06692v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-06692v1</guid>
+      <pubDate>Mon, 08 Jun 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Sahin Torlakcik</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.IM</category>
         <category>astro-ph.EP</category>
         <category>astro-ph.GA</category>
         <category>astro-ph.SR</category>
-    </item>
-    <item>
-      <title>Escape of Water- and Metal-enriched Atmospheres from compact Hot mini-Neptunes with CHAIN</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2606-02083v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-02083v1</guid>
-      <pubDate>Tue, 02 Jun 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Daria Kubyshkina, Jo Ann Egger, Caroline Piaulet-Ghorayeb</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Jets and Superrotation in Deep and Shallow Planetary Atmospheres</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2606-00443v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-00443v1</guid>
-      <pubDate>Tue, 02 Jun 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Geoffrey K Vallis, Loren I. Matilsky, Quentin Nicolas</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Orbit Refinement of WASP-18 b and Evidence Against the Existence of WASP-18 c</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2606-02473v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-02473v1</guid>
-      <pubDate>Tue, 02 Jun 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Avinash Salguneswaran Nediyedath et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.SR</category>
-    </item>
-    <item>
-      <title>The Pan-Pacific Planet Search -- IX. A menagerie of companions orbiting evolved stars</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2606-00787v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-00787v1</guid>
-      <pubDate>Tue, 02 Jun 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Robert A. Wittenmyer et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.SR</category>
-    </item>
-    <item>
-      <title>Assessment of the Mass Loss and Radius Change of 3I/ATLAS Based on Observed Production Rates</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2606-01377v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-01377v1</guid>
-      <pubDate>Tue, 02 Jun 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Tessa T. Frincke, Darryl Z. Seligman</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.GA</category>
-    </item>
-    <item>
-      <title>Prospects for Astrobiology and Technosignature Searches with the Vera C. Rubin Observatory Legacy Survey of Space and Time</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2606-00574v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-00574v1</guid>
-      <pubDate>Tue, 02 Jun 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Andjelka B Kovacevic et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.IM</category>
-        <category>astro-ph.EP</category>
-        <category>physics.space-ph</category>
     </item>
   </channel>
 </rss>
