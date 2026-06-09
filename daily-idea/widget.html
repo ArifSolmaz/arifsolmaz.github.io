@@ -3,58 +3,58 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Idea of the day &mdash; Transit Duration Variation Archaeology — Detecting Orbital Precession and Hidden Mutual Inclinations in TESS Multi-Planet Systems</title>
+<title>Idea of the day &mdash; Warm Jupiter Exo-Trojan Census via Kepler–TESS Combined TTV Baselines</title>
 <link rel="stylesheet" href="widget.css"/>
 </head>
 <body>
 <section class="exo-daily" aria-label="Exoplanet idea of the day">
   <header class="exo-daily__head">
     <span class="exo-daily__eyebrow">Exoplanet idea of the day</span>
-    <time class="exo-daily__date" datetime="2026-06-08">2026-06-08</time>
+    <time class="exo-daily__date" datetime="2026-06-09">2026-06-09</time>
   </header>
-  <h2 class="exo-daily__title">Transit Duration Variation Archaeology — Detecting Orbital Precession and Hidden Mutual Inclinations in TESS Multi-Planet Systems</h2>
+  <h2 class="exo-daily__title">Warm Jupiter Exo-Trojan Census via Kepler–TESS Combined TTV Baselines</h2>
   <div class="exo-daily__premise">
-    <p>Transit duration variations (TDVs) are the neglected sibling of transit timing variations (TTVs). While TTV analysis has matured into a standard tool for mass measurement (especially near mean-motion resonances), TDVs encode different and complementary dynamical information: they are sensitive to changes in the orbital impact parameter over time, which traces nodal precession driven by mutual inclinations between planets. A precessing orbit changes how the planet's chord crosses the stellar disk, altering the transit duration on timescales of years to decades. In multi-planet systems, even modest mutual inclinations (a few degrees) can produce measurable TDV signals, and these mutual inclinations are a fossil record of the system's dynamical history — whether planets migrated smoothly in a disk, were scattered, or were torqued by an external companion.</p>
-<p>Despite theoretical predictions dating back over a decade, systematic TDV searches across large samples remain sparse. The recent homogeneous TTV survey of 423 single-transiting TESS systems (A&amp;A, 2026) focused primarily on timing shifts. TDV signals in these same lightcurves — and in the longer-baseline Kepler/K2 systems now supplemented by TESS re-observations — are largely unmined at population scale.</p>
+    <p>Trojan companions — bodies librating around the L4/L5 Lagrange points of a planet — are ubiquitous in our solar system (Jupiter alone hosts over 12,000), yet not a single confirmed exo-Trojan exists. Most searches have focused on hot Jupiters, where tidal migration likely destabilizes co-orbitals. The recent ExoEcho study (Barragán et al. 2026) constrained Trojans for 260 hot Jupiters using TESS TTVs alone but found no detections — an expected null given the dynamical hostility of those orbits.</p>
+<p>The underexplored sweet spot is <strong>warm Jupiters</strong> (P ~ 10–200 days). These planets underwent less violent migration, and dynamical simulations predict that co-orbital trapping during disk-driven migration is most efficient at intermediate orbital distances. Yet warm Jupiters have sparse TESS coverage (often only a handful of transits) and their Kepler-era TTVs were never systematically searched for the specific libration-period signature of a Trojan.</p>
   </div>
   <details class="exo-daily__more">
     <summary>Read the full proposal</summary>
     <div class="exo-daily__full">
       <h3>Scientific Premise</h3>
-<p>Transit duration variations (TDVs) are the neglected sibling of transit timing variations (TTVs). While TTV analysis has matured into a standard tool for mass measurement (especially near mean-motion resonances), TDVs encode different and complementary dynamical information: they are sensitive to changes in the orbital impact parameter over time, which traces nodal precession driven by mutual inclinations between planets. A precessing orbit changes how the planet's chord crosses the stellar disk, altering the transit duration on timescales of years to decades. In multi-planet systems, even modest mutual inclinations (a few degrees) can produce measurable TDV signals, and these mutual inclinations are a fossil record of the system's dynamical history — whether planets migrated smoothly in a disk, were scattered, or were torqued by an external companion.</p>
-<p>Despite theoretical predictions dating back over a decade, systematic TDV searches across large samples remain sparse. The recent homogeneous TTV survey of 423 single-transiting TESS systems (A&amp;A, 2026) focused primarily on timing shifts. TDV signals in these same lightcurves — and in the longer-baseline Kepler/K2 systems now supplemented by TESS re-observations — are largely unmined at population scale.</p>
+<p>Trojan companions — bodies librating around the L4/L5 Lagrange points of a planet — are ubiquitous in our solar system (Jupiter alone hosts over 12,000), yet not a single confirmed exo-Trojan exists. Most searches have focused on hot Jupiters, where tidal migration likely destabilizes co-orbitals. The recent ExoEcho study (Barragán et al. 2026) constrained Trojans for 260 hot Jupiters using TESS TTVs alone but found no detections — an expected null given the dynamical hostility of those orbits.</p>
+<p>The underexplored sweet spot is <strong>warm Jupiters</strong> (P ~ 10–200 days). These planets underwent less violent migration, and dynamical simulations predict that co-orbital trapping during disk-driven migration is most efficient at intermediate orbital distances. Yet warm Jupiters have sparse TESS coverage (often only a handful of transits) and their Kepler-era TTVs were never systematically searched for the specific libration-period signature of a Trojan.</p>
 <h3>Target Datasets</h3>
 <ul>
-<li><strong>Kepler DR25 long-cadence and short-cadence lightcurves</strong> (17 quarters, ~4 years baseline) for ~700 multi-planet candidate systems.</li>
-<li><strong>TESS Full-Frame Images and 2-minute cadence data</strong> from Sectors 1–83+ (ongoing extended mission), providing a second epoch 6–10 years after Kepler for overlap targets.</li>
-<li><strong>K2 campaigns</strong> covering ecliptic fields with multi-planet systems.</li>
-<li><strong>NASA Exoplanet Archive</strong> cumulative planet table and TTV/TDV catalogs for cross-referencing.</li>
+<li><strong>Kepler DR25 long-cadence light curves</strong> for all confirmed warm Jupiters (roughly 50–80 systems with P &gt; 10 d and M_p &gt; 0.3 M_Jup).</li>
+<li><strong>TESS FFI light curves</strong> (Sectors 1–83, through the extended mission) for the same targets, providing a 7–9 year lever arm when combined with Kepler epochs.</li>
+<li><strong>Published radial velocity datasets</strong> from the California Legacy Survey, HARPS archive, and others to constrain planetary masses and break TTV degeneracies.</li>
+<li><strong>Gaia DR4 astrometry</strong> (expected 2026) for independent companion-mass upper limits in wide-orbit cases.</li>
 </ul>
 <h3>Novelty</h3>
-<p>Most TTV papers either ignore TDVs entirely or treat them as nuisance parameters. A handful of individual case studies exist (e.g., Kepler-117, Kepler-108), but no one has conducted a population-level TDV survey that combines Kepler-era and TESS-era baselines to measure long-term orbital precession rates across hundreds of systems. The key innovation is leveraging the ~10-year time lever between Kepler and TESS to detect slow precession that was invisible within Kepler's 4-year window alone.</p>
+<p>Previous TTV-based Trojan searches used either Kepler or TESS data in isolation. Combining both missions extends the observational baseline from ~4 years (Kepler alone) to ~13 years, which is critical because Trojan libration periods scale as P_lib ∝ P_orb / √(m_Trojan/m_star) and can be decades long for Earth-mass Trojans around warm Jupiters. A 13-year baseline makes sub-cycle curvature detectable for the first time in many systems.</p>
+<p>Furthermore, while the ExoEcho project targeted hot Jupiters (where theory predicts Trojan instability), this project specifically targets the dynamically favorable warm-Jupiter regime — a population large enough for statistical constraints but neglected in systematic Trojan searches.</p>
 <h3>Concrete Workflow</h3>
 <ol>
-<li><strong>Sample construction.</strong> Cross-match Kepler/K2 multi-planet systems with TESS observed sectors using TIC/KIC identifiers. Prioritize systems with ≥2 transiting planets and sufficient TESS coverage for at least 3 transits per planet.</li>
-<li><strong>Uniform transit fitting.</strong> Fit individual transits in both Kepler and TESS data using a consistent model (e.g., <code>batman</code> + Gaussian process stellar variability model) to extract per-transit duration, depth, and mid-time with MCMC uncertainties.</li>
-<li><strong>TDV time series construction.</strong> For each planet, construct the duration time series spanning the combined Kepler+TESS baseline. Fit a linear trend and sinusoidal precession model to the TDV series.</li>
-<li><strong>Dynamical interpretation.</strong> For systems with significant TDV trends, use N-body integrations (e.g., <code>REBOUND</code> with <code>REBOUNDx</code>) to constrain the mutual inclination required to produce the observed precession rate, marginalizing over companion masses from TTV constraints or RV data.</li>
-<li><strong>Population statistics.</strong> Compile the mutual inclination distribution across the sample and compare to predictions from smooth disk migration (low mutual inclinations, &lt;2°) vs. post-disk dynamical excitation (broader distribution).</li>
+<li><strong>Uniform transit timing extraction.</strong> Re-fit all Kepler long-cadence and TESS 2-min/FFI transits for the warm Jupiter sample using a consistent model (e.g., batman + GP stellar variability). Produce a homogeneous O–C (observed minus calculated) timing catalog.</li>
+<li><strong>Trojan TTV model injection-recovery.</strong> Simulate TTV signals from co-orbital companions across a grid of Trojan masses (0.1 M_Earth to 10 M_Earth) and libration amplitudes (20°–60°). Inject into real O–C residuals to quantify detection sensitivity per system.</li>
+<li><strong>Bayesian model comparison.</strong> For each system, fit three models to the O–C data: (a) linear ephemeris, (b) sinusoidal TTV from a perturbing planet in mean-motion resonance, (c) Trojan libration TTV (which has a characteristic period and amplitude relationship distinct from generic TTVs). Use nested sampling to compute Bayes factors.</li>
+<li><strong>Population-level upper limits.</strong> Even non-detections yield a joint upper limit on the occurrence rate of massive Trojans around warm Jupiters — a quantity with direct implications for migration theory.</li>
+<li><strong>Follow-up prioritization.</strong> Flag any candidates with Bayes factor &gt; 10 in favor of the Trojan model for targeted JWST or ground-based transit photometry at predicted libration-maximum epochs.</li>
 </ol>
-<h3>Expected Signal/Observable</h3>
-<p>Nodal precession periods for typical compact Kepler multis are ~50–500 years. Over a 10-year baseline, this produces transit duration changes of ~10–60 seconds for mutual inclinations of 1–5°, depending on orbital periods and planet masses. Kepler short-cadence data achieves transit duration precision of ~5–20 seconds per transit; stacking multiple transits and comparing epoch-averaged durations between Kepler and TESS should reach sensitivity to changes of ~10 seconds.</p>
+<h3>Expected Signal / Observable</h3>
+<p>A 1 M_Earth Trojan around a warm Jupiter (P = 30 d, M_p = 1 M_Jup) produces TTV amplitudes of ~30–90 seconds with a libration period of ~15–25 years. Over a 13-year Kepler+TESS baseline, this manifests as a slow, monotonic or gently curving O–C drift distinguishable from a linear ephemeris at the 3–5σ level for systems with individual timing precisions of ~30 s.</p>
 <h3>Possible False Positives</h3>
 <ul>
-<li><strong>Stellar variability and spot-crossing events</strong> can distort transit shapes and bias duration measurements. Mitigation: use Gaussian process detrending and flag transits with obvious spot anomalies.</li>
-<li><strong>Instrumental systematics</strong> — differences in Kepler vs. TESS bandpass and cadence can introduce apparent duration offsets. Mitigation: inject synthetic transits into both datasets and verify recovery consistency.</li>
-<li><strong>TTVs masquerading as TDVs</strong> — strong TTVs can shift the ingress/egress timing asymmetrically, mimicking a duration change. Mitigation: simultaneously fit TTVs and TDVs in a coupled model.</li>
-<li><strong>Apsidal precession</strong> in eccentric orbits also produces TDVs; distinguishing nodal from apsidal precession requires joint TTV+TDV modeling.</li>
+<li><strong>Apsidal precession</strong> from an unseen outer companion mimics a slow TTV drift. Mitigation: radial velocity data constrain outer companions; apsidal precession also produces correlated transit duration variations (TDVs), which Trojan TTVs do not.</li>
+<li><strong>Stellar activity–induced timing biases.</strong> Starspot crossings during transit shift the measured mid-time. Mitigation: GP detrending of in-transit residuals; consistency checks between Kepler short-cadence and long-cadence timings.</li>
+<li><strong>Instrumental systematics.</strong> Kepler-to-TESS cross-calibration offsets in timing zero-points. Mitigation: ground-based transit observations (e.g., from ExoClock) serve as an independent bridge between missions.</li>
 </ul>
 <h3>Why It Matters</h3>
-<p>The mutual inclination distribution of planetary systems is one of the most direct diagnostics of post-formation dynamical evolution, but it is extremely difficult to measure — transit surveys are geometrically biased toward coplanar systems, and astrometric measurements remain limited. TDV-based precession detection offers a unique channel to measure this quantity for hundreds of systems simultaneously, using data that already exists. A discovery that compact multis harbor hidden mutual inclinations of several degrees would challenge the prevailing "flat as a pancake" narrative and point toward late-stage dynamical sculpting.</p>
+<p>Detecting or placing stringent upper limits on exo-Trojans around warm Jupiters directly tests predictions of disk-driven migration models. A detection would be the first confirmed exo-Trojan — a landmark discovery. Even a robust null result constrains the efficiency of co-orbital capture and the prevalence of material at planetary Lagrange points, informing models of late-stage planet formation and the delivery of volatiles.</p>
     </div>
   </details>
   <footer class="exo-daily__foot">
-    <span class="exo-daily__meta">Source brief: 2026-05-06</span>
+    <span class="exo-daily__meta">Source brief: 2026-04-06</span>
     <span class="exo-daily__meta">Rotates daily &middot; 66 ideas in the pool</span>
   </footer>
 </section>
