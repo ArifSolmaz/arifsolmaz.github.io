@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 10 Jun 2026 06:18:05 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 11 Jun 2026 06:43:25 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,96 +15,98 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>Exploring Exoplanets with Interferometry</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2606-10108v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-10108v1</guid>
-      <pubDate>Wed, 10 Jun 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Sascha P. Quanz et al.</dc:creator>
+      <title>Strong and variable stratospheric CO emission from lava-planet 55 Cnc e observed with NIRCam/JWST</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2606-11866v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-11866v1</guid>
+      <pubDate>Thu, 11 Jun 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Ignas Snellen et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.IM</category>
-        <category>astro-ph.EP</category>
-        <category>physics.ins-det</category>
-    </item>
-    <item>
-      <title>First detection of HDO ice in a protoplanetary disk</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2606-10888v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-10888v1</guid>
-      <pubDate>Wed, 10 Jun 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Alexey Potapov et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.SR</category>
-        <category>physics.chem-ph</category>
-        <category>physics.space-ph</category>
-    </item>
-    <item>
-      <title>MINDS survey of silicates in T Tauri disks: Correlation between dust and gas</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2606-11026v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-11026v1</guid>
-      <pubDate>Wed, 10 Jun 2026 20:00:00 +0000</pubDate>
-      <dc:creator>J. Varga et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.SR</category>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>SUPPPPRESS: Prototyping and testing liquid-crystal vector vortex coronagraphs with reduced polarization leakage</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2606-10760v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-10760v1</guid>
-      <pubDate>Wed, 10 Jun 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Rico Landman et al.</dc:creator>
+      <title>Calibration of an Analog-to-Digital Conversion Nonlinearity in JWST/NIRISS</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2606-11983v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-11983v1</guid>
+      <pubDate>Thu, 11 Jun 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Shashank Dholakia et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.IM</category>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>Exploring the Orbital Stability of Large, Lightweight Mirrors around Exoplanets</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2606-10140v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-10140v1</guid>
-      <pubDate>Wed, 10 Jun 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Shauna M. Sallmen Eric J. Korpela</dc:creator>
+      <title>Reinterpreting the JWST Observations of 55 Cancri e with a Non-Grey General Circulation Model</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2606-12116v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-12116v1</guid>
+      <pubDate>Thu, 11 Jun 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Ruizhi Zhan, Daniel D. B. Koll</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>The 35-Myr old infant planet TOI-837 b has a mildly misaligned orbit</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2606-12010v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-12010v1</guid>
+      <pubDate>Thu, 11 Jun 2026 20:00:00 +0000</pubDate>
+      <dc:creator>G. Mantovan et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Atmospheric Dynamics of Asymmetrically Magnetized Hot Jupiter</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2606-12119v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-12119v1</guid>
+      <pubDate>Thu, 11 Jun 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Miaoyin Tang, Cong Yu</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Hydrodynamical Simulations of Resonant Breaking in Multi-Planet Systems via Rebound Migration During Disk Dispersal</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2606-11452v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-11452v1</guid>
+      <pubDate>Thu, 11 Jun 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Beibei Liu et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Revealing the Origin of Desert Dwellers via Stellar Obliquities</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2606-11292v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-11292v1</guid>
+      <pubDate>Thu, 11 Jun 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Tim Hallatt, James E. Owen, Sarah Millholland</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Do Super-Puffs Defy Core Accretion? Population-Wide Interior Structure Constraints</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2606-11330v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-11330v1</guid>
+      <pubDate>Thu, 11 Jun 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Nicholas T. Marston, Juliette Becker, Alex R. Howe</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Machine-learning clustering of close-in exoplanet populations: links to pebble accretion</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2606-11737v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-11737v1</guid>
+      <pubDate>Thu, 11 Jun 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Yi Duann et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
         <category>astro-ph.IM</category>
-        <category>astro-ph.EP</category>
-        <category>physics.pop-ph</category>
+        <category>cs.LG</category>
     </item>
     <item>
-      <title>Multi-epoch scattered-light analysis of HD 135344B: new evidence for a spiral-driving protoplanet</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2606-10624v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-10624v1</guid>
-      <pubDate>Wed, 10 Jun 2026 20:00:00 +0000</pubDate>
-      <dc:creator>J. Latour et al.</dc:creator>
+      <title>Numerical Simulations of Hypervelocity Micrometeoroid Impacts: Rocky Impactors onto Icy Targets and the Role of Porosity</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2606-11404v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-11404v1</guid>
+      <pubDate>Thu, 11 Jun 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Ryuki Hyodo, Shigeru Wakita, Brandon C. Johnson</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Stellar Obliquities of Young Systems, Atmospheres Undergoing Contraction and Escape (SOYSAUCE) II: a 135 Myr planet on an aligned orbit with transit timing variations</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2606-09973v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-09973v1</guid>
-      <pubDate>Wed, 10 Jun 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Madyson G. Barber et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.SR</category>
-    </item>
-    <item>
-      <title>Analysis of the young disk around WRAY 15-1880: does it contain a primitive planetary system?</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2606-10816v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-10816v1</guid>
-      <pubDate>Wed, 10 Jun 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Elisabetta Rigliaco et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.SR</category>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Complex gas flows in magnetized protoplanetary disks promote the formation of dust traps at low fragmentation velocities</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2606-10012v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-10012v1</guid>
-      <pubDate>Wed, 10 Jun 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Vignesh Vaikundaraman et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
+        <category>astro-ph.GA</category>
     </item>
   </channel>
 </rss>
