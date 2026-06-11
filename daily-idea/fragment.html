@@ -1,52 +1,53 @@
 <section class="exo-daily" aria-label="Exoplanet idea of the day">
   <header class="exo-daily__head">
     <span class="exo-daily__eyebrow">Exoplanet idea of the day</span>
-    <time class="exo-daily__date" datetime="2026-06-10">2026-06-10</time>
+    <time class="exo-daily__date" datetime="2026-06-11">2026-06-11</time>
   </header>
-  <h2 class="exo-daily__title">Mapping Stellar Surface Heterogeneity via Repeated Starspot Occultation Events in Archival Kepler Long-Cadence Data</h2>
+  <h2 class="exo-daily__title">Poor-Man&#x27;s Transmission Spectroscopy via Multi-Mission Transit Depth Chromaticity</h2>
   <div class="exo-daily__premise">
-    <p>When a transiting planet crosses a starspot (or facula), it produces a brief brightening (or dimming) bump in the transit light curve. These "spot-crossing events" are routinely flagged as nuisances and masked out during standard transit fitting. But each crossing is actually a spatially resolved probe of the stellar photosphere at a known latitude (set by the transit chord) and a known longitude (set by the timing within the transit). Over hundreds of transits observed by Kepler across 4 years, a single planet repeatedly scans a narrow band of its host star's surface. The idea is to invert this information: reconstruct a longitude-resolved map of spot coverage along the transit chord as a function of time, yielding a "butterfly diagram" analog for stars other than the Sun.</p>
-<p>Solar butterfly diagrams (showing how sunspot latitudes migrate over the ~11-year cycle) are foundational to understanding stellar dynamos, yet we have essentially zero equivalent data for other stars. Doppler imaging works only for rapid rotators; starspot modulation in broadband photometry gives rotation periods but no spatial information. Transit-chord spot tomography is the only technique that gives spatially localized spot information on slow-rotating Sun-like stars, and it has been applied in only a handful of individual case studies rather than as a systematic survey.</p>
+    <p>Transmission spectroscopy — measuring how transit depth varies with wavelength — is the gold standard for characterizing exoplanet atmospheres, but it requires expensive, dedicated spectroscopic observations (HST, JWST). Meanwhile, hundreds of transiting planets have been observed by multiple photometric surveys operating in <strong>different bandpasses</strong>: Kepler (420–900 nm, peaked at ~600 nm), TESS (600–1000 nm, peaked at ~800 nm), CHEOPS (350–1100 nm, peaked at ~700 nm), and ground-based surveys like WASP (400–700 nm) and NGTS (520–890 nm). Each mission effectively measures the transit depth at a different effective wavelength.</p>
+<p>The idea: by cross-calibrating transit depths measured by different missions for the same planet, one can extract a <strong>broadband transmission spectrum</strong> — coarse, but covering hundreds of planets simultaneously rather than one at a time. This approach is essentially free, requiring only careful reanalysis of existing public photometry.</p>
   </div>
   <details class="exo-daily__more">
     <summary>Read the full proposal</summary>
     <div class="exo-daily__full">
       <h3>Scientific Premise</h3>
-<p>When a transiting planet crosses a starspot (or facula), it produces a brief brightening (or dimming) bump in the transit light curve. These "spot-crossing events" are routinely flagged as nuisances and masked out during standard transit fitting. But each crossing is actually a spatially resolved probe of the stellar photosphere at a known latitude (set by the transit chord) and a known longitude (set by the timing within the transit). Over hundreds of transits observed by Kepler across 4 years, a single planet repeatedly scans a narrow band of its host star's surface. The idea is to invert this information: reconstruct a longitude-resolved map of spot coverage along the transit chord as a function of time, yielding a "butterfly diagram" analog for stars other than the Sun.</p>
-<p>Solar butterfly diagrams (showing how sunspot latitudes migrate over the ~11-year cycle) are foundational to understanding stellar dynamos, yet we have essentially zero equivalent data for other stars. Doppler imaging works only for rapid rotators; starspot modulation in broadband photometry gives rotation periods but no spatial information. Transit-chord spot tomography is the only technique that gives spatially localized spot information on slow-rotating Sun-like stars, and it has been applied in only a handful of individual case studies rather than as a systematic survey.</p>
+<p>Transmission spectroscopy — measuring how transit depth varies with wavelength — is the gold standard for characterizing exoplanet atmospheres, but it requires expensive, dedicated spectroscopic observations (HST, JWST). Meanwhile, hundreds of transiting planets have been observed by multiple photometric surveys operating in <strong>different bandpasses</strong>: Kepler (420–900 nm, peaked at ~600 nm), TESS (600–1000 nm, peaked at ~800 nm), CHEOPS (350–1100 nm, peaked at ~700 nm), and ground-based surveys like WASP (400–700 nm) and NGTS (520–890 nm). Each mission effectively measures the transit depth at a different effective wavelength.</p>
+<p>The idea: by cross-calibrating transit depths measured by different missions for the same planet, one can extract a <strong>broadband transmission spectrum</strong> — coarse, but covering hundreds of planets simultaneously rather than one at a time. This approach is essentially free, requiring only careful reanalysis of existing public photometry.</p>
 <h3>Target Datasets</h3>
 <ul>
-<li><strong>Kepler long-cadence (30-min) photometry</strong> for all confirmed transiting planet hosts with orbital periods short enough to yield &gt;50 transits (roughly P &lt; 30 days). This gives ~200-400 systems.</li>
-<li><strong>Kepler short-cadence (1-min) data</strong> where available, for higher-fidelity bump characterization.</li>
-<li><strong>Stellar parameters</strong> from Kepler DR25, Gaia DR3 (for effective temperature, radius, and inclination priors).</li>
-<li><strong>Rotation periods</strong> from McQuillan et al. (2014) and subsequent catalogs, to connect spot evolution to activity cycles.</li>
+<li><strong>Kepler/K2 DR25 light curves</strong> — transit depths for ~2,700 confirmed planets.</li>
+<li><strong>TESS light curves</strong> (2-min cadence and FFI) — overlapping observations for ~500+ Kepler planets and ~5,000 TESS-discovered planets.</li>
+<li><strong>CHEOPS public data archive</strong> — targeted observations of ~200 planets with high-precision photometry in a distinct bandpass.</li>
+<li><strong>Ground-based survey archives</strong> (WASP, HATNet/HATSouth, NGTS, TRAPPIST) — transit depths in optical bands.</li>
+<li><strong>Stellar atmospheric models</strong> (PHOENIX, ATLAS9) — needed to compute precise limb-darkening corrections in each bandpass, which is the dominant systematic.</li>
 </ul>
 <h3>Novelty</h3>
-<p>Individual spot-crossing analyses exist (e.g., Sanchis-Ojeda et al. 2011 on HAT-P-11, Morris et al. 2017 on Kepler-17), but no one has conducted a population-level, homogeneous survey that reconstructs time-resolved spot-coverage maps for hundreds of systems simultaneously. The mainstream approach treats spot crossings as contaminants. Flipping this into a stellar-astrophysics dataset is the key reframing. Furthermore, recent work (2025-2026) on stellar contamination in transmission spectroscopy has highlighted how poorly we understand spot distributions, making this directly relevant to JWST atmospheric retrievals.</p>
+<p>Individual studies have noted transit depth differences between Kepler and TESS for specific systems, but no one has performed a <strong>systematic, population-level extraction of broadband chromatic transit depth differences</strong> across hundreds of planets to map atmospheric properties statistically. The key insight is that while individual depth differences are noisy (~200–500 ppm uncertainty), stacking by planetary class (e.g., hot Jupiters, warm Neptunes, sub-Neptunes) produces a population-averaged transmission signal detectable at high significance.</p>
+<p>This is distinct from standard transmission spectroscopy in that it trades spectral resolution for enormous sample size, enabling demographic atmospheric characterization — asking not "what is this planet's atmosphere?" but "do sub-Neptunes as a class have cloud-free or hazy atmospheres?"</p>
 <h3>Concrete Workflow</h3>
 <ol>
-<li>Download all Kepler PDC-SAP light curves for systems with &gt;50 transits from MAST.</li>
-<li>Perform a standard transit model fit (Mandel &amp; Agol) to each transit individually, using the planet's known parameters as priors.</li>
-<li>Subtract the best-fit transit model to produce residual light curves for each transit epoch.</li>
-<li>Apply a matched-filter or Gaussian-process bump detector to the residuals to identify spot-crossing events, recording their in-transit phase (which maps to stellar longitude modulo the star's rotation), amplitude (proxy for spot contrast and size), and sign (brightening = dark spot, dimming = bright facula).</li>
-<li>For each system, build a 2D map: x-axis = stellar longitude (from in-transit timing + known rotation period), y-axis = time (transit epoch). This is the "transit-chord butterfly diagram."</li>
-<li>Measure spot lifetimes, differential rotation (if the planet's orbital plane precesses or if multiple planets at different impact parameters exist), and any long-term trends suggestive of magnetic cycles.</li>
-<li>Stack the population to look for statistical trends: do spot-coverage patterns correlate with spectral type, rotation period, or age?</li>
+<li><strong>Homogeneous transit fitting.</strong> For every planet observed by at least two missions, fit transit models independently to each mission's data using identical system parameters (orbital period, inclination, a/R<em>) but allowing the planet-to-star radius ratio R_p/R</em> to float. Use mission-specific limb-darkening coefficients computed from the host star's T_eff, log(g), and [Fe/H] using 3D stellar atmosphere models.</li>
+<li><strong>Chromatic depth difference catalog.</strong> Compute Δ(R_p/R*)² between each mission pair for every planet. Propagate uncertainties including limb-darkening model uncertainty (the dominant systematic).</li>
+<li><strong>Atmospheric model grid comparison.</strong> Generate predicted chromatic depth differences from a grid of forward atmospheric models (clear H/He, hazy, cloudy, high-mean-molecular-weight) convolved with each mission's bandpass. Compare to observed Δ(R_p/R*)² values.</li>
+<li><strong>Hierarchical Bayesian population analysis.</strong> Fit a mixture model to the chromatic depth differences within each planetary class to infer the population-level fraction of clear vs. hazy/cloudy atmospheres.</li>
+<li><strong>Validation on known targets.</strong> Verify that the method recovers known atmospheric properties for planets with existing HST/JWST transmission spectra (e.g., HD 209458b, WASP-39b, GJ 1214b).</li>
 </ol>
-<h3>Expected Signal/Observable</h3>
-<p>Spot-crossing bumps in Kepler long-cadence data have typical amplitudes of 100-500 ppm for active stars, well above photon noise for Kepler-magnitude targets (Kp &lt; 14). For a system with 100+ transits of a hot Jupiter (transit duration ~2-3 hours, giving ~5-6 long-cadence points in transit), one expects to detect spot crossings in 10-40% of transits for moderately active hosts (log R'HK ~ -4.5). The "butterfly diagram" would show spot-longitude clustering that drifts in phase with the stellar rotation and evolves on timescales of months to years.</p>
+<h3>Expected Signal / Observable</h3>
+<p>A clear, hydrogen-rich atmosphere on a hot Jupiter produces a transit depth difference of ~200–400 ppm between the Kepler and TESS bandpasses (due to Rayleigh scattering slope and Na/K absorption in the bluer Kepler band). For an individual planet, this is marginal (1–2σ). But stacking 50 hot Jupiters yields a population-averaged detection at 7–14σ. For sub-Neptunes, the signal per planet is smaller (~50–100 ppm) but the sample is larger (~300 planets), yielding comparable aggregate significance.</p>
 <h3>Possible False Positives</h3>
 <ul>
-<li><strong>Instrumental systematics</strong>: Kepler's rolling-band artifact and focus changes can mimic in-transit bumps. Mitigation: use the PDC-corrected data, and require that bumps appear at consistent in-transit phases across nearby epochs (instrumental artifacts would not respect the transit geometry).</li>
-<li><strong>Planetary atmospheric variability</strong>: For hot Jupiters, changing atmospheric albedo could modulate transit depth, but this would affect the entire transit, not produce localized bumps.</li>
-<li><strong>TTVs and transit-shape changes from orbital dynamics</strong>: These change ingress/egress shape, not in-transit residuals. Distinguishable by morphology.</li>
+<li><strong>Limb-darkening mismodeling.</strong> If stellar limb-darkening coefficients are incorrect, they produce spurious chromatic depth differences. Mitigation: use 3D MHD stellar atmosphere models rather than 1D; fit limb-darkening from the data for the brightest targets; include limb-darkening uncertainty in the error budget.</li>
+<li><strong>Stellar contamination / third light.</strong> Unresolved background stars contribute differently in each bandpass. Mitigation: Gaia DR3/DR4 provides constraints on nearby contaminants; high-resolution imaging catalogs (Robo-AO, speckle) identify close companions.</li>
+<li><strong>Starspot-induced chromatic transit depth variations.</strong> Unocculted starspots make transits appear deeper in bluer bands regardless of the planet's atmosphere. Mitigation: correlate chromatic depth differences with stellar activity indicators (S-index, photometric variability amplitude); model the starspot contamination spectrum and marginalize over plausible spot coverages.</li>
+<li><strong>Detector systematics.</strong> Bandpass-dependent instrumental effects. Mitigation: the population-level approach averages over instrument-specific biases that vary randomly from target to target.</li>
 </ul>
-<h3>Why It Could Matter</h3>
-<p>This would be the first systematic "stellar weather map" survey for Sun-like stars, directly constraining dynamo models that currently extrapolate wildly from solar data. It also has immediate practical value: the JWST transmission-spectroscopy community urgently needs empirical spot-distribution priors to correct for stellar contamination (as highlighted by NASA's SAG 21 report). A catalog of spot-coverage statistics as a function of spectral type and activity level would be directly usable as priors in atmospheric retrieval codes.</p>
+<h3>Why It Matters</h3>
+<p>JWST can characterize ~50–100 exoplanet atmospheres over its lifetime. This project provides coarse atmospheric demographic information for <strong>hundreds</strong> of planets simultaneously, answering questions like: What fraction of sub-Neptunes have high-altitude hazes? Does cloud prevalence correlate with equilibrium temperature, surface gravity, or host star metallicity? These population-level answers are inaccessible to JWST's one-at-a-time approach and directly inform atmospheric formation and evolution models. The method also identifies the most promising cloud-free targets for detailed JWST follow-up, improving the efficiency of the most oversubscribed telescope in history.</p>
     </div>
   </details>
   <footer class="exo-daily__foot">
-    <span class="exo-daily__meta"></span>
+    <span class="exo-daily__meta">Source brief: 2026-04-06</span>
     <span class="exo-daily__meta">Rotates daily &middot; 66 ideas in the pool</span>
   </footer>
 </section>
