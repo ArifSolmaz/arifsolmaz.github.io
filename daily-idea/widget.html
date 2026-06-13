@@ -3,55 +3,60 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Idea of the day &mdash; Eclipse-Depth Variability as a Probe of Surface Geology on Rocky Exoplanets</title>
+<title>Idea of the day &mdash; Detecting Cometary/Exozodiacal Dust Transits via Asymmetric Ingress-Egress Chromatic Signatures in Kepler and TESS Photometry</title>
 <link rel="stylesheet" href="widget.css"/>
 </head>
 <body>
 <section class="exo-daily" aria-label="Exoplanet idea of the day">
   <header class="exo-daily__head">
     <span class="exo-daily__eyebrow">Exoplanet idea of the day</span>
-    <time class="exo-daily__date" datetime="2026-06-12">2026-06-12</time>
+    <time class="exo-daily__date" datetime="2026-06-13">2026-06-13</time>
   </header>
-  <h2 class="exo-daily__title">Eclipse-Depth Variability as a Probe of Surface Geology on Rocky Exoplanets</h2>
+  <h2 class="exo-daily__title">Detecting Cometary/Exozodiacal Dust Transits via Asymmetric Ingress-Egress Chromatic Signatures in Kepler and TESS Photometry</h2>
   <div class="exo-daily__premise">
-    <p>JWST's "Hot Rocks Survey" is now delivering secondary-eclipse photometry for a growing sample of rocky exoplanets around M dwarfs (TRAPPIST-1 b/c, GJ 3473 b, LHS 3844 b, and others). A striking but underexplored signal has emerged: visit-to-visit variability in eclipse depth. For GJ 3473 b, the MIRI F1500W eclipse depth swings from roughly 33 to 371 ppm across visits. The community has largely treated this scatter as systematic noise or weather. But if these planets are airless (as the data increasingly suggest), there is no weather — so what is changing? One plausible answer is that we are seeing the thermal signature of heterogeneous surface geology on a synchronously rotating world whose sub-observer longitude shifts slightly due to libration or slight orbital eccentricity. Different mineral assemblages (basalt, feldspar, iron oxide, sulfur deposits) have dramatically different thermal inertias and emissivities at 15 µm, meaning the hemisphere-integrated dayside flux genuinely changes as the planet rocks back and forth.</p>
+    <p>Circumstellar dust — from cometary activity, collisional cascades, or exozodiacal clouds — should produce transient, asymmetric, and wavelength-dependent dimming events distinct from planetary transits. A few spectacular cases exist (KIC 8462852 "Tabby's Star," KIC 3542116's exocomet transits), but a systematic search for <em>low-level</em> asymmetric chromatic transit-like events across the full Kepler/TESS archive has not been done at scale. The key diagnostic is the <em>ingress-egress asymmetry</em>: a dusty tail or extended debris structure produces a sharp ingress (leading edge occults the star) and a gradual egress (diffuse tail clears slowly), or vice versa, with a wavelength-dependent depth ratio (dust scatters/absorbs more at shorter wavelengths). By searching for events with significant ingress-egress asymmetry <em>and</em> chromatic depth variation simultaneously, one can build a catalog of candidate dust transit events and constrain the incidence rate of active cometary or collisional dust production as a function of stellar type and age.</p>
   </div>
   <details class="exo-daily__more">
     <summary>Read the full proposal</summary>
     <div class="exo-daily__full">
       <h3>Scientific Premise</h3>
-<p>JWST's "Hot Rocks Survey" is now delivering secondary-eclipse photometry for a growing sample of rocky exoplanets around M dwarfs (TRAPPIST-1 b/c, GJ 3473 b, LHS 3844 b, and others). A striking but underexplored signal has emerged: visit-to-visit variability in eclipse depth. For GJ 3473 b, the MIRI F1500W eclipse depth swings from roughly 33 to 371 ppm across visits. The community has largely treated this scatter as systematic noise or weather. But if these planets are airless (as the data increasingly suggest), there is no weather — so what is changing? One plausible answer is that we are seeing the thermal signature of heterogeneous surface geology on a synchronously rotating world whose sub-observer longitude shifts slightly due to libration or slight orbital eccentricity. Different mineral assemblages (basalt, feldspar, iron oxide, sulfur deposits) have dramatically different thermal inertias and emissivities at 15 µm, meaning the hemisphere-integrated dayside flux genuinely changes as the planet rocks back and forth.</p>
+<p>Circumstellar dust — from cometary activity, collisional cascades, or exozodiacal clouds — should produce transient, asymmetric, and wavelength-dependent dimming events distinct from planetary transits. A few spectacular cases exist (KIC 8462852 "Tabby's Star," KIC 3542116's exocomet transits), but a systematic search for <em>low-level</em> asymmetric chromatic transit-like events across the full Kepler/TESS archive has not been done at scale. The key diagnostic is the <em>ingress-egress asymmetry</em>: a dusty tail or extended debris structure produces a sharp ingress (leading edge occults the star) and a gradual egress (diffuse tail clears slowly), or vice versa, with a wavelength-dependent depth ratio (dust scatters/absorbs more at shorter wavelengths). By searching for events with significant ingress-egress asymmetry <em>and</em> chromatic depth variation simultaneously, one can build a catalog of candidate dust transit events and constrain the incidence rate of active cometary or collisional dust production as a function of stellar type and age.</p>
 <h3>Target Datasets</h3>
 <ul>
-<li>All public JWST/MIRI secondary-eclipse photometry of rocky exoplanets (currently ~8–10 targets with at least two visits each), available via MAST.</li>
-<li>Complementary Spitzer/IRAC 4.5 µm archival photometry of the same or similar targets for cross-wavelength comparison.</li>
-<li>Laboratory reflectance/emissivity spectra of planetary analog minerals from the RELAB and ECOSTRESS spectral libraries.</li>
+<li><strong>Kepler short-cadence data</strong> for the highest time resolution on ingress/egress shape.</li>
+<li><strong>TESS 2-minute and 20-second cadence data</strong>, especially for bright stars where photometric precision enables chromatic analysis via comparison with ground-based multicolor follow-up or TESS's own red bandpass versus synthetic blue from Gaia epoch photometry.</li>
+<li><strong>Kepler's "red" vs. "blue" pixel-level light curves</strong>: Kepler's broad bandpass can be crudely split into redder and bluer channels using the pixel response function and the star's position on the detector, enabling low-resolution chromatic transit analysis.</li>
+<li><strong>Gaia DR3 epoch photometry</strong> (G, BP, RP) for simultaneous multicolor coverage of TESS targets.</li>
 </ul>
 <h3>Novelty</h3>
-<p>The 2026 "Uniform Reinterpretation" paper by Ih et al. reanalyzed rocky-planet eclipses but focused on systematic offsets from stellar/orbital uncertainties, not on the temporal scatter itself. No published study has yet built a forward model connecting surface mineralogy heterogeneity + forced libration to predicted eclipse-depth variability amplitudes and timescales. This project would be the first to treat visit-to-visit eclipse scatter as signal rather than noise.</p>
+<p>Exocomet transit searches have been done (e.g., Rappaport et al. 2018 for Kepler, Zieba et al. 2019 for TESS), but they primarily used morphological shape-matching to theoretical comet tail profiles. Adding the <em>chromatic</em> dimension — requiring both asymmetry and wavelength-dependent depth — as a joint discriminant is underexplored and substantially reduces the false positive rate. The Kepler pixel-level chromatic decomposition technique has been used for eclipsing binary characterization but not systematically applied to asymmetric single-event transits. Combining Gaia epoch photometry with TESS for simultaneous multicolor coverage of transient events is also a relatively untapped approach.</p>
 <h3>Concrete Workflow</h3>
 <ol>
-<li>Compile all multi-visit MIRI eclipse depths and uncertainties from published reductions and, where possible, re-extract from the Stage 2 JWST pipeline products.</li>
-<li>Compute the expected libration amplitude for each target from its measured or constrained eccentricity (using values from the NASA Exoplanet Archive and radial-velocity constraints).</li>
-<li>Build a hemispherically resolved thermal model: tile the dayside into ~100 facets, assign each facet a mineral class drawn from a parameterized spatial distribution, propagate the mineral's thermal inertia and 15 µm emissivity through a 1D heat conduction model, and integrate the emergent flux over the visible hemisphere at each libration phase.</li>
-<li>For each target, run an MCMC over the mineral mixture fractions and spatial correlation length, fitting the observed eclipse-depth distribution (mean and variance).</li>
-<li>Perform model comparison (BIC/evidence) against the null hypothesis that all scatter is Gaussian noise with no physical origin.</li>
+<li>Download Kepler short-cadence and TESS 2-minute cadence light curves for a volume-limited or magnitude-limited stellar sample (e.g., all FGK dwarfs brighter than Kp = 14 or TESS mag &lt; 12).</li>
+<li>Run a matched-filter search for single or few-repeat asymmetric dipping events. Use a bank of templates: sharp-ingress/slow-egress and slow-ingress/sharp-egress profiles with varying timescales (hours to days).</li>
+<li>For each candidate event, perform pixel-level photometry on Kepler data to extract a crude "blue" and "red" light curve. For TESS candidates, cross-match with Gaia epoch photometry to check for simultaneous BP/RP dimming.</li>
+<li>Compute the ingress-egress asymmetry parameter (ratio of ingress to egress duration) and the chromatic depth ratio (blue depth / red depth). Genuine dust transits should show asymmetry &gt; 1.5 and blue/red depth ratio &gt; 1.</li>
+<li>Vet candidates against known instrumental artifacts (momentum dumps, scattered light, cosmic rays) and astrophysical false positives (grazing eclipsing binaries, starspot crossings).</li>
+<li>For surviving candidates, fit a physical dust tail model (optical depth, grain size distribution, tail opening angle, velocity) to the light curve shape and chromatic information. Derive dust production rates.</li>
+<li>Compute occurrence rates as a function of stellar spectral type, age (from Gaia+isochrone or gyrochronology), and presence/absence of known planetary companions.</li>
 </ol>
-<h3>Expected Signal / Observable</h3>
-<p>For a planet with eccentricity ~0.01 (giving ~2° of optical libration) and a surface split between low-inertia regolith and high-inertia basalt, the model predicts eclipse-depth modulations of 30–80 ppm at 15 µm — consistent with the scatter already seen in GJ 3473 b. A positive detection would manifest as eclipse-depth variance significantly exceeding the per-visit measurement uncertainty, with the excess variance correlating with the predicted libration amplitude across the sample.</p>
+<h3>Expected Signal/Observable</h3>
+<p>Asymmetric dimming events with depths of 0.01–1% lasting hours to days, with blue/red depth ratios of 1.1–3 depending on grain size. For Kepler short-cadence bright stars, individual events down to ~0.05% depth should be detectable. Occurrence rates are poorly constrained but could plausibly be 0.1–5% of FGK dwarfs showing at least one event per year of monitoring.</p>
 <h3>Possible False Positives</h3>
 <ul>
-<li>Uncorrected JWST detector systematics (ramp effects, charge migration) that differ between visits.</li>
-<li>Stellar variability of the M-dwarf host imprinting at 15 µm (though M-dwarf flux variability at these wavelengths is expected to be very small).</li>
-<li>Residual pointing jitter placing the PSF on different detector regions with slightly different flat-field responses.</li>
-<li>Mitigation: the libration hypothesis makes a specific prediction — that the eclipse-depth modulation amplitude should scale with orbital eccentricity across the sample, while systematics would not.</li>
+<li><strong>Instrumental artifacts</strong> (pointing jitter, thermal transients) can produce asymmetric flux dips but should not be chromatic. The joint asymmetry+chromaticity requirement is the primary filter.</li>
+<li><strong>Starspot evolution</strong> during a planetary transit can create apparent asymmetry. However, spot-crossing events are periodic (at the rotation period) and not chromatic in the same sense as dust.</li>
+<li><strong>Grazing eclipsing binaries</strong> can be asymmetric if the companion has a non-spherical shape (e.g., Roche lobe overflow), but these are periodic and achromatic.</li>
+<li><strong>Background eclipsing binaries</strong> blended in the photometric aperture. Pixel-level centroid analysis (standard Kepler/TESS vetting) addresses this.</li>
 </ul>
-<h3>Why It Could Matter</h3>
-<p>If eclipse-depth variability encodes surface composition, it would be the first remote detection of geology on an exoplanet — a fundamentally new observable. It would also inform whether these worlds are primordial bare rocks, lava-resurfaced, or mantled in impact regolith, connecting directly to questions about interior evolution and volatile delivery.</p>
+<h3>Why It Matters</h3>
+<p>The prevalence of active dust production around main-sequence stars is a window into the late stages of planetary system evolution — ongoing cometary bombardment, collisional grinding of asteroid belts, and dynamical instability. Current constraints come from infrared excess surveys (which probe warm/hot dust in bulk) and a handful of individual spectacle systems. A systematic photometric census with chromatic discrimination would bridge the gap between infrared-excess statistics and individual dramatic systems, constraining how common "Late Heavy Bombardment"-like episodes are across the galaxy and whether they correlate with planetary system architecture.</p>
+<hr/>
+<p><em>Report generated autonomously on April 23, 2026. Choices made: focused on Kepler/TESS/Gaia as the primary public datasets; prioritized ideas where the observational signature is concrete and the workflow is end-to-end feasible with existing data; avoided ideas that require new observations or proprietary data.</em></p>
     </div>
   </details>
   <footer class="exo-daily__foot">
-    <span class="exo-daily__meta">Source brief: 2026-05-08</span>
+    <span class="exo-daily__meta">Source brief: 2026-04-23</span>
     <span class="exo-daily__meta">Rotates daily &middot; 66 ideas in the pool</span>
   </footer>
 </section>
