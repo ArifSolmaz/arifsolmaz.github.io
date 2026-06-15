@@ -3,50 +3,56 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Idea of the day &mdash; Systematic Search for Exoplanetary Ring Systems via Ingress–Egress Morphology Decomposition in Kepler Long-Cadence Data</title>
+<title>Idea of the day &mdash; Mapping Tidally Driven Weather — Detecting Orbital-Phase-Locked Atmospheric Variability in Eccentric Hot Jupiters Using Multi-Epoch TESS Phase Curves</title>
 <link rel="stylesheet" href="widget.css"/>
 </head>
 <body>
 <section class="exo-daily" aria-label="Exoplanet idea of the day">
   <header class="exo-daily__head">
     <span class="exo-daily__eyebrow">Exoplanet idea of the day</span>
-    <time class="exo-daily__date" datetime="2026-06-14">2026-06-14</time>
+    <time class="exo-daily__date" datetime="2026-06-15">2026-06-15</time>
   </header>
-  <h2 class="exo-daily__title">Systematic Search for Exoplanetary Ring Systems via Ingress–Egress Morphology Decomposition in Kepler Long-Cadence Data</h2>
+  <h2 class="exo-daily__title">Mapping Tidally Driven Weather — Detecting Orbital-Phase-Locked Atmospheric Variability in Eccentric Hot Jupiters Using Multi-Epoch TESS Phase Curves</h2>
   <div class="exo-daily__premise">
-    <p>Despite Saturn being one of our solar system's most visually iconic objects, <strong>no exoplanetary ring system has been confirmed around a transiting planet</strong>. Previous searches have focused on anomalous transit depth (a ringed planet mimics a larger planet) or gross light-curve shape. However, a ring system's most diagnostic signature is subtler: the <em>morphology</em> of ingress and egress should differ from a spherical planet because the ring's projected cross-section is not circularly symmetric. A tilted ring produces a characteristic asymmetry — the ingress and egress durations differ, and the curvature of the light curve during these phases departs from the standard limb-darkening model. This has been modeled theoretically but never systematically exploited across a large sample with modern Bayesian inference.</p>
+    <p>Most thermal phase curve studies target <em>circular-orbit</em> hot Jupiters, where the dayside–nightside temperature contrast is quasi-static. But <strong>eccentric hot Jupiters</strong> experience dramatically time-varying irradiation: at periastron, the planet receives a flash of intense stellar heating, then "relaxes" as it swings to apastron. General circulation models (GCMs) predict that this should drive <em>transient weather events</em> — shock fronts, episodic cloud formation/dissipation, and superrotating jet spin-up/spin-down — that repeat every orbit but may vary in amplitude from orbit to orbit due to chaotic atmospheric dynamics. This orbit-to-orbit variability in the phase curve has never been systematically measured.</p>
   </div>
   <details class="exo-daily__more">
     <summary>Read the full proposal</summary>
     <div class="exo-daily__full">
       <h3>Scientific Premise</h3>
-<p>Despite Saturn being one of our solar system's most visually iconic objects, <strong>no exoplanetary ring system has been confirmed around a transiting planet</strong>. Previous searches have focused on anomalous transit depth (a ringed planet mimics a larger planet) or gross light-curve shape. However, a ring system's most diagnostic signature is subtler: the <em>morphology</em> of ingress and egress should differ from a spherical planet because the ring's projected cross-section is not circularly symmetric. A tilted ring produces a characteristic asymmetry — the ingress and egress durations differ, and the curvature of the light curve during these phases departs from the standard limb-darkening model. This has been modeled theoretically but never systematically exploited across a large sample with modern Bayesian inference.</p>
+<p>Most thermal phase curve studies target <em>circular-orbit</em> hot Jupiters, where the dayside–nightside temperature contrast is quasi-static. But <strong>eccentric hot Jupiters</strong> experience dramatically time-varying irradiation: at periastron, the planet receives a flash of intense stellar heating, then "relaxes" as it swings to apastron. General circulation models (GCMs) predict that this should drive <em>transient weather events</em> — shock fronts, episodic cloud formation/dissipation, and superrotating jet spin-up/spin-down — that repeat every orbit but may vary in amplitude from orbit to orbit due to chaotic atmospheric dynamics. This orbit-to-orbit variability in the phase curve has never been systematically measured.</p>
 <h3>Target Datasets</h3>
 <ul>
-<li><strong>Kepler DR25</strong> long-cadence and short-cadence light curves for all confirmed and candidate giant planets (R &gt; 6 R_Earth) with well-sampled transits</li>
-<li><strong>TESS</strong> full-frame image light curves for bright giant planet hosts (for independent validation)</li>
-<li><strong>Spitzer</strong> secondary eclipse and phase curve data where available (to constrain thermal emission and break ring-vs-oblateness degeneracy)</li>
+<li><strong>TESS Extended Mission</strong> continuous viewing zone data for eccentric (e &gt; 0.1) giant planets observed over multiple sectors (providing dozens of orbital phase curves per target)</li>
+<li><strong>JWST</strong> NIRSpec/G395H or MIRI/LRS phase curve observations of eccentric systems (HAT-P-2b, HD 80606b, TOI-5800b) for spectroscopic decomposition</li>
+<li><strong>Spitzer</strong> archival 4.5 µm phase curves for eccentric systems (HAT-P-2b has 3 full orbits)</li>
+<li><strong>Kepler</strong> long-cadence data for Kepler-419b, Kepler-693b, and other eccentric giants</li>
 </ul>
 <h3>Novelty</h3>
-<p>A 2025 TESS-based search of 308 candidates found 6 statistically favored ringed models, but none was conclusive — partly because TESS's 2-minute cadence and shorter baselines limit ingress/egress sampling. Kepler's 4-year baseline and ~1-minute short-cadence mode for many targets provide far superior ingress/egress morphology constraints. The key novelty here is <strong>not just searching for rings, but building a hierarchical Bayesian framework</strong> that simultaneously fits for planetary oblateness, ring optical depth (as a function of wavelength if multi-band data exist), ring inclination, and ring inner/outer radii — while marginalizing over stellar limb darkening and instrumental systematics. This converts each non-detection into a quantitative <em>upper limit</em> on ring size/opacity, enabling population-level statements (e.g., "fewer than X% of warm Jupiters host Saturn-like ring systems").</p>
+<p>Existing phase curve analyses treat each orbit as a realization of the same signal and stack them for SNR. The novel angle here is to <strong>treat orbit-to-orbit variations as the signal itself</strong>: measure the <em>variance</em> and <em>covariance structure</em> of the phase curve amplitude, hotspot offset, and ingress/egress brightness across many orbits. This is a second-order statistic (variability of variability) that GCMs predict but observers have not yet systematically extracted. TOI-5800b, highlighted in 2025 as a tidal-heating laboratory, is an ideal anchor target. The approach is analogous to exoplanet "weather mapping" but uses temporal rather than spatial decomposition.</p>
 <h3>Concrete Workflow</h3>
 <ol>
-<li>Select all Kepler giant planets with at least 10 well-observed transits (to enable phase-folding for high-SNR ingress/egress profiles). Expected sample: ~200 systems.</li>
-<li>Implement a fast analytic transit+ring model (building on Zuluaga et al. 2015's framework) in a differentiable code (JAX/NumPyro) to enable gradient-based Bayesian inference.</li>
-<li>For each system, fit four nested models: (a) spherical planet, (b) oblate planet, (c) spherical planet + ring, (d) oblate planet + ring. Use Bayesian model comparison (evidence ratios) to rank.</li>
-<li>For the top candidates, validate against TESS data (different bandpass → different ring opacity if rings are icy/dusty) and check for secondary eclipse depth anomalies (a ring would increase geometric albedo).</li>
-<li>Compile population-level ring occurrence rate upper limits as a function of planet mass, orbital period, and stellar irradiation.</li>
+<li>Identify all eccentric (e &gt; 0.1) transiting giant planets with TESS multi-sector coverage providing &gt;15 full orbital phase curves. Cross-reference with Spitzer and Kepler archives. Expected sample: 8–15 systems.</li>
+<li>For each system, extract individual-orbit phase curves using a Gaussian process (GP) model to deconvolve stellar variability (rotation, spots) from planetary signal. Key: the planetary signal is periodic at the <em>orbital</em> period while stellar variability operates at the <em>rotation</em> period — they are generally incommensurable, enabling separation.</li>
+<li>Fit each individual-orbit phase curve with a low-order spherical harmonic brightness map (2–3 parameters: amplitude, phase offset, asymmetry). Record the posterior distributions per orbit.</li>
+<li>Compute the orbit-to-orbit scatter in these parameters. Compare against (a) the expected scatter from photon noise + systematics alone (null hypothesis: no atmospheric variability), and (b) GCM predictions for the specific system's orbital parameters.</li>
+<li>For targets with detected variability, characterize the <em>autocorrelation timescale</em> of the variability — is the atmosphere "remembering" its state from one orbit to the next (long radiative timescale) or fully resetting (short radiative timescale)? This directly constrains the atmospheric radiative time constant.</li>
 </ol>
 <h3>Expected Signal / Observable</h3>
-<p>For a Saturn-analog ring (1.5–2.5 planetary radii, optical depth ~0.5) around a Jupiter-sized planet at 0.1–1 AU, the ingress/egress asymmetry is ~50–200 ppm above the symmetric model — detectable in phase-folded Kepler short-cadence data at 2–5 sigma for bright hosts. Even non-detections constrain ring properties: the population-level statement "warm Jupiters have ring occurrence &lt;5% at 95% confidence" would be a publishable first.</p>
+<p>GCMs for eccentric hot Jupiters (e.g., Kataria et al. 2013, Lewis et al. 2014) predict orbit-to-orbit hotspot offset variations of ~5–15 degrees and peak flux variations of ~5–10% of the phase curve amplitude. In TESS bandpass for a system like HAT-P-2b (V~8.7), a single-orbit phase curve semi-amplitude is ~50 ppm; orbit-to-orbit variations of ~5 ppm should be detectable at 2–3 sigma with 20+ orbits from TESS extended mission data. The radiative timescale measurement (from autocorrelation) would be a first-of-its-kind observable.</p>
 <h3>Possible False Positives</h3>
 <ul>
-<li>Starspot crossings during ingress/egress can mimic asymmetry (mitigated by requiring consistent asymmetry across many epochs and checking for spot-induced chromaticity in multi-quarter data).</li>
-<li>Planetary oblateness produces a similar but subtly different ingress/egress signature (mitigated by fitting both oblate and ringed models simultaneously).</li>
-<li>TTVs causing slight epoch-to-epoch transit shape variations that, when phase-folded, produce spurious asymmetries (mitigated by fitting individual transit times before folding).</li>
+<li>Stellar variability at harmonics of the rotation period could mimic orbit-to-orbit changes if the orbital and rotation periods are near-commensurate (mitigated by GP detrending and checking for correlation with stellar activity indicators).</li>
+<li>Instrumental systematics that vary sector-to-sector in TESS (mitigated by restricting analysis to orbits within the same sector, then comparing across sectors).</li>
+<li>Companion-induced orbital precession changing the transit/eclipse geometry on multi-year timescales (mitigated by checking for TTVs and known companions).</li>
 </ul>
 <h3>Why It Matters</h3>
-<p>Rings are a natural outcome of tidal disruption, giant impacts, and satellite dynamics — all processes fundamental to planetary system evolution. A population-level constraint on ring occurrence would test theories of ring longevity (are rings transient or stable over Gyr?), inform models of satellite formation around giant exoplanets, and — if a detection is made — open an entirely new phenomenology for characterization with JWST transmission spectroscopy through ring material.</p>
+<p>Detecting orbit-to-orbit atmospheric variability would be the first empirical measurement of exoplanet <em>weather</em> (as opposed to <em>climate</em>). It would provide a direct, model-independent constraint on atmospheric radiative and advective timescales — quantities that are currently only inferred indirectly from single-epoch phase curve amplitudes and offsets. For eccentric planets specifically, the "flash heating" scenario offers a unique natural experiment in atmospheric response to impulsive forcing, with no solar system analog. Success here would establish a new observational methodology applicable to the growing sample of well-characterized JWST phase curve targets.</p>
+<hr/>
+<p>## Summary Table</p>
+<p>| Feature | Project 1: Galactic Chronochemistry | Project 2: Exoplanetary Rings | Project 3: Tidally Driven Weather | |---|---|---|---| | <strong>Core dataset</strong> | Kepler/TESS + APOGEE/GALAH + Gaia | Kepler DR25 short-cadence | TESS Extended Mission multi-sector | | <strong>Key method</strong> | Hierarchical occurrence rate modeling across chemodynamical populations | Bayesian ingress/egress morphology decomposition | Orbit-to-orbit phase curve variance analysis | | <strong>Novelty axis</strong> | Chemical clocks as planet formation probes | Population-level ring constraints via non-detections | Second-order atmospheric variability statistics | | <strong>Feasibility</strong> | High (all data public now) | High (all data public, new modeling needed) | Medium-High (requires careful systematics control) | | <strong>Impact if successful</strong> | Bridges exoplanet science and Galactic archaeology | First ring detection or strongest population constraints | First empirical exoplanet weather detection |</p>
+<hr/>
+<p><em>This report was generated as part of an automated exoplanet research strategy session. Ideas are intended as starting points for deeper literature review and feasibility assessment.</em></p>
     </div>
   </details>
   <footer class="exo-daily__foot">
