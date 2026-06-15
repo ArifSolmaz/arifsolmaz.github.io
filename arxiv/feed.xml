@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 12 Jun 2026 06:28:05 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 15 Jun 2026 07:11:59 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,21 +15,61 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>Connecting Polarization to Exoplanet Yield Calculations for HWO</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2606-12842v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-12842v1</guid>
-      <pubDate>Fri, 12 Jun 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Jaren N. Ashcraft et al.</dc:creator>
+      <title>Tidal locking as a negative feedback on Earth-like planetary dynamos: consequences for magnetic shielding and habitability</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2606-14508v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-14508v1</guid>
+      <pubDate>Mon, 15 Jun 2026 20:00:00 +0000</pubDate>
+      <dc:creator>J. P. Hidalgo, D. R. G Schleicher</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.IM</category>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>Hydrogen and Helium Dissolution, Outgassing, and Loss in Evolving Sub-Neptune Magma Oceans: Examining Demographic Features and Radius Evolution</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2606-14646v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-14646v1</guid>
+      <pubDate>Mon, 15 Jun 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Yao Tang et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>An early look at how gas giants shape small planet bulk compositions</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2606-12524v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-12524v1</guid>
-      <pubDate>Fri, 12 Jun 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Joseph Y. Tang, Marta L. Bryan, Eve J. Lee</dc:creator>
+      <title>COUNTESS I: A Uniformly Vetted Catalog of Known and New Transiting Exoplanets in the TESS Northern Continuous Viewing Zone</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2606-13789v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-13789v1</guid>
+      <pubDate>Mon, 15 Jun 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Andrew Hotnisky et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+        <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>A population view of transiting hot giant exoplanets: Tracing Fe and Ti chemistry with ESPRESSO and MAROON-X</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2606-14490v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-14490v1</guid>
+      <pubDate>Mon, 15 Jun 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Bibiana Prinoth et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Solar System Technosignatures</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2606-13797v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-13797v1</guid>
+      <pubDate>Mon, 15 Jun 2026 20:00:00 +0000</pubDate>
+      <dc:creator>T. Joseph W. Lazio</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+        <category>physics.pop-ph</category>
+    </item>
+    <item>
+      <title>The Edges of Planetary Systems: Falling Off the Kuiper Cliff in a Dissipating Gas Disk</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2606-14704v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-14704v1</guid>
+      <pubDate>Mon, 15 Jun 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Rixin Li, Eugene Chiang</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
     </item>
