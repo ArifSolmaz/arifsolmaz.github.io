@@ -3,60 +3,56 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Idea of the day &mdash; Mapping Tidally Driven Weather — Detecting Orbital-Phase-Locked Atmospheric Variability in Eccentric Hot Jupiters Using Multi-Epoch TESS Phase Curves</title>
+<title>Idea of the day &mdash; Mapping the Exoplanet &quot;Obliquity Desert&quot; Using Transit Duration Variations in Multi-Planet Kepler Systems</title>
 <link rel="stylesheet" href="widget.css"/>
 </head>
 <body>
 <section class="exo-daily" aria-label="Exoplanet idea of the day">
   <header class="exo-daily__head">
     <span class="exo-daily__eyebrow">Exoplanet idea of the day</span>
-    <time class="exo-daily__date" datetime="2026-06-15">2026-06-15</time>
+    <time class="exo-daily__date" datetime="2026-06-16">2026-06-16</time>
   </header>
-  <h2 class="exo-daily__title">Mapping Tidally Driven Weather — Detecting Orbital-Phase-Locked Atmospheric Variability in Eccentric Hot Jupiters Using Multi-Epoch TESS Phase Curves</h2>
+  <h2 class="exo-daily__title">Mapping the Exoplanet &quot;Obliquity Desert&quot; Using Transit Duration Variations in Multi-Planet Kepler Systems</h2>
   <div class="exo-daily__premise">
-    <p>Most thermal phase curve studies target <em>circular-orbit</em> hot Jupiters, where the dayside–nightside temperature contrast is quasi-static. But <strong>eccentric hot Jupiters</strong> experience dramatically time-varying irradiation: at periastron, the planet receives a flash of intense stellar heating, then "relaxes" as it swings to apastron. General circulation models (GCMs) predict that this should drive <em>transient weather events</em> — shock fronts, episodic cloud formation/dissipation, and superrotating jet spin-up/spin-down — that repeat every orbit but may vary in amplitude from orbit to orbit due to chaotic atmospheric dynamics. This orbit-to-orbit variability in the phase curve has never been systematically measured.</p>
+    <p>Planetary obliquity (axial tilt) affects climate, habitability, and long-term orbital stability. In multi-planet systems, mutual gravitational perturbations can drive obliquity oscillations, but these are rarely observable. However, a planet's obliquity is dynamically coupled to its orbital inclination evolution: Cassini state transitions and secular spin-orbit resonances can lock obliquity to inclination. Kepler multi-planet systems show measurable transit duration variations (TDVs) caused by orbital plane precession from mutual inclinations. By inverting TDV signals to extract the precession rate and mutual inclination amplitude, and then forward-modeling the spin-orbit coupling, one can identify which planets are likely trapped in Cassini states (with predictable obliquities) versus those in chaotic obliquity regimes. This maps out an "obliquity desert" — regions of parameter space where stable low obliquity is dynamically enforced — versus "obliquity oases" where large, potentially habitable-relevant obliquities are permitted.</p>
   </div>
   <details class="exo-daily__more">
     <summary>Read the full proposal</summary>
     <div class="exo-daily__full">
       <h3>Scientific Premise</h3>
-<p>Most thermal phase curve studies target <em>circular-orbit</em> hot Jupiters, where the dayside–nightside temperature contrast is quasi-static. But <strong>eccentric hot Jupiters</strong> experience dramatically time-varying irradiation: at periastron, the planet receives a flash of intense stellar heating, then "relaxes" as it swings to apastron. General circulation models (GCMs) predict that this should drive <em>transient weather events</em> — shock fronts, episodic cloud formation/dissipation, and superrotating jet spin-up/spin-down — that repeat every orbit but may vary in amplitude from orbit to orbit due to chaotic atmospheric dynamics. This orbit-to-orbit variability in the phase curve has never been systematically measured.</p>
+<p>Planetary obliquity (axial tilt) affects climate, habitability, and long-term orbital stability. In multi-planet systems, mutual gravitational perturbations can drive obliquity oscillations, but these are rarely observable. However, a planet's obliquity is dynamically coupled to its orbital inclination evolution: Cassini state transitions and secular spin-orbit resonances can lock obliquity to inclination. Kepler multi-planet systems show measurable transit duration variations (TDVs) caused by orbital plane precession from mutual inclinations. By inverting TDV signals to extract the precession rate and mutual inclination amplitude, and then forward-modeling the spin-orbit coupling, one can identify which planets are likely trapped in Cassini states (with predictable obliquities) versus those in chaotic obliquity regimes. This maps out an "obliquity desert" — regions of parameter space where stable low obliquity is dynamically enforced — versus "obliquity oases" where large, potentially habitable-relevant obliquities are permitted.</p>
 <h3>Target Datasets</h3>
 <ul>
-<li><strong>TESS Extended Mission</strong> continuous viewing zone data for eccentric (e &gt; 0.1) giant planets observed over multiple sectors (providing dozens of orbital phase curves per target)</li>
-<li><strong>JWST</strong> NIRSpec/G395H or MIRI/LRS phase curve observations of eccentric systems (HAT-P-2b, HD 80606b, TOI-5800b) for spectroscopic decomposition</li>
-<li><strong>Spitzer</strong> archival 4.5 µm phase curves for eccentric systems (HAT-P-2b has 3 full orbits)</li>
-<li><strong>Kepler</strong> long-cadence data for Kepler-419b, Kepler-693b, and other eccentric giants</li>
+<li><strong>Kepler DR25 light curves</strong> for all confirmed and validated multi-transiting systems (roughly 700+ systems).</li>
+<li><strong>Transit timing and duration catalogs</strong> (Holczer et al. 2016, Rowe et al. 2015, updated community catalogs).</li>
+<li><strong>Gaia DR3/DR4 stellar densities</strong> to anchor transit duration modeling.</li>
+<li><strong>Published TTV/TDV analyses</strong> for cross-validation of mutual inclination estimates.</li>
 </ul>
 <h3>Novelty</h3>
-<p>Existing phase curve analyses treat each orbit as a realization of the same signal and stack them for SNR. The novel angle here is to <strong>treat orbit-to-orbit variations as the signal itself</strong>: measure the <em>variance</em> and <em>covariance structure</em> of the phase curve amplitude, hotspot offset, and ingress/egress brightness across many orbits. This is a second-order statistic (variability of variability) that GCMs predict but observers have not yet systematically extracted. TOI-5800b, highlighted in 2025 as a tidal-heating laboratory, is an ideal anchor target. The approach is analogous to exoplanet "weather mapping" but uses temporal rather than spatial decomposition.</p>
+<p>TDVs have been used to confirm mutual inclinations in a handful of Kepler systems, and obliquity dynamics have been studied theoretically. But the connection — using <em>observed</em> TDV-derived precession rates to predict <em>planetary obliquity regimes</em> across a population — appears underexplored as a systematic survey. Most obliquity studies are purely theoretical or focus on the Solar System. This project bridges dynamics and observation in a way that produces testable predictions for JWST phase curve observations (which are sensitive to obliquity-driven seasonal thermal signatures).</p>
 <h3>Concrete Workflow</h3>
 <ol>
-<li>Identify all eccentric (e &gt; 0.1) transiting giant planets with TESS multi-sector coverage providing &gt;15 full orbital phase curves. Cross-reference with Spitzer and Kepler archives. Expected sample: 8–15 systems.</li>
-<li>For each system, extract individual-orbit phase curves using a Gaussian process (GP) model to deconvolve stellar variability (rotation, spots) from planetary signal. Key: the planetary signal is periodic at the <em>orbital</em> period while stellar variability operates at the <em>rotation</em> period — they are generally incommensurable, enabling separation.</li>
-<li>Fit each individual-orbit phase curve with a low-order spherical harmonic brightness map (2–3 parameters: amplitude, phase offset, asymmetry). Record the posterior distributions per orbit.</li>
-<li>Compute the orbit-to-orbit scatter in these parameters. Compare against (a) the expected scatter from photon noise + systematics alone (null hypothesis: no atmospheric variability), and (b) GCM predictions for the specific system's orbital parameters.</li>
-<li>For targets with detected variability, characterize the <em>autocorrelation timescale</em> of the variability — is the atmosphere "remembering" its state from one orbit to the next (long radiative timescale) or fully resetting (short radiative timescale)? This directly constrains the atmospheric radiative time constant.</li>
+<li>Measure or compile TDVs for all Kepler multi-transiting systems with sufficient SNR. Use a uniform transit-fitting pipeline (e.g., exoplanet or batman) applied to individual transits.</li>
+<li>Fit a linear or sinusoidal TDV model to each planet to extract the precession period and amplitude of the inclination oscillation.</li>
+<li>For systems with detected TDV signals, use the precession rate and planet/star parameters to compute the spin-orbit coupling parameter α (ratio of precession rate to spin-axis precession rate driven by the stellar torque).</li>
+<li>Map each planet onto the Cassini state diagram: α ≈ 1 indicates proximity to a spin-orbit resonance where obliquity can be large and chaotic; α ≫ 1 or α ≪ 1 indicates stable low or moderate obliquity.</li>
+<li>Compile a population-level map of obliquity regime versus planet radius, period, multiplicity, and mutual inclination.</li>
+<li>Identify the most promising targets where large obliquity is dynamically predicted — these are high-priority JWST phase curve targets where seasonal thermal signatures might be detectable.</li>
 </ol>
-<h3>Expected Signal / Observable</h3>
-<p>GCMs for eccentric hot Jupiters (e.g., Kataria et al. 2013, Lewis et al. 2014) predict orbit-to-orbit hotspot offset variations of ~5–15 degrees and peak flux variations of ~5–10% of the phase curve amplitude. In TESS bandpass for a system like HAT-P-2b (V~8.7), a single-orbit phase curve semi-amplitude is ~50 ppm; orbit-to-orbit variations of ~5 ppm should be detectable at 2–3 sigma with 20+ orbits from TESS extended mission data. The radiative timescale measurement (from autocorrelation) would be a first-of-its-kind observable.</p>
+<h3>Expected Signal/Observable</h3>
+<p>TDV amplitudes of 1–30 minutes over the 4-year Kepler baseline for systems with mutual inclinations of 1–5 degrees and precession periods of 10–100 years. The derived obliquity regime classification (Cassini state 1, 2, or chaotic) is the primary output.</p>
 <h3>Possible False Positives</h3>
 <ul>
-<li>Stellar variability at harmonics of the rotation period could mimic orbit-to-orbit changes if the orbital and rotation periods are near-commensurate (mitigated by GP detrending and checking for correlation with stellar activity indicators).</li>
-<li>Instrumental systematics that vary sector-to-sector in TESS (mitigated by restricting analysis to orbits within the same sector, then comparing across sectors).</li>
-<li>Companion-induced orbital precession changing the transit/eclipse geometry on multi-year timescales (mitigated by checking for TTVs and known companions).</li>
+<li><strong>Stellar activity and spot-crossing events</strong> can mimic transit duration changes. Filtering on impact parameter consistency and using even/odd transit comparisons helps.</li>
+<li><strong>TTVs from eccentricity</strong> can be confused with TDVs if the transit model is insufficiently flexible. Joint TTV+TDV fitting mitigates this.</li>
+<li><strong>Insufficient baseline</strong> for long precession periods leads to unconstrained slopes rather than periodic signals. These systems yield only upper/lower limits on mutual inclination.</li>
 </ul>
 <h3>Why It Matters</h3>
-<p>Detecting orbit-to-orbit atmospheric variability would be the first empirical measurement of exoplanet <em>weather</em> (as opposed to <em>climate</em>). It would provide a direct, model-independent constraint on atmospheric radiative and advective timescales — quantities that are currently only inferred indirectly from single-epoch phase curve amplitudes and offsets. For eccentric planets specifically, the "flash heating" scenario offers a unique natural experiment in atmospheric response to impulsive forcing, with no solar system analog. Success here would establish a new observational methodology applicable to the growing sample of well-characterized JWST phase curve targets.</p>
-<hr/>
-<p>## Summary Table</p>
-<p>| Feature | Project 1: Galactic Chronochemistry | Project 2: Exoplanetary Rings | Project 3: Tidally Driven Weather | |---|---|---|---| | <strong>Core dataset</strong> | Kepler/TESS + APOGEE/GALAH + Gaia | Kepler DR25 short-cadence | TESS Extended Mission multi-sector | | <strong>Key method</strong> | Hierarchical occurrence rate modeling across chemodynamical populations | Bayesian ingress/egress morphology decomposition | Orbit-to-orbit phase curve variance analysis | | <strong>Novelty axis</strong> | Chemical clocks as planet formation probes | Population-level ring constraints via non-detections | Second-order atmospheric variability statistics | | <strong>Feasibility</strong> | High (all data public now) | High (all data public, new modeling needed) | Medium-High (requires careful systematics control) | | <strong>Impact if successful</strong> | Bridges exoplanet science and Galactic archaeology | First ring detection or strongest population constraints | First empirical exoplanet weather detection |</p>
-<hr/>
-<p><em>This report was generated as part of an automated exoplanet research strategy session. Ideas are intended as starting points for deeper literature review and feasibility assessment.</em></p>
+<p>Obliquity is one of the least constrained parameters for exoplanets, yet it profoundly affects climate stability and surface habitability. A population-level obliquity regime map — even a probabilistic one — would be a first, directly informing target prioritization for atmospheric characterization missions and adding a dynamical dimension to habitability assessments that is currently missing.</p>
     </div>
   </details>
   <footer class="exo-daily__foot">
-    <span class="exo-daily__meta">Source brief: 2026-04-07</span>
+    <span class="exo-daily__meta">Source brief: 2026-04-23</span>
     <span class="exo-daily__meta">Rotates daily &middot; 66 ideas in the pool</span>
   </footer>
 </section>
