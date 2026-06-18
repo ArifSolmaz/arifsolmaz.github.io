@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 17 Jun 2026 07:03:05 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 18 Jun 2026 06:46:24 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,79 +15,83 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>Transit Timing Variations in TESS: A Catalog from the First Five Years</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2606-17218v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-17218v1</guid>
-      <pubDate>Wed, 17 Jun 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Emma Nabbie et al.</dc:creator>
+      <title>ThousandWorlds: A benchmark for climate emulation of potentially habitable exoplanets</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2606-18338v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-18338v1</guid>
+      <pubDate>Thu, 18 Jun 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Edward T. Stevenson et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
+        <category>cs.LG</category>
         <category>astro-ph.EP</category>
         <category>astro-ph.IM</category>
     </item>
     <item>
-      <title>Transit timing and starspot-induced transit depth variations in the 17 Myr old HIP 67522 system</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2606-18045v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-18045v1</guid>
-      <pubDate>Wed, 17 Jun 2026 20:00:00 +0000</pubDate>
-      <dc:creator>H. Chakraborty et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Effect of tidal gravity and planetary rotation on the retrieved atmospheric abundances of close-in exoplanets</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2606-18100v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-18100v1</guid>
-      <pubDate>Wed, 17 Jun 2026 20:00:00 +0000</pubDate>
-      <dc:creator>K. Arnav, Gopal Hazra</dc:creator>
+      <title>JWST-TST High Contrast: First Direct Spectroscopy of GJ 504 b reveals Clouds and Possible Metal Enrichment</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2606-19228v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-19228v1</guid>
+      <pubDate>Thu, 18 Jun 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Aneesh Baburaj et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.SR</category>
     </item>
     <item>
-      <title>Unraveling the Mystery of the Peculiar and Young Hot Jupiter CoRoT-2b II: Phase Resolved Emission Spectroscopy with VLT/CRIRES+ and Gemini-S/IGRINS</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2606-17304v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-17304v1</guid>
-      <pubDate>Wed, 17 Jun 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Aurora Y. Kesseli et al.</dc:creator>
+      <title>Building a Roadmap for Hubble Science into the 2030s: Revealing Atmospheric Structure and Evolution in Substellar Worlds Using HST</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2606-18299v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-18299v1</guid>
+      <pubDate>Thu, 18 Jun 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Allison M. McCarthy et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>High-Eccentricity Tidal Migration Driven by Secular Chaos in Wide-Binary Systems</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2606-17344v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-17344v1</guid>
-      <pubDate>Wed, 17 Jun 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Yurou Liu et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Clustering SPH Debris into N-body Fragments: A Collisional Code for Planet Formation</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2606-17348v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-17348v1</guid>
-      <pubDate>Wed, 17 Jun 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Samuele Crespi, Mohamad Ali-Dib, Ian Dobbs-Dixon</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
         <category>astro-ph.IM</category>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.SR</category>
     </item>
     <item>
-      <title>Ice Giants Revisited: Uranus and Neptune as Magma Ocean Worlds</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2606-18219v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-18219v1</guid>
-      <pubDate>Wed, 17 Jun 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Edward D. Young et al.</dc:creator>
+      <title>Super-earths and mini-neptunes follow different orbital period-eccentricity relations</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2606-18410v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-18410v1</guid>
+      <pubDate>Thu, 18 Jun 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Ke-Ting Shin et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>The Effect of Adiabatic Index on Radius Evolution and the Mass Loss</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2606-17143v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-17143v1</guid>
-      <pubDate>Wed, 17 Jun 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Arick Collander, Eve J. Lee</dc:creator>
+      <title>Revisiting the Exo-Mercury Candidate GJ 367 b with ESPRESSO and a Self-Consistent Tidal Distortion Model</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2606-18355v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-18355v1</guid>
+      <pubDate>Thu, 18 Jun 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Rena A. Lee et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Three dimensional temporal evolution of photochemical haze in exoplanet atmospheres I. Description and test application to HD 189733b</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2606-19056v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-19056v1</guid>
+      <pubDate>Thu, 18 Jun 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Elspeth K. H. Lee et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>The Maximum Density of a Collisionally-Produced Planet is A Function of its Mass and Orbital Period</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2606-18336v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-18336v1</guid>
+      <pubDate>Thu, 18 Jun 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Madison Brady, Darryl Seligman</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Modeling Doppler Shifts in Radial-Velocity Data with Deep Learning toward Earth-mass Exoplanet Detection</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2606-18464v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-18464v1</guid>
+      <pubDate>Thu, 18 Jun 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Isidro Gómez-Vargas et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.IM</category>
+        <category>astro-ph.EP</category>
+        <category>cs.LG</category>
     </item>
   </channel>
 </rss>
