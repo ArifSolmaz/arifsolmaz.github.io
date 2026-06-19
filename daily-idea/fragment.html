@@ -1,52 +1,51 @@
 <section class="exo-daily" aria-label="Exoplanet idea of the day">
   <header class="exo-daily__head">
     <span class="exo-daily__eyebrow">Exoplanet idea of the day</span>
-    <time class="exo-daily__date" datetime="2026-06-18">2026-06-18</time>
+    <time class="exo-daily__date" datetime="2026-06-19">2026-06-19</time>
   </header>
-  <h2 class="exo-daily__title">Lava World Atmosphere Demographics — Mining the Ultra-Short-Period Population for Magma-Ocean Volatile Fingerprints</h2>
+  <h2 class="exo-daily__title">Mining Planet-Induced Stellar Flares to Map Exoplanetary Magnetic Fields Across the Hot Jupiter Population</h2>
   <div class="exo-daily__premise">
-    <p>JWST recently detected a thick atmosphere on TOI-561b, a small, scorching-hot rocky planet orbiting one of the oldest stars in the Milky Way — a planet that, under prevailing models, should have been stripped bare long ago. This discovery, alongside the confirmed atmosphere on 55 Cancri e, suggests that magma-ocean outgassing can sustain secondary atmospheres even under extreme irradiation. Yet no systematic demographic study has asked: across the full population of known ultra-short-period (USP) planets, which ones should harbor magma-ocean atmospheres, and what does the presence or absence of such atmospheres tell us about interior composition and mantle volatile budgets?</p>
-<p>The idea is to build a predictive framework — grounded in bulk density, irradiation environment, and host-star age/activity — and test it against JWST secondary eclipse and phase curve observations as they accumulate. The key scientific leverage is that magma-ocean atmospheres are not primordial. Their composition (SiO, Na, K, SiO₂, FeO vapors) is set by the rock vapor equilibrium of the mantle, making them direct probes of interior mineralogy in a way that no other technique currently achieves.</p>
+    <p>Star-planet magnetic interactions (SPI) have been theorized for two decades: a close-in planet orbiting inside its host star's sub-Alfvénic radius can channel energy along magnetic field lines connecting the planet to the stellar surface, triggering localized chromospheric hot spots and, in some cases, flares that are phase-locked to the planet's orbit. Recent work has confirmed this phenomenon in the young system HIP 67522 (Nature, 2025), where flares are statistically concentrated at specific orbital phases of the inner planet. Earlier, Cauley et al. (2019) inferred magnetic field strengths of 20–120 G for four hot Jupiters via Ca II K emission modulated at the planetary orbital period.</p>
+<p>Despite these breakthroughs, no one has performed a <em>systematic, blind survey</em> of the full TESS short-cadence archive to identify phase-correlated flare excesses across the entire hot Jupiter population. The TESS dataset now spans 6+ years and covers most known hot Jupiter hosts at 2-minute or 20-second cadence. A population-level search could (a) dramatically expand the sample of SPI detections, (b) measure or constrain planetary magnetic field strengths as a function of planet mass, age, and orbital separation, and (c) test whether SPI scales with the sub-Alfvénic condition as theory predicts.</p>
   </div>
   <details class="exo-daily__more">
     <summary>Read the full proposal</summary>
     <div class="exo-daily__full">
       <h3>Scientific Premise</h3>
-<p>JWST recently detected a thick atmosphere on TOI-561b, a small, scorching-hot rocky planet orbiting one of the oldest stars in the Milky Way — a planet that, under prevailing models, should have been stripped bare long ago. This discovery, alongside the confirmed atmosphere on 55 Cancri e, suggests that magma-ocean outgassing can sustain secondary atmospheres even under extreme irradiation. Yet no systematic demographic study has asked: across the full population of known ultra-short-period (USP) planets, which ones should harbor magma-ocean atmospheres, and what does the presence or absence of such atmospheres tell us about interior composition and mantle volatile budgets?</p>
-<p>The idea is to build a predictive framework — grounded in bulk density, irradiation environment, and host-star age/activity — and test it against JWST secondary eclipse and phase curve observations as they accumulate. The key scientific leverage is that magma-ocean atmospheres are not primordial. Their composition (SiO, Na, K, SiO₂, FeO vapors) is set by the rock vapor equilibrium of the mantle, making them direct probes of interior mineralogy in a way that no other technique currently achieves.</p>
+<p>Star-planet magnetic interactions (SPI) have been theorized for two decades: a close-in planet orbiting inside its host star's sub-Alfvénic radius can channel energy along magnetic field lines connecting the planet to the stellar surface, triggering localized chromospheric hot spots and, in some cases, flares that are phase-locked to the planet's orbit. Recent work has confirmed this phenomenon in the young system HIP 67522 (Nature, 2025), where flares are statistically concentrated at specific orbital phases of the inner planet. Earlier, Cauley et al. (2019) inferred magnetic field strengths of 20–120 G for four hot Jupiters via Ca II K emission modulated at the planetary orbital period.</p>
+<p>Despite these breakthroughs, no one has performed a <em>systematic, blind survey</em> of the full TESS short-cadence archive to identify phase-correlated flare excesses across the entire hot Jupiter population. The TESS dataset now spans 6+ years and covers most known hot Jupiter hosts at 2-minute or 20-second cadence. A population-level search could (a) dramatically expand the sample of SPI detections, (b) measure or constrain planetary magnetic field strengths as a function of planet mass, age, and orbital separation, and (c) test whether SPI scales with the sub-Alfvénic condition as theory predicts.</p>
 <h3>Target Datasets</h3>
 <ul>
-<li><strong>NASA Exoplanet Archive</strong> for the full USP planet catalog (P &lt; 1 day): masses, radii, densities, host-star properties.</li>
-<li><strong>JWST Cycle 1–4 archival spectra</strong> (NIRSpec, MIRI) for secondary eclipses and thermal emission of USP rocky planets (55 Cnc e, TOI-561b, GJ 367b, K2-141b, LHS 3844b, and others observed as part of GO programs).</li>
-<li><strong>TESS phase curves</strong> of USP planets — even non-detections constrain dayside brightness temperatures and therefore surface/atmospheric thermal budgets.</li>
-<li><strong>Spitzer 4.5 μm archival eclipses</strong> for supplementary thermal constraints.</li>
+<li><strong>TESS 2-minute and 20-second cadence light curves</strong> (MAST/SPOC) for all confirmed hot Jupiter hosts (~500 systems with a &lt; 0.1 AU).</li>
+<li><strong>TESS Full-Frame Images</strong> (30 min / 10 min / 200 s cadence depending on sector) for fainter hosts not observed at short cadence.</li>
+<li><strong>Ephemerides</strong> from the NASA Exoplanet Archive (orbital period, epoch, eccentricity).</li>
+<li><strong>Stellar activity indicators</strong>: TESS light curve variability (rotation period, spot modulation amplitude), plus archival Ca II H&amp;K and Hα indices from spectroscopic surveys (LAMOST, GALAH DR4, California Legacy Survey) where available.</li>
 </ul>
 <h3>Novelty</h3>
-<p>Individual lava-world atmosphere detections are being published one at a time. What is missing is a population-level analysis that asks: given interior structure models and magma-ocean thermochemistry, can we predict which USP planets should retain rock-vapor atmospheres and which should not? The detection of an atmosphere on TOI-561b (an ancient, metal-poor star) immediately challenges the expectation that old, heavily irradiated planets lose atmospheres. A systematic census would turn individual surprises into a testable demographic trend linking mantle composition, stellar environment, and atmospheric retention.</p>
+<p>The HIP 67522 detection was a single-system study of an unusually young star. Cauley et al. (2019) used spectroscopic monitoring of four hand-picked systems. This project would be distinct because it: (1) is a <em>blind, population-level</em> flare-phase analysis of hundreds of hot Jupiter systems simultaneously; (2) uses photometric flare detection on TESS data (which is far more abundant than spectroscopic time series); (3) builds a hierarchical model that treats the SPI flare rate enhancement as a function of physical parameters (planet mass, semi-major axis, stellar B-field proxy, sub-Alfvénic radius), enabling the first empirical scaling relation for star-planet magnetic coupling.</p>
 <h3>Concrete Workflow</h3>
 <ol>
-<li>Compile the complete USP planet sample (~40–50 planets with measured masses and radii) from the NASA Exoplanet Archive.</li>
-<li>For each planet, compute the expected magma-ocean vapor pressure and atmospheric scale height using published rock-vapor-equilibrium codes (e.g., MAGMA, VapoRock), parameterized by plausible mantle compositions (Earth-like BSE, Mg-rich, Fe-rich).</li>
-<li>Model atmospheric escape rates under each planet's XUV environment using host-star activity proxies (rotation period, X-ray luminosity from eROSITA or archival XMM/Chandra).</li>
-<li>Predict a binary outcome (atmosphere-retaining vs. stripped) for each target and rank by observational accessibility (emission signal-to-noise in MIRI/NIRSpec).</li>
-<li>Cross-match predictions against existing JWST and Spitzer secondary eclipse detections and non-detections.</li>
-<li>Perform a Bayesian hierarchical analysis: what mantle composition distribution across the USP population best explains the observed detection/non-detection pattern?</li>
+<li>Compile a target list of all confirmed transiting hot Jupiters with TESS short-cadence data (expected ~300–400 systems with adequate coverage).</li>
+<li>Apply an automated flare detection pipeline (e.g., AltaiPony or stella, both open-source and trained on TESS data) to every light curve. Record flare start times, durations, and energies.</li>
+<li>Phase-fold flare occurrence times to the planetary orbital period for each system. For each system, compute the Rayleigh statistic (Z²) to test whether flare times are uniformly distributed in orbital phase or clustered.</li>
+<li>At the population level, stack the phase-folded flare distributions across all systems (weighted by the number of flares per system). Test for a global excess at the expected SPI phase (near the sub-planetary longitude or shifted by the Parker spiral angle, depending on the Alfvén travel time).</li>
+<li>Bin the sample by planet mass, orbital period, and stellar activity level. Fit a hierarchical Bayesian model: the SPI flare rate enhancement Δf is parameterized as Δf ∝ (Bp × Rp²) / (a² × v_sw), where Bp is the planetary magnetic field, Rp is planet radius, a is separation, and v_sw is stellar wind speed (proxied by stellar activity). This lets you solve for Bp (or its distribution) as the key latent variable.</li>
+<li>Validate by checking that the signal disappears for a control sample of planets at a &gt; 0.3 AU (where sub-Alfvénic interaction should be negligible).</li>
 </ol>
 <h3>Expected Signal / Observable</h3>
-<p>Secondary eclipse depths of 50–200 ppm in MIRI bands for planets with rock-vapor atmospheres (SiO, Na features), versus bare-rock blackbody emission for stripped surfaces. The key discriminant is the ratio of optical (TESS) to infrared (MIRI 15 μm) eclipse depths: a planet with a greenhouse atmosphere will show a steeper spectral slope than a bare rock.</p>
+<p>In HIP 67522, the planet-correlated flare rate was roughly 2–3× the baseline rate at specific orbital phases. For the broader hot Jupiter population, a more modest enhancement (~20–50% in phase-binned flare rate) would be expected, detectable at 3–5σ when stacking across ~100+ active host stars. Systems with young, active hosts and massive, close-in planets should show the strongest signal.</p>
 <h3>Possible False Positives</h3>
 <ul>
-<li>Residual stellar variability mimicking shallow eclipse depth variations.</li>
-<li>Instrumental systematics in MIRI at the ~50 ppm level for faint targets.</li>
-<li>Degeneracy between thin rock-vapor atmospheres and high-albedo bare surfaces (both reduce dayside brightness temperature relative to a zero-albedo blackbody).</li>
-<li>Uncertainty in XUV flux histories, which propagates into escape-rate predictions.</li>
+<li><strong>Stellar rotation aliasing</strong>: If the stellar rotation period is close to the planetary orbital period (tidal synchronization), activity modulation mimics orbital-phase-locked flaring. Mitigation: measure the stellar rotation period from the light curve; exclude systems where P_rot/P_orb is within 5% of an integer ratio; test whether the flare-phase signal persists after removing the rotational modulation.</li>
+<li><strong>Small-number statistics</strong>: Many systems will have few flares. Mitigation: the hierarchical model properly handles low-count systems by shrinking toward the population mean; the detection is made at the population level, not per-system.</li>
+<li><strong>Flare detection false positives</strong>: Instrumental artifacts or cosmic rays flagged as flares. Mitigation: use injection-recovery tests to characterize the flare pipeline's false positive rate; require flares to span at least 3 consecutive cadences.</li>
 </ul>
-<h3>Why This Matters</h3>
-<p>This would be the first population-level test of magma-ocean atmospheric theory. It directly constrains mantle volatile inventories — a fundamental unknown in rocky planet geophysics — using only photometric data. If the detection pattern correlates with host-star metallicity or age, it opens a window into how rocky planet interiors evolve on Gyr timescales, which is central to understanding habitability.</p>
+<h3>Why It Could Matter</h3>
+<p>Exoplanetary magnetic fields are among the most important yet poorly constrained properties in exoplanet science. Magnetic fields govern atmospheric escape rates (and thus long-term atmospheric evolution), control the interaction between planetary magnetospheres and stellar winds, and may be a prerequisite for surface habitability. A population-level measurement of hot Jupiter magnetic field strengths as a function of mass and age would be the first empirical constraint on the planetary magnetic dynamo scaling law beyond our solar system — directly relevant to understanding whether terrestrial planets in habitable zones retain protective magnetospheres.</p>
     </div>
   </details>
   <footer class="exo-daily__foot">
-    <span class="exo-daily__meta">Source brief: 2026-04-01</span>
+    <span class="exo-daily__meta">Source brief: 2026-05-11</span>
     <span class="exo-daily__meta">Rotates daily &middot; 66 ideas in the pool</span>
   </footer>
 </section>
