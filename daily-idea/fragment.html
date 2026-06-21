@@ -1,50 +1,71 @@
 <section class="exo-daily" aria-label="Exoplanet idea of the day">
   <header class="exo-daily__head">
     <span class="exo-daily__eyebrow">Exoplanet idea of the day</span>
-    <time class="exo-daily__date" datetime="2026-06-20">2026-06-20</time>
+    <time class="exo-daily__date" datetime="2026-06-21">2026-06-21</time>
   </header>
-  <h2 class="exo-daily__title">The Nightside Rotation Signal: Detecting Atmospheric Super-Rotation and Jet Structure from TESS Phase Curve Residuals</h2>
+  <h2 class="exo-daily__title">A Systematic Census of Anomalous Transit Duration Ratios in Multi-Planet Systems as Probes of Mutual Inclination and Undetected Companions</h2>
   <div class="exo-daily__premise">
-    <p>Full-orbit phase curves from Spitzer and TESS have revealed that many hot Jupiters have their brightest hemisphere shifted eastward from the substellar point — the canonical signature of equatorial super-rotation. But the <em>amplitude and phase offset of higher-order harmonics</em> in the phase curve (beyond the fundamental sinusoid) encode information about the latitudinal and vertical structure of atmospheric jets. General circulation models (GCMs) predict that the second harmonic (C₂) should be sensitive to the presence of mid-latitude jets, polar vortices, and day-night asymmetries in cloud coverage. Yet most observational phase-curve analyses stop at the first harmonic (C₁) because the signal-to-noise in individual systems is marginal for higher orders. This project would stack phase curves across the TESS hot Jupiter population to extract the <em>population-averaged</em> second-harmonic signal and its dependence on equilibrium temperature and surface gravity.</p>
+    <p>In a multi-transiting system, the ratio of transit durations between two planets is a strong diagnostic of the system's geometry. For coplanar, circular orbits, the duration ratio depends only on the period ratio and the stellar density (both well-measured). Deviations from this expected ratio directly encode information about mutual orbital inclinations, eccentricities, and the gravitational influence of undetected non-transiting companions.</p>
+<p>This "duration ratio" diagnostic was introduced by Fabrycky et al. (2014) and used in early Kepler statistical analyses to show that multi-planet systems are generally quite flat (mutual inclinations ~1-2 degrees). But it has not been revisited with the dramatically improved stellar parameters from Gaia DR3, the extended TESS baseline, or modern N-body dynamical modeling. More importantly, individual systems with anomalous duration ratios have never been systematically followed up as targets of interest for hidden companions. The idea is to perform a population-level screen for "duration ratio outliers" and then use those outliers as a target list for detailed dynamical modeling to predict the masses and orbits of unseen perturbing bodies.</p>
   </div>
   <details class="exo-daily__more">
     <summary>Read the full proposal</summary>
     <div class="exo-daily__full">
       <h3>Scientific Premise</h3>
-<p>Full-orbit phase curves from Spitzer and TESS have revealed that many hot Jupiters have their brightest hemisphere shifted eastward from the substellar point — the canonical signature of equatorial super-rotation. But the <em>amplitude and phase offset of higher-order harmonics</em> in the phase curve (beyond the fundamental sinusoid) encode information about the latitudinal and vertical structure of atmospheric jets. General circulation models (GCMs) predict that the second harmonic (C₂) should be sensitive to the presence of mid-latitude jets, polar vortices, and day-night asymmetries in cloud coverage. Yet most observational phase-curve analyses stop at the first harmonic (C₁) because the signal-to-noise in individual systems is marginal for higher orders. This project would stack phase curves across the TESS hot Jupiter population to extract the <em>population-averaged</em> second-harmonic signal and its dependence on equilibrium temperature and surface gravity.</p>
+<p>In a multi-transiting system, the ratio of transit durations between two planets is a strong diagnostic of the system's geometry. For coplanar, circular orbits, the duration ratio depends only on the period ratio and the stellar density (both well-measured). Deviations from this expected ratio directly encode information about mutual orbital inclinations, eccentricities, and the gravitational influence of undetected non-transiting companions.</p>
+<p>This "duration ratio" diagnostic was introduced by Fabrycky et al. (2014) and used in early Kepler statistical analyses to show that multi-planet systems are generally quite flat (mutual inclinations ~1-2 degrees). But it has not been revisited with the dramatically improved stellar parameters from Gaia DR3, the extended TESS baseline, or modern N-body dynamical modeling. More importantly, individual systems with anomalous duration ratios have never been systematically followed up as targets of interest for hidden companions. The idea is to perform a population-level screen for "duration ratio outliers" and then use those outliers as a target list for detailed dynamical modeling to predict the masses and orbits of unseen perturbing bodies.</p>
 <h3>Target Datasets</h3>
 <ul>
-<li>TESS 2-minute and 20-second cadence light curves for all confirmed transiting hot Jupiters with T_eq &gt; 1500 K and orbital periods &lt; 3 days (estimated ~40–60 systems with sufficient TESS coverage)</li>
-<li>Spitzer 3.6 and 4.5 μm full-orbit phase curves (archival; ~30 systems from the "Ultimate Spitzer Phase Curve Survey")</li>
-<li>Published GCM outputs for comparison (e.g., from the SPARC/MITgcm grid)</li>
+<li><strong>Kepler DR25 multi-planet systems</strong>: ~700 systems with 2+ transiting planets, with individually measured transit durations.</li>
+<li><strong>TESS multi-planet systems</strong>: The growing catalog of TESS multi-planet systems (now ~150+), with independent duration measurements.</li>
+<li><strong>Gaia DR3 stellar parameters</strong>: Precise stellar radii and densities, which are essential to compute the expected duration ratios.</li>
+<li><strong>Radial velocity archives</strong> (California Legacy Survey, HARPS, ESPRESSO public data): For cross-checking predicted companions against existing RV data.</li>
 </ul>
 <h3>Novelty</h3>
-<p>Population-level phase-curve stacking to extract higher-order harmonics is, to my knowledge, potentially underexplored. Individual high-SNR systems (WASP-18 b, WASP-121 b) have had their phase curves decomposed into harmonics, but no one has combined the full TESS sample to beat down photon noise and measure the <em>mean</em> C₂ amplitude and phase as a function of planetary parameters. This is analogous to what galaxy surveys do with stacking — trading individual detail for statistical power. The result would be a direct, model-independent constraint on the prevalence and structure of non-axisymmetric atmospheric circulation patterns.</p>
+<p>The original Fabrycky et al. (2014) analysis used Kepler Q1-Q8 data with pre-Gaia stellar parameters (often uncertain by 30-50% in stellar radius). Gaia DR3 has reduced radius uncertainties to ~2-5% for most Kepler hosts, which propagates directly into tighter predicted duration ratios and therefore greater sensitivity to anomalies. No one has re-done this analysis with Gaia-era stellar parameters. Additionally, the original work focused on population statistics (the overall inclination distribution), not on identifying individual outlier systems as dynamically interesting targets. The key innovation is using the duration-ratio diagnostic as a "discovery tool" for hidden planets, rather than merely a population statistic.</p>
 <h3>Concrete Workflow</h3>
 <ol>
-<li>Select all hot Jupiters with T_eq &gt; 1500 K, measured masses, and ≥ 2 TESS sectors of continuous coverage.</li>
-<li>Detrend each light curve for stellar variability and instrument systematics using a Gaussian process with a Matérn-3/2 kernel.</li>
-<li>Phase-fold each system on its known ephemeris; fit a two-harmonic Fourier model: F(φ) = F₀ + C₁ cos(φ − δ₁) + C₂ cos(2φ − δ₂), where φ is orbital phase.</li>
-<li>Normalize C₁ and C₂ by the secondary eclipse depth (dayside flux) to obtain fractional harmonic amplitudes.</li>
-<li>Bin systems by T_eq (1500–2000 K, 2000–2500 K, 2500+ K) and by log(g). Compute the weighted-mean C₂/C₁ ratio and δ₂ offset in each bin.</li>
-<li>Compare the population-averaged C₂/C₁ and δ₂ to predictions from a grid of GCM simulations spanning the same parameter space.</li>
+<li>Compile transit durations (T14) for all planet pairs in Kepler and TESS multi-planet systems from the NASA Exoplanet Archive.</li>
+<li>For each pair, compute the expected duration ratio assuming coplanar circular orbits, using Gaia DR3 stellar densities.</li>
+<li>Compute the observed/expected duration ratio and its uncertainty for every pair.</li>
+<li>Identify outliers: systems where the duration ratio deviates by &gt;3-sigma from the coplanar-circular prediction.</li>
+<li>For each outlier, run a grid of N-body simulations exploring: (a) mutual inclination between the known planets, (b) eccentricity of either planet, and (c) the presence of an additional non-transiting planet with a range of masses and periods.</li>
+<li>Determine which scenario(s) can reproduce the observed duration ratio anomaly while remaining dynamically stable over Gyr timescales (using SPOCK or MEGNO stability maps).</li>
+<li>For each outlier with a compelling "hidden companion" solution, predict the companion's RV semi-amplitude and check against archival RV data. Flag systems where the predicted companion is detectable with current instruments but hasn't been looked for.</li>
+<li>Publish a target list of "dynamically interesting" multi-planet systems ranked by the predicted mass and detectability of their hidden companions.</li>
 </ol>
-<h3>Expected Signal / Observable</h3>
-<p>GCMs predict C₂/C₁ ratios of ~0.05–0.20 for hot Jupiters, with the second harmonic phase offset δ₂ shifting from ~0° (symmetric day-night contrast) to ~45° (jet-driven asymmetry) as T_eq increases and clouds dissipate. In individual TESS systems, C₂ is typically detected at only 1–2σ; stacking ~20 systems per bin should push this to 4–6σ.</p>
+<h3>Expected Signal/Observable</h3>
+<p>For a system where a non-transiting planet inclines the known planets by ~5 degrees relative to each other, the duration ratio anomaly is typically 5-15% (Fabrycky et al. 2014). With Gaia-era stellar parameters, the expected duration ratio is now known to ~3-5% precision for most Kepler systems, so 5-15% anomalies would stand out at 2-5 sigma. Based on the known Kepler mutual-inclination distribution, one expects roughly 10-30 systems with significant anomalies attributable to undetected companions, out of ~700 multi-planet systems.</p>
 <h3>Possible False Positives</h3>
 <ul>
-<li>Ellipsoidal variations from tidal distortion produce a C₂ signal at fixed phase. Mitigation: model and subtract the ellipsoidal + Doppler beaming contribution using the known planet mass and stellar density.</li>
-<li>Residual stellar variability at the second harmonic of the orbital period. Mitigation: verify that out-of-transit variability does not show power at 2/P_orb; exclude systems with significant stellar rotation signals near this frequency.</li>
-<li>Inhomogeneous detrending across systems could introduce a spurious stacked signal. Mitigation: use a uniform pipeline and perform a null test by stacking phase curves at a randomized phase offset.</li>
+<li><strong>Residual stellar parameter errors</strong>: Even Gaia DR3 radii have systematics for evolved or spotted stars. Mitigation: use only dwarf stars with well-characterized spectroscopic parameters (logg &gt; 4.0, Teff uncertainties &lt; 100 K).</li>
+<li><strong>Impact parameter degeneracies</strong>: Transit duration depends on impact parameter, which can be poorly constrained for small planets with grazing transits. Mitigation: restrict to planets with well-measured ingress/egress durations (SNR &gt; 10 per transit) so that impact parameter is independently constrained.</li>
+<li><strong>Eccentricity mimicking inclination</strong>: An eccentric orbit changes transit duration and can mimic an inclination anomaly. This is not really a "false positive" but rather an alternative explanation that is itself scientifically interesting (eccentric orbits in compact multis also suggest dynamical perturbation). The N-body modeling in step 5 jointly fits both possibilities.</li>
+<li><strong>Systematics in the transit catalog</strong>: Some durations in the DR25 catalog are measured with automated pipelines that may have biases for shallow or V-shaped transits. Mitigation: re-fit transits independently for all outlier candidates using the raw Kepler pixel data.</li>
 </ul>
-<h3>Why It Matters</h3>
-<p>Atmospheric circulation is the engine that redistributes energy on tidally locked worlds, governing their climate, chemistry, and observational appearance. The second harmonic of the phase curve is a direct diagnostic of jet structure that GCMs make specific predictions about but that has never been tested at the population level. A detection (or meaningful upper limit) would constrain the physics of atmospheric drag, magnetic braking, and cloud radiative feedback in a regime with no Solar System analog — information that feeds directly into interpreting JWST transmission and emission spectra.</p>
+<h3>Why It Could Matter</h3>
+<p>Finding hidden planets via dynamical inference is one of the oldest and most celebrated methods in astronomy (Neptune was predicted this way). Applying it systematically to the Kepler multi-planet population with modern stellar parameters could yield a catalog of predicted companions that are immediately testable with radial velocities or JWST transit searches. It also directly probes the three-dimensional architecture of planetary systems, which is a key observable for planet formation models (e.g., did systems form in a flat disk, or were they dynamically excited by giant planet migration?). This is a "low-hanging fruit" project in the sense that all the data exist and the methodology is straightforward, yet the specific combination of Gaia-era parameters + outlier identification + dynamical follow-up has not been executed.</p>
 <hr/>
-<p><em>Generated on March 10, 2026. Sources include the NASA Exoplanet Archive, TESS/Kepler/Spitzer archival data holdings, and recent literature.</em></p>
+<p>## Summary Table</p>
+<p>| Project | Key Data | Primary Observable | Detection Threshold | Estimated Targets | |---|---|---|---|---| | Starspot Transit Tomography | Kepler LC/SC | In-transit residual bumps (100-500 ppm) | SNR &gt; 3 per bump | ~200-400 systems | | Ring Precession Periodograms | Kepler + TESS depths | Periodic depth variation (500-1500 ppm) | FAP &lt; 1% in periodogram | ~10-13 plausible detections | | Duration Ratio Outlier Census | Kepler/TESS multis + Gaia DR3 | Duration ratio anomaly (5-15%) | &gt;3-sigma deviation | ~10-30 outliers from ~700 systems |</p>
+<hr/>
+<p>## Key References and Resources</p>
+<ul>
+<li>Sanchis-Ojeda et al. (2011) - Starspot occultations in HAT-P-11b transits</li>
+<li>Morris et al. (2017) - Starspot characterization from Kepler-17 transits</li>
+<li>Ohta et al. (2009) - Theoretical framework for ringed planet transits</li>
+<li>Akinsanmi et al. (2020) - Ring precession detectability estimates</li>
+<li>Umetani et al. (2025) - TESS ring search via single-epoch transit shape (<a href="https://arxiv.org/html/2505.05948">arXiv:2505.05948</a>)</li>
+<li>Fabrycky et al. (2014) - Transit duration ratios in Kepler multis</li>
+<li>NASA Exoplanet Archive - <a href="https://exoplanetarchive.ipac.caltech.edu">https://exoplanetarchive.ipac.caltech.edu</a></li>
+<li>Rackham et al. (2023) - SAG 21 stellar contamination report (<a href="https://academic.oup.com/rasti/article/2/1/148/7081330">Oxford Academic</a>)</li>
+<li>Lam et al. (2025) - JWST oblateness detection for Kepler-167e (<a href="https://iopscience.iop.org/article/10.3847/1538-3881/ae3a81">IOPscience</a>)</li>
+<li>de Wit &amp; Seager (2025) - Exploring exoplanet dynamics with JWST (<a href="https://www.pnas.org/doi/10.1073/pnas.2416189122">PNAS</a>)</li>
+</ul>
     </div>
   </details>
   <footer class="exo-daily__foot">
-    <span class="exo-daily__meta">Source brief: 2026-03-10</span>
+    <span class="exo-daily__meta"></span>
     <span class="exo-daily__meta">Rotates daily &middot; 66 ideas in the pool</span>
   </footer>
 </section>
