@@ -1,6 +1,6 @@
 {
   "announcement_date": "2026-06-19",
-  "updated_at": "2026-06-19T07:00:23.789334+00:00",
+  "updated_at": "2026-06-22T07:14:47.825703+00:00",
   "category": "astro-ph.EP",
   "paper_count": 9,
   "papers": [
@@ -26,6 +26,7 @@
       "abs_link": "https://arxiv.org/abs/2606.20249v1",
       "is_exoplanet_focused": true,
       "tweetability_score": 60,
+      "figure_url": "https://arxiv.org/html/2606.20249v1/2606.20249v1/x1.png",
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -33,8 +34,7 @@
         "claim": "",
         "evidence": "",
         "question": ""
-      },
-      "figure_url": "https://arxiv.org/html/2606.20249v1/2606.20249v1/x1.png"
+      }
     },
     {
       "id": "2606.19487v1",
@@ -60,6 +60,7 @@
       "abs_link": "https://arxiv.org/abs/2606.19487v1",
       "is_exoplanet_focused": true,
       "tweetability_score": 32,
+      "figure_url": "https://arxiv.org/html/2606.19487v1/2606.19487v1/x1.png",
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -67,8 +68,7 @@
         "claim": "",
         "evidence": "",
         "question": ""
-      },
-      "figure_url": "https://arxiv.org/html/2606.19487v1/2606.19487v1/x1.png"
+      }
     },
     {
       "id": "2606.19456v1",
@@ -88,6 +88,7 @@
       "abs_link": "https://arxiv.org/abs/2606.19456v1",
       "is_exoplanet_focused": true,
       "tweetability_score": 28,
+      "figure_url": "https://arxiv.org/html/2606.19456v1/2606.19456v1/Quadrants.png",
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -95,8 +96,7 @@
         "claim": "",
         "evidence": "",
         "question": ""
-      },
-      "figure_url": "https://arxiv.org/html/2606.19456v1/2606.19456v1/Quadrants.png"
+      }
     },
     {
       "id": "2606.20464v1",
@@ -116,6 +116,7 @@
       "abs_link": "https://arxiv.org/abs/2606.20464v1",
       "is_exoplanet_focused": true,
       "tweetability_score": 25,
+      "figure_url": "https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?w=800&q=80",
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -123,8 +124,7 @@
         "claim": "",
         "evidence": "",
         "question": ""
-      },
-      "figure_url": "https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?w=800&q=80"
+      }
     },
     {
       "id": "2606.20398v1",
@@ -142,6 +142,7 @@
       "abs_link": "https://arxiv.org/abs/2606.20398v1",
       "is_exoplanet_focused": true,
       "tweetability_score": 25,
+      "figure_url": "https://arxiv.org/html/2606.20398v1/2606.20398v1/figure1.png",
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -149,8 +150,7 @@
         "claim": "",
         "evidence": "",
         "question": ""
-      },
-      "figure_url": "https://arxiv.org/html/2606.20398v1/2606.20398v1/figure1.png"
+      }
     },
     {
       "id": "2606.20224v1",
@@ -204,6 +204,7 @@
       "abs_link": "https://arxiv.org/abs/2606.20224v1",
       "is_exoplanet_focused": true,
       "tweetability_score": 19,
+      "figure_url": "https://arxiv.org/html/2606.20224v1/2606.20224v1/toi2147_lc_small.png",
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -211,8 +212,7 @@
         "claim": "",
         "evidence": "",
         "question": ""
-      },
-      "figure_url": "https://arxiv.org/html/2606.20224v1/2606.20224v1/toi2147_lc_small.png"
+      }
     },
     {
       "id": "2606.19671v1",
@@ -242,6 +242,7 @@
       "abs_link": "https://arxiv.org/abs/2606.19671v1",
       "is_exoplanet_focused": true,
       "tweetability_score": 14,
+      "figure_url": "https://arxiv.org/html/2606.19671v1/2606.19671v1/x1.png",
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -249,8 +250,7 @@
         "claim": "",
         "evidence": "",
         "question": ""
-      },
-      "figure_url": "https://arxiv.org/html/2606.19671v1/2606.19671v1/x1.png"
+      }
     },
     {
       "id": "2606.19685v1",
@@ -281,6 +281,7 @@
       "abs_link": "https://arxiv.org/abs/2606.19685v1",
       "is_exoplanet_focused": true,
       "tweetability_score": 11,
+      "figure_url": "https://arxiv.org/html/2606.19685v1/2606.19685v1/x1.png",
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -288,8 +289,7 @@
         "claim": "",
         "evidence": "",
         "question": ""
-      },
-      "figure_url": "https://arxiv.org/html/2606.19685v1/2606.19685v1/x1.png"
+      }
     },
     {
       "id": "2606.19575v1",
@@ -310,6 +310,7 @@
       "abs_link": "https://arxiv.org/abs/2606.19575v1",
       "is_exoplanet_focused": true,
       "tweetability_score": 4,
+      "figure_url": "https://arxiv.org/html/2606.19575v1/2606.19575v1/x1.png",
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -317,8 +318,7 @@
         "claim": "",
         "evidence": "",
         "question": ""
-      },
-      "figure_url": "https://arxiv.org/html/2606.19575v1/2606.19575v1/x1.png"
+      }
     }
   ]
 }
