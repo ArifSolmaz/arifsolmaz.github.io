@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 25 Jun 2026 06:00:34 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 26 Jun 2026 06:04:55 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,55 +15,134 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>Glossy Silicate Clouds on the Scorched Dayside of LTT9779b</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2606-26075v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-26075v1</guid>
-      <pubDate>Thu, 25 Jun 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Suman Saha et al.</dc:creator>
+      <title>Nautilus: Fast Time-Resolved Spectroscopy of GKM Stellar Flares and Their Implications for Planetary Habitability</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2606-26462v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-26462v1</guid>
+      <pubDate>Fri, 26 Jun 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Chia-Lung Lin et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Unveiling the Trans-Neptunian Region with the SKA</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2606-25686v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-25686v1</guid>
-      <pubDate>Thu, 25 Jun 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Pablo Santos-Sanz et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
-    </item>
-    <item>
-      <title>Resonant Super-Earths Dancing With EKL Oscillations: TTV Phase Excitation and Resonance Disruption by EKL Interactions between a Cold Jupiter and Stellar Companion</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2606-25413v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-25413v1</guid>
-      <pubDate>Thu, 25 Jun 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Pin-Gao Gu, Gongjie Li</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.GA</category>
-    </item>
-    <item>
-      <title>Collaborating with Artists in the Search for Life</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2606-24943v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-24943v1</guid>
-      <pubDate>Thu, 25 Jun 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Jack Madden et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.IM</category>
-        <category>astro-ph.EP</category>
-        <category>physics.soc-ph</category>
-    </item>
-    <item>
-      <title>A Potential Signature of HD 7977&#x27;s Passage Among Observed Long-Period Comet Orbits</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2606-25069v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-25069v1</guid>
-      <pubDate>Thu, 25 Jun 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Nathan A. Kaib, Sean N. Raymond</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.GA</category>
         <category>astro-ph.SR</category>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+    </item>
+    <item>
+      <title>Cross-correlation transmission spectroscopy of ultra-hot Jupiters WASP-189b, HAT-P-57b, KELT-17b, and KELT-21b with GIANO-B</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2606-27221v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-27221v1</guid>
+      <pubDate>Fri, 26 Jun 2026 20:00:00 +0000</pubDate>
+      <dc:creator>P. Meni-Gallardo et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Two inner dust clumps in PDS 70. A third protoplanet traced by trojan material or a substructured inner disk?</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2606-26381v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-26381v1</guid>
+      <pubDate>Fri, 26 Jun 2026 20:00:00 +0000</pubDate>
+      <dc:creator>O. Balsalobre-Ruza et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Unveiling Complex Chemistry in Planet-forming Disks with the SKAO</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2606-27289v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-27289v1</guid>
+      <pubDate>Fri, 26 Jun 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Linda Podio et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.SR</category>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Using VLTI/GRAVITY+ to determine the identity of a third planet candidate in the PDS 70 system</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2606-26249v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-26249v1</guid>
+      <pubDate>Fri, 26 Jun 2026 20:00:00 +0000</pubDate>
+      <dc:creator>David Trevascus et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Predictions of Transiting Exoplanet Confirmations from Rubin LSST Surveys</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2606-26358v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-26358v1</guid>
+      <pubDate>Fri, 26 Jun 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Suber Corley et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+    </item>
+    <item>
+      <title>Nautilus Space Observatory: The Evolution of Planets and their Atmospheres</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2606-26214v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-26214v1</guid>
+      <pubDate>Fri, 26 Jun 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Ilaria Pascucci et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.IM</category>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Improving exoplanet mass characterisation with Bayesian model selection using the Learned Harmonic Mean Estimator</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2606-27252v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-27252v1</guid>
+      <pubDate>Fri, 26 Jun 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Ross S. Dobson et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+    </item>
+    <item>
+      <title>A nonrelativistic radiative transfer module for Idefix</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2606-26268v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-26268v1</guid>
+      <pubDate>Fri, 26 Jun 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Nicolas Scepi, Geoffroy Lesur</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.IM</category>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.GA</category>
+        <category>astro-ph.HE</category>
+        <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>Architectures of Planetary Systems III: Excitation of Eccentricities and Inclinations</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2606-26343v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-26343v1</guid>
+      <pubDate>Fri, 26 Jun 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Alex R. Howe, Juliette C. Becker, Fred C. Adams</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>The ESO SupJup Survey XI. Atmospheric properties of six isolated M- and L-type dwarfs with CRIRES+</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2606-27107v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-27107v1</guid>
+      <pubDate>Fri, 26 Jun 2026 20:00:00 +0000</pubDate>
+      <dc:creator>C. R. Malcolm et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>Investigating the System Configuration of Kepler-451 through Orbital Period Variations: Dynamical and Magnetic Interpretations</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2606-26817v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-26817v1</guid>
+      <pubDate>Fri, 26 Jun 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Huseyin Er et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.SR</category>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Astrochemical Study of Early Embedded Disks</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2606-27278v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-27278v1</guid>
+      <pubDate>Fri, 26 Jun 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Eleonora Bianchi</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.SR</category>
+        <category>astro-ph.EP</category>
     </item>
   </channel>
 </rss>
