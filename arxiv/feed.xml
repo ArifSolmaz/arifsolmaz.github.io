@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 29 Jun 2026 06:39:10 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 30 Jun 2026 06:05:28 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,34 +15,95 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>Chemical Divergence and Water Depletion: Gas Properties of Evolved Upper Scorpius Disks Revealed by JWST/MIRI</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2606-27476v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-27476v1</guid>
-      <pubDate>Mon, 29 Jun 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Eshan Raul et al.</dc:creator>
+      <title>A Scalable Path to Astrometric Exomoon Discoveries with the Nautilus Space Observatory</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2606-28523v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-28523v1</guid>
+      <pubDate>Tue, 30 Jun 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Kevin Wagner et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>KMT-2025-BLG-2093: Free-Floating Planet Candidate Near the Shore of the Einstein Desert</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2606-27725v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-27725v1</guid>
-      <pubDate>Mon, 29 Jun 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Yoon-Hyun Ryu et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.IM</category>
         <category>astro-ph.EP</category>
         <category>astro-ph.SR</category>
     </item>
     <item>
-      <title>An Adjoint Projection Formulation for Enforcing the divergence-free Constraint in Smoothed Particle Magnetohydrodynamics</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2606-28197v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-28197v1</guid>
-      <pubDate>Mon, 29 Jun 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Yusuke Tsukamoto</dc:creator>
+      <title>Asymmetric nightside CO2 features, inefficient heat transport, and precise evolutionary constraints: Spectroscopic phase curves reveal the past and present of a white dwarf-brown dwarf binary</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2606-30112v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-30112v1</guid>
+      <pubDate>Tue, 30 Jun 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Daphne Broski-Laing et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.SR</category>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Center-to-limb variations of solar active regions: Observations of spots, faculae, and network in the 6173 Å continuum</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2606-28887v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-28887v1</guid>
+      <pubDate>Tue, 30 Jun 2026 20:00:00 +0000</pubDate>
+      <dc:creator>A. G. M. Pietrow et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.SR</category>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>CARMApy: An Open-Source Python Framework for Simulating Microphysical Clouds in Planetary Atmospheres</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2606-30438v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-30438v1</guid>
+      <pubDate>Tue, 30 Jun 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Wolf Cukier et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.IM</category>
+    </item>
+    <item>
+      <title>Testing the prevalence of hydrogen-silicate miscibility in young sub-Neptunes</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2606-30644v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-30644v1</guid>
+      <pubDate>Tue, 30 Jun 2026 20:00:00 +0000</pubDate>
+      <dc:creator>James G. Rogers, Hilke E. Schlichting</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>The GAPS programme at TNG LXXV. Validating and confirming Gaia substellar astrometric candidates with HARPS-N</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2606-29001v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-29001v1</guid>
+      <pubDate>Tue, 30 Jun 2026 20:00:00 +0000</pubDate>
+      <dc:creator>D. Barbato et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+        <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>ASTEP confirmation of a pair of long-period Jupiter-sized planets with extremely low densities transiting TOI-791</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2606-30016v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-30016v1</guid>
+      <pubDate>Tue, 30 Jun 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Georgina Dransfield et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>TOI-6884b: A low-mass brown dwarf transiting a slightly evolved star</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2606-29666v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-29666v1</guid>
+      <pubDate>Tue, 30 Jun 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Akanksha Khandelwal et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>Improving the Precision of Line-by-Line Radial Velocities: A Data-Driven Iterative Algorithm for Spectral Line Selection</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2606-29552v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2606-29552v1</guid>
+      <pubDate>Tue, 30 Jun 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Kanishk Pandey et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+        <category>astro-ph.SR</category>
     </item>
   </channel>
 </rss>
