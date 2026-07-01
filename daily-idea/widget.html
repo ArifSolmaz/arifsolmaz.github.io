@@ -3,61 +3,56 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Idea of the day &mdash; Mapping Exoplanet Period–Radius Deserts Across Galactic Stellar Populations Using Kepler + Gaia Chemodynamics</title>
+<title>Idea of the day &mdash; Stroboscopic Exomoon Fingerprints in Archival Kepler Multi-Transit Systems</title>
 <link rel="stylesheet" href="widget.css"/>
 </head>
 <body>
 <section class="exo-daily" aria-label="Exoplanet idea of the day">
   <header class="exo-daily__head">
     <span class="exo-daily__eyebrow">Exoplanet idea of the day</span>
-    <time class="exo-daily__date" datetime="2026-06-30">2026-06-30</time>
+    <time class="exo-daily__date" datetime="2026-07-01">2026-07-01</time>
   </header>
-  <h2 class="exo-daily__title">Mapping Exoplanet Period–Radius Deserts Across Galactic Stellar Populations Using Kepler + Gaia Chemodynamics</h2>
+  <h2 class="exo-daily__title">Stroboscopic Exomoon Fingerprints in Archival Kepler Multi-Transit Systems</h2>
   <div class="exo-daily__premise">
-    <p>The well-known features in the exoplanet period–radius diagram — the hot Neptune desert, the radius valley, the sub-Jovian savanna — are shaped by formation, migration, and atmospheric evolution processes. However, nearly all demographic studies treat the host star population as monolithic, or at best split by spectral type. With Gaia DR3 providing precise kinematics, metallicities, and ages for nearly all Kepler host stars, it is now possible to ask: <strong>do the boundaries of the hot Neptune desert and radius valley shift systematically between distinct Galactic stellar populations</strong> (thin disk, thick disk, high-α vs. low-α sequences)? These populations differ in age, metallicity, and α-element enrichment, each of which independently affects planet formation (disk mass, solid inventory, migration timescales) and atmospheric evolution (XUV irradiation history, which correlates with stellar age).</p>
+    <p>When a planet hosts a moon, the planet orbits the planet–moon barycenter, imprinting a characteristic pattern onto successive transit times (TTVs) and transit durations (TDVs). For a single-moon system, the TTV–TDV diagram traces a predictable ellipse whose shape and orientation encode the moon's mass, orbital period, and inclination. This "stroboscopic" pattern is analytically deterministic after just three consecutive transits — yet it has barely been exploited as a systematic detection tool across the full Kepler long-cadence catalog.</p>
+<p>Most TTV-based exomoon searches have focused on a handful of spectacular candidates (e.g., Kepler-1625b, Kepler-1708b) and relied on photodynamical forward-modeling, which is computationally expensive and biases searches toward large moons. A complementary, lighter-weight approach would be to construct TTV–TDV phase portraits for every multi-transit Kepler planet and search for the distinctive elliptical topology predicted by the analytic theory, flagging candidates for deeper photodynamical follow-up.</p>
   </div>
   <details class="exo-daily__more">
     <summary>Read the full proposal</summary>
     <div class="exo-daily__full">
       <h3>Scientific Premise</h3>
-<p>The well-known features in the exoplanet period–radius diagram — the hot Neptune desert, the radius valley, the sub-Jovian savanna — are shaped by formation, migration, and atmospheric evolution processes. However, nearly all demographic studies treat the host star population as monolithic, or at best split by spectral type. With Gaia DR3 providing precise kinematics, metallicities, and ages for nearly all Kepler host stars, it is now possible to ask: <strong>do the boundaries of the hot Neptune desert and radius valley shift systematically between distinct Galactic stellar populations</strong> (thin disk, thick disk, high-α vs. low-α sequences)? These populations differ in age, metallicity, and α-element enrichment, each of which independently affects planet formation (disk mass, solid inventory, migration timescales) and atmospheric evolution (XUV irradiation history, which correlates with stellar age).</p>
+<p>When a planet hosts a moon, the planet orbits the planet–moon barycenter, imprinting a characteristic pattern onto successive transit times (TTVs) and transit durations (TDVs). For a single-moon system, the TTV–TDV diagram traces a predictable ellipse whose shape and orientation encode the moon's mass, orbital period, and inclination. This "stroboscopic" pattern is analytically deterministic after just three consecutive transits — yet it has barely been exploited as a systematic detection tool across the full Kepler long-cadence catalog.</p>
+<p>Most TTV-based exomoon searches have focused on a handful of spectacular candidates (e.g., Kepler-1625b, Kepler-1708b) and relied on photodynamical forward-modeling, which is computationally expensive and biases searches toward large moons. A complementary, lighter-weight approach would be to construct TTV–TDV phase portraits for every multi-transit Kepler planet and search for the distinctive elliptical topology predicted by the analytic theory, flagging candidates for deeper photodynamical follow-up.</p>
 <h3>Target Datasets</h3>
 <ul>
-<li><strong>Kepler DR25 planet candidate catalog</strong> and confirmed planet catalog (~4,000 candidates with well-characterized completeness).</li>
-<li><strong>Gaia DR3</strong> astrometry (parallaxes, proper motions) and spectroscopy (radial velocities, [M/H], [α/Fe]) for Kepler target stars.</li>
-<li><strong>LAMOST DR9 / APOGEE DR17</strong> for higher-precision chemical abundances where Gaia's spectroscopic pipeline has limitations.</li>
-<li><strong>Kepler stellar properties catalog</strong> (Berger et al. 2020) updated with Gaia-based radii for homogeneous planet radius calculation.</li>
-<li><strong>Kepler completeness maps</strong> (e.g., from the DR25 completeness products or Burke et al. 2015) for occurrence rate calculations.</li>
+<li><strong>Kepler DR25</strong> long-cadence light curves (publicly available via MAST).</li>
+<li><strong>Kepler TTV catalog</strong> from Holczer et al. (2016) and Rowe et al. updates.</li>
+<li>Supplementary <strong>TESS</strong> transits for overlapping targets (to extend the time baseline by ~8 years).</li>
 </ul>
 <h3>Novelty</h3>
-<p>While the dependence of planet occurrence on metallicity is well-studied (the giant planet–metallicity correlation), and some work has explored occurrence vs. age (using gyrochronology or isochrone ages), the <strong>simultaneous use of full chemodynamic population membership</strong> (thin disk vs. thick disk, [α/Fe] sequences) as an independent variable for sculpting the <em>topology</em> of the period–radius diagram is underexplored. This goes beyond asking "do old stars have fewer planets?" to asking "does the hot Neptune desert have a different boundary for thick-disk (old, α-enhanced) stars vs. thin-disk (younger, solar-α) stars?" — which probes whether the desert is primarily sculpted by formation conditions (correlated with birth environment/metallicity) or post-formation evolution (correlated with age/XUV history). The Gaia+spectroscopic survey combination makes this possible for the first time at scale.</p>
+<p>Existing exomoon searches are overwhelmingly individual-target, photodynamical-model-driven efforts. This project inverts the approach: a population-level, model-light geometric screen applied uniformly to thousands of planets. The stroboscopic ellipse criterion was described theoretically (Heller et al. 2016) but has not been deployed as a bulk survey tool.</p>
 <h3>Concrete Workflow</h3>
 <ol>
-<li><strong>Stellar Population Classification:</strong> Cross-match Kepler targets with Gaia DR3 + LAMOST/APOGEE. Classify stars into chemodynamic populations using [α/Fe] vs. [Fe/H] (the bimodal α-sequence), supplemented by kinematic criteria (Galactic velocity dispersions). Assign population membership probabilities.</li>
-<li><strong>Homogeneous Planet Parameters:</strong> Recompute planet radii using Gaia-based stellar radii. Apply uniform detection efficiency corrections using the Kepler completeness maps.</li>
-<li><strong>Population-Resolved Occurrence Rates:</strong> Compute planet occurrence rates in the period–radius plane separately for each stellar population, using inverse-detection-efficiency weighting. Use ~15 × 15 bins in log-period vs. log-radius space.</li>
-<li><strong>Desert/Valley Boundary Fitting:</strong> For each population, fit the boundaries of the hot Neptune desert (upper and lower edges in the period–radius plane) and the radius valley (the gap between super-Earths and sub-Neptunes) using a parametric model (e.g., power-law boundaries) or a non-parametric kernel density estimate. Compare boundary locations across populations.</li>
-<li><strong>Statistical Significance:</strong> Use bootstrap resampling and hierarchical Bayesian modeling to assess whether observed boundary shifts exceed what is expected from sample size differences alone. Test against null models where population membership is randomized.</li>
+<li>Extract or compile per-transit midtimes and durations for all Kepler planets with ≥6 transits.</li>
+<li>For each planet, construct the TTV vs. TDV scatter and fit a 2D ellipse model vs. a null (random scatter) model using Bayesian Information Criterion.</li>
+<li>Rank candidates by ellipse significance; cross-check against known TTV planet–planet interaction signals (using N-body posteriors from Hadden &amp; Lithwick catalogs) to remove false positives.</li>
+<li>For top candidates, perform injection-recovery tests on synthetic light curves with injected moons to calibrate detection sensitivity.</li>
+<li>Submit the strongest candidates for photodynamical modeling or JWST white-light transit follow-up.</li>
 </ol>
 <h3>Expected Signal / Observable</h3>
-<p>If the hot Neptune desert is primarily shaped by XUV-driven photoevaporation (age-dependent), thick-disk planets (older by ~4–8 Gyr on average) should show a <strong>wider desert</strong> extending to larger planetary radii, because more atmospheric mass has been stripped. Conversely, if the desert is shaped by formation/migration (metallicity-dependent), the desert boundaries should shift with [Fe/H] but not independently with age at fixed metallicity. The radius valley position is predicted to scale as R_valley ∝ F^α where F is the incident flux; for older (lower-luminosity?) stars the valley may appear at a different radius. Expected shifts: ~0.1–0.3 R⊕ in the valley position and ~10–30% changes in the desert boundary period, based on photoevaporation model predictions.</p>
+<p>A statistically significant elliptical pattern in the TTV–TDV plane, with the ellipse semi-axes yielding the moon-to-planet mass ratio and orbital period ratio. For a Ganymede-mass moon around a Neptune-sized planet, expected TTV amplitudes are ~1–5 minutes, within reach of Kepler's timing precision for high-SNR transits.</p>
 <h3>Possible False Positives</h3>
 <ul>
-<li><strong>Detection bias correlation with stellar population:</strong> Thick-disk stars are on average more distant and fainter in the Kepler field, leading to lower detection completeness for small planets. Mitigation: explicitly model and correct for detection completeness as a function of stellar magnitude and planet size; restrict analysis to magnitude-limited subsamples where completeness is comparable.</li>
-<li><strong>Small sample size for thick disk:</strong> Only ~10–15% of Kepler targets are thick-disk stars, yielding ~300–500 planet candidates. Mitigation: use hierarchical models that borrow strength across populations; focus on the most robust features (desert vs. non-desert) rather than fine structure.</li>
-<li><strong>Age–metallicity degeneracy:</strong> Thick-disk stars are both older <em>and</em> more α-enhanced, making it hard to separate age from chemistry. Mitigation: include [Fe/H]-matched subsamples across populations, and use gyrochronological or asteroseismic ages for the subset with such measurements to partially break the degeneracy.</li>
+<li>Planet–planet gravitational perturbations can produce correlated TTV–TDV signals, but these typically evolve on much longer (super-orbital) timescales and do not trace closed ellipses in phase space.</li>
+<li>Stellar activity (spot-crossing events) can shift apparent midtimes; mitigated by using only white-light midtimes derived from full-transit fits rather than ingress/egress timing.</li>
+<li>Instrumental systematics in Kepler long-cadence data can introduce correlated noise; the injection-recovery step calibrates this.</li>
 </ul>
-<h3>Why This Matters</h3>
-<p>This project connects exoplanet demographics to Galactic archaeology — asking whether the planetary systems formed in the Milky Way's early thick disk differ architecturally from those formed more recently in the thin disk. A positive detection of population-dependent desert/valley boundaries would (a) discriminate between photoevaporation and core-powered mass loss as the dominant atmospheric sculpting mechanism (they predict different age dependencies), (b) provide a new "chemical clock" approach to understanding planet formation timescales, and (c) open the door to using planet demographics as a tracer of Galactic chemical evolution, complementing traditional stellar archaeology.</p>
-<hr/>
-<p>## Summary Comparison</p>
-<p>| Feature | Project 1: Flare–Orbit Coupling | Project 2: Tidal Asteroseismology | Project 3: Galactic Population Demography | |---|---|---|---| | <strong>Primary Data</strong> | Kepler + TESS photometry | Kepler asteroseismic data | Kepler planets + Gaia DR3 + spectroscopic surveys | | <strong>Key Observable</strong> | Flare phase non-uniformity | Power spectrum peak at 2/P_orb | Desert/valley boundary shifts | | <strong>Physical Probe</strong> | Exoplanetary magnetic fields | Stellar tidal dissipation Q★ | Formation vs. evolution sculpting | | <strong>Statistical Approach</strong> | Hierarchical Bayesian phase analysis | Coherent frequency stacking | Population-resolved occurrence rates | | <strong>Risk Level</strong> | Medium (signal may be subtle) | High (amplitudes may be sub-ppm) | Medium-low (large well-characterized sample) | | <strong>Payoff if Successful</strong> | First population constraint on exo-magnetism | First direct tidal response measurement | Link exoplanet architecture to Galactic history |</p>
-<hr/>
-<p><em>Notes: All datasets referenced are publicly available. Workflow descriptions assume standard Python tools (lightkurve, astropy, exoplanet, PyMC) and HPC resources for the Kepler/TESS light curve processing. Each project is estimated at 6–12 months of focused effort for a graduate student or postdoc.</em></p>
+<h3>Why It Could Matter</h3>
+<p>No exomoon has been confirmed to date. A bulk geometric survey could either (a) surface a population of credible candidates that escaped individual searches, or (b) place the first meaningful upper limits on the occurrence rate of large moons across a broad parameter space — either outcome is publishable and high-impact.</p>
     </div>
   </details>
   <footer class="exo-daily__foot">
-    <span class="exo-daily__meta">Source brief: 2026-03-31</span>
+    <span class="exo-daily__meta">Source brief: 2026-03-08</span>
     <span class="exo-daily__meta">Rotates daily &middot; 66 ideas in the pool</span>
   </footer>
 </section>
