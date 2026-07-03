@@ -3,55 +3,60 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Idea of the day &mdash; Eclipse-Depth Variability as a Probe of Surface Geology on Rocky Exoplanets</title>
+<title>Idea of the day &mdash; Tidal Decay Chronometry — Using Hot Jupiter Orbital Period Derivatives as Independent Stellar Age Clocks</title>
 <link rel="stylesheet" href="widget.css"/>
 </head>
 <body>
 <section class="exo-daily" aria-label="Exoplanet idea of the day">
   <header class="exo-daily__head">
     <span class="exo-daily__eyebrow">Exoplanet idea of the day</span>
-    <time class="exo-daily__date" datetime="2026-07-02">2026-07-02</time>
+    <time class="exo-daily__date" datetime="2026-07-03">2026-07-03</time>
   </header>
-  <h2 class="exo-daily__title">Eclipse-Depth Variability as a Probe of Surface Geology on Rocky Exoplanets</h2>
+  <h2 class="exo-daily__title">Tidal Decay Chronometry — Using Hot Jupiter Orbital Period Derivatives as Independent Stellar Age Clocks</h2>
   <div class="exo-daily__premise">
-    <p>JWST's "Hot Rocks Survey" is now delivering secondary-eclipse photometry for a growing sample of rocky exoplanets around M dwarfs (TRAPPIST-1 b/c, GJ 3473 b, LHS 3844 b, and others). A striking but underexplored signal has emerged: visit-to-visit variability in eclipse depth. For GJ 3473 b, the MIRI F1500W eclipse depth swings from roughly 33 to 371 ppm across visits. The community has largely treated this scatter as systematic noise or weather. But if these planets are airless (as the data increasingly suggest), there is no weather — so what is changing? One plausible answer is that we are seeing the thermal signature of heterogeneous surface geology on a synchronously rotating world whose sub-observer longitude shifts slightly due to libration or slight orbital eccentricity. Different mineral assemblages (basalt, feldspar, iron oxide, sulfur deposits) have dramatically different thermal inertias and emissivities at 15 µm, meaning the hemisphere-integrated dayside flux genuinely changes as the planet rocks back and forth.</p>
+    <p>Hot Jupiters on very tight orbits (P &lt; 2 days) are expected to undergo measurable tidal orbital decay, where energy dissipation inside the host star causes the planet to spiral inward. The rate of this inspiral is governed by the stellar tidal quality factor Q'★, which itself depends on the star's internal structure — and therefore its evolutionary state and age. The key insight is that if you can measure the period derivative ∂P/∂t for a sample of ultra-short-period hot Jupiters, you can invert the tidal decay rate to obtain an independent, dynamical age estimate for the host star. This would create a wholly new stellar age-dating method, complementary to gyrochronology, isochrone fitting, and asteroseismology.</p>
+<p>WASP-12b's confirmed orbital decay (period decreasing at ~29 ms/yr) demonstrated this is measurable. But no one has systematically attempted to build a <strong>calibrated age ladder</strong> from tidal decay rates across a population.</p>
   </div>
   <details class="exo-daily__more">
     <summary>Read the full proposal</summary>
     <div class="exo-daily__full">
       <h3>Scientific Premise</h3>
-<p>JWST's "Hot Rocks Survey" is now delivering secondary-eclipse photometry for a growing sample of rocky exoplanets around M dwarfs (TRAPPIST-1 b/c, GJ 3473 b, LHS 3844 b, and others). A striking but underexplored signal has emerged: visit-to-visit variability in eclipse depth. For GJ 3473 b, the MIRI F1500W eclipse depth swings from roughly 33 to 371 ppm across visits. The community has largely treated this scatter as systematic noise or weather. But if these planets are airless (as the data increasingly suggest), there is no weather — so what is changing? One plausible answer is that we are seeing the thermal signature of heterogeneous surface geology on a synchronously rotating world whose sub-observer longitude shifts slightly due to libration or slight orbital eccentricity. Different mineral assemblages (basalt, feldspar, iron oxide, sulfur deposits) have dramatically different thermal inertias and emissivities at 15 µm, meaning the hemisphere-integrated dayside flux genuinely changes as the planet rocks back and forth.</p>
+<p>Hot Jupiters on very tight orbits (P &lt; 2 days) are expected to undergo measurable tidal orbital decay, where energy dissipation inside the host star causes the planet to spiral inward. The rate of this inspiral is governed by the stellar tidal quality factor Q'★, which itself depends on the star's internal structure — and therefore its evolutionary state and age. The key insight is that if you can measure the period derivative ∂P/∂t for a sample of ultra-short-period hot Jupiters, you can invert the tidal decay rate to obtain an independent, dynamical age estimate for the host star. This would create a wholly new stellar age-dating method, complementary to gyrochronology, isochrone fitting, and asteroseismology.</p>
+<p>WASP-12b's confirmed orbital decay (period decreasing at ~29 ms/yr) demonstrated this is measurable. But no one has systematically attempted to build a <strong>calibrated age ladder</strong> from tidal decay rates across a population.</p>
 <h3>Target Datasets</h3>
 <ul>
-<li>All public JWST/MIRI secondary-eclipse photometry of rocky exoplanets (currently ~8–10 targets with at least two visits each), available via MAST.</li>
-<li>Complementary Spitzer/IRAC 4.5 µm archival photometry of the same or similar targets for cross-wavelength comparison.</li>
-<li>Laboratory reflectance/emissivity spectra of planetary analog minerals from the RELAB and ECOSTRESS spectral libraries.</li>
+<li><strong>Kepler/K2 long-baseline photometry</strong> for ultra-short-period giant planets (WASP-18b, WASP-19b, WASP-43b, KELT-16b, and others with P &lt; 2 days)</li>
+<li><strong>TESS</strong> multi-sector observations extending the time baseline by 6+ years beyond Kepler</li>
+<li><strong>Archival ground-based transit times</strong> from ETD (Exoplanet Transit Database) and literature, some stretching back 15+ years</li>
+<li><strong>Gaia DR4</strong> parallaxes and stellar parameters for host star characterization</li>
+<li><strong>ESPRESSO/HARPS</strong> RV archives for refining orbital eccentricities (needed to disentangle tidal circularization from decay)</li>
 </ul>
 <h3>Novelty</h3>
-<p>The 2026 "Uniform Reinterpretation" paper by Ih et al. reanalyzed rocky-planet eclipses but focused on systematic offsets from stellar/orbital uncertainties, not on the temporal scatter itself. No published study has yet built a forward model connecting surface mineralogy heterogeneity + forced libration to predicted eclipse-depth variability amplitudes and timescales. This project would be the first to treat visit-to-visit eclipse scatter as signal rather than noise.</p>
+<p>While individual period derivative measurements exist for a handful of systems, and tidal theory papers model decay rates, the specific idea of <strong>inverting measured ∂P/∂t values into a population-level stellar age calibration</strong> is underexplored. Most tidal decay papers focus on predicting remaining lifetimes or constraining Q'★. Flipping the problem — treating Q'★ as a known function of stellar type (calibrated on the few well-characterized systems) and then solving for age — has not been systematically pursued as an age-dating technique. This is distinct from mainstream work because it reframes tidal decay from an orbital evolution problem into a stellar astrophysics tool.</p>
 <h3>Concrete Workflow</h3>
 <ol>
-<li>Compile all multi-visit MIRI eclipse depths and uncertainties from published reductions and, where possible, re-extract from the Stage 2 JWST pipeline products.</li>
-<li>Compute the expected libration amplitude for each target from its measured or constrained eccentricity (using values from the NASA Exoplanet Archive and radial-velocity constraints).</li>
-<li>Build a hemispherically resolved thermal model: tile the dayside into ~100 facets, assign each facet a mineral class drawn from a parameterized spatial distribution, propagate the mineral's thermal inertia and 15 µm emissivity through a 1D heat conduction model, and integrate the emergent flux over the visible hemisphere at each libration phase.</li>
-<li>For each target, run an MCMC over the mineral mixture fractions and spatial correlation length, fitting the observed eclipse-depth distribution (mean and variance).</li>
-<li>Perform model comparison (BIC/evidence) against the null hypothesis that all scatter is Gaussian noise with no physical origin.</li>
+<li>Compile a master catalog of all hot Jupiters with P &lt; 2.5 days that have transit timing observations spanning &gt;8 years (combining Kepler, TESS, and ground-based).</li>
+<li>For each system, perform a uniform O-C (observed minus calculated) transit timing analysis using a quadratic ephemeris model (linear decay) and compare against constant-period and apsidal precession models via Bayesian model selection (BIC/Bayes factors).</li>
+<li>For systems with significant ∂P/∂t detections (or informative upper limits), compute the implied Q'★ using standard equilibrium tidal theory.</li>
+<li>Cross-match with independently age-dated host stars (via asteroseismology from Kepler, gyrochronology, or cluster membership) to calibrate the Q'★–age–spectral-type relation.</li>
+<li>Apply the calibrated relation to the remaining systems to predict ages; compare against isochrone ages to assess systematic offsets and scatter.</li>
+<li>Quantify the method's precision and identify the stellar parameter regime where tidal decay chronometry is most powerful.</li>
 </ol>
 <h3>Expected Signal / Observable</h3>
-<p>For a planet with eccentricity ~0.01 (giving ~2° of optical libration) and a surface split between low-inertia regolith and high-inertia basalt, the model predicts eclipse-depth modulations of 30–80 ppm at 15 µm — consistent with the scatter already seen in GJ 3473 b. A positive detection would manifest as eclipse-depth variance significantly exceeding the per-visit measurement uncertainty, with the excess variance correlating with the predicted libration amplitude across the sample.</p>
+<p>For WASP-12b-like systems, period shifts of ~30 ms/yr accumulate to ~0.5 seconds over a 15-year baseline — easily detectable with modern transit photometry (timing precision ~10–30 seconds for ground-based, ~5 seconds for TESS, sub-second for Kepler). For less extreme systems (WASP-18b, WASP-43b), expected shifts are smaller (a few ms/yr) but may be detectable with the now-available ~10–15 year baselines. The "signal" for the age calibration is a correlation between the measured decay rate residuals (after removing the spectral-type dependence of Q'★) and independently determined stellar ages.</p>
 <h3>Possible False Positives</h3>
 <ul>
-<li>Uncorrected JWST detector systematics (ramp effects, charge migration) that differ between visits.</li>
-<li>Stellar variability of the M-dwarf host imprinting at 15 µm (though M-dwarf flux variability at these wavelengths is expected to be very small).</li>
-<li>Residual pointing jitter placing the PSF on different detector regions with slightly different flat-field responses.</li>
-<li>Mitigation: the libration hypothesis makes a specific prediction — that the eclipse-depth modulation amplitude should scale with orbital eccentricity across the sample, while systematics would not.</li>
+<li><strong>Apsidal precession</strong> can mimic a quadratic O-C trend over limited baselines. Mitigation: include precession as an alternative model; use RV eccentricity constraints.</li>
+<li><strong>Rømer delay</strong> from a long-period companion can produce apparent period changes. Mitigation: check for RV trends and Gaia astrometric acceleration.</li>
+<li><strong>Stellar magnetic activity cycles</strong> (Applegate mechanism) can modulate transit times quasi-periodically. Mitigation: monitor stellar activity indicators; the Applegate effect is typically periodic, not secular.</li>
+<li><strong>Systematics in heterogeneous timing datasets</strong> from combining space and ground photometry. Mitigation: use a hierarchical model with per-instrument timing offsets.</li>
 </ul>
 <h3>Why It Could Matter</h3>
-<p>If eclipse-depth variability encodes surface composition, it would be the first remote detection of geology on an exoplanet — a fundamentally new observable. It would also inform whether these worlds are primordial bare rocks, lava-resurfaced, or mantled in impact regolith, connecting directly to questions about interior evolution and volatile delivery.</p>
+<p>Stellar ages are one of the most poorly constrained fundamental parameters in astrophysics. Gyrochronology breaks down for old and hot stars; isochrone fitting is degenerate on the main sequence; asteroseismology requires specific data. A tidal decay–based age clock would be completely independent of these methods, working best for F- and early G-type stars hosting ultra-short-period giants — a regime where other techniques struggle. Even if the precision is moderate (±1–2 Gyr), the independence of the method makes it valuable for cross-calibrating the stellar age ladder.</p>
     </div>
   </details>
   <footer class="exo-daily__foot">
-    <span class="exo-daily__meta">Source brief: 2026-05-08</span>
+    <span class="exo-daily__meta">Source brief: 2026-04-29</span>
     <span class="exo-daily__meta">Rotates daily &middot; 66 ideas in the pool</span>
   </footer>
 </section>
