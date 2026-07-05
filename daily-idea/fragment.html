@@ -1,48 +1,53 @@
 <section class="exo-daily" aria-label="Exoplanet idea of the day">
   <header class="exo-daily__head">
     <span class="exo-daily__eyebrow">Exoplanet idea of the day</span>
-    <time class="exo-daily__date" datetime="2026-07-04">2026-07-04</time>
+    <time class="exo-daily__date" datetime="2026-07-05">2026-07-05</time>
   </header>
-  <h2 class="exo-daily__title">Eclipse-Depth Variability as a Probe of Surface Geology on Rocky Exoplanets</h2>
+  <h2 class="exo-daily__title">Transit Timing Variation Archaeology for Hidden Tidal Heating — Identifying &quot;Exo-Ios&quot; in the Kepler Multi-Planet Archive</h2>
   <div class="exo-daily__premise">
-    <p>JWST's "Hot Rocks Survey" is now delivering secondary-eclipse photometry for a growing sample of rocky exoplanets around M dwarfs (TRAPPIST-1 b/c, GJ 3473 b, LHS 3844 b, and others). A striking but underexplored signal has emerged: visit-to-visit variability in eclipse depth. For GJ 3473 b, the MIRI F1500W eclipse depth swings from roughly 33 to 371 ppm across visits. The community has largely treated this scatter as systematic noise or weather. But if these planets are airless (as the data increasingly suggest), there is no weather — so what is changing? One plausible answer is that we are seeing the thermal signature of heterogeneous surface geology on a synchronously rotating world whose sub-observer longitude shifts slightly due to libration or slight orbital eccentricity. Different mineral assemblages (basalt, feldspar, iron oxide, sulfur deposits) have dramatically different thermal inertias and emissivities at 15 µm, meaning the hemisphere-integrated dayside flux genuinely changes as the planet rocks back and forth.</p>
+    <p>Io is the most volcanically active body in the solar system because Jupiter and Europa force a non-zero eccentricity through orbital resonance, and tidal dissipation converts that forced eccentricity into internal heat. The same mechanism should operate in compact multi-planet systems, many of which were discovered by Kepler and are now being monitored by TESS. Transit timing variations (TTVs) encode the gravitational interactions between planets, including the forced eccentricities responsible for tidal heating. Yet almost no one has systematically mined the Kepler TTV catalog specifically to compute tidal heating budgets and identify which rocky planets are likely experiencing Io-like or even super-Io-level volcanism.</p>
+<p>Recent work on LP 791-18 d demonstrated this approach for a single system — forced eccentricity from TTV modeling yielded a tidal heat flux potentially exceeding Io's. The question is whether this is a rare curiosity or the tip of a population. The Kepler multi-planet sample contains hundreds of compact systems where inner rocky planets could be tidally heated by outer companions.</p>
   </div>
   <details class="exo-daily__more">
     <summary>Read the full proposal</summary>
     <div class="exo-daily__full">
       <h3>Scientific Premise</h3>
-<p>JWST's "Hot Rocks Survey" is now delivering secondary-eclipse photometry for a growing sample of rocky exoplanets around M dwarfs (TRAPPIST-1 b/c, GJ 3473 b, LHS 3844 b, and others). A striking but underexplored signal has emerged: visit-to-visit variability in eclipse depth. For GJ 3473 b, the MIRI F1500W eclipse depth swings from roughly 33 to 371 ppm across visits. The community has largely treated this scatter as systematic noise or weather. But if these planets are airless (as the data increasingly suggest), there is no weather — so what is changing? One plausible answer is that we are seeing the thermal signature of heterogeneous surface geology on a synchronously rotating world whose sub-observer longitude shifts slightly due to libration or slight orbital eccentricity. Different mineral assemblages (basalt, feldspar, iron oxide, sulfur deposits) have dramatically different thermal inertias and emissivities at 15 µm, meaning the hemisphere-integrated dayside flux genuinely changes as the planet rocks back and forth.</p>
+<p>Io is the most volcanically active body in the solar system because Jupiter and Europa force a non-zero eccentricity through orbital resonance, and tidal dissipation converts that forced eccentricity into internal heat. The same mechanism should operate in compact multi-planet systems, many of which were discovered by Kepler and are now being monitored by TESS. Transit timing variations (TTVs) encode the gravitational interactions between planets, including the forced eccentricities responsible for tidal heating. Yet almost no one has systematically mined the Kepler TTV catalog specifically to compute tidal heating budgets and identify which rocky planets are likely experiencing Io-like or even super-Io-level volcanism.</p>
+<p>Recent work on LP 791-18 d demonstrated this approach for a single system — forced eccentricity from TTV modeling yielded a tidal heat flux potentially exceeding Io's. The question is whether this is a rare curiosity or the tip of a population. The Kepler multi-planet sample contains hundreds of compact systems where inner rocky planets could be tidally heated by outer companions.</p>
 <h3>Target Datasets</h3>
 <ul>
-<li>All public JWST/MIRI secondary-eclipse photometry of rocky exoplanets (currently ~8–10 targets with at least two visits each), available via MAST.</li>
-<li>Complementary Spitzer/IRAC 4.5 µm archival photometry of the same or similar targets for cross-wavelength comparison.</li>
-<li>Laboratory reflectance/emissivity spectra of planetary analog minerals from the RELAB and ECOSTRESS spectral libraries.</li>
+<li><strong>Kepler DR25 long-cadence light curves</strong> and the Holczer et al. (2016) TTV catalog (~2,600 KOIs with measured TTVs), supplemented by the more recent Hadden &amp; Lithwick updated TTV fits.</li>
+<li><strong>TESS extended-mission light curves</strong> for Kepler-field targets observed in TESS Sectors 40+, providing a new temporal baseline to refine TTV periods and amplitudes.</li>
+<li><strong>NASA Exoplanet Archive</strong> confirmed/validated multi-planet systems for masses, radii, and orbital parameters.</li>
+<li><strong>Published radial velocity masses</strong> (California-Kepler Survey, HARPS-N) to break the mass-eccentricity degeneracy in TTV inversions where available.</li>
 </ul>
 <h3>Novelty</h3>
-<p>The 2026 "Uniform Reinterpretation" paper by Ih et al. reanalyzed rocky-planet eclipses but focused on systematic offsets from stellar/orbital uncertainties, not on the temporal scatter itself. No published study has yet built a forward model connecting surface mineralogy heterogeneity + forced libration to predicted eclipse-depth variability amplitudes and timescales. This project would be the first to treat visit-to-visit eclipse scatter as signal rather than noise.</p>
+<p>TTV analyses have traditionally focused on extracting planet masses and testing dynamical stability. The tidal-heating angle — using TTVs to compute forced eccentricities and then estimating internal heat fluxes — has only been applied to a handful of individual systems (LP 791-18, TRAPPIST-1). A systematic survey across the full Kepler multi-planet catalog, ranking hundreds of rocky planets by predicted tidal heat flux, would be genuinely new. It connects exoplanet dynamics to geophysics in a way that is rarely attempted at population scale.</p>
+<p>Additionally, a 2025 reanalysis of Kepler data for KOI-134 revealed that previously missed planets produce TTVs that confused earlier analyses. This suggests that the existing TTV catalog may contain unrecognized signals from additional unseen companions whose gravitational influence drives tidal heating in known planets.</p>
 <h3>Concrete Workflow</h3>
 <ol>
-<li>Compile all multi-visit MIRI eclipse depths and uncertainties from published reductions and, where possible, re-extract from the Stage 2 JWST pipeline products.</li>
-<li>Compute the expected libration amplitude for each target from its measured or constrained eccentricity (using values from the NASA Exoplanet Archive and radial-velocity constraints).</li>
-<li>Build a hemispherically resolved thermal model: tile the dayside into ~100 facets, assign each facet a mineral class drawn from a parameterized spatial distribution, propagate the mineral's thermal inertia and 15 µm emissivity through a 1D heat conduction model, and integrate the emergent flux over the visible hemisphere at each libration phase.</li>
-<li>For each target, run an MCMC over the mineral mixture fractions and spatial correlation length, fitting the observed eclipse-depth distribution (mean and variance).</li>
-<li>Perform model comparison (BIC/evidence) against the null hypothesis that all scatter is Gaussian noise with no physical origin.</li>
+<li>Select all Kepler multi-planet systems (N ≥ 2) where at least one planet has R &lt; 2 R⊕ (likely rocky) and measured TTVs with signal-to-noise &gt; 3.</li>
+<li>For each system, perform N-body TTV inversions (using TTVFast or TTVFaster) to extract the posterior distributions of planet masses and free + forced eccentricities.</li>
+<li>Where RV masses exist, use them as priors to tighten eccentricity constraints.</li>
+<li>Compute tidal heat flux for each rocky planet using the standard tidal dissipation formula: Ė_tidal = (21/2) × (k₂/Q) × (n⁵R⁵e²)/G, parameterized by plausible tidal quality factors Q (10–1000) and Love numbers k₂.</li>
+<li>Rank the population by predicted tidal heat flux. Identify the top 20 "exo-Io" candidates.</li>
+<li>Cross-reference with JWST and TESS phase curve observations to see if any candidates show anomalous thermal emission or atmospheric signatures consistent with volcanism (SO₂, SiO outgassing).</li>
 </ol>
 <h3>Expected Signal / Observable</h3>
-<p>For a planet with eccentricity ~0.01 (giving ~2° of optical libration) and a surface split between low-inertia regolith and high-inertia basalt, the model predicts eclipse-depth modulations of 30–80 ppm at 15 µm — consistent with the scatter already seen in GJ 3473 b. A positive detection would manifest as eclipse-depth variance significantly exceeding the per-visit measurement uncertainty, with the excess variance correlating with the predicted libration amplitude across the sample.</p>
+<p>The direct observable is the TTV signal itself, which constrains forced eccentricity. The derived quantity — tidal heat flux in W/m² — can then be compared to Io (~2 W/m²) and Earth (~0.09 W/m²). Planets with predicted heat fluxes exceeding 1 W/m² are strong exo-Io candidates. Secondary observables include anomalous thermal phase curve amplitudes (excess nightside flux from internal heating) and potential volcanic atmospheric signatures (SO₂ at 7.3 μm with JWST/MIRI).</p>
 <h3>Possible False Positives</h3>
 <ul>
-<li>Uncorrected JWST detector systematics (ramp effects, charge migration) that differ between visits.</li>
-<li>Stellar variability of the M-dwarf host imprinting at 15 µm (though M-dwarf flux variability at these wavelengths is expected to be very small).</li>
-<li>Residual pointing jitter placing the PSF on different detector regions with slightly different flat-field responses.</li>
-<li>Mitigation: the libration hypothesis makes a specific prediction — that the eclipse-depth modulation amplitude should scale with orbital eccentricity across the sample, while systematics would not.</li>
+<li>TTVs caused by stellar activity or instrumental systematics rather than true gravitational perturbations (mitigated by restricting to systems with correlated TTVs in multiple planets).</li>
+<li>Eccentricity-inclination degeneracy in TTV inversions: some solutions trade eccentricity for mutual inclination, which does not drive tidal heating.</li>
+<li>Uncertainty in tidal Q: the dissipation factor for rocky exoplanets is unconstrained and could vary by orders of magnitude, making absolute heat flux predictions uncertain (though relative rankings within the population are more robust).</li>
+<li>Undetected additional planets whose gravitational influence is misattributed, inflating or deflating eccentricity estimates.</li>
 </ul>
-<h3>Why It Could Matter</h3>
-<p>If eclipse-depth variability encodes surface composition, it would be the first remote detection of geology on an exoplanet — a fundamentally new observable. It would also inform whether these worlds are primordial bare rocks, lava-resurfaced, or mantled in impact regolith, connecting directly to questions about interior evolution and volatile delivery.</p>
+<h3>Why This Matters</h3>
+<p>Tidal heating may be one of the most important drivers of geological activity — and potentially habitability — on rocky exoplanets, especially those orbiting M dwarfs where compact resonant chains are common. Identifying a population of tidally heated worlds would establish a new category of geophysically active planets, provide targets for JWST volcanic atmosphere searches, and test whether the Solar System's Io is an outlier or a common outcome of multi-planet dynamics.</p>
     </div>
   </details>
   <footer class="exo-daily__foot">
-    <span class="exo-daily__meta">Source brief: 2026-05-08</span>
+    <span class="exo-daily__meta">Source brief: 2026-04-01</span>
     <span class="exo-daily__meta">Rotates daily &middot; 66 ideas in the pool</span>
   </footer>
 </section>
