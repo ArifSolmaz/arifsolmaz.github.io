@@ -3,67 +3,60 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Idea of the day &mdash; Hunting Ghost Planets in Resonant Chains via Long-Baseline TTV Drift Detection (Kepler-to-TESS)</title>
+<title>Idea of the day &mdash; Stellar Surface Contamination Mapping via Multi-Epoch JWST Transmission Spectra of TRAPPIST-1 Planets</title>
 <link rel="stylesheet" href="widget.css"/>
 </head>
 <body>
 <section class="exo-daily" aria-label="Exoplanet idea of the day">
   <header class="exo-daily__head">
     <span class="exo-daily__eyebrow">Exoplanet idea of the day</span>
-    <time class="exo-daily__date" datetime="2026-07-07">2026-07-07</time>
+    <time class="exo-daily__date" datetime="2026-07-08">2026-07-08</time>
   </header>
-  <h2 class="exo-daily__title">Hunting Ghost Planets in Resonant Chains via Long-Baseline TTV Drift Detection (Kepler-to-TESS)</h2>
+  <h2 class="exo-daily__title">Stellar Surface Contamination Mapping via Multi-Epoch JWST Transmission Spectra of TRAPPIST-1 Planets</h2>
   <div class="exo-daily__premise">
-    <p>Many multi-planet systems discovered by Kepler are near (but not exactly in) mean-motion resonances, and some show transit timing variations (TTVs) indicative of gravitational interactions. A 2025 study bridging Kepler and TESS ephemerides identified 5 new systems with periodic TTVs and 17 systems with long-term secular trends in transit times previously unknown. These secular trends — slow, monotonic drifts in transit times — are a smoking gun for gravitational perturbations from unseen (non-transiting) planets in the system.</p>
-<p>The ambitious idea: use the ~12-year baseline from Kepler (2009–2013) through K2 (2014–2018) to TESS (2018–2026+) to systematically identify systems with non-linear TTV trends, then perform dynamical inversions to constrain the masses and orbital parameters of the hidden perturbers. These "ghost planets" are invisible in transit photometry but leave gravitational fingerprints on their transiting siblings.</p>
+    <p>JWST transmission spectroscopy of the TRAPPIST-1 system — the highest-priority target for rocky-planet atmosphere detection — has been repeatedly complicated by stellar contamination. Active regions (spots, faculae) on the host M dwarf imprint spectral features into the transit spectrum that can mimic or mask planetary atmospheric signatures. Recent analyses of TRAPPIST-1d and TRAPPIST-1e have found that stellar contamination is present in essentially all observations, and the data do not yet clearly distinguish between "no atmosphere" and "atmosphere hidden by stellar noise."</p>
+<p>Rather than treating stellar contamination as a nuisance to be marginalized, this project proposes to invert the problem: use the multi-epoch, multi-planet TRAPPIST-1 transmission spectra to reconstruct a time-variable map of the stellar surface itself, then subtract it to recover the planetary signal — or, at minimum, derive the tightest possible joint constraints on both the stellar heterogeneity and any planetary atmosphere.</p>
   </div>
   <details class="exo-daily__more">
     <summary>Read the full proposal</summary>
     <div class="exo-daily__full">
       <h3>Scientific Premise</h3>
-<p>Many multi-planet systems discovered by Kepler are near (but not exactly in) mean-motion resonances, and some show transit timing variations (TTVs) indicative of gravitational interactions. A 2025 study bridging Kepler and TESS ephemerides identified 5 new systems with periodic TTVs and 17 systems with long-term secular trends in transit times previously unknown. These secular trends — slow, monotonic drifts in transit times — are a smoking gun for gravitational perturbations from unseen (non-transiting) planets in the system.</p>
-<p>The ambitious idea: use the ~12-year baseline from Kepler (2009–2013) through K2 (2014–2018) to TESS (2018–2026+) to systematically identify systems with non-linear TTV trends, then perform dynamical inversions to constrain the masses and orbital parameters of the hidden perturbers. These "ghost planets" are invisible in transit photometry but leave gravitational fingerprints on their transiting siblings.</p>
+<p>JWST transmission spectroscopy of the TRAPPIST-1 system — the highest-priority target for rocky-planet atmosphere detection — has been repeatedly complicated by stellar contamination. Active regions (spots, faculae) on the host M dwarf imprint spectral features into the transit spectrum that can mimic or mask planetary atmospheric signatures. Recent analyses of TRAPPIST-1d and TRAPPIST-1e have found that stellar contamination is present in essentially all observations, and the data do not yet clearly distinguish between "no atmosphere" and "atmosphere hidden by stellar noise."</p>
+<p>Rather than treating stellar contamination as a nuisance to be marginalized, this project proposes to invert the problem: use the multi-epoch, multi-planet TRAPPIST-1 transmission spectra to reconstruct a time-variable map of the stellar surface itself, then subtract it to recover the planetary signal — or, at minimum, derive the tightest possible joint constraints on both the stellar heterogeneity and any planetary atmosphere.</p>
 <h3>Target Datasets</h3>
 <ul>
-<li><strong>Kepler transit times</strong>: Holczer et al. (2016) TTV catalog for all Kepler multi-planet systems, plus updated mid-times from Rowe &amp; Thompson.</li>
-<li><strong>K2 transit times</strong>: For systems in overlapping K2 campaign fields.</li>
-<li><strong>TESS transit times</strong>: TESS-Kepler overlap from Sectors 14, 26, 40, 41, 53–55, 67–69, and the 2025–2026 extended mission pointings in the Kepler field. Use the 2025 Kokori et al. catalog of updated ephemerides.</li>
-<li><strong>Radial velocities</strong>: Archival RVs from the California Legacy Survey, HARPS-N, and HIRES for systems where available.</li>
+<li><strong>JWST GO and GTO program data</strong> for TRAPPIST-1b, c, d, e, f, and g across Cycles 1–4 (NIRSpec G395H, NIRISS SOSS, NIRSpec PRISM). Multiple epochs per planet are now available or scheduled.</li>
+<li><strong>Spitzer/IRAC archival phase curves and transits</strong> of TRAPPIST-1 planets (3.6 and 4.5 μm) for long-baseline stellar variability characterization.</li>
+<li><strong>TESS Sector 85+ data</strong> (2-minute cadence) for contemporaneous optical monitoring of stellar rotation and flare activity.</li>
+<li><strong>Ground-based photometric monitoring</strong> from SPECULOOS and TRAPPIST-South/North, publicly archived.</li>
 </ul>
 <h3>Novelty</h3>
-<p>While individual TTV analyses are routine, a systematic population-level search for <em>secular</em> TTV drifts using the 12+ year Kepler-to-TESS baseline is a qualitatively new capability that has only recently become possible. Most TTV studies focus on periodic (sinusoidal) signals from known planet pairs near resonance. Secular drifts — caused by long-period perturbers on timescales longer than the Kepler mission — have been largely inaccessible until the TESS extended mission provided the necessary temporal leverage. The goal here is not just detection but dynamical inversion: turning a measured drift rate and curvature into posterior constraints on the perturber's mass and period.</p>
+<p>Current approaches fit each planet's transmission spectrum independently and include a parametric stellar contamination model (e.g., a two-temperature photosphere model) as a nuisance component. The underexplored angle is to fit all planets jointly across all epochs simultaneously, exploiting the fact that each planet transits a different chord of the stellar disk at a different time, thereby sampling the stellar surface at different latitudes and rotational phases. This multi-chord, multi-epoch tomographic approach can break degeneracies that are intractable with single-planet fits. The concept is analogous to Doppler imaging of rapidly rotating stars, but applied to transmission spectroscopy for the first time.</p>
 <h3>Concrete Workflow</h3>
 <ol>
-<li><strong>Ephemeris bridging</strong>: For all Kepler multi-planet systems re-observed by TESS (estimated ~500 systems), compute precise mid-transit times from TESS SPOC or QLP light curves. Combine with Kepler-era mid-times.</li>
-<li><strong>Trend detection</strong>: Fit each planet's O−C (observed minus calculated) transit time series with a polynomial model (linear + quadratic + cubic). Identify systems where the Bayesian evidence favors a quadratic or cubic term over a constant-period model (ΔlnZ &gt; 5).</li>
-<li><strong>Resonance proximity filter</strong>: For systems with detected secular trends, check whether the drift rate is consistent with perturbation by a planet near a low-order (2:1, 3:2, 5:3, 3:1) resonance with the transiting planet.</li>
-<li><strong>Dynamical inversion</strong>: For the most significant detections, run N-body MCMC fits (using TTVFast or REBOUND) over the parameter space of the hidden planet (mass, period, eccentricity, inclination). Combine TTV constraints with any available RV data.</li>
-<li><strong>Prediction and validation</strong>: For the best-constrained ghost planets, predict their transit probability and expected transit depth. Flag systems where the perturber has &gt;5% transit probability for targeted TESS or CHEOPS follow-up.</li>
+<li><strong>Data compilation.</strong> Gather all publicly released JWST transmission spectra of TRAPPIST-1 planets (reduced spectra from the MAST JWST archive and community reductions). Compile contemporaneous ground-based and TESS photometry to constrain the stellar rotational phase at each transit epoch.</li>
+<li><strong>Stellar surface model.</strong> Parameterize the TRAPPIST-1 surface as a grid of tiles (e.g., HEALPix with N_side = 4, giving 192 tiles). Each tile has a temperature drawn from a prior informed by M-dwarf spot/faculae contrast measurements. The stellar spectrum at each tile is interpolated from PHOENIX model grids.</li>
+<li><strong>Transit geometry engine.</strong> For each observed transit, compute the stellar disk region occulted by the planet as a function of time using the known orbital parameters and impact parameters. This defines which tiles contribute to the transmission spectrum at each epoch.</li>
+<li><strong>Joint retrieval.</strong> Implement a hierarchical Bayesian retrieval where: (a) the stellar surface map is shared across all transits and evolves slowly (with a Gaussian-process prior on temporal evolution tied to the ~3.3-day rotation period); (b) each planet has its own atmospheric model (flat line, or parameterized absorbers). Use nested sampling (e.g., MultiNest or dynesty) to explore the joint posterior.</li>
+<li><strong>Atmosphere detectability.</strong> Compute the Bayesian evidence for "atmosphere + stellar contamination" versus "stellar contamination only" for each planet. Report detection significances and upper limits on atmospheric column densities.</li>
+<li><strong>Validation.</strong> Apply the framework to synthetic JWST spectra generated from known stellar maps and known atmospheric models to verify that the tomographic inversion recovers both correctly.</li>
 </ol>
 <h3>Expected Signal / Observable</h3>
-<ul>
-<li>A quadratic O−C drift of ~1–10 minutes over 12 years is detectable for Earth-to-Neptune-mass perturbers in orbits of 100–500 days.</li>
-<li>For super-Earths near 2:1 resonance with a known transiting planet, the expected TTV drift rate is ~0.5–5 min/decade, well within measurement precision for Kepler-TESS bridged baselines.</li>
-<li>The population-level yield: an estimated 10–30 new "ghost planet" candidates across the Kepler multi-planet sample, with dynamical mass constraints to within a factor of 2–3.</li>
-</ul>
+<p>The stellar contamination signal in TRAPPIST-1 transmission spectra is on the order of 50–200 ppm across the NIR, comparable to or larger than expected planetary atmospheric features (~20–100 ppm for a thin secondary atmosphere). By fitting 6 planets × 3–5 epochs × 2–3 instrument modes jointly, the framework leverages ~50+ independent spectral datasets to constrain a single stellar map, dramatically reducing per-planet contamination uncertainty. Simulations suggest a factor of 3–5 improvement in atmospheric upper limits compared to single-epoch, single-planet analyses.</p>
 <h3>Possible False Positives</h3>
 <ul>
-<li><strong>Stellar activity-induced timing shifts</strong>: Starspots near the transit chord can shift the apparent mid-time by ~10–30 seconds. Mitigation: correlate O−C residuals with stellar activity indicators (flux modulation amplitude, spot-crossing frequency); exclude systems with strong activity-timing correlations.</li>
-<li><strong>Orbital decay</strong>: For very short-period planets, tidal orbital decay can produce a quadratic O−C trend. Mitigation: compute the expected decay rate from tidal theory; flag systems where the observed drift matches the tidal prediction.</li>
-<li><strong>Apsidal precession</strong>: In eccentric systems, apsidal precession produces a periodic O−C signal that over a short baseline can mimic a secular trend. Mitigation: fit precession models alongside hidden-planet models; use Bayesian model comparison.</li>
-<li><strong>Light-time effect from a stellar binary companion</strong>: An unseen stellar companion causes the system barycenter to move, producing long-term TTV trends. Mitigation: check for Gaia RUWE &gt; 1.4 (indicating astrometric excess noise from a companion); include a linear drift term in the model.</li>
+<li><strong>Degeneracy between stellar spots and planetary hazes.</strong> Both produce wavelength-dependent slopes. Mitigation: the multi-chord tomography constrains the spatial distribution of stellar features independently of the planetary spectrum, partially breaking this degeneracy.</li>
+<li><strong>Stellar surface evolution faster than assumed.</strong> If flares or rapid spot emergence alter the surface between transits within the same rotation, the GP prior may smooth over real changes. Mitigation: allow the GP lengthscale to be inferred from the data; flag epochs with contemporaneous flare detections for separate treatment.</li>
+<li><strong>Systematic offsets between JWST instrument modes.</strong> NIRSpec and NIRISS may have different absolute flux calibrations. Mitigation: include instrument-specific offset parameters in the retrieval.</li>
 </ul>
-<h3>Why This Could Matter</h3>
-<p>Kepler revealed that tightly-packed inner planetary systems are common, but the outer architecture of these systems is almost entirely unknown. This project would provide the first statistical census of "cold" planets (P ~ 100–500 days) in Kepler multi-planet systems — a population that is largely invisible to both transit surveys (low geometric probability) and RV surveys (long baselines needed). Understanding the outer boundary conditions of compact inner systems is critical for testing formation theories: did these planets form in situ, or did they migrate inward from a more extended configuration, leaving outer companions behind? The ghost planets hold the answer.</p>
+<h3>Why It Could Matter</h3>
+<p>TRAPPIST-1 is the cornerstone system for rocky exoplanet atmospheric characterization, and stellar contamination is the single biggest obstacle. A framework that turns the contamination into a jointly solved component — rather than a marginalized nuisance — could be the key to unlocking atmospheric detections (or definitive non-detections) for habitable-zone rocky worlds with existing JWST data. The tomographic stellar map itself would also be a novel data product, providing the first spatially resolved view of an ultracool dwarf's surface derived from exoplanet transits.</p>
 <hr/>
-<p>## Summary Table</p>
-<p>| # | Project | Key Dataset | Primary Observable | Novelty Level | |---|---------|------------|-------------------|--------------| | 1 | Starspot Latitude Census | Kepler + TESS transits of K/M hosts | Spot latitude vs. Rossby number | Population-level dynamo test via transit tomography | | 2 | Tidal Inflation Fossils | TEPCat obliquities + Kepler/TESS radii | Radius anomaly vs. obliquity for warm Neptunes | First controlled test of tidal memory in sub-giants | | 3 | Ghost Planet Census | Kepler-to-TESS 12-yr TTV baseline | Secular O−C drifts → hidden perturber masses | Systematic dynamical inversion at population scale |</p>
-<hr/>
-<p><em>Report generated autonomously. Design choices: focused on projects that leverage the unique 12+ year Kepler-to-TESS baseline or population-scale approaches that were not possible even 2 years ago. All datasets referenced are publicly available.</em></p>
+<p><em>Generated March 9, 2026. All proposed datasets are publicly available through MAST, the NASA Exoplanet Archive, ESA archives, and community data releases.</em></p>
     </div>
   </details>
   <footer class="exo-daily__foot">
-    <span class="exo-daily__meta">Source brief: 2026-03-25</span>
+    <span class="exo-daily__meta">Source brief: 2026-03-09</span>
     <span class="exo-daily__meta">Rotates daily &middot; 66 ideas in the pool</span>
   </footer>
 </section>
