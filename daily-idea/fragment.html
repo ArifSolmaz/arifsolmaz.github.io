@@ -1,53 +1,47 @@
 <section class="exo-daily" aria-label="Exoplanet idea of the day">
   <header class="exo-daily__head">
     <span class="exo-daily__eyebrow">Exoplanet idea of the day</span>
-    <time class="exo-daily__date" datetime="2026-07-08">2026-07-08</time>
+    <time class="exo-daily__date" datetime="2026-07-09">2026-07-09</time>
   </header>
-  <h2 class="exo-daily__title">Stellar Surface Contamination Mapping via Multi-Epoch JWST Transmission Spectra of TRAPPIST-1 Planets</h2>
+  <h2 class="exo-daily__title">Sulfur Geochemistry as a Planetary Classification Axis — Mining JWST Transmission Spectra for a &quot;Sulfur Sequence&quot;</h2>
   <div class="exo-daily__premise">
-    <p>JWST transmission spectroscopy of the TRAPPIST-1 system — the highest-priority target for rocky-planet atmosphere detection — has been repeatedly complicated by stellar contamination. Active regions (spots, faculae) on the host M dwarf imprint spectral features into the transit spectrum that can mimic or mask planetary atmospheric signatures. Recent analyses of TRAPPIST-1d and TRAPPIST-1e have found that stellar contamination is present in essentially all observations, and the data do not yet clearly distinguish between "no atmosphere" and "atmosphere hidden by stellar noise."</p>
-<p>Rather than treating stellar contamination as a nuisance to be marginalized, this project proposes to invert the problem: use the multi-epoch, multi-planet TRAPPIST-1 transmission spectra to reconstruct a time-variable map of the stellar surface itself, then subtract it to recover the planetary signal — or, at minimum, derive the tightest possible joint constraints on both the stellar heterogeneity and any planetary atmosphere.</p>
+    <p>JWST has recently revealed sulfur-bearing species (H₂S, SO₂, and exotic sulfur compounds) in a growing but heterogeneous set of exoplanet atmospheres — from the ultra-hot Jupiters where SO₂ is photochemically produced, to the strange sulfur-dominated world L 98-59 d, to the carbon-and-sulfur chemistry of pulsar planets. Yet there is no systematic framework that treats sulfur abundance and speciation as a <em>classification axis</em> for planets the way metallicity or C/O ratio is used. The idea: construct a "sulfur sequence" — an empirical ordering of planets by their sulfur chemistry regime — and test whether it correlates with interior structure, formation pathway, or host-star properties in ways that C/O and metallicity alone do not capture.</p>
   </div>
   <details class="exo-daily__more">
     <summary>Read the full proposal</summary>
     <div class="exo-daily__full">
       <h3>Scientific Premise</h3>
-<p>JWST transmission spectroscopy of the TRAPPIST-1 system — the highest-priority target for rocky-planet atmosphere detection — has been repeatedly complicated by stellar contamination. Active regions (spots, faculae) on the host M dwarf imprint spectral features into the transit spectrum that can mimic or mask planetary atmospheric signatures. Recent analyses of TRAPPIST-1d and TRAPPIST-1e have found that stellar contamination is present in essentially all observations, and the data do not yet clearly distinguish between "no atmosphere" and "atmosphere hidden by stellar noise."</p>
-<p>Rather than treating stellar contamination as a nuisance to be marginalized, this project proposes to invert the problem: use the multi-epoch, multi-planet TRAPPIST-1 transmission spectra to reconstruct a time-variable map of the stellar surface itself, then subtract it to recover the planetary signal — or, at minimum, derive the tightest possible joint constraints on both the stellar heterogeneity and any planetary atmosphere.</p>
+<p>JWST has recently revealed sulfur-bearing species (H₂S, SO₂, and exotic sulfur compounds) in a growing but heterogeneous set of exoplanet atmospheres — from the ultra-hot Jupiters where SO₂ is photochemically produced, to the strange sulfur-dominated world L 98-59 d, to the carbon-and-sulfur chemistry of pulsar planets. Yet there is no systematic framework that treats sulfur abundance and speciation as a <em>classification axis</em> for planets the way metallicity or C/O ratio is used. The idea: construct a "sulfur sequence" — an empirical ordering of planets by their sulfur chemistry regime — and test whether it correlates with interior structure, formation pathway, or host-star properties in ways that C/O and metallicity alone do not capture.</p>
 <h3>Target Datasets</h3>
 <ul>
-<li><strong>JWST GO and GTO program data</strong> for TRAPPIST-1b, c, d, e, f, and g across Cycles 1–4 (NIRSpec G395H, NIRISS SOSS, NIRSpec PRISM). Multiple epochs per planet are now available or scheduled.</li>
-<li><strong>Spitzer/IRAC archival phase curves and transits</strong> of TRAPPIST-1 planets (3.6 and 4.5 μm) for long-baseline stellar variability characterization.</li>
-<li><strong>TESS Sector 85+ data</strong> (2-minute cadence) for contemporaneous optical monitoring of stellar rotation and flare activity.</li>
-<li><strong>Ground-based photometric monitoring</strong> from SPECULOOS and TRAPPIST-South/North, publicly archived.</li>
+<li><strong>JWST transmission and emission spectra</strong> from Cycle 1–4 GO and GTO programs (publicly available via MAST). Key targets: WASP-39b (SO₂ detection), WASP-107b, WASP-18b (3D atmospheric map now available), L 98-59 d, HR 8799 bcde, and the growing list of sub-Neptune atmospheric detections.</li>
+<li><strong>NASA Exoplanet Archive</strong> bulk parameters (mass, radius, equilibrium temperature, host-star metallicity, age).</li>
+<li><strong>Published photochemical model grids</strong> (e.g., Tsai et al. 2023; Polman et al. 2024) as theoretical comparison points.</li>
 </ul>
 <h3>Novelty</h3>
-<p>Current approaches fit each planet's transmission spectrum independently and include a parametric stellar contamination model (e.g., a two-temperature photosphere model) as a nuisance component. The underexplored angle is to fit all planets jointly across all epochs simultaneously, exploiting the fact that each planet transits a different chord of the stellar disk at a different time, thereby sampling the stellar surface at different latitudes and rotational phases. This multi-chord, multi-epoch tomographic approach can break degeneracies that are intractable with single-planet fits. The concept is analogous to Doppler imaging of rapidly rotating stars, but applied to transmission spectroscopy for the first time.</p>
+<p>Most atmospheric retrieval papers treat sulfur detections on a target-by-target basis. A cross-sample, population-level study of sulfur chemistry regimes is largely absent from the literature. The closest work is the SO₂ photochemistry modeling for hot Jupiters, but nobody has attempted to unify the sulfur signatures across the mass–temperature–metallicity space into a single empirical framework and test it as an independent classification dimension.</p>
 <h3>Concrete Workflow</h3>
 <ol>
-<li><strong>Data compilation.</strong> Gather all publicly released JWST transmission spectra of TRAPPIST-1 planets (reduced spectra from the MAST JWST archive and community reductions). Compile contemporaneous ground-based and TESS photometry to constrain the stellar rotational phase at each transit epoch.</li>
-<li><strong>Stellar surface model.</strong> Parameterize the TRAPPIST-1 surface as a grid of tiles (e.g., HEALPix with N_side = 4, giving 192 tiles). Each tile has a temperature drawn from a prior informed by M-dwarf spot/faculae contrast measurements. The stellar spectrum at each tile is interpolated from PHOENIX model grids.</li>
-<li><strong>Transit geometry engine.</strong> For each observed transit, compute the stellar disk region occulted by the planet as a function of time using the known orbital parameters and impact parameters. This defines which tiles contribute to the transmission spectrum at each epoch.</li>
-<li><strong>Joint retrieval.</strong> Implement a hierarchical Bayesian retrieval where: (a) the stellar surface map is shared across all transits and evolves slowly (with a Gaussian-process prior on temporal evolution tied to the ~3.3-day rotation period); (b) each planet has its own atmospheric model (flat line, or parameterized absorbers). Use nested sampling (e.g., MultiNest or dynesty) to explore the joint posterior.</li>
-<li><strong>Atmosphere detectability.</strong> Compute the Bayesian evidence for "atmosphere + stellar contamination" versus "stellar contamination only" for each planet. Report detection significances and upper limits on atmospheric column densities.</li>
-<li><strong>Validation.</strong> Apply the framework to synthetic JWST spectra generated from known stellar maps and known atmospheric models to verify that the tomographic inversion recovers both correctly.</li>
+<li>Compile all publicly available JWST spectra with sulfur-species detections or meaningful upper limits (expect ~20–30 targets by mid-2026).</li>
+<li>Run uniform atmospheric retrievals (e.g., using open-source codes like POSEIDON or petitRADTRANS) with a sulfur-inclusive chemical network to extract sulfur abundance ratios (S/O, S/H) and dominant sulfur species for each target.</li>
+<li>Construct a sulfur-regime diagram: plot dominant sulfur species and total sulfur abundance against equilibrium temperature, surface gravity, and host-star [Fe/H].</li>
+<li>Test for clustering: do planets separate into distinct sulfur-chemistry regimes (e.g., "SO₂-dominated," "H₂S-dominated," "sulfur-depleted")? Use unsupervised clustering methods (e.g., Gaussian mixture models).</li>
+<li>Compare the sulfur sequence to predictions from photochemical models to determine whether the observed regimes can be explained purely by irradiation chemistry or whether interior outgassing (i.e., formation-pathway-dependent bulk sulfur content) is required.</li>
 </ol>
 <h3>Expected Signal / Observable</h3>
-<p>The stellar contamination signal in TRAPPIST-1 transmission spectra is on the order of 50–200 ppm across the NIR, comparable to or larger than expected planetary atmospheric features (~20–100 ppm for a thin secondary atmosphere). By fitting 6 planets × 3–5 epochs × 2–3 instrument modes jointly, the framework leverages ~50+ independent spectral datasets to constrain a single stellar map, dramatically reducing per-planet contamination uncertainty. Simulations suggest a factor of 3–5 improvement in atmospheric upper limits compared to single-epoch, single-planet analyses.</p>
-<h3>Possible False Positives</h3>
+<p>A statistically meaningful separation of planets into 2–4 sulfur chemistry regimes on the temperature–gravity plane, with residual scatter that correlates with host-star metallicity or planetary bulk density — implying formation-pathway information encoded in sulfur.</p>
+<h3>Possible False Positives / Pitfalls</h3>
 <ul>
-<li><strong>Degeneracy between stellar spots and planetary hazes.</strong> Both produce wavelength-dependent slopes. Mitigation: the multi-chord tomography constrains the spatial distribution of stellar features independently of the planetary spectrum, partially breaking this degeneracy.</li>
-<li><strong>Stellar surface evolution faster than assumed.</strong> If flares or rapid spot emergence alter the surface between transits within the same rotation, the GP prior may smooth over real changes. Mitigation: allow the GP lengthscale to be inferred from the data; flag epochs with contemporaneous flare detections for separate treatment.</li>
-<li><strong>Systematic offsets between JWST instrument modes.</strong> NIRSpec and NIRISS may have different absolute flux calibrations. Mitigation: include instrument-specific offset parameters in the retrieval.</li>
+<li>Small sample size may not yet support robust clustering; this improves as more JWST cycles release data.</li>
+<li>Retrieval degeneracies between sulfur species and other absorbers (especially in the 3–5 µm window where H₂O, CO₂, and SO₂ features overlap).</li>
+<li>Non-equilibrium photochemistry can dominate over bulk composition signals, making it hard to disentangle irradiation effects from formation signatures.</li>
 </ul>
-<h3>Why It Could Matter</h3>
-<p>TRAPPIST-1 is the cornerstone system for rocky exoplanet atmospheric characterization, and stellar contamination is the single biggest obstacle. A framework that turns the contamination into a jointly solved component — rather than a marginalized nuisance — could be the key to unlocking atmospheric detections (or definitive non-detections) for habitable-zone rocky worlds with existing JWST data. The tomographic stellar map itself would also be a novel data product, providing the first spatially resolved view of an ultracool dwarf's surface derived from exoplanet transits.</p>
-<hr/>
-<p><em>Generated March 9, 2026. All proposed datasets are publicly available through MAST, the NASA Exoplanet Archive, ESA archives, and community data releases.</em></p>
+<h3>Why It Matters</h3>
+<p>If sulfur chemistry encodes formation-pathway information independently of C/O and metallicity, it provides a new empirical tool for linking atmospheric composition to planet formation — directly relevant to the field's central goal of connecting observed exoplanet diversity to formation theory.</p>
     </div>
   </details>
   <footer class="exo-daily__foot">
-    <span class="exo-daily__meta">Source brief: 2026-03-09</span>
+    <span class="exo-daily__meta">Source brief: 2026-04-02</span>
     <span class="exo-daily__meta">Rotates daily &middot; 66 ideas in the pool</span>
   </footer>
 </section>
