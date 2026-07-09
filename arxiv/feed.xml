@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 08 Jul 2026 05:15:32 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 09 Jul 2026 05:58:36 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,51 +15,74 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>A generalised microbial cell model for methane biosignature predictions</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-06366v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-06366v1</guid>
-      <pubDate>Wed, 08 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Arwen E. Nicholson, Nathan J. Mayne</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>A parameterised approach to disequilibrium retrievals in the JWST era: Application to NIRCam observations of HD 189733b</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-06491v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-06491v1</guid>
-      <pubDate>Wed, 08 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Jake Taylor et al.</dc:creator>
+      <title>Mitigating Charge Migration in JWST NIRISS Reveals That KELT-7 b is a Metal-enriched Ultra-hot Jupiter Orbiting a Young Metal-rich Star</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2607-06708v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-06708v1</guid>
+      <pubDate>Thu, 09 Jul 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Stephen P. Schmidt et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.IM</category>
     </item>
     <item>
-      <title>Dynamical constraints on planet engulfment as the origin of lithium enhancement in TOI-5882</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-05566v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-05566v1</guid>
-      <pubDate>Wed, 08 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>C. Charalambous et al.</dc:creator>
+      <title>Climates of temperate rocky planets with He-dominated atmospheres</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2607-06857v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-06857v1</guid>
+      <pubDate>Thu, 09 Jul 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Viviane Kuss et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Exoplanet Detection Using Adaptive Quantum-Optimal Measurement</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2607-06931v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-06931v1</guid>
+      <pubDate>Thu, 09 Jul 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Hyunsoo Choi et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>physics.optics</category>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+    </item>
+    <item>
+      <title>&quot;Perfect&quot; spectra for ESO&#x27;s HARPS spectrograph</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2607-06809v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-06809v1</guid>
+      <pubDate>Thu, 09 Jul 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Dinko Milaković et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.IM</category>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Extreme Debris Disks: Insights into Violent Collisions in Planet Formation and Destruction</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2607-06684v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-06684v1</guid>
+      <pubDate>Thu, 09 Jul 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Kate Y. L. Su et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.SR</category>
     </item>
     <item>
-      <title>The deep atmosphere of Jupiter</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-06310v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-06310v1</guid>
-      <pubDate>Wed, 08 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Keren Duer-Milner</dc:creator>
+      <title>Radio emission from close-in exoplanets: Can we extend the radio-magnetic scaling law to the sub-Alfvénic stellar wind regime?</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2607-07704v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-07704v1</guid>
+      <pubDate>Thu, 09 Jul 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Filip Elekes, Aline A. Vidotto</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>Puffed-up Edges of Planet-opened Gaps in Protoplanetary Disks. II. The Role of the Planet&#x27;s Orbital Eccentricity</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-05497v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-05497v1</guid>
-      <pubDate>Wed, 08 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Jiaqing Bi, Min-Kai Lin</dc:creator>
+      <title>Ionized gas emission in protoplanetary disks with the SKAO</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2607-07571v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-07571v1</guid>
+      <pubDate>Thu, 09 Jul 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Greta Guidi et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.SR</category>
         <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
     </item>
   </channel>
 </rss>
