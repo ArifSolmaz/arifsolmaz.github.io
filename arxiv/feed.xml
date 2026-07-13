@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 10 Jul 2026 05:58:05 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 13 Jul 2026 05:31:12 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,84 +15,42 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>The Impact of Planetary Phase Functions on Exo-Earth Detectability with EXOSIMS</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-08701v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-08701v1</guid>
-      <pubDate>Fri, 10 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Searra Foote et al.</dc:creator>
+      <title>The GAPS Programme with HARPS-N at TNG LXXVII. Occurrence rates of small close-in planets in the presence of cold Jupiters</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2607-09320v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-09320v1</guid>
+      <pubDate>Mon, 13 Jul 2026 20:00:00 +0000</pubDate>
+      <dc:creator>A. Ruggieri et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>HD 148797: A bright F-type star with two moderate-period low-density sub-Jovian planets. Compact multi-planet architectures are common in the Neptunian savanna</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2607-09656v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-09656v1</guid>
+      <pubDate>Mon, 13 Jul 2026 20:00:00 +0000</pubDate>
+      <dc:creator>J. M. Almenara et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Tentative detection of circularly polarized bursty radio emissions from the HD 189733 exoplanetary system using NenuFAR beamformed observations</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2607-08910v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-08910v1</guid>
+      <pubDate>Mon, 13 Jul 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Jake D. Turner et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.IM</category>
-    </item>
-    <item>
-      <title>RedDots: Magnetic field of the nearby active M dwarf GJ 729, and a search for companions</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-08050v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-08050v1</guid>
-      <pubDate>Fri, 10 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>E. L. Brown et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.SR</category>
-        <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>Space and Lunar Interferometry: Emerging Concepts and Pathways</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-07746v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-07746v1</guid>
-      <pubDate>Fri, 10 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Gioia Rau</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.IM</category>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Phase-dependent chemistry of WASP-43 b revealed with a suite of one-, two-, and three-dimensional models</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-08486v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-08486v1</guid>
-      <pubDate>Fri, 10 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Robin Baeyens et al.</dc:creator>
+      <title>Companion Architectures of Sub-Saturns: Distinct Migration Pathways Across the Neptunian Landscape</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2607-09451v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-09451v1</guid>
+      <pubDate>Mon, 13 Jul 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Luis Thomas et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
-    </item>
-    <item>
-      <title>Vetting Ambiguous Planetary Candidates (APC) in TESS Data: Insights from LATTE Package and Detection of Nine Potential Exoplanet Candidates</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-08132v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-08132v1</guid>
-      <pubDate>Fri, 10 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Umer Hameed Khan et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
-    </item>
-    <item>
-      <title>On-Orbit Calibration of Danuri/PolCam. II. Radiometric Calibration</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-08008v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-08008v1</guid>
-      <pubDate>Fri, 10 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Kilho Baek et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.IM</category>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>A search for circumstellar gas in pre-main-sequence debris discs using absorption spectroscopy</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-08263v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-08263v1</guid>
-      <pubDate>Fri, 10 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Karolina M. Szewczyk, Daniela P. Iglesias, Olja Panić</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Probing the origins. III. Exoplanet demographics across Galactic birth radii</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-07787v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-07787v1</guid>
-      <pubDate>Fri, 10 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Juan José García-Delgado et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.GA</category>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.SR</category>
     </item>
   </channel>
 </rss>
