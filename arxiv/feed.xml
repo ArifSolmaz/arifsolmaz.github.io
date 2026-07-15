@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 14 Jul 2026 04:46:02 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 15 Jul 2026 04:45:54 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,124 +15,61 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>Stellar Multiplicity of M Dwarfs with Short-period Giant Planets, and the Characterization of TOI-5628Ab</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-10177v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-10177v1</guid>
-      <pubDate>Tue, 14 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Tianjun Gan et al.</dc:creator>
+      <title>Biosignature detectability on transiting habitable worlds with ELT/ANDES</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2607-12017v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-12017v1</guid>
+      <pubDate>Wed, 15 Jul 2026 20:00:00 +0000</pubDate>
+      <dc:creator>E. Kurzawa-Ferrandez, A. Bello-Arufe, R. Hu</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+    </item>
+    <item>
+      <title>When Stabilizing Feedbacks Wreak Havoc in Habitable Planets: Chaos at the Freezing Point in a Four-Feedback Climate Model</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2607-12972v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-12972v1</guid>
+      <pubDate>Wed, 15 Jul 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Chaucer Langbert, Dániel Apai, Renu Malhotra</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>TESS Photometry and Radial Velocity Analysis of the sub-Neptune Exoplanet π Mensae c and the Wider π Mensae Planetary System</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2607-12088v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-12088v1</guid>
+      <pubDate>Wed, 15 Jul 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Skylar S. Larsen et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Probing the Innermost Region of the V883 Ori Disk Using ALMA Band 1 Methanol Line Observations</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2607-12005v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-12005v1</guid>
+      <pubDate>Wed, 15 Jul 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Yoshihide Yamato et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.GA</category>
         <category>astro-ph.SR</category>
     </item>
     <item>
-      <title>Modeling the Impact of Starspot Inhomogeneity on Spectroscopic Retrievals of Directly-Imaged Planets</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-11728v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-11728v1</guid>
-      <pubDate>Tue, 14 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Alex R. Howe et al.</dc:creator>
+      <title>Direct Retrieval of Protoplanetary Disk Dust Properties using Auto-differentiable Gaussian Processes and Its Application to the HD 169142 Disk</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2607-12618v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-12618v1</guid>
+      <pubDate>Wed, 15 Jul 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Tomohiro C. Yoshida et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.IM</category>
     </item>
     <item>
-      <title>High Resolution Optical Methane Linelist from observations of Titan for Cross-Correlation studies</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-10250v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-10250v1</guid>
-      <pubDate>Tue, 14 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Rafael Rianço-Silva et al.</dc:creator>
+      <title>Modeling the Evolution of Protoplanetary Disks: Two Pathways from Gravitational Instability to MHD Wind-Driven Accretion</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2607-12007v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-12007v1</guid>
+      <pubDate>Wed, 15 Jul 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Yang Ni, Wenrui Xu, Xue-Ning Bai</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
-        <category>physics.ao-ph</category>
-        <category>physics.chem-ph</category>
-    </item>
-    <item>
-      <title>Water gas discs in exo-asteroid belts</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-11677v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-11677v1</guid>
-      <pubDate>Tue, 14 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Paul Huet, Quentin Kral, Louis Manchon</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>How Many Transiting Giant Planets Can JWST Search for Moons and Rotational Oblateness?</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-09873v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-09873v1</guid>
-      <pubDate>Tue, 14 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Le-Chris Wang, Joshua N. Winn</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Discovering and Characterising Exoplanets and Ultracool Dwarfs with the Square Kilometre Array</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-11507v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-11507v1</guid>
-      <pubDate>Tue, 14 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Robert D. Kavanagh et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
-        <category>astro-ph.SR</category>
-    </item>
-    <item>
-      <title>Stellar Observation Scheduling Optimization for Distributed Space Interferometry Missions</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-10888v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-10888v1</guid>
-      <pubDate>Tue, 14 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Ethan Foss, Antonio Rizza, Simone D&#x27;Amico</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
-        <category>math.OC</category>
-    </item>
-    <item>
-      <title>Peering through the disc of HD 98800 BaBb. Precise timing predictions for the HD 98800 AaAb occultation</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-11599v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-11599v1</guid>
-      <pubDate>Tue, 14 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>S. Zúñiga-Fernández et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.SR</category>
-    </item>
-    <item>
-      <title>Parameter estimation from the transit light curve including gravitational lensing effects</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-10175v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-10175v1</guid>
-      <pubDate>Tue, 14 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Shinta Kasuya et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
-    </item>
-    <item>
-      <title>Latitudinal chemical and cloud variations in the atmosphere of a brown dwarf</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-11642v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-11642v1</guid>
-      <pubDate>Tue, 14 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Benjamin Charnay et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.SR</category>
-    </item>
-    <item>
-      <title>Evolution and Observable Properties of Rocky Planet Atmospheres</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-11531v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-11531v1</guid>
-      <pubDate>Tue, 14 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Marie-Luise Steinmeyer et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Exoplanetary Tour Design with Solar Sails: TheAntipodes Results in the GTOC13 Problem</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-10150v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-10150v1</guid>
-      <pubDate>Tue, 14 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Jack Yarndley et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.IM</category>
         <category>astro-ph.EP</category>
     </item>
   </channel>
