@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 16 Jul 2026 04:54:55 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 17 Jul 2026 04:58:17 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,70 +15,102 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>Piercing through the Haze: Characterizing Titan-like terrestrial exoplanets with JWST</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-13255v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-13255v1</guid>
-      <pubDate>Thu, 16 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>L. C. Mayorga et al.</dc:creator>
+      <title>Atmospheric evolution through outgassing and escape on young molten rocky exoplanets</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2607-15011v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-15011v1</guid>
+      <pubDate>Fri, 17 Jul 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Emma Postolec et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>physics.ao-ph</category>
+        <category>physics.geo-ph</category>
+    </item>
+    <item>
+      <title>Tidal evolution of packed moon systems around an Earth-mass planet</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2607-14323v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-14323v1</guid>
+      <pubDate>Fri, 17 Jul 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Alan Briseño, Billy Quarles, Marialis Rosario-Franco</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>Reflation: redox-driven atmospheric inflation as tracer of super-Earth geochemistry</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-13793v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-13793v1</guid>
-      <pubDate>Thu, 16 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Lorenzo Cesario et al.</dc:creator>
+      <title>The Expected Yield of Venus Zone Terrestrial Planets from PLATO</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2607-14225v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-14225v1</guid>
+      <pubDate>Fri, 17 Jul 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Stephen R. Kane et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>Cradle of Life: From the Formation of Stars to Habitable Worlds with the SKAO</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-13867v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-13867v1</guid>
-      <pubDate>Thu, 16 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Eleonora Bianchi, Joseph R. Callingham, the Cradle of Life working group</dc:creator>
+      <title>The exozodi spectral effect: Residual habitable zone dust may bias exoEarth characterization</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2607-14329v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-14329v1</guid>
+      <pubDate>Fri, 17 Jul 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Miles H. Currie et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Helium escaping from the atmosphere of a nearby rocky exoplanet orbiting in a habitable zone</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2607-14326v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-14326v1</guid>
+      <pubDate>Fri, 17 Jul 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Collin Cherubim et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Sulfur photochemistry observationally traces mantle redox states of rocky planets</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2607-15204v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-15204v1</guid>
+      <pubDate>Fri, 17 Jul 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Ioannis Panagiotou et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>physics.geo-ph</category>
+    </item>
+    <item>
+      <title>The majority of hot Jupiters formed beyond the water ice line</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2607-15144v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-15144v1</guid>
+      <pubDate>Fri, 17 Jul 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Yaxing He et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>First planetesimals from DESI DR1: 12 highly metal-rich white dwarfs</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2607-14251v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-14251v1</guid>
+      <pubDate>Fri, 17 Jul 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Paula Izquierdo et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
         <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>Dust masses of Upper Scorpius disks and their statistics</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2607-14850v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-14850v1</guid>
+      <pubDate>Fri, 17 Jul 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Huiyi Deng, Yao Liu, Min Fang</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.GA</category>
+        <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>DUET: Design of a simultaneous InGaAs--CCD split-beam imager for ultra-cool dwarf exoplanet transit survey</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2607-14772v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-14772v1</guid>
+      <pubDate>Fri, 17 Jul 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Peter P. Pedersen et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.IM</category>
-    </item>
-    <item>
-      <title>Photometric Variability and Rotation of Beta Pictoris b from JWST NIRCam Coronagraphic Imaging</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-13133v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-13133v1</guid>
-      <pubDate>Thu, 16 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Yifan Zhou et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>SaNDi-SHoP: Searching for Satellites&#x27;N&#x27;Disks with a Star-Hopping Program II. Spectrophotometric analysis and orbital monitoring of directly imaged companions</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-13545v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-13545v1</guid>
-      <pubDate>Thu, 16 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Andrea Bernardi et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Revisiting TOI-4438 and TOI-442 planetary systems with new observations from SPIRou and TESS</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-13333v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-13333v1</guid>
-      <pubDate>Thu, 16 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>J. Serrano Bell et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Growing Planets Produce Extreme Dust Signatures</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-13227v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-13227v1</guid>
-      <pubDate>Thu, 16 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Philip J. Carter, Zoë M. Leinhardt</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
+        <category>astro-ph.SR</category>
     </item>
   </channel>
 </rss>
