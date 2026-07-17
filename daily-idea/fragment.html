@@ -1,55 +1,62 @@
 <section class="exo-daily" aria-label="Exoplanet idea of the day">
   <header class="exo-daily__head">
     <span class="exo-daily__eyebrow">Exoplanet idea of the day</span>
-    <time class="exo-daily__date" datetime="2026-07-16">2026-07-16</time>
+    <time class="exo-daily__date" datetime="2026-07-17">2026-07-17</time>
   </header>
-  <h2 class="exo-daily__title">Poor Person&#x27;s Doppler Imaging — Reconstructing Stellar Surface Activity Maps from Starspot-Transit Crossings Across the Kepler–TESS Baseline</h2>
+  <h2 class="exo-daily__title">Stellar Butterfly Diagrams from Multi-Epoch Transmission Spectra — Turning Stellar Contamination into Starspot Science</h2>
   <div class="exo-daily__premise">
-    <p>When a transiting exoplanet crosses a starspot, it produces a brief brightening "bump" in the transit light curve. Each bump encodes the spot's position along the transit chord, its contrast (temperature), and its approximate size. A single crossing is a curiosity; dozens of crossings of the <em>same star</em> over months or years become a tomographic probe of the stellar surface. With Kepler's 4-year baseline and TESS's ongoing multi-sector coverage, some active planet-hosting stars now have <strong>10+ years of transit-resolved spot-crossing data</strong>. This project would systematically invert those crossings into time-resolved latitude–longitude activity maps — effectively a photometry-only analog of Doppler imaging, but for planet-hosting stars that are often too faint for spectropolarimetric mapping.</p>
-<p>A recent homogeneous survey (A&amp;A, 2025) cataloged ~102 spot-crossing candidates across 6 planets from 3,273 Kepler/TESS transits, estimating detection frequencies of ~4% (TESS) to ~37% (Kepler) for K-dwarf hosts. This catalog exists, but no one has yet used it (or an expanded version) to do <em>longitudinal surface reconstruction</em> across the full Kepler+TESS time baseline.</p>
+    <p>Stellar surface heterogeneity — starspots and faculae — is one of the dominant systematic errors in exoplanet transmission spectroscopy, particularly for planets transiting K and M dwarfs. An enormous amount of effort is being invested in removing or correcting this contamination signal. But the contamination itself encodes information about the host star's surface: as a planet transits, it occults a specific chord of the stellar disk, and the difference between the in-transit and out-of-transit spectrum reveals the spatially resolved properties of that chord relative to the disk-integrated star.</p>
+<p>The underexplored idea is to flip the problem: instead of treating stellar contamination as noise to subtract, use multi-epoch transit observations — where the starspot pattern evolves over months to years — to reconstruct the latitude-dependent spot coverage and its temporal migration. On the Sun, this produces the famous "butterfly diagram" showing how sunspot latitudes migrate toward the equator over the ~11-year solar cycle. No such diagram has ever been constructed for another star using transit-chord tomography, yet the data to attempt it may already exist in the JWST and HST archives for the most frequently observed exoplanet host stars.</p>
+<p>A January 2026 study in Astronomy &amp; Astrophysics showed that the simplified stellar contamination model can produce errors of 80–100 ppm in the optical for sub-Neptunes — comparable to the atmospheric features themselves. This means the stellar signal is strong and detectable, not buried in noise. The Pandora SmallSat mission, launched January 2026, is specifically designed to monitor stellar heterogeneity for 20 exoplanet host stars, providing an ideal complementary dataset.</p>
   </div>
   <details class="exo-daily__more">
     <summary>Read the full proposal</summary>
     <div class="exo-daily__full">
       <h3>Scientific Premise</h3>
-<p>When a transiting exoplanet crosses a starspot, it produces a brief brightening "bump" in the transit light curve. Each bump encodes the spot's position along the transit chord, its contrast (temperature), and its approximate size. A single crossing is a curiosity; dozens of crossings of the <em>same star</em> over months or years become a tomographic probe of the stellar surface. With Kepler's 4-year baseline and TESS's ongoing multi-sector coverage, some active planet-hosting stars now have <strong>10+ years of transit-resolved spot-crossing data</strong>. This project would systematically invert those crossings into time-resolved latitude–longitude activity maps — effectively a photometry-only analog of Doppler imaging, but for planet-hosting stars that are often too faint for spectropolarimetric mapping.</p>
-<p>A recent homogeneous survey (A&amp;A, 2025) cataloged ~102 spot-crossing candidates across 6 planets from 3,273 Kepler/TESS transits, estimating detection frequencies of ~4% (TESS) to ~37% (Kepler) for K-dwarf hosts. This catalog exists, but no one has yet used it (or an expanded version) to do <em>longitudinal surface reconstruction</em> across the full Kepler+TESS time baseline.</p>
+<p>Stellar surface heterogeneity — starspots and faculae — is one of the dominant systematic errors in exoplanet transmission spectroscopy, particularly for planets transiting K and M dwarfs. An enormous amount of effort is being invested in removing or correcting this contamination signal. But the contamination itself encodes information about the host star's surface: as a planet transits, it occults a specific chord of the stellar disk, and the difference between the in-transit and out-of-transit spectrum reveals the spatially resolved properties of that chord relative to the disk-integrated star.</p>
+<p>The underexplored idea is to flip the problem: instead of treating stellar contamination as noise to subtract, use multi-epoch transit observations — where the starspot pattern evolves over months to years — to reconstruct the latitude-dependent spot coverage and its temporal migration. On the Sun, this produces the famous "butterfly diagram" showing how sunspot latitudes migrate toward the equator over the ~11-year solar cycle. No such diagram has ever been constructed for another star using transit-chord tomography, yet the data to attempt it may already exist in the JWST and HST archives for the most frequently observed exoplanet host stars.</p>
+<p>A January 2026 study in Astronomy &amp; Astrophysics showed that the simplified stellar contamination model can produce errors of 80–100 ppm in the optical for sub-Neptunes — comparable to the atmospheric features themselves. This means the stellar signal is strong and detectable, not buried in noise. The Pandora SmallSat mission, launched January 2026, is specifically designed to monitor stellar heterogeneity for 20 exoplanet host stars, providing an ideal complementary dataset.</p>
 <h3>Target Datasets</h3>
 <ul>
-<li><strong>Kepler short-cadence light curves</strong> for active planet hosts (e.g., Kepler-17, Kepler-71, HAT-P-11, Kepler-411).</li>
-<li><strong>TESS 2-minute and 20-second cadence data</strong> for the same targets in overlapping sectors.</li>
-<li><strong>Ground-based multicolor transit photometry</strong> (MuSCAT2/3 archives) to constrain spot temperatures via chromaticity of the bump amplitude.</li>
-<li>The spot-crossing catalog from the 2025 A&amp;A homogeneous survey as a starting point.</li>
+<li><strong>HST/WFC3 and STIS transmission spectra archives</strong> for repeatedly observed systems: HD 189733b (~20+ transits over 15 years), WASP-107b, GJ 1214b, GJ 436b, HAT-P-11b.</li>
+<li><strong>JWST NIRSpec/NIRISS/G395H multi-epoch transit spectra</strong> from Cycles 1–4 (many GO programs observe multiple transits of the same target).</li>
+<li><strong>TESS continuous photometry</strong> for the same host stars to track rotational modulation and starspot evolution between transit epochs.</li>
+<li><strong>Pandora SmallSat monitoring data</strong> (beginning 2026) for simultaneous visible photometry and NIR spectroscopy of active host stars.</li>
+<li><strong>Ground-based photometric monitoring</strong> (e.g., MEarth, SPECULOOS) providing long-baseline spot modulation histories.</li>
 </ul>
 <h3>Novelty</h3>
-<p>Starspot-crossing events have been studied individually or in small batches to measure stellar differential rotation rates. But a <em>systematic inversion across the full decade-long Kepler+TESS baseline</em> to produce time-evolving surface maps has not been done. This bridges a gap between (a) the Doppler imaging community, which maps stellar surfaces spectroscopically but rarely for planet hosts, and (b) the exoplanet community, which catalogs spot crossings but rarely synthesizes them into stellar physics. The key insight is that the planet acts as a scanning probe whose chord is fixed by orbital geometry — successive transits at slightly different spot longitudes (due to stellar rotation) raster-scan a latitude band.</p>
+<p>Photometric butterfly diagrams have been constructed for a small number of stars — notably Kepler-63 via spot-crossing events in broadband Kepler photometry, and one Sun-like star via asteroseismology. However, these photometric approaches measure only spot position and approximate size. What has not been done is to use multi-epoch <em>spectroscopic</em> transit observations (transmission spectra from HST and JWST) to extract both the spatial distribution and the temperature/composition of spot regions as a function of time. Spectroscopic transit tomography adds a wavelength dimension that photometric spot mapping cannot access: the contamination spectrum's shape constrains the spot temperature, while its amplitude constrains the covering fraction, breaking the degeneracy that plagues broadband methods.</p>
+<p>This project bridges two communities (exoplanet atmospheres and stellar physics) in a way that benefits both: exoplanet scientists get physically motivated, time-evolving contamination corrections grounded in the actual spot cycle phase, and stellar physicists get temperature-resolved activity cycle maps for M/K dwarfs — a regime where photometric spot-crossing methods are most limited by the faintness of individual crossing events.</p>
 <h3>Concrete Workflow</h3>
 <ol>
-<li><strong>Expand the spot-crossing catalog.</strong> Re-analyze all Kepler short-cadence and TESS high-cadence transits for the ~15 most active planet hosts using a Gaussian-process detrending + spot-bump fitting pipeline (e.g., building on <code>spotrod</code> or <code>starsim</code>).</li>
-<li><strong>Map each crossing to stellar coordinates.</strong> Use the known orbital geometry (impact parameter, planet-to-star radius ratio, orbital period) and the crossing time within the transit to assign each spot a position on the stellar disk. Stellar rotation period and inclination (from out-of-transit modulation and v sin i) provide the longitude axis.</li>
-<li><strong>Time-evolve the map.</strong> Bin crossings into rolling windows (e.g., 1 stellar rotation period wide) and build maximum-entropy or Bayesian surface brightness maps at each epoch.</li>
-<li><strong>Extract differential rotation and activity cycle signatures.</strong> Fit a solar-like differential rotation law (Ω(lat) = Ω_eq − ΔΩ sin²θ) to the spot latitude drift. Look for long-term modulations in spot filling factor that could indicate magnetic cycles analogous to the Sun's 11-year cycle.</li>
-<li><strong>Cross-validate</strong> against out-of-transit rotational modulation amplitudes and published v sin i / Rossiter-McLaughlin measurements.</li>
+<li>Identify the 5–10 K/M dwarf exoplanet hosts with the largest number of archival transit spectral observations spanning ≥2 years (HD 189733, GJ 1214, WASP-107, HAT-P-11, GJ 436 are strong candidates).</li>
+<li>For each epoch, fit the transmission spectrum jointly for the planetary atmosphere and the stellar contamination spectrum using a two-component (spot + photosphere) model, extracting the spot covering fraction and effective temperature of the occulted chord.</li>
+<li>Combine the transit geometry (known impact parameter, transit chord latitude on the stellar disk) with the epoch-dependent spot fraction to assign a spot coverage to a specific stellar latitude band at each observation epoch.</li>
+<li>Construct a time-latitude diagram of spot coverage — the stellar butterfly diagram — from the ensemble of transit epochs.</li>
+<li>Compare to predictions from mean-field dynamo models for K/M dwarfs and to photometric activity cycle periods measured from long-baseline monitoring.</li>
+<li>Quantify how the spot evolution propagates into time-variable biases on retrieved planetary atmospheric parameters (e.g., does the apparent H₂O abundance of HD 189733b correlate with the host star's activity cycle phase?).</li>
 </ol>
 <h3>Expected Signal / Observable</h3>
+<p>Spot covering fractions of 1–30% for active K/M dwarfs, producing wavelength-dependent contamination signals of 50–500 ppm in the optical and 10–100 ppm in the NIR. The temporal evolution of these signals over years should reveal systematic latitude migration if the star has a solar-like activity cycle. For HD 189733 (known ~12-year photometric cycle), the transit archive spans long enough to potentially capture a full spot migration cycle.</p>
+<h3>Possible False Positives</h3>
 <ul>
-<li>Differential rotation ΔΩ/Ω_eq measurable to ~5–10% for stars with ≥20 spot crossings, competitive with spectroscopic methods.</li>
-<li>Secular trends in mean spot latitude ("butterfly diagram" analogs) over the 10-year baseline for the best-sampled systems.</li>
-<li>Spot temperature contrasts (from multicolor bump amplitudes) that constrain the magnetic field strength–temperature relation on other stars.</li>
+<li>Spot evolution on timescales shorter than the transit cadence (days–weeks) could produce scatter that mimics latitude migration rather than reflecting a coherent cycle.</li>
+<li>Degeneracy between spot temperature and covering fraction: a few hot spots and many cool spots can produce similar contamination spectra.</li>
+<li>Impact parameter uncertainties propagate into stellar latitude assignments, blurring the butterfly diagram.</li>
+<li>If the stellar inclination is low (star viewed pole-on), different latitudes project onto similar disk positions, reducing spatial discrimination.</li>
+<li>Faculae (bright regions) can partially cancel spot signals, complicating the two-component model.</li>
 </ul>
-<h3>Possible False Positives / Pitfalls</h3>
-<ul>
-<li><strong>Faculae mimicking spots.</strong> Facular crossings produce dips rather than bumps and could be confused with instrumental systematics. Multicolor photometry helps distinguish them (faculae have lower contrast in red bands).</li>
-<li><strong>Spot evolution between transits.</strong> Spots grow, shrink, and migrate. If the spot lifetime is shorter than the transit interval, successive crossings do not probe the same spot, degrading the map. Mitigation: focus on stars with short orbital periods (&lt; 3 days) and long spot lifetimes.</li>
-<li><strong>Degeneracy between spot size and contrast.</strong> A small, dark spot and a large, warm spot can produce similar bumps in a single band. Multicolor data partially breaks this degeneracy.</li>
-<li><strong>Transit chord bias.</strong> The planet only scans a narrow latitude band (set by the impact parameter). Surface features at other latitudes are invisible. This is a fundamental limitation but can be acknowledged and modeled.</li>
-</ul>
-<h3>Why This Could Matter</h3>
-<p>Stellar activity is the dominant noise source contaminating exoplanet atmosphere characterization (the "transit light source effect"). Understanding where spots are, how they evolve, and how they differ from solar spots is critical for interpreting JWST transmission spectra. This project would deliver the first photometry-derived, time-resolved stellar surface maps for active planet hosts — a direct input for correcting JWST spectra and for testing stellar dynamo models on stars other than the Sun.</p>
+<h3>Why This Matters</h3>
+<p>Understanding stellar magnetic activity cycles is a fundamental problem in stellar astrophysics, with direct implications for planetary habitability (stellar flares, UV environment). Spectroscopic transit-chord tomography would provide temperature-resolved spot maps that go beyond what photometric crossing events or asteroseismology can achieve, particularly for the M and K dwarfs that host the most observationally accessible rocky planets. If successful, this project would produce the first spectrally informed butterfly diagrams for cool dwarfs, while simultaneously delivering physically motivated, epoch-specific stellar contamination corrections for JWST transmission spectra — directly improving the reliability of atmospheric retrievals for potentially habitable worlds.</p>
+<hr/>
+<p>## Summary Table</p>
+<p>| # | Project | Primary Data | Key Output | Risk Level | |---|---------|-------------|------------|------------| | 1 | Lava World Atmosphere Demographics | JWST + TESS + Spitzer eclipses | Population-level test of magma-ocean atmosphere theory | Medium — requires sufficient JWST archival targets | | 2 | TTV-Derived Tidal Heating Census | Kepler TTVs + TESS baselines | Ranked catalog of "exo-Io" candidates | Medium-Low — well-constrained dynamical method | | 3 | Stellar Butterfly Diagrams via Transit Tomography | HST + JWST multi-epoch spectra + Pandora | First stellar activity cycle maps from transit data | High — novel technique, unclear signal strength |</p>
+<hr/>
+<p><em>Report generated April 1, 2026. All datasets referenced are publicly available through MAST, the NASA Exoplanet Archive, and mission-specific data portals.</em></p>
     </div>
   </details>
   <footer class="exo-daily__foot">
-    <span class="exo-daily__meta">Source brief: 2026-05-04</span>
+    <span class="exo-daily__meta">Source brief: 2026-04-01</span>
     <span class="exo-daily__meta">Rotates daily &middot; 66 ideas in the pool</span>
   </footer>
 </section>
