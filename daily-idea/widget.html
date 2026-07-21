@@ -3,62 +3,57 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Idea of the day &mdash; Transfer-Learned Stellar Contamination Correction for M-Dwarf Transmission Spectroscopy</title>
+<title>Idea of the day &mdash; Tidal Oblateness Archaeology — Mining Kepler/TESS for Planetary Shape Signatures to Constrain Interior States</title>
 <link rel="stylesheet" href="widget.css"/>
 </head>
 <body>
 <section class="exo-daily" aria-label="Exoplanet idea of the day">
   <header class="exo-daily__head">
     <span class="exo-daily__eyebrow">Exoplanet idea of the day</span>
-    <time class="exo-daily__date" datetime="2026-07-20">2026-07-20</time>
+    <time class="exo-daily__date" datetime="2026-07-21">2026-07-21</time>
   </header>
-  <h2 class="exo-daily__title">Transfer-Learned Stellar Contamination Correction for M-Dwarf Transmission Spectroscopy</h2>
+  <h2 class="exo-daily__title">Tidal Oblateness Archaeology — Mining Kepler/TESS for Planetary Shape Signatures to Constrain Interior States</h2>
   <div class="exo-daily__premise">
-    <p>JWST transmission spectroscopy of planets around M dwarfs — the most common targets for atmospheric characterization of small, potentially habitable worlds — is fundamentally limited by stellar contamination from unocculted spots and faculae. The TRAPPIST-1 system has become a worst-case exemplar: strong contamination features dominate the transmission spectra of planets b, c, and e, and current stellar models cannot fully explain the observed contamination patterns. A recent breakthrough used back-to-back transits of TRAPPIST-1 b and c (observed quasi-simultaneously) as mutual calibrators, since both planets have similar radii and impact parameters, making them ideal for isolating stellar contamination.</p>
-<p>However, this multi-planet calibration technique is a luxury available only in compact multi-transiting systems. For the majority of M-dwarf planets (LHS 1140 b, TOI-700 d, GJ 1214 b), no sibling planet provides a convenient calibrator. The project proposes training a neural network on the rich, multi-planet, multi-epoch TRAPPIST-1 contamination dataset, then transfer-learning to other M-dwarf systems where contamination cannot be directly calibrated.</p>
+    <p>A planet's shape encodes its rotational state and interior density profile. A rapidly rotating or tidally distorted planet is oblate, and that oblateness subtly alters the ingress and egress morphology of its transit light curve. Theoretical predictions have long suggested that Kepler-class photometry should be sensitive to oblateness at the level of a few percent for inflated hot Jupiters, and recent results are finally beginning to deliver: HIP 41378f yielded the first robust oblateness constraint in 2025 (f ≤ 0.889 at 95% confidence), and Kepler-427b shows depth variations consistent with f = 0.19 at ~90% significance. A recent PNAS review (Ragozzine et al., 2025) highlighted that tidal distortion, rotational oblateness, and obliquity remain among the least-explored dynamical signals accessible to JWST and existing photometric archives — the community has been so focused on atmospheric characterization that shape-based science has been left on the table.</p>
+<p>These early detections demonstrate that the signal is <em>there</em>, but the field remains in a one-planet-at-a-time mode. The key insight is that oblateness is not just a curiosity — it is a <em>direct probe of interior rotation and tidal dissipation efficiency</em>, two quantities that are extremely difficult to measure by any other means. A systematic oblateness census across the known hot Jupiter population could distinguish between tidal synchronization models, constrain the tidal quality factor Q', and identify planets with anomalously high obliquities (potentially maintained by secular spin-orbit resonances in multi-planet systems).</p>
   </div>
   <details class="exo-daily__more">
     <summary>Read the full proposal</summary>
     <div class="exo-daily__full">
       <h3>Scientific Premise</h3>
-<p>JWST transmission spectroscopy of planets around M dwarfs — the most common targets for atmospheric characterization of small, potentially habitable worlds — is fundamentally limited by stellar contamination from unocculted spots and faculae. The TRAPPIST-1 system has become a worst-case exemplar: strong contamination features dominate the transmission spectra of planets b, c, and e, and current stellar models cannot fully explain the observed contamination patterns. A recent breakthrough used back-to-back transits of TRAPPIST-1 b and c (observed quasi-simultaneously) as mutual calibrators, since both planets have similar radii and impact parameters, making them ideal for isolating stellar contamination.</p>
-<p>However, this multi-planet calibration technique is a luxury available only in compact multi-transiting systems. For the majority of M-dwarf planets (LHS 1140 b, TOI-700 d, GJ 1214 b), no sibling planet provides a convenient calibrator. The project proposes training a neural network on the rich, multi-planet, multi-epoch TRAPPIST-1 contamination dataset, then transfer-learning to other M-dwarf systems where contamination cannot be directly calibrated.</p>
+<p>A planet's shape encodes its rotational state and interior density profile. A rapidly rotating or tidally distorted planet is oblate, and that oblateness subtly alters the ingress and egress morphology of its transit light curve. Theoretical predictions have long suggested that Kepler-class photometry should be sensitive to oblateness at the level of a few percent for inflated hot Jupiters, and recent results are finally beginning to deliver: HIP 41378f yielded the first robust oblateness constraint in 2025 (f ≤ 0.889 at 95% confidence), and Kepler-427b shows depth variations consistent with f = 0.19 at ~90% significance. A recent PNAS review (Ragozzine et al., 2025) highlighted that tidal distortion, rotational oblateness, and obliquity remain among the least-explored dynamical signals accessible to JWST and existing photometric archives — the community has been so focused on atmospheric characterization that shape-based science has been left on the table.</p>
+<p>These early detections demonstrate that the signal is <em>there</em>, but the field remains in a one-planet-at-a-time mode. The key insight is that oblateness is not just a curiosity — it is a <em>direct probe of interior rotation and tidal dissipation efficiency</em>, two quantities that are extremely difficult to measure by any other means. A systematic oblateness census across the known hot Jupiter population could distinguish between tidal synchronization models, constrain the tidal quality factor Q', and identify planets with anomalously high obliquities (potentially maintained by secular spin-orbit resonances in multi-planet systems).</p>
 <h3>Target Datasets</h3>
 <ul>
-<li><strong>JWST NIRSpec and NIRISS transmission spectra</strong> of all TRAPPIST-1 planets (b, c, d, e, f, g) across multiple epochs (JWST Cycles 1–3)</li>
-<li><strong>JWST transmission spectra</strong> of other M-dwarf planets: LHS 1140 b, GJ 1214 b, TOI-700 d, LP 791-18 d, TOI-1452 b</li>
-<li><strong>Contemporaneous stellar monitoring:</strong> TRAPPIST-1 out-of-transit photometry from JWST, Spitzer (archival), and ground-based telescopes for stellar variability characterization</li>
-<li><strong>Stellar models:</strong> PHOENIX, SPHINX, and STAGGER grid spectra for M-dwarf heterogeneity modeling</li>
-<li><strong>Published spot/faculae covering fractions</strong> from TTV, photometric variability, and spectral decomposition analyses</li>
+<li><strong>Kepler long-cadence and short-cadence light curves</strong> for ~300 confirmed hot Jupiters and inflated sub-Saturns (MAST archive)</li>
+<li><strong>TESS 2-minute and 20-second cadence data</strong> for the brightest transit hosts observed across multiple sectors</li>
+<li><strong>JWST NIRSpec/NIRISS transit observations</strong> already in the archive (GO Cycles 1–3) where ingress/egress are well-sampled at high SNR</li>
+<li><strong>Spitzer 4.5 µm phase curves</strong> (archival) for thermal emission asymmetry cross-checks</li>
 </ul>
 <h3>Novelty</h3>
-<p>The back-to-back transit calibration for TRAPPIST-1 b/c has been demonstrated in one study (Radica et al. 2024), and neural networks for stellar contamination reduction have been proposed in early 2026 (arXiv:2602.10330). However, no published work has attempted to combine these approaches into a transfer-learning framework: using TRAPPIST-1 as a "training star" whose contamination is well-characterized through multi-planet differential spectroscopy, then applying the learned contamination patterns to other M-dwarf hosts. The project's distinct contribution is treating TRAPPIST-1's contamination not as a nuisance to be removed, but as a Rosetta Stone for understanding M-dwarf heterogeneity at spectroscopic resolution.</p>
+<p>While individual studies have now achieved detections for a small number of planets (e.g., HIP 41378f, Kepler-427b), and earlier work placed upper limits on systems like Kepler-7b, no one has performed a <em>population-level</em> oblateness survey using uniform methodology across hundreds of planets. The statistical power of a population approach is that even non-detections become informative: an ensemble of upper limits on oblateness across a range of orbital periods, planetary radii, and stellar types would place the tightest constraints to date on tidal synchronization timescales and interior viscosity models. This is distinct from the one-planet-at-a-time paradigm that has dominated so far.</p>
 <h3>Concrete Workflow</h3>
 <ol>
-<li><strong>Build the TRAPPIST-1 contamination atlas:</strong> Collect all JWST transmission spectra of TRAPPIST-1 planets across all available epochs. For each epoch, compute the "contamination spectrum" by differencing spectra of planet pairs with known (negligible) atmospheres (b and c) from epochs with different stellar activity states.</li>
-<li><strong>Parameterize the contamination:</strong> Decompose each contamination spectrum into a basis set of stellar heterogeneity components (spot temperature, faculae temperature, covering fractions) using a combination of PHOENIX model grids and data-driven decomposition (PCA/NMF).</li>
-<li><strong>Train the neural network:</strong> Train a variational autoencoder (VAE) or normalizing flow on the TRAPPIST-1 contamination spectra, conditioned on stellar activity indicators (out-of-transit flux level, photometric variability amplitude, spectral slope). The network learns the mapping: (stellar activity indicators, wavelength) → contamination spectrum shape.</li>
-<li><strong>Transfer to other systems:</strong> For each non-TRAPPIST-1 M-dwarf target, use the target's stellar activity indicators (from out-of-transit JWST data and ground-based monitoring) as input to the trained network. The network predicts the expected contamination spectrum, which is then subtracted from the observed transmission spectrum before atmospheric retrieval.</li>
-<li><strong>Validation:</strong> Test the framework on TRAPPIST-1 e and f — planets with possible atmospheres — by comparing retrieval results with and without the neural contamination correction. Also apply leave-one-out cross-validation within the TRAPPIST-1 system.</li>
-<li><strong>Application to high-priority targets:</strong> Apply the correction to GJ 1214 b (where high-altitude clouds/hazes and stellar contamination are entangled), LHS 1140 b (a promising HZ super-Earth), and TOI-700 d.</li>
+<li>Construct a target list of all transiting planets with Rp &gt; 0.5 RJ and P &lt; 10 days from the NASA Exoplanet Archive, cross-matched with Kepler, TESS, and JWST archival coverage.</li>
+<li>Develop a custom transit model incorporating planetary oblateness (parameterized as f = (Req - Rpole)/Req) and projected obliquity (θ), building on the Seager &amp; Hui (2002) and Carter &amp; Winn (2010) formalisms.</li>
+<li>Fit each system's phase-folded light curve with both a spherical model and an oblate model using nested sampling (e.g., dynesty) to compute Bayesian evidence ratios.</li>
+<li>For systems with marginal detections (ΔlnZ &gt; 2), stack residuals from similar-parameter planets to search for a population-level signal.</li>
+<li>Compare the resulting oblateness–period distribution against tidal evolution models (e.g., Leconte et al. 2010; Millholland &amp; Laughlin 2019) to constrain Q' as a function of planet mass and radius.</li>
 </ol>
-<h3>Expected Signal/Observable</h3>
-<p>Stellar contamination in TRAPPIST-1 transmission spectra produces wavelength-dependent offsets of 50–200 ppm that vary between epochs. The neural network should capture the dominant modes of this variation (expected to be described by 3–5 latent dimensions based on the dimensionality of spot/faculae parameter space). For transfer targets, the correction is expected to reduce systematic residuals by a factor of 2–5, potentially revealing atmospheric features (H₂O, CO₂, CH₄ at 10–50 ppm) that are currently buried under contamination noise.</p>
+<h3>Expected Signal / Observable</h3>
+<p>For a planet with f ~ 0.05 (comparable to Saturn) and an obliquity of 30°, the transit depth asymmetry between ingress and egress is on the order of 50–100 ppm for a Jupiter-sized planet around a Sun-like star. This is below the noise floor for individual Kepler long-cadence transits, but <em>stacking 50+ transits for the best-observed planets</em> (or using TESS 20-second cadence for bright hosts) brings the effective sensitivity into the 10–30 ppm range, where detections become plausible for the most inflated, rapidly rotating cases.</p>
 <h3>Possible False Positives</h3>
 <ul>
-<li><strong>Overfitting to TRAPPIST-1:</strong> The contamination patterns of TRAPPIST-1 (spectral type M8V, very active) may not transfer well to earlier M dwarfs (M2–M5V) with different spot/faculae properties. The transfer learning could introduce systematic biases rather than removing them.</li>
-<li><strong>Activity indicator degeneracies:</strong> Photometric variability amplitude is a crude proxy for the spatial distribution of heterogeneities on the stellar disk, and the same variability amplitude can arise from very different spot configurations.</li>
-<li><strong>Confounding atmospheric signals:</strong> If TRAPPIST-1 b and c do have thin atmospheres (which cannot be fully excluded), the "pure contamination" training set would be slightly contaminated by atmospheric features, propagating errors to other systems.</li>
-<li><strong>Temporal non-stationarity:</strong> M-dwarf activity evolves on timescales of months to years; contamination patterns learned at one epoch may not apply at another, requiring ongoing recalibration.</li>
+<li><strong>Starspot crossings</strong> during ingress/egress can mimic asymmetric transit shapes. Mitigation: multi-epoch analysis (spot patterns change, oblateness does not), and infrared observations where spot contrast is reduced.</li>
+<li><strong>Gravity darkening</strong> of the host star (if rapidly rotating or tidally distorted by the planet) can produce asymmetric transits. Mitigation: restrict the sample to slow rotators (v sin i &lt; 5 km/s) or model gravity darkening jointly.</li>
+<li><strong>Transit timing variations (TTVs)</strong> can shift ingress/egress if not properly detrended. Mitigation: fit individual transits rather than relying solely on phase-folded data.</li>
 </ul>
-<h3>Why It Matters</h3>
-<p>M dwarfs host the most observationally accessible potentially habitable planets, but stellar contamination is the single largest obstacle to characterizing their atmospheres with JWST. If this transfer-learning approach works, it would transform every M-dwarf atmospheric observation by providing a principled, data-driven contamination correction — turning TRAPPIST-1 from a cautionary tale into a calibration standard. The approach also has direct implications for the interpretation of biosignature claims: dimethyl sulfide and other potential biosignatures on K2-18b-like planets cannot be confidently identified until stellar contamination is controlled at the ~10 ppm level, which current methods cannot achieve.</p>
-<hr/>
-<p><em>These ideas draw on the rapidly evolving 2025–2026 landscape of JWST atmospheric characterization, archival Kepler/K2 data mining, and stellar contamination mitigation. Each project leverages publicly available data and addresses a gap identified in the NASA ExEP Science Gap List or recent literature.</em></p>
+<h3>Why This Could Matter</h3>
+<p>A population-level constraint on planetary oblateness would be a <em>first</em>. It would directly measure how efficiently tidal forces synchronize planetary rotation — a process that is central to understanding the thermal evolution, atmospheric dynamics (day-night circulation is rotation-dependent), and long-term stability of close-in planets. It could also identify "smoking gun" cases of planets in spin-orbit resonance with obliquities preserved at high values, opening a new window on multi-planet dynamical histories.</p>
     </div>
   </details>
   <footer class="exo-daily__foot">
-    <span class="exo-daily__meta">Source brief: 2026-03-14</span>
+    <span class="exo-daily__meta">Source brief: 2026-04-08</span>
     <span class="exo-daily__meta">Rotates daily &middot; 66 ideas in the pool</span>
   </footer>
 </section>
