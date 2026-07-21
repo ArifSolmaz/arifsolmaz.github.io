@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 20 Jul 2026 05:33:24 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 21 Jul 2026 05:15:14 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,33 +15,50 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>Silicate Clouds, SiO, and Molecular Trends across the L-T Sequence: A JWST/MIRI LRS Spectral Library of Brown Dwarfs</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-15521v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-15521v1</guid>
-      <pubDate>Mon, 20 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Sam Barber et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.SR</category>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Ephemeris Refinement for Qatar-4 b, HAT-P-18 b, and CoRoT-1 b with Small Telescope and TESS Observations</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-15391v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-15391v1</guid>
-      <pubDate>Mon, 20 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Heather B. Hewitt et al.</dc:creator>
+      <title>A Self-Consistent 3D Hydrodynamic Model for Helium Transit Signatures in Evaporating Hot Jupiters</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2607-18193v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-18193v1</guid>
+      <pubDate>Tue, 21 Jul 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Anselmo Falorca, Aline Vidotto</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>Extending dynamical mass measurements: probing GI as a possible origin of mm-dust spirals</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-15923v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-15923v1</guid>
-      <pubDate>Mon, 20 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>V. Pezzotta et al.</dc:creator>
+      <title>Case Study of a Super-eccentric Warm Jupiter Migrating via Equilibrium and Dynamical Tides</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2607-16406v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-16406v1</guid>
+      <pubDate>Tue, 21 Jul 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Donald Liveoak, Sarah Millholland, Michelle Vick</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
-        <category>astro-ph.GA</category>
+    </item>
+    <item>
+      <title>Planet-moon ejections in close stellar encounters</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2607-16402v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-16402v1</guid>
+      <pubDate>Tue, 21 Jul 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Yannick Badoux, Simon Portegies Zwart</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Resolving core-envelope degeneracies in giant planets and sub-Neptunes: constraining the equivalence in the presence of dilute gradients</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2607-16713v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-16713v1</guid>
+      <pubDate>Tue, 21 Jul 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Christian Wilkinson et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+    </item>
+    <item>
+      <title>Probing disk dynamics and dust evolution through shadows in protoplanetary disks: A case study of the HD 142527 disk</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2607-17648v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-17648v1</guid>
+      <pubDate>Tue, 21 Jul 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Yuya Fukuhara et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
         <category>astro-ph.SR</category>
     </item>
   </channel>
