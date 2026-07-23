@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 22 Jul 2026 05:14:27 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 23 Jul 2026 05:19:13 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,70 +15,58 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>Precise Determination of the Metallicity and C/O of WASP-39 b From a Single JWST Instrument Mode with Phase-Resolved Cross-Correlation Retrievals</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-18409v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-18409v1</guid>
-      <pubDate>Wed, 22 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Arjun B. Savel et al.</dc:creator>
+      <title>Planetesimal Formation Across the Stellar Mass Spectrum and its Influence on Exoplanet-Inherited Volatile Budgets</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2607-20271v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-20271v1</guid>
+      <pubDate>Thu, 23 Jul 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Joe Williams et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
-    </item>
-    <item>
-      <title>Refined parameters, formation, and dynamical stability of the wild exoplanet system K2-312=HD 80653</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-19325v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-19325v1</guid>
-      <pubDate>Wed, 22 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>L. Naponiello et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Nancy Grace Roman Space Telescope Wide Field Instrument: Bright Point Source Saturation Response and Persistence Properties from Thermal-Vacuum Testing</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-18419v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-18419v1</guid>
-      <pubDate>Wed, 22 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Dana R. Louie et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.IM</category>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.GA</category>
         <category>astro-ph.SR</category>
     </item>
     <item>
-      <title>Late-infall-induced formation of giant planets, multi-generational planetesimals, and disk substructures</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-18370v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-18370v1</guid>
-      <pubDate>Wed, 22 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Haichen Zhao et al.</dc:creator>
+      <title>CAFE follow-up of TESS hot Jupiter candidates left behind: I. Five newly confirmed planets and a false positive</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2607-19756v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-19756v1</guid>
+      <pubDate>Thu, 23 Jul 2026 20:00:00 +0000</pubDate>
+      <dc:creator>J. Lillo-Box et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>Characterizing Microlensing Planetary System OGLE-2014-BLG-0676L with High-Resolution Image Constrained Light Curve Modeling</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-18408v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-18408v1</guid>
-      <pubDate>Wed, 22 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Asahi Idei et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.GA</category>
-    </item>
-    <item>
-      <title>Dynamical formation of long-period exoplanets systems in evolving binary stars</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-19118v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-19118v1</guid>
-      <pubDate>Wed, 22 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Isabel J. Lima et al.</dc:creator>
+      <title>Atmospheric retrieval evidence for water isotopologue HDO on exoplanet WASP-39b</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2607-19579v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-19579v1</guid>
+      <pubDate>Thu, 23 Jul 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Fabian Gruebel et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>Chondrite Parent Bodies as Escaped Satellites of Proto-Planetary Embryos</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-18523v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-18523v1</guid>
-      <pubDate>Wed, 22 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Harold F. Levison et al.</dc:creator>
+      <title>A Search for Exoplanets around Northern Circumpolar Stars X. The origin of radial velocity variations in the evolved star HD 216595</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2607-19775v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-19775v1</guid>
+      <pubDate>Thu, 23 Jul 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Sang-Hee Kim et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.SR</category>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Dust and Gas Transport in Substructured Nonideal MHD Wind-Launching Disks with Embedded Planets</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2607-20158v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-20158v1</guid>
+      <pubDate>Thu, 23 Jul 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Chun-Yen Hsu et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Dynamically Selected Mass-Radius Relationship for Low Mass Exoplanets</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2607-19632v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-19632v1</guid>
+      <pubDate>Thu, 23 Jul 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Brad Hansen, Austin Mao</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
     </item>
