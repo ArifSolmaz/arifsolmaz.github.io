@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 Jul 2026 05:15:10 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 27 Jul 2026 05:42:54 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,24 +15,62 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>Magnetohydrodynamical opening of dust traps in protoplanetary disks</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-21350v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-21350v1</guid>
-      <pubDate>Fri, 24 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Sergey Khaibrakhmanov, Vitaly Akimkin</dc:creator>
+      <title>Detecting habitable exoplanet atmospheres with LIFE, the Large Interferometer for Exoplanets</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2607-21683v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-21683v1</guid>
+      <pubDate>Mon, 27 Jul 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Sarah Rugheimer et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.IM</category>
         <category>astro-ph.EP</category>
-        <category>astro-ph.SR</category>
     </item>
     <item>
-      <title>The Effects of Magnetic Accretion on the Spatial Extent of White Dwarf Pollution</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-20747v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-20747v1</guid>
-      <pubDate>Fri, 24 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Dang Pham, Aster G. Taylor, Tim Cunningham</dc:creator>
+      <title>JWST/MIRI Reveals the Evolution from Molecular to Atomic Disk Winds</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2607-21733v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-21733v1</guid>
+      <pubDate>Mon, 27 Jul 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Naman S. Bajaj et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.SR</category>
         <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>First results of a continuous monitoring campaign of the PLATO Southern field</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2607-22181v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-22181v1</guid>
+      <pubDate>Mon, 27 Jul 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Thomas Granzer et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+    </item>
+    <item>
+      <title>A Stable Mineral Fingerprint in the Fading Warm Debris Disk around HD 15407A</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2607-21948v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-21948v1</guid>
+      <pubDate>Mon, 27 Jul 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Shu Wang et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Dust characterization of the HD 163296 disk with high-resolution multi-wavelength ALMA observations</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2607-22169v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-22169v1</guid>
+      <pubDate>Mon, 27 Jul 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Kiyoaki Doi et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Optical design of VIPER: a high-resolution multimode fiber-fed VIPA spectrograph for characterizing exoplanet atmospheric escape</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2607-22454v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-22454v1</guid>
+      <pubDate>Mon, 27 Jul 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Matthew C. H. Leung et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.IM</category>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.SR</category>
     </item>
   </channel>
 </rss>
