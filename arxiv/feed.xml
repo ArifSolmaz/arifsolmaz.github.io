@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 28 Jul 2026 04:58:39 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 29 Jul 2026 05:16:11 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,81 +15,24 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>A uniform transit survey of 461 ExoFOP M-dwarf TOI hosts: Follow-up prioritization and new transit candidates</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-23781v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-23781v1</guid>
-      <pubDate>Tue, 28 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Yohann Tschudi</dc:creator>
+      <title>Constraining the lives and times of exoplanets through evolutionary Bayesian retrievals</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2607-25845v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-25845v1</guid>
+      <pubDate>Wed, 29 Jul 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Harrison Nicholls et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>ANDES, the high-resolution spectrograph of the ELT: simulated performance of the CORO module and overview of the high-contrast capabilities for exoplanet observations</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-23555v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-23555v1</guid>
-      <pubDate>Tue, 28 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>M. N&#x27;Diaye et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.IM</category>
-        <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>Angular Momentum of Planet-Forming Disks: Implications for Infall Driven Misalignments</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-23741v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-23741v1</guid>
-      <pubDate>Tue, 28 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Aashish Gupta et al.</dc:creator>
+      <title>GRaTer-JAX: An Accelerated Package for Debris Disk Modeling</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2607-25342v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-25342v1</guid>
+      <pubDate>Wed, 29 Jul 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Mihir Kondapalli et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
-        <category>astro-ph.SR</category>
-    </item>
-    <item>
-      <title>Locate a stellar flare from the M dwarf LAMOST J1332+5057</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-24284v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-24284v1</guid>
-      <pubDate>Tue, 28 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Guang-Wei Li et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.SR</category>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Tracing outer planetary systems through white dwarf pollution in wide binaries</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-22911v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-22911v1</guid>
-      <pubDate>Tue, 28 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Carolina Lizana-Vidal et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.SR</category>
-    </item>
-    <item>
-      <title>Jointly Modeling Roman Coronagraph Astrometry and Photometry Improves Orbital Parameter Estimates</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-22754v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-22754v1</guid>
-      <pubDate>Tue, 28 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Farrah Molina, Sarah Blunt, Jason Wang</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.IM</category>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>SCoRE: the Surface Composition of Rocky Exoplanets</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-22820v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-22820v1</guid>
-      <pubDate>Tue, 28 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Leon Sereinig, Oliver Herbort</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Atmospheric Escape Rates of Planets in Stellar Tidal Fields from 3-D Hydrodynamic Simulations1</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-24733v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-24733v1</guid>
-      <pubDate>Tue, 28 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Ritika Sethi, Morgan MacLeod, Sarah Millholland</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
     </item>
   </channel>
 </rss>
