@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 30 Jul 2026 04:53:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 31 Jul 2026 05:29:53 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,59 +15,79 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>An interstellar energetic and non-aqueous pathway to peptide formation</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-26814v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-26814v1</guid>
-      <pubDate>Thu, 30 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Alfred Thomas Hopkinson et al.</dc:creator>
+      <title>Characterizing the oxidation state of rocky exoplanets with the Large Interferometer for Exoplanets (LIFE)</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2607-28121v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-28121v1</guid>
+      <pubDate>Fri, 31 Jul 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Lorenzo Cesario et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Upgrading LBTI/NOMIC with a quadruple annular groove phase mask and GeoSnap detector for imaging nearby, habitable-zone exoplanets</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2607-28562v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-28562v1</guid>
+      <pubDate>Fri, 31 Jul 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Kevin Wagner et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.IM</category>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>High-Resolution Dayside Spectroscopy of the Ultra-Hot Jupiter WASP-178b with GHOST/Gemini South</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2607-27363v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-27363v1</guid>
+      <pubDate>Fri, 31 Jul 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Caitlin E. Bell et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Laboratory demonstration of low order wavefront control using light reflected off the vortex coronagraph</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2607-28603v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-28603v1</guid>
+      <pubDate>Fri, 31 Jul 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Clarissa R. Do Ó et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.IM</category>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Segment-level thermal sensitivity analysis for exo-Earth coronagraphy with segmented space telescopes</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2607-28393v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-28393v1</guid>
+      <pubDate>Fri, 31 Jul 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Ananya Sahoo et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.IM</category>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Setting the Stage: The Early History of the Solar System</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2607-27543v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-27543v1</guid>
+      <pubDate>Fri, 31 Jul 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Antgona Segura et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>A Systematic Trend in the Observed vs. Predicted Radii of Transiting Brown Dwarfs</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2607-27352v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-27352v1</guid>
+      <pubDate>Fri, 31 Jul 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Thomas G. Beatty</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
         <category>astro-ph.SR</category>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.GA</category>
-        <category>physics.space-ph</category>
     </item>
     <item>
-      <title>The JWST weather report: Unravelling the atmospheric variability of isolated worlds using principal component analysis</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-26182v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-26182v1</guid>
-      <pubDate>Thu, 30 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Merle A. Schrader et al.</dc:creator>
+      <title>Stellar Activity, Exoplanet, Habitability, Planetary Atmospheres</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2607-27531v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-27531v1</guid>
+      <pubDate>Fri, 31 Jul 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Antígona Segura et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
-        <category>astro-ph.SR</category>
-    </item>
-    <item>
-      <title>Tricouplers for nulling interferometry with photonic integrated circuits</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-26168v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-26168v1</guid>
-      <pubDate>Thu, 30 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Anusha Pai Asnodkar et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.IM</category>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>HARMONI@ELT: instrument design, performance, and science capabilities</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-26537v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-26537v1</guid>
-      <pubDate>Thu, 30 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>B. Neichel et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.IM</category>
-        <category>astro-ph.CO</category>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.GA</category>
-        <category>astro-ph.SR</category>
-    </item>
-    <item>
-      <title>ForMoSA: Forward Modeling tool for Spectral Analysis</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-26243v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-26243v1</guid>
-      <pubDate>Thu, 30 Jul 2026 20:00:00 +0000</pubDate>
-      <dc:creator>ForMoSA Collaboration et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.IM</category>
         <category>astro-ph.EP</category>
         <category>astro-ph.SR</category>
     </item>
