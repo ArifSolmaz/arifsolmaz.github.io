@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 03 Aug 2026 05:35:43 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 04 Aug 2026 04:58:08 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,64 +15,94 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>Warm Sub-Saturns Orbiting Single Stars Are Spin-Orbit Aligned</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-29558v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-29558v1</guid>
-      <pubDate>Mon, 03 Aug 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Xian-Yu Wang, Songhu Wang</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>A Physically Driven Parameterisation of Multidimensional Atmospheres: Application to the JWST Phase Curve of WASP-121b</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-29057v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-29057v1</guid>
-      <pubDate>Mon, 03 Aug 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Yuanheng Yang et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Atmospheric Signatures of Common Envelope Evolution in White Dwarf Planets</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-28717v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-28717v1</guid>
-      <pubDate>Mon, 03 Aug 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Sydney Jenkins et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.SR</category>
-    </item>
-    <item>
-      <title>Towards Autodifferentiable Point Spread Function Modelling for the VLT/ERIS Vortex Coronagraph</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-29524v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-29524v1</guid>
-      <pubDate>Mon, 03 Aug 2026 20:00:00 +0000</pubDate>
-      <dc:creator>P. Van de Walle Suarez et al.</dc:creator>
+      <title>Orbital Periods and Equilibrium Temperatures from Single TESS Transits with a Physics-Informed Neural Network</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-01101v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-01101v1</guid>
+      <pubDate>Tue, 04 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Muhammad Hassan Javed</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.IM</category>
     </item>
     <item>
-      <title>The Fe I 4377 Å Line as a Solar Faculae Indicator: Insights from Spectral Ratio Analysis</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-29455v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-29455v1</guid>
-      <pubDate>Mon, 03 Aug 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Katlyn L. Hobbs et al.</dc:creator>
+      <title>ESCAPE: a small explorer mission to study the stellar drivers of exoplanet evolution</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-00683v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-00683v1</guid>
+      <pubDate>Tue, 04 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Allison Youngblood et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
         <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>The generation of spiral density waves by MRI in accretion discs</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-00343v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-00343v1</guid>
+      <pubDate>Tue, 04 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>G. Mamatsashvili et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.HE</category>
+        <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>Using High-Resolution Spectroscopy to Study the Composition, Temperature, and Dynamics of Exoplanet Atmospheres</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-00520v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-00520v1</guid>
+      <pubDate>Tue, 04 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Mu&#x27;allim Yakubu</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.IM</category>
     </item>
     <item>
-      <title>The Tartu Observatory Fiber-fed Echelle Spectrograph (TOFES) Data Reduction Pipeline</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2607-29570v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2607-29570v1</guid>
-      <pubDate>Mon, 03 Aug 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Sandipan P. D. Borthakur et al.</dc:creator>
+      <title>The Dynamics of Planetary Ejection</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-00173v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-00173v1</guid>
+      <pubDate>Tue, 04 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Malena Rice, William DeRocco, Sean N. Raymond</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>Rotation, spectral type, and albedo of the potentially hazardous asteroid (153814) 2001 WNₑₓt ₅ Prior to the 2028 June close approach</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-02577v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-02577v1</guid>
+      <pubDate>Tue, 04 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Jin Beniyama et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>MiraSOL: a DMD-based spectrograph for resolved solar spectroscopy</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-01493v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-01493v1</guid>
+      <pubDate>Tue, 04 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Christian Robles, Suvrath Mahadevan, Lawrence Ramsey</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.IM</category>
         <category>astro-ph.EP</category>
         <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>Accretion across scales: streamers, surface-layer transport, and rapid replenishment in young protoplanetary discs</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-02204v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-02204v1</guid>
+      <pubDate>Tue, 04 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Christian Granzow Holm et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>CHEOPS photometry from 2024 reveals a reversal in the transit-timing variations of AU Mic c</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-01120v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-01120v1</guid>
+      <pubDate>Tue, 04 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Z. Garai et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
     </item>
   </channel>
 </rss>
