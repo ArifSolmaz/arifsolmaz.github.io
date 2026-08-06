@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 05 Aug 2026 04:59:54 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 06 Aug 2026 05:11:11 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,39 +15,98 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>A broad exploration of climate and observability of close-in rocky exoplanets: applications to Ross 128 b</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-03857v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-03857v1</guid>
-      <pubDate>Wed, 05 Aug 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Houelle Mathilde et al.</dc:creator>
+      <title>Searching for Habitable Exoplanets with Relative Astrometry (SHERA). I. The Case for Searching for Planets in Binary Star Systems</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-04250v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-04250v1</guid>
+      <pubDate>Thu, 06 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Jessie L. Christiansen et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+    </item>
+    <item>
+      <title>Breaking the brightness barrier: JWST/NIRCam DHS spectroscopy for high-precision time-series observations</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-04109v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-04109v1</guid>
+      <pubDate>Thu, 06 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Achrene Dyrek et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.IM</category>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>JWST Transmission Spectroscopy of TOI-3235 b: Challenges in Constraining Giant Planet Atmospheres Around M Dwarfs Amid Stellar Contamination</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-04194v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-04194v1</guid>
+      <pubDate>Thu, 06 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Zoe Ko et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>Phase-curve approach to study atmospheric flows in hot Jupiters</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-03406v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-03406v1</guid>
-      <pubDate>Wed, 05 Aug 2026 20:00:00 +0000</pubDate>
-      <dc:creator>D. Shulyak et al.</dc:creator>
+      <title>Spatial distribution of water ice in the protoplanetary silhouette disk d216-0939</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-04803v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-04803v1</guid>
+      <pubDate>Thu, 06 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>J. S. Martin et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>HIP 61637 b: a TESS Brown Dwarf in a Near-circular Orbit around a Massive A-type Star</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-03094v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-03094v1</guid>
-      <pubDate>Wed, 05 Aug 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Nino Ephremidze et al.</dc:creator>
+      <title>A new window in time: a mid-infrared slit spectroscopy mode for precision time-series astronomy with JWST/MIRI</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-04110v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-04110v1</guid>
+      <pubDate>Thu, 06 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Achrene Dyrek et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
-        <category>astro-ph.SR</category>
+        <category>astro-ph.IM</category>
     </item>
     <item>
-      <title>Helium-poor winds do not require helium-poor planets</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-03980v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-03980v1</guid>
-      <pubDate>Wed, 05 Aug 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Leonardos Gkouvelis, Francisco J. Pozuelos</dc:creator>
+      <title>Circular polarization as a probe of cloud properties and asymmetries in giant exoplanet atmospheres</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-04837v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-04837v1</guid>
+      <pubDate>Thu, 06 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>M. B. Michaelis, S. Wolf</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+    </item>
+    <item>
+      <title>Self-consistent 1D modelling of Jupiter&#x27;s upper atmosphere as an exoplanet analogue</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-04086v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-04086v1</guid>
+      <pubDate>Thu, 06 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Nils-Martin Robeling et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+    </item>
+    <item>
+      <title>Charged Clouds of Ionized Gas Emerge from Tribocharging Grains</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-04062v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-04062v1</guid>
+      <pubDate>Thu, 06 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Patrick Hock, Jens Teiser, Gerhard Wurm</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.IM</category>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>A Formation-Stage Bottleneck for Exomoons around Close-in Rocky Planets</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-04512v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-04512v1</guid>
+      <pubDate>Thu, 06 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Rongxi Bi et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Generating eccentricity from envelope stripping in the Radius Valley</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-04231v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-04231v1</guid>
+      <pubDate>Thu, 06 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Brad M. S. Hansen</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
     </item>
