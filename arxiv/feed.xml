@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 07 Aug 2026 04:21:24 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 10 Aug 2026 03:46:56 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,62 +15,104 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>Veiled in Starlight: Impacts of Stellar Contamination on Retrievals of TRAPPIST-1f&#x27;s Atmospheric Composition</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-06207v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-06207v1</guid>
-      <pubDate>Fri, 07 Aug 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Harper Rosenthal et al.</dc:creator>
+      <title>The JWST Early Release Science Program for Direct Observations of Exoplanetary Systems VIII: patchy forsterite and enstatite clouds in the atmosphere of VHS 1256 b, retrieval lessons learned and outlook to the future</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-06583v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-06583v1</guid>
+      <pubDate>Mon, 10 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Niall Whiteford et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Pyrat Bay 2.0: an Upgraded Framework for Exoplanet Atmosphere Modeling in the JWST Era</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-07128v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-07128v1</guid>
+      <pubDate>Mon, 10 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Patricio E. Cubillos et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.IM</category>
     </item>
     <item>
-      <title>Exploration of Exoplanet Atmospheres with the James Webb Space Telescope</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-05885v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-05885v1</guid>
-      <pubDate>Fri, 07 Aug 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Sasha Hinkley, David K. Sing</dc:creator>
+      <title>Host--Non-host Differences in Stellar Chemistry, Activity, and Birth Radius: Hints of Distinct Formation Environments for Earth-like Planets and Sub-Neptunes</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-07331v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-07331v1</guid>
+      <pubDate>Mon, 10 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Xunzhou Chen et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.SR</category>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>The False Spin of an Exo-Venus</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-06475v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-06475v1</guid>
+      <pubDate>Mon, 10 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Stephen R. Kane</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Optomechanical Design of the MANTIS SmallSat: An Extreme-, Far- and Near-Ultraviolet Spectrograph for Exoplanet Host Stars</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-06594v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-06594v1</guid>
+      <pubDate>Mon, 10 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Brian Fleming et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.IM</category>
-    </item>
-    <item>
-      <title>Dust transport in envelopes of disk-embedded planets: II. Fully convective envelopes</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-05672v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-05672v1</guid>
-      <pubDate>Fri, 07 Aug 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Ayumu Kuwahara, Michiel Lambrechts</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>The TASSIE Program. II: Three Close-In Companions Orbiting Sun-Like Stars</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-05500v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-05500v1</guid>
-      <pubDate>Fri, 07 Aug 2026 20:00:00 +0000</pubDate>
-      <dc:creator>T. Plunkett et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Inventories of Rich Carbon-Chain Chemistry in Prestellar and Starless Cores in the Perseus Molecular Cloud</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-05264v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-05264v1</guid>
-      <pubDate>Fri, 07 Aug 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Anissa Pokorny-Yadav et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.GA</category>
         <category>astro-ph.EP</category>
         <category>astro-ph.SR</category>
     </item>
     <item>
-      <title>The SPACE Program II: No discernible spectral features in the transmission spectrum of the sub-Neptune HD 191939 b observed with HST/WFC3</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-05962v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-05962v1</guid>
-      <pubDate>Fri, 07 Aug 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Cyril Gapp et al.</dc:creator>
+      <title>Multi-epoch ultraviolet observables for breaking the radius-albedo degeneracy in directly imaged exoplanets</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-06649v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-06649v1</guid>
+      <pubDate>Mon, 10 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Suniti Sanghavi, Robert A. West, Pin Chen</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+    </item>
+    <item>
+      <title>Euclid Early Release Observations of the Barnard 30 dark cloud I. Brown dwarfs and planetary mass candidate members at the core of the association</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-07048v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-07048v1</guid>
+      <pubDate>Mon, 10 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>D. Barrado et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.SR</category>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.GA</category>
+    </item>
+    <item>
+      <title>Alkali Metallicity, Mineral Clouds, and Deep Atmospheric Variability on Jupiter</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-06600v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-06600v1</guid>
+      <pubDate>Mon, 10 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Xi Zhang et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>physics.ao-ph</category>
+    </item>
+    <item>
+      <title>Juno Microwave Observations Reveal Jupiter&#x27;s Deep Alkali-Chlorine Relation</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-06586v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-06586v1</guid>
+      <pubDate>Mon, 10 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Xi Zhang et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>physics.ao-ph</category>
+    </item>
+    <item>
+      <title>An Observational Study of Systematics in Differential Transmission Spectroscopy Using HFOSC on the Himalayan Chandra Telescope</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-06749v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-06749v1</guid>
+      <pubDate>Mon, 10 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Manjunath Bestha et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
     </item>
   </channel>
 </rss>
