@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 11 Aug 2026 03:29:14 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 14 Aug 2026 04:00:36 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,54 +15,91 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>TOI-7475 spectroscopic follow up - detection of a massive hot Jupiter on an eccentric orbit</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-09679v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-09679v1</guid>
-      <pubDate>Tue, 11 Aug 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Joanna Pietrucha et al.</dc:creator>
+      <title>Strict Limits on Helium Absorption from LHS 1140 b from Four JWST NIRISS Transits</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-13470v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-13470v1</guid>
+      <pubDate>Fri, 14 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Michael Radica</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>What can Planetary Ice Shells Teach Us about Ocean Mixing and Life, and Why Salt Matters</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-07826v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-07826v1</guid>
-      <pubDate>Tue, 11 Aug 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Nicole Shibley</dc:creator>
+      <title>No Helium Detected in LHS 1140 b from Four JWST NIRISS/SOSS Transits</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-13473v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-13473v1</guid>
+      <pubDate>Fri, 14 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Katherine A. Bennett et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>Spectrally dispersed non-redundant aperture-masking interferometry in the thermal infrared with LBTI/ALES</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-07738v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-07738v1</guid>
-      <pubDate>Tue, 11 Aug 2026 20:00:00 +0000</pubDate>
-      <dc:creator>T. A. Stuber et al.</dc:creator>
+      <title>Climates of Gl 514 b</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-12457v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-12457v1</guid>
+      <pubDate>Fri, 14 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Héctor E. Delgado Díaz et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.IM</category>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>The Role of Extended-Source Geometry and Diurnal Cycles on Exoplanetary Thermal Baselines: Reconciling the Brightness Temperature of 55 Cancri e</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-09241v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-09241v1</guid>
-      <pubDate>Tue, 11 Aug 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Mradumay Sadh</dc:creator>
+      <title>Are Hot Jupiters Tidally Disrupted During Stellar Main Sequence?</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-12790v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-12790v1</guid>
+      <pubDate>Fri, 14 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Qingru Hu et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
-    </item>
-    <item>
-      <title>Global simulations of accretion flows onto perturbers embedded in magnetized disks -I. MRI and jet formation in ideal MHD</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-09471v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-09471v1</guid>
-      <pubDate>Tue, 11 Aug 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Raúl O. Chametla et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.HE</category>
         <category>astro-ph.EP</category>
         <category>astro-ph.GA</category>
+        <category>astro-ph.IM</category>
+    </item>
+    <item>
+      <title>Assessing Planetary Stability and Long-Term Habitability in Nearby Stellar Binaries: 70 Oph, 36 Oph, γ Leo</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-13243v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-13243v1</guid>
+      <pubDate>Fri, 14 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Alyssa R. Jankowski et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Stellar tidal systematics in apsidal-motion searches for circumbinary planets: CH Ind and SW CMa</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-13269v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-13269v1</guid>
+      <pubDate>Fri, 14 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Qunfeng Jiang</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
         <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>Gas Flows and Mass Accretion Rates in Eight Dippers: HD 142666, HD 143006, HD 145718, V935 Sco, DoAr 25, EPIC 204638512, EPIC 205151387, and EPIC 203850058</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-08891v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-08891v1</guid>
+      <pubDate>Fri, 14 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Michael L. Sitko et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.SR</category>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>The sensitivity of TESS to transiting planets in TOIs with close-in stellar companions</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-13527v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-13527v1</guid>
+      <pubDate>Fri, 14 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Colin Littlefield et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>A Radon-Transform Perspective on Exoplanet Transits</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-13163v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-13163v1</guid>
+      <pubDate>Fri, 14 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Shotaro Tada</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
     </item>
   </channel>
 </rss>
