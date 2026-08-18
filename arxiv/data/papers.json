@@ -1,6 +1,6 @@
 {
   "announcement_date": "2026-08-17",
-  "updated_at": "2026-08-17T02:53:32.645302+00:00",
+  "updated_at": "2026-08-18T02:49:39.384019+00:00",
   "category": "astro-ph.EP",
   "paper_count": 3,
   "papers": [
@@ -26,6 +26,7 @@
       "abs_link": "https://arxiv.org/abs/2608.13895v1",
       "is_exoplanet_focused": true,
       "tweetability_score": 18,
+      "figure_url": "https://arxiv.org/html/2608.13895v1/2608.13895v1/chemical.png",
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -33,8 +34,7 @@
         "claim": "",
         "evidence": "",
         "question": ""
-      },
-      "figure_url": "https://arxiv.org/html/2608.13895v1/2608.13895v1/chemical.png"
+      }
     },
     {
       "id": "2608.13639v1",
@@ -56,6 +56,7 @@
       "abs_link": "https://arxiv.org/abs/2608.13639v1",
       "is_exoplanet_focused": true,
       "tweetability_score": 17,
+      "figure_url": "https://arxiv.org/html/2608.13639v1/2608.13639v1/embryomass.png",
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -63,8 +64,7 @@
         "claim": "",
         "evidence": "",
         "question": ""
-      },
-      "figure_url": "https://arxiv.org/html/2608.13639v1/2608.13639v1/embryomass.png"
+      }
     },
     {
       "id": "2608.14518v1",
@@ -82,6 +82,7 @@
       "abs_link": "https://arxiv.org/abs/2608.14518v1",
       "is_exoplanet_focused": true,
       "tweetability_score": 15,
+      "figure_url": "https://arxiv.org/html/2608.14518v1/2608.14518v1/Convective_surface_renewal.png",
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -89,8 +90,7 @@
         "claim": "",
         "evidence": "",
         "question": ""
-      },
-      "figure_url": "https://arxiv.org/html/2608.14518v1/2608.14518v1/Convective_surface_renewal.png"
+      }
     }
   ]
 }
