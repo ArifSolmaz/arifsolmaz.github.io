@@ -1,49 +1,48 @@
 <section class="exo-daily" aria-label="Exoplanet idea of the day">
   <header class="exo-daily__head">
     <span class="exo-daily__eyebrow">Exoplanet idea of the day</span>
-    <time class="exo-daily__date" datetime="2026-08-18">2026-08-18</time>
+    <time class="exo-daily__date" datetime="2026-08-19">2026-08-19</time>
   </header>
-  <h2 class="exo-daily__title">Stochastic Brightness Variability of Ultra-Short-Period Lava Worlds as a Window into Magma Ocean Dynamics</h2>
+  <h2 class="exo-daily__title">Mapping the Tidal Graveyard: A Frequency-Resolved Census of Orbital Decay Signatures Across the TESS Extended Mission</h2>
   <div class="exo-daily__premise">
-    <p>Ultra-short-period (USP) rocky planets such as 55 Cancri e, TOI-561b, and K2-141b orbit so close to their stars that their daysides are molten — permanent magma oceans under mineral vapor atmospheres. In 2025, JWST revealed that TOI-561b possesses a substantial atmosphere despite being a 3,140°F lava world orbiting one of the oldest stars in the galaxy, upending predictions that such worlds should be airless. Meanwhile, years of Spitzer 4.5 μm phase curve observations of 55 Cnc e have shown puzzling epoch-to-epoch brightness variations that remain unexplained.</p>
-<p>This project hypothesizes that <em>stochastic variability</em> in the thermal emission of USP rocky planets encodes information about magma ocean convective overturn, episodic volcanic outgassing, and cloud formation/dissipation in mineral vapor atmospheres. By characterizing the power spectral density (PSD) of brightness fluctuations across multiple epochs, we can effectively do "exo-geophysics" — constraining mantle viscosity, outgassing rates, and atmospheric replenishment timescales from time-domain photometry alone.</p>
+    <p>We know hot Jupiters are spiraling into their host stars — the poster children being WASP-12 b and Kepler-1658 b, whose orbital periods are measurably shrinking in real time. But the <em>population-level statistics</em> of orbital decay remain remarkably thin. Recent work on 188 hot Jupiters has shown that the stellar tidal quality factor Q'★ climbs sharply with forcing frequency (from ~10⁵ to ~10⁷ across a factor-of-four frequency range), which implies that the efficiency of tidal dissipation is not a single number but a steep function of the planet's orbital frequency relative to the star's spin. Most studies still treat Q'★ as a constant. This project would build a homogeneous transit-timing catalog from all available TESS sectors (now spanning 6+ years of baseline for many fields) and combine it with archival Kepler/K2 data to construct a <em>frequency-resolved tidal dissipation map</em> of the short-period giant planet population.</p>
   </div>
   <details class="exo-daily__more">
     <summary>Read the full proposal</summary>
     <div class="exo-daily__full">
       <h3>Scientific Premise</h3>
-<p>Ultra-short-period (USP) rocky planets such as 55 Cancri e, TOI-561b, and K2-141b orbit so close to their stars that their daysides are molten — permanent magma oceans under mineral vapor atmospheres. In 2025, JWST revealed that TOI-561b possesses a substantial atmosphere despite being a 3,140°F lava world orbiting one of the oldest stars in the galaxy, upending predictions that such worlds should be airless. Meanwhile, years of Spitzer 4.5 μm phase curve observations of 55 Cnc e have shown puzzling epoch-to-epoch brightness variations that remain unexplained.</p>
-<p>This project hypothesizes that <em>stochastic variability</em> in the thermal emission of USP rocky planets encodes information about magma ocean convective overturn, episodic volcanic outgassing, and cloud formation/dissipation in mineral vapor atmospheres. By characterizing the power spectral density (PSD) of brightness fluctuations across multiple epochs, we can effectively do "exo-geophysics" — constraining mantle viscosity, outgassing rates, and atmospheric replenishment timescales from time-domain photometry alone.</p>
+<p>We know hot Jupiters are spiraling into their host stars — the poster children being WASP-12 b and Kepler-1658 b, whose orbital periods are measurably shrinking in real time. But the <em>population-level statistics</em> of orbital decay remain remarkably thin. Recent work on 188 hot Jupiters has shown that the stellar tidal quality factor Q'★ climbs sharply with forcing frequency (from ~10⁵ to ~10⁷ across a factor-of-four frequency range), which implies that the efficiency of tidal dissipation is not a single number but a steep function of the planet's orbital frequency relative to the star's spin. Most studies still treat Q'★ as a constant. This project would build a homogeneous transit-timing catalog from all available TESS sectors (now spanning 6+ years of baseline for many fields) and combine it with archival Kepler/K2 data to construct a <em>frequency-resolved tidal dissipation map</em> of the short-period giant planet population.</p>
 <h3>Target Datasets</h3>
 <ul>
-<li><strong>JWST MIRI</strong> (15 μm) and <strong>NIRCam</strong> (4.5 μm) secondary eclipse and phase curve observations of 55 Cnc e (multiple GO programs across Cycles 1–4), TOI-561b (Cycle 3+), K2-141b, and LHS 3844b (the airless control case).</li>
-<li><strong>Archival Spitzer/IRAC 4.5 μm</strong> phase curves and secondary eclipses of 55 Cnc e spanning 2012–2020 (~15 independent epochs), providing a unique multi-year baseline.</li>
-<li><strong>TESS</strong> optical phase curves for the same targets, providing simultaneous reflected-light constraints on cloud cover variability.</li>
+<li>TESS full-frame images and 2-minute cadence light curves (all sectors through Extended Mission 2)</li>
+<li>Kepler and K2 long- and short-cadence photometry (MAST archive)</li>
+<li>Published radial velocity masses from the NASA Exoplanet Archive</li>
+<li>Gaia DR3 stellar parameters and ages</li>
 </ul>
 <h3>Novelty</h3>
-<p>Current analyses of USP planet thermal emission treat each observation as an independent snapshot, fitting a single brightness temperature or phase curve amplitude. No one has systematically analyzed the <em>time-series statistics</em> of epoch-to-epoch variability — computing power spectra, autocorrelation functions, or structure functions of the dayside brightness. This is the approach used in AGN variability studies and brown dwarf weather monitoring, but it has never been applied to rocky exoplanets. The TOI-561b atmosphere discovery and the growing multi-epoch JWST archive now make this feasible for the first time.</p>
+<p>While individual orbital-decay detections exist, no study has systematically measured (or placed upper limits on) period derivatives for the full short-period giant population using a uniform pipeline, then decomposed the resulting Q'★ distribution as a function of tidal forcing frequency, stellar structure (convective envelope depth), and system age. The frequency dependence itself is a direct probe of dissipation physics — distinguishing equilibrium tide theory from dynamical (inertial wave) models — but it has only been studied statistically, not via direct Pdot measurements across the population.</p>
 <h3>Concrete Workflow</h3>
 <ol>
-<li>Gather all available secondary eclipse depth measurements for each target across all instruments and epochs. Homogenize the photometric reduction pipeline (using the Eureka! or ExoTiC-MIRI pipelines) to minimize systematic offsets between epochs.</li>
-<li>Compute the fractional RMS variability (F_var) at each wavelength. Compare against the expected photon noise + systematic floor to determine if intrinsic variability is detected at &gt;3σ.</li>
-<li>For targets with sufficient epochs (55 Cnc e: ~15+ in Spitzer, growing in JWST), compute the power spectral density of the brightness time series. Test against models: (a) white noise (no intrinsic variability), (b) red noise with PSD ∝ f^(−α) (stochastic convective overturn), (c) quasi-periodic oscillation (tidal forcing of magma ocean).</li>
-<li>Compare the measured variability amplitude and PSD slope against coupled interior-atmosphere models of magma ocean convection. Key parameters: mantle viscosity (η = 0.1–100 Pa·s for ultramafic silicate melts), Rayleigh number, surface-atmosphere exchange timescale, and mineral cloud condensation/dissipation timescale.</li>
-<li>Use the TESS optical variability to disentangle reflective (cloud) variability from thermal (surface temperature) variability via wavelength-dependent amplitude ratios.</li>
+<li>Build a uniform transit-timing pipeline (e.g., using <code>batman</code> + nested sampling) applied to every confirmed hot Jupiter with P &lt; 3.5 days observed by both TESS and Kepler/K2.</li>
+<li>Measure mid-transit times with per-epoch uncertainties; fit linear and quadratic ephemerides.</li>
+<li>For systems with a significant quadratic term (Pdot), derive Q'★. For non-detections, compute 2σ upper limits on |Pdot|.</li>
+<li>Bin results by tidal forcing frequency (≈ 2/P_orb − 2/P_rot), stellar T_eff (proxy for convective envelope depth), and gyrochronological age.</li>
+<li>Compare the observed Q'★(f) relation to predictions from equilibrium-tide and inertial-wave dissipation models.</li>
 </ol>
 <h3>Expected Signal / Observable</h3>
-<p>For 55 Cnc e, the observed Spitzer eclipse depth scatter is ~20–30% around the mean, well above the ~5% photometric uncertainty. If this is intrinsic, the expected PSD should show red noise (α ~ 1–2) on timescales of hours to weeks, corresponding to convective overturn times for a ~100 km deep magma ocean with η ~ 1 Pa·s. For a more viscous magma (η ~ 100 Pa·s), the characteristic timescale shifts to months, producing a steeper PSD. Cloud formation/dissipation in a mineral vapor (SiO, Na, K) atmosphere would add variability on shorter timescales (hours) detectable within single JWST visits.</p>
+<p>A measurable period shift of ~1–50 ms over a 10-year Kepler-to-TESS baseline for systems with Q'★ ≲ 10⁶. Even non-detections constrain Q'★ &gt; 10⁷ and are informative. The key deliverable is a Q'★-vs-frequency diagram with actual measurements (not just population inference).</p>
 <h3>Possible False Positives</h3>
 <ul>
-<li><strong>Stellar variability</strong> of the host star (55 Cnc is a moderately active K dwarf) could masquerade as planetary variability. Mitigation: simultaneous multi-wavelength monitoring; stellar variability has a known spectral signature distinct from planetary thermal emission.</li>
-<li><strong>Instrumental systematics</strong> — Spitzer's well-known intrapixel sensitivity variations and JWST's detector settling could produce spurious epoch-to-epoch scatter. Mitigation: apply identical pipeline to the "null" target LHS 3844b (confirmed airless); any variability detected there is systematic.</li>
-<li><strong>Star-planet magnetic interaction</strong> could modulate the stellar chromospheric emission near the planet's orbital phase. Mitigation: check whether the variability correlates with orbital phase (magnetic) vs. being phase-independent (magma ocean).</li>
+<li>Apsidal precession in mildly eccentric orbits mimics a quadratic TTV. Mitigation: fit for eccentricity using secondary-eclipse timing or radial velocities.</li>
+<li>Rømer delay from a long-period companion produces a parabolic TTV. Mitigation: include a cubic term and check for radial-velocity trends.</li>
+<li>Stellar activity–induced transit-time shifts at the ~10 s level. Mitigation: model starspot crossing events; compare results across wavelengths if multi-band data exist.</li>
 </ul>
 <h3>Why It Matters</h3>
-<p>This would establish a new subfield: <em>time-domain exo-geology</em>. Magma ocean dynamics are central to understanding terrestrial planet differentiation, early atmospheric formation, and volatile delivery — processes that shaped Earth but are completely inaccessible in our own solar system's present state. USP lava worlds are natural laboratories where these processes are ongoing and observable. Constraining mantle viscosity from brightness variability would be a genuinely new kind of measurement with no solar system analog.</p>
+<p>This would provide the first direct, frequency-resolved measurement of tidal dissipation in planet-hosting stars — a fundamental input for predicting the fate of close-in planets, understanding angular momentum evolution, and calibrating tidal theory for binary stars and compact objects alike.</p>
     </div>
   </details>
   <footer class="exo-daily__foot">
-    <span class="exo-daily__meta">Source brief: 2026-03-26</span>
+    <span class="exo-daily__meta">Source brief: 2026-03-10</span>
     <span class="exo-daily__meta">Rotates daily &middot; 66 ideas in the pool</span>
   </footer>
 </section>
