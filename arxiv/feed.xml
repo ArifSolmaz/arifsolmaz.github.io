@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 20 Aug 2026 02:51:02 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 21 Aug 2026 02:56:29 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,100 +15,65 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>The Tidal Venus Phenomenon: Demographics and Case Studies</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-18290v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-18290v1</guid>
-      <pubDate>Thu, 20 Aug 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Stephen R. Kane, Emma L. Miles</dc:creator>
+      <title>The Effects of M Star Age Dependent Ultraviolet Emission on Detecting and Interpreting Exoplanet Biosignatures</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-19328v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-19328v1</guid>
+      <pubDate>Fri, 21 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>C. Evan Davis et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>Looking for TRAPPIST-1 external planets&#x27; emission in JWST archival data</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-18626v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-18626v1</guid>
-      <pubDate>Thu, 20 Aug 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Louis-Julien Cartigny et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>A Search for helium in the atmospheres of three sub-Neptunes and a super-Earth around M-dwarfs</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-19030v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-19030v1</guid>
-      <pubDate>Thu, 20 Aug 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Kiyoe Kawauchi et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Stellar Abundances as Probes of Rocky Exoplanet Interiors: The Mantle Composition and Mineralogy of GJ 486b</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-18457v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-18457v1</guid>
-      <pubDate>Thu, 20 Aug 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Harshit Krishna et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.SR</category>
-    </item>
-    <item>
-      <title>Wet Removal and Cloud Enhancement: The Microphysics of Cloud-Haze Interactions on Sub-Neptunes</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-19100v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-19100v1</guid>
-      <pubDate>Thu, 20 Aug 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Vighnesh Nagpal et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>The Inbound Gas and Dust Evolution of Interstellar Comet 3I/ATLAS from Optical Spectroscopy and Multi-band Photometry</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-18371v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-18371v1</guid>
-      <pubDate>Thu, 20 Aug 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Toni Santana-Ros et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.GA</category>
-    </item>
-    <item>
-      <title>No Persistent Helium Absorption in LHS 1140 b: Four JWST/NIRISS SOSS Transits and Multi-epoch Stellar He I Variability</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-19120v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-19120v1</guid>
-      <pubDate>Thu, 20 Aug 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Amélie Gressier et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Astro-Hunters: Machine Learning for Exoplanet Transit Detection in TESS Photometry</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-18172v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-18172v1</guid>
-      <pubDate>Thu, 20 Aug 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Fatimah Emad Eldin</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
-    </item>
-    <item>
-      <title>Asgard/NOTT: Status of laboratory nulling performance</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-18951v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-18951v1</guid>
-      <pubDate>Thu, 20 Aug 2026 20:00:00 +0000</pubDate>
-      <dc:creator>T. Mattheussen et al.</dc:creator>
+      <title>Shaping SHAPE - A spectro-polarimeter onboard Chandrayaan-3 to observe Earth as an Exoplanet</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-19371v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-19371v1</guid>
+      <pubDate>Fri, 21 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Anuj Nandi et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.IM</category>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>Investigating the properties of nearby young moving groups using GaiaDR3</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-18596v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-18596v1</guid>
-      <pubDate>Thu, 20 Aug 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Mamta Lad et al.</dc:creator>
+      <title>Asymmetric Aerosol Distribution on the Terminators of the Warm Saturn WASP-69 b Revealed by JWST NIRISS/SOSS</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-19756v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-19756v1</guid>
+      <pubDate>Fri, 21 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Le-Chris Wang et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Substructure evolution from protoplanetary to debris disks driven by mutually gravitating planetesimals and implications on Kepler resonances and free-floating planets</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-19329v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-19329v1</guid>
+      <pubDate>Fri, 21 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Yinuo Han, Konstantin Batygin, Fei Dai</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
         <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>Finding Habitable Exoplanets with Binary Relative Astrometry: Planet Detection and Characterization with the Microarcsecond Astrometric Retrieval Algorithm (MARA)</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-19444v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-19444v1</guid>
+      <pubDate>Fri, 21 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>William Roberson et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+    </item>
+    <item>
+      <title>Microlensify: a Transformer Based Machine Learning Classifier for Microlensing Events Trained on TESS Light Curves</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-19419v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-19419v1</guid>
+      <pubDate>Fri, 21 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Atousa Kalantari et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.IM</category>
         <category>astro-ph.EP</category>
         <category>astro-ph.GA</category>
+        <category>astro-ph.SR</category>
+        <category>cs.LG</category>
     </item>
   </channel>
 </rss>
