@@ -1,52 +1,49 @@
 <section class="exo-daily" aria-label="Exoplanet idea of the day">
   <header class="exo-daily__head">
     <span class="exo-daily__eyebrow">Exoplanet idea of the day</span>
-    <time class="exo-daily__date" datetime="2026-08-22">2026-08-22</time>
+    <time class="exo-daily__date" datetime="2026-08-23">2026-08-23</time>
   </header>
-  <h2 class="exo-daily__title">Lava World Atmosphere Demographics — Mining the Ultra-Short-Period Population for Magma-Ocean Volatile Fingerprints</h2>
+  <h2 class="exo-daily__title">Tidally Induced Stellar Oscillation Modes as a Probe of Hot Jupiter Interior Structure</h2>
   <div class="exo-daily__premise">
-    <p>JWST recently detected a thick atmosphere on TOI-561b, a small, scorching-hot rocky planet orbiting one of the oldest stars in the Milky Way — a planet that, under prevailing models, should have been stripped bare long ago. This discovery, alongside the confirmed atmosphere on 55 Cancri e, suggests that magma-ocean outgassing can sustain secondary atmospheres even under extreme irradiation. Yet no systematic demographic study has asked: across the full population of known ultra-short-period (USP) planets, which ones should harbor magma-ocean atmospheres, and what does the presence or absence of such atmospheres tell us about interior composition and mantle volatile budgets?</p>
-<p>The idea is to build a predictive framework — grounded in bulk density, irradiation environment, and host-star age/activity — and test it against JWST secondary eclipse and phase curve observations as they accumulate. The key scientific leverage is that magma-ocean atmospheres are not primordial. Their composition (SiO, Na, K, SiO₂, FeO vapors) is set by the rock vapor equilibrium of the mantle, making them direct probes of interior mineralogy in a way that no other technique currently achieves.</p>
+    <p>Hot Jupiters in tight orbits raise tidal bulges on their host stars. These tidal interactions should excite or modulate stellar oscillation modes at harmonics of the orbital frequency. While tidal spin-up and orbital decay have received attention (e.g., WASP-12b), the <em>spectral fingerprint</em> of tidally forced oscillations in stellar photometry remains largely uncharacterized across the population. By searching Kepler and TESS long-baseline light curves for excess power at exact integer multiples of the orbital frequency (after transit removal), one could detect or constrain the tidal dissipation quality factor Q'★ for dozens of systems simultaneously — and, by extension, back out constraints on the planetary Love number and interior density profile through the coupling efficiency.</p>
   </div>
   <details class="exo-daily__more">
     <summary>Read the full proposal</summary>
     <div class="exo-daily__full">
       <h3>Scientific Premise</h3>
-<p>JWST recently detected a thick atmosphere on TOI-561b, a small, scorching-hot rocky planet orbiting one of the oldest stars in the Milky Way — a planet that, under prevailing models, should have been stripped bare long ago. This discovery, alongside the confirmed atmosphere on 55 Cancri e, suggests that magma-ocean outgassing can sustain secondary atmospheres even under extreme irradiation. Yet no systematic demographic study has asked: across the full population of known ultra-short-period (USP) planets, which ones should harbor magma-ocean atmospheres, and what does the presence or absence of such atmospheres tell us about interior composition and mantle volatile budgets?</p>
-<p>The idea is to build a predictive framework — grounded in bulk density, irradiation environment, and host-star age/activity — and test it against JWST secondary eclipse and phase curve observations as they accumulate. The key scientific leverage is that magma-ocean atmospheres are not primordial. Their composition (SiO, Na, K, SiO₂, FeO vapors) is set by the rock vapor equilibrium of the mantle, making them direct probes of interior mineralogy in a way that no other technique currently achieves.</p>
+<p>Hot Jupiters in tight orbits raise tidal bulges on their host stars. These tidal interactions should excite or modulate stellar oscillation modes at harmonics of the orbital frequency. While tidal spin-up and orbital decay have received attention (e.g., WASP-12b), the <em>spectral fingerprint</em> of tidally forced oscillations in stellar photometry remains largely uncharacterized across the population. By searching Kepler and TESS long-baseline light curves for excess power at exact integer multiples of the orbital frequency (after transit removal), one could detect or constrain the tidal dissipation quality factor Q'★ for dozens of systems simultaneously — and, by extension, back out constraints on the planetary Love number and interior density profile through the coupling efficiency.</p>
 <h3>Target Datasets</h3>
 <ul>
-<li><strong>NASA Exoplanet Archive</strong> for the full USP planet catalog (P &lt; 1 day): masses, radii, densities, host-star properties.</li>
-<li><strong>JWST Cycle 1–4 archival spectra</strong> (NIRSpec, MIRI) for secondary eclipses and thermal emission of USP rocky planets (55 Cnc e, TOI-561b, GJ 367b, K2-141b, LHS 3844b, and others observed as part of GO programs).</li>
-<li><strong>TESS phase curves</strong> of USP planets — even non-detections constrain dayside brightness temperatures and therefore surface/atmospheric thermal budgets.</li>
-<li><strong>Spitzer 4.5 μm archival eclipses</strong> for supplementary thermal constraints.</li>
+<li><strong>Kepler long-cadence and short-cadence data</strong> for confirmed hot Jupiter hosts (roughly 50–70 systems with P &lt; 5 days and sufficient baseline).</li>
+<li><strong>TESS Continuous Viewing Zone targets</strong> with multi-sector coverage for independent validation.</li>
+<li><strong>Gaia DR3/DR4 stellar parameters</strong> for accurate mass/radius to model the expected tidal forcing amplitude.</li>
 </ul>
 <h3>Novelty</h3>
-<p>Individual lava-world atmosphere detections are being published one at a time. What is missing is a population-level analysis that asks: given interior structure models and magma-ocean thermochemistry, can we predict which USP planets should retain rock-vapor atmospheres and which should not? The detection of an atmosphere on TOI-561b (an ancient, metal-poor star) immediately challenges the expectation that old, heavily irradiated planets lose atmospheres. A systematic census would turn individual surprises into a testable demographic trend linking mantle composition, stellar environment, and atmospheric retention.</p>
+<p>Most tidal studies focus on orbital period derivatives (timing) or rotational synchronization. Directly detecting the <em>forced oscillation spectrum</em> in photometry at orbital harmonics is a distinct observable. A few individual-system searches exist (e.g., WASP-18, HAT-P-13), but no systematic population-level survey of tidally forced stellar pulsation excess has been published using the full Kepler/TESS archive. The population approach is what makes this distinct: non-detections are just as informative as detections for constraining Q'★ distributions.</p>
 <h3>Concrete Workflow</h3>
 <ol>
-<li>Compile the complete USP planet sample (~40–50 planets with measured masses and radii) from the NASA Exoplanet Archive.</li>
-<li>For each planet, compute the expected magma-ocean vapor pressure and atmospheric scale height using published rock-vapor-equilibrium codes (e.g., MAGMA, VapoRock), parameterized by plausible mantle compositions (Earth-like BSE, Mg-rich, Fe-rich).</li>
-<li>Model atmospheric escape rates under each planet's XUV environment using host-star activity proxies (rotation period, X-ray luminosity from eROSITA or archival XMM/Chandra).</li>
-<li>Predict a binary outcome (atmosphere-retaining vs. stripped) for each target and rank by observational accessibility (emission signal-to-noise in MIRI/NIRSpec).</li>
-<li>Cross-match predictions against existing JWST and Spitzer secondary eclipse detections and non-detections.</li>
-<li>Perform a Bayesian hierarchical analysis: what mantle composition distribution across the USP population best explains the observed detection/non-detection pattern?</li>
+<li>Assemble a catalog of confirmed hot Jupiters with Kepler or multi-sector TESS photometry. Use the NASA Exoplanet Archive for orbital elements.</li>
+<li>For each system, flatten the light curve (remove transits, stellar rotation, instrumental trends) using a Gaussian process or spline baseline, preserving frequencies near orbital harmonics.</li>
+<li>Compute a Lomb-Scargle or Bayesian periodogram of the residuals. Extract power at the first 5–10 integer harmonics of the orbital frequency.</li>
+<li>Compare the measured harmonic power against a noise model (bootstrap or injection-recovery on phase-shuffled data) to assess significance.</li>
+<li>For systems with detections, forward-model the expected tidal forcing amplitude as a function of Q'★, planetary mass, and orbital separation. Infer Q'★ posteriors.</li>
+<li>For non-detections, derive upper limits. Stack non-detections in a meta-analysis to push sensitivity below individual-system thresholds.</li>
+<li>Correlate inferred Q'★ with stellar type, age (from gyrochronology/isochrones), and planetary mass to look for trends.</li>
 </ol>
-<h3>Expected Signal / Observable</h3>
-<p>Secondary eclipse depths of 50–200 ppm in MIRI bands for planets with rock-vapor atmospheres (SiO, Na features), versus bare-rock blackbody emission for stripped surfaces. The key discriminant is the ratio of optical (TESS) to infrared (MIRI 15 μm) eclipse depths: a planet with a greenhouse atmosphere will show a steeper spectral slope than a bare rock.</p>
+<h3>Expected Signal/Observable</h3>
+<p>Excess photometric power at exact integer multiples of the orbital frequency, at amplitudes of roughly 1–50 ppm for the most favorable systems (massive planets, short periods, solar-type hosts). Stacking could reach sub-ppm sensitivity.</p>
 <h3>Possible False Positives</h3>
 <ul>
-<li>Residual stellar variability mimicking shallow eclipse depth variations.</li>
-<li>Instrumental systematics in MIRI at the ~50 ppm level for faint targets.</li>
-<li>Degeneracy between thin rock-vapor atmospheres and high-albedo bare surfaces (both reduce dayside brightness temperature relative to a zero-albedo blackbody).</li>
-<li>Uncertainty in XUV flux histories, which propagates into escape-rate predictions.</li>
+<li><strong>Ellipsoidal variations and Doppler beaming</strong> also produce power at orbital harmonics. These are well-modeled and must be subtracted; the residual excess (or lack thereof) is the tidal oscillation signal.</li>
+<li><strong>Stellar p-mode oscillations</strong> near the orbital harmonic frequencies could contaminate, especially for subgiants. Frequency resolution from long baselines mitigates this.</li>
+<li><strong>Residual instrumental systematics</strong> at specific frequencies (e.g., Kepler rolling-band artifacts). Cross-validation between Kepler and TESS reduces this risk.</li>
 </ul>
-<h3>Why This Matters</h3>
-<p>This would be the first population-level test of magma-ocean atmospheric theory. It directly constrains mantle volatile inventories — a fundamental unknown in rocky planet geophysics — using only photometric data. If the detection pattern correlates with host-star metallicity or age, it opens a window into how rocky planet interiors evolve on Gyr timescales, which is central to understanding habitability.</p>
+<h3>Why It Matters</h3>
+<p>Tidal dissipation governs hot Jupiter orbital evolution, survival timescales, and the observed period distribution. Current Q'★ constraints come from a handful of individual systems with measured orbital decay. A population-level photometric approach would provide an independent, complementary constraint and could reveal whether Q'★ varies systematically with stellar or planetary properties — a key open question for understanding why some hot Jupiters survive and others spiral inward.</p>
     </div>
   </details>
   <footer class="exo-daily__foot">
-    <span class="exo-daily__meta">Source brief: 2026-04-01</span>
+    <span class="exo-daily__meta">Source brief: 2026-04-23</span>
     <span class="exo-daily__meta">Rotates daily &middot; 66 ideas in the pool</span>
   </footer>
 </section>
