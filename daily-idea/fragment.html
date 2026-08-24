@@ -1,49 +1,51 @@
 <section class="exo-daily" aria-label="Exoplanet idea of the day">
   <header class="exo-daily__head">
     <span class="exo-daily__eyebrow">Exoplanet idea of the day</span>
-    <time class="exo-daily__date" datetime="2026-08-23">2026-08-23</time>
+    <time class="exo-daily__date" datetime="2026-08-24">2026-08-24</time>
   </header>
-  <h2 class="exo-daily__title">Tidally Induced Stellar Oscillation Modes as a Probe of Hot Jupiter Interior Structure</h2>
+  <h2 class="exo-daily__title">Transit Timing Variation Archaeology in Kepler&#x27;s Long-Baseline Data — Hunting Unseen Companions via Decade-Long TTV Drift</h2>
   <div class="exo-daily__premise">
-    <p>Hot Jupiters in tight orbits raise tidal bulges on their host stars. These tidal interactions should excite or modulate stellar oscillation modes at harmonics of the orbital frequency. While tidal spin-up and orbital decay have received attention (e.g., WASP-12b), the <em>spectral fingerprint</em> of tidally forced oscillations in stellar photometry remains largely uncharacterized across the population. By searching Kepler and TESS long-baseline light curves for excess power at exact integer multiples of the orbital frequency (after transit removal), one could detect or constrain the tidal dissipation quality factor Q'★ for dozens of systems simultaneously — and, by extension, back out constraints on the planetary Love number and interior density profile through the coupling efficiency.</p>
+    <p>Kepler observed many multi-planet systems for ~4 years (2009–2013). TESS has since re-observed many of these systems, creating a baseline of 13–17 years. Over such long baselines, even very small transit timing variations (TTVs) caused by distant, non-transiting perturbers — planets in the 1–10 AU range that are invisible to both transit surveys and current radial velocity precision for faint Kepler stars — could accumulate into measurable timing drifts. This is a regime that is almost entirely unexplored: most TTV studies focus on near-resonant pairs with short-period oscillations, not on slow secular drifts caused by distant companions. This project proposes a systematic search for <em>monotonic or long-period TTV trends</em> in Kepler systems using the Kepler+TESS combined baseline.</p>
   </div>
   <details class="exo-daily__more">
     <summary>Read the full proposal</summary>
     <div class="exo-daily__full">
       <h3>Scientific Premise</h3>
-<p>Hot Jupiters in tight orbits raise tidal bulges on their host stars. These tidal interactions should excite or modulate stellar oscillation modes at harmonics of the orbital frequency. While tidal spin-up and orbital decay have received attention (e.g., WASP-12b), the <em>spectral fingerprint</em> of tidally forced oscillations in stellar photometry remains largely uncharacterized across the population. By searching Kepler and TESS long-baseline light curves for excess power at exact integer multiples of the orbital frequency (after transit removal), one could detect or constrain the tidal dissipation quality factor Q'★ for dozens of systems simultaneously — and, by extension, back out constraints on the planetary Love number and interior density profile through the coupling efficiency.</p>
+<p>Kepler observed many multi-planet systems for ~4 years (2009–2013). TESS has since re-observed many of these systems, creating a baseline of 13–17 years. Over such long baselines, even very small transit timing variations (TTVs) caused by distant, non-transiting perturbers — planets in the 1–10 AU range that are invisible to both transit surveys and current radial velocity precision for faint Kepler stars — could accumulate into measurable timing drifts. This is a regime that is almost entirely unexplored: most TTV studies focus on near-resonant pairs with short-period oscillations, not on slow secular drifts caused by distant companions. This project proposes a systematic search for <em>monotonic or long-period TTV trends</em> in Kepler systems using the Kepler+TESS combined baseline.</p>
 <h3>Target Datasets</h3>
 <ul>
-<li><strong>Kepler long-cadence and short-cadence data</strong> for confirmed hot Jupiter hosts (roughly 50–70 systems with P &lt; 5 days and sufficient baseline).</li>
-<li><strong>TESS Continuous Viewing Zone targets</strong> with multi-sector coverage for independent validation.</li>
-<li><strong>Gaia DR3/DR4 stellar parameters</strong> for accurate mass/radius to model the expected tidal forcing amplitude.</li>
+<li><strong>Kepler DR25 light curves</strong> and the associated transit timing catalogs (Holczer et al. 2016; Rowe et al. 2015).</li>
+<li><strong>TESS FFI light curves</strong> from Sectors 1–83+ (QLP and SPOC pipelines, publicly available via MAST).</li>
+<li><strong>ExoFOP-TESS</strong> for supplementary stellar characterization.</li>
+<li><strong>Gaia DR3</strong> astrometric excess noise and RUWE for independent evidence of massive companions.</li>
 </ul>
 <h3>Novelty</h3>
-<p>Most tidal studies focus on orbital period derivatives (timing) or rotational synchronization. Directly detecting the <em>forced oscillation spectrum</em> in photometry at orbital harmonics is a distinct observable. A few individual-system searches exist (e.g., WASP-18, HAT-P-13), but no systematic population-level survey of tidally forced stellar pulsation excess has been published using the full Kepler/TESS archive. The population approach is what makes this distinct: non-detections are just as informative as detections for constraining Q'★ distributions.</p>
+<p>The vast majority of TTV analyses focus on short-period oscillatory signals from near-resonant planet pairs. The secular, long-timescale drift signal caused by distant perturbers has been discussed theoretically (e.g., Agol et al. 2005; Nesvorný 2009) but has almost never been systematically exploited with real data, primarily because sufficient baselines didn't exist until TESS revisited the Kepler field. A few individual systems have been studied (e.g., Kepler-88), but no population-level survey of long-baseline TTV drifts has been published.</p>
 <h3>Concrete Workflow</h3>
 <ol>
-<li>Assemble a catalog of confirmed hot Jupiters with Kepler or multi-sector TESS photometry. Use the NASA Exoplanet Archive for orbital elements.</li>
-<li>For each system, flatten the light curve (remove transits, stellar rotation, instrumental trends) using a Gaussian process or spline baseline, preserving frequencies near orbital harmonics.</li>
-<li>Compute a Lomb-Scargle or Bayesian periodogram of the residuals. Extract power at the first 5–10 integer harmonics of the orbital frequency.</li>
-<li>Compare the measured harmonic power against a noise model (bootstrap or injection-recovery on phase-shuffled data) to assess significance.</li>
-<li>For systems with detections, forward-model the expected tidal forcing amplitude as a function of Q'★, planetary mass, and orbital separation. Infer Q'★ posteriors.</li>
-<li>For non-detections, derive upper limits. Stack non-detections in a meta-analysis to push sensitivity below individual-system thresholds.</li>
-<li>Correlate inferred Q'★ with stellar type, age (from gyrochronology/isochrones), and planetary mass to look for trends.</li>
+<li>Cross-match the Kepler planet candidate catalog with TESS observed targets; identify systems with ≥3 Kepler transits and ≥2 TESS transits (expect ~500–1000 systems).</li>
+<li>Extract precise transit times from TESS FFI photometry using template-matching or MCMC fitting of individual transits.</li>
+<li>For each system, construct an O-C (observed minus calculated) timing diagram spanning the full ~15-year baseline.</li>
+<li>Fit the O-C diagrams with: (a) a constant-period model, (b) a linear drift model (indicative of a period derivative from a distant perturber), and (c) a quadratic/sinusoidal model.</li>
+<li>Identify statistically significant non-constant O-C trends using Bayesian model comparison (e.g., Bayes factors).</li>
+<li>For systems with significant drifts, perform N-body dynamical modeling to constrain the mass and orbital period of the unseen perturber.</li>
+<li>Cross-validate against Gaia DR3 astrometric excess noise: systems with TTV-inferred massive companions should show elevated RUWE or astrometric excess noise.</li>
 </ol>
-<h3>Expected Signal/Observable</h3>
-<p>Excess photometric power at exact integer multiples of the orbital frequency, at amplitudes of roughly 1–50 ppm for the most favorable systems (massive planets, short periods, solar-type hosts). Stacking could reach sub-ppm sensitivity.</p>
-<h3>Possible False Positives</h3>
+<h3>Expected Signal / Observable</h3>
+<p>A Jupiter-mass planet at 3 AU perturbing an inner transiting planet at 0.1 AU produces a TTV drift of ~10–100 seconds over 15 years, depending on geometry. TESS FFI transit timing precision for bright Kepler targets is ~30–120 seconds for individual transits but can be beaten down with multiple transits. Detection of ~10–50 systems with statistically significant long-period TTV drifts, a subset of which will have Gaia astrometric corroboration.</p>
+<h3>Possible False Positives / Pitfalls</h3>
 <ul>
-<li><strong>Ellipsoidal variations and Doppler beaming</strong> also produce power at orbital harmonics. These are well-modeled and must be subtracted; the residual excess (or lack thereof) is the tidal oscillation signal.</li>
-<li><strong>Stellar p-mode oscillations</strong> near the orbital harmonic frequencies could contaminate, especially for subgiants. Frequency resolution from long baselines mitigates this.</li>
-<li><strong>Residual instrumental systematics</strong> at specific frequencies (e.g., Kepler rolling-band artifacts). Cross-validation between Kepler and TESS reduces this risk.</li>
+<li>Stellar activity (spot crossings) can introduce quasi-random timing offsets, particularly for active stars; careful treatment with Gaussian process noise models is needed.</li>
+<li>Instrumental systematics between Kepler and TESS (different bandpasses, different apertures, different pixel scales) can introduce apparent timing offsets; careful detrending and aperture selection is critical.</li>
+<li>Apsidal precession in eccentric inner orbits can mimic a secular drift without requiring an external companion; this can be tested by looking for correlated transit duration changes.</li>
+<li>Period decay from tidal dissipation (relevant for ultra-short-period planets) is a physical signal that must be distinguished from companion-induced drift.</li>
 </ul>
 <h3>Why It Matters</h3>
-<p>Tidal dissipation governs hot Jupiter orbital evolution, survival timescales, and the observed period distribution. Current Q'★ constraints come from a handful of individual systems with measured orbital decay. A population-level photometric approach would provide an independent, complementary constraint and could reveal whether Q'★ varies systematically with stellar or planetary properties — a key open question for understanding why some hot Jupiters survive and others spiral inward.</p>
+<p>This would represent the first systematic census of giant planets in the 1–10 AU range around Kepler host stars — a population that is extremely difficult to probe by any other method for these typically faint (Kp 12–16) stars. It directly constrains the "cold Jupiter" occurrence rate around hosts of inner small planets, a key parameter for understanding system architecture and the role of giant planets in shaping inner planetary systems. It also demonstrates a novel use of the Kepler+TESS temporal baseline that will only improve as TESS continues operating.</p>
     </div>
   </details>
   <footer class="exo-daily__foot">
-    <span class="exo-daily__meta">Source brief: 2026-04-23</span>
+    <span class="exo-daily__meta">Source brief: 2026-04-02</span>
     <span class="exo-daily__meta">Rotates daily &middot; 66 ideas in the pool</span>
   </footer>
 </section>
