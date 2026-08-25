@@ -1,51 +1,49 @@
 <section class="exo-daily" aria-label="Exoplanet idea of the day">
   <header class="exo-daily__head">
     <span class="exo-daily__eyebrow">Exoplanet idea of the day</span>
-    <time class="exo-daily__date" datetime="2026-08-24">2026-08-24</time>
+    <time class="exo-daily__date" datetime="2026-08-25">2026-08-25</time>
   </header>
-  <h2 class="exo-daily__title">Transit Timing Variation Archaeology in Kepler&#x27;s Long-Baseline Data — Hunting Unseen Companions via Decade-Long TTV Drift</h2>
+  <h2 class="exo-daily__title">Mapping the &quot;Stellar Contamination Graveyard&quot; — Retroactively Identifying False Atmospheric Detections in Pre-JWST Transmission Spectra</h2>
   <div class="exo-daily__premise">
-    <p>Kepler observed many multi-planet systems for ~4 years (2009–2013). TESS has since re-observed many of these systems, creating a baseline of 13–17 years. Over such long baselines, even very small transit timing variations (TTVs) caused by distant, non-transiting perturbers — planets in the 1–10 AU range that are invisible to both transit surveys and current radial velocity precision for faint Kepler stars — could accumulate into measurable timing drifts. This is a regime that is almost entirely unexplored: most TTV studies focus on near-resonant pairs with short-period oscillations, not on slow secular drifts caused by distant companions. This project proposes a systematic search for <em>monotonic or long-period TTV trends</em> in Kepler systems using the Kepler+TESS combined baseline.</p>
+    <p>Recent work (Savvidou et al. 2026, A&amp;A; Rustamkulov et al. 2024, AJ) has shown that simplified stellar contamination models — especially the disk-averaged Transit Light Source Effect (TLSE) correction — can introduce systematic, wavelength-dependent biases of up to ~400 ppm in transmission spectra, particularly for active M- and K-dwarf hosts at optical wavelengths. JWST observations of systems like TOI-5205b have already revealed cases where stellar contamination dominates the transmission spectrum below ~3 μm, overpowering the planetary signal by up to an order of magnitude. Yet the community has accumulated years of published HST/WFC3 and Spitzer transmission spectra for dozens of planets around active stars — many of which used now-outdated contamination corrections or none at all. A systematic, retroactive audit of these published spectra using modern self-consistent contamination models has not been performed at scale.</p>
   </div>
   <details class="exo-daily__more">
     <summary>Read the full proposal</summary>
     <div class="exo-daily__full">
       <h3>Scientific Premise</h3>
-<p>Kepler observed many multi-planet systems for ~4 years (2009–2013). TESS has since re-observed many of these systems, creating a baseline of 13–17 years. Over such long baselines, even very small transit timing variations (TTVs) caused by distant, non-transiting perturbers — planets in the 1–10 AU range that are invisible to both transit surveys and current radial velocity precision for faint Kepler stars — could accumulate into measurable timing drifts. This is a regime that is almost entirely unexplored: most TTV studies focus on near-resonant pairs with short-period oscillations, not on slow secular drifts caused by distant companions. This project proposes a systematic search for <em>monotonic or long-period TTV trends</em> in Kepler systems using the Kepler+TESS combined baseline.</p>
+<p>Recent work (Savvidou et al. 2026, A&amp;A; Rustamkulov et al. 2024, AJ) has shown that simplified stellar contamination models — especially the disk-averaged Transit Light Source Effect (TLSE) correction — can introduce systematic, wavelength-dependent biases of up to ~400 ppm in transmission spectra, particularly for active M- and K-dwarf hosts at optical wavelengths. JWST observations of systems like TOI-5205b have already revealed cases where stellar contamination dominates the transmission spectrum below ~3 μm, overpowering the planetary signal by up to an order of magnitude. Yet the community has accumulated years of published HST/WFC3 and Spitzer transmission spectra for dozens of planets around active stars — many of which used now-outdated contamination corrections or none at all. A systematic, retroactive audit of these published spectra using modern self-consistent contamination models has not been performed at scale.</p>
 <h3>Target Datasets</h3>
 <ul>
-<li><strong>Kepler DR25 light curves</strong> and the associated transit timing catalogs (Holczer et al. 2016; Rowe et al. 2015).</li>
-<li><strong>TESS FFI light curves</strong> from Sectors 1–83+ (QLP and SPOC pipelines, publicly available via MAST).</li>
-<li><strong>ExoFOP-TESS</strong> for supplementary stellar characterization.</li>
-<li><strong>Gaia DR3</strong> astrometric excess noise and RUWE for independent evidence of massive companions.</li>
+<li>All published HST/WFC3 G141 grism transmission spectra (publicly archived via MAST/Barbara A. Mikulski Archive)</li>
+<li>Spitzer/IRAC secondary eclipse and transit photometry from the Spitzer Heritage Archive</li>
+<li>Stellar activity indicators: Ca II H&amp;K indices, photometric variability from TESS and Kepler/K2 light curves, X-ray fluxes from XMM-Newton/Chandra</li>
+<li>JWST Early Release and Cycle 1–3 transmission spectra for cross-validation on overlapping targets</li>
 </ul>
 <h3>Novelty</h3>
-<p>The vast majority of TTV analyses focus on short-period oscillatory signals from near-resonant planet pairs. The secular, long-timescale drift signal caused by distant perturbers has been discussed theoretically (e.g., Agol et al. 2005; Nesvorný 2009) but has almost never been systematically exploited with real data, primarily because sufficient baselines didn't exist until TESS revisited the Kepler field. A few individual systems have been studied (e.g., Kepler-88), but no population-level survey of long-baseline TTV drifts has been published.</p>
+<p>While individual retrieval papers sometimes mention stellar contamination as a caveat, no one has performed a population-level meta-analysis asking: "For how many published atmospheric detections does the reported molecular signature become statistically insignificant once modern TLSE models are applied?" This is distinct from simply improving retrieval codes — it is a forensic audit of the existing literature. The 2026 Savvidou et al. result that disk-averaged TLSE corrections can be wrong by hundreds of ppm makes this timely and tractable.</p>
 <h3>Concrete Workflow</h3>
 <ol>
-<li>Cross-match the Kepler planet candidate catalog with TESS observed targets; identify systems with ≥3 Kepler transits and ≥2 TESS transits (expect ~500–1000 systems).</li>
-<li>Extract precise transit times from TESS FFI photometry using template-matching or MCMC fitting of individual transits.</li>
-<li>For each system, construct an O-C (observed minus calculated) timing diagram spanning the full ~15-year baseline.</li>
-<li>Fit the O-C diagrams with: (a) a constant-period model, (b) a linear drift model (indicative of a period derivative from a distant perturber), and (c) a quadratic/sinusoidal model.</li>
-<li>Identify statistically significant non-constant O-C trends using Bayesian model comparison (e.g., Bayes factors).</li>
-<li>For systems with significant drifts, perform N-body dynamical modeling to constrain the mass and orbital period of the unseen perturber.</li>
-<li>Cross-validate against Gaia DR3 astrometric excess noise: systems with TTV-inferred massive companions should show elevated RUWE or astrometric excess noise.</li>
+<li>Compile a catalog of all published HST/WFC3 and Spitzer transmission spectra (roughly 70–100 planets with published spectra as of 2025).</li>
+<li>Cross-match with TESS and Kepler/K2 photometry to characterize host-star variability (spot covering fractions, facular contrasts, rotation periods).</li>
+<li>For each system, apply the Rackham et al. (2018) disk-averaged TLSE correction and the Savvidou et al. (2026) self-consistent geometric TLSE model.</li>
+<li>Re-run atmospheric retrievals (e.g., with petitRADTRANS or POSEIDON) on the corrected spectra.</li>
+<li>Flag systems where the original claimed molecular detection (H₂O, Na, K, etc.) drops below 2σ significance after correction.</li>
+<li>Cross-validate against any available JWST spectra for the same targets.</li>
 </ol>
 <h3>Expected Signal / Observable</h3>
-<p>A Jupiter-mass planet at 3 AU perturbing an inner transiting planet at 0.1 AU produces a TTV drift of ~10–100 seconds over 15 years, depending on geometry. TESS FFI transit timing precision for bright Kepler targets is ~30–120 seconds for individual transits but can be beaten down with multiple transits. Detection of ~10–50 systems with statistically significant long-period TTV drifts, a subset of which will have Gaia astrometric corroboration.</p>
-<h3>Possible False Positives / Pitfalls</h3>
+<p>A ranked list of "contamination-vulnerable" detections, quantifying how many published H₂O or alkali-metal detections in the HST era may have been partially or wholly driven by unocculted stellar heterogeneity rather than planetary atmospheres. Preliminary estimates suggest 15–30% of published WFC3 water detections around M dwarfs may be significantly affected.</p>
+<h3>Possible False Positives (in the meta-analysis itself)</h3>
 <ul>
-<li>Stellar activity (spot crossings) can introduce quasi-random timing offsets, particularly for active stars; careful treatment with Gaussian process noise models is needed.</li>
-<li>Instrumental systematics between Kepler and TESS (different bandpasses, different apertures, different pixel scales) can introduce apparent timing offsets; careful detrending and aperture selection is critical.</li>
-<li>Apsidal precession in eccentric inner orbits can mimic a secular drift without requiring an external companion; this can be tested by looking for correlated transit duration changes.</li>
-<li>Period decay from tidal dissipation (relevant for ultra-short-period planets) is a physical signal that must be distinguished from companion-induced drift.</li>
+<li>Overestimating stellar activity: if the spot covering fraction is poorly constrained (e.g., from sparse TESS coverage), the correction itself may be inaccurate in the other direction.</li>
+<li>Retrieval degeneracies: removing stellar contamination may shift molecular abundances rather than eliminating detections entirely, making it ambiguous whether the original detection was "wrong."</li>
+<li>Temporal variability: stellar activity at the epoch of the HST observation may differ from the epoch of the TESS/Kepler photometry used to estimate spots.</li>
 </ul>
-<h3>Why It Matters</h3>
-<p>This would represent the first systematic census of giant planets in the 1–10 AU range around Kepler host stars — a population that is extremely difficult to probe by any other method for these typically faint (Kp 12–16) stars. It directly constrains the "cold Jupiter" occurrence rate around hosts of inner small planets, a key parameter for understanding system architecture and the role of giant planets in shaping inner planetary systems. It also demonstrates a novel use of the Kepler+TESS temporal baseline that will only improve as TESS continues operating.</p>
+<h3>Why This Could Matter</h3>
+<p>This project would produce a community resource — essentially a reliability index for pre-JWST atmospheric characterizations — and directly inform target prioritization for JWST Cycles 4+ and future ARIEL observations. If a substantial fraction of legacy detections are contaminated, it changes the empirical landscape of comparative exoplanetology and the inferred prevalence of water-rich atmospheres on sub-Neptunes.</p>
     </div>
   </details>
   <footer class="exo-daily__foot">
-    <span class="exo-daily__meta">Source brief: 2026-04-02</span>
+    <span class="exo-daily__meta">Source brief: 2026-05-12</span>
     <span class="exo-daily__meta">Rotates daily &middot; 66 ideas in the pool</span>
   </footer>
 </section>
