@@ -1,8 +1,8 @@
 {
   "announcement_date": "2026-08-24",
-  "updated_at": "2026-08-24T02:57:05.742604+00:00",
+  "updated_at": "2026-08-25T02:52:10.698732+00:00",
   "category": "astro-ph.EP",
-  "paper_count": 8,
+  "paper_count": 7,
   "papers": [
     {
       "id": "2608.20450v1",
@@ -43,6 +43,7 @@
       "abs_link": "https://arxiv.org/abs/2608.20450v1",
       "is_exoplanet_focused": true,
       "tweetability_score": 36,
+      "figure_url": "https://arxiv.org/html/2608.20450v1/2608.20450v1/Figure_2_grid_50pole_upto50eq.png",
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -50,35 +51,7 @@
         "claim": "",
         "evidence": "",
         "question": ""
-      },
-      "figure_url": "https://arxiv.org/html/2608.20450v1/2608.20450v1/Figure_2_grid_50pole_upto50eq.png"
-    },
-    {
-      "id": "2608.21129v1",
-      "title": "Transit Searches for Habitable-Zone Exoplanets with Artificial Intelligence",
-      "abstract": "Searching for Earth-sized planets in stellar habitable zones ultimately means finding a small number of very shallow, widely separated transits in noisy light curves. Around Sun-like stars, habitable-zone planets generally have long orbital periods, so a finite observing baseline may record only a few transits. At the same time, intrinsic stellar variability, instrumental systematics, and data gaps can obscure these weak events or produce transit-like brightness changes. This review examines recent progress in AI-assisted light-curve preprocessing, weak-signal searches, candidate vetting, and parameter inference, and considers the potential roles of pretraining and multimodal models. Taken together, the studies reviewed here show that AI has practical value in making large-scale light-curve analysis more efficient, recovering more signals at low signal-to-noise ratios in some injection tests, and reducing the number of targets requiring manual review. This review concludes that combining AI with physical modeling, statistical inference, and follow-up observations provides a practical route to improve both the discovery efficiency and the reliability of habitable-zone candidate studies.",
-      "authors": [
-        "Qingtian Liu"
-      ],
-      "categories": [
-        "astro-ph.EP",
-        "astro-ph.IM"
-      ],
-      "published": "2026-08-21",
-      "updated": "2026-08-21",
-      "pdf_link": "https://arxiv.org/pdf/2608.21129v1.pdf",
-      "abs_link": "https://arxiv.org/abs/2608.21129v1",
-      "is_exoplanet_focused": true,
-      "tweetability_score": 35,
-      "summary": "",
-      "summary_html": "<p><em>Summary unavailable.</em></p>",
-      "tweet_hook": {
-        "hook": "",
-        "claim": "",
-        "evidence": "",
-        "question": ""
-      },
-      "figure_url": "https://arxiv.org/html/2608.21129v1/data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg=="
+      }
     },
     {
       "id": "2608.20949v1",
@@ -98,6 +71,7 @@
       "abs_link": "https://arxiv.org/abs/2608.20949v1",
       "is_exoplanet_focused": true,
       "tweetability_score": 34,
+      "figure_url": "https://arxiv.org/html/2608.20949v1/2608.20949v1/zzz_plot1.png",
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -105,8 +79,7 @@
         "claim": "",
         "evidence": "",
         "question": ""
-      },
-      "figure_url": "https://arxiv.org/html/2608.20949v1/2608.20949v1/zzz_plot1.png"
+      }
     },
     {
       "id": "2608.20456v1",
@@ -127,6 +100,7 @@
       "abs_link": "https://arxiv.org/abs/2608.20456v1",
       "is_exoplanet_focused": true,
       "tweetability_score": 23,
+      "figure_url": "https://arxiv.org/html/2608.20456v1/2608.20456v1/Figures/block_diagram3.png",
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -134,8 +108,7 @@
         "claim": "",
         "evidence": "",
         "question": ""
-      },
-      "figure_url": "https://arxiv.org/html/2608.20456v1/2608.20456v1/Figures/block_diagram3.png"
+      }
     },
     {
       "id": "2608.20646v1",
@@ -155,6 +128,7 @@
       "abs_link": "https://arxiv.org/abs/2608.20646v1",
       "is_exoplanet_focused": true,
       "tweetability_score": 11,
+      "figure_url": "https://arxiv.org/html/2608.20646v1/2608.20646v1/Crit_Scatter_Final.png",
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -162,8 +136,7 @@
         "claim": "",
         "evidence": "",
         "question": ""
-      },
-      "figure_url": "https://arxiv.org/html/2608.20646v1/2608.20646v1/Crit_Scatter_Final.png"
+      }
     },
     {
       "id": "2608.21285v1",
@@ -181,6 +154,7 @@
       "abs_link": "https://arxiv.org/abs/2608.21285v1",
       "is_exoplanet_focused": true,
       "tweetability_score": 10,
+      "figure_url": "https://arxiv.org/html/2608.21285v1/2608.21285v1/figure1_three_spaces.png",
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -188,8 +162,7 @@
         "claim": "",
         "evidence": "",
         "question": ""
-      },
-      "figure_url": "https://arxiv.org/html/2608.21285v1/2608.21285v1/figure1_three_spaces.png"
+      }
     },
     {
       "id": "2608.20470v1",
@@ -211,6 +184,7 @@
       "abs_link": "https://arxiv.org/abs/2608.20470v1",
       "is_exoplanet_focused": true,
       "tweetability_score": 8,
+      "figure_url": "https://arxiv.org/html/2608.20470v1/2608.20470v1/EvolutionPlots.png",
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -218,8 +192,7 @@
         "claim": "",
         "evidence": "",
         "question": ""
-      },
-      "figure_url": "https://arxiv.org/html/2608.20470v1/2608.20470v1/EvolutionPlots.png"
+      }
     },
     {
       "id": "2608.20436v1",
@@ -240,6 +213,7 @@
       "abs_link": "https://arxiv.org/abs/2608.20436v1",
       "is_exoplanet_focused": true,
       "tweetability_score": 6,
+      "figure_url": "https://arxiv.org/html/2608.20436v1/data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==",
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -247,8 +221,7 @@
         "claim": "",
         "evidence": "",
         "question": ""
-      },
-      "figure_url": "https://arxiv.org/html/2608.20436v1/data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg=="
+      }
     }
   ]
 }
