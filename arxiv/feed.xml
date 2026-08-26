@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 25 Aug 2026 02:52:10 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 26 Aug 2026 02:58:46 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,71 +15,120 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>Leveraging Impact Parameter to Mitigate the Transit Light Source Effect: Early Insights from TRAPPIST-1</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-20450v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-20450v1</guid>
-      <pubDate>Mon, 24 Aug 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Ana Glidden et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
-        <category>astro-ph.SR</category>
-    </item>
-    <item>
-      <title>The impact of tidal locking on Earth-like planetary dynamos</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-20949v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-20949v1</guid>
-      <pubDate>Mon, 24 Aug 2026 20:00:00 +0000</pubDate>
-      <dc:creator>J. P. Hidalgo, D. R. G Schleicher</dc:creator>
+      <title>An Evolving Cosmic Shoreline and Sandbar Bounding the Rocky Airless Valley</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-23912v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-23912v1</guid>
+      <pubDate>Wed, 26 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Barron K. Nguyen et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.SR</category>
+        <category>physics.geo-ph</category>
     </item>
     <item>
-      <title>High-contrast aperture masking interferometry: detecting companions within the diffraction limit</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-20456v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-20456v1</guid>
-      <pubDate>Mon, 24 Aug 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Benjamin Calvin, Michael Fitzgerald, Jessica Castellanos</dc:creator>
+      <title>Sub-diffraction-limited coronagraphic imaging with nano-printed PIAACMC phase masks</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-24333v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-24333v1</guid>
+      <pubDate>Wed, 26 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Elena Tonucci et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.IM</category>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>Magnesium silicate condensation in sub-Neptune envelopes: the fundamental link between chemistry, structure, and observables</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-24873v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-24873v1</guid>
+      <pubDate>Wed, 26 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>William Misener et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Atmospheric Retrieval of Combined JWST, HST, and Ground-Based Observations Reveals a Featureless Transmission Spectrum for GJ 1132 b</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-24803v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-24803v1</guid>
+      <pubDate>Wed, 26 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Mohammad Senobar, Sareh Ataiee</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>CHIANTE I: Obliquity Measurements of Four High-Priority Ariel Targets in Binaries</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-23662v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-23662v1</guid>
+      <pubDate>Wed, 26 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Alex S. Polanski et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>WASP-12b Exhibits Persistent In-Transit Hα Absorption</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-23678v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-23678v1</guid>
+      <pubDate>Wed, 26 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Shreyas Vissapragada et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>The Hot Neptune Initiative (HONEI) III. An ultra-hot super Neptune orbiting the metal-rich subgiant star TOI-5646: the largest host for a desert dweller</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-24311v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-24311v1</guid>
+      <pubDate>Wed, 26 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>L. Mancini et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Flyby-induced high-eccentricity migration and the prevalence of hot Jupiters in M67</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-24874v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-24874v1</guid>
+      <pubDate>Wed, 26 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Mika V. Kontiainen, Cathie J. Clarke, Andrew J. Winter</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.GA</category>
+        <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>An analysis of the Herbig star population and their protoplanetary disks within 1 kpc</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-23729v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-23729v1</guid>
+      <pubDate>Wed, 26 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>L. M. Stapper et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.GA</category>
+        <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>NIRC2-Pol: First Light of Near-Infrared Polarimetry on Keck II</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-24661v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-24661v1</guid>
+      <pubDate>Wed, 26 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Briley L. Lewis et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.IM</category>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>Accounting for Transit Timing Detectability: Biases in Planetary Radius and Orbital Period</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-20646v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-20646v1</guid>
-      <pubDate>Mon, 24 Aug 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Skylar D&#x27;Angiolillo, Daniel Fabrycky, Mariah G. MacDonald</dc:creator>
+      <title>Volatile depletion in rocky planets as a chemical fingerprint of hybrid accretion</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-24407v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-24407v1</guid>
+      <pubDate>Wed, 26 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Haiyang S. Wang et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>Does Cumulative XUV Unify the Neptunian Desert?</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-21285v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-21285v1</guid>
-      <pubDate>Mon, 24 Aug 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Qunfeng Jiang</dc:creator>
+      <title>Quantitative Links between Formation and Atmospheric Composition for Giant Planets</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-23682v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-23682v1</guid>
+      <pubDate>Wed, 26 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Yayaati Chachan, Ruth Murray-Clay, Jonathan J. Fortney</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Effects of Outer Giant Planets on In Situ Formation of Inner Super-Earths</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-20470v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-20470v1</guid>
-      <pubDate>Mon, 24 Aug 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Phoebe Sandhaus et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>A Multi-instrument Generalized Lomb-Scargle Periodogram Implementation</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-20436v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-20436v1</guid>
-      <pubDate>Mon, 24 Aug 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Giulia Martos, Néstor Espinoza, Jorge Meléndez</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.IM</category>
         <category>astro-ph.EP</category>
     </item>
   </channel>
