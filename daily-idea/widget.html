@@ -3,60 +3,56 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Idea of the day &mdash; Mapping Tidally Driven Weather — Detecting Orbital-Phase-Locked Atmospheric Variability in Eccentric Hot Jupiters Using Multi-Epoch TESS Phase Curves</title>
+<title>Idea of the day &mdash; Mapping Exoplanet Magnetic Field Topologies via Asymmetric Metastable Helium Escape Geometry</title>
 <link rel="stylesheet" href="widget.css"/>
 </head>
 <body>
 <section class="exo-daily" aria-label="Exoplanet idea of the day">
   <header class="exo-daily__head">
     <span class="exo-daily__eyebrow">Exoplanet idea of the day</span>
-    <time class="exo-daily__date" datetime="2026-08-26">2026-08-26</time>
+    <time class="exo-daily__date" datetime="2026-08-27">2026-08-27</time>
   </header>
-  <h2 class="exo-daily__title">Mapping Tidally Driven Weather — Detecting Orbital-Phase-Locked Atmospheric Variability in Eccentric Hot Jupiters Using Multi-Epoch TESS Phase Curves</h2>
+  <h2 class="exo-daily__title">Mapping Exoplanet Magnetic Field Topologies via Asymmetric Metastable Helium Escape Geometry</h2>
   <div class="exo-daily__premise">
-    <p>Most thermal phase curve studies target <em>circular-orbit</em> hot Jupiters, where the dayside–nightside temperature contrast is quasi-static. But <strong>eccentric hot Jupiters</strong> experience dramatically time-varying irradiation: at periastron, the planet receives a flash of intense stellar heating, then "relaxes" as it swings to apastron. General circulation models (GCMs) predict that this should drive <em>transient weather events</em> — shock fronts, episodic cloud formation/dissipation, and superrotating jet spin-up/spin-down — that repeat every orbit but may vary in amplitude from orbit to orbit due to chaotic atmospheric dynamics. This orbit-to-orbit variability in the phase curve has never been systematically measured.</p>
+    <p>Planetary magnetic fields are among the most important yet least constrained properties of exoplanets. They shield atmospheres from stellar wind stripping, influence habitability, and encode information about interior dynamics. In early 2026, JWST tracked helium escaping from the hot Jupiter WASP-121b continuously over a full orbit, revealing two enormous asymmetric helium streams stretching across more than half the planet's orbital path. This asymmetry is shaped by the interaction between the escaping gas, the stellar wind, and — critically — the planet's magnetic field. Yet most atmospheric escape studies focus on <em>mass-loss rates</em>, treating the escaping gas as a scalar quantity rather than exploiting its 3D geometry as a diagnostic of the magnetic environment.</p>
+<p>This project proposes a systematic geometric analysis of He 10830 Å absorption profiles across a sample of ~15–20 hot Jupiters and warm Neptunes to infer magnetic field strengths and dipole orientations through forward-modeling with 3D magnetohydrodynamic (MHD) simulations.</p>
   </div>
   <details class="exo-daily__more">
     <summary>Read the full proposal</summary>
     <div class="exo-daily__full">
       <h3>Scientific Premise</h3>
-<p>Most thermal phase curve studies target <em>circular-orbit</em> hot Jupiters, where the dayside–nightside temperature contrast is quasi-static. But <strong>eccentric hot Jupiters</strong> experience dramatically time-varying irradiation: at periastron, the planet receives a flash of intense stellar heating, then "relaxes" as it swings to apastron. General circulation models (GCMs) predict that this should drive <em>transient weather events</em> — shock fronts, episodic cloud formation/dissipation, and superrotating jet spin-up/spin-down — that repeat every orbit but may vary in amplitude from orbit to orbit due to chaotic atmospheric dynamics. This orbit-to-orbit variability in the phase curve has never been systematically measured.</p>
+<p>Planetary magnetic fields are among the most important yet least constrained properties of exoplanets. They shield atmospheres from stellar wind stripping, influence habitability, and encode information about interior dynamics. In early 2026, JWST tracked helium escaping from the hot Jupiter WASP-121b continuously over a full orbit, revealing two enormous asymmetric helium streams stretching across more than half the planet's orbital path. This asymmetry is shaped by the interaction between the escaping gas, the stellar wind, and — critically — the planet's magnetic field. Yet most atmospheric escape studies focus on <em>mass-loss rates</em>, treating the escaping gas as a scalar quantity rather than exploiting its 3D geometry as a diagnostic of the magnetic environment.</p>
+<p>This project proposes a systematic geometric analysis of He 10830 Å absorption profiles across a sample of ~15–20 hot Jupiters and warm Neptunes to infer magnetic field strengths and dipole orientations through forward-modeling with 3D magnetohydrodynamic (MHD) simulations.</p>
 <h3>Target Datasets</h3>
 <ul>
-<li><strong>TESS Extended Mission</strong> continuous viewing zone data for eccentric (e &gt; 0.1) giant planets observed over multiple sectors (providing dozens of orbital phase curves per target)</li>
-<li><strong>JWST</strong> NIRSpec/G395H or MIRI/LRS phase curve observations of eccentric systems (HAT-P-2b, HD 80606b, TOI-5800b) for spectroscopic decomposition</li>
-<li><strong>Spitzer</strong> archival 4.5 µm phase curves for eccentric systems (HAT-P-2b has 3 full orbits)</li>
-<li><strong>Kepler</strong> long-cadence data for Kepler-419b, Kepler-693b, and other eccentric giants</li>
+<li><strong>JWST NIRSpec/G140H and NIRCam grism</strong> time-series observations of He 10830 Å in known escaping-atmosphere planets (WASP-121b, WASP-107b, HAT-P-11b, HAT-P-32b, GJ 3470b, TOI-560b, others from the growing JWST GO archive).</li>
+<li><strong>Ground-based high-resolution spectroscopy</strong> from CARMENES (Calar Alto), SPIRou (CFHT), and GIANO-B (TNG), which have published He 10830 Å detections for ~30 planets with varying signal morphologies.</li>
+<li><strong>Archival stellar wind models</strong> from the literature (e.g., Alfvén wave-driven wind models calibrated to X-ray/EUV fluxes from XMM-Newton and Chandra).</li>
 </ul>
 <h3>Novelty</h3>
-<p>Existing phase curve analyses treat each orbit as a realization of the same signal and stack them for SNR. The novel angle here is to <strong>treat orbit-to-orbit variations as the signal itself</strong>: measure the <em>variance</em> and <em>covariance structure</em> of the phase curve amplitude, hotspot offset, and ingress/egress brightness across many orbits. This is a second-order statistic (variability of variability) that GCMs predict but observers have not yet systematically extracted. TOI-5800b, highlighted in 2025 as a tidal-heating laboratory, is an ideal anchor target. The approach is analogous to exoplanet "weather mapping" but uses temporal rather than spatial decomposition.</p>
+<p>While He 10830 Å detections are now routine, the community overwhelmingly interprets them through 1D Parker wind models or simplified 3D hydro codes <em>without magnetic fields</em>. Only a handful of papers (e.g., Owen &amp; Adams 2014; Carolan et al. 2021; Hazra et al. 2022) have attempted MHD escape modeling, and none have applied it systematically across a population to look for trends between inferred field strength and planetary bulk properties. This project would be the first population-level magnetic field survey of exoplanets using escape geometry, filling a gap between interior structure theory (which predicts field strengths) and observation (which has almost no constraints).</p>
 <h3>Concrete Workflow</h3>
 <ol>
-<li>Identify all eccentric (e &gt; 0.1) transiting giant planets with TESS multi-sector coverage providing &gt;15 full orbital phase curves. Cross-reference with Spitzer and Kepler archives. Expected sample: 8–15 systems.</li>
-<li>For each system, extract individual-orbit phase curves using a Gaussian process (GP) model to deconvolve stellar variability (rotation, spots) from planetary signal. Key: the planetary signal is periodic at the <em>orbital</em> period while stellar variability operates at the <em>rotation</em> period — they are generally incommensurable, enabling separation.</li>
-<li>Fit each individual-orbit phase curve with a low-order spherical harmonic brightness map (2–3 parameters: amplitude, phase offset, asymmetry). Record the posterior distributions per orbit.</li>
-<li>Compute the orbit-to-orbit scatter in these parameters. Compare against (a) the expected scatter from photon noise + systematics alone (null hypothesis: no atmospheric variability), and (b) GCM predictions for the specific system's orbital parameters.</li>
-<li>For targets with detected variability, characterize the <em>autocorrelation timescale</em> of the variability — is the atmosphere "remembering" its state from one orbit to the next (long radiative timescale) or fully resetting (short radiative timescale)? This directly constrains the atmospheric radiative time constant.</li>
+<li>Compile all published He 10830 Å transmission spectroscopy datasets (both space and ground) with sufficient spectral resolution to resolve the line profile asymmetry (R &gt; 20,000 for ground; JWST time-resolved ingress/egress mapping for space).</li>
+<li>For each target, extract the velocity-resolved absorption profile as a function of orbital phase, focusing on: (a) blueshift of the absorption centroid (bulk outflow speed), (b) asymmetry between leading and trailing limbs during transit, and (c) pre/post-transit absorption (extended tail geometry).</li>
+<li>Run a grid of 3D MHD photoevaporation simulations (using codes such as PLUTO or Athena++) spanning planetary dipole field strengths from 0.1–50 Gauss and dipole tilt angles from 0°–90°, with stellar wind conditions matched to each system's measured XUV flux.</li>
+<li>Perform Bayesian model comparison (nested sampling) between the observed line profiles and the simulation grid to derive posterior distributions on B-field strength and orientation for each planet.</li>
+<li>Search for correlations between inferred B-field and: planetary mass, radius, rotation period (from phase curve constraints), bulk density, and host star activity level.</li>
 </ol>
 <h3>Expected Signal / Observable</h3>
-<p>GCMs for eccentric hot Jupiters (e.g., Kataria et al. 2013, Lewis et al. 2014) predict orbit-to-orbit hotspot offset variations of ~5–15 degrees and peak flux variations of ~5–10% of the phase curve amplitude. In TESS bandpass for a system like HAT-P-2b (V~8.7), a single-orbit phase curve semi-amplitude is ~50 ppm; orbit-to-orbit variations of ~5 ppm should be detectable at 2–3 sigma with 20+ orbits from TESS extended mission data. The radiative timescale measurement (from autocorrelation) would be a first-of-its-kind observable.</p>
+<p>The primary observable is the degree and direction of asymmetry in the He 10830 Å transit absorption profile. A strong dipolar field channels escaping gas into polar funnels, producing a characteristic double-peaked absorption signature and suppressing equatorial outflow. A weak or absent field yields a roughly symmetric, broad blueshifted absorption. Intermediate cases produce trailing tails whose opening angle and velocity structure encode the magnetopause standoff distance. Expected magnetic field strengths for hot Jupiters range from ~1–30 Gauss based on scaling laws; the line profile differences between 1 G and 10 G should be detectable at &gt;3σ with existing JWST data quality.</p>
 <h3>Possible False Positives</h3>
 <ul>
-<li>Stellar variability at harmonics of the rotation period could mimic orbit-to-orbit changes if the orbital and rotation periods are near-commensurate (mitigated by GP detrending and checking for correlation with stellar activity indicators).</li>
-<li>Instrumental systematics that vary sector-to-sector in TESS (mitigated by restricting analysis to orbits within the same sector, then comparing across sectors).</li>
-<li>Companion-induced orbital precession changing the transit/eclipse geometry on multi-year timescales (mitigated by checking for TTVs and known companions).</li>
+<li><strong>Stellar wind anisotropy</strong> (e.g., from coronal mass ejections or sector structure) could produce asymmetric confinement patterns mimicking a planetary field. Mitigation: use multi-epoch observations to test for time-variability inconsistent with a steady dipole.</li>
+<li><strong>Tidal effects</strong> on the escaping atmosphere can also break symmetry. Mitigation: tidal distortion is predictable from the known orbital/planetary parameters and can be included in the forward model.</li>
+<li><strong>3D day-night temperature contrasts</strong> affect the photoionization balance and thus the He triplet population. Mitigation: couple the MHD model with a non-LTE He level population calculation.</li>
 </ul>
 <h3>Why It Matters</h3>
-<p>Detecting orbit-to-orbit atmospheric variability would be the first empirical measurement of exoplanet <em>weather</em> (as opposed to <em>climate</em>). It would provide a direct, model-independent constraint on atmospheric radiative and advective timescales — quantities that are currently only inferred indirectly from single-epoch phase curve amplitudes and offsets. For eccentric planets specifically, the "flash heating" scenario offers a unique natural experiment in atmospheric response to impulsive forcing, with no solar system analog. Success here would establish a new observational methodology applicable to the growing sample of well-characterized JWST phase curve targets.</p>
-<hr/>
-<p>## Summary Table</p>
-<p>| Feature | Project 1: Galactic Chronochemistry | Project 2: Exoplanetary Rings | Project 3: Tidally Driven Weather | |---|---|---|---| | <strong>Core dataset</strong> | Kepler/TESS + APOGEE/GALAH + Gaia | Kepler DR25 short-cadence | TESS Extended Mission multi-sector | | <strong>Key method</strong> | Hierarchical occurrence rate modeling across chemodynamical populations | Bayesian ingress/egress morphology decomposition | Orbit-to-orbit phase curve variance analysis | | <strong>Novelty axis</strong> | Chemical clocks as planet formation probes | Population-level ring constraints via non-detections | Second-order atmospheric variability statistics | | <strong>Feasibility</strong> | High (all data public now) | High (all data public, new modeling needed) | Medium-High (requires careful systematics control) | | <strong>Impact if successful</strong> | Bridges exoplanet science and Galactic archaeology | First ring detection or strongest population constraints | First empirical exoplanet weather detection |</p>
-<hr/>
-<p><em>This report was generated as part of an automated exoplanet research strategy session. Ideas are intended as starting points for deeper literature review and feasibility assessment.</em></p>
+<p>Exoplanet magnetic fields are a "missing variable" in atmospheric evolution, habitability assessment, and interior structure theory. Dynamo scaling laws disagree by orders of magnitude for super-Earths and sub-Neptunes. A population-level set of even rough B-field constraints — the first of its kind — would immediately test and discriminate between competing dynamo theories and reshape our understanding of which planets can retain their atmospheres over gigayear timescales.</p>
     </div>
   </details>
   <footer class="exo-daily__foot">
-    <span class="exo-daily__meta">Source brief: 2026-04-07</span>
+    <span class="exo-daily__meta">Source brief: 2026-03-26</span>
     <span class="exo-daily__meta">Rotates daily &middot; 66 ideas in the pool</span>
   </footer>
 </section>
