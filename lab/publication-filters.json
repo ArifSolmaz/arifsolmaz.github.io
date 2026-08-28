@@ -19,7 +19,7 @@
     "2009AppRI..67.2049Y"
   ],
   "exclude_reason": "Different researcher(s) named Solmaz — not this author.",
-  "review_queue": [
+  "confirmed_bibcodes": [
     "2023BAAS...55c.263M",
     "2019BAAS...51g.265H",
     "2019BAAS...51g..55S",
@@ -27,5 +27,5 @@
     "2019BAAS...51c.271L",
     "2019astro2020T.528D"
   ],
-  "review_note": "Astro2020 / BAAS community white papers matched by name but not listed on the CV — confirm authorship, then either delete from this list or move to exclude_bibcodes."
+  "confirmed_note": "Community/decadal white papers with large author lists, confirmed by the author as genuine co-authorships (2026-08). Kept on the page; listed here so a future maintainer does not mistake them for name collisions."
 }
