@@ -1,0 +1,59 @@
+name: Update lab page data
+
+on:
+  schedule:
+    # Mondays 03:30 UTC — after the weekend's arXiv/ADS indexing settles
+    - cron: "30 3 * * 1"
+  workflow_dispatch:
+  push:
+    branches: [ "main" ]
+    paths:
+      - "cv.tex"
+      - "publications.json"
+      - "lab/publication-filters.json"
+      - "scripts/build_lab_data.py"
+      - "scripts/fetch_ads.py"
+      - ".github/workflows/update-lab.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-lab-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  update:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Refresh publications from NASA ADS
+        # Needs the ADS_API_TOKEN secret. Without it this step is skipped and the
+        # build below falls back to the publication file already in the repo.
+        continue-on-error: true
+        env:
+          ADS_API_TOKEN: ${{ secrets.ADS_API_TOKEN }}
+        run: python3 scripts/fetch_ads.py
+
+      - name: Rebuild lab data from CV + publications
+        run: python3 scripts/build_lab_data.py
+
+      - name: Commit if anything changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add lab/lab-data.json lab/ads-publications.json 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "lab data unchanged"
+          else
+            git commit -m "chore(lab): refresh lab data from CV and ADS"
+            git push
+          fi

@@ -1,0 +1,31 @@
+{
+  "_comment": [
+    "Hand-maintained corrections applied on top of the NASA ADS query.",
+    "The ADS name search 'Solmaz, Arif' also matches other researchers with the",
+    "same surname (nuclear physics, condensed matter, chemistry). Once the ADS",
+    "refresh runs with an ORCID query these exclusions become redundant, but they",
+    "stay here as a safety net. Add a bibcode to exclude_bibcodes to drop a record;",
+    "add one to include_notes only to leave yourself a reminder."
+  ],
+  "orcid": "0000-0003-3519-3003",
+  "exclude_bibcodes": [
+    "2025JEST...2210049T",
+    "2016PhRvB..93k5101R",
+    "2015PhRvB..92c5405N",
+    "2010RPDos.138..264Y",
+    "2010JRNC..283..305Y",
+    "2010AppRI..68.1040Y",
+    "2009JRNC..280..569Y",
+    "2009AppRI..67.2049Y"
+  ],
+  "exclude_reason": "Different researcher(s) named Solmaz — not this author.",
+  "review_queue": [
+    "2023BAAS...55c.263M",
+    "2019BAAS...51g.265H",
+    "2019BAAS...51g..55S",
+    "2019BAAS...51c.414H",
+    "2019BAAS...51c.271L",
+    "2019astro2020T.528D"
+  ],
+  "review_note": "Astro2020 / BAAS community white papers matched by name but not listed on the CV — confirm authorship, then either delete from this list or move to exclude_bibcodes."
+}
