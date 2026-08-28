@@ -1,6 +1,7 @@
-# AA — Algorithm Analysis for Absolute Beginners
+# AA — Algorithm Analysis with Python
 
-A 14-week, no-experience-required introduction to algorithm analysis with Python,
+A 14-week introduction to algorithm analysis with Python that builds the needed
+programming from the basics,
 published at:
 
 - Course home: <https://arifsolmaz.github.io/aa/>
