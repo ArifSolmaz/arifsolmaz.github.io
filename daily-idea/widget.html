@@ -3,56 +3,67 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Idea of the day &mdash; Mapping Exoplanet Magnetic Field Topologies via Asymmetric Metastable Helium Escape Geometry</title>
+<title>Idea of the day &mdash; Hunting Ghost Planets in Resonant Chains via Long-Baseline TTV Drift Detection (Kepler-to-TESS)</title>
 <link rel="stylesheet" href="widget.css"/>
 </head>
 <body>
 <section class="exo-daily" aria-label="Exoplanet idea of the day">
   <header class="exo-daily__head">
     <span class="exo-daily__eyebrow">Exoplanet idea of the day</span>
-    <time class="exo-daily__date" datetime="2026-08-27">2026-08-27</time>
+    <time class="exo-daily__date" datetime="2026-08-28">2026-08-28</time>
   </header>
-  <h2 class="exo-daily__title">Mapping Exoplanet Magnetic Field Topologies via Asymmetric Metastable Helium Escape Geometry</h2>
+  <h2 class="exo-daily__title">Hunting Ghost Planets in Resonant Chains via Long-Baseline TTV Drift Detection (Kepler-to-TESS)</h2>
   <div class="exo-daily__premise">
-    <p>Planetary magnetic fields are among the most important yet least constrained properties of exoplanets. They shield atmospheres from stellar wind stripping, influence habitability, and encode information about interior dynamics. In early 2026, JWST tracked helium escaping from the hot Jupiter WASP-121b continuously over a full orbit, revealing two enormous asymmetric helium streams stretching across more than half the planet's orbital path. This asymmetry is shaped by the interaction between the escaping gas, the stellar wind, and — critically — the planet's magnetic field. Yet most atmospheric escape studies focus on <em>mass-loss rates</em>, treating the escaping gas as a scalar quantity rather than exploiting its 3D geometry as a diagnostic of the magnetic environment.</p>
-<p>This project proposes a systematic geometric analysis of He 10830 Å absorption profiles across a sample of ~15–20 hot Jupiters and warm Neptunes to infer magnetic field strengths and dipole orientations through forward-modeling with 3D magnetohydrodynamic (MHD) simulations.</p>
+    <p>Many multi-planet systems discovered by Kepler are near (but not exactly in) mean-motion resonances, and some show transit timing variations (TTVs) indicative of gravitational interactions. A 2025 study bridging Kepler and TESS ephemerides identified 5 new systems with periodic TTVs and 17 systems with long-term secular trends in transit times previously unknown. These secular trends — slow, monotonic drifts in transit times — are a smoking gun for gravitational perturbations from unseen (non-transiting) planets in the system.</p>
+<p>The ambitious idea: use the ~12-year baseline from Kepler (2009–2013) through K2 (2014–2018) to TESS (2018–2026+) to systematically identify systems with non-linear TTV trends, then perform dynamical inversions to constrain the masses and orbital parameters of the hidden perturbers. These "ghost planets" are invisible in transit photometry but leave gravitational fingerprints on their transiting siblings.</p>
   </div>
   <details class="exo-daily__more">
     <summary>Read the full proposal</summary>
     <div class="exo-daily__full">
       <h3>Scientific Premise</h3>
-<p>Planetary magnetic fields are among the most important yet least constrained properties of exoplanets. They shield atmospheres from stellar wind stripping, influence habitability, and encode information about interior dynamics. In early 2026, JWST tracked helium escaping from the hot Jupiter WASP-121b continuously over a full orbit, revealing two enormous asymmetric helium streams stretching across more than half the planet's orbital path. This asymmetry is shaped by the interaction between the escaping gas, the stellar wind, and — critically — the planet's magnetic field. Yet most atmospheric escape studies focus on <em>mass-loss rates</em>, treating the escaping gas as a scalar quantity rather than exploiting its 3D geometry as a diagnostic of the magnetic environment.</p>
-<p>This project proposes a systematic geometric analysis of He 10830 Å absorption profiles across a sample of ~15–20 hot Jupiters and warm Neptunes to infer magnetic field strengths and dipole orientations through forward-modeling with 3D magnetohydrodynamic (MHD) simulations.</p>
+<p>Many multi-planet systems discovered by Kepler are near (but not exactly in) mean-motion resonances, and some show transit timing variations (TTVs) indicative of gravitational interactions. A 2025 study bridging Kepler and TESS ephemerides identified 5 new systems with periodic TTVs and 17 systems with long-term secular trends in transit times previously unknown. These secular trends — slow, monotonic drifts in transit times — are a smoking gun for gravitational perturbations from unseen (non-transiting) planets in the system.</p>
+<p>The ambitious idea: use the ~12-year baseline from Kepler (2009–2013) through K2 (2014–2018) to TESS (2018–2026+) to systematically identify systems with non-linear TTV trends, then perform dynamical inversions to constrain the masses and orbital parameters of the hidden perturbers. These "ghost planets" are invisible in transit photometry but leave gravitational fingerprints on their transiting siblings.</p>
 <h3>Target Datasets</h3>
 <ul>
-<li><strong>JWST NIRSpec/G140H and NIRCam grism</strong> time-series observations of He 10830 Å in known escaping-atmosphere planets (WASP-121b, WASP-107b, HAT-P-11b, HAT-P-32b, GJ 3470b, TOI-560b, others from the growing JWST GO archive).</li>
-<li><strong>Ground-based high-resolution spectroscopy</strong> from CARMENES (Calar Alto), SPIRou (CFHT), and GIANO-B (TNG), which have published He 10830 Å detections for ~30 planets with varying signal morphologies.</li>
-<li><strong>Archival stellar wind models</strong> from the literature (e.g., Alfvén wave-driven wind models calibrated to X-ray/EUV fluxes from XMM-Newton and Chandra).</li>
+<li><strong>Kepler transit times</strong>: Holczer et al. (2016) TTV catalog for all Kepler multi-planet systems, plus updated mid-times from Rowe &amp; Thompson.</li>
+<li><strong>K2 transit times</strong>: For systems in overlapping K2 campaign fields.</li>
+<li><strong>TESS transit times</strong>: TESS-Kepler overlap from Sectors 14, 26, 40, 41, 53–55, 67–69, and the 2025–2026 extended mission pointings in the Kepler field. Use the 2025 Kokori et al. catalog of updated ephemerides.</li>
+<li><strong>Radial velocities</strong>: Archival RVs from the California Legacy Survey, HARPS-N, and HIRES for systems where available.</li>
 </ul>
 <h3>Novelty</h3>
-<p>While He 10830 Å detections are now routine, the community overwhelmingly interprets them through 1D Parker wind models or simplified 3D hydro codes <em>without magnetic fields</em>. Only a handful of papers (e.g., Owen &amp; Adams 2014; Carolan et al. 2021; Hazra et al. 2022) have attempted MHD escape modeling, and none have applied it systematically across a population to look for trends between inferred field strength and planetary bulk properties. This project would be the first population-level magnetic field survey of exoplanets using escape geometry, filling a gap between interior structure theory (which predicts field strengths) and observation (which has almost no constraints).</p>
+<p>While individual TTV analyses are routine, a systematic population-level search for <em>secular</em> TTV drifts using the 12+ year Kepler-to-TESS baseline is a qualitatively new capability that has only recently become possible. Most TTV studies focus on periodic (sinusoidal) signals from known planet pairs near resonance. Secular drifts — caused by long-period perturbers on timescales longer than the Kepler mission — have been largely inaccessible until the TESS extended mission provided the necessary temporal leverage. The goal here is not just detection but dynamical inversion: turning a measured drift rate and curvature into posterior constraints on the perturber's mass and period.</p>
 <h3>Concrete Workflow</h3>
 <ol>
-<li>Compile all published He 10830 Å transmission spectroscopy datasets (both space and ground) with sufficient spectral resolution to resolve the line profile asymmetry (R &gt; 20,000 for ground; JWST time-resolved ingress/egress mapping for space).</li>
-<li>For each target, extract the velocity-resolved absorption profile as a function of orbital phase, focusing on: (a) blueshift of the absorption centroid (bulk outflow speed), (b) asymmetry between leading and trailing limbs during transit, and (c) pre/post-transit absorption (extended tail geometry).</li>
-<li>Run a grid of 3D MHD photoevaporation simulations (using codes such as PLUTO or Athena++) spanning planetary dipole field strengths from 0.1–50 Gauss and dipole tilt angles from 0°–90°, with stellar wind conditions matched to each system's measured XUV flux.</li>
-<li>Perform Bayesian model comparison (nested sampling) between the observed line profiles and the simulation grid to derive posterior distributions on B-field strength and orientation for each planet.</li>
-<li>Search for correlations between inferred B-field and: planetary mass, radius, rotation period (from phase curve constraints), bulk density, and host star activity level.</li>
+<li><strong>Ephemeris bridging</strong>: For all Kepler multi-planet systems re-observed by TESS (estimated ~500 systems), compute precise mid-transit times from TESS SPOC or QLP light curves. Combine with Kepler-era mid-times.</li>
+<li><strong>Trend detection</strong>: Fit each planet's O−C (observed minus calculated) transit time series with a polynomial model (linear + quadratic + cubic). Identify systems where the Bayesian evidence favors a quadratic or cubic term over a constant-period model (ΔlnZ &gt; 5).</li>
+<li><strong>Resonance proximity filter</strong>: For systems with detected secular trends, check whether the drift rate is consistent with perturbation by a planet near a low-order (2:1, 3:2, 5:3, 3:1) resonance with the transiting planet.</li>
+<li><strong>Dynamical inversion</strong>: For the most significant detections, run N-body MCMC fits (using TTVFast or REBOUND) over the parameter space of the hidden planet (mass, period, eccentricity, inclination). Combine TTV constraints with any available RV data.</li>
+<li><strong>Prediction and validation</strong>: For the best-constrained ghost planets, predict their transit probability and expected transit depth. Flag systems where the perturber has &gt;5% transit probability for targeted TESS or CHEOPS follow-up.</li>
 </ol>
 <h3>Expected Signal / Observable</h3>
-<p>The primary observable is the degree and direction of asymmetry in the He 10830 Å transit absorption profile. A strong dipolar field channels escaping gas into polar funnels, producing a characteristic double-peaked absorption signature and suppressing equatorial outflow. A weak or absent field yields a roughly symmetric, broad blueshifted absorption. Intermediate cases produce trailing tails whose opening angle and velocity structure encode the magnetopause standoff distance. Expected magnetic field strengths for hot Jupiters range from ~1–30 Gauss based on scaling laws; the line profile differences between 1 G and 10 G should be detectable at &gt;3σ with existing JWST data quality.</p>
+<ul>
+<li>A quadratic O−C drift of ~1–10 minutes over 12 years is detectable for Earth-to-Neptune-mass perturbers in orbits of 100–500 days.</li>
+<li>For super-Earths near 2:1 resonance with a known transiting planet, the expected TTV drift rate is ~0.5–5 min/decade, well within measurement precision for Kepler-TESS bridged baselines.</li>
+<li>The population-level yield: an estimated 10–30 new "ghost planet" candidates across the Kepler multi-planet sample, with dynamical mass constraints to within a factor of 2–3.</li>
+</ul>
 <h3>Possible False Positives</h3>
 <ul>
-<li><strong>Stellar wind anisotropy</strong> (e.g., from coronal mass ejections or sector structure) could produce asymmetric confinement patterns mimicking a planetary field. Mitigation: use multi-epoch observations to test for time-variability inconsistent with a steady dipole.</li>
-<li><strong>Tidal effects</strong> on the escaping atmosphere can also break symmetry. Mitigation: tidal distortion is predictable from the known orbital/planetary parameters and can be included in the forward model.</li>
-<li><strong>3D day-night temperature contrasts</strong> affect the photoionization balance and thus the He triplet population. Mitigation: couple the MHD model with a non-LTE He level population calculation.</li>
+<li><strong>Stellar activity-induced timing shifts</strong>: Starspots near the transit chord can shift the apparent mid-time by ~10–30 seconds. Mitigation: correlate O−C residuals with stellar activity indicators (flux modulation amplitude, spot-crossing frequency); exclude systems with strong activity-timing correlations.</li>
+<li><strong>Orbital decay</strong>: For very short-period planets, tidal orbital decay can produce a quadratic O−C trend. Mitigation: compute the expected decay rate from tidal theory; flag systems where the observed drift matches the tidal prediction.</li>
+<li><strong>Apsidal precession</strong>: In eccentric systems, apsidal precession produces a periodic O−C signal that over a short baseline can mimic a secular trend. Mitigation: fit precession models alongside hidden-planet models; use Bayesian model comparison.</li>
+<li><strong>Light-time effect from a stellar binary companion</strong>: An unseen stellar companion causes the system barycenter to move, producing long-term TTV trends. Mitigation: check for Gaia RUWE &gt; 1.4 (indicating astrometric excess noise from a companion); include a linear drift term in the model.</li>
 </ul>
-<h3>Why It Matters</h3>
-<p>Exoplanet magnetic fields are a "missing variable" in atmospheric evolution, habitability assessment, and interior structure theory. Dynamo scaling laws disagree by orders of magnitude for super-Earths and sub-Neptunes. A population-level set of even rough B-field constraints — the first of its kind — would immediately test and discriminate between competing dynamo theories and reshape our understanding of which planets can retain their atmospheres over gigayear timescales.</p>
+<h3>Why This Could Matter</h3>
+<p>Kepler revealed that tightly-packed inner planetary systems are common, but the outer architecture of these systems is almost entirely unknown. This project would provide the first statistical census of "cold" planets (P ~ 100–500 days) in Kepler multi-planet systems — a population that is largely invisible to both transit surveys (low geometric probability) and RV surveys (long baselines needed). Understanding the outer boundary conditions of compact inner systems is critical for testing formation theories: did these planets form in situ, or did they migrate inward from a more extended configuration, leaving outer companions behind? The ghost planets hold the answer.</p>
+<hr/>
+<p>## Summary Table</p>
+<p>| # | Project | Key Dataset | Primary Observable | Novelty Level | |---|---------|------------|-------------------|--------------| | 1 | Starspot Latitude Census | Kepler + TESS transits of K/M hosts | Spot latitude vs. Rossby number | Population-level dynamo test via transit tomography | | 2 | Tidal Inflation Fossils | TEPCat obliquities + Kepler/TESS radii | Radius anomaly vs. obliquity for warm Neptunes | First controlled test of tidal memory in sub-giants | | 3 | Ghost Planet Census | Kepler-to-TESS 12-yr TTV baseline | Secular O−C drifts → hidden perturber masses | Systematic dynamical inversion at population scale |</p>
+<hr/>
+<p><em>Report generated autonomously. Design choices: focused on projects that leverage the unique 12+ year Kepler-to-TESS baseline or population-scale approaches that were not possible even 2 years ago. All datasets referenced are publicly available.</em></p>
     </div>
   </details>
   <footer class="exo-daily__foot">
-    <span class="exo-daily__meta">Source brief: 2026-03-26</span>
+    <span class="exo-daily__meta">Source brief: 2026-03-25</span>
     <span class="exo-daily__meta">Rotates daily &middot; 66 ideas in the pool</span>
   </footer>
 </section>
