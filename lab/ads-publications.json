@@ -1,0 +1,350 @@
+{
+  "responseHeader": {
+    "status": 0,
+    "QTime": 19,
+    "params": {
+      "q": "orcid:\"0000-0002-3076-164X\"",
+      "fl": "bibcode,title,year,pub,volume,page,doi,bibstem,database,property,author_count,first_author",
+      "start": "0",
+      "internal_logging_params": "X-Amzn-Trace-Id=Root=1-6a92122c-42f9d9e521b6e7562a26d856",
+      "fq": "database:(astronomy OR physics)",
+      "sort": "date desc",
+      "rows": "200",
+      "wt": "json"
+    }
+  },
+  "response": {
+    "numFound": 10,
+    "start": 0,
+    "numFoundExact": true,
+    "docs": [
+      {
+        "bibcode": "2025A&A...703A.147O",
+        "property": [
+          "ARTICLE",
+          "DATA",
+          "EPRINT_OPENACCESS",
+          "ESOURCE",
+          "OPENACCESS",
+          "PUB_OPENACCESS",
+          "REFEREED"
+        ],
+        "author_count": 101,
+        "bibstem": [
+          "A&A",
+          "A&A...703"
+        ],
+        "database": [
+          "astronomy"
+        ],
+        "doi": [
+          "10.1051/0004-6361/202556498",
+          "10.48550/arXiv.2509.15384"
+        ],
+        "first_author": "Ortiz, J. L.",
+        "page": [
+          "A147"
+        ],
+        "pub": "Astronomy and Astrophysics",
+        "title": [
+          "A high geometric albedo and small size for the Haumea cluster member (24835) 1995 SM<SUB>55</SUB> determined from a stellar occultation and photometric observations"
+        ],
+        "volume": "703",
+        "year": "2025"
+      },
+      {
+        "bibcode": "2025MNRAS.543.3456E",
+        "author_count": 21,
+        "bibstem": [
+          "MNRAS",
+          "MNRAS.543"
+        ],
+        "database": [
+          "astronomy"
+        ],
+        "doi": [
+          "10.1093/mnras/staf1659",
+          "10.48550/arXiv.2509.25319"
+        ],
+        "first_author": "Esparza-Borges, Emma",
+        "page": [
+          "3456"
+        ],
+        "pub": "Monthly Notices of the Royal Astronomical Society",
+        "title": [
+          "Testing the performance of cross-correlation techniques to search for molecular features in JWST NIRSpec G395H observations of transiting exoplanets"
+        ],
+        "volume": "543",
+        "year": "2025",
+        "property": [
+          "ARTICLE",
+          "DATA",
+          "EPRINT_OPENACCESS",
+          "ESOURCE",
+          "OPENACCESS",
+          "PUB_OPENACCESS",
+          "REFEREED"
+        ]
+      },
+      {
+        "bibcode": "2025epsc.conf.1815L",
+        "author_count": 10,
+        "bibstem": [
+          "epsc",
+          "epsc.conf"
+        ],
+        "database": [
+          "astronomy"
+        ],
+        "doi": [
+          "10.5194/epsc-dps2025-1815"
+        ],
+        "first_author": "Lambrov Ivanovski, Stavro",
+        "page": [
+          "EPSC-DPS2025-1815"
+        ],
+        "pub": "EPSC-DPS Joint Meeting 2025",
+        "title": [
+          "Europlanet Machine Learning Working Group: a year of progress"
+        ],
+        "volume": "2025",
+        "year": "2025",
+        "property": [
+          "ARTICLE",
+          "ESOURCE",
+          "NOT REFEREED"
+        ]
+      },
+      {
+        "bibcode": "2025epsc.conf...39A",
+        "author_count": 7,
+        "bibstem": [
+          "epsc",
+          "epsc.conf"
+        ],
+        "database": [
+          "astronomy"
+        ],
+        "doi": [
+          "10.5194/epsc-dps2025-39"
+        ],
+        "first_author": "Attree, Nicholas",
+        "page": [
+          "EPSC-DPS2025-39"
+        ],
+        "pub": "EPSC-DPS Joint Meeting 2025",
+        "title": [
+          "Planetary Research: A new diamond open access journal for planetary science"
+        ],
+        "volume": "2025",
+        "year": "2025",
+        "property": [
+          "ARTICLE",
+          "ESOURCE",
+          "NOT REFEREED"
+        ]
+      },
+      {
+        "bibcode": "2023ApJS..265....4K",
+        "author_count": 217,
+        "bibstem": [
+          "ApJS",
+          "ApJS..265"
+        ],
+        "database": [
+          "astronomy"
+        ],
+        "doi": [
+          "10.3847/1538-4365/ac9da4",
+          "10.48550/arXiv.2209.09673"
+        ],
+        "first_author": "Kokori, A.",
+        "page": [
+          "4"
+        ],
+        "pub": "The Astrophysical Journal Supplement Series",
+        "title": [
+          "ExoClock Project. III. 450 New Exoplanet Ephemerides from Ground and Space Observations"
+        ],
+        "volume": "265",
+        "year": "2023",
+        "property": [
+          "ARTICLE",
+          "ASSOCIATED",
+          "DATA",
+          "EPRINT_OPENACCESS",
+          "ESOURCE",
+          "OPENACCESS",
+          "PUB_OPENACCESS",
+          "REFEREED"
+        ]
+      },
+      {
+        "bibcode": "2022A&A...664A.130S",
+        "property": [
+          "ARTICLE",
+          "DATA",
+          "EPRINT_OPENACCESS",
+          "ESOURCE",
+          "OPENACCESS",
+          "PUB_OPENACCESS",
+          "REFEREED"
+        ],
+        "author_count": 88,
+        "bibstem": [
+          "A&A",
+          "A&A...664"
+        ],
+        "database": [
+          "astronomy"
+        ],
+        "doi": [
+          "10.1051/0004-6361/202141546",
+          "10.48550/arXiv.2205.12882"
+        ],
+        "first_author": "Santos-Sanz, P.",
+        "page": [
+          "A130"
+        ],
+        "pub": "Astronomy and Astrophysics",
+        "title": [
+          "Physical properties of the trans-Neptunian object (38628) Huya from a multi-chord stellar occultation"
+        ],
+        "volume": "664",
+        "year": "2022"
+      },
+      {
+        "bibcode": "2021NewA...8601571P",
+        "author_count": 7,
+        "bibstem": [
+          "NewA",
+          "NewA...86"
+        ],
+        "database": [
+          "astronomy"
+        ],
+        "doi": [
+          "10.1016/j.newast.2021.101571",
+          "10.48550/arXiv.2101.06265"
+        ],
+        "first_author": "Poro, Atila",
+        "page": [
+          "101571"
+        ],
+        "pub": "New Astronomy",
+        "title": [
+          "BO Ari Light Curve Analysis using Ground-Based and TESS Data"
+        ],
+        "volume": "86",
+        "year": "2021",
+        "property": [
+          "ARTICLE",
+          "EPRINT_OPENACCESS",
+          "ESOURCE",
+          "OPENACCESS",
+          "REFEREED"
+        ]
+      },
+      {
+        "bibcode": "2021AstL...47..402P",
+        "property": [
+          "ARTICLE",
+          "EPRINT_OPENACCESS",
+          "ESOURCE",
+          "OPENACCESS",
+          "REFEREED"
+        ],
+        "author_count": 17,
+        "bibstem": [
+          "AstL",
+          "AstL...47"
+        ],
+        "database": [
+          "astronomy"
+        ],
+        "doi": [
+          "10.1134/S1063773721060050",
+          "10.48550/arXiv.2006.00528"
+        ],
+        "first_author": "Poro, A.",
+        "page": [
+          "402"
+        ],
+        "pub": "Astronomy Letters",
+        "title": [
+          "The First Light Curve Solutions and Period Study of BQ Ari"
+        ],
+        "volume": "47",
+        "year": "2021"
+      },
+      {
+        "bibcode": "2021TJAA....2....1S",
+        "property": [
+          "ARTICLE",
+          "EPRINT_OPENACCESS",
+          "ESOURCE",
+          "OPENACCESS",
+          "REFEREED"
+        ],
+        "author_count": 9,
+        "bibstem": [
+          "TJAA",
+          "TJAA....2"
+        ],
+        "database": [
+          "astronomy"
+        ],
+        "doi": [
+          "10.48550/arXiv.2103.04855"
+        ],
+        "first_author": "Solmaz, Arif",
+        "page": [
+          "1"
+        ],
+        "pub": "Turkish Journal of Astronomy and Astrophysics",
+        "title": [
+          "Çukurova University Space Sciences and Solar Energy Research and Application Center (UZAYMER): I. Observing Conditions and Ongoing Projects"
+        ],
+        "volume": "2",
+        "year": "2021"
+      },
+      {
+        "bibcode": "2019BAAS...51g..55S",
+        "author_count": 18,
+        "bibstem": [
+          "BAAS",
+          "BAAS...51"
+        ],
+        "database": [
+          "astronomy"
+        ],
+        "doi": [
+          "10.48550/arXiv.1907.06320"
+        ],
+        "first_author": "Smith, Arfon",
+        "page": [
+          "55"
+        ],
+        "pub": "Bulletin of the American Astronomical Society",
+        "title": [
+          "Astronomy should be in the clouds"
+        ],
+        "volume": "51",
+        "year": "2019",
+        "property": [
+          "ARTICLE",
+          "EPRINT_OPENACCESS",
+          "ESOURCE",
+          "NOT REFEREED",
+          "OPENACCESS",
+          "PUB_OPENACCESS"
+        ]
+      }
+    ]
+  },
+  "allocatedBytes": 7372032,
+  "filtered": "true",
+  "_meta": {
+    "query": "orcid:\"0000-0002-3076-164X\""
+  }
+}
