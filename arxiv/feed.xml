@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 27 Aug 2026 12:14:06 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 28 Aug 2026 13:39:28 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,61 +15,84 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>Assessing the Climate and Habitability of Tidally Locked Rocky Exoplanets</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-25451v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-25451v1</guid>
-      <pubDate>Thu, 27 Aug 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Erica Bisesi et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Benchmark Brown Dwarfs as Chemical Laboratories: Linking System Bulk Properties to Atmospheric Retrievals</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-26029v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-26029v1</guid>
-      <pubDate>Thu, 27 Aug 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Viktória Kecskeméthy et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.SR</category>
-    </item>
-    <item>
-      <title>Kepler-50: Two Planets in Close Resonance Perturbed by a Non-transiting Planet</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-25035v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-25035v1</guid>
-      <pubDate>Thu, 27 Aug 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Daniel Jontof-Hutter et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>The Isotopic and Elemental Abundances of Planet-Host Star TRAPPIST-1</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-26097v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-26097v1</guid>
-      <pubDate>Thu, 27 Aug 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Darío González Picos et al.</dc:creator>
+      <title>Panchromatic Spectra of Nearby Low-mass and Sun-like Stars with Directly Imageable Habitable Zones</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-27344v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-27344v1</guid>
+      <pubDate>Fri, 28 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Sarah Peacock et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.SR</category>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>Discovery and Characterization of the TOI-4468 Planetary System: A Transiting Hot Jupiter With a Lone Nearby Outer Companion</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-25208v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-25208v1</guid>
-      <pubDate>Thu, 27 Aug 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Joseph R. Livesey et al.</dc:creator>
+      <title>The MegaWave Radio Surveyor</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-26322v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-26322v1</guid>
+      <pubDate>Fri, 28 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>T. Joseph W. Lazio et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.IM</category>
+        <category>astro-ph.CO</category>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>The JWST/NIRCam Scattered Light Disks GTO 2780 program: panchromatic coronagraphic imaging of the HD 10647, HD 32297, HD 61005, HD 107146, and HD 181327 debris disk systems</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-27437v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-27437v1</guid>
+      <pubDate>Fri, 28 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>András Gáspár et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.SR</category>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Alfred: A Flexible, User-Friendly Python Package for Exoplanet Confirmation</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-26227v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-26227v1</guid>
+      <pubDate>Fri, 28 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Maxwell A. Kroft</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.IM</category>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>The true masses of radial-velocity exoplanets constrained by stability</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-26880v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-26880v1</guid>
+      <pubDate>Fri, 28 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Xander Byrne, Amy Bonsor</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+    </item>
+    <item>
+      <title>SOAR TESS Survey III: Mapping the Stellar Companion Deficit around TESS Planet Candidates</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-26250v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-26250v1</guid>
+      <pubDate>Fri, 28 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Carl Ziegler et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>JWST color sequence of transiting exoplanets and directly imaged substellar objects</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-25993v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-25993v1</guid>
-      <pubDate>Thu, 27 Aug 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Guangwei Fu et al.</dc:creator>
+      <title>Spatially Scanned STIS Spectra of the Exoplanet Host Star 55 Cnc</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-25184v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-25184v1</guid>
+      <pubDate>Fri, 28 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>D. E. Welty et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.IM</category>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>An Equation of State for Supercritical Silicate-Hydrogen Mixtures at Sub-Neptune Interior Conditions</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-27401v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-27401v1</guid>
+      <pubDate>Fri, 28 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Sarah P. Marcum, Lars Stixrude, Edward D. Young</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
-        <category>astro-ph.SR</category>
     </item>
   </channel>
 </rss>
