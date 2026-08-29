@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-08-28",
+  "generated_at": "2026-08-29",
   "pi": {
     "name": "Arif Solmaz, PhD",
     "title": "Assistant Professor --- Exoplanet Science & Scientific ML",
     "email": "arif.solmaz@istun.edu.tr"
   },
-  "profile": "Astronomer specializing in exoplanet transit photometry and timing analysis, with emphasis on characterizing systematic effects from stellar activity. I develop Bayesian and machine learning pipelines to extract precise transit parameters from TESS, JWST, and ground-based data, specializing in transit timing variations (TTVs) and starspot-induced biases. As a lead contributor to international collaborations including the ExoClock Project and EXPLORE, I coordinate multi-site observing campaigns across 50+ countries. I teach computational methods and programming at the undergraduate level and maintain reproducible, open-source research workflows. % ===================== EDUCATION =====================",
+  "profile": "Astronomer specializing in exoplanet transit photometry and timing analysis, with emphasis on characterizing systematic effects from stellar activity. I develop Bayesian and machine learning pipelines to extract precise transit parameters from TESS, JWST, and ground-based data, specializing in transit timing variations (TTVs) and starspot-induced biases. As a lead contributor to international collaborations including the ExoClock Project and EXPLORE, I coordinate multi-site observing campaigns across 50+ countries. I teach computational methods and programming at the undergraduate level and maintain reproducible, open-source research workflows.",
   "education": [
     {
       "degree": "PhD in Physics",
@@ -46,7 +46,7 @@
       "organisation": "Çağ University, Faculty of Arts and Sciences",
       "period": "Feb 2011 -- Sep 2015",
       "location": "Mersin, Turkey",
-      "note": "Supported teaching and observational research activities; contributed to TÜBİTAK-funded meteor monitoring and stellar astrophysics programs. % ===================== PUBLICATIONS ====================="
+      "note": "Supported teaching and observational research activities; contributed to TÜBİTAK-funded meteor monitoring and stellar astrophysics programs."
     }
   ],
   "projects": [
@@ -107,7 +107,7 @@
       "note": ""
     }
   ],
-  "teaching": "Current (2026--2027, İSTÜN): Physics I & II, Computer Programming I & II, Object-Oriented Programming, Data Structures & Algorithms, Robotics, Machine Learning --- all in English and/or Turkish. 2pt Previous (Çağ University): Statistics, Quantitative Methods, Introductory--Advanced Programming. % ===================== OUTREACH =====================",
+  "teaching": "Current (2026--2027, İSTÜN): Physics I & II, Computer Programming I & II, Object-Oriented Programming, Data Structures & Algorithms, Robotics, Machine Learning --- all in English and/or Turkish. 2pt Previous (Çağ University): Statistics, Quantitative Methods, Introductory--Advanced Programming.",
   "memberships": "International Astronomical Union (IAU), European Astronomical Society (EAS), Turkish Astronomical Society (TAD), European Association for Astronomy Education (EAAE --- Board Member). 0.6em center 0.4em publication list, research code, and teaching materials at arifsolmaz.github.io. References available upon request. center",
   "publications": [
     {
@@ -125,6 +125,20 @@
       "url": "https://doi.org/10.5194/epsc-dps2025-1815"
     },
     {
+      "title": "Artificial Intelligence in Planetary Science and Astronomy: Applications and Research Potential",
+      "year": 2025,
+      "bibcode": "2025epsc.conf.1467K",
+      "doi": "10.5194/epsc-dps2025-1467",
+      "journal": "epsc",
+      "kind": "conference",
+      "volume": "2025",
+      "page": "EPSC-DPS2025-1467",
+      "preprint": false,
+      "refereed": null,
+      "authors": null,
+      "url": "https://doi.org/10.5194/epsc-dps2025-1467"
+    },
+    {
       "title": "Planetary Research: A new diamond open access journal for planetary science",
       "year": 2025,
       "bibcode": "2025epsc.conf...39A",
@@ -137,6 +151,20 @@
       "refereed": false,
       "authors": 7,
       "url": "https://doi.org/10.5194/epsc-dps2025-39"
+    },
+    {
+      "title": "ExoClock Project IV: A homogeneous catalogue of 620 updated exoplanet ephemerides",
+      "year": 2025,
+      "bibcode": "2025arXiv251114407K",
+      "doi": null,
+      "journal": "arXiv preprint",
+      "kind": "preprint",
+      "volume": null,
+      "page": "arXiv:2511.14407",
+      "preprint": true,
+      "refereed": null,
+      "authors": null,
+      "url": "https://ui.adsabs.harvard.edu/abs/2025arXiv251114407K/abstract"
     },
     {
       "title": "Testing the performance of cross-correlation techniques to search for molecular features in JWST NIRSpec G395H observations of transiting exoplanets",
@@ -165,6 +193,62 @@
       "refereed": true,
       "authors": 101,
       "url": "https://doi.org/10.1051/0004-6361/202556498"
+    },
+    {
+      "title": "VizieR Online Data Catalog: ExoClock project. III. 450 exoplanet ephemerides (Kokori+, 2023)",
+      "year": 2023,
+      "bibcode": "2023yCat..22650004K",
+      "doi": null,
+      "journal": "yCat",
+      "kind": "dataset",
+      "volume": "226",
+      "page": "J/ApJS/265/4",
+      "preprint": false,
+      "refereed": null,
+      "authors": null,
+      "url": "https://ui.adsabs.harvard.edu/abs/2023yCat..22650004K/abstract"
+    },
+    {
+      "title": "Leke Örtülmelerinin Ötegezegen Geçiş Ortası Zaman Ölçümlerine Etkisi",
+      "year": 2023,
+      "bibcode": "2023TJAA....4S.147A",
+      "doi": "10.55064/tjaa.1203704",
+      "journal": "Turkish J. Astronomy & Astrophysics",
+      "kind": "journal",
+      "volume": "4",
+      "page": "147",
+      "preprint": false,
+      "refereed": null,
+      "authors": null,
+      "url": "https://doi.org/10.55064/tjaa.1203704"
+    },
+    {
+      "title": "Zamanlama Yöntemiyle Ötegezegen Keşfi",
+      "year": 2023,
+      "bibcode": "2023TJAA....4S..83O",
+      "doi": "10.55064/tjaa.1202812",
+      "journal": "Turkish J. Astronomy & Astrophysics",
+      "kind": "journal",
+      "volume": "4",
+      "page": "83",
+      "preprint": false,
+      "refereed": null,
+      "authors": null,
+      "url": "https://doi.org/10.55064/tjaa.1202812"
+    },
+    {
+      "title": "Advancing Space Science Requires NASA Support for Coordination Between the Science Mission Directorate Communities",
+      "year": 2023,
+      "bibcode": "2023BAAS...55c.263M",
+      "doi": "10.3847/25c2cfeb.e033d3ce",
+      "journal": "BAAS",
+      "kind": "whitepaper",
+      "volume": "55",
+      "page": "263",
+      "preprint": false,
+      "refereed": null,
+      "authors": null,
+      "url": "https://doi.org/10.3847/25c2cfeb.e033d3ce"
     },
     {
       "title": "ExoClock Project. III. 450 New Exoplanet Ephemerides from Ground and Space Observations",
@@ -209,6 +293,20 @@
       "url": "https://doi.org/10.48550/arXiv.2103.04855"
     },
     {
+      "title": "Ç.Ü. Uzay Bilimleri ve Güneş Enerjisi Araştırma ve Uygulama Merkezi (UZAYMER) : I. Gözlem Koşulları ve Güncel Projeler",
+      "year": 2021,
+      "bibcode": "2021TJAA....2....1S",
+      "doi": "10.48550/arXiv.2103.04855",
+      "journal": "Turkish J. Astronomy & Astrophysics",
+      "kind": "journal",
+      "volume": "2",
+      "page": "1",
+      "preprint": false,
+      "refereed": null,
+      "authors": null,
+      "url": "https://doi.org/10.48550/arXiv.2103.04855"
+    },
+    {
       "title": "BO Ari Light Curve Analysis using Ground-Based and TESS Data",
       "year": 2021,
       "bibcode": "2021NewA...8601571P",
@@ -237,6 +335,34 @@
       "url": "https://doi.org/10.1134/S1063773721060050"
     },
     {
+      "title": "Life Beyond the Solar System: Remotely Detectable Biosignatures",
+      "year": 2019,
+      "bibcode": "2019astro2020T.528D",
+      "doi": "10.48550/arXiv.1801.06714",
+      "journal": "astro",
+      "kind": "whitepaper",
+      "volume": "2020",
+      "page": "528",
+      "preprint": false,
+      "refereed": null,
+      "authors": null,
+      "url": "https://doi.org/10.48550/arXiv.1801.06714"
+    },
+    {
+      "title": "Support the Python Numerical Core",
+      "year": 2019,
+      "bibcode": "2019BAAS...51g.265H",
+      "doi": null,
+      "journal": "BAAS",
+      "kind": "whitepaper",
+      "volume": "51",
+      "page": "265",
+      "preprint": false,
+      "refereed": null,
+      "authors": null,
+      "url": "https://ui.adsabs.harvard.edu/abs/2019BAAS...51g.265H/abstract"
+    },
+    {
       "title": "Astronomy should be in the clouds",
       "year": 2019,
       "bibcode": "2019BAAS...51g..55S",
@@ -249,6 +375,48 @@
       "refereed": false,
       "authors": 18,
       "url": "https://doi.org/10.48550/arXiv.1907.06320"
+    },
+    {
+      "title": "A Balancing Act: Biosignature and Anti-Biosignature Studies in the Next Decade and Beyond",
+      "year": 2019,
+      "bibcode": "2019BAAS...51c.414H",
+      "doi": null,
+      "journal": "BAAS",
+      "kind": "whitepaper",
+      "volume": "51",
+      "page": "414",
+      "preprint": false,
+      "refereed": null,
+      "authors": null,
+      "url": "https://ui.adsabs.harvard.edu/abs/2019BAAS...51c.414H/abstract"
+    },
+    {
+      "title": "The Importance of Thermal Emission Spectroscopy for Understanding Terrestrial Exoplanets",
+      "year": 2019,
+      "bibcode": "2019BAAS...51c.271L",
+      "doi": null,
+      "journal": "BAAS",
+      "kind": "whitepaper",
+      "volume": "51",
+      "page": "271",
+      "preprint": false,
+      "refereed": null,
+      "authors": null,
+      "url": "https://ui.adsabs.harvard.edu/abs/2019BAAS...51c.271L/abstract"
+    },
+    {
+      "title": "Turkish meteor surveillance systems and network: Impact craters and meteorites database",
+      "year": 2014,
+      "bibcode": "2014acm..conf..538U",
+      "doi": null,
+      "journal": "acm",
+      "kind": "conference",
+      "volume": null,
+      "page": "538",
+      "preprint": false,
+      "refereed": null,
+      "authors": null,
+      "url": "https://ui.adsabs.harvard.edu/abs/2014acm..conf..538U/abstract"
     }
   ],
   "journal_articles": [
@@ -279,6 +447,34 @@
       "refereed": true,
       "authors": 101,
       "url": "https://doi.org/10.1051/0004-6361/202556498"
+    },
+    {
+      "title": "Leke Örtülmelerinin Ötegezegen Geçiş Ortası Zaman Ölçümlerine Etkisi",
+      "year": 2023,
+      "bibcode": "2023TJAA....4S.147A",
+      "doi": "10.55064/tjaa.1203704",
+      "journal": "Turkish J. Astronomy & Astrophysics",
+      "kind": "journal",
+      "volume": "4",
+      "page": "147",
+      "preprint": false,
+      "refereed": null,
+      "authors": null,
+      "url": "https://doi.org/10.55064/tjaa.1203704"
+    },
+    {
+      "title": "Zamanlama Yöntemiyle Ötegezegen Keşfi",
+      "year": 2023,
+      "bibcode": "2023TJAA....4S..83O",
+      "doi": "10.55064/tjaa.1202812",
+      "journal": "Turkish J. Astronomy & Astrophysics",
+      "kind": "journal",
+      "volume": "4",
+      "page": "83",
+      "preprint": false,
+      "refereed": null,
+      "authors": null,
+      "url": "https://doi.org/10.55064/tjaa.1202812"
     },
     {
       "title": "ExoClock Project. III. 450 New Exoplanet Ephemerides from Ground and Space Observations",
@@ -320,6 +516,20 @@
       "preprint": false,
       "refereed": true,
       "authors": 9,
+      "url": "https://doi.org/10.48550/arXiv.2103.04855"
+    },
+    {
+      "title": "Ç.Ü. Uzay Bilimleri ve Güneş Enerjisi Araştırma ve Uygulama Merkezi (UZAYMER) : I. Gözlem Koşulları ve Güncel Projeler",
+      "year": 2021,
+      "bibcode": "2021TJAA....2....1S",
+      "doi": "10.48550/arXiv.2103.04855",
+      "journal": "Turkish J. Astronomy & Astrophysics",
+      "kind": "journal",
+      "volume": "2",
+      "page": "1",
+      "preprint": false,
+      "refereed": null,
+      "authors": null,
       "url": "https://doi.org/10.48550/arXiv.2103.04855"
     },
     {
@@ -353,6 +563,48 @@
   ],
   "white_papers": [
     {
+      "title": "Advancing Space Science Requires NASA Support for Coordination Between the Science Mission Directorate Communities",
+      "year": 2023,
+      "bibcode": "2023BAAS...55c.263M",
+      "doi": "10.3847/25c2cfeb.e033d3ce",
+      "journal": "BAAS",
+      "kind": "whitepaper",
+      "volume": "55",
+      "page": "263",
+      "preprint": false,
+      "refereed": null,
+      "authors": null,
+      "url": "https://doi.org/10.3847/25c2cfeb.e033d3ce"
+    },
+    {
+      "title": "Life Beyond the Solar System: Remotely Detectable Biosignatures",
+      "year": 2019,
+      "bibcode": "2019astro2020T.528D",
+      "doi": "10.48550/arXiv.1801.06714",
+      "journal": "astro",
+      "kind": "whitepaper",
+      "volume": "2020",
+      "page": "528",
+      "preprint": false,
+      "refereed": null,
+      "authors": null,
+      "url": "https://doi.org/10.48550/arXiv.1801.06714"
+    },
+    {
+      "title": "Support the Python Numerical Core",
+      "year": 2019,
+      "bibcode": "2019BAAS...51g.265H",
+      "doi": null,
+      "journal": "BAAS",
+      "kind": "whitepaper",
+      "volume": "51",
+      "page": "265",
+      "preprint": false,
+      "refereed": null,
+      "authors": null,
+      "url": "https://ui.adsabs.harvard.edu/abs/2019BAAS...51g.265H/abstract"
+    },
+    {
       "title": "Astronomy should be in the clouds",
       "year": 2019,
       "bibcode": "2019BAAS...51g..55S",
@@ -365,6 +617,34 @@
       "refereed": false,
       "authors": 18,
       "url": "https://doi.org/10.48550/arXiv.1907.06320"
+    },
+    {
+      "title": "A Balancing Act: Biosignature and Anti-Biosignature Studies in the Next Decade and Beyond",
+      "year": 2019,
+      "bibcode": "2019BAAS...51c.414H",
+      "doi": null,
+      "journal": "BAAS",
+      "kind": "whitepaper",
+      "volume": "51",
+      "page": "414",
+      "preprint": false,
+      "refereed": null,
+      "authors": null,
+      "url": "https://ui.adsabs.harvard.edu/abs/2019BAAS...51c.414H/abstract"
+    },
+    {
+      "title": "The Importance of Thermal Emission Spectroscopy for Understanding Terrestrial Exoplanets",
+      "year": 2019,
+      "bibcode": "2019BAAS...51c.271L",
+      "doi": null,
+      "journal": "BAAS",
+      "kind": "whitepaper",
+      "volume": "51",
+      "page": "271",
+      "preprint": false,
+      "refereed": null,
+      "authors": null,
+      "url": "https://ui.adsabs.harvard.edu/abs/2019BAAS...51c.271L/abstract"
     }
   ],
   "conference_contributions": [
@@ -383,6 +663,20 @@
       "url": "https://doi.org/10.5194/epsc-dps2025-1815"
     },
     {
+      "title": "Artificial Intelligence in Planetary Science and Astronomy: Applications and Research Potential",
+      "year": 2025,
+      "bibcode": "2025epsc.conf.1467K",
+      "doi": "10.5194/epsc-dps2025-1467",
+      "journal": "epsc",
+      "kind": "conference",
+      "volume": "2025",
+      "page": "EPSC-DPS2025-1467",
+      "preprint": false,
+      "refereed": null,
+      "authors": null,
+      "url": "https://doi.org/10.5194/epsc-dps2025-1467"
+    },
+    {
       "title": "Planetary Research: A new diamond open access journal for planetary science",
       "year": 2025,
       "bibcode": "2025epsc.conf...39A",
@@ -395,17 +689,61 @@
       "refereed": false,
       "authors": 7,
       "url": "https://doi.org/10.5194/epsc-dps2025-39"
+    },
+    {
+      "title": "Turkish meteor surveillance systems and network: Impact craters and meteorites database",
+      "year": 2014,
+      "bibcode": "2014acm..conf..538U",
+      "doi": null,
+      "journal": "acm",
+      "kind": "conference",
+      "volume": null,
+      "page": "538",
+      "preprint": false,
+      "refereed": null,
+      "authors": null,
+      "url": "https://ui.adsabs.harvard.edu/abs/2014acm..conf..538U/abstract"
     }
   ],
-  "preprints": [],
-  "datasets": [],
+  "preprints": [
+    {
+      "title": "ExoClock Project IV: A homogeneous catalogue of 620 updated exoplanet ephemerides",
+      "year": 2025,
+      "bibcode": "2025arXiv251114407K",
+      "doi": null,
+      "journal": "arXiv preprint",
+      "kind": "preprint",
+      "volume": null,
+      "page": "arXiv:2511.14407",
+      "preprint": true,
+      "refereed": null,
+      "authors": null,
+      "url": "https://ui.adsabs.harvard.edu/abs/2025arXiv251114407K/abstract"
+    }
+  ],
+  "datasets": [
+    {
+      "title": "VizieR Online Data Catalog: ExoClock project. III. 450 exoplanet ephemerides (Kokori+, 2023)",
+      "year": 2023,
+      "bibcode": "2023yCat..22650004K",
+      "doi": null,
+      "journal": "yCat",
+      "kind": "dataset",
+      "volume": "226",
+      "page": "J/ApJS/265/4",
+      "preprint": false,
+      "refereed": null,
+      "authors": null,
+      "url": "https://ui.adsabs.harvard.edu/abs/2023yCat..22650004K/abstract"
+    }
+  ],
   "metrics": {
-    "ads_records": 10,
-    "distinct_works": 10,
-    "journal_articles": 7,
-    "white_papers": 1,
-    "conference_contributions": 2,
-    "excluded_by_filter": 0,
+    "ads_records": 31,
+    "distinct_works": 22,
+    "journal_articles": 10,
+    "white_papers": 6,
+    "conference_contributions": 4,
+    "excluded_by_filter": 8,
     "latest_year": 2025
   }
 }

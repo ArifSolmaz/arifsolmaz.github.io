@@ -37,12 +37,15 @@ def de_tex(text: str) -> str:
 
 
 def section(cv: str, name: str) -> str:
-    """Return the body of \\section{NAME} up to the next \\section."""
+    """Return the body of \\section{NAME} up to the next \\section, comments stripped."""
     m = re.search(
         r"\\section\{" + re.escape(name) + r"\}(.*?)(?=\\section\{|\\end\{document\})",
         cv, re.S | re.I,
     )
-    return m.group(1) if m else ""
+    if not m:
+        return ""
+    # drop full-line LaTeX comments (e.g. the "% ===== EDUCATION =====" separators)
+    return re.sub(r"(?m)^\s*%.*$", "", m.group(1))
 
 
 def parse_appointments(cv: str):
@@ -227,17 +230,40 @@ def parse_publications(raw: dict, filters: dict = None):
 def main():
     cv = CV.read_text(encoding="utf-8") if CV.exists() else ""
     filters = load_filters()
-    pubs, num_found, skipped = ([], 0, 0)
 
-    source = ADS_PUBS if ADS_PUBS.exists() else PUBS
-    if source.exists():
+    # An ORCID query returns only what the author has claimed on ORCID, which is
+    # usually incomplete; a name query is complete but pulls in other people with
+    # the same surname. So we MERGE: ORCID records are the trusted core, the
+    # name-search records (minus the collisions listed in the filters) fill the
+    # gaps, and exclude_bibcodes removes anything that is not this author.
+    RANK = {"journal": 0, "whitepaper": 1, "conference": 2, "preprint": 3, "dataset": 4}
+
+    def parse_source(path):
+        if not path.exists():
+            return [], 0, 0
         try:
-            pubs, num_found, skipped = parse_publications(
-                json.loads(source.read_text(encoding="utf-8")), filters
-            )
-            print(f"  publications from {source.relative_to(ROOT)}")
+            return parse_publications(json.loads(path.read_text(encoding="utf-8")), filters)
         except (json.JSONDecodeError, KeyError, TypeError) as exc:   # keep the page alive
-            print(f"  ! could not parse {source.name}: {exc}")
+            print(f"  ! could not parse {path.name}: {exc}")
+            return [], 0, 0
+
+    orcid_pubs, orcid_found, _ = parse_source(ADS_PUBS)
+    name_pubs, name_found, skipped = parse_source(PUBS)
+
+    merged = {}
+    for p in orcid_pubs + name_pubs:            # ORCID first, so it wins ties
+        key = norm_title(p["title"])
+        keep = merged.get(key)
+        if keep is None:
+            merged[key] = p
+            continue
+        # prefer the better publication kind; on a tie prefer the one with a DOI
+        if (RANK[p["kind"]], 0 if p["doi"] else 1) < (RANK[keep["kind"]], 0 if keep["doi"] else 1):
+            merged[key] = p
+    pubs = sorted(merged.values(), key=lambda p: (p["year"] or 0, p["bibcode"]), reverse=True)
+    num_found = max(orcid_found, name_found)
+    print(f"  publications merged: {len(orcid_pubs)} ORCID + {len(name_pubs)} name-search "
+          f"-> {len(pubs)} distinct")
 
     journals = [p for p in pubs if p["kind"] == "journal"]
     whitepapers = [p for p in pubs if p["kind"] == "whitepaper"]
