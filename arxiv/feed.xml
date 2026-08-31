@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 28 Aug 2026 13:39:28 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 31 Aug 2026 07:58:28 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,82 +15,70 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>Panchromatic Spectra of Nearby Low-mass and Sun-like Stars with Directly Imageable Habitable Zones</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-27344v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-27344v1</guid>
-      <pubDate>Fri, 28 Aug 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Sarah Peacock et al.</dc:creator>
+      <title>A Clearer View of HAT-P-1 b: JWST NIRSpec G395H Reveals Water, Carbon Dioxide, and Possibly Hydrogen Sulfide</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-28538v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-28538v1</guid>
+      <pubDate>Mon, 31 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Reza Ashtari et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>pyEDITH: the coronagraphic exposure time calculator for the Habitable Worlds Observatory</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-28477v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-28477v1</guid>
+      <pubDate>Mon, 31 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Eleonora Alei et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.IM</category>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>The PLACID active coronagraphic imager instrument: commissioning status</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-28226v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-28226v1</guid>
+      <pubDate>Mon, 31 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Ruben Tandon et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.IM</category>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Stellar Flares Rather than High Tiₙt As Possible Cause for the Missing Methane in Young Exoplanets: The Case Study of V1298 Tau\,b</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-27576v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-27576v1</guid>
+      <pubDate>Mon, 31 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Danica Adams et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
         <category>astro-ph.SR</category>
-        <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>The MegaWave Radio Surveyor</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-26322v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-26322v1</guid>
-      <pubDate>Fri, 28 Aug 2026 20:00:00 +0000</pubDate>
-      <dc:creator>T. Joseph W. Lazio et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.IM</category>
-        <category>astro-ph.CO</category>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.SR</category>
-    </item>
-    <item>
-      <title>The JWST/NIRCam Scattered Light Disks GTO 2780 program: panchromatic coronagraphic imaging of the HD 10647, HD 32297, HD 61005, HD 107146, and HD 181327 debris disk systems</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-27437v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-27437v1</guid>
-      <pubDate>Fri, 28 Aug 2026 20:00:00 +0000</pubDate>
-      <dc:creator>András Gáspár et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.SR</category>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Alfred: A Flexible, User-Friendly Python Package for Exoplanet Confirmation</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-26227v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-26227v1</guid>
-      <pubDate>Fri, 28 Aug 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Maxwell A. Kroft</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.IM</category>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>The true masses of radial-velocity exoplanets constrained by stability</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-26880v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-26880v1</guid>
-      <pubDate>Fri, 28 Aug 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Xander Byrne, Amy Bonsor</dc:creator>
+      <title>ExoMOD II. A Statistical Model of Transit Timing Variations in Kepler Multi-Planet Systems</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-28550v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-28550v1</guid>
+      <pubDate>Mon, 31 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>David Nesvorny et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.IM</category>
     </item>
     <item>
-      <title>SOAR TESS Survey III: Mapping the Stellar Companion Deficit around TESS Planet Candidates</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-26250v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-26250v1</guid>
-      <pubDate>Fri, 28 Aug 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Carl Ziegler et al.</dc:creator>
+      <title>ExoMOD I. A Forward Model for the Orbital Architecture of Kepler Multi-Planet Systems</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-28548v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-28548v1</guid>
+      <pubDate>Mon, 31 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>David Nesvorny et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Spatially Scanned STIS Spectra of the Exoplanet Host Star 55 Cnc</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-25184v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-25184v1</guid>
-      <pubDate>Fri, 28 Aug 2026 20:00:00 +0000</pubDate>
-      <dc:creator>D. E. Welty et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.IM</category>
-        <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>An Equation of State for Supercritical Silicate-Hydrogen Mixtures at Sub-Neptune Interior Conditions</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-27401v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-27401v1</guid>
-      <pubDate>Fri, 28 Aug 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Sarah P. Marcum, Lars Stixrude, Edward D. Young</dc:creator>
+      <title>Modeling Carbon-Based Planets with MAGRATHEA</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2608-27892v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-27892v1</guid>
+      <pubDate>Mon, 31 Aug 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Robert Royer, David R. Rice, Jason H. Steffen</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
     </item>
