@@ -1,12 +1,12 @@
 {
   "responseHeader": {
     "status": 0,
-    "QTime": 19,
+    "QTime": 180,
     "params": {
       "q": "orcid:\"0000-0002-3076-164X\"",
       "fl": "bibcode,title,year,pub,volume,page,doi,bibstem,database,property,author_count,first_author",
       "start": "0",
-      "internal_logging_params": "X-Amzn-Trace-Id=Root=1-6a92122c-42f9d9e521b6e7562a26d856",
+      "internal_logging_params": "X-Amzn-Trace-Id=Root=1-6a95504e-7b3e8d7a3d37f30d012d8300",
       "fq": "database:(astronomy OR physics)",
       "sort": "date desc",
       "rows": "200",
@@ -146,6 +146,16 @@
       },
       {
         "bibcode": "2023ApJS..265....4K",
+        "property": [
+          "ARTICLE",
+          "ASSOCIATED",
+          "DATA",
+          "EPRINT_OPENACCESS",
+          "ESOURCE",
+          "OPENACCESS",
+          "PUB_OPENACCESS",
+          "REFEREED"
+        ],
         "author_count": 217,
         "bibstem": [
           "ApJS",
@@ -167,17 +177,7 @@
           "ExoClock Project. III. 450 New Exoplanet Ephemerides from Ground and Space Observations"
         ],
         "volume": "265",
-        "year": "2023",
-        "property": [
-          "ARTICLE",
-          "ASSOCIATED",
-          "DATA",
-          "EPRINT_OPENACCESS",
-          "ESOURCE",
-          "OPENACCESS",
-          "PUB_OPENACCESS",
-          "REFEREED"
-        ]
+        "year": "2023"
       },
       {
         "bibcode": "2022A&A...664A.130S",
@@ -342,7 +342,7 @@
       }
     ]
   },
-  "allocatedBytes": 7372032,
+  "allocatedBytes": 7332328,
   "filtered": "true",
   "_meta": {
     "query": "orcid:\"0000-0002-3076-164X\""
