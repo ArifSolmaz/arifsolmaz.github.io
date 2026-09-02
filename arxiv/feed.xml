@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 01 Sep 2026 07:04:51 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 02 Sep 2026 06:41:57 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,133 +15,92 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>On the Impact of Correlated Noise and Spectral Resolution on the Retrieval Analysis of the Habitable World Observatory</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-28748v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-28748v1</guid>
-      <pubDate>Tue, 01 Sep 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Ji Wang, Philipp A. Huber, Sascha P. Quanz</dc:creator>
+      <title>Constraining the Planetary Obliquity Distribution of Warm Jupiters</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-01599v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-01599v1</guid>
+      <pubDate>Wed, 02 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Caleb Lammers, Joshua N. Winn</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>The Venus Benchmark: Resolving Degeneracies in Terrestrial Exoplanet Spectra with DAVINCI</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-00147v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-00147v1</guid>
+      <pubDate>Wed, 02 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Stephen R. Kane et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.IM</category>
     </item>
     <item>
-      <title>Impacts of Correlated Noise on Retrievals of Exo-Earth Atmospheres</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-28749v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-28749v1</guid>
-      <pubDate>Tue, 01 Sep 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Nicole Wolff et al.</dc:creator>
+      <title>A JWST transiting survey of FGK stellar limb darkening: empirical evidence for quadratic laws and atmospheric model comparisons</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-00263v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-00263v1</guid>
+      <pubDate>Wed, 02 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>David K. Sing et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>Optical Colors as Compressed Spectral Information for Trans-Neptunian Objects</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-01169v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-01169v1</guid>
+      <pubDate>Wed, 02 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Hsing-Wen Lin et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.IM</category>
     </item>
     <item>
-      <title>Systematic and Statistical Properties of Prominence Eruptions on the M-dwarf YZ CMi</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-30243v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-30243v1</guid>
-      <pubDate>Tue, 01 Sep 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Yuto Kajikiya et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.SR</category>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Probing Triton&#x27;s Space Environment and Internal Structure: An Integrated Detection-and-Interpretation Framework</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-29784v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-29784v1</guid>
-      <pubDate>Tue, 01 Sep 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Jiansen He et al.</dc:creator>
+      <title>Beyond Five Scale Heights: Composition- and Cloud-dependent Ariel Tier-2 Requirements for sub-Neptunes</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-01577v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-01577v1</guid>
+      <pubDate>Wed, 02 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Vigneshwaran Krishnamurthy et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Atmospheric escape fractionates secondary but not primary atmospheres</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-30106v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-30106v1</guid>
-      <pubDate>Tue, 01 Sep 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Mara Attia, Tim Lichtenberg</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Dynamical Mass Demography of Single S-type Planets Shaped by Stellar Companions</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-29140v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-29140v1</guid>
-      <pubDate>Tue, 01 Sep 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Xiumin Huang, Jianghui Ji</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.SR</category>
-        <category>physics.space-ph</category>
-    </item>
-    <item>
-      <title>The γ Cephei System: Updated Orbits, Dynamical Architecture, and Limits on Additional Companions</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-30030v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-30030v1</guid>
-      <pubDate>Tue, 01 Sep 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Judah Van Zandt et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Evolution of Stellar Activity and Habitable Zone (EATEN): III. X-ray Activity of Dwarfs in Open Clusters and Field Stars</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-29248v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-29248v1</guid>
-      <pubDate>Tue, 01 Sep 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Xue Li et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.SR</category>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>The refractory fraction of phosphorus in planet-forming discs</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-29254v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-29254v1</guid>
-      <pubDate>Tue, 01 Sep 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Sandipan P. D. Borthakur et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.SR</category>
-    </item>
-    <item>
-      <title>Pre-shipment optical characterization of the SCALES instrument</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-28918v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-28918v1</guid>
-      <pubDate>Tue, 01 Sep 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Isabel J. Kain et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.IM</category>
-        <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>Probing the Taxonomic Diversity of the Small Near-Earth Object Population</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-28779v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-28779v1</guid>
-      <pubDate>Tue, 01 Sep 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Andy J. López-Oquendo et al.</dc:creator>
+      <title>Where planetary solids survive sublimation around young and hot white dwarfs</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-00398v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-00398v1</guid>
+      <pubDate>Wed, 02 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Dimitri Veras et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Empirical Constraints on the CO Snowline Transition in HD 163296: The Local CO Column and ¹³C¹⁸O Optical Depth</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-30140v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-30140v1</guid>
-      <pubDate>Tue, 01 Sep 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Chunhua Qi et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.GA</category>
         <category>astro-ph.SR</category>
     </item>
     <item>
-      <title>Accretion Rates and Thermohaline Convection in Polluted White Dwarfs</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2608-31110v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2608-31110v1</guid>
-      <pubDate>Tue, 01 Sep 2026 20:00:00 +0000</pubDate>
-      <dc:creator>J. R. Fuentes et al.</dc:creator>
+      <title>Accelerating Chemical Kinetics for Exoplanet Atmospheres using Neural Networks</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-00428v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-00428v1</guid>
+      <pubDate>Wed, 02 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Isaac Malsky et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.SR</category>
         <category>astro-ph.EP</category>
-        <category>physics.flu-dyn</category>
+        <category>cs.LG</category>
+    </item>
+    <item>
+      <title>Exoplanets in star clusters</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-01013v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-01013v1</guid>
+      <pubDate>Wed, 02 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>T. Broza, E. Paunzen</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>Transiting Planetary Systems with Distant Giant Companions Remain Moderately Coplanar</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-01377v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-01377v1</guid>
+      <pubDate>Wed, 02 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Guang-Yao Xiao et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
     </item>
   </channel>
 </rss>
