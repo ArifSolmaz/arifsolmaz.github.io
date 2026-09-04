@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 03 Sep 2026 06:45:34 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 04 Sep 2026 06:49:10 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,83 +15,54 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>3.5-meter Segmented-Mirror Robotic Space Telescope Mission White Paper III. Key Scientific Mission: Exoplanet Science with a Coronagraph</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2609-02577v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-02577v1</guid>
-      <pubDate>Thu, 03 Sep 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Juhan Kim et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.IM</category>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.SR</category>
-    </item>
-    <item>
-      <title>The Hill sphere transits of Beta Pictoris c and the search for another 1981-like event</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2609-02708v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-02708v1</guid>
-      <pubDate>Thu, 03 Sep 2026 20:00:00 +0000</pubDate>
-      <dc:creator>V. E. C. Bakker et al.</dc:creator>
+      <title>Radial velocity detection of the TRAPPIST-1 planetary system with SPIRou and NIRPS</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-03006v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-03006v1</guid>
+      <pubDate>Fri, 04 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Alexandrine L&#x27;Heureux et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>Precise Stellar Age Constraints and Habitable Zone Evolution in Exoplanet Systems</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2609-01790v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-01790v1</guid>
-      <pubDate>Thu, 03 Sep 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Grace Henry, Ted von Hippel, Anna Childs</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.SR</category>
-    </item>
-    <item>
-      <title>The Ultraviolet Spectrograph on ESA&#x27;s Jupiter Icy Moons Explorer Mission (JUICE-UVS)</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2609-02856v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-02856v1</guid>
-      <pubDate>Thu, 03 Sep 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Kurt D. Retherford et al.</dc:creator>
+      <title>Detection of hydrocarbons in Titan using high-resolution cross-correlation spectroscopy</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-03975v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-03975v1</guid>
+      <pubDate>Fri, 04 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Maria Coelho et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.IM</category>
-    </item>
-    <item>
-      <title>Mass constraints for the K2-223 system planets: An ultra-short-period sub-Earth, a short-period super-Earth, and a tentative long-period giant planet</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2609-01721v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-01721v1</guid>
-      <pubDate>Thu, 03 Sep 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Dawid Jankowski et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>POSEIDON III: The Aligned Orbit of the Hot Neptune Around the Hot Star WASP-195</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2609-02888v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-02888v1</guid>
-      <pubDate>Thu, 03 Sep 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Juan I. Espinoza-Retamal et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Galactic tides in the Solar System within a non-axisymmetric Milky Way model adjusted to Gaia data</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2609-02693v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-02693v1</guid>
-      <pubDate>Thu, 03 Sep 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Alexandre Bougakov et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.GA</category>
-    </item>
-    <item>
-      <title>Mass-dependent multiplicity fraction in low mass stars revealed by Gaia astrometry</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2609-01822v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-01822v1</guid>
-      <pubDate>Thu, 03 Sep 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Ben Pennell et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.SR</category>
+        <category>physics.ao-ph</category>
+        <category>physics.space-ph</category>
+    </item>
+    <item>
+      <title>Evolutionary pathways toward survival of a thick CO2- or SO2-rich atmosphere on the lava world TOI-561 b</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-03144v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-03144v1</guid>
+      <pubDate>Fri, 04 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Emma Postolec et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
-        <category>astro-ph.GA</category>
+        <category>physics.ao-ph</category>
+    </item>
+    <item>
+      <title>JWST MIRI reveals a potential atmosphere on the ultra-hot rocky planet TOI-431b</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-03029v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-03029v1</guid>
+      <pubDate>Fri, 04 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Cole Smith et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>New and Updated Rossiter-McLaughlin Measurements for Three Hot Jupiter-Hosting M Dwarfs</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-03031v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-03031v1</guid>
+      <pubDate>Fri, 04 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Drew Weisserman et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
     </item>
   </channel>
 </rss>
