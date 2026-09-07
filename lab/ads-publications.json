@@ -1,12 +1,12 @@
 {
   "responseHeader": {
     "status": 0,
-    "QTime": 180,
+    "QTime": 145,
     "params": {
       "q": "orcid:\"0000-0002-3076-164X\"",
       "fl": "bibcode,title,year,pub,volume,page,doi,bibstem,database,property,author_count,first_author",
       "start": "0",
-      "internal_logging_params": "X-Amzn-Trace-Id=Root=1-6a95504e-7b3e8d7a3d37f30d012d8300",
+      "internal_logging_params": "X-Amzn-Trace-Id=Root=1-6a9e7688-088f4d635194c47416dfcd20",
       "fq": "database:(astronomy OR physics)",
       "sort": "date desc",
       "rows": "200",
@@ -18,40 +18,6 @@
     "start": 0,
     "numFoundExact": true,
     "docs": [
-      {
-        "bibcode": "2025A&A...703A.147O",
-        "property": [
-          "ARTICLE",
-          "DATA",
-          "EPRINT_OPENACCESS",
-          "ESOURCE",
-          "OPENACCESS",
-          "PUB_OPENACCESS",
-          "REFEREED"
-        ],
-        "author_count": 101,
-        "bibstem": [
-          "A&A",
-          "A&A...703"
-        ],
-        "database": [
-          "astronomy"
-        ],
-        "doi": [
-          "10.1051/0004-6361/202556498",
-          "10.48550/arXiv.2509.15384"
-        ],
-        "first_author": "Ortiz, J. L.",
-        "page": [
-          "A147"
-        ],
-        "pub": "Astronomy and Astrophysics",
-        "title": [
-          "A high geometric albedo and small size for the Haumea cluster member (24835) 1995 SM<SUB>55</SUB> determined from a stellar occultation and photometric observations"
-        ],
-        "volume": "703",
-        "year": "2025"
-      },
       {
         "bibcode": "2025MNRAS.543.3456E",
         "author_count": 21,
@@ -75,6 +41,40 @@
           "Testing the performance of cross-correlation techniques to search for molecular features in JWST NIRSpec G395H observations of transiting exoplanets"
         ],
         "volume": "543",
+        "year": "2025",
+        "property": [
+          "ARTICLE",
+          "DATA",
+          "EPRINT_OPENACCESS",
+          "ESOURCE",
+          "OPENACCESS",
+          "PUB_OPENACCESS",
+          "REFEREED"
+        ]
+      },
+      {
+        "bibcode": "2025A&A...703A.147O",
+        "author_count": 101,
+        "bibstem": [
+          "A&A",
+          "A&A...703"
+        ],
+        "database": [
+          "astronomy"
+        ],
+        "doi": [
+          "10.1051/0004-6361/202556498",
+          "10.48550/arXiv.2509.15384"
+        ],
+        "first_author": "Ortiz, J. L.",
+        "page": [
+          "A147"
+        ],
+        "pub": "Astronomy and Astrophysics",
+        "title": [
+          "A high geometric albedo and small size for the Haumea cluster member (24835) 1995 SM<SUB>55</SUB> determined from a stellar occultation and photometric observations"
+        ],
+        "volume": "703",
         "year": "2025",
         "property": [
           "ARTICLE",
@@ -146,16 +146,6 @@
       },
       {
         "bibcode": "2023ApJS..265....4K",
-        "property": [
-          "ARTICLE",
-          "ASSOCIATED",
-          "DATA",
-          "EPRINT_OPENACCESS",
-          "ESOURCE",
-          "OPENACCESS",
-          "PUB_OPENACCESS",
-          "REFEREED"
-        ],
         "author_count": 217,
         "bibstem": [
           "ApJS",
@@ -177,19 +167,20 @@
           "ExoClock Project. III. 450 New Exoplanet Ephemerides from Ground and Space Observations"
         ],
         "volume": "265",
-        "year": "2023"
-      },
-      {
-        "bibcode": "2022A&A...664A.130S",
+        "year": "2023",
         "property": [
           "ARTICLE",
+          "ASSOCIATED",
           "DATA",
           "EPRINT_OPENACCESS",
           "ESOURCE",
           "OPENACCESS",
           "PUB_OPENACCESS",
           "REFEREED"
-        ],
+        ]
+      },
+      {
+        "bibcode": "2022A&A...664A.130S",
         "author_count": 88,
         "bibstem": [
           "A&A",
@@ -211,7 +202,16 @@
           "Physical properties of the trans-Neptunian object (38628) Huya from a multi-chord stellar occultation"
         ],
         "volume": "664",
-        "year": "2022"
+        "year": "2022",
+        "property": [
+          "ARTICLE",
+          "DATA",
+          "EPRINT_OPENACCESS",
+          "ESOURCE",
+          "OPENACCESS",
+          "PUB_OPENACCESS",
+          "REFEREED"
+        ]
       },
       {
         "bibcode": "2021NewA...8601571P",
@@ -247,13 +247,6 @@
       },
       {
         "bibcode": "2021AstL...47..402P",
-        "property": [
-          "ARTICLE",
-          "EPRINT_OPENACCESS",
-          "ESOURCE",
-          "OPENACCESS",
-          "REFEREED"
-        ],
         "author_count": 17,
         "bibstem": [
           "AstL",
@@ -275,17 +268,17 @@
           "The First Light Curve Solutions and Period Study of BQ Ari"
         ],
         "volume": "47",
-        "year": "2021"
-      },
-      {
-        "bibcode": "2021TJAA....2....1S",
+        "year": "2021",
         "property": [
           "ARTICLE",
           "EPRINT_OPENACCESS",
           "ESOURCE",
           "OPENACCESS",
           "REFEREED"
-        ],
+        ]
+      },
+      {
+        "bibcode": "2021TJAA....2....1S",
         "author_count": 9,
         "bibstem": [
           "TJAA",
@@ -306,7 +299,14 @@
           "Çukurova University Space Sciences and Solar Energy Research and Application Center (UZAYMER): I. Observing Conditions and Ongoing Projects"
         ],
         "volume": "2",
-        "year": "2021"
+        "year": "2021",
+        "property": [
+          "ARTICLE",
+          "EPRINT_OPENACCESS",
+          "ESOURCE",
+          "OPENACCESS",
+          "REFEREED"
+        ]
       },
       {
         "bibcode": "2019BAAS...51g..55S",
@@ -342,7 +342,7 @@
       }
     ]
   },
-  "allocatedBytes": 7332328,
+  "allocatedBytes": 7537072,
   "filtered": "true",
   "_meta": {
     "query": "orcid:\"0000-0002-3076-164X\""
