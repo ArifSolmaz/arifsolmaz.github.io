@@ -1,6 +1,6 @@
 {
   "announcement_date": "2026-09-07",
-  "updated_at": "2026-09-07T06:53:08.313533+00:00",
+  "updated_at": "2026-09-08T06:49:49.054888+00:00",
   "category": "astro-ph.EP",
   "paper_count": 13,
   "papers": [
@@ -22,6 +22,7 @@
       "abs_link": "https://arxiv.org/abs/2609.04597v1",
       "is_exoplanet_focused": true,
       "tweetability_score": 60,
+      "figure_url": "https://arxiv.org/html/2609.04597v1/2609.04597v1/glint_phase_compare_75cloud.png",
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -29,8 +30,7 @@
         "claim": "",
         "evidence": "",
         "question": ""
-      },
-      "figure_url": "https://arxiv.org/html/2609.04597v1/2609.04597v1/glint_phase_compare_75cloud.png"
+      }
     },
     {
       "id": "2609.04887v1",
@@ -49,6 +49,7 @@
       "abs_link": "https://arxiv.org/abs/2609.04887v1",
       "is_exoplanet_focused": true,
       "tweetability_score": 46,
+      "figure_url": "https://arxiv.org/html/2609.04887v1/data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==",
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -56,8 +57,7 @@
         "claim": "",
         "evidence": "",
         "question": ""
-      },
-      "figure_url": "https://arxiv.org/html/2609.04887v1/data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg=="
+      }
     },
     {
       "id": "2609.05413v1",
@@ -103,6 +103,7 @@
       "abs_link": "https://arxiv.org/abs/2609.05413v1",
       "is_exoplanet_focused": true,
       "tweetability_score": 35,
+      "figure_url": "https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?w=800&q=80",
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -110,8 +111,7 @@
         "claim": "",
         "evidence": "",
         "question": ""
-      },
-      "figure_url": "https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?w=800&q=80"
+      }
     },
     {
       "id": "2609.05264v1",
@@ -132,6 +132,7 @@
       "abs_link": "https://arxiv.org/abs/2609.05264v1",
       "is_exoplanet_focused": true,
       "tweetability_score": 27,
+      "figure_url": "https://arxiv.org/html/2609.05264v1/2609.05264v1/between-planets-corr.png",
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -139,8 +140,7 @@
         "claim": "",
         "evidence": "",
         "question": ""
-      },
-      "figure_url": "https://arxiv.org/html/2609.05264v1/2609.05264v1/between-planets-corr.png"
+      }
     },
     {
       "id": "2609.05312v1",
@@ -170,6 +170,7 @@
       "abs_link": "https://arxiv.org/abs/2609.05312v1",
       "is_exoplanet_focused": true,
       "tweetability_score": 25,
+      "figure_url": "https://arxiv.org/html/2609.05312v1/2609.05312v1/figs/river_b_full.png",
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -177,8 +178,7 @@
         "claim": "",
         "evidence": "",
         "question": ""
-      },
-      "figure_url": "https://arxiv.org/html/2609.05312v1/2609.05312v1/figs/river_b_full.png"
+      }
     },
     {
       "id": "2609.05134v1",
@@ -202,6 +202,7 @@
       "abs_link": "https://arxiv.org/abs/2609.05134v1",
       "is_exoplanet_focused": true,
       "tweetability_score": 24,
+      "figure_url": "https://arxiv.org/html/2609.05134v1/2609.05134v1/Pictures/Results/qB0.6_qP1.0_eB0.50_N1/Figure_mean-motion_ratio_1_qB0.6_qP1.0_eB0.50_N1.png",
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -209,8 +210,7 @@
         "claim": "",
         "evidence": "",
         "question": ""
-      },
-      "figure_url": "https://arxiv.org/html/2609.05134v1/2609.05134v1/Pictures/Results/qB0.6_qP1.0_eB0.50_N1/Figure_mean-motion_ratio_1_qB0.6_qP1.0_eB0.50_N1.png"
+      }
     },
     {
       "id": "2609.05265v1",
@@ -235,6 +235,7 @@
       "abs_link": "https://arxiv.org/abs/2609.05265v1",
       "is_exoplanet_focused": true,
       "tweetability_score": 21,
+      "figure_url": "https://arxiv.org/html/2609.05265v1/2609.05265v1/fig4_color_color_no_MF213_constrain.png",
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -242,8 +243,7 @@
         "claim": "",
         "evidence": "",
         "question": ""
-      },
-      "figure_url": "https://arxiv.org/html/2609.05265v1/2609.05265v1/fig4_color_color_no_MF213_constrain.png"
+      }
     },
     {
       "id": "2609.05301v1",
@@ -261,6 +261,7 @@
       "abs_link": "https://arxiv.org/abs/2609.05301v1",
       "is_exoplanet_focused": true,
       "tweetability_score": 17,
+      "figure_url": "https://arxiv.org/html/2609.05301v1/2609.05301v1/eureka_reductions.png",
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -268,8 +269,7 @@
         "claim": "",
         "evidence": "",
         "question": ""
-      },
-      "figure_url": "https://arxiv.org/html/2609.05301v1/2609.05301v1/eureka_reductions.png"
+      }
     },
     {
       "id": "2609.05366v1",
@@ -307,6 +307,7 @@
       "abs_link": "https://arxiv.org/abs/2609.05366v1",
       "is_exoplanet_focused": true,
       "tweetability_score": 13,
+      "figure_url": "https://arxiv.org/html/2609.05366v1/2609.05366v1/Observations.png",
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -314,8 +315,7 @@
         "claim": "",
         "evidence": "",
         "question": ""
-      },
-      "figure_url": "https://arxiv.org/html/2609.05366v1/2609.05366v1/Observations.png"
+      }
     },
     {
       "id": "2609.04790v1",
@@ -339,6 +339,7 @@
       "abs_link": "https://arxiv.org/abs/2609.04790v1",
       "is_exoplanet_focused": true,
       "tweetability_score": 12,
+      "figure_url": "https://arxiv.org/html/2609.04790v1/2609.04790v1/TOI1431_corner_logg.png",
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -346,8 +347,7 @@
         "claim": "",
         "evidence": "",
         "question": ""
-      },
-      "figure_url": "https://arxiv.org/html/2609.04790v1/2609.04790v1/TOI1431_corner_logg.png"
+      }
     },
     {
       "id": "2609.04944v1",
@@ -368,6 +368,7 @@
       "abs_link": "https://arxiv.org/abs/2609.04944v1",
       "is_exoplanet_focused": true,
       "tweetability_score": 12,
+      "figure_url": "https://arxiv.org/html/2609.04944v1/2609.04944v1/Ms_Miso2.png",
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -375,8 +376,7 @@
         "claim": "",
         "evidence": "",
         "question": ""
-      },
-      "figure_url": "https://arxiv.org/html/2609.04944v1/2609.04944v1/Ms_Miso2.png"
+      }
     },
     {
       "id": "2609.04318v1",
@@ -395,6 +395,7 @@
       "abs_link": "https://arxiv.org/abs/2609.04318v1",
       "is_exoplanet_focused": true,
       "tweetability_score": 5,
+      "figure_url": "https://images.unsplash.com/photo-1543722530-d2c3201371e7?w=800&q=80",
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -402,8 +403,7 @@
         "claim": "",
         "evidence": "",
         "question": ""
-      },
-      "figure_url": "https://images.unsplash.com/photo-1543722530-d2c3201371e7?w=800&q=80"
+      }
     },
     {
       "id": "2609.05208v1",
@@ -426,6 +426,7 @@
       "abs_link": "https://arxiv.org/abs/2609.05208v1",
       "is_exoplanet_focused": true,
       "tweetability_score": 0,
+      "figure_url": "https://arxiv.org/html/2609.05208v1/2609.05208v1/coro_scheme_full.png",
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -433,8 +434,7 @@
         "claim": "",
         "evidence": "",
         "question": ""
-      },
-      "figure_url": "https://arxiv.org/html/2609.05208v1/2609.05208v1/coro_scheme_full.png"
+      }
     }
   ]
 }
