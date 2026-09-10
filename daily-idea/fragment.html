@@ -1,55 +1,57 @@
 <section class="exo-daily" aria-label="Exoplanet idea of the day">
   <header class="exo-daily__head">
     <span class="exo-daily__eyebrow">Exoplanet idea of the day</span>
-    <time class="exo-daily__date" datetime="2026-09-09">2026-09-09</time>
+    <time class="exo-daily__date" datetime="2026-09-10">2026-09-10</time>
   </header>
-  <h2 class="exo-daily__title">Poor Person&#x27;s Doppler Imaging — Reconstructing Stellar Surface Activity Maps from Starspot-Transit Crossings Across the Kepler–TESS Baseline</h2>
+  <h2 class="exo-daily__title">Stellar Granulation Flicker as an Astrophysical Calibrator for JWST Transmission Spectra</h2>
   <div class="exo-daily__premise">
-    <p>When a transiting exoplanet crosses a starspot, it produces a brief brightening "bump" in the transit light curve. Each bump encodes the spot's position along the transit chord, its contrast (temperature), and its approximate size. A single crossing is a curiosity; dozens of crossings of the <em>same star</em> over months or years become a tomographic probe of the stellar surface. With Kepler's 4-year baseline and TESS's ongoing multi-sector coverage, some active planet-hosting stars now have <strong>10+ years of transit-resolved spot-crossing data</strong>. This project would systematically invert those crossings into time-resolved latitude–longitude activity maps — effectively a photometry-only analog of Doppler imaging, but for planet-hosting stars that are often too faint for spectropolarimetric mapping.</p>
-<p>A recent homogeneous survey (A&amp;A, 2025) cataloged ~102 spot-crossing candidates across 6 planets from 3,273 Kepler/TESS transits, estimating detection frequencies of ~4% (TESS) to ~37% (Kepler) for K-dwarf hosts. This catalog exists, but no one has yet used it (or an expanded version) to do <em>longitudinal surface reconstruction</em> across the full Kepler+TESS time baseline.</p>
+    <p>The biggest systematic threat to JWST transmission spectroscopy of small exoplanets is stellar contamination: unocculted starspots and faculae imprint a wavelength-dependent bias on the measured transit depth that can mimic or mask planetary atmospheric features. The standard correction (the Rackham/TLSE model) treats the stellar surface as a two-component mixture (quiet photosphere + active regions) and estimates filling factors from photometric variability. But a 2026 study showed this simplified model fails by up to 400 ppm in the optical for active hosts, and the correction depends sensitively on parameters (spot temperature, size distribution, spatial clustering) that are poorly constrained for most planet-hosting M and K dwarfs.</p>
+<p>Here is the twist: stellar granulation — the convective pattern on the stellar surface — produces a broadband photometric "flicker" on timescales of minutes to hours that is directly measurable from the out-of-transit portions of JWST time-series observations. Crucially, the amplitude and spectral slope of granulation flicker depend on the same stellar surface properties (effective temperature, surface gravity, metallicity, convective velocity) that determine the spot-to-photosphere contrast and hence the contamination spectrum. In other words, granulation flicker is an independent, contemporaneous probe of the stellar surface physics that drives the contamination, available for free in every JWST transit observation.</p>
   </div>
   <details class="exo-daily__more">
     <summary>Read the full proposal</summary>
     <div class="exo-daily__full">
       <h3>Scientific Premise</h3>
-<p>When a transiting exoplanet crosses a starspot, it produces a brief brightening "bump" in the transit light curve. Each bump encodes the spot's position along the transit chord, its contrast (temperature), and its approximate size. A single crossing is a curiosity; dozens of crossings of the <em>same star</em> over months or years become a tomographic probe of the stellar surface. With Kepler's 4-year baseline and TESS's ongoing multi-sector coverage, some active planet-hosting stars now have <strong>10+ years of transit-resolved spot-crossing data</strong>. This project would systematically invert those crossings into time-resolved latitude–longitude activity maps — effectively a photometry-only analog of Doppler imaging, but for planet-hosting stars that are often too faint for spectropolarimetric mapping.</p>
-<p>A recent homogeneous survey (A&amp;A, 2025) cataloged ~102 spot-crossing candidates across 6 planets from 3,273 Kepler/TESS transits, estimating detection frequencies of ~4% (TESS) to ~37% (Kepler) for K-dwarf hosts. This catalog exists, but no one has yet used it (or an expanded version) to do <em>longitudinal surface reconstruction</em> across the full Kepler+TESS time baseline.</p>
+<p>The biggest systematic threat to JWST transmission spectroscopy of small exoplanets is stellar contamination: unocculted starspots and faculae imprint a wavelength-dependent bias on the measured transit depth that can mimic or mask planetary atmospheric features. The standard correction (the Rackham/TLSE model) treats the stellar surface as a two-component mixture (quiet photosphere + active regions) and estimates filling factors from photometric variability. But a 2026 study showed this simplified model fails by up to 400 ppm in the optical for active hosts, and the correction depends sensitively on parameters (spot temperature, size distribution, spatial clustering) that are poorly constrained for most planet-hosting M and K dwarfs.</p>
+<p>Here is the twist: stellar granulation — the convective pattern on the stellar surface — produces a broadband photometric "flicker" on timescales of minutes to hours that is directly measurable from the out-of-transit portions of JWST time-series observations. Crucially, the amplitude and spectral slope of granulation flicker depend on the same stellar surface properties (effective temperature, surface gravity, metallicity, convective velocity) that determine the spot-to-photosphere contrast and hence the contamination spectrum. In other words, granulation flicker is an independent, contemporaneous probe of the stellar surface physics that drives the contamination, available for free in every JWST transit observation.</p>
 <h3>Target Datasets</h3>
 <ul>
-<li><strong>Kepler short-cadence light curves</strong> for active planet hosts (e.g., Kepler-17, Kepler-71, HAT-P-11, Kepler-411).</li>
-<li><strong>TESS 2-minute and 20-second cadence data</strong> for the same targets in overlapping sectors.</li>
-<li><strong>Ground-based multicolor transit photometry</strong> (MuSCAT2/3 archives) to constrain spot temperatures via chromaticity of the bump amplitude.</li>
-<li>The spot-crossing catalog from the 2025 A&amp;A homogeneous survey as a starting point.</li>
+<li>All public JWST NIRSpec and NIRISS/SOSS transit time-series observations (currently ~40–50 targets), focusing on the out-of-transit baseline segments.</li>
+<li>Kepler short-cadence (1-minute) light curves for the subset of targets in the Kepler field, providing high-precision flicker measurements at optical wavelengths.</li>
+<li>TESS 20-second and 2-minute cadence data for the broader sample.</li>
+<li>3D magnetohydrodynamic (MHD) stellar atmosphere simulations from the Stagger grid and MURaM code, which predict both the granulation power spectrum and the spot/facula contrast as a function of stellar parameters.</li>
 </ul>
 <h3>Novelty</h3>
-<p>Starspot-crossing events have been studied individually or in small batches to measure stellar differential rotation rates. But a <em>systematic inversion across the full decade-long Kepler+TESS baseline</em> to produce time-evolving surface maps has not been done. This bridges a gap between (a) the Doppler imaging community, which maps stellar surfaces spectroscopically but rarely for planet hosts, and (b) the exoplanet community, which catalogs spot crossings but rarely synthesizes them into stellar physics. The key insight is that the planet acts as a scanning probe whose chord is fixed by orbital geometry — successive transits at slightly different spot longitudes (due to stellar rotation) raster-scan a latitude band.</p>
+<p>Granulation flicker has been studied in the context of radial-velocity noise ("jitter") and asteroseismology, and recent 2025 work isolated granulation signals in synthetic spectral lines. But no one has yet used the measured granulation flicker in JWST transit baselines as a diagnostic constraint on the stellar contamination correction applied to the same observation. This project would close that loop: use the flicker to inform the contamination model, rather than treating them as separate problems.</p>
 <h3>Concrete Workflow</h3>
 <ol>
-<li><strong>Expand the spot-crossing catalog.</strong> Re-analyze all Kepler short-cadence and TESS high-cadence transits for the ~15 most active planet hosts using a Gaussian-process detrending + spot-bump fitting pipeline (e.g., building on <code>spotrod</code> or <code>starsim</code>).</li>
-<li><strong>Map each crossing to stellar coordinates.</strong> Use the known orbital geometry (impact parameter, planet-to-star radius ratio, orbital period) and the crossing time within the transit to assign each spot a position on the stellar disk. Stellar rotation period and inclination (from out-of-transit modulation and v sin i) provide the longitude axis.</li>
-<li><strong>Time-evolve the map.</strong> Bin crossings into rolling windows (e.g., 1 stellar rotation period wide) and build maximum-entropy or Bayesian surface brightness maps at each epoch.</li>
-<li><strong>Extract differential rotation and activity cycle signatures.</strong> Fit a solar-like differential rotation law (Ω(lat) = Ω_eq − ΔΩ sin²θ) to the spot latitude drift. Look for long-term modulations in spot filling factor that could indicate magnetic cycles analogous to the Sun's 11-year cycle.</li>
-<li><strong>Cross-validate</strong> against out-of-transit rotational modulation amplitudes and published v sin i / Rossiter-McLaughlin measurements.</li>
+<li>For each public JWST transit observation, extract the white-light and spectroscopic (per-wavelength-bin) out-of-transit light curves at native time resolution.</li>
+<li>Compute the granulation flicker amplitude (the RMS on 10-minute to 2-hour timescales after removing instrumental trends and any residual stellar rotation signal) in each wavelength bin.</li>
+<li>Fit the observed flicker spectrum (amplitude vs. wavelength) with predictions from the Stagger 3D atmosphere grid, retrieving effective temperature, log(g), and a "granulation activity index."</li>
+<li>Use the same 3D atmosphere grid to predict the spot-to-photosphere contrast spectrum and the expected stellar contamination signal for a given spot filling factor.</li>
+<li>Combine the flicker-derived stellar surface constraint with the standard transit-depth fitting (using a retrieval code like POSEIDON or petitRADTRANS), marginalizing over the stellar contamination parameters with the flicker-informed prior rather than a flat prior.</li>
+<li>Compare the retrieved atmospheric properties (H₂O, CO₂, CH₄ abundances, cloud-top pressure) with and without the flicker-informed prior. Quantify the reduction in degeneracy between stellar contamination and planetary atmosphere.</li>
 </ol>
 <h3>Expected Signal / Observable</h3>
+<p>For a typical M3 dwarf host, granulation flicker at ~1 µm has an RMS of ~100–300 ppm on 30-minute timescales, measurable at high significance in a single JWST visit. The spectral slope of the flicker (bluer = larger amplitude) constrains the effective temperature of the granulation contrast to ~50 K, which in turn constrains the spot-photosphere temperature contrast to ~100 K — a factor of 3–5 improvement over the current uncertainty from broadband photometric monitoring alone. This tighter prior propagates into a ~30–50% reduction in the posterior uncertainty on retrieved molecular abundances for small planets around active stars.</p>
+<h3>Possible False Positives</h3>
 <ul>
-<li>Differential rotation ΔΩ/Ω_eq measurable to ~5–10% for stars with ≥20 spot crossings, competitive with spectroscopic methods.</li>
-<li>Secular trends in mean spot latitude ("butterfly diagram" analogs) over the 10-year baseline for the best-sampled systems.</li>
-<li>Spot temperature contrasts (from multicolor bump amplitudes) that constrain the magnetic field strength–temperature relation on other stars.</li>
+<li>Instrumental red noise (1/f noise, detector persistence) on similar timescales to granulation, which could inflate or suppress the measured flicker amplitude.</li>
+<li>Residual starspot modulation (rotation-timescale variability leaking into the flicker band) if the observation spans a significant fraction of the stellar rotation period.</li>
+<li>The 3D atmosphere grids may not perfectly represent the surface of real M dwarfs (magnetic effects, metallicity extremes), leading to biased stellar parameter retrievals from the flicker.</li>
+<li>Mitigation: the wavelength dependence of granulation flicker is distinct from instrumental systematics (which are typically grey or have detector-specific spectral signatures), and cross-validation with Kepler/TESS flicker measurements for overlapping targets can calibrate the 3D grid predictions.</li>
 </ul>
-<h3>Possible False Positives / Pitfalls</h3>
-<ul>
-<li><strong>Faculae mimicking spots.</strong> Facular crossings produce dips rather than bumps and could be confused with instrumental systematics. Multicolor photometry helps distinguish them (faculae have lower contrast in red bands).</li>
-<li><strong>Spot evolution between transits.</strong> Spots grow, shrink, and migrate. If the spot lifetime is shorter than the transit interval, successive crossings do not probe the same spot, degrading the map. Mitigation: focus on stars with short orbital periods (&lt; 3 days) and long spot lifetimes.</li>
-<li><strong>Degeneracy between spot size and contrast.</strong> A small, dark spot and a large, warm spot can produce similar bumps in a single band. Multicolor data partially breaks this degeneracy.</li>
-<li><strong>Transit chord bias.</strong> The planet only scans a narrow latitude band (set by the impact parameter). Surface features at other latitudes are invisible. This is a fundamental limitation but can be acknowledged and modeled.</li>
-</ul>
-<h3>Why This Could Matter</h3>
-<p>Stellar activity is the dominant noise source contaminating exoplanet atmosphere characterization (the "transit light source effect"). Understanding where spots are, how they evolve, and how they differ from solar spots is critical for interpreting JWST transmission spectra. This project would deliver the first photometry-derived, time-resolved stellar surface maps for active planet hosts — a direct input for correcting JWST spectra and for testing stellar dynamo models on stars other than the Sun.</p>
+<h3>Why It Could Matter</h3>
+<p>Stellar contamination is arguably the single largest barrier to interpreting transmission spectra of potentially habitable planets around M dwarfs — the prime targets for JWST and future missions like the Habitable Worlds Observatory. If granulation flicker can be harnessed as a self-calibrating diagnostic, it would improve every JWST transmission spectrum retroactively (since the flicker information is already in the data) and provide a physically motivated framework for contamination correction that scales to future, even more precise observatories. It transforms a nuisance signal (stellar noise) into an asset.</p>
+<hr/>
+<p>## Summary Table</p>
+<p>| # | Project | Key Data | Core Observable | Novelty Angle | |---|---------|----------|----------------|---------------| | 1 | Eclipse-depth variability as surface geology | JWST/MIRI multi-visit eclipses | Visit-to-visit scatter in 15 µm depth | Treating scatter as signal, not noise; linking to libration + mineralogy | | 2 | Decade-baseline TTVs for Saturn analogs | Kepler + TESS transit times (12+ yr) | Low-frequency O–C curvature | First uniform survey for non-resonant cold giants via TTVs | | 3 | Granulation flicker as contamination calibrator | JWST out-of-transit baselines + 3D stellar models | Flicker amplitude vs. wavelength | Using in-observation stellar noise to self-correct the stellar contamination |</p>
+<hr/>
+<p><em>All datasets referenced are publicly available via MAST, the NASA Exoplanet Archive, and the respective mission data portals. No proprietary data is required for any of these projects.</em></p>
     </div>
   </details>
   <footer class="exo-daily__foot">
-    <span class="exo-daily__meta">Source brief: 2026-05-04</span>
+    <span class="exo-daily__meta">Source brief: 2026-05-08</span>
     <span class="exo-daily__meta">Rotates daily &middot; 66 ideas in the pool</span>
   </footer>
 </section>
