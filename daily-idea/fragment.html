@@ -1,57 +1,54 @@
 <section class="exo-daily" aria-label="Exoplanet idea of the day">
   <header class="exo-daily__head">
     <span class="exo-daily__eyebrow">Exoplanet idea of the day</span>
-    <time class="exo-daily__date" datetime="2026-09-10">2026-09-10</time>
+    <time class="exo-daily__date" datetime="2026-09-11">2026-09-11</time>
   </header>
-  <h2 class="exo-daily__title">Stellar Granulation Flicker as an Astrophysical Calibrator for JWST Transmission Spectra</h2>
+  <h2 class="exo-daily__title">Tidal Inflation as a Misalignment Fossil — A Radius Anomaly Census of Spin-Orbit-Measured Warm Neptunes</h2>
   <div class="exo-daily__premise">
-    <p>The biggest systematic threat to JWST transmission spectroscopy of small exoplanets is stellar contamination: unocculted starspots and faculae imprint a wavelength-dependent bias on the measured transit depth that can mimic or mask planetary atmospheric features. The standard correction (the Rackham/TLSE model) treats the stellar surface as a two-component mixture (quiet photosphere + active regions) and estimates filling factors from photometric variability. But a 2026 study showed this simplified model fails by up to 400 ppm in the optical for active hosts, and the correction depends sensitively on parameters (spot temperature, size distribution, spatial clustering) that are poorly constrained for most planet-hosting M and K dwarfs.</p>
-<p>Here is the twist: stellar granulation — the convective pattern on the stellar surface — produces a broadband photometric "flicker" on timescales of minutes to hours that is directly measurable from the out-of-transit portions of JWST time-series observations. Crucially, the amplitude and spectral slope of granulation flicker depend on the same stellar surface properties (effective temperature, surface gravity, metallicity, convective velocity) that determine the spot-to-photosphere contrast and hence the contamination spectrum. In other words, granulation flicker is an independent, contemporaneous probe of the stellar surface physics that drives the contamination, available for free in every JWST transit observation.</p>
+    <p>Hot Jupiters on misaligned orbits are thought to have arrived at short periods via high-eccentricity migration (Kozai-Lidov cycles, planet-planet scattering) rather than smooth disk migration. A natural but under-tested prediction is that misaligned planets should have experienced stronger tidal dissipation during orbital circularization, which would deposit energy into the planet interior and inflate its radius. Recent work has begun to confirm this for Neptune-sized planets specifically — suggesting tidal inflation is stronger for misaligned Neptunes than aligned ones. But the sample remains small and the confounders (age, irradiation, composition) are not yet well-controlled.</p>
+<p>The proposal here is to build the definitive sample of warm Neptunes and sub-Saturns (R = 3–8 R⊕, P = 3–30 days) with both measured spin-orbit angles (from Rossiter-McLaughlin or Doppler shadow observations) and precise radii (from Kepler/TESS + Gaia), and to test whether the radius anomaly (observed radius minus the radius predicted by standard thermal evolution models at the system's age and irradiation) correlates with obliquity after controlling for all known confounders.</p>
   </div>
   <details class="exo-daily__more">
     <summary>Read the full proposal</summary>
     <div class="exo-daily__full">
       <h3>Scientific Premise</h3>
-<p>The biggest systematic threat to JWST transmission spectroscopy of small exoplanets is stellar contamination: unocculted starspots and faculae imprint a wavelength-dependent bias on the measured transit depth that can mimic or mask planetary atmospheric features. The standard correction (the Rackham/TLSE model) treats the stellar surface as a two-component mixture (quiet photosphere + active regions) and estimates filling factors from photometric variability. But a 2026 study showed this simplified model fails by up to 400 ppm in the optical for active hosts, and the correction depends sensitively on parameters (spot temperature, size distribution, spatial clustering) that are poorly constrained for most planet-hosting M and K dwarfs.</p>
-<p>Here is the twist: stellar granulation — the convective pattern on the stellar surface — produces a broadband photometric "flicker" on timescales of minutes to hours that is directly measurable from the out-of-transit portions of JWST time-series observations. Crucially, the amplitude and spectral slope of granulation flicker depend on the same stellar surface properties (effective temperature, surface gravity, metallicity, convective velocity) that determine the spot-to-photosphere contrast and hence the contamination spectrum. In other words, granulation flicker is an independent, contemporaneous probe of the stellar surface physics that drives the contamination, available for free in every JWST transit observation.</p>
+<p>Hot Jupiters on misaligned orbits are thought to have arrived at short periods via high-eccentricity migration (Kozai-Lidov cycles, planet-planet scattering) rather than smooth disk migration. A natural but under-tested prediction is that misaligned planets should have experienced stronger tidal dissipation during orbital circularization, which would deposit energy into the planet interior and inflate its radius. Recent work has begun to confirm this for Neptune-sized planets specifically — suggesting tidal inflation is stronger for misaligned Neptunes than aligned ones. But the sample remains small and the confounders (age, irradiation, composition) are not yet well-controlled.</p>
+<p>The proposal here is to build the definitive sample of warm Neptunes and sub-Saturns (R = 3–8 R⊕, P = 3–30 days) with both measured spin-orbit angles (from Rossiter-McLaughlin or Doppler shadow observations) and precise radii (from Kepler/TESS + Gaia), and to test whether the radius anomaly (observed radius minus the radius predicted by standard thermal evolution models at the system's age and irradiation) correlates with obliquity after controlling for all known confounders.</p>
 <h3>Target Datasets</h3>
 <ul>
-<li>All public JWST NIRSpec and NIRISS/SOSS transit time-series observations (currently ~40–50 targets), focusing on the out-of-transit baseline segments.</li>
-<li>Kepler short-cadence (1-minute) light curves for the subset of targets in the Kepler field, providing high-precision flicker measurements at optical wavelengths.</li>
-<li>TESS 20-second and 2-minute cadence data for the broader sample.</li>
-<li>3D magnetohydrodynamic (MHD) stellar atmosphere simulations from the Stagger grid and MURaM code, which predict both the granulation power spectrum and the spot/facula contrast as a function of stellar parameters.</li>
+<li><strong>Obliquity measurements</strong>: TEPCat obliquity catalog (as of 2026, ~250+ systems with projected obliquity λ). Filter for R_p = 3–8 R⊕.</li>
+<li><strong>Precise radii</strong>: Kepler/TESS transit photometry combined with Gaia DR3 stellar radii.</li>
+<li><strong>Stellar ages</strong>: Isochrone fitting using spectroscopic Teff, log g, [Fe/H] from literature, plus gyrochronology where rotation periods are available.</li>
+<li><strong>Mass measurements</strong>: Radial velocity mass determinations from HARPS, HARPS-N, ESPRESSO, NEID archives.</li>
 </ul>
 <h3>Novelty</h3>
-<p>Granulation flicker has been studied in the context of radial-velocity noise ("jitter") and asteroseismology, and recent 2025 work isolated granulation signals in synthetic spectral lines. But no one has yet used the measured granulation flicker in JWST transit baselines as a diagnostic constraint on the stellar contamination correction applied to the same observation. This project would close that loop: use the flicker to inform the contamination model, rather than treating them as separate problems.</p>
+<p>While the tidal-inflation–misalignment connection has been noted for hot Jupiters, extending this to the Neptune/sub-Saturn regime is scientifically distinct because these planets have fundamentally different interior structures (potentially large ice/rock fractions) and different tidal quality factors (Q'). A 2025 study found early evidence that misaligned Neptunes are more inflated, but did not control for age or metallicity in a Bayesian hierarchical framework. This project would do so, and would additionally search for a "memory" timescale — how long after circularization the tidal inflation signature persists — by looking for correlations between radius anomaly, obliquity, and system age.</p>
 <h3>Concrete Workflow</h3>
 <ol>
-<li>For each public JWST transit observation, extract the white-light and spectroscopic (per-wavelength-bin) out-of-transit light curves at native time resolution.</li>
-<li>Compute the granulation flicker amplitude (the RMS on 10-minute to 2-hour timescales after removing instrumental trends and any residual stellar rotation signal) in each wavelength bin.</li>
-<li>Fit the observed flicker spectrum (amplitude vs. wavelength) with predictions from the Stagger 3D atmosphere grid, retrieving effective temperature, log(g), and a "granulation activity index."</li>
-<li>Use the same 3D atmosphere grid to predict the spot-to-photosphere contrast spectrum and the expected stellar contamination signal for a given spot filling factor.</li>
-<li>Combine the flicker-derived stellar surface constraint with the standard transit-depth fitting (using a retrieval code like POSEIDON or petitRADTRANS), marginalizing over the stellar contamination parameters with the flicker-informed prior rather than a flat prior.</li>
-<li>Compare the retrieved atmospheric properties (H₂O, CO₂, CH₄ abundances, cloud-top pressure) with and without the flicker-informed prior. Quantify the reduction in degeneracy between stellar contamination and planetary atmosphere.</li>
+<li><strong>Sample construction</strong>: Query TEPCat for all planets with measured λ; cross-match with NASA Exoplanet Archive for R_p, M_p, P, a/R*, and host star parameters. Restrict to 3 &lt; R_p/R⊕ &lt; 8 and P &lt; 30 days. Expected sample: ~40–60 planets.</li>
+<li><strong>Radius anomaly computation</strong>: For each planet, run a grid of thermal evolution models (using MESA or the Lopez &amp; Fortney 2014 framework) over a range of core mass fractions and atmospheric hydrogen/helium envelopes. Compute the predicted radius at the system's estimated age and current irradiation level. Define Δ R = R_obs − R_pred.</li>
+<li><strong>Hierarchical Bayesian model</strong>: Fit a population-level model where Δ R depends on (a) projected obliquity |λ|, (b) irradiation flux, (c) system age, (d) host star metallicity, and (e) planet mass. Use a latent-variable approach for the true 3D obliquity ψ, marginalizing over the unknown stellar inclination using v sin i and P_rot.</li>
+<li><strong>Circularization timescale analysis</strong>: For the subset of systems with well-constrained ages, test whether the obliquity–inflation correlation weakens with age, revealing the Kelvin-Helmholtz "cooling" timescale of tidally deposited energy.</li>
+<li><strong>Sensitivity analysis</strong>: Perform injection-recovery to determine the minimum detectable tidal energy deposit given current radius uncertainties.</li>
 </ol>
 <h3>Expected Signal / Observable</h3>
-<p>For a typical M3 dwarf host, granulation flicker at ~1 µm has an RMS of ~100–300 ppm on 30-minute timescales, measurable at high significance in a single JWST visit. The spectral slope of the flicker (bluer = larger amplitude) constrains the effective temperature of the granulation contrast to ~50 K, which in turn constrains the spot-photosphere temperature contrast to ~100 K — a factor of 3–5 improvement over the current uncertainty from broadband photometric monitoring alone. This tighter prior propagates into a ~30–50% reduction in the posterior uncertainty on retrieved molecular abundances for small planets around active stars.</p>
+<ul>
+<li>Misaligned warm Neptunes (|λ| &gt; 30°) should show Δ R ~ 0.3–1.0 R⊕ larger than aligned counterparts, if tidal inflation is significant.</li>
+<li>A declining Δ R with system age among misaligned planets would indicate a characteristic tidal energy dissipation timescale of ~1–5 Gyr.</li>
+<li>A null result (no correlation) would also be significant: it would imply that Neptune-class interiors respond differently to tidal heating than gas giants, placing constraints on their tidal Q' values.</li>
+</ul>
 <h3>Possible False Positives</h3>
 <ul>
-<li>Instrumental red noise (1/f noise, detector persistence) on similar timescales to granulation, which could inflate or suppress the measured flicker amplitude.</li>
-<li>Residual starspot modulation (rotation-timescale variability leaking into the flicker band) if the observation spans a significant fraction of the stellar rotation period.</li>
-<li>The 3D atmosphere grids may not perfectly represent the surface of real M dwarfs (magnetic effects, metallicity extremes), leading to biased stellar parameter retrievals from the flicker.</li>
-<li>Mitigation: the wavelength dependence of granulation flicker is distinct from instrumental systematics (which are typically grey or have detector-specific spectral signatures), and cross-validation with Kepler/TESS flicker measurements for overlapping targets can calibrate the 3D grid predictions.</li>
+<li><strong>Compositional diversity</strong>: A planet with a thicker H/He envelope will naturally appear inflated relative to a rocky-rich planet of the same mass. Mitigation: include mass and bulk density as covariates; restrict analysis to planets with measured masses (not just upper limits).</li>
+<li><strong>Age uncertainties</strong>: Stellar ages from isochrone fitting carry ~30–50% uncertainties. Mitigation: use a hierarchical model that propagates age uncertainties; perform analysis both with and without age as a covariate.</li>
+<li><strong>Selection bias in obliquity measurements</strong>: Obliquities are preferentially measured for planets around bright, slowly-rotating stars. Mitigation: model the selection function explicitly.</li>
 </ul>
-<h3>Why It Could Matter</h3>
-<p>Stellar contamination is arguably the single largest barrier to interpreting transmission spectra of potentially habitable planets around M dwarfs — the prime targets for JWST and future missions like the Habitable Worlds Observatory. If granulation flicker can be harnessed as a self-calibrating diagnostic, it would improve every JWST transmission spectrum retroactively (since the flicker information is already in the data) and provide a physically motivated framework for contamination correction that scales to future, even more precise observatories. It transforms a nuisance signal (stellar noise) into an asset.</p>
-<hr/>
-<p>## Summary Table</p>
-<p>| # | Project | Key Data | Core Observable | Novelty Angle | |---|---------|----------|----------------|---------------| | 1 | Eclipse-depth variability as surface geology | JWST/MIRI multi-visit eclipses | Visit-to-visit scatter in 15 µm depth | Treating scatter as signal, not noise; linking to libration + mineralogy | | 2 | Decade-baseline TTVs for Saturn analogs | Kepler + TESS transit times (12+ yr) | Low-frequency O–C curvature | First uniform survey for non-resonant cold giants via TTVs | | 3 | Granulation flicker as contamination calibrator | JWST out-of-transit baselines + 3D stellar models | Flicker amplitude vs. wavelength | Using in-observation stellar noise to self-correct the stellar contamination |</p>
-<hr/>
-<p><em>All datasets referenced are publicly available via MAST, the NASA Exoplanet Archive, and the respective mission data portals. No proprietary data is required for any of these projects.</em></p>
+<h3>Why This Could Matter</h3>
+<p>This would directly test whether the orbital migration history of a planet leaves a detectable imprint on its present-day radius — a kind of "tidal fossil record." For the Neptune/sub-Saturn population, which is the most common type of planet found by Kepler yet the least understood structurally, this could provide the first empirical calibration of tidal Q' and constrain whether these planets have rocky cores, icy mantles, or something else entirely.</p>
     </div>
   </details>
   <footer class="exo-daily__foot">
-    <span class="exo-daily__meta">Source brief: 2026-05-08</span>
+    <span class="exo-daily__meta">Source brief: 2026-03-25</span>
     <span class="exo-daily__meta">Rotates daily &middot; 66 ideas in the pool</span>
   </footer>
 </section>
