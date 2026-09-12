@@ -1,50 +1,50 @@
 <section class="exo-daily" aria-label="Exoplanet idea of the day">
   <header class="exo-daily__head">
     <span class="exo-daily__eyebrow">Exoplanet idea of the day</span>
-    <time class="exo-daily__date" datetime="2026-09-11">2026-09-11</time>
+    <time class="exo-daily__date" datetime="2026-09-12">2026-09-12</time>
   </header>
-  <h2 class="exo-daily__title">Tidal Inflation as a Misalignment Fossil — A Radius Anomaly Census of Spin-Orbit-Measured Warm Neptunes</h2>
+  <h2 class="exo-daily__title">Starspot Latitude Mapping via Transit Chord Tomography Across Stellar Spectral Types</h2>
   <div class="exo-daily__premise">
-    <p>Hot Jupiters on misaligned orbits are thought to have arrived at short periods via high-eccentricity migration (Kozai-Lidov cycles, planet-planet scattering) rather than smooth disk migration. A natural but under-tested prediction is that misaligned planets should have experienced stronger tidal dissipation during orbital circularization, which would deposit energy into the planet interior and inflate its radius. Recent work has begun to confirm this for Neptune-sized planets specifically — suggesting tidal inflation is stronger for misaligned Neptunes than aligned ones. But the sample remains small and the confounders (age, irradiation, composition) are not yet well-controlled.</p>
-<p>The proposal here is to build the definitive sample of warm Neptunes and sub-Saturns (R = 3–8 R⊕, P = 3–30 days) with both measured spin-orbit angles (from Rossiter-McLaughlin or Doppler shadow observations) and precise radii (from Kepler/TESS + Gaia), and to test whether the radius anomaly (observed radius minus the radius predicted by standard thermal evolution models at the system's age and irradiation) correlates with obliquity after controlling for all known confounders.</p>
+    <p>When a transiting exoplanet crosses a starspot, the resulting photometric "bump" in the transit light curve encodes information about the spot's position, size, and contrast. The transit chord acts as a one-dimensional knife-edge scan of the stellar surface. By aggregating many such crossings for the same system over time, one can reconstruct the latitude distribution of spots along the transit chord — and because the planet's orbital inclination constrains the chord's geometry on the stellar disk, the spot latitudes are physically meaningful.</p>
+<p>The key insight is that the <em>ensemble</em> of spot-crossing events across many different host stars, binned by spectral type and rotation period, could reveal systematic latitude-dependent activity patterns analogous to the Sun's butterfly diagram — but for stars spanning K0 to M4. While individual spot-crossing detections are well-studied, a homogeneous population-level latitude census tied to stellar Rossby number remains potentially underexplored.</p>
   </div>
   <details class="exo-daily__more">
     <summary>Read the full proposal</summary>
     <div class="exo-daily__full">
       <h3>Scientific Premise</h3>
-<p>Hot Jupiters on misaligned orbits are thought to have arrived at short periods via high-eccentricity migration (Kozai-Lidov cycles, planet-planet scattering) rather than smooth disk migration. A natural but under-tested prediction is that misaligned planets should have experienced stronger tidal dissipation during orbital circularization, which would deposit energy into the planet interior and inflate its radius. Recent work has begun to confirm this for Neptune-sized planets specifically — suggesting tidal inflation is stronger for misaligned Neptunes than aligned ones. But the sample remains small and the confounders (age, irradiation, composition) are not yet well-controlled.</p>
-<p>The proposal here is to build the definitive sample of warm Neptunes and sub-Saturns (R = 3–8 R⊕, P = 3–30 days) with both measured spin-orbit angles (from Rossiter-McLaughlin or Doppler shadow observations) and precise radii (from Kepler/TESS + Gaia), and to test whether the radius anomaly (observed radius minus the radius predicted by standard thermal evolution models at the system's age and irradiation) correlates with obliquity after controlling for all known confounders.</p>
+<p>When a transiting exoplanet crosses a starspot, the resulting photometric "bump" in the transit light curve encodes information about the spot's position, size, and contrast. The transit chord acts as a one-dimensional knife-edge scan of the stellar surface. By aggregating many such crossings for the same system over time, one can reconstruct the latitude distribution of spots along the transit chord — and because the planet's orbital inclination constrains the chord's geometry on the stellar disk, the spot latitudes are physically meaningful.</p>
+<p>The key insight is that the <em>ensemble</em> of spot-crossing events across many different host stars, binned by spectral type and rotation period, could reveal systematic latitude-dependent activity patterns analogous to the Sun's butterfly diagram — but for stars spanning K0 to M4. While individual spot-crossing detections are well-studied, a homogeneous population-level latitude census tied to stellar Rossby number remains potentially underexplored.</p>
 <h3>Target Datasets</h3>
 <ul>
-<li><strong>Obliquity measurements</strong>: TEPCat obliquity catalog (as of 2026, ~250+ systems with projected obliquity λ). Filter for R_p = 3–8 R⊕.</li>
-<li><strong>Precise radii</strong>: Kepler/TESS transit photometry combined with Gaia DR3 stellar radii.</li>
-<li><strong>Stellar ages</strong>: Isochrone fitting using spectroscopic Teff, log g, [Fe/H] from literature, plus gyrochronology where rotation periods are available.</li>
-<li><strong>Mass measurements</strong>: Radial velocity mass determinations from HARPS, HARPS-N, ESPRESSO, NEID archives.</li>
+<li><strong>Kepler</strong> long-cadence and short-cadence light curves for all confirmed transiting planets around K and M dwarfs (~400+ systems).</li>
+<li><strong>TESS</strong> Sectors 1–83+ (through Extended Mission 2) for bright K/M host stars with known transiting planets.</li>
+<li><strong>Stellar parameters</strong>: Gaia DR3 effective temperatures, rotation periods from McQuillan et al. (Kepler) or TESS rotation catalogs, and spectroscopic metallicities from LAMOST or GALAH where available.</li>
 </ul>
 <h3>Novelty</h3>
-<p>While the tidal-inflation–misalignment connection has been noted for hot Jupiters, extending this to the Neptune/sub-Saturn regime is scientifically distinct because these planets have fundamentally different interior structures (potentially large ice/rock fractions) and different tidal quality factors (Q'). A 2025 study found early evidence that misaligned Neptunes are more inflated, but did not control for age or metallicity in a Bayesian hierarchical framework. This project would do so, and would additionally search for a "memory" timescale — how long after circularization the tidal inflation signature persists — by looking for correlations between radius anomaly, obliquity, and system age.</p>
+<p>Recent work (e.g., the 2025 homogeneous search for spot transits across K–M main-sequence stars in Kepler/TESS) has focused on detection frequency and spot property retrieval for individual events. However, a population-level reconstruction of spot latitude distributions as a function of stellar Rossby number — directly testing dynamo theory predictions for fully vs. partially convective stars — would go significantly beyond current analyses. Solar dynamo models predict spots migrate toward the equator over the activity cycle (the butterfly diagram), while fully convective M dwarfs may generate spots at all latitudes via a distributed dynamo. Transit chord tomography can test this.</p>
 <h3>Concrete Workflow</h3>
 <ol>
-<li><strong>Sample construction</strong>: Query TEPCat for all planets with measured λ; cross-match with NASA Exoplanet Archive for R_p, M_p, P, a/R*, and host star parameters. Restrict to 3 &lt; R_p/R⊕ &lt; 8 and P &lt; 30 days. Expected sample: ~40–60 planets.</li>
-<li><strong>Radius anomaly computation</strong>: For each planet, run a grid of thermal evolution models (using MESA or the Lopez &amp; Fortney 2014 framework) over a range of core mass fractions and atmospheric hydrogen/helium envelopes. Compute the predicted radius at the system's estimated age and current irradiation level. Define Δ R = R_obs − R_pred.</li>
-<li><strong>Hierarchical Bayesian model</strong>: Fit a population-level model where Δ R depends on (a) projected obliquity |λ|, (b) irradiation flux, (c) system age, (d) host star metallicity, and (e) planet mass. Use a latent-variable approach for the true 3D obliquity ψ, marginalizing over the unknown stellar inclination using v sin i and P_rot.</li>
-<li><strong>Circularization timescale analysis</strong>: For the subset of systems with well-constrained ages, test whether the obliquity–inflation correlation weakens with age, revealing the Kelvin-Helmholtz "cooling" timescale of tidally deposited energy.</li>
-<li><strong>Sensitivity analysis</strong>: Perform injection-recovery to determine the minimum detectable tidal energy deposit given current radius uncertainties.</li>
+<li><strong>Catalog assembly</strong>: Cross-match the NASA Exoplanet Archive with Kepler/TESS light curve catalogs. Select systems with ≥20 observed transits and host star Teff &lt; 5000 K.</li>
+<li><strong>Spot-crossing detection</strong>: Fit each transit with a standard limb-darkened model; identify residual bumps exceeding 3σ above photon noise using a matched-filter approach (Gaussian kernel bank of variable width).</li>
+<li><strong>Spot parameter extraction</strong>: For each detected event, sample the posterior over spot latitude (along the chord), spot-to-photosphere contrast ratio, and spot angular radius using an MCMC framework that marginalizes over stellar inclination (constrained by v sin i and rotation period).</li>
+<li><strong>Population binning</strong>: Aggregate spot latitude posteriors for all events in bins of Rossby number (Ro = P_rot / τ_conv). Construct latitude frequency histograms for each Ro bin.</li>
+<li><strong>Dynamo comparison</strong>: Compare observed latitude distributions against predictions from flux-transport dynamo models (for partially convective stars) and mean-field α² dynamo models (for fully convective stars).</li>
 </ol>
 <h3>Expected Signal / Observable</h3>
 <ul>
-<li>Misaligned warm Neptunes (|λ| &gt; 30°) should show Δ R ~ 0.3–1.0 R⊕ larger than aligned counterparts, if tidal inflation is significant.</li>
-<li>A declining Δ R with system age among misaligned planets would indicate a characteristic tidal energy dissipation timescale of ~1–5 Gyr.</li>
-<li>A null result (no correlation) would also be significant: it would imply that Neptune-class interiors respond differently to tidal heating than gas giants, placing constraints on their tidal Q' values.</li>
+<li>For Sun-like and early-K stars (Ro ~ 0.5–2), expect a concentration of spots at low-to-mid latitudes (10°–30°), consistent with solar-type activity bands.</li>
+<li>For mid-to-late M dwarfs (Ro &lt; 0.1), expect a flatter latitude distribution extending to high latitudes (&gt;50°), reflecting a qualitatively different dynamo regime.</li>
+<li>The transition in latitude distribution shape as a function of Ro would be the primary observable — a "phase diagram" of stellar spot geography.</li>
 </ul>
 <h3>Possible False Positives</h3>
 <ul>
-<li><strong>Compositional diversity</strong>: A planet with a thicker H/He envelope will naturally appear inflated relative to a rocky-rich planet of the same mass. Mitigation: include mass and bulk density as covariates; restrict analysis to planets with measured masses (not just upper limits).</li>
-<li><strong>Age uncertainties</strong>: Stellar ages from isochrone fitting carry ~30–50% uncertainties. Mitigation: use a hierarchical model that propagates age uncertainties; perform analysis both with and without age as a covariate.</li>
-<li><strong>Selection bias in obliquity measurements</strong>: Obliquities are preferentially measured for planets around bright, slowly-rotating stars. Mitigation: model the selection function explicitly.</li>
+<li><strong>Spot–inclination degeneracy</strong>: A small equatorial spot and a larger high-latitude spot can produce similar bumps. Mitigation: marginalize over inclination using v sin i priors; require systems with well-constrained stellar obliquities.</li>
+<li><strong>Instrumental systematics</strong>: Kepler long-cadence data smears short-duration bumps. Mitigation: use short-cadence data where available; calibrate bump detectability with injection-recovery tests.</li>
+<li><strong>Faculae masquerading as spots</strong>: Bright regions crossed during transit produce dips rather than bumps, but could bias contrast estimates. Mitigation: model both spot and facular crossings simultaneously.</li>
+<li><strong>Planet-induced gravity darkening</strong>: For very close-in planets, tidal distortion of the star can mimic spot signatures. Mitigation: restrict to systems with a/R* &gt; 5.</li>
 </ul>
 <h3>Why This Could Matter</h3>
-<p>This would directly test whether the orbital migration history of a planet leaves a detectable imprint on its present-day radius — a kind of "tidal fossil record." For the Neptune/sub-Saturn population, which is the most common type of planet found by Kepler yet the least understood structurally, this could provide the first empirical calibration of tidal Q' and constrain whether these planets have rocky cores, icy mantles, or something else entirely.</p>
+<p>This would be one of the first empirical tests of dynamo theory at the level of spot-latitude geography for a statistically meaningful sample of stars other than the Sun. The fully convective boundary (~M3.5) is a critical divide in stellar physics — whether the spot distribution changes qualitatively at this boundary has implications for understanding magnetic braking, angular momentum evolution, and the activity environment experienced by habitable-zone planets around M dwarfs.</p>
     </div>
   </details>
   <footer class="exo-daily__foot">
