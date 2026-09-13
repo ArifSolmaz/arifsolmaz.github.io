@@ -3,61 +3,55 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Idea of the day &mdash; Starspot Latitude Mapping via Transit Chord Tomography Across Stellar Spectral Types</title>
+<title>Idea of the day &mdash; Tidally Forced Stellar Oscillations from Hot Jupiters in Kepler Asteroseismic Data</title>
 <link rel="stylesheet" href="widget.css"/>
 </head>
 <body>
 <section class="exo-daily" aria-label="Exoplanet idea of the day">
   <header class="exo-daily__head">
     <span class="exo-daily__eyebrow">Exoplanet idea of the day</span>
-    <time class="exo-daily__date" datetime="2026-09-12">2026-09-12</time>
+    <time class="exo-daily__date" datetime="2026-09-13">2026-09-13</time>
   </header>
-  <h2 class="exo-daily__title">Starspot Latitude Mapping via Transit Chord Tomography Across Stellar Spectral Types</h2>
+  <h2 class="exo-daily__title">Tidally Forced Stellar Oscillations from Hot Jupiters in Kepler Asteroseismic Data</h2>
   <div class="exo-daily__premise">
-    <p>When a transiting exoplanet crosses a starspot, the resulting photometric "bump" in the transit light curve encodes information about the spot's position, size, and contrast. The transit chord acts as a one-dimensional knife-edge scan of the stellar surface. By aggregating many such crossings for the same system over time, one can reconstruct the latitude distribution of spots along the transit chord — and because the planet's orbital inclination constrains the chord's geometry on the stellar disk, the spot latitudes are physically meaningful.</p>
-<p>The key insight is that the <em>ensemble</em> of spot-crossing events across many different host stars, binned by spectral type and rotation period, could reveal systematic latitude-dependent activity patterns analogous to the Sun's butterfly diagram — but for stars spanning K0 to M4. While individual spot-crossing detections are well-studied, a homogeneous population-level latitude census tied to stellar Rossby number remains potentially underexplored.</p>
+    <p>A hot Jupiter in a short-period orbit exerts a time-varying tidal potential on its host star at the orbital frequency and its harmonics. This should excite stellar oscillations at precisely predictable frequencies — the tidal forcing frequency is 2/P_orb (for the dominant quadrupolar tide) and its harmonics. For a typical hot Jupiter with P_orb ~ 2–4 days around a solar-type star, the forcing frequency falls in the range 5–12 μHz, which is <em>below</em> the p-mode oscillation spectrum but within the regime of g-modes and tidally excited gravity-mode oscillations. The amplitude of this forced oscillation depends on the planet-to-star mass ratio, orbital separation, and the stellar dissipation factor Q★. <strong>Detecting or placing upper limits on these oscillations would directly constrain tidal dissipation efficiency</strong>, one of the most poorly known parameters in exoplanetary astrophysics.</p>
   </div>
   <details class="exo-daily__more">
     <summary>Read the full proposal</summary>
     <div class="exo-daily__full">
       <h3>Scientific Premise</h3>
-<p>When a transiting exoplanet crosses a starspot, the resulting photometric "bump" in the transit light curve encodes information about the spot's position, size, and contrast. The transit chord acts as a one-dimensional knife-edge scan of the stellar surface. By aggregating many such crossings for the same system over time, one can reconstruct the latitude distribution of spots along the transit chord — and because the planet's orbital inclination constrains the chord's geometry on the stellar disk, the spot latitudes are physically meaningful.</p>
-<p>The key insight is that the <em>ensemble</em> of spot-crossing events across many different host stars, binned by spectral type and rotation period, could reveal systematic latitude-dependent activity patterns analogous to the Sun's butterfly diagram — but for stars spanning K0 to M4. While individual spot-crossing detections are well-studied, a homogeneous population-level latitude census tied to stellar Rossby number remains potentially underexplored.</p>
+<p>A hot Jupiter in a short-period orbit exerts a time-varying tidal potential on its host star at the orbital frequency and its harmonics. This should excite stellar oscillations at precisely predictable frequencies — the tidal forcing frequency is 2/P_orb (for the dominant quadrupolar tide) and its harmonics. For a typical hot Jupiter with P_orb ~ 2–4 days around a solar-type star, the forcing frequency falls in the range 5–12 μHz, which is <em>below</em> the p-mode oscillation spectrum but within the regime of g-modes and tidally excited gravity-mode oscillations. The amplitude of this forced oscillation depends on the planet-to-star mass ratio, orbital separation, and the stellar dissipation factor Q★. <strong>Detecting or placing upper limits on these oscillations would directly constrain tidal dissipation efficiency</strong>, one of the most poorly known parameters in exoplanetary astrophysics.</p>
 <h3>Target Datasets</h3>
 <ul>
-<li><strong>Kepler</strong> long-cadence and short-cadence light curves for all confirmed transiting planets around K and M dwarfs (~400+ systems).</li>
-<li><strong>TESS</strong> Sectors 1–83+ (through Extended Mission 2) for bright K/M host stars with known transiting planets.</li>
-<li><strong>Stellar parameters</strong>: Gaia DR3 effective temperatures, rotation periods from McQuillan et al. (Kepler) or TESS rotation catalogs, and spectroscopic metallicities from LAMOST or GALAH where available.</li>
+<li><strong>Kepler long-cadence data</strong> (4 years of continuous photometry) for the ~50 confirmed hot Jupiter hosts observed by Kepler (HAT-P-7, Kepler-17, TrES-2, KOI systems, etc.), providing frequency resolution of ~8 nHz.</li>
+<li><strong>Kepler short-cadence data</strong> where available, for higher Nyquist frequency and better characterization of the p-mode spectrum.</li>
+<li><strong>TESS Continuous Viewing Zone</strong> targets with hot Jupiters (up to ~1 year of data in the extended mission), though with lower photometric precision.</li>
+<li>Radial velocity archives (California Legacy Survey, HARPS) for precise planetary mass constraints.</li>
 </ul>
 <h3>Novelty</h3>
-<p>Recent work (e.g., the 2025 homogeneous search for spot transits across K–M main-sequence stars in Kepler/TESS) has focused on detection frequency and spot property retrieval for individual events. However, a population-level reconstruction of spot latitude distributions as a function of stellar Rossby number — directly testing dynamo theory predictions for fully vs. partially convective stars — would go significantly beyond current analyses. Solar dynamo models predict spots migrate toward the equator over the activity cycle (the butterfly diagram), while fully convective M dwarfs may generate spots at all latitudes via a distributed dynamo. Transit chord tomography can test this.</p>
+<p>Asteroseismology of planet hosts is well-studied for characterizing <em>stellar</em> properties (radius, age, density), but the specific search for <strong>tidally forced oscillation peaks</strong> at the orbital frequency harmonics is largely unexplored observationally. Theoretical predictions exist (e.g., Burkart et al. 2012; Fuller 2017 on dynamical tides), but a systematic observational search in the Kepler power spectra of hot Jupiter hosts — looking for narrow peaks at exactly 2/P_orb, 3/P_orb, 4/P_orb — has not been published as a dedicated survey. The distinction from standard asteroseismology is that the signal is at a <em>known, exact</em> frequency, enabling coherent stacking across the entire 4-year baseline and across multiple systems by normalizing to the predicted tidal forcing amplitude.</p>
 <h3>Concrete Workflow</h3>
 <ol>
-<li><strong>Catalog assembly</strong>: Cross-match the NASA Exoplanet Archive with Kepler/TESS light curve catalogs. Select systems with ≥20 observed transits and host star Teff &lt; 5000 K.</li>
-<li><strong>Spot-crossing detection</strong>: Fit each transit with a standard limb-darkened model; identify residual bumps exceeding 3σ above photon noise using a matched-filter approach (Gaussian kernel bank of variable width).</li>
-<li><strong>Spot parameter extraction</strong>: For each detected event, sample the posterior over spot latitude (along the chord), spot-to-photosphere contrast ratio, and spot angular radius using an MCMC framework that marginalizes over stellar inclination (constrained by v sin i and rotation period).</li>
-<li><strong>Population binning</strong>: Aggregate spot latitude posteriors for all events in bins of Rossby number (Ro = P_rot / τ_conv). Construct latitude frequency histograms for each Ro bin.</li>
-<li><strong>Dynamo comparison</strong>: Compare observed latitude distributions against predictions from flux-transport dynamo models (for partially convective stars) and mean-field α² dynamo models (for fully convective stars).</li>
+<li><strong>Power Spectrum Construction:</strong> For each hot Jupiter host, compute the Lomb-Scargle periodogram of the full Kepler light curve after removing transits and instrumental systematics (using the PDC-MAP or custom detrending). Focus on the low-frequency regime (1–50 μHz).</li>
+<li><strong>Signal Search at Known Frequencies:</strong> Extract the power at 2/P_orb, 3/P_orb, …, N/P_orb (up to the Nyquist limit). Compare to the local noise floor estimated from a frequency window excluding orbital harmonics. Compute the signal-to-noise and false alarm probability for each harmonic.</li>
+<li><strong>Stacking Across Systems:</strong> For systems with non-detections, normalize the expected signal amplitude using the predicted tidal forcing strength ∝ (Mp/M★)(R★/a)³ and coherently (or incoherently) stack the power spectra of multiple systems, aligned at their respective harmonic frequencies. This boosts sensitivity to a population-average signal.</li>
+<li><strong>Upper Limits on Q★:</strong> Convert non-detections into upper limits on the tidally forced oscillation amplitude, which in turn constrains the effective tidal quality factor Q★ via the forced oscillation amplitude relation from linear tidal theory.</li>
+<li><strong>Injection Tests:</strong> Inject synthetic sinusoidal signals at the expected frequencies and amplitudes into the real light curves to calibrate detection sensitivity and ensure the detrending pipeline does not suppress signals at these frequencies.</li>
 </ol>
 <h3>Expected Signal / Observable</h3>
-<ul>
-<li>For Sun-like and early-K stars (Ro ~ 0.5–2), expect a concentration of spots at low-to-mid latitudes (10°–30°), consistent with solar-type activity bands.</li>
-<li>For mid-to-late M dwarfs (Ro &lt; 0.1), expect a flatter latitude distribution extending to high latitudes (&gt;50°), reflecting a qualitatively different dynamo regime.</li>
-<li>The transition in latitude distribution shape as a function of Ro would be the primary observable — a "phase diagram" of stellar spot geography.</li>
-</ul>
+<p>For a 1 M_J planet at 0.05 AU around a solar-type star, tidal forcing predicts photometric oscillation amplitudes of ~0.01–1 ppm depending on Q★ (ranging from 10⁵ to 10⁷). Kepler's noise floor in the low-frequency regime for bright stars is ~0.5–5 ppm per frequency bin, so individual detections are challenging but stacking ~30 systems could push sensitivity to ~0.1 ppm. A detection would appear as a narrow peak at exactly 2/P_orb in the periodogram, distinguishable from stellar variability by its precise frequency.</p>
 <h3>Possible False Positives</h3>
 <ul>
-<li><strong>Spot–inclination degeneracy</strong>: A small equatorial spot and a larger high-latitude spot can produce similar bumps. Mitigation: marginalize over inclination using v sin i priors; require systems with well-constrained stellar obliquities.</li>
-<li><strong>Instrumental systematics</strong>: Kepler long-cadence data smears short-duration bumps. Mitigation: use short-cadence data where available; calibrate bump detectability with injection-recovery tests.</li>
-<li><strong>Faculae masquerading as spots</strong>: Bright regions crossed during transit produce dips rather than bumps, but could bias contrast estimates. Mitigation: model both spot and facular crossings simultaneously.</li>
-<li><strong>Planet-induced gravity darkening</strong>: For very close-in planets, tidal distortion of the star can mimic spot signatures. Mitigation: restrict to systems with a/R* &gt; 5.</li>
+<li><strong>Ellipsoidal variation residuals:</strong> The equilibrium tidal bulge produces ellipsoidal variation at 2/P_orb, and imperfect removal of this known signal could leave a residual peak. Mitigation: model and subtract ellipsoidal variations using Fourier decomposition before searching for excess power; the tidally forced oscillations have a <em>different phase</em> than the equilibrium tide.</li>
+<li><strong>Doppler boosting residuals:</strong> The star's reflex motion produces a photometric signal at 1/P_orb. Mitigation: model using the known RV amplitude.</li>
+<li><strong>Instrumental artifacts:</strong> Kepler has known low-frequency systematics. Mitigation: use injection-recovery to verify that real signals at these frequencies survive the detrending, and compare with control stars (similar brightness, no planet) at the same frequencies.</li>
 </ul>
-<h3>Why This Could Matter</h3>
-<p>This would be one of the first empirical tests of dynamo theory at the level of spot-latitude geography for a statistically meaningful sample of stars other than the Sun. The fully convective boundary (~M3.5) is a critical divide in stellar physics — whether the spot distribution changes qualitatively at this boundary has implications for understanding magnetic braking, angular momentum evolution, and the activity environment experienced by habitable-zone planets around M dwarfs.</p>
+<h3>Why This Matters</h3>
+<p>Tidal dissipation governs the orbital evolution, circularization, and inspiral of hot Jupiters, the spin-orbit synchronization of close binary stars, and the heating of planetary interiors. Yet Q★ is observationally constrained only to within ~2 orders of magnitude for solar-type stars. A direct detection of tidally forced oscillations would provide the first <em>spectroscopic-quality</em> measurement of tidal response in a single-star context. Even upper limits from stacking would meaningfully constrain whether enhanced dissipation (low Q★, as suggested by some hot Jupiter orbital decay measurements like WASP-12b) is common or anomalous.</p>
     </div>
   </details>
   <footer class="exo-daily__foot">
-    <span class="exo-daily__meta">Source brief: 2026-03-25</span>
+    <span class="exo-daily__meta">Source brief: 2026-03-31</span>
     <span class="exo-daily__meta">Rotates daily &middot; 66 ideas in the pool</span>
   </footer>
 </section>
