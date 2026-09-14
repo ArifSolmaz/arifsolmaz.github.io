@@ -1,12 +1,12 @@
 {
   "responseHeader": {
     "status": 0,
-    "QTime": 145,
+    "QTime": 181,
     "params": {
       "q": "orcid:\"0000-0002-3076-164X\"",
       "fl": "bibcode,title,year,pub,volume,page,doi,bibstem,database,property,author_count,first_author",
       "start": "0",
-      "internal_logging_params": "X-Amzn-Trace-Id=Root=1-6a9e7688-088f4d635194c47416dfcd20",
+      "internal_logging_params": "X-Amzn-Trace-Id=Root=1-6aa7b9b9-09b7ee1b5bfe779635291748",
       "fq": "database:(astronomy OR physics)",
       "sort": "date desc",
       "rows": "200",
@@ -87,35 +87,6 @@
         ]
       },
       {
-        "bibcode": "2025epsc.conf.1815L",
-        "author_count": 10,
-        "bibstem": [
-          "epsc",
-          "epsc.conf"
-        ],
-        "database": [
-          "astronomy"
-        ],
-        "doi": [
-          "10.5194/epsc-dps2025-1815"
-        ],
-        "first_author": "Lambrov Ivanovski, Stavro",
-        "page": [
-          "EPSC-DPS2025-1815"
-        ],
-        "pub": "EPSC-DPS Joint Meeting 2025",
-        "title": [
-          "Europlanet Machine Learning Working Group: a year of progress"
-        ],
-        "volume": "2025",
-        "year": "2025",
-        "property": [
-          "ARTICLE",
-          "ESOURCE",
-          "NOT REFEREED"
-        ]
-      },
-      {
         "bibcode": "2025epsc.conf...39A",
         "author_count": 7,
         "bibstem": [
@@ -135,6 +106,35 @@
         "pub": "EPSC-DPS Joint Meeting 2025",
         "title": [
           "Planetary Research: A new diamond open access journal for planetary science"
+        ],
+        "volume": "2025",
+        "year": "2025",
+        "property": [
+          "ARTICLE",
+          "ESOURCE",
+          "NOT REFEREED"
+        ]
+      },
+      {
+        "bibcode": "2025epsc.conf.1815L",
+        "author_count": 10,
+        "bibstem": [
+          "epsc",
+          "epsc.conf"
+        ],
+        "database": [
+          "astronomy"
+        ],
+        "doi": [
+          "10.5194/epsc-dps2025-1815"
+        ],
+        "first_author": "Lambrov Ivanovski, Stavro",
+        "page": [
+          "EPSC-DPS2025-1815"
+        ],
+        "pub": "EPSC-DPS Joint Meeting 2025",
+        "title": [
+          "Europlanet Machine Learning Working Group: a year of progress"
         ],
         "volume": "2025",
         "year": "2025",
@@ -342,7 +342,7 @@
       }
     ]
   },
-  "allocatedBytes": 7537072,
+  "allocatedBytes": 7748320,
   "filtered": "true",
   "_meta": {
     "query": "orcid:\"0000-0002-3076-164X\""
