@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 11 Sep 2026 06:53:34 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 16 Sep 2026 07:04:02 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,84 +15,88 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>Energy deposition in planetary and exoplanetary atmospheres induced by cosmic rays</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2609-10688v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-10688v1</guid>
-      <pubDate>Fri, 11 Sep 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Jesse Polman, Ingo Leya</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.HE</category>
-    </item>
-    <item>
-      <title>The Dyn-Atmo Survey: High-contrast Imaging Spectroscopy of the Substellar Companion HD 13724 B with the JWST NIRSpec IFU</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2609-11827v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-11827v1</guid>
-      <pubDate>Fri, 11 Sep 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Kielan K. W. Hoch et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.SR</category>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
-    </item>
-    <item>
-      <title>WASP-43b TESS Phase Curve Mapping: Evidence for a Hot Interior</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2609-10719v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-10719v1</guid>
-      <pubDate>Fri, 11 Sep 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Maura Lally et al.</dc:creator>
+      <title>Inhomogeneous Cloud Coverage and Altitude-Dependent Heat Transport on the Hot-Jupiter NGTS-10 Ab from its Optical-to-Infrared Phase Curve</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-16115v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-16115v1</guid>
+      <pubDate>Wed, 16 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Louis-Philippe Coulombe et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>The Dyn-Atmo Survey: JWST/NIRSpec spectroscopy of dynamical benchmark GJ 758 B</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2609-11828v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-11828v1</guid>
-      <pubDate>Fri, 11 Sep 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Alexander Madurowicz et al.</dc:creator>
+      <title>The asymmetric limbs of HD 209458 b observed with JWST NIRCam F322W2/F444W</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-16834v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-16834v1</guid>
+      <pubDate>Wed, 16 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Cathal Maguire et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.SR</category>
         <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
     </item>
     <item>
-      <title>Constraining Tidal Migration with the Hot Jupiter Population</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2609-10850v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-10850v1</guid>
-      <pubDate>Fri, 11 Sep 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Linhao Ma et al.</dc:creator>
+      <title>Stellar Ages of M Dwarf Hosts of Temperate Sub-Neptunes</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-17505v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-17505v1</guid>
+      <pubDate>Wed, 16 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Lalitha Sairam, Nikku Madhusudhan</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.SR</category>
     </item>
     <item>
-      <title>Sorting a mess I: Addressing velocity-axis correlation of cross-correlation functions. A census of atomic and ionised species in KELT-9b&#x27;s atmosphere</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2609-10695v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-10695v1</guid>
-      <pubDate>Fri, 11 Sep 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Nicholas W. Borsato et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
-    </item>
-    <item>
-      <title>The Mysterious Inspiral of WASP-12b: Why Obliquity Tides Cannot Drive Orbital Decay</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2609-11925v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-11925v1</guid>
-      <pubDate>Fri, 11 Sep 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Caleb Lammers, Yubo Su, Joshua N. Winn</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Planetary Accretion Is Less Frequent in Wide Binaries: Evidence from Metal-Enriched White Dwarfs in DESI DR1</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2609-11798v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-11798v1</guid>
-      <pubDate>Fri, 11 Sep 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Siyi Xu et al.</dc:creator>
+      <title>Rescuing Kepler&#x27;s False Positives: A Possible Habitable Zone Exoplanet in the Triple Star System KOI-1623</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-16201v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-16201v1</guid>
+      <pubDate>Wed, 16 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Rita Lanxuan Wang et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>Discovery of radio emission from the exoplanet β Pictoris b</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-16720v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-16720v1</guid>
+      <pubDate>Wed, 16 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Kevin N. Ortiz Ceballos, Edo Berger, Yvette Cendes</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>No statistically significant evidence for a correlation between stellar and planetary composition</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-17159v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-17159v1</guid>
+      <pubDate>Wed, 16 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Daisy A. Turner et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>Saturns Are Not Large Neptunes: The effect of removing inflated giants from empirical mass-radius relations</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-17025v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-17025v1</guid>
+      <pubDate>Wed, 16 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Georgina Dransfield, Valentina Tardugno, Niamh K. O&#x27;Sullivan</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Multi-wavelength Constraints on Dust Dynamics and Size Evolution in Protoplanetary Disk Rings. II. Observational Implications</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-16556v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-16556v1</guid>
+      <pubDate>Wed, 16 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Linhan Yang et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>What the Solar System Can Teach Us About Rocky Exoplanets</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-16224v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-16224v1</guid>
+      <pubDate>Wed, 16 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Paul K. Byrne et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
     </item>
   </channel>
 </rss>
