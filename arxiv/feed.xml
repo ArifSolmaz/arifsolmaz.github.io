@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 17 Sep 2026 06:59:50 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 18 Sep 2026 06:56:10 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,50 +15,80 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>Uncovering temperate worlds: an updated look at the K2-3 system with ESPRESSO</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2609-17792v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-17792v1</guid>
-      <pubDate>Thu, 17 Sep 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Avidaan Srivastava et al.</dc:creator>
+      <title>Thermal Evolution of Lava Planets Across System Ages: Predictions for Hell of a Survey</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-20155v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-20155v1</guid>
+      <pubDate>Fri, 18 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Mariana Sastre et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>physics.geo-ph</category>
+    </item>
+    <item>
+      <title>Coupled Orbital and Interior Evolution of Sub-Neptunes</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-20611v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-20611v1</guid>
+      <pubDate>Fri, 18 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Ritika Sethi, Sarah Millholland, Tim Hallatt</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>Graph neural networks for exoplanet atmospheres</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2609-17894v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-17894v1</guid>
-      <pubDate>Thu, 17 Sep 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Antonia Vojtekova et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.IM</category>
-        <category>astro-ph.EP</category>
-        <category>cs.NE</category>
-    </item>
-    <item>
-      <title>A Binary Flux Calibrator Reveals the Scientific Potential of Short-integration JWST MIRI Imaging to Directly Detect sub-Jupiter Exoplanets</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2609-19133v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-19133v1</guid>
-      <pubDate>Thu, 17 Sep 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Rachel Bowens-Rubin et al.</dc:creator>
+      <title>Stellar companions sculpt hot Jupiter formation and spin-orbit evolution</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-19249v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-19249v1</guid>
+      <pubDate>Fri, 18 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Cheyanne Shariat et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.SR</category>
     </item>
     <item>
-      <title>Evidence for an Extended Hydrogen Outflow on WASP-12 b</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2609-17675v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-17675v1</guid>
-      <pubDate>Thu, 17 Sep 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Morgan Saidel et al.</dc:creator>
+      <title>Exoplanet detection through photometric orbital phase modulations</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-20355v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-20355v1</guid>
+      <pubDate>Fri, 18 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>J. Lillo-Box, O. Balsalobre-Ruza</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+    </item>
+    <item>
+      <title>Galactic archaeology meets exoplanets: linking stellar birth radii to exoplanet demographics</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-19274v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-19274v1</guid>
+      <pubDate>Fri, 18 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>M. L. L. Dantas et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.GA</category>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>Widespread plasma jets in the Martian magnetosheath revealed by dual-spacecraft observations</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-19788v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-19788v1</guid>
+      <pubDate>Fri, 18 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Abigail Tadlock et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>physics.space-ph</category>
+    </item>
+    <item>
+      <title>Does HD 3167 Have Planets with Perpendicular Orbits?</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-19277v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-19277v1</guid>
+      <pubDate>Fri, 18 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Joshua N. Winn et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>Predicting Macroturbulence in F/G/K Dwarfs to 100 m/s Precision</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2609-17693v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-17693v1</guid>
-      <pubDate>Thu, 17 Sep 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Jack Lubin et al.</dc:creator>
+      <title>Mapping Molecular Ion Distributions in a Diverse Sample of Protoplanetary Disks</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-19313v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-19313v1</guid>
+      <pubDate>Fri, 18 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Deryl E. Long et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.SR</category>
         <category>astro-ph.EP</category>
