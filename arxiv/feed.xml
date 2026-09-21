@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 18 Sep 2026 06:56:10 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 21 Sep 2026 07:30:16 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,83 +15,74 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>Thermal Evolution of Lava Planets Across System Ages: Predictions for Hell of a Survey</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2609-20155v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-20155v1</guid>
-      <pubDate>Fri, 18 Sep 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Mariana Sastre et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>physics.geo-ph</category>
-    </item>
-    <item>
-      <title>Coupled Orbital and Interior Evolution of Sub-Neptunes</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2609-20611v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-20611v1</guid>
-      <pubDate>Fri, 18 Sep 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Ritika Sethi, Sarah Millholland, Tim Hallatt</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Stellar companions sculpt hot Jupiter formation and spin-orbit evolution</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2609-19249v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-19249v1</guid>
-      <pubDate>Fri, 18 Sep 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Cheyanne Shariat et al.</dc:creator>
+      <title>JWST MEP - A World Under Spotty Starlight: Detection of CO2 and H2O in the Hot Saturn WASP-52b with JWST NIRSpec G395H</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-21810v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-21810v1</guid>
+      <pubDate>Mon, 21 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>JWST GO 3969 Team et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.SR</category>
     </item>
     <item>
-      <title>Exoplanet detection through photometric orbital phase modulations</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2609-20355v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-20355v1</guid>
-      <pubDate>Fri, 18 Sep 2026 20:00:00 +0000</pubDate>
-      <dc:creator>J. Lillo-Box, O. Balsalobre-Ruza</dc:creator>
+      <title>Time-resolved JWST Retrieval Analysis of the Coldest Brown Dwarf: Temperature and Chemical Variations in WISE 0855-07</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-21881v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-21881v1</guid>
+      <pubDate>Mon, 21 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Harshil Kothari et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
+        <category>astro-ph.SR</category>
     </item>
     <item>
-      <title>Galactic archaeology meets exoplanets: linking stellar birth radii to exoplanet demographics</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2609-19274v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-19274v1</guid>
-      <pubDate>Fri, 18 Sep 2026 20:00:00 +0000</pubDate>
-      <dc:creator>M. L. L. Dantas et al.</dc:creator>
+      <title>Faithful Neural Embeddings for 3D Exoplanet Climate Modeling</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-21706v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-21706v1</guid>
+      <pubDate>Mon, 21 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Amit Reza, Ludmila Carone, Christiane Helling</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Recovering the Morning and Evening Limbs of WASP-94Ab from Its Limb-Averaged JWST Transmission Spectrum</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-20923v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-20923v1</guid>
+      <pubDate>Mon, 21 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Tyler R. Fairnington et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Searching for Massive Remnant Planetary System Hosts with White Dwarf Gaia XP Spectra</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-22033v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-22033v1</guid>
+      <pubDate>Mon, 21 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Lou Baya Ould Rouis et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.SR</category>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>White Dwarf Natal Kicks as Velocity-Space Random Walks. I. Fokker-Planck Theory</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-20940v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-20940v1</guid>
+      <pubDate>Mon, 21 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Stephen Majeski et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.SR</category>
+        <category>astro-ph.EP</category>
         <category>astro-ph.GA</category>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.SR</category>
     </item>
     <item>
-      <title>Widespread plasma jets in the Martian magnetosheath revealed by dual-spacecraft observations</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2609-19788v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-19788v1</guid>
-      <pubDate>Fri, 18 Sep 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Abigail Tadlock et al.</dc:creator>
+      <title>Reinforcement learning for post-coronagraphic wavefront control</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-20880v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-20880v1</guid>
+      <pubDate>Mon, 21 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Manuela Castañeda-Medina et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.IM</category>
         <category>astro-ph.EP</category>
-        <category>physics.space-ph</category>
-    </item>
-    <item>
-      <title>Does HD 3167 Have Planets with Perpendicular Orbits?</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2609-19277v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-19277v1</guid>
-      <pubDate>Fri, 18 Sep 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Joshua N. Winn et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Mapping Molecular Ion Distributions in a Diverse Sample of Protoplanetary Disks</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2609-19313v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-19313v1</guid>
-      <pubDate>Fri, 18 Sep 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Deryl E. Long et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.SR</category>
-        <category>astro-ph.EP</category>
+        <category>cs.AI</category>
     </item>
   </channel>
 </rss>
