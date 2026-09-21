@@ -1,12 +1,12 @@
 {
   "responseHeader": {
     "status": 0,
-    "QTime": 181,
+    "QTime": 169,
     "params": {
       "q": "orcid:\"0000-0002-3076-164X\"",
       "fl": "bibcode,title,year,pub,volume,page,doi,bibstem,database,property,author_count,first_author",
       "start": "0",
-      "internal_logging_params": "X-Amzn-Trace-Id=Root=1-6aa7b9b9-09b7ee1b5bfe779635291748",
+      "internal_logging_params": "X-Amzn-Trace-Id=Root=1-6ab0f4b9-661f89b759c6b1a153c5abde",
       "fq": "database:(astronomy OR physics)",
       "sort": "date desc",
       "rows": "200",
@@ -18,40 +18,6 @@
     "start": 0,
     "numFoundExact": true,
     "docs": [
-      {
-        "bibcode": "2025MNRAS.543.3456E",
-        "author_count": 21,
-        "bibstem": [
-          "MNRAS",
-          "MNRAS.543"
-        ],
-        "database": [
-          "astronomy"
-        ],
-        "doi": [
-          "10.1093/mnras/staf1659",
-          "10.48550/arXiv.2509.25319"
-        ],
-        "first_author": "Esparza-Borges, Emma",
-        "page": [
-          "3456"
-        ],
-        "pub": "Monthly Notices of the Royal Astronomical Society",
-        "title": [
-          "Testing the performance of cross-correlation techniques to search for molecular features in JWST NIRSpec G395H observations of transiting exoplanets"
-        ],
-        "volume": "543",
-        "year": "2025",
-        "property": [
-          "ARTICLE",
-          "DATA",
-          "EPRINT_OPENACCESS",
-          "ESOURCE",
-          "OPENACCESS",
-          "PUB_OPENACCESS",
-          "REFEREED"
-        ]
-      },
       {
         "bibcode": "2025A&A...703A.147O",
         "author_count": 101,
@@ -75,6 +41,40 @@
           "A high geometric albedo and small size for the Haumea cluster member (24835) 1995 SM<SUB>55</SUB> determined from a stellar occultation and photometric observations"
         ],
         "volume": "703",
+        "year": "2025",
+        "property": [
+          "ARTICLE",
+          "DATA",
+          "EPRINT_OPENACCESS",
+          "ESOURCE",
+          "OPENACCESS",
+          "PUB_OPENACCESS",
+          "REFEREED"
+        ]
+      },
+      {
+        "bibcode": "2025MNRAS.543.3456E",
+        "author_count": 21,
+        "bibstem": [
+          "MNRAS",
+          "MNRAS.543"
+        ],
+        "database": [
+          "astronomy"
+        ],
+        "doi": [
+          "10.1093/mnras/staf1659",
+          "10.48550/arXiv.2509.25319"
+        ],
+        "first_author": "Esparza-Borges, Emma",
+        "page": [
+          "3456"
+        ],
+        "pub": "Monthly Notices of the Royal Astronomical Society",
+        "title": [
+          "Testing the performance of cross-correlation techniques to search for molecular features in JWST NIRSpec G395H observations of transiting exoplanets"
+        ],
+        "volume": "543",
         "year": "2025",
         "property": [
           "ARTICLE",
@@ -342,7 +342,7 @@
       }
     ]
   },
-  "allocatedBytes": 7748320,
+  "allocatedBytes": 7912272,
   "filtered": "true",
   "_meta": {
     "query": "orcid:\"0000-0002-3076-164X\""
