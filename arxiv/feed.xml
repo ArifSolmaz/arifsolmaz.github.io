@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 21 Sep 2026 07:30:16 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 22 Sep 2026 07:09:48 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,74 +15,141 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>JWST MEP - A World Under Spotty Starlight: Detection of CO2 and H2O in the Hot Saturn WASP-52b with JWST NIRSpec G395H</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2609-21810v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-21810v1</guid>
-      <pubDate>Mon, 21 Sep 2026 20:00:00 +0000</pubDate>
-      <dc:creator>JWST GO 3969 Team et al.</dc:creator>
+      <title>The Science Potential of Characterizing Gas Giant Exoplanets with HWO</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-22653v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-22653v1</guid>
+      <pubDate>Tue, 22 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Beck Dacus et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+    </item>
+    <item>
+      <title>Exoplanet Atmosphere Spectral Sensitivity Analysis with PICASO: Jacobians, Linear-Gaussian Approximations, and Information Content</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-22634v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-22634v1</guid>
+      <pubDate>Tue, 22 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Natasha E. Batalha, Nicholas F. Wogan</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+    </item>
+    <item>
+      <title>Impact of accretion variability on the CO emission of a disk around a very-low-mass star with JWST</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-24329v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-24329v1</guid>
+      <pubDate>Tue, 22 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>C. Bergez-Casalou et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.SR</category>
     </item>
     <item>
-      <title>Time-resolved JWST Retrieval Analysis of the Coldest Brown Dwarf: Temperature and Chemical Variations in WISE 0855-07</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2609-21881v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-21881v1</guid>
-      <pubDate>Mon, 21 Sep 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Harshil Kothari et al.</dc:creator>
+      <title>Upside down: GJ3090 b the first retrograde exoplanet around an M dwarf detected with NIRPS</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-24870v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-24870v1</guid>
+      <pubDate>Tue, 22 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Y. Carteret et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Super-Earth Interiors Shrink by About 10% as They Crystallise</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-23091v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-23091v1</guid>
+      <pubDate>Tue, 22 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Tim Lichtenberg et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>physics.geo-ph</category>
+    </item>
+    <item>
+      <title>How dust particles orbiting white dwarfs can reveal undetected co-orbiting exoplanets I. Exoplanet on a circular orbit</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-24405v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-24405v1</guid>
+      <pubDate>Tue, 22 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Kyriaki I. Antoniadou, Dimitri Veras</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.SR</category>
     </item>
     <item>
-      <title>Faithful Neural Embeddings for 3D Exoplanet Climate Modeling</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2609-21706v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-21706v1</guid>
-      <pubDate>Mon, 21 Sep 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Amit Reza, Ludmila Carone, Christiane Helling</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Recovering the Morning and Evening Limbs of WASP-94Ab from Its Limb-Averaged JWST Transmission Spectrum</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2609-20923v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-20923v1</guid>
-      <pubDate>Mon, 21 Sep 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Tyler R. Fairnington et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Searching for Massive Remnant Planetary System Hosts with White Dwarf Gaia XP Spectra</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2609-22033v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-22033v1</guid>
-      <pubDate>Mon, 21 Sep 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Lou Baya Ould Rouis et al.</dc:creator>
+      <title>Elemental Abundances of Cool Stars: A Spectroscopic Framework Applied to Five Planet-Host Stars</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-24970v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-24970v1</guid>
+      <pubDate>Tue, 22 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Nicole Gromek et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.SR</category>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>White Dwarf Natal Kicks as Velocity-Space Random Walks. I. Fokker-Planck Theory</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2609-20940v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-20940v1</guid>
-      <pubDate>Mon, 21 Sep 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Stephen Majeski et al.</dc:creator>
+      <title>Optical Constants of Photochemical Haze Analogs in N2-CH4-CO Atmospheres from 0.4 to 28.6 μm</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-22982v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-22982v1</guid>
+      <pubDate>Tue, 22 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Zhengbo Yang et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Characterization of the Compact Multi-planet System TOI-789: Validation of Three Terrestrial Planets, Dynamical Characterization, and Detection of a Fourth Temperate Candidate</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-22945v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-22945v1</guid>
+      <pubDate>Tue, 22 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Juan F. Pagés Navarrete</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>An Open Cluster Origin for Most Solar-Type Binaries in the Solar Neighborhood and Implications for Primordial Planet Stability</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-22516v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-22516v1</guid>
+      <pubDate>Tue, 22 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Anna C. Childs, Aaron M. Geller</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.SR</category>
         <category>astro-ph.EP</category>
         <category>astro-ph.GA</category>
     </item>
     <item>
-      <title>Reinforcement learning for post-coronagraphic wavefront control</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2609-20880v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-20880v1</guid>
-      <pubDate>Mon, 21 Sep 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Manuela Castañeda-Medina et al.</dc:creator>
+      <title>Searching for Embedded Protoplanets with the Keck/NIRC2 Vortex Coronagraph: Confirmation of a Core-accretion Planet in the Narrow Gap of the Elias 2-24 Disk</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-23122v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-23122v1</guid>
+      <pubDate>Tue, 22 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Andrea Bernardi et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.IM</category>
         <category>astro-ph.EP</category>
-        <category>cs.AI</category>
+    </item>
+    <item>
+      <title>Marginalized planet-to-star radius ratio posteriors for low-SNR transiting planets via dimensionality reduction</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-23159v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-23159v1</guid>
+      <pubDate>Tue, 22 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Oryna Ivashtenko, Barak Zackay</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+    </item>
+    <item>
+      <title>Transit timing variation</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-24645v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-24645v1</guid>
+      <pubDate>Tue, 22 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Luca Borsato</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+        <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>Regime transitions of dynamos driven by fingering double-diffusive convection</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-23956v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-23956v1</guid>
+      <pubDate>Tue, 22 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Wei Fan, YufengLin</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
     </item>
   </channel>
 </rss>
