@@ -1,12 +1,12 @@
 {
   "responseHeader": {
     "status": 0,
-    "QTime": 106,
+    "QTime": 32,
     "params": {
       "q": "-docs(1f8e5e2fda6aa0148343a32ba70673cc) author:\"solmaz, arif\"",
       "fl": "bibcode,title,year,pub,volume,page,doi,bibstem,database,property,author_count,first_author",
       "start": "0",
-      "internal_logging_params": "X-Amzn-Trace-Id=Root=1-6ab82222-33f4ecd400d8c9905706680b",
+      "internal_logging_params": "X-Amzn-Trace-Id=Root=1-6ab82297-2647c61842039ad116705fe8",
       "fq": "database:(astronomy OR physics)",
       "sort": "date desc,bibcode desc",
       "rows": "200",
