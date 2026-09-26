@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21",
+  "generated_at": "2026-09-26",
   "pi": {
     "name": "Arif Solmaz, PhD",
     "title": "Assistant Professor --- Exoplanet Science & Scientific ML",
@@ -110,6 +110,48 @@
   "teaching": "Current (2026--2027, İSTÜN): Physics I & II, Computer Programming I & II, Object-Oriented Programming, Data Structures & Algorithms, Robotics, Machine Learning --- all in English and/or Turkish. 2pt Previous (Çağ University): Statistics, Quantitative Methods, Introductory--Advanced Programming.",
   "memberships": "International Astronomical Union (IAU), European Astronomical Society (EAS), Turkish Astronomical Society (TAD), European Association for Astronomy Education (EAAE --- Board Member). 0.6em center 0.4em publication list, research code, and teaching materials at arifsolmaz.github.io. References available upon request. center",
   "publications": [
+    {
+      "title": "Early Exploration of the Scientific Discovery Space for the Habitable Worlds Observatory",
+      "year": 2026,
+      "bibcode": "2026arXiv260811294D",
+      "doi": null,
+      "journal": "arXiv",
+      "kind": "preprint",
+      "volume": null,
+      "page": null,
+      "preprint": true,
+      "refereed": false,
+      "authors": null,
+      "url": "https://ui.adsabs.harvard.edu/abs/2026arXiv260811294D/abstract"
+    },
+    {
+      "title": "The role of the Hubble Space Telescope in advancing our understanding of atmospheric escape in exoplanets",
+      "year": 2026,
+      "bibcode": "2026arXiv260526140D",
+      "doi": null,
+      "journal": "arXiv",
+      "kind": "whitepaper",
+      "volume": null,
+      "page": null,
+      "preprint": true,
+      "refereed": false,
+      "authors": null,
+      "url": "https://ui.adsabs.harvard.edu/abs/2026arXiv260526140D/abstract"
+    },
+    {
+      "title": "ExoClock Project. IV. A Homogeneous Catalog of 620 Updated Exoplanet Ephemerides",
+      "year": 2026,
+      "bibcode": "2026ApJS..283....5K",
+      "doi": "10.3847/1538-4365/ae3238",
+      "journal": "The Astrophysical Journal Supplement Series",
+      "kind": "journal",
+      "volume": "283",
+      "page": "5",
+      "preprint": false,
+      "refereed": true,
+      "authors": null,
+      "url": "https://doi.org/10.3847/1538-4365/ae3238"
+    },
     {
       "title": "Europlanet Machine Learning Working Group: a year of progress",
       "year": 2025,
@@ -421,6 +463,20 @@
   ],
   "journal_articles": [
     {
+      "title": "ExoClock Project. IV. A Homogeneous Catalog of 620 Updated Exoplanet Ephemerides",
+      "year": 2026,
+      "bibcode": "2026ApJS..283....5K",
+      "doi": "10.3847/1538-4365/ae3238",
+      "journal": "The Astrophysical Journal Supplement Series",
+      "kind": "journal",
+      "volume": "283",
+      "page": "5",
+      "preprint": false,
+      "refereed": true,
+      "authors": null,
+      "url": "https://doi.org/10.3847/1538-4365/ae3238"
+    },
+    {
       "title": "Testing the performance of cross-correlation techniques to search for molecular features in JWST NIRSpec G395H observations of transiting exoplanets",
       "year": 2025,
       "bibcode": "2025MNRAS.543.3456E",
@@ -562,6 +618,20 @@
     }
   ],
   "white_papers": [
+    {
+      "title": "The role of the Hubble Space Telescope in advancing our understanding of atmospheric escape in exoplanets",
+      "year": 2026,
+      "bibcode": "2026arXiv260526140D",
+      "doi": null,
+      "journal": "arXiv",
+      "kind": "whitepaper",
+      "volume": null,
+      "page": null,
+      "preprint": true,
+      "refereed": false,
+      "authors": null,
+      "url": "https://ui.adsabs.harvard.edu/abs/2026arXiv260526140D/abstract"
+    },
     {
       "title": "Advancing Space Science Requires NASA Support for Coordination Between the Science Mission Directorate Communities",
       "year": 2023,
@@ -707,6 +777,20 @@
   ],
   "preprints": [
     {
+      "title": "Early Exploration of the Scientific Discovery Space for the Habitable Worlds Observatory",
+      "year": 2026,
+      "bibcode": "2026arXiv260811294D",
+      "doi": null,
+      "journal": "arXiv",
+      "kind": "preprint",
+      "volume": null,
+      "page": null,
+      "preprint": true,
+      "refereed": false,
+      "authors": null,
+      "url": "https://ui.adsabs.harvard.edu/abs/2026arXiv260811294D/abstract"
+    },
+    {
       "title": "ExoClock Project IV: A homogeneous catalogue of 620 updated exoplanet ephemerides",
       "year": 2025,
       "bibcode": "2025arXiv251114407K",
@@ -738,12 +822,12 @@
     }
   ],
   "metrics": {
-    "ads_records": 31,
-    "distinct_works": 22,
-    "journal_articles": 10,
-    "white_papers": 6,
+    "ads_records": 34,
+    "distinct_works": 25,
+    "journal_articles": 11,
+    "white_papers": 7,
     "conference_contributions": 4,
     "excluded_by_filter": 8,
-    "latest_year": 2025
+    "latest_year": 2026
   }
 }

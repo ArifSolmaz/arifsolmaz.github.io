@@ -27,5 +27,9 @@
     "2019BAAS...51c.271L",
     "2019astro2020T.528D"
   ],
-  "confirmed_note": "Community/decadal white papers with large author lists, confirmed by the author as genuine co-authorships (2026-08). Kept on the page; listed here so a future maintainer does not mistake them for name collisions."
+  "confirmed_note": "Community/decadal white papers with large author lists, confirmed by the author as genuine co-authorships (2026-08). Kept on the page; listed here so a future maintainer does not mistake them for name collisions.",
+  "ads_name_query": "-docs(1f8e5e2fda6aa0148343a32ba70673cc) author:\"solmaz, arif\"",
+  "kind_overrides": {
+    "2026arXiv260526140D": "whitepaper"
+  }
 }

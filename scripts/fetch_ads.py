@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Refresh lab/ads-publications.json from NASA ADS.
+Refresh both ORCID and filtered-author lab publication files from NASA ADS.
 
 Identity comes from ORCID, not from the name: an author search for
 "Solmaz, Arif" also returns papers by other researchers with that surname.
@@ -11,7 +11,7 @@ Environment:
   ADS_ORCID       optional — ORCID to query (default: value in lab/publication-filters.json)
 
 Exit codes: 0 wrote/updated (or unchanged), 1 no token, 2 request failed.
-The lab page keeps working from the previous file if this fails.
+Both cached files are retained if either ADS request fails.
 """
 
 import json
@@ -24,6 +24,7 @@ import urllib.request
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "lab" / "ads-publications.json"
+NAME_OUT = ROOT / "lab" / "ads-name-publications.json"
 FILTERS = ROOT / "lab" / "publication-filters.json"
 
 FIELDS = ",".join([
@@ -56,40 +57,48 @@ def main() -> int:
             return 2
         query = f'orcid:"{orcid}"'
 
-    params = urllib.parse.urlencode({
-        "q": query,
-        "fl": FIELDS,
-        "fq": "database:(astronomy OR physics)",
-        "rows": "200",
-        "sort": "date desc",
-    })
-    request = urllib.request.Request(
-        f"{API}?{params}",
-        headers={"Authorization": f"Bearer {token}"},
-    )
+    name_query = os.environ.get("ADS_NAME_QUERY", "").strip()
+    if not name_query:
+        name_query = json.loads(FILTERS.read_text(encoding="utf-8")).get("ads_name_query", "").strip()
+    if not name_query:
+        print("no filtered ADS name query configured")
+        return 2
 
-    try:
+    def fetch(q):
+        params = urllib.parse.urlencode({
+            "q": q,
+            "fl": FIELDS,
+            "fq": "database:(astronomy OR physics)",
+            "rows": "200",
+            "sort": "date desc, bibcode desc",
+        })
+        request = urllib.request.Request(
+            f"{API}?{params}",
+            headers={"Authorization": f"Bearer {token}"},
+        )
         with urllib.request.urlopen(request, timeout=60) as response:
             payload = json.loads(response.read().decode("utf-8"))
+        docs = payload.get("response", {}).get("docs", [])
+        if not docs:
+            raise ValueError(f"ADS query returned no records: {q}")
+        payload.setdefault("_meta", {})["query"] = q
+        return payload
+
+    try:
+        orcid_payload = fetch(query)
+        name_payload = fetch(name_query)
     except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError, ValueError) as exc:
-        print(f"ADS request failed ({exc}) — keeping the existing publication file")
+        print(f"ADS request failed ({exc}) — keeping both existing publication files")
         return 2
 
-    found = payload.get("response", {}).get("numFound", 0)
-    if not found:
-        print(f"query returned no records: {query} — refusing to overwrite with an empty list")
-        return 2
-
-    payload.setdefault("_meta", {})["query"] = query
-    new_text = json.dumps(payload, indent=2, ensure_ascii=False) + "\n"
-
-    if OUT.exists() and OUT.read_text(encoding="utf-8") == new_text:
-        print(f"{found} records — unchanged")
-        return 0
-
-    OUT.parent.mkdir(parents=True, exist_ok=True)
-    OUT.write_text(new_text, encoding="utf-8")
-    print(f"{found} records written to {OUT.relative_to(ROOT)}")
+    for path, payload in ((OUT, orcid_payload), (NAME_OUT, name_payload)):
+        new_text = json.dumps(payload, indent=2, ensure_ascii=False) + "\n"
+        if path.exists() and path.read_text(encoding="utf-8") == new_text:
+            print(f"{path.name}: {len(payload['response']['docs'])} records, unchanged")
+            continue
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(new_text, encoding="utf-8")
+        print(f"{path.name}: {len(payload['response']['docs'])} records written")
     return 0
 
 

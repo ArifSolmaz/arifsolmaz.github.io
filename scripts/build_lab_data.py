@@ -4,7 +4,8 @@ Build lab/lab-data.json — the data the lab page renders itself from.
 
 Sources (both already in this repository):
   cv.tex             appointments, funded projects, teaching, memberships
-  publications.json  a NASA ADS query response for author "Solmaz, Arif"
+  lab/ads-name-publications.json  refreshed filtered-author ADS results
+  publications.json  older manual ADS export (fallback)
 
 Run:  python3 scripts/build_lab_data.py
 The lab page falls back to its built-in static content if this file is missing,
@@ -19,7 +20,8 @@ from datetime import datetime, timezone
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 CV = ROOT / "cv.tex"
 PUBS = ROOT / "publications.json"          # manual ADS export (fallback)
-ADS_PUBS = ROOT / "lab" / "ads-publications.json"   # written by scripts/fetch_ads.py
+ADS_PUBS = ROOT / "lab" / "ads-publications.json"   # ORCID query
+ADS_NAME_PUBS = ROOT / "lab" / "ads-name-publications.json"   # filtered author query
 FILTERS = ROOT / "lab" / "publication-filters.json"
 OUT = ROOT / "lab" / "lab-data.json"
 
@@ -194,7 +196,7 @@ def parse_publications(raw: dict, filters: dict = None):
         bibcode = d.get("bibcode", "")
         props = [p.upper() for p in d.get("property", [])]
         stems = d.get("bibstem") or []
-        kind = classify(bibcode, stems, props)
+        kind = filters.get("kind_overrides", {}).get(bibcode) or classify(bibcode, stems, props)
         stem = stems[0] if stems else ""
         entry = {
             "title": title,
@@ -248,7 +250,7 @@ def main():
             return [], 0, 0
 
     orcid_pubs, orcid_found, _ = parse_source(ADS_PUBS)
-    name_pubs, name_found, skipped = parse_source(PUBS)
+    name_pubs, name_found, skipped = parse_source(ADS_NAME_PUBS if ADS_NAME_PUBS.exists() else PUBS)
 
     merged = {}
     for p in orcid_pubs + name_pubs:            # ORCID first, so it wins ties

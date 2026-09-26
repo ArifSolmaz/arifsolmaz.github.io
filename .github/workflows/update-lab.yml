@@ -11,6 +11,7 @@ on:
       - "cv.tex"
       - "publications.json"
       - "lab/publication-filters.json"
+      - "lab/ads-name-publications.json"
       - "scripts/build_lab_data.py"
       - "scripts/fetch_ads.py"
       - ".github/workflows/update-lab.yml"
@@ -36,9 +37,8 @@ jobs:
           python-version: "3.11"
 
       - name: Refresh publications from NASA ADS
-        # Needs the ADS_API_TOKEN secret. Without it this step is skipped and the
-        # build below falls back to the publication file already in the repo.
-        continue-on-error: true
+        # The configured ADS token refreshes ORCID and filtered-author results.
+        # A failure is visible in Actions; the published cached files stay intact.
         env:
           ADS_API_TOKEN: ${{ secrets.ADS_API_TOKEN }}
         run: python3 scripts/fetch_ads.py
@@ -50,7 +50,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add lab/lab-data.json lab/ads-publications.json 2>/dev/null || true
+          git add lab/lab-data.json lab/ads-publications.json lab/ads-name-publications.json
           if git diff --cached --quiet; then
             echo "lab data unchanged"
           else
