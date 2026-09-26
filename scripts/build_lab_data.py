@@ -13,6 +13,7 @@ so a failed run degrades to "slightly stale", never to a blank page.
 """
 
 import json
+import html
 import pathlib
 import re
 from datetime import datetime, timezone
@@ -186,7 +187,7 @@ def parse_publications(raw: dict, filters: dict = None):
     skipped = 0
 
     for d in docs:
-        title = (d.get("title") or [""])[0]
+        title = html.unescape(re.sub(r"<[^>]+>", "", (d.get("title") or [""])[0]))
         key = norm_title(title)
         if not key:
             continue
