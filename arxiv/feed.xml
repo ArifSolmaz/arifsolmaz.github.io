@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 25 Sep 2026 06:58:04 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 28 Sep 2026 08:04:31 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,33 +15,32 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>Exoplanet Detection Techniques: Radial Velocity</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2609-29378v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-29378v1</guid>
-      <pubDate>Fri, 25 Sep 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Rafael Luque, Matthew R. Standing</dc:creator>
+      <title>TS23/McDonald and FIES/NOT strike again. Two new warm Jupiter systems and outer companions in a third</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-30915v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-30915v1</guid>
+      <pubDate>Mon, 28 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>E. Knudstrup et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
     </item>
     <item>
-      <title>VLTI/MATISSE observations of the hot dust around β Pictoris: Observing faint objects with MATISSE</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2609-29783v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-29783v1</guid>
-      <pubDate>Fri, 25 Sep 2026 20:00:00 +0000</pubDate>
-      <dc:creator>P. Priolet et al.</dc:creator>
+      <title>Hot Rocks Survey VI: An anomalously hot dayside for the rocky planet GJ 357 b</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-30552v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-30552v1</guid>
+      <pubDate>Mon, 28 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Merlin Zgraggen et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
     </item>
     <item>
-      <title>The GAPS programme at TNG LXXIX. New mass constraints for the infant planets in the V1298 Tau system through a long-term radial velocity monitoring with HARPS-N</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2609-30038v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-30038v1</guid>
-      <pubDate>Fri, 25 Sep 2026 20:00:00 +0000</pubDate>
-      <dc:creator>M. Damasso et al.</dc:creator>
+      <title>On the Compositions of Interstellar Objects</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-30827v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-30827v1</guid>
+      <pubDate>Mon, 28 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Matthew J. Hopkins et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
+        <category>astro-ph.GA</category>
     </item>
   </channel>
 </rss>
