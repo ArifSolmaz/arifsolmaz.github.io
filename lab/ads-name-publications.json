@@ -1,12 +1,12 @@
 {
   "responseHeader": {
     "status": 0,
-    "QTime": 32,
+    "QTime": 135,
     "params": {
       "q": "-docs(1f8e5e2fda6aa0148343a32ba70673cc) author:\"solmaz, arif\"",
       "fl": "bibcode,title,year,pub,volume,page,doi,bibstem,database,property,author_count,first_author",
       "start": "0",
-      "internal_logging_params": "X-Amzn-Trace-Id=Root=1-6ab82297-2647c61842039ad116705fe8",
+      "internal_logging_params": "X-Amzn-Trace-Id=Root=1-6aba3b3a-5276a9a113fddd1876d3052d",
       "fq": "database:(astronomy OR physics)",
       "sort": "date desc,bibcode desc",
       "rows": "200",
@@ -123,9 +123,9 @@
           "MNRAS.543"
         ],
         "database": [
-          "astronomy",
           "planetary",
-          "astrophysics"
+          "astrophysics",
+          "astronomy"
         ],
         "doi": [
           "10.1093/mnras/staf1659",
@@ -159,9 +159,9 @@
           "A&A...703"
         ],
         "database": [
-          "astronomy",
           "planetary",
-          "astrophysics"
+          "astrophysics",
+          "astronomy"
         ],
         "doi": [
           "10.1051/0004-6361/202556498",
@@ -344,9 +344,9 @@
           "BAAS...55"
         ],
         "database": [
-          "astronomy",
           "planetary",
-          "heliophysics"
+          "heliophysics",
+          "astronomy"
         ],
         "doi": [
           "10.3847/25c2cfeb.e033d3ce"
@@ -572,9 +572,9 @@
           "BAAS...53"
         ],
         "database": [
-          "astronomy",
           "planetary",
-          "heliophysics"
+          "heliophysics",
+          "astronomy"
         ],
         "doi": [
           "10.3847/25c2cfeb.53e7ca7e"
@@ -662,8 +662,8 @@
           "BAAS...51"
         ],
         "database": [
-          "astronomy",
-          "planetary"
+          "planetary",
+          "astronomy"
         ],
         "first_author": "Mandt, Kathleen E.",
         "page": [
@@ -784,8 +784,8 @@
           "BAAS...51"
         ],
         "database": [
-          "astronomy",
-          "planetary"
+          "planetary",
+          "astronomy"
         ],
         "first_author": "Line, Michael",
         "page": [

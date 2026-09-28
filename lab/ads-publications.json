@@ -1,12 +1,12 @@
 {
   "responseHeader": {
     "status": 0,
-    "QTime": 184,
+    "QTime": 173,
     "params": {
       "q": "orcid:\"0000-0002-3076-164X\"",
       "fl": "bibcode,title,year,pub,volume,page,doi,bibstem,database,property,author_count,first_author",
       "start": "0",
-      "internal_logging_params": "X-Amzn-Trace-Id=Root=1-6ab82296-47fe66762fa3d2b130dbc302",
+      "internal_logging_params": "X-Amzn-Trace-Id=Root=1-6aba3b3a-4214bc0003de2cc870ad9af8",
       "fq": "database:(astronomy OR physics)",
       "sort": "date desc,bibcode desc",
       "rows": "200",
@@ -26,9 +26,9 @@
           "MNRAS.543"
         ],
         "database": [
-          "astronomy",
           "planetary",
-          "astrophysics"
+          "astrophysics",
+          "astronomy"
         ],
         "doi": [
           "10.1093/mnras/staf1659",
@@ -62,9 +62,9 @@
           "A&A...703"
         ],
         "database": [
-          "astronomy",
           "planetary",
-          "astrophysics"
+          "astrophysics",
+          "astronomy"
         ],
         "doi": [
           "10.1051/0004-6361/202556498",
@@ -350,7 +350,7 @@
       }
     ]
   },
-  "allocatedBytes": 7942552,
+  "allocatedBytes": 8046120,
   "filtered": "true",
   "_meta": {
     "query": "orcid:\"0000-0002-3076-164X\""
