@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 28 Sep 2026 08:04:31 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 29 Sep 2026 07:45:13 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,32 +15,112 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>TS23/McDonald and FIES/NOT strike again. Two new warm Jupiter systems and outer companions in a third</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2609-30915v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-30915v1</guid>
-      <pubDate>Mon, 28 Sep 2026 20:00:00 +0000</pubDate>
-      <dc:creator>E. Knudstrup et al.</dc:creator>
+      <title>Worlds Next Door. V. A Candidate Solar System Scale Super-Jupiter in the 61 Cygni Binary System</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-32893v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-32893v1</guid>
+      <pubDate>Tue, 29 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Aniket Sanghi et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>JWST NIRSpec G395H Transmission Spectra of Two Similar Sub-Neptunes in the TOI-125 System</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-35607v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-35607v1</guid>
+      <pubDate>Tue, 29 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Yiwei Chai et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>Hot Rocks Survey VI: An anomalously hot dayside for the rocky planet GJ 357 b</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2609-30552v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-30552v1</guid>
-      <pubDate>Mon, 28 Sep 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Merlin Zgraggen et al.</dc:creator>
+      <title>Hybrid worlds are the commonest outcome among the M-dwarf sub-Neptunes characterised with JWST</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-34635v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-34635v1</guid>
+      <pubDate>Tue, 29 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Juan F. Pagés Navarrete</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>On the Compositions of Interstellar Objects</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2609-30827v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-30827v1</guid>
-      <pubDate>Mon, 28 Sep 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Matthew J. Hopkins et al.</dc:creator>
+      <title>Correcting stellar contamination in transmission spectroscopy with contemporaneous monitoring: Application to GJ 1214 b</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-35721v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-35721v1</guid>
+      <pubDate>Tue, 29 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Ò. Porqueras-León et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
-        <category>astro-ph.GA</category>
+        <category>astro-ph.IM</category>
+    </item>
+    <item>
+      <title>The First Hubble Detection of a Secondary Eclipse from a Rocky Exoplanet: the 5.4-hour planet TOI-2431 b</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-31966v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-31966v1</guid>
+      <pubDate>Tue, 29 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Sebastian Zieba et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Variable X-ray flux may explain variable helium escape from the habitable-zone exoplanet LHS 1140b</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-31859v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-31859v1</guid>
+      <pubDate>Tue, 29 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Collin Cherubim, Tim Cunningham, Jason A. Dittmann</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>A temperate sub-Neptune transiting the M4 Dwarf TOI-210 identified by NIRPS and TESS -- Uncovering hidden M-dwarf planetary systems in the near-infrared</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-35747v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-35747v1</guid>
+      <pubDate>Tue, 29 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>C. Cadieux et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>The NEID Earth Twin Survey. VI. Discovery of a Low-Mass Planet Orbiting HD 126053 and RV Signals Near the Rotation Periods of HD 168009 and HD 10780</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-32097v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-32097v1</guid>
+      <pubDate>Tue, 29 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Arvind F. Gupta et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>Investigating potential causes for high inferred intrinsic temperatures of warm transiting Neptune and Sub-Neptune planets</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-32044v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-32044v1</guid>
+      <pubDate>Tue, 29 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Saugata Barat et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>K-dwarf starspot hunters: how to directly characterize spot and faculae properties with UV-IR panchromatic transit spectra</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-35676v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-35676v1</guid>
+      <pubDate>Tue, 29 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Joanna K. Barstow et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+        <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>Spectral Properties of Solar Wind Charge Exchange from Earth&#x27;s Magnetospheric Boundaries: MHD and Test Particle Simulations</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2609-35098v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2609-35098v1</guid>
+      <pubDate>Tue, 29 Sep 2026 20:00:00 +0000</pubDate>
+      <dc:creator>A. Ramachandran et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>physics.space-ph</category>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.SR</category>
+        <category>physics.comp-ph</category>
+        <category>physics.plasm-ph</category>
     </item>
   </channel>
 </rss>
