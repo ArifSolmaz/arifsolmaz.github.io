@@ -16,7 +16,6 @@ daha küçük gruplarda süreleri kısaltmanız yeterli.
 | Sunum (TR) | [sunum/](sunum/) | 37 slaytlık ders anlatımı | Eğitmen projeksiyonda; öğrenci evde tekrar |
 | Sunum (EN) | [sunum/en/](sunum/en/) | Aynı sunumun İngilizcesi | İngilizce ders / değişim öğrencileri |
 | Hazır araçlar | [hazir-araclar.md](hazir-araclar.md) | Learn Git Branching (Türkçe, hesapsız) ve GitHub Skills kurslarını derste kullanma | Her öğrenci |
-| Git oyun alanı | [oyun-alani/](oyun-alani/) · [EN](oyun-alani/en/) | İsteğe bağlı yedek: hesapsız robot simülatörü | — |
 | Örnek eğitim deposu | [ornek-depo/](ornek-depo/) | Gerçek GitHub uygulaması için başlangıç dosyaları | Takımlar |
 | Katılımcı el kitabı | [katilimci-el-kitabi.md](katilimci-el-kitabi.md) | Gerçek GitHub'da adım adım alıştırmalar | Öğrenci |
 | Alıştırmalar | [alistirmalar.md](alistirmalar.md) | Süreli sınıf içi görevler | Eğitmen |
@@ -230,12 +229,6 @@ projeksiyonda birlikte bakın:
 | GitHub Skills | Adımdan sonra bot yazmadı | **Actions** sekmesinde işin bitmesini beklesin; kırmızıysa adımı kontrol etsin (doğru branch adı, doğru dosya). |
 | GitHub Skills | Depoyu private açtı | Public olarak yeniden kopyalasın. |
 
-### 5.4 Kendi oyun alanımız (yedek)
-
-Sitedeki [Git oyun alanı](oyun-alani/) isteğe bağlı bir yedektir: Learn Git
-Branching'e erişilemezse ya da “push edilmeyen kod robota gitmez” fikrini
-göstermek isterseniz kullanabilirsiniz.
-
 ## 6. Gerçek GitHub uygulaması: 40–45 kişi
 
 Tek bir depoya 45 kişiyi davet etmek işe yaramaz: PR listesi kalabalıklaşır,
@@ -339,8 +332,6 @@ açıldıysa public olarak yeniden kopyalatın.
   oluşturulup bu depoya gönderilmelidir.
 - Learn Git Branching ve GitHub Skills dış araçlardır; dönem başında bağlantıların
   ve kurs adlarının değişmediğini kontrol edin.
-- İsteğe bağlı oyun alanı tek bir HTML dosyasıdır (`oyun-alani/index.html`,
-  İngilizcesi `oyun-alani/en/index.html`).
 - GitHub'ın arayüzü zamanla değişir; slayt 32'deki ekran görüntülerini dönem
   başında yenileyin. Claude Code ve Codex kurulum komutlarını da dönem başında
   kendi dokümanlarından kontrol edin.

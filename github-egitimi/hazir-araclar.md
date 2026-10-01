@@ -97,10 +97,3 @@ Sunum (kavram)  →  Learn Git Branching (Git'te ne oluyor?)  →  GitHub Skills
 - **Ödev:** Introduction to GitHub kursu + Learn Git Branching Remote 1–6.
 - **Ders 2:** Sunum 15–37 → Review pull requests ve Resolve merge conflicts →
   takım depolarında uygulama.
-
-## Kendi oyun alanımız (isteğe bağlı)
-
-Pakette ayrıca hesapsız çalışan bir [Git oyun alanı](oyun-alani/) da var: robot
-projesi üzerinde 13 görev. Learn Git Branching'e erişilemeyen bir durumda ya da
-“push edilmeyen kod robota gitmez” fikrini göstermek için yedek olarak
-kullanılabilir.

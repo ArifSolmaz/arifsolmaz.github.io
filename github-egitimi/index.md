@@ -27,8 +27,6 @@ uygulama.
   kendi GitHub hesabında, bir botun adım adım yönlendirdiği gerçek kurslar
   (branch, pull request, review, merge conflict).
 
-İsteğe bağlı yedek: hesapsız çalışan [Git oyun alanı](oyun-alani/).
-
 ## Başlangıç
 
 - [Eğitmen rehberi](egitmen-rehberi.md)

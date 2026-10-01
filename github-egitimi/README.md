@@ -26,7 +26,6 @@ başlar; ikinci oturumda GitHub Desktop veya terminale geçilebilir.
 - [katilimci-el-kitabi.md](katilimci-el-kitabi.md): katılımcılara verilecek adım adım not
 - [alistirmalar.md](alistirmalar.md): sınıf içinde yapılacak uygulamalar
 - [hazir-araclar.md](hazir-araclar.md): Learn Git Branching ve GitHub Skills'i derste kullanma
-- [oyun-alani/](oyun-alani/): isteğe bağlı, hesapsız Git simülatörü
 - [sunum/](sunum/): tarayıcıda çalışan hazır ders sunumu (Türkçe; İngilizcesi `sunum/en/`)
 - [slayt-iskeleti.md](slayt-iskeleti.md): sunum hazırlamak için başlıklar
 - [degerlendirme-listesi.md](degerlendirme-listesi.md): katılımcıların kazanımlarını kontrol listesi
