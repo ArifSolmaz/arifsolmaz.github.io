@@ -11,6 +11,7 @@ adım adım talimatları [katılımcı el kitabındadır](katilimci-el-kitabi.md
 | Kod | Alıştırma | Nerede? | Ne zaman? | Süre |
 |---|---|---|---|---|
 | N0 | Git gerekli mi? | Tartışma / örnek senaryolar | Ders 1 | 10 dk |
+| R1 | Gerçek repo okuma | [Gerçek GitHub örnekleri](gercek-ornekler/) | Ders 1 ya da ödev | 10–20 dk |
 | L1 | Commit ve branch | Learn Git Branching | Ders 1 | 15 dk |
 | L2 | Merge | Learn Git Branching | Ders 1 | 10 dk |
 | L3 | Revert (hızlılar için) | Learn Git Branching | Ders 1 | 5–10 dk |
@@ -50,6 +51,28 @@ Başarı ölçütü:
 
 - Öğrenci “Git gerekli mi?” sorusuna sadece “evet/hayır” değil, gerekçeli cevap verebiliyor.
 - Öğrenci depoya girmemesi gereken dosya türlerine örnek verebiliyor.
+
+### R1. Gerçek repo okuma
+
+**Amaç:** GitHub'ın yalnızca “dosya yükleme sitesi” olmadığını, yaşayan bir proje
+yönetim alanı olduğunu görmek.
+
+Öğrenciler [Gerçek GitHub örnekleri](gercek-ornekler/) sayfasından bir repo seçer:
+PX4, ArduPilot, OpenCV, ROS 2, Arduino IDE, VS Code, CPython ya da Home Assistant.
+
+Beş soruya kısa cevap yazarlar:
+
+1. README size projenin ne yaptığını 30 saniyede anlattı mı?
+2. Issues sekmesinde en sık görünen etiketler ne?
+3. Açık bir pull request'te hangi dosyalar değişmiş?
+4. Son release notunda kullanıcıyı ilgilendiren bir değişiklik var mı?
+5. Star sayısına bakmadan, bu repo sağlıklı görünüyor mu? Neden?
+
+Başarı ölçütü:
+
+- Öğrenci README, Issues, Pull requests ve Releases sekmelerini bulabiliyor.
+- Öğrenci star sayısını tek başına kalite ölçütü sanmıyor.
+- Öğrenci gerçek bir PR diff'ini okumayı denemiş oluyor.
 
 ## Ders 1 — Learn Git Branching (sınıfta, çiftler hâlinde)
 

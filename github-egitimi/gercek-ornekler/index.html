@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gerçek GitHub örnekleri | GitHub Eğitimi</title>
+  <meta name="description" content="Ders için gerçek GitHub depoları, kullanım senaryoları ve popüler depo keşif kaynakları.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..800&family=JetBrains+Mono:wght@500..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/course.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../">GitHub Eğitimi</a>
+    <nav class="nav" aria-label="Gerçek örnekler bağlantıları">
+      <a href="../neden-git/">Neden Git?</a>
+      <a href="../sunum/">Sunum</a>
+      <a href="../student/">Öğrenci</a>
+      <a href="../instructor/">Eğitmen</a>
+      <a href="../../">Arif Solmaz</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <p class="eyebrow">Gerçek dünya turu</p>
+      <h1>Öğrencilere GitHub'ın canlı ekosistem olduğunu gösterin</h1>
+      <p>
+        GitHub yalnızca ödev teslim yeri değildir. Açık kaynak projelerde issue,
+        pull request, release, review, test ve dokümantasyon aynı yerde görünür.
+        Bu sayfayı derste kısa bir repo turu için kullanın.
+      </p>
+      <div class="button-row">
+        <a class="button primary" href="#repo-turu">Repo turu</a>
+        <a class="button secondary" href="#kesif">Popülerleri keşfet</a>
+        <a class="button secondary" href="#arama">Arama tarifleri</a>
+      </div>
+    </section>
+
+    <section class="page-section" id="repo-turu">
+      <p class="eyebrow">Sınıfta açılacak depolar</p>
+      <h2>Somut repo örnekleri ve derste bakılacak yerler</h2>
+      <div class="grid two">
+        <a class="card" href="https://github.com/PX4/PX4-Autopilot">
+          <span class="meta">Uçuş kontrolü</span>
+          <h3>PX4/PX4-Autopilot</h3>
+          <p>Drone/autopilot projesi. Issues, pull requests, releases ve test durumları mekatronik öğrencisi için doğrudan anlamlıdır.</p>
+          <span class="arrow">PR diff ve release aç</span>
+        </a>
+        <a class="card" href="https://github.com/ArduPilot/ardupilot">
+          <span class="meta">Otonom araçlar</span>
+          <h3>ArduPilot/ardupilot</h3>
+          <p>Robot, uçak, rover ve deniz araçları için büyük, uzun yaşayan bir açık kaynak ekosistemi.</p>
+          <span class="arrow">Issue etiketlerine bak</span>
+        </a>
+        <a class="card" href="https://github.com/opencv/opencv">
+          <span class="meta">Görüntü işleme</span>
+          <h3>opencv/opencv</h3>
+          <p>Bilgisayarlı görü için klasik örnek. Release, documentation, bug report ve review kültürü iyi gösterilir.</p>
+          <span class="arrow">Release ve PR incele</span>
+        </a>
+        <a class="card" href="https://github.com/ros2/ros2">
+          <span class="meta">Robotik altyapı</span>
+          <h3>ros2/ros2</h3>
+          <p>Birçok alt depoyu bir araya getiren robotik meta deposu. Büyük projelerde tek repo yetmeyebilir fikrini anlatır.</p>
+          <span class="arrow">Alt repo yapısını göster</span>
+        </a>
+        <a class="card" href="https://github.com/arduino/arduino-ide">
+          <span class="meta">Kullanıcı ürünü</span>
+          <h3>arduino/arduino-ide</h3>
+          <p>Öğrencilerin tanıdığı bir aracın issue ve pull request üzerinden nasıl geliştirildiğini gösterir.</p>
+          <span class="arrow">Bug issue aç</span>
+        </a>
+        <a class="card" href="https://github.com/microsoft/vscode">
+          <span class="meta">Büyük ekip pratiği</span>
+          <h3>microsoft/vscode</h3>
+          <p>Çok büyük bir ürün reposu. Etiketler, milestones, discussions, release notes ve issue triage için iyi örnek.</p>
+          <span class="arrow">Labels ve milestones aç</span>
+        </a>
+        <a class="card" href="https://github.com/python/cpython">
+          <span class="meta">Dil geliştirme</span>
+          <h3>python/cpython</h3>
+          <p>Bir programlama dilinin bile issue, review, test ve release ile yönetildiğini gösterir.</p>
+          <span class="arrow">Pull request kontrollerini göster</span>
+        </a>
+        <a class="card" href="https://github.com/home-assistant/core">
+          <span class="meta">Topluluk katkısı</span>
+          <h3>home-assistant/core</h3>
+          <p>Çok sayıda cihaz entegrasyonu olan bir topluluk projesi. Katkı rehberi ve review yükü görünürdür.</p>
+          <span class="arrow">Contributing dosyasına bak</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="page-section alt">
+      <p class="eyebrow">Ders akışı</p>
+      <h2>10 dakikalık repo okuma alıştırması</h2>
+      <div class="steps">
+        <article class="step">
+          <h3>README</h3>
+          <p>Proje ne yapıyor, nasıl kurulur, kime hitap ediyor? README bunu anlatıyor mu?</p>
+        </article>
+        <article class="step">
+          <h3>Issues</h3>
+          <p>Hatalar, istekler ve kararlar nasıl yazılmış? Etiketler ne işe yarıyor?</p>
+        </article>
+        <article class="step">
+          <h3>Pull requests</h3>
+          <p>Diff okunabiliyor mu? Review yorumları somut mu? Testler geçiyor mu?</p>
+        </article>
+        <article class="step">
+          <h3>Releases</h3>
+          <p>Değişiklikler kullanıcıya nasıl duyurulmuş? Sürüm notları anlaşılır mı?</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="page-section" id="kesif">
+      <p class="eyebrow">Canlı keşif kaynakları</p>
+      <h2>Bugün ne popüler, ne yükseliyor, ne konuşuluyor?</h2>
+      <div class="link-list">
+        <a class="link-item" href="https://github.com/trending"><strong>GitHub Trending</strong><span>bugünün yükselenleri</span></a>
+        <a class="link-item" href="https://github.com/search?q=stars%3A%3E50000&type=repositories&s=stars&o=desc"><strong>Most starred repos</strong><span>GitHub araması</span></a>
+        <a class="link-item" href="https://github.com/topics"><strong>GitHub Topics</strong><span>konuya göre keşif</span></a>
+        <a class="link-item" href="https://github.com/collections"><strong>GitHub Collections</strong><span>kürasyon listeleri</span></a>
+        <a class="link-item" href="https://ossinsight.io/trending"><strong>OSS Insight Trending</strong><span>alternatif trend verisi</span></a>
+        <a class="link-item" href="https://star-history.com"><strong>Star History</strong><span>star büyüme grafiği</span></a>
+        <a class="link-item" href="https://hn.algolia.com/?dateRange=all&page=0&prefix=false&query=github.com&sort=byPopularity&type=story"><strong>Hacker News Search</strong><span>GitHub linkleri, puana göre</span></a>
+        <a class="link-item" href="https://hn.algolia.com/?dateRange=all&page=0&prefix=false&query=Show%20HN%20github.com&sort=byPopularity&type=story"><strong>Show HN + GitHub</strong><span>yeni araç lansmanları</span></a>
+      </div>
+      <p>
+        Not: Star sayısı kalite garantisi değildir; GitHub bunu yaklaşık ilgi
+        sinyali olarak kullanır. Repo seçerken yıldızla birlikte son commit,
+        açık issue, PR kalitesi, lisans ve dokümantasyona da bakın.
+      </p>
+    </section>
+
+    <section class="page-section alt" id="arama">
+      <p class="eyebrow">Arama tarifleri</p>
+      <h2>Öğrencinin kendi alanında repo bulması için hazır sorgular</h2>
+      <div class="grid two">
+        <a class="card" href="https://github.com/search?q=topic%3Arobotics+stars%3A%3E1000&type=repositories&s=stars&o=desc">
+          <span class="meta">Robotik</span>
+          <h3><code>topic:robotics stars:&gt;1000</code></h3>
+          <p>Robotik alanında çok yıldızlı depoları bulur. Sonra Issues ve Pull requests sekmelerinden proje sağlığını kontrol edin.</p>
+          <span class="arrow">Aramayı aç</span>
+        </a>
+        <a class="card" href="https://github.com/search?q=topic%3Aarduino+stars%3A%3E500&type=repositories&s=stars&o=desc">
+          <span class="meta">Arduino</span>
+          <h3><code>topic:arduino stars:&gt;500</code></h3>
+          <p>Mikrodenetleyici, kütüphane ve örnek proje depolarını keşfetmek için hızlı başlangıç.</p>
+          <span class="arrow">Aramayı aç</span>
+        </a>
+        <a class="card" href="https://github.com/search?q=language%3APython+stars%3A%3E10000&type=repositories&s=stars&o=desc">
+          <span class="meta">Python</span>
+          <h3><code>language:Python stars:&gt;10000</code></h3>
+          <p>Bilimsel hesaplama, otomasyon ve yapay zeka tarafında popüler Python depolarını gösterir.</p>
+          <span class="arrow">Aramayı aç</span>
+        </a>
+        <a class="card" href="https://github.com/search?q=label%3A%22good+first+issue%22+state%3Aopen&type=issues">
+          <span class="meta">İlk katkı</span>
+          <h3><code>good first issue</code></h3>
+          <p>Yeni katkı yapacaklar için etiketlenmiş açık issue'ları gösterir. Önce katkı rehberini okuyun.</p>
+          <span class="arrow">Aramayı aç</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <p class="eyebrow">Sınıf tartışması</p>
+      <h2>Bir repoya bakınca sorulacak sorular</h2>
+      <div class="quote-panel">
+        <p>
+          “Bu repo güvenilir mi?” sorusunu yalnızca star sayısıyla cevaplamayın:
+          son etkinlik, açık issue'lar, PR review'ları, testler, release notları,
+          lisans ve README birlikte okunur.
+        </p>
+      </div>
+      <div class="button-row">
+        <a class="button light" href="../sunum/">Sunuma dön</a>
+        <a class="button ghost" href="../instructor/">Eğitmen planına dön</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p><a href="../">Atölye ana sayfasına dön</a></p>
+  </footer>
+</body>
+</html>

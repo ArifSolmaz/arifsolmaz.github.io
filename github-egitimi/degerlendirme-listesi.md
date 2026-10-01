@@ -8,6 +8,7 @@ Kanıtların çoğu GitHub'da kendiliğinden birikir; ayrıca sınav yapmanız g
 | Kanıt | Nerede? | Nasıl kontrol edilir? |
 |---|---|---|
 | Learn Git Branching seviyeleri | Öğrencinin tarayıcısı | Seviye menüsünün ekran görüntüsü (Ders 1: Introduction 1–3; ödev: Push & Pull 1–6) |
+| Gerçek repo okuma | Öğrencinin kısa cevapları / sınıf tartışması | README, Issues, Pull requests ve Releases sekmelerinden kanıt gösterebiliyor mu |
 | GitHub Skills deposu | Öğrencinin gönderdiği depo bağlantısı | Gönderilen bağlantıyı açın; kursun son adımına ulaşılmış mı, birleştirilmiş PR var mı |
 | Birleştirilmiş PR | Takım deposu → Pull requests → Closed | Öğrencinin PR'ı birleşmiş mi, açıklamasında `Closes #` var mı |
 | Review yorumu | Takım deposu → PR → Files changed | Öğrencinin en az bir satır yorumu ve bir Approve / Request changes kararı var mı |
@@ -23,6 +24,7 @@ toplamak ve her takım deposunun **Pull requests → Closed** listesine bakmak.
 |---|---|---:|---:|---:|
 | Git'in hangi durumlarda gerekli olduğunu gerekçelendirebiliyor | N0 senaryo tartışması / çıkış sorusu |  |  |  |
 | Git'in yalnızca komut değil çalışma yöntemi olduğunu açıklayabiliyor | Çıkış sorusu |  |  |  |
+| Gerçek bir açık kaynak depoda README, issue, PR, release ve star sinyallerini okuyabiliyor | R1 gerçek repo okuma |  |  |  |
 | Git ile GitHub'ı ayırt edebiliyor | Çıkış sorusu / sunum testi (slayt 30) |  |  |  |
 | Commit'in ne olduğunu açıklayabiliyor | Learn Git Branching L1 |  |  |  |
 | Branch'in neden kullanıldığını açıklayabiliyor | Learn Git Branching L1, Alıştırma B |  |  |  |

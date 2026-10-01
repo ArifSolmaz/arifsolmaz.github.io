@@ -1,4 +1,4 @@
-# Hazır araçlar: Learn Git Branching ve GitHub Skills
+# Hazır araçlar: Learn Git Branching, GitHub Skills ve repo keşfi
 
 Kavramları denemek için kendi aracımızı yazmak yerine, milyonlarca kişinin
 kullandığı iki ücretsiz araçla çalışıyoruz. İkisi de birbirini tamamlar:
@@ -99,6 +99,9 @@ Sunum (kavram)  →  Learn Git Branching (Git'te ne oluyor?)  →  GitHub Skills
 
 - **45 dakikalık ders:** yalnızca sunum. Learn Git Branching Giriş 1–3 ve
   Introduction to GitHub kursu dersten sonra isteyenler içindir (sunum, 36. slayt).
+  Aynı slayttaki gerçek repo turu için [Gerçek GitHub örnekleri](gercek-ornekler/)
+  sayfasını kullanın; popüler depolar, GitHub Trending ve Hacker News arama
+  bağlantıları orada hazırdır.
 
 Uygulamalı (2 × 100 dk) sürümde:
 

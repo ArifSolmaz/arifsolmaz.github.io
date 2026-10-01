@@ -11,6 +11,7 @@ Canlı sayfa: <https://arifsolmaz.github.io/github-egitimi/>
 
 - `index.html`: temiz ana sayfa
 - `neden-git/`: Git gerekli mi, nasıl kullanılır, best practices
+- `gercek-ornekler/`: gerçek GitHub depoları, kullanım senaryoları ve popüler repo keşif kaynakları
 - `student/`: öğrenciler için dersten sonra izlenecek yol
 - `instructor/`: eğitmen için ders akışı ve hazırlık masası
 - `sunum/`: Türkçe slayt destesi
@@ -21,7 +22,7 @@ Canlı sayfa: <https://arifsolmaz.github.io/github-egitimi/>
 - `egitmen-rehberi.md`: dakika dakika ders akışı ve genişletilmiş atölye planı
 - `katilimci-el-kitabi.md`: öğrenci için ayrıntılı adım adım rehber
 - `alistirmalar.md`: uygulamalı sürüm için alıştırmalar
-- `hazir-araclar.md`: Learn Git Branching ve GitHub Skills kullanımı
+- `hazir-araclar.md`: Learn Git Branching, GitHub Skills ve repo keşif kaynakları
 - `degerlendirme-listesi.md`: kanıt ve değerlendirme tablosu
 - `ornek-depo/`: takım uygulaması için kopyalanabilir başlangıç deposu
 

@@ -7,6 +7,7 @@ da kurulum bilmeniz gerekmiyor.
 
 **Yanınızda açık tutun:**
 [Neden Git?](neden-git/) ·
+[Gerçek GitHub örnekleri](gercek-ornekler/) ·
 [Sunum](sunum/) ·
 [Learn Git Branching (Türkçe)](https://learngitbranching.js.org/?locale=tr_TR) ·
 [GitHub Skills — Introduction to GitHub](https://github.com/skills/introduction-to-github)
@@ -32,7 +33,7 @@ Kolaydan zora dört yol (sunumun 36. slaytı):
 | 1. Learn Git Branching: commit, branch, merge'ü canlı bir ağaçta görün | 15 dk, hesap gerekmez | Aşağıda bölüm 2 |
 | 2. İlk reponuz: GitHub Docs “Hello World” | 30 dk | [Sunum, 33. slayt](sunum/#33) |
 | 3. GitHub Skills: Introduction to GitHub | yaklaşık 1 saat | Aşağıda bölüm 3.1 |
-| 4. Kendi projeniz için bir repo | kendi hızınızda | Aşağıda bölüm 6 |
+| 4. Gerçek repo turu: popüler ve iyi yönetilen depoları okuyun | kendi hızınızda | [Gerçek GitHub örnekleri](gercek-ornekler/) |
 
 Hocanız uygulamalı (2 × 100 dakikalık) sürümü yapıyorsa aşağıdaki yol haritası
 ve takım alıştırmaları (bölüm 4) da geçerlidir.
@@ -45,7 +46,7 @@ ve takım alıştırmaları (bölüm 4) da geçerlidir.
 | Ders 1 | Sunum + Learn Git Branching'de commit, branch, merge | 100 dk |
 | Ödev | GitHub Skills “Introduction to GitHub” kursu + Learn Git Branching push/pull | 1–1,5 saat |
 | Ders 2 | Sunum + takım deponuzda issue, branch, pull request, review, çakışma | 100 dk |
-| Sonrası | Kendi projeniz için bir depo, profil README'si | — |
+| Sonrası | Gerçek repo turu, kendi projeniz için bir depo, profil README'si | — |
 
 ## Temel kavramlar
 

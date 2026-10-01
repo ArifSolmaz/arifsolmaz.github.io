@@ -26,6 +26,7 @@ Ders sonunda öğrenci şunları söyleyebilmeli:
 | Parça | Bağlantı | Ne için? | Kim kullanır? |
 |---|---|---|---|
 | Neden Git? | [neden-git/](neden-git/) | Gereklilik, gerçek kullanım ve best practices | Herkes |
+| Gerçek GitHub örnekleri | [gercek-ornekler/](gercek-ornekler/) | PX4, ArduPilot, OpenCV, ROS 2, VS Code gibi depolarda issue, PR, release ve star sinyallerini okumak | Herkes |
 | Sunum (TR) | [sunum/](sunum/) | 37 slaytlık ders anlatımı | Eğitmen projeksiyonda; öğrenci evde tekrar |
 | Sunum (EN) | [sunum/en/](sunum/en/) | Aynı sunumun İngilizcesi | İngilizce ders / değişim öğrencileri |
 | Hazır araçlar | [hazir-araclar.md](hazir-araclar.md) | Learn Git Branching (Türkçe, hesapsız) ve GitHub Skills kurslarını derste kullanma | Her öğrenci |
@@ -42,7 +43,8 @@ Katmanlar birbirini tamamlar:
    komut yazar, commit ağacı anında değişir. Yanlış yapmak bedavadır.
 4. **GitHub Skills** aynı adımları gerçek GitHub arayüzünde, bir botun
    yönlendirmesiyle tek başına yaptırır.
-5. **Takım deposu** hepsini gerçek bir takımla tekrarlatır.
+5. **Gerçek repo turu** öğrenciye açık kaynakta aynı akışların nasıl yaşadığını gösterir.
+6. **Takım deposu** hepsini gerçek bir takımla tekrarlatır.
 
 Her kavram için sıra aynıdır: **problem → iyi alışkanlık → Git'te ne oluyor → GitHub'da nasıl yapılır**.
 
@@ -61,7 +63,7 @@ tablo nerede durup nerede hızlanacağınızı gösterir.
 | 7–17 | 8–14 | 1. bölüm: kişisel repo | 9'daki komut kutusunu atlayın. 12 (günlük döngü) ve 13 (commit mesajı) asıl slaytlar. |
 | 17–30 | 15–23 | 2. bölüm: takım | 17 (branch ve PR) ve 20 (conflict) asıl slaytlar. 21–22'yi birer cümleyle geçin. |
 | 30–37 | 24–28 | 3. bölüm: yapay zekâ | 26 (güvenli akış) ve 28 (kurallar) yeter; 25 ve 27'yi kısa tutun. |
-| 37–43 | 29–32 | Kapanış: test ve Hello World | 30'da öğrenciler bir dakika yanındakiyle tartışsın. 31–32'de Hello World'ü kendi hesabınızda 3–4 dakikada canlı yapın. |
+| 37–43 | 29–32 | Kapanış: gerçek repo turu, test ve Hello World | 29'da yalnızca 1–2 canlı depo açın; 30'da öğrenciler bir dakika yanındakiyle tartışsın. 31–32'de Hello World'ü kendi hesabınızda 3–4 dakikada canlı yapın. |
 | 43–45 | 33–37 | İsteyenler için | 33'ü yaptırmayın, gösterin. 36'da durun ve dört yolu söyleyin (2.2). |
 
 **Canlı gösterim için:** dersten önce Hello World'ü bir kez prova edin. Zaman
@@ -80,7 +82,7 @@ yapılabilir; adım adım talimatlar sitede hazırdır.
 | 1. Learn Git Branching, Giriş 1–3 | 15 dk, hesap gerekmez | [Hazır araçlar](hazir-araclar.md), [el kitabı bölüm 2](katilimci-el-kitabi.md) |
 | 2. İlk repo (Hello World, slayt 33) | 30 dk | Sunumun 31–34. slaytları |
 | 3. GitHub Skills: Introduction to GitHub | yaklaşık 1 saat | [El kitabı bölüm 3.1](katilimci-el-kitabi.md) |
-| 4. Kendi projesi için repo | kendi hızında | [El kitabı bölüm 6](katilimci-el-kitabi.md) |
+| 4. Gerçek repo turu | kendi hızında | [Gerçek GitHub örnekleri](gercek-ornekler/) |
 
 Derste şöyle söyleyebilirsiniz:
 
@@ -88,8 +90,9 @@ Derste şöyle söyleyebilirsiniz:
 > Learn Git Branching'i açsın: hesap açmadan, 15 dakikada commit ve branch'i
 > gözüyle görür. Biraz daha isteyen 33. slayttaki altı adımla ilk reposunu açsın.
 > Daha da ileri gitmek isteyen GitHub Skills'in Introduction to GitHub kursunu
-> bitirsin; bir bot adım adım yönlendiriyor. Hepsinin bağlantısı atölye
-> sayfasında.”
+> bitirsin; bir bot adım adım yönlendiriyor. Sonra gerçek repo turunda PX4,
+> OpenCV ve VS Code gibi projelerin issue ve PR'larını okusun. Hepsinin
+> bağlantısı atölye sayfasında.”
 
 Dersten sonra öğrencilere gönderebileceğiniz mesaj:
 
@@ -101,7 +104,8 @@ Sunum ve isteğe bağlı devam yolları:
 https://arifsolmaz.github.io/github-egitimi/
 Kolaydan zora: (1) Learn Git Branching, 15 dk, hesap gerekmez;
 (2) ilk reponuz, sunumun 33. slaytı, 30 dk; (3) GitHub Skills
-"Introduction to GitHub", ~1 saat; (4) kendi projeniz için bir repo.
+"Introduction to GitHub", ~1 saat; (4) gerçek repo turu: PX4, OpenCV,
+VS Code ve popüler repo listeleri.
 Takıldığınız yeri bir sonraki derste sorun.
 ```
 
@@ -119,7 +123,7 @@ ve 6 bu sürüm içindir.
 
 | Dakika | Ne yapılır | Slayt | Oyun alanı |
 |---|---|---|---|
-| 0–10 | Sorun: `son_GERCEKTEN.ino` klasörü; GitHub nedir | 1–5 | — |
+| 0–10 | Sorun: `son_GERCEKTEN.ino` klasörü; Git gerekli mi; Git ve GitHub farkı | 1–5 | — |
 | 10–20 | Terimler, yaşam döngüsü | 6–7 | — |
 | 20–35 | Kurulum (yalnızca hesap), repo yapısı, Markdown | 8–11 | — |
 | 35–45 | Günlük döngü ve commit mesajları | 12–13 | Projeksiyonda Learn Git Branching 1. seviyeyi siz yapın |
@@ -225,10 +229,10 @@ kaydırarak gezilir.
 | 1 Kapak | Hedefi söyleyin: 45 dakika, bilgisayar gerekmez; isteyenler için devam yolları sonda. |
 | 2 Plan | Öğrenme çıktılarını başta okuyun, kapanışta dönün. |
 | 3 Sorun | “Bilgisayarında böyle bir klasör olan?” diye sorun; eller kalkar. Dosya adıyla sürüm tutmak elle yapılan bir sürüm kontrolüdür. |
-| 4 GitHub nedir | GitHub'ın yalnızca yazılım şirketleri için olmadığını vurgulayın; bizim için “yazılım” firmware, kontrol kodu, simülasyon ve doküman demek. |
+| 4 Git gerekli mi | Git'in her işte şart olmadığını vurgulayın; geçmiş, ekip çalışması veya güvenli deneme gerekiyorsa erken başlamak rahatlatır. |
 | 5 Git ve GitHub | En sık karışan konu. GitLab ve Bitbucket da Git kullanır. |
 | 6 Terimler | Ezberletmeyin; deftere yazdırın. Commit, branch, push gibi terimler sektörde İngilizce kullanılır. |
-| 7 Yaşam döngüsü | Bu derste ilk üç aşama: planla, oluştur, incele. Actions sonraki konu. |
+| 7 Günlük Git akışı | Issue → branch → commit → push → PR → review → merge akışını ekip davranışı olarak anlatın; komut listesi olarak değil. |
 | 9 Kurulum | Hesap açmak dersin parçası değil; devam etmek isteyenler evde açar. Komut kutusunu atlayın. |
 | 10 Repo yapısı | Repo oluştururken “Add a README” ve bir `.gitignore` şablonu (C++/Python) seçtirin. |
 | 11 Markdown | README'nin Markdown ile yazıldığını gösterin; Hello World gösteriminde **Preview** sekmesini açın. |
@@ -247,13 +251,14 @@ kaydırarak gezilir.
 | 26 Güvenli ajan akışı | Ajana Türkçe de yazılabilir. 5. adım (donanımda test) pazarlık konusu değil. |
 | 27 GitHub içinde ajanlar | Soldaki konuşma örnektir. `@claude` için repoda `/install-github-app` ile kurulum ve yazma yetkisi gerekir. Bir demo reposunda bir kez kurun. |
 | 28 Kurallar | Ders politikanızı doldurun. Ajanların commit'leri çoğu zaman `Co-authored-by` satırı taşır. |
+| 29 Gerçek depolar | En fazla iki repo açın. Öneri: PX4'te bir PR, OpenCV'de bir release, VS Code'da labels/milestones. Star sayısının kalite garantisi olmadığını söyleyin. |
 | 30 Test | Cevaplar: 1) Git geçmişi tutan program, GitHub onu barındıran site; 2) commit yerel, push GitHub'a; 3) `main` hep çalışmalı, denemeler branch'te; 4) PR birleşince issue #7 kapanır. Kahoot/Mentimeter'a da aktarılabilir. |
 | 31 Hello World | GitHub Docs'taki resmî alıştırma. Adlar `hello-world` ve `readme-edits`. |
 | 32 Nereye tıklanır | Hello World'ü burada canlı yapın, her tıklamayı söyleyin. Yeni başlayanlar için en önemli an. |
 | 33 Kendiniz deneyin | Derste yaptırmayın; “evde 30 dakika” deyin. Sık takılmalar: doğrulama e-postası, branch'e geçmeden düzenlemek. |
 | 34 Merge sonrası | Profil README'sini isteyenlere önerin. |
 | 35 Komut özeti | Göstermeniz yeter; PDF olarak paylaşın. |
-| 36 Bundan sonrası | Burada durun ve dört yolu söyleyin (bölüm 2.2). Atölye sayfasının adresini tahtaya yazın. |
+| 36 Bundan sonrası | Burada durun ve dört yolu söyleyin (bölüm 2.2). Gerçek repo turunu ödev değil merak yolu gibi sunun; atölye sayfasının adresini tahtaya yazın. |
 
 ## 5. Hazır araçlarla 40–45 kişilik sınıf
 
