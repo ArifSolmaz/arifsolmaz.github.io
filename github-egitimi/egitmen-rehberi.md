@@ -54,8 +54,7 @@ tablo nerede durup nerede hızlanacağınızı gösterir.
 **Canlı gösterim için:** dersten önce Hello World'ü bir kez prova edin. Zaman
 kalmazsa yalnızca pull request açmayı ve merge'ü gösterin.
 
-**Zaman sıkışırsa sırayla şunları kısaltın:** 3. bölüm (24–28; öğrenciler evde
-`N` ile okuyabilir), sonra 13, 14, 21, 22, 29, 34 ve 35. 17, 20, 31–32 ve 36'yı
+**Zaman sıkışırsa sırayla şunları kısaltın:** 3. bölüm (24–28), sonra 13, 14, 21, 22, 29, 34 ve 35. 17, 20, 31–32 ve 36'yı
 kısaltmayın.
 
 ### 2.2 Dersin sonunda: isteyenler için dört yol
@@ -66,7 +65,7 @@ yapılabilir; adım adım talimatlar sitede hazırdır.
 | Yol | Süre | Öğrenci nereden başlar? |
 |---|---|---|
 | 1. Learn Git Branching, Giriş 1–3 | 15 dk, hesap gerekmez | [Hazır araçlar](hazir-araclar.md), [el kitabı bölüm 2](katilimci-el-kitabi.md) |
-| 2. İlk repo (Hello World, slayt 33) | 30 dk | Sunumun 31–34. slaytları; `N` ile açıklamalar |
+| 2. İlk repo (Hello World, slayt 33) | 30 dk | Sunumun 31–34. slaytları |
 | 3. GitHub Skills: Introduction to GitHub | yaklaşık 1 saat | [El kitabı bölüm 3.1](katilimci-el-kitabi.md) |
 | 4. Kendi projesi için repo | kendi hızında | [El kitabı bölüm 6](katilimci-el-kitabi.md) |
 
@@ -183,7 +182,6 @@ Ders süresinin ilk 20 dakikası buna gider.
 | `→` `Space` `PageDown` | Sonraki slayt |
 | `←` `PageUp` | Önceki slayt |
 | `Home` / `End` | İlk / son slayt |
-| `N` | Slaytın sade açıklaması (öğrenciye yönelik) |
 | `O` | Tüm slaytlar; tıklayıp atlayın |
 | `F` | Tam ekran |
 | `P` | Yazdır; “PDF olarak kaydet” ile her slayt bir sayfa olur |
@@ -191,13 +189,6 @@ Ders süresinin ilk 20 dakikası buna gider.
 Her slaytın kendi adresi vardır (`sunum/#18` gibi); öğrencilere doğrudan ilgili
 slaytı gönderebilirsiniz. TR/EN butonu aynı slaytta dil değiştirir. Telefonda
 kaydırarak gezilir.
-
-### 4.2 Açıklamalar öğrenci için yazıldı
-
-`N` ile açılan metinler **öğrenciye** yöneliktir: her terimi ilk geçtiği yerde
-açıklar, “siz” diye hitap eder. Projeksiyonda açık bırakırsanız sınıf da okur;
-evde tekrar eden öğrenci için asıl destek budur. Sizin için ipuçları aşağıdaki
-4.4 bölümündedir.
 
 ### 4.3 Derse girmeden doldurmanız gereken yerler
 

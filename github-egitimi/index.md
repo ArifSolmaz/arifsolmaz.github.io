@@ -9,8 +9,7 @@ rehberler var.
 
 **[Slaytları aç → Mekatronik Mühendisleri için GitHub](sunum/)** · [English version](sunum/en/)
 
-Tarayıcıda çalışan, 37 slaytlık ders sunumu. Ok tuşlarıyla ilerleyin; `N` her slaytın
-sade açıklamasını, `O` tüm slaytları açar, `F` tam ekran yapar, `P` ile PDF olarak
+Tarayıcıda çalışan, 37 slaytlık ders sunumu. Ok tuşlarıyla ilerleyin; `O` tüm slaytları açar, `F` tam ekran yapar, `P` ile PDF olarak
 kaydedebilirsiniz. Bölümler: Git ve GitHub'a giriş, kişisel repo, takım projesi
 yönetimi (issue, branch, pull request, review, conflict), Claude Code ve Codex gibi
 yapay zekâ kodlama ajanları ve GitHub Docs'taki “Hello World” akışının canlı

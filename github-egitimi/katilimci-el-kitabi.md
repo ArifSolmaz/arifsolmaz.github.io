@@ -5,7 +5,7 @@ Programlama, komut satırı ya da kurulum bilmeniz gerekmiyor. Takıldığınız
 bu sayfaya, sonra yanınızdaki arkadaşınıza, sonra hocanıza bakın.
 
 **Yanınızda açık tutun:**
-[Sunum](sunum/) (`N` tuşu her slaytın sade açıklamasını açar) ·
+[Sunum](sunum/) ·
 [Learn Git Branching (Türkçe)](https://learngitbranching.js.org/?locale=tr_TR) ·
 [GitHub Skills — Introduction to GitHub](https://github.com/skills/introduction-to-github)
 
