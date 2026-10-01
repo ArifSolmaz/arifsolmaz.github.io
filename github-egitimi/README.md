@@ -1,11 +1,10 @@
 # GitHub Eğitimi
 
-Lise seviyesi 45 dakikalık GitHub dersi. Ana amaç komut ezberi değil:
-GitHub'ın ne için kullanıldığını, neden yazılımcılar için önemli olduğunu,
-insanların kod, web sitesi, portfolyo, görev takibi, açık kaynak ve release gibi
-alanlarda nasıl kullandığını anlatmak. Devam etmek isteyen öğrenciler Learn Git
-Branching, GitHub Skills, GitHub Pages ve takım deposu alıştırmalarıyla pratik
-yapar.
+45 dakikalık sade GitHub dersi. Ana amaç komut ezberi değil:
+GitHub'ın ne için kullanıldığını, neden yazılımcılar ve ekipler için önemli olduğunu,
+insanların kod, web sitesi, kendini gösterme, görev takibi, açık paylaşım ve yeni sürüm
+alanlarında nasıl kullandığını anlatmak. Devam etmek isteyen öğrenciler görsel Git
+alıştırması, GitHub Skills, GitHub Pages ve takım projesi alıştırmalarıyla pratik yapar.
 
 Canlı sayfa: <https://arifsolmaz.github.io/github-egitimi/>
 
@@ -13,7 +12,7 @@ Canlı sayfa: <https://arifsolmaz.github.io/github-egitimi/>
 
 - `index.html`: temiz ana sayfa
 - `neden-git/`: GitHub ne için kullanılır, neden önemlidir, best practices
-- `gercek-ornekler/`: GitHub Pages, Issues, PR, portfolyo, release, açık kaynak ve repo keşif örnekleri
+- `gercek-ornekler/`: web sayfası, görev listesi, değişiklik önerisi, kişisel vitrin, yeni sürüm, açık kaynak ve proje keşif örnekleri
 - `student/`: öğrenciler için dersten sonra izlenecek yol
 - `instructor/`: eğitmen için ders akışı ve hazırlık masası
 - `sunum/`: Türkçe slayt destesi
@@ -24,7 +23,7 @@ Canlı sayfa: <https://arifsolmaz.github.io/github-egitimi/>
 - `egitmen-rehberi.md`: dakika dakika ders akışı ve genişletilmiş atölye planı
 - `katilimci-el-kitabi.md`: öğrenci için ayrıntılı adım adım rehber
 - `alistirmalar.md`: uygulamalı sürüm için alıştırmalar
-- `hazir-araclar.md`: Learn Git Branching, GitHub Skills ve repo keşif kaynakları
+- `hazir-araclar.md`: görsel Git alıştırması, GitHub Skills ve proje keşif kaynakları
 - `degerlendirme-listesi.md`: kanıt ve değerlendirme tablosu
 - `ornek-depo/`: takım uygulaması için kopyalanabilir başlangıç deposu
 

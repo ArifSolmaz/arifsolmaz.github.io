@@ -1,11 +1,10 @@
 # Eğitmen rehberi
 
-Bu rehber, GitHub'ı yalnızca komut ya da repo arayüzü olarak değil, lise
-seviyesinde anlaşılacak bir proje kültürü olarak nasıl öğreteceğinizi anlatır:
-ne için kullanılır, neden önemlidir, insanlar gerçek hayatta nasıl kullanır,
-yazılımcılar için neden değerlidir, sonra isteyenler hangi araçlarla pratik
-yapar. 40–45 kişilik bir sınıf düşünülerek yazıldı; daha küçük gruplarda
-süreleri kısaltmanız yeterli.
+Bu rehber, GitHub'ı yalnızca komut ya da ekran anlatımı olarak değil, sade bir
+proje kültürü olarak nasıl öğreteceğinizi anlatır: ne için kullanılır, neden
+önemlidir, insanlar gerçek hayatta nasıl kullanır, yazılımcılar için neden
+değerlidir, sonra isteyenler hangi araçlarla pratik yapar. 40–45 kişilik bir
+sınıf düşünülerek yazıldı; daha küçük gruplarda süreleri kısaltmanız yeterli.
 
 > Kısa yol: Ders **45 dakika ve yalnızca sunumdur**; öğrencinin bilgisayar
 > başında bir şey yapması gerekmez. İlk hedef Git'in neden gerekli olduğunu ve
@@ -17,20 +16,20 @@ süreleri kısaltmanız yeterli.
 
 Ders sonunda öğrenci şunları söyleyebilmeli:
 
-- GitHub'ın yalnızca “kod deposu” değil; web sitesi, portfolyo, görev takibi,
-  açık kaynak ve yayın platformu olarak da kullanıldığını.
+- GitHub'ın yalnızca “kod koyma yeri” değil; web sitesi, kişisel vitrin, görev
+  takibi, açık kaynak ve yayın alanı olarak da kullanıldığını.
 - Yazılımcılar için GitHub'ın neden temel bir mesleki beceri olduğunu.
-- Bir ekibin issue, commit, pull request, review ve release gibi kavramlarla işi
-  nasıl görünür hale getirdiğini.
-- İyi kullanımda küçük adım, açık açıklama, review ve gizli veri disiplininin
-  neden önemli olduğunu.
+- Bir ekibin görev kaydı, kayıt notu, değişiklik önerisi, gözden geçirme ve yeni
+  sürüm gibi kavramlarla işi nasıl görünür hale getirdiğini.
+- İyi kullanımda küçük adım, açık açıklama, gözden geçirme ve gizli veri
+  disiplininin neden önemli olduğunu.
 
 ## 1. Paketin parçaları
 
 | Parça | Bağlantı | Ne için? | Kim kullanır? |
 |---|---|---|---|
-| Neden Git? | [neden-git/](neden-git/) | Gereklilik, gerçek kullanım ve best practices | Herkes |
-| Gerçek GitHub örnekleri | [gercek-ornekler/](gercek-ornekler/) | GitHub Pages, Issues, PR, portfolyo, release ve açık kaynak örneklerini göstermek | Herkes |
+| Neden Git? | [neden-git/](neden-git/) | Gereklilik, gerçek kullanım ve iyi alışkanlıklar | Herkes |
+| Gerçek GitHub örnekleri | [gercek-ornekler/](gercek-ornekler/) | Web sayfası, görev listesi, değişiklik önerisi, kişisel vitrin, yeni sürüm ve açık kaynak örneklerini göstermek | Herkes |
 | Sunum (TR) | [sunum/](sunum/) | 37 slaytlık ders anlatımı | Eğitmen projeksiyonda; öğrenci evde tekrar |
 | Sunum (EN) | [sunum/en/](sunum/en/) | Aynı sunumun İngilizcesi | İngilizce ders / değişim öğrencileri |
 | Hazır araçlar | [hazir-araclar.md](hazir-araclar.md) | Learn Git Branching (Türkçe, hesapsız) ve GitHub Skills kurslarını derste kullanma | Her öğrenci |
@@ -42,13 +41,13 @@ Ders sonunda öğrenci şunları söyleyebilmeli:
 Katmanlar birbirini tamamlar:
 
 1. **Neden Git?** aracın hangi probleme cevap verdiğini netleştirir.
-2. **Sunum** kavramı anlatır (commit nedir, branch neden var).
-3. **Learn Git Branching** kavramın Git tarafında ne yaptığını gösterir: öğrenci
-   komut yazar, commit ağacı anında değişir. Yanlış yapmak bedavadır.
+2. **Sunum** kavramı anlatır: kaydetme, ayrı deneme, gözden geçirme ve paylaşma.
+3. **Görsel Git alıştırması** kavramın Git tarafında ne yaptığını gösterir:
+   öğrenci komut yazsa bile ekranda bir ağaç görür. Yanlış yapmak bedavadır.
 4. **GitHub Skills** aynı adımları gerçek GitHub arayüzünde, bir botun
    yönlendirmesiyle tek başına yaptırır.
-5. **Gerçek repo turu** aynı akışların açık kaynakta nasıl yaşadığını somutlaştırır.
-6. **Takım deposu** hepsini gerçek bir takımla tekrarlatır.
+5. **Gerçek proje turu** aynı akışların açık kaynakta nasıl yaşadığını somutlaştırır.
+6. **Takım projesi** hepsini gerçek bir takımla tekrarlatır.
 
 45 dakikalık teorik derste sıra şudur: **ne için kullanılır → neden önemli → insanlar nasıl kullanır → iyi alışkanlık → isteyenler için pratik**.
 
@@ -63,11 +62,11 @@ tablo nerede durup nerede hızlanacağınızı gösterir.
 
 | Dakika | Slayt | Bölüm | Nerede durun, nerede hızlanın |
 |---|---|---|---|
-| 0–8 | 1–7 | Giriş: ne için, neden | GitHub'ı “kod yükleme sitesi” diye değil, proje hafızası ve vitrini diye anlatın. 6–7'de web sitesi, portfolyo, issue, release örneklerini vurgulayın. |
-| 8–18 | 8–11 | Yazılımcı için önemi | Kurulum anlatmayın; mesleki değer, proje sayfası, web sitesi ve dokümantasyon örneklerinde durun. |
-| 18–30 | 12–23 | Temel iş akışı | Commit, main, branch, PR ve review'u kavram düzeyinde anlatın. Komutları ezberletmeyin; “ne problemi çözüyor?” diye bağlayın. |
-| 30–35 | 24–28 | Yapay zekâ ve güven | Bu bölümü kısa tutun: sorumluluk, gizli veri, review ve test fikrini verin. |
-| 35–41 | 29–30 | Gerçek örnekler ve kontrol | 29'da VS Code, Python, kişisel site, project board, release gibi farklı kullanım alanlarını gösterin. |
+| 0–8 | 1–7 | Giriş: ne için, neden | GitHub'ı “kod yükleme sitesi” diye değil, proje hafızası ve vitrini diye anlatın. 6–7'de web sitesi, kişisel vitrin, görev listesi ve yeni sürüm örneklerini vurgulayın. |
+| 8–18 | 8–11 | İş ve okul için değeri | Kurulum anlatmayın; mesleki değer, proje sayfası, web sitesi ve kullanım notu örneklerinde durun. |
+| 18–30 | 12–23 | Temel iş akışı | Kaydetme, ana sürüm, ayrı deneme, değişiklik önerisi ve gözden geçirmeyi kavram düzeyinde anlatın. Komutları ezberletmeyin; “ne problemi çözüyor?” diye bağlayın. |
+| 30–35 | 24–28 | Yapay zekâ ve güven | Bu bölümü kısa tutun: sorumluluk, gizli veri, insan kontrolü ve test fikrini verin. |
+| 35–41 | 29–30 | Gerçek örnekler ve kontrol | 29'da VS Code, Python, kişisel site, proje panosu ve yeni sürüm gibi farklı kullanım alanlarını gösterin. |
 | 41–45 | 31–37 | Demo ve devam yolu | Hello World'ü hızlı gösterin; 36'da Learn Git Branching, ilk proje, GitHub Pages ve gerçek örnekleri söyleyin. |
 
 **Canlı gösterim için:** dersten önce Hello World'ü bir kez prova edin. Zaman
@@ -85,7 +84,7 @@ yapılabilir; adım adım talimatlar sitede hazırdır.
 | 1. Learn Git Branching, Giriş 1–3 | 15 dk, hesap gerekmez | [Hazır araçlar](hazir-araclar.md), [el kitabı bölüm 2](katilimci-el-kitabi.md) |
 | 2. İlk repo (Hello World, slayt 33) | 30 dk | Sunumun 31–34. slaytları |
 | 3. GitHub Skills: Introduction to GitHub | yaklaşık 1 saat | [El kitabı bölüm 3.1](katilimci-el-kitabi.md) |
-| 4. Gerçek repo turu | kendi hızında | [Gerçek GitHub örnekleri](gercek-ornekler/) |
+| 4. Gerçek proje turu | kendi hızında | [Gerçek GitHub örnekleri](gercek-ornekler/) |
 
 Derste şöyle söyleyebilirsiniz:
 
@@ -93,7 +92,7 @@ Derste şöyle söyleyebilirsiniz:
 > Learn Git Branching'i açsın: hesap açmadan, 15 dakikada commit ve branch'i
 > gözüyle görür. Biraz daha isteyen 33. slayttaki altı adımla ilk reposunu açsın.
 > Daha da ileri gitmek isteyen GitHub Skills'in Introduction to GitHub kursunu
-> bitirsin; bir bot adım adım yönlendiriyor. Sonra gerçek repo turunda PX4,
+> bitirsin; bir bot adım adım yönlendiriyor. Sonra gerçek proje turunda PX4,
 > OpenCV ve VS Code gibi projelerin issue ve PR'larını okusun. Hepsinin
 > bağlantısı atölye sayfasında.”
 
@@ -107,7 +106,7 @@ Sunum ve isteğe bağlı devam yolları:
 https://arifsolmaz.github.io/github-egitimi/
 Kolaydan zora: (1) Learn Git Branching, 15 dk, hesap gerekmez;
 (2) ilk reponuz, sunumun 33. slaytı, 30 dk; (3) GitHub Skills
-"Introduction to GitHub", ~1 saat; (4) gerçek repo turu: PX4, OpenCV,
+"Introduction to GitHub", ~1 saat; (4) gerçek proje turu: PX4, OpenCV,
 VS Code ve popüler repo listeleri.
 Takıldığınız yeri bir sonraki derste sorun.
 ```
@@ -261,7 +260,7 @@ kaydırarak gezilir.
 | 33 Kendiniz deneyin | Derste yaptırmayın; “evde 30 dakika” deyin. Sık takılmalar: doğrulama e-postası, branch'e geçmeden düzenlemek. |
 | 34 Merge sonrası | Profil README'sini isteyenlere önerin. |
 | 35 Komut özeti | Göstermeniz yeter; PDF olarak paylaşın. |
-| 36 Bundan sonrası | Burada durun ve dört yolu söyleyin (bölüm 2.2). Gerçek repo turunu ödev değil merak yolu gibi sunun; atölye sayfasının adresini tahtaya yazın. |
+| 36 Bundan sonrası | Burada durun ve dört yolu söyleyin (bölüm 2.2). Gerçek proje turunu ödev değil merak yolu gibi sunun; atölye sayfasının adresini tahtaya yazın. |
 
 ## 5. Hazır araçlarla 40–45 kişilik sınıf
 
