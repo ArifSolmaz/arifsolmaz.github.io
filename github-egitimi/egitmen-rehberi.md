@@ -1,13 +1,13 @@
 # Eğitmen rehberi
 
 Bu rehber, paketin tamamını bir sınıfta nasıl kullanacağınızı anlatır: tarayıcıda
-çalışan **sunum**, hesap gerektirmeyen **Git oyun alanı** ve gerçek GitHub'da
-yapılan **uygulama**. 40–45 kişilik bir mekatronik sınıfı düşünülerek yazıldı;
+çalışan **sunum**, kavramları denemek için **hazır araçlar** (Learn Git Branching
+ve GitHub Skills) ve gerçek GitHub'da yapılan **takım uygulaması**. 40–45 kişilik bir mekatronik sınıfı düşünülerek yazıldı;
 daha küçük gruplarda süreleri kısaltmanız yeterli.
 
-> Kısa yol: Ders 1'de sunumun 1–14. slaytları + oyun alanının 1–5. görevleri;
-> Ders 2'de 15–37. slaytlar + oyun alanının 6–13. görevleri + gerçek GitHub'da
-> takım uygulaması. Ayrıntılar aşağıda.
+> Kısa yol: Ders 1'de sunumun 1–14. slaytları + Learn Git Branching giriş
+> seviyeleri; ödev olarak GitHub Skills “Introduction to GitHub”; Ders 2'de
+> 15–37. slaytlar + gerçek GitHub'da takım uygulaması. Ayrıntılar aşağıda.
 
 ## 1. Paketin parçaları
 
@@ -15,8 +15,8 @@ daha küçük gruplarda süreleri kısaltmanız yeterli.
 |---|---|---|---|
 | Sunum (TR) | [sunum/](sunum/) | 37 slaytlık ders anlatımı | Eğitmen projeksiyonda; öğrenci evde tekrar |
 | Sunum (EN) | [sunum/en/](sunum/en/) | Aynı sunumun İngilizcesi | İngilizce ders / değişim öğrencileri |
-| Git oyun alanı (TR) | [oyun-alani/](oyun-alani/) | Hesapsız, risksiz Git simülatörü; 13 görev | Her öğrenci kendi tarayıcısında |
-| Git oyun alanı (EN) | [oyun-alani/en/](oyun-alani/en/) | Oyun alanının İngilizcesi | — |
+| Hazır araçlar | [hazir-araclar.md](hazir-araclar.md) | Learn Git Branching (Türkçe, hesapsız) ve GitHub Skills kurslarını derste kullanma | Her öğrenci |
+| Git oyun alanı | [oyun-alani/](oyun-alani/) · [EN](oyun-alani/en/) | İsteğe bağlı yedek: hesapsız robot simülatörü | — |
 | Örnek eğitim deposu | [ornek-depo/](ornek-depo/) | Gerçek GitHub uygulaması için başlangıç dosyaları | Takımlar |
 | Katılımcı el kitabı | [katilimci-el-kitabi.md](katilimci-el-kitabi.md) | Gerçek GitHub'da adım adım alıştırmalar | Öğrenci |
 | Alıştırmalar | [alistirmalar.md](alistirmalar.md) | Süreli sınıf içi görevler | Eğitmen |
@@ -25,16 +25,18 @@ daha küçük gruplarda süreleri kısaltmanız yeterli.
 Üç katman birbirini tamamlar:
 
 1. **Sunum** kavramı anlatır (commit nedir, branch neden var).
-2. **Oyun alanı** kavramı güvenle denetir: öğrenci butona basar ve dosyaya, commit
-   geçmişine ve robota etkisini anında görür. Yanlış yapmak bedavadır.
-3. **Gerçek GitHub** aynı akışı gerçek arayüzde ve gerçek bir takımla tekrarlatır.
+2. **Learn Git Branching** kavramın Git tarafında ne yaptığını gösterir: öğrenci
+   komut yazar, commit ağacı anında değişir. Yanlış yapmak bedavadır.
+3. **GitHub Skills** aynı adımları gerçek GitHub arayüzünde, bir botun
+   yönlendirmesiyle tek başına yaptırır.
+4. **Takım deposu** hepsini gerçek bir takımla tekrarlatır.
 
-Her kavram için sıra aynıdır: **anlat → oyun alanında dene → GitHub'da yap**.
+Her kavram için sıra aynıdır: **anlat → Learn Git Branching'de dene → GitHub'da yap**.
 
 ## 2. Önerilen ders planı (2 × 100 dakika)
 
-Bütün içerik tek derse sığmaz; iki derse bölün. Aradaki haftada öğrenciler oyun
-alanını bitirir ve hesaplarını hazırlar.
+Bütün içerik tek derse sığmaz; iki derse bölün. Aradaki haftada öğrenciler hesaplarını
+açar ve GitHub Skills'in ilk kursunu bitirir.
 
 ### Ders 1 — Tek başına: commit, push, branch
 
@@ -43,23 +45,24 @@ alanını bitirir ve hesaplarını hazırlar.
 | 0–10 | Sorun: `son_GERCEKTEN.ino` klasörü; GitHub nedir | 1–5 | — |
 | 10–20 | Terimler, yaşam döngüsü | 6–7 | — |
 | 20–35 | Kurulum (yalnızca hesap), repo yapısı, Markdown | 8–11 | — |
-| 35–45 | Günlük döngü ve commit mesajları | 12–13 | Projeksiyonda görev 1–3'ü siz yapın |
-| 45–70 | **Oyun alanı, çiftler hâlinde** | — | Görev 1–5 |
-| 70–80 | Kontrol noktası: “GitHub etiketi neden kımıldamadı?” | — | Görev 2–3 tartışması |
-| 80–90 | `.gitignore` ve şifreler | 14 | Görev 9 (isteğe bağlı) |
+| 35–45 | Günlük döngü ve commit mesajları | 12–13 | Projeksiyonda Learn Git Branching 1. seviyeyi siz yapın |
+| 45–70 | **Learn Git Branching, çiftler hâlinde** | — | Giriş 1–3 (commit, branch, merge) |
+| 70–80 | Kontrol noktası: “Merge commit'inin neden iki ebeveyni var?” | 17 | Hızlanma 4 (revert) hızlı bitirenlere |
+| 80–90 | `.gitignore` ve şifreler | 14 | — |
 | 90–100 | Çıkış soruları, ödev | — | — |
 
-**Ödev (Ders 2'ye kadar):** oyun alanında 13 görevi bitirip tamamlama kartının
-ekran görüntüsünü gönderin; GitHub hesabını açın ve e-postayı doğrulayın;
-GitHub Education'a başvurun (isteğe bağlı).
+**Ödev (Ders 2'ye kadar):** GitHub hesabını açıp e-postayı doğrulayın; GitHub
+Skills [Introduction to GitHub](https://github.com/skills/introduction-to-github)
+kursunu bitirip depo bağlantısını gönderin; Learn Git Branching'de Remote → Push &
+Pull 1–6. seviyeleri yapın; GitHub Education'a başvurun (isteğe bağlı).
 
 ### Ders 2 — Takımla: issue, pull request, review, conflict, yapay zekâ
 
 | Dakika | Ne yapılır | Slayt | Oyun alanı / GitHub |
 |---|---|---|---|
-| 0–10 | Ödevdeki takılmalar; 3–4 kartı projeksiyonda gösterin | — | Kartlar |
-| 10–30 | Issue, branch, diff, review, conflict | 15–20 | Görev 6–8 ve 11 projeksiyonda |
-| 30–40 | Pano, milestone, sık hatalar | 21–23 | Görev 12 |
+| 0–10 | Ödevdeki takılmalar; 3–4 öğrencinin Skills deposunu projeksiyonda açın | — | Skills depoları |
+| 10–30 | Issue, branch, diff, review, conflict | 15–20 | Projeksiyonda bir Skills deposundaki PR'ın diff'i |
+| 30–40 | Pano, milestone, sık hatalar | 21–23 | Learn Git Branching Remote 5 (Fake Teamwork) projeksiyonda |
 | 40–55 | Yapay zekâ ajanları | 24–28 | Canlı demo (sizin hesabınızla) |
 | 55–60 | Hızlı test | 30 | — |
 | 60–65 | Hello World akışı ve nereye tıklanır | 31–32 | — |
@@ -68,9 +71,9 @@ GitHub Education'a başvurun (isteğe bağlı).
 
 ### Tek ders zorunluysa (120 dakika)
 
-Slayt 1–7 (15 dk) → oyun alanı görev 1–8 (35 dk) → slayt 15–20 (15 dk) →
-Hello World uygulaması, **bireysel** (35 dk) → slayt 33–37 (10 dk) → çıkış
-(10 dk). 3. bölümü (yapay zekâ) ve takım çalışmasını ikinci bir derse bırakın.
+Slayt 1–7 (15 dk) → Learn Git Branching Giriş 1–3 (20 dk) → slayt 15–20
+(15 dk) → GitHub Skills Introduction to GitHub, **bireysel** (50 dk) → slayt
+33–37 (10 dk) → çıkış (10 dk). 3. bölümü (yapay zekâ) ve takım çalışmasını ikinci bir derse bırakın.
 
 ## 3. Dersten önce: kontrol listesi
 
@@ -78,15 +81,17 @@ Hello World uygulaması, **bireysel** (35 dk) → slayt 33–37 (10 dk) → çı
 
 - [ ] Öğrencilere hazırlık mesajını gönderin (aşağıda).
 - [ ] Laboratuvar bilgisayarlarında güncel bir tarayıcı (Chrome, Edge, Firefox)
-      olduğunu ve `arifsolmaz.github.io` ile `github.com`'un açıldığını kontrol edin.
+      olduğunu ve `arifsolmaz.github.io`, `learngitbranching.js.org` ile
+      `github.com`'un açıldığını kontrol edin.
 - [ ] Takım depolarını hazırlayın (Bölüm 6).
 - [ ] Sunumdaki boş alanları doldurun (Bölüm 4.3).
 
 **Ders günü, 15 dakika önce**
 
-- [ ] Projeksiyonda sunumu `F` ile tam ekran açın; ikinci sekmede oyun alanı,
+- [ ] Projeksiyonda sunumu `F` ile tam ekran açın; ikinci sekmede
+      [Learn Git Branching (Türkçe)](https://learngitbranching.js.org/?locale=tr_TR),
       üçüncüde kendi demo deponuz.
-- [ ] Oyun alanında **Baştan başla**'ya basın ki gösterim temiz başlasın.
+- [ ] Learn Git Branching'i gizli pencerede açın ki seviyeler sıfırdan başlasın.
 - [ ] Sınıf Wi-Fi'ı ve projeksiyon çözünürlüğü (sunum 16:9 ölçeklenir).
 
 **Öğrencilere hazırlık mesajı**
@@ -96,7 +101,7 @@ Merhaba, [tarih] dersinde GitHub'a başlıyoruz. Lütfen derse gelmeden:
 1. github.com'da ücretsiz bir hesap açın (üniversite e-postanızla) ve
    e-postanızı doğrulayın. Kullanıcı adını CV'nize yazabileceğiniz biçimde seçin.
 2. Şu sayfayı açıp çalıştığını kontrol edin:
-   https://arifsolmaz.github.io/github-egitimi/oyun-alani/
+   https://learngitbranching.js.org/?locale=tr_TR
 Programlama ya da kurulum gerekmiyor; dizüstü bilgisayarınızı getirin.
 ```
 
@@ -155,17 +160,17 @@ evde tekrar eden öğrenci için asıl destek budur. Sizin için ipuçları aşa
 | 9 Kurulum | Hesap açmayı ödev verin. Ders tamamen tarayıcıda yürür; Git kurmak gerekmez. |
 | 10 Repo yapısı | Repo oluştururken “Add a README” ve bir `.gitignore` şablonu (C++/Python) seçtirin. |
 | 11 Markdown | Uygulamada README düzenleyecekler. GitHub'da **Preview** sekmesini gösterin. |
-| 12 Günlük döngü | Komutlar yalnızca tanısınlar diye; bugün tarayıcıdayız. Burada oyun alanına geçin. |
+| 12 Günlük döngü | Komutlar yalnızca tanısınlar diye; bugün tarayıcıdayız. Burada Learn Git Branching'e geçin. |
 | 13 Commit mesajı | “Kp 2.0'dan 1.4'e düşürüldü” mesajı, robot salınım yaparsa neyi geri alacağınızı söyler. |
-| 14 `.gitignore` | ESP32 kodunda ev Wi-Fi şifresi klasik hatadır. `secrets_example.h` boş değerlerle commit edilir. Oyun alanı görev 9. |
+| 14 `.gitignore` | ESP32 kodunda ev Wi-Fi şifresi klasik hatadır. `secrets_example.h` boş değerlerle commit edilir. |
 | 16 Issue | WhatsApp grubunun yerini alır. “Closes #12” yazılan PR birleşince issue kapanır. |
 | 17 Branch ve PR | Kural: `main` her zaman robotta çalışan sürüm. |
 | 18 Diff | “Files changed”da bir satıra gelip `+` ile satıra yorum bırakmayı gösterin. |
-| 19 Review | Comment / Approve / Request changes. Çiftleri eşleştirip birbirlerinin PR'ını inceletin. |
-| 20 Conflict | HEAD = sizin branch'iniz, `=======` altı = gelen. İşaretler silinmezse kod derlenmez; oyun alanında robot da “derlenmiyor” der. |
+| 19 Review | Comment / Approve / Request changes. Çiftleri eşleştirip birbirlerinin PR'ını inceletin. Pratik için GitHub Skills “Review pull requests”. |
+| 20 Conflict | HEAD = sizin branch'iniz, `=======` altı = gelen. İşaretler silinmezse kod derlenmez. Pratik için GitHub Skills “Resolve merge conflicts”. |
 | 21 Pano | Haftalık toplantıda “kim ne yaptı?” yerine panoyu açın. Donanım işleri de panoya. |
 | 22 Milestone | Haftaları kendi izlencenize göre değiştirin. Katkı grafiği bireysel katkıyı görünür kılar. |
-| 23 Sık hatalar | `revert` geçmişi silmez; `--amend` yalnızca push edilmemiş son commit için. Oyun alanı görev 10 ve 12. |
+| 23 Sık hatalar | `revert` geçmişi silmez; `--amend` yalnızca push edilmemiş son commit için. Learn Git Branching: Hızlanma 4, Remote 5–6. |
 | 25 Claude Code / Codex | İkisi de ücretli plan ya da API kredisi ister. Windows'ta Claude Code PowerShell'de `irm https://claude.ai/install.ps1 \| iex` ile kurulur. Güncel komutlar için dokümanlara bakın. |
 | 26 Güvenli ajan akışı | Ajana Türkçe de yazılabilir. 5. adım (donanımda test) pazarlık konusu değil. |
 | 27 GitHub içinde ajanlar | Soldaki konuşma örnektir. `@claude` için repoda `/install-github-app` ile kurulum ve yazma yetkisi gerekir. Bir demo reposunda bir kez kurun. |
@@ -177,89 +182,59 @@ evde tekrar eden öğrenci için asıl destek budur. Sizin için ipuçları aşa
 | 34 Merge sonrası | Ödev önerisi: profil README'si. |
 | 35 Komut özeti | PDF olarak verin ya da laboratuvar masalarına koyun. |
 
-## 5. Git oyun alanı ile 40–45 kişilik sınıf
+## 5. Hazır araçlarla 40–45 kişilik sınıf
 
-### 5.1 Nasıl çalışıyor?
+Kullanım ayrıntıları ve seviye/kurs listesi: [hazir-araclar.md](hazir-araclar.md).
 
-- **Sunucu yok.** Sayfa bir kez yüklenir; bütün simülasyon öğrencinin kendi
-  tarayıcısında çalışır. 45 kişi aynı anda açsa da kimse diğerini yavaşlatmaz;
-  GitHub Pages yalnızca küçük bir dosya (yaklaşık 60 KB) gönderir.
-- **Herkesin kendi dünyası var.** Bir öğrencinin yaptığı commit başkasının
-  ekranında görünmez. “Takım arkadaşın push etsin” butonu ortak çalışmayı
-  simüle eder; gerçek ortak çalışma Bölüm 6'daki gerçek GitHub uygulamasındadır.
-- **Gerçek GitHub'a dokunmaz.** Hesap, giriş, internet üzerinden yazma yok.
-  “Push”, “Pull request” ve “Merge” aynı sayfadaki sahte bir GitHub'a gider.
-- **İlerleme o tarayıcıda saklanır.** Sekme kapanıp açılınca kaldığı yerden
-  devam eder. Gizli pencerede, tarayıcı kapanınca silinir. Başka bir bilgisayara
-  taşınmaz.
-- **İnternet kesilirse:** Sayfa yüklendikten sonra internetsiz çalışır (yazı tipi
-  yalnızca daha sade görünür).
+### 5.1 Learn Git Branching (sınıfta)
 
-### 5.2 Sınıfı düzenlemek
+- **Sunucu yükü yok:** sayfa bir kez yüklenir, her şey öğrencinin tarayıcısında
+  çalışır. 45 kişi aynı anda kullanabilir; hesap gerekmez.
+- **Türkçe açın:** `https://learngitbranching.js.org/?locale=tr_TR`. Sola `levels`
+  yazmak seviye menüsünü açar; `reset` seviyeyi, `undo` son adımı geri alır.
+- **Çiftler hâlinde** çalıştırın (yaklaşık 22 çift): biri yazar, diğeri seviyenin
+  anlatımını okur ve hedef ağaçla karşılaştırır. Her seviyede rol değiştirsinler.
+- **Dizüstü ya da laboratuvar bilgisayarı** kullanın; telefonda komut yazmak zor.
+- **İlerleme o tarayıcıda saklanır;** farklı bilgisayarda ya da gizli pencerede
+  baştan başlar.
 
-- **Çiftler hâlinde çalıştırın** (yaklaşık 22 çift). Biri klavyede (sürücü),
-  diğeri görev metnini okur ve “Gözle” kısmını kontrol eder (yönlendirici).
-  Her 4–5 görevde rol değiştirsinler. 45 ayrı ekrandan daha az soru gelir ve
-  öğrenciler kavramı birbirine anlatır.
-- **Dizüstü ya da laboratuvar bilgisayarı kullanın.** Telefonda çalışır ama
-  dosya, grafik ve robot alt alta dizildiği için çok kaydırma gerekir.
-- **Ortak laboratuvar bilgisayarlarında:** her grup çıkarken **Baştan başla**'ya
-  bassın; yoksa sonraki öğrenci önceki ilerlemeyi görür.
-- **Asistan ya da gönüllü öğrenci:** 40+ kişide bir yardımcı çok fark eder.
-  Oyun alanını önceden bitirmiş 3–4 öğrenciyi “yardımcı” yapın.
+**Kontrol noktaları.** Herkes kendi hızında ilerler ama sınıfı üç kez durdurup
+projeksiyonda birlikte bakın:
 
-### 5.3 Senkron ilerlemek: kontrol noktaları
-
-Herkes kendi hızında ilerler ama sınıfı üç noktada durdurun ve projeksiyonda
-birlikte bakın:
-
-| Kontrol noktası | Görevler | Sınıfa sorun |
+| Nokta | Seviye | Sınıfa sorun |
 |---|---|---|
-| A | 1–3 | “Commit ettiniz ama GitHub etiketi neden kımıldamadı? Robot neden değişmedi?” |
-| B | 4–8 | “Branch'te README'yi değiştirdiniz; main'e geçince neden yoktu? Merge'den sonra neden Pull yapmanız gerekti?” |
-| C | 9–13 | “Revert neden geçmişi silmiyor? Çakışmada kararı kim verdi?” |
+| A | Giriş 1–2 | “`git branch` yeni bir commit oluşturdu mu? Yıldız (*) neyi gösteriyor?” |
+| B | Giriş 3 | “Merge commit'inin neden iki ebeveyni var? GitHub'da PR'ı merge edince ne olur?” |
+| C | Hızlanma 4 (hızlılar) | “`revert` ile `reset` arasındaki fark ne? Ortak bir branch'te hangisi güvenli?” |
 
-Hızlı bitirenlere: `.gitignore`'dan `secrets.h` satırını silip commit etmeyi ve
-ne olduğunu gözlemlemeyi önerin (sayfa uyarı verir), ya da yavaş bir çifte
-yardımcı olmalarını isteyin.
+### 5.2 GitHub Skills (ödev ve Ders 2)
 
-### 5.4 Takip ve değerlendirme
+- Her öğrenci kursu **kendi hesabına** kopyalar (Copy Exercise) ve depoyu
+  **Public** yapar; private depoda Actions dakikası harcanır.
+- Bot her adımı kontrol edip sonrakini yazar. 45 öğrenci aynı anda başlayabilir;
+  her depo kendi işini çalıştırır.
+- **Takip:** depo bağlantılarını bir forma ya da LMS'e toplayın. Depoyu açınca
+  öğrencinin hangi adımda olduğu görünür; bu, sınıfta el kaldırtmaktan daha
+  güvenilir bir kanıttır.
+- Kurslar İngilizcedir. Ders 1'de slayt 31 (Hello World) ve slayt 32'yi Türkçe
+  anlattıysanız talimatlar zorlamaz.
 
-Sayfanın sunucusu olmadığı için eğitmen paneli yoktur. Bunun yerine:
+### 5.3 Sık takılmalar
 
-- Görevler panelinin altındaki **Tamamlama kartı**: öğrenci adını yazar; kart adı,
-  kaç görevin bittiğini, saati ve 1–13 arası kutuları gösterir.
-- Ödev olarak kartın ekran görüntüsünü LMS'e ya da bir forma yüklettirin.
-- Sınıfta “Kartında kaç yeşil kutu var?” diye el kaldırtmak hızlı bir yoklamadır.
-
-Kart bir sınav aracı değildir (aynı tarayıcıda başkası da bitirebilir). Asıl
-ölçüm, gerçek GitHub'daki PR'lar ve review yorumlarıdır (Bölüm 8).
-
-### 5.5 Görevlerde sık takılmalar
-
-| Görev | Takılma | Çözüm |
+| Araç | Takılma | Çözüm |
 |---|---|---|
-| 2 Commit | Mesaj yazmadan Commit'e basıyor | Sayfa mesaj ister; “ne değişti?” diye sorun. |
-| 5 Güvende | Değişikliği commit etmeden main'e geçmeye çalışıyor | Sayfa izin vermez; önce commit. Gerçek Git'te de benzer bir uyarı çıkar. |
-| 6 PR | Branch listesi boş | Branch push edilmemiş. PR, GitHub'daki branch'ten açılır. |
-| 7 Merge | Issue kapanmadı | PR açıklamasında `Closes #1` yok; yeni PR'da yazsın. |
-| 10 Revert | Robot hâlâ bozuk | Revert yerel; Push'a basmadı. Bu görevin asıl dersi bu. |
-| 11 Conflict | Merge'e basınca çakışma çıkmadı | İki tarafta da aynı Kp satırı değişmeli **ve** ikisi de push edilmeli. |
-| 12 Reddedilen push | Pull da reddedildi | Önce yerel değişiklikler commit edilmeli. |
+| Learn Git Branching | Seviye geçmiyor | Hedef ağaçla karşılaştırsın (`show goal`); `reset` ile baştan. |
+| Learn Git Branching | Yanlış komut yazdı | `undo` son adımı geri alır. |
+| Learn Git Branching | İlerleme kayboldu | Farklı tarayıcı ya da gizli pencere; seviyeler kısa, yeniden yapılır. |
+| GitHub Skills | Talimat çıkmadı | 20 saniye bekleyip sayfayı yenilesin. |
+| GitHub Skills | Adımdan sonra bot yazmadı | **Actions** sekmesinde işin bitmesini beklesin; kırmızıysa adımı kontrol etsin (doğru branch adı, doğru dosya). |
+| GitHub Skills | Depoyu private açtı | Public olarak yeniden kopyalasın. |
 
-### 5.6 Oyun alanı ve sunum eşleşmesi
+### 5.4 Kendi oyun alanımız (yedek)
 
-| Görev | Slayt |
-|---|---|
-| 1–3 Değiştir, commit, push | 12 Günlük döngü, 13 Commit mesajları |
-| 4–5 Branch | 17 Branch ve pull request |
-| 6–7 PR, review, merge | 16 Issue, 18 Diff, 19 Review |
-| 8 Pull | 23 Sık hatalar |
-| 9 `.gitignore` | 14 Repoya girmemesi gerekenler |
-| 10 Revert | 23 Sık hatalar |
-| 11 Conflict | 20 Merge conflict |
-| 12 Reddedilen push | 23 Sık hatalar |
-| 13 Branch silme | 34 Merge sonrası |
+Sitedeki [Git oyun alanı](oyun-alani/) isteğe bağlı bir yedektir: Learn Git
+Branching'e erişilemezse ya da “push edilmeyen kod robota gitmez” fikrini
+göstermek isterseniz kullanabilirsiniz.
 
 ## 6. Gerçek GitHub uygulaması: 40–45 kişi
 
@@ -322,7 +297,8 @@ Son 10 dakikada her takım bir başka takımın açık bir PR'ına yorum bıraks
 
 | Kanıt | Nereden | Ne gösterir |
 |---|---|---|
-| Tamamlama kartı (13/13) | Oyun alanı | Kavramları denedi |
+| Introduction to GitHub deposu | GitHub Skills | Branch → commit → PR → merge akışını tek başına yaptı |
+| Seviye menüsünün ekran görüntüsü | Learn Git Branching | Commit, branch, merge kavramlarını denedi |
 | Birleştirilmiş PR + `Closes #` | Takım deposu | Branch → PR → merge akışını yaptı |
 | Anlamlı bir review yorumu | Takım deposu | İnceleme yapabiliyor |
 | Çözülmüş conflict commit'i | Takım deposu | Çakışmayı anladı |
@@ -346,23 +322,25 @@ aynı değişikliği branch + PR ile tekrar yaptırın. Branch koruması açıks
 “Create a new branch” seçeneği sunar; onu seçtirin.
 
 **Conflict korkuttu.** “İki kişi aynı cümleyi değiştirdi; hangisini tutacağımıza
-karar veriyoruz.” Oyun alanında görev 11'i birlikte yapın.
+karar veriyoruz.” GitHub Skills “Resolve merge conflicts” kursunu ödev verin.
 
 **Grup hız farkı.** Hızlılar yavaşların PR'larını incelesin ya da yardımcı olsun.
 
-**Oyun alanında ilerleme kayboldu.** Gizli pencere ya da farklı bilgisayar.
-Görevler 5–10 dakikada yeniden yapılabilir.
+**Learn Git Branching'de ilerleme kayboldu.** Gizli pencere ya da farklı
+bilgisayar. Seviyeler kısadır, yeniden yapılır.
 
-**Oyun alanı başkasının ilerlemesini gösteriyor.** Ortak bilgisayar; **Baştan
-başla**.
+**GitHub Skills'te bot cevap vermiyor.** Actions sekmesine baktırın; depo private
+açıldıysa public olarak yeniden kopyalatın.
 
 ## 10. Paketi güncellemek
 
 - Sunumun kaynağı claude.ai'deki iki slayt destesidir (TR ve EN). Destede
   yaptığınız değişiklikler web sürümüne kendiliğinden geçmez; `sunum/` yeniden
   oluşturulup bu depoya gönderilmelidir.
-- Oyun alanı tek bir HTML dosyasıdır (`oyun-alani/index.html`, İngilizcesi
-  `oyun-alani/en/index.html`); görev metinleri dosyanın içindedir.
+- Learn Git Branching ve GitHub Skills dış araçlardır; dönem başında bağlantıların
+  ve kurs adlarının değişmediğini kontrol edin.
+- İsteğe bağlı oyun alanı tek bir HTML dosyasıdır (`oyun-alani/index.html`,
+  İngilizcesi `oyun-alani/en/index.html`).
 - GitHub'ın arayüzü zamanla değişir; slayt 32'deki ekran görüntülerini dönem
   başında yenileyin. Claude Code ve Codex kurulum komutlarını da dönem başında
   kendi dokümanlarından kontrol edin.

@@ -418,7 +418,7 @@
   </div>
   <p style="font-size:28px; line-height:1.4"><b>Today we stay in the browser</b> — these commands are for later. GitHub Desktop runs the same loop with buttons.</p>
   <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">12</p></div>
-  <aside>Working with Git is a simple loop: change your files, choose which changes to save (add), save a snapshot with a message (commit), and send it to GitHub (push). Commit saves on your computer; push uploads it. Today we stay in the browser, where one button (Commit changes) does all of this for you. The commands are here only so you recognise them later. In the Git playground you can press Commit and watch the history grow.</aside>
+  <aside>Working with Git is a simple loop: change your files, choose which changes to save (add), save a snapshot with a message (commit), and send it to GitHub (push). Commit saves on your computer; push uploads it. Today we stay in the browser, where one button (Commit changes) does all of this for you. The commands are here only so you recognise them later. Try it in Learn Git Branching (first level): type git commit and watch the history grow.</aside>
 </section>
 <section id="commits" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -567,7 +567,7 @@
     </div>
   </div>
   <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">17</p></div>
-  <aside>main is the version that works on the real robot, so you don't experiment on it. Instead you create a branch: a separate copy where you can change things freely. When your change works, you open a pull request to ask for it to be joined into main. A teammate looks at it, and then it is merged. If the experiment fails, you just delete the branch — main was never touched. In the Git playground, create a branch, change a file and check that main stays the same.</aside>
+  <aside>main is the version that works on the real robot, so you don't experiment on it. Instead you create a branch: a separate copy where you can change things freely. When your change works, you open a pull request to ask for it to be joined into main. A teammate looks at it, and then it is merged. If the experiment fails, you just delete the branch — main was never touched. In Learn Git Branching, the Branching and Merging levels show this as a growing tree.</aside>
 </section>
 <section id="diff" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -651,7 +651,7 @@
   </div>
   <p style="font-size:28px; line-height:1.4">Prevention: pull often, keep branches small, don't edit the same file at the same time.</p>
   <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">20</p></div>
-  <aside>A merge conflict happens when two people changed the same line in different ways. Git can't guess which one is right, so it shows both and asks you to choose. The part under HEAD is your version, the part under ======= is the other one. Keep the correct line, delete the marker lines (&lt;&lt;&lt;, ===, &gt;&gt;&gt;), and save. It's not an error, just a question. You can create and solve a conflict yourself in the Git playground.</aside>
+  <aside>A merge conflict happens when two people changed the same line in different ways. Git can't guess which one is right, so it shows both and asks you to choose. The part under HEAD is your version, the part under ======= is the other one. Keep the correct line, delete the marker lines (&lt;&lt;&lt;, ===, &gt;&gt;&gt;), and save. It's not an error, just a question. To practise, GitHub Skills has a short free course called Resolve merge conflicts.</aside>
 </section>
 <section id="board" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -731,7 +731,7 @@
     <tr><td style="padding:10px 16px; border-bottom:1px solid #dedad0; font-weight:600">Commits missing from profile</td><td style="padding:10px 16px; border-bottom:1px solid #dedad0">Git email doesn't match the account</td><td style="padding:10px 16px; border-bottom:1px solid #dedad0">Fix <span style="color:#b8491a">user.email</span></td></tr>
   </table>
   <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">23</p></div>
-  <aside>Everyone makes these mistakes in the first weeks — that's fine. If GitHub refuses your push, someone else saved first: get their changes (pull), then try again. If a new change broke the robot, revert creates a new snapshot that undoes it. If a password was uploaded, change the password immediately: deleting the file is not enough because it stays in the history. You can try revert without any risk in the Git playground.</aside>
+  <aside>Everyone makes these mistakes in the first weeks — that's fine. If GitHub refuses your push, someone else saved first: get their changes (pull), then try again. If a new change broke the robot, revert creates a new snapshot that undoes it. If a password was uploaded, change the password immediately: deleting the file is not enough because it stays in the history. The Reversing Changes level in Learn Git Branching lets you try revert without any risk.</aside>
 </section>
 <section id="part3" data-transition="push" style="background:#14181f; color:#f4f2ec; font-family:Inter, Arial, sans-serif; padding:128px; display:flex; flex-direction:column; justify-content:center; gap:32px">
   <p style="font-family:'Space Grotesk', Arial, sans-serif; font-size:200px; font-weight:700; line-height:1.0; color:#e8692c">03</p>
@@ -1013,7 +1013,7 @@
     <li>Merge it — and watch the issue close itself</li>
   </ol>
   <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#14181f">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#14181f">33</p></div>
-  <aside>Now it's your turn. Follow the six steps in order. Everything happens in the browser. If you get stuck, ask your neighbour or the instructor — getting stuck is part of learning. Common traps: the verification email hasn't arrived yet, or you edited the file before switching to your new branch. Want to warm up before making an account? Try the same steps in the Git playground.</aside>
+  <aside>Now it's your turn. Follow the six steps in order. Everything happens in the browser. If you get stuck, ask your neighbour or the instructor — getting stuck is part of learning. Common traps: the verification email hasn't arrived yet, or you edited the file before switching to your new branch. Want to warm up? Learn Git Branching needs no account, and the GitHub Skills course Introduction to GitHub walks you through these same steps with a helper bot.</aside>
 </section>
 <section id="aftermerge" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -1122,7 +1122,7 @@
   <button id="btn-ov">O</button>
   <button id="btn-fs" aria-label="Fullscreen">⛶</button>
   <a href="../" id="lang-link">TR</a>
-  <a href="../../oyun-alani/en/">Playground</a>
+  <a href="https://learngitbranching.js.org/">Try it</a>
   <a href="../../">Workshop page</a>
   <span id="help">← → navigate · N explanation · O overview · F fullscreen · P print/PDF</span>
 </nav>

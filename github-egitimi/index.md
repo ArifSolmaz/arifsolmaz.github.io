@@ -16,19 +16,23 @@ yönetimi (issue, branch, pull request, review, conflict), Claude Code ve Codex 
 yapay zekâ kodlama ajanları ve GitHub Docs'taki “Hello World” akışını izleyen
 uygulama.
 
-## Git oyun alanı
+## Hazır araçlarla deneme
 
-**[Oyun alanını aç →](oyun-alani/)** · [English](oyun-alani/en/)
+**[Learn Git Branching ve GitHub Skills nasıl kullanılır →](hazir-araclar.md)**
 
-Hesap açmadan, tarayıcıda çalışan bir Git simülatörü. Öğrenciler 13 görevle commit,
-push, branch, pull request, merge, pull, `.gitignore`, revert, merge conflict ve
-reddedilen push'u kendileri dener; her butonun dosyalara, commit geçmişine ve
-GitHub'daki `main`'i çalıştıran küçük bir robota etkisini canlı görür. Gerçek
-GitHub'a dokunmaz; hiçbir şey bozulmaz.
+- **[Learn Git Branching](https://learngitbranching.js.org/?locale=tr_TR)** (Türkçe):
+  commit, branch, merge, revert, push ve pull'u canlı bir commit ağacında dener.
+  Hesap gerekmez.
+- **[GitHub Skills](https://github.com/skills/introduction-to-github)**: öğrencinin
+  kendi GitHub hesabında, bir botun adım adım yönlendirdiği gerçek kurslar
+  (branch, pull request, review, merge conflict).
+
+İsteğe bağlı yedek: hesapsız çalışan [Git oyun alanı](oyun-alani/).
 
 ## Başlangıç
 
 - [Eğitmen rehberi](egitmen-rehberi.md)
+- [Hazır araçlar](hazir-araclar.md)
 - [Katılımcı el kitabı](katilimci-el-kitabi.md)
 - [Alıştırmalar](alistirmalar.md)
 - [Slayt iskeleti](slayt-iskeleti.md) — hazır sunum için yukarıdaki [Sunum](sunum/) bağlantısına bakın
@@ -41,13 +45,13 @@ Ayrıntılı plan, 40–45 kişilik sınıf düzeni ve slayt slayt eğitmen notl
 **[eğitmen rehberine](egitmen-rehberi.md)** bakın. Kısaca, iki ders:
 
 1. **Ders 1 (100 dk):** sunumun 1–14. slaytları; ardından öğrenciler çiftler
-   hâlinde oyun alanında 1–5. görevleri yapar. Ödev: 13 görevin tamamı ve GitHub
-   hesabı.
+   hâlinde Learn Git Branching'de giriş seviyelerini yapar. Ödev: GitHub hesabı ve
+   GitHub Skills “Introduction to GitHub” kursu.
 2. **Ders 2 (100 dk):** 15–37. slaytlar; ardından 4 kişilik takımlar, `ornek-depo/`
    şablonundan üretilen kendi depolarında branch, pull request, review ve
    conflict uygulaması yapar.
 
-Her kavram için sıra: **anlat → oyun alanında dene → gerçek GitHub'da yap**.
+Her kavram için sıra: **anlat → Learn Git Branching'de dene → GitHub'da yap**.
 
 ## Kaynaklar
 

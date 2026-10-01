@@ -3,8 +3,9 @@
 Bu notlar, atölye sırasında adım adım takip etmek içindir. Komut satırı bilmeniz
 gerekmiyor.
 
-> Önce denemek ister misiniz? [Git oyun alanında](oyun-alani/) aynı adımları hesap
-> açmadan, hiçbir şeyi bozmadan deneyebilirsiniz. Dersin slaytları: [sunum](sunum/)
+> Önce denemek ister misiniz? [Learn Git Branching](https://learngitbranching.js.org/?locale=tr_TR)
+> ile hesap açmadan commit ve branch'leri deneyin; [GitHub Skills “Introduction to GitHub”](https://github.com/skills/introduction-to-github)
+> kursu ise aynı adımları kendi GitHub hesabınızda bir botla adım adım yaptırır. Dersin slaytları: [sunum](sunum/)
 > (`N` tuşu her slaytın sade açıklamasını açar).
 
 ## GitHub’da ne yapacağız?
