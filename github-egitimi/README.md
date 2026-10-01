@@ -25,6 +25,7 @@ başlar; ikinci oturumda GitHub Desktop veya terminale geçilebilir.
 - [egitmen-rehberi.md](egitmen-rehberi.md): dersi yürüten kişi için hazırlık ve akış
 - [katilimci-el-kitabi.md](katilimci-el-kitabi.md): katılımcılara verilecek adım adım not
 - [alistirmalar.md](alistirmalar.md): sınıf içinde yapılacak uygulamalar
+- [sunum/](sunum/): tarayıcıda çalışan hazır ders sunumu (Türkçe; İngilizcesi `sunum/en/`)
 - [slayt-iskeleti.md](slayt-iskeleti.md): sunum hazırlamak için başlıklar
 - [degerlendirme-listesi.md](degerlendirme-listesi.md): katılımcıların kazanımlarını kontrol listesi
 - [ornek-depo/](ornek-depo/): ayrı bir eğitim deposuna kopyalanabilecek başlangıç malzemesi

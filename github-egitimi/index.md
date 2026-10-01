@@ -5,12 +5,23 @@ Bu sayfa, öğrencilere ve çalışma arkadaşlarına GitHub kullanımını uygu
 günden bir depoda düzenleme yapması, pull request açması, birbirinin işini
 incelemesi ve küçük bir çakışmayı çözmesidir.
 
+## Sunum
+
+**[Slaytları aç → Mekatronik Mühendisleri için GitHub](sunum/)** · [English version](sunum/en/)
+
+Tarayıcıda çalışan, 37 slaytlık ders sunumu. Ok tuşlarıyla ilerleyin; `N` konuşmacı
+notlarını, `O` tüm slaytları açar, `F` tam ekran yapar, `P` ile PDF olarak
+kaydedebilirsiniz. Bölümler: Git ve GitHub'a giriş, kişisel repo, takım projesi
+yönetimi (issue, branch, pull request, review, conflict), Claude Code ve Codex gibi
+yapay zekâ kodlama ajanları ve GitHub Docs'taki “Hello World” akışını izleyen
+uygulama.
+
 ## Başlangıç
 
 - [Eğitmen rehberi](egitmen-rehberi.md)
 - [Katılımcı el kitabı](katilimci-el-kitabi.md)
 - [Alıştırmalar](alistirmalar.md)
-- [Slayt iskeleti](slayt-iskeleti.md)
+- [Slayt iskeleti](slayt-iskeleti.md) — hazır sunum için yukarıdaki [Sunum](sunum/) bağlantısına bakın
 - [Değerlendirme listesi](degerlendirme-listesi.md)
 - [Örnek eğitim deposu](ornek-depo/)
 
@@ -22,3 +33,8 @@ incelemesi ve küçük bir çakışmayı çözmesidir.
 4. Atölyeyi issue, branch, commit, pull request, review, merge ve conflict akışıyla yürütün.
 5. İlk oturumda GitHub web arayüzünü kullanın; GitHub Desktop veya terminali ikinci oturuma bırakın.
 
+## Kaynaklar
+
+- [GitHub Docs — Hello World](https://docs.github.com/en/get-started/using-github/hello-world): uygulamanın izlediği resmî adım adım eğitim
+- [GitHub Docs — GitHub flow](https://docs.github.com/en/get-started/using-github/github-flow)
+- [GitHub Skills](https://skills.github.com/): ücretsiz, etkileşimli kurslar

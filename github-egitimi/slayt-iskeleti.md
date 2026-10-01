@@ -1,5 +1,7 @@
 # Slayt iskeleti
 
+> Hazır sunum: **[sunum/](sunum/)** — bu iskeletteki başlıkların hepsini kapsar.
+
 Bu dosya, sunum hazırlamak isteyen eğitmen için başlık taslağıdır. Slaytları
 kısa tutun; her kavramdan sonra uygulama yaptırın.
 
