@@ -31,6 +31,12 @@ body {
   line-height: 1.55;
 }
 
+.landing-page {
+  min-height: 100vh;
+  background: var(--dark);
+  color: var(--cream);
+}
+
 a {
   color: inherit;
 }
@@ -152,6 +158,30 @@ a {
 .button.secondary {
   border-color: #444b57;
   color: var(--cream);
+}
+
+.single-presentation {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 960px;
+  padding: clamp(28px, 7vw, 96px);
+}
+
+.single-presentation h1 {
+  max-width: 920px;
+  margin: 0;
+  font-size: clamp(48px, 8vw, 108px);
+  line-height: .98;
+  letter-spacing: 0;
+}
+
+.single-presentation p:not(.eyebrow) {
+  max-width: 760px;
+  margin: 26px 0 0;
+  color: #d4d7dc;
+  font-size: clamp(19px, 2vw, 25px);
 }
 
 .button.light {
