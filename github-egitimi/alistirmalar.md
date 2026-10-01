@@ -10,6 +10,7 @@ adım adım talimatları [katılımcı el kitabındadır](katilimci-el-kitabi.md
 
 | Kod | Alıştırma | Nerede? | Ne zaman? | Süre |
 |---|---|---|---|---|
+| N0 | Git gerekli mi? | Tartışma / örnek senaryolar | Ders 1 | 10 dk |
 | L1 | Commit ve branch | Learn Git Branching | Ders 1 | 15 dk |
 | L2 | Merge | Learn Git Branching | Ders 1 | 10 dk |
 | L3 | Revert (hızlılar için) | Learn Git Branching | Ders 1 | 5–10 dk |
@@ -24,6 +25,31 @@ adım adım talimatları [katılımcı el kitabındadır](katilimci-el-kitabi.md
 | G | Mini takım görevi | Takım deposu | 3. ders ya da ödev | 30–45 dk |
 
 ---
+
+## Ders 1 — Önce karar: Git gerekli mi?
+
+### N0. Senaryo tartışması
+
+**Amaç:** Git'i “her şeyi GitHub'a koymak” diye değil, doğru iş için doğru
+çalışma yöntemi olarak görmek.
+
+Sınıfa üç kısa senaryo verin ve her biri için “Git kullanır mıyız, nasıl
+kullanırız, neyi koymayız?” diye sorun:
+
+1. Tek kişinin bir akşamlık hesaplama notu.
+2. Dört kişilik robot projesi: Arduino kodu, devre şeması, rapor ve görev listesi.
+3. İçinde kişisel veri olan ham anket dosyaları ve analiz kodu.
+
+Beklenen çıkarım:
+
+- Birinci senaryoda Git şart olmayabilir.
+- İkinci senaryoda Git ve GitHub güçlü biçimde faydalıdır.
+- Üçüncü senaryoda analiz kodu Git'e girebilir; ham kişisel veri ve gizli dosyalar dikkatle ayrılmalıdır.
+
+Başarı ölçütü:
+
+- Öğrenci “Git gerekli mi?” sorusuna sadece “evet/hayır” değil, gerekçeli cevap verebiliyor.
+- Öğrenci depoya girmemesi gereken dosya türlerine örnek verebiliyor.
 
 ## Ders 1 — Learn Git Branching (sınıfta, çiftler hâlinde)
 

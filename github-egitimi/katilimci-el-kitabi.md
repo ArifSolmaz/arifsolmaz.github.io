@@ -1,19 +1,29 @@
 # Katılımcı el kitabı
 
-Bu sayfa, GitHub dersinde baştan sona ne yapacağınızı adım adım anlatır.
-Programlama, komut satırı ya da kurulum bilmeniz gerekmiyor. Takıldığınızda önce
-bu sayfaya, sonra yanınızdaki arkadaşınıza, sonra hocanıza bakın.
+Bu sayfa, Git ve GitHub dersinde neyi neden yapacağınızı adım adım anlatır.
+Amaç komut ezberlemek değil; bir projede değişiklikleri güvenli, görünür ve
+geri döndürülebilir biçimde yönetmeyi öğrenmektir. Programlama, komut satırı ya
+da kurulum bilmeniz gerekmiyor.
 
 **Yanınızda açık tutun:**
+[Neden Git?](neden-git/) ·
 [Sunum](sunum/) ·
 [Learn Git Branching (Türkçe)](https://learngitbranching.js.org/?locale=tr_TR) ·
 [GitHub Skills — Introduction to GitHub](https://github.com/skills/introduction-to-github)
 
 ## Önce bunu okuyun: ders ve isteğe bağlı yollar
 
-GitHub dersi **45 dakika ve yalnızca sunumdur**. Derste dinleyip izlemeniz
-yeterli; hesap açmanız ya da bilgisayar getirmeniz gerekmez. Bu sayfadaki her şey
+Kısa ders **45 dakika ve yalnızca sunumdur**. Derste önce Git'in neden var
+olduğunu, hangi işlerde gerekli olduğunu ve iyi kullanım alışkanlıklarını
+göreceksiniz. Bilgisayar getirmeniz gerekmez. Bu sayfadaki pratik adımlar
 **isteğe bağlıdır**: ders sonrası devam etmek isteyenler içindir.
+
+## Dersin asıl fikri
+
+- Git, “son_final2.docx” karmaşasını azaltır.
+- GitHub, değişiklikleri ekipçe görmeyi, tartışmayı ve onaylamayı kolaylaştırır.
+- İyi kullanım, komut bilmekten çok küçük değişiklik, açık mesaj, review ve gizli veri disipliniyle ilgilidir.
+- Her proje Git istemez; ama geçmişi, ekip çalışması veya güvenli deneme ihtiyacı varsa erken başlamak rahatlatır.
 
 Kolaydan zora dört yol (sunumun 36. slaytı):
 

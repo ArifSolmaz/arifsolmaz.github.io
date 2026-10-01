@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>GitHub Eğitimi | Arif Solmaz</title>
-  <meta name="description" content="Mekatronik öğrencileri için 45 dakikalık GitHub girişi ve isteğe bağlı uygulama yolu.">
+  <title>Git ve GitHub Eğitimi | Arif Solmaz</title>
+  <meta name="description" content="Git gerekli mi, insanlar nasıl kullanır ve iyi Git alışkanlıkları nelerdir?">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..800&family=JetBrains+Mono:wght@500..800&display=swap" rel="stylesheet">
@@ -15,6 +15,7 @@
     <header class="topbar">
       <a class="brand" href="../">Arif Solmaz</a>
       <nav class="nav" aria-label="Ana bağlantılar">
+        <a href="neden-git/">Neden Git?</a>
         <a href="sunum/">Sunum</a>
         <a href="student/">Öğrenci yolu</a>
         <a href="instructor/">Eğitmen notları</a>
@@ -25,14 +26,16 @@
     <main>
       <section class="hero">
         <div>
-          <p class="eyebrow">45 dakikalık giriş + isteğe bağlı pratik</p>
-          <h1>Mekatronik öğrencileri için GitHub</h1>
+          <p class="eyebrow">Önce neden, sonra nasıl</p>
+          <h1>Git gerekli mi? Nasıl kullanılır? İyi alışkanlıklar neler?</h1>
           <p>
-            Derste öğrenciler GitHub’ın mantığını izleyerek öğrenir. Devam etmek
-            isteyenler için hesap gerektirmeyen kısa pratik, GitHub Skills ve
-            takım deposu alıştırmaları ayrı bir yolda durur.
+            Bu ders Git’i yalnızca komutlar ve GitHub butonları olarak anlatmaz.
+            Öğrenciler önce sürüm kontrolünün ne zaman gerekli olduğunu, insanların
+            gerçek projelerde nasıl kullandığını ve hangi alışkanlıkların işi
+            güvenli hale getirdiğini görür.
           </p>
           <div class="hero-actions">
+            <a class="button primary" href="neden-git/">Neden Git?</a>
             <a class="button primary" href="sunum/">Sunumu başlat</a>
             <a class="button secondary" href="student/">Öğrenci pratiği</a>
             <a class="button secondary" href="instructor/">Eğitmen materyali</a>
@@ -59,11 +62,18 @@
       <section class="section" aria-labelledby="paths-title">
         <div class="section-header">
           <p class="eyebrow">Nereden başlamalı?</p>
-          <h2 id="paths-title">Üç giriş kapısı</h2>
-          <p>Öğrenciler, eğitmenler ve kendi kendine çalışanlar aynı dosya listesine bakmak zorunda kalmasın.</p>
+          <h2 id="paths-title">Dört giriş kapısı</h2>
+          <p>Öğrenciler önce amacı görsün; sonra sunum, pratik ve eğitmen notları ayrı yollara ayrılsın.</p>
         </div>
 
-        <div class="grid">
+        <div class="grid four">
+          <a class="card" href="neden-git/">
+            <span class="meta">Temel fikir</span>
+            <h3>Neden Git?</h3>
+            <p>Git ne zaman gerekli, ne zaman gereksiz, ekipler gerçekte nasıl kullanıyor?</p>
+            <span class="arrow">Oku</span>
+          </a>
+
           <a class="card" href="sunum/">
             <span class="meta">Ders anı</span>
             <h3>Sunumu aç</h3>
@@ -89,27 +99,27 @@
 
       <section class="section alt" aria-labelledby="practice-title">
         <div class="section-header">
-          <p class="eyebrow">İsteğe bağlı pratik</p>
-          <h2 id="practice-title">Kolaydan zora dört adım</h2>
-          <p>Derste bilgisayar gerekmez. Öğrenci devam etmek isterse bu sırayla ilerler.</p>
+          <p class="eyebrow">Dersin omurgası</p>
+          <h2 id="practice-title">Öğrenme sırası: gerekçe, akış, alışkanlık, pratik</h2>
+          <p>Komutlar bu çerçevenin sonunda gelir; amaç, aracı ne zaman ve nasıl kullanacağını bilen insanlar yetiştirmek.</p>
         </div>
 
         <div class="steps">
           <article class="step">
-            <h3>Learn Git Branching</h3>
-            <p>15 dakika. Hesap yok, kurulum yok; commit, branch ve merge görselleşir.</p>
+            <h3>Gerekli mi?</h3>
+            <p>Dosya geçmişi, ekip çalışması, deney yapma ve geri dönme ihtiyacı konuşulur.</p>
           </article>
           <article class="step">
-            <h3>İlk repo</h3>
-            <p>30 dakika. GitHub Docs “Hello World” akışıyla ilk branch ve pull request.</p>
+            <h3>Nasıl kullanılır?</h3>
+            <p>Issue, branch, commit, pull request ve review gerçek çalışma akışı olarak anlatılır.</p>
           </article>
           <article class="step">
-            <h3>GitHub Skills</h3>
-            <p>Yaklaşık 1 saat. GitHub’ın botla yönlendirdiği gerçek pratik deposu.</p>
+            <h3>İyi alışkanlıklar</h3>
+            <p>Küçük commit, çalışan <code>main</code>, anlamlı mesaj, review kültürü ve gizli veri kuralları.</p>
           </article>
           <article class="step">
-            <h3>Kendi proje deposu</h3>
-            <p>Kendi hızında. README, profil sayfası ve küçük bir ders projesi deposu.</p>
+            <h3>Pratik</h3>
+            <p>Learn Git Branching, Hello World, GitHub Skills ve takım deposu ile uygulama.</p>
           </article>
         </div>
       </section>
@@ -139,7 +149,7 @@
     </main>
 
     <footer class="footer">
-      <p>GitHub Eğitimi · Arif Solmaz · <a href="../">Ana siteye dön</a></p>
+      <p>Git ve GitHub Eğitimi · Arif Solmaz · <a href="../">Ana siteye dön</a></p>
     </footer>
   </div>
 </body>

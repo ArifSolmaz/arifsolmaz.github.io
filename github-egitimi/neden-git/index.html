@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Neden Git? | GitHub Eğitimi</title>
+  <meta name="description" content="Git gerekli mi, gerçek hayatta nasıl kullanılır ve iyi Git alışkanlıkları nelerdir?">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..800&family=JetBrains+Mono:wght@500..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/course.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../">GitHub Eğitimi</a>
+    <nav class="nav" aria-label="Neden Git bağlantıları">
+      <a href="../sunum/">Sunum</a>
+      <a href="../student/">Öğrenci</a>
+      <a href="../instructor/">Eğitmen</a>
+      <a href="../../">Arif Solmaz</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <p class="eyebrow">Önce amaç, sonra araç</p>
+      <h1>Git gerekli mi, nasıl kullanılır, hangi alışkanlıklar işe yarar?</h1>
+      <p>
+        Git’i komut ezberi olarak değil, çalışma hafızası olarak düşünün:
+        ne değişti, kim değiştirdi, neden değiştirdi ve güvenle geri dönebilir
+        miyiz sorularına cevap verir.
+      </p>
+      <div class="button-row">
+        <a class="button primary" href="#gerekli-mi">Gerekli mi?</a>
+        <a class="button secondary" href="#iyi-aliskanliklar">İyi alışkanlıklar</a>
+      </div>
+    </section>
+
+    <section class="page-section" id="gerekli-mi">
+      <p class="eyebrow">Karar ölçütü</p>
+      <h2>Git her iş için şart değil, ama çoğu ciddi işte erken rahatlatır</h2>
+      <div class="grid two">
+        <article class="card">
+          <span class="meta">Kullanın</span>
+          <h3>Git anlamlıdır</h3>
+          <ul class="plain-list">
+            <li>Bir dosyanın birden fazla sürümü olacaksa.</li>
+            <li>Bir projede birden fazla kişi çalışacaksa.</li>
+            <li>Deneme yapıp ana çalışan hali bozmamak istiyorsanız.</li>
+            <li>Bir rapor, kod, devre ya da veri analizinin geçmişi önemliyse.</li>
+            <li>Yayınlamadan önce değişiklikleri gözden geçirmek istiyorsanız.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <span class="meta">Basit tutun</span>
+          <h3>Git gereksiz olabilir</h3>
+          <ul class="plain-list">
+            <li>Tek seferlik, atılacak bir dosya üretiyorsanız.</li>
+            <li>Proje yalnızca büyük ikili dosyalardan oluşuyorsa ve geçmiş gerekmiyorsa.</li>
+            <li>Gizli veri, şifre ya da kişisel bilgi ayıklanmadan depoya girecekse.</li>
+            <li>Ekibin önce klasör düzeni ve dosya adlandırması çözülmemişse.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="page-section alt">
+      <p class="eyebrow">Gerçek kullanım</p>
+      <h2>İnsanlar Git’i günlük iş akışı olarak kullanır</h2>
+      <div class="steps">
+        <article class="step">
+          <h3>Planla</h3>
+          <p>Issue açılır: yapılacak iş, hata, soru ya da karar görünür hale gelir.</p>
+        </article>
+        <article class="step">
+          <h3>Ayrı çalış</h3>
+          <p>Branch açılır: deneme ana çalışan sürümü bozmaz.</p>
+        </article>
+        <article class="step">
+          <h3>Kaydet ve açıkla</h3>
+          <p>Commit küçük bir değişikliği, nedenini anlatan mesajla kaydeder.</p>
+        </article>
+        <article class="step">
+          <h3>İncele ve birleştir</h3>
+          <p>Pull request üzerinden diff okunur, yorum yapılır, uygun olunca merge edilir.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="page-section" id="iyi-aliskanliklar">
+      <p class="eyebrow">İyi alışkanlıklar</p>
+      <h2>İyi Git kullanımı teknikten çok ekip alışkanlığıdır</h2>
+      <div class="grid">
+        <article class="card">
+          <span class="meta">Geçmiş</span>
+          <h3>Küçük ve anlamlı commit</h3>
+          <p>Bir commit bir fikri taşısın. “final”, “son”, “düzeltme” yerine neyin neden değiştiğini yazın.</p>
+        </article>
+        <article class="card">
+          <span class="meta">Güven</span>
+          <h3><code>main</code> çalışır kalsın</h3>
+          <p>Deneyler branch’te yapılır. Çalışmayan kod, bozuk rapor ya da yarım dosya ana hatta alınmaz.</p>
+        </article>
+        <article class="card">
+          <span class="meta">İnceleme</span>
+          <h3>Pull request küçük olsun</h3>
+          <p>Küçük PR okunur, tartışılır ve hızlı birleşir. Büyük PR çoğu zaman kimsenin gerçekten okumadığı değişikliktir.</p>
+        </article>
+        <article class="card">
+          <span class="meta">Güvenlik</span>
+          <h3>Şifre ve gizli veri yok</h3>
+          <p>API anahtarı, Wi-Fi şifresi, özel veri ve kişisel bilgi depoya girmez. Örnek ayar dosyası kullanın.</p>
+        </article>
+        <article class="card">
+          <span class="meta">Dosya düzeni</span>
+          <h3>Üretilen dosyayı değil kaynağı izleyin</h3>
+          <p>Derleme çıktısı, geçici dosya ve büyük veri için `.gitignore`, gerekirse Git LFS ya da ayrı depolama kullanın.</p>
+        </article>
+        <article class="card">
+          <span class="meta">Ekip kültürü</span>
+          <h3>Review kişiye değil işe bakar</h3>
+          <p>Yorumlar somut, nazik ve satıra bağlı olsun. Amaç hata yakalamak kadar ortak standart oluşturmaktır.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="page-section alt">
+      <p class="eyebrow">Ders mesajı</p>
+      <h2>Öğrenciye verilmesi gereken ana fikir</h2>
+      <div class="quote-panel">
+        <p>
+          “Git, kod yazanların kullandığı karmaşık bir araç değil; ciddi bir
+          projede değişiklikleri güvenle yönetmenin yoludur. İyi kullanırsanız
+          hata yapmayı daha az korkutucu, ekip çalışmasını daha görünür yapar.”
+        </p>
+      </div>
+      <div class="button-row">
+        <a class="button light" href="../student/">Öğrenci yoluna geç</a>
+        <a class="button ghost" href="../instructor/">Eğitmen planını aç</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p><a href="../">Atölye ana sayfasına dön</a></p>
+  </footer>
+</body>
+</html>

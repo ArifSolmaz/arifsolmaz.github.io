@@ -1,14 +1,16 @@
 # GitHub Eğitimi
 
-Mekatronik öğrencileri için 45 dakikalık GitHub girişi ve isteğe bağlı uygulama
-yolu. Ana ders sunumdur; devam etmek isteyen öğrenciler Learn Git Branching,
-GitHub Skills ve takım deposu alıştırmalarıyla pratik yapar.
+Mekatronik öğrencileri için Git ve GitHub dersi. Ana amaç komut ezberi değil:
+Git’in ne zaman gerekli olduğunu, insanların gerçek projelerde nasıl kullandığını
+ve iyi çalışma alışkanlıklarını öğretmek. Devam etmek isteyen öğrenciler Learn
+Git Branching, GitHub Skills ve takım deposu alıştırmalarıyla pratik yapar.
 
 Canlı sayfa: <https://arifsolmaz.github.io/github-egitimi/>
 
 ## Giriş kapıları
 
 - `index.html`: temiz ana sayfa
+- `neden-git/`: Git gerekli mi, nasıl kullanılır, best practices
 - `student/`: öğrenciler için dersten sonra izlenecek yol
 - `instructor/`: eğitmen için ders akışı ve hazırlık masası
 - `sunum/`: Türkçe slayt destesi

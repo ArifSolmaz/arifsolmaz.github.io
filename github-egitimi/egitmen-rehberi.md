@@ -1,19 +1,31 @@
 # Eğitmen rehberi
 
-Bu rehber, paketin tamamını bir sınıfta nasıl kullanacağınızı anlatır: tarayıcıda
-çalışan **sunum**, kavramları denemek için **hazır araçlar** (Learn Git Branching
-ve GitHub Skills) ve gerçek GitHub'da yapılan **takım uygulaması**. 40–45 kişilik bir mekatronik sınıfı düşünülerek yazıldı;
-daha küçük gruplarda süreleri kısaltmanız yeterli.
+Bu rehber, Git'i yalnızca komut ya da GitHub arayüzü olarak değil, bir çalışma
+yöntemi olarak nasıl öğreteceğinizi anlatır: Git gerekli mi, insanlar gerçek
+projelerde nasıl kullanır, iyi alışkanlıklar nelerdir, sonra hangi araçlarla
+pratik yapılır. 40–45 kişilik bir mekatronik sınıfı düşünülerek yazıldı; daha
+küçük gruplarda süreleri kısaltmanız yeterli.
 
 > Kısa yol: Ders **45 dakika ve yalnızca sunumdur**; öğrencinin bilgisayar
-> başında bir şey yapması gerekmez. Sonda 36. slaytı gösterip isteyenlere dört
-> devam yolunu söylersiniz (bölüm 2.2). Daha fazla ders saatiniz varsa aynı
-> paket 2 × 100 dakikalık uygulamalı bir sürüme genişler (bölüm 2.3).
+> başında bir şey yapması gerekmez. İlk hedef Git'in neden gerekli olduğunu ve
+> iyi kullanım kültürünü anlatmaktır; GitHub uygulaması canlı demo ve isteğe
+> bağlı devam yolu olarak gelir. Daha fazla ders saatiniz varsa aynı paket
+> 2 × 100 dakikalık uygulamalı bir sürüme genişler (bölüm 2.3).
+
+## Öğrenme hedefleri
+
+Ders sonunda öğrenci şunları söyleyebilmeli:
+
+- Git'in hangi işlerde gerekli, hangi işlerde gereksiz olabileceğini.
+- Bir ekibin issue → branch → commit → pull request → review → merge akışıyla nasıl çalıştığını.
+- İyi Git kullanımında küçük commit, anlamlı mesaj, çalışan `main`, review ve gizli veri kurallarının neden önemli olduğunu.
+- GitHub'ın Git üzerine kurulmuş bir paylaşım ve review platformu olduğunu.
 
 ## 1. Paketin parçaları
 
 | Parça | Bağlantı | Ne için? | Kim kullanır? |
 |---|---|---|---|
+| Neden Git? | [neden-git/](neden-git/) | Gereklilik, gerçek kullanım ve best practices | Herkes |
 | Sunum (TR) | [sunum/](sunum/) | 37 slaytlık ders anlatımı | Eğitmen projeksiyonda; öğrenci evde tekrar |
 | Sunum (EN) | [sunum/en/](sunum/en/) | Aynı sunumun İngilizcesi | İngilizce ders / değişim öğrencileri |
 | Hazır araçlar | [hazir-araclar.md](hazir-araclar.md) | Learn Git Branching (Türkçe, hesapsız) ve GitHub Skills kurslarını derste kullanma | Her öğrenci |
@@ -22,16 +34,17 @@ daha küçük gruplarda süreleri kısaltmanız yeterli.
 | Alıştırmalar | [alistirmalar.md](alistirmalar.md) | Süreli alıştırma listesi ve başarı ölçütleri (L1–L3, Ö1–Ö2, A–G) | Eğitmen |
 | Değerlendirme listesi | [degerlendirme-listesi.md](degerlendirme-listesi.md) | Kanıt kaynakları, kazanım tablosu, puanlama önerisi, çıkış soruları | Eğitmen |
 
-Üç katman birbirini tamamlar:
+Katmanlar birbirini tamamlar:
 
-1. **Sunum** kavramı anlatır (commit nedir, branch neden var).
-2. **Learn Git Branching** kavramın Git tarafında ne yaptığını gösterir: öğrenci
+1. **Neden Git?** aracın hangi probleme cevap verdiğini netleştirir.
+2. **Sunum** kavramı anlatır (commit nedir, branch neden var).
+3. **Learn Git Branching** kavramın Git tarafında ne yaptığını gösterir: öğrenci
    komut yazar, commit ağacı anında değişir. Yanlış yapmak bedavadır.
-3. **GitHub Skills** aynı adımları gerçek GitHub arayüzünde, bir botun
+4. **GitHub Skills** aynı adımları gerçek GitHub arayüzünde, bir botun
    yönlendirmesiyle tek başına yaptırır.
-4. **Takım deposu** hepsini gerçek bir takımla tekrarlatır.
+5. **Takım deposu** hepsini gerçek bir takımla tekrarlatır.
 
-Her kavram için sıra aynıdır: **anlat → Learn Git Branching'de dene → GitHub'da yap**.
+Her kavram için sıra aynıdır: **problem → iyi alışkanlık → Git'te ne oluyor → GitHub'da nasıl yapılır**.
 
 ## 2. Ders planı
 
@@ -44,7 +57,7 @@ tablo nerede durup nerede hızlanacağınızı gösterir.
 
 | Dakika | Slayt | Bölüm | Nerede durun, nerede hızlanın |
 |---|---|---|---|
-| 0–7 | 1–7 | Giriş | 3'te “Bilgisayarında böyle bir klasör olan?” diye sorun. 6'daki terimleri tek tek okumayın; “hepsi örnekle tekrar gelecek” deyin. |
+| 0–7 | 1–7 | Giriş | Önce “Git gerekli mi?” sorusunu sorun. 3'te “Bilgisayarında böyle bir klasör olan?” diye sorun. 6'daki terimleri tek tek okumayın; “hepsi örnekle tekrar gelecek” deyin. |
 | 7–17 | 8–14 | 1. bölüm: kişisel repo | 9'daki komut kutusunu atlayın. 12 (günlük döngü) ve 13 (commit mesajı) asıl slaytlar. |
 | 17–30 | 15–23 | 2. bölüm: takım | 17 (branch ve PR) ve 20 (conflict) asıl slaytlar. 21–22'yi birer cümleyle geçin. |
 | 30–37 | 24–28 | 3. bölüm: yapay zekâ | 26 (güvenli akış) ve 28 (kurallar) yeter; 25 ve 27'yi kısa tutun. |
@@ -81,7 +94,10 @@ Derste şöyle söyleyebilirsiniz:
 Dersten sonra öğrencilere gönderebileceğiniz mesaj:
 
 ```text
-Bugünkü GitHub dersinin sunumu ve isteğe bağlı devam yolları:
+Bugünkü Git ve GitHub dersinin ana fikri, “komut ezberi” değil: değişiklikleri
+güvenle yönetmek, ekipte görünür çalışmak ve iyi alışkanlıklar edinmek.
+
+Sunum ve isteğe bağlı devam yolları:
 https://arifsolmaz.github.io/github-egitimi/
 Kolaydan zora: (1) Learn Git Branching, 15 dk, hesap gerekmez;
 (2) ilk reponuz, sunumun 33. slaytı, 30 dk; (3) GitHub Skills

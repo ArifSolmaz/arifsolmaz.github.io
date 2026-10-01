@@ -21,6 +21,8 @@ toplamak ve her takım deposunun **Pull requests → Closed** listesine bakmak.
 
 | Kazanım | Kanıt | Evet | Biraz | Tekrar lazım |
 |---|---|---:|---:|---:|
+| Git'in hangi durumlarda gerekli olduğunu gerekçelendirebiliyor | N0 senaryo tartışması / çıkış sorusu |  |  |  |
+| Git'in yalnızca komut değil çalışma yöntemi olduğunu açıklayabiliyor | Çıkış sorusu |  |  |  |
 | Git ile GitHub'ı ayırt edebiliyor | Çıkış sorusu / sunum testi (slayt 30) |  |  |  |
 | Commit'in ne olduğunu açıklayabiliyor | Learn Git Branching L1 |  |  |  |
 | Branch'in neden kullanıldığını açıklayabiliyor | Learn Git Branching L1, Alıştırma B |  |  |  |
@@ -28,6 +30,7 @@ toplamak ve her takım deposunun **Pull requests → Closed** listesine bakmak.
 | GitHub'da yeni branch'te dosya ekleyip commit edebiliyor | Alıştırma B |  |  |  |
 | Pull request açıp issue'ya bağlayabiliyor | Alıştırma C, Skills deposu |  |  |  |
 | Başkasının PR'ına anlamlı review yapabiliyor | Alıştırma D, F |  |  |  |
+| İyi Git alışkanlıklarını sayabiliyor: küçük commit, anlamlı mesaj, çalışan `main`, gizli veri yok | Neden Git? sayfası / PR incelemesi |  |  |  |
 | Merge'ün ne yaptığını açıklayabiliyor | Learn Git Branching L2, Alıştırma D |  |  |  |
 | Çakışmayı sakin biçimde çözebiliyor | Alıştırma E |  |  |  |
 | Hatalı bir değişikliği revert ile geri almayı biliyor | Learn Git Branching L3 (isteğe bağlı) |  |  |  |
@@ -49,7 +52,9 @@ Her dersin son 5 dakikasında yazılı ya da sözlü:
 
 1. Bugün öğrendiğim en kullanışlı şey:
 2. Hâlâ karışık gelen adım:
-3. Kendi projemde GitHub'ı kullanabileceğim bir yer:
+3. Git'in gerekli olduğu bir proje örneği:
+4. Git'in gereksiz ya da dikkatli kullanılması gereken bir durum:
+5. Kendi projemde GitHub'ı kullanabileceğim bir yer:
 
 “Hâlâ karışık” cevaplarını bir sonraki dersin ilk 10 dakikasında ele alın.
 
@@ -60,3 +65,4 @@ Bir öğrenci aşağıdaki üç şeyi yapabiliyorsa ilk seviye başarı tamamdı
 - Kendi branch'inde küçük bir değişiklik yapar.
 - Ne yaptığını anlatan ve bir issue'ya bağlı bir pull request açar.
 - Başkasının değişikliğine anlamlı bir review yorumu bırakır.
+- Hangi dosyaların depoya girmemesi gerektiğini söyleyebilir.

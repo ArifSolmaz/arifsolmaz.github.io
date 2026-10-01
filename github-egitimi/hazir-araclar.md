@@ -3,6 +3,10 @@
 Kavramları denemek için kendi aracımızı yazmak yerine, milyonlarca kişinin
 kullandığı iki ücretsiz araçla çalışıyoruz. İkisi de birbirini tamamlar:
 
+Bu araçlar dersin kendisi değildir. Önce Git'in neden gerekli olabileceği ve iyi
+çalışma alışkanlıkları konuşulur; araçlar bu fikirleri görünür ve denenebilir
+hale getirir.
+
 | | Learn Git Branching | GitHub Skills |
 |---|---|---|
 | Ne? | Branch ve commit'leri canlı bir ağaç olarak çizen Git oyunu | Kendi GitHub hesabınızda, bir botun adım adım yönlendirdiği gerçek kurslar |
