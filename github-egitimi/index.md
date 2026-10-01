@@ -9,12 +9,22 @@ incelemesi ve küçük bir çakışmayı çözmesidir.
 
 **[Slaytları aç → Mekatronik Mühendisleri için GitHub](sunum/)** · [English version](sunum/en/)
 
-Tarayıcıda çalışan, 37 slaytlık ders sunumu. Ok tuşlarıyla ilerleyin; `N` konuşmacı
-notlarını, `O` tüm slaytları açar, `F` tam ekran yapar, `P` ile PDF olarak
+Tarayıcıda çalışan, 37 slaytlık ders sunumu. Ok tuşlarıyla ilerleyin; `N` her slaytın
+sade açıklamasını, `O` tüm slaytları açar, `F` tam ekran yapar, `P` ile PDF olarak
 kaydedebilirsiniz. Bölümler: Git ve GitHub'a giriş, kişisel repo, takım projesi
 yönetimi (issue, branch, pull request, review, conflict), Claude Code ve Codex gibi
 yapay zekâ kodlama ajanları ve GitHub Docs'taki “Hello World” akışını izleyen
 uygulama.
+
+## Git oyun alanı
+
+**[Oyun alanını aç →](oyun-alani/)** · [English](oyun-alani/en/)
+
+Hesap açmadan, tarayıcıda çalışan bir Git simülatörü. Öğrenciler 13 görevle commit,
+push, branch, pull request, merge, pull, `.gitignore`, revert, merge conflict ve
+reddedilen push'u kendileri dener; her butonun dosyalara, commit geçmişine ve
+GitHub'daki `main`'i çalıştıran küçük bir robota etkisini canlı görür. Gerçek
+GitHub'a dokunmaz; hiçbir şey bozulmaz.
 
 ## Başlangıç
 

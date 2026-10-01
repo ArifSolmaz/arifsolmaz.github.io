@@ -1,0 +1,685 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Git oyun alanı — GitHub Eğitimi</title>
+<meta name="description" content="Hesap açmadan, hiçbir şeyi bozma riski olmadan dene: her butonun dosyalara, geçmişe ve robota ne yaptığını canlı gör.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=JetBrains+Mono:wght@400..700&family=Space+Grotesk:wght@500..700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f4f2ec; --card: #fbfaf6; --paper: #fffdf8; --line: #dedad0; --ink: #1b2129; --muted: #5b6470; --soft: #6b7280;
+    --dark: #14181f; --accent: #e8692c; --accent-ink: #b8491a; --green: #237a52; --green-bg: #d6f0df; --red: #a33a3a; --red-bg: #f8dcdc;
+    --blue: #2f6aa3; --lane1: #e8692c; --lane2: #2f6aa3; --lane3: #8a4fb0; --lane4: #237a52;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: var(--bg); color: var(--ink); font: 15px/1.5 Inter, Arial, sans-serif; }
+  h1, h2, h3 { font-family: 'Space Grotesk', Arial, sans-serif; line-height: 1.15; }
+  code, .mono, textarea, input.mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+  button { font: inherit; cursor: pointer; border-radius: 8px; border: 1px solid var(--line); background: var(--paper); color: var(--ink); padding: 7px 12px; min-height: 36px; }
+  button:hover { border-color: var(--accent); }
+  button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  button.primary { background: var(--dark); color: #f4f2ec; border-color: var(--dark); }
+  button.primary:hover { background: #2a313c; }
+  button.accent { background: var(--accent); border-color: var(--accent); color: #14181f; font-weight: 600; }
+  button:disabled { opacity: .45; cursor: not-allowed; }
+  input, select, textarea { font: inherit; border: 1px solid var(--line); border-radius: 8px; padding: 7px 10px; background: var(--paper); color: var(--ink); min-height: 36px; }
+  a { color: var(--accent-ink); }
+
+  header.top { display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; padding: 16px 20px; background: var(--dark); color: #f4f2ec; }
+  header.top h1 { font-size: 22px; }
+  header.top p { color: #b9bec6; font-size: 14px; flex: 1 1 320px; }
+  header.top nav { display: flex; gap: 8px; flex-wrap: wrap; }
+  header.top nav a, header.top nav button { color: #f4f2ec; background: transparent; border: 1px solid #3a414d; border-radius: 8px; padding: 6px 12px; text-decoration: none; font-size: 14px; min-height: 34px; display: inline-flex; align-items: center; }
+
+  #explain { margin: 16px 20px 0; padding: 14px 18px; border-radius: 12px; background: var(--dark); color: #f4f2ec; display: flex; gap: 14px; align-items: flex-start; }
+  #explain .tag { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 1.5px; color: var(--accent); white-space: nowrap; padding-top: 2px; }
+  #explain .what { font-size: 15px; }
+  #explain .cmd { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #8a919c; margin-top: 4px; }
+  #explain.warn { background: #3a1d1d; }
+  #explain.good { background: #12301f; }
+
+  .layout { display: grid; gap: 16px; padding: 16px 20px 32px; grid-template-columns: 330px minmax(0, 1fr) minmax(0, 1fr); align-items: start; }
+  @media (max-width: 1250px) { .layout { grid-template-columns: 300px minmax(0, 1fr); } #col-github { grid-column: 1 / -1; } }
+  @media (max-width: 820px) { .layout { grid-template-columns: minmax(0, 1fr); padding: 12px; } #explain { margin: 12px 12px 0; } }
+
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 16px; }
+  .card + .card { margin-top: 16px; }
+  .card h2 { font-size: 18px; display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+  .card h2 .where { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 1.2px; color: var(--soft); font-weight: 500; text-transform: uppercase; }
+  .hint { color: var(--muted); font-size: 13.5px; }
+  .row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .row + .row { margin-top: 8px; }
+  .grow { flex: 1 1 160px; min-width: 0; }
+
+  /* missions */
+  #missions ol { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+  .mission { border: 1px solid var(--line); border-radius: 10px; background: var(--paper); }
+  .mission > button { width: 100%; text-align: left; border: 0; background: transparent; display: flex; gap: 10px; align-items: flex-start; padding: 10px 12px; border-radius: 10px; }
+  .mission .num { flex: none; width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; font-size: 12px; font-weight: 700; background: var(--line); color: var(--ink); margin-top: 1px; }
+  .mission.done .num { background: var(--green); color: #fff; }
+  .mission.current { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent) inset; }
+  .mission .title { font-weight: 600; }
+  .mission .body { padding: 0 12px 12px 46px; font-size: 14px; display: none; }
+  .mission.open .body { display: block; }
+  .mission .body ol { list-style: decimal; padding-left: 18px; gap: 2px; display: block; }
+  .mission .body ol li { margin: 2px 0; }
+  .mission .see { margin-top: 8px; padding: 8px 10px; background: #f6efe4; border-radius: 8px; font-size: 13.5px; }
+  .mission .why { margin-top: 8px; padding: 8px 10px; background: var(--green-bg); border-radius: 8px; font-size: 13.5px; display: none; }
+  .mission.done .why { display: block; }
+  #progress { height: 8px; background: var(--line); border-radius: 4px; overflow: hidden; margin: 6px 0 12px; }
+  #progress div { height: 100%; background: var(--green); width: 0; transition: width .4s; }
+
+  /* files + editor */
+  .branchbar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding: 10px; background: var(--paper); border: 1px solid var(--line); border-radius: 10px; margin-bottom: 12px; }
+  .branchbar label { font-size: 13px; color: var(--muted); }
+  .files { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+  .file { display: inline-flex; gap: 6px; align-items: center; font-family: 'JetBrains Mono', monospace; font-size: 13px; }
+  .file[aria-pressed="true"] { border-color: var(--dark); background: #ece8de; }
+  .badge { font-family: Inter, Arial, sans-serif; font-size: 11px; font-weight: 600; padding: 1px 7px; border-radius: 999px; }
+  .badge.mod { background: #f6d9cc; color: #8a3412; }
+  .badge.ign { background: #e9e6de; color: var(--muted); }
+  .badge.cfl { background: var(--red-bg); color: var(--red); }
+  textarea.editor { width: 100%; min-height: 230px; resize: vertical; font-size: 13.5px; line-height: 1.5; background: #fffdf8; white-space: pre; overflow: auto; tab-size: 2; }
+  .diff { margin-top: 10px; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: var(--paper); }
+  .diff .dh { display: flex; justify-content: space-between; padding: 6px 10px; background: #e9e6de; font-family: 'JetBrains Mono', monospace; font-size: 12.5px; }
+  .diff pre { font-family: 'JetBrains Mono', monospace; font-size: 12.5px; padding: 3px 10px; white-space: pre-wrap; word-break: break-word; }
+  .diff .add { background: var(--green-bg); color: #14532d; }
+  .diff .del { background: var(--red-bg); color: #7a2222; }
+  .diff .ctx { color: var(--muted); }
+  .diff .empty { padding: 8px 10px; color: var(--muted); font-size: 13px; }
+  .commitbox { margin-top: 12px; padding-top: 12px; border-top: 1px dashed var(--line); }
+
+  /* graph */
+  #graph-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; background: var(--paper); }
+  #graph text { font-family: 'JetBrains Mono', monospace; font-size: 11px; }
+  #graph .node { cursor: pointer; }
+  .legend { display: flex; flex-wrap: wrap; gap: 10px; font-size: 12px; color: var(--muted); margin-top: 6px; }
+  .legend span::before { box-shadow: inset 0 0 0 1px rgba(20,24,31,.35); content: ''; display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 5px; vertical-align: -1px; background: var(--c); }
+  #commit-info { margin-top: 8px; font-size: 13.5px; }
+
+  /* robot */
+  .robot { display: grid; grid-template-columns: minmax(0, 1fr) 200px; gap: 12px; align-items: center; }
+  @media (max-width: 520px) { .robot { grid-template-columns: 1fr; } }
+  #robot-svg { width: 100%; height: auto; background: #ece8de; border-radius: 10px; }
+  #robot-status { font-weight: 600; }
+  #robot-status.ok { color: var(--green); } #robot-status.bad { color: var(--red); }
+
+  /* github: issues, prs */
+  .list { display: flex; flex-direction: column; gap: 6px; }
+  .issue, .pr { border: 1px solid var(--line); border-radius: 10px; background: var(--paper); padding: 8px 10px; font-size: 14px; }
+  .state { font-size: 11.5px; font-weight: 700; padding: 1px 8px; border-radius: 999px; margin-right: 6px; }
+  .state.open { background: var(--green-bg); color: var(--green); }
+  .state.closed, .state.merged { background: #e7dcf1; color: #5d2f80; }
+  .pr .actions { margin-top: 8px; }
+  .resolver { margin-top: 10px; padding: 10px; border-radius: 10px; background: var(--red-bg); }
+  .resolver textarea { width: 100%; min-height: 150px; margin-top: 6px; font-size: 13px; white-space: pre; }
+  details summary { cursor: pointer; font-weight: 600; font-size: 14px; }
+
+  #log { list-style: none; padding: 0; max-height: 240px; overflow: auto; font-size: 13px; display: flex; flex-direction: column; gap: 4px; }
+  #log li { padding: 5px 8px; border-radius: 6px; background: var(--paper); border: 1px solid var(--line); }
+  #log code { color: var(--accent-ink); font-size: 12.5px; }
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+</style>
+</head>
+<body>
+<header class="top">
+  <h1 id="t-title"></h1>
+  <p id="t-sub"></p>
+  <nav>
+    <a href="../sunum/" id="t-slides"></a>
+    <a href="en/">EN</a>
+    <a href="../" id="t-home"></a>
+    <button id="reset"></button>
+  </nav>
+</header>
+
+<div id="explain" role="status" aria-live="polite"><span class="tag" id="t-what"></span><div><div class="what" id="explain-what"></div><div class="cmd" id="explain-cmd"></div></div></div>
+
+<div class="layout">
+  <!-- missions -->
+  <aside id="missions" class="card" aria-labelledby="t-missionsH">
+    <h2 id="t-missionsH"></h2>
+    <div class="hint" id="progress-label"></div>
+    <div id="progress"><div></div></div>
+    <ol id="mission-list"></ol>
+  </aside>
+
+  <!-- local computer -->
+  <section id="col-local" aria-labelledby="t-local">
+    <div class="card">
+      <h2><span id="t-local"></span> <span class="where" id="t-local-where"></span></h2>
+      <p class="hint" id="t-local-hint" style="margin-bottom:10px"></p>
+      <div class="branchbar">
+        <label for="branch-select" id="t-branch"></label>
+        <select id="branch-select"></select>
+        <input id="new-branch" class="mono grow" placeholder="readme-edits" aria-labelledby="t-newbranch-l" style="max-width:190px">
+        <button id="create-branch"></button><span class="sr" id="t-newbranch-l"></span>
+        <span style="flex:1"></span>
+        <button id="pull"></button>
+        <button id="push" class="primary"></button>
+      </div>
+      <div class="files" id="files" role="group"></div>
+      <label for="editor" class="sr" id="t-editor-l"></label>
+      <textarea id="editor" class="editor" spellcheck="false"></textarea>
+      <div class="diff" id="work-diff"></div>
+      <div class="commitbox">
+        <div class="row">
+          <label for="commit-msg" class="sr" id="t-msg-l"></label>
+          <input id="commit-msg" class="grow">
+          <button id="commit" class="accent"></button>
+        </div>
+        <div class="row"><button id="discard"></button><span class="hint" id="t-commit-hint"></span></div>
+      </div>
+    </div>
+    <div class="card">
+      <h2><span id="t-log"></span></h2>
+      <ul id="log"></ul>
+    </div>
+  </section>
+
+  <!-- github -->
+  <section id="col-github" aria-labelledby="t-github">
+    <div class="card">
+      <h2><span id="t-robot"></span> <span class="where" id="t-robot-where"></span></h2>
+      <div class="robot">
+        <svg id="robot-svg" viewBox="0 0 400 130" role="img" aria-labelledby="robot-status"></svg>
+        <div><div id="robot-status"></div><div class="hint" id="robot-detail"></div></div>
+      </div>
+    </div>
+    <div class="card">
+      <h2><span id="t-github"></span> <span class="where" id="t-history"></span></h2>
+      <div id="graph-wrap"><svg id="graph" role="img" aria-labelledby="t-history"></svg></div>
+      <div class="legend" id="legend"></div>
+      <div id="commit-info" class="hint"></div>
+    </div>
+    <div class="card">
+      <h2 id="t-prs"></h2>
+      <details id="new-pr-box">
+        <summary id="t-newpr"></summary>
+        <div class="row" style="margin-top:8px"><label for="pr-from" id="t-from" class="hint"></label><select id="pr-from"></select><span class="hint">→ main</span></div>
+        <div class="row"><input id="pr-title" class="grow" aria-labelledby="t-prtitle-l"><span class="sr" id="t-prtitle-l"></span></div>
+        <div class="row"><textarea id="pr-body" class="grow" rows="2" aria-labelledby="t-prbody-l"></textarea><span class="sr" id="t-prbody-l"></span></div>
+        <div class="row"><button id="open-pr" class="primary"></button></div>
+      </details>
+      <div class="list" id="prs" style="margin-top:10px"></div>
+    </div>
+    <div class="card">
+      <h2 id="t-issuesH"></h2>
+      <div class="list" id="issues"></div>
+      <div class="row" style="margin-top:10px"><button id="teammate"></button><span class="hint" id="t-teammate-hint"></span></div>
+    </div>
+  </section>
+</div>
+
+<script>
+const LANG = document.documentElement.lang === 'en' ? 'en' : 'tr';
+const T = {"tr": {"title": "Git oyun alanı", "sub": "Hesap açmadan, hiçbir şeyi bozma riski olmadan dene: her butonun dosyalara, geçmişe ve robota ne yaptığını canlı gör.", "slides": "Sunum", "home": "Atölye sayfası", "resetBtn": "Baştan başla", "resetConfirm": "Her şey ilk hâline dönsün mü?", "what": "NE OLDU?", "welcome": "Hoş geldin! Soldaki görevleri sırayla izle. Her adımdan sonra burada ne olduğunu ve arka planda hangi Git komutunun çalıştığını göreceksin.", "behind": "Arka planda:", "missionsH": "Görevler", "progress": "{n} / {t} görev tamam", "seeLabel": "Gözle:", "whyLabel": "Ne oldu?", "missionDone": "Görev tamam: {t} (açıklaması solda).", "editing": "{f} değişti. Aşağıdaki diff'te farkı gör. Henüz kaydedilmedi: kaydetmek için commit et.", "editingIgn": "{f} değişti ama .gitignore'da: Git bu değişikliği görmüyor.", "local": "Bilgisayarın", "local-hint": "Dosyaları burada düzenler, commit ile kaydedersin. Push edene kadar GitHub ve robot değişikliği görmez.", "onBranch": "şu an: {b}", "branch": "Branch", "createBranch": "Yeni branch", "newbranch-l": "Yeni branch adı", "pullBtn": "Pull ↓", "pushBtn": "Push", "editor-l": "Dosya düzenleyici", "msg-l": "Commit mesajı", "msgPh": "Commit mesajı, ör. README'ye adımı ekledim", "commitBtn": "Commit", "discardBtn": "Değişiklikleri geri al", "nChanged": "{n} dosya değişti, commit bekliyor.", "cleanTree": "Kaydedilmemiş değişiklik yok.", "bIgnored": "yok sayılıyor", "bModified": "değişti", "ignoredExplain": "{f}, .gitignore listesinde. Git bu dosyayı izlemez; commit'e de GitHub'a da girmez.", "noChanges": "Bu dosyada, {b} branch'indeki son commit'e göre değişiklik yok. Yukarıda bir şey yaz, farkı burada gör.", "log": "Yaptıkların", "logEmpty": "Henüz bir şey yapmadın.", "robot": "Robot", "robot-where": "GitHub'daki main'i çalıştırır", "github": "GitHub", "history": "commit geçmişi", "lgLocal": "turuncu etiket: bilgisayarındaki branch (★ = şu an)", "lgRemote": "siyah etiket: GitHub'daki branch", "lgMerge": "içi boş daire: merge commit", "lgClick": "Bir noktaya tıkla: ne değiştiğini gör.", "pickCommit": "Grafikteki bir noktaya (commit) tıkla; o commit'in değiştirdiği satırlar burada görünür.", "revertBtn": "Bu commit'i geri al (revert)", "noDiff": "Dosya değişikliği yok.", "prs": "Pull request'ler", "newpr": "Yeni pull request aç", "from": "Branch:", "noPushed": "(önce bir branch'i push et)", "prtitle-l": "PR başlığı", "prbody-l": "PR açıklaması", "prTitlePh": "Başlık, ör. README'ye adımı ekle", "prBodyPh": "Açıklama, ör. Closes #1", "openPR": "Pull request aç", "noPRs": "Henüz pull request yok.", "filesChanged": "Files changed (diff)", "approveBtn": "Approve", "changesBtn": "Request changes", "mergeBtn": "Merge pull request", "deleteBtn": "Branch'i sil: {b}", "rvApproved": "✓ Onaylandı (approve)", "rvChanges": "✗ Değişiklik istendi", "st_open": "Açık", "st_merged": "Merged", "st_closed": "Kapandı", "resolveTitle": "Merge conflict: karar senin", "resolveHelp": "Aynı satır iki yerde farklı değişmiş. Doğru satırı bırak; <<<<<<<, ======= ve >>>>>>> satırlarını sil, sonra kaydet.", "resolveBtn": "Çözümü kaydet ve birleştir", "issuesH": "Issue'lar", "teammateBtn": "Takım arkadaşın push etsin", "teammate-hint": "Takım arkadaşın GitHub'daki main'e yeni bir commit gönderir.", "initMsg": "Proje oluşturuldu", "theirs": "gelen branch", "mateFile": "docs/takim-notlari.md", "mateHead": "# Takım notları", "mateLine": "- Not {n}: motor sürücü test edildi", "mateMsg": "Takım notu {n} eklendi", "mateName": "Takım arkadaşı", "mateDone": "Takım arkadaşın GitHub'daki main'e bir commit gönderdi. Grafikte T harfli noktaya bak: GitHub/main ilerledi, ama senin bilgisayarındaki main geride kaldı.", "needResolve": "Önce sağdaki pull request'teki çakışmayı çöz.", "onlyIgnored": "Commit'lenecek bir şey yok: değiştirdiğin {f} .gitignore'da olduğu için Git onu hiç görmüyor. İşte .gitignore böyle korur.", "nothing": "Commit'lenecek değişiklik yok. Önce bir dosyayı değiştir.", "needMsg": "Commit mesajı yaz: ne değişti, kısaca.", "committed": "Commit {id} kaydedildi ({b} branch'inde, {n} dosya). Grafikte yeni bir nokta belirdi. Dikkat: GitHub etiketi yerinden oynamadı; commit sadece bilgisayarında.", "ignoredNote": "({f} .gitignore'da olduğu için commit'e girmedi.)", "leaked": "UYARI: secrets.h artık commit'in içinde! Push edersen şifre GitHub'da herkese görünür ve geçmişten silmek çok zor. Gerçek hayatta şifreyi hemen değiştirmen gerekirdi.", "discarded": "Kaydedilmemiş değişiklikler silindi; dosyalar son commit'teki hâline döndü.", "dirtySwitch": "Branch değiştirmeden önce değişikliklerini commit et (ya da geri al). Yoksa Git onları nereye koyacağını bilemez.", "switched": "{b} branch'ine geçtin. Dosyalar o branch'teki son commit'e göre değişti.", "needBranchName": "Yeni branch için bir ad yaz, ör. readme-edits.", "badBranch": "Branch adında sadece harf, rakam, - _ . / kullan.", "branchExists": "{b} adında bir branch zaten var.", "branched": "{b} branch'ini {from} branch'inden açtın ve ona geçtin. Şu an iki branch aynı noktayı gösteriyor; yapacağın commit'ler sadece {b} branch'ine gidecek.", "rejected": "Push reddedildi! GitHub'daki {b}, senin bilgisayarında olmayan commit'ler içeriyor (biri senden önce push etti). Önce Pull ile onları al, sonra tekrar push et.", "upToDate": "Zaten güncel; gönderilecek ya da alınacak bir şey yok.", "pushed": "{b} GitHub'a gönderildi. Siyah GitHub etiketi senin commit'ine geldi; artık takım da görebilir.", "robotFixed": "Robot yeni kodu aldı ve artık düzgün çalışıyor ✓", "robotBroke": "Robot yeni kodu aldı ve sorun çıkardı ✗ — sağdaki robota bak.", "noRemote": "{b} henüz GitHub'da yok; çekilecek bir şey yok.", "dirtyPull": "Pull'dan önce değişikliklerini commit et.", "pullConflict": "Pull sırasında çakışma çıktı. Bu oyun alanında bunu bir pull request üzerinden çözmeyi dene.", "pullMerge": "GitHub'daki {b} birleştirildi", "pulled": "GitHub'daki {b} bilgisayarına alındı. Turuncu ve siyah etiket yine aynı noktada.", "dirtyRevert": "Revert'ten önce değişikliklerini commit et.", "cantRevertFirst": "İlk commit geri alınamaz.", "revertNotHere": "Bu commit şu an bulunduğun {b} branch'inde değil.", "revertConflict": "Bu commit'i geri almak sonraki değişikliklerle çakışıyor; daha yeni bir commit'i dene.", "reverted": "{id} geri alındı: onu tersine çeviren yeni bir commit ({nid}) eklendi. Geçmiş silinmedi, sadece üstüne yeni bir adım geldi. Robotun etkilenmesi için push et.", "needPushedBranch": "Pull request için önce branch'ini push et: PR GitHub'daki branch'ten açılır.", "prExists": "{b} için zaten açık bir pull request var.", "prNothing": "{b} branch'inde main'de olmayan bir değişiklik yok (push ettin mi?).", "prOpened": "Pull request #{n} açıldı ({b} → main). 'Files changed' kısmında diff'i oku, sonra onayla ve birleştir.", "approvedMsg": "PR #{n} onaylandı. Gerçek takımda bunu başka biri yapar.", "changesMsg": "PR #{n} için değişiklik istendi. Sahibi branch'e yeni commit push edince PR kendiliğinden güncellenir.", "conflictMsg": "Merge conflict! {f} dosyasında aynı satır iki branch'te farklı değişmiş. Pull request'in altında hangi satırın kalacağını seç.", "mergedMsg": "PR #{n} birleştirildi: GitHub'daki main'e bir merge commit eklendi.", "issueClosedMsg": "Açıklamadaki anahtar kelime sayesinde {i} kendiliğinden kapandı.", "localBehind": "Bilgisayarındaki main geride kaldı: main'e geçip Pull yap.", "markersLeft": "Hâlâ <<<<<<< / ======= / >>>>>>> satırları var. Onları sil, sadece doğru kodu bırak.", "cantDeleteHead": "main'i ya da şu an bulunduğun branch'i silemezsin; önce başka bir branch'e geç.", "notMerged": "{b} henüz main'e birleştirilmedi (ya da yerelde push edilmemiş commit'ler var). Silersen o iş kaybolur.", "deletedMsg": "{b} silindi. İşi kaybolmadı: commit'leri main'in geçmişinde duruyor.", "rbCompile": "Kod derlenmiyor ✗", "rbCompileD": "main.ino içinde çakışma işaretleri (<<<<<<<) kalmış; robot bu kodu yükleyemez.", "rbNoKp": "Kp satırı bulunamadı ya da bozuk.", "rbPins": "Robot yerinde dönüyor ✗", "rbPinsD": "İki motor da aynı pine ({p}) bağlanmış.", "rbWobble": "Robot sağa sola salınıyor ✗", "rbWobbleD": "Kp = {kp} çok yüksek: robot her hatada fazla sert düzeltiyor.", "rbDrift": "Robot virajda çizgiden çıkıyor ✗", "rbDriftD": "Kp = {kp} çok düşük: robot hatayı düzeltmeye yetecek kadar dönmüyor.", "rbOk": "Robot çizgiyi düzgün izliyor ✓", "rbOkD": "Kp = {kp}. Robot, GitHub'daki main'de ne varsa onu çalıştırır.", "initialFiles": {"README.md": "# Çizgi İzleyen Robot\n\nSiyah çizgiyi izleyen iki tekerlekli robot.\n\n## Takım\n- (adını buraya yaz)\n", "firmware/main.ino": "// Çizgi izleyen robot\nconst float Kp = 1.4;      // oransal kazanç\nconst int SOL_MOTOR = 5;\nconst int SAG_MOTOR = 6;\n\nvoid setup() {\n  pinMode(SOL_MOTOR, OUTPUT);\n  pinMode(SAG_MOTOR, OUTPUT);\n}\n\nvoid loop() {\n  float hata = cizgiOku();\n  surMotorlar(Kp * hata);\n}", ".gitignore": "# Git'in izlemeyeceği dosyalar\nbuild/\n*.hex\nsecrets.h\n", "secrets.h": "// Wi-Fi bilgileri — asla GitHub'a gitmemeli\n#define WIFI_SSID \"\"\n#define WIFI_PASS \"\"\n"}, "missions": {"edit": {"t": "Bir dosyayı değiştir", "do": ["Ortadaki dosyalardan <b>README.md<\/b> seçili olsun.", "“(adını buraya yaz)” yerine adını yaz."], "see": "Dosyanın yanında <b>değişti<\/b> etiketi çıkar; altında yeşil (+) ve kırmızı (−) satırlarla diff görünür.", "why": "Değişiklik şu an sadece çalışma kopyanda. Henüz geçmişe kaydedilmedi; Git sadece “bu dosya değişti” diye biliyor."}, "commit": {"t": "Commit et", "do": ["Commit mesajı yaz, ör. <i>README'ye adımı ekledim<\/i>.", "<b>Commit<\/b> butonuna bas."], "see": "Sağdaki grafikte yeni bir nokta belirir. Turuncu <b>main ★<\/b> etiketi ona geçer ama siyah <b>GitHub/main<\/b> etiketi eski noktada kalır.", "why": "Commit bir anlık kayıttır ve bilgisayarında durur. Geçmişte bu noktaya her zaman dönebilirsin. Ama GitHub ve takım henüz görmüyor."}, "push": {"t": "Push et", "do": ["<b>Push<\/b> butonuna bas."], "see": "Siyah <b>GitHub/main<\/b> etiketi senin commit'ine kayar.", "why": "Push, bilgisayarındaki commit'leri GitHub'a gönderir. Artık takımın da görebilir; robot da GitHub'daki main'i çalıştırır."}, "branch": {"t": "Branch aç", "do": ["Branch kutusuna <b>readme-edits<\/b> yaz.", "<b>Yeni branch<\/b> butonuna bas."], "see": "Grafikte iki turuncu etiket aynı noktada durur: main ve readme-edits ★.", "why": "Branch, aynı yerden başlayan ayrı bir çalışma hattıdır. Şimdilik main ile aynı; farkı commit edince oluşur."}, "safe": {"t": "Branch'te dene, main'in güvende olduğunu gör", "do": ["readme-edits üzerindeyken README'ye bir satır ekle ve commit et.", "Branch menüsünden <b>main<\/b>'e geç ve README'ye bak."], "see": "main'deki README'de yeni satır yok! Grafikte readme-edits ayrı bir hatta ilerledi.", "why": "Branch'teki iş main'e dokunmaz. Robot main'i çalıştırdığı için deneme yaparken onu bozamazsın."}, "pr": {"t": "Pull request aç", "do": ["readme-edits'e geri geç ve <b>Push<\/b> et.", "Sağda <b>Yeni pull request aç<\/b>'ı aç, readme-edits'i seç.", "Açıklamaya <b>Closes #1<\/b> yaz ve <b>Pull request aç<\/b>."], "see": "Listede açık bir PR belirir. <b>Files changed<\/b> kısmında main'e neyin geleceğini gösteren diff var.", "why": "Pull request, “branch'imdeki değişiklikleri main'e alalım mı?” diye sormaktır. Değişiklik main'e girmeden önce görülür ve tartışılır."}, "merge": {"t": "İncele ve birleştir", "do": ["PR'daki diff'i oku.", "<b>Approve<\/b>'a, sonra <b>Merge pull request<\/b>'e bas."], "see": "PR <b>Merged<\/b> olur ve <b>#1 numaralı issue kendiliğinden kapanır<\/b>. GitHub/main'de içi boş bir merge noktası belirir.", "why": "Merge, branch'teki işi main'e katar. “Closes #1” yazdığın için GitHub ilgili işi de bitmiş saydı."}, "pull": {"t": "Pull ile bilgisayarını güncelle", "do": ["Branch menüsünden <b>main<\/b>'e geç.", "<b>Pull ↓<\/b> butonuna bas."], "see": "Turuncu main etiketi siyah GitHub/main etiketinin yanına gelir; README'de branch'teki satır artık var.", "why": "Merge GitHub'da oldu; bilgisayarın bunu kendiliğinden bilmez. Pull, GitHub'daki yeni commit'leri bilgisayarına getirir. Çalışmaya her zaman pull ile başla."}, "ignore": {"t": ".gitignore'u test et", "do": ["<b>secrets.h<\/b> dosyasını seç, WIFI_PASS'in tırnakları arasına bir şifre yaz.", "Commit etmeyi dene."], "see": "Git “commit'lenecek bir şey yok” der; secrets.h'nin yanında <b>yok sayılıyor<\/b> yazar.", "why": ".gitignore'daki dosyalar hiç izlenmez; şifre asla geçmişe ya da GitHub'a girmez. (Merak edersen .gitignore'dan secrets.h satırını sil ve tekrar dene: ne olduğuna bak, sonra geri al.)"}, "revert": {"t": "Robotu boz, revert ile kurtar", "do": ["main'de <b>firmware/main.ino<\/b>'da Kp'yi <b>5.0<\/b> yap, commit et ve push et.", "Robota bak.", "Grafikte o commit'e tıkla, <b>Bu commit'i geri al (revert)<\/b>, sonra push et."], "see": "Kp 5.0 iken robot sağa sola salınır. Revert ve push'tan sonra yine düzgün izler; geçmişte hem hatalı commit hem de onu geri alan commit durur.", "why": "Revert hatalı commit'i silmez; onu tersine çeviren yeni bir commit ekler. Takım arkadaşlarının geçmişi bozulmaz, robot çalışan koda döner."}, "conflict": {"t": "Çakışma oluştur ve çöz", "do": ["main'den <b>pid-ayar<\/b> branch'i aç; Kp'yi <b>1.8<\/b> yap, commit, push.", "main'e geç; Kp'yi <b>1.2<\/b> yap, commit, push.", "pid-ayar için PR aç ve Merge'e bas.", "Çıkan kutuda tek bir Kp satırı bırak, işaret satırlarını sil, kaydet."], "see": "GitHub birleştirmeyi durdurur ve iki sürümü <<<<<<< / ======= / >>>>>>> arasında gösterir.", "why": "İki kişi aynı satırı farklı değiştirince Git hangisinin doğru olduğunu bilemez; kararı insan verir. Bu bir hata değil, bir sorudur."}, "rejected": {"t": "Reddedilen push'u düzelt", "do": ["main'deyken <b>Takım arkadaşın push etsin<\/b>'e bas.", "README'yi değiştir, commit et, <b>Push<\/b>'a bas.", "Reddedilince <b>Pull ↓<\/b>, sonra yine <b>Push<\/b>."], "see": "İlk push reddedilir. Pull, arkadaşının commit'ini getirir ve birleştirir; ikinci push başarılı olur.", "why": "GitHub, başkasının işini ezmene izin vermez. Önce onun commit'lerini alırsın, sonra seninkini gönderirsin."}, "delete": {"t": "Birleştirilen branch'i sil", "do": ["main'deyken, birleştirilmiş PR'ın altındaki <b>Branch'i sil<\/b> butonuna bas."], "see": "Etiket kaybolur ama grafikteki noktalar yerinde kalır.", "why": "Branch sadece bir etikettir. İşi main'e girdiyse branch'i silmek hiçbir şey kaybettirmez ve repoyu düzenli tutar."}}, "issues": ["README'ye adını ekle", "PID kazancını ayarla", "Takım notlarını güncel tut"]}}[LANG];
+const S = (k, o) => { let s = T[k]; if (s == null) return k; if (o) for (const x in o) s = s.split('{' + x + '}').join(o[x]); return s; };
+
+/* ---------------- model ---------------- */
+const KEY = 'gh-playground-' + LANG;
+let st;
+function fresh() {
+  const files = JSON.parse(JSON.stringify(T.initialFiles));
+  const tracked = {}; for (const p in files) if (p !== 'secrets.h') tracked[p] = files[p];
+  const c0 = { id: hash('init'), parents: [], msg: T.initMsg, files: tracked, lane: 'main', n: 0, who: 'you' };
+  return {
+    commits: { [c0.id]: c0 }, order: [c0.id], seq: 1,
+    local: { main: c0.id }, remote: { main: c0.id }, lanes: ['main'], head: 'main',
+    work: files, sel: 'README.md',
+    issues: T.issues.map((t, i) => ({ n: i + 1, title: t, open: true })),
+    prs: [], prSeq: 3, flags: {}, done: {}, log: [], pick: null, conflict: null, mateCount: 0
+  };
+}
+function hash(s) { let h = 2166136261; s = s + Math.random(); for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } return ('0000000' + (h >>> 0).toString(16)).slice(-7); }
+function save() { try { localStorage.setItem(KEY, JSON.stringify(st)); } catch (e) {} }
+function load() { try { const s = JSON.parse(localStorage.getItem(KEY)); if (s && s.commits) return s; } catch (e) {} return null; }
+
+const C = id => st.commits[id];
+const headId = () => st.local[st.head];
+const snap = id => C(id).files;
+function ancestors(id) { const seen = new Set(), q = [id]; while (q.length) { const x = q.shift(); if (seen.has(x)) continue; seen.add(x); C(x).parents.forEach(p => q.push(p)); } return seen; }
+const isAnc = (a, b) => ancestors(b).has(a);           // a is ancestor of (or equal to) b
+function mergeBase(a, b) { const A = ancestors(a); const q = [b], seen = new Set(); while (q.length) { const x = q.shift(); if (seen.has(x)) continue; seen.add(x); if (A.has(x)) return x; C(x).parents.forEach(p => q.push(p)); } return null; }
+
+function ignored(path, gi) {
+  gi = gi == null ? (st.work['.gitignore'] || '') : gi;
+  return gi.split('\n').map(s => s.trim()).filter(s => s && !s.startsWith('#')).some(pat => {
+    if (pat.endsWith('/')) return path.startsWith(pat);
+    if (pat.includes('*')) { const re = new RegExp('^' + pat.replace(/[.+^${}()|[\]\\]/g, '\\$&').replace(/\*/g, '[^/]*') + '$'); return re.test(path) || re.test(path.split('/').pop()); }
+    return path === pat;
+  });
+}
+function changedFiles() {
+  const h = snap(headId()), out = [];
+  for (const p in st.work) { if (ignored(p)) continue; if (h[p] !== st.work[p]) out.push(p); }
+  for (const p in h) if (!(p in st.work)) out.push(p);
+  return out;
+}
+const dirty = () => changedFiles().length > 0;
+
+function newCommit(parents, msg, files, lane, who) {
+  const id = hash(msg + st.seq);
+  st.commits[id] = { id, parents, msg, files, lane, n: st.seq++, who: who || 'you' };
+  st.order.push(id);
+  if (!st.lanes.includes(lane)) st.lanes.push(lane);
+  return id;
+}
+
+/* line diff (LCS) */
+function diffLines(a, b) {
+  const A = (a || '').split('\n'), B = (b || '').split('\n'), n = A.length, m = B.length;
+  const L = Array.from({ length: n + 1 }, () => new Array(m + 1).fill(0));
+  for (let i = n - 1; i >= 0; i--) for (let j = m - 1; j >= 0; j--) L[i][j] = A[i] === B[j] ? L[i + 1][j + 1] + 1 : Math.max(L[i + 1][j], L[i][j + 1]);
+  const out = []; let i = 0, j = 0;
+  while (i < n && j < m) { if (A[i] === B[j]) { out.push([' ', A[i]]); i++; j++; } else if (L[i + 1][j] >= L[i][j + 1]) out.push(['-', A[i++]]); else out.push(['+', B[j++]]); }
+  while (i < n) out.push(['-', A[i++]]); while (j < m) out.push(['+', B[j++]]);
+  return out;
+}
+function diffHTML(path, a, b) {
+  const d = diffLines(a, b); const add = d.filter(x => x[0] === '+').length, del = d.filter(x => x[0] === '-').length;
+  // show changed lines with 1 line of context
+  const keep = d.map((x, k) => x[0] !== ' ' || (d[k - 1] && d[k - 1][0] !== ' ') || (d[k + 1] && d[k + 1][0] !== ' '));
+  let body = ''; let gap = false;
+  d.forEach((x, k) => { if (!keep[k]) { if (!gap) { body += '<pre class="ctx">…</pre>'; gap = true; } return; } gap = false; body += '<pre class="' + (x[0] === '+' ? 'add' : x[0] === '-' ? 'del' : 'ctx') + '">' + (x[0] === ' ' ? '  ' : x[0] + ' ') + esc(x[1]) + '</pre>'; });
+  return '<div class="dh"><span>' + esc(path) + '</span><span><span style="color:var(--green)">+' + add + '</span> <span style="color:var(--red)">−' + del + '</span></span></div>' + body;
+}
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
+
+/* three-way merge, line based */
+function merge3(base, ours, theirs) {
+  const files = {}, conflicts = [];
+  const paths = new Set([...Object.keys(base), ...Object.keys(ours), ...Object.keys(theirs)]);
+  paths.forEach(p => {
+    const b = base[p], o = ours[p], t = theirs[p];
+    if (o === t) { if (o != null) files[p] = o; return; }
+    if (o === b) { if (t != null) files[p] = t; return; }
+    if (t === b) { if (o != null) files[p] = o; return; }
+    const B = (b || '').split('\n'), O = (o || '').split('\n'), Th = (t || '').split('\n');
+    if (B.length === O.length && B.length === Th.length) {
+      const res = []; let bad = false;
+      for (let i = 0; i < B.length; i++) {
+        if (O[i] === Th[i] || Th[i] === B[i]) res.push(O[i]);
+        else if (O[i] === B[i]) res.push(Th[i]);
+        else { bad = true; res.push('<<<<<<< main', O[i], '=======', Th[i], '>>>>>>> ' + T.theirs); }
+      }
+      files[p] = res.join('\n'); if (bad) conflicts.push(p);
+    } else { files[p] = '<<<<<<< main\n' + (o || '') + '\n=======\n' + (t || '') + '\n>>>>>>> ' + T.theirs; conflicts.push(p); }
+  });
+  return { files, conflicts };
+}
+const hasMarkers = s => /^(<<<<<<<|=======|>>>>>>>)/m.test(s || '');
+
+/* ---------------- actions ---------------- */
+function explain(kind, what, cmd) { st.last = { kind, what, cmd }; st.log.unshift({ what, cmd }); st.log = st.log.slice(0, 40); }
+
+function doEdit(v) {
+  st.work[st.sel] = v;
+  st.last = { kind: '', what: ignored(st.sel) ? S('editingIgn', { f: st.sel }) : S('editing', { f: st.sel }), cmd: '' };
+  if (st.sel === 'README.md' && v !== snap(headId())['README.md']) st.flags.edited = true;
+}
+function doCommit() {
+  if (st.conflict) return explain('warn', S('needResolve'), '');
+  const msg = el('commit-msg').value.trim();
+  const ch = changedFiles();
+  const ignoredChanged = Object.keys(st.work).filter(p => ignored(p) && st.work[p] !== T.initialFiles[p]);
+  if (!ch.length && ignoredChanged.includes('secrets.h')) st.flags.ignoredSeen = true;
+  if (!ch.length) return explain('warn', ignoredChanged.length ? S('onlyIgnored', { f: ignoredChanged.join(', ') }) : S('nothing'), 'git status');
+  if (!msg) { el('commit-msg').focus(); return explain('warn', S('needMsg'), ''); }
+  const files = {}; for (const p in st.work) if (!ignored(p)) files[p] = st.work[p];
+  const leaked = 'secrets.h' in files && !('secrets.h' in snap(headId()));
+  const id = newCommit([headId()], msg, files, st.head);
+  st.local[st.head] = id; el('commit-msg').value = '';
+  st.flags.commits = (st.flags.commits || 0) + 1;
+  if (st.head !== 'main') st.flags.branchCommit = true;
+  if (ignoredChanged.includes('secrets.h')) st.flags.ignoredSeen = true;
+  if (st.flags.rejected) st.flags.commitAfterReject = true;
+  let what = S('committed', { id, b: st.head, n: ch.length });
+  if (ignoredChanged.length) what += ' ' + S('ignoredNote', { f: ignoredChanged.join(', ') });
+  if (leaked) { what += ' ' + S('leaked'); st.flags.leaked = true; }
+  explain(leaked ? 'warn' : 'good', what, 'git add . && git commit -m "' + msg + '"');
+}
+function doDiscard() {
+  const h = snap(headId()); const keep = {}; for (const p in st.work) if (ignored(p)) keep[p] = st.work[p];
+  st.work = Object.assign({}, h, keep); explain('', S('discarded'), 'git restore .');
+}
+function doSwitch(b) {
+  if (b === st.head) return;
+  if (st.conflict) return explain('warn', S('needResolve'), '');
+  if (dirty()) { renderBranches(); return explain('warn', S('dirtySwitch'), 'git switch ' + b); }
+  const keep = {}; for (const p in st.work) if (ignored(p)) keep[p] = st.work[p];
+  st.head = b; st.work = Object.assign({}, snap(st.local[b]), keep);
+  if (!(st.sel in st.work)) st.sel = 'README.md';
+  if (b === 'main' && Object.keys(st.local).some(x => x !== 'main' && !isAnc(st.local[x], st.local.main))) st.flags.sawMainUnchanged = true;
+  explain('', S('switched', { b }), 'git switch ' + b);
+}
+function doCreateBranch() {
+  const name = el('new-branch').value.trim().replace(/\s+/g, '-');
+  if (!name) { el('new-branch').focus(); return explain('warn', S('needBranchName'), ''); }
+  if (!/^[A-Za-z0-9._\/-]+$/.test(name)) return explain('warn', S('badBranch'), '');
+  if (st.local[name]) return explain('warn', S('branchExists', { b: name }), '');
+  st.local[name] = headId(); if (!st.lanes.includes(name)) st.lanes.push(name);
+  const from = st.head; st.head = name; el('new-branch').value = '';
+  st.flags.branched = true;
+  explain('good', S('branched', { b: name, from }), 'git switch -c ' + name);
+}
+function doPush() {
+  const b = st.head, l = st.local[b], r = st.remote[b];
+  if (r && !isAnc(r, l)) { st.flags.rejected = true; return explain('warn', S('rejected', { b }), 'git push   ✗ rejected (non-fast-forward)'); }
+  if (r === l) return explain('', S('upToDate'), 'git push');
+  const before = robotState().ok;
+  st.remote[b] = l; st.flags.pushed = true;
+  if (st.flags.rejected && st.flags.pulledAfterReject) st.flags.pushAfterReject = true;
+  if (b === 'main') { const rv = C(l).revertOf; if (rv) st.flags.revertPushed = true; if (!robotState().ok) st.flags.robotBroken = true; }
+  const after = robotState().ok;
+  let what = S('pushed', { b }); if (b === 'main' && before !== after) what += ' ' + (after ? S('robotFixed') : S('robotBroke'));
+  explain(after ? 'good' : 'warn', what, 'git push origin ' + b);
+}
+function doPull() {
+  if (st.conflict) return explain('warn', S('needResolve'), '');
+  const b = st.head, l = st.local[b], r = st.remote[b];
+  if (!r) return explain('', S('noRemote', { b }), 'git pull');
+  if (dirty()) return explain('warn', S('dirtyPull'), 'git pull');
+  if (isAnc(r, l)) return explain('', S('upToDate'), 'git pull');
+  if (isAnc(l, r)) { st.local[b] = r; }
+  else {
+    const m = merge3(snap(mergeBase(l, r)), snap(l), snap(r));
+    if (m.conflicts.length) return explain('warn', S('pullConflict'), 'git pull');
+    st.local[b] = newCommit([l, r], S('pullMerge', { b }), m.files, b);
+  }
+  const keep = {}; for (const p in st.work) if (ignored(p)) keep[p] = st.work[p];
+  st.work = Object.assign({}, snap(st.local[b]), keep);
+  if (st.flags.rejected) st.flags.pulledAfterReject = true;
+  if (b === 'main' && st.prs.some(p => p.state === 'merged')) st.flags.pulledAfterMerge = true;
+  explain('good', S('pulled', { b }), 'git pull origin ' + b);
+}
+function doRevert(id) {
+  if (st.conflict) return explain('warn', S('needResolve'), '');
+  if (dirty()) return explain('warn', S('dirtyRevert'), '');
+  const c = C(id); if (!c.parents.length) return explain('warn', S('cantRevertFirst'), '');
+  if (!isAnc(id, headId())) return explain('warn', S('revertNotHere', { b: st.head }), '');
+  const parent = snap(c.parents[0]), cur = Object.assign({}, snap(headId()));
+  const m = merge3(c.files, cur, parent);
+  if (m.conflicts.length) return explain('warn', S('revertConflict'), '');
+  const nid = newCommit([headId()], 'Revert "' + c.msg + '"', m.files, st.head);
+  st.commits[nid].revertOf = id;
+  st.local[st.head] = nid;
+  const keep = {}; for (const p in st.work) if (ignored(p)) keep[p] = st.work[p];
+  st.work = Object.assign({}, m.files, keep);
+  st.flags.reverted = true;
+  explain('good', S('reverted', { id, nid }), 'git revert ' + id);
+}
+function doOpenPR() {
+  const from = el('pr-from').value;
+  if (!from) return explain('warn', S('needPushedBranch'), '');
+  if (st.prs.some(p => p.from === from && p.state === 'open')) return explain('warn', S('prExists', { b: from }), '');
+  if (isAnc(st.remote[from], st.remote.main)) return explain('warn', S('prNothing', { b: from }), '');
+  const title = el('pr-title').value.trim() || from, body = el('pr-body').value;
+  const n = st.prSeq++;
+  st.prs.unshift({ n, from, title, body, state: 'open', review: null });
+  el('pr-title').value = ''; el('pr-body').value = ''; el('new-pr-box').open = false;
+  if (/\b(close[sd]?|fix(e[sd])?|resolve[sd]?|kapat(ır)?)\s+#\d+/i.test(body)) st.flags.prLinked = true;
+  st.flags.prOpened = true;
+  explain('good', S('prOpened', { n, b: from }), 'gh pr create --base main --head ' + from);
+}
+function doReview(n, kind) {
+  const pr = st.prs.find(p => p.n === n); pr.review = kind;
+  if (kind === 'approve') st.flags.approved = true;
+  explain(kind === 'approve' ? 'good' : '', S(kind === 'approve' ? 'approvedMsg' : 'changesMsg', { n }), kind === 'approve' ? 'gh pr review --approve' : 'gh pr review --request-changes');
+}
+function doMerge(n) {
+  if (st.conflict) return explain('warn', S('needResolve'), '');
+  const pr = st.prs.find(p => p.n === n), src = st.remote[pr.from], tgt = st.remote.main;
+  const m = merge3(snap(mergeBase(tgt, src)), snap(tgt), snap(src));
+  if (m.conflicts.length) { st.conflict = { n, files: m.files, paths: m.conflicts }; st.flags.sawConflict = true; return explain('warn', S('conflictMsg', { f: m.conflicts.join(', ') }), 'git merge ' + pr.from + '   ✗ CONFLICT'); }
+  finishMerge(pr, m.files);
+}
+function finishMerge(pr, files) {
+  const before = robotState().ok;
+  const id = newCommit([st.remote.main, st.remote[pr.from]], 'Merge pull request #' + pr.n + ' from ' + pr.from, files, 'main');
+  st.remote.main = id; pr.state = 'merged'; st.flags.merged = true;
+  const closed = [];
+  const re = /\b(?:close[sd]?|fix(?:e[sd])?|resolve[sd]?|kapat(?:ır)?)\s+#(\d+)/gi; let mm;
+  while ((mm = re.exec(pr.body))) { const is = st.issues.find(i => i.n === +mm[1]); if (is && is.open) { is.open = false; closed.push('#' + is.n); } }
+  if (closed.length) st.flags.issueClosed = true;
+  const after = robotState().ok; if (!after) st.flags.robotBroken = true;
+  let what = S('mergedMsg', { n: pr.n }); if (closed.length) what += ' ' + S('issueClosedMsg', { i: closed.join(', ') });
+  what += ' ' + S('localBehind');
+  if (before !== after) what += ' ' + (after ? S('robotFixed') : S('robotBroke'));
+  explain('good', what, 'git merge --no-ff ' + pr.from);
+}
+function doResolve() {
+  const cf = st.conflict; const files = Object.assign({}, cf.files);
+  for (const p of cf.paths) { const v = el('res-' + p.replace(/\W/g, '_')).value; if (hasMarkers(v)) return explain('warn', S('markersLeft'), ''); files[p] = v; }
+  st.conflict = null; st.flags.conflictResolved = true;
+  finishMerge(st.prs.find(p => p.n === cf.n), files);
+}
+function doDeleteBranch(b) {
+  if (b === 'main' || b === st.head) return explain('warn', S('cantDeleteHead'), '');
+  const merged = st.remote[b] && isAnc(st.remote[b], st.remote.main) && isAnc(st.local[b], st.remote.main);
+  if (!merged) return explain('warn', S('notMerged', { b }), 'git branch -d ' + b + '   ✗');
+  delete st.local[b]; delete st.remote[b]; st.flags.deleted = true;
+  explain('good', S('deletedMsg', { b }), 'git push origin --delete ' + b);
+}
+function doTeammate() {
+  st.mateCount++;
+  const f = Object.assign({}, snap(st.remote.main));
+  const p = T.mateFile; f[p] = (f[p] ? f[p] + '\n' : T.mateHead + '\n') + S('mateLine', { n: st.mateCount });
+  st.remote.main = newCommit([st.remote.main], S('mateMsg', { n: st.mateCount }), f, 'main', 'mate');
+  st.flags.mate = true;
+  explain('', S('mateDone'), '(' + T.mateName + ') git push origin main');
+}
+
+/* ---------------- robot ---------------- */
+function robotState() {
+  const src = (snap(st.remote.main)['firmware/main.ino'] || '');
+  if (hasMarkers(src)) return { ok: false, mode: 'broken', msg: S('rbCompile'), detail: S('rbCompileD') };
+  const kp = parseFloat((src.match(/Kp\s*=\s*(-?[\d.]+)/) || [])[1]);
+  const l = (src.match(/(SOL_MOTOR|LEFT_MOTOR)\s*=\s*(\d+)/) || [])[2], r = (src.match(/(SAG_MOTOR|RIGHT_MOTOR)\s*=\s*(\d+)/) || [])[2];
+  if (isNaN(kp)) return { ok: false, mode: 'broken', msg: S('rbCompile'), detail: S('rbNoKp') };
+  if (l && r && l === r) return { ok: false, mode: 'spin', msg: S('rbPins'), detail: S('rbPinsD', { p: l }) };
+  if (kp > 2.5) return { ok: false, mode: 'wobble', msg: S('rbWobble'), detail: S('rbWobbleD', { kp }) };
+  if (kp < 0.6) return { ok: false, mode: 'drift', msg: S('rbDrift'), detail: S('rbDriftD', { kp }) };
+  return { ok: true, mode: 'ok', msg: S('rbOk'), detail: S('rbOkD', { kp }) };
+}
+function renderRobot() {
+  const r = robotState(); const s = el('robot-svg');
+  let track = 'M10 70'; for (let x = 10; x <= 390; x += 10) track += ' L' + x + ' ' + (70 + 22 * Math.sin(x / 45)).toFixed(1);
+  let path = 'M10 70';
+  for (let x = 10; x <= 390; x += 5) {
+    let y = 70 + 22 * Math.sin(x / 45);
+    if (r.mode === 'wobble') y += 14 * Math.sin(x / 8);
+    if (r.mode === 'drift') y += Math.min(46, Math.max(0, (x - 120) * 0.25));
+    path += ' L' + x + ' ' + y.toFixed(1);
+  }
+  const col = r.ok ? '#237a52' : '#a33a3a';
+  let robot;
+  if (r.mode === 'broken') robot = '<g transform="translate(40 70)"><circle r="11" fill="#9aa1ab"/><text x="0" y="4" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">!</text></g>';
+  else if (r.mode === 'spin') robot = '<g transform="translate(60 70)"><g><circle r="11" fill="' + col + '"/><rect x="-2" y="-14" width="4" height="8" fill="#fff"/><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="1s" repeatCount="indefinite"/></g></g>';
+  else robot = '<g><circle r="11" fill="' + col + '"/><circle r="4" fill="#fff"/><animateMotion dur="7s" repeatCount="indefinite" path="' + path + '"/></g>';
+  s.innerHTML = '<path d="' + track + '" fill="none" stroke="#14181f" stroke-width="6" stroke-linecap="round"/>' + robot;
+  const rs = el('robot-status'); rs.textContent = r.msg; rs.className = r.ok ? 'ok' : 'bad';
+  el('robot-detail').textContent = r.detail;
+}
+
+/* ---------------- graph ---------------- */
+const laneColor = i => ['#14181f', '#e8692c', '#2f6aa3', '#8a4fb0', '#237a52', '#b8491a'][i % 6];
+function renderGraph() {
+  const g = el('graph'), X = 48, Y = 34, top = 30;
+  const ids = st.order, pos = {};
+  const lanes = st.lanes;
+  ids.forEach((id, k) => { pos[id] = { x: 28 + k * X, y: top + lanes.indexOf(C(id).lane) * Y }; });
+  const W = 60 + ids.length * X, H = top + lanes.length * Y + 34;
+  let svg = '';
+  ids.forEach(id => C(id).parents.forEach((p, k) => {
+    const a = pos[p], b = pos[id]; const col = laneColor(lanes.indexOf(k === 0 ? C(id).lane : C(p).lane));
+    svg += a.y === b.y ? '<line x1="' + a.x + '" y1="' + a.y + '" x2="' + b.x + '" y2="' + b.y + '" stroke="' + col + '" stroke-width="3"/>'
+      : '<path d="M' + a.x + ' ' + a.y + ' C ' + (a.x + X * .6) + ' ' + a.y + ', ' + (b.x - X * .6) + ' ' + b.y + ', ' + b.x + ' ' + b.y + '" fill="none" stroke="' + col + '" stroke-width="3"/>';
+  }));
+  // labels: local branches, github branches, HEAD
+  const tags = {};
+  for (const b in st.local) (tags[st.local[b]] = tags[st.local[b]] || []).push({ t: b + (b === st.head ? ' ★' : ''), c: '#e8692c', f: '#14181f' });
+  for (const b in st.remote) (tags[st.remote[b]] = tags[st.remote[b]] || []).push({ t: 'GitHub/' + b, c: '#14181f', f: '#f4f2ec' });
+  ids.forEach(id => {
+    const p = pos[id], c = C(id), col = laneColor(lanes.indexOf(c.lane));
+    const sel = st.pick === id;
+    svg += '<g class="node" tabindex="0" role="button" data-id="' + id + '" aria-label="' + esc(id + ' ' + c.msg) + '">' +
+      '<circle cx="' + p.x + '" cy="' + p.y + '" r="' + (sel ? 10 : 8) + '" fill="' + (c.parents.length > 1 ? '#fffdf8' : col) + '" stroke="' + col + '" stroke-width="' + (c.parents.length > 1 ? 4 : 2) + '"/>' +
+      (c.who === 'mate' ? '<text x="' + p.x + '" y="' + (p.y + 4) + '" text-anchor="middle" fill="#fff" font-size="9">T</text>' : '') + '</g>';
+  });
+  let maxY = H;
+  for (const id in tags) {
+    const p = pos[id]; if (!p) continue;
+    tags[id].forEach((t, k) => {
+      const y = p.y + 16 + k * 15, w = t.t.length * 6.8 + 8, cx = Math.max(p.x, w / 2 + 2);
+      svg += '<rect x="' + (cx - w / 2) + '" y="' + y + '" width="' + w + '" height="13" rx="3" fill="' + t.c + '"/><text x="' + cx + '" y="' + (y + 10) + '" text-anchor="middle" fill="' + t.f + '">' + esc(t.t) + '</text>';
+      maxY = Math.max(maxY, y + 20);
+    });
+  }
+  g.setAttribute('viewBox', '0 0 ' + W + ' ' + maxY); g.setAttribute('width', W); g.setAttribute('height', maxY);
+  g.innerHTML = svg;
+  g.querySelectorAll('.node').forEach(n => { const f = () => { st.pick = n.dataset.id; renderAll(false); }; n.onclick = f; n.onkeydown = e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); f(); } }; });
+  el('legend').innerHTML = '<span style="--c:#e8692c">' + esc(S('lgLocal')) + '</span><span style="--c:#14181f">' + esc(S('lgRemote')) + '</span><span style="--c:#fffdf8;">' + esc(S('lgMerge')) + '</span><span>' + esc(S('lgClick')) + '</span>';
+  const ci = el('commit-info');
+  if (st.pick && C(st.pick)) {
+    const c = C(st.pick), par = c.parents[0] ? snap(c.parents[0]) : {};
+    let d = ''; const paths = new Set([...Object.keys(par), ...Object.keys(c.files)]);
+    paths.forEach(p => { if (par[p] !== c.files[p]) d += '<div class="diff">' + diffHTML(p, par[p], c.files[p]) + '</div>'; });
+    ci.innerHTML = '<div class="row"><b class="mono">' + c.id + '</b> <span>' + esc(c.msg) + '</span> <span class="hint">' + (c.who === 'mate' ? T.mateName : '') + '</span>' +
+      '<span style="flex:1"></span>' + (c.parents.length ? '<button id="revert-btn">' + esc(S('revertBtn')) + '</button>' : '') + '</div>' + (d || '<div class="hint">' + esc(S('noDiff')) + '</div>');
+    const rb = el('revert-btn'); if (rb) rb.onclick = () => { doRevert(c.id); renderAll(); };
+  } else ci.textContent = S('pickCommit');
+  const wrap = el('graph-wrap'); wrap.scrollLeft = wrap.scrollWidth;
+}
+
+/* ---------------- render ---------------- */
+const el = id => document.getElementById(id);
+function renderBranches() {
+  const bs = el('branch-select'); bs.innerHTML = Object.keys(st.local).map(b => '<option' + (b === st.head ? ' selected' : '') + '>' + esc(b) + '</option>').join('');
+  const pf = el('pr-from'); const opts = Object.keys(st.remote).filter(b => b !== 'main');
+  pf.innerHTML = opts.length ? opts.map(b => '<option>' + esc(b) + '</option>').join('') : '<option value="">' + esc(S('noPushed')) + '</option>';
+}
+function renderFiles() {
+  const h = snap(headId());
+  el('files').innerHTML = Object.keys(st.work).sort().map(p => {
+    const ign = ignored(p), mod = !ign && h[p] !== st.work[p];
+    return '<button class="file" aria-pressed="' + (p === st.sel) + '" data-p="' + esc(p) + '">' + esc(p) +
+      (ign ? '<span class="badge ign">' + esc(S('bIgnored')) + '</span>' : mod ? '<span class="badge mod">' + esc(S('bModified')) + '</span>' : '') + '</button>';
+  }).join('');
+  el('files').querySelectorAll('.file').forEach(b => b.onclick = () => { st.sel = b.dataset.p; renderAll(false); });
+  const ed = el('editor'); if (document.activeElement !== ed) ed.value = st.work[st.sel] || '';
+  ed.setAttribute('aria-label', st.sel);
+  renderWorkDiff();
+}
+function renderWorkDiff() {
+  const h = snap(headId()), p = st.sel, wd = el('work-diff');
+  if (ignored(p)) wd.innerHTML = '<div class="empty">' + esc(S('ignoredExplain', { f: p })) + '</div>';
+  else if (h[p] === st.work[p]) wd.innerHTML = '<div class="empty">' + esc(S('noChanges', { b: st.head })) + '</div>';
+  else wd.innerHTML = diffHTML(p, h[p], st.work[p]);
+  const n = changedFiles().length;
+  el('commit').disabled = !!st.conflict;
+  el('t-commit-hint').textContent = n ? S('nChanged', { n }) : S('cleanTree');
+  const ahead = st.remote[st.head] ? !isAnc(st.local[st.head], st.remote[st.head]) : true;
+  el('push').textContent = S('pushBtn') + (ahead ? ' ↑' : '');
+  el('t-local-where').textContent = S('onBranch', { b: st.head });
+}
+function renderPRs() {
+  el('prs').innerHTML = st.prs.length ? st.prs.map(pr => {
+    const src = st.remote[pr.from] || null, tgt = st.remote.main;
+    let diff = '';
+    if (pr.state === 'open' && src) {
+      const base = snap(mergeBase(tgt, src)), s = snap(src);
+      new Set([...Object.keys(base), ...Object.keys(s)]).forEach(p => { if (base[p] !== s[p]) diff += '<div class="diff">' + diffHTML(p, base[p], s[p]) + '</div>'; });
+    }
+    let res = '';
+    if (st.conflict && st.conflict.n === pr.n) {
+      res = '<div class="resolver"><b>' + esc(S('resolveTitle')) + '</b><div class="hint" style="color:#5a1f1f">' + esc(S('resolveHelp')) + '</div>' +
+        st.conflict.paths.map(p => '<label class="mono" for="res-' + p.replace(/\W/g, '_') + '" style="display:block;margin-top:8px">' + esc(p) + '</label><textarea id="res-' + p.replace(/\W/g, '_') + '" spellcheck="false">' + esc(st.conflict.files[p]) + '</textarea>').join('') +
+        '<div class="row" style="margin-top:8px"><button class="primary" id="resolve-btn">' + esc(S('resolveBtn')) + '</button></div></div>';
+    }
+    return '<div class="pr"><div><span class="state ' + pr.state + '">' + esc(S('st_' + pr.state)) + '</span><b>#' + pr.n + ' ' + esc(pr.title) + '</b> <span class="hint mono">' + esc(pr.from) + ' → main</span></div>' +
+      (pr.body ? '<div class="hint" style="margin-top:4px">' + esc(pr.body) + '</div>' : '') +
+      (pr.review ? '<div class="hint" style="margin-top:4px">' + esc(S(pr.review === 'approve' ? 'rvApproved' : 'rvChanges')) + '</div>' : '') +
+      (pr.state === 'open' ? '<details style="margin-top:6px"><summary>' + esc(S('filesChanged')) + '</summary>' + (diff || '<div class="hint">' + esc(S('noDiff')) + '</div>') + '</details>' +
+        '<div class="row actions"><button data-a="approve" data-n="' + pr.n + '">' + esc(S('approveBtn')) + '</button><button data-a="changes" data-n="' + pr.n + '">' + esc(S('changesBtn')) + '</button><button class="primary" data-a="merge" data-n="' + pr.n + '">' + esc(S('mergeBtn')) + '</button></div>' : '') +
+      (pr.state === 'merged' && st.local[pr.from] ? '<div class="row actions"><button data-a="delete" data-b="' + esc(pr.from) + '">' + esc(S('deleteBtn', { b: pr.from })) + '</button></div>' : '') +
+      res + '</div>';
+  }).join('') : '<div class="hint">' + esc(S('noPRs')) + '</div>';
+  el('prs').querySelectorAll('button[data-a]').forEach(b => b.onclick = () => {
+    const a = b.dataset.a, n = +b.dataset.n;
+    if (a === 'approve' || a === 'changes') doReview(n, a === 'approve' ? 'approve' : 'changes');
+    if (a === 'merge') doMerge(n);
+    if (a === 'delete') doDeleteBranch(b.dataset.b);
+    renderAll();
+  });
+  const rb = el('resolve-btn'); if (rb) rb.onclick = () => { doResolve(); renderAll(); };
+}
+function renderIssues() {
+  el('issues').innerHTML = st.issues.map(i => '<div class="issue"><span class="state ' + (i.open ? 'open' : 'closed') + '">' + esc(S(i.open ? 'st_open' : 'st_closed')) + '</span><b>#' + i.n + '</b> ' + esc(i.title) + '</div>').join('');
+}
+function renderLog() {
+  el('log').innerHTML = st.log.map(l => '<li>' + esc(l.what) + (l.cmd ? '<br><code>' + esc(l.cmd) + '</code>' : '') + '</li>').join('') || '<li class="hint">' + esc(S('logEmpty')) + '</li>';
+  const ex = el('explain'), L = st.last || { kind: '', what: S('welcome'), cmd: '' };
+  ex.className = L.kind || ''; el('explain-what').textContent = L.what; el('explain-cmd').textContent = L.cmd ? S('behind') + ' ' + L.cmd : '';
+}
+
+/* missions */
+const MISSIONS = [
+  ['edit', f => f.edited], ['commit', f => f.commits >= 1], ['push', f => f.pushed], ['branch', f => f.branched],
+  ['safe', f => f.branchCommit && f.sawMainUnchanged], ['pr', f => f.prOpened && f.prLinked], ['merge', f => f.approved && f.issueClosed],
+  ['pull', f => f.pulledAfterMerge], ['ignore', f => f.ignoredSeen], ['revert', f => f.robotBroken && f.revertPushed && robotState().ok],
+  ['conflict', f => f.conflictResolved], ['rejected', f => f.rejected && f.pushAfterReject], ['delete', f => f.deleted]
+];
+function renderMissions() {
+  let cur = -1, count = 0;
+  const newly = [];
+  MISSIONS.forEach(([k, chk], i) => { const d = !!chk(st.flags); if (d && !st.done[k]) newly.push(k); if (d) st.done[k] = true; });
+  MISSIONS.forEach(([k], i) => { if (st.done[k]) count++; else if (cur < 0) cur = i; });
+  if (st.openM == null || newly.length) st.openM = cur;
+  el('mission-list').innerHTML = MISSIONS.map(([k], i) => {
+    const m = T.missions[k], d = st.done[k];
+    return '<li class="mission' + (d ? ' done' : '') + (i === cur ? ' current' : '') + (i === st.openM ? ' open' : '') + '"><button aria-expanded="' + (i === st.openM) + '" data-i="' + i + '"><span class="num">' + (d ? '✓' : i + 1) + '</span><span class="title">' + esc(m.t) + '</span></button>' +
+      '<div class="body"><ol>' + m.do.map(x => '<li>' + x + '</li>').join('') + '</ol><div class="see"><b>' + esc(S('seeLabel')) + '</b> ' + m.see + '</div><div class="why"><b>' + esc(S('whyLabel')) + '</b> ' + m.why + '</div></div></li>';
+  }).join('');
+  el('mission-list').querySelectorAll('.mission > button').forEach(b => b.onclick = () => { st.openM = st.openM === +b.dataset.i ? -1 : +b.dataset.i; save(); renderMissions(); });
+  el('progress').firstElementChild.style.width = (count / MISSIONS.length * 100) + '%';
+  el('progress-label').textContent = S('progress', { n: count, t: MISSIONS.length });
+  if (newly.length) { const m = T.missions[newly[newly.length - 1]]; const prev = st.last || { what: '', cmd: '' }; st.last = { kind: 'good', what: (prev.what ? prev.what + '  ✓ ' : '✓ ') + S('missionDone', { t: m.t }), cmd: prev.cmd }; }
+}
+const strip = h => h.replace(/<[^>]+>/g, '');
+
+function renderAll(withSave) {
+  renderBranches(); renderFiles(); renderGraph(); renderRobot(); renderPRs(); renderIssues(); renderMissions(); renderLog();
+  if (withSave !== false) save(); else save();
+}
+
+/* static text */
+function staticText() {
+  const set = (id, k) => { const e = el(id); if (e) e.textContent = S(k); };
+  ['title', 'sub', 'slides', 'home', 'what', 'missionsH', 'local', 'local-hint', 'branch', 'log', 'robot', 'robot-where', 'github', 'history', 'prs', 'newpr', 'from', 'issuesH', 'teammate-hint', 'editor-l', 'msg-l', 'newbranch-l', 'prtitle-l', 'prbody-l'].forEach(k => set('t-' + k, k));
+  set('reset', 'resetBtn'); set('create-branch', 'createBranch'); set('pull', 'pullBtn'); set('commit', 'commitBtn'); set('discard', 'discardBtn'); set('open-pr', 'openPR'); set('teammate', 'teammateBtn');
+  el('commit-msg').placeholder = S('msgPh'); el('pr-title').placeholder = S('prTitlePh'); el('pr-body').placeholder = S('prBodyPh');
+}
+
+/* wire */
+el('editor').addEventListener('input', e => { doEdit(e.target.value); renderFiles(); renderMissions(); renderLog(); save(); });
+el('branch-select').onchange = e => { doSwitch(e.target.value); renderAll(); };
+el('create-branch').onclick = () => { doCreateBranch(); renderAll(); };
+el('new-branch').onkeydown = e => { if (e.key === 'Enter') { doCreateBranch(); renderAll(); } };
+el('commit').onclick = () => { doCommit(); renderAll(); };
+el('commit-msg').onkeydown = e => { if (e.key === 'Enter') { doCommit(); renderAll(); } };
+el('discard').onclick = () => { doDiscard(); renderAll(); };
+el('push').onclick = () => { doPush(); renderAll(); };
+el('pull').onclick = () => { doPull(); renderAll(); };
+el('open-pr').onclick = () => { doOpenPR(); renderAll(); };
+el('teammate').onclick = () => { doTeammate(); renderAll(); };
+el('reset').onclick = () => { if (confirm(S('resetConfirm'))) { st = fresh(); renderAll(); } };
+
+st = load() || fresh();
+staticText(); renderAll();
+</script>
+</body>
+</html>

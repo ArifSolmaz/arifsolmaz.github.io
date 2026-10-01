@@ -92,7 +92,7 @@
     <p style="font-size:36px; line-height:1.4; color:#b9bec6">Version control and project management for your code, circuits and CAD — starting from zero.</p>
   </div>
   <p style="font-size:24px; color:#8a919c">Dr. Arif Solmaz · Mechatronics Engineering, İSTÜN</p>
-  <aside>Goal for today: by the end of the session every student has a GitHub account, a first repository, and has merged one pull request. No prior Git knowledge assumed. The graphic on the right is what we will build towards: a main line of work, a side branch for an experiment, and a merge back.</aside>
+  <aside>Welcome! Today you will learn GitHub from zero. You don't need to know any programming or Git. By the end you will have a GitHub account, your own project folder on GitHub, and you will have proposed and accepted your first change. The drawing on the right shows the idea: one main line of work, a side path to try something, and the two joining back together.</aside>
 </section>
 <section id="agenda" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:32px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -139,7 +139,7 @@
     <p style="font-size:28px"><span style="color:#237a52">✓</span> Use an AI coding agent safely inside a Git workflow</p>
   </div>
   <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">02</p></div>
-  <aside>Timings assume a 100-minute session; adjust to your class length. With Part 3 added the deck is dense for one session, so consider splitting: week 1 covers the intro, Part 1 and the lab; week 2 covers Parts 2 and 3. Read the learning outcomes at the start and come back to them at the end.</aside>
+  <aside>This is the plan for the session. First we see why GitHub exists, then you use it alone (Part 1), then with a team (Part 2), then with AI helpers (Part 3), and finally you try everything yourself in the lab. The four green ticks are what you should be able to do at the end. If something is unclear, that's normal — every word comes back with an example.</aside>
 </section>
 <section id="problem" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -164,7 +164,7 @@
   </div>
   <p style="font-size:32px; line-height:1.4">Git answers all three. <b>GitHub</b> puts the answers online, shared with your whole team.</p>
   <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">03</p></div>
-  <aside>Ask the room: who has a folder like this on their laptop right now? Most hands go up. The point: renaming files is a manual, error-prone version control system. Git automates exactly this, and GitHub makes it shareable.</aside>
+  <aside>Many students save versions by renaming files: v2, v3, final, final_REALLY. After a week nobody knows which file is on the robot or what changed. A version control tool does this job for you: it remembers every saved version, who made it and why. That tool is Git, and GitHub puts it online so your team can share it.</aside>
 </section>
 <section id="what" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -188,7 +188,7 @@
   </div>
   <p style="font-size:24px; color:#6b7280">Based on GitHub Docs, “What is GitHub?”</p>
   <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">04</p></div>
-  <aside>GitHub Docs describes GitHub as a platform for building software that supports every stage of development. Emphasise that GitHub is not only for software companies: students, researchers, data scientists and project managers all use it. For us, "software" includes firmware, control code, simulation scripts and even documentation.</aside>
+  <aside>GitHub is a website where you keep your project and work on it with others. Think of it as Google Drive made for projects: it keeps every version of every file, it has a to-do list for your team, and it lets other people see and suggest changes. It is not only for software companies — students, researchers and engineers all use it.</aside>
 </section>
 <section id="gitvsgithub" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -221,7 +221,7 @@
   </div>
   <p style="font-size:32px; line-height:1.4">GitHub is built on Git — you use both together.</p>
   <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">05</p></div>
-  <aside>The most common beginner confusion. Git is open-source version control software: it records a history of changes and lets you merge your work with other people's. GitHub hosts Git projects, called repositories, in the cloud and adds planning and collaboration tools on top. Alternatives to GitHub exist (GitLab, Bitbucket), but they all use Git underneath.</aside>
+  <aside>These two names sound the same but are different things. Git is a free program that records the history of a folder on your computer, like a camera taking snapshots. GitHub is a website that stores those snapshots online, like a shared photo album, and adds tools for teamwork. Today we only use the GitHub website, so you don't need to install Git yet.</aside>
 </section>
 <section id="vocab" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -240,7 +240,7 @@
     <tr><td style="padding:10px 16px; border-bottom:1px solid #dedad0; font-weight:600">README.md</td><td style="padding:10px 16px; border-bottom:1px solid #dedad0">The front page of your repo</td><td style="padding:10px 16px; border-bottom:1px solid #dedad0">Wiring, setup, how to run it</td></tr>
   </table>
   <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">06</p></div>
-  <aside>Don't try to make them memorise these now; every term comes back later with an example. Point out that the full GitHub glossary is in the docs. Suggest students write these eight words in their notebooks.</aside>
+  <aside>Don't try to memorise this table now. A repository (repo) is just a project folder with its history. A commit is one saved snapshot with a short message. A branch is a copy where you can try things safely. A pull request is how you ask to bring your branch's changes into the main version. Each word comes back later with an example.</aside>
 </section>
 <section id="lifecycle" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -284,13 +284,13 @@
     </div>
   </div>
   <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">07</p></div>
-  <aside>These six stages come straight from the GitHub Docs page. Key message from the docs: you do not need every stage at once. Most people start with a repository and a few issues, then grow. In this course we focus on Plan, Create and Review. Test and Deploy (GitHub Actions) are a later topic.</aside>
+  <aside>A project goes through stages: plan the work, build it, check it, test it, release it, and keep it running. GitHub has a tool for each stage. You do not need all of them at once — most people start with just a repository and a few to-do items (issues). Today we focus on the first three: plan, build, check.</aside>
 </section>
 <section id="part1" data-transition="push" style="background:#14181f; color:#f4f2ec; font-family:Inter, Arial, sans-serif; padding:128px; display:flex; flex-direction:column; justify-content:center; gap:32px">
   <p style="font-family:'Space Grotesk', Arial, sans-serif; font-size:200px; font-weight:700; line-height:1.0; color:#e8692c">01</p>
   <h2 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:88px; font-weight:600; line-height:1.1">Your personal repository</h2>
   <p style="font-size:32px; line-height:1.4; color:#b9bec6; width:1200px">Creating a repo, the everyday commit loop, and good habits from day one.</p>
-  <aside>Part 1 is about working alone: one student, one repository. Everything here also applies to team projects in Part 2.</aside>
+  <aside>Part 1 is about working alone: one person, one project. Everything you learn here is also what you will do later in a team.</aside>
 </section>
 <section id="setup" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -318,7 +318,7 @@
   </div>
   <p style="font-size:28px; line-height:1.4">Use the same email as your GitHub account, or your commits won't show up on your profile.</p>
   <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">09</p></div>
-  <aside>Ideally set these steps as pre-class homework so lecture time isn't spent on installation. If the lab computers don't have Git, the entire lab can be done in the browser. git --version checks whether Git is installed. GitHub Desktop users enter their name and email in the settings on first launch.</aside>
+  <aside>To start you need a free GitHub account. Choose a username you would be happy to put on your CV. The black box shows commands for people who install Git on their own computer — you can skip them today, because we will work only in the browser. If you install Git later, use the same email address as your GitHub account, otherwise your work won't appear on your profile.</aside>
 </section>
 <section id="anatomy" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -349,7 +349,7 @@
     </div>
   </div>
   <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">10</p></div>
-  <aside>There is no single mandatory layout, but a predictable structure lets anyone, including you in six months, find things fast. Mechatronics repos are multidisciplinary: code, electronics and mechanics live side by side. When you create a repo on GitHub, tick "Add a README" and choose a .gitignore template (e.g. C++ or Python) so you start with both.</aside>
+  <aside>This is how a tidy robot project folder can look. README.md is the front page: anyone opening the project reads it first. The other folders keep code, electronics drawings and 3D parts apart, so things are easy to find. The .gitignore file is a list of files Git should not save, such as temporary build files.</aside>
 </section>
 <section id="markdown" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -378,7 +378,7 @@
   </div>
   <p style="font-size:28px; line-height:1.4"><span style="font-family:'JetBrains Mono', monospace; color:#b8491a"># heading · **bold** · - list · ![alt](image)</span> — that covers most READMEs.</p>
   <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">11</p></div>
-  <aside>Students will edit a README in the lab, so they need this now. Markdown is plain text with a few symbols; GitHub turns it into a formatted page. The file ends in .md. On GitHub, the "Preview" tab next to "Edit" shows the rendered result before committing, which is the fastest way to learn. Code blocks use three backticks; tables are also possible, but not needed today.</aside>
+  <aside>README files are written in Markdown: plain text with a few symbols. A # at the start of a line makes a heading, **two stars** around a word make it bold, a - at the start makes a list item. On the left is what you type, on the right is what GitHub shows. On GitHub, the Preview tab shows the result before you save.</aside>
 </section>
 <section id="loop" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:32px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -418,7 +418,7 @@
   </div>
   <p style="font-size:28px; line-height:1.4"><b>Today we stay in the browser</b> — these commands are for later. GitHub Desktop runs the same loop with buttons.</p>
   <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">12</p></div>
-  <aside>Clone once, then repeat edit, add, commit, push forever. Staging lets you choose which changes go into the next snapshot. Commit is local; nothing reaches GitHub until you push. Before starting work on a shared repo, run git pull to get your teammates' changes. The GitHub Docs "Start your journey" path uses GitHub Desktop, so it's a good match for absolute beginners; the command line can come later.</aside>
+  <aside>Working with Git is a simple loop: change your files, choose which changes to save (add), save a snapshot with a message (commit), and send it to GitHub (push). Commit saves on your computer; push uploads it. Today we stay in the browser, where one button (Commit changes) does all of this for you. The commands are here only so you recognise them later. In the Git playground you can press Commit and watch the history grow.</aside>
 </section>
 <section id="commits" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -443,7 +443,7 @@
   </div>
   <p style="font-family:'Space Grotesk', Arial, sans-serif; font-size:40px; line-height:1.3">Start with a verb. Say what changed and why. One logical change per commit.</p>
   <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">13</p></div>
-  <aside>The commit log is your engineering lab notebook. "Lower PID Kp from 2.0 to 1.4" tells you exactly what to revert if the robot starts oscillating on the track. Use the longer commit description for the why: "after track test, robot overshot curves". Small, frequent commits are easier to understand and undo than one giant commit at the end of the week.</aside>
+  <aside>Every commit has a message. Write it for the person who reads it next month — probably you. Start with a verb and say what changed: 'Fix left motor spinning backwards' is useful, 'update' is not. Small, frequent commits are easier to understand and to undo than one big commit at the end of the week.</aside>
 </section>
 <section id="ignore" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -476,13 +476,13 @@
     </div>
   </div>
   <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">14</p></div>
-  <aside>A classic student mistake: pushing an ESP32 sketch with the home Wi-Fi password hard-coded. Put credentials in a separate file like secrets.h, list it in .gitignore, and commit a secrets_example.h with blank values instead. Removing a secret from the latest version does not remove it from history, so prevention matters. GitHub Docs has a page on storing secrets safely.</aside>
+  <aside>Some files must never go on GitHub. Passwords and keys: if your public project contains your Wi-Fi password, anyone can read it, and deleting it later does not remove it from the history. Build files: they are created automatically and just take space. Very big files like videos: GitHub refuses files over 100 MB. Listing them in .gitignore makes Git skip them.</aside>
 </section>
 <section id="part2" data-transition="push" style="background:#14181f; color:#f4f2ec; font-family:Inter, Arial, sans-serif; padding:128px; display:flex; flex-direction:column; justify-content:center; gap:32px">
   <p style="font-family:'Space Grotesk', Arial, sans-serif; font-size:200px; font-weight:700; line-height:1.0; color:#e8692c">02</p>
   <h2 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:88px; font-weight:600; line-height:1.1">Managing a team project</h2>
   <p style="font-size:32px; line-height:1.4; color:#b9bec6; width:1300px">Issues, branches, pull requests and boards — how a team of four builds one robot without chaos.</p>
-  <aside>Now we move from one person to a team. Typical capstone setup: one person on firmware, one on electronics, one on CAD, one on documentation and testing. GitHub becomes the team's shared to-do list and change log.</aside>
+  <aside>Part 2 is about teams. When four people build one robot, you need a shared to-do list, a safe way to try ideas, and a way to check each other's work. GitHub gives you all three.</aside>
 </section>
 <section id="issues" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -527,7 +527,7 @@
     </div>
   </div>
   <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">16</p></div>
-  <aside>Issues replace the WhatsApp group as the place where tasks live. The checklist inside an issue (task list) breaks a problem into steps. Keywords like "Fixes #12" or "Closes #12" in a pull request description close the issue automatically when the PR merges. Issues are also where you record hardware findings, so the knowledge isn't lost when a teammate is absent.</aside>
+  <aside>An issue is one item on the team's to-do list: a task, a bug or a question. Give it a clear title, labels (like bug or hardware) and a person responsible. You can tick off small steps inside it. If you later write 'Fixes #12' in a pull request, GitHub closes issue number 12 automatically when the change is accepted.</aside>
 </section>
 <section id="branches" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -567,7 +567,7 @@
     </div>
   </div>
   <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">17</p></div>
-  <aside>This is the "GitHub flow" described in the docs. The rule for teams: main must always be the version that works on the real robot. Experiments, like adding an ultrasonic sensor, happen on a branch. If the experiment fails, delete the branch and nothing is broken. The pull request is where the team discusses the change before it lands; you can even review your own PR when working alone.</aside>
+  <aside>main is the version that works on the real robot, so you don't experiment on it. Instead you create a branch: a separate copy where you can change things freely. When your change works, you open a pull request to ask for it to be joined into main. A teammate looks at it, and then it is merged. If the experiment fails, you just delete the branch — main was never touched. In the Git playground, create a branch, change a file and check that main stays the same.</aside>
 </section>
 <section id="diff" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -591,7 +591,7 @@
   </div>
   <p style="font-family:'Space Grotesk', Arial, sans-serif; font-size:36px; line-height:1.3">Read the diff before you merge — every time, even your own.</p>
   <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">18</p></div>
-  <aside>A diff shows the differences between two versions of a file. GitHub shows diffs in pull requests ("Files changed" tab) and on every commit page. In the Hello World tutorial, students look over the diff on the Compare page before creating the pull request. Lines that did not change are shown in grey for context. Hover over a line in "Files changed" and click + to leave a comment on that exact line; that is how line-level review starts.</aside>
+  <aside>A diff shows exactly what changed between two versions of a file. Red lines starting with − were removed, green lines starting with + were added, grey lines are unchanged and only there for context. You will see diffs on every pull request (the Files changed tab) and on every commit. Always read the diff before accepting a change, even your own.</aside>
 </section>
 <section id="review" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -626,7 +626,7 @@
     </div>
   </div>
   <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">19</p></div>
-  <aside>When you submit a review on GitHub you choose one of three outcomes: comment, approve or request changes. Review is not about finding faults; it builds shared quality. The four rules — kind, specific, line-linked, reasoned — come from the workshop's slide outline. For practice, pair students and have each one review the other's lab pull request. GitHub Skills has a free "Review pull requests" course for more.</aside>
+  <aside>Reviewing means reading someone's pull request and giving feedback before it is merged. Good comments are kind, specific, point to a line, and explain why. 'This is wrong' does not help; 'Pin D5 is already used, could we use D9?' does. When you finish a review you choose: Comment (just feedback), Approve (ready to merge) or Request changes (something must be fixed first).</aside>
 </section>
 <section id="conflict" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -651,7 +651,7 @@
   </div>
   <p style="font-size:28px; line-height:1.4">Prevention: pull often, keep branches small, don't edit the same file at the same time.</p>
   <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">20</p></div>
-  <aside>A conflict is not an error; it is Git saying "you decide". The HEAD section is the version on your branch; below ======= is the version from the branch being merged in. This happens often in mechatronics: two people tune the same PID gain or change the same pin definition. GitHub lets you resolve simple conflicts in the browser on the pull request page, and GitHub Desktop and VS Code highlight the markers in colour. Important: if you forget to delete the markers, the code won't compile.</aside>
+  <aside>A merge conflict happens when two people changed the same line in different ways. Git can't guess which one is right, so it shows both and asks you to choose. The part under HEAD is your version, the part under ======= is the other one. Keep the correct line, delete the marker lines (&lt;&lt;&lt;, ===, &gt;&gt;&gt;), and save. It's not an error, just a question. You can create and solve a conflict yourself in the Git playground.</aside>
 </section>
 <section id="board" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -677,7 +677,7 @@
   </div>
   <p style="font-size:28px; line-height:1.4">Every card is an issue. Move it across as work progresses and the whole team sees the same status.</p>
   <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">21</p></div>
-  <aside>GitHub Projects gives you a Kanban board like this, plus table and roadmap views of the same issues. Note that hardware tasks (CAD, purchasing, PCB layout) belong on the board too, not only code. In the weekly team meeting, open the board instead of asking "what did everyone do?".</aside>
+  <aside>A project board shows all the team's issues as cards in columns: To do, In progress, Done. When you start a task you move its card, so everyone sees who is doing what without asking. Hardware tasks like ordering parts or designing a bracket go on the board too, not only code.</aside>
 </section>
 <section id="milestones" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -714,7 +714,7 @@
     <p style="font-size:30px; line-height:1.4">The commit history is your team's lab notebook: it shows who did what, and when.</p>
   </div>
   <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">22</p></div>
-  <aside>A milestone groups issues under a deadline and shows a progress bar based on closed issues. Map milestones to your course deliverables. The numbers here are an example; replace the weeks with your actual syllabus dates. Mention how contribution graphs and commit history make individual contributions to team projects visible.</aside>
+  <aside>A milestone groups issues under a deadline, for example 'Working prototype — week 10'. GitHub shows a progress bar based on how many of those issues are closed. The commit history also works like a lab notebook: it records who did what and when, which makes everyone's contribution visible.</aside>
 </section>
 <section id="mistakes" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -731,13 +731,13 @@
     <tr><td style="padding:10px 16px; border-bottom:1px solid #dedad0; font-weight:600">Commits missing from profile</td><td style="padding:10px 16px; border-bottom:1px solid #dedad0">Git email doesn't match the account</td><td style="padding:10px 16px; border-bottom:1px solid #dedad0">Fix <span style="color:#b8491a">user.email</span></td></tr>
   </table>
   <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">23</p></div>
-  <aside>These are the situations students actually hit in their first weeks. The rejected push is covered in GitHub Docs as a "non-fast-forward error". git revert doesn't erase history; it adds a new commit that reverses the bad one, which is the safe option on shared branches. Use --amend only on the last commit, before it has been pushed. For a leaked password, deleting the file isn't enough because it stays in history, so changing the password is essential.</aside>
+  <aside>Everyone makes these mistakes in the first weeks — that's fine. If GitHub refuses your push, someone else saved first: get their changes (pull), then try again. If a new change broke the robot, revert creates a new snapshot that undoes it. If a password was uploaded, change the password immediately: deleting the file is not enough because it stays in the history. You can try revert without any risk in the Git playground.</aside>
 </section>
 <section id="part3" data-transition="push" style="background:#14181f; color:#f4f2ec; font-family:Inter, Arial, sans-serif; padding:128px; display:flex; flex-direction:column; justify-content:center; gap:32px">
   <p style="font-family:'Space Grotesk', Arial, sans-serif; font-size:200px; font-weight:700; line-height:1.0; color:#e8692c">03</p>
   <h2 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:88px; font-weight:600; line-height:1.1">AI coding agents meet GitHub</h2>
   <p style="font-size:32px; line-height:1.4; color:#b9bec6; width:1300px">Claude Code and OpenAI Codex: what they are, how they use Git, and how to use them without losing control.</p>
-  <aside>Students will use AI coding agents whether we teach them or not. The goal of this part is to connect them to what we just learned: agents work best, and most safely, inside a Git workflow with branches, pull requests and human review.</aside>
+  <aside>Part 3 is about AI coding assistants. They can write and change code for you, but they work best — and most safely — inside the same GitHub routine you just learned: branches, pull requests and a human who checks the result.</aside>
 </section>
 <section id="agents" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -768,7 +768,7 @@
   </div>
   <p style="font-size:24px; color:#6b7280">Windows installers and other options: code.claude.com/docs · github.com/openai/codex</p>
   <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">25</p></div>
-  <aside>A coding agent is different from a chatbot: it runs in the terminal inside your project folder, reads your files, edits them, runs commands, and can drive Git for you (branch, commit, push). You describe the goal in plain language and review what it does. Both tools also exist as editor extensions, desktop apps and web versions; we use the terminal (CLI) versions because they sit right next to Git. On Windows, Claude Code installs with "irm https://claude.ai/install.ps1 | iex" in PowerShell, and Codex has a PowerShell installer too; check each project's docs for current commands. Both need a paid plan or API credits, so check what your students have access to before the lab.</aside>
+  <aside>Claude Code and Codex are AI assistants that work inside your project folder. You describe what you want in normal language, and they read your files, change them and can even save commits for you. Both need a paid plan or API credits. Each reads a short rules file in your project (CLAUDE.md or AGENTS.md) where you write things like which board you use.</aside>
 </section>
 <section id="agentflow" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -796,7 +796,7 @@
   </div>
   <p style="font-family:'Space Grotesk', Arial, sans-serif; font-size:36px; line-height:1.3">The agent is a fast assistant, not the engineer. You own every line you merge.</p>
   <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">26</p></div>
-  <aside>Everything from Parts 1 and 2 still applies; the agent just types faster. A branch makes agent work easy to throw away: if the result is bad, delete the branch. Both Claude Code and Codex ask for approval before risky actions by default, and both can show you the diff. Git can also be driven conversationally, e.g. "what files have I changed?", "create a new branch called fix/motor-stall", "commit my changes with a descriptive message". For hardware projects, step 5 is non-negotiable: the agent can compile code, but it cannot see the motor.</aside>
+  <aside>Use AI assistants with the same safe routine: start from an issue, make a new branch, ask the assistant to explain its plan first, read every change it makes (the diff), test on the real robot, then open a pull request so a person checks it. The assistant types fast, but you are the engineer: you are responsible for what you accept.</aside>
 </section>
 <section id="agentgithub" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -838,7 +838,7 @@
     </div>
   </div>
   <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">27</p></div>
-  <aside>The conversation on the left is an illustration. With the Claude GitHub App and workflow installed (the /install-github-app command sets both up), mentioning @claude in an issue or PR comment makes Claude answer, change code and push commits; only users with write access can trigger it. With Codex connected to the repository, a "@codex review" comment asks Codex for a code review. The rules file on the right is the most useful thing to teach: a short Markdown file in the repo root that both agents read on every run. CLAUDE.md is Claude Code's file, AGENTS.md is Codex's. Put your board, pin map and "never do this" rules there. Setup requires paid plans or API credits, so for a course the instructor may want to set this up once on a demo repository.</aside>
+  <aside>AI assistants can also work directly on GitHub. In a project where they are set up, writing @claude in an issue or pull request comment asks Claude to answer or make a change; writing '@codex review' asks Codex to review the pull request. The conversation on the left is an example. The rules file on the right tells the assistant important facts about your project.</aside>
 </section>
 <section id="airules" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -876,7 +876,7 @@
     </div>
   </div>
   <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">28</p></div>
-  <aside>Fill in the last card with your own course policy before teaching, for example: "allowed for projects if disclosed in the PR; not allowed in exams". Git history makes AI use visible: agent-made commits usually carry a Co-authored-by line, and the pull request is the natural place to explain what the AI did and what the student verified. Emphasise the hardware point for mechatronics: an agent can produce code that compiles and still burns a motor driver.</aside>
+  <aside>Five rules for using AI: you are responsible for every line you accept; don't accept code you can't explain; always test on the real hardware; never paste passwords or personal data into an AI tool; and say honestly in your pull request what the AI did. Your instructor will tell you when AI help is allowed in this course.</aside>
 </section>
 <section id="portfolio" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -899,7 +899,7 @@
   </div>
   <p style="font-family:'Space Grotesk', Arial, sans-serif; font-size:44px; line-height:1.3; width:1400px">Put the link on your CV. A working robot with a clean history says more than a line of text.</p>
   <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">29</p></div>
-  <aside>GitHub Docs lists "showcase and share work" and "host documentation and websites" among the main reasons people use GitHub. Encourage students to keep good course projects public (after the course ends, and with the instructor's OK for assignments). Students can apply to GitHub Education with their university email or student ID.</aside>
+  <aside>Your GitHub projects can show employers what you can do. A good README with a photo of your robot, how it is wired and what you learned says more than a line on a CV. GitHub Pages can turn a project into a free website, and students can get free tools through GitHub Education.</aside>
 </section>
 <section id="quiz" data-transition="push" style="background:#14181f; color:#f4f2ec; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -930,7 +930,7 @@
   </div>
   <p style="font-size:28px; color:#b9bec6">Discuss with your neighbour first, then we'll answer together.</p>
   <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#8a919c">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#8a919c">30</p></div>
-  <aside>Answers. 1: Git is the version control tool on your computer; GitHub is the platform that hosts Git repositories in the cloud and adds collaboration tools like issues, PRs and boards. 2: commit records a change locally; push sends those commits to GitHub. Until you push, the team can't see it. 3: main should always be the working version so anyone can safely flash it to the robot; experiments happen on a branch and come in through a reviewed pull request. 4: when the PR is merged into main, issue #7 closes automatically. Tip: you can also run these questions in Kahoot or Mentimeter.</aside>
+  <aside>Answers: 1. Git is the program that keeps the history; GitHub is the website that stores it online and adds teamwork tools. 2. Commit saves a snapshot on your computer; push sends it to GitHub so others can see it. 3. main must always work so anyone can load it onto the robot; experiments go on a branch. 4. When that pull request is merged, issue #7 closes automatically.</aside>
 </section>
 <section id="helloworld" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -971,7 +971,7 @@
   </div>
   <p style="font-size:28px; line-height:1.4">No coding, no command line, no installation. This is the exact path of today's lab — just with a robot README.</p>
   <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">31</p></div>
-  <aside>This slide follows GitHub's own "Hello World" tutorial in GitHub Docs, which teaches the pull request workflow without any coding, command line or Git installation. The official names are hello-world for the repository and readme-edits for the branch; you can use them as they are, or the course names on the lab slide. Point students to the tutorial as their reference afterwards: docs.github.com/en/get-started/using-github/hello-world.</aside>
+  <aside>This is GitHub's own beginner exercise, called Hello World, and it is exactly what you will do in the lab: create a repository, create a branch called readme-edits, change the README and commit, open a pull request, then merge it. No coding and no installation — everything happens on the GitHub website.</aside>
 </section>
 <section id="demo" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -997,7 +997,7 @@
     </div>
   </div>
   <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">32</p></div>
-  <aside>Replace the four frames with your own screenshots so they match GitHub's current interface. Even better: do all six lab steps live on the projector, slowly, before students start. Narrate each click. This demo matters more than any other slide for complete beginners: it links each concept to the real button on the real page.</aside>
+  <aside>These are the four places on GitHub you will click in the lab: the New repository form, the New issue page, the branch menu on the Code tab, and the 'Compare &amp; pull request' button. Watch where they are during the live demo before you try it yourself.</aside>
 </section>
 <section id="lab" data-transition="push" style="background:#e8692c; color:#14181f; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -1013,7 +1013,7 @@
     <li>Merge it — and watch the issue close itself</li>
   </ol>
   <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#14181f">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#14181f">33</p></div>
-  <aside>Everything can be done in the browser, no installation needed: GitHub lets you create a branch and edit files directly on the website. Walk around and help. Common hiccups: email verification not arriving, forgetting to switch to the new branch before editing. Stretch goal for fast students: add a photo to the README and create a second issue with a label.</aside>
+  <aside>Now it's your turn. Follow the six steps in order. Everything happens in the browser. If you get stuck, ask your neighbour or the instructor — getting stuck is part of learning. Common traps: the verification email hasn't arrived yet, or you edited the file before switching to your new branch. Want to warm up before making an account? Try the same steps in the Git playground.</aside>
 </section>
 <section id="aftermerge" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -1039,7 +1039,7 @@
     <p style="font-size:24px; color:#6b7280">Example contribution graph: activity growing after a course starts</p>
   </div>
   <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">34</p></div>
-  <aside>These are the "next steps" from the Hello World tutorial. Deleting a merged branch keeps the repository tidy; the commits stay in main's history. The contribution graph appears on each user's GitHub profile and fills in as they commit and merge. A profile README is a special repository named exactly like the username (e.g. ayse-yilmaz/ayse-yilmaz); its README.md is shown at the top of the profile. A nice homework: create a profile README in Markdown with a photo of a project.</aside>
+  <aside>After merging: delete the branch — its work is now safely in main, and you start a fresh branch for the next task. Each commit and pull request adds a coloured square to the contribution graph on your profile. And if you create a repository named exactly like your username, its README appears at the top of your profile page.</aside>
 </section>
 <section id="cheatsheet" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -1066,7 +1066,7 @@
     </div>
   </div>
   <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">35</p></div>
-  <aside>Export this slide as a PDF to share with students, or print it for the lab benches. GitHub Docs also has a fuller "Git cheatsheet". git switch is the recommended way to change branches in recent Git versions; older tutorials use git checkout -b for the same thing.</aside>
+  <aside>This is a summary of the Git commands for later, when you work on your own computer. You don't need them for today's lab. The daily routine on the right is the one to remember: start with pull (get the latest), finish with push (share your work).</aside>
 </section>
 <section id="next" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -1100,17 +1100,17 @@
     </div>
   </div>
   <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">36</p></div>
-  <aside>Homework suggestion: complete the "Introduction to GitHub" course on GitHub Skills before next week, and move one existing project (e.g. an Arduino sketch from a previous course) into a personal repository with a README.</aside>
+  <aside>To keep practising: GitHub's official getting-started guide, GitHub Desktop (Git with buttons instead of commands), GitHub Skills (free interactive courses inside real repositories) and GitHub Education for free student tools. A good first homework: put one of your old Arduino projects in a new repository with a README.</aside>
 </section>
 <section id="close" data-transition="fade" style="background:#14181f; color:#f4f2ec; font-family:Inter, Arial, sans-serif; padding:128px; display:flex; flex-direction:column; justify-content:center; gap:48px">
   <h1 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:88px; font-weight:700; line-height:1.15">Commit early. Commit often.<br><span style="color:#e8692c">Push before you leave the lab.</span></h1>
   <p style="font-size:40px; color:#b9bec6">Questions?</p>
-  <aside>Summary: Git records history, GitHub shares it. Issues plan the work, branches and pull requests protect main, boards and milestones keep the team on schedule. Open the floor for questions.</aside>
+  <aside>The one habit to keep: save small steps often (commit), and always send your work to GitHub (push) before you leave the lab. Git remembers history, GitHub shares it, issues plan the work, and branches with pull requests keep the working version safe.</aside>
 </section>
   </div>
 </main>
 
-<div id="notes" role="region" aria-live="polite" aria-label="Speaker notes"><h4>Speaker notes</h4><div id="notes-text"></div></div>
+<div id="notes" role="region" aria-live="polite" aria-label="In plain words"><h4>In plain words</h4><div id="notes-text"></div></div>
 
 <div id="overview" role="dialog" aria-label="All slides"><h3>All slides</h3><div id="grid"></div></div>
 
@@ -1122,8 +1122,9 @@
   <button id="btn-ov">O</button>
   <button id="btn-fs" aria-label="Fullscreen">⛶</button>
   <a href="../" id="lang-link">TR</a>
+  <a href="../../oyun-alani/en/">Playground</a>
   <a href="../../">Workshop page</a>
-  <span id="help">← → navigate · N notes · O overview · F fullscreen · P print/PDF</span>
+  <span id="help">← → navigate · N explanation · O overview · F fullscreen · P print/PDF</span>
 </nav>
 
 <script>
