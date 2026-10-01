@@ -31,9 +31,8 @@ uygulama.
 
 - [Eğitmen rehberi](egitmen-rehberi.md)
 - [Hazır araçlar](hazir-araclar.md)
-- [Katılımcı el kitabı](katilimci-el-kitabi.md)
+- [Katılımcı el kitabı](katilimci-el-kitabi.md) — öğrenci için baştan sona rehber
 - [Alıştırmalar](alistirmalar.md)
-- [Slayt iskeleti](slayt-iskeleti.md) — hazır sunum için yukarıdaki [Sunum](sunum/) bağlantısına bakın
 - [Değerlendirme listesi](degerlendirme-listesi.md)
 - [Örnek eğitim deposu](ornek-depo/)
 

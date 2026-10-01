@@ -21,8 +21,8 @@ Bugün şunları yapacağız:
 ```md
 # Ad Soyad
 
+- Takımdaki rolüm:
 - İlgi alanım:
-- GitHub’dan beklentim:
 - Bugün öğrendiğim ilk kavram:
 ```
 

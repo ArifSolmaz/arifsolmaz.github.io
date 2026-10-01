@@ -13,8 +13,8 @@ ayse-yilmaz.md
 ```md
 # Ayşe Yılmaz
 
-- İlgi alanım: dijital arşiv
-- GitHub’dan beklentim: ekip çalışmasını daha düzenli yapmak
+- Takımdaki rolüm: firmware
+- İlgi alanım: çizgi izleyen robotlar
 - Bugün öğrendiğim ilk kavram: branch
 ```
 

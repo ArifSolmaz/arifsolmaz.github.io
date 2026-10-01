@@ -1,150 +1,192 @@
 # Alıştırmalar
 
-Bu alıştırmalar sıralı ilerlemek için tasarlanmıştır. İlk dört alıştırma
-herkesin yapması gereken çekirdek bölümdür.
+Eğitmen için süreli alıştırma listesi. Sıra ve süreler
+[eğitmen rehberindeki](egitmen-rehberi.md) iki derslik planla aynıdır; öğrencinin
+adım adım talimatları [katılımcı el kitabındadır](katilimci-el-kitabi.md).
 
-## 1. Depoyu keşfet
+| Kod | Alıştırma | Nerede? | Ne zaman? | Süre |
+|---|---|---|---|---|
+| L1 | Commit ve branch | Learn Git Branching | Ders 1 | 15 dk |
+| L2 | Merge | Learn Git Branching | Ders 1 | 10 dk |
+| L3 | Revert (hızlılar için) | Learn Git Branching | Ders 1 | 5–10 dk |
+| Ö1 | Introduction to GitHub | GitHub Skills | Ödev | ~1 saat |
+| Ö2 | Push ve pull | Learn Git Branching | Ödev | 20 dk |
+| A | Depoyu tanı | Takım deposu | Ders 2 | 5 dk |
+| B | Profil dosyası, yeni branch | Takım deposu | Ders 2 | 10 dk |
+| C | Pull request aç | Takım deposu | Ders 2 | 5 dk |
+| D | Review ve merge | Takım deposu | Ders 2 | 10 dk |
+| E | Çakışma çöz | Takım deposu | Ders 2 | 15 dk |
+| F | Takımlar arası review | Takım depoları | Ders 2 | 10 dk |
+| G | Mini takım görevi | Takım deposu | 3. ders ya da ödev | 30–45 dk |
 
-**Süre:** 10 dakika  
-**Amaç:** GitHub ekranındaki temel alanları tanımak
+---
 
-Katılımcıdan şunları bulmasını isteyin:
+## Ders 1 — Learn Git Branching (sınıfta, çiftler hâlinde)
 
-- README
-- dosya geçmişi
-- Issues
-- Pull requests
-- branch listesi
+Hazırlık: projeksiyonda [Türkçe sayfayı](https://learngitbranching.js.org/?locale=tr_TR)
+gizli pencerede açın ve 1. seviyeyi siz yapın.
 
-Mini soru:
+### L1. Commit ve branch
 
-```text
-Bu depoda son değişikliği kim, ne zaman yapmış?
-```
-
-## 2. Profil dosyası ekle
-
-**Süre:** 20 dakika  
-**Amaç:** dosya oluşturma, branch açma, commit kaydetme
-
-Görev:
-
-`katilimcilar/ad-soyad.md` dosyası oluşturulacak.
-
-Beklenen içerik:
-
-```md
-# Ad Soyad
-
-- İlgi alanım:
-- GitHub’dan beklentim:
-- Bugün öğrendiğim ilk kavram:
-```
+**Seviye:** Main → Introduction Sequence 1–2
+**Amaç:** commit'in geçmişe nokta eklediğini, branch'in yalnızca bir etiket
+olduğunu görmek
 
 Başarı ölçütü:
 
-- Dosya doğru klasörde
+- Her iki seviye tamamlandı (menüde işaretli)
+- Öğrenci “`git branch` yeni bir commit oluşturdu mu?” sorusuna “hayır, sadece
+  etiket” diye cevap verebiliyor
+
+### L2. Merge
+
+**Seviye:** Main → Introduction Sequence 3
+**Amaç:** iki hattın birleşmesini görmek
+
+Başarı ölçütü:
+
+- Seviye tamamlandı
+- Merge commit'inin neden iki ebeveyni olduğunu açıklayabiliyor
+- Bunu GitHub'daki “Merge pull request” butonuyla ilişkilendirebiliyor
+
+### L3. Revert (hızlı bitirenler)
+
+**Seviye:** Main → Ramping Up 4 (Reversing Changes)
+**Amaç:** hatalı bir commit'i geçmişi silmeden geri almak
+
+Başarı ölçütü: `revert` ile `reset` arasındaki farkı söyleyebiliyor; ortak
+branch'te `revert`'in güvenli olduğunu biliyor.
+
+---
+
+## Ödev
+
+### Ö1. GitHub Skills — Introduction to GitHub
+
+**Bağlantı:** [github.com/skills/introduction-to-github](https://github.com/skills/introduction-to-github)
+**Amaç:** branch → commit → PR → merge akışını gerçek GitHub'da tek başına yapmak
+
+Öğrenci depoyu **Public** olarak kopyalar ve bitirince depo bağlantısını gönderir.
+
+Başarı ölçütü:
+
+- Depo bağlantısı gönderildi
+- Depoda kursun son adımına ulaşıldığı görülüyor
+- Depoda birleştirilmiş en az bir pull request var
+
+### Ö2. Learn Git Branching — push ve pull
+
+**Seviye:** Remote → Push & Pull 1–6
+**Amaç:** yerel ve uzak depo farkını, `pull` ve `push`'un ne yaptığını görmek
+
+Başarı ölçütü: seviye menüsünün ekran görüntüsünde 1–6 işaretli.
+
+---
+
+## Ders 2 — takım deposu
+
+Hazırlık: şablondan takım depolarını oluşturun, üyeleri davet edin ve
+[issue şablonlarındaki](ornek-depo/issue-sablonlari.md) issue'ları açıp her üyeye
+birini atayın ([eğitmen rehberi, bölüm 6](egitmen-rehberi.md)).
+
+### A. Depoyu tanı
+
+**Amaç:** GitHub ekranındaki temel alanları bulmak
+
+Öğrenci şunları bulur: README, commit geçmişi, Issues, kendisine atanan issue,
+Pull requests, branch menüsü.
+
+Mini soru: “Bu depoda son değişikliği kim, ne zaman yapmış?”
+
+### B. Profil dosyası, yeni branch
+
+**Amaç:** dosya oluşturmak, commit sırasında yeni branch açmak
+
+Görev: `katilimcilar/ad-soyad.md` dosyası; commit penceresinde “Create a new
+branch” seçeneği.
+
+Başarı ölçütü:
+
+- Dosya doğru klasörde ve adlandırmada
+- Değişiklik `main`'de değil, yeni branch'te
 - Commit mesajı anlaşılır
-- Değişiklik yeni branch’te
 
-## 3. Pull request aç
+### C. Pull request aç
 
-**Süre:** 15 dakika  
-**Amaç:** değişiklik önermeyi öğrenmek
+**Amaç:** değişiklik önermek ve issue'ya bağlamak
 
-Pull request açıklamasında şu başlıklar olsun:
+PR açıklaması:
 
 ```md
 ## Ne değişti?
 
-## Neden?
+Closes #<issue numarası>
 
-## Kontrol listesi
-- [ ] Dosya doğru yerde
-- [ ] Yazım hatası kontrol edildi
+## Kontrol
+- [ ] Dosya adı doğru mu?
+- [ ] İçerik anlaşılır mı?
 ```
+
+Başarı ölçütü: PR açık, açıklama boş değil, `Closes #` ile issue bağlı.
+
+### D. Review ve merge
+
+**Amaç:** başkasının değişikliğini inceleme alışkanlığı
+
+Her öğrenci bir takım arkadaşının PR'ında **Files changed**'e bakar, en az bir
+satıra yorum bırakır ve Approve / Request changes seçer. İnceleyici rolündeki
+öğrenci onaylanan PR'ları birleştirir ve branch'i siler.
 
 Başarı ölçütü:
 
-- PR açık
-- Açıklama boş değil
-- İlgili issue bağlanmışsa daha iyi
+- Yorum kibar, somut, satıra bağlı ve gerekçeli
+- PR birleşince bağlı issue kendiliğinden kapandı
 
-## 4. Review yap
+### E. Çakışma çöz
 
-**Süre:** 20 dakika  
-**Amaç:** başkasının değişikliğini inceleme alışkanlığı kazanmak
-
-Katılımcı başka birinin PR’ında:
-
-- `Files changed` alanına bakar
-- en az bir yorum bırakır
-- uygunsa approve eder
-
-Yorumlar kibar, somut ve kısa olmalıdır.
-
-## 5. Issue ile çalışma
-
-**Süre:** 15 dakika  
-**Amaç:** işi dosyadan önce issue’da tarif etmeyi öğrenmek
-
-Görev:
-
-Katılımcı yeni bir issue açar:
-
-```text
-Başlık: README’ye kaynak önerisi ekle
-```
-
-Açıklama:
-
-```md
-README dosyasına GitHub öğrenmek isteyenler için bir kaynak bağlantısı eklemek istiyorum.
-
-Tamamlanma ölçütü:
-- Kaynak bağlantısı eklendi
-- Kısa açıklama yazıldı
-```
-
-## 6. Çakışma alıştırması
-
-**Süre:** 25 dakika  
 **Amaç:** merge conflict korkusunu azaltmak
 
-Hazırlık:
-
-`cakisma-alani.md` içinde şu satır olsun:
+`cakisma-alani.md`'deki şu satırı takımın dört üyesi de kendi önerisiyle
+değiştirir ve PR açar:
 
 ```md
 Atölyeden sonra GitHub’ı şu iş için kullanabiliriz: ...
 ```
 
-Görev:
-
-Tüm katılımcılar aynı satırı kendi önerileriyle değiştirir. İlk merge’den sonra
-diğer katılımcılarda çakışma oluşur.
+İlk PR birleşince diğer üçünde çakışma çıkar. Takım **Resolve conflicts**
+ekranında birlikte karar verir.
 
 Başarı ölçütü:
 
 - Çakışma ekranı görüldü
-- Karar verilerek temiz metin bırakıldı
-- Çözüm commit edildi
+- İşaret satırları silinip temiz metin bırakıldı
+- Çözüm commit edildi ve PR birleştirildi
 
-## 7. Mini takım görevi
+### F. Takımlar arası review
 
-**Süre:** 30–45 dakika  
-**Amaç:** gerçek iş akışını canlandırmak
+**Amaç:** tanımadığı bir değişikliği okumak
 
-Üç kişilik gruplar oluşturun:
+Eşleşme: takım 1 → 2, 2 → 3 … 11 → 1. Her takım diğer takımın açık bir PR'ına en
+az bir yorum bırakır.
 
-- Kişi 1: issue açar
-- Kişi 2: değişikliği yapar ve PR açar
-- Kişi 3: review yapar
+---
+
+## G. Mini takım görevi (3. ders ya da ödev)
+
+**Amaç:** gerçek iş akışını baştan sona canlandırmak
+
+Takım içinde roller dönüşümlüdür:
+
+- Biri issue açar ve işi tarif eder
+- Biri değişikliği yapar ve `Closes #` ile PR açar
+- Biri review yapar ve merge eder
 
 Örnek görevler:
 
-- README’ye kısa sözlük ekle
-- Proje notlarında eksik başlık tamamla
-- Kaynaklar listesine bağlantı ekle
-- Yazım hatasını düzelt
+- README'ye pin tablosu ekle (Markdown tablosu)
+- README'ye kısa bir Git sözlüğü ekle
+- `proje-notlari.md`'deki kaynak listesine bağlantılar ekle
+- Bir yazım hatasını düzelt
 
+Başarı ölçütü: her takım üyesinin en az bir birleştirilmiş PR'ı ve en az bir
+review yorumu var.

@@ -17,9 +17,9 @@ daha küçük gruplarda süreleri kısaltmanız yeterli.
 | Sunum (EN) | [sunum/en/](sunum/en/) | Aynı sunumun İngilizcesi | İngilizce ders / değişim öğrencileri |
 | Hazır araçlar | [hazir-araclar.md](hazir-araclar.md) | Learn Git Branching (Türkçe, hesapsız) ve GitHub Skills kurslarını derste kullanma | Her öğrenci |
 | Örnek eğitim deposu | [ornek-depo/](ornek-depo/) | Gerçek GitHub uygulaması için başlangıç dosyaları | Takımlar |
-| Katılımcı el kitabı | [katilimci-el-kitabi.md](katilimci-el-kitabi.md) | Gerçek GitHub'da adım adım alıştırmalar | Öğrenci |
-| Alıştırmalar | [alistirmalar.md](alistirmalar.md) | Süreli sınıf içi görevler | Eğitmen |
-| Değerlendirme listesi | [degerlendirme-listesi.md](degerlendirme-listesi.md) | Kazanım kontrolü ve çıkış soruları | Eğitmen |
+| Katılımcı el kitabı | [katilimci-el-kitabi.md](katilimci-el-kitabi.md) | Öğrencinin baştan sona rehberi: hesap, Ders 1, ödev, Ders 2 takım alıştırmaları | Öğrenci |
+| Alıştırmalar | [alistirmalar.md](alistirmalar.md) | Süreli alıştırma listesi ve başarı ölçütleri (L1–L3, Ö1–Ö2, A–G) | Eğitmen |
+| Değerlendirme listesi | [degerlendirme-listesi.md](degerlendirme-listesi.md) | Kanıt kaynakları, kazanım tablosu, puanlama önerisi, çıkış soruları | Eğitmen |
 
 Üç katman birbirini tamamlar:
 
@@ -262,7 +262,7 @@ katılır. Dönem boyunca ödev de verecekseniz bu yol daha az iş çıkarır.
 | İnceleyici | Takımdaki PR'ları inceler, onaylar, merge eder |
 
 Herkes kendi profil dosyasını (`katilimcilar/ad-soyad.md`) ayrı branch ve PR ile
-ekler; [katılımcı el kitabındaki](katilimci-el-kitabi.md) Alıştırma 2–4 budur.
+ekler; [katılımcı el kitabındaki](katilimci-el-kitabi.md) Alıştırma B–D budur.
 
 ### 6.3 Çakışma alıştırması
 
