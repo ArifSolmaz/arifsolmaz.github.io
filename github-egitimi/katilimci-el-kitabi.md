@@ -3,6 +3,10 @@
 Bu notlar, atölye sırasında adım adım takip etmek içindir. Komut satırı bilmeniz
 gerekmiyor.
 
+> Önce denemek ister misiniz? [Git oyun alanında](oyun-alani/) aynı adımları hesap
+> açmadan, hiçbir şeyi bozmadan deneyebilirsiniz. Dersin slaytları: [sunum](sunum/)
+> (`N` tuşu her slaytın sade açıklamasını açar).
+
 ## GitHub’da ne yapacağız?
 
 Bugün şunları öğreneceksiniz:

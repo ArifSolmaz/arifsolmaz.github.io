@@ -37,11 +37,17 @@ GitHub'a dokunmaz; hiçbir şey bozulmaz.
 
 ## Önerilen akış
 
-1. GitHub’da yeni bir eğitim deposu oluşturun.
-2. `ornek-depo/` içindeki dosyaları bu yeni depoya kopyalayın.
-3. Katılımcıları depoya davet edin.
-4. Atölyeyi issue, branch, commit, pull request, review, merge ve conflict akışıyla yürütün.
-5. İlk oturumda GitHub web arayüzünü kullanın; GitHub Desktop veya terminali ikinci oturuma bırakın.
+Ayrıntılı plan, 40–45 kişilik sınıf düzeni ve slayt slayt eğitmen notları için
+**[eğitmen rehberine](egitmen-rehberi.md)** bakın. Kısaca, iki ders:
+
+1. **Ders 1 (100 dk):** sunumun 1–14. slaytları; ardından öğrenciler çiftler
+   hâlinde oyun alanında 1–5. görevleri yapar. Ödev: 13 görevin tamamı ve GitHub
+   hesabı.
+2. **Ders 2 (100 dk):** 15–37. slaytlar; ardından 4 kişilik takımlar, `ornek-depo/`
+   şablonundan üretilen kendi depolarında branch, pull request, review ve
+   conflict uygulaması yapar.
+
+Her kavram için sıra: **anlat → oyun alanında dene → gerçek GitHub'da yap**.
 
 ## Kaynaklar
 
