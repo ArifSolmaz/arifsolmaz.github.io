@@ -1122,11 +1122,10 @@
   <button id="ui-btn-notes" aria-pressed="false">N</button>
   <button id="ui-btn-ov">O</button>
   <button id="ui-btn-fs" aria-label="Fullscreen">⛶</button>
-  <a href="notlar.html" id="ui-speaker" target="gh-notes">Notlar</a>
   <a href="en/" id="ui-lang-link">EN</a>
   <a href="../hazir-araclar.html">Dene</a>
   <a href="../">Atölye sayfası</a>
-  <span id="ui-help">← → gezin · N açıklama · S konuşma notları · O genel bakış · F tam ekran · P yazdır/PDF</span>
+  <span id="ui-help">← → gezin · N açıklama · O genel bakış · F tam ekran · P yazdır/PDF</span>
 </nav>
 
 <script>
@@ -1137,14 +1136,6 @@
   var notesBox = document.getElementById('ui-notes'), notesText = document.getElementById('ui-notes-text');
   var ov = document.getElementById('ui-overview'), grid = document.getElementById('ui-grid');
   var count = document.getElementById('ui-count'), bar = document.getElementById('ui-progress');
-
-  var ch = null; try { ch = new BroadcastChannel('gh-egitimi-sunum'); } catch (e) {}
-  if (ch) ch.onmessage = function (ev) {
-    var d = ev.data || {};
-    if (d.type === 'go' && d.n) go(d.n - 1, true);
-    else if (d.type === 'hello') ch.postMessage({ type: 'slide', n: i + 1 });
-  };
-  function openSpeaker() { window.open(document.getElementById('ui-speaker').getAttribute('href') + '#' + (i + 1), 'gh-notes'); }
 
   function fit() {
     var s = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
@@ -1166,7 +1157,6 @@
     document.title = (h ? h.textContent.replace(/\s+/g, ' ').trim() + ' · ' : '') + 'Mekatronik Mühendisleri için GitHub — Sunum';
     var hash = '#' + (i + 1);
     if (location.hash !== hash) history[push ? 'pushState' : 'replaceState'](null, '', hash);
-    if (ch) ch.postMessage({ type: 'slide', n: i + 1 });
     var cur = grid.querySelector('.current'); if (cur) cur.classList.remove('current');
     if (grid.children[i]) grid.children[i].classList.add('current');
   }
@@ -1214,7 +1204,6 @@
   document.getElementById('ui-btn-notes').onclick = function () { toggleNotes(); };
   document.getElementById('ui-btn-ov').onclick = function () { toggleOverview(); };
   document.getElementById('ui-btn-fs').onclick = fullscreen;
-  document.getElementById('ui-speaker').onclick = function (e) { e.preventDefault(); openSpeaker(); };
   // keep the slide number when switching language
   document.getElementById('ui-lang-link').addEventListener('click', function (e) { this.href = this.getAttribute('href').split('#')[0] + '#' + (i + 1); });
 
@@ -1230,7 +1219,6 @@
     else if (k === 'o' || k === 'O' || k === 'Escape') toggleOverview(k === 'Escape' ? false : undefined);
     else if (k === 'f' || k === 'F') fullscreen();
     else if (k === 'p' || k === 'P') window.print();
-    else if (k === 's' || k === 'S') openSpeaker();
   });
 
   // touch swipe

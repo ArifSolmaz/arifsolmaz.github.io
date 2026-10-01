@@ -9,12 +9,6 @@ rehberler var.
 
 **[Slaytları aç → Mekatronik Mühendisleri için GitHub](sunum/)** · [English version](sunum/en/)
 
-**[Konuşma notları](sunum/notlar.html)** · [Speaker notes](sunum/en/notes.html): 45 dakikalık ders için slayt
-slayt konuşma metni, süreler ve eğitmen ipuçları. Sunumda `S` tuşuyla ayrı pencerede açılır
-ve slaytla birlikte ilerler. Dersten sonra öğrencilere **[ders metni](sunum/notlar.html?ogrenci)**
-([lecture script](sunum/en/notes.html?handout)) olarak verilebilir; bu görünümde eğitmen
-ipuçları ve süreler gizlenir.
-
 Tarayıcıda çalışan, 37 slaytlık ders sunumu. Ok tuşlarıyla ilerleyin; `N` her slaytın
 sade açıklamasını, `O` tüm slaytları açar, `F` tam ekran yapar, `P` ile PDF olarak
 kaydedebilirsiniz. Bölümler: Git ve GitHub'a giriş, kişisel repo, takım projesi
@@ -28,7 +22,6 @@ Hepsi isteğe bağlı ve tek başına yapılabilir (sunumun 36. slaytı).
 
 | | Ne? | Süre | Rehber |
 |---|---|---|---|
-| 0 | [Ders metni](sunum/notlar.html?ogrenci): derste anlatılanların yazılı hâli | yaklaşık 20 dk okuma | — |
 | 1 | [Learn Git Branching](https://learngitbranching.js.org/?locale=tr_TR): commit, branch ve merge'ü tarayıcıda canlı bir ağaç olarak görün | 15 dk, hesap gerekmez | [Hazır araçlar](hazir-araclar.md) |
 | 2 | İlk reponuz: GitHub Docs “Hello World” akışı | 30 dk | [Sunum, 33. slayt](sunum/#33) |
 | 3 | [GitHub Skills: Introduction to GitHub](https://github.com/skills/introduction-to-github): bir bot adım adım yönlendirir | yaklaşık 1 saat | [Katılımcı el kitabı](katilimci-el-kitabi.md) |
