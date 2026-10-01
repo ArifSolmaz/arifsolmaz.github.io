@@ -33,7 +33,7 @@ Kolaydan zora dört yol (sunumun 36. slaytı):
 | 1. Learn Git Branching: commit, branch, merge'ü canlı bir ağaçta görün | 15 dk, hesap gerekmez | Aşağıda bölüm 2 |
 | 2. İlk reponuz: GitHub Docs “Hello World” | 30 dk | [Sunum, 33. slayt](sunum/#33) |
 | 3. GitHub Skills: Introduction to GitHub | yaklaşık 1 saat | Aşağıda bölüm 3.1 |
-| 4. Gerçek repo turu: popüler ve iyi yönetilen depoları okuyun | kendi hızınızda | [Gerçek GitHub örnekleri](gercek-ornekler/) |
+| 4. Gerçek repo turu: popüler depoları bulun, değerlendirin, indirin ve katkı yolunu görün | kendi hızınızda | [Gerçek GitHub örnekleri](gercek-ornekler/) |
 
 Hocanız uygulamalı (2 × 100 dakikalık) sürümü yapıyorsa aşağıdaki yol haritası
 ve takım alıştırmaları (bölüm 4) da geçerlidir.

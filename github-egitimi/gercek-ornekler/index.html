@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Gerçek GitHub örnekleri | GitHub Eğitimi</title>
-  <meta name="description" content="Ders için gerçek GitHub depoları, kullanım senaryoları ve popüler depo keşif kaynakları.">
+  <title>GitHub: Canlı bir ekosistem | GitHub Eğitimi</title>
+  <meta name="description" content="Gerçek GitHub depoları, kullanım senaryoları ve popüler depo keşif kaynakları.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..800&family=JetBrains+Mono:wght@500..800&display=swap" rel="stylesheet">
@@ -25,16 +25,17 @@
   <main>
     <section class="page-hero">
       <p class="eyebrow">Gerçek dünya turu</p>
-      <h1>Öğrencilere GitHub'ın canlı ekosistem olduğunu gösterin</h1>
+      <h1>GitHub: Canlı bir ekosistem</h1>
       <p>
         GitHub yalnızca ödev teslim yeri değildir. Açık kaynak projelerde issue,
         pull request, release, review, test ve dokümantasyon aynı yerde görünür.
-        Bu sayfayı derste kısa bir repo turu için kullanın.
+        Bu sayfa kısa bir repo turu için somut örnekler ve canlı keşif kaynakları sunar.
       </p>
       <div class="button-row">
         <a class="button primary" href="#repo-turu">Repo turu</a>
         <a class="button secondary" href="#kesif">Popülerleri keşfet</a>
         <a class="button secondary" href="#arama">Arama tarifleri</a>
+        <a class="button secondary" href="#sonra">Bulunca ne yapmalı?</a>
       </div>
     </section>
 
@@ -57,20 +58,20 @@
         <a class="card" href="https://github.com/opencv/opencv">
           <span class="meta">Görüntü işleme</span>
           <h3>opencv/opencv</h3>
-          <p>Bilgisayarlı görü için klasik örnek. Release, documentation, bug report ve review kültürü iyi gösterilir.</p>
+          <p>Bilgisayarlı görü için klasik örnek. Release, documentation, bug report ve review kültürü birlikte okunur.</p>
           <span class="arrow">Release ve PR incele</span>
         </a>
         <a class="card" href="https://github.com/ros2/ros2">
           <span class="meta">Robotik altyapı</span>
           <h3>ros2/ros2</h3>
           <p>Birçok alt depoyu bir araya getiren robotik meta deposu. Büyük projelerde tek repo yetmeyebilir fikrini anlatır.</p>
-          <span class="arrow">Alt repo yapısını göster</span>
+          <span class="arrow">Alt repo yapısını incele</span>
         </a>
         <a class="card" href="https://github.com/arduino/arduino-ide">
           <span class="meta">Kullanıcı ürünü</span>
           <h3>arduino/arduino-ide</h3>
-          <p>Öğrencilerin tanıdığı bir aracın issue ve pull request üzerinden nasıl geliştirildiğini gösterir.</p>
-          <span class="arrow">Bug issue aç</span>
+          <p>Tanıdık bir aracın issue ve pull request üzerinden nasıl geliştirildiğini anlatmak için iyi örnektir.</p>
+          <span class="arrow">Bug issue incele</span>
         </a>
         <a class="card" href="https://github.com/microsoft/vscode">
           <span class="meta">Büyük ekip pratiği</span>
@@ -81,8 +82,8 @@
         <a class="card" href="https://github.com/python/cpython">
           <span class="meta">Dil geliştirme</span>
           <h3>python/cpython</h3>
-          <p>Bir programlama dilinin bile issue, review, test ve release ile yönetildiğini gösterir.</p>
-          <span class="arrow">Pull request kontrollerini göster</span>
+          <p>Bir programlama dilinin bile issue, review, test ve release ile yönetildiğini görünür kılar.</p>
+          <span class="arrow">Pull request kontrollerini incele</span>
         </a>
         <a class="card" href="https://github.com/home-assistant/core">
           <span class="meta">Topluluk katkısı</span>
@@ -155,19 +156,56 @@
         <a class="card" href="https://github.com/search?q=language%3APython+stars%3A%3E10000&type=repositories&s=stars&o=desc">
           <span class="meta">Python</span>
           <h3><code>language:Python stars:&gt;10000</code></h3>
-          <p>Bilimsel hesaplama, otomasyon ve yapay zeka tarafında popüler Python depolarını gösterir.</p>
+          <p>Bilimsel hesaplama, otomasyon ve yapay zeka tarafında popüler Python depolarını listeler.</p>
           <span class="arrow">Aramayı aç</span>
         </a>
         <a class="card" href="https://github.com/search?q=label%3A%22good+first+issue%22+state%3Aopen&type=issues">
           <span class="meta">İlk katkı</span>
           <h3><code>good first issue</code></h3>
-          <p>Yeni katkı yapacaklar için etiketlenmiş açık issue'ları gösterir. Önce katkı rehberini okuyun.</p>
+          <p>Yeni katkı yapacaklar için etiketlenmiş açık issue'ları listeler. Önce katkı rehberini okuyun.</p>
           <span class="arrow">Aramayı aç</span>
         </a>
       </div>
     </section>
 
-    <section class="page-section">
+    <section class="page-section" id="sonra">
+      <p class="eyebrow">Repo bulunca</p>
+      <h2>Beğendiğiniz projeyle ne yapılır?</h2>
+      <div class="steps">
+        <article class="step">
+          <h3>Değerlendir</h3>
+          <p>README, lisans, son release, son commit, açık issue'lar ve test durumuna bakın. Star tek başına güven ölçütü değildir.</p>
+        </article>
+        <article class="step">
+          <h3>Kaydet</h3>
+          <p>Sonra dönmek için star verin; sürüm ve güvenlik duyurularını izlemek istiyorsanız Watch ayarını bilinçli kullanın.</p>
+        </article>
+        <article class="step">
+          <h3>Kullan</h3>
+          <p>Önce dokümantasyondaki kurulum ve örnekleri izleyin. Kodu kendi projenize almadan önce lisansı okuyun ve kaynak gösterin.</p>
+        </article>
+        <article class="step">
+          <h3>İndir</h3>
+          <p>Sadece bakacaksanız Code → Download ZIP yeter. Çalıştırıp güncelleyecekseniz GitHub Desktop veya <code>git clone</code> kullanın.</p>
+        </article>
+        <article class="step">
+          <h3>Geliştir</h3>
+          <p>Yazma yetkiniz yoksa fork alın. Yeni branch açın, küçük bir değişiklik yapın, test edin ve açıklayıcı commit yazın.</p>
+        </article>
+        <article class="step">
+          <h3>Katkı ver</h3>
+          <p>CONTRIBUTING dosyasını okuyun, ilgili issue'yu bağlayın, pull request açın ve neyi neden değiştirdiğinizi anlatın.</p>
+        </article>
+      </div>
+      <div class="link-list">
+        <a class="link-item" href="https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository"><strong>Terminalde clone</strong><span>GitHub Docs</span></a>
+        <a class="link-item" href="https://docs.github.com/en/desktop/adding-and-cloning-repositories/cloning-and-forking-repositories-from-github-desktop"><strong>GitHub Desktop ile clone/fork</strong><span>GitHub Docs</span></a>
+        <a class="link-item" href="https://docs.github.com/en/get-started/exploring-projects-on-github/contributing-to-a-project"><strong>Açık kaynağa katkı</strong><span>GitHub Docs</span></a>
+        <a class="link-item" href="https://docs.github.com/en/pull-requests/how-tos/work-with-forks/fork-a-repo"><strong>Fork ile çalışma</strong><span>GitHub Docs</span></a>
+      </div>
+    </section>
+
+    <section class="page-section alt">
       <p class="eyebrow">Sınıf tartışması</p>
       <h2>Bir repoya bakınca sorulacak sorular</h2>
       <div class="quote-panel">

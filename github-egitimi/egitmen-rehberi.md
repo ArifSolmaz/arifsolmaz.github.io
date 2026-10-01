@@ -43,7 +43,7 @@ Katmanlar birbirini tamamlar:
    komut yazar, commit ağacı anında değişir. Yanlış yapmak bedavadır.
 4. **GitHub Skills** aynı adımları gerçek GitHub arayüzünde, bir botun
    yönlendirmesiyle tek başına yaptırır.
-5. **Gerçek repo turu** öğrenciye açık kaynakta aynı akışların nasıl yaşadığını gösterir.
+5. **Gerçek repo turu** aynı akışların açık kaynakta nasıl yaşadığını somutlaştırır.
 6. **Takım deposu** hepsini gerçek bir takımla tekrarlatır.
 
 Her kavram için sıra aynıdır: **problem → iyi alışkanlık → Git'te ne oluyor → GitHub'da nasıl yapılır**.
@@ -251,7 +251,7 @@ kaydırarak gezilir.
 | 26 Güvenli ajan akışı | Ajana Türkçe de yazılabilir. 5. adım (donanımda test) pazarlık konusu değil. |
 | 27 GitHub içinde ajanlar | Soldaki konuşma örnektir. `@claude` için repoda `/install-github-app` ile kurulum ve yazma yetkisi gerekir. Bir demo reposunda bir kez kurun. |
 | 28 Kurallar | Ders politikanızı doldurun. Ajanların commit'leri çoğu zaman `Co-authored-by` satırı taşır. |
-| 29 Gerçek depolar | En fazla iki repo açın. Öneri: PX4'te bir PR, OpenCV'de bir release, VS Code'da labels/milestones. Star sayısının kalite garantisi olmadığını söyleyin. |
+| 29 Gerçek depolar | En fazla iki repo açın. Öneri: PX4'te bir PR, OpenCV'de bir release, VS Code'da labels/milestones. Sonra “bulunca ne yapılır?” kısmını bağlayın: README/lisans oku, Download ZIP ya da clone, gerekiyorsa fork + branch + PR. Star sayısının kalite garantisi olmadığını söyleyin. |
 | 30 Test | Cevaplar: 1) Git geçmişi tutan program, GitHub onu barındıran site; 2) commit yerel, push GitHub'a; 3) `main` hep çalışmalı, denemeler branch'te; 4) PR birleşince issue #7 kapanır. Kahoot/Mentimeter'a da aktarılabilir. |
 | 31 Hello World | GitHub Docs'taki resmî alıştırma. Adlar `hello-world` ve `readme-edits`. |
 | 32 Nereye tıklanır | Hello World'ü burada canlı yapın, her tıklamayı söyleyin. Yeni başlayanlar için en önemli an. |

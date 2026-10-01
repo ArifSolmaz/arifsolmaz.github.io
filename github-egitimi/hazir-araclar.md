@@ -101,7 +101,8 @@ Sunum (kavram)  →  Learn Git Branching (Git'te ne oluyor?)  →  GitHub Skills
   Introduction to GitHub kursu dersten sonra isteyenler içindir (sunum, 36. slayt).
   Aynı slayttaki gerçek repo turu için [Gerçek GitHub örnekleri](gercek-ornekler/)
   sayfasını kullanın; popüler depolar, GitHub Trending ve Hacker News arama
-  bağlantıları orada hazırdır.
+  bağlantıları, ayrıca bir repo bulunduğunda download/clone/fork/PR yolu orada
+  hazırdır.
 
 Uygulamalı (2 × 100 dk) sürümde:
 

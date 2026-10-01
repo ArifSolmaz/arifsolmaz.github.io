@@ -60,7 +60,7 @@ yönetim alanı olduğunu görmek.
 Öğrenciler [Gerçek GitHub örnekleri](gercek-ornekler/) sayfasından bir repo seçer:
 PX4, ArduPilot, OpenCV, ROS 2, Arduino IDE, VS Code, CPython ya da Home Assistant.
 
-Beş soruya kısa cevap yazarlar:
+Önce beş soruya kısa cevap yazarlar:
 
 1. README size projenin ne yaptığını 30 saniyede anlattı mı?
 2. Issues sekmesinde en sık görünen etiketler ne?
@@ -68,11 +68,19 @@ Beş soruya kısa cevap yazarlar:
 4. Son release notunda kullanıcıyı ilgilendiren bir değişiklik var mı?
 5. Star sayısına bakmadan, bu repo sağlıklı görünüyor mu? Neden?
 
+Sonra “bu repoyu gerçekten kullanacak olsam ne yaparım?” kararını eklerler:
+
+- Sadece incelemek: Star ver, release notlarını ve README'yi oku.
+- Denemek: Code → Download ZIP veya GitHub Desktop / `git clone` ile indir.
+- Kendi projene uyarlamak: lisansı oku, kaynak göster, küçük bir örnek çalıştır.
+- Katkı vermek: CONTRIBUTING dosyasını oku, fork al, branch aç, test et, pull request aç.
+
 Başarı ölçütü:
 
 - Öğrenci README, Issues, Pull requests ve Releases sekmelerini bulabiliyor.
 - Öğrenci star sayısını tek başına kalite ölçütü sanmıyor.
 - Öğrenci gerçek bir PR diff'ini okumayı denemiş oluyor.
+- Öğrenci download, clone, fork ve pull request arasındaki farkı pratik bir senaryo üzerinden açıklayabiliyor.
 
 ## Ders 1 — Learn Git Branching (sınıfta, çiftler hâlinde)
 
