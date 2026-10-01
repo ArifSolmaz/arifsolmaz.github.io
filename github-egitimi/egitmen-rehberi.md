@@ -51,6 +51,14 @@ tablo nerede durup nerede hızlanacağınızı gösterir.
 | 37–43 | 29–32 | Kapanış: test ve Hello World | 30'da öğrenciler bir dakika yanındakiyle tartışsın. 31–32'de Hello World'ü kendi hesabınızda 3–4 dakikada canlı yapın. |
 | 43–45 | 33–37 | İsteyenler için | 33'ü yaptırmayın, gösterin. 36'da durun ve dört yolu söyleyin (2.2). |
 
+**Konuşma notları:** her slayt için söylenecek metin, planlanan süre ve
+eğitmen ipucu [sunum/notlar.html](sunum/notlar.html) sayfasında
+([İngilizcesi](sunum/en/notes.html)). Sunumda `S`'ye basınca notlar ayrı bir
+pencerede açılır ve slaytla birlikte ilerler; dizüstünde notları, projeksiyonda
+sunumu tutun. Üst çubuktaki sayaç ilk slayt geçişinde başlar ve plana göre önde
+mi geride mi olduğunuzu gösterir. Notlar sayfasında `←` `→` ile de slayt
+değiştirebilirsiniz.
+
 **Canlı gösterim için:** dersten önce Hello World'ü bir kez prova edin. Zaman
 kalmazsa yalnızca pull request açmayı ve merge'ü gösterin.
 
@@ -87,6 +95,8 @@ https://arifsolmaz.github.io/github-egitimi/
 Kolaydan zora: (1) Learn Git Branching, 15 dk, hesap gerekmez;
 (2) ilk reponuz, sunumun 33. slaytı, 30 dk; (3) GitHub Skills
 "Introduction to GitHub", ~1 saat; (4) kendi projeniz için bir repo.
+Derste anlatılanların yazılı hâli:
+https://arifsolmaz.github.io/github-egitimi/sunum/notlar.html?ogrenci
 Takıldığınız yeri bir sonraki derste sorun.
 ```
 
@@ -184,6 +194,7 @@ Ders süresinin ilk 20 dakikası buna gider.
 | `←` `PageUp` | Önceki slayt |
 | `Home` / `End` | İlk / son slayt |
 | `N` | Slaytın sade açıklaması (öğrenciye yönelik) |
+| `S` | Konuşma notlarını ayrı pencerede açar; notlar slaytı izler |
 | `O` | Tüm slaytlar; tıklayıp atlayın |
 | `F` | Tam ekran |
 | `P` | Yazdır; “PDF olarak kaydet” ile her slayt bir sayfa olur |

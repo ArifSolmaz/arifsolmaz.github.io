@@ -412,7 +412,7 @@
     <p style="font-size:26px">$ git commit -m "Add PID control for line tracking"</p>
     <p style="font-size:26px">$ git push</p>
   </div>
-  <p style="font-size:28px; line-height:1.4"><b>Today we stay in the browser</b> — these commands are for later. GitHub Desktop runs the same loop with buttons.</p>
+  <p style="font-size:28px; line-height:1.4"><b>To start, the browser is enough</b> — these commands are for later. GitHub Desktop runs the same loop with buttons.</p>
   <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">12</p></div>
   <aside>Working with Git is a simple loop: change your files, choose which changes to save (add), save a snapshot with a message (commit), and send it to GitHub (push). Commit saves on your computer; push uploads it. In the browser, one button (Commit changes) does all of this for you. The commands are here only so you recognise them later. Want to try it? In Learn Git Branching (first level), type git commit and watch the history grow.</aside>
 </section>
@@ -1122,10 +1122,11 @@
   <button id="ui-btn-notes" aria-pressed="false">N</button>
   <button id="ui-btn-ov">O</button>
   <button id="ui-btn-fs" aria-label="Fullscreen">⛶</button>
+  <a href="notes.html" id="ui-speaker" target="gh-notes">Notes</a>
   <a href="../" id="ui-lang-link">TR</a>
   <a href="https://learngitbranching.js.org/">Try it</a>
   <a href="../../">Workshop page</a>
-  <span id="ui-help">← → navigate · N explanation · O overview · F fullscreen · P print/PDF</span>
+  <span id="ui-help">← → navigate · N explanation · S speaker notes · O overview · F fullscreen · P print/PDF</span>
 </nav>
 
 <script>
@@ -1136,6 +1137,14 @@
   var notesBox = document.getElementById('ui-notes'), notesText = document.getElementById('ui-notes-text');
   var ov = document.getElementById('ui-overview'), grid = document.getElementById('ui-grid');
   var count = document.getElementById('ui-count'), bar = document.getElementById('ui-progress');
+
+  var ch = null; try { ch = new BroadcastChannel('gh-egitimi-sunum'); } catch (e) {}
+  if (ch) ch.onmessage = function (ev) {
+    var d = ev.data || {};
+    if (d.type === 'go' && d.n) go(d.n - 1, true);
+    else if (d.type === 'hello') ch.postMessage({ type: 'slide', n: i + 1 });
+  };
+  function openSpeaker() { window.open(document.getElementById('ui-speaker').getAttribute('href') + '#' + (i + 1), 'gh-notes'); }
 
   function fit() {
     var s = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
@@ -1157,6 +1166,7 @@
     document.title = (h ? h.textContent.replace(/\s+/g, ' ').trim() + ' · ' : '') + 'GitHub for Mechatronics Engineers — Slides';
     var hash = '#' + (i + 1);
     if (location.hash !== hash) history[push ? 'pushState' : 'replaceState'](null, '', hash);
+    if (ch) ch.postMessage({ type: 'slide', n: i + 1 });
     var cur = grid.querySelector('.current'); if (cur) cur.classList.remove('current');
     if (grid.children[i]) grid.children[i].classList.add('current');
   }
@@ -1204,6 +1214,7 @@
   document.getElementById('ui-btn-notes').onclick = function () { toggleNotes(); };
   document.getElementById('ui-btn-ov').onclick = function () { toggleOverview(); };
   document.getElementById('ui-btn-fs').onclick = fullscreen;
+  document.getElementById('ui-speaker').onclick = function (e) { e.preventDefault(); openSpeaker(); };
   // keep the slide number when switching language
   document.getElementById('ui-lang-link').addEventListener('click', function (e) { this.href = this.getAttribute('href').split('#')[0] + '#' + (i + 1); });
 
@@ -1219,6 +1230,7 @@
     else if (k === 'o' || k === 'O' || k === 'Escape') toggleOverview(k === 'Escape' ? false : undefined);
     else if (k === 'f' || k === 'F') fullscreen();
     else if (k === 'p' || k === 'P') window.print();
+    else if (k === 's' || k === 'S') openSpeaker();
   });
 
   // touch swipe
