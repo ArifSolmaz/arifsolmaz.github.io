@@ -14,40 +14,40 @@
   body { background: #0d1015; color: #f4f2ec; font-family: Inter, Arial, sans-serif; overflow: hidden; }
 
   /* ---- stage: a fixed 1920x1080 canvas scaled to the window ---- */
-  #viewport { position: fixed; inset: 0; display: grid; place-items: center; }
-  #stage { position: relative; width: 1920px; height: 1080px; transform-origin: center center; flex: none; }
-  #stage > section { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden;
+  #ui-viewport { position: fixed; inset: 0; display: grid; place-items: center; }
+  #ui-stage { position: relative; width: 1920px; height: 1080px; transform-origin: center center; flex: none; }
+  #ui-stage > section { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden;
     opacity: 0; visibility: hidden; transition: opacity .35s ease, visibility 0s linear .35s; }
-  #stage > section.active { opacity: 1; visibility: visible; transition: opacity .35s ease; }
+  #ui-stage > section.active { opacity: 1; visibility: visible; transition: opacity .35s ease; }
   section aside { display: none; }
   section a { color: inherit; }
   section table { border-spacing: 0; }
 
   /* ---- chrome ---- */
-  #bar { position: fixed; left: 0; right: 0; bottom: 0; display: flex; align-items: center; gap: 8px;
+  #ui-bar { position: fixed; left: 0; right: 0; bottom: 0; display: flex; align-items: center; gap: 8px;
     padding: 8px 12px; background: rgba(13,16,21,.86); backdrop-filter: blur(6px); font-size: 14px;
     transition: opacity .3s; z-index: 10; }
-  body.idle #bar { opacity: 0; }
-  #bar button, #bar a { white-space: nowrap; background: transparent; color: #f4f2ec; border: 1px solid #3a414d; border-radius: 8px;
+  body.idle #ui-bar { opacity: 0; }
+  #ui-bar button, #ui-bar a { white-space: nowrap; background: transparent; color: #f4f2ec; border: 1px solid #3a414d; border-radius: 8px;
     padding: 6px 12px; font: inherit; cursor: pointer; text-decoration: none; min-height: 34px; display: inline-flex; align-items: center; }
-  #bar button:hover, #bar a:hover { border-color: #e8692c; }
-  #bar button:focus-visible, #bar a:focus-visible { outline: 2px solid #e8692c; outline-offset: 2px; }
-  #count { font-variant-numeric: tabular-nums; color: #b9bec6; min-width: 64px; text-align: center; }
-  #help { color: #8a919c; margin-left: auto; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  #progress { position: fixed; left: 0; top: 0; height: 4px; background: #e8692c; transition: width .3s; z-index: 11; }
+  #ui-bar button:hover, #ui-bar a:hover { border-color: #e8692c; }
+  #ui-bar button:focus-visible, #ui-bar a:focus-visible { outline: 2px solid #e8692c; outline-offset: 2px; }
+  #ui-count { font-variant-numeric: tabular-nums; color: #b9bec6; min-width: 64px; text-align: center; }
+  #ui-help { color: #8a919c; margin-left: auto; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  #ui-progress { position: fixed; left: 0; top: 0; height: 4px; background: #e8692c; transition: width .3s; z-index: 11; }
 
   /* ---- speaker notes ---- */
-  #notes { position: fixed; left: 50%; bottom: 60px; transform: translateX(-50%); width: min(960px, calc(100% - 32px));
+  #ui-notes { position: fixed; left: 50%; bottom: 60px; transform: translateX(-50%); width: min(960px, calc(100% - 32px));
     max-height: 38vh; overflow: auto; background: #fbfaf6; color: #1b2129; border-radius: 12px;
     padding: 16px 20px; font-size: 16px; line-height: 1.55; box-shadow: 0 10px 40px rgba(0,0,0,.45); display: none; z-index: 9; }
-  #notes.show { display: block; }
-  #notes h4 { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 1.5px; color: #b8491a; margin-bottom: 6px; text-transform: uppercase; }
+  #ui-notes.show { display: block; }
+  #ui-notes h4 { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 1.5px; color: #b8491a; margin-bottom: 6px; text-transform: uppercase; }
 
   /* ---- overview ---- */
-  #overview { position: fixed; inset: 0; background: #0d1015; overflow: auto; padding: 24px 16px 80px; display: none; z-index: 20; }
-  #overview.show { display: block; }
-  #overview h3 { font-family: 'Space Grotesk', Arial, sans-serif; font-size: 22px; margin: 0 auto 16px; max-width: 1400px; }
-  #grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; max-width: 1400px; margin: 0 auto; }
+  #ui-overview { position: fixed; inset: 0; background: #0d1015; overflow: auto; padding: 24px 16px 80px; display: none; z-index: 20; }
+  #ui-overview.show { display: block; }
+  #ui-overview h3 { font-family: 'Space Grotesk', Arial, sans-serif; font-size: 22px; margin: 0 auto 16px; max-width: 1400px; }
+  #ui-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; max-width: 1400px; margin: 0 auto; }
   .thumb { position: relative; aspect-ratio: 16/9; overflow: hidden; border-radius: 8px; border: 2px solid transparent; cursor: pointer; background: #14181f; padding: 0; }
   .thumb.current { border-color: #e8692c; }
   .thumb:focus-visible { outline: 2px solid #e8692c; outline-offset: 2px; }
@@ -55,23 +55,23 @@
   .thumb .mini > section { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden; }
   .thumb span { position: absolute; right: 6px; bottom: 6px; background: rgba(13,16,21,.8); color: #f4f2ec; font-size: 12px; padding: 2px 7px; border-radius: 6px; }
 
-  @media (max-width: 640px) { #help { display: none; } #bar { gap: 6px; padding: 6px 8px; } #bar button, #bar a { padding: 6px 9px; } }
+  @media (max-width: 640px) { #ui-help { display: none; } #ui-bar { gap: 6px; padding: 6px 8px; } #ui-bar button, #ui-bar a { padding: 6px 9px; } }
 
   /* ---- print: one slide per page ---- */
   @page { size: 1920px 1080px; margin: 0; }
   @media print {
     body { overflow: visible; background: #fff; }
-    #bar, #notes, #overview, #progress { display: none !important; }
-    #viewport { position: static; display: block; }
-    #stage { transform: none !important; width: 1920px; height: auto; }
-    #stage > section { position: relative; opacity: 1; visibility: visible; page-break-after: always; break-after: page; }
+    #ui-bar, #ui-notes, #ui-overview, #ui-progress { display: none !important; }
+    #ui-viewport { position: static; display: block; }
+    #ui-stage { transform: none !important; width: 1920px; height: auto; }
+    #ui-stage > section { position: relative; opacity: 1; visibility: visible; page-break-after: always; break-after: page; }
   }
 </style>
 </head>
 <body>
-<div id="progress" role="presentation"></div>
-<main id="viewport" aria-label="Mekatronik Mühendisleri için GitHub">
-  <div id="stage">
+<div id="ui-progress" role="presentation"></div>
+<main id="ui-viewport" aria-label="Mekatronik Mühendisleri için GitHub">
+  <div id="ui-stage">
 <section id="cover" data-transition="fade" style="background:#14181f; color:#f4f2ec; font-family:Inter, Arial, sans-serif; padding:128px; display:flex; flex-direction:column; justify-content:space-between">
   <svg aria-label="Commit grafiği: main'den ayrılıp geri birleşen bir feature branch" viewBox="0 0 480 720" style="position:absolute; right:160px; top:180px; width:480px; height:720px">
     <line x1="120" y1="40" x2="120" y2="680" stroke="#3a414d" stroke-width="6"/>
@@ -1110,31 +1110,31 @@
   </div>
 </main>
 
-<div id="notes" role="region" aria-live="polite" aria-label="Basitçe"><h4>Basitçe</h4><div id="notes-text"></div></div>
+<div id="ui-notes" role="region" aria-live="polite" aria-label="Basitçe"><h4>Basitçe</h4><div id="ui-notes-text"></div></div>
 
-<div id="overview" role="dialog" aria-label="Tüm slaytlar"><h3>Tüm slaytlar</h3><div id="grid"></div></div>
+<div id="ui-overview" role="dialog" aria-label="Tüm slaytlar"><h3>Tüm slaytlar</h3><div id="ui-grid"></div></div>
 
-<nav id="bar" aria-label="Slide navigation">
-  <button id="prev" aria-label="Previous">←</button>
-  <span id="count" aria-live="polite"></span>
-  <button id="next" aria-label="Next">→</button>
-  <button id="btn-notes" aria-pressed="false">N</button>
-  <button id="btn-ov">O</button>
-  <button id="btn-fs" aria-label="Fullscreen">⛶</button>
-  <a href="en/" id="lang-link">EN</a>
+<nav id="ui-bar" aria-label="Slide navigation">
+  <button id="ui-prev" aria-label="Previous">←</button>
+  <span id="ui-count" aria-live="polite"></span>
+  <button id="ui-next" aria-label="Next">→</button>
+  <button id="ui-btn-notes" aria-pressed="false">N</button>
+  <button id="ui-btn-ov">O</button>
+  <button id="ui-btn-fs" aria-label="Fullscreen">⛶</button>
+  <a href="en/" id="ui-lang-link">EN</a>
   <a href="../hazir-araclar.html">Dene</a>
   <a href="../">Atölye sayfası</a>
-  <span id="help">← → gezin · N açıklama · O genel bakış · F tam ekran · P yazdır/PDF</span>
+  <span id="ui-help">← → gezin · N açıklama · O genel bakış · F tam ekran · P yazdır/PDF</span>
 </nav>
 
 <script>
 (function () {
-  var stage = document.getElementById('stage');
+  var stage = document.getElementById('ui-stage');
   var slides = Array.prototype.slice.call(stage.children);
   var n = slides.length, i = 0;
-  var notesBox = document.getElementById('notes'), notesText = document.getElementById('notes-text');
-  var ov = document.getElementById('overview'), grid = document.getElementById('grid');
-  var count = document.getElementById('count'), bar = document.getElementById('progress');
+  var notesBox = document.getElementById('ui-notes'), notesText = document.getElementById('ui-notes-text');
+  var ov = document.getElementById('ui-overview'), grid = document.getElementById('ui-grid');
+  var count = document.getElementById('ui-count'), bar = document.getElementById('ui-progress');
 
   function fit() {
     var s = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
@@ -1164,7 +1164,7 @@
   function toggleNotes(force) {
     var on = typeof force === 'boolean' ? force : !notesBox.classList.contains('show');
     notesBox.classList.toggle('show', on);
-    document.getElementById('btn-notes').setAttribute('aria-pressed', on);
+    document.getElementById('ui-btn-notes').setAttribute('aria-pressed', on);
     try { localStorage.setItem('gh-notes', on ? '1' : '0'); } catch (e) {}
   }
   function buildOverview() {
@@ -1198,13 +1198,13 @@
     else { document.exitFullscreen(); }
   }
 
-  document.getElementById('prev').onclick = function () { go(i - 1, true); };
-  document.getElementById('next').onclick = function () { go(i + 1, true); };
-  document.getElementById('btn-notes').onclick = function () { toggleNotes(); };
-  document.getElementById('btn-ov').onclick = function () { toggleOverview(); };
-  document.getElementById('btn-fs').onclick = fullscreen;
+  document.getElementById('ui-prev').onclick = function () { go(i - 1, true); };
+  document.getElementById('ui-next').onclick = function () { go(i + 1, true); };
+  document.getElementById('ui-btn-notes').onclick = function () { toggleNotes(); };
+  document.getElementById('ui-btn-ov').onclick = function () { toggleOverview(); };
+  document.getElementById('ui-btn-fs').onclick = fullscreen;
   // keep the slide number when switching language
-  document.getElementById('lang-link').addEventListener('click', function (e) { this.href = this.getAttribute('href').split('#')[0] + '#' + (i + 1); });
+  document.getElementById('ui-lang-link').addEventListener('click', function (e) { this.href = this.getAttribute('href').split('#')[0] + '#' + (i + 1); });
 
   document.addEventListener('keydown', function (e) {
     if (e.metaKey || e.ctrlKey || e.altKey) return;
