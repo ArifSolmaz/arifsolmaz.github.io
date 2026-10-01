@@ -1081,11 +1081,11 @@
   <button id="ui-prev" aria-label="Previous">←</button>
   <span id="ui-count" aria-live="polite"></span>
   <button id="ui-next" aria-label="Next">→</button>
-  <button id="ui-btn-ov">O</button>
+  <button id="ui-btn-ov" aria-label="Overview">Overview</button>
   <button id="ui-btn-fs" aria-label="Fullscreen">⛶</button>
   <a href="../" id="ui-lang-link">TR</a>
-  <a href="https://learngitbranching.js.org/">Try it</a>
-  <a href="../../">Workshop page</a>
+  <a href="../../student/">Student path</a>
+  <a href="../../">Home</a>
   <span id="ui-help">← → navigate · O overview · F fullscreen · P print/PDF</span>
 </nav>
 
@@ -1112,7 +1112,8 @@
     count.textContent = (i + 1) + ' / ' + n;
     bar.style.width = ((i + 1) / n * 100) + '%';
     var h = slides[i].querySelector('h1, h2');
-    document.title = (h ? h.textContent.replace(/\s+/g, ' ').trim() + ' · ' : '') + 'GitHub for Mechatronics Engineers — Slides';
+    var rawTitle = h ? (h.innerText || h.textContent || '') : '';
+    document.title = (rawTitle ? rawTitle.replace(/\s+/g, ' ').trim() + ' · ' : '') + 'GitHub for Mechatronics Engineers — Slides';
     var hash = '#' + (i + 1);
     if (location.hash !== hash) history[push ? 'pushState' : 'replaceState'](null, '', hash);
     var cur = grid.querySelector('.current'); if (cur) cur.classList.remove('current');
@@ -1125,7 +1126,8 @@
     slides.forEach(function (s, k) {
       var b = document.createElement('button'); b.className = 'thumb';
       var h = s.querySelector('h1, h2');
-      b.setAttribute('aria-label', (k + 1) + '. ' + (h ? h.textContent.replace(/\s+/g, ' ').trim() : ''));
+      var rawLabel = h ? (h.innerText || h.textContent || '') : '';
+      b.setAttribute('aria-label', (k + 1) + '. ' + rawLabel.replace(/\s+/g, ' ').trim());
       var mini = document.createElement('div'); mini.className = 'mini';
       var c = s.cloneNode(true); c.removeAttribute('id'); c.classList.remove('active');
       mini.appendChild(c); b.appendChild(mini);

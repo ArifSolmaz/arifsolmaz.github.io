@@ -66,7 +66,8 @@ ve takım alıştırmaları (bölüm 4) da geçerlidir.
 5. İsteğe bağlı: [GitHub Education](https://education.github.com)'a öğrenci olarak
    başvurun; ücretsiz araçlar verir.
 
-Derse dizüstü bilgisayarınızı getirin. Hiçbir şey kurmanız gerekmiyor.
+Hocanız uygulamalı sürümü yapacaksa derse dizüstü bilgisayarınızı getirin.
+Kısa sunum dersinde bilgisayar gerekmez.
 
 ## 2. Ders 1: commit, branch, merge
 

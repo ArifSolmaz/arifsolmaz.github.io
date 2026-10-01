@@ -1081,11 +1081,11 @@
   <button id="ui-prev" aria-label="Previous">←</button>
   <span id="ui-count" aria-live="polite"></span>
   <button id="ui-next" aria-label="Next">→</button>
-  <button id="ui-btn-ov">O</button>
+  <button id="ui-btn-ov" aria-label="Genel bakış">Genel bakış</button>
   <button id="ui-btn-fs" aria-label="Fullscreen">⛶</button>
   <a href="en/" id="ui-lang-link">EN</a>
-  <a href="../hazir-araclar.html">Dene</a>
-  <a href="../">Atölye sayfası</a>
+  <a href="../student/">Pratik yap</a>
+  <a href="../">Ana sayfa</a>
   <span id="ui-help">← → gezin · O genel bakış · F tam ekran · P yazdır/PDF</span>
 </nav>
 
@@ -1112,7 +1112,8 @@
     count.textContent = (i + 1) + ' / ' + n;
     bar.style.width = ((i + 1) / n * 100) + '%';
     var h = slides[i].querySelector('h1, h2');
-    document.title = (h ? h.textContent.replace(/\s+/g, ' ').trim() + ' · ' : '') + 'Mekatronik Mühendisleri için GitHub — Sunum';
+    var rawTitle = h ? (h.innerText || h.textContent || '') : '';
+    document.title = (rawTitle ? rawTitle.replace(/\s+/g, ' ').trim() + ' · ' : '') + 'Mekatronik Mühendisleri için GitHub — Sunum';
     var hash = '#' + (i + 1);
     if (location.hash !== hash) history[push ? 'pushState' : 'replaceState'](null, '', hash);
     var cur = grid.querySelector('.current'); if (cur) cur.classList.remove('current');
@@ -1125,7 +1126,8 @@
     slides.forEach(function (s, k) {
       var b = document.createElement('button'); b.className = 'thumb';
       var h = s.querySelector('h1, h2');
-      b.setAttribute('aria-label', (k + 1) + '. ' + (h ? h.textContent.replace(/\s+/g, ' ').trim() : ''));
+      var rawLabel = h ? (h.innerText || h.textContent || '') : '';
+      b.setAttribute('aria-label', (k + 1) + '. ' + rawLabel.replace(/\s+/g, ' ').trim());
       var mini = document.createElement('div'); mini.className = 'mini';
       var c = s.cloneNode(true); c.removeAttribute('id'); c.classList.remove('active');
       mini.appendChild(c); b.appendChild(mini);

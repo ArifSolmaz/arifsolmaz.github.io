@@ -332,7 +332,7 @@ değiştirip PR açar. İlk PR birleşince diğer üçünde çakışma çıkar; 
 
 Son 10 dakikada her takım bir başka takımın açık bir PR'ına yorum bıraksın
 (takım 1 → 2, 2 → 3 …). Review dili için slayt 19 ve
-[katkı rehberi](ornek-depo/CONTRIBUTING.md).
+[katkı rehberi](ornek-depo/katki-rehberi.html).
 
 ## 7. Yapay zekâ bölümü (slayt 24–28)
 

@@ -33,3 +33,5 @@ Bugün şunları yapacağız:
 - Pull request açıklamasını boş bırakmayın.
 - Başkasının çalışmasına yorum yaparken somut ve nazik olun.
 
+Eğitim sırasında kullanılacak katkı akışı için [katkı rehberine](katki-rehberi.html),
+hazır görev metinleri için [issue şablonlarına](issue-sablonlari.html) bakın.
