@@ -93,6 +93,11 @@ kontrol eder ve sonraki adımın talimatını yazar. Hepsi ücretsizdir.
 Sunum (kavram)  →  Learn Git Branching (Git'te ne oluyor?)  →  GitHub Skills (GitHub'da nasıl yapılır?)  →  Takım deposu (gerçek iş birliği)
 ```
 
+- **45 dakikalık ders:** yalnızca sunum. Learn Git Branching Giriş 1–3 ve
+  Introduction to GitHub kursu dersten sonra isteyenler içindir (sunum, 36. slayt).
+
+Uygulamalı (2 × 100 dk) sürümde:
+
 - **Ders 1:** Sunum 1–14 → Learn Git Branching Giriş 1–3 (sınıfta, çiftler hâlinde).
 - **Ödev:** Introduction to GitHub kursu + Learn Git Branching Remote 1–6.
 - **Ders 2:** Sunum 15–37 → Review pull requests ve Resolve merge conflicts →

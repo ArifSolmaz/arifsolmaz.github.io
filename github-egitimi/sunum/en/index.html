@@ -92,54 +92,50 @@
     <p style="font-size:36px; line-height:1.4; color:#b9bec6">Version control and project management for your code, circuits and CAD — starting from zero.</p>
   </div>
   <p style="font-size:24px; color:#8a919c">Dr. Arif Solmaz · Mechatronics Engineering, İSTÜN</p>
-  <aside>Welcome! Today you will learn GitHub from zero. You don't need to know any programming or Git. By the end you will have a GitHub account, your own project folder on GitHub, and you will have proposed and accepted your first change. The drawing on the right shows the idea: one main line of work, a side path to try something, and the two joining back together.</aside>
+  <aside>Welcome! In the next 45 minutes you will get to know GitHub from zero. You don't need to know any programming or Git, and you don't need a computer in class — just watch and listen. By the end you will know what GitHub is and how a project runs on it. If you want to try it yourself, the last slides show short ways to do that. The drawing on the right shows the idea: one main line of work, a side path to try something, and the two joining back together.</aside>
 </section>
 <section id="agenda" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:32px">
   <div style="display:flex; flex-direction:column; gap:12px">
-    <p style="font-family:'JetBrains Mono', monospace; font-size:24px; color:#b8491a; letter-spacing:2px">LECTURE FLOW (SUGGESTED TIMINGS)</p>
+    <p style="font-family:'JetBrains Mono', monospace; font-size:24px; color:#b8491a; letter-spacing:2px">LECTURE FLOW · 45 MINUTES</p>
     <h2 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:72px; font-weight:600; line-height:1.1">Today's plan</h2>
   </div>
   <div style="display:flex; gap:16px">
     <div style="flex:1; display:flex; flex-direction:column; gap:8px; background:#fbfaf6; border:1px solid #dedad0; border-top:6px solid #b9bec6; border-radius:16px; padding:24px">
-      <p style="font-family:'JetBrains Mono', monospace; font-size:24px; color:#b8491a">10 min</p>
+      <p style="font-family:'JetBrains Mono', monospace; font-size:24px; color:#b8491a">7 min</p>
       <h3 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:30px; font-weight:600">Intro</h3>
       <p style="font-size:24px; line-height:1.4">Why version control; Git and GitHub</p>
     </div>
     <div style="flex:1; display:flex; flex-direction:column; gap:8px; background:#fbfaf6; border:1px solid #dedad0; border-top:6px solid #e8692c; border-radius:16px; padding:24px">
-      <p style="font-family:'JetBrains Mono', monospace; font-size:24px; color:#b8491a">20 min</p>
+      <p style="font-family:'JetBrains Mono', monospace; font-size:24px; color:#b8491a">10 min</p>
       <h3 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:30px; font-weight:600">Part 1</h3>
       <p style="font-size:24px; line-height:1.4">Personal repo, commit loop, habits</p>
     </div>
     <div style="flex:1; display:flex; flex-direction:column; gap:8px; background:#fbfaf6; border:1px solid #dedad0; border-top:6px solid #e8692c; border-radius:16px; padding:24px">
-      <p style="font-family:'JetBrains Mono', monospace; font-size:24px; color:#b8491a">20 min</p>
+      <p style="font-family:'JetBrains Mono', monospace; font-size:24px; color:#b8491a">13 min</p>
       <h3 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:30px; font-weight:600">Part 2</h3>
       <p style="font-size:24px; line-height:1.4">Issues, branches, PRs, boards</p>
     </div>
     <div style="flex:1; display:flex; flex-direction:column; gap:8px; background:#fbfaf6; border:1px solid #dedad0; border-top:6px solid #e8692c; border-radius:16px; padding:24px">
-      <p style="font-family:'JetBrains Mono', monospace; font-size:24px; color:#b8491a">15 min</p>
+      <p style="font-family:'JetBrains Mono', monospace; font-size:24px; color:#b8491a">7 min</p>
       <h3 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:30px; font-weight:600">Part 3</h3>
       <p style="font-size:24px; line-height:1.4">AI agents: Claude Code, Codex</p>
     </div>
     <div style="flex:1; display:flex; flex-direction:column; gap:8px; background:#14181f; color:#f4f2ec; border-radius:16px; padding:24px">
-      <p style="font-family:'JetBrains Mono', monospace; font-size:24px; color:#e8692c">25 min</p>
-      <h3 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:30px; font-weight:600">Lab</h3>
-      <p style="font-size:24px; line-height:1.4">First repo, issue and PR</p>
-    </div>
-    <div style="flex:1; display:flex; flex-direction:column; gap:8px; background:#fbfaf6; border:1px solid #dedad0; border-top:6px solid #b9bec6; border-radius:16px; padding:24px">
-      <p style="font-family:'JetBrains Mono', monospace; font-size:24px; color:#b8491a">10 min</p>
+      <p style="font-family:'JetBrains Mono', monospace; font-size:24px; color:#e8692c">8 min</p>
       <h3 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:30px; font-weight:600">Wrap-up</h3>
-      <p style="font-size:24px; line-height:1.4">Quiz, cheat sheet, questions</p>
+      <p style="font-size:24px; line-height:1.4">Hello World live demo, quiz, what next</p>
     </div>
   </div>
   <div style="display:flex; flex-direction:column; gap:14px; background:#fbfaf6; border:1px solid #dedad0; border-radius:16px; padding:28px 40px">
     <h3 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:32px; font-weight:600">By the end of today you will be able to:</h3>
-    <p style="font-size:28px"><span style="color:#237a52">✓</span> Tell Git and GitHub apart and use the core vocabulary</p>
-    <p style="font-size:28px"><span style="color:#237a52">✓</span> Create a repository, commit and push</p>
-    <p style="font-size:28px"><span style="color:#237a52">✓</span> Run a team project with issues and pull requests</p>
-    <p style="font-size:28px"><span style="color:#237a52">✓</span> Use an AI coding agent safely inside a Git workflow</p>
+    <p style="font-size:28px"><span style="color:#237a52">✓</span> Tell Git and GitHub apart and use the basic terms</p>
+    <p style="font-size:28px"><span style="color:#237a52">✓</span> Explain what commit, push, branch and pull request are for</p>
+    <p style="font-size:28px"><span style="color:#237a52">✓</span> Describe how a team project is run with issues and pull requests</p>
+    <p style="font-size:28px"><span style="color:#237a52">✓</span> Say where an AI coding agent fits in a Git workflow</p>
+    <p style="font-size:26px; color:#5b6470; padding-top:6px; border-top:1px solid #dedad0">No computer needed in class. Want to try it yourself? See slide 36.</p>
   </div>
   <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">02</p></div>
-  <aside>This is the plan for the session. First we see why GitHub exists, then you use it alone (Part 1), then with a team (Part 2), then with AI helpers (Part 3), and finally you try everything yourself in the lab. The four green ticks are what you should be able to do at the end. If something is unclear, that's normal — every word comes back with an example.</aside>
+  <aside>This is the plan for the 45 minutes. First we see why GitHub exists, then how you use it alone (Part 1), with a team (Part 2) and with AI helpers (Part 3). At the end you watch GitHub's own Hello World exercise live. You don't need to do anything at a computer during class; ways to try it yourself are on slide 36. If something is unclear, that's normal — every word comes back with an example.</aside>
 </section>
 <section id="problem" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -221,7 +217,7 @@
   </div>
   <p style="font-size:32px; line-height:1.4">GitHub is built on Git — you use both together.</p>
   <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">05</p></div>
-  <aside>These two names sound the same but are different things. Git is a free program that records the history of a folder on your computer, like a camera taking snapshots. GitHub is a website that stores those snapshots online, like a shared photo album, and adds tools for teamwork. Today we only use the GitHub website, so you don't need to install Git yet.</aside>
+  <aside>These two names sound the same but are different things. Git is a free program that records the history of a folder on your computer, like a camera taking snapshots. GitHub is a website that stores those snapshots online, like a shared photo album, and adds tools for teamwork. To get started the GitHub website is enough, so you don't need to install Git yet.</aside>
 </section>
 <section id="vocab" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -318,7 +314,7 @@
   </div>
   <p style="font-size:28px; line-height:1.4">Use the same email as your GitHub account, or your commits won't show up on your profile.</p>
   <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">09</p></div>
-  <aside>To start you need a free GitHub account. Choose a username you would be happy to put on your CV. The black box shows commands for people who install Git on their own computer — you can skip them today, because we will work only in the browser. If you install Git later, use the same email address as your GitHub account, otherwise your work won't appear on your profile.</aside>
+  <aside>To start you need a free GitHub account. Choose a username you would be happy to put on your CV. The black box shows commands for people who install Git on their own computer — you can skip them for now, because getting started only needs the browser. If you install Git later, use the same email address as your GitHub account, otherwise your work won't appear on your profile.</aside>
 </section>
 <section id="anatomy" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -418,7 +414,7 @@
   </div>
   <p style="font-size:28px; line-height:1.4"><b>Today we stay in the browser</b> — these commands are for later. GitHub Desktop runs the same loop with buttons.</p>
   <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">12</p></div>
-  <aside>Working with Git is a simple loop: change your files, choose which changes to save (add), save a snapshot with a message (commit), and send it to GitHub (push). Commit saves on your computer; push uploads it. Today we stay in the browser, where one button (Commit changes) does all of this for you. The commands are here only so you recognise them later. Try it in Learn Git Branching (first level): type git commit and watch the history grow.</aside>
+  <aside>Working with Git is a simple loop: change your files, choose which changes to save (add), save a snapshot with a message (commit), and send it to GitHub (push). Commit saves on your computer; push uploads it. In the browser, one button (Commit changes) does all of this for you. The commands are here only so you recognise them later. Want to try it? In Learn Git Branching (first level), type git commit and watch the history grow.</aside>
 </section>
 <section id="commits" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -934,7 +930,7 @@
 </section>
 <section id="helloworld" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
-    <p style="font-family:'JetBrains Mono', monospace; font-size:24px; color:#b8491a; letter-spacing:2px">BEFORE THE LAB · GITHUB DOCS “HELLO WORLD”</p>
+    <p style="font-family:'JetBrains Mono', monospace; font-size:24px; color:#b8491a; letter-spacing:2px">LIVE DEMO · GITHUB DOCS “HELLO WORLD”</p>
     <h2 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:72px; font-weight:600; line-height:1.1">Hello World in five steps</h2>
   </div>
   <div style="display:flex; gap:20px">
@@ -969,13 +965,13 @@
       <p style="font-family:'JetBrains Mono', monospace; font-size:22px; color:#b8491a">Merge pull request</p>
     </div>
   </div>
-  <p style="font-size:28px; line-height:1.4">No coding, no command line, no installation. This is the exact path of today's lab — just with a robot README.</p>
+  <p style="font-size:28px; line-height:1.4">No coding, no command line, no installation. You will watch this path live now and can try it at home — just with a robot README.</p>
   <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">31</p></div>
-  <aside>This is GitHub's own beginner exercise, called Hello World, and it is exactly what you will do in the lab: create a repository, create a branch called readme-edits, change the README and commit, open a pull request, then merge it. No coding and no installation — everything happens on the GitHub website.</aside>
+  <aside>This is GitHub's own beginner exercise, called Hello World. You will watch it live in a moment, and you can do exactly the same at home: create a repository, create a branch called readme-edits, change the README and commit, open a pull request, then merge it. No coding and no installation — everything happens on the GitHub website and it takes about 30 minutes.</aside>
 </section>
 <section id="demo" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
-    <p style="font-family:'JetBrains Mono', monospace; font-size:24px; color:#b8491a; letter-spacing:2px">BEFORE THE LAB · LIVE DEMO</p>
+    <p style="font-family:'JetBrains Mono', monospace; font-size:24px; color:#b8491a; letter-spacing:2px">LIVE DEMO</p>
     <h2 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:72px; font-weight:600; line-height:1.1">Where to click on GitHub</h2>
   </div>
   <div style="display:flex; gap:32px">
@@ -997,12 +993,12 @@
     </div>
   </div>
   <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">32</p></div>
-  <aside>These are the four places on GitHub you will click in the lab: the New repository form, the New issue page, the branch menu on the Code tab, and the 'Compare &amp; pull request' button. Watch where they are during the live demo before you try it yourself.</aside>
+  <aside>These are the four places on GitHub you will click when you try Hello World: the New repository form, the New issue page, the branch menu on the Code tab, and the 'Compare &amp; pull request' button. Watch where they are during the live demo; it will help when you try it yourself.</aside>
 </section>
 <section id="lab" data-transition="push" style="background:#e8692c; color:#14181f; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
-    <p style="font-family:'JetBrains Mono', monospace; font-size:24px; color:#14181f; letter-spacing:2px">HANDS-ON · ABOUT 30 MINUTES</p>
-    <h2 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:72px; font-weight:700; line-height:1.1">Lab: your first repository</h2>
+    <p style="font-family:'JetBrains Mono', monospace; font-size:24px; color:#14181f; letter-spacing:2px">AFTER CLASS · OPTIONAL · ABOUT 30 MINUTES</p>
+    <h2 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:72px; font-weight:700; line-height:1.1">Try it yourself: your first repository</h2>
   </div>
   <ol style="font-size:34px; line-height:1.6; padding-left:52px">
     <li>Sign up at github.com with your university email</li>
@@ -1013,7 +1009,7 @@
     <li>Merge it — and watch the issue close itself</li>
   </ol>
   <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#14181f">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#14181f">33</p></div>
-  <aside>Now it's your turn. Follow the six steps in order. Everything happens in the browser. If you get stuck, ask your neighbour or the instructor — getting stuck is part of learning. Common traps: the verification email hasn't arrived yet, or you edited the file before switching to your new branch. Want to warm up? Learn Git Branching needs no account, and the GitHub Skills course Introduction to GitHub walks you through these same steps with a helper bot.</aside>
+  <aside>This slide is optional — we don't do it in class. Set aside about 30 minutes at home or in the lab and follow the six steps in order; everything happens in the browser. Common traps: the verification email hasn't arrived yet, or you edited the file before switching to your new branch. If you get stuck, ask in the next class. Want to warm up first? Learn Git Branching needs no account, and the GitHub Skills course Introduction to GitHub walks you through these same steps with a helper bot.</aside>
 </section>
 <section id="aftermerge" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -1066,41 +1062,46 @@
     </div>
   </div>
   <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">35</p></div>
-  <aside>This is a summary of the Git commands for later, when you work on your own computer. You don't need them for today's lab. The daily routine on the right is the one to remember: start with pull (get the latest), finish with push (share your work).</aside>
+  <aside>This is a summary of the Git commands for later, when you work on your own computer. You don't need them to get started. The daily routine on the right is the one to remember: start with pull (get the latest), finish with push (share your work).</aside>
 </section>
-<section id="next" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
+<section id="next" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:36px">
   <div style="display:flex; flex-direction:column; gap:12px">
-    <p style="font-family:'JetBrains Mono', monospace; font-size:24px; color:#b8491a; letter-spacing:2px">RESOURCES</p>
-    <h2 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:72px; font-weight:600; line-height:1.1">Where to go next</h2>
+    <p style="font-family:'JetBrains Mono', monospace; font-size:24px; color:#b8491a; letter-spacing:2px">OPTIONAL · AFTER CLASS</p>
+    <h2 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:72px; font-weight:600; line-height:1.1">Where to go next, at your own pace</h2>
   </div>
-  <div style="display:flex; flex-direction:column; gap:32px">
-    <div style="display:flex; gap:32px">
-      <div style="flex:1; display:flex; flex-direction:column; gap:10px; background:#fbfaf6; border:1px solid #dedad0; border-radius:16px; padding:32px">
-        <h3 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:34px; font-weight:600">GitHub Docs: Start your journey</h3>
-        <p style="font-size:26px; line-height:1.4">The official step-by-step path this lecture follows.</p>
-        <p style="font-family:'JetBrains Mono', monospace; font-size:24px"><a href="https://docs.github.com/en/get-started/start-your-journey" style="color:#b8491a">docs.github.com/en/get-started</a></p>
+  <div style="display:flex; flex-direction:column; gap:28px">
+    <div style="display:flex; gap:28px">
+      <div style="flex:1; display:flex; flex-direction:column; gap:10px; background:#fbfaf6; border:1px solid #dedad0; border-radius:16px; padding:28px 32px">
+        <p style="font-family:'JetBrains Mono', monospace; font-size:22px; color:#b8491a; letter-spacing:1px">1 · 15 MIN · NO ACCOUNT</p>
+        <h3 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:34px; font-weight:600">Learn Git Branching</h3>
+        <p style="font-size:26px; line-height:1.4">See commit, branch and merge as a live tree in your browser. Introduction 1–3.</p>
+        <p style="font-family:'JetBrains Mono', monospace; font-size:22px"><a href="https://learngitbranching.js.org/" style="color:#b8491a">learngitbranching.js.org</a></p>
       </div>
-      <div style="flex:1; display:flex; flex-direction:column; gap:10px; background:#fbfaf6; border:1px solid #dedad0; border-radius:16px; padding:32px">
-        <h3 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:34px; font-weight:600">GitHub Desktop</h3>
-        <p style="font-size:26px; line-height:1.4">Use Git with buttons instead of commands.</p>
-        <p style="font-family:'JetBrains Mono', monospace; font-size:24px"><a href="https://desktop.github.com" style="color:#b8491a">desktop.github.com</a></p>
+      <div style="flex:1; display:flex; flex-direction:column; gap:10px; background:#fbfaf6; border:1px solid #dedad0; border-radius:16px; padding:28px 32px">
+        <p style="font-family:'JetBrains Mono', monospace; font-size:22px; color:#b8491a; letter-spacing:1px">2 · ABOUT 30 MIN</p>
+        <h3 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:34px; font-weight:600">Your first repository</h3>
+        <p style="font-size:26px; line-height:1.4">The six steps on slide 33: repo, issue, branch, pull request, merge.</p>
+        <p style="font-family:'JetBrains Mono', monospace; font-size:22px"><a href="https://github.com/new" style="color:#b8491a">github.com/new</a></p>
       </div>
     </div>
-    <div style="display:flex; gap:32px">
-      <div style="flex:1; display:flex; flex-direction:column; gap:10px; background:#fbfaf6; border:1px solid #dedad0; border-radius:16px; padding:32px">
-        <h3 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:34px; font-weight:600">GitHub Skills</h3>
-        <p style="font-size:26px; line-height:1.4">Free interactive courses that run inside real repositories.</p>
-        <p style="font-family:'JetBrains Mono', monospace; font-size:24px"><a href="https://skills.github.com" style="color:#b8491a">skills.github.com</a></p>
+    <div style="display:flex; gap:28px">
+      <div style="flex:1; display:flex; flex-direction:column; gap:10px; background:#fbfaf6; border:1px solid #dedad0; border-radius:16px; padding:28px 32px">
+        <p style="font-family:'JetBrains Mono', monospace; font-size:22px; color:#b8491a; letter-spacing:1px">3 · ABOUT 1 HOUR</p>
+        <h3 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:34px; font-weight:600">GitHub Skills: Introduction to GitHub</h3>
+        <p style="font-size:26px; line-height:1.4">A bot guides you step by step; you finish with a profile README.</p>
+        <p style="font-family:'JetBrains Mono', monospace; font-size:22px"><a href="https://github.com/skills/introduction-to-github" style="color:#b8491a">github.com/skills/introduction-to-github</a></p>
       </div>
-      <div style="flex:1; display:flex; flex-direction:column; gap:10px; background:#fbfaf6; border:1px solid #dedad0; border-radius:16px; padding:32px">
-        <h3 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:34px; font-weight:600">GitHub Education</h3>
-        <p style="font-size:26px; line-height:1.4">Apply for the Student Developer Pack.</p>
-        <p style="font-family:'JetBrains Mono', monospace; font-size:24px"><a href="https://education.github.com" style="color:#b8491a">education.github.com</a></p>
+      <div style="flex:1; display:flex; flex-direction:column; gap:10px; background:#fbfaf6; border:1px solid #dedad0; border-radius:16px; padding:28px 32px">
+        <p style="font-family:'JetBrains Mono', monospace; font-size:22px; color:#b8491a; letter-spacing:1px">4 · YOUR OWN PACE</p>
+        <h3 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:34px; font-weight:600">Your own project</h3>
+        <p style="font-size:26px; line-height:1.4">Put an old Arduino project in a repository with a README. Student tools: GitHub Education.</p>
+        <p style="font-family:'JetBrains Mono', monospace; font-size:22px"><a href="https://education.github.com" style="color:#b8491a">education.github.com</a></p>
       </div>
     </div>
   </div>
+  <p style="font-size:26px">Step-by-step guides: <a href="https://arifsolmaz.github.io/github-egitimi/" style="font-family:'JetBrains Mono', monospace; color:#b8491a">arifsolmaz.github.io/github-egitimi</a></p>
   <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">36</p></div>
-  <aside>To keep practising: GitHub's official getting-started guide, GitHub Desktop (Git with buttons instead of commands), GitHub Skills (free interactive courses inside real repositories) and GitHub Education for free student tools. A good first homework: put one of your old Arduino projects in a new repository with a README.</aside>
+  <aside>The lecture ends here; everything on this slide is optional, from easiest to hardest. 1) Learn Git Branching: in your browser, no account, 15 minutes — see commit, branch and merge as a live tree. 2) Your first repository: the six steps on slide 33, about 30 minutes. 3) GitHub Skills' Introduction to GitHub: a bot guides you step by step, about an hour. 4) Your own project: put an old Arduino project in a repository with a README. The workshop page has step-by-step guides for all of these.</aside>
 </section>
 <section id="close" data-transition="fade" style="background:#14181f; color:#f4f2ec; font-family:Inter, Arial, sans-serif; padding:128px; display:flex; flex-direction:column; justify-content:center; gap:48px">
   <h1 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:88px; font-weight:700; line-height:1.15">Commit early. Commit often.<br><span style="color:#e8692c">Push before you leave the lab.</span></h1>

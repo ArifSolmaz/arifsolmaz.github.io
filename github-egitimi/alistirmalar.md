@@ -1,5 +1,9 @@
 # Alıştırmalar
 
+> 45 dakikalık derste sınıf içi alıştırma yoktur; o sürümde L1, Ö1 ve “ilk
+> repo” (sunum, 33. slayt) isteyenlere önerilir. Bu sayfa 2 × 100 dakikalık
+> uygulamalı sürüm içindir.
+
 Eğitmen için süreli alıştırma listesi. Sıra ve süreler
 [eğitmen rehberindeki](egitmen-rehberi.md) iki derslik planla aynıdır; öğrencinin
 adım adım talimatları [katılımcı el kitabındadır](katilimci-el-kitabi.md).

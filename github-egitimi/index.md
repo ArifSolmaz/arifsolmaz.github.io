@@ -1,9 +1,9 @@
 # GitHub Eğitimi — uygulamalı atölye paketi
 
-Bu sayfa, öğrencilere ve çalışma arkadaşlarına GitHub kullanımını uygulamalı
-öğretmek için hazırlanmış kısa bir eğitim paketidir. Amaç, katılımcıların ilk
-günden bir depoda düzenleme yapması, pull request açması, birbirinin işini
-incelemesi ve küçük bir çakışmayı çözmesidir.
+Mekatronik öğrencilerine GitHub'ı sıfırdan anlatan bir ders paketi. Ders **45
+dakika ve yalnızca sunumdur**: öğrenci dinler ve izler, bilgisayar gerekmez.
+Devam etmek isteyenler için aşağıda kolaydan zora dört yol ve adım adım
+rehberler var.
 
 ## Sunum
 
@@ -13,19 +13,19 @@ Tarayıcıda çalışan, 37 slaytlık ders sunumu. Ok tuşlarıyla ilerleyin; `N
 sade açıklamasını, `O` tüm slaytları açar, `F` tam ekran yapar, `P` ile PDF olarak
 kaydedebilirsiniz. Bölümler: Git ve GitHub'a giriş, kişisel repo, takım projesi
 yönetimi (issue, branch, pull request, review, conflict), Claude Code ve Codex gibi
-yapay zekâ kodlama ajanları ve GitHub Docs'taki “Hello World” akışını izleyen
-uygulama.
+yapay zekâ kodlama ajanları ve GitHub Docs'taki “Hello World” akışının canlı
+gösterimi.
 
-## Hazır araçlarla deneme
+## Dersten sonra: isteyenler için
 
-**[Learn Git Branching ve GitHub Skills nasıl kullanılır →](hazir-araclar.md)**
+Hepsi isteğe bağlı ve tek başına yapılabilir (sunumun 36. slaytı).
 
-- **[Learn Git Branching](https://learngitbranching.js.org/?locale=tr_TR)** (Türkçe):
-  commit, branch, merge, revert, push ve pull'u canlı bir commit ağacında dener.
-  Hesap gerekmez.
-- **[GitHub Skills](https://github.com/skills/introduction-to-github)**: öğrencinin
-  kendi GitHub hesabında, bir botun adım adım yönlendirdiği gerçek kurslar
-  (branch, pull request, review, merge conflict).
+| | Ne? | Süre | Rehber |
+|---|---|---|---|
+| 1 | [Learn Git Branching](https://learngitbranching.js.org/?locale=tr_TR): commit, branch ve merge'ü tarayıcıda canlı bir ağaç olarak görün | 15 dk, hesap gerekmez | [Hazır araçlar](hazir-araclar.md) |
+| 2 | İlk reponuz: GitHub Docs “Hello World” akışı | 30 dk | [Sunum, 33. slayt](sunum/#33) |
+| 3 | [GitHub Skills: Introduction to GitHub](https://github.com/skills/introduction-to-github): bir bot adım adım yönlendirir | yaklaşık 1 saat | [Katılımcı el kitabı](katilimci-el-kitabi.md) |
+| 4 | Kendi projeniz için bir repo, profil README'si | kendi hızınızda | [Katılımcı el kitabı](katilimci-el-kitabi.md) |
 
 ## Başlangıç
 
@@ -38,20 +38,18 @@ uygulama.
 
 ## Önerilen akış
 
-Ayrıntılı plan, 40–45 kişilik sınıf düzeni ve slayt slayt eğitmen notları için
-**[eğitmen rehberine](egitmen-rehberi.md)** bakın. Kısaca, iki ders:
+**45 dakikalık ders (varsayılan):** 37 slayt; Hello World eğitmen tarafından
+canlı gösterilir, sonda 36. slaytta devam yolları söylenir. Dakika dakika plan
+için [eğitmen rehberi, bölüm 2.1](egitmen-rehberi.md).
 
-1. **Ders 1 (100 dk):** sunumun 1–14. slaytları; ardından öğrenciler çiftler
-   hâlinde Learn Git Branching'de giriş seviyelerini yapar. Ödev: GitHub hesabı ve
-   GitHub Skills “Introduction to GitHub” kursu.
-2. **Ders 2 (100 dk):** 15–37. slaytlar; ardından 4 kişilik takımlar, `ornek-depo/`
-   şablonundan üretilen kendi depolarında branch, pull request, review ve
-   conflict uygulaması yapar.
-
-Her kavram için sıra: **anlat → Learn Git Branching'de dene → GitHub'da yap**.
+**Daha fazla ders saatiniz varsa (2 × 100 dk):** aynı paket uygulamalı bir
+sürüme genişler: Ders 1'de sunum + Learn Git Branching, ödev olarak GitHub
+Skills, Ders 2'de 4 kişilik takımlar `ornek-depo/` şablonundan üretilen
+depolarda branch, pull request, review ve conflict uygulaması yapar. 40–45
+kişilik sınıf düzeni [eğitmen rehberinde](egitmen-rehberi.md).
 
 ## Kaynaklar
 
-- [GitHub Docs — Hello World](https://docs.github.com/en/get-started/using-github/hello-world): uygulamanın izlediği resmî adım adım eğitim
+- [GitHub Docs — Hello World](https://docs.github.com/en/get-started/using-github/hello-world): canlı gösterimin izlediği resmî adım adım eğitim
 - [GitHub Docs — GitHub flow](https://docs.github.com/en/get-started/using-github/github-flow)
 - [GitHub Skills](https://skills.github.com/): ücretsiz, etkileşimli kurslar

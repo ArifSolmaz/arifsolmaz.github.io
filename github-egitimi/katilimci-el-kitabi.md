@@ -9,7 +9,25 @@ bu sayfaya, sonra yanınızdaki arkadaşınıza, sonra hocanıza bakın.
 [Learn Git Branching (Türkçe)](https://learngitbranching.js.org/?locale=tr_TR) ·
 [GitHub Skills — Introduction to GitHub](https://github.com/skills/introduction-to-github)
 
-## Yol haritası
+## Önce bunu okuyun: ders ve isteğe bağlı yollar
+
+GitHub dersi **45 dakika ve yalnızca sunumdur**. Derste dinleyip izlemeniz
+yeterli; hesap açmanız ya da bilgisayar getirmeniz gerekmez. Bu sayfadaki her şey
+**isteğe bağlıdır**: ders sonrası devam etmek isteyenler içindir.
+
+Kolaydan zora dört yol (sunumun 36. slaytı):
+
+| Yol | Süre | Nereden? |
+|---|---|---|
+| 1. Learn Git Branching: commit, branch, merge'ü canlı bir ağaçta görün | 15 dk, hesap gerekmez | Aşağıda bölüm 2 |
+| 2. İlk reponuz: GitHub Docs “Hello World” | 30 dk | [Sunum, 33. slayt](sunum/#33) |
+| 3. GitHub Skills: Introduction to GitHub | yaklaşık 1 saat | Aşağıda bölüm 3.1 |
+| 4. Kendi projeniz için bir repo | kendi hızınızda | Aşağıda bölüm 6 |
+
+Hocanız uygulamalı (2 × 100 dakikalık) sürümü yapıyorsa aşağıdaki yol haritası
+ve takım alıştırmaları (bölüm 4) da geçerlidir.
+
+## Yol haritası (uygulamalı sürüm)
 
 | Ne zaman? | Ne yapacaksınız? | Süre |
 |---|---|---|
