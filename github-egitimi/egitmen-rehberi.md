@@ -138,7 +138,7 @@ Slayt 1–7 (15 dk) → Learn Git Branching Giriş 1–3 (20 dk) → slayt 15–
 
 ## 3. Dersten önce: kontrol listesi
 
-45 dakikalık sürümde yalnızca **Ders günü** maddeleri, Bölüm 4.3 ve Hello World
+45 dakikalık sürümde yalnızca **Ders günü** maddeleri, Bölüm 4.2 ve Hello World
 provası gerekir. Hazırlık mesajı ve takım depoları genişletilmiş sürüm içindir.
 
 **Bir hafta önce**
@@ -148,7 +148,7 @@ provası gerekir. Hazırlık mesajı ve takım depoları genişletilmiş sürüm
       olduğunu ve `arifsolmaz.github.io`, `learngitbranching.js.org` ile
       `github.com`'un açıldığını kontrol edin.
 - [ ] Takım depolarını hazırlayın (Bölüm 6).
-- [ ] Sunumdaki boş alanları doldurun (Bölüm 4.3).
+- [ ] Sunumdaki boş alanları doldurun (Bölüm 4.2).
 
 **Ders günü, 15 dakika önce**
 
@@ -190,7 +190,7 @@ Her slaytın kendi adresi vardır (`sunum/#18` gibi); öğrencilere doğrudan il
 slaytı gönderebilirsiniz. TR/EN butonu aynı slaytta dil değiştirir. Telefonda
 kaydırarak gezilir.
 
-### 4.3 Derse girmeden doldurmanız gereken yerler
+### 4.2 Derse girmeden doldurmanız gereken yerler
 
 - **Slayt 1:** Tarih web sürümünden kaldırıldı; claude.ai'deki slayt destesinde
   `[Tarih]` hâlâ duruyor.
@@ -202,7 +202,7 @@ kaydırarak gezilir.
   hesabınızdan alın ki GitHub'ın güncel arayüzüyle eşleşsin; ya da bu adımları
   canlı gösterin.
 
-### 4.4 Slayt slayt eğitmen notları
+### 4.3 Slayt slayt eğitmen notları
 
 | Slayt | Eğitmen için |
 |---|---|
