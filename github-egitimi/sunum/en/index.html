@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GitHub for Mechatronics Engineers — Slides</title>
-<meta name="description" content="GitHub for Mechatronics Engineers">
+<title>Git and GitHub for Mechatronics Projects — Slides</title>
+<meta name="description" content="Git and GitHub for Mechatronics Projects">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=JetBrains+Mono:wght@400..700&family=Space+Grotesk:wght@400..700&display=swap" rel="stylesheet">
@@ -70,7 +70,7 @@
 </head>
 <body>
 <div id="ui-progress" role="presentation"></div>
-<main id="ui-viewport" aria-label="GitHub for Mechatronics Engineers">
+<main id="ui-viewport" aria-label="Git and GitHub for Mechatronics Projects">
   <div id="ui-stage">
 <section id="cover" data-transition="fade" style="background:#14181f; color:#f4f2ec; font-family:Inter, Arial, sans-serif; padding:128px; display:flex; flex-direction:column; justify-content:space-between">
   <svg aria-label="Commit graph: a feature branch splitting off main and merging back" viewBox="0 0 480 720" style="position:absolute; right:160px; top:180px; width:480px; height:720px">
@@ -88,8 +88,8 @@
   </svg>
   <p style="font-family:'JetBrains Mono', monospace; font-size:28px; color:#e8692c; letter-spacing:3px">MECHATRONICS ENGINEERING · LECTURE</p>
   <div style="display:flex; flex-direction:column; gap:40px; width:1040px">
-    <h1 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:128px; font-weight:700; line-height:1.0">GitHub for<br>Mechatronics<br>Engineers</h1>
-    <p style="font-size:36px; line-height:1.4; color:#b9bec6">Version control and project management for your code, circuits and CAD — starting from zero.</p>
+    <h1 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:128px; font-weight:700; line-height:1.0">Git and GitHub<br>for Mechatronics<br>Projects</h1>
+    <p style="font-size:36px; line-height:1.4; color:#b9bec6">When is it necessary, how do people use it, and which habits make work safer?</p>
   </div>
   <p style="font-size:24px; color:#8a919c">Dr. Arif Solmaz · Mechatronics Engineering, İSTÜN</p>
 </section>
@@ -102,22 +102,22 @@
     <div style="flex:1; display:flex; flex-direction:column; gap:8px; background:#fbfaf6; border:1px solid #dedad0; border-top:6px solid #b9bec6; border-radius:16px; padding:24px">
       <p style="font-family:'JetBrains Mono', monospace; font-size:24px; color:#b8491a">7 min</p>
       <h3 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:30px; font-weight:600">Intro</h3>
-      <p style="font-size:24px; line-height:1.4">Why version control; Git and GitHub</p>
+      <p style="font-size:24px; line-height:1.4">Is Git necessary? Real usage</p>
     </div>
     <div style="flex:1; display:flex; flex-direction:column; gap:8px; background:#fbfaf6; border:1px solid #dedad0; border-top:6px solid #e8692c; border-radius:16px; padding:24px">
       <p style="font-family:'JetBrains Mono', monospace; font-size:24px; color:#b8491a">10 min</p>
       <h3 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:30px; font-weight:600">Part 1</h3>
-      <p style="font-size:24px; line-height:1.4">Personal repo, commit loop, habits</p>
+      <p style="font-size:24px; line-height:1.4">Personal work and good commits</p>
     </div>
     <div style="flex:1; display:flex; flex-direction:column; gap:8px; background:#fbfaf6; border:1px solid #dedad0; border-top:6px solid #e8692c; border-radius:16px; padding:24px">
       <p style="font-family:'JetBrains Mono', monospace; font-size:24px; color:#b8491a">13 min</p>
       <h3 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:30px; font-weight:600">Part 2</h3>
-      <p style="font-size:24px; line-height:1.4">Issues, branches, PRs, boards</p>
+      <p style="font-size:24px; line-height:1.4">Team flow: issues, branches, PRs</p>
     </div>
     <div style="flex:1; display:flex; flex-direction:column; gap:8px; background:#fbfaf6; border:1px solid #dedad0; border-top:6px solid #e8692c; border-radius:16px; padding:24px">
       <p style="font-family:'JetBrains Mono', monospace; font-size:24px; color:#b8491a">7 min</p>
       <h3 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:30px; font-weight:600">Part 3</h3>
-      <p style="font-size:24px; line-height:1.4">AI agents: Claude Code, Codex</p>
+      <p style="font-size:24px; line-height:1.4">Tools, agents and safe use</p>
     </div>
     <div style="flex:1; display:flex; flex-direction:column; gap:8px; background:#14181f; color:#f4f2ec; border-radius:16px; padding:24px">
       <p style="font-family:'JetBrains Mono', monospace; font-size:24px; color:#e8692c">8 min</p>
@@ -127,13 +127,13 @@
   </div>
   <div style="display:flex; flex-direction:column; gap:14px; background:#fbfaf6; border:1px solid #dedad0; border-radius:16px; padding:28px 40px">
     <h3 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:32px; font-weight:600">By the end of today you will be able to:</h3>
-    <p style="font-size:28px"><span style="color:#237a52">✓</span> Tell Git and GitHub apart and use the basic terms</p>
-    <p style="font-size:28px"><span style="color:#237a52">✓</span> Explain what commit, push, branch and pull request are for</p>
-    <p style="font-size:28px"><span style="color:#237a52">✓</span> Describe how a team project is run with issues and pull requests</p>
-    <p style="font-size:28px"><span style="color:#237a52">✓</span> Say where an AI coding agent fits in a Git workflow</p>
+    <p style="font-size:28px"><span style="color:#237a52">✓</span> Decide when Git is useful and when it may be overkill</p>
+    <p style="font-size:28px"><span style="color:#237a52">✓</span> Describe how people use Git in daily project work</p>
+    <p style="font-size:28px"><span style="color:#237a52">✓</span> Explain small commits, a working main branch, review and secret-handling rules</p>
+    <p style="font-size:28px"><span style="color:#237a52">✓</span> See GitHub as the sharing and review layer on top of Git</p>
     <p style="font-size:26px; color:#5b6470; padding-top:6px; border-top:1px solid #dedad0">No computer needed in class. Want to try it yourself? See slide 36.</p>
   </div>
-  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">02</p></div>
+  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">Git and GitHub for Mechatronics Projects</p><p style="font-size:24px; color:#6b7280">02</p></div>
 </section>
 <section id="problem" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -157,30 +157,30 @@
     </div>
   </div>
   <p style="font-size:32px; line-height:1.4">Git answers all three. <b>GitHub</b> puts the answers online, shared with your whole team.</p>
-  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">03</p></div>
+  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">Git and GitHub for Mechatronics Projects</p><p style="font-size:24px; color:#6b7280">03</p></div>
 </section>
 <section id="what" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
-    <p style="font-family:'JetBrains Mono', monospace; font-size:24px; color:#b8491a; letter-spacing:2px">DEFINITION</p>
-    <h2 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:72px; font-weight:600; line-height:1.1">What is GitHub?</h2>
+    <p style="font-family:'JetBrains Mono', monospace; font-size:24px; color:#b8491a; letter-spacing:2px">DECISION RULE</p>
+    <h2 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:72px; font-weight:600; line-height:1.1">Is Git necessary?</h2>
   </div>
-  <p style="font-family:'Space Grotesk', Arial, sans-serif; font-size:44px; line-height:1.3; width:1400px">A cloud platform that supports your entire development process — from planning the work to shipping and maintaining it.</p>
+  <p style="font-family:'Space Grotesk', Arial, sans-serif; font-size:44px; line-height:1.3; width:1400px">Git is not mandatory for every file. But if history, teamwork or safe experiments matter, starting early saves pain.</p>
   <div style="display:flex; gap:32px">
     <div style="flex:1; display:flex; flex-direction:column; gap:12px; background:#fbfaf6; border:1px solid #dedad0; border-radius:16px; padding:32px">
-      <h3 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:40px; font-weight:600; color:#b8491a">Store</h3>
-      <p style="font-size:28px; line-height:1.4">Keep code, firmware and docs with their complete history.</p>
+      <h3 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:40px; font-weight:600; color:#b8491a">Use it</h3>
+      <p style="font-size:28px; line-height:1.4">For code, reports, circuit diagrams or analysis files that will change and may need rollback.</p>
     </div>
     <div style="flex:1; display:flex; flex-direction:column; gap:12px; background:#fbfaf6; border:1px solid #dedad0; border-radius:16px; padding:32px">
-      <h3 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:40px; font-weight:600; color:#b8491a">Plan</h3>
-      <p style="font-size:28px; line-height:1.4">Track tasks, bugs and deadlines with issues and boards.</p>
+      <h3 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:40px; font-weight:600; color:#b8491a">Not always</h3>
+      <p style="font-size:28px; line-height:1.4">For one-off throwaway files, Git may add learning overhead without much benefit.</p>
     </div>
     <div style="flex:1; display:flex; flex-direction:column; gap:12px; background:#fbfaf6; border:1px solid #dedad0; border-radius:16px; padding:32px">
-      <h3 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:40px; font-weight:600; color:#b8491a">Share</h3>
-      <p style="font-size:28px; line-height:1.4">Collaborate with teammates and show your work to the world.</p>
+      <h3 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:40px; font-weight:600; color:#b8491a">Be careful</h3>
+      <p style="font-size:28px; line-height:1.4">Passwords, API keys, personal data and huge raw files do not belong directly in the repo.</p>
     </div>
   </div>
-  <p style="font-size:24px; color:#6b7280">Based on GitHub Docs, “What is GitHub?”</p>
-  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">04</p></div>
+  <p style="font-size:30px; line-height:1.4">The question is not “Do we know Git?” The question is “Do we need history, collaboration and safe experiments?”</p>
+  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">Git and GitHub for Mechatronics Projects</p><p style="font-size:24px; color:#6b7280">04</p></div>
 </section>
 <section id="gitvsgithub" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -212,7 +212,7 @@
     </div>
   </div>
   <p style="font-size:32px; line-height:1.4">GitHub is built on Git — you use both together.</p>
-  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">05</p></div>
+  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">Git and GitHub for Mechatronics Projects</p><p style="font-size:24px; color:#6b7280">05</p></div>
 </section>
 <section id="vocab" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -230,50 +230,50 @@
     <tr><td style="padding:10px 16px; border-bottom:1px solid #dedad0; font-weight:600">Pull request (PR)</td><td style="padding:10px 16px; border-bottom:1px solid #dedad0">A proposal to merge a branch</td><td style="padding:10px 16px; border-bottom:1px solid #dedad0">Merge the sensor code into main</td></tr>
     <tr><td style="padding:10px 16px; border-bottom:1px solid #dedad0; font-weight:600">README.md</td><td style="padding:10px 16px; border-bottom:1px solid #dedad0">The front page of your repo</td><td style="padding:10px 16px; border-bottom:1px solid #dedad0">Wiring, setup, how to run it</td></tr>
   </table>
-  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">06</p></div>
+  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">Git and GitHub for Mechatronics Projects</p><p style="font-size:24px; color:#6b7280">06</p></div>
 </section>
 <section id="lifecycle" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
-    <p style="font-family:'JetBrains Mono', monospace; font-size:24px; color:#b8491a; letter-spacing:2px">THE DEVELOPMENT LIFE CYCLE</p>
-    <h2 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:72px; font-weight:600; line-height:1.1">One platform for every stage</h2>
+    <p style="font-family:'JetBrains Mono', monospace; font-size:24px; color:#b8491a; letter-spacing:2px">REAL USAGE</p>
+    <h2 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:72px; font-weight:600; line-height:1.1">People use Git as a daily workflow</h2>
   </div>
   <div style="display:flex; flex-direction:column; gap:32px">
     <div style="display:flex; gap:32px">
       <div style="flex:1; display:flex; flex-direction:column; gap:8px; background:#fbfaf6; border:1px solid #dedad0; border-radius:16px; padding:32px">
         <h3 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:36px; font-weight:600">1 · Plan</h3>
-        <p style="font-size:26px; line-height:1.4">Track tasks and set milestones.</p>
-        <p style="font-family:'JetBrains Mono', monospace; font-size:24px; color:#b8491a">Issue: order motor drivers</p>
+        <p style="font-size:26px; line-height:1.4">Open an issue so work, bugs, questions and decisions are visible.</p>
+        <p style="font-family:'JetBrains Mono', monospace; font-size:24px; color:#b8491a">Issue: servo jitters</p>
       </div>
       <div style="flex:1; display:flex; flex-direction:column; gap:8px; background:#fbfaf6; border:1px solid #dedad0; border-radius:16px; padding:32px">
-        <h3 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:36px; font-weight:600">2 · Create</h3>
-        <p style="font-size:26px; line-height:1.4">Write code with a clear timeline of changes.</p>
-        <p style="font-family:'JetBrains Mono', monospace; font-size:24px; color:#b8491a">Commit encoder library</p>
+        <h3 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:36px; font-weight:600">2 · Work separately</h3>
+        <p style="font-size:26px; line-height:1.4">Create a branch so experiments do not break the working main version.</p>
+        <p style="font-family:'JetBrains Mono', monospace; font-size:24px; color:#b8491a">feature/servo-fix</p>
       </div>
       <div style="flex:1; display:flex; flex-direction:column; gap:8px; background:#fbfaf6; border:1px solid #dedad0; border-radius:16px; padding:32px">
-        <h3 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:36px; font-weight:600">3 · Review</h3>
-        <p style="font-size:26px; line-height:1.4">Discuss changes and apply feedback.</p>
-        <p style="font-family:'JetBrains Mono', monospace; font-size:24px; color:#b8491a">A teammate checks your PR</p>
+        <h3 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:36px; font-weight:600">3 · Save and explain</h3>
+        <p style="font-size:26px; line-height:1.4">Commit one small change with a message that says why.</p>
+        <p style="font-family:'JetBrains Mono', monospace; font-size:24px; color:#b8491a">Lower PWM limit</p>
       </div>
     </div>
     <div style="display:flex; gap:32px">
       <div style="flex:1; display:flex; flex-direction:column; gap:8px; background:#fbfaf6; border:1px solid #dedad0; border-radius:16px; padding:32px">
-        <h3 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:36px; font-weight:600">4 · Test</h3>
-        <p style="font-size:26px; line-height:1.4">Automate checks before anything merges.</p>
-        <p style="font-family:'JetBrains Mono', monospace; font-size:24px; color:#b8491a">Auto-compile the sketch</p>
+        <h3 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:36px; font-weight:600">4 · Share</h3>
+        <p style="font-size:26px; line-height:1.4">Push your branch so teammates can see it.</p>
+        <p style="font-family:'JetBrains Mono', monospace; font-size:24px; color:#b8491a">git push</p>
       </div>
       <div style="flex:1; display:flex; flex-direction:column; gap:8px; background:#fbfaf6; border:1px solid #dedad0; border-radius:16px; padding:32px">
-        <h3 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:36px; font-weight:600">5 · Deploy</h3>
-        <p style="font-size:26px; line-height:1.4">Release versions in a managed way.</p>
-        <p style="font-family:'JetBrains Mono', monospace; font-size:24px; color:#b8491a">Tag v1.0 for demo day</p>
+        <h3 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:36px; font-weight:600">5 · Review</h3>
+        <p style="font-size:26px; line-height:1.4">Read the diff in a pull request, comment, and request changes if needed.</p>
+        <p style="font-family:'JetBrains Mono', monospace; font-size:24px; color:#b8491a">Files changed</p>
       </div>
       <div style="flex:1; display:flex; flex-direction:column; gap:8px; background:#fbfaf6; border:1px solid #dedad0; border-radius:16px; padding:32px">
-        <h3 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:36px; font-weight:600">6 · Operate</h3>
-        <p style="font-size:26px; line-height:1.4">Manage dependencies and fix security issues.</p>
-        <p style="font-family:'JetBrains Mono', monospace; font-size:24px; color:#b8491a">Update outdated libraries</p>
+        <h3 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:36px; font-weight:600">6 · Merge / recover</h3>
+        <p style="font-size:26px; line-height:1.4">Merge if it is ready; use revert to recover without erasing history.</p>
+        <p style="font-family:'JetBrains Mono', monospace; font-size:24px; color:#b8491a">merge or revert</p>
       </div>
     </div>
   </div>
-  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">07</p></div>
+  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">Git and GitHub for Mechatronics Projects</p><p style="font-size:24px; color:#6b7280">07</p></div>
 </section>
 <section id="part1" data-transition="push" style="background:#14181f; color:#f4f2ec; font-family:Inter, Arial, sans-serif; padding:128px; display:flex; flex-direction:column; justify-content:center; gap:32px">
   <p style="font-family:'Space Grotesk', Arial, sans-serif; font-size:200px; font-weight:700; line-height:1.0; color:#e8692c">01</p>
@@ -305,7 +305,7 @@
     <p style="font-size:26px">$ git config --global user.email "first.last@example.edu"</p>
   </div>
   <p style="font-size:28px; line-height:1.4">Use the same email as your GitHub account, or your commits won't show up on your profile.</p>
-  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">09</p></div>
+  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">Git and GitHub for Mechatronics Projects</p><p style="font-size:24px; color:#6b7280">09</p></div>
 </section>
 <section id="anatomy" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -335,7 +335,7 @@
       </div>
     </div>
   </div>
-  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">10</p></div>
+  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">Git and GitHub for Mechatronics Projects</p><p style="font-size:24px; color:#6b7280">10</p></div>
 </section>
 <section id="markdown" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -363,7 +363,7 @@
     </div>
   </div>
   <p style="font-size:28px; line-height:1.4"><span style="font-family:'JetBrains Mono', monospace; color:#b8491a"># heading · **bold** · - list · ![alt](image)</span> — that covers most READMEs.</p>
-  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">11</p></div>
+  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">Git and GitHub for Mechatronics Projects</p><p style="font-size:24px; color:#6b7280">11</p></div>
 </section>
 <section id="loop" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:32px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -402,7 +402,7 @@
     <p style="font-size:26px">$ git push</p>
   </div>
   <p style="font-size:28px; line-height:1.4"><b>To start, the browser is enough</b> — these commands are for later. GitHub Desktop runs the same loop with buttons.</p>
-  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">12</p></div>
+  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">Git and GitHub for Mechatronics Projects</p><p style="font-size:24px; color:#6b7280">12</p></div>
 </section>
 <section id="commits" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -426,7 +426,7 @@
     </div>
   </div>
   <p style="font-family:'Space Grotesk', Arial, sans-serif; font-size:40px; line-height:1.3">Start with a verb. Say what changed and why. One logical change per commit.</p>
-  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">13</p></div>
+  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">Git and GitHub for Mechatronics Projects</p><p style="font-size:24px; color:#6b7280">13</p></div>
 </section>
 <section id="ignore" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -458,7 +458,7 @@
       </div>
     </div>
   </div>
-  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">14</p></div>
+  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">Git and GitHub for Mechatronics Projects</p><p style="font-size:24px; color:#6b7280">14</p></div>
 </section>
 <section id="part2" data-transition="push" style="background:#14181f; color:#f4f2ec; font-family:Inter, Arial, sans-serif; padding:128px; display:flex; flex-direction:column; justify-content:center; gap:32px">
   <p style="font-family:'Space Grotesk', Arial, sans-serif; font-size:200px; font-weight:700; line-height:1.0; color:#e8692c">02</p>
@@ -507,7 +507,7 @@
       </div>
     </div>
   </div>
-  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">16</p></div>
+  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">Git and GitHub for Mechatronics Projects</p><p style="font-size:24px; color:#6b7280">16</p></div>
 </section>
 <section id="branches" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -546,7 +546,7 @@
       <p style="font-size:24px; line-height:1.4">A teammate reviews, then it joins main.</p>
     </div>
   </div>
-  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">17</p></div>
+  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">Git and GitHub for Mechatronics Projects</p><p style="font-size:24px; color:#6b7280">17</p></div>
 </section>
 <section id="diff" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -569,7 +569,7 @@
     </div>
   </div>
   <p style="font-family:'Space Grotesk', Arial, sans-serif; font-size:36px; line-height:1.3">Read the diff before you merge — every time, even your own.</p>
-  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">18</p></div>
+  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">Git and GitHub for Mechatronics Projects</p><p style="font-size:24px; color:#6b7280">18</p></div>
 </section>
 <section id="review" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -603,7 +603,7 @@
       </div>
     </div>
   </div>
-  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">19</p></div>
+  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">Git and GitHub for Mechatronics Projects</p><p style="font-size:24px; color:#6b7280">19</p></div>
 </section>
 <section id="conflict" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -627,7 +627,7 @@
     </div>
   </div>
   <p style="font-size:28px; line-height:1.4">Prevention: pull often, keep branches small, don't edit the same file at the same time.</p>
-  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">20</p></div>
+  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">Git and GitHub for Mechatronics Projects</p><p style="font-size:24px; color:#6b7280">20</p></div>
 </section>
 <section id="board" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -652,7 +652,7 @@
     </div>
   </div>
   <p style="font-size:28px; line-height:1.4">Every card is an issue. Move it across as work progresses and the whole team sees the same status.</p>
-  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">21</p></div>
+  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">Git and GitHub for Mechatronics Projects</p><p style="font-size:24px; color:#6b7280">21</p></div>
 </section>
 <section id="milestones" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -688,7 +688,7 @@
   <div style="background:#14181f; color:#f4f2ec; border-radius:16px; padding:32px 40px">
     <p style="font-size:30px; line-height:1.4">The commit history is your team's lab notebook: it shows who did what, and when.</p>
   </div>
-  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">22</p></div>
+  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">Git and GitHub for Mechatronics Projects</p><p style="font-size:24px; color:#6b7280">22</p></div>
 </section>
 <section id="mistakes" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -704,7 +704,7 @@
     <tr><td style="padding:10px 16px; border-bottom:1px solid #dedad0; font-weight:600">“File too large” error</td><td style="padding:10px 16px; border-bottom:1px solid #dedad0">GitHub blocks files over 100 MB</td><td style="padding:10px 16px; border-bottom:1px solid #dedad0">Use Git LFS or a Release</td></tr>
     <tr><td style="padding:10px 16px; border-bottom:1px solid #dedad0; font-weight:600">Commits missing from profile</td><td style="padding:10px 16px; border-bottom:1px solid #dedad0">Git email doesn't match the account</td><td style="padding:10px 16px; border-bottom:1px solid #dedad0">Fix <span style="color:#b8491a">user.email</span></td></tr>
   </table>
-  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">23</p></div>
+  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">Git and GitHub for Mechatronics Projects</p><p style="font-size:24px; color:#6b7280">23</p></div>
 </section>
 <section id="part3" data-transition="push" style="background:#14181f; color:#f4f2ec; font-family:Inter, Arial, sans-serif; padding:128px; display:flex; flex-direction:column; justify-content:center; gap:32px">
   <p style="font-family:'Space Grotesk', Arial, sans-serif; font-size:200px; font-weight:700; line-height:1.0; color:#e8692c">03</p>
@@ -739,7 +739,7 @@
     </div>
   </div>
   <p style="font-size:24px; color:#6b7280">Windows installers and other options: code.claude.com/docs · github.com/openai/codex</p>
-  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">25</p></div>
+  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">Git and GitHub for Mechatronics Projects</p><p style="font-size:24px; color:#6b7280">25</p></div>
 </section>
 <section id="agentflow" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -766,7 +766,7 @@
     </div>
   </div>
   <p style="font-family:'Space Grotesk', Arial, sans-serif; font-size:36px; line-height:1.3">The agent is a fast assistant, not the engineer. You own every line you merge.</p>
-  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">26</p></div>
+  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">Git and GitHub for Mechatronics Projects</p><p style="font-size:24px; color:#6b7280">26</p></div>
 </section>
 <section id="agentgithub" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -807,7 +807,7 @@
       </div>
     </div>
   </div>
-  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">27</p></div>
+  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">Git and GitHub for Mechatronics Projects</p><p style="font-size:24px; color:#6b7280">27</p></div>
 </section>
 <section id="airules" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -844,7 +844,7 @@
       </div>
     </div>
   </div>
-  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">28</p></div>
+  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">Git and GitHub for Mechatronics Projects</p><p style="font-size:24px; color:#6b7280">28</p></div>
 </section>
 <section id="portfolio" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -866,7 +866,7 @@
     </div>
   </div>
   <p style="font-family:'Space Grotesk', Arial, sans-serif; font-size:44px; line-height:1.3; width:1400px">Put the link on your CV. A working robot with a clean history says more than a line of text.</p>
-  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">29</p></div>
+  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">Git and GitHub for Mechatronics Projects</p><p style="font-size:24px; color:#6b7280">29</p></div>
 </section>
 <section id="quiz" data-transition="push" style="background:#14181f; color:#f4f2ec; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -896,7 +896,7 @@
     </div>
   </div>
   <p style="font-size:28px; color:#b9bec6">Discuss with your neighbour first, then we'll answer together.</p>
-  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#8a919c">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#8a919c">30</p></div>
+  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#8a919c">Git and GitHub for Mechatronics Projects</p><p style="font-size:24px; color:#8a919c">30</p></div>
 </section>
 <section id="helloworld" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -936,7 +936,7 @@
     </div>
   </div>
   <p style="font-size:28px; line-height:1.4">No coding, no command line, no installation. You will watch this path live now and can try it at home — just with a robot README.</p>
-  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">31</p></div>
+  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">Git and GitHub for Mechatronics Projects</p><p style="font-size:24px; color:#6b7280">31</p></div>
 </section>
 <section id="demo" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -961,7 +961,7 @@
       <p style="font-size:24px; line-height:1.4"><b>4 ·</b> “Compare &amp; pull request” button</p>
     </div>
   </div>
-  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">32</p></div>
+  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">Git and GitHub for Mechatronics Projects</p><p style="font-size:24px; color:#6b7280">32</p></div>
 </section>
 <section id="lab" data-transition="push" style="background:#e8692c; color:#14181f; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -976,7 +976,7 @@
     <li>Open a pull request with “Closes #1” in the description</li>
     <li>Merge it — and watch the issue close itself</li>
   </ol>
-  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#14181f">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#14181f">33</p></div>
+  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#14181f">Git and GitHub for Mechatronics Projects</p><p style="font-size:24px; color:#14181f">33</p></div>
 </section>
 <section id="aftermerge" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -1001,7 +1001,7 @@
     <svg aria-label="Example contribution graph: activity growing after a course starts" viewBox="0 0 880 154" style="width:1100px; height:192px"><rect x="0" y="0" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="0" y="22" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="0" y="44" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="0" y="66" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="0" y="88" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="0" y="110" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="0" y="132" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="22" y="0" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="22" y="22" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="22" y="44" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="22" y="66" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="22" y="88" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="22" y="110" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="22" y="132" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="44" y="0" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="44" y="22" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="44" y="44" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="44" y="66" width="18" height="18" rx="3" fill="#f6d9cc"/><rect x="44" y="88" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="44" y="110" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="44" y="132" width="18" height="18" rx="3" fill="#efa883"/><rect x="66" y="0" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="66" y="22" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="66" y="44" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="66" y="66" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="66" y="88" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="66" y="110" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="66" y="132" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="88" y="0" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="88" y="22" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="88" y="44" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="88" y="66" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="88" y="88" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="88" y="110" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="88" y="132" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="110" y="0" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="110" y="22" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="110" y="44" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="110" y="66" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="110" y="88" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="110" y="110" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="110" y="132" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="132" y="0" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="132" y="22" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="132" y="44" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="132" y="66" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="132" y="88" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="132" y="110" width="18" height="18" rx="3" fill="#f6d9cc"/><rect x="132" y="132" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="154" y="0" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="154" y="22" width="18" height="18" rx="3" fill="#efa883"/><rect x="154" y="44" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="154" y="66" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="154" y="88" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="154" y="110" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="154" y="132" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="176" y="0" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="176" y="22" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="176" y="44" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="176" y="66" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="176" y="88" width="18" height="18" rx="3" fill="#f6d9cc"/><rect x="176" y="110" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="176" y="132" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="198" y="0" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="198" y="22" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="198" y="44" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="198" y="66" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="198" y="88" width="18" height="18" rx="3" fill="#f6d9cc"/><rect x="198" y="110" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="198" y="132" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="220" y="0" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="220" y="22" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="220" y="44" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="220" y="66" width="18" height="18" rx="3" fill="#e8692c"/><rect x="220" y="88" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="220" y="110" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="220" y="132" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="242" y="0" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="242" y="22" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="242" y="44" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="242" y="66" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="242" y="88" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="242" y="110" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="242" y="132" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="264" y="0" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="264" y="22" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="264" y="44" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="264" y="66" width="18" height="18" rx="3" fill="#f6d9cc"/><rect x="264" y="88" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="264" y="110" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="264" y="132" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="286" y="0" width="18" height="18" rx="3" fill="#f6d9cc"/><rect x="286" y="22" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="286" y="44" width="18" height="18" rx="3" fill="#f6d9cc"/><rect x="286" y="66" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="286" y="88" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="286" y="110" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="286" y="132" width="18" height="18" rx="3" fill="#f6d9cc"/><rect x="308" y="0" width="18" height="18" rx="3" fill="#efa883"/><rect x="308" y="22" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="308" y="44" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="308" y="66" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="308" y="88" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="308" y="110" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="308" y="132" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="330" y="0" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="330" y="22" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="330" y="44" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="330" y="66" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="330" y="88" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="330" y="110" width="18" height="18" rx="3" fill="#f6d9cc"/><rect x="330" y="132" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="352" y="0" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="352" y="22" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="352" y="44" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="352" y="66" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="352" y="88" width="18" height="18" rx="3" fill="#f6d9cc"/><rect x="352" y="110" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="352" y="132" width="18" height="18" rx="3" fill="#f6d9cc"/><rect x="374" y="0" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="374" y="22" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="374" y="44" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="374" y="66" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="374" y="88" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="374" y="110" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="374" y="132" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="396" y="0" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="396" y="22" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="396" y="44" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="396" y="66" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="396" y="88" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="396" y="110" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="396" y="132" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="418" y="0" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="418" y="22" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="418" y="44" width="18" height="18" rx="3" fill="#e8692c"/><rect x="418" y="66" width="18" height="18" rx="3" fill="#f6d9cc"/><rect x="418" y="88" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="418" y="110" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="418" y="132" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="440" y="0" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="440" y="22" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="440" y="44" width="18" height="18" rx="3" fill="#e8692c"/><rect x="440" y="66" width="18" height="18" rx="3" fill="#b8491a"/><rect x="440" y="88" width="18" height="18" rx="3" fill="#f6d9cc"/><rect x="440" y="110" width="18" height="18" rx="3" fill="#f6d9cc"/><rect x="440" y="132" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="462" y="0" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="462" y="22" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="462" y="44" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="462" y="66" width="18" height="18" rx="3" fill="#efa883"/><rect x="462" y="88" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="462" y="110" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="462" y="132" width="18" height="18" rx="3" fill="#b8491a"/><rect x="484" y="0" width="18" height="18" rx="3" fill="#f6d9cc"/><rect x="484" y="22" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="484" y="44" width="18" height="18" rx="3" fill="#f6d9cc"/><rect x="484" y="66" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="484" y="88" width="18" height="18" rx="3" fill="#f6d9cc"/><rect x="484" y="110" width="18" height="18" rx="3" fill="#b8491a"/><rect x="484" y="132" width="18" height="18" rx="3" fill="#e8692c"/><rect x="506" y="0" width="18" height="18" rx="3" fill="#efa883"/><rect x="506" y="22" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="506" y="44" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="506" y="66" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="506" y="88" width="18" height="18" rx="3" fill="#efa883"/><rect x="506" y="110" width="18" height="18" rx="3" fill="#f6d9cc"/><rect x="506" y="132" width="18" height="18" rx="3" fill="#efa883"/><rect x="528" y="0" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="528" y="22" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="528" y="44" width="18" height="18" rx="3" fill="#efa883"/><rect x="528" y="66" width="18" height="18" rx="3" fill="#b8491a"/><rect x="528" y="88" width="18" height="18" rx="3" fill="#e8692c"/><rect x="528" y="110" width="18" height="18" rx="3" fill="#efa883"/><rect x="528" y="132" width="18" height="18" rx="3" fill="#efa883"/><rect x="550" y="0" width="18" height="18" rx="3" fill="#efa883"/><rect x="550" y="22" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="550" y="44" width="18" height="18" rx="3" fill="#f6d9cc"/><rect x="550" y="66" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="550" y="88" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="550" y="110" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="550" y="132" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="572" y="0" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="572" y="22" width="18" height="18" rx="3" fill="#efa883"/><rect x="572" y="44" width="18" height="18" rx="3" fill="#b8491a"/><rect x="572" y="66" width="18" height="18" rx="3" fill="#f6d9cc"/><rect x="572" y="88" width="18" height="18" rx="3" fill="#b8491a"/><rect x="572" y="110" width="18" height="18" rx="3" fill="#b8491a"/><rect x="572" y="132" width="18" height="18" rx="3" fill="#b8491a"/><rect x="594" y="0" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="594" y="22" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="594" y="44" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="594" y="66" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="594" y="88" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="594" y="110" width="18" height="18" rx="3" fill="#f6d9cc"/><rect x="594" y="132" width="18" height="18" rx="3" fill="#e8692c"/><rect x="616" y="0" width="18" height="18" rx="3" fill="#e8692c"/><rect x="616" y="22" width="18" height="18" rx="3" fill="#f6d9cc"/><rect x="616" y="44" width="18" height="18" rx="3" fill="#f6d9cc"/><rect x="616" y="66" width="18" height="18" rx="3" fill="#efa883"/><rect x="616" y="88" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="616" y="110" width="18" height="18" rx="3" fill="#f6d9cc"/><rect x="616" y="132" width="18" height="18" rx="3" fill="#e8692c"/><rect x="638" y="0" width="18" height="18" rx="3" fill="#efa883"/><rect x="638" y="22" width="18" height="18" rx="3" fill="#efa883"/><rect x="638" y="44" width="18" height="18" rx="3" fill="#f6d9cc"/><rect x="638" y="66" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="638" y="88" width="18" height="18" rx="3" fill="#efa883"/><rect x="638" y="110" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="638" y="132" width="18" height="18" rx="3" fill="#efa883"/><rect x="660" y="0" width="18" height="18" rx="3" fill="#b8491a"/><rect x="660" y="22" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="660" y="44" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="660" y="66" width="18" height="18" rx="3" fill="#b8491a"/><rect x="660" y="88" width="18" height="18" rx="3" fill="#efa883"/><rect x="660" y="110" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="660" y="132" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="682" y="0" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="682" y="22" width="18" height="18" rx="3" fill="#e8692c"/><rect x="682" y="44" width="18" height="18" rx="3" fill="#efa883"/><rect x="682" y="66" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="682" y="88" width="18" height="18" rx="3" fill="#efa883"/><rect x="682" y="110" width="18" height="18" rx="3" fill="#b8491a"/><rect x="682" y="132" width="18" height="18" rx="3" fill="#f6d9cc"/><rect x="704" y="0" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="704" y="22" width="18" height="18" rx="3" fill="#f6d9cc"/><rect x="704" y="44" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="704" y="66" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="704" y="88" width="18" height="18" rx="3" fill="#b8491a"/><rect x="704" y="110" width="18" height="18" rx="3" fill="#f6d9cc"/><rect x="704" y="132" width="18" height="18" rx="3" fill="#f6d9cc"/><rect x="726" y="0" width="18" height="18" rx="3" fill="#b8491a"/><rect x="726" y="22" width="18" height="18" rx="3" fill="#f6d9cc"/><rect x="726" y="44" width="18" height="18" rx="3" fill="#e8692c"/><rect x="726" y="66" width="18" height="18" rx="3" fill="#efa883"/><rect x="726" y="88" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="726" y="110" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="726" y="132" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="748" y="0" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="748" y="22" width="18" height="18" rx="3" fill="#f6d9cc"/><rect x="748" y="44" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="748" y="66" width="18" height="18" rx="3" fill="#f6d9cc"/><rect x="748" y="88" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="748" y="110" width="18" height="18" rx="3" fill="#e8692c"/><rect x="748" y="132" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="770" y="0" width="18" height="18" rx="3" fill="#f6d9cc"/><rect x="770" y="22" width="18" height="18" rx="3" fill="#f6d9cc"/><rect x="770" y="44" width="18" height="18" rx="3" fill="#e8692c"/><rect x="770" y="66" width="18" height="18" rx="3" fill="#f6d9cc"/><rect x="770" y="88" width="18" height="18" rx="3" fill="#b8491a"/><rect x="770" y="110" width="18" height="18" rx="3" fill="#f6d9cc"/><rect x="770" y="132" width="18" height="18" rx="3" fill="#f6d9cc"/><rect x="792" y="0" width="18" height="18" rx="3" fill="#f6d9cc"/><rect x="792" y="22" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="792" y="44" width="18" height="18" rx="3" fill="#f6d9cc"/><rect x="792" y="66" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="792" y="88" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="792" y="110" width="18" height="18" rx="3" fill="#efa883"/><rect x="792" y="132" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="814" y="0" width="18" height="18" rx="3" fill="#f6d9cc"/><rect x="814" y="22" width="18" height="18" rx="3" fill="#efa883"/><rect x="814" y="44" width="18" height="18" rx="3" fill="#f6d9cc"/><rect x="814" y="66" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="814" y="88" width="18" height="18" rx="3" fill="#f6d9cc"/><rect x="814" y="110" width="18" height="18" rx="3" fill="#f6d9cc"/><rect x="814" y="132" width="18" height="18" rx="3" fill="#efa883"/><rect x="836" y="0" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="836" y="22" width="18" height="18" rx="3" fill="#f6d9cc"/><rect x="836" y="44" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="836" y="66" width="18" height="18" rx="3" fill="#e9e6de"/><rect x="836" y="88" width="18" height="18" rx="3" fill="#efa883"/><rect x="836" y="110" width="18" height="18" rx="3" fill="#f6d9cc"/><rect x="836" y="132" width="18" height="18" rx="3" fill="#f6d9cc"/><rect x="858" y="0" width="18" height="18" rx="3" fill="#efa883"/><rect x="858" y="22" width="18" height="18" rx="3" fill="#e8692c"/><rect x="858" y="44" width="18" height="18" rx="3" fill="#f6d9cc"/><rect x="858" y="66" width="18" height="18" rx="3" fill="#f6d9cc"/><rect x="858" y="88" width="18" height="18" rx="3" fill="#f6d9cc"/><rect x="858" y="110" width="18" height="18" rx="3" fill="#f6d9cc"/><rect x="858" y="132" width="18" height="18" rx="3" fill="#efa883"/></svg>
     <p style="font-size:24px; color:#6b7280">Example contribution graph: activity growing after a course starts</p>
   </div>
-  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">34</p></div>
+  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">Git and GitHub for Mechatronics Projects</p><p style="font-size:24px; color:#6b7280">34</p></div>
 </section>
 <section id="cheatsheet" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -1027,7 +1027,7 @@
       <p style="font-size:24px; line-height:1.4; color:#b9bec6">Start work with pull, finish with push.</p>
     </div>
   </div>
-  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">35</p></div>
+  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">Git and GitHub for Mechatronics Projects</p><p style="font-size:24px; color:#6b7280">35</p></div>
 </section>
 <section id="next" data-transition="fade" style="background:#f4f2ec; color:#1b2129; font-family:Inter, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:36px">
   <div style="display:flex; flex-direction:column; gap:12px">
@@ -1065,7 +1065,7 @@
     </div>
   </div>
   <p style="font-size:26px">Step-by-step guides: <a href="https://arifsolmaz.github.io/github-egitimi/" style="font-family:'JetBrains Mono', monospace; color:#b8491a">arifsolmaz.github.io/github-egitimi</a></p>
-  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">GitHub for Mechatronics Engineers</p><p style="font-size:24px; color:#6b7280">36</p></div>
+  <div style="position:absolute; left:128px; bottom:64px; width:1664px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#6b7280">Git and GitHub for Mechatronics Projects</p><p style="font-size:24px; color:#6b7280">36</p></div>
 </section>
 <section id="close" data-transition="fade" style="background:#14181f; color:#f4f2ec; font-family:Inter, Arial, sans-serif; padding:128px; display:flex; flex-direction:column; justify-content:center; gap:48px">
   <h1 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:88px; font-weight:700; line-height:1.15">Commit early. Commit often.<br><span style="color:#e8692c">Push before you leave the lab.</span></h1>
@@ -1113,7 +1113,7 @@
     bar.style.width = ((i + 1) / n * 100) + '%';
     var h = slides[i].querySelector('h1, h2');
     var rawTitle = h ? (h.innerText || h.textContent || '') : '';
-    document.title = (rawTitle ? rawTitle.replace(/\s+/g, ' ').trim() + ' · ' : '') + 'GitHub for Mechatronics Engineers — Slides';
+    document.title = (rawTitle ? rawTitle.replace(/\s+/g, ' ').trim() + ' · ' : '') + 'Git and GitHub for Mechatronics Projects — Slides';
     var hash = '#' + (i + 1);
     if (location.hash !== hash) history[push ? 'pushState' : 'replaceState'](null, '', hash);
     var cur = grid.querySelector('.current'); if (cur) cur.classList.remove('current');
