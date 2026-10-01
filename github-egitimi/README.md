@@ -1,17 +1,19 @@
 # GitHub Eğitimi
 
-Mekatronik öğrencileri için Git ve GitHub dersi. Ana amaç komut ezberi değil:
-Git’in ne zaman gerekli olduğunu, insanların gerçek projelerde nasıl kullandığını
-ve iyi çalışma alışkanlıklarını öğretmek. Devam etmek isteyen öğrenciler Learn
-Git Branching, GitHub Skills ve takım deposu alıştırmalarıyla pratik yapar.
+Lise seviyesi 45 dakikalık GitHub dersi. Ana amaç komut ezberi değil:
+GitHub'ın ne için kullanıldığını, neden yazılımcılar için önemli olduğunu,
+insanların kod, web sitesi, portfolyo, görev takibi, açık kaynak ve release gibi
+alanlarda nasıl kullandığını anlatmak. Devam etmek isteyen öğrenciler Learn Git
+Branching, GitHub Skills, GitHub Pages ve takım deposu alıştırmalarıyla pratik
+yapar.
 
 Canlı sayfa: <https://arifsolmaz.github.io/github-egitimi/>
 
 ## Giriş kapıları
 
 - `index.html`: temiz ana sayfa
-- `neden-git/`: Git gerekli mi, nasıl kullanılır, best practices
-- `gercek-ornekler/`: gerçek GitHub depoları, kullanım senaryoları, repo keşif kaynakları ve bulduğunuz repoyu indirme/iyileştirme yolu
+- `neden-git/`: GitHub ne için kullanılır, neden önemlidir, best practices
+- `gercek-ornekler/`: GitHub Pages, Issues, PR, portfolyo, release, açık kaynak ve repo keşif örnekleri
 - `student/`: öğrenciler için dersten sonra izlenecek yol
 - `instructor/`: eğitmen için ders akışı ve hazırlık masası
 - `sunum/`: Türkçe slayt destesi

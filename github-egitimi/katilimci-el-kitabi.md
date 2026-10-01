@@ -1,9 +1,9 @@
 # Katılımcı el kitabı
 
-Bu sayfa, Git ve GitHub dersinde neyi neden yapacağınızı adım adım anlatır.
-Amaç komut ezberlemek değil; bir projede değişiklikleri güvenli, görünür ve
-geri döndürülebilir biçimde yönetmeyi öğrenmektir. Programlama, komut satırı ya
-da kurulum bilmeniz gerekmiyor.
+Bu sayfa, GitHub dersinde neyi neden yapacağınızı adım adım anlatır. Amaç komut
+ezberlemek değil; GitHub'ın kod, web sitesi, dokümantasyon, portfolyo, görev
+takibi ve ekip çalışmasında nasıl kullanıldığını anlamaktır. Programlama, komut
+satırı ya da kurulum bilmeniz gerekmiyor.
 
 **Yanınızda açık tutun:**
 [Neden Git?](neden-git/) ·
@@ -14,15 +14,15 @@ da kurulum bilmeniz gerekmiyor.
 
 ## Önce bunu okuyun: ders ve isteğe bağlı yollar
 
-Kısa ders **45 dakika ve yalnızca sunumdur**. Derste önce Git'in neden var
-olduğunu, hangi işlerde gerekli olduğunu ve iyi kullanım alışkanlıklarını
-göreceksiniz. Bilgisayar getirmeniz gerekmez. Bu sayfadaki pratik adımlar
+Kısa ders **45 dakika ve yalnızca sunumdur**. Derste önce GitHub'ın ne için
+kullanıldığını, yazılımcılar için neden önemli olduğunu ve iyi kullanım
+alışkanlıklarını göreceksiniz. Bilgisayar getirmeniz gerekmez. Bu sayfadaki pratik adımlar
 **isteğe bağlıdır**: ders sonrası devam etmek isteyenler içindir.
 
 ## Dersin asıl fikri
 
 - Git, “son_final2.docx” karmaşasını azaltır.
-- GitHub, değişiklikleri ekipçe görmeyi, tartışmayı ve onaylamayı kolaylaştırır.
+- GitHub, kod deposu olmanın yanında web sitesi, portfolyo, görev takibi, açık kaynak ve yayın alanıdır.
 - İyi kullanım, komut bilmekten çok küçük değişiklik, açık mesaj, review ve gizli veri disipliniyle ilgilidir.
 - Her proje Git istemez; ama geçmişi, ekip çalışması veya güvenli deneme ihtiyacı varsa erken başlamak rahatlatır.
 
@@ -32,8 +32,8 @@ Kolaydan zora dört yol (sunumun 36. slaytı):
 |---|---|---|
 | 1. Learn Git Branching: commit, branch, merge'ü canlı bir ağaçta görün | 15 dk, hesap gerekmez | Aşağıda bölüm 2 |
 | 2. İlk reponuz: GitHub Docs “Hello World” | 30 dk | [Sunum, 33. slayt](sunum/#33) |
-| 3. GitHub Skills: Introduction to GitHub | yaklaşık 1 saat | Aşağıda bölüm 3.1 |
-| 4. Gerçek repo turu: popüler depoları bulun, değerlendirin, indirin ve katkı yolunu görün | kendi hızınızda | [Gerçek GitHub örnekleri](gercek-ornekler/) |
+| 3. Kişisel web sitesi: GitHub Pages ile yayınlayın | 30–60 dk | [pages.github.com](https://pages.github.com/) |
+| 4. Gerçek kullanım turu: web sitesi, issue, PR, release ve açık kaynak örnekleri | kendi hızınızda | [Gerçek GitHub örnekleri](gercek-ornekler/) |
 
 Hocanız uygulamalı (2 × 100 dakikalık) sürümü yapıyorsa aşağıdaki yol haritası
 ve takım alıştırmaları (bölüm 4) da geçerlidir.

@@ -27,29 +27,34 @@ adım adım talimatları [katılımcı el kitabındadır](katilimci-el-kitabi.md
 
 ---
 
-## Ders 1 — Önce karar: Git gerekli mi?
+## Ders 1 — Önce karar: GitHub ne için kullanılır?
 
 ### N0. Senaryo tartışması
 
-**Amaç:** Git'i “her şeyi GitHub'a koymak” diye değil, doğru iş için doğru
-çalışma yöntemi olarak görmek.
+**Amaç:** GitHub'ı “her şeyi yüklediğimiz depo” diye değil; proje hafızası,
+web sitesi, portfolyo, görev takibi ve ekip çalışması aracı olarak görmek.
 
-Sınıfa üç kısa senaryo verin ve her biri için “Git kullanır mıyız, nasıl
-kullanırız, neyi koymayız?” diye sorun:
+Sınıfa beş kısa senaryo verin ve her biri için “GitHub burada ne işe yarar,
+ne işe yaramaz, neyi koymayız?” diye sorun:
 
 1. Tek kişinin bir akşamlık hesaplama notu.
 2. Dört kişilik robot projesi: Arduino kodu, devre şeması, rapor ve görev listesi.
 3. İçinde kişisel veri olan ham anket dosyaları ve analiz kodu.
+4. Bir öğrencinin kişisel portfolyo sitesi.
+5. Okul kulübünün etkinlik web sitesi ve görev listesi.
 
 Beklenen çıkarım:
 
 - Birinci senaryoda Git şart olmayabilir.
 - İkinci senaryoda Git ve GitHub güçlü biçimde faydalıdır.
 - Üçüncü senaryoda analiz kodu Git'e girebilir; ham kişisel veri ve gizli dosyalar dikkatle ayrılmalıdır.
+- Dördüncü ve beşinci senaryoda GitHub Pages, README, Issues ve proje panosu
+  kod yazmayan işler için de anlamlı olabilir.
 
 Başarı ölçütü:
 
-- Öğrenci “Git gerekli mi?” sorusuna sadece “evet/hayır” değil, gerekçeli cevap verebiliyor.
+- Öğrenci “GitHub burada ne işe yarar?” sorusuna sadece “repo açarız” değil,
+  gerekçeli cevap verebiliyor.
 - Öğrenci depoya girmemesi gereken dosya türlerine örnek verebiliyor.
 
 ### R1. Gerçek repo okuma

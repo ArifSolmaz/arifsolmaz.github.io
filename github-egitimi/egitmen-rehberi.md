@@ -1,14 +1,15 @@
 # Eğitmen rehberi
 
-Bu rehber, Git'i yalnızca komut ya da GitHub arayüzü olarak değil, bir çalışma
-yöntemi olarak nasıl öğreteceğinizi anlatır: Git gerekli mi, insanlar gerçek
-projelerde nasıl kullanır, iyi alışkanlıklar nelerdir, sonra hangi araçlarla
-pratik yapılır. 40–45 kişilik bir mekatronik sınıfı düşünülerek yazıldı; daha
-küçük gruplarda süreleri kısaltmanız yeterli.
+Bu rehber, GitHub'ı yalnızca komut ya da repo arayüzü olarak değil, lise
+seviyesinde anlaşılacak bir proje kültürü olarak nasıl öğreteceğinizi anlatır:
+ne için kullanılır, neden önemlidir, insanlar gerçek hayatta nasıl kullanır,
+yazılımcılar için neden değerlidir, sonra isteyenler hangi araçlarla pratik
+yapar. 40–45 kişilik bir sınıf düşünülerek yazıldı; daha küçük gruplarda
+süreleri kısaltmanız yeterli.
 
 > Kısa yol: Ders **45 dakika ve yalnızca sunumdur**; öğrencinin bilgisayar
 > başında bir şey yapması gerekmez. İlk hedef Git'in neden gerekli olduğunu ve
-> iyi kullanım kültürünü anlatmaktır; GitHub uygulaması canlı demo ve isteğe
+> GitHub'ın geniş kullanım alanlarını anlatmaktır; GitHub uygulaması canlı demo ve isteğe
 > bağlı devam yolu olarak gelir. Daha fazla ders saatiniz varsa aynı paket
 > 2 × 100 dakikalık uygulamalı bir sürüme genişler (bölüm 2.3).
 
@@ -16,17 +17,20 @@ küçük gruplarda süreleri kısaltmanız yeterli.
 
 Ders sonunda öğrenci şunları söyleyebilmeli:
 
-- Git'in hangi işlerde gerekli, hangi işlerde gereksiz olabileceğini.
-- Bir ekibin issue → branch → commit → pull request → review → merge akışıyla nasıl çalıştığını.
-- İyi Git kullanımında küçük commit, anlamlı mesaj, çalışan `main`, review ve gizli veri kurallarının neden önemli olduğunu.
-- GitHub'ın Git üzerine kurulmuş bir paylaşım ve review platformu olduğunu.
+- GitHub'ın yalnızca “kod deposu” değil; web sitesi, portfolyo, görev takibi,
+  açık kaynak ve yayın platformu olarak da kullanıldığını.
+- Yazılımcılar için GitHub'ın neden temel bir mesleki beceri olduğunu.
+- Bir ekibin issue, commit, pull request, review ve release gibi kavramlarla işi
+  nasıl görünür hale getirdiğini.
+- İyi kullanımda küçük adım, açık açıklama, review ve gizli veri disiplininin
+  neden önemli olduğunu.
 
 ## 1. Paketin parçaları
 
 | Parça | Bağlantı | Ne için? | Kim kullanır? |
 |---|---|---|---|
 | Neden Git? | [neden-git/](neden-git/) | Gereklilik, gerçek kullanım ve best practices | Herkes |
-| Gerçek GitHub örnekleri | [gercek-ornekler/](gercek-ornekler/) | PX4, ArduPilot, OpenCV, ROS 2, VS Code gibi depolarda issue, PR, release ve star sinyallerini okumak | Herkes |
+| Gerçek GitHub örnekleri | [gercek-ornekler/](gercek-ornekler/) | GitHub Pages, Issues, PR, portfolyo, release ve açık kaynak örneklerini göstermek | Herkes |
 | Sunum (TR) | [sunum/](sunum/) | 37 slaytlık ders anlatımı | Eğitmen projeksiyonda; öğrenci evde tekrar |
 | Sunum (EN) | [sunum/en/](sunum/en/) | Aynı sunumun İngilizcesi | İngilizce ders / değişim öğrencileri |
 | Hazır araçlar | [hazir-araclar.md](hazir-araclar.md) | Learn Git Branching (Türkçe, hesapsız) ve GitHub Skills kurslarını derste kullanma | Her öğrenci |
@@ -46,7 +50,7 @@ Katmanlar birbirini tamamlar:
 5. **Gerçek repo turu** aynı akışların açık kaynakta nasıl yaşadığını somutlaştırır.
 6. **Takım deposu** hepsini gerçek bir takımla tekrarlatır.
 
-Her kavram için sıra aynıdır: **problem → iyi alışkanlık → Git'te ne oluyor → GitHub'da nasıl yapılır**.
+45 dakikalık teorik derste sıra şudur: **ne için kullanılır → neden önemli → insanlar nasıl kullanır → iyi alışkanlık → isteyenler için pratik**.
 
 ## 2. Ders planı
 
@@ -59,18 +63,17 @@ tablo nerede durup nerede hızlanacağınızı gösterir.
 
 | Dakika | Slayt | Bölüm | Nerede durun, nerede hızlanın |
 |---|---|---|---|
-| 0–7 | 1–7 | Giriş | Önce “Git gerekli mi?” sorusunu sorun. 3'te “Bilgisayarında böyle bir klasör olan?” diye sorun. 6'daki terimleri tek tek okumayın; “hepsi örnekle tekrar gelecek” deyin. |
-| 7–17 | 8–14 | 1. bölüm: kişisel repo | 9'daki komut kutusunu atlayın. 12 (günlük döngü) ve 13 (commit mesajı) asıl slaytlar. |
-| 17–30 | 15–23 | 2. bölüm: takım | 17 (branch ve PR) ve 20 (conflict) asıl slaytlar. 21–22'yi birer cümleyle geçin. |
-| 30–37 | 24–28 | 3. bölüm: yapay zekâ | 26 (güvenli akış) ve 28 (kurallar) yeter; 25 ve 27'yi kısa tutun. |
-| 37–43 | 29–32 | Kapanış: gerçek repo turu, test ve Hello World | 29'da yalnızca 1–2 canlı depo açın; 30'da öğrenciler bir dakika yanındakiyle tartışsın. 31–32'de Hello World'ü kendi hesabınızda 3–4 dakikada canlı yapın. |
-| 43–45 | 33–37 | İsteyenler için | 33'ü yaptırmayın, gösterin. 36'da durun ve dört yolu söyleyin (2.2). |
+| 0–8 | 1–7 | Giriş: ne için, neden | GitHub'ı “kod yükleme sitesi” diye değil, proje hafızası ve vitrini diye anlatın. 6–7'de web sitesi, portfolyo, issue, release örneklerini vurgulayın. |
+| 8–18 | 8–11 | Yazılımcı için önemi | Kurulum anlatmayın; mesleki değer, proje sayfası, web sitesi ve dokümantasyon örneklerinde durun. |
+| 18–30 | 12–23 | Temel iş akışı | Commit, main, branch, PR ve review'u kavram düzeyinde anlatın. Komutları ezberletmeyin; “ne problemi çözüyor?” diye bağlayın. |
+| 30–35 | 24–28 | Yapay zekâ ve güven | Bu bölümü kısa tutun: sorumluluk, gizli veri, review ve test fikrini verin. |
+| 35–41 | 29–30 | Gerçek örnekler ve kontrol | 29'da VS Code, Python, kişisel site, project board, release gibi farklı kullanım alanlarını gösterin. |
+| 41–45 | 31–37 | Demo ve devam yolu | Hello World'ü hızlı gösterin; 36'da Learn Git Branching, ilk proje, GitHub Pages ve gerçek örnekleri söyleyin. |
 
 **Canlı gösterim için:** dersten önce Hello World'ü bir kez prova edin. Zaman
 kalmazsa yalnızca pull request açmayı ve merge'ü gösterin.
 
-**Zaman sıkışırsa sırayla şunları kısaltın:** 3. bölüm (24–28), sonra 13, 14, 21, 22, 29, 34 ve 35. 17, 20, 31–32 ve 36'yı
-kısaltmayın.
+**Zaman sıkışırsa sırayla şunları kısaltın:** teknik komut kutuları, yapay zekâ bölümü (24–28), sonra conflict ayrıntısı ve komut özeti. 6–11, 29 ve 36'yı kısaltmayın; dersin geniş çerçevesi oralarda.
 
 ### 2.2 Dersin sonunda: isteyenler için dört yol
 
