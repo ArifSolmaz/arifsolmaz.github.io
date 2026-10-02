@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub Ne İşime Yarar? | Arif Solmaz</title>
+<meta name="description" content="Mekatronik öğrencileri için 45 dakikalık, başlangıç seviyesinde GitHub dersi: altı fayda, animasyonlar ve ders kiti.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=IBM+Plex+Sans:wght@400;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0d1424;--ink2:#131d33;--line:#26365a;--fg:#eef2fa;--fg2:#b3bfd6;--fg3:#7686a6;--acc:#ff6b4a;--acc2:#ffb199}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ink);color:var(--fg);font-family:'IBM Plex Sans',Arial,sans-serif;line-height:1.5}
+a{color:var(--acc2)}
+.wrap{max-width:1080px;margin:0 auto;padding:48px 16px 80px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.16em;color:var(--acc);text-transform:uppercase;margin:0}
+h1{font-family:'Bricolage Grotesque',Arial,sans-serif;font-weight:800;font-size:clamp(36px,6vw,64px);line-height:1.04;margin:14px 0 12px;letter-spacing:-.01em}
+h2{font-family:'Bricolage Grotesque',Arial,sans-serif;font-weight:700;font-size:26px;margin:56px 0 14px}
+.lead{font-size:19px;color:var(--fg2);max-width:760px;margin:0}
+.lang{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.lang button{background:none;border:0;color:var(--fg2);font:600 14px 'IBM Plex Sans',sans-serif;padding:8px 16px;cursor:pointer}
+.lang button[aria-pressed=true]{background:var(--acc);color:#1a0f0b}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:10px;font-weight:600;text-decoration:none;border:1px solid var(--line);color:var(--fg)}
+.btn.pri{background:var(--acc);border-color:var(--acc);color:#1a0f0b}
+.words{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.words span{font-family:'JetBrains Mono',monospace;font-size:14px;padding:5px 11px;border-radius:8px;background:rgba(255,107,74,.12);border:1px solid rgba(255,107,74,.35);color:var(--acc2)}
+.scene{background:var(--ink2);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-bottom:22px}
+.scene img{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#0a101d}
+.scene .cap{display:flex;gap:14px;align-items:baseline;padding:14px 18px;flex-wrap:wrap}
+.scene .n{font-family:'JetBrains Mono',monospace;color:var(--acc);font-size:14px}
+.scene .t{font-weight:600;font-size:18px}
+.scene .d{color:var(--fg2);font-size:15px;flex-basis:100%}
+.scene .dl{margin-left:auto;font-size:13px}
+ol.plan{padding-left:20px;color:var(--fg2)} ol.plan li{margin:6px 0} ol.plan b{color:var(--fg)}
+.foot{margin-top:56px;color:var(--fg3);font-size:14px}
+[data-l]{display:none} html[lang=tr] [data-l=tr], html[lang=en] [data-l=en]{display:revert}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <p class="eyebrow"><span data-l="tr">Mekatronik · GitHub'a giriş · 45 dakika</span><span data-l="en">Mechatronics · Intro to GitHub · 45 minutes</span></p>
+    <div class="lang" role="group" aria-label="Dil / Language"><button data-set="tr">TR</button><button data-set="en">EN</button></div>
+  </div>
+  <h1><span data-l="tr">GitHub ne işime yarar?</span><span data-l="en">What's GitHub good for?</span></h1>
+  <p class="lead"><span data-l="tr">Başlangıç seviyesinde bir ders: projeni kaybetme, takımınla düzenli çalış, yaptıklarını göster. Terminal yok; her şey tarayıcıda ve telefonda.</span><span data-l="en">A beginner class: never lose a project, work as a team, show what you've built. No terminal; everything happens in the browser and on your phone.</span></p>
+  <div class="words"><span>repository</span><span>commit</span><span>issue</span><span>README</span></div>
+  <div class="btns">
+    <a class="btn pri" href="https://github.com/arifsolmaz/sinif-duvari/issues/1"><span data-l="tr">Sınıf sayfası</span><span data-l="en">Class page</span></a>
+    <a class="btn" href="kit/HAZIRLIK.md" data-l="tr">Hazırlık rehberi</a>
+    <a class="btn" href="kit/SETUP.md" data-l="en">Setup guide</a>
+    <a class="btn" href="github-ders-kiti.zip"><span data-l="tr">Ders kitini indir (.zip)</span><span data-l="en">Download the class kit (.zip)</span></a>
+  </div>
+
+  <h2><span data-l="tr">Dersin akışı</span><span data-l="en">Lesson plan</span></h2>
+  <ol class="plan">
+    <li data-l="tr"><b>Açılış · 7 dk</b> — dağınık klasör sorunu, GitHub nedir, dört kelime</li>
+    <li data-l="tr"><b>Altı fayda · 24 dk</b> — her biri önce animasyon, sonra gerçek GitHub'da canlı</li>
+    <li data-l="tr"><b>Sıra sizde · 9 dk</b> — telefondan ilk depo, link sınıf sayfasına</li>
+    <li data-l="tr"><b>Kapanış · 5 dk</b> — özet ve bu haftanın görevi</li>
+    <li data-l="en"><b>Opening · 7 min</b> — the messy folder, what GitHub is, four words</li>
+    <li data-l="en"><b>Six benefits · 24 min</b> — each one as an animation, then live on real GitHub</li>
+    <li data-l="en"><b>Your turn · 9 min</b> — a first repository on the phone, link posted on the class page</li>
+    <li data-l="en"><b>Closing · 5 min</b> — recap and this week's task</li>
+  </ol>
+
+  <h2><span data-l="tr">Animasyonlar</span><span data-l="en">Animations</span></h2>
+  <div id="scenes"></div>
+
+  <p class="foot"><span data-l="tr">Animasyonlardaki kişi, kullanıcı ve kütüphane adları örnek amaçlıdır.</span><span data-l="en">The people, usernames and libraries in the animations are made up.</span> · <a href="../">GitHub Eğitimi</a> · <a href="/">arifsolmaz.github.io</a></p>
+</div>
+<script>
+const S = [
+  ['01-daginik-klasor','01-messy-folder','Hangisi son hâli?','Which one is the latest?','Yedi "final" dosya ve bir mesaj grubu; GitHub\'da tek dosya ve geçmişi.','Seven "final" files and a group chat; on GitHub, one file and its history.'],
+  ['02-projen-kaybolmaz','02-never-lost','Fayda 1 · Projen kaybolmaz','Benefit 1 · Never lost','Bir kez yükle; okulda, evde, telefonda aç.','Upload once; open it at school, at home, on your phone.'],
+  ['03-projeni-github-a-koy','03-put-your-project-on-github','Projeni GitHub\'a koy','Put your project on GitHub','New repository → Add README → Create repository → Upload files → Commit changes','New repository → Add README → Create repository → Upload files → Commit changes'],
+  ['04-zaman-makinesi','04-time-machine','Fayda 2 · Zaman makinesi','Benefit 2 · Time machine','History: kim, ne zaman, neyi değiştirdi. Kırmızı eski, yeşil yeni.','History: who changed what, and when. Red is before, green is after.'],
+  ['05-takimin-listesi','05-team-to-do-list','Fayda 3 · Takımın listesi','Benefit 3 · Team to-do list','Issues: New issue → Assignees → Close issue.','Issues: New issue → Assignees → Close issue.'],
+  ['06-hazir-kod','06-ready-made-code','Fayda 4 · Hazır kod','Benefit 4 · Ready-made code','Ara → Code → Download ZIP → Arduino IDE: .ZIP Kütüphanesi Ekle...','Search → Code → Download ZIP → Arduino IDE: Add .ZIP Library...'],
+  ['07-portfolyo','07-portfolio','Fayda 5 · Portfolyo','Benefit 5 · Portfolio','Profil, sabitlenmiş projeler, README ve CV\'deki tek satır.','Profile, pinned projects, README and one line on your CV.'],
+  ['08-sira-sizde','08-your-turn','Sıra sizde · İlk deponu aç','Your turn · First repository','Telefondan depo aç, README yaz, linki sınıf sayfasına yorum olarak ekle.','Create a repository on your phone, write a README, post the link on the class page.'],
+  ['09-ozet','09-recap','Özet · Altı fayda','Recap · Six benefits','Fayda 6: öğrenciye ücretsiz — education.github.com/pack','Benefit 6: free for students — education.github.com/pack'],
+];
+function render(l){
+  document.documentElement.lang = l;
+  document.querySelectorAll('.lang button').forEach(b => b.setAttribute('aria-pressed', b.dataset.set === l));
+  const k = l === 'tr' ? 0 : 1;
+  document.getElementById('scenes').innerHTML = S.map((s, i) => {
+    const src = `gif/${l}/${s[k]}.gif`;
+    return `<figure class="scene" style="margin:0 0 22px"><img src="${src}" alt="${s[2 + k]}" loading="lazy" width="1600" height="900">
+      <figcaption class="cap"><span class="n">${String(i + 1).padStart(2, '0')}</span><span class="t">${s[2 + k]}</span><a class="dl" href="${src}" download>${l === 'tr' ? 'GIF indir' : 'Download GIF'}</a><span class="d">${s[4 + k]}</span></figcaption></figure>`;
+  }).join('');
+  try { localStorage.setItem('gh-lang', l); } catch (e) {}
+}
+document.querySelectorAll('.lang button').forEach(b => b.onclick = () => render(b.dataset.set));
+let start = 'tr';
+try { start = localStorage.getItem('gh-lang') || (location.hash === '#en' ? 'en' : 'tr'); } catch (e) {}
+if (location.hash === '#en') start = 'en';
+render(start);
+</script>
+</body>
+</html>
