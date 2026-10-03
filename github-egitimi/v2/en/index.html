@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Git &amp; GitHub Fundamentals — Slides (Version 2)</title>
+<meta name="description" content="Git & GitHub fundamentals: terminal, the five core commands, SSH, branches, pull requests, merge conflicts and undoing history.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600..800&family=IBM+Plex+Sans:wght@400;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; box-sizing: border-box; }
+  html, body { height: 100%; }
+  body { background: #0d1424; color: #f4f2ec; font-family: Inter, Arial, sans-serif; overflow: hidden; }
+
+  /* ---- stage: a fixed 1920x1080 canvas scaled to the window ---- */
+  #ui-viewport { position: fixed; inset: 0; display: grid; place-items: center; }
+  #ui-stage { position: relative; width: 1920px; height: 1080px; transform-origin: center center; flex: none; }
+  #ui-stage > section p, #ui-stage > section h1, #ui-stage > section h2, #ui-stage > section h3, #ui-stage > section ol, #ui-stage > section ul { margin: 0; }
+  #ui-stage > section { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden;
+    opacity: 0; visibility: hidden; transition: opacity .35s ease, visibility 0s linear .35s; }
+  #ui-stage > section.active { opacity: 1; visibility: visible; transition: opacity .35s ease; }
+  section aside { display: none; }
+  section a { color: inherit; }
+  section table { border-spacing: 0; }
+
+  /* ---- chrome ---- */
+  #ui-bar { position: fixed; left: 0; right: 0; bottom: 0; display: flex; align-items: center; gap: 8px;
+    padding: 8px 12px; background: rgba(13,16,21,.86); backdrop-filter: blur(6px); font-size: 14px;
+    transition: opacity .3s; z-index: 10; }
+  body.idle #ui-bar { opacity: 0; }
+  #ui-bar button, #ui-bar a { white-space: nowrap; background: transparent; color: #f4f2ec; border: 1px solid #3a414d; border-radius: 8px;
+    padding: 6px 12px; font: inherit; cursor: pointer; text-decoration: none; min-height: 34px; display: inline-flex; align-items: center; }
+  #ui-bar button:hover, #ui-bar a:hover { border-color: #ff6b4a; }
+  #ui-bar button:focus-visible, #ui-bar a:focus-visible { outline: 2px solid #ff6b4a; outline-offset: 2px; }
+  #ui-count { font-variant-numeric: tabular-nums; color: #b9bec6; min-width: 64px; text-align: center; }
+  #ui-help { color: #8a919c; margin-left: auto; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  #ui-progress { position: fixed; left: 0; top: 0; height: 4px; background: #ff6b4a; transition: width .3s; z-index: 11; }
+
+  /* ---- speaker notes ---- */
+  #ui-notes { position: fixed; left: 50%; bottom: 60px; transform: translateX(-50%); width: min(960px, calc(100% - 32px));
+    max-height: 38vh; overflow: auto; background: #fbfaf6; color: #1b2129; border-radius: 12px;
+    padding: 16px 20px; font-size: 16px; line-height: 1.55; box-shadow: 0 10px 40px rgba(0,0,0,.45); display: none; z-index: 9; }
+  #ui-notes.show { display: block; }
+  #ui-notes h4 { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 1.5px; color: #b8491a; margin-bottom: 6px; text-transform: uppercase; }
+
+  /* ---- overview ---- */
+  #ui-overview { position: fixed; inset: 0; background: #0d1424; overflow: auto; padding: 24px 16px 80px; display: none; z-index: 20; }
+  #ui-overview.show { display: block; }
+  #ui-overview h3 { font-family: 'Space Grotesk', Arial, sans-serif; font-size: 22px; margin: 0 auto 16px; max-width: 1400px; }
+  #ui-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; max-width: 1400px; margin: 0 auto; }
+  .thumb { position: relative; aspect-ratio: 16/9; overflow: hidden; border-radius: 8px; border: 2px solid transparent; cursor: pointer; background: #14181f; padding: 0; }
+  .thumb.current { border-color: #ff6b4a; }
+  .thumb:focus-visible { outline: 2px solid #ff6b4a; outline-offset: 2px; }
+  .thumb .mini { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; transform-origin: 0 0; pointer-events: none; }
+  .thumb .mini > section { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden; }
+  .thumb span { position: absolute; right: 6px; bottom: 6px; background: rgba(13,16,21,.8); color: #f4f2ec; font-size: 12px; padding: 2px 7px; border-radius: 6px; }
+
+  @media (max-width: 640px) { #ui-help { display: none; } #ui-bar { gap: 6px; padding: 6px 8px; } #ui-bar button, #ui-bar a { padding: 6px 9px; } }
+
+  /* ---- print: one slide per page ---- */
+  @page { size: 1920px 1080px; margin: 0; }
+  @media print {
+    body { overflow: visible; background: #fff; }
+    #ui-bar, #ui-notes, #ui-overview, #ui-progress { display: none !important; }
+    #ui-viewport { position: static; display: block; }
+    #ui-stage { transform: none !important; width: 1920px; height: auto; }
+    #ui-stage > section { position: relative; opacity: 1; visibility: visible; page-break-after: always; break-after: page; }
+  }
+
+  .s{padding:100px 128px 96px;display:flex;flex-direction:column;gap:44px;font-family:'IBM Plex Sans',Arial,sans-serif}
+  .s.dark{background:#0d1424;color:#eef2fa}
+  .s.paper{background:#f4f1ea;color:#141b2b}
+  .s.coral{background:#ff6b4a;color:#1a0f0b}
+  .s .hd{display:flex;flex-direction:column;gap:14px}
+  .s .eb{font-size:24px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:#ff6b4a}
+  .s.paper .eb{color:#b93c1d} .s.coral .eb{color:#1a0f0b}
+  .s .h1{font-family:'Bricolage Grotesque',Arial,sans-serif;font-size:116px;font-weight:800;line-height:1.02;letter-spacing:-2px}
+  .s .h2{font-family:'Bricolage Grotesque',Arial,sans-serif;font-size:66px;font-weight:700;line-height:1.08;letter-spacing:-.5px}
+  .s .lead{font-size:34px;line-height:1.42;color:#b3bfd6;max-width:1500px}
+  .s.paper .lead{color:#4a5568}
+  .s .sec{position:absolute;right:128px;top:104px;font-family:'JetBrains Mono',monospace;font-size:24px;color:#7686a6}
+  .s.paper .sec{color:#8a8578}
+  .s .row{display:flex;gap:36px;align-items:stretch}
+  .s .col{display:flex;flex-direction:column;gap:24px}
+  .s .g2{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+  .s .g3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+  .s .g5{display:grid;grid-template-columns:repeat(5,1fr);gap:22px}
+  .s .card{background:#fbfaf6;border:1px solid #ddd6c8;border-radius:20px;padding:30px 34px;display:flex;flex-direction:column;gap:12px}
+  .s.dark .card{background:#131d33;border-color:#26365a}
+  .s .card h3{font-family:'Bricolage Grotesque',Arial,sans-serif;font-size:40px;font-weight:700;line-height:1.15}
+  .s .card p{font-size:29px;line-height:1.42;color:#4a5568}
+  .s.dark .card p{color:#b3bfd6}
+  .s .card .k{font-family:'JetBrains Mono',monospace;font-size:24px;font-weight:700;color:#b93c1d}
+  .s.dark .card .k{color:#ffb199}
+  .s .card .ic{width:60px;height:60px;border-radius:16px;background:rgba(255,107,74,.15);color:#ff6b4a;display:grid;place-items:center;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:26px}
+  .s code,.s .c{font-family:'JetBrains Mono',monospace;font-size:.88em;background:#fff1ec;color:#b93c1d;padding:1px 10px;border-radius:8px;white-space:nowrap;font-variant-ligatures:none}
+  .s.dark code,.s.dark .c{background:rgba(255,107,74,.14);color:#ffb199}
+  .s .term{background:#0a0f1a;border:1px solid #24314f;border-radius:18px;overflow:hidden;box-shadow:0 18px 50px rgba(0,0,0,.28)}
+  .s .term .bar{height:46px;background:#18223a;display:flex;align-items:center;gap:10px;padding:0 20px;font-family:'JetBrains Mono',monospace;font-size:19px;color:#7686a6}
+  .s .term .bar i{width:13px;height:13px;border-radius:50%;background:#3a4766;display:block}
+  .s .term .bar span{margin-left:10px}
+  .s .term pre{margin:0;padding:26px 34px;font-family:'JetBrains Mono',monospace;font-size:30px;line-height:1.55;color:#eef2fa;white-space:pre;font-variant-ligatures:none}
+  .s .term .tc{color:#7686a6} .s .term .tp{color:#7fdba6} .s .term .tf{color:#ffb199} .s .term .ts{color:#9ef0c0}
+  .s .term .te{color:#ff8a80} .s .term .to{color:#b3bfd6} .s .term .tg{color:#ff6b4a;font-weight:700}
+  .s .call{border-left:8px solid #ff6b4a;background:rgba(255,107,74,.10);border-radius:0 16px 16px 0;padding:26px 34px;font-size:30px;line-height:1.45}
+  .s .call .t{display:block;font-size:21px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#ff6b4a;margin-bottom:6px}
+  .s.paper .call .t{color:#b93c1d}
+  .s .call.warn{border-left-color:#e5484d;background:rgba(229,72,77,.10)}
+  .s .call.warn .t{color:#e5484d}
+  .s.paper .call.warn .t{color:#c0262d}
+  .s table.tb{border-collapse:separate;border-spacing:0;width:100%;font-size:29px}
+  .s table.tb th code{text-transform:none;font-size:24px}
+  .s table.tb th{text-align:left;font-size:21px;letter-spacing:2px;text-transform:uppercase;color:#7686a6;padding:12px 18px;border-bottom:2px solid #ddd6c8;font-weight:600}
+  .s table.tb td{padding:22px 20px;border-bottom:1px solid #ddd6c8;vertical-align:top;line-height:1.38}
+  .s.dark table.tb th{border-color:#26365a} .s.dark table.tb td{border-color:#26365a}
+  .s table.tb td.m{font-family:'JetBrains Mono',monospace;font-weight:700;color:#b93c1d;white-space:nowrap}
+  .s.dark table.tb td.m{color:#ffb199}
+  .s ul.bl{list-style:none;padding:0;display:flex;flex-direction:column;gap:24px;font-size:32px;line-height:1.4}
+  .s ul.bl li{position:relative;padding-left:40px}
+  .s ul.bl li::before{content:'';position:absolute;left:0;top:15px;width:16px;height:16px;border-radius:4px;background:#ff6b4a}
+  .s ol.st{list-style:none;padding:0;display:flex;flex-direction:column;gap:28px;counter-reset:st;font-size:32px;line-height:1.4}
+  .s ol.st li{position:relative;padding-left:66px;counter-increment:st}
+  .s ol.st li::before{content:counter(st);position:absolute;left:0;top:-2px;width:46px;height:46px;border-radius:50%;background:#ff6b4a;color:#1a0f0b;display:grid;place-items:center;font-weight:700;font-size:23px}
+  .s .pill{display:inline-flex;align-items:center;height:40px;padding:0 18px;border-radius:20px;font-size:22px;font-weight:600;letter-spacing:1px}
+  .s .sp{flex:1}
+  .s .bd{flex:1;display:flex;flex-direction:column;justify-content:center;gap:40px;min-height:0}
+  .s table.tb.tight td{padding:13px 20px}
+  .s .muted{color:#7686a6}
+  .s svg text{font-family:'IBM Plex Sans',Arial,sans-serif}
+  .s svg .mono{font-family:'JetBrains Mono',monospace}
+  .s .big{font-family:'Bricolage Grotesque',Arial,sans-serif;font-weight:800}
+
+</style>
+</head>
+<body>
+<div id="ui-progress" role="presentation"></div>
+<main id="ui-viewport" aria-label="Git &amp; GitHub Fundamentals — Slides (Version 2)">
+  <div id="ui-stage">
+<section id="cover" class="s dark">
+<svg width="1920" height="300" viewBox="0 0 1920 300" style="position:absolute;left:0;top:640px" aria-label="branch">
+<path d="M128 200 H1660" stroke="#3a4766" stroke-width="8" stroke-linecap="round"/>
+<path d="M500 200 C 590 200 590 80 680 80 H1120 C 1210 80 1210 200 1300 200" stroke="#5b8cff" stroke-width="8" fill="none"/>
+<circle cx="260" cy="200" r="16" fill="#c7d1e4" stroke="#0d1424" stroke-width="6"/><circle cx="500" cy="200" r="16" fill="#c7d1e4" stroke="#0d1424" stroke-width="6"/>
+<circle cx="800" cy="80" r="16" fill="#5b8cff" stroke="#0d1424" stroke-width="6"/><circle cx="1000" cy="80" r="16" fill="#5b8cff" stroke="#0d1424" stroke-width="6"/>
+<circle cx="1300" cy="200" r="20" fill="#0d1424" stroke="#ff6b4a" stroke-width="7"/><circle cx="1300" cy="200" r="7" fill="#ff6b4a"/>
+<text x="1660" y="170" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="26" font-weight="700" fill="#ffb199">git push</text>
+</svg>
+<p class="eb">MECHATRONICS · GIT & GITHUB · VERSION 2</p>
+<h1 class="h1" style="width:1664px">Git & GitHub Fundamentals</h1>
+<p class="lead" style="font-size:36px;width:1300px">From the terminal to your first commit, from branches to pull requests: the workflow professional developers use every day.</p>
+<p style="position:absolute;left:128px;bottom:64px;font-size:24px;color:#7686a6">Arif Solmaz · İSTÜN Mechatronics Engineering</p>
+<aside>This version is technical: terminal, commands, SSH, branches, pull requests, conflicts and undoing history. Version 1 (What's GitHub good for?) covered the benefits; this one shows how it is done.</aside></section>
+<section id="plan" class="s paper"><div class="hd"><p class="eb">TODAY</p><h2 class="h2">Git & GitHub in ten parts</h2></div><div class="bd"><div class="g2" style="column-gap:80px;row-gap:0"><div style="display:flex;gap:22px;align-items:baseline;padding:24px 0;border-top:1px solid #ddd6c8"><span style="font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:700;color:#b93c1d;width:56px">01</span><span style="font-size:36px;font-weight:600">Version control & key terms</span></div><div style="display:flex;gap:22px;align-items:baseline;padding:24px 0;border-top:1px solid #ddd6c8"><span style="font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:700;color:#b93c1d;width:56px">02</span><span style="font-size:36px;font-weight:600">Setup: Git & VS Code</span></div><div style="display:flex;gap:22px;align-items:baseline;padding:24px 0;border-top:1px solid #ddd6c8"><span style="font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:700;color:#b93c1d;width:56px">03</span><span style="font-size:36px;font-weight:600">Core cycle: clone, add, commit, push, pull</span></div><div style="display:flex;gap:22px;align-items:baseline;padding:24px 0;border-top:1px solid #ddd6c8"><span style="font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:700;color:#b93c1d;width:56px">04</span><span style="font-size:36px;font-weight:600">Authentication with SSH</span></div><div style="display:flex;gap:22px;align-items:baseline;padding:24px 0;border-top:1px solid #ddd6c8"><span style="font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:700;color:#b93c1d;width:56px">05</span><span style="font-size:36px;font-weight:600">git init & linking a remote</span></div><div style="display:flex;gap:22px;align-items:baseline;padding:24px 0;border-top:1px solid #ddd6c8"><span style="font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:700;color:#b93c1d;width:56px">06</span><span style="font-size:36px;font-weight:600">Branching & local merging</span></div><div style="display:flex;gap:22px;align-items:baseline;padding:24px 0;border-top:1px solid #ddd6c8"><span style="font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:700;color:#b93c1d;width:56px">07</span><span style="font-size:36px;font-weight:600">The pull request lifecycle</span></div><div style="display:flex;gap:22px;align-items:baseline;padding:24px 0;border-top:1px solid #ddd6c8"><span style="font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:700;color:#b93c1d;width:56px">08</span><span style="font-size:36px;font-weight:600">Resolving merge conflicts</span></div><div style="display:flex;gap:22px;align-items:baseline;padding:24px 0;border-top:1px solid #ddd6c8"><span style="font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:700;color:#b93c1d;width:56px">09</span><span style="font-size:36px;font-weight:600">Managing & undoing history</span></div><div style="display:flex;gap:22px;align-items:baseline;padding:24px 0;border-top:1px solid #ddd6c8"><span style="font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:700;color:#b93c1d;width:56px">10</span><span style="font-size:36px;font-weight:600">Forking & multi-branch strategy</span></div></div></div><aside>Ten parts. The first three are the essentials; 4–5 connect your computer to GitHub; 6–8 are teamwork; 9–10 are advanced.</aside></section>
+<section id="vc" class="s dark"><p class="sec">01 / 10</p><div class="hd"><p class="eb">1 · VERSION CONTROL</p><h2 class="h2">Git keeps your code's timeline</h2><p class="lead">Git is a free, open-source, distributed version control system. Instead of copies of files, it stores a snapshot of every change.</p></div><div class="bd"><svg width="1664" height="300" viewBox="0 0 1664 300" aria-label="Commit timeline"><path d="M120 110 H1600" stroke="#3a4766" stroke-width="8" stroke-linecap="round"/><circle cx="180" cy="110" r="20" fill="#ff6b4a" stroke="#0d1424" stroke-width="6"/><text x="180" y="180" text-anchor="middle" font-size="27" font-weight="600" fill="#eef2fa">First save</text><text x="180" y="216" text-anchor="middle" class="mono" font-size="21" fill="#7686a6">elif · 09:12</text><circle cx="520" cy="110" r="20" fill="#ff6b4a" stroke="#0d1424" stroke-width="6"/><text x="520" y="180" text-anchor="middle" font-size="27" font-weight="600" fill="#eef2fa">Add README</text><text x="520" y="216" text-anchor="middle" class="mono" font-size="21" fill="#7686a6">kaan · 11:40</text><circle cx="860" cy="110" r="20" fill="#ff6b4a" stroke="#0d1424" stroke-width="6"/><text x="860" y="180" text-anchor="middle" font-size="27" font-weight="600" fill="#eef2fa">Sensor code</text><text x="860" y="216" text-anchor="middle" class="mono" font-size="21" fill="#7686a6">deniz · 14:05</text><circle cx="1200" cy="110" r="24" fill="#ff8a80" stroke="#0d1424" stroke-width="6"/><text x="1200" y="180" text-anchor="middle" font-size="27" font-weight="600" fill="#eef2fa">Bug appears</text><text x="1200" y="216" text-anchor="middle" class="mono" font-size="21" fill="#7686a6">kaan · 16:30</text><circle cx="1540" cy="110" r="20" fill="#ff6b4a" stroke="#0d1424" stroke-width="6"/><text x="1540" y="180" text-anchor="middle" font-size="27" font-weight="600" fill="#eef2fa">Fix</text><text x="1540" y="216" text-anchor="middle" class="mono" font-size="21" fill="#7686a6">elif · 17:10</text><path d="M1200 60 C 1100 0, 960 0, 870 60" stroke="#7fdba6" stroke-width="4" fill="none" stroke-dasharray="10 9"/><path d="M884 46 L866 64 L892 70" stroke="#7fdba6" stroke-width="4" fill="none"/><text x="1035" y="22" text-anchor="middle" font-size="24" font-weight="600" fill="#7fdba6">go back</text></svg><div class="g3"><div class="card" style=""><div class="ic">?</div><h3>Inspect</h3><p>Which line changed, who changed it, and when?</p></div><div class="card" style=""><div class="ic">!</div><h3>Find the bug</h3><p>Find which change introduced the bug.</p></div><div class="card" style=""><div class="ic">↺</div><h3>Revert</h3><p>Return the project or a file to a working earlier state.</p></div></div></div><aside>The value of version control: tracking changes over time. Each commit is a snapshot, so you can inspect, find bugs and roll back.</aside></section>
+<section id="terms" class="s paper"><p class="sec">01 / 10</p><div class="hd"><p class="eb">1 · KEY TERMS</p><h2 class="h2">Start with five words</h2></div><div class="bd"><div class="g5"><div class="card" style="padding:28px 26px"><div class="ic" style="font-size:24px">📁</div><h3 style="font-size:32px">Directory</h3><p style="font-size:27px">A container for files and subfolders.</p></div><div class="card" style="padding:28px 26px"><div class="ic" style="font-size:24px">>_</div><h3 style="font-size:32px">Terminal (CLI)</h3><p style="font-size:27px">An app where you run text commands.</p></div><div class="card" style="padding:28px 26px"><div class="ic" style="font-size:24px">cd</div><h3 style="font-size:32px">cd</h3><p style="font-size:27px">Enter a folder: <code>cd path</code> · go up: <code>cd ..</code></p></div><div class="card" style="padding:28px 26px"><div class="ic" style="font-size:24px">{ }</div><h3 style="font-size:32px">Code editor</h3><p style="font-size:27px">An editor with highlighting and a terminal (VS Code).</p></div><div class="card" style="padding:28px 26px"><div class="ic" style="font-size:24px">.git</div><h3 style="font-size:32px">Repository</h3><p style="font-size:27px">A folder Git tracks: files + full history.</p></div></div><div class="term" style=""><div class="bar"><i></i><i></i><i></i><span>terminal · moving between folders</span></div><pre style="font-size:35px"><span class="tp">$</span> <span class="tg">cd</span> Desktop/robot-projem
+<span class="tp">$</span> <span class="tg">cd</span> ..
+<span class="tp">$</span> <span class="tg">ls</span></pre></div></div><aside>We can't talk about Git without these five. cd means change directory. A repository is a project folder Git tracks, with a hidden .git folder inside.</aside></section>
+<section id="cli" class="s paper"><p class="sec">01 / 10</p><div class="hd"><p class="eb">1 · CLI VS GUI</p><h2 class="h2">Why the terminal?</h2></div><div class="bd"><table class="tb"><tr><th>Command line (CLI)</th><th>Graphical interface (GUI)</th></tr><tr><td style="font-weight:600">You type the command; parameters and flags are visible.</td><td style="color:#4a5568">Menus and buttons hide the Git operations.</td></tr><tr><td style="font-weight:600">Available everywhere: laptop, server, cloud.</td><td style="color:#4a5568">Tied to the desktop; doesn't run on servers.</td></tr><tr><td style="font-weight:600">Works in scripts and CI pipelines.</td><td style="color:#4a5568">Not suited to automation.</td></tr><tr><td style="font-weight:600">Same commands on macOS, Linux, Windows (Git Bash).</td><td style="color:#4a5568">Buttons and terms differ between apps.</td></tr></table><div class="call" style=""><span class="t">Why it matters</span>Learning in the terminal builds a real mental model of commands and branches. Developers also use it daily to install packages, run scripts and work on servers.</div></div><aside>GUI apps exist, but we use the terminal: it is the same everywhere, scriptable, and it shows what actually happens.</aside></section>
+<section id="gitvsgithub" class="s dark"><p class="sec">01 / 10</p><div class="hd"><p class="eb">1 · NOT THE SAME THING</p><h2 class="h2">Git ≠ GitHub</h2></div><div class="bd"><div class="g2" style="flex:1"><div class="card" style="padding:44px"><p class="big" style="font-size:96px;color:#ff6b4a;line-height:1">Git</p><h3>A tool on your computer</h3><p>Tracks changes and keeps local history. No internet needed.</p><p class="k" style="margin-top:auto">git commit · git log</p></div><div class="card" style="padding:44px;background:#eef2fa;border-color:#eef2fa"><p class="big" style="font-size:96px;color:#141b2b;line-height:1">GitHub</p><h3 style="color:#141b2b">A platform on the web</h3><p style="color:#4a5568">Hosts Git repositories: teamwork, code review, backup and portfolio.</p><p class="k" style="margin-top:auto;color:#b93c1d">Pull request · Issues · Actions</p></div></div></div><aside>This is the most common confusion. Git is the local tool; GitHub is the service that hosts repositories online. GitLab and Bitbucket also use Git.</aside></section>
+<section id="install" class="s paper"><p class="sec">02 / 10</p><div class="hd"><p class="eb">2 · SETUP</p><h2 class="h2">First, check whether Git is there</h2></div><div class="bd"><div class="g3"><div class="card"><h3>macOS</h3><p>Often already installed. Otherwise use Homebrew.</p><div class="term" style=""><div class="bar"><i></i><i></i><i></i><span>terminal</span></div><pre style="font-size:28px"><span class="tp">$</span> <span class="tg">git</span> <span class="tf">--version</span>
+<span class="tp">$</span> <span class="tg">brew</span> install git</pre></div></div><div class="card"><h3>Windows</h3><p>Download <b>Git for Windows</b> from git-scm.com; choose <b>Git Bash</b> during setup.</p><div class="term" style=""><div class="bar"><i></i><i></i><i></i><span>terminal</span></div><pre style="font-size:28px"><span class="tp">$</span> <span class="tg">git</span> <span class="tf">--version</span></pre></div></div><div class="card"><h3>Linux</h3><p>Usually preinstalled. Otherwise use your package manager (e.g. <code>sudo apt install git</code>).</p><div class="term" style=""><div class="bar"><i></i><i></i><i></i><span>terminal</span></div><pre style="font-size:28px"><span class="tp">$</span> <span class="tg">git</span> <span class="tf">--version</span></pre></div></div></div><div class="term" style=""><div class="bar"><i></i><i></i><i></i><span>a working install looks like this</span></div><pre style="font-size:33px"><span class="tp">$</span> <span class="tg">git</span> <span class="tf">--version</span>
+<span class="to">git version 2.47.0</span></pre></div></div><aside>Everyone types git --version. If you see a version number, you are ready. On Windows, choosing Git Bash matters: commands work the same as on Mac/Linux. Your version number may differ.</aside></section>
+<section id="vscode" class="s dark"><p class="sec">02 / 10</p><div class="hd"><p class="eb">2 · VS CODE</p><h2 class="h2">Editor and terminal in one window</h2></div><div class="bd"><div class="row" style="align-items:center;gap:56px"><svg width="980" height="560" viewBox="0 0 980 560" aria-label="VS Code"><rect width="980" height="560" rx="18" fill="#1e1e1e"/><rect width="980" height="40" rx="18" fill="#2d2d2d"/><rect y="22" width="980" height="18" fill="#2d2d2d"/><circle cx="26" cy="20" r="7" fill="#ff5f57"/><circle cx="50" cy="20" r="7" fill="#febc2e"/><circle cx="74" cy="20" r="7" fill="#28c840"/><text x="490" y="27" text-anchor="middle" font-size="17" fill="#bbb">demo-repo — Visual Studio Code</text><rect y="40" width="60" height="520" fill="#333"/><rect x="0" y="52" width="4" height="44" fill="#ff6b4a"/><rect x="16" y="60" width="28" height="28" rx="4" fill="none" stroke="#ddd" stroke-width="3"/><rect x="60" y="40" width="250" height="520" fill="#252526"/><text x="80" y="74" font-size="16" font-weight="700" fill="#bbb" letter-spacing="1">EXPLORER</text><text x="92" y="112" class="mono" font-size="18" fill="#ddd">▾ demo-repo</text><text x="92" y="144" class="mono" font-size="18" fill="#ddd">   index.html</text><text x="92" y="176" class="mono" font-size="18" fill="#ddd">   README.md</text><text x="92" y="208" class="mono" font-size="18" fill="#ddd">   style.css</text><rect x="310" y="40" width="670" height="300" fill="#1e1e1e"/><text x="340" y="90" class="mono" font-size="18" fill="#569cd6"># Demo Repo</text><text x="340" y="120" class="mono" font-size="18" fill="#ddd"></text><text x="340" y="150" class="mono" font-size="18" fill="#ddd">This is a demo repository.</text><rect x="310" y="340" width="670" height="220" fill="#181818"/><rect x="310" y="340" width="670" height="2" fill="#ff6b4a"/><text x="330" y="372" font-size="15" font-weight="700" fill="#ddd" letter-spacing="1">TERMINAL</text><text x="330" y="410" class="mono" font-size="18" fill="#7fdba6">~/demo-repo $ <tspan fill="#eee">git status</tspan></text><text x="330" y="440" class="mono" font-size="18" fill="#bbb">On branch master</text><text x="330" y="470" class="mono" font-size="18" fill="#bbb">nothing to commit, working tree clean</text></svg><div class="col" style="flex:1;gap:30px"><div class="card" style=""><div class="ic">1</div><h3>Explorer (top icon)</h3><p>All files and subfolders of the open folder.</p></div><div class="card" style=""><div class="ic">2</div><h3>Integrated terminal</h3><p><b>View → Terminal</b>. Starts in the open folder; no switching windows.</p></div></div></div></div><aside>VS Code is free and runs on every OS. Open the project folder with File → Open Folder, then View → Terminal. The terminal opens in that folder.</aside></section>
+<section id="newrepo" class="s paper"><p class="sec">03 / 10</p><div class="hd"><p class="eb">3 · A REPOSITORY ON GITHUB</p><h2 class="h2">Start with a repository on GitHub</h2></div><div class="bd"><div class="row" style="gap:64px"><ol class="st" style="flex:1"><li>Top-right <b>+</b> → <b>New repository</b> (or the green <b>New</b> button)</li><li>Name it: <code>demo-repo</code></li><li>Keep the defaults → <b>Create repository</b></li><li>Create <code>README.md</code> in the web editor</li><li><b>Commit changes</b>: default message "Create README.md"</li></ol><div class="col" style="width:640px"><div class="term" style=""><div class="bar"><i></i><i></i><i></i><span>README.md</span></div><pre style="font-size:35px"><span class="tc"># Demo Repo</span>
+
+A repository for
+practicing Git.</pre></div><div class="call" style=""><span class="t">Markdown</span><code>#</code> is a heading, plain text is a paragraph. The README is the first thing anyone sees.</div></div></div></div><aside>Demo live: github.com → + → New repository → demo-repo → Create. Then Add a README → Commit changes. We will clone this repository next.</aside></section>
+<section id="zones" class="s paper"><p class="sec">03 / 10</p><div class="hd"><p class="eb">3 · FOUR ZONES</p><h2 class="h2">Code moves between four places</h2></div><div class="bd"><svg width="1664" height="560" viewBox="0 0 1664 560" aria-label="Four zones and five commands"><defs><marker id="ah" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M0 0 L12 6 L0 12 z" fill="#ff6b4a"/></marker><marker id="ag" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M0 0 L12 6 L0 12 z" fill="#2f7d58"/></marker></defs><rect x="0" y="40" width="1268" height="310" rx="28" fill="none" stroke="#c9c1b1" stroke-width="3" stroke-dasharray="12 10"/><text x="30" y="84" font-size="23" font-weight="700" letter-spacing="3" fill="#8a8578">YOUR COMPUTER</text><text x="1384" y="84" font-size="23" font-weight="700" letter-spacing="3" fill="#8a8578">THE CLOUD</text><rect x="30" y="120" width="300" height="190" rx="24" fill="#fbfaf6" stroke="#ddd6c8" stroke-width="3"/><text x="180.0" y="206" text-anchor="middle" font-size="34" font-weight="700" fill="#141b2b">Working dir</text><text x="180.0" y="252" text-anchor="middle" class="mono" font-size="24" fill="#4a5568">files you edit</text><rect x="484" y="120" width="300" height="190" rx="24" fill="#fbfaf6" stroke="#ddd6c8" stroke-width="3"/><text x="634.0" y="206" text-anchor="middle" font-size="34" font-weight="700" fill="#141b2b">Staging area</text><text x="634.0" y="252" text-anchor="middle" class="mono" font-size="24" fill="#4a5568">index</text><rect x="938" y="120" width="300" height="190" rx="24" fill="#fbfaf6" stroke="#ddd6c8" stroke-width="3"/><text x="1088.0" y="206" text-anchor="middle" font-size="34" font-weight="700" fill="#141b2b">Local repo</text><text x="1088.0" y="252" text-anchor="middle" class="mono" font-size="24" fill="#4a5568">.git/ · HEAD</text><rect x="1384" y="120" width="280" height="190" rx="24" fill="#141b2b" stroke="#141b2b" stroke-width="3"/><text x="1524.0" y="206" text-anchor="middle" font-size="34" font-weight="700" fill="#eef2fa">Remote repo</text><text x="1524.0" y="252" text-anchor="middle" class="mono" font-size="24" fill="#b3bfd6">GitHub · origin</text><path d="M340 215 H470" stroke="#ff6b4a" stroke-width="6" marker-end="url(#ah)"/><text x="399.0" y="193" text-anchor="middle" class="mono" font-size="28" font-weight="700" fill="#b93c1d">add</text><path d="M794 215 H924" stroke="#ff6b4a" stroke-width="6" marker-end="url(#ah)"/><text x="853.0" y="193" text-anchor="middle" class="mono" font-size="28" font-weight="700" fill="#b93c1d">commit</text><path d="M1248 215 H1370" stroke="#ff6b4a" stroke-width="6" marker-end="url(#ah)"/><text x="1303.0" y="193" text-anchor="middle" class="mono" font-size="28" font-weight="700" fill="#b93c1d">push</text><path d="M1524 310 V440 H180 V324" stroke="#2f7d58" stroke-width="6" fill="none" marker-end="url(#ag)"/><text x="852" y="426" text-anchor="middle" class="mono" font-size="28" font-weight="700" fill="#2f7d58">pull · clone</text><text x="852" y="496" text-anchor="middle" font-size="26" fill="#4a5568">remote changes come down to your computer</text></svg><p class="lead" style="font-size:28px"><b>add</b> prepares, <b>commit</b> saves, <b>push</b> uploads, <b>pull</b> brings changes down. <b>clone</b> downloads a remote repository for the first time.</p></div><aside>The most important picture of the lecture. Working directory: where you edit. Staging area: changes chosen for the next commit. Local repository: the permanent history in .git. Remote: GitHub.</aside></section>
+<section id="commands" class="s paper"><p class="sec">03 / 10</p><div class="hd"><p class="eb">3 · FIVE COMMANDS</p><h2 class="h2">The whole daily cycle</h2></div><div class="bd"><table class="tb tight"><tr><th>Command</th><th>What it does</th><th>Direction</th></tr><tr><td class="m">git clone</td><td>Downloads a remote repository and creates the .git folder.</td><td class="muted" style="white-space:nowrap">remote → working dir</td></tr><tr><td class="m">git add</td><td>Stages changed files for the next commit.</td><td class="muted" style="white-space:nowrap">working dir → staging</td></tr><tr><td class="m">git commit</td><td>Writes staged changes into history with a message.</td><td class="muted" style="white-space:nowrap">staging → local repo</td></tr><tr><td class="m">git push</td><td>Uploads local commits to GitHub.</td><td class="muted" style="white-space:nowrap">local repo → remote</td></tr><tr><td class="m">git pull</td><td>Fetches remote changes and merges them in.</td><td class="muted" style="white-space:nowrap">remote → working dir</td></tr></table><div class="term" style=""><div class="bar"><i></i><i></i><i></i><span>one full round</span></div><pre style="font-size:24px"><span class="tp">$</span> <span class="tg">git</span> clone git@github.com:username/demo-repo.git
+<span class="tp">$</span> <span class="tg">cd</span> demo-repo
+<span class="tp">$</span> <span class="tg">git</span> add README.md
+<span class="tp">$</span> <span class="tg">git</span> commit <span class="tf">-m</span> <span class="ts">"Add setup steps"</span>
+<span class="tp">$</span> <span class="tg">git</span> push</pre></div></div><aside>Match the table with the previous picture: each command is one arrow. Type the round live, running git status after each step.</aside></section>
+<section id="dotgit" class="s dark"><p class="sec">03 / 10</p><div class="hd"><p class="eb">3 · THE .GIT FOLDER</p><h2 class="h2">History lives in a hidden folder</h2></div><div class="bd"><div class="row" style="gap:56px"><div class="term" style="width:860px;"><div class="bar"><i></i><i></i><i></i><span>demo-repo</span></div><pre><span class="tp">$</span> <span class="tg">ls</span> <span class="tf">-la</span>
+<span class="to">drwxr-xr-x   .</span>
+<span class="to">drwxr-xr-x   ..</span>
+<span class="to">drwxr-xr-x   .git</span>
+<span class="to">-rw-r--r--   README.md</span>
+<span class="to">-rw-r--r--   index.html</span></pre></div><div class="col" style="flex:1"><div class="card" style=""><div class="ic">-l</div><h3>-l</h3><p>Long format: permissions, size, date.</p></div><div class="card" style=""><div class="ic">-a</div><h3>-a</h3><p>All entries, including hidden ones (names starting with a dot).</p></div><div class="call" style=""><span class="t">Hands off</span><code>.git</code> is Git's database: commits, branches, settings. Don't edit it by hand; delete it and the history is gone.</div></div></div></div><aside>After clone or init, .git exists. ls -la shows it. Some shells have an la alias for the same thing. In Windows Explorer, turn on hidden items.</aside></section>
+<section id="ssh" class="s dark"><p class="sec">04 / 10</p><div class="hd"><p class="eb">4 · SSH</p><h2 class="h2">Secure without passwords: a key pair</h2></div><div class="bd"><svg width="1664" height="460" viewBox="0 0 1664 460" aria-label="SSH key pair"><defs><marker id="sa" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M0 0 L12 6 L0 12 z" fill="#ff6b4a"/></marker></defs><rect x="40" y="70" width="460" height="290" rx="22" fill="#131d33" stroke="#26365a" stroke-width="3"/><text x="70" y="120" font-size="22" font-weight="700" letter-spacing="3" fill="#7686a6">YOUR COMPUTER</text><rect x="70" y="150" width="400" height="90" rx="14" fill="#2a1a17" stroke="#ff6b4a" stroke-width="3"/><circle cx="118" cy="195" r="18" fill="none" stroke="#ff6b4a" stroke-width="5"/><path d="M136 195 H182 M168 195 V212 M180 195 V208" stroke="#ff6b4a" stroke-width="5"/><text x="206" y="188" class="mono" font-size="25" font-weight="700" fill="#ffb199">~/.ssh/id_rsa</text><text x="206" y="220" font-size="21" fill="#ffb199">private key · secret</text><text x="70" y="300" font-size="24" fill="#b3bfd6">This key signs.</text><text x="70" y="334" font-size="24" fill="#b3bfd6">It never leaves the computer.</text><rect x="1164" y="70" width="460" height="290" rx="22" fill="#eef2fa"/><text x="1194" y="120" font-size="22" font-weight="700" letter-spacing="3" fill="#56627a">GITHUB · SETTINGS</text><rect x="1194" y="150" width="400" height="90" rx="14" fill="#fff" stroke="#9fb0cf" stroke-width="3"/><rect x="1222" y="190" width="40" height="32" rx="6" fill="#56627a"/><path d="M1230 190 V178 a12 12 0 0 1 24 0 V190" stroke="#56627a" stroke-width="5" fill="none"/><text x="1284" y="188" class="mono" font-size="25" font-weight="700" fill="#141b2b">id_rsa.pub</text><text x="1284" y="220" font-size="21" fill="#4a5568">public key · shareable</text><text x="1194" y="300" font-size="24" fill="#4a5568">Verifies the signature with it.</text><text x="1194" y="334" font-size="24" fill="#4a5568">Contains nothing secret.</text><path d="M520 200 H1140" stroke="#ff6b4a" stroke-width="5" marker-end="url(#sa)"/><rect x="700" y="160" width="264" height="80" rx="40" fill="#0d1424" stroke="#ff6b4a" stroke-width="3"/><text x="832" y="210" text-anchor="middle" class="mono" font-size="25" font-weight="700" fill="#ffb199">git push + signature</text><text x="832" y="300" text-anchor="middle" font-size="26" font-weight="600" fill="#7fdba6">✓ it is your account, no password needed</text></svg><div class="call" style=""><span class="t">How it works</span>During a push, Git creates a signature with the private key; GitHub verifies it with the public key. No secret ever travels over the network.</div></div><aside>Asymmetric cryptography: one key signs, the other verifies. The public key can go anywhere; the private key is never shared, never sent, never uploaded.</aside></section>
+<section id="keygen" class="s paper"><p class="sec">04 / 10</p><div class="hd"><p class="eb">4 · CREATE A KEY</p><h2 class="h2">Generate the key, add it to GitHub</h2></div><div class="bd"><div class="row" style="gap:56px"><div class="col" style="width:930px"><div class="term" style=""><div class="bar"><i></i><i></i><i></i><span>terminal</span></div><pre style="font-size:27px"><span class="tp">$</span> <span class="tg">ssh-keygen</span> <span class="tf">-t</span> rsa <span class="tf">-b</span> 4096 <span class="tf">-C</span> <span class="ts">"you@example.com"</span>
+<span class="to">Enter file in which to save the key (~/.ssh/id_rsa):</span>
+<span class="to">Enter passphrase (empty for no passphrase):</span>
+
+<span class="tc"># macOS: copy the public key to the clipboard</span>
+<span class="tp">$</span> <span class="tg">pbcopy</span> &lt; ~/.ssh/id_rsa.pub</pre></div><div class="call" style=""><span class="t">Current recommendation</span>GitHub now recommends <code>ssh-keygen -t ed25519 -C "email"</code>; the file is then <code>id_ed25519</code>.</div></div><ol class="st" style="flex:1;font-size:30px"><li>Press <b>Enter</b> for the path: <code>~/.ssh/id_rsa</code></li><li>Passphrase is optional; <b>Enter</b> twice for none</li><li>Copy the <code>.pub</code> file</li><li>GitHub: <b>Settings → SSH and GPG keys → New SSH key</b> → paste → <b>Add SSH key</b></li></ol></div></div><aside>The lecture notes use RSA 4096. GitHub docs now recommend ed25519; both work. On Windows use: clip &lt; ~/.ssh/id_rsa.pub (Git Bash). On Linux, cat the file and copy it.</aside></section>
+<section id="agent" class="s dark"><p class="sec">04 / 10</p><div class="hd"><p class="eb">4 · SSH AGENT</p><h2 class="h2">Keep the key loaded in every session</h2></div><div class="bd"><div class="g3" style="align-items:start"><div class="col"><p class="eb" style="font-size:22px">1 · Start the agent</p><div class="term" style=""><div class="bar"><i></i><i></i><i></i><span>terminal</span></div><pre style="font-size:28px"><span class="tp">$</span> <span class="tg">eval</span> <span class="ts">"$(ssh-agent <span class="tf">-s</span>)"</span>
+<span class="to">Agent pid 4821</span></pre></div></div><div class="col"><p class="eb" style="font-size:22px" lang="en">2 · ~/.ssh/config (macOS)</p><div class="term" style=""><div class="bar"><i></i><i></i><i></i><span>~/.ssh/config</span></div><pre style="font-size:28px">Host github.com
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_rsa</pre></div></div><div class="col"><p class="eb" style="font-size:22px">3 · Add the key</p><div class="term" style=""><div class="bar"><i></i><i></i><i></i><span>terminal</span></div><pre style="font-size:28px"><span class="tp">$</span> <span class="tg">ssh-add</span> ~/.ssh/id_rsa
+<span class="to">Identity added</span></pre></div></div></div><div class="term" style=""><div class="bar"><i></i><i></i><i></i><span>test: does it work?</span></div><pre style="font-size:31px"><span class="tp">$</span> <span class="tg">ssh</span> <span class="tf">-T</span> git@github.com
+<span class="to">Hi username! You've successfully authenticated...</span></pre></div></div><aside>On macOS 10.12.2+, the config file lets the Keychain remember the key. The ssh -T test isn't in the notes, but it is the fastest way to prove the setup works.</aside></section>
+<section id="init" class="s paper"><p class="sec">05 / 10</p><div class="hd"><p class="eb">5 · GIT INIT</p><h2 class="h2">Turn a folder into a repository and link it</h2></div><div class="bd"><div class="col" style="gap:28px"><div class="term" style=""><div class="bar"><i></i><i></i><i></i><span>before a remote exists</span></div><pre style="font-size:25px"><span class="tp">$</span> <span class="tg">cd</span> path/to/demo-repo-2
+<span class="tp">$</span> <span class="tg">echo</span> <span class="ts">"# Demo Repo 2"</span> &gt; README.md
+<span class="tp">$</span> <span class="tg">git</span> init
+<span class="tp">$</span> <span class="tg">git</span> add README.md
+<span class="tp">$</span> <span class="tg">git</span> commit <span class="tf">-m</span> <span class="ts">"First commit"</span>
+
+<span class="tp">$</span> <span class="tg">git</span> push origin master
+<span class="te">fatal: 'origin' does not appear to be a git repository</span></pre></div><div class="row" style="gap:32px;align-items:stretch"><div class="call warn" style="width:520px;flex:none"><span class="t">Why the error?</span>The local repository has no address called <code>origin</code>.</div><div class="term" style=""><div class="bar"><i></i><i></i><i></i><span>the fix</span></div><pre style="font-size:24px"><span class="tc"># create an empty repo on GitHub, copy its SSH URL</span>
+<span class="tp">$</span> <span class="tg">git</span> remote add origin git@github.com:username/demo-repo-2.git
+<span class="tp">$</span> <span class="tg">git</span> remote <span class="tf">-v</span></pre></div></div></div></div><aside>git init creates the hidden .git folder, so status, add and commit work. But it doesn't know GitHub. Show the error on purpose, then fix it with remote add. remote -v lists the address twice (fetch and push).</aside></section>
+<section id="upstream" class="s dark"><p class="sec">05 / 10</p><div class="hd"><p class="eb">5 · UPSTREAM</p><h2 class="h2">Use -u on the first push</h2></div><div class="bd"><div class="term" style=""><div class="bar"><i></i><i></i><i></i><span>terminal</span></div><pre style="font-size:35px"><span class="tp">$</span> <span class="tg">git</span> push <span class="tf">-u</span> origin master
+<span class="to">Branch 'master' set up to track 'origin/master'.</span>
+
+<span class="tc"># from now on the short form is enough</span>
+<span class="tp">$</span> <span class="tg">git</span> push
+<span class="tp">$</span> <span class="tg">git</span> pull</pre></div><div class="g2"><div class="call" style=""><span class="t">Instructor note</span><code>-u</code> links local <code>master</code> to <code>origin/master</code> and saves it in <code>.git/config</code>. After that, no target needed.</div><div class="call warn" style=""><span class="t">Common pitfall</span>A bare <code>git push</code> on a fresh repository fails. Always set the upstream on the first push.</div></div></div><aside>Note: new GitHub repositories default to main. git init on your computer may create master or main; check with git branch and use that name in the command.</aside></section>
+<section id="branch" class="s dark"><p class="sec">06 / 10</p><div class="hd"><p class="eb">6 · BRANCHING</p><h2 class="h2">Experiment without breaking the main code</h2></div><div class="bd"><svg width="1664" height="330" viewBox="0 0 1664 330" aria-label="Branching and merging"><path d="M60 230 H1600" stroke="#56627a" stroke-width="10" stroke-linecap="round"/><path d="M420 230 C 520 230 520 90 620 90 H1040 C 1140 90 1140 230 1240 230" stroke="#5b8cff" stroke-width="10" fill="none"/><circle cx="160" cy="230" r="20" fill="#c7d1e4" stroke="#0d1424" stroke-width="6"/><circle cx="420" cy="230" r="20" fill="#c7d1e4" stroke="#0d1424" stroke-width="6"/><circle cx="900" cy="230" r="20" fill="#c7d1e4" stroke="#0d1424" stroke-width="6"/><circle cx="1240" cy="230" r="26" fill="#0d1424" stroke="#c7d1e4" stroke-width="8"/><circle cx="1460" cy="230" r="20" fill="#c7d1e4" stroke="#0d1424" stroke-width="6"/><circle cx="720" cy="90" r="20" fill="#5b8cff" stroke="#0d1424" stroke-width="6"/><circle cx="880" cy="90" r="20" fill="#5b8cff" stroke="#0d1424" stroke-width="6"/><text x="60" y="296" class="mono" font-size="26" font-weight="700" fill="#c7d1e4">master</text><text x="620" y="46" class="mono" font-size="26" font-weight="700" fill="#8fb0ff">feature-readme-instructions</text><text x="1240" y="296" text-anchor="middle" class="mono" font-size="24" font-weight="700" fill="#ffb199">git merge</text><text x="420" y="296" text-anchor="middle" class="mono" font-size="24" font-weight="700" fill="#ffb199">git checkout -b</text><text x="900" y="296" text-anchor="middle" font-size="22" fill="#7686a6">master is untouched</text></svg><div class="g2"><div class="card" style=""><h3>Long-lived · never deleted</h3><p><code>master</code> · <code>staging</code> · <code>dev</code></p></div><div class="card" style=""><h3>Short-lived · deleted after merge</h3><p><code>feature/user-auth</code> · <code>issue-11</code> · <code>hotfix-header-formatting</code></p></div></div></div><aside>When you branch, Git copies the current state of the branch you are on. Work on the branch stays isolated: switch back to master and it disappears. When done, merge and delete the short-lived branch.</aside></section>
+<section id="branchcmd" class="s paper"><p class="sec">06 / 10</p><div class="hd"><p class="eb">6 · BRANCH COMMANDS</p><h2 class="h2">List, create, switch</h2></div><div class="bd"><div class="row" style="gap:48px"><div class="term" style="width:1000px;"><div class="bar"><i></i><i></i><i></i><span>terminal</span></div><pre style="font-size:28px"><span class="tp">$</span> <span class="tg">git</span> branch
+<span class="to">* master</span>
+
+<span class="tc"># create and switch right away (-b)</span>
+<span class="tp">$</span> <span class="tg">git</span> checkout <span class="tf">-b</span> feature-readme-instructions
+<span class="to">Switched to a new branch 'feature-readme-instructions'</span>
+
+<span class="tp">$</span> <span class="tg">git</span> checkout master</pre></div><div class="col" style="flex:1"><div class="call" style=""><span class="t">Tab completion</span>Type <code>git checkout instr</code> and press <b>Tab</b>: if no other branch matches, the full name appears.</div><div class="call" style=""><span class="t">Newer syntax</span>Newer commands do the same: <code>git switch -c name</code> and <code>git switch master</code>.</div></div></div></div><aside>The asterisk marks the active branch. Avoid spaces and accented letters in branch names; keep them short and descriptive. Tab completion depends on your shell; it works in Git Bash and the macOS terminal.</aside></section>
+<section id="merge" class="s dark"><p class="sec">06 / 10</p><div class="hd"><p class="eb">6 · LOCAL MERGE</p><h2 class="h2">Look first, then merge, then clean up</h2></div><div class="bd"><div class="term" style=""><div class="bar"><i></i><i></i><i></i><span>terminal</span></div><pre style="font-size:32px"><span class="tc"># 1. switch to the target branch</span>
+<span class="tp">$</span> <span class="tg">git</span> checkout master
+<span class="tc"># 2. inspect the differences</span>
+<span class="tp">$</span> <span class="tg">git</span> diff feature-readme-instructions
+<span class="to">- Setup</span>
+<span class="to">+ Setup: open index.html in your browser</span>
+<span class="tc"># 3. merge</span>
+<span class="tp">$</span> <span class="tg">git</span> merge feature-readme-instructions
+<span class="tc"># 4. delete the short-lived branch</span>
+<span class="tp">$</span> <span class="tg">git</span> branch <span class="tf">-d</span> feature-readme-instructions</pre></div></div><aside>Working alone, a local merge is fine. In a team, merging happens on GitHub through a pull request: the next part. -d is safe: it refuses to delete an unmerged branch.</aside></section>
+<section id="pr" class="s paper"><p class="sec">07 / 10</p><div class="hd"><p class="eb">7 · PULL REQUEST</p><h2 class="h2">"Shall we merge this branch?"</h2></div><div class="bd"><div class="row" style="gap:48px"><div class="term" style="width:1000px;"><div class="bar"><i></i><i></i><i></i><span>a good PR title and description</span></div><pre style="font-size:27px"><span class="tc">### Add Local Development Setup Instructions to README</span>
+
+<span class="tc">### Description</span>
+- Added local development setup section to README.md.
+- Documented index.html browser preview steps.
+- Fixed header syntax formatting.</pre></div><div class="col" style="flex:1"><ul class="bl" style="font-size:31px"><li>Source branch → target branch (e.g. <code>feature-…</code> → <code>master</code>)</li><li>The hub for code review, discussion and automated tests</li><li>A clear title + a bulleted Markdown description</li></ul></div></div></div><aside>A PR turns a merge into a conversation. The description explains what changed and why. Ask students to write their PRs in this format.</aside></section>
+<section id="review" class="s dark"><p class="sec">07 / 10</p><div class="hd"><p class="eb">7 · REVIEW & SYNC</p><h2 class="h2">Review, fix, merge, update</h2></div><div class="bd"><div class="row" style="gap:48px"><div class="term" style="width:900px"><div class="bar"><i></i><i></i><i></i><span>Files changed · README.md</span></div><pre style="font-size:28px;padding:0"><span style="display:block;padding:6px 26px;background:rgba(229,72,77,.18);color:#ffb3b5">- ## Setup</span><span style="display:block;padding:6px 26px;background:rgba(47,125,88,.30);color:#a8f0c6">+ ## Local development setup</span><span style="display:block;padding:6px 26px;background:rgba(47,125,88,.30);color:#a8f0c6">+ Open index.html in your browser.</span></pre><div style="margin:14px 26px 22px;display:flex;gap:16px;align-items:flex-start"><span style="width:36px;height:36px;border-radius:8px;background:#2f6fd6;color:#fff;display:grid;place-items:center;font-weight:800;font-size:26px;flex:none">+</span><div style="background:#131d33;border:1px solid #26365a;border-radius:12px;padding:12px 18px;font-size:23px;color:#eef2fa;font-size:26px">Which browser did you test with?</div></div></div><div class="col" style="flex:1"><ol class="st" style="font-size:29px"><li><span style="color:#7fdba6">+</span> added, <span style="color:#ff8a80">−</span> removed line</li><li>Comment on a line with the blue <b>+</b></li><li>The author pushes to the same branch; the PR updates itself</li><li>After approval: <b>Merge pull request</b></li></ol><div class="term" style=""><div class="bar"><i></i><i></i><i></i><span>after the merge</span></div><pre style="font-size:26px"><span class="tp">$</span> <span class="tg">git</span> checkout master
+<span class="tp">$</span> <span class="tg">git</span> pull
+<span class="tp">$</span> <span class="tg">git</span> branch <span class="tf">-d</span> feature-readme-instructions</pre></div></div></div></div><aside>After merging on GitHub, the master on your computer is out of date. Switch to master, pull, then delete the old branch.</aside></section>
+<section id="conflict" class="s dark"><p class="sec">08 / 10</p><div class="hd"><p class="eb">8 · MERGE CONFLICT</p><h2 class="h2">Two different edits to the same line</h2></div><div class="bd"><div class="row" style="gap:56px;align-items:center"><svg width="760" height="480" viewBox="0 0 760 480" aria-label="Two edits to the same line"><path d="M40 380 H720" stroke="#56627a" stroke-width="10" stroke-linecap="round"/><path d="M150 380 C 230 380 230 170 310 170 H600" stroke="#5b8cff" stroke-width="10" fill="none"/><circle cx="150" cy="380" r="18" fill="#c7d1e4" stroke="#0d1424" stroke-width="6"/><circle cx="450" cy="170" r="18" fill="#5b8cff" stroke="#0d1424" stroke-width="6"/><circle cx="450" cy="380" r="18" fill="#c7d1e4" stroke="#0d1424" stroke-width="6"/><rect x="330" y="60" width="240" height="64" rx="12" fill="#131d33" stroke="#5b8cff" stroke-width="2"/><text x="450" y="102" text-anchor="middle" class="mono" font-size="25" fill="#cfe0ff">&lt;p&gt;world&lt;/p&gt;</text><rect x="330" y="410" width="240" height="64" rx="12" fill="#131d33" stroke="#c7d1e4" stroke-width="2"/><text x="450" y="452" text-anchor="middle" class="mono" font-size="25" fill="#eef2fa">&lt;p&gt;there&lt;/p&gt;</text><text x="40" y="350" class="mono" font-size="24" font-weight="700" fill="#c7d1e4">master</text><text x="320" y="150" class="mono" font-size="24" font-weight="700" fill="#8fb0ff" dy="-40" dx="290">quick-test</text><circle cx="660" cy="275" r="46" fill="#e5484d"/><text x="660" y="292" text-anchor="middle" font-size="48" font-weight="800" fill="#fff">!</text><path d="M600 170 C 640 170 650 210 655 228" stroke="#e5484d" stroke-width="5" fill="none" stroke-dasharray="8 7"/><path d="M480 380 C 600 380 650 340 655 322" stroke="#e5484d" stroke-width="5" fill="none" stroke-dasharray="8 7"/><text x="40" y="40" font-size="24" fill="#7686a6">index.html · line 2</text></svg><div class="col" style="flex:1"><div class="term" style=""><div class="bar"><i></i><i></i><i></i><span>quick-test</span></div><pre style="font-size:26px"><span class="tp">$</span> <span class="tg">git</span> merge master
+<span class="to">Auto-merging index.html</span>
+<span class="te">CONFLICT (content): Merge conflict in index.html</span>
+<span class="te">Automatic merge failed; fix conflicts and then commit.</span></pre></div><div class="call" style=""><span class="t">Why does it stop?</span>Git can't decide which line is right, so it asks you. It also happens when a file is changed on one branch and deleted on the other.</div></div></div></div><aside>Scenario: on quick-test you changed line 2 to world; meanwhile on master the same line became there. Merging master into quick-test conflicts. A conflict is not an error, it is a question.</aside></section>
+<section id="resolve" class="s paper"><p class="sec">08 / 10</p><div class="hd"><p class="eb">8 · RESOLVING</p><h2 class="h2">Read the markers, choose, clean up</h2></div><div class="bd"><div class="row" style="gap:52px"><div class="col" style="width:820px"><div class="term" style="width:820px"><div class="bar"><i></i><i></i><i></i><span>index.html</span></div><pre style="font-size:28px;padding:0"><span style="display:block;padding:8px 28px;background:rgba(255,212,121,.16);color:#ffd479">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span><span style="display:block;padding:8px 28px;background:rgba(91,140,255,.16);color:#cfe0ff">&lt;p&gt;world&lt;/p&gt;</span><span style="display:block;padding:8px 28px;color:#7686a6">=======</span><span style="display:block;padding:8px 28px;background:rgba(127,219,166,.14);color:#a8f0c6">&lt;p&gt;there&lt;/p&gt;</span><span style="display:block;padding:8px 28px;background:rgba(255,212,121,.16);color:#ffd479">&gt;&gt;&gt;&gt;&gt;&gt;&gt; master</span></pre></div><ul class="bl" style="font-size:24px;gap:12px"><li><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code> your branch</li><li><code>=======</code> separator</li><li><code>&gt;&gt;&gt;&gt;&gt;&gt;&gt; master</code> incoming branch</li></ul></div><div class="col" style="flex:1"><ol class="st" style="font-size:26px;gap:16px"><li>Open the file in VS Code</li><li>Keep what you want, delete the marker lines</li><li>Save: <code>git add index.html</code></li><li>Finish with a commit</li></ol><div class="term" style=""><div class="bar"><i></i><i></i><i></i><span>terminal</span></div><pre style="font-size:26px"><span class="tp">$</span> <span class="tg">git</span> commit <span class="tf">-am</span> <span class="ts">"Resolve merge conflict"</span></pre></div><div class="call" style="font-size:23px;padding:16px 24px"><span class="t">-am</span><code>-a</code> only stages files Git already tracks. Add new files with <code>git add</code> first.</div></div></div></div><aside>VS Code highlights conflicts and offers Accept Current / Accept Incoming / Accept Both. Keeping both lines is also a valid resolution.</aside></section>
+<section id="undo" class="s dark"><p class="sec">09 / 10</p><div class="hd"><p class="eb">9 · UNDOING</p><h2 class="h2">Undo staging or the last commit</h2></div><div class="bd"><div class="g3" style="align-items:start"><div class="col"><p class="eb" style="font-size:22px">Staged by mistake</p><div class="term" style=""><div class="bar"><i></i><i></i><i></i><span>terminal</span></div><pre style="font-size:31px"><span class="tp">$</span> <span class="tg">git</span> add README.md
+<span class="tp">$</span> <span class="tg">git</span> reset
+<span class="tp">$</span> <span class="tg">git</span> status
+<span class="to">modified: README.md</span></pre></div><p style="font-size:28px;line-height:1.4;color:#b3bfd6">Your edits stay; the file just leaves staging.</p></div><div class="col"><p class="eb" style="font-size:22px">Undo the last commit</p><div class="term" style=""><div class="bar"><i></i><i></i><i></i><span>terminal</span></div><pre style="font-size:31px"><span class="tp">$</span> <span class="tg">git</span> reset HEAD~1</pre></div><p style="font-size:28px;line-height:1.4;color:#b3bfd6"><b>HEAD</b> is the current commit of the active branch. <code>HEAD~1</code> moves back one; your code stays on disk (--mixed).</p></div><div class="col"><p class="eb" style="font-size:22px">Look at history</p><div class="term" style=""><div class="bar"><i></i><i></i><i></i><span>terminal</span></div><pre style="font-size:31px"><span class="tp">$</span> <span class="tg">git</span> log
+<span class="to">commit a1b2c3d4…</span>
+<span class="to">Author: elif</span>
+<span class="to">    Add README</span></pre></div><p style="font-size:28px;line-height:1.4;color:#b3bfd6">Newest first. <b>Space</b> to scroll, <b>q</b> to quit.</p></div></div></div><aside>Each commit has a unique SHA-1 hash; git log shows them. For a short list, git log --oneline is handy.</aside></section>
+<section id="hard" class="s paper"><p class="sec">09 / 10</p><div class="hd"><p class="eb">9 · MIXED VS HARD</p><h2 class="h2">One is safe, one is destructive</h2></div><div class="bd"><table class="tb"><tr><th></th><th><code>git reset HEAD~1</code></th><th><code>git reset --hard &lt;hash&gt;</code></th></tr><tr><td style="font-weight:600">Staging area</td><td style="color:#2f7d58;font-weight:600">Unstages changes</td><td style="color:#c0262d;font-weight:600">Clears it completely</td></tr><tr><td style="font-weight:600">Your code on disk</td><td style="color:#2f7d58;font-weight:600">Kept</td><td style="color:#c0262d;font-weight:600">Erased</td></tr><tr><td style="font-weight:600">Risk of losing work</td><td style="color:#2f7d58;font-weight:600">Low</td><td style="color:#c0262d;font-weight:600">Extreme: cannot be undone</td></tr></table><div class="call warn" style=""><span class="t">Warning: destructive command</span><code>git reset --hard a1b2c3d4</code> wipes all uncommitted changes and rewrites your files to match that commit. It cannot be undone. Don't run it unless you are sure nothing will be lost.</div></div><aside>Rule: run git status first. If there is uncommitted work, commit it or use git stash before a hard reset.</aside></section>
+<section id="forkbranch" class="s dark"><p class="sec">10 / 10</p><div class="hd"><p class="eb">10 · FORKS & BRANCH ARCHITECTURE</p><h2 class="h2">Whose repository? Which branch?</h2></div><div class="bd"><div class="row" style="gap:56px;align-items:center"><div class="col" style="width:600px"><div class="card" style=""><div class="ic">→</div><h3>Direct clone</h3><p>Team or organization projects where you can push.</p></div><div class="card" style=""><div class="ic">⑂</div><h3>Fork</h3><p>Open-source projects you can't push to (e.g. Vue.js): copy it to your account first.</p></div></div><svg width="1000" height="470" viewBox="0 0 1000 470" aria-label="Long-lived and short-lived branches"><path d="M170 70 H980" stroke="#c7d1e4" stroke-width="9" stroke-linecap="round"/><text x="0" y="79" class="mono" font-size="27" font-weight="700" fill="#c7d1e4">master</text><text x="980" y="48" text-anchor="end" font-size="21" fill="#7686a6">production</text><path d="M170 190 H980" stroke="#f0a93b" stroke-width="9" stroke-linecap="round"/><text x="0" y="199" class="mono" font-size="27" font-weight="700" fill="#f0a93b">staging</text><text x="980" y="168" text-anchor="end" font-size="21" fill="#7686a6">pre-release test</text><path d="M170 310 H980" stroke="#7fdba6" stroke-width="9" stroke-linecap="round"/><text x="0" y="319" class="mono" font-size="27" font-weight="700" fill="#7fdba6">dev</text><text x="980" y="288" text-anchor="end" font-size="21" fill="#7686a6">daily integration</text><path d="M380 310 C 430 310 430 420 480 420 H640 C 690 420 690 310 740 310" stroke="#5b8cff" stroke-width="7" fill="none" stroke-dasharray="2 0"/><text x="560" y="458" text-anchor="middle" class="mono" font-size="23" fill="#8fb0ff">feature-login-page</text><path d="M820 310 C 850 310 850 190 880 190" stroke="#7fdba6" stroke-width="5" fill="none" stroke-dasharray="9 8"/><path d="M900 190 C 925 190 925 70 950 70" stroke="#f0a93b" stroke-width="5" fill="none" stroke-dasharray="9 8"/><circle cx="380" cy="310" r="14" fill="#0d1424" stroke="#eef2fa" stroke-width="5"/><circle cx="740" cy="310" r="14" fill="#0d1424" stroke="#eef2fa" stroke-width="5"/><circle cx="880" cy="190" r="14" fill="#0d1424" stroke="#eef2fa" stroke-width="5"/><circle cx="950" cy="70" r="14" fill="#0d1424" stroke="#eef2fa" stroke-width="5"/><circle cx="560" cy="420" r="14" fill="#0d1424" stroke="#eef2fa" stroke-width="5"/></svg></div></div><aside>Enterprise projects often keep three long-lived branches: master (production), staging (pre-release test), dev (integration). Feature branches start from dev, merge into dev, then get deleted.</aside></section>
+<section id="forkflow" class="s paper"><p class="sec">10 / 10</p><div class="hd"><p class="eb">10 · CONTRIBUTING TO OPEN SOURCE</p><h2 class="h2">A pull request to someone else's project in five steps</h2></div><div class="bd"><svg width="1664" height="580" viewBox="0 0 1664 580" aria-label="Fork contribution flow"><defs><marker id="fa" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M0 0 L12 6 L0 12 z" fill="#ff6b4a"/></marker></defs><rect x="40" y="40" width="520" height="130" rx="22" fill="#141b2b" stroke="#141b2b" stroke-width="3"/><text x="300.0" y="98" text-anchor="middle" font-size="30" font-weight="700" fill="#eef2fa">Original project (upstream)</text><text x="300.0" y="138" text-anchor="middle" class="mono" font-size="22" fill="#b3bfd6">vuejs/core · dev</text><rect x="1104" y="40" width="520" height="130" rx="22" fill="#fbfaf6" stroke="#ddd6c8" stroke-width="3"/><text x="1364.0" y="98" text-anchor="middle" font-size="30" font-weight="700" fill="#141b2b">Your fork</text><text x="1364.0" y="138" text-anchor="middle" class="mono" font-size="22" fill="#4a5568">your-username/core</text><rect x="572" y="390" width="520" height="130" rx="22" fill="#fbfaf6" stroke="#ddd6c8" stroke-width="3"/><text x="832.0" y="448" text-anchor="middle" font-size="30" font-weight="700" fill="#141b2b">Your computer</text><text x="832.0" y="488" text-anchor="middle" class="mono" font-size="22" fill="#4a5568">feature-fix</text><path d="M570 90 H1092" stroke="#ff6b4a" stroke-width="5" marker-end="url(#fa)"/><circle cx="831" cy="90" r="24" fill="#ff6b4a"/><text x="831" y="99" text-anchor="middle" font-size="25" font-weight="800" fill="#1a0f0b">1</text><text x="831" y="150" text-anchor="middle" class="mono" font-size="24" font-weight="700" fill="#b93c1d">Fork</text><path d="M1220 176 C 1220 320 1160 400 1100 430" stroke="#ff6b4a" stroke-width="5" fill="none" marker-end="url(#fa)"/><circle cx="1214" cy="300" r="24" fill="#ff6b4a"/><text x="1214" y="309" text-anchor="middle" font-size="25" font-weight="800" fill="#1a0f0b">2</text><text x="1180" y="309" text-anchor="end" class="mono" font-size="24" font-weight="700" fill="#b93c1d">git clone</text><circle cx="560" cy="548" r="24" fill="#ff6b4a"/><text x="560" y="557" text-anchor="middle" font-size="25" font-weight="800" fill="#1a0f0b">3</text><text x="598" y="556" class="mono" font-size="23" font-weight="700" fill="#b93c1d">checkout -b · add · commit</text><path d="M1094 480 C 1450 480 1540 360 1540 186" stroke="#2f7d58" stroke-width="5" fill="none" stroke-dasharray="10 8"/><circle cx="1540" cy="300" r="24" fill="#ff6b4a"/><text x="1540" y="309" text-anchor="middle" font-size="25" font-weight="800" fill="#1a0f0b">4</text><text x="1576" y="364" text-anchor="middle" class="mono" font-size="24" font-weight="700" fill="#2f7d58">push -u</text><path d="M1150 174 C 900 300 560 300 380 182" stroke="#5b8cff" stroke-width="6" fill="none" marker-end="url(#fa)"/><circle cx="770" cy="270" r="24" fill="#ff6b4a"/><text x="770" y="279" text-anchor="middle" font-size="25" font-weight="800" fill="#1a0f0b">5</text><text x="770" y="330" text-anchor="middle" class="mono" font-size="24" font-weight="700" fill="#2f5fc4">New pull request → dev</text></svg></div><aside>1 Fork; 2 clone your fork; 3 branch, change, commit; 4 push the branch to your fork; 5 on GitHub, New pull request: target the original project and its dev branch, compare with your branch.</aside></section>
+<section id="cheat" class="s dark"><div class="hd"><p class="eb">CHEAT SHEET</p><h2 class="h2">All the commands on one page</h2></div><div class="bd"><div class="g2" style="grid-template-columns:repeat(4,1fr);gap:24px"><div class="card" style="padding:30px 30px;gap:16px"><h3 style="font-size:40px">Start</h3><p class="k" style="font-size:25px">git --version</p><p class="k" style="font-size:25px">git clone &lt;url&gt;</p><p class="k" style="font-size:25px">git init</p><p class="k" style="font-size:25px">git remote add origin &lt;url&gt;</p></div><div class="card" style="padding:30px 30px;gap:16px"><h3 style="font-size:40px">Save</h3><p class="k" style="font-size:25px">git status</p><p class="k" style="font-size:25px">git add &lt;file&gt;</p><p class="k" style="font-size:25px">git commit -m "..."</p><p class="k" style="font-size:25px">git push -u origin master</p></div><div class="card" style="padding:30px 30px;gap:16px"><h3 style="font-size:40px">Branches</h3><p class="k" style="font-size:25px">git branch</p><p class="k" style="font-size:25px">git checkout -b &lt;branch&gt;</p><p class="k" style="font-size:25px">git diff &lt;branch&gt;</p><p class="k" style="font-size:25px">git merge &lt;branch&gt;</p></div><div class="card" style="padding:30px 30px;gap:16px"><h3 style="font-size:40px">Undo</h3><p class="k" style="font-size:25px">git reset</p><p class="k" style="font-size:25px">git reset HEAD~1</p><p class="k" style="font-size:25px">git log</p><p class="k" style="font-size:25px;color:#ff8a80">git reset --hard &lt;hash&gt;</p></div></div><p class="lead" style="font-size:28px">Practice: <b>learngitbranching.js.org</b> (in the browser) · <b>github.com/skills/introduction-to-github</b></p></div><aside>Tell students to screenshot this slide. The only red command is the destructive one: --hard.</aside></section>
+<section id="thanks" class="s coral"><div style="flex:1"></div><h1 class="h1" style="font-size:150px">Thank you</h1><p style="font-family:'JetBrains Mono',monospace;font-size:34px;line-height:1.6;max-width:1600px">clone → add → commit → push → pull<br>branch → pull request → merge</p><p class="big" style="font-size:60px">Questions?</p><div style="flex:1"></div><aside>Suggested homework: create demo-repo-2 with git init, push it to GitHub over SSH, change the README on a feature branch, open a pull request to yourself and merge it.</aside></section>
+  </div>
+</main>
+
+<div id="ui-notes" role="note"><h4>Speaker notes</h4><div id="ui-notes-body" style="white-space:pre-wrap"></div></div>
+<div id="ui-overview" role="dialog" aria-label="All slides"><h3>All slides</h3><div id="ui-grid"></div></div>
+
+<nav id="ui-bar" aria-label="Slide navigation">
+  <button id="ui-prev" aria-label="Previous">←</button>
+  <span id="ui-count" aria-live="polite"></span>
+  <button id="ui-next" aria-label="Next">→</button>
+  <button id="ui-btn-ov" aria-label="Overview">Overview</button>
+  <button id="ui-btn-notes" aria-label="Speaker notes">N</button>
+  <button id="ui-btn-fs" aria-label="Fullscreen">⛶</button>
+  <a href="../" id="ui-lang-link">TR</a>
+  <a href="/github-egitimi/canli-ders/en/">Version 1</a>
+  <a href="/">Home</a>
+  <span id="ui-help">← → navigate · N notes · O overview · F fullscreen · P print/PDF</span>
+</nav>
+<script>
+(function () {
+  var stage = document.getElementById('ui-stage');
+  var slides = Array.prototype.slice.call(stage.children);
+  var n = slides.length, i = 0;
+  var ov = document.getElementById('ui-overview'), grid = document.getElementById('ui-grid');
+  var count = document.getElementById('ui-count'), bar = document.getElementById('ui-progress');
+  var notes = document.getElementById('ui-notes'), notesBody = document.getElementById('ui-notes-body');
+  function toggleNotes() { notes.classList.toggle('show'); }
+  // GIFs play once: each time a slide opens, its GIF starts again from the first frame
+  var gifBlobs = {}, gifUrls = {};
+  function loadGif(p) { if (!gifBlobs[p]) gifBlobs[p] = fetch(p).then(function (r) { return r.blob(); }); return gifBlobs[p]; }
+  function playGif(s) { var g = s.querySelector('img[data-gif]'); if (!g) return; var p = g.getAttribute('data-src');
+    loadGif(p).then(function (b) { if (!s.classList.contains('active')) return; if (gifUrls[p]) URL.revokeObjectURL(gifUrls[p]); gifUrls[p] = URL.createObjectURL(b); g.src = gifUrls[p]; })
+      .catch(function () { g.src = p; }); }
+  slides.forEach(function (s) { var g = s.querySelector('img[data-gif]'); if (g) loadGif(g.getAttribute('data-src')); });
+  window.addEventListener('beforeprint', function () { slides.forEach(function (s) { var g = s.querySelector('img[data-gif]'); if (g && !g.getAttribute('src')) g.src = g.getAttribute('data-src'); }); });
+  document.getElementById('ui-btn-notes').onclick = toggleNotes;
+
+  function fit() {
+    var s = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+    stage.style.transform = 'scale(' + s + ')';
+    // keep the scaled stage from creating scrollbars
+    stage.style.margin = (-(1080 - 1080 * s) / 2) + 'px ' + (-(1920 - 1920 * s) / 2) + 'px';
+  }
+
+  function go(k, push) {
+    k = Math.max(0, Math.min(n - 1, k));
+    slides[i].classList.remove('active');
+    i = k;
+    slides[i].classList.add('active');
+    playGif(slides[i]);
+    var a = slides[i].querySelector('aside'); notesBody.textContent = a ? a.textContent.trim() : '';
+    count.textContent = (i + 1) + ' / ' + n;
+    bar.style.width = ((i + 1) / n * 100) + '%';
+    var h = slides[i].querySelector('h1, h2');
+    var rawTitle = h ? (h.innerText || h.textContent || '') : '';
+    document.title = (rawTitle ? rawTitle.replace(/\s+/g, ' ').trim() + ' · ' : '') + "Git & GitHub Fundamentals \u2014 Slides (Version 2)";
+    var hash = '#' + (i + 1);
+    if (location.hash !== hash) history[push ? 'pushState' : 'replaceState'](null, '', hash);
+    var cur = grid.querySelector('.current'); if (cur) cur.classList.remove('current');
+    if (grid.children[i]) grid.children[i].classList.add('current');
+  }
+  function fromHash() { var m = /^#(\d+)/.exec(location.hash); return m ? parseInt(m[1], 10) - 1 : 0; }
+
+  function buildOverview() {
+    if (grid.children.length) return;
+    slides.forEach(function (s, k) {
+      var b = document.createElement('button'); b.className = 'thumb';
+      var h = s.querySelector('h1, h2');
+      var rawLabel = h ? (h.innerText || h.textContent || '') : '';
+      b.setAttribute('aria-label', (k + 1) + '. ' + rawLabel.replace(/\s+/g, ' ').trim());
+      var mini = document.createElement('div'); mini.className = 'mini';
+      var c = s.cloneNode(true); c.removeAttribute('id'); c.classList.remove('active');
+      var cg = c.querySelector('img[data-gif]'); if (cg) cg.src = cg.getAttribute('data-src');
+      mini.appendChild(c); b.appendChild(mini);
+      var tag = document.createElement('span'); tag.textContent = k + 1; b.appendChild(tag);
+      b.addEventListener('click', function () { go(k, true); toggleOverview(false); });
+      grid.appendChild(b);
+    });
+    scaleThumbs();
+  }
+  function scaleThumbs() {
+    Array.prototype.forEach.call(grid.querySelectorAll('.thumb'), function (t) {
+      t.firstChild.style.transform = 'scale(' + (t.clientWidth / 1920) + ')';
+    });
+  }
+  function toggleOverview(force) {
+    var on = typeof force === 'boolean' ? force : !ov.classList.contains('show');
+    if (on) buildOverview();
+    ov.classList.toggle('show', on);
+    if (on) { scaleThumbs(); var c = grid.children[i]; if (c) { c.classList.add('current'); c.focus(); c.scrollIntoView({ block: 'center' }); } }
+  }
+  function fullscreen() {
+    if (!document.fullscreenElement) { (document.documentElement.requestFullscreen || function () {}).call(document.documentElement); }
+    else { document.exitFullscreen(); }
+  }
+
+  document.getElementById('ui-prev').onclick = function () { go(i - 1, true); };
+  document.getElementById('ui-next').onclick = function () { go(i + 1, true); };
+  document.getElementById('ui-btn-ov').onclick = function () { toggleOverview(); };
+  document.getElementById('ui-btn-fs').onclick = fullscreen;
+  // keep the slide number when switching language
+  document.getElementById('ui-lang-link').addEventListener('click', function (e) { this.href = this.getAttribute('href').split('#')[0] + '#' + (i + 1); });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    var k = e.key;
+    if (ov.classList.contains('show')) { if (k === 'Escape' || k === 'o' || k === 'O') { toggleOverview(false); e.preventDefault(); } return; }
+    if (k === 'ArrowRight' || k === 'PageDown' || k === ' ' || k === 'ArrowDown') { go(i + 1, true); e.preventDefault(); }
+    else if (k === 'ArrowLeft' || k === 'PageUp' || k === 'ArrowUp' || k === 'Backspace') { go(i - 1, true); e.preventDefault(); }
+    else if (k === 'Home') { go(0, true); e.preventDefault(); }
+    else if (k === 'End') { go(n - 1, true); e.preventDefault(); }
+    else if (k === 'o' || k === 'O' || k === 'Escape') toggleOverview(k === 'Escape' ? false : undefined);
+    else if (k === 'f' || k === 'F') fullscreen();
+    else if (k === 'n' || k === 'N') toggleNotes();
+    else if (k === 'p' || k === 'P') window.print();
+  });
+
+  // touch swipe
+  var x0 = null, y0 = null;
+  stage.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, { passive: true });
+  stage.addEventListener('touchend', function (e) {
+    if (x0 === null) return;
+    var dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0;
+    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) go(i + (dx < 0 ? 1 : -1), true);
+    x0 = null;
+  });
+
+  // hide controls when idle
+  var t; function wake() { document.body.classList.remove('idle'); clearTimeout(t); t = setTimeout(function () { document.body.classList.add('idle'); }, 2500); }
+  ['mousemove', 'touchstart', 'keydown'].forEach(function (ev) { document.addEventListener(ev, wake, { passive: true }); });
+
+  window.addEventListener('resize', function () { fit(); if (ov.classList.contains('show')) scaleThumbs(); });
+  window.addEventListener('popstate', function () { go(fromHash(), false); });
+
+  fit();
+  go(fromHash(), false);
+  wake();
+})();
+</script>
+</body>
+</html>
