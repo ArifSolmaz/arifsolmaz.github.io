@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 02 Oct 2026 07:49:19 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 05 Oct 2026 08:04:47 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,32 +15,55 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>How eccentric is the debris disk of epsilon Eridani? ALMA reveals a near-circular belt</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-00462v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-00462v1</guid>
-      <pubDate>Fri, 02 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Oto Ulrich et al.</dc:creator>
+      <title>A Missing Latent, Not a Missing Simulator: Radius-Augmented Inference for Real JWST Retrieval</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-02245v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-02245v1</guid>
+      <pubDate>Mon, 05 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Angshuman Chakravertty, P V V Raj</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.IM</category>
+        <category>astro-ph.EP</category>
+        <category>cs.LG</category>
+    </item>
+    <item>
+      <title>Joint RV-Astrometric Analysis of two-planet system HD 65216: Prospects for Gaia DR4</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-02783v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-02783v1</guid>
+      <pubDate>Mon, 05 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Alexander L. Wallace, Robert A. Wittenmyer, Jonathan Horner</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Performance of AutoRegressive Planet Search methodology on simulated PLATO lightcurves</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-02629v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-02629v1</guid>
+      <pubDate>Mon, 05 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Eric D. Feigelson et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+    </item>
+    <item>
+      <title>TOI-1408: the limb darkening models, photometric and Doppler noises, and the exoplanetary system</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-02434v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-02434v1</guid>
+      <pubDate>Mon, 05 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Roman V. Baluev</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+    </item>
+    <item>
+      <title>Plato benchmark stars I. The initial benchmark sample</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-02956v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-02956v1</guid>
+      <pubDate>Mon, 05 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>T. Merle et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.SR</category>
-    </item>
-    <item>
-      <title>Correlations between the Carbon-to-Oxygen Ratio and the Orbital and Physical Properties of Exoplanets</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-00813v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-00813v1</guid>
-      <pubDate>Fri, 02 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Noah Ferich et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Planetary eccentricity enhances inward comet transport but suppresses gentle impacts</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-01053v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-01053v1</guid>
-      <pubDate>Fri, 02 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Qunfeng Jiang</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
     </item>
   </channel>
 </rss>
