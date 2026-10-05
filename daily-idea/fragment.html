@@ -1,51 +1,54 @@
 <section class="exo-daily" aria-label="Exoplanet idea of the day">
   <header class="exo-daily__head">
     <span class="exo-daily__eyebrow">Exoplanet idea of the day</span>
-    <time class="exo-daily__date" datetime="2026-10-04">2026-10-04</time>
+    <time class="exo-daily__date" datetime="2026-10-05">2026-10-05</time>
   </header>
-  <h2 class="exo-daily__title">Mining Planet-Induced Stellar Flares to Map Exoplanetary Magnetic Fields Across the Hot Jupiter Population</h2>
+  <h2 class="exo-daily__title">Tidal Inflation as a Misalignment Fossil — A Radius Anomaly Census of Spin-Orbit-Measured Warm Neptunes</h2>
   <div class="exo-daily__premise">
-    <p>Star-planet magnetic interactions (SPI) have been theorized for two decades: a close-in planet orbiting inside its host star's sub-Alfvénic radius can channel energy along magnetic field lines connecting the planet to the stellar surface, triggering localized chromospheric hot spots and, in some cases, flares that are phase-locked to the planet's orbit. Recent work has confirmed this phenomenon in the young system HIP 67522 (Nature, 2025), where flares are statistically concentrated at specific orbital phases of the inner planet. Earlier, Cauley et al. (2019) inferred magnetic field strengths of 20–120 G for four hot Jupiters via Ca II K emission modulated at the planetary orbital period.</p>
-<p>Despite these breakthroughs, no one has performed a <em>systematic, blind survey</em> of the full TESS short-cadence archive to identify phase-correlated flare excesses across the entire hot Jupiter population. The TESS dataset now spans 6+ years and covers most known hot Jupiter hosts at 2-minute or 20-second cadence. A population-level search could (a) dramatically expand the sample of SPI detections, (b) measure or constrain planetary magnetic field strengths as a function of planet mass, age, and orbital separation, and (c) test whether SPI scales with the sub-Alfvénic condition as theory predicts.</p>
+    <p>Hot Jupiters on misaligned orbits are thought to have arrived at short periods via high-eccentricity migration (Kozai-Lidov cycles, planet-planet scattering) rather than smooth disk migration. A natural but under-tested prediction is that misaligned planets should have experienced stronger tidal dissipation during orbital circularization, which would deposit energy into the planet interior and inflate its radius. Recent work has begun to confirm this for Neptune-sized planets specifically — suggesting tidal inflation is stronger for misaligned Neptunes than aligned ones. But the sample remains small and the confounders (age, irradiation, composition) are not yet well-controlled.</p>
+<p>The proposal here is to build the definitive sample of warm Neptunes and sub-Saturns (R = 3–8 R⊕, P = 3–30 days) with both measured spin-orbit angles (from Rossiter-McLaughlin or Doppler shadow observations) and precise radii (from Kepler/TESS + Gaia), and to test whether the radius anomaly (observed radius minus the radius predicted by standard thermal evolution models at the system's age and irradiation) correlates with obliquity after controlling for all known confounders.</p>
   </div>
   <details class="exo-daily__more">
     <summary>Read the full proposal</summary>
     <div class="exo-daily__full">
       <h3>Scientific Premise</h3>
-<p>Star-planet magnetic interactions (SPI) have been theorized for two decades: a close-in planet orbiting inside its host star's sub-Alfvénic radius can channel energy along magnetic field lines connecting the planet to the stellar surface, triggering localized chromospheric hot spots and, in some cases, flares that are phase-locked to the planet's orbit. Recent work has confirmed this phenomenon in the young system HIP 67522 (Nature, 2025), where flares are statistically concentrated at specific orbital phases of the inner planet. Earlier, Cauley et al. (2019) inferred magnetic field strengths of 20–120 G for four hot Jupiters via Ca II K emission modulated at the planetary orbital period.</p>
-<p>Despite these breakthroughs, no one has performed a <em>systematic, blind survey</em> of the full TESS short-cadence archive to identify phase-correlated flare excesses across the entire hot Jupiter population. The TESS dataset now spans 6+ years and covers most known hot Jupiter hosts at 2-minute or 20-second cadence. A population-level search could (a) dramatically expand the sample of SPI detections, (b) measure or constrain planetary magnetic field strengths as a function of planet mass, age, and orbital separation, and (c) test whether SPI scales with the sub-Alfvénic condition as theory predicts.</p>
+<p>Hot Jupiters on misaligned orbits are thought to have arrived at short periods via high-eccentricity migration (Kozai-Lidov cycles, planet-planet scattering) rather than smooth disk migration. A natural but under-tested prediction is that misaligned planets should have experienced stronger tidal dissipation during orbital circularization, which would deposit energy into the planet interior and inflate its radius. Recent work has begun to confirm this for Neptune-sized planets specifically — suggesting tidal inflation is stronger for misaligned Neptunes than aligned ones. But the sample remains small and the confounders (age, irradiation, composition) are not yet well-controlled.</p>
+<p>The proposal here is to build the definitive sample of warm Neptunes and sub-Saturns (R = 3–8 R⊕, P = 3–30 days) with both measured spin-orbit angles (from Rossiter-McLaughlin or Doppler shadow observations) and precise radii (from Kepler/TESS + Gaia), and to test whether the radius anomaly (observed radius minus the radius predicted by standard thermal evolution models at the system's age and irradiation) correlates with obliquity after controlling for all known confounders.</p>
 <h3>Target Datasets</h3>
 <ul>
-<li><strong>TESS 2-minute and 20-second cadence light curves</strong> (MAST/SPOC) for all confirmed hot Jupiter hosts (~500 systems with a &lt; 0.1 AU).</li>
-<li><strong>TESS Full-Frame Images</strong> (30 min / 10 min / 200 s cadence depending on sector) for fainter hosts not observed at short cadence.</li>
-<li><strong>Ephemerides</strong> from the NASA Exoplanet Archive (orbital period, epoch, eccentricity).</li>
-<li><strong>Stellar activity indicators</strong>: TESS light curve variability (rotation period, spot modulation amplitude), plus archival Ca II H&amp;K and Hα indices from spectroscopic surveys (LAMOST, GALAH DR4, California Legacy Survey) where available.</li>
+<li><strong>Obliquity measurements</strong>: TEPCat obliquity catalog (as of 2026, ~250+ systems with projected obliquity λ). Filter for R_p = 3–8 R⊕.</li>
+<li><strong>Precise radii</strong>: Kepler/TESS transit photometry combined with Gaia DR3 stellar radii.</li>
+<li><strong>Stellar ages</strong>: Isochrone fitting using spectroscopic Teff, log g, [Fe/H] from literature, plus gyrochronology where rotation periods are available.</li>
+<li><strong>Mass measurements</strong>: Radial velocity mass determinations from HARPS, HARPS-N, ESPRESSO, NEID archives.</li>
 </ul>
 <h3>Novelty</h3>
-<p>The HIP 67522 detection was a single-system study of an unusually young star. Cauley et al. (2019) used spectroscopic monitoring of four hand-picked systems. This project would be distinct because it: (1) is a <em>blind, population-level</em> flare-phase analysis of hundreds of hot Jupiter systems simultaneously; (2) uses photometric flare detection on TESS data (which is far more abundant than spectroscopic time series); (3) builds a hierarchical model that treats the SPI flare rate enhancement as a function of physical parameters (planet mass, semi-major axis, stellar B-field proxy, sub-Alfvénic radius), enabling the first empirical scaling relation for star-planet magnetic coupling.</p>
+<p>While the tidal-inflation–misalignment connection has been noted for hot Jupiters, extending this to the Neptune/sub-Saturn regime is scientifically distinct because these planets have fundamentally different interior structures (potentially large ice/rock fractions) and different tidal quality factors (Q'). A 2025 study found early evidence that misaligned Neptunes are more inflated, but did not control for age or metallicity in a Bayesian hierarchical framework. This project would do so, and would additionally search for a "memory" timescale — how long after circularization the tidal inflation signature persists — by looking for correlations between radius anomaly, obliquity, and system age.</p>
 <h3>Concrete Workflow</h3>
 <ol>
-<li>Compile a target list of all confirmed transiting hot Jupiters with TESS short-cadence data (expected ~300–400 systems with adequate coverage).</li>
-<li>Apply an automated flare detection pipeline (e.g., AltaiPony or stella, both open-source and trained on TESS data) to every light curve. Record flare start times, durations, and energies.</li>
-<li>Phase-fold flare occurrence times to the planetary orbital period for each system. For each system, compute the Rayleigh statistic (Z²) to test whether flare times are uniformly distributed in orbital phase or clustered.</li>
-<li>At the population level, stack the phase-folded flare distributions across all systems (weighted by the number of flares per system). Test for a global excess at the expected SPI phase (near the sub-planetary longitude or shifted by the Parker spiral angle, depending on the Alfvén travel time).</li>
-<li>Bin the sample by planet mass, orbital period, and stellar activity level. Fit a hierarchical Bayesian model: the SPI flare rate enhancement Δf is parameterized as Δf ∝ (Bp × Rp²) / (a² × v_sw), where Bp is the planetary magnetic field, Rp is planet radius, a is separation, and v_sw is stellar wind speed (proxied by stellar activity). This lets you solve for Bp (or its distribution) as the key latent variable.</li>
-<li>Validate by checking that the signal disappears for a control sample of planets at a &gt; 0.3 AU (where sub-Alfvénic interaction should be negligible).</li>
+<li><strong>Sample construction</strong>: Query TEPCat for all planets with measured λ; cross-match with NASA Exoplanet Archive for R_p, M_p, P, a/R*, and host star parameters. Restrict to 3 &lt; R_p/R⊕ &lt; 8 and P &lt; 30 days. Expected sample: ~40–60 planets.</li>
+<li><strong>Radius anomaly computation</strong>: For each planet, run a grid of thermal evolution models (using MESA or the Lopez &amp; Fortney 2014 framework) over a range of core mass fractions and atmospheric hydrogen/helium envelopes. Compute the predicted radius at the system's estimated age and current irradiation level. Define Δ R = R_obs − R_pred.</li>
+<li><strong>Hierarchical Bayesian model</strong>: Fit a population-level model where Δ R depends on (a) projected obliquity |λ|, (b) irradiation flux, (c) system age, (d) host star metallicity, and (e) planet mass. Use a latent-variable approach for the true 3D obliquity ψ, marginalizing over the unknown stellar inclination using v sin i and P_rot.</li>
+<li><strong>Circularization timescale analysis</strong>: For the subset of systems with well-constrained ages, test whether the obliquity–inflation correlation weakens with age, revealing the Kelvin-Helmholtz "cooling" timescale of tidally deposited energy.</li>
+<li><strong>Sensitivity analysis</strong>: Perform injection-recovery to determine the minimum detectable tidal energy deposit given current radius uncertainties.</li>
 </ol>
 <h3>Expected Signal / Observable</h3>
-<p>In HIP 67522, the planet-correlated flare rate was roughly 2–3× the baseline rate at specific orbital phases. For the broader hot Jupiter population, a more modest enhancement (~20–50% in phase-binned flare rate) would be expected, detectable at 3–5σ when stacking across ~100+ active host stars. Systems with young, active hosts and massive, close-in planets should show the strongest signal.</p>
+<ul>
+<li>Misaligned warm Neptunes (|λ| &gt; 30°) should show Δ R ~ 0.3–1.0 R⊕ larger than aligned counterparts, if tidal inflation is significant.</li>
+<li>A declining Δ R with system age among misaligned planets would indicate a characteristic tidal energy dissipation timescale of ~1–5 Gyr.</li>
+<li>A null result (no correlation) would also be significant: it would imply that Neptune-class interiors respond differently to tidal heating than gas giants, placing constraints on their tidal Q' values.</li>
+</ul>
 <h3>Possible False Positives</h3>
 <ul>
-<li><strong>Stellar rotation aliasing</strong>: If the stellar rotation period is close to the planetary orbital period (tidal synchronization), activity modulation mimics orbital-phase-locked flaring. Mitigation: measure the stellar rotation period from the light curve; exclude systems where P_rot/P_orb is within 5% of an integer ratio; test whether the flare-phase signal persists after removing the rotational modulation.</li>
-<li><strong>Small-number statistics</strong>: Many systems will have few flares. Mitigation: the hierarchical model properly handles low-count systems by shrinking toward the population mean; the detection is made at the population level, not per-system.</li>
-<li><strong>Flare detection false positives</strong>: Instrumental artifacts or cosmic rays flagged as flares. Mitigation: use injection-recovery tests to characterize the flare pipeline's false positive rate; require flares to span at least 3 consecutive cadences.</li>
+<li><strong>Compositional diversity</strong>: A planet with a thicker H/He envelope will naturally appear inflated relative to a rocky-rich planet of the same mass. Mitigation: include mass and bulk density as covariates; restrict analysis to planets with measured masses (not just upper limits).</li>
+<li><strong>Age uncertainties</strong>: Stellar ages from isochrone fitting carry ~30–50% uncertainties. Mitigation: use a hierarchical model that propagates age uncertainties; perform analysis both with and without age as a covariate.</li>
+<li><strong>Selection bias in obliquity measurements</strong>: Obliquities are preferentially measured for planets around bright, slowly-rotating stars. Mitigation: model the selection function explicitly.</li>
 </ul>
-<h3>Why It Could Matter</h3>
-<p>Exoplanetary magnetic fields are among the most important yet poorly constrained properties in exoplanet science. Magnetic fields govern atmospheric escape rates (and thus long-term atmospheric evolution), control the interaction between planetary magnetospheres and stellar winds, and may be a prerequisite for surface habitability. A population-level measurement of hot Jupiter magnetic field strengths as a function of mass and age would be the first empirical constraint on the planetary magnetic dynamo scaling law beyond our solar system — directly relevant to understanding whether terrestrial planets in habitable zones retain protective magnetospheres.</p>
+<h3>Why This Could Matter</h3>
+<p>This would directly test whether the orbital migration history of a planet leaves a detectable imprint on its present-day radius — a kind of "tidal fossil record." For the Neptune/sub-Saturn population, which is the most common type of planet found by Kepler yet the least understood structurally, this could provide the first empirical calibration of tidal Q' and constrain whether these planets have rocky cores, icy mantles, or something else entirely.</p>
     </div>
   </details>
   <footer class="exo-daily__foot">
-    <span class="exo-daily__meta">Source brief: 2026-05-11</span>
+    <span class="exo-daily__meta">Source brief: 2026-03-25</span>
     <span class="exo-daily__meta">Rotates daily &middot; 66 ideas in the pool</span>
   </footer>
 </section>
