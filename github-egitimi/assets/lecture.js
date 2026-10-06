@@ -10,6 +10,11 @@
   const notes=document.getElementById('ui-notes');
   const overview=document.getElementById('ui-overview');
   const appendixButton=document.getElementById('ui-appendix');
+  const language=document.body.dataset.lang||document.documentElement.lang||'tr';
+  const ui=language==='en'?{appendix:'Appendix',main:'Main lecture',extras:'Appendix slides',title:'Git and GitHub'}:{appendix:'Ek',main:'Ana anlatım',extras:'Ek slaytlar',title:'Git ve GitHub'};
+  const languageLink=document.querySelector('[data-language-link]');
+  const languageBase=languageLink?.getAttribute('href').split('#')[0];
+  const appendixLabel=i=>`${ui.appendix} ${i-mainCount+1}`;
   const loaded=new Map();
   let index=0, lastMain=0, returnFocus=null;
   const appendix=()=>index>=mainCount;
@@ -39,26 +44,29 @@
     slides.forEach((s,i)=>{s.classList.toggle('active',i===index);s.setAttribute('aria-hidden',String(i!==index));});
     document.body.dataset.mode=appendix()?'appendix':'main';
     const start=appendix()?mainCount:0,end=appendix()?slides.length:mainCount;
-    count.textContent=appendix()?`Ek ${index-mainCount+1} / ${slides.length-mainCount}`:`${index+1} / ${mainCount}`;
+    count.textContent=appendix()?`${appendixLabel(index)} / ${slides.length-mainCount}`:`${index+1} / ${mainCount}`;
     count.title=slides[index].querySelector('h1,h2').textContent;
     previous.disabled=index===start;next.disabled=index===end-1;
     document.getElementById('ui-btn-replay').disabled=!slides[index].querySelector('img[data-animation]');
-    appendixButton.textContent=appendix()?'Ana anlatım':'Ek slaytlar';
+    appendixButton.textContent=appendix()?ui.main:ui.extras;
     document.getElementById('ui-progress').style.width=`${(index-start+1)/(end-start)*100}%`;
     const speech=slides[index].querySelector('aside');
-    document.getElementById('ui-notes-title').textContent=`${appendix()?'Ek '+(index-mainCount+1):index+1}. ${count.title}`;
+    document.getElementById('ui-notes-title').textContent=`${appendix()?appendixLabel(index):index+1}. ${count.title}`;
     document.getElementById('ui-notes-body').textContent=speech?.querySelector('.speech')?.textContent||'';
     document.getElementById('ui-notes-sources').replaceChildren(...Array.from(speech?.querySelectorAll('a')||[],a=>a.cloneNode(true)));
     document.querySelectorAll('.thumb').forEach((t,i)=>{t.classList.toggle('current',i===index);if(i===index)t.setAttribute('aria-current','true');else t.removeAttribute('aria-current');});
     const hash=`#${index+1}`;
     if(location.hash!==hash)history[push?'pushState':'replaceState'](null,'',hash);
-    document.title=`${count.title} · Git ve GitHub`;
+    document.title=count.title.trim()===ui.title?ui.title:`${count.title} · ${ui.title}`;
+    if(languageLink)languageLink.setAttribute('href',`${languageBase}#${encodeURIComponent(slides[index].id)}`);
+    const notesDocument=document.getElementById('ui-notes-document');
+    if(notesDocument)notesDocument.setAttribute('href',`konusmaci-notlari.html#not-${index+1}`);
     playAnimation(slides[index]);
   }
   function fromHash(){
     let hash=location.hash.slice(1);
     try{hash=decodeURIComponent(hash);}catch{return 0;}
-    if(hash==='ekler')return mainCount;
+    if(hash==='ekler'||hash==='appendix')return mainCount;
     if(/^\d+$/.test(hash))return Number(hash)-1;
     const found=slides.findIndex(s=>s.id===hash);return found<0?0:found;
   }
@@ -74,13 +82,13 @@
   function buildOverview(){
     slides.forEach((s,i)=>{
       const button=document.createElement('button');button.className='thumb';button.type='button';
-      const title=s.querySelector('h1,h2').textContent;button.setAttribute('aria-label',`${i<mainCount?i+1:'Ek '+(i-mainCount+1)}. ${title}`);
+      const title=s.querySelector('h1,h2').textContent;button.setAttribute('aria-label',`${i<mainCount?i+1:appendixLabel(i)}. ${title}`);
       const preview=document.createElement('div');preview.className='thumb-preview';preview.setAttribute('aria-hidden','true');
       const mini=document.createElement('div');mini.className='mini';const clone=s.cloneNode(true);clone.removeAttribute('id');clone.removeAttribute('aria-hidden');clone.classList.remove('active');clone.querySelector('aside')?.remove();
       clone.querySelectorAll('[id]').forEach(e=>e.removeAttribute('id'));
       clone.querySelectorAll('a').forEach(a=>a.removeAttribute('href'));
       clone.querySelectorAll('img[data-animation]').forEach(img=>{img.src=img.dataset.poster;img.removeAttribute('data-animation');});
-      mini.append(clone);preview.append(mini);const label=document.createElement('div');label.className='thumb-label';const number=document.createElement('b');number.textContent=i<mainCount?`${i+1}.`:`Ek ${i-mainCount+1}.`;label.append(number,document.createTextNode(title));
+      mini.append(clone);preview.append(mini);const label=document.createElement('div');label.className='thumb-label';const number=document.createElement('b');number.textContent=i<mainCount?`${i+1}.`:`${appendixLabel(i)}.`;label.append(number,document.createTextNode(title));
       button.append(preview,label);button.onclick=()=>{show(i,true);setOverview(false);};
       document.getElementById(i<mainCount?'ui-main-grid':'ui-extra-grid').append(button);
     });

@@ -9,13 +9,16 @@ Mekatronik öğrencileri için 45 dakikalık, anlatım ağırlıklı eğitim. Ay
 ## Güncel girişler
 
 - `index.html`: birleşik sunum. Ana gezinme 32. slaytta biter. “Ek slaytlar” düğmesi teknik ayrıntılara geçer.
+- `en/index.html`: aynı 44 slaytın İngilizce sürümü; dil değiştirirken slayt numarası korunur.
 - `konusmaci-notlari.html`: dakika planı, her slaytın konuşma metni ve kaynaklar.
+- `en/konusmaci-notlari.html`: bütün slaytların İngilizce konuşmacı notları ve aynı dakika planı.
 - `egitmen-rehberi.md`: aynı notların indirilebilir metni.
+- `pdf/git-github-tr.pdf` ve `pdf/git-github-en.pdf`: 44 sayfalık, 16:9 Türkçe ve İngilizce slayt çıktıları.
 - `canli-ders/materyal.html`: dersin dört animasyonu, notlar ve örnek proje.
 - `student/`: dersten sonra isteğe bağlı bağımsız kaynaklar.
 - `instructor/`: güncel ders bağlantıları.
 
-Eski Türkçe `canli-ders/` ve `sunum/` adresleri ana sunuma, `v2/` teknik eklerin başlangıcına yönlenir. Eski slayt numaraları taşınmaz. İngilizce önceki eğitimler, birleşik Türkçe sunumla aynı içerik değildir.
+Eski Türkçe `canli-ders/` ve `sunum/` adresleri ana sunuma, İngilizce karşılıkları `en/` sunumuna, `v2/` teknik eklerin başlangıcına yönlenir. Eski slayt numaraları taşınmaz. Önceki sürümler arşivde korunur.
 
 ## Sunum kullanımı
 
@@ -25,6 +28,6 @@ Animasyonlar yalnız gerektiğinde yüklenir. Ağ veya dosya erişimi başarıs�
 
 ## İçerik bakımı
 
-`ders.json` slayt metinleri, konuşmacı notları, süreler ve kaynakları içerir. `python3 build.py` ana HTML sunumunu ve iki not belgesini üretir. Python standart kütüphanesi yeterlidir. Görseller özgün eğitimden alınmıştır.
+`ders.json` Türkçe, `lesson-en.json` İngilizce slayt metinleri, konuşmacı notları, süreler ve kaynakları içerir. `python3 build.py` iki dilde HTML sunumlarını ve not belgelerini üretir. Python standart kütüphanesi yeterlidir. Görseller özgün eğitimden alınmıştır. İçerik değiştiğinde PDF çıktıları da yenilenmelidir.
 
 Düzeltilmiş önceki teknik başvuru `arsiv/teknik/` altında, önceki Türkçe sunum `arsiv/onceki-sunum/` altında saklanır. Önceki geniş atölye rehberi `arsiv/egitmen-rehberi-atolye.md` dosyasındadır. Bu belgeler güncel ana dersin parçası değildir.

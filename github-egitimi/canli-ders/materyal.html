@@ -49,9 +49,10 @@ ol.plan{padding-left:20px;color:var(--fg2)} ol.plan li{margin:6px 0} ol.plan b{c
   <p class="lead"><span data-l="tr">45 dakikalık anlatım: projelerin geçmişi, GitHub ve ekip çalışması. 32 ana slayt ve 12 ek. Canlı gösterim, hesap hazırlığı ve sınıf içi uygulama yok.</span><span data-l="en">A 45-minute lecture on project history, GitHub and teamwork. 32 main slides and 12 appendix slides. No live demo, account setup or classroom exercise.</span></p>
   <div class="words"><span>repository</span><span>commit</span><span>issue</span><span>README</span></div>
   <div class="btns">
-    <a class="btn pri" href="../"><span data-l="tr">Birleşik Türkçe sunum</span><span data-l="en">Combined Turkish presentation</span></a>
-    <a class="btn" href="../konusmaci-notlari.html"><span data-l="tr">Konuşmacı notları</span><span data-l="en">Turkish speaker notes</span></a>
-    <a class="btn" href="ornek-proje.zip"><span data-l="tr">Örnek projeyi indir (.zip)</span><span data-l="en">Download the example project (.zip)</span></a>
+    <a class="btn pri" id="slides-link" href="../"><span data-l="tr">Birleşik sunum</span><span data-l="en">Combined presentation</span></a>
+    <a class="btn" id="notes-link" href="../konusmaci-notlari.html"><span data-l="tr">Konuşmacı notları</span><span data-l="en">Speaker notes</span></a>
+    <a class="btn" id="pdf-link" href="../pdf/git-github-tr.pdf" download><span data-l="tr">44 slaytın PDF'si</span><span data-l="en">All 44 slides as PDF</span></a>
+    <a class="btn" id="project-link" href="ornek-proje.zip"><span data-l="tr">Örnek projeyi indir (.zip)</span><span data-l="en">Download the example project (.zip)</span></a>
   </div>
 
   <h2><span data-l="tr">Dersin akışı</span><span data-l="en">Lesson plan</span></h2>
@@ -71,7 +72,7 @@ ol.plan{padding-left:20px;color:var(--fg2)} ol.plan li{margin:6px 0} ol.plan b{c
   <h2><span data-l="tr">Animasyonlar</span><span data-l="en">Animations</span></h2>
   <div id="scenes"></div>
 
-  <p class="foot"><span data-l="tr">Animasyonlardaki kişi, kullanıcı ve kütüphane adları örnek amaçlıdır.</span><span data-l="en">The people, usernames and libraries in the animations are made up.</span> · <a href="../">Birleşik sunum / Combined slides</a> · <a href="../">GitHub Eğitimi</a> · <a href="/">arifsolmaz.github.io</a></p>
+  <p class="foot"><span data-l="tr">Animasyonlardaki kişi, kullanıcı ve kütüphane adları örnek amaçlıdır.</span><span data-l="en">The people, usernames and libraries in the animations are made up.</span> · <a id="footer-slides-link" href="../">Birleşik sunum / Combined slides</a> · <a href="/">arifsolmaz.github.io</a></p>
 </div>
 <script>
 const S = [
@@ -81,7 +82,13 @@ const S = [
  ['05-takimin-listesi','05-team-to-do-list','Takımın iş listesi','The team task list','Issue işin tanımını, sorumlusunu ve durumunu tutar.','An issue tracks a task, its assignee and its status.'],
 ];
 function render(l){
+  l = l === 'en' ? 'en' : 'tr';
   document.documentElement.lang = l;
+  document.getElementById('slides-link').href = l === 'en' ? '../en/' : '../';
+  document.getElementById('footer-slides-link').href = l === 'en' ? '../en/' : '../';
+  document.getElementById('notes-link').href = l === 'en' ? '../en/konusmaci-notlari.html' : '../konusmaci-notlari.html';
+  document.getElementById('pdf-link').href = `../pdf/git-github-${l}.pdf`;
+  document.getElementById('project-link').href = l === 'en' ? 'example-project.zip' : 'ornek-proje.zip';
   document.querySelectorAll('.lang button').forEach(b => b.setAttribute('aria-pressed', b.dataset.set === l));
   const k = l === 'tr' ? 0 : 1;
   document.getElementById('scenes').innerHTML = S.map((s, i) => {
