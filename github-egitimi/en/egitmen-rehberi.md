@@ -1,332 +1,347 @@
-# Git and GitHub: The Basics in One Project
+# Git and GitHub: The Robot Worked Yesterday
 
 32 main slides and 12 appendix slides. The main lecture and questions take 45 minutes.
 
 No live demonstration, in-class exercise or required homework. Appendix slides are outside the main lecture time.
 
-## 1. Git and GitHub
+## 1. The robot worked yesterday
 
 00:00–00:45 · 45 seconds
 
-Welcome. Today we will follow one robot project from its first files to teamwork. We will begin with what GitHub offers us, then see how Git makes those benefits possible. By the end, I want you to understand where a change is stored and how it reaches the team, rather than memorize a list of commands. Keeping code, a circuit diagram, and an explanation together helps us manage a mechatronics project as a whole.
+Imagine a team building a line-following robot. Elif and Deniz worked on the same project yesterday. Today the robot loses the line, and different files circulate in the group chat. They do not know which one to continue from. We will follow their decisions throughout this lesson, introducing Git and GitHub when the team needs them. The aim is to understand how a change becomes traceable and shareable. This is a fictional teaching example; the threshold values on screen are not measurements from a tested robot. We will use prepared visuals to follow the problem through to a shared decision, without a live coding exercise.
 
 Sources:
 
 
-## 2. The 45-minute route
+## 2. Which file can we trust?
 
 00:45–01:30 · 45 seconds
 
-The lecture has four parts. First, we will use the problem of messy project files to introduce the core concepts. Next, we will follow a file change from a computer to GitHub. The third part shows how two people can work on the same project. Finally, we will discuss choosing existing code, building a portfolio, and student resources. The last three minutes are for questions. Installation and detailed commands are in the appendix; the main lecture focuses on concepts and how they connect.
-
-Sources:
-
-
-## 3. Which file is the latest?
-
-01:30–03:00 · 90 seconds
-
-In our robot team, Elif works on the motors and Deniz works on the line sensors. As code is shared in a group chat, copies named robot, robot_final, and robot_final_SON appear. Their names do not tell us which version works or who changed what. Combining both people's fixes also means comparing files by hand. Git solves this by keeping project history rather than creating a new filename for every saved version. We still work on robot.ino, with a timeline showing which changes were recorded and in what order. That timeline contains the changes we selected and committed.
+These file names may look familiar. We go from robot to robot final to robot final final, but renaming a file does not preserve the reasoning behind a decision. When Elif sends one copy and Deniz another, the problem grows. The file with the latest timestamp is not necessarily the right one. The team needs to see what changed, why it changed, and in what order. We will record the relationships between saved versions as well as the files themselves. That lets us keep both people’s contributions instead of losing one by choosing a copy at random.
 
 Sources:
 
 - [Viewing commit history](https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History)
 
-## 4. Git and GitHub
+## 3. We have files. Where is the decision?
+
+01:30–03:00 · 90 seconds
+
+Elif and Deniz can inspect the files, but they cannot find a record explaining the change behind today’s behavior. What value did they use yesterday? Which line did Deniz touch? Which copy did Elif continue from? A change history helps answer these questions without relying on memory. It does not prove that the robot works correctly; it first helps narrow the question. Our immediate goal is to identify what changed without guessing. That distinction will matter throughout the lesson: the tool keeps records, and the team makes the engineering decision.
+
+Sources:
+
+- [Viewing commit history](https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History)
+
+## 4. How do we compare yesterday and today?
 
 03:00–04:30 · 90 seconds
 
-Keeping these two names separate is the key to this lecture. Git is the version control tool on our computer. We can record changes and inspect local history without the internet. GitHub hosts Git repositories and organizes teamwork around them. Having a GitHub account does not mean that every change on our computer automatically goes online. We will explain that transfer with push and pull. GitHub can be used in a browser, and Git through a terminal or a graphical interface. The menus differ, but the underlying concepts are the same. Understanding what an operation records matters as much as knowing which button to click.
+Imagine looking through the team’s recorded history. A commit shows the sensor threshold changing from 500 to 900, alongside an author and a message. We can now name the changed line instead of saying that something is different. This record does not automatically prove the change was wrong. It gives us a possible cause to investigate. IR sensor thresholds also depend on the hardware and operating conditions; copying a value from another robot is not a calibration method. Now we should separate the tool that keeps this history from the platform where the team shares it.
+
+Sources:
+
+- [Viewing commit history](https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History)
+
+## 5. Which part of this is Git?
+
+04:30–05:45 · 75 seconds
+
+Separating Git from GitHub makes the rest of the story easier. Git is the version control tool on the computer: it records selected changes and manages local history and branches. Many local operations work without an internet connection. GitHub hosts repositories and organizes collaboration around that history. Elif saving a file does not mean Deniz can see it on GitHub. Creating a local record and transferring it to the shared repository are separate steps. We can use Git through a terminal or an editor’s interface. The buttons may differ, but the recording and sharing relationships we are about to follow stay the same.
 
 Sources:
 
 - [What is GitHub?](https://docs.github.com/en/get-started/start-your-journey/what-is-github)
 
-## 5. A repository holds files and history
+## 6. What should we keep together?
 
-04:30–05:45 · 75 seconds
+05:45–07:00 · 75 seconds
 
-A repository is more than a folder on the internet. It contains project files and their recorded history. In our example, robot.ino, the wiring diagram for the IR sensors, the README, and a few project photographs share the same context. The animation shows those files coming together on GitHub. Uploading files in the browser also creates a commit. When we work locally, recording and sending changes are separate operations. Text files are easy to compare line by line. Photographs and PDFs can also be stored, but we should not expect the same detailed comparison that we get with text.
+The team brings robot.ino, the wiring diagram, a project photo, and an explanation into one repository. A repository contains the project’s files and its recorded history. That keeps the code connected to the hardware it is meant to control. The animation shows files coming together on GitHub; uploading through the browser creates a commit too. When working locally, recording and sending remain separate steps. We can inspect line changes in text files. Photos and PDFs can also be stored, but their changes are not as easy to compare as code. The repository keeps the project’s context in one place.
 
 Sources:
 
 - [About repositories](https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories)
 
-## 6. A commit is a checkpoint
+## 7. What changed on that line?
 
-05:45–07:00 · 75 seconds
+07:00–08:15 · 75 seconds
 
-A commit is a recorded checkpoint in a project's history. Saving a file in an editor changes the working file, but that alone does not add it to Git history. When we select changes and commit them, we create a record that can be inspected later. Its message explains the purpose of the change. For the robot, “Increase the IR sensor threshold” tells us more than “update,” even months later. Each commit has an ID and a relationship to earlier commits, forming a timeline. A commit made on our computer is still local. It must be sent before the team can see it on GitHub. We will make that distinction clearer with the four areas.
+This view is called a diff. The minus line belongs to the earlier side of the comparison, and the plus line to the later side. The threshold in the robot code changed from 500 to 900. These are not readings from two sensors: they are the same variable in two recorded versions. A commit records a selected state of the project in history, with an identifier and a message. Saving a file in an editor does not create one automatically. The diff focuses attention on the changed area. A small-looking line can still have a large effect. How should we assess this change?
 
 Sources:
 
 - [git commit](https://git-scm.com/docs/git-commit)
+- [git diff](https://git-scm.com/docs/git-diff)
 
-## 7. The README is the entry point
+## 8. Is 900 wrong?
 
-07:00–08:15 · 75 seconds
+08:15–09:15 · 60 seconds
 
-The README guides someone seeing the project for the first time. It does not need to explain every line of code. It should make clear what the robot does, what hardware it uses, and how to run it. Our robot has IR line sensors and an Arduino controller. A wiring diagram, a photograph, and the names of any libraries complete the explanation. README.md uses Markdown, with simple symbols for headings and lists. GitHub displays it as a readable page. Good documentation helps teammates, instructors, and people reviewing an internship application. Setup instructions that actually match the project matter more than an attractive layout alone.
+Pause here. Having 500 in yesterday’s file and 900 in today’s does not establish that 500 is correct in every situation. Lighting, the surface, and sensor placement can affect behavior. Git tells us which line changed; the team must evaluate the expected behavior under suitable conditions. Elif and Deniz first inspect the reasoning and any available measurement records. Returning to 500 may be a candidate solution, but it is not yet an accepted result. The next step is therefore to make the investigation a visible task and work on a separate branch, rather than overwrite the shared code.
+
+Sources:
+
+- [Viewing commit history](https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History)
+- [git diff](https://git-scm.com/docs/git-diff)
+
+## 9. Who is tracking the problem?
+
+09:15–10:45 · 90 seconds
+
+The team now has a concrete question: when does the robot lose the line, and how might the threshold change be involved? An issue records that question. We can describe the expected behavior, the observed problem, and the relevant file, then assign the investigation to Elif. The task no longer disappears in a group chat. This animation demonstrates the issue interface with a photo task; our story’s task concerns the sensor threshold. An issue tracks a need. Later we can connect our proposed change to it. Even after the issue closes, the discussion and reasoning remain available in the project.
+
+Sources:
+
+- [About issues](https://docs.github.com/en/issues/tracking-your-work-with-issues/learning-about-issues/about-issues)
+
+## 10. How do we try it without changing main?
+
+10:45–12:00 · 75 seconds
+
+Elif wants to reconsider the threshold without mixing everyone’s trials into the shared main line. A branch provides a separate line of work from the same starting point. Commits Elif creates there do not automatically change main. Main may also move forward with other accepted work; the diagram shows both lines. Creating a branch does not require a new physical project folder: a branch name points to a commit. For a small team, one main branch and short-lived task branches can be enough. Review and validation will determine when the candidate is ready to join the main line.
+
+Sources:
+
+- [Git branches](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell)
+- [Branching workflows](https://git-scm.com/book/en/v2/Git-Branching-Branching-Workflows)
+
+## 11. I saved it. Can Deniz see it?
+
+12:00–13:45 · 105 seconds
+
+Four areas answer this question. The working tree is where we edit the file. The staging area selects what will enter the next commit. The local repository is the recorded history on our computer. The remote repository is the history shared on GitHub. Editing the threshold happens in the first area. Add selects it, commit records it locally, and push transfers the commits to the shared repository. Saving in the editor has not yet reached Deniz. Likewise, a new commit on GitHub does not automatically update our computer. We will now move Elif’s single sensor change through these areas step by step.
+
+Sources:
+
+- [How Git works](https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F)
+
+## 12. How do we get the same starting point?
+
+13:45–15:00 · 75 seconds
+
+Imagine Elif starting on a new computer. Clone creates a local copy of the existing robot repository. A normal clone brings the files, recorded history, and remote address connection, so she can inspect both code and earlier versions. Repository-url is a placeholder for the real cloning address. Reading a public repository over HTTPS usually does not require signing in; a private one requires access. Permission to clone is not permission to push. Downloading a ZIP provides the selected version’s files without setting up local Git history. Here we use a clone because Elif needs to work with history and send new commits.
+
+Sources:
+
+- [Cloning a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
+
+## 13. Which branch is the trial on?
+
+15:00–16:15 · 75 seconds
+
+We start on main in the cloned project. Switch with the c option creates feature/sensor-esigi and moves us to it. The star in the branch list marks the active branch. The next commits will advance this line. We have not edited the code yet: creating a branch alone does not fix the sensor problem. Naming a branch after its purpose helps the team find the relevant work. Here main is the shared main line and the task branch holds the candidate solution. Other projects may use different names and contribution rules. Next we will actually edit the file, producing a change to record.
+
+Sources:
+
+- [Git branches](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell)
+- [Branching workflows](https://git-scm.com/book/en/v2/Git-Branching-Branching-Workflows)
+- [git switch](https://git-scm.com/docs/git-switch)
+- [git diff](https://git-scm.com/docs/git-diff)
+
+## 14. Which solution are we trying?
+
+16:15–17:45 · 90 seconds
+
+Elif now changes the threshold in robot.ino from 900 to 500 and saves the file. Returning to yesterday’s value is our candidate, not proof of a fix. Git status shows that the working tree differs from the previous commit; diff shows the changed line. No new commit exists yet, and GitHub still has the earlier version. At this point we can reread the change, define a test plan, or abandon it. Cloning and creating a branch did not produce the edit; this is where the actual work happens. The following recording and sharing steps will carry this same sensor line.
+
+Sources:
+
+- [git diff](https://git-scm.com/docs/git-diff)
+- [git status](https://git-scm.com/docs/git-status)
+
+## 15. What goes into this commit?
+
+17:45–19:15 · 90 seconds
+
+Add selects the content of the next commit. Elif stages the sensor threshold change and checks the staged diff. If an unfinished README edit also exists, she does not have to include it in this record. That keeps the commit’s purpose clear. Diff cached shows what is about to enter history. Add stages the file’s state at that moment; if we edit it again, we may need another add to include the new version. Choosing a meaningful scope instead of combining every change makes review and later undoing easier. We will now record only the selected sensor change.
+
+Sources:
+
+- [git add](https://git-scm.com/docs/git-add)
+
+## 16. How do we record what we did?
+
+19:15–20:30 · 75 seconds
+
+Elif commits the staged sensor change to local history. The message says it is a candidate return to 500, accurately describing its status. Log oneline shows the new record’s identifier and message. A commit records the selected staged state; history on the computer advances while the earlier 900 record remains available. This can happen without an internet connection. Return to our question: has Deniz seen it? Not yet, because Elif has only made a record on her own computer. A local commit and access through the shared repository are separate things. Sending it will complete that distinction.
+
+Sources:
+
+- [git commit](https://git-scm.com/docs/git-commit)
+- [Viewing commit history](https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History)
+
+## 17. Can Deniz see it now?
+
+20:30–22:00 · 90 seconds
+
+Elif pushes the new commit to the sensor branch on origin. The u option records which remote branch this local branch tracks. Once the push succeeds, Deniz can see the candidate on GitHub. Main has not changed automatically; only the task branch has been updated. Push transfers commits, not uncommitted working-tree edits. It requires the right remote address, write permission, and authentication; the appendix contains those details. If a push is rejected, we understand the shared history before trying to overwrite it. The team can now inspect the same change. Visibility is still not acceptance: the pull request will ask that question.
+
+Sources:
+
+- [git push](https://git-scm.com/docs/git-push)
+- [git branch](https://git-scm.com/docs/git-branch)
+
+## 18. Should we bring this into main?
+
+22:00–23:30 · 90 seconds
+
+Elif opens a pull request from the task branch into main. The source branch contains the candidate sensor solution; the target is the shared main line. The description explains the problem, the return from 900 to 500, and the validation still required. It can also link to the issue: the issue describes the need, while the PR presents a proposed solution. Opening a PR makes it available for discussion and review. It does not immediately accept it. Other proposals could address the same problem differently. The team evaluates the source and target, the code diff, and the reasoning together. What should Deniz inspect?
+
+Sources:
+
+- [About issues](https://docs.github.com/en/issues/tracking-your-work-with-issues/learning-about-issues/about-issues)
+- [Pull requests](https://docs.github.com/en/pull-requests/reference/pull-requests)
+
+## 19. What will Deniz look for?
+
+23:30–25:00 · 90 seconds
+
+Deniz reviews the sensor line in Files changed. Why 500? Under which conditions will it be tested? The questions examine the proposal’s basis. If Elif sends another commit to the same branch after feedback, the PR updates; she does not need a new PR. Automated checks, when present, also contribute, though a software check may not establish real robot behavior. Review approval and permission to merge can be separate. The team’s rule is to require a suitable reason and validation before accepting the candidate. If main advances with another accepted change in the meantime, the two lines may also need to be reconciled.
+
+Sources:
+
+- [Pull request reviews](https://docs.github.com/en/pull-requests/reference/pull-request-reviews)
+
+## 20. What if two decisions change one line?
+
+25:00–26:15 · 75 seconds
+
+Add a common situation to the story. While Elif works, another change from Deniz is reviewed and accepted into main, making the same threshold 700. Elif’s branch still has the candidate 500. In this merge example, we are on the task branch and bring main into it. Git cannot automatically choose between the conflicting edits, so it stops with conflict markers. HEAD is our current branch’s side and main is the incoming side. HEAD does not mean the correct choice. Git can often combine edits in different areas, but the team must resolve the conflicting meaning on this line.
+
+Sources:
+
+- [Merge conflicts](https://docs.github.com/en/pull-requests/reference/merge-conflicts)
+
+## 21. Which one do we choose?
+
+26:15–28:00 · 105 seconds
+
+Elif and Deniz compare the reasons for both changes and decide to continue with the 500 candidate. One threshold remains in the file, and the conflict markers are removed. The team saves the file and completes the appropriate validation. Add and commit record this merge resolution; push updates the PR. An editor’s selection buttons can simplify the operation, while the team records why it chose the result. We will show the next stage assuming the candidate has passed the required review and validation. That lets us follow this same change into the main line and onto the team’s computers.
+
+Sources:
+
+- [Resolving a merge conflict](https://docs.github.com/en/pull-requests/how-tos/merge-and-close-pull-requests/resolving-a-merge-conflict-using-the-command-line)
+
+## 22. How does the decision enter shared history?
+
+28:00–29:30 · 90 seconds
+
+We have reached acceptance. For this example, assume the 500 candidate has passed the required review and validation. An authorized team member merges the change into main. The discussion and reasoning in the PR remain available later. The merge method affects how history looks; not every method produces the same kind of merge commit. For a first lesson, the essential relationship is that trying a change on a branch, sending it, approving it, and accepting it into main are separate steps. The accepted change is now in the shared repository. Elif’s computer has not been updated automatically.
+
+Sources:
+
+- [Pull request reviews](https://docs.github.com/en/pull-requests/reference/pull-request-reviews)
+- [GitHub flow](https://docs.github.com/en/get-started/using-github/github-flow)
+- [git switch](https://git-scm.com/docs/git-switch)
+
+## 23. GitHub is current. Is my computer?
+
+29:30–30:45 · 75 seconds
+
+Elif switches to local main and gets the shared repository’s updates. Pull fetches remote changes and integrates them into the local branch. Checking status first is a good habit. Here ff only advances local main when it has not diverged; if both sides have different new commits, it stops. We then decide how to reconcile the histories. Elif’s and Deniz’s computers reach the accepted shared state only after updating. Push carries commits from us to the shared repository, and pull gets updates back. Opening a PR and running pull are different operations. Now consider what a new teammate will see.
+
+Sources:
+
+- [git pull](https://git-scm.com/docs/git-pull)
+- [GitHub flow](https://docs.github.com/en/get-started/using-github/github-flow)
+- [git switch](https://git-scm.com/docs/git-switch)
+
+## 24. Where does the next teammate start?
+
+30:45–32:15 · 90 seconds
+
+Imagine a new student joining the team. Commit history traces decisions, but it does not by itself explain the wiring or how to run the robot. The README supplies that entry point. We can state the purpose, hardware, wiring diagram, and calibration steps. Explaining when the threshold needs adjustment is more useful than asking someone to copy one number. Markdown headings organize a readable page. The README must match the real project files, as well as look clear. Even if Elif and Deniz leave, the next person receives a guide for continuing the work, alongside the latest files.
 
 Sources:
 
 - [About README files](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes)
 
-## 8. Who can see it?
+## 25. Can everyone see it and change it?
 
-08:15–09:15 · 60 seconds
+32:15–34:00 · 105 seconds
 
-We choose a repository's visibility when we create it. Anyone can view and clone a public repository, but that does not mean anyone can change the original repository. Write access is a separate permission. A private repository limits access to authorized people. For a course or team project, we should decide in advance which files to share. A circuit diagram or robot program is different from a password or access key. If sensitive information has entered the history, deleting it from the latest file does not remove earlier commits. File contents and permissions therefore deserve attention before sharing. We will also return to licensing near the end.
+Before sharing, the team separates two questions. A public repository can be viewed and cloned by everyone; that does not give everyone permission to write to the main repository. A private repository limits access to authorized people. A class or team project should decide which files to publish. Code and wiring diagrams differ from passwords, access keys, and personal information. If sensitive information enters a commit, deleting it from the latest file does not remove it from earlier records. Keeping history makes that responsibility matter too. Next we will consider the conditions for using code from another project.
 
 Sources:
 
 - [Repository visibility](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/setting-repository-visibility)
 - [Removing sensitive data](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository)
 
-## 9. It worked yesterday
-
-09:15–10:45 · 90 seconds
-
-The robot followed the line yesterday, but behaves differently today. Our first reaction may be to blame the latest file. History helps us identify the commit that introduced the change. The animation shows a threshold changing from 500 to 900. The robot in the course kit reads IR sensors with analogRead; these numbers are example thresholds for comparing sensor readings. They are not universal calibration values for every robot. A commit records an author, a time, and a message. Those details show who made a change, but do not prove that it is correct. We still need to inspect and validate it. History lets us compare recorded states instead of relying on memory.
-
-Sources:
-
-- [Viewing commit history](https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History)
-
-## 10. How to read a diff
-
-10:45–12:00 · 75 seconds
-
-A diff is a view of differences. A minus sign marks a line on the earlier side of the comparison; a plus sign marks a line on the later side. These are not readings from two different sensors. They show the old and new values of the same variable. Here, the threshold for an analog IR sensor reading increases from 500 to 900. The signs make the change readable even without color. During review, this lets us focus on the changed section instead of rereading the entire file. Context still matters: a small numeric change can alter the robot's behavior. When comparing branches, we should make clear which side comes first and which comes second.
-
-Sources:
-
-- [git diff](https://git-scm.com/docs/git-diff)
-
-## 11. A change passes through four areas
-
-12:00–13:45 · 105 seconds
-
-These four areas are central to the lecture. The working tree is where we open and edit files. The staging area selects what will go into the next commit. The local repository holds commit history on our computer. The remote repository is the shared history on GitHub. This does not mean creating four separate projects; it describes different states of the same project. Editing the README happens in the working tree. Add stages the change. Commit records the staged state locally. Push sends commits to the remote repository. If something changes on GitHub, our local copy does not update automatically. We need to bring that change in. We will now follow each of these arrows in the robot repository.
-
-Sources:
-
-- [How Git works](https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F)
-
-## 12. Clone creates a local copy
-
-13:45–15:00 · 75 seconds
-
-Clone creates a local copy of an existing Git repository. A normal clone includes files, recorded history, and the remote address. After cloning robot-projem, we can edit its README and inspect earlier commits. The repository-url text on the slide is a placeholder for the actual clone URL. Reading a public repository over HTTPS usually does not require account authentication. A private repository requires access permission. Being able to clone does not mean being allowed to push changes back. Download ZIP usually gives us the files at the selected state, without creating local Git history. That distinction matters when we want to work with history.
-
-Sources:
-
-- [Cloning a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
-
-## 13. First, edit the file
-
-15:00–16:15 · 75 seconds
-
-There must be an actual change between cloning and making a new commit. Imagine adding the IR sensors' purpose and the location of the wiring diagram to the robot's README. We save it in the editor; the working tree now differs from the previous commit. Git status shows that state. There is no new commit yet, and nothing new is visible on GitHub. We can reread the text and check for mistakes. A command list that jumps straight from clone to add can suggest that cloning itself creates a new change. The editing step is where the change actually happens. The following operations select and record it.
-
-Sources:
-
-- [git status](https://git-scm.com/docs/git-status)
-
-## 14. Add selects the change
-
-16:15–17:45 · 90 seconds
-
-Add does not upload a file. It prepares the contents of the next commit. Here, we select only the README change. If we are also experimenting with the robot code, we do not have to include that work in the documentation commit. Git diff --cached shows the staged difference: what we are about to record. If we edit a file again after adding it, the staging area may still hold the previously selected state. To record the later edit too, we add it again. Staging is therefore a selection made at a particular moment, rather than moving an entire folder. Small, understandable commits make review and later undoing easier.
-
-Sources:
-
-- [git add](https://git-scm.com/docs/git-add)
-
-## 15. Commit records the change locally
-
-17:45–19:15 · 90 seconds
-
-We now record the staged README change with a commit. Its message, “Document IR sensor wiring in README,” explains why the file changed. Git log --oneline presents the history as a short list, including the new commit's ID and message. Earlier robot code commits remain in the history. This operation updates the local repository and does not require the internet. A commit message can also make a claim about a result. If we write “Fix the sensor,” we should explain what was actually checked. Our example changes documentation only; it does not demonstrate that the sensor works. Next, we will send this local commit to the team's shared repository.
-
-Sources:
-
-- [git commit](https://git-scm.com/docs/git-commit)
-- [Viewing commit history](https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History)
-
-## 16. Push sends commits to GitHub
-
-19:15–20:30 · 75 seconds
-
-Push sends local commits to the remote repository. Once it succeeds, the team can read our README update on GitHub. Push is different from saving a file in the editor; it does not directly send uncommitted changes from the working tree. Sending requires a remote address, a target branch, write permission, and suitable authentication. We can use an HTTPS authentication method or an SSH key; the appendix covers details. The account's normal password is not sufficient for Git authentication here. The first push may also need a tracking relationship. If new commits exist remotely, Git may reject the push. We should understand and incorporate the team's changes instead of forcing an overwrite.
-
-Sources:
-
-- [git push](https://git-scm.com/docs/git-push)
-
-## 17. Pull brings updates in
-
-20:30–22:00 · 90 seconds
-
-If Deniz pushes robot code to GitHub, the file on Elif's computer does not change by itself. Pull fetches remote updates and incorporates them into the local branch. First, status shows whether there are uncommitted working-tree changes. The --ff-only option advances the branch if the local history has not gone in a separate direction. If each side has different new commits, it stops; we then choose how to integrate the histories, for example with merge or rebase. General pull behavior can depend on configuration. The central relationship is simple: push goes from us to the shared repository, and pull comes back to us. Seeing the latest version on GitHub does not mean the local copy is current.
-
-Sources:
-
-- [git pull](https://git-scm.com/docs/git-pull)
-
-## 18. An issue makes work visible
-
-22:00–23:30 · 90 seconds
-
-We open an issue so a task does not disappear in a group chat. An issue can report a bug, describe a task, or suggest an improvement. For our robot, imagine an issue titled “Investigate the IR sensor threshold.” Its description explains when the robot loses the line, what we expect, and which file is involved. We can assign an owner and add labels. The issue number gives us a reference for discussions and pull requests. The animation uses a photograph task; the same structure works for a sensor problem or missing README content. Closing the issue does not erase its history. We can find the decisions later, keeping the question “What should we do?” separate from, but connected to, the code.
-
-Sources:
-
-- [About issues](https://docs.github.com/en/issues/tracking-your-work-with-issues/learning-about-issues/about-issues)
-
-## 19. A branch is a separate line of work
-
-23:30–25:00 · 90 seconds
-
-A branch creates a separate line of work. Imagine starting a branch from the current main commit to adjust the IR sensor threshold. New commits on that branch do not automatically change main. Someone else can work on the README in another branch. Thinking of a branch as copying the whole project folder may seem convenient, but that is not Git's model. A branch name points to a commit and advances with new commits. The branch we check out determines which state we see in the working tree. Branches help organize work, but do not guarantee that a change is good or correct. Review and validation are still needed before merging.
-
-Sources:
-
-- [Git branches](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell)
-
-## 20. Start with a simple branch workflow
-
-25:00–26:15 · 75 seconds
-
-For a beginner robot team, one main branch and short-lived task branches are enough. We call the main branch main in this presentation. Other projects may use master or another name; commands must use the actual name. Large projects may have dev, staging, or release branches, but that is not one mandatory workflow for everyone. When contributing elsewhere, we should not choose a target branch out of habit. First, read CONTRIBUTING or the contribution documentation. Maintainers decide which branch accepts contributions and under what conditions. Adding branches should make work easier to organize, rather than create a process that is difficult to understand.
-
-Sources:
-
-- [Branching workflows](https://git-scm.com/book/en/v2/Git-Branching-Branching-Workflows)
-
-## 21. A pull request is a proposal
-
-26:15–28:00 · 105 seconds
-
-A pull request proposes merging one branch into another. Our sensor-threshold branch is the source, and main is the target. Opening a PR does not immediately accept the change; it makes it available for review. The title describes the specific task. The description covers the problem, the change, and validation. Here, the threshold moves from 500 to 900. In a real project, we should state the conditions under which it was checked. We do not present an unperformed test as completed in this example. A PR can also link to the issue. The issue asks what we should do; the PR asks whether to accept this solution. Choosing the correct source and target matters as much as the content.
-
-Sources:
-
-- [Pull requests](https://docs.github.com/en/pull-requests/reference/pull-requests)
-
-## 22. Review strengthens the solution
-
-28:00–29:30 · 90 seconds
-
-Code review is more than looking for typos. A teammate may ask why the threshold changed, under what conditions the analog readings were measured, or whether another behavior is affected. In GitHub's Files changed view, a comment can attach to the relevant line. If the author responds with a new commit on the same branch and pushes it, the PR updates; there is no need to start a new one. Automated checks, when configured, also show their results. Review aims to make the solution understandable and reliable. Permission to approve and permission to merge may differ. The team's rules determine when a change can enter the main branch.
-
-Sources:
-
-- [Pull request reviews](https://docs.github.com/en/pull-requests/reference/pull-request-reviews)
-
-## 23. Update locally after the merge
-
-29:30–30:45 · 75 seconds
-
-After review, the change can be merged into main on GitHub. Our local main may still point to an earlier commit, so we switch to it and bring in the remote update. The --ff-only example assumes there are no separate new commits on local main. The sensor-threshold change is now part of the main line of work. If the task branch is no longer needed, we can remove it. The content included in main remains. The shape of the history depends on the merge method: GitHub offers several methods, and they do not all produce identical history. Before going into those details, remember the cycle: propose, review, accept, and update everyone's local copies.
-
-Sources:
-
-- [GitHub flow](https://docs.github.com/en/get-started/using-github/github-flow)
-- [git switch](https://git-scm.com/docs/git-switch)
-
-## 24. A conflict asks us to decide
-
-30:45–32:15 · 90 seconds
-
-Git can often combine changes in different areas automatically. But if a shared starting threshold of 500 becomes 900 on one branch and 700 on another, Git cannot know which value is right. It stops and adds conflict markers. In this example, we are on the sensor-threshold branch and merging main into it. The HEAD section contains 900, while the incoming main section contains 700. HEAD does not mean “the correct side”; it identifies our current position. Deleting a file on one branch while changing it on the other can also cause a conflict. Git stopping does not mean the whole project is broken. It makes a decision visible for the team to resolve.
-
-Sources:
-
-- [Merge conflicts](https://docs.github.com/en/pull-requests/reference/merge-conflicts)
-
-## 25. Resolve the meaning of the conflict
-
-32:15–34:00 · 105 seconds
-
-Resolving a conflict is not choosing one side at random. We read both authors' reasoning and decide on the robot's intended behavior. The final file should contain a meaningful threshold and no conflict markers. Sometimes we combine both changes or write a third solution. After saving, we perform suitable project validation. Add and commit then complete this merge resolution. The commands on this slide apply to a merge; the continuation step during rebase is different. Editors such as VS Code make the options easier to use, but we still decide which content is correct. Removing markers can finish the technical step; understanding whether the problem is solved requires looking at the code and the project's behavior.
-
-Sources:
-
-- [Resolving a merge conflict](https://docs.github.com/en/pull-requests/how-tos/merge-and-close-pull-requests/resolving-a-merge-conflict-using-the-command-line)
-
-## 26. How do we choose existing code?
+## 26. Should we use the code we found?
 
 34:00–35:30 · 90 seconds
 
-Imagine adding an HC-SR04 distance sensor to the line-following robot. Finding a library on GitHub can speed up the start, but choosing the one with the most stars is not enough. A star can mean that someone saved a project or expressed interest; it does not directly measure real-world use or correctness. We first check compatibility with our sensor and Arduino environment. We look for wiring information and examples in the README, inspect open issues, and consider maintenance. A recent update is not automatically better; a mature project may change less often. Finally, we check the license. This slide provides selection criteria rather than recommending a particular library.
+Suppose Elif finds another repository explaining sensor calibration. Existing code can speed up a start, but matching sensor names do not guarantee compatibility. Inspect the board, wiring, libraries, and conditions the example is intended for. The README and open issues provide context. Stars reflect interest or bookmarking; they do not measure correctness on our robot or the number of real deployments. A recent update is not proof of superiority either: mature projects may change less often. The team checks its needs, then compatibility and maintenance. That provides a reasoned choice before bringing a new code fragment into the project.
 
 Sources:
 
 - [What stars mean](https://docs.github.com/en/get-started/exploring-projects-on-github/saving-repositories-with-stars)
 
-## 27. A license sets the conditions of use
+## 27. Can we use the code we can see?
 
 35:30–36:30 · 60 seconds
 
-A public repository does not automatically grant unrestricted use. A license explains the conditions for using, modifying, and distributing code. When adding a library to our robot, we check both its license and those of its dependencies. Some licenses require attribution or retained license notices; other obligations may apply. With no license, we should not assume that finding code on GitHub makes every use permitted. If we want others to use our own project, clearly stating an appropriate license also helps. The aim here is not to memorize license types, but to recognize that a sharing decision involves more than the technical files.
+Viewing a repository in a browser does not grant every usage right. Its license describes the conditions for using, modifying, and distributing the code. Before adding Elif’s example to the robot, inspect its license notice and any conditions on its dependencies. Some licenses require attribution or retaining the license text; other obligations may apply. Without a license, finding code on GitHub is not a basis for assuming unrestricted use. If the team wants others to use its robot project, it can state an appropriate license clearly. The lesson is to distinguish visibility from usage rights.
 
 Sources:
 
 - [Repository licenses](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository)
 
-## 28. Contribute through a fork
+## 28. How do we propose a fix to another project?
 
 36:30–38:00 · 90 seconds
 
-We may have write access to our team's repository but not to an external open-source project. A fork is not required just to read or clone a public project. It is useful when we want a remote copy in our own account that we can push to. First, we read the contribution guide and find the branch that accepts contributions. Then we clone our fork, make changes on a task branch, and push our commits to the fork. We open a PR with our fork's branch as the source and the original project's branch as the target. The target is not always dev; CONTRIBUTING or the maintainers' instructions determine it. This lets us propose an organized change without write access to the original repository.
+Suppose the team finds a missing explanation in the example. It may have no write permission to the original repository. Reading or cloning a public project does not require a fork; a fork gives us a remote copy on our own account where we can push. First read the contribution guide and learn the accepted target branch. Then clone the fork, make a change on a task branch, and push our commits to our fork. The PR’s source is our fork and its target is the original project. Maintainers evaluate it. The recording, sharing, and review cycle is familiar; the repositories and decision-makers differ.
 
 Sources:
 
 - [About forks](https://docs.github.com/en/pull-requests/reference/forks)
 
-## 29. A portfolio explains your work
+## 29. What does this project say about us?
 
 38:00–39:30 · 90 seconds
 
-A GitHub profile can be a portfolio, but its repositories need to be understandable. In the robot project, we can explain the problem, our contribution within the team, the hardware, and the outcome. A photograph or short video makes the project concrete; describing its limitations honestly is also valuable. Featuring a few strong projects makes the profile easier to explore. The green contribution squares are not a complete record of working time. GitHub counts specific activities and commits under certain conditions. Laboratory work and design thinking are not fully represented. In an application, a clear project and a concrete description of your contribution matter more than the number of squares.
+A robot project used in a portfolio needs more than a repository link. Elif and Deniz can explain the problem, their own contributions, and the reasons behind decisions. A photo, short demonstration, and running guide make it concrete. Honestly describing limits and unsuccessful conditions is useful too. The profile animation demonstrates featuring projects. Green contribution squares do not measure all work time: hardware preparation and lab thinking are not fully represented. In an internship review, the purpose is to show what someone did and how they made project decisions, rather than simply report an activity count.
 
 Sources:
 
 - [Contribution graph criteria](https://docs.github.com/en/account-and-profile/reference/profile-contributions-reference)
 
-## 30. Student resources
+## 30. Where can we continue after class?
 
 39:30–40:30 · 60 seconds
 
-GitHub Education offers learning resources and benefits for students. The Student Developer Pack includes partner offers whose number and terms can change. Copilot Student is also available to verified students. These benefits should not be understood as unlimited services automatically granted to every account. An application requires verification of student status, with email or documents depending on the process. Some benefits may need separate activation. Instead of giving a fixed offer count or a guaranteed approval time, the slide points to the current official information. Choose tools according to your needs; being free does not by itself make a tool suitable for the project.
+Today we followed one change rather than using every command. Later, revisit concepts in Pro Git or find a GitHub operation’s details in GitHub Docs. GitHub Skills offers step-by-step practice at your own pace. The twelve reference slides cover setup and everyday commands. If you need student tools, check GitHub Education’s current official conditions; offers and application requirements may change. The official Copilot Student setup page is also linked as a reference. Starting with the task you need to perform, then choosing the relevant resource, is more useful than collecting a long tool list. Finally, return to the file confusion we started with.
 
 Sources:
 
+- [Pro Git · English](https://git-scm.com/book/en/v2)
+- [Git and GitHub learning resources](https://docs.github.com/en/get-started/start-your-journey/git-and-github-learning-resources)
+- [GitHub Skills](https://github.com/skills/introduction-to-github)
 - [GitHub Education](https://docs.github.com/en/education/about-github-education/github-education-for-students/about-github-education-for-students)
-- [Apply as a student](https://docs.github.com/en/education/about-github-education/github-education-for-students/apply-to-github-education-as-a-student)
 - [Copilot Student](https://docs.github.com/en/copilot/how-tos/copilot-on-github/set-up-copilot/enable-copilot/set-up-for-students)
 
-## 31. The whole project workflow
+## 31. What does the team have now?
 
 40:30–42:00 · 90 seconds
 
-We started with the robot losing the line. An issue made the task visible, a branch held the change, and a commit recorded it. Push brought it to the shared platform; a PR supported review and merging, then we updated the local copy. Alongside this workflow, the README explains the project, history shows what changed, and the license sets sharing conditions. Three distinctions organize the concepts: Git and GitHub are different; saving, committing, and pushing are different; and issues and PRs answer different questions. The appendix is a reference for commands. Anyone who wants to continue later can use the official GitHub Docs, the Pro Git book, and GitHub Skills independently.
+At first, Elif and Deniz did not know what to do with different final files. We found the history and diff, then made the problem visible as an issue. We developed a candidate on a branch, selected and recorded it, shared it, and opened it for review. When a conflict appeared, the team chose the sensor solution with a reason and appropriate validation. After acceptance, local copies were updated from shared main. The README gave the next person a starting point. What we gained was a traceable project decision. Real robot behavior still requires hardware validation; Git helps organize and share its records.
 
 Sources:
 
 - [Git and GitHub learning resources](https://docs.github.com/en/get-started/start-your-journey/git-and-github-learning-resources)
-- [Introduction to GitHub](https://github.com/skills/introduction-to-github)
+- [GitHub Skills](https://github.com/skills/introduction-to-github)
 
-## 32. Questions
+## 32. What if it loses the line tomorrow?
 
 42:00–45:00 · 180 seconds
 
-Thank you. We can think about questions in three groups: where the change is currently stored, who can see it, and how it enters the team's shared line of work. A file saved but not committed is in a different state from a commit made but not pushed. Working on a branch and merging into main are also separate steps. We can use the last three minutes to discuss these relationships or how to organize your own projects.
+Return to the robot from the opening. If its behavior changes again, we can inspect the history, diff, issue, and reasoning instead of only looking for a file called final. Saving, committing, and pushing are separate steps; the PR is where the team evaluates acceptance. These relationships help you explain where a change currently stands in your own project. We have three minutes for questions. If there are none, briefly revisit what records and explanations a new teammate would need to take over this robot. The following twelve reference slides hold setup and command details.
 
 Sources:
 
-- [GitHub Docs](https://docs.github.com/en/get-started/start-your-journey/git-and-github-learning-resources)
+- [Git and GitHub learning resources](https://docs.github.com/en/get-started/start-your-journey/git-and-github-learning-resources)
 - [Pro Git · English](https://git-scm.com/book/en/v2)
 - [GitHub Skills](https://github.com/skills/introduction-to-github)
 - [GitHub Education](https://education.github.com/pack)

@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Git ve GitHub · Ders materyali | Arif Solmaz</title>
-<meta name="description" content="Birleşik Git ve GitHub dersi: 32 ana slayt, 12 ek, konuşmacı notları ve örnek proje.">
+<title>Git ve GitHub · Robot dün çalışıyordu | Arif Solmaz</title>
+<meta name="description" content="Elif ve Deniz’in robot vakasıyla 45 dakikalık Git ve GitHub anlatımı: 32 ana slayt, 12 ek, beş GIF ve konuşmacı notları.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=IBM+Plex+Sans:wght@400;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
@@ -45,41 +45,42 @@ ol.plan{padding-left:20px;color:var(--fg2)} ol.plan li{margin:6px 0} ol.plan b{c
     <p class="eyebrow"><span data-l="tr">Mekatronik · Git ve GitHub · 45 dakika</span><span data-l="en">Mechatronics · Git and GitHub · 45 minutes</span></p>
     <div class="lang" role="group" aria-label="Dil / Language"><button data-set="tr">TR</button><button data-set="en">EN</button></div>
   </div>
-  <h1><span data-l="tr">Git ve GitHub</span><span data-l="en">Git and GitHub</span></h1>
-  <p class="lead"><span data-l="tr">45 dakikalık anlatım: projelerin geçmişi, GitHub ve ekip çalışması. 32 ana slayt ve 12 ek. Canlı gösterim, hesap hazırlığı ve sınıf içi uygulama yok.</span><span data-l="en">A 45-minute lecture on project history, GitHub and teamwork. 32 main slides and 12 appendix slides. No live demo, account setup or classroom exercise.</span></p>
+  <h1><span data-l="tr">Robot dün çalışıyordu</span><span data-l="en">The robot worked yesterday</span></h1>
+  <p class="lead"><span data-l="tr">Elif ve Deniz’in kurgusal robotu bugün çizgiyi kaybediyor. Değişikliğin izinden ortak karara, sonra projeyi devretmeye ilerliyoruz. 45 dakikalık anlatım: 32 ana slayt, 12 ek ve beş GIF. Canlı uygulama veya hesap hazırlığı gerekmiyor.</span><span data-l="en">Elif and Deniz’s fictional robot loses the line today. Follow the change through to a shared decision and project handover. A 45-minute lecture: 32 main slides, 12 reference slides and five GIFs. No live exercise or account setup is required.</span></p>
   <div class="words"><span>repository</span><span>commit</span><span>issue</span><span>README</span></div>
   <div class="btns">
-    <a class="btn pri" id="slides-link" href="../"><span data-l="tr">Birleşik sunum</span><span data-l="en">Combined presentation</span></a>
+    <a class="btn pri" id="slides-link" href="../"><span data-l="tr">Sunumu aç</span><span data-l="en">Open the presentation</span></a>
     <a class="btn" id="notes-link" href="../konusmaci-notlari.html"><span data-l="tr">Konuşmacı notları</span><span data-l="en">Speaker notes</span></a>
     <a class="btn" id="pdf-link" href="../pdf/git-github-tr.pdf" download><span data-l="tr">44 slaytın PDF'si</span><span data-l="en">All 44 slides as PDF</span></a>
     <a class="btn" id="project-link" href="ornek-proje.zip"><span data-l="tr">Örnek projeyi indir (.zip)</span><span data-l="en">Download the example project (.zip)</span></a>
   </div>
 
-  <h2><span data-l="tr">Dersin akışı</span><span data-l="en">Lesson plan</span></h2>
+  <h2><span data-l="tr">Robotun hikâyesi</span><span data-l="en">The robot’s story</span></h2>
   <ol class="plan">
-    <li data-l="tr"><b>Temeller</b>: dosya sorunu, Git ve GitHub ayrımı, depo, commit, README</li>
-    <li data-l="tr"><b>Kayıt akışı</b>: hazırlık alanı, yerel geçmiş, push ve pull</li>
-    <li data-l="tr"><b>Takım çalışması</b>: issue, branch, pull request, inceleme ve çakışma</li>
-    <li data-l="tr"><b>Paylaşım</b>: kütüphane seçimi, lisans, fork, portfolyo ve öğrenci imkânları</li>
-    <li data-l="tr"><b>Ekler</b>: kurulum, SSH ve ayrıntılı komutlar, ana ders süresinin dışında</li>
-    <li data-l="en"><b>Foundations</b>: file versions, Git and GitHub, repository, commit, README</li>
-    <li data-l="en"><b>Saving changes</b>: staging, local history, push and pull</li>
-    <li data-l="en"><b>Teamwork</b>: issues, branches, pull requests, reviews and conflicts</li>
-    <li data-l="en"><b>Sharing</b>: libraries, licenses, forks, portfolios and student benefits</li>
-    <li data-l="en"><b>Appendix</b>: installation, SSH and detailed commands outside the main lecture</li>
+    <li data-l="tr"><b>İzi bul</b>: farklı son dosyalar, kayıt geçmişi ve 500 → 900 değişikliği</li>
+    <li data-l="tr"><b>Adayı geliştir</b>: aynı sensör değişikliğini ayrı dalda düzenle, seç, kaydet ve paylaş</li>
+    <li data-l="tr"><b>Birlikte karar ver</b>: issue, PR, inceleme, çakışma, kabul ve yerel güncelleme</li>
+    <li data-l="tr"><b>Projeyi devret</b>: README, paylaşım koşulları, dış katkı ve portfolyo</li>
+    <li data-l="tr"><b>Ekler</b>: kurulum, SSH ve ayrıntılı komutlar; ana ders süresinin dışında</li>
+    <li data-l="en"><b>Find the trail</b>: different final files, recorded history and the 500 → 900 change</li>
+    <li data-l="en"><b>Develop a candidate</b>: edit, stage, record and share the same sensor change on a separate branch</li>
+    <li data-l="en"><b>Decide together</b>: issue, PR, review, conflict, acceptance and local updates</li>
+    <li data-l="en"><b>Hand over the project</b>: README, sharing conditions, outside contributions and portfolio</li>
+    <li data-l="en"><b>Reference slides</b>: setup, SSH and detailed commands outside the main lecture</li>
   </ol>
 
   <h2><span data-l="tr">Animasyonlar</span><span data-l="en">Animations</span></h2>
   <div id="scenes"></div>
 
-  <p class="foot"><span data-l="tr">Animasyonlardaki kişi, kullanıcı ve kütüphane adları örnek amaçlıdır.</span><span data-l="en">The people, usernames and libraries in the animations are made up.</span> · <a id="footer-slides-link" href="../">Birleşik sunum / Combined slides</a> · <a href="/">arifsolmaz.github.io</a></p>
+  <p class="foot"><span data-l="tr">Animasyonlardaki kişi, kullanıcı ve kütüphane adları örnek amaçlıdır.</span><span data-l="en">The people, usernames and libraries in the animations are made up.</span> · <a id="footer-slides-link" href="../">Ana sunum / Main presentation</a> · <a href="/">arifsolmaz.github.io</a></p>
 </div>
 <script>
 const S = [
- ['01-daginik-klasor','01-messy-folder','Dağınık dosya sorunu','The messy folder','Commit edilen sürümler tek bir geçmişte izlenir.','Committed versions can be followed in one history.'],
- ['03-projeni-github-a-koy','03-put-your-project-on-github','Bir projenin depo görünümü','A project repository','Kod, şema ve rapor aynı depoda bulunabilir.','Code, diagrams and reports can live in the same repository.'],
- ['04-zaman-makinesi','04-time-machine','Değişiklik geçmişi','Change history','Commit edilmiş değişiklikler: kim, ne zaman, neyi değiştirdi?','Committed changes: who changed what, and when?'],
- ['05-takimin-listesi','05-team-to-do-list','Takımın iş listesi','The team task list','Issue işin tanımını, sorumlusunu ve durumunu tutar.','An issue tracks a task, its assignee and its status.'],
+ ['01-daginik-klasor','01-messy-folder','Hangi dosyaya güveneceğiz?','Which file can we trust?','Farklı son dosyalar yerine kaydedilmiş geçmişi izleriz.','Follow recorded history instead of choosing between final files.'],
+ ['04-zaman-makinesi','04-time-machine','Dünle bugünü karşılaştır','Compare yesterday and today','500 → 900 değişikliğini buluruz; doğru eşik robotta doğrulanır.','Find the 500 → 900 change; validate the right threshold on the robot.'],
+ ['03-projeni-github-a-koy','03-put-your-project-on-github','Projeyi birlikte sakla','Keep the project together','Kod, bağlantı şeması ve açıklama aynı depoda bulunur.','Code, wiring and explanations share one repository.'],
+ ['05-takimin-listesi','05-team-to-do-list','Sorunu takip et','Track the problem','GIF fotoğraf işiyle issue arayüzünü gösterir; hikâyemizdeki iş sensör eşiğidir.','The GIF demonstrates issues with a photo task; our story tracks the sensor threshold.'],
+ ['07-portfolyo','07-portfolio','Yaptığın işi anlaşılır kıl','Make your work understandable','Projeyi, katkını ve kararlarının gerekçesini görünür kıl.','Show the project, your contribution and your reasoning.'],
 ];
 function render(l){
   l = l === 'en' ? 'en' : 'tr';

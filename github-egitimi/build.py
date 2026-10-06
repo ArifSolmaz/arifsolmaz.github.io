@@ -136,7 +136,9 @@ def render_slide(slide, index, main_count, total_count, timing, lang, prefix):
         content += f'<div class="slide-links">{source_links(slide)}</div>'
     speech = f'{timing}\n\n{slide["notes"]}'
     reference_class = ' cheatsheet' if str(slide['id']) == '44' else ''
-    return f'''<section id="{esc(slide['id'])}" class="{theme} {layout}{' appendix' if appendix else ''}{reference_class}" data-timing="{esc(timing)}" aria-hidden="true">
+    cover_class = ' story-cover' if index == 0 and layout == 'cover' else ''
+    sources_class = ' with-sources' if slide.get('visibleSources') else ''
+    return f'''<section id="{esc(slide['id'])}" class="{theme} {layout}{' appendix' if appendix else ''}{reference_class}{cover_class}{sources_class}" data-timing="{esc(timing)}" aria-hidden="true">
 {heading}<div class="content">{content}</div>
 <footer class="slide-footer"><span>{esc(ui['footer'])}</span><span>{esc(number)}</span></footer>
 <aside><div class="speech">{esc(speech)}</div><div class="sources">{source_links(slide)}</div></aside>
@@ -187,7 +189,7 @@ def build(lang):
 <title>{esc(data['title'])}</title><meta name="description" content="{esc(ui['description'])}">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600..800&family=IBM+Plex+Sans:wght@400;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{prefix}assets/lecture.css"><link rel="stylesheet" href="{prefix}assets/editor.css"></head><body data-lang="{lang}" data-prefix="{prefix}" data-main-count="{main_count}">
+<link rel="stylesheet" href="{prefix}assets/lecture.css"><link rel="stylesheet" href="{prefix}assets/editor.css"></head><body data-lang="{lang}" data-prefix="{prefix}" data-main-count="{main_count}" data-storage-key="git-github-editor-story-v2:{lang}">
 <div id="ui-progress" aria-hidden="true"></div><main id="ui-viewport" aria-label="{esc(ui['lecture_label'])}"><div id="ui-stage">{''.join(rendered)}</div></main>
 <div id="ui-notes" role="region" aria-label="{esc(ui['notes'])}" hidden><h3 id="ui-notes-title"></h3><div id="ui-notes-body"></div><div id="ui-notes-sources"></div></div>
 <div id="ui-overview" role="dialog" aria-modal="true" aria-label="{esc(ui['all_slides'])}" hidden><div class="overview-top"><h2>{esc(ui['all_slides'])}</h2><button id="ui-close-ov">{esc(ui['return'])}</button></div><h3>{esc(ui['main_heading'])}</h3><div class="overview-grid" id="ui-main-grid"></div><h3>{esc(ui['extra_heading'])}</h3><div class="overview-grid" id="ui-extra-grid"></div></div>

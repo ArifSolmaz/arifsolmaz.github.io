@@ -170,7 +170,7 @@
     const slide = data.slides[i], section = sectionNodes[i], active = section.classList.contains('active');
     const wasUrl = section.querySelector('img[data-blob-url]')?.dataset.blobUrl;
     if (wasUrl) URL.revokeObjectURL(wasUrl);
-    section.className = `${slide.theme} ${slide.layout}${slide.appendix ? ' appendix' : ''}${String(slide.id) === '44' ? ' cheatsheet' : ''}${active ? ' active' : ''}`;
+    section.className = `${slide.theme} ${slide.layout}${slide.appendix ? ' appendix' : ''}${String(slide.id) === '44' ? ' cheatsheet' : ''}${i === 0 && slide.layout === 'cover' ? ' story-cover' : ''}${slide.visibleSources ? ' with-sources' : ''}${active ? ' active' : ''}`;
     section.id = String(slide.id);
     const heading = editable(node(i === 0 ? 'h1' : 'h2', '', slide.title), 'title');
     const eyebrow = editable(node('p', 'eyebrow', slide.eyebrow || ''), 'eyebrow');
