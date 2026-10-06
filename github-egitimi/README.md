@@ -26,6 +26,16 @@ Sol/sağ oklarla gezinilir. `N` notları, `O` genel bakışı, `F` tam ekranı a
 
 Animasyonlar yalnız gerektiğinde yüklenir. Ağ veya dosya erişimi başarısız olduğunda sabit görsel kullanılır. Google Fonts yüklenemezse yerel yazı tiplerine geçilir. Paylaşılan kaynaklar öğrenci paketi teklifleri gibi değişebilen bilgilerin güncel resmi adreslerini içerir.
 
+## Sunumu düzenleme
+
+Sunumdaki **Düzenle** düğmesi, seçili slaydın yanında düzenleme alanlarını açar. Başlık, açıklama, maddeler, sütun metinleri, kod, konuşmacı notları, süre ve renk teması değiştirilebilir. Önizlemedeki metne tıklamak ilgili düzenleme alanına geçer. Düzenlemeler Türkçe ve İngilizce için ayrı saklanır.
+
+Değişiklikler bu tarayıcıda otomatik kaydedilir. Paylaşmak için **HTML indir**, yedeklemek veya başka tarayıcıda düzenlemeye devam etmek için **Düzenleme dosyasını indir** kullanılır. İndirilen HTML, görselleri ve sunum araçlarını canlı siteden yükler; internet bağlantısı gerekir. **Dosyadan aç** ile düzenleme dosyası geri yüklenebilir.
+
+Güncellenen konuşmacı notları ayrıca indirilebilir. Düzenlenmiş slaytların PDF çıktısı için **Yazdır** kullanılır; tarayıcıda hedef olarak PDF seçilir. Bir düzenleme varsa PDF düğmesi bu güncel yazdırma akışını açar. Özgün PDF dosyaları ilk yayımlanan 44 slaydın çıktılarıdır.
+
+Tarayıcıdaki düzenlemeler herkesin gördüğü siteyi değiştirmez. Site içeriğini kalıcı güncellemek için indirilen düzenleme dosyasının içerikleri ilgili kaynak dosyasına uygulanıp sunum yeniden üretilir ve yayımlanır. Tarayıcı verileri temizlenmeden önce düzenleme dosyası indirilmelidir.
+
 ## İçerik bakımı
 
 `ders.json` Türkçe, `lesson-en.json` İngilizce slayt metinleri, konuşmacı notları, süreler ve kaynakları içerir. `python3 build.py` iki dilde HTML sunumlarını ve not belgelerini üretir. Python standart kütüphanesi yeterlidir. Görseller özgün eğitimden alınmıştır. İçerik değiştiğinde PDF çıktıları da yenilenmelidir.

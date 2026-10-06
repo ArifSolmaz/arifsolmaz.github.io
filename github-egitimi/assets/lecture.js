@@ -14,6 +14,8 @@
   const ui=language==='en'?{appendix:'Appendix',main:'Main lecture',extras:'Appendix slides',title:'Git and GitHub'}:{appendix:'Ek',main:'Ana anlatım',extras:'Ek slaytlar',title:'Git ve GitHub'};
   const languageLink=document.querySelector('[data-language-link]');
   const languageBase=languageLink?.getAttribute('href').split('#')[0];
+  const notesDocument=document.getElementById('ui-notes-document');
+  const notesBase=document.body.dataset.notesBase||notesDocument?.getAttribute('href').split('#')[0];
   const appendixLabel=i=>`${ui.appendix} ${i-mainCount+1}`;
   const loaded=new Map();
   let index=0, lastMain=0, returnFocus=null;
@@ -27,7 +29,7 @@
   async function playAnimation(slide){
     const img=slide.querySelector('img[data-animation]');
     if(!img)return;
-    if(matchMedia('(prefers-reduced-motion: reduce)').matches){img.src=img.dataset.poster;return;}
+    if(document.body.classList.contains('editing')||matchMedia('(prefers-reduced-motion: reduce)').matches){img.src=img.dataset.poster;return;}
     const path=img.dataset.animation;
     if(location.protocol==='file:'){img.src=path;return;}
     try{
@@ -59,9 +61,9 @@
     if(location.hash!==hash)history[push?'pushState':'replaceState'](null,'',hash);
     document.title=count.title.trim()===ui.title?ui.title:`${count.title} · ${ui.title}`;
     if(languageLink)languageLink.setAttribute('href',`${languageBase}#${encodeURIComponent(slides[index].id)}`);
-    const notesDocument=document.getElementById('ui-notes-document');
-    if(notesDocument)notesDocument.setAttribute('href',`konusmaci-notlari.html#not-${index+1}`);
+    if(notesDocument)notesDocument.setAttribute('href',`${notesBase}#not-${index+1}`);
     playAnimation(slides[index]);
+    document.dispatchEvent(new CustomEvent('lecture:slidechange',{detail:{index,slideId:slides[index].id}}));
   }
   function fromHash(){
     let hash=location.hash.slice(1);
@@ -80,6 +82,8 @@
   }
   function toggleNotes(){notes.hidden=!notes.hidden;document.getElementById('ui-btn-notes').setAttribute('aria-pressed',String(!notes.hidden));}
   function buildOverview(){
+    document.getElementById('ui-main-grid').replaceChildren();
+    document.getElementById('ui-extra-grid').replaceChildren();
     slides.forEach((s,i)=>{
       const button=document.createElement('button');button.className='thumb';button.type='button';
       const title=s.querySelector('h1,h2').textContent;button.setAttribute('aria-label',`${i<mainCount?i+1:appendixLabel(i)}. ${title}`);
@@ -104,10 +108,11 @@
   window.addEventListener('hashchange',()=>show(fromHash()));
   window.addEventListener('popstate',()=>show(fromHash()));
   window.addEventListener('resize',fit);
+  document.addEventListener('lecture:refresh',e=>{buildOverview();fit();show(e.detail?.index??index);});
   window.addEventListener('beforeprint',()=>{slides.forEach(s=>{const img=s.querySelector('img[data-animation]');if(img)img.src=img.dataset.poster;});});
   window.addEventListener('afterprint',()=>playAnimation(slides[index]));
   document.addEventListener('keydown',e=>{
-    if(e.metaKey||e.ctrlKey||e.altKey||e.target.closest('input,textarea,select'))return;
+    if(e.metaKey||e.ctrlKey||e.altKey||e.target.closest('input,textarea,select,[contenteditable="true"]'))return;
     const k=e.key.toLowerCase();
     if(k===' '&&e.target.closest('button,a'))return;
     if(!overview.hidden){

@@ -16,7 +16,7 @@ UI = {
         'all_slides': 'Tüm slaytlar', 'return': 'Sunuma dön',
         'main_heading': 'Ana anlatım · 32 slayt · 45 dakika', 'extra_heading': 'Ekler · 12 slayt',
         'navigation': 'Sunum gezinmesi', 'previous': 'Önceki slayt', 'next': 'Sonraki slayt',
-        'overview': 'Genel bakış', 'notes_button': 'Notlar', 'appendix_button': 'Ek slaytlar',
+        'edit': 'Düzenle', 'overview': 'Genel bakış', 'notes_button': 'Notlar', 'appendix_button': 'Ek slaytlar',
         'replay': 'Animasyonu yinele', 'fullscreen': 'Tam ekran', 'print': 'Yazdır',
         'notes_document': 'Not belgesi', 'materials': 'Materyal', 'pdf': 'PDF indir',
         'help': '← → gezin · N notlar · O genel bakış', 'open_slide': 'Slaytı aç',
@@ -36,7 +36,7 @@ UI = {
         'all_slides': 'All slides', 'return': 'Return to presentation',
         'main_heading': 'Main lecture · 32 slides · 45 minutes', 'extra_heading': 'Appendix · 12 slides',
         'navigation': 'Presentation navigation', 'previous': 'Previous slide', 'next': 'Next slide',
-        'overview': 'Overview', 'notes_button': 'Notes', 'appendix_button': 'Appendix slides',
+        'edit': 'Edit', 'overview': 'Overview', 'notes_button': 'Notes', 'appendix_button': 'Appendix slides',
         'replay': 'Replay animation', 'fullscreen': 'Fullscreen', 'print': 'Print',
         'notes_document': 'Notes document', 'materials': 'Materials', 'pdf': 'Download PDF',
         'help': '← → navigate · N notes · O overview', 'open_slide': 'Open slide',
@@ -64,6 +64,11 @@ def clock(seconds):
     return f'{int(seconds)//60:02}:{int(seconds)%60:02}'
 
 
+def embedded_json(data):
+    """Keep JSON unchanged while preventing script-tag and line-separator parsing."""
+    return json.dumps(data, ensure_ascii=False, separators=(',', ':')).replace('<', r'\u003c').replace('\u2028', r'\u2028').replace('\u2029', r'\u2029')
+
+
 def resource(value, prefix):
     """JSON paths are relative to the lecture root; EN pages are one level down."""
     value = str(value)
@@ -80,7 +85,7 @@ def bullets(slide):
     if not slide.get('bullets'):
         return ''
     tag = 'ol' if slide.get('layout') == 'steps' else 'ul'
-    return f'<{tag} class="big-list">' + ''.join(f'<li>{inline(b)}</li>' for b in slide['bullets']) + f'</{tag}>'
+    return f'<{tag} class="big-list">' + ''.join(f'<li data-edit-field="bullets" data-edit-index="{i}">{inline(b)}</li>' for i, b in enumerate(slide['bullets'])) + f'</{tag}>'
 
 
 def codebox(code):
@@ -88,7 +93,11 @@ def codebox(code):
     for line in code.splitlines():
         cls = 'added' if line.startswith('+') else 'removed' if line.startswith('-') else ''
         lines.append(f'<span class="{cls}">{esc(line)}</span>')
-    return '<pre class="codebox"><code>' + '\n'.join(lines) + '</code></pre>'
+    return '<pre class="codebox" data-edit-field="code"><code>' + '\n'.join(lines) + '</code></pre>'
+
+
+def column_content(columns):
+    return ''.join(f'<div class="column"><h3 data-edit-field="columns" data-edit-index="{i}" data-edit-part="heading">{esc(c["heading"])}</h3><p data-edit-field="columns" data-edit-index="{i}" data-edit-part="body">{inline(c["body"])}</p></div>' for i, c in enumerate(columns))
 
 
 def render_slide(slide, index, main_count, total_count, timing, lang, prefix):
@@ -98,8 +107,8 @@ def render_slide(slide, index, main_count, total_count, timing, lang, prefix):
     title_tag = 'h1' if index == 0 else 'h2'
     theme = slide.get('theme', 'paper')
     layout = slide.get('layout', 'text')
-    heading = f'<p class="eyebrow">{esc(slide.get("eyebrow", ""))}</p><{title_tag}>{esc(slide["title"])}</{title_tag}>'
-    lead = f'<p class="lead">{inline(slide["lead"])}</p>' if slide.get('lead') else ''
+    heading = f'<p class="eyebrow" data-edit-field="eyebrow">{esc(slide.get("eyebrow", ""))}</p><{title_tag} data-edit-field="title">{esc(slide["title"])}</{title_tag}>'
+    lead = f'<p class="lead" data-edit-field="lead">{inline(slide["lead"])}</p>' if slide.get('lead') else ''
     if layout == 'cover':
         content = lead + (f'<p class="byline">Arif Solmaz<br>{esc(ui["byline"])}</p>' if index == 0 else bullets(slide))
         if slide.get('diagram'):
@@ -114,20 +123,20 @@ def render_slide(slide, index, main_count, total_count, timing, lang, prefix):
     elif slide.get('code'):
         side = bullets(slide)
         if slide.get('columns'):
-            side += ''.join(f'<div class="column"><h3>{esc(c["heading"])}</h3><p>{inline(c["body"])}</p></div>' for c in slide['columns'])
+            side += column_content(slide['columns'])
         content = lead + (f'<div class="code-layout">{codebox(slide["code"])}<div>{side}</div></div>' if side else codebox(slide['code']))
     elif slide.get('columns'):
         columns = slide['columns']
-        content = lead + f'<div class="columns {"three" if len(columns)==3 else ""}">' + ''.join(f'<div class="column"><h3>{esc(c["heading"])}</h3><p>{inline(c["body"])}</p></div>' for c in columns) + '</div>' + bullets(slide)
+        content = lead + f'<div class="columns {"three" if len(columns)==3 else ""}">' + column_content(columns) + '</div>' + bullets(slide)
     else:
         content = lead + bullets(slide)
     if slide.get('caption'):
-        content += f'<p class="caption">{inline(slide["caption"])}</p>'
+        content += f'<p class="caption" data-edit-field="caption">{inline(slide["caption"])}</p>'
     if slide.get('visibleSources'):
         content += f'<div class="slide-links">{source_links(slide)}</div>'
     speech = f'{timing}\n\n{slide["notes"]}'
     reference_class = ' cheatsheet' if str(slide['id']) == '44' else ''
-    return f'''<section id="{esc(slide['id'])}" class="{theme} {layout}{' appendix' if appendix else ''}{reference_class}" aria-hidden="true">
+    return f'''<section id="{esc(slide['id'])}" class="{theme} {layout}{' appendix' if appendix else ''}{reference_class}" data-timing="{esc(timing)}" aria-hidden="true">
 {heading}<div class="content">{content}</div>
 <footer class="slide-footer"><span>{esc(ui['footer'])}</span><span>{esc(number)}</span></footer>
 <aside><div class="speech">{esc(speech)}</div><div class="sources">{source_links(slide)}</div></aside>
@@ -178,12 +187,13 @@ def build(lang):
 <title>{esc(data['title'])}</title><meta name="description" content="{esc(ui['description'])}">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600..800&family=IBM+Plex+Sans:wght@400;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{prefix}assets/lecture.css"></head><body data-lang="{lang}" data-main-count="{main_count}">
+<link rel="stylesheet" href="{prefix}assets/lecture.css"><link rel="stylesheet" href="{prefix}assets/editor.css"></head><body data-lang="{lang}" data-prefix="{prefix}" data-main-count="{main_count}">
 <div id="ui-progress" aria-hidden="true"></div><main id="ui-viewport" aria-label="{esc(ui['lecture_label'])}"><div id="ui-stage">{''.join(rendered)}</div></main>
 <div id="ui-notes" role="region" aria-label="{esc(ui['notes'])}" hidden><h3 id="ui-notes-title"></h3><div id="ui-notes-body"></div><div id="ui-notes-sources"></div></div>
 <div id="ui-overview" role="dialog" aria-modal="true" aria-label="{esc(ui['all_slides'])}" hidden><div class="overview-top"><h2>{esc(ui['all_slides'])}</h2><button id="ui-close-ov">{esc(ui['return'])}</button></div><h3>{esc(ui['main_heading'])}</h3><div class="overview-grid" id="ui-main-grid"></div><h3>{esc(ui['extra_heading'])}</h3><div class="overview-grid" id="ui-extra-grid"></div></div>
-<nav id="ui-bar" aria-label="{esc(ui['navigation'])}"><button id="ui-prev" aria-label="{esc(ui['previous'])}">←</button><span id="ui-count" aria-live="polite"></span><button id="ui-next" aria-label="{esc(ui['next'])}">→</button><button id="ui-btn-ov">{esc(ui['overview'])}</button><button id="ui-btn-notes" aria-pressed="false">{esc(ui['notes_button'])}</button><button id="ui-appendix">{esc(ui['appendix_button'])}</button><button id="ui-btn-replay">{esc(ui['replay'])}</button><button id="ui-btn-fs">{esc(ui['fullscreen'])}</button><button id="ui-btn-print">{esc(ui['print'])}</button><a id="ui-notes-document" href="konusmaci-notlari.html" target="_blank" rel="noopener">{esc(ui['notes_document'])}</a><a href="{material}">{esc(ui['materials'])}</a><a href="{pdf}" download>{esc(ui['pdf'])}</a><a data-language-link href="{other_deck}" aria-label="{esc(ui['language_label'])}" hreflang="{'en' if lang == 'tr' else 'tr'}">{other_lang}</a><span id="ui-help">{esc(ui['help'])}</span></nav>
-<script src="{prefix}assets/lecture.js"></script></body></html>'''
+<nav id="ui-bar" aria-label="{esc(ui['navigation'])}"><button id="ui-prev" aria-label="{esc(ui['previous'])}">←</button><span id="ui-count" aria-live="polite"></span><button id="ui-next" aria-label="{esc(ui['next'])}">→</button><button id="ui-btn-edit" aria-pressed="false">{esc(ui['edit'])}</button><button id="ui-btn-ov">{esc(ui['overview'])}</button><button id="ui-btn-notes" aria-pressed="false">{esc(ui['notes_button'])}</button><button id="ui-appendix">{esc(ui['appendix_button'])}</button><button id="ui-btn-replay">{esc(ui['replay'])}</button><button id="ui-btn-fs">{esc(ui['fullscreen'])}</button><button id="ui-btn-print">{esc(ui['print'])}</button><a id="ui-notes-document" href="konusmaci-notlari.html" target="_blank" rel="noopener">{esc(ui['notes_document'])}</a><a href="{material}">{esc(ui['materials'])}</a><a href="{pdf}" download>{esc(ui['pdf'])}</a><a data-language-link href="{other_deck}" aria-label="{esc(ui['language_label'])}" hreflang="{'en' if lang == 'tr' else 'tr'}">{other_lang}</a><span id="ui-help">{esc(ui['help'])}</span></nav>
+<script id="lecture-data" type="application/json">{embedded_json(data)}</script>
+<script src="{prefix}assets/lecture.js"></script><script src="{prefix}assets/editor.js"></script></body></html>'''
     (destination / 'index.html').write_text(document)
     note_document = f'''<!doctype html><html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{esc(ui['notes'])} · {esc(ui['footer'])}</title><style>
 *{{box-sizing:border-box}}body{{margin:0;background:#f4f1ea;color:#141b2b;font:19px/1.7 Arial,sans-serif}}main{{max-width:900px;margin:auto;padding:56px 28px}}h1{{font-size:44px;line-height:1.15}}h2{{font-size:28px;line-height:1.25}}a{{color:#a43f20}}section{{padding:38px 0;border-bottom:1px solid #cfc7ba;break-inside:avoid}}.time{{font-size:15px;color:#626d7d}}.sources{{display:flex;flex-direction:column;font-size:14px;gap:5px}}.back{{display:inline-block;margin-top:14px;font-size:14px}}nav{{display:flex;gap:24px;flex-wrap:wrap}}@media print{{body{{background:white;font-size:13pt}}main{{padding:0;max-width:none}}nav,.back{{display:none}}section{{padding:20px 0}}}}@page{{size:A4;margin:18mm}}
