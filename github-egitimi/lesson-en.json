@@ -1,6 +1,6 @@
 {
   "title": "Git and GitHub: The Robot Worked Yesterday",
-  "mainCount": 32,
+  "mainCount": 34,
   "slides": [
     {
       "id": 1,
@@ -76,7 +76,7 @@
       "lead": "There is a clue in the history: threshold 500 → 900.",
       "caption": "We found the change. We have not yet established the right threshold.",
       "notes": "Imagine looking through the team’s recorded history. A commit shows the sensor threshold changing from 500 to 900, alongside an author and a message. We can now name the changed line instead of saying that something is different. This record does not automatically prove the change was wrong. It gives us a possible cause to investigate. IR sensor thresholds also depend on the hardware and operating conditions; copying a value from another robot is not a calibration method. Now we should separate the tool that keeps this history from the platform where the team shares it.",
-      "duration": 90,
+      "duration": 30,
       "sources": [
         {
           "title": "Viewing commit history",
@@ -91,6 +91,70 @@
     },
     {
       "id": 5,
+      "title": "The robot’s settings in the animation",
+      "eyebrow": "01 · FOLLOW THE ROBOT’S TRAIL",
+      "theme": "paper",
+      "layout": "code",
+      "lead": "The GIF values are examples. The real threshold needs measurements.",
+      "caption": "",
+      "notes": "Read the settings shown in the English animation. SPEED starts at 200, TURN_SPEED at 120, and THRESHOLD at 900. The comment names the purpose of each setting. int defines integer variables; assignment provides their starting values. Unlike const int in later simplified examples, these variables can be reassigned by later program statements. This is only the visible fragment, not the whole robot program. THRESHOLD is the English animation’s name for the sensor threshold; the shared narrative uses ESIK. The fictional numbers illustrate a history change and require validation for actual hardware and operating conditions.\n\nAdditional explanation: A recorded threshold change is a clue. It does not establish the right setting for every robot.",
+      "duration": 30,
+      "sources": [
+        {
+          "title": "Arduino int type",
+          "url": "https://github.com/arduino/reference-en/blob/master/Language/Variables/Data%20Types/int.adoc"
+        },
+        {
+          "title": "Arduino setup function",
+          "url": "https://github.com/arduino/reference-en/blob/master/Language/Structure/Sketch/setup.adoc"
+        },
+        {
+          "title": "Arduino pinMode function",
+          "url": "https://docs.arduino.cc/language-reference/en/functions/digital-io/pinMode/"
+        }
+      ],
+      "appendix": false,
+      "code": "// robot.ino — line-following robot\nint SPEED = 200;       // speed on straights\nint TURN_SPEED = 120;  // speed in turns\nint THRESHOLD = 900;   // sensor threshold",
+      "codeNotes": [
+        "`//` starts a comment. `int` defines an integer variable.",
+        "`SPEED`, `TURN_SPEED` and `THRESHOLD` name straight speed, turn speed and sensor threshold settings.",
+        "`=` assigns the initial value. `;` ends the declaration."
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Preparing the two motor pins",
+      "eyebrow": "01 · FOLLOW THE ROBOT’S TRAIL",
+      "theme": "dark",
+      "layout": "code",
+      "lead": "This fragment prepares pins. The motor-driving code is not shown.",
+      "caption": "",
+      "notes": "This is the next visible fragment from the animation. Arduino calls setup once after startup or reset. void indicates no returned value. The opening and closing braces contain the body. The two pinMode calls configure pins 5 and 6 as outputs; the comments connect those pins with left and right motors. Configuring a pin is not the same operation as driving a motor or setting a speed. No loop, sensor reading, or complete movement algorithm is shown here. The lesson reads this fragment to understand the tracked file, not to build or operate a robot in class.\n\nAdditional explanation: This fragment prepares outputs; sensor readings and movement control appear elsewhere in the full program.",
+      "duration": 30,
+      "sources": [
+        {
+          "title": "Arduino int type",
+          "url": "https://github.com/arduino/reference-en/blob/master/Language/Variables/Data%20Types/int.adoc"
+        },
+        {
+          "title": "Arduino setup function",
+          "url": "https://github.com/arduino/reference-en/blob/master/Language/Structure/Sketch/setup.adoc"
+        },
+        {
+          "title": "Arduino pinMode function",
+          "url": "https://docs.arduino.cc/language-reference/en/functions/digital-io/pinMode/"
+        }
+      ],
+      "appendix": false,
+      "code": "void setup() {\n  pinMode(5, OUTPUT);  // left motor\n  pinMode(6, OUTPUT);  // right motor\n}",
+      "codeNotes": [
+        "`setup()` runs once at startup or reset. `void` means it returns no value.",
+        "`pinMode(5, OUTPUT)` configures pin 5 as an output; the second line does the same for pin 6.",
+        "The comments identify the left and right motor connections. `pinMode` alone does not start either motor."
+      ]
+    },
+    {
+      "id": 7,
       "title": "Which part of this is Git?",
       "eyebrow": "01 · FOLLOW THE ROBOT’S TRAIL",
       "theme": "paper",
@@ -118,7 +182,7 @@
       ]
     },
     {
-      "id": 6,
+      "id": 8,
       "title": "What should we keep together?",
       "eyebrow": "01 · FOLLOW THE ROBOT’S TRAIL",
       "theme": "dark",
@@ -140,14 +204,14 @@
       }
     },
     {
-      "id": 7,
+      "id": 9,
       "title": "What changed on that line?",
       "eyebrow": "01 · FOLLOW THE ROBOT’S TRAIL",
       "theme": "paper",
       "layout": "code",
       "lead": "We are seeing the old and new values of one variable.",
-      "caption": "− previous line · + next line · commit: a recorded state",
-      "notes": "This view is called a diff. The minus line belongs to the earlier side of the comparison, and the plus line to the later side. The threshold in the robot code changed from 500 to 900. These are not readings from two sensors: they are the same variable in two recorded versions. A commit records a selected state of the project in history, with an identifier and a message. Saving a file in an editor does not create one automatically. The diff focuses attention on the changed area. A small-looking line can still have a large effect. How should we assess this change?",
+      "caption": "",
+      "notes": "This view is called a diff. The minus line belongs to the earlier side of the comparison, and the plus line to the later side. The threshold in the robot code changed from 500 to 900. These are not readings from two sensors: they are the same variable in two recorded versions. A commit records a selected state of the project in history, with an identifier and a message. Saving a file in an editor does not create one automatically. The diff focuses attention on the changed area. A small-looking line can still have a large effect. How should we assess this change?\n\nAdditional explanation: − previous line · + next line · commit: a recorded state",
       "duration": 75,
       "sources": [
         {
@@ -160,10 +224,15 @@
         }
       ],
       "appendix": false,
-      "code": "robot.ino\n\n- const int ESIK = 500;\n+ const int ESIK = 900;"
+      "code": "robot.ino\n\n- const int ESIK = 500;\n+ const int ESIK = 900;",
+      "codeNotes": [
+        "`robot.ino` names the compared file; it is not a program statement.",
+        "`const int ESIK` defines an integer constant. Its old value is 500; its new value is 900.",
+        "`-` marks the removed line and `+` the added line. These signs are absent from the actual C++ file."
+      ]
     },
     {
-      "id": 8,
+      "id": 10,
       "title": "Is 900 wrong?",
       "eyebrow": "01 · FOLLOW THE ROBOT’S TRAIL",
       "theme": "coral",
@@ -190,14 +259,14 @@
       ]
     },
     {
-      "id": 9,
+      "id": 11,
       "title": "Who is tracking the problem?",
       "eyebrow": "01 · FOLLOW THE ROBOT’S TRAIL",
       "theme": "dark",
       "layout": "animation",
       "lead": "Issue: “Investigate the IR sensor threshold.”",
-      "caption": "GIF: the issue interface using a photo task. Our task is the sensor threshold.",
-      "notes": "The team now has a concrete question: when does the robot lose the line, and how might the threshold change be involved? An issue records that question. We can describe the expected behavior, the observed problem, and the relevant file, then assign the investigation to Elif. The task no longer disappears in a group chat. This animation demonstrates the issue interface with a photo task; our story’s task concerns the sensor threshold. An issue tracks a need. Later we can connect our proposed change to it. Even after the issue closes, the discussion and reasoning remain available in the project.",
+      "caption": "`is:issue` selects issue records; `state:open` selects open ones. Type this in GitHub’s search box, not a terminal.",
+      "notes": "The team now has a concrete question: when does the robot lose the line, and how might the threshold change be involved? An issue records that question. We can describe the expected behavior, the observed problem, and the relevant file, then assign the investigation to Elif. The task no longer disappears in a group chat. This animation demonstrates the issue interface with a photo task; our story’s task concerns the sensor threshold. An issue tracks a need. Later we can connect our proposed change to it. Even after the issue closes, the discussion and reasoning remain available in the project.\n\nThe search filter is: is:issue state:open. It lists open issues without changing their state. The animation uses a photo task to demonstrate the interface; our story investigates the sensor threshold.",
       "duration": 90,
       "sources": [
         {
@@ -212,13 +281,13 @@
       }
     },
     {
-      "id": 10,
+      "id": 12,
       "title": "How do we try it without changing main?",
       "eyebrow": "01 · FOLLOW THE ROBOT’S TRAIL",
       "theme": "dark",
       "layout": "text",
       "lead": "We will develop the candidate solution on a separate branch.",
-      "caption": "A branch organizes a trial. It does not prove the change is correct.",
+      "caption": "The diagram uses shortened command labels: `git switch -c` and `git merge`.",
       "notes": "Elif wants to reconsider the threshold without mixing everyone’s trials into the shared main line. A branch provides a separate line of work from the same starting point. Commits Elif creates there do not automatically change main. Main may also move forward with other accepted work; the diagram shows both lines. Creating a branch does not require a new physical project folder: a branch name points to a commit. For a small team, one main branch and short-lived task branches can be enough. Review and validation will determine when the candidate is ready to join the main line.",
       "duration": 75,
       "sources": [
@@ -233,17 +302,22 @@
       ],
       "appendix": false,
       "diagram": "assets/branch-en.svg",
-      "diagramAlt": "A sensor task branches from main, develops separate commits, and merges after acceptance."
+      "diagramAlt": "A sensor task branches from main, develops separate commits, and merges after acceptance.",
+      "codeNotes": [
+        "`main` is the team’s shared main branch.",
+        "`feature/sensor-esigi` names the sensor task branch, not a new project folder.",
+        "`git switch -c` creates and switches to a branch. `git merge` combines another branch into the current one."
+      ]
     },
     {
-      "id": 11,
+      "id": 13,
       "title": "I saved it. Can Deniz see it?",
       "eyebrow": "02 · MOVE THE CHANGE",
       "theme": "paper",
       "layout": "steps",
-      "lead": "Not yet. Editing, recording, and sharing are separate steps.",
-      "caption": "Edit → add → commit → push · Get the team’s updates: pull",
-      "notes": "Four areas answer this question. The working tree is where we edit the file. The staging area selects what will enter the next commit. The local repository is the recorded history on our computer. The remote repository is the history shared on GitHub. Editing the threshold happens in the first area. Add selects it, commit records it locally, and push transfers the commits to the shared repository. Saving in the editor has not yet reached Deniz. Likewise, a new commit on GitHub does not automatically update our computer. We will now move Elif’s single sensor change through these areas step by step.",
+      "lead": "",
+      "caption": "",
+      "notes": "Four areas answer this question. The working tree is where we edit the file. The staging area selects what will enter the next commit. The local repository is the recorded history on our computer. The remote repository is the history shared on GitHub. Editing the threshold happens in the first area. Add selects it, commit records it locally, and push transfers the commits to the shared repository. Saving in the editor has not yet reached Deniz. Likewise, a new commit on GitHub does not automatically update our computer. We will now move Elif’s single sensor change through these areas step by step.\n\nNot yet. Editing, recording, and sharing are separate steps.\nEdit → add → commit → push · Get the team’s updates: pull",
       "duration": 105,
       "sources": [
         {
@@ -254,17 +328,22 @@
       "appendix": false,
       "bullets": [],
       "diagram": "assets/zones-en.svg",
-      "diagramAlt": "Add moves a selection from working tree to staging, commit records it locally, push sends it remotely, and pull gets updates."
+      "diagramAlt": "Add moves a selection from working tree to staging, commit records it locally, push sends it remotely, and pull gets updates.",
+      "codeNotes": [
+        "`index` is staging; `.git/` holds local repository data; `HEAD` names the current commit position.",
+        "`origin` is the remote address name. `add` selects, `commit` records locally, and `push` sends commits.",
+        "`clone` creates a local repository copy; `pull` gets updates for an existing one."
+      ]
     },
     {
-      "id": 12,
+      "id": 14,
       "title": "How do we get the same starting point?",
       "eyebrow": "02 · MOVE THE CHANGE",
       "theme": "dark",
       "layout": "code",
       "lead": "Elif brings the project’s files and history onto her computer.",
-      "caption": "Clone brings history. A ZIP does not create a local Git history.",
-      "notes": "Imagine Elif starting on a new computer. Clone creates a local copy of the existing robot repository. A normal clone brings the files, recorded history, and remote address connection, so she can inspect both code and earlier versions. Repository-url is a placeholder for the real cloning address. Reading a public repository over HTTPS usually does not require signing in; a private one requires access. Permission to clone is not permission to push. Downloading a ZIP provides the selected version’s files without setting up local Git history. Here we use a clone because Elif needs to work with history and send new commits.",
+      "caption": "",
+      "notes": "Imagine Elif starting on a new computer. Clone creates a local copy of the existing robot repository. A normal clone brings the files, recorded history, and remote address connection, so she can inspect both code and earlier versions. Repository-url is a placeholder for the real cloning address. Reading a public repository over HTTPS usually does not require signing in; a private one requires access. Permission to clone is not permission to push. Downloading a ZIP provides the selected version’s files without setting up local Git history. Here we use a clone because Elif needs to work with history and send new commits.\n\nAdditional explanation: Clone brings history. A ZIP does not create a local Git history.",
       "duration": 75,
       "sources": [
         {
@@ -273,17 +352,22 @@
         }
       ],
       "appendix": false,
-      "code": "git clone <repository-url>\ncd robot-projem"
+      "code": "git clone <repository-url>\ncd robot-projem",
+      "codeNotes": [
+        "`git clone` copies an existing repository, including its recorded history, to the computer.",
+        "Replace `<repository-url>` with the real clone address, without the angle brackets.",
+        "`cd robot-projem` enters the project folder. Use its actual name; `cd` is a terminal command."
+      ]
     },
     {
-      "id": 13,
+      "id": 15,
       "title": "Which branch is the trial on?",
       "eyebrow": "02 · MOVE THE CHANGE",
       "theme": "paper",
       "layout": "code",
       "lead": "Elif creates a separate line for the sensor task.",
-      "caption": "Active branch: feature/sensor-esigi · This does not change main.",
-      "notes": "We start on main in the cloned project. Switch with the c option creates feature/sensor-esigi and moves us to it. The star in the branch list marks the active branch. The next commits will advance this line. We have not edited the code yet: creating a branch alone does not fix the sensor problem. Naming a branch after its purpose helps the team find the relevant work. Here main is the shared main line and the task branch holds the candidate solution. Other projects may use different names and contribution rules. Next we will actually edit the file, producing a change to record.",
+      "caption": "",
+      "notes": "We start on main in the cloned project. Switch with the c option creates feature/sensor-esigi and moves us to it. The star in the branch list marks the active branch. The next commits will advance this line. We have not edited the code yet: creating a branch alone does not fix the sensor problem. Naming a branch after its purpose helps the team find the relevant work. Here main is the shared main line and the task branch holds the candidate solution. Other projects may use different names and contribution rules. Next we will actually edit the file, producing a change to record.\n\nAdditional explanation: Active branch: feature/sensor-esigi · This does not change main.",
       "duration": 75,
       "sources": [
         {
@@ -304,17 +388,22 @@
         }
       ],
       "appendix": false,
-      "code": "git switch -c feature/sensor-esigi\ngit branch"
+      "code": "git switch -c feature/sensor-esigi\ngit branch",
+      "codeNotes": [
+        "`git switch -c` creates a branch from the current commit and switches to it.",
+        "`feature/sensor-esigi` is our task branch name. The slash does not create a new project folder.",
+        "`git branch` lists local branches. A star marks the active branch."
+      ]
     },
     {
-      "id": 14,
+      "id": 16,
       "title": "Which solution are we trying?",
       "eyebrow": "02 · MOVE THE CHANGE",
       "theme": "paper",
       "layout": "code",
       "lead": "We prepare 900 → 500 as a candidate change.",
-      "caption": "Save → git status · History and GitHub have not changed yet.",
-      "notes": "Elif now changes the threshold in robot.ino from 900 to 500 and saves the file. Returning to yesterday’s value is our candidate, not proof of a fix. Git status shows that the working tree differs from the previous commit; diff shows the changed line. No new commit exists yet, and GitHub still has the earlier version. At this point we can reread the change, define a test plan, or abandon it. Cloning and creating a branch did not produce the edit; this is where the actual work happens. The following recording and sharing steps will carry this same sensor line.",
+      "caption": "",
+      "notes": "Elif now changes the threshold in robot.ino from 900 to 500 and saves the file. Returning to yesterday’s value is our candidate, not proof of a fix. Git status shows that the working tree differs from the previous commit; diff shows the changed line. No new commit exists yet, and GitHub still has the earlier version. At this point we can reread the change, define a test plan, or abandon it. Cloning and creating a branch did not produce the edit; this is where the actual work happens. The following recording and sharing steps will carry this same sensor line.\n\nAdditional explanation: Save → git status · History and GitHub have not changed yet.",
       "duration": 90,
       "sources": [
         {
@@ -327,17 +416,22 @@
         }
       ],
       "appendix": false,
-      "code": "robot.ino\n\n- const int ESIK = 900;\n+ const int ESIK = 500;"
+      "code": "robot.ino\n\n- const int ESIK = 900;\n+ const int ESIK = 500;",
+      "codeNotes": [
+        "The removed `900` line is the previous value; the added `500` line is our candidate.",
+        "Keep only `const int ESIK = 500;` in the real file, without the diff sign.",
+        "`git status` checks saved file changes. Saving alone creates no commit and updates no GitHub repository."
+      ]
     },
     {
-      "id": 15,
+      "id": 17,
       "title": "What goes into this commit?",
       "eyebrow": "02 · MOVE THE CHANGE",
       "theme": "dark",
       "layout": "code",
       "lead": "We select the sensor change. Other work can wait.",
-      "caption": "Add selects. There is no new commit or upload yet.",
-      "notes": "Add selects the content of the next commit. Elif stages the sensor threshold change and checks the staged diff. If an unfinished README edit also exists, she does not have to include it in this record. That keeps the commit’s purpose clear. Diff cached shows what is about to enter history. Add stages the file’s state at that moment; if we edit it again, we may need another add to include the new version. Choosing a meaningful scope instead of combining every change makes review and later undoing easier. We will now record only the selected sensor change.",
+      "caption": "",
+      "notes": "Add selects the content of the next commit. Elif stages the sensor threshold change and checks the staged diff. If an unfinished README edit also exists, she does not have to include it in this record. That keeps the commit’s purpose clear. Diff cached shows what is about to enter history. Add stages the file’s state at that moment; if we edit it again, we may need another add to include the new version. Choosing a meaningful scope instead of combining every change makes review and later undoing easier. We will now record only the selected sensor change.\n\nAdditional explanation: Add selects. There is no new commit or upload yet.",
       "duration": 90,
       "sources": [
         {
@@ -346,17 +440,22 @@
         }
       ],
       "appendix": false,
-      "code": "git add robot.ino\ngit diff --cached"
+      "code": "git add robot.ino\ngit diff --cached",
+      "codeNotes": [
+        "`git add robot.ino` selects the file’s current content for the next commit.",
+        "`git diff --cached` shows all staged changes against the latest commit.",
+        "If the file changes after `add`, its new content must be selected again. Other staged files remain selected."
+      ]
     },
     {
-      "id": 16,
+      "id": 18,
       "title": "How do we record what we did?",
       "eyebrow": "02 · MOVE THE CHANGE",
       "theme": "paper",
       "layout": "code",
       "lead": "A commit keeps the change and its purpose in history.",
-      "caption": "The record is local. “Candidate” means validation is still pending.",
-      "notes": "Elif commits the staged sensor change to local history. The message says it is a candidate return to 500, accurately describing its status. Log oneline shows the new record’s identifier and message. A commit records the selected staged state; history on the computer advances while the earlier 900 record remains available. This can happen without an internet connection. Return to our question: has Deniz seen it? Not yet, because Elif has only made a record on her own computer. A local commit and access through the shared repository are separate things. Sending it will complete that distinction.",
+      "caption": "",
+      "notes": "Elif commits the staged sensor change to local history. The message says it is a candidate return to 500, accurately describing its status. Log oneline shows the new record’s identifier and message. A commit records the selected staged state; history on the computer advances while the earlier 900 record remains available. This can happen without an internet connection. Return to our question: has Deniz seen it? Not yet, because Elif has only made a record on her own computer. A local commit and access through the shared repository are separate things. Sending it will complete that distinction.\n\nAdditional explanation: The record is local. “Candidate” means validation is still pending.",
       "duration": 75,
       "sources": [
         {
@@ -369,17 +468,22 @@
         }
       ],
       "appendix": false,
-      "code": "git commit -m \"Candidate return to 500 for IR sensor threshold\"\ngit log --oneline"
+      "code": "git commit -m \"Candidate return to 500 for IR sensor threshold\"\ngit log --oneline",
+      "codeNotes": [
+        "`git commit` records the staged content in local history.",
+        "`-m` supplies the message. Quotes keep the words together as one message.",
+        "`git log --oneline` lists reachable commits with short IDs and messages. No upload has happened yet."
+      ]
     },
     {
-      "id": 17,
+      "id": 19,
       "title": "Can Deniz see it now?",
       "eyebrow": "02 · MOVE THE CHANGE",
       "theme": "dark",
       "layout": "code",
       "lead": "After push, the candidate is visible on GitHub’s task branch.",
-      "caption": "A shared candidate ≠ an accepted change in main",
-      "notes": "Elif pushes the new commit to the sensor branch on origin. The u option records which remote branch this local branch tracks. Once the push succeeds, Deniz can see the candidate on GitHub. Main has not changed automatically; only the task branch has been updated. Push transfers commits, not uncommitted working-tree edits. It requires the right remote address, write permission, and authentication; the appendix contains those details. If a push is rejected, we understand the shared history before trying to overwrite it. The team can now inspect the same change. Visibility is still not acceptance: the pull request will ask that question.",
+      "caption": "",
+      "notes": "Elif pushes the new commit to the sensor branch on origin. The u option records which remote branch this local branch tracks. Once the push succeeds, Deniz can see the candidate on GitHub. Main has not changed automatically; only the task branch has been updated. Push transfers commits, not uncommitted working-tree edits. It requires the right remote address, write permission, and authentication; the appendix contains those details. If a push is rejected, we understand the shared history before trying to overwrite it. The team can now inspect the same change. Visibility is still not acceptance: the pull request will ask that question.\n\nAdditional explanation: A shared candidate ≠ an accepted change in main",
       "duration": 90,
       "sources": [
         {
@@ -392,17 +496,23 @@
         }
       ],
       "appendix": false,
-      "code": "git push -u origin feature/sensor-esigi"
+      "code": "git push -u origin feature/sensor-esigi",
+      "codeNotes": [
+        "`git push` sends local commits to a remote repository.",
+        "`origin` is the saved name of the remote address; `feature/sensor-esigi` is the branch being sent.",
+        "`-u` sets that branch’s tracking relationship for later commands.",
+        "This needs access and write permission. Uncommitted edits are not sent; `main` is not merged."
+      ]
     },
     {
-      "id": 18,
+      "id": 20,
       "title": "Should we bring this into main?",
       "eyebrow": "03 · DECIDE TOGETHER",
       "theme": "paper",
       "layout": "code",
       "lead": "A pull request proposes a change for the team to evaluate.",
-      "caption": "Issue: what do we need? · PR: should we accept this proposal?",
-      "notes": "Elif opens a pull request from the task branch into main. The source branch contains the candidate sensor solution; the target is the shared main line. The description explains the problem, the return from 900 to 500, and the validation still required. It can also link to the issue: the issue describes the need, while the PR presents a proposed solution. Opening a PR makes it available for discussion and review. It does not immediately accept it. Other proposals could address the same problem differently. The team evaluates the source and target, the code diff, and the reasoning together. What should Deniz inspect?",
+      "caption": "",
+      "notes": "Elif opens a pull request from the task branch into main. The source branch contains the candidate sensor solution; the target is the shared main line. The description explains the problem, the return from 900 to 500, and the validation still required. It can also link to the issue: the issue describes the need, while the PR presents a proposed solution. Opening a PR makes it available for discussion and review. It does not immediately accept it. Other proposals could address the same problem differently. The team evaluates the source and target, the code diff, and the reasoning together. What should Deniz inspect?\n\nAdditional explanation: Issue: what do we need? · PR: should we accept this proposal?",
       "duration": 90,
       "sources": [
         {
@@ -415,10 +525,15 @@
         }
       ],
       "appendix": false,
-      "code": "feature/sensor-esigi  →  main\n\nProblem: The robot loses the line.\nCandidate: ESIK, 900 → 500.\nReason: Investigate a return to the old value.\nValidation: Measurement and behavior records pending."
+      "code": "feature/sensor-esigi  →  main\n\nProblem: The robot loses the line.\nCandidate: ESIK, 900 → 500.\nReason: Investigate a return to the old value.\nValidation: Measurement and behavior records pending.",
+      "codeNotes": [
+        "`feature/sensor-esigi` is the source branch; `main` is the proposed destination.",
+        "Problem, Candidate and Reason explain the need, the change and its purpose.",
+        "Validation says what is still pending. This is PR description text, not a terminal command."
+      ]
     },
     {
-      "id": 19,
+      "id": 21,
       "title": "What will Deniz look for?",
       "eyebrow": "03 · DECIDE TOGETHER",
       "theme": "coral",
@@ -441,14 +556,14 @@
       ]
     },
     {
-      "id": 20,
+      "id": 22,
       "title": "What if two decisions change one line?",
       "eyebrow": "03 · DECIDE TOGETHER",
       "theme": "paper",
       "layout": "code",
       "lead": "Elif’s candidate is 500. Incoming main has 700.",
-      "caption": "We are on the task branch, merging main into it. Git cannot choose the right value.",
-      "notes": "Add a common situation to the story. While Elif works, another change from Deniz is reviewed and accepted into main, making the same threshold 700. Elif’s branch still has the candidate 500. In this merge example, we are on the task branch and bring main into it. Git cannot automatically choose between the conflicting edits, so it stops with conflict markers. HEAD is our current branch’s side and main is the incoming side. HEAD does not mean the correct choice. Git can often combine edits in different areas, but the team must resolve the conflicting meaning on this line.",
+      "caption": "",
+      "notes": "Add a common situation to the story. While Elif works, another change from Deniz is reviewed and accepted into main, making the same threshold 700. Elif’s branch still has the candidate 500. In this merge example, we are on the task branch and bring main into it. Git cannot automatically choose between the conflicting edits, so it stops with conflict markers. HEAD is our current branch’s side and main is the incoming side. HEAD does not mean the correct choice. Git can often combine edits in different areas, but the team must resolve the conflicting meaning on this line.\n\nAdditional explanation: We are on the task branch, merging main into it. Git cannot choose the right value.",
       "duration": 75,
       "sources": [
         {
@@ -457,17 +572,23 @@
         }
       ],
       "appendix": false,
-      "code": "robot.ino\n\n<<<<<<< HEAD\nconst int ESIK = 500;\n=======\nconst int ESIK = 700;\n>>>>>>> main"
+      "code": "robot.ino\n\n<<<<<<< HEAD\nconst int ESIK = 500;\n=======\nconst int ESIK = 700;\n>>>>>>> main",
+      "codeNotes": [
+        "`<<<<<<< HEAD` opens our current branch’s version, with value 500.",
+        "`=======` separates the alternatives. The incoming `main` version has value 700.",
+        "`>>>>>>> main` closes the incoming side. These are Git markers, not C++ statements.",
+        "The team must choose the justified result and remove the markers. `HEAD` does not mean the correct answer."
+      ]
     },
     {
-      "id": 21,
+      "id": 23,
       "title": "Which one do we choose?",
       "eyebrow": "03 · DECIDE TOGETHER",
       "theme": "paper",
-      "layout": "steps",
+      "layout": "code",
       "lead": "In this example, Elif and Deniz continue with the 500 candidate.",
-      "caption": "Removing conflict markers does not prove the robot’s problem is fixed.",
-      "notes": "Elif and Deniz compare the reasons for both changes and decide to continue with the 500 candidate. One threshold remains in the file, and the conflict markers are removed. The team saves the file and completes the appropriate validation. Add and commit record this merge resolution; push updates the PR. An editor’s selection buttons can simplify the operation, while the team records why it chose the result. We will show the next stage assuming the candidate has passed the required review and validation. That lets us follow this same change into the main line and onto the team’s computers.",
+      "caption": "",
+      "notes": "Elif and Deniz compare the reasons for both changes and decide to continue with the 500 candidate. One threshold remains in the file, and the conflict markers are removed. The team saves the file and completes the appropriate validation. Add and commit record this merge resolution; push updates the PR. An editor’s selection buttons can simplify the operation, while the team records why it chose the result. We will show the next stage assuming the candidate has passed the required review and validation. That lets us follow this same change into the main line and onto the team’s computers.\n\nThe original workflow reminders are: Evaluate the reasoning behind both changes together. Remove the markers and save the chosen solution. After validation, finish review through the same PR.\n\nAdditional explanation: Removing conflict markers does not prove the robot’s problem is fixed.",
       "duration": 105,
       "sources": [
         {
@@ -476,15 +597,16 @@
         }
       ],
       "appendix": false,
-      "bullets": [
-        "Evaluate the reasoning behind both changes together.",
-        "Remove the markers and save the chosen solution.",
-        "After validation, finish review through the same PR."
-      ],
-      "code": "robot.ino\n\nconst int ESIK = 500;"
+      "bullets": [],
+      "code": "robot.ino\n\nconst int ESIK = 500;",
+      "codeNotes": [
+        "`const` defines a constant; `int` is an integer type; `ESIK` is its name.",
+        "`= 500` supplies the example value; `;` ends the definition.",
+        "One definition remains after the conflict markers are removed. Validate it before recording the merge resolution."
+      ]
     },
     {
-      "id": 22,
+      "id": 24,
       "title": "How does the decision enter shared history?",
       "eyebrow": "03 · DECIDE TOGETHER",
       "theme": "paper",
@@ -520,14 +642,14 @@
       ]
     },
     {
-      "id": 23,
+      "id": 25,
       "title": "GitHub is current. Is my computer?",
       "eyebrow": "03 · DECIDE TOGETHER",
       "theme": "dark",
       "layout": "code",
       "lead": "We update local main separately.",
-      "caption": "Push shares. Pull gets updates. A pull request proposes a merge.",
-      "notes": "Elif switches to local main and gets the shared repository’s updates. Pull fetches remote changes and integrates them into the local branch. Checking status first is a good habit. Here ff only advances local main when it has not diverged; if both sides have different new commits, it stops. We then decide how to reconcile the histories. Elif’s and Deniz’s computers reach the accepted shared state only after updating. Push carries commits from us to the shared repository, and pull gets updates back. Opening a PR and running pull are different operations. Now consider what a new teammate will see.",
+      "caption": "",
+      "notes": "Elif switches to local main and gets the shared repository’s updates. Pull fetches remote changes and integrates them into the local branch. Checking status first is a good habit. Here ff only advances local main when it has not diverged; if both sides have different new commits, it stops. We then decide how to reconcile the histories. Elif’s and Deniz’s computers reach the accepted shared state only after updating. Push carries commits from us to the shared repository, and pull gets updates back. Opening a PR and running pull are different operations. Now consider what a new teammate will see.\n\nAdditional explanation: Push shares. Pull gets updates. A pull request proposes a merge.",
       "duration": 75,
       "sources": [
         {
@@ -544,17 +666,22 @@
         }
       ],
       "appendix": false,
-      "code": "git status\ngit switch main\ngit pull --ff-only"
+      "code": "git status\ngit switch main\ngit pull --ff-only",
+      "codeNotes": [
+        "`git status` reports working-tree and staging changes before we switch branches.",
+        "`git switch main` makes local `main` the active branch.",
+        "`git pull --ff-only` gets remote updates and advances the active branch only if its history has not diverged. Otherwise it stops."
+      ]
     },
     {
-      "id": 24,
+      "id": 26,
       "title": "Where does the next teammate start?",
       "eyebrow": "04 · HAND OVER THE PROJECT",
       "theme": "paper",
       "layout": "code",
       "lead": "We leave running instructions alongside the code.",
-      "caption": "Purpose · hardware · wiring · running · known limits",
-      "notes": "Imagine a new student joining the team. Commit history traces decisions, but it does not by itself explain the wiring or how to run the robot. The README supplies that entry point. We can state the purpose, hardware, wiring diagram, and calibration steps. Explaining when the threshold needs adjustment is more useful than asking someone to copy one number. Markdown headings organize a readable page. The README must match the real project files, as well as look clear. Even if Elif and Deniz leave, the next person receives a guide for continuing the work, alongside the latest files.",
+      "caption": "",
+      "notes": "Imagine a new student joining the team. Commit history traces decisions, but it does not by itself explain the wiring or how to run the robot. The README supplies that entry point. We can state the purpose, hardware, wiring diagram, and calibration steps. Explaining when the threshold needs adjustment is more useful than asking someone to copy one number. Markdown headings organize a readable page. The README must match the real project files, as well as look clear. Even if Elif and Deniz leave, the next person receives a guide for continuing the work, alongside the latest files.\n\nAdditional explanation: Purpose · hardware · wiring · running · known limits",
       "duration": 90,
       "sources": [
         {
@@ -563,10 +690,15 @@
         }
       ],
       "appendix": false,
-      "code": "# Line-Following Robot\n\n## Hardware\nArduino, IR sensors, motor driver.\n\n## Getting started\nFollow the wiring diagram.\nValidate the threshold in your own conditions.\nRecord your observations and reasons for changes."
+      "code": "# Line-Following Robot\n\n## Hardware\nArduino, IR sensors, motor driver.\n\n## Getting started\nFollow the wiring diagram.\nValidate the threshold in your own conditions.\nRecord your observations and reasons for changes.",
+      "codeNotes": [
+        "`#` creates a Markdown title; `##` creates a section heading.",
+        "The other lines are ordinary README text explaining hardware and how to start.",
+        "GitHub displays this file as a readable project page. These lines are not terminal commands."
+      ]
     },
     {
-      "id": 25,
+      "id": 27,
       "title": "Can everyone see it and change it?",
       "eyebrow": "04 · HAND OVER THE PROJECT",
       "theme": "coral",
@@ -598,7 +730,7 @@
       ]
     },
     {
-      "id": 26,
+      "id": 28,
       "title": "Should we use the code we found?",
       "eyebrow": "04 · HAND OVER THE PROJECT",
       "theme": "paper",
@@ -621,7 +753,7 @@
       ]
     },
     {
-      "id": 27,
+      "id": 29,
       "title": "Can we use the code we can see?",
       "eyebrow": "04 · HAND OVER THE PROJECT",
       "theme": "paper",
@@ -644,7 +776,7 @@
       ]
     },
     {
-      "id": 28,
+      "id": 30,
       "title": "How do we propose a fix to another project?",
       "eyebrow": "04 · HAND OVER THE PROJECT",
       "theme": "dark",
@@ -667,7 +799,7 @@
       ]
     },
     {
-      "id": 29,
+      "id": 31,
       "title": "What does this project say about us?",
       "eyebrow": "04 · HAND OVER THE PROJECT",
       "theme": "paper",
@@ -689,13 +821,13 @@
       }
     },
     {
-      "id": 30,
+      "id": 32,
       "title": "Where can we continue after class?",
       "eyebrow": "04 · HAND OVER THE PROJECT",
       "theme": "paper",
       "layout": "text",
       "lead": "Return to official resources when a need arises.",
-      "caption": "Setup and commands: 12 reference slides · Student tools: GitHub Education",
+      "caption": "Setup and commands: 15 reference slides · Student tools: GitHub Education",
       "notes": "Today we followed one change rather than using every command. Later, revisit concepts in Pro Git or find a GitHub operation’s details in GitHub Docs. GitHub Skills offers step-by-step practice at your own pace. The twelve reference slides cover setup and everyday commands. If you need student tools, check GitHub Education’s current official conditions; offers and application requirements may change. The official Copilot Student setup page is also linked as a reference. Starting with the task you need to perform, then choosing the relevant resource, is more useful than collecting a long tool list. Finally, return to the file confusion we started with.",
       "duration": 60,
       "sources": [
@@ -728,7 +860,7 @@
       ]
     },
     {
-      "id": 31,
+      "id": 33,
       "title": "What does the team have now?",
       "eyebrow": "04 · HAND OVER THE PROJECT",
       "theme": "dark",
@@ -760,7 +892,7 @@
       ]
     },
     {
-      "id": 32,
+      "id": 34,
       "title": "What if it loses the line tomorrow?",
       "eyebrow": "QUESTIONS · 3 MINUTES",
       "theme": "dark",
@@ -791,25 +923,15 @@
       "visibleSources": true
     },
     {
-      "id": 33,
+      "id": 35,
       "title": "Installing Git",
       "eyebrow": "APPENDIX 01 · REFERENCE",
       "theme": "paper",
-      "layout": "columns",
+      "layout": "code",
       "lead": "Use the official installation route for your operating system.",
-      "columns": [
-        {
-          "heading": "Windows",
-          "body": "Git for Windows, with Git Bash or a suitable terminal."
-        },
-        {
-          "heading": "macOS and Linux",
-          "body": "A package or installation method suited to the operating system."
-        }
-      ],
       "code": "git --version",
-      "caption": "Version numbers vary. Current instructions: git-scm.com/install",
-      "notes": "This appendix slide is an installation reference. Git --version shows the installed version. If Git is not installed, choose the appropriate method from the official Git website. We should not assume that every Mac already has Git; it depends on the environment. Git for Windows can provide Git Bash on Windows. A distribution's package manager is a common choice on Linux. The installation method does not change the core Git concepts.",
+      "caption": "",
+      "notes": "This appendix slide is an installation reference. Git --version shows the installed version. If Git is not installed, choose the appropriate method from the official Git website. We should not assume that every Mac already has Git; it depends on the environment. Git for Windows can provide Git Bash on Windows. A distribution's package manager is a common choice on Linux. The installation method does not change the core Git concepts.\n\nInstallation choices: Windows: Git for Windows, with Git Bash or a suitable terminal. macOS and Linux: A package or installation method suited to the operating system.\n\nAdditional explanation: Version numbers vary. Current instructions: git-scm.com/install",
       "duration": 0,
       "sources": [
         {
@@ -817,18 +939,22 @@
           "url": "https://git-scm.com/install/"
         }
       ],
-      "appendix": true
+      "appendix": true,
+      "codeNotes": [
+        "`git --version` prints the Git version available to the terminal.",
+        "It checks the installation; it does not install Git or create a repository."
+      ]
     },
     {
-      "id": 34,
+      "id": 36,
       "title": "Commit identity",
       "eyebrow": "APPENDIX 02 · REFERENCE",
       "theme": "dark",
       "layout": "code",
       "lead": "Configure the name and email that will appear in commits.",
       "code": "git config --global user.name \"Elif Örnek\"\ngit config --global user.email \"elif@example.com\"\ngit config --global init.defaultBranch main",
-      "caption": "The name and email are examples. These settings do not authenticate you to GitHub.",
-      "notes": "These settings define commit identity and the default branch name for new repositories. The displayed name and email are examples; use the appropriate real information in an actual setup. Global configuration applies to the user account, and a repository can have its own local overrides. If the commit email appears in public history, privacy preferences also matter. These settings do not sign us in to GitHub or grant permission to push. Authentication is a separate concern.",
+      "caption": "",
+      "notes": "These settings define commit identity and the default branch name for new repositories. The displayed name and email are examples; use the appropriate real information in an actual setup. Global configuration applies to the user account, and a repository can have its own local overrides. If the commit email appears in public history, privacy preferences also matter. These settings do not sign us in to GitHub or grant permission to push. Authentication is a separate concern.\n\nAdditional explanation: The name and email are examples. These settings do not authenticate you to GitHub.",
       "duration": 0,
       "sources": [
         {
@@ -836,10 +962,15 @@
           "url": "https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup"
         }
       ],
-      "appendix": true
+      "appendix": true,
+      "codeNotes": [
+        "`git config --global` sets values for this user account. A repository can override them locally.",
+        "`user.name` and `user.email` label new commits. They do not sign you in to GitHub.",
+        "`init.defaultBranch main` sets the first branch name for future repositories; it renames no existing branch."
+      ]
     },
     {
-      "id": 35,
+      "id": 37,
       "title": "Editor and terminal",
       "eyebrow": "APPENDIX 03 · REFERENCE",
       "theme": "paper",
@@ -867,15 +998,15 @@
       "appendix": true
     },
     {
-      "id": 36,
+      "id": 38,
       "title": ".git and .gitignore",
       "eyebrow": "APPENDIX 04 · REFERENCE",
       "theme": "dark",
       "layout": "code",
       "lead": "The history database and tracking preferences are stored separately.",
       "code": "robot-projem/\n  .git/\n  .gitignore\n  README.md\n  robot.ino\n\n# Example .gitignore\nbuild/\n.env",
-      "caption": "Do not edit .git by hand. .gitignore does not remove tracked files from history.",
-      "notes": "The .git directory contains the local database for commits, branches, and settings. Deleting or editing it by hand can damage local history. The .gitignore file identifies untracked files that should normally remain outside tracking, such as build output or environment settings. But adding an already committed file to .gitignore does not remove it from history. If sensitive information was pushed accidentally, adding an ignore rule is not a complete fix. The affected credential should be revoked, and the official cleanup process followed.",
+      "caption": "",
+      "notes": "The .git directory contains the local database for commits, branches, and settings. Deleting or editing it by hand can damage local history. The .gitignore file identifies untracked files that should normally remain outside tracking, such as build output or environment settings. But adding an already committed file to .gitignore does not remove it from history. If sensitive information was pushed accidentally, adding an ignore rule is not a complete fix. The affected credential should be revoked, and the official cleanup process followed.\n\nAdditional explanation: Do not edit .git by hand. .gitignore does not remove tracked files from history.",
       "duration": 0,
       "sources": [
         {
@@ -887,18 +1018,24 @@
           "url": "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository"
         }
       ],
-      "appendix": true
+      "appendix": true,
+      "codeNotes": [
+        "`robot-projem/` is the project folder. `.git/` holds local Git history and settings.",
+        "`README.md` explains the project; `robot.ino` contains the source code.",
+        "In `.gitignore`, `build/` excludes that untracked directory and `.env` excludes that untracked filename.",
+        "`#` starts a comment. Ignore rules erase neither tracked content nor past secrets."
+      ]
     },
     {
-      "id": 37,
+      "id": 39,
       "title": "An SSH key pair",
       "eyebrow": "APPENDIX 05 · REFERENCE",
       "theme": "paper",
       "layout": "code",
       "lead": "Add the public key to GitHub; keep the private key to yourself.",
       "code": "ssh-keygen -t ed25519 -C \"elif@example.com\"\n\n# File to add to GitHub:\n~/.ssh/id_ed25519.pub\n\n# Private key: do not share\n~/.ssh/id_ed25519",
-      "caption": "A passphrase adds protection. Do not overwrite an existing key.",
-      "notes": "SSH authentication uses a public and private key pair. Current documentation recommends Ed25519, though older systems may need an alternative. The .pub file is added under SSH and GPG keys in the GitHub account. The private key is never shared or uploaded to a repository. The example email is only a label. A passphrase protects the key, and an SSH agent makes it easier to use during a session. When generating a new key, avoid accidentally overwriting an existing file.",
+      "caption": "",
+      "notes": "SSH authentication uses a public and private key pair. Current documentation recommends Ed25519, though older systems may need an alternative. The .pub file is added under SSH and GPG keys in the GitHub account. The private key is never shared or uploaded to a repository. The example email is only a label. A passphrase protects the key, and an SSH agent makes it easier to use during a session. When generating a new key, avoid accidentally overwriting an existing file.\n\nAdditional explanation: A passphrase adds protection. Do not overwrite an existing key.",
       "duration": 0,
       "sources": [
         {
@@ -910,18 +1047,23 @@
           "url": "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account"
         }
       ],
-      "appendix": true
+      "appendix": true,
+      "codeNotes": [
+        "`ssh-keygen` creates a key pair. `-t ed25519` selects its type; `-C` adds a descriptive label.",
+        "`~` means the user’s home directory. The example paths are filenames, not extra commands.",
+        "Add the `.pub` public key to GitHub. Keep the private key without `.pub` to yourself."
+      ]
     },
     {
-      "id": 38,
+      "id": 40,
       "title": "SSH agent and connection",
       "eyebrow": "APPENDIX 06 · REFERENCE",
       "theme": "dark",
       "layout": "code",
       "lead": "Agent setup depends on the operating system.",
       "code": "# Bash / Git Bash example\neval \"$(ssh-agent -s)\"\nssh-add ~/.ssh/id_ed25519\n\n# Check the GitHub connection\nssh -T git@github.com",
-      "caption": "macOS Keychain and Windows OpenSSH steps may differ; follow the official instructions.",
-      "notes": "These commands are a short agent example for Bash or Git Bash. Details differ for macOS Keychain and the Windows OpenSSH service. The same configuration is not mandatory on every operating system. On the first SSH connection, the server's identity is checked against GitHub's published key fingerprints. A successful authentication message confirms SSH access to the account, but GitHub does not provide general shell access. Even when the key connection succeeds, repository write permissions still apply separately.",
+      "caption": "",
+      "notes": "These commands are a short agent example for Bash or Git Bash. Details differ for macOS Keychain and the Windows OpenSSH service. The same configuration is not mandatory on every operating system. On the first SSH connection, the server's identity is checked against GitHub's published key fingerprints. A successful authentication message confirms SSH access to the account, but GitHub does not provide general shell access. Even when the key connection succeeds, repository write permissions still apply separately.\n\nAdditional explanation: macOS Keychain and Windows OpenSSH steps may differ; follow the official instructions.",
       "duration": 0,
       "sources": [
         {
@@ -929,18 +1071,25 @@
           "url": "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent"
         }
       ],
-      "appendix": true
+      "appendix": true,
+      "codeNotes": [
+        "`#` begins a comment. This setup example uses Bash or Git Bash.",
+        "`ssh-agent -s` starts an agent; `$(...)` captures its settings; `eval` applies them to this shell.",
+        "`ssh-add` loads the private key into the agent.",
+        "`ssh -T` checks GitHub authentication without requesting a terminal.",
+        "GitHub offers no shell access. Successful `ssh -T` authentication normally returns exit code 1."
+      ]
     },
     {
-      "id": 39,
-      "title": "Turn a local folder into a repository",
+      "id": 41,
+      "title": "Starting a local repository",
       "eyebrow": "APPENDIX 07 · REFERENCE",
       "theme": "paper",
       "layout": "code",
-      "lead": "This example assumes an empty remote repository on GitHub.",
-      "code": "cd robot-projem\ngit init -b main\ngit add README.md robot.ino\ngit commit -m \"Initial robot project commit\"\ngit remote add origin <repository-url>\ngit remote -v",
-      "caption": "README.md and robot.ino already exist. If the remote has initial commits, clone may be simpler.",
-      "notes": "Init starts a local Git repository in an existing folder. The example names main explicitly and records the existing README and robot code as the first commit. Remote add associates the remote address with the name origin. Origin is a conventional name, not a password or special service. Init does not create a repository on GitHub. This example assumes that the remote has already been created and is empty. If the remote contains initial commits, such as a README, cloning it may be simpler than creating two independent histories.",
+      "lead": "The folder, README.md and robot.ino already exist.",
+      "code": "cd robot-projem\ngit init -b main\ngit add README.md robot.ino",
+      "caption": "",
+      "notes": "Init starts a local Git repository in an existing folder. The example names main explicitly and records the existing README and robot code as the first commit. Remote add associates the remote address with the name origin. Origin is a conventional name, not a password or special service. Init does not create a repository on GitHub. This example assumes that the remote has already been created and is empty. If the remote contains initial commits, such as a README, cloning it may be simpler than creating two independent histories.\n\nAdditional explanation: This example starts locally. `git init` does not create a repository on GitHub.",
       "duration": 0,
       "sources": [
         {
@@ -952,18 +1101,51 @@
           "url": "https://git-scm.com/docs/git-remote"
         }
       ],
-      "appendix": true
+      "appendix": true,
+      "codeNotes": [
+        "`cd robot-projem` enters an existing folder; it creates no folder.",
+        "`git init -b main` starts a local repository with `main` as its first branch name.",
+        "`git add README.md robot.ino` stages these two files. Nothing has been committed or uploaded yet."
+      ]
     },
     {
-      "id": 40,
-      "title": "First push and tracking",
+      "id": 42,
+      "title": "First commit and remote address",
       "eyebrow": "APPENDIX 08 · REFERENCE",
+      "theme": "paper",
+      "layout": "code",
+      "lead": "The GitHub repository has already been created and is empty.",
+      "code": "git commit -m \"Initial robot project commit\"\ngit remote add origin <repository-url>\ngit remote -v",
+      "caption": "",
+      "notes": "Init starts a local Git repository in an existing folder. The example names main explicitly and records the existing README and robot code as the first commit. Remote add associates the remote address with the name origin. Origin is a conventional name, not a password or special service. Init does not create a repository on GitHub. This example assumes that the remote has already been created and is empty. If the remote contains initial commits, such as a README, cloning it may be simpler than creating two independent histories.\n\nAdditional explanation: The local record and remote address are ready. The first push follows separately.",
+      "duration": 0,
+      "sources": [
+        {
+          "title": "git init",
+          "url": "https://git-scm.com/docs/git-init"
+        },
+        {
+          "title": "git remote",
+          "url": "https://git-scm.com/docs/git-remote"
+        }
+      ],
+      "appendix": true,
+      "codeNotes": [
+        "`git commit -m` records the staged content with the quoted message in local history.",
+        "`git remote add origin` saves the real remote address under the name `origin`.",
+        "Replace `<repository-url>` without angle brackets. `git remote -v` lists fetch and push addresses; it uploads no files."
+      ]
+    },
+    {
+      "id": 43,
+      "title": "First push and tracking",
+      "eyebrow": "APPENDIX 09 · REFERENCE",
       "theme": "dark",
       "layout": "code",
       "lead": "-u records which remote branch the local branch tracks.",
       "code": "git push -u origin main\n\n# After setting up tracking:\ngit push\ngit pull --ff-only",
-      "caption": "Check the branch name with git branch. Commands must use the project’s actual branch name.",
-      "notes": "On the first push, -u establishes tracking between local main and remote origin/main. With suitable configuration, later push and pull commands can use that relationship to find their target. This tracked remote branch is sometimes called the upstream branch. That is a different context from a remote named upstream for the original project in a fork workflow. The branch does not have to be called main, though that is the name used throughout this presentation. Always check the actual branch name and remote address.",
+      "caption": "",
+      "notes": "On the first push, -u establishes tracking between local main and remote origin/main. With suitable configuration, later push and pull commands can use that relationship to find their target. This tracked remote branch is sometimes called the upstream branch. That is a different context from a remote named upstream for the original project in a fork workflow. The branch does not have to be called main, though that is the name used throughout this presentation. Always check the actual branch name and remote address.\n\nAdditional explanation: Check the branch name with git branch. Commands must use the project’s actual branch name.",
       "duration": 0,
       "sources": [
         {
@@ -971,18 +1153,23 @@
           "url": "https://git-scm.com/docs/git-branch"
         }
       ],
-      "appendix": true
+      "appendix": true,
+      "codeNotes": [
+        "`git push -u origin main` sends local `main` commits and records the tracking relationship.",
+        "With suitable tracking and configuration, `git push` sends later commits without repeating the remote and branch.",
+        "`git pull --ff-only` gets updates and stops if histories diverge. These examples are not a mandatory sequence."
+      ]
     },
     {
-      "id": 41,
-      "title": "Branch and diff commands",
-      "eyebrow": "APPENDIX 09 · REFERENCE",
+      "id": 44,
+      "title": "Task branch and current branch",
+      "eyebrow": "APPENDIX 10 · REFERENCE",
       "theme": "paper",
       "layout": "code",
-      "lead": "Make the before and after sides of a comparison explicit.",
-      "code": "git branch\ngit switch -c feature/sensor-esigi\n\n# Compare branch tips: main → feature\ngit diff main feature/sensor-esigi -- robot.ino\n\n# Feature changes from the common starting point:\ngit diff main...feature/sensor-esigi",
-      "caption": "Tab completion depends on the shell. The typed prefix must match the start of the branch name.",
-      "notes": "Git switch -c creates a branch and switches to it. In the branch list, an asterisk marks the current branch. When diff compares two branch tips, the first name is the before side and the second is the after side. The minus and plus signs are read in that direction. A three-dot comparison shows the second branch's changes relative to their common starting point. If completion is available, type a prefix at the start of the name, such as feature. A word from the middle of a branch name is not guaranteed to complete in every environment. Shell settings affect the result.",
+      "lead": "This reference example assumes the new branch does not already exist.",
+      "code": "git branch\ngit switch -c feature/sensor-esigi",
+      "caption": "",
+      "notes": "Git switch -c creates a branch and switches to it. In the branch list, an asterisk marks the current branch. When diff compares two branch tips, the first name is the before side and the second is the after side. The minus and plus signs are read in that direction. A three-dot comparison shows the second branch's changes relative to their common starting point. If completion is available, type a prefix at the start of the name, such as feature. A word from the middle of a branch name is not guaranteed to complete in every environment. Shell settings affect the result.\n\nAdditional explanation: A branch name points to a commit; creating it creates no new project directory.",
       "duration": 0,
       "sources": [
         {
@@ -994,26 +1181,59 @@
           "url": "https://git-scm.com/docs/git-diff"
         }
       ],
-      "appendix": true
+      "appendix": true,
+      "codeNotes": [
+        "`git branch` lists local branches and marks the active one with a star.",
+        "`git switch -c` creates the named branch from the current commit and switches to it.",
+        "Here `feature/sensor-esigi` is the branch name. To start from `main`, first be on `main`."
+      ]
     },
     {
-      "id": 42,
+      "id": 45,
+      "title": "Two ways to compare the branches",
+      "eyebrow": "APPENDIX 11 · REFERENCE",
+      "theme": "paper",
+      "layout": "code",
+      "lead": "The two comparisons use different starting points.",
+      "code": "\n# Compare branch tips: main → feature\ngit diff main feature/sensor-esigi -- robot.ino\n\n# Feature changes from the common starting point:\ngit diff main...feature/sensor-esigi",
+      "caption": "",
+      "notes": "Git switch -c creates a branch and switches to it. In the branch list, an asterisk marks the current branch. When diff compares two branch tips, the first name is the before side and the second is the after side. The minus and plus signs are read in that direction. A three-dot comparison shows the second branch's changes relative to their common starting point. If completion is available, type a prefix at the start of the name, such as feature. A word from the middle of a branch name is not guaranteed to complete in every environment. Shell settings affect the result.\n\nAdditional explanation: The first comparison is limited to robot.ino; the three-dot example compares the feature branch’s full change.",
+      "duration": 0,
+      "sources": [
+        {
+          "title": "git switch",
+          "url": "https://git-scm.com/docs/git-switch"
+        },
+        {
+          "title": "git diff",
+          "url": "https://git-scm.com/docs/git-diff"
+        }
+      ],
+      "appendix": true,
+      "codeNotes": [
+        "`git diff main feature/sensor-esigi` compares the final states of both branches.",
+        "`-- robot.ino` limits comparison to this file; `--` separates branch names from the path.",
+        "`main...feature/sensor-esigi` compares the common starting commit with the task branch tip."
+      ]
+    },
+    {
+      "id": 46,
       "title": "Choose what you want to undo",
-      "eyebrow": "APPENDIX 10 · REFERENCE",
+      "eyebrow": "APPENDIX 12 · REFERENCE",
       "theme": "coral",
       "layout": "columns",
-      "lead": "Files, the staging area, and history require different operations.",
+      "lead": "`HEAD~1`: previous commit · `<commit>`: chosen commit ID",
       "columns": [
         {
           "heading": "Unstage a change",
-          "body": "git restore --staged README.md\nThe edit stays in the working file."
+          "body": "`git restore --staged README.md`\nUnstages the file. Working-file edits remain."
         },
         {
           "heading": "Reverse a shared change",
-          "body": "git revert <commit>\nCreates a new commit that reverses an earlier effect."
+          "body": "`git revert <commit>`\nCreates a new commit that reverses the selected commit’s effect."
         }
       ],
-      "caption": "git reset HEAD~1 moves the branch to the previous commit; the default mixed mode preserves working files.",
+      "caption": "`git reset HEAD~1` moves the branch back; default `mixed` mode resets staging to the target and keeps working files.",
       "notes": "Before undoing, decide what should change. Restore --staged removes an accidentally added file from staging while preserving its edits in the working tree. Revert creates a new commit to reverse an earlier shared change, keeping shared history intact. Reset moves the branch's position and, depending on the mode, changes staging or working files as well. The default mixed mode preserves working files but moves the history position. Reset and revert therefore do not have the same purpose or effects.",
       "duration": 0,
       "sources": [
@@ -1030,18 +1250,19 @@
           "url": "https://git-scm.com/docs/git-reset"
         }
       ],
-      "appendix": true
+      "appendix": true,
+      "codeNotes": []
     },
     {
-      "id": 43,
+      "id": 47,
       "title": "Hard reset and recovery limits",
-      "eyebrow": "APPENDIX 11 · REFERENCE",
+      "eyebrow": "APPENDIX 13 · REFERENCE",
       "theme": "dark",
       "layout": "code",
       "lead": "A hard reset can discard uncommitted work.",
       "code": "# Only after checking the effects:\ngit reset --hard <commit>\n\n# Inspect local reference movements:\ngit reflog",
-      "caption": "Reflog may help find earlier commits; it cannot guarantee recovery of all unrecorded work.",
-      "notes": "Hard reset moves a branch to the selected commit and makes the staging area and tracked working files match it. Uncommitted edits can be lost, and some untracked files in the way can also be affected. A previously committed state may sometimes be found in the local reflog, so calling every hard reset irreversible is inaccurate. But reflog is not a general backup and does not keep everything forever. We should not assume that work never committed can be recovered. First inspect status and the changes. Do not use hard reset without understanding its effects.",
+      "caption": "",
+      "notes": "Hard reset moves a branch to the selected commit and makes the staging area and tracked working files match it. Uncommitted edits can be lost, and some untracked files in the way can also be affected. A previously committed state may sometimes be found in the local reflog, so calling every hard reset irreversible is inaccurate. But reflog is not a general backup and does not keep everything forever. We should not assume that work never committed can be recovered. First inspect status and the changes. Do not use hard reset without understanding its effects.\n\nAdditional explanation: Reflog may help find earlier commits; it cannot guarantee recovery of all unrecorded work.",
       "duration": 0,
       "sources": [
         {
@@ -1053,18 +1274,23 @@
           "url": "https://git-scm.com/docs/git-reflog"
         }
       ],
-      "appendix": true
+      "appendix": true,
+      "codeNotes": [
+        "`git reset --hard <commit>` moves the branch and replaces staging and tracked working files with that commit’s state.",
+        "Uncommitted edits can be lost. Some untracked files in the way can also be affected.",
+        "`git reflog` lists local reference movements. It may locate earlier commits but cannot recover every unsaved change."
+      ]
     },
     {
-      "id": 44,
-      "title": "Quick command reference",
-      "eyebrow": "APPENDIX 12 · REFERENCE",
+      "id": 48,
+      "title": "Selecting committing and sending a file",
+      "eyebrow": "APPENDIX 14 · REFERENCE",
       "theme": "paper",
       "layout": "code",
-      "lead": "Commands are shorthand for the concepts in the main lecture.",
-      "code": "git clone <repository-url>\n# Edit and save the file\ngit status\ngit add <file>\ngit commit -m \"What changed and why?\"\ngit push\n\n# Get the team's updates\ngit pull --ff-only\n# Create a task branch\ngit switch -c feature/<task>",
-      "caption": "Replace placeholders with real values. Installation, identity, and permissions must be in place.",
-      "notes": "This final appendix slide is a short reference for the daily workflow. Clone provides a starting point, but a new commit requires an actual file edit first. Status shows the state, add selects changes, commit records them, and push sends them. Pull brings in the team's updates. A branch provides a place for a separate task, and a PR supports review. We do not need to run every command in sequence each time. We choose the next operation by checking whether the change is in the working tree, staging area, or local history.",
+      "lead": "Choose the next operation from the state of the actual project.",
+      "code": "git clone <repository-url>\n# Edit and save the file\ngit status\ngit add <file>\ngit commit -m \"What changed and why?\"\ngit push",
+      "caption": "",
+      "notes": "This final appendix slide is a short reference for the daily workflow. Clone provides a starting point, but a new commit requires an actual file edit first. Status shows the state, add selects changes, commit records them, and push sends them. Pull brings in the team's updates. A branch provides a place for a separate task, and a PR supports review. We do not need to run every command in sequence each time. We choose the next operation by checking whether the change is in the working tree, staging area, or local history.\n\nAdditional explanation: Replace placeholders with real values. Installation, identity, and permissions must be in place.",
       "duration": 0,
       "sources": [
         {
@@ -1072,7 +1298,39 @@
           "url": "https://docs.github.com/en/get-started/start-your-journey/git-and-github-learning-resources"
         }
       ],
-      "appendix": true
+      "appendix": true,
+      "codeNotes": [
+        "`git clone` copies a repository. Then enter its project folder.",
+        "`#` starts a comment reminding us to edit and save first.",
+        "`git status` checks files and staging.",
+        "`git add <file>` selects that file’s current content.",
+        "`git commit -m` records staging with a message; `git push` sends commits.",
+        "Replace `<repository-url>` and `<file>` with real values."
+      ]
+    },
+    {
+      "id": 49,
+      "title": "Remote updates and a new task branch",
+      "eyebrow": "APPENDIX 15 · REFERENCE",
+      "theme": "paper",
+      "layout": "code",
+      "lead": "Use pull for remote updates; use a branch for a separate task.",
+      "code": "\n# Get the team's updates\ngit pull --ff-only\n# Create a task branch\ngit switch -c feature/<task>",
+      "caption": "",
+      "notes": "This final appendix slide is a short reference for the daily workflow. Clone provides a starting point, but a new commit requires an actual file edit first. Status shows the state, add selects changes, commit records them, and push sends them. Pull brings in the team's updates. A branch provides a place for a separate task, and a PR supports review. We do not need to run every command in sequence each time. We choose the next operation by checking whether the change is in the working tree, staging area, or local history.\n\nAdditional explanation: Replace placeholders with real values. Installation, identity, and permissions must be in place.",
+      "duration": 0,
+      "sources": [
+        {
+          "title": "Git and GitHub learning resources",
+          "url": "https://docs.github.com/en/get-started/start-your-journey/git-and-github-learning-resources"
+        }
+      ],
+      "appendix": true,
+      "codeNotes": [
+        "`git pull --ff-only` fetches remote changes and advances the active branch only if histories have not diverged.",
+        "`git switch -c feature/<task>` creates and switches to a task branch. Replace `<task>` with its actual short name.",
+        "`#` introduces explanatory comments. Pull needs suitable remote tracking; branch creation does not require a new folder."
+      ]
     }
   ]
 }

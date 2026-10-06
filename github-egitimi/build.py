@@ -11,19 +11,19 @@ UI = {
         'footer': 'Git ve GitHub', 'appendix': 'Ek', 'seconds': 'saniye',
         'appendix_timing': 'Ek slayt · ana anlatım süresinin dışında',
         'byline': 'İSTÜN Mekatronik Mühendisliği', 'cover_alt': 'Git dalı ve ana akış',
-        'description': 'Mekatronik öğrencileri için Git ve GitHub: 32 ana slayt ve 12 ek, 45 dakikalık anlatım, konuşmacı notları.',
+        'description': 'Mekatronik öğrencileri için Git ve GitHub: {main_count} ana slayt ve {extra_count} ek, {minutes} dakikalık anlatım, konuşmacı notları.',
         'lecture_label': 'Birleşik Git ve GitHub sunumu', 'notes': 'Konuşmacı notları',
         'all_slides': 'Tüm slaytlar', 'return': 'Sunuma dön',
-        'main_heading': 'Ana anlatım · 32 slayt · 45 dakika', 'extra_heading': 'Ekler · 12 slayt',
+        'main_heading': 'Ana anlatım · {main_count} slayt · {minutes} dakika', 'extra_heading': 'Ekler · {extra_count} slayt',
         'navigation': 'Sunum gezinmesi', 'previous': 'Önceki slayt', 'next': 'Sonraki slayt',
         'edit': 'Düzenle', 'overview': 'Genel bakış', 'notes_button': 'Notlar', 'appendix_button': 'Ek slaytlar',
         'replay': 'Animasyonu yinele', 'fullscreen': 'Tam ekran', 'print': 'Yazdır',
         'notes_document': 'Not belgesi', 'materials': 'Materyal', 'pdf': 'PDF indir',
         'help': '← → gezin · N notlar · O genel bakış', 'open_slide': 'Slaytı aç',
         'sources': 'Kaynaklar', 'download_notes': 'Notları indir',
-        'notes_subtitle': 'Konuşmacı notları · 32 ana slayt ve 12 ek',
+        'code_notes': 'Kodun anlamı', 'notes_subtitle': 'Konuşmacı notları · {main_count} ana slayt ve {extra_count} ek',
         'notes_intro': 'Ana anlatım ve sorular için süre: 45 dakika. Ek slaytlar soru ve ayrıntılı başvuru içindir.',
-        'markdown_intro': '32 ana slayt, 12 ek slayt. Ana anlatım ve sorular toplam 45 dakika.',
+        'markdown_intro': '{main_count} ana slayt, {extra_count} ek slayt. Ana anlatım ve sorular toplam {minutes} dakika.',
         'markdown_scope': 'Canlı gösterim, sınıf içi uygulama ve zorunlu ödev yoktur. Ek slaytlar ana anlatım süresinin dışındadır.',
         'language_label': 'Switch to English',
     },
@@ -31,19 +31,19 @@ UI = {
         'footer': 'Git and GitHub', 'appendix': 'Appendix', 'seconds': 'seconds',
         'appendix_timing': 'Appendix slide · outside the main lecture time',
         'byline': 'İSTÜN Mechatronics Engineering', 'cover_alt': 'Git branch and main workflow',
-        'description': 'Git and GitHub for mechatronics students: 32 main slides, 12 appendix slides, a 45-minute lecture and complete speaker notes.',
+        'description': 'Git and GitHub for mechatronics students: {main_count} main slides, {extra_count} appendix slides, a {minutes}-minute lecture and complete speaker notes.',
         'lecture_label': 'Combined Git and GitHub presentation', 'notes': 'Speaker notes',
         'all_slides': 'All slides', 'return': 'Return to presentation',
-        'main_heading': 'Main lecture · 32 slides · 45 minutes', 'extra_heading': 'Appendix · 12 slides',
+        'main_heading': 'Main lecture · {main_count} slides · {minutes} minutes', 'extra_heading': 'Appendix · {extra_count} slides',
         'navigation': 'Presentation navigation', 'previous': 'Previous slide', 'next': 'Next slide',
         'edit': 'Edit', 'overview': 'Overview', 'notes_button': 'Notes', 'appendix_button': 'Appendix slides',
         'replay': 'Replay animation', 'fullscreen': 'Fullscreen', 'print': 'Print',
         'notes_document': 'Notes document', 'materials': 'Materials', 'pdf': 'Download PDF',
         'help': '← → navigate · N notes · O overview', 'open_slide': 'Open slide',
         'sources': 'Sources', 'download_notes': 'Download notes',
-        'notes_subtitle': 'Speaker notes · 32 main slides and 12 appendix slides',
+        'code_notes': 'What the code means', 'notes_subtitle': 'Speaker notes · {main_count} main slides and {extra_count} appendix slides',
         'notes_intro': 'The main lecture and questions take 45 minutes. Appendix slides are available for questions and detailed reference.',
-        'markdown_intro': '32 main slides and 12 appendix slides. The main lecture and questions take 45 minutes.',
+        'markdown_intro': '{main_count} main slides and {extra_count} appendix slides. The main lecture and questions take {minutes} minutes.',
         'markdown_scope': 'No live demonstration, in-class exercise or required homework. Appendix slides are outside the main lecture time.',
         'language_label': 'Switch to Turkish',
     },
@@ -88,9 +88,13 @@ def bullets(slide):
     return f'<{tag} class="big-list">' + ''.join(f'<li data-edit-field="bullets" data-edit-index="{i}">{inline(b)}</li>' for i, b in enumerate(slide['bullets'])) + f'</{tag}>'
 
 
+def code_lines(code):
+    return re.split(r'\r?\n', code)
+
+
 def codebox(code):
     lines = []
-    for line in code.splitlines():
+    for line in code_lines(code):
         cls = 'added' if line.startswith('+') else 'removed' if line.startswith('-') else ''
         lines.append(f'<span class="{cls}">{esc(line)}</span>')
     return '<pre class="codebox" data-edit-field="code"><code>' + '\n'.join(lines) + '</code></pre>'
@@ -98,6 +102,16 @@ def codebox(code):
 
 def column_content(columns):
     return ''.join(f'<div class="column"><h3 data-edit-field="columns" data-edit-index="{i}" data-edit-part="heading">{esc(c["heading"])}</h3><p data-edit-field="columns" data-edit-index="{i}" data-edit-part="body">{inline(c["body"])}</p></div>' for i, c in enumerate(columns))
+
+
+def code_notes(slide, editable=True):
+    if not slide.get('codeNotes'):
+        return ''
+    items = []
+    for i, note in enumerate(slide['codeNotes']):
+        fields = f' data-edit-field="codeNotes" data-edit-index="{i}"' if editable else ''
+        items.append(f'<li{fields}>{inline(note)}</li>')
+    return '<ul class="code-notes">' + ''.join(items) + '</ul>'
 
 
 def render_slide(slide, index, main_count, total_count, timing, lang, prefix):
@@ -121,24 +135,29 @@ def render_slide(slide, index, main_count, total_count, timing, lang, prefix):
     elif slide.get('diagram'):
         content = lead + f'<img class="diagram" src="{esc(resource(slide["diagram"],prefix))}" alt="{esc(slide.get("diagramAlt",slide["title"]))}">' + bullets(slide)
     elif slide.get('code'):
-        side = bullets(slide)
+        side = code_notes(slide) + bullets(slide)
         if slide.get('columns'):
             side += column_content(slide['columns'])
-        content = lead + (f'<div class="code-layout">{codebox(slide["code"])}<div>{side}</div></div>' if side else codebox(slide['code']))
+        explained = ' explained ' + ('side' if len(code_lines(slide['code'])) > 7 else 'stacked') if slide.get('codeNotes') else ''
+        content = lead + (f'<div class="code-layout{explained}">{codebox(slide["code"])}<div class="code-support">{side}</div></div>' if side else codebox(slide['code']))
     elif slide.get('columns'):
         columns = slide['columns']
         content = lead + f'<div class="columns {"three" if len(columns)==3 else ""}">' + column_content(columns) + '</div>' + bullets(slide)
     else:
         content = lead + bullets(slide)
+    if not slide.get('code') or slide.get('asset') or slide.get('diagram') or layout == 'cover':
+        content += code_notes(slide)
     if slide.get('caption'):
         content += f'<p class="caption" data-edit-field="caption">{inline(slide["caption"])}</p>'
     if slide.get('visibleSources'):
         content += f'<div class="slide-links">{source_links(slide)}</div>'
     speech = f'{timing}\n\n{slide["notes"]}'
-    reference_class = ' cheatsheet' if str(slide['id']) == '44' else ''
+    reference_class = ' cheatsheet' if appendix and index == total_count-1 and layout == 'code' else ''
     cover_class = ' story-cover' if index == 0 and layout == 'cover' else ''
     sources_class = ' with-sources' if slide.get('visibleSources') else ''
-    return f'''<section id="{esc(slide['id'])}" class="{theme} {layout}{' appendix' if appendix else ''}{reference_class}{cover_class}{sources_class}" data-timing="{esc(timing)}" aria-hidden="true">
+    explanation_class = ' has-code-notes' if slide.get('codeNotes') else ''
+    diagram_class = ' diagram-explained' if slide.get('diagram') and slide.get('codeNotes') and layout != 'cover' else ''
+    return f'''<section id="{esc(slide['id'])}" class="{theme} {layout}{' appendix' if appendix else ''}{reference_class}{cover_class}{sources_class}{explanation_class}{diagram_class}" data-timing="{esc(timing)}" aria-hidden="true">
 {heading}<div class="content">{content}</div>
 <footer class="slide-footer"><span>{esc(ui['footer'])}</span><span>{esc(number)}</span></footer>
 <aside><div class="speech">{esc(speech)}</div><div class="sources">{source_links(slide)}</div></aside>
@@ -146,18 +165,22 @@ def render_slide(slide, index, main_count, total_count, timing, lang, prefix):
 
 
 def build(lang):
-    ui = UI[lang]
     source = ROOT / ('ders.json' if lang == 'tr' else 'lesson-en.json')
     data = json.loads(source.read_text())
     slides = data['slides']
     main_count = data['mainCount']
-    assert len(slides) == 44 and main_count == 32
+    assert isinstance(slides, list) and slides
+    assert isinstance(main_count, int) and not isinstance(main_count, bool) and 0 < main_count <= len(slides)
+    assert all(isinstance(s['duration'], int) and not isinstance(s['duration'], bool) and 0 <= s['duration'] <= (600 if i < main_count else 0) for i, s in enumerate(slides))
     assert sum(s['duration'] for s in slides[:main_count]) == 2700
     assert slides[main_count-1]['duration'] == 180, 'Keep three minutes for questions.'
-    assert len({s['id'] for s in slides}) == len(slides)
+    assert len({str(s['id']) for s in slides}) == len(slides)
     assert all(bool(s.get('appendix')) == (i >= main_count) for i, s in enumerate(slides))
+    assert all('codeNotes' not in s or isinstance(s['codeNotes'], list) and len(s['codeNotes']) <= 100 and all(isinstance(note, str) and len(note) <= 10000 for note in s['codeNotes']) for s in slides)
+    ui = {key: value.format(main_count=main_count, extra_count=len(slides)-main_count, minutes=sum(s['duration'] for s in slides[:main_count])//60) for key, value in UI[lang].items()}
     if lang == 'en':
         original = json.loads((ROOT / 'ders.json').read_text())
+        assert main_count == original['mainCount'], 'Language links require matching lecture sections.'
         assert [s['id'] for s in slides] == [s['id'] for s in original['slides']], 'Language links require matching slide IDs.'
     prefix = '' if lang == 'tr' else '../'
     destination = ROOT if lang == 'tr' else ROOT / 'en'
@@ -180,8 +203,12 @@ def build(lang):
             timing = ui['appendix_timing']
             label = f'{ui["appendix"]} {i-main_count+1}'
         rendered.append(render_slide(slide, i, main_count, len(slides), timing, lang, prefix))
-        note_sections.append(f'<section id="not-{i+1}"><p class="time">{esc(timing)}</p><h2>{label}. {esc(slide["title"])}</h2><p>{esc(slide["notes"]).replace(chr(10),"<br>")}</p><div class="sources">{source_links(slide)}</div><a class="back" href="index.html#{esc(slide["id"])}">{esc(ui["open_slide"])}</a></section>')
-        markdown.extend([f'## {label}. {slide["title"]}', '', timing, '', slide['notes'], '', ui['sources'] + ':', ''])
+        annotations = f'<h3>{esc(ui["code_notes"])}</h3>{code_notes(slide, editable=False)}' if slide.get('codeNotes') else ''
+        note_sections.append(f'<section id="not-{i+1}"><p class="time">{esc(timing)}</p><h2>{label}. {esc(slide["title"])}</h2><p>{esc(slide["notes"]).replace(chr(10),"<br>")}</p>{annotations}<div class="sources">{source_links(slide)}</div><a class="back" href="index.html#{esc(slide["id"])}">{esc(ui["open_slide"])}</a></section>')
+        markdown.extend([f'## {label}. {slide["title"]}', '', timing, '', slide['notes'], ''])
+        if slide.get('codeNotes'):
+            markdown.extend([ui['code_notes'] + ':', '', *[f'- {note}' for note in slide['codeNotes']], ''])
+        markdown.extend([ui['sources'] + ':', ''])
         markdown.extend([f'- [{s["title"]}]({s["url"]})' for s in slide.get('sources', [])])
         markdown.append('')
     document = f'''<!doctype html>
@@ -189,7 +216,7 @@ def build(lang):
 <title>{esc(data['title'])}</title><meta name="description" content="{esc(ui['description'])}">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600..800&family=IBM+Plex+Sans:wght@400;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{prefix}assets/lecture.css"><link rel="stylesheet" href="{prefix}assets/editor.css"></head><body data-lang="{lang}" data-prefix="{prefix}" data-main-count="{main_count}" data-storage-key="git-github-editor-story-v2:{lang}">
+<link rel="stylesheet" href="{prefix}assets/lecture.css"><link rel="stylesheet" href="{prefix}assets/editor.css"></head><body data-lang="{lang}" data-prefix="{prefix}" data-main-count="{main_count}" data-storage-key="git-github-editor-code-notes-v3:{lang}">
 <div id="ui-progress" aria-hidden="true"></div><main id="ui-viewport" aria-label="{esc(ui['lecture_label'])}"><div id="ui-stage">{''.join(rendered)}</div></main>
 <div id="ui-notes" role="region" aria-label="{esc(ui['notes'])}" hidden><h3 id="ui-notes-title"></h3><div id="ui-notes-body"></div><div id="ui-notes-sources"></div></div>
 <div id="ui-overview" role="dialog" aria-modal="true" aria-label="{esc(ui['all_slides'])}" hidden><div class="overview-top"><h2>{esc(ui['all_slides'])}</h2><button id="ui-close-ov">{esc(ui['return'])}</button></div><h3>{esc(ui['main_heading'])}</h3><div class="overview-grid" id="ui-main-grid"></div><h3>{esc(ui['extra_heading'])}</h3><div class="overview-grid" id="ui-extra-grid"></div></div>
