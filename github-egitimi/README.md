@@ -2,18 +2,19 @@
 
 Mekatronik öğrencileri için 45 dakikalık anlatım dersi. Elif ve Deniz’in kurgusal çizgi izleyen robotu dün çalışıyordu; bugün çizgiyi kaybediyor ve takımda farklı “son” dosyalar dolaşıyor. Aynı sensör değişikliğinin geçmişini bulur, ayrı bir dalda aday çözüm geliştirir, birlikte inceleyip kabul eder ve projeyi sonraki kişiye devrederiz.
 
-- **32 ana slayt:** anlatım ve sorular toplam 45 dakika.
-- **12 ek slayt:** kurulum, SSH ve ayrıntılı komutlar. Ana dersin süresine dahil değildir.
+- **34 ana slayt:** anlatım ve sorular toplam 45 dakika.
+- **15 ek slayt (35–49):** kurulum, SSH ve ayrıntılı komutlar. Ana dersin süresine dahil değildir.
+- Kodun ne yaptığını açıklayan kısa notlar doğrudan slaytlarda görünür. Yoğun komut blokları ayrı sayfalara bölünmüştür.
 - Canlı gösterim, telefon veya hesap hazırlığı, sınıf içi uygulama ve zorunlu ödev yoktur.
 
 ## Güncel girişler
 
-- `index.html`: robot vakası üzerinden ana sunum. Ana gezinme 32. slaytta biter. “Ek slaytlar” düğmesi teknik ayrıntılara geçer.
-- `en/index.html`: aynı 44 slaytın İngilizce sürümü; dil değiştirirken slayt numarası korunur.
+- `index.html`: robot vakası üzerinden ana sunum. Ana gezinme 34. slaytta biter. “Ek slaytlar” düğmesi 35–49 arasındaki teknik ayrıntılara geçer.
+- `en/index.html`: aynı 49 slaytın İngilizce sürümü; dil değiştirirken slayt numarası korunur.
 - `konusmaci-notlari.html`: dakika planı, her slaytın konuşma metni ve kaynaklar.
 - `en/konusmaci-notlari.html`: bütün slaytların İngilizce konuşmacı notları ve aynı dakika planı.
 - `egitmen-rehberi.md`: aynı notların indirilebilir metni.
-- `pdf/git-github-tr.pdf` ve `pdf/git-github-en.pdf`: 44 sayfalık, 16:9 Türkçe ve İngilizce slayt çıktıları.
+- `pdf/git-github-tr.pdf` ve `pdf/git-github-en.pdf`: 49 sayfalık, 16:9 Türkçe ve İngilizce slayt çıktıları.
 - `canli-ders/materyal.html`: dersin beş GIF animasyonu, notlar ve örnek proje.
 - `student/`: dersten sonra isteğe bağlı bağımsız kaynaklar.
 - `instructor/`: güncel ders bağlantıları.
@@ -28,7 +29,7 @@ Animasyonlar yalnız gerektiğinde yüklenir. Ağ veya dosya erişimi başarıs�
 
 ## Sunumu düzenleme
 
-Sunumdaki **Düzenle** düğmesi, seçili slaydın yanında düzenleme alanlarını açar. Başlık, açıklama, maddeler, sütun metinleri, kod, konuşmacı notları, süre ve renk teması değiştirilebilir. Önizlemedeki metne tıklamak ilgili düzenleme alanına geçer. Düzenlemeler Türkçe ve İngilizce için ayrı saklanır.
+Sunumdaki **Düzenle** düğmesi, seçili slaydın yanında düzenleme alanlarını açar. Başlık, açıklama, maddeler, sütun metinleri, kod, ekranda görünen kod açıklamaları, konuşmacı notları, süre ve renk teması değiştirilebilir. Önizlemedeki metne tıklamak ilgili düzenleme alanına geçer. Düzenlemeler Türkçe ve İngilizce için ayrı saklanır.
 
 Değişiklikler bu tarayıcıda otomatik kaydedilir. Paylaşmak için **HTML indir**, yedeklemek veya başka tarayıcıda düzenlemeye devam etmek için **Düzenleme dosyasını indir** kullanılır. İndirilen HTML, görselleri ve sunum araçlarını canlı siteden yükler; internet bağlantısı gerekir. **Dosyadan aç** ile düzenleme dosyası geri yüklenebilir.
 

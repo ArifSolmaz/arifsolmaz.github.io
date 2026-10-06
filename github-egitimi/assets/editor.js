@@ -10,7 +10,7 @@
     editor: 'Edit presentation', close: 'Close editor', instruction: 'Click text on a slide or change a field on the right.',
     storage: 'Changes are saved in this browser. Download HTML to share them.',
     title: 'Title', eyebrow: 'Section label', lead: 'Introduction', bullets: 'List · one item per line',
-    columns: 'Column', heading: 'Heading', body: 'Text', code: 'Code', caption: 'Caption', notes: 'Speaker notes',
+    columns: 'Column', heading: 'Heading', body: 'Text', code: 'Code', codeNotes: 'What the code means · one explanation per line', codeNotesHeading: 'What the code means', caption: 'Caption', notes: 'Speaker notes',
     duration: 'Duration · seconds', theme: 'Background', paper: 'Light', dark: 'Dark', coral: 'Orange',
     main: 'Main lecture', appendix: 'Appendix', total: 'Main lecture time', seconds: 'seconds',
     undo: 'Undo', redo: 'Redo', json: 'Download edit file', html: 'Download HTML', import: 'Open edit file',
@@ -19,7 +19,7 @@
     confirmReset: 'Restore original', cancel: 'Cancel', original: 'Original presentation restored.',
     saved: 'Saved in this browser.', loaded: 'Your saved draft has been restored.', imported: 'The edit file has been opened and saved.',
     memory: 'Changes are kept in memory. Browser storage is unavailable or full; download HTML or an edit file to keep them.',
-    invalid: 'The edit file could not be opened. Choose an export for this language and these 44 slides.',
+    invalid: 'The edit file could not be opened. Choose an export for this language and this presentation.',
     storageInvalid: 'The saved draft is incompatible. The original presentation is shown; opening a valid edit file will replace that draft.',
     number: 'Enter a whole number from 0 to 600 seconds.', download: 'Download prepared.',
     hints: 'Use **bold** or `code` in paragraphs and list items. Current PDF: Print → Save as PDF.',
@@ -32,7 +32,7 @@
     editor: 'Sunumu düzenle', close: 'Düzenleyiciyi kapat', instruction: 'Metne tıklayın veya sağdaki alanı değiştirin.',
     storage: 'Değişiklikler bu tarayıcıda kaydedilir. Paylaşmak için HTML indirin.',
     title: 'Başlık', eyebrow: 'Bölüm etiketi', lead: 'Giriş metni', bullets: 'Liste · her satır bir madde',
-    columns: 'Sütun', heading: 'Başlık', body: 'Metin', code: 'Kod', caption: 'Açıklama', notes: 'Konuşmacı notları',
+    columns: 'Sütun', heading: 'Başlık', body: 'Metin', code: 'Kod', codeNotes: 'Kodun anlamı · her satır bir açıklama', codeNotesHeading: 'Kodun anlamı', caption: 'Açıklama', notes: 'Konuşmacı notları',
     duration: 'Süre · saniye', theme: 'Arka plan', paper: 'Açık', dark: 'Koyu', coral: 'Turuncu',
     main: 'Ana anlatım', appendix: 'Ek', total: 'Ana anlatım süresi', seconds: 'saniye',
     undo: 'Geri al', redo: 'Yinele', json: 'Düzenleme dosyasını indir', html: 'HTML indir', import: 'Dosyadan aç',
@@ -41,7 +41,7 @@
     confirmReset: 'Özgün sunuma dön', cancel: 'Vazgeç', original: 'Özgün sunuma dönüldü.',
     saved: 'Bu tarayıcıda kaydedildi.', loaded: 'Kaydedilmiş taslağınız açıldı.', imported: 'Düzenleme dosyası açıldı ve kaydedildi.',
     memory: 'Değişiklikler bellekte tutuluyor. Tarayıcı depolaması kullanılamıyor veya dolu; saklamak için HTML veya düzenleme dosyası indirin.',
-    invalid: 'Düzenleme dosyası açılamadı. Bu dil ve 44 slayt için dışa aktarılmış bir dosya seçin.',
+    invalid: 'Düzenleme dosyası açılamadı. Bu dil ve bu sunum için dışa aktarılmış bir dosya seçin.',
     storageInvalid: 'Kaydedilmiş taslak uyumlu değil. Özgün sunum gösteriliyor; geçerli bir düzenleme dosyası açmak taslağı değiştirir.',
     number: '0 ile 600 arasında bir tam saniye değeri girin.', download: 'İndirme hazırlandı.',
     hints: 'Paragraf ve listelerde **kalın** veya `kod` kullanabilirsiniz. Güncel PDF için Yazdır → PDF olarak kaydet.',
@@ -54,13 +54,14 @@
   const copy = value => JSON.parse(JSON.stringify(value));
   let original;
   try { original = JSON.parse(embedded.textContent); } catch { return; }
-  if (!Array.isArray(original.slides) || original.slides.length !== 44 || original.mainCount !== 32) return;
+  if (!Array.isArray(original.slides) || !original.slides.length || !Number.isInteger(original.mainCount) || original.mainCount < 1 || original.mainCount > original.slides.length || stage.children.length !== original.slides.length) return;
   original = { title: original.title, mainCount: original.mainCount, slides: original.slides };
+  const mainCount = original.mainCount, totalSlides = original.slides.length;
   let data = copy(original);
   let index = Math.max(0, Array.from(stage.children).findIndex(s => s.classList.contains('active')));
   let open = false, focusReturn = null, editGroup = null, restoring = false;
   const undo = [], redo = [];
-  const storageKey = document.body.dataset.storageKey || `git-github-editor-v1:${lang}${document.body.dataset.deckId ? ':' + document.body.dataset.deckId : ''}`;
+  const storageKey = document.body.dataset.storageKey || `git-github-editor-code-notes-v3:${lang}${document.body.dataset.deckId ? ':' + document.body.dataset.deckId : ''}`;
   const canonicalRoot = 'https://arifsolmaz.github.io/github-egitimi/';
   const canonicalPage = canonicalRoot + (english ? 'en/' : '');
   const prefix = document.body.dataset.prefix || (english ? '../' : '');
@@ -68,22 +69,23 @@
   const pdfLabels = new Map(Array.from(document.querySelectorAll('a[href*="pdf/git-github-"]'), a => [a, { text: a.textContent, download: a.getAttribute('download') }]));
   const notesLink = document.getElementById('ui-notes-document');
   const originalNotesLabel = notesLink?.textContent;
-  const allowedSlideKeys = new Set(['id', 'title', 'eyebrow', 'theme', 'layout', 'lead', 'caption', 'notes', 'duration', 'sources', 'appendix', 'diagram', 'diagramAlt', 'asset', 'bullets', 'columns', 'code', 'visibleSources']);
+  const allowedSlideKeys = new Set(['id', 'title', 'eyebrow', 'theme', 'layout', 'lead', 'caption', 'notes', 'duration', 'sources', 'appendix', 'diagram', 'diagramAlt', 'asset', 'bullets', 'columns', 'code', 'codeNotes', 'visibleSources']);
   const textKeys = ['title', 'eyebrow', 'lead', 'caption', 'notes', 'code'];
   const text = (value, maximum = 200000) => typeof value === 'string' && value.length <= maximum;
   const object = value => value !== null && typeof value === 'object' && !Array.isArray(value);
   function validateImport(input) {
-    if (!object(input) || input.schemaVersion !== 1 || input.language !== lang || input.mainCount !== 32 || !text(input.title, 2000) || !Array.isArray(input.slides) || input.slides.length !== 44) throw Error('Invalid deck');
+    if (!object(input) || input.schemaVersion !== 1 || input.language !== lang || input.mainCount !== mainCount || !text(input.title, 2000) || !Array.isArray(input.slides) || input.slides.length !== totalSlides) throw Error('Invalid deck');
     if (new TextEncoder().encode(JSON.stringify(input, null, 2)).length > 4000000) throw Error('Deck size limit');
     if (Object.keys(input).some(k => !['schemaVersion', 'language', 'title', 'mainCount', 'slides'].includes(k))) throw Error('Unknown deck property');
-    const result = { title: input.title, mainCount: 32, slides: [] };
+    const result = { title: input.title, mainCount, slides: [] };
     input.slides.forEach((slide, i) => {
       const source = original.slides[i];
-      if (!object(slide) || Object.keys(slide).some(k => !allowedSlideKeys.has(k)) || slide.id !== source.id || slide.layout !== source.layout || slide.appendix !== (i >= 32)) throw Error('Invalid slide metadata');
-      if (!['paper', 'dark', 'coral'].includes(slide.theme) || !Number.isInteger(slide.duration) || slide.duration < 0 || slide.duration > (i < 32 ? 600 : 0)) throw Error('Invalid slide settings');
+      if (!object(slide) || Object.keys(slide).some(k => !allowedSlideKeys.has(k)) || slide.id !== source.id || slide.layout !== source.layout || slide.appendix !== (i >= mainCount)) throw Error('Invalid slide metadata');
+      if (!['paper', 'dark', 'coral'].includes(slide.theme) || !Number.isInteger(slide.duration) || slide.duration < 0 || slide.duration > (i < mainCount ? 600 : 0)) throw Error('Invalid slide settings');
       if (!text(slide.title, 2000) || !text(slide.notes)) throw Error('Invalid required text');
       textKeys.forEach(k => { if (slide[k] !== undefined && !text(slide[k], k === 'code' ? 100000 : 200000)) throw Error('Invalid text'); });
       if (slide.bullets !== undefined && (!Array.isArray(slide.bullets) || slide.bullets.length > 100 || slide.bullets.some(v => !text(v, 10000)))) throw Error('Invalid list');
+      if (slide.codeNotes !== undefined && (!Array.isArray(slide.codeNotes) || slide.codeNotes.length > 100 || slide.codeNotes.some(v => !text(v, 10000)))) throw Error('Invalid code notes');
       if ((slide.columns?.length || 0) !== (source.columns?.length || 0)) throw Error('Invalid columns');
       if (slide.columns !== undefined && (!Array.isArray(slide.columns) || slide.columns.some(c => !object(c) || Object.keys(c).some(k => !['heading', 'body'].includes(k)) || !text(c.heading, 2000) || !text(c.body, 20000)))) throw Error('Invalid column text');
       if (slide.diagram !== source.diagram || slide.diagramAlt !== source.diagramAlt) throw Error('Asset metadata cannot change');
@@ -96,6 +98,7 @@
       const clean = copy(source);
       textKeys.forEach(k => { if (slide[k] !== undefined) clean[k] = slide[k]; else delete clean[k]; });
       ['bullets', 'columns'].forEach(k => { if (slide[k] !== undefined) clean[k] = copy(slide[k]); else delete clean[k]; });
+      if (slide.codeNotes !== undefined) clean.codeNotes = copy(slide.codeNotes);
       clean.theme = slide.theme; clean.duration = slide.duration; clean.sources = copy(slide.sources);
       result.slides.push(clean);
     });
@@ -166,11 +169,18 @@
     });
     result.append(code); return result;
   }
+  function codeNotes(slide, editing = true) {
+    if (!slide.codeNotes?.length) return null;
+    const result = node('ul', 'code-notes');
+    if (editing) editable(result, 'codeNotes');
+    slide.codeNotes.forEach(value => result.append(inline(node('li'), value)));
+    return result;
+  }
   function renderSlide(i) {
     const slide = data.slides[i], section = sectionNodes[i], active = section.classList.contains('active');
     const wasUrl = section.querySelector('img[data-blob-url]')?.dataset.blobUrl;
     if (wasUrl) URL.revokeObjectURL(wasUrl);
-    section.className = `${slide.theme} ${slide.layout}${slide.appendix ? ' appendix' : ''}${String(slide.id) === '44' ? ' cheatsheet' : ''}${i === 0 && slide.layout === 'cover' ? ' story-cover' : ''}${slide.visibleSources ? ' with-sources' : ''}${active ? ' active' : ''}`;
+    section.className = `${slide.theme} ${slide.layout}${slide.appendix ? ' appendix' : ''}${slide.appendix && i === totalSlides - 1 && slide.layout === 'code' ? ' cheatsheet' : ''}${i === 0 && slide.layout === 'cover' ? ' story-cover' : ''}${slide.visibleSources ? ' with-sources' : ''}${slide.codeNotes?.length ? ' has-code-notes' : ''}${slide.diagram && slide.codeNotes?.length && slide.layout !== 'cover' ? ' diagram-explained' : ''}${active ? ' active' : ''}`;
     section.id = String(slide.id);
     const heading = editable(node(i === 0 ? 'h1' : 'h2', '', slide.title), 'title');
     const eyebrow = editable(node('p', 'eyebrow', slide.eyebrow || ''), 'eyebrow');
@@ -189,14 +199,19 @@
       image.src = image.dataset.poster; image.alt = slide.asset.alt; image.width = 1920; image.height = 1080; content.append(image);
     } else if (slide.diagram) { diagram(); bullets(); }
     else if (slide.code) {
-      if (slide.bullets?.length || slide.columns?.length) {
-        const row = node('div', 'code-layout'), side = node('div'), items = list(slide);
+      if (slide.bullets?.length || slide.columns?.length || slide.codeNotes?.length) {
+        const explained = slide.codeNotes?.length ? ` explained ${slide.code.split(/\r?\n/).length > 7 ? 'side' : 'stacked'}` : '';
+        const row = node('div', `code-layout${explained}`), side = node('div', 'code-support'), items = list(slide), annotations = codeNotes(slide);
+        if (annotations) side.append(annotations);
         if (items) side.append(items);
         if (slide.columns?.length) side.append(columns(slide, false));
         row.append(codebox(slide.code), side); content.append(row);
       } else content.append(codebox(slide.code));
     } else if (slide.columns?.length) { content.append(columns(slide)); bullets(); }
     else bullets();
+    if (!slide.code || slide.asset || slide.diagram || slide.layout === 'cover') {
+      const annotations = codeNotes(slide); if (annotations) content.append(annotations);
+    }
     if (slide.caption) content.append(editable(inline(node('p', 'caption'), slide.caption), 'caption'));
     if (slide.visibleSources) { const links = node('div', 'slide-links'); links.append(sources(slide)); content.append(links); }
     const footer = node('footer', 'slide-footer');
@@ -242,14 +257,15 @@
     let target = slide;
     while (path.length > 1) target = target[path.shift()];
     const key = path[0];
-    const normalized = field === 'bullets' ? value.split(/\r?\n/).filter(line => line.trim()) : value;
+    const listField = field === 'bullets' || field === 'codeNotes';
+    const normalized = listField ? value.split(/\r?\n/).filter(line => line.trim()) : value;
     if (JSON.stringify(target[key]) === JSON.stringify(normalized)) return;
     const candidate = copy(data);
     const candidatePath = field.split('.'); let candidateTarget = candidate.slides[index];
     while (candidatePath.length > 1) candidateTarget = candidateTarget[candidatePath.shift()];
     candidateTarget[candidatePath[0]] = normalized;
     try { validateImport(payload(candidate)); }
-    catch (error) { setStatus(error.message === 'Deck size limit' ? ui.deckLimit : field === 'bullets' ? ui.listLimit : ui.errors, true); return; }
+    catch (error) { setStatus(error.message === 'Deck size limit' ? ui.deckLimit : listField ? ui.listLimit : ui.errors, true); return; }
     if (!editGroup) { remember(); editGroup = `${index}:${field}`; }
     data = candidate;
     refresh(); save();
@@ -301,7 +317,7 @@
     if (kind === 'textarea') control.rows = path === 'notes' ? 7 : path === 'code' ? 6 : 3;
     if (kind === 'number') { control.min = '0'; control.max = '600'; control.step = '1'; }
     if (kind === 'textarea' || kind === 'text') {
-      control.maxLength = path === 'title' || /\.heading$/.test(path) ? 2000 : path === 'code' ? 100000 : /\.body$/.test(path) ? 20000 : path === 'bullets' ? 1000100 : 200000;
+      control.maxLength = path === 'title' || /\.heading$/.test(path) ? 2000 : path === 'code' ? 100000 : /\.body$/.test(path) ? 20000 : ['bullets', 'codeNotes'].includes(path) ? 1000100 : 200000;
     }
     control.value = value ?? ''; control.dataset.editorPath = path; control.dataset.field = path;
     control.addEventListener('input', () => updateField(path, kind === 'number' ? control.valueAsNumber : control.value));
@@ -318,6 +334,7 @@
     if (!slide.asset && !(slide.layout === 'cover' && index === 0)) field(ui.bullets, 'bullets', (slide.bullets || []).join('\n'), 'textarea');
     (slide.columns || []).forEach((column, i) => { field(`${ui.columns} ${i + 1} · ${ui.heading}`, `columns.${i}.heading`, column.heading); field(`${ui.columns} ${i + 1} · ${ui.body}`, `columns.${i}.body`, column.body, 'textarea'); });
     if ('code' in slide) field(ui.code, 'code', slide.code || '', 'textarea');
+    field(ui.codeNotes, 'codeNotes', (slide.codeNotes || []).join('\n'), 'textarea');
     field(ui.caption, 'caption', slide.caption || '', 'textarea');
     field(ui.notes, 'notes', slide.notes, 'textarea');
     if (index < data.mainCount) field(ui.duration, 'duration', slide.duration, 'number');
@@ -341,7 +358,7 @@
     const footer = section.querySelector('footer').getBoundingClientRect();
     const heading = section.querySelector('h1,h2').getBoundingClientRect();
     const scale = bounds.width / 1920;
-    const overflow = Array.from(section.querySelectorAll('[data-editor-field],.codebox code,.content img')).some(element => {
+    const overflow = Array.from(section.querySelectorAll('[data-editor-field],.codebox code,.code-notes li,.content img')).some(element => {
       const box = element.getBoundingClientRect();
       return box.height > 0 && (box.bottom > footer.top - 8 * scale || box.right > bounds.right - 100 * scale || box.left < bounds.left + 100 * scale || (element.closest('.content') && box.top < heading.bottom + 12 * scale));
     });
@@ -396,7 +413,7 @@
     body.dataset.assetBase = canonicalRoot;
     body.dataset.notesBase = canonicalPage + 'konusmaci-notlari.html';
     const snapshot = globalThis.crypto?.randomUUID?.() || `${Date.now()}-${Math.random().toString(36).slice(2)}`;
-    body.dataset.deckId = snapshot; body.dataset.storageKey = `git-github-editor-v1:${lang}:${snapshot}`;
+    body.dataset.deckId = snapshot; body.dataset.storageKey = `git-github-editor-code-notes-v3:${lang}:${snapshot}`;
     clone.querySelector('#lecture-data').textContent = JSON.stringify(payload()).replace(/</g, '\\u003c');
     clone.querySelectorAll('[src],[href],[data-animation],[data-poster]').forEach(element => {
       ['src', 'href', 'data-animation', 'data-poster'].forEach(attribute => {
@@ -422,6 +439,8 @@
     data.slides.forEach((slide, i) => {
       const section = node('section'); section.id = `not-${i + 1}`;
       section.append(node('h2', '', `${i < data.mainCount ? i + 1 : ui.appendix + ' ' + (i - data.mainCount + 1)}. ${slide.title}`), node('p', 'timing', times[i]), node('p', 'speech', slide.notes));
+      const annotations = codeNotes(slide, false);
+      if (annotations) section.append(node('h3', '', ui.codeNotesHeading), annotations);
       if (slide.sources.length) { const links = node('div', 'sources'); links.append(sources(slide)); section.append(links); }
       body.append(section);
     });
