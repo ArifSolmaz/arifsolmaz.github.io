@@ -1,0 +1,1024 @@
+{
+  "title": "Git ve GitHub: Tek Projede Temeller",
+  "mainCount": 32,
+  "slides": [
+    {
+      "id": 1,
+      "title": "Git ve GitHub",
+      "eyebrow": "MEKATRONİK · 45 DAKİKA",
+      "theme": "dark",
+      "layout": "cover",
+      "lead": "Projenin geçmişini tut, takımınla çalış, emeğini görünür kıl.",
+      "caption": "",
+      "notes": "Hoş geldiniz. Bugün bir robot projesinin ilk dosyasından ekip çalışmasına kadar aynı hikâyeyi izleyeceğiz. Önce GitHub'ın bize ne kazandırdığını, ardından bu kazancın Git ile nasıl oluştuğunu konuşacağız. Dersin sonunda komut ezberlemekten çok, bir değişikliğin nerede durduğunu ve takıma nasıl ulaştığını anlayabilmenizi istiyorum. Kod, devre şeması ve açıklamayı aynı proje içinde düşünmek, yalnız yazılımda değil mekatronik projelerinde de işimizi kolaylaştırır.",
+      "duration": 45,
+      "sources": [],
+      "appendix": false,
+      "diagram": "assets/lecture-cover.svg"
+    },
+    {
+      "id": 2,
+      "title": "45 dakikalık rota",
+      "eyebrow": "DERSİN AKIŞI",
+      "theme": "paper",
+      "layout": "steps",
+      "lead": "Bir robot projesi, dört durak.",
+      "bullets": [
+        "Temeller: dosya, depo ve geçmiş · 9 dk 15 sn",
+        "Değişiklik: bilgisayardan GitHub'a · 12 dk 45 sn",
+        "Takım: issue, dal ve inceleme · 12 dk",
+        "Paylaşım, kaynaklar ve sorular · 11 dk"
+      ],
+      "caption": "32 ana slayt · 12 başvuru slaytı · Tek proje üzerinden anlatım",
+      "notes": "Dersi dört bölümde izleyeceğiz. İlk bölümde dağınık dosya sorununu çözerek temel kavramları yerleştireceğiz. İkinci bölümde bir dosya değişikliğinin bilgisayardan GitHub'a giden yolunu takip edeceğiz. Üçüncü bölümde iki kişinin aynı projede nasıl çalıştığını göreceğiz. Son bölümde hazır kod seçimi, portfolyo ve öğrenci kaynakları var. Son üç dakikayı sorulara ayırdım. Kurulum ve ayrıntılı komutlar sunumun sonundaki eklerde duruyor; ana akışın odağı kavramlar ve aralarındaki ilişkiler.",
+      "duration": 45,
+      "sources": [],
+      "appendix": false
+    },
+    {
+      "id": 3,
+      "title": "Son dosya hangisi?",
+      "eyebrow": "01 · TEMELLER",
+      "theme": "coral",
+      "layout": "animation",
+      "lead": "robot_final_SON.ino dosyası gerçekten son sürüm mü?",
+      "asset": {
+        "src": "canli-ders/gif/tr/01-daginik-klasor.gif",
+        "alt": "Bir robot projesinin kopyaları birikir; hangi dosyanın son sürüm olduğu belirsizleşir."
+      },
+      "caption": "Dosya adlarına sürüm yazmak yerine, değişikliklerin geçmişini tutarız.",
+      "notes": "Bir robot takımında Elif motorları, Deniz çizgi sensörlerini düzenliyor. Kod mesaj grubunda paylaşıldıkça robot, robot_final ve robot_final_SON gibi kopyalar ortaya çıkıyor. Dosya adından hangisinin çalıştığını, kimin hangi değişikliği yaptığını anlayamıyoruz. İki kişinin düzeltmesini birleştirmek de elle karşılaştırma gerektiriyor. Git'in çözümü her kayıt için yeni bir dosya adı üretmek değil, projenin geçmişini tutmak. Böylece bugünkü dosya ile geçmişteki kayıtlar birbirinden ayrılıyor. Yine robot.ino dosyası üzerinde çalışıyoruz; yanında hangi değişikliklerin hangi sırayla kaydedildiğini anlatan bir zaman çizgisi oluşuyor. Bu çizgi yalnız seçip commit ettiğimiz değişiklikleri içeriyor.",
+      "duration": 90,
+      "sources": [
+        {
+          "title": "Commit geçmişini incelemek",
+          "url": "https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History"
+        }
+      ],
+      "appendix": false
+    },
+    {
+      "id": 4,
+      "title": "Git ve GitHub",
+      "eyebrow": "01 · TEMELLER",
+      "theme": "paper",
+      "layout": "columns",
+      "lead": "Git geçmişi tutar. GitHub bu geçmiş etrafında birlikte çalışmayı sağlar.",
+      "columns": [
+        {
+          "heading": "Git · bilgisayarındaki araç",
+          "body": "Commit'leri, dalları ve yerel geçmişi yönetir. Birçok işlem internet olmadan çalışır."
+        },
+        {
+          "heading": "GitHub · ortak platform",
+          "body": "Depoyu barındırır; issue, pull request ve inceleme araçlarını bir araya getirir."
+        }
+      ],
+      "caption": "Git aynı zamanda GitLab ve diğer Git sunucularıyla da kullanılabilir.",
+      "notes": "Bu iki adı ayırmak bütün dersin anahtarı. Git bilgisayarımızdaki sürüm kontrol aracı. Dosyalardaki değişiklikleri kaydetmek ve yerel geçmişi incelemek için internet gerekmiyor. GitHub ise Git depolarını barındıran ve bu depolar etrafında ekip çalışmasını düzenleyen platform. Dolayısıyla GitHub hesabına sahip olmak, bilgisayarda yaptığımız her değişikliğin kendiliğinden internete gideceği anlamına gelmiyor. İki taraf arasındaki aktarımı birazdan push ve pull ile açıklayacağız. GitHub'ı tarayıcıdan, Git'i terminalden veya bir grafik arayüzden kullanabiliriz. Menüleri farklı olsa da temel kavramlar aynıdır. Burada önemli olan hangi düğmeye basıldığı kadar işlemin neyi kaydettiğini anlamak.",
+      "duration": 90,
+      "sources": [
+        {
+          "title": "GitHub nedir?",
+          "url": "https://docs.github.com/en/get-started/start-your-journey/what-is-github"
+        }
+      ],
+      "appendix": false
+    },
+    {
+      "id": 5,
+      "title": "Depo dosya ve geçmiştir",
+      "eyebrow": "01 · TEMELLER",
+      "theme": "dark",
+      "layout": "animation",
+      "lead": "Kod, devre şeması, rapor ve açıklama aynı projenin parçalarıdır.",
+      "asset": {
+        "src": "canli-ders/gif/tr/03-projeni-github-a-koy.gif",
+        "alt": "Robot projesinin kod, şema, rapor ve fotoğrafları bir GitHub deposunda bir araya gelir."
+      },
+      "caption": "Repository = depo · robot.ino + README.md + devre şeması + kayıtlı geçmiş",
+      "notes": "Repository kelimesini depo diye kullanacağız. Depo yalnız internette duran bir klasör değildir; projenin dosyalarıyla birlikte kaydedilmiş geçmişini de taşır. Robot örneğimizde robot.ino kodu, IR sensörlerin bağlantı şeması, README açıklaması ve birkaç proje fotoğrafı aynı bağlamda duruyor. Animasyon bu dosyaların GitHub'da bir araya gelişini gösteriyor. Tarayıcıdan dosya yüklerken de bir commit oluşturulur. Yerelde çalışırkense kayıt ve gönderim iki ayrı işlemdir. Metin dosyalarında satır farklarını kolayca inceleyebiliriz. Fotoğraf ve PDF gibi dosyalar da saklanabilir; ancak onların değişimini metin kadar ayrıntılı karşılaştırmayı beklememeliyiz.",
+      "duration": 75,
+      "sources": [
+        {
+          "title": "Depolar",
+          "url": "https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories"
+        }
+      ],
+      "appendix": false
+    },
+    {
+      "id": 6,
+      "title": "Commit bir kayıt noktası",
+      "eyebrow": "01 · TEMELLER",
+      "theme": "paper",
+      "layout": "text",
+      "lead": "“IR sensör eşiği artırıldı” bir değişikliği ve amacını anlatır.",
+      "bullets": [
+        "Projenin seçilmiş hâlini geçmişe kaydeder.",
+        "Bir kimliği, yazarı ve açıklama mesajı vardır.",
+        "Bilgisayarda commit etmek, GitHub'a göndermekten ayrıdır."
+      ],
+      "caption": "Kaydetmek ≠ commit etmek ≠ push etmek",
+      "notes": "Commit, projenin belirli bir andaki hâlinin kayıt noktasıdır. Bir dosyayı editörde kaydetmek çalışma dosyasını değiştirir; bu işlem tek başına Git geçmişine girmez. Değişiklikleri seçip commit ettiğimizde geçmişte incelenebilen bir kayıt oluşur. Mesajı da bu kaydın neyi amaçladığını anlatır. Robot için “güncelleme” yerine “IR sensör eşiği artırıldı” demek, aylar sonra neden değişiklik yapıldığını anlamayı kolaylaştırır. Commit'in bir kimliği vardır; önceki kayıtlarla ilişkisi sayesinde zaman çizgisi kurulur. Bu kayıt bilgisayarda oluşturulduysa hâlâ yereldedir. Takımın GitHub'da görebilmesi için gönderilmesi gerekir. Bu ayrımı birazdan dört bölgeyle somutlaştıracağız.",
+      "duration": 75,
+      "sources": [
+        {
+          "title": "git commit",
+          "url": "https://git-scm.com/docs/git-commit"
+        }
+      ],
+      "appendix": false
+    },
+    {
+      "id": 7,
+      "title": "README giriş kapısıdır",
+      "eyebrow": "01 · TEMELLER",
+      "theme": "paper",
+      "layout": "code",
+      "lead": "Projeyi açan biri neye baktığını birkaç cümlede anlayabilmeli.",
+      "code": "# Robot Projem\n\nIR sensörlerle çizgi izleyen Arduino robotu.\n\n## Donanım\nArduino, IR sensörler, motor sürücü ve motorlar.\n\n## Çalıştırma\nBağlantı şemasını ve robot.ino açıklamalarını izleyin.",
+      "caption": "Amaç · donanım · kurulum · fotoğraf veya şema",
+      "notes": "README, projeyi ilk kez gören kişiye rehberlik eder. Kodun bütün ayrıntılarını burada anlatmak gerekmiyor; robotun ne yaptığı, hangi malzemeleri kullandığı ve nasıl çalıştırıldığı anlaşılmalı. Bizim örneğimizde çizgi algılayan IR sensörler ve kontrol kartı Arduino. Bir bağlantı şeması, bir fotoğraf ve kullanılan kütüphanelerin adları açıklamayı tamamlar. README.md dosyası Markdown biçimindedir; başlık ve listeler basit işaretlerle yazılır. GitHub bunu okunabilir bir sayfa olarak gösterir. İyi açıklama takım arkadaşına olduğu kadar projeyi değerlendiren hocaya veya staj başvurusunu inceleyen kişiye de yardım eder. Çalıştırma adımlarının gerçekten projeyle eşleşmesi, güzel görünmesinden daha önemlidir.",
+      "duration": 75,
+      "sources": [
+        {
+          "title": "README dosyası",
+          "url": "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes"
+        }
+      ],
+      "appendix": false
+    },
+    {
+      "id": 8,
+      "title": "Kim görebilir?",
+      "eyebrow": "01 · TEMELLER",
+      "theme": "coral",
+      "layout": "columns",
+      "lead": "Görünürlük ve yazma izni ayrı kararlardır.",
+      "columns": [
+        {
+          "heading": "Public · herkese açık",
+          "body": "Herkes görebilir ve klonlayabilir. Ana depoya yazmak ayrıca izin gerektirir."
+        },
+        {
+          "heading": "Private · özel",
+          "body": "Erişimi yetkili kişilerle sınırlıdır. Takım üyelerine uygun izin verilir."
+        }
+      ],
+      "caption": "Parolalar, erişim anahtarları ve kişisel veriler proje dosyası değildir.",
+      "notes": "Depoyu açarken görünürlüğünü seçiyoruz. Public depo herkes tarafından görülebilir ve klonlanabilir; bu, herkesin ana depoyu değiştirebildiği anlamına gelmez. Yazma yetkisi ayrı bir izindir. Private depo ise erişimi yetkili kişilerle sınırlar. Bir ders veya takım projesinde hangi dosyaların paylaşılacağına baştan karar vermek gerekir. Bağlantı şeması ve robot kodu başka, parola veya erişim anahtarı başka tür bilgidir. Hassas bir bilgi geçmişe girdiyse son dosyadan silmek önceki commit'leri ortadan kaldırmaz. Bu yüzden paylaşmadan önce dosyaların içeriği ve proje izinleri düşünülmelidir. Görünürlük tercihiyle birlikte lisans konusuna da kapanışta döneceğiz.",
+      "duration": 60,
+      "sources": [
+        {
+          "title": "Depo görünürlüğü",
+          "url": "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/setting-repository-visibility"
+        },
+        {
+          "title": "Hassas veriyi kaldırmak",
+          "url": "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository"
+        }
+      ],
+      "appendix": false
+    },
+    {
+      "id": 9,
+      "title": "Dün çalışıyordu",
+      "eyebrow": "02 · DEĞİŞİKLİĞİN YOLU",
+      "theme": "dark",
+      "layout": "animation",
+      "lead": "Geçmiş, “Ne değişti?” sorusuna somut bir cevap verir.",
+      "asset": {
+        "src": "canli-ders/gif/tr/04-zaman-makinesi.gif",
+        "alt": "Commit geçmişinde sensör eşiğinin 500 değerinden 900 değerine değiştirildiği görülür."
+      },
+      "caption": "Kim, ne zaman, hangi kayıtla? · Geçmiş yalnız commit edilen değişiklikleri kapsar.",
+      "notes": "Robot dün çizgiyi takip ediyordu; bugün davranışı farklı. İlk tepki son dosyayı suçlamak olabilir. Geçmişe baktığımızda ise değişikliğin hangi commit ile geldiğini bulabiliriz. Animasyonda eşiğin 500'den 900'e geçtiği bir kayıt var. Ders kitindeki örnek robot, IR sensör değerlerini analogRead ile okur; bu sayılar sensör okumasını karşılaştırmak için seçilmiş örnek eşiklerdir. Bütün robotlar için geçerli kalibrasyon değerleri değildir. Kayıtta yazar, zaman ve açıklama bulunur. Bunlar değişikliği kimin yaptığını gösterir, ama doğru olduğunu tek başına kanıtlamaz. İncelememiz ve robot üzerinde doğrulamamız gerekir. Geçmişin değeri tartışmayı hatırlamak yerine kaydedilmiş hâlleri karşılaştırabilmektir.",
+      "duration": 90,
+      "sources": [
+        {
+          "title": "Commit geçmişini incelemek",
+          "url": "https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History"
+        }
+      ],
+      "appendix": false
+    },
+    {
+      "id": 10,
+      "title": "Satır farkı nasıl okunur?",
+      "eyebrow": "02 · DEĞİŞİKLİĞİN YOLU",
+      "theme": "paper",
+      "layout": "code",
+      "lead": "Diff, iki hâl arasındaki değişikliği gösterir.",
+      "code": "robot.ino\n\n- const int ESIK = 500;\n+ const int ESIK = 900;",
+      "caption": "− önceki satır · + yeni satır · ESIK: IR sensör okuması için örnek eşik",
+      "notes": "Diff kelimesi fark görünümünü anlatır. Eksi işareti karşılaştırmanın önceki tarafındaki satırı, artı işareti sonraki tarafındaki satırı gösterir. İki satır iki farklı sensörün çıktısı değil, aynı değişkenin eski ve yeni değeridir. Bu örnekte IR sensörün analog okuma eşiği 500'den 900'e çıkarılmış. Renkler olmasa bile artı ve eksi işaretlerinden fark okunabilir. Bu görünüm kod incelemesinde işe yarar: bütün dosyayı baştan okumak yerine değişen bölgeye odaklanırız. Fakat bağlamı da anlamalıyız; küçük bir sayı değişikliği robot davranışını etkileyebilir. İki dalı karşılaştırırken hangi tarafın önce ve hangi tarafın sonra olduğunu açık yazmak önemlidir.",
+      "duration": 75,
+      "sources": [
+        {
+          "title": "git diff",
+          "url": "https://git-scm.com/docs/git-diff"
+        }
+      ],
+      "appendix": false
+    },
+    {
+      "id": 11,
+      "title": "Değişiklik dört yerde durur",
+      "eyebrow": "02 · DEĞİŞİKLİĞİN YOLU",
+      "theme": "paper",
+      "layout": "steps",
+      "lead": "Düzenle → hazırla → kaydet → paylaş",
+      "bullets": [],
+      "caption": "Add hazırlar. Commit yerelde kaydeder. Push gönderir. Pull uzaktaki yenilikleri alır.",
+      "notes": "Bu dört bölgeyi dersin merkezine yerleştirelim. Çalışma alanı dosyaları açıp düzenlediğimiz yerdir. Hazırlık alanı bir sonraki kayda hangi değişikliklerin gireceğini seçer. Yerel depo bilgisayardaki commit geçmişidir. Uzak depo ise burada GitHub'da paylaştığımız geçmiş. Bunlar dört ayrı proje üretmek anlamına gelmiyor; aynı projenin farklı durumlarını anlatıyor. README'yi düzenlemek ilk bölgede olur. Add değişikliği hazırlığa alır. Commit hazırlanan hâli yerel geçmişe yazar. Push kayıtları uzak depoya gönderir. GitHub'da bir değişiklik yapılırsa bilgisayardaki kopya kendiliğinden güncellenmez; o değişikliği getirmek gerekir. Şimdi bu okların her birini aynı robot deposunda sırayla izleyeceğiz.",
+      "duration": 105,
+      "sources": [
+        {
+          "title": "Git: çalışma modeli",
+          "url": "https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F"
+        }
+      ],
+      "appendix": false,
+      "diagram": "assets/lecture-zones.svg",
+      "diagramAlt": "Çalışma alanı, hazırlık alanı, yerel depo ve uzak depo arasında add, commit, push ve pull"
+    },
+    {
+      "id": 12,
+      "title": "Clone ile yerel kopya",
+      "eyebrow": "02 · DEĞİŞİKLİĞİN YOLU",
+      "theme": "dark",
+      "layout": "code",
+      "lead": "Var olan depoyu dosyaları ve geçmişiyle bilgisayara alırız.",
+      "code": "git clone <depo-adresi>\ncd robot-projem",
+      "caption": "Public depo HTTPS ile okunabilir; private depoda erişim gerekir. ZIP indirmek Git geçmişini getirmez.",
+      "notes": "Clone, var olan bir Git deposunun yerel kopyasını oluşturur. Normal bir klonlamada dosyalarla birlikte kayıtlı geçmiş ve uzak depo adresi de gelir. Örneğin robot-projem deposunu bilgisayara aldığımızda README'yi düzenleyebilir ve önceki kayıtları inceleyebiliriz. Ekrandaki depo-adresi, gerçek projenin klonlama adresi için yer tutucudur. Herkese açık bir depo HTTPS üzerinden okunurken genellikle hesapla kimlik doğrulamak gerekmez. Özel bir depo için erişim yetkisi gerekir. Klonlayabilmek, projeye değişiklik gönderebilmekle aynı şey değildir. Download ZIP ise çoğunlukla seçili hâlin dosyalarını verir; yerel Git geçmişini oluşturmaz. Geçmişle çalışmak istediğimizde bu ayrım önem kazanır.",
+      "duration": 75,
+      "sources": [
+        {
+          "title": "Depoyu klonlamak",
+          "url": "https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository"
+        }
+      ],
+      "appendix": false
+    },
+    {
+      "id": 13,
+      "title": "Önce dosyayı değiştiririz",
+      "eyebrow": "02 · DEĞİŞİKLİĞİN YOLU",
+      "theme": "paper",
+      "layout": "code",
+      "lead": "README'ye çizgi sensörlerinin görevini ekledik ve dosyayı kaydettik.",
+      "code": "README.md\n\n## Sensörler\nIR sensörler çizgiyi algılamak için kullanılır.\nBağlantılar devre-semasi.png dosyasındadır.\n\n# Dosyayı kaydet → ardından:\ngit status",
+      "caption": "Düzenleme adımı olmadan add ve commit yeni bir değişiklik üretmez.",
+      "notes": "Klonlama ile kayıt arasında mutlaka bir değişiklik olmalı. Robotun README dosyasına IR sensörlerin görevini ve bağlantı şemasının yerini eklediğimizi düşünelim. Dosyayı editörde kaydettik; şimdi çalışma alanı önceki commit'ten farklı. Git status bu durumu gösterir. Henüz yeni commit yok ve GitHub'da da yeni içerik görünmez. Bu noktada metni tekrar okuyup yanlış bir bilgi ekleyip eklemediğimizi kontrol edebiliriz. Dikkat edilmesi gereken küçük ama önemli bir ayrıntı var: bir komut listesinde clone'dan hemen sonra add yazılması, sanki klonlama kendi başına yeni kayıt üretmiş gibi anlaşılabilir. Asıl işi yapan düzenleme burada gerçekleşiyor; sonraki işlemler bu değişikliği seçiyor ve kaydediyor.",
+      "duration": 75,
+      "sources": [
+        {
+          "title": "git status",
+          "url": "https://git-scm.com/docs/git-status"
+        }
+      ],
+      "appendix": false
+    },
+    {
+      "id": 14,
+      "title": "Add ile değişikliği seçeriz",
+      "eyebrow": "02 · DEĞİŞİKLİĞİN YOLU",
+      "theme": "dark",
+      "layout": "code",
+      "lead": "Bir commit'in kapsamını bilinçli belirleriz.",
+      "code": "git add README.md\ngit diff --cached",
+      "caption": "Add, dosyanın o andaki hâlini hazırlar. Sonraki düzenleme için yeniden add gerekebilir.",
+      "notes": "Add bir yükleme komutu değil; bir sonraki commit'in içeriğini hazırlama komutu. Burada yalnız README değişikliğini seçiyoruz. Robot kodunda aynı anda başka bir deneme varsa onu bu açıklama kaydına katmak zorunda değiliz. Git diff cached hazırlanan farkı gösterir; birazdan kaydedeceğimiz şey budur. Bir dosyayı add ettikten sonra yeniden düzenlersek hazırlık alanında önceki seçilmiş hâli kalabilir. Yeni düzenlemeyi de kayda almak istiyorsak yeniden add yaparız. Bu ayrıntı hazırlığın bir klasörü tamamen taşımak değil, değişikliği belirli bir anda seçmek olduğunu gösterir. Küçük ve anlaşılır kayıtlar üretmek, sonraki kod incelemesini ve gerektiğinde geri almayı kolaylaştırır.",
+      "duration": 90,
+      "sources": [
+        {
+          "title": "git add",
+          "url": "https://git-scm.com/docs/git-add"
+        }
+      ],
+      "appendix": false
+    },
+    {
+      "id": 15,
+      "title": "Commit ile yerelde kaydederiz",
+      "eyebrow": "02 · DEĞİŞİKLİĞİN YOLU",
+      "theme": "paper",
+      "layout": "code",
+      "lead": "Mesaj, değişikliğin ne işe yaradığını anlatır.",
+      "code": "git commit -m \"IR sensör bağlantıları README'de açıklandı\"\ngit log --oneline",
+      "caption": "Bu kayıt bilgisayardadır. GitHub'a aktarım bir sonraki adımdır.",
+      "notes": "Hazırladığımız README değişikliğini şimdi commit ile geçmişe yazıyoruz. Mesaj “IR sensör bağlantıları README'de açıklandı” diyor; böylece dosyanın hangi amaçla değiştiğini anlayabiliyoruz. Git log oneline geçmişi kısa bir liste hâlinde gösterir. Listede yeni kaydın kimliği ve açıklaması bulunur. Daha önceki robot kodu kaydı da geçmişte kalır. Bu işlem için internet şart değildir ve bilgisayardaki yerel depo güncellenir. Commit mesajı bir sonuç iddiası da taşıyabilir; bu yüzden “sensör düzeltildi” yazıyorsak gerçekten neyi doğruladığımızı açıklamak iyi olur. Buradaki değişiklik yalnız belgede; sensörün çalıştığına dair bir test sonucu üretmiyor. Şimdi bu yerel kaydı takımın ortak deposuna göndereceğiz.",
+      "duration": 90,
+      "sources": [
+        {
+          "title": "git commit",
+          "url": "https://git-scm.com/docs/git-commit"
+        },
+        {
+          "title": "Commit geçmişini incelemek",
+          "url": "https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History"
+        }
+      ],
+      "appendix": false
+    },
+    {
+      "id": 16,
+      "title": "Push ile GitHub'a göndeririz",
+      "eyebrow": "02 · DEĞİŞİKLİĞİN YOLU",
+      "theme": "dark",
+      "layout": "code",
+      "lead": "Yerel kayıtlar, push sonrasında uzak depoda görünür.",
+      "code": "git push",
+      "caption": "Yazma izni ve kimlik doğrulama gerekir. GitHub hesap parolası, Git için HTTPS parolası değildir.",
+      "notes": "Push yerel commit'leri uzak depoya gönderir. İşlem başarılı olunca takım README açıklamasını GitHub'da görebilir. Push dosyayı editörde kaydetmenin başka adı değildir; commit edilmemiş çalışma alanı değişikliklerini doğrudan göndermiyoruz. Gönderim için uzak adres, hedef dal, yazma izni ve uygun kimlik doğrulama gerekir. HTTPS için bir erişim yöntemi veya SSH anahtarı kullanılabilir; ayrıntıları ek slaytlarda var. Burada hesabın normal parolasını terminalde kullanmak yeterli kabul edilmemelidir. İlk gönderimde izleme bağlantısı ayarlamak gerekebilir. Ayrıca uzakta yeni kayıtlar varsa Git gönderimi reddedebilir. Bu durumu zorla üzerine yazmak yerine takımın değişikliklerini anlayıp yerel çalışmaya dahil etmek gerekir.",
+      "duration": 75,
+      "sources": [
+        {
+          "title": "git push",
+          "url": "https://git-scm.com/docs/git-push"
+        }
+      ],
+      "appendix": false
+    },
+    {
+      "id": 17,
+      "title": "Pull ile yenilikleri alırız",
+      "eyebrow": "02 · DEĞİŞİKLİĞİN YOLU",
+      "theme": "paper",
+      "layout": "code",
+      "lead": "Takımın ortak geçmişi ile yerel kopya yeniden buluşur.",
+      "code": "git status\ngit pull --ff-only",
+      "caption": "Örnek, yerel dalda ayrı commit yoksa ilerler. Geçmişler ayrılmışsa birleştirme yöntemi seçilir.",
+      "notes": "Deniz robot kodunu GitHub'a gönderdiyse Elif'in bilgisayarındaki dosya kendi kendine değişmez. Pull uzaktaki güncellemeleri getirip yerel dala dahil eder. Önce status ile çalışma alanında commit edilmemiş değişiklik olup olmadığına bakılır. Buradaki ff-only seçeneği, yerel geçmiş ayrı bir yöne gitmemişse dalı ileri taşır. İki tarafta da farklı yeni commit'ler oluşmuşsa durur; bu durumda merge veya rebase gibi bir yöntemle geçmişlerin nasıl birleştirileceği seçilir. Genel pull davranışı ayarlara bağlı olabilir. Başlangıç için asıl ilişkiyi hatırlamak yeterli: push bizden ortak depoya, pull ortak depodan bize. GitHub'daki en yeni sürümü görebilmek ile bilgisayardaki kopyanın güncel olması aynı şey değildir.",
+      "duration": 90,
+      "sources": [
+        {
+          "title": "git pull",
+          "url": "https://git-scm.com/docs/git-pull"
+        }
+      ],
+      "appendix": false
+    },
+    {
+      "id": 18,
+      "title": "Issue işi görünür kılar",
+      "eyebrow": "03 · TAKIM ÇALIŞMASI",
+      "theme": "coral",
+      "layout": "animation",
+      "lead": "“IR sensör eşiğini incele” ortak bir iş kaydıdır.",
+      "asset": {
+        "src": "canli-ders/gif/tr/05-takimin-listesi.gif",
+        "alt": "GitHub Issues üzerinde bir iş açılır, takım üyesine atanır ve tamamlandığında kapatılır."
+      },
+      "caption": "Başlık + gözlenen durum + beklenen sonuç + sorumlu",
+      "notes": "Takımın işleri mesaj grubunda kaybolmasın diye issue açarız. Issue bir hata bildirimi, yapılacak iş veya geliştirme önerisi olabilir. Robot örneğimizde “IR sensör eşiğini incele” başlıklı bir kayıt düşünelim. Açıklamada robotun hangi koşulda çizgiyi kaybettiğini, beklenen davranışı ve ilgili dosyayı yazarız. Bir sorumlu atanabilir ve etiket eklenebilir. İş numarası konuşmalarda ve pull request içinde referans verir. Animasyonda bir fotoğraf işi gösteriliyor; aynı düzen sensör hatası veya README eksikliği için de kullanılabilir. Issue kapandığında geçmişi yok olmaz. Hangi kararların verildiğini daha sonra bulabiliriz. Böylece “ne yapacağız?” sorusu kod dosyasından ayrı ama projeyle bağlantılı durur.",
+      "duration": 90,
+      "sources": [
+        {
+          "title": "Issue kavramı",
+          "url": "https://docs.github.com/en/issues/tracking-your-work-with-issues/learning-about-issues/about-issues"
+        }
+      ],
+      "appendix": false
+    },
+    {
+      "id": 19,
+      "title": "Dal ayrı bir çalışma çizgisidir",
+      "eyebrow": "03 · TAKIM ÇALIŞMASI",
+      "theme": "dark",
+      "layout": "text",
+      "lead": "Aynı başlangıçtan farklı değişiklikler ilerleyebilir.",
+      "bullets": [],
+      "caption": "Branch, bütün dosyaların fiziksel kopyası değil, bir commit'e işaret eden addır.",
+      "notes": "Branch yani dal, projede ayrı bir çalışma çizgisi oluşturur. Ana çizgideki mevcut commit'ten IR sensör eşiğini düzenlemek için yeni bir dal açtığımızı düşünelim. O dalda yaptığımız yeni kayıtlar main dalını otomatik değiştirmez. Başka biri README üzerinde ayrı bir dalda çalışabilir. Branch açmayı bütün proje klasörünü fiziksel olarak kopyalamak gibi düşünmek pratikte kolay görünse de Git'in modeli böyle değildir. Dal adı bir commit'e işaret eder ve yeni kayıtlarla ilerler. Dosyaları hangi daldan açtığımız, çalışma alanında gördüğümüz hâli belirler. Dal bize düzenli çalışmayı sağlar; yapılan değişikliğin iyi veya hatasız olduğunu garanti etmez. Birleştirmeden önce inceleme ve doğrulama gerekir.",
+      "duration": 90,
+      "sources": [
+        {
+          "title": "Git dalları",
+          "url": "https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell"
+        }
+      ],
+      "appendix": false,
+      "diagram": "assets/lecture-branch.svg",
+      "diagramAlt": "main dalından ayrılan özellik dalı ve inceleme sonrası birleşme"
+    },
+    {
+      "id": 20,
+      "title": "Başlangıç için sade dal düzeni",
+      "eyebrow": "03 · TAKIM ÇALIŞMASI",
+      "theme": "paper",
+      "layout": "columns",
+      "lead": "Dal düzenini projenin ihtiyacı belirler.",
+      "columns": [
+        {
+          "heading": "Ana çizgi",
+          "body": "main · takımın kabul ettiği güncel çalışma."
+        },
+        {
+          "heading": "İş dalları",
+          "body": "feature/sensor-esigi · belirli değişiklik, inceleme, birleştirme."
+        }
+      ],
+      "caption": "dev veya staging her proje için zorunlu değildir. Hedef dal CONTRIBUTING kılavuzundan öğrenilir.",
+      "notes": "Başlangıç düzeyindeki robot takımı için bir ana dal ve kısa süreli iş dalları yeterli bir düzen. Ana dalı bu sunumda main diye adlandırıyoruz. Başka projelerde master veya farklı adlar görülebilir; komutta gerçek dal adı kullanılır. Büyük projelerde dev, staging veya sürüm dalları bulunabilir, fakat bunları herkesin uygulaması gereken tek doğru düzen olarak sunmamak gerekir. Dışarıdaki bir projeye katkı verirken hedef dalı alışkanlıkla seçmeyiz. Önce CONTRIBUTING dosyasına veya katkı belgelerine bakarız. Projenin bakımcıları hangi dala ve hangi koşullarda katkı kabul edildiğini belirler. Dal sayısını artırmanın amacı düzen kurmak olmalı; anlaşılması güç bir süreç yaratmak değil.",
+      "duration": 75,
+      "sources": [
+        {
+          "title": "Dal düzenleri",
+          "url": "https://git-scm.com/book/en/v2/Git-Branching-Branching-Workflows"
+        }
+      ],
+      "appendix": false
+    },
+    {
+      "id": 21,
+      "title": "Pull request bir öneridir",
+      "eyebrow": "03 · TAKIM ÇALIŞMASI",
+      "theme": "paper",
+      "layout": "code",
+      "lead": "“Bu dalın değişikliğini main'e alalım mı?”",
+      "code": "Kaynak: feature/sensor-esigi  →  Hedef: main\n\nBaşlık: IR sensör eşiğini artır\n\nNeden: Robot bazı koşullarda çizgiyi kaybediyordu.\nDeğişiklik: ESIK, 500 → 900.\nDoğrulama: Yapılan gözlem ve test burada belirtilir.",
+      "caption": "PR açıklaması neyin, neden değiştiğini ve nasıl doğrulandığını anlatır.",
+      "notes": "Pull request, bir dalı başka bir dala birleştirme önerisidir. Kaynak bizim sensör eşiği dalımız, hedef main. Bir PR açmak değişikliği hemen kabul ettirmek anlamına gelmez; inceleme için görünür hâle getirir. Başlık somut işi anlatır. Açıklamada sorun, değişiklik ve doğrulama yer alır. Burada 500 değerinden 900 değerine geçen eşik var. Gerçek projede hangi koşullarda denendiğini yazmak gerekir; sunumdaki örnek için yapılmamış bir testi yapılmış gibi göstermiyoruz. PR aynı zamanda ilgili issue'ya bağlantı kurabilir. “Ne yapacağız?” sorusu issue'da, “Bu çözümü kabul ediyor muyuz?” sorusu PR'da tartışılır. Kaynak ve hedef dalı doğru seçmek, içerik kadar önemlidir.",
+      "duration": 105,
+      "sources": [
+        {
+          "title": "Pull request",
+          "url": "https://docs.github.com/en/pull-requests/reference/pull-requests"
+        }
+      ],
+      "appendix": false
+    },
+    {
+      "id": 22,
+      "title": "İnceleme çözümü güçlendirir",
+      "eyebrow": "03 · TAKIM ÇALIŞMASI",
+      "theme": "dark",
+      "layout": "text",
+      "lead": "Bir sayı değişikliği küçük görünür; robotun davranışını etkileyebilir.",
+      "bullets": [
+        "Files changed: değişen satırlar ve bağlam.",
+        "Yorum: “Bu eşik hangi koşulda denendi?”",
+        "Yeni commit aynı dala gönderilince PR güncellenir.",
+        "Onay ve gerekli kontroller sonrası birleştirme."
+      ],
+      "caption": "İnceleme, kararın ve gerekçesinin projede kalmasını sağlar.",
+      "notes": "Kod incelemesi yalnız yazım hatası aramak değildir. Takım arkadaşı eşiğin neden değiştiğini, analog okuma değerinin hangi koşullarda ölçüldüğünü ve başka bir davranışı etkileyip etkilemediğini sorabilir. GitHub'ın Files changed görünümünde yorum doğrudan ilgili satıra bağlanır. Yazar geri bildirime göre aynı dalda yeni commit oluşturup gönderirse PR güncellenir; baştan yeni bir PR açması gerekmez. Bir projede otomatik kontroller varsa onların sonuçları da görünür. İncelemenin amacı kişiyi değerlendirmekten çok çözümü anlaşılır ve güvenilir hâle getirmektir. Onay vermekle birleştirme yetkisine sahip olmak aynı şey olmayabilir. Takımın kuralları hangi koşullarda değişikliğin ana dala alınacağını belirler.",
+      "duration": 90,
+      "sources": [
+        {
+          "title": "Pull request incelemeleri",
+          "url": "https://docs.github.com/en/pull-requests/reference/pull-request-reviews"
+        }
+      ],
+      "appendix": false
+    },
+    {
+      "id": 23,
+      "title": "Birleştirme sonrası herkes günceller",
+      "eyebrow": "03 · TAKIM ÇALIŞMASI",
+      "theme": "paper",
+      "layout": "steps",
+      "lead": "GitHub'da kabul edilen değişiklik, yerel main'e ayrıca alınır.",
+      "bullets": [
+        "PR, main'e birleştirilir.",
+        "Yerelde main dalına geçilir.",
+        "Uzak değişiklikler alınır.",
+        "Birleşmiş iş dalı gerekirse temizlenir."
+      ],
+      "code": "git switch main\ngit pull --ff-only",
+      "caption": "Dal silmeden önce değişikliğin hedef dalda bulunduğu doğrulanır.",
+      "notes": "İnceleme tamamlanınca değişiklik GitHub'da main dalına birleştirilebilir. Ancak bizim bilgisayardaki main hâlâ önceki commit'te olabilir. Bu yüzden yerelde main'e geçip uzaktaki yeni hâli alırız. Slayttaki ff-only örneği yerel main'de ayrı yeni commit olmadığı varsayımıyla ilerler. Bundan sonra sensör eşiği değişikliği ana çalışma çizgisinde görünür. İş dalı artık gerekmiyorsa temizlenebilir. Main’e alınan içerik korunur. Geçmişin biçimi birleştirme yöntemine bağlıdır. GitHub'da farklı birleştirme yöntemleri vardır ve hepsi aynı geçmiş biçimini üretmez. Başlangıçta yöntem ayrıntısından önce şu döngüyü oturtmak önemli: değişikliği öner, incele, kabul et ve takımın yerel kopyalarını güncelle.",
+      "duration": 75,
+      "sources": [
+        {
+          "title": "GitHub akışı",
+          "url": "https://docs.github.com/en/get-started/using-github/github-flow"
+        },
+        {
+          "title": "git switch",
+          "url": "https://git-scm.com/docs/git-switch"
+        }
+      ],
+      "appendix": false
+    },
+    {
+      "id": 24,
+      "title": "Çakışma kararı bize bırakır",
+      "eyebrow": "03 · TAKIM ÇALIŞMASI",
+      "theme": "coral",
+      "layout": "code",
+      "lead": "İki dal aynı satırı farklı biçimde değiştirmiş.",
+      "code": "robot.ino\n\n<<<<<<< HEAD\nconst int ESIK = 900;\n=======\nconst int ESIK = 700;\n>>>>>>> main",
+      "caption": "HEAD: şu anki dal · main: birleştirdiğimiz dal · ESIK: IR sensör okuma eşiği",
+      "notes": "Git farklı bölgelerdeki değişiklikleri çoğu zaman otomatik birleştirir. Ama ortak başlangıçta 500 olan aynı eşik, bir dalda 900 diğer dalda 700 yapılmışsa hangi değerin doğru olduğunu bilemez. O noktada çakışma işaretleriyle durur. Bu örnekte sensör eşiği dalındayız ve main'i o dala birleştiriyoruz. HEAD bölümünde 900, gelen main tarafında 700 var. HEAD sözcüğü her zaman “doğru olan taraf” anlamına gelmez; bulunduğumuz konumu gösterir. Bir dosyanın bir dalda silinip diğerinde değiştirilmesi de çakışma doğurabilir. Git'in durması bütün projenin bozulduğu anlamına gelmez. Takımın çözmesi gereken bir kararı görünür kılar.",
+      "duration": 90,
+      "sources": [
+        {
+          "title": "Birleştirme çakışmaları",
+          "url": "https://docs.github.com/en/pull-requests/reference/merge-conflicts"
+        }
+      ],
+      "appendix": false
+    },
+    {
+      "id": 25,
+      "title": "Çakışmayı anlamıyla çözeriz",
+      "eyebrow": "03 · TAKIM ÇALIŞMASI",
+      "theme": "paper",
+      "layout": "steps",
+      "lead": "Önce doğru davranışa karar verilir, ardından işaretler temizlenir.",
+      "bullets": [
+        "İki değişikliğin gerekçesini ve bağlamını oku.",
+        "Proje için uygun çözümü seç veya yeni çözüm yaz.",
+        "İşaretleri kaldır, dosyayı kaydet ve doğrula.",
+        "Dosyayı add ile hazırla, merge commit'ini tamamla."
+      ],
+      "code": "git add robot.ino\ngit commit -m \"IR sensör eşik çakışması çözüldü\"",
+      "caption": "Örnek bir merge çözümüdür; devam komutu yapılan işleme göre değişir.",
+      "notes": "Çözüm, iki seçenekten rastgele birini kabul etmek değildir. Eşiği değiştiren iki kişinin gerekçesini okuyup robotun beklenen davranışına karar veririz. Son dosyada tek ve anlamlı bir eşik kalmalı; çakışma işaretleri kaldırılmalı. Bazen iki değişikliği birleştirmek veya üçüncü bir çözüm yazmak gerekir. Dosyayı kaydettikten sonra projeye uygun doğrulama yapılır. Ardından add ve commit ile bu merge çözümü tamamlanır. Slayttaki komutlar merge örneği içindir; rebase sırasında devam adımı farklıdır. VS Code gibi editörler seçenekleri kolaylaştırır, fakat hangi içeriğin doğru olduğuna bizim karar vermemiz gerekir. İşaretleri silmek teknik işlemi bitirebilir; gerçek sorunun çözüldüğünü anlamak ise kodu ve proje davranışını incelemeyi gerektirir.",
+      "duration": 105,
+      "sources": [
+        {
+          "title": "Çakışmayı çözmek",
+          "url": "https://docs.github.com/en/pull-requests/how-tos/merge-and-close-pull-requests/resolving-a-merge-conflict-using-the-command-line"
+        }
+      ],
+      "appendix": false
+    },
+    {
+      "id": 26,
+      "title": "Hazır kodu nasıl seçeriz?",
+      "eyebrow": "04 · PAYLAŞIM VE GÖRÜNÜRLÜK",
+      "theme": "dark",
+      "layout": "text",
+      "lead": "Robota HC-SR04 mesafe sensörü eklerken ilk sonuç tek başına yeterli değildir.",
+      "bullets": [
+        "Donanım ve kullanılan yazılım sürümüyle uyum.",
+        "README, bağlantı açıklaması ve çalışan örnekler.",
+        "Bakım durumu, açık sorunlar ve yayınlar.",
+        "Lisans ve projenin kullanım koşulları."
+      ],
+      "caption": "Yıldız, ilgi ve kaydetme işaretidir; kalite veya kullanım garantisi değildir.",
+      "notes": "Çizgi izleyen robota ayrıca HC-SR04 mesafe sensörü eklemek istediğimizi düşünelim. GitHub'da bir kütüphane bulmak başlangıcı hızlandırabilir. Ama yıldızı en çok olanı seçmek yeterli bir değerlendirme değildir. Yıldız bir kişinin projeyi kaydetmesi veya ilgi göstermesiyle ilişkilidir; kaç kişinin üründe kullandığını ya da kodun doğru olduğunu doğrudan ölçmez. Önce sensör ve Arduino ortamımızla uyuma bakarız. README'de bağlantı bilgisi ve örnek var mı, açık sorunlar neleri anlatıyor, projenin bakımı sürüyor mu diye inceleriz. Yakın tarihte güncelleme olması tek başına üstünlük de değildir; oturmuş bir proje daha seyrek değişebilir. Son olarak lisans koşullarını kontrol ederiz. Bu slayt bir belirli kütüphaneyi tavsiye etmiyor, seçim ölçütlerini gösteriyor.",
+      "duration": 90,
+      "sources": [
+        {
+          "title": "Yıldızların anlamı",
+          "url": "https://docs.github.com/en/get-started/exploring-projects-on-github/saving-repositories-with-stars"
+        }
+      ],
+      "appendix": false
+    },
+    {
+      "id": 27,
+      "title": "Lisans kullanım şartlarını anlatır",
+      "eyebrow": "04 · PAYLAŞIM VE GÖRÜNÜRLÜK",
+      "theme": "coral",
+      "layout": "text",
+      "lead": "Bir kodu görebilmek, onu her amaçla kullanabilmek anlamına gelmez.",
+      "bullets": [
+        "LICENSE dosyasını ve bağımlılıkların lisanslarını oku.",
+        "Kopyalama, dağıtma ve değişiklik koşullarını öğren.",
+        "Gerekli atıf ve lisans bildirimlerini koru."
+      ],
+      "caption": "Açık kaynak kullanırken teknik uygunluk ve kullanım izni birlikte değerlendirilir.",
+      "notes": "Bir depoyu public görmek, bütün kullanım haklarının serbest olduğu sonucunu vermez. Lisans kodun hangi koşullarda kullanılabileceğini, değiştirilebileceğini ve dağıtılabileceğini açıklar. Robot projesine bir kütüphane eklerken hem o kütüphanenin hem bağlı olduğu parçaların koşullarına bakılır. Bazı lisanslar atıf veya lisans bildirimini korumayı ister; başka yükümlülükler de olabilir. Lisans yoksa “GitHub'da buldum, o yüzden her yerde kullanabilirim” varsayımıyla ilerlememek gerekir. Kendi projemizi başkalarının kullanmasını istiyorsak uygun lisansı açıkça belirtmek de işe yarar. Buradaki amaç lisans türlerini ezberlemek değil, paylaşım kararının teknik dosyalardan ibaret olmadığını fark etmek.",
+      "duration": 60,
+      "sources": [
+        {
+          "title": "Depo lisansları",
+          "url": "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository"
+        }
+      ],
+      "appendix": false
+    },
+    {
+      "id": 28,
+      "title": "Fork ile dış projeye katkı",
+      "eyebrow": "04 · PAYLAŞIM VE GÖRÜNÜRLÜK",
+      "theme": "paper",
+      "layout": "steps",
+      "lead": "Kendi kopyanda çalış, asıl projeye değişiklik öner.",
+      "bullets": [
+        "Katkı kılavuzunu oku ve hedef dalı öğren.",
+        "Depoyu hesabına fork et; kendi fork'unu klonla.",
+        "İş dalında değiştir, commit et ve fork'una gönder.",
+        "Asıl projeye doğru hedef dalı seçerek PR aç."
+      ],
+      "caption": "Public depoyu doğrudan klonlamak mümkündür; fork, kendi uzak kopyanda çalışmanı sağlar.",
+      "notes": "Kendi takımımızın deposuna yazma yetkimiz olabilir; dışarıdaki bir açık kaynak projede olmayabilir. Public projeyi okumak ve klonlamak için fork şart değildir. Ama kendi hesabımızda gönderim yapabileceğimiz bir uzak kopya istiyorsak fork kullanabiliriz. Önce katkı kılavuzunu okur, hangi dala katkı kabul edildiğini öğreniriz. Ardından fork'umuzu klonlayıp bir iş dalında değişiklik yaparız. Commit'leri kendi fork'umuza gönderdikten sonra asıl projeye PR açarız. Kaynak dal bizim fork'umuzda, hedef dal asıl projededir. Hedef her projede dev değildir; CONTRIBUTING veya bakımcıların talimatı belirler. Böylece yazma izni olmadan da projeye düzenli bir değişiklik önerisi sunabiliriz.",
+      "duration": 90,
+      "sources": [
+        {
+          "title": "Fork kavramı",
+          "url": "https://docs.github.com/en/pull-requests/reference/forks"
+        }
+      ],
+      "appendix": false
+    },
+    {
+      "id": 29,
+      "title": "Portfolyo projeyi anlaşılır kılar",
+      "eyebrow": "04 · PAYLAŞIM VE GÖRÜNÜRLÜK",
+      "theme": "dark",
+      "layout": "columns",
+      "lead": "İyi açıklanan birkaç proje, katkı sayısından daha çok şey anlatabilir.",
+      "columns": [
+        {
+          "heading": "Projede göster",
+          "body": "Amaç, senin katkın, kullanılan donanım, sonuçlar ve çalışma sınırları."
+        },
+        {
+          "heading": "Profilde düzenle",
+          "body": "Öne çıkan depolar, açık README'ler ve doğru çalışan proje bağlantıları."
+        }
+      ],
+      "caption": "Katkı grafiği GitHub'ın saydığı etkinlikleri gösterir; bütün çalışma günlerini veya emeği ölçmez.",
+      "notes": "GitHub profili bir portfolyo olabilir, ama depoların anlaşılır olması gerekir. Robot projesinde hangi sorunu çözmeye çalıştığımızı, takım içindeki katkımızı, kullanılan donanımı ve elde edilen sonucu açıklayabiliriz. Bir fotoğraf veya kısa gösterim projeyi canlandırır; aynı zamanda çalışmadığı koşulları dürüstçe yazmak değerlidir. Profilde birkaç iyi projeyi öne çıkarmak gezmeyi kolaylaştırır. Yeşil katkı karelerini ise bütün çalışma süresi gibi yorumlamayalım. GitHub belirli etkinlikleri ve belirli koşullardaki commit'leri sayar; laboratuvar çalışması veya tasarım düşüncesi bu grafiğe tamamen yansımaz. Bir başvuruda önemli olan kare sayısından çok, projenin ve kişinin katkısının somut biçimde görülebilmesidir.",
+      "duration": 90,
+      "sources": [
+        {
+          "title": "Katkı grafiğinin ölçütleri",
+          "url": "https://docs.github.com/en/account-and-profile/reference/profile-contributions-reference"
+        }
+      ],
+      "appendix": false
+    },
+    {
+      "id": 30,
+      "title": "Öğrenci kaynakları",
+      "eyebrow": "04 · PAYLAŞIM VE GÖRÜNÜRLÜK",
+      "theme": "paper",
+      "layout": "text",
+      "lead": "GitHub Education, doğrulanmış öğrenciler için araç ve öğrenme imkânları sunar.",
+      "bullets": [
+        "Student Developer Pack: değişen iş ortağı teklifleri.",
+        "Copilot Student: doğrulanmış öğrenciler için ücretsiz erişim.",
+        "Başvuru: öğrenci durumu ve gerekli belgelerle doğrulama."
+      ],
+      "caption": "Güncel şartlar ve teklifler: education.github.com/pack",
+      "notes": "GitHub Education öğrencilere öğrenme kaynakları ve çeşitli araç avantajları sunuyor. Student Developer Pack içinde iş ortaklarının teklifleri yer alıyor; bunların sayısı ve koşulları zaman içinde değişebilir. Doğrulanmış öğrenciler için Copilot Student erişimi de var. Bu avantajlar her hesabın kendiliğinden alacağı sınırsız hizmetler olarak düşünülmemeli. Başvuru öğrenci durumunun doğrulanmasını gerektirir; gerekli e-posta veya belgeler başvuruya göre belirlenir. Bazı avantajların ayrıca etkinleştirilmesi gerekebilir. Burada sabit teklif sayısı veya kesin onay süresi vermek yerine resmî güncel sayfayı kaynak olarak bırakıyorum. İhtiyaç duyulan araç seçilmeli; bir aracın ücretsiz olması projenin ihtiyaçlarına uygun olduğu anlamına gelmez.",
+      "duration": 60,
+      "sources": [
+        {
+          "title": "GitHub Education",
+          "url": "https://docs.github.com/en/education/about-github-education/github-education-for-students/about-github-education-for-students"
+        },
+        {
+          "title": "Öğrenci başvurusu",
+          "url": "https://docs.github.com/en/education/about-github-education/github-education-for-students/apply-to-github-education-as-a-student"
+        },
+        {
+          "title": "Copilot Student",
+          "url": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/set-up-copilot/enable-copilot/set-up-for-students"
+        }
+      ],
+      "appendix": false
+    },
+    {
+      "id": 31,
+      "title": "Bir projenin bütün akışı",
+      "eyebrow": "ÖZET",
+      "theme": "coral",
+      "layout": "summary",
+      "lead": "Sorun → issue → dal → değişiklik → commit → push → PR → inceleme → merge → pull",
+      "bullets": [
+        "Git kaydeder; GitHub ortak çalışmayı düzenler.",
+        "Kaydet, commit ve push farklı adımlardır.",
+        "README projeyi, issue işi, PR çözümü açıklar."
+      ],
+      "caption": "Kaynaklar: GitHub Docs · Pro Git · GitHub Skills",
+      "notes": "Robotun çizgiyi kaybetme sorunundan başladık. Issue ile işi görünür yaptık, bir dalda değişikliği geliştirdik ve commit ile kaydettik. Push ile ortak platforma ulaştırdık; PR üzerinden inceleyip birleştirdik ve yerel kopyayı güncelledik. Bu akışın yanında README projeyi açıklıyor, geçmiş neyin değiştiğini gösteriyor ve lisans paylaşım şartlarını belirliyor. Üç ayrımı hatırlarsak geri kalan kavramlar yerine oturur: Git ile GitHub farklıdır; dosyayı kaydetmek, commit etmek ve push etmek farklıdır; issue ile PR farklı soruları cevaplar. Sunumun ekleri komutlara yeniden bakmak için kullanılabilir. Daha sonra isteyenler resmî GitHub Docs, Pro Git kitabı ve GitHub Skills kaynaklarından bağımsız olarak ilerleyebilir.",
+      "duration": 90,
+      "sources": [
+        {
+          "title": "Git ve GitHub kaynakları",
+          "url": "https://docs.github.com/en/get-started/start-your-journey/git-and-github-learning-resources"
+        },
+        {
+          "title": "Introduction to GitHub",
+          "url": "https://github.com/skills/introduction-to-github"
+        }
+      ],
+      "appendix": false
+    },
+    {
+      "id": 32,
+      "title": "Sorular",
+      "eyebrow": "KAPANIŞ",
+      "theme": "dark",
+      "layout": "cover",
+      "lead": "Değişiklik nerede? Kim görebiliyor? Takıma nasıl ulaşıyor?",
+      "caption": "Git · GitHub · repository · commit · branch · issue · pull request",
+      "notes": "Teşekkürler. Soruları üç başlık etrafında düşünebiliriz: değişiklik şu anda nerede duruyor, kimler bu değişikliği görebiliyor ve takımın ortak çizgisine nasıl alınacak? Bir dosyanın kaydedildiği ama commit edilmediği durumla, commit edildiği ama gönderilmediği durum artık farklı anlamlar taşıyor. Bir dalda çalışmakla main'e birleştirmek de farklı adımlar. Son üç dakikada bu ilişkiler veya kendi projelerinizin nasıl düzenlenebileceğiyle ilgili soruları ele alabiliriz.",
+      "duration": 180,
+      "sources": [
+        {
+          "title": "GitHub Docs",
+          "url": "https://docs.github.com/en/get-started/start-your-journey/git-and-github-learning-resources"
+        },
+        {
+          "title": "Pro Git · Türkçe",
+          "url": "https://git-scm.com/book/tr/v2"
+        },
+        {
+          "title": "GitHub Skills",
+          "url": "https://github.com/skills/introduction-to-github"
+        },
+        {
+          "title": "GitHub Education",
+          "url": "https://education.github.com/pack"
+        }
+      ],
+      "appendix": false,
+      "visibleSources": true
+    },
+    {
+      "id": 33,
+      "title": "Git kurulumu",
+      "eyebrow": "EK 01 · BAŞVURU",
+      "theme": "paper",
+      "layout": "columns",
+      "lead": "İşletim sistemine uygun resmî kurulum yolunu seç.",
+      "columns": [
+        {
+          "heading": "Windows",
+          "body": "Git for Windows; Git Bash veya uygun terminal."
+        },
+        {
+          "heading": "macOS ve Linux",
+          "body": "İşletim sistemine uygun paket veya kurulum yöntemi."
+        }
+      ],
+      "code": "git --version",
+      "caption": "Sürüm numarası sisteme göre değişir. Güncel kurulum: git-scm.com/install",
+      "notes": "Bu ek kurulum sırasında başvuru içindir. Git version komutu kurulu Git'in sürümünü gösterir. Kurulu değilse işletim sistemine uygun yöntem resmî Git sayfasından seçilir. macOS'ta Git'in her cihazda hazır olduğunu varsaymayalım; kullanılan ortam bunu değiştirebilir. Windows'ta Git for Windows ile Git Bash kullanılabilir. Linux'ta dağıtımın paket yöneticisi yaygın yoldur. Kurulum seçeneği Git kavramlarını değiştirmez.",
+      "duration": 0,
+      "sources": [
+        {
+          "title": "Git kurulumu",
+          "url": "https://git-scm.com/install/"
+        }
+      ],
+      "appendix": true
+    },
+    {
+      "id": 34,
+      "title": "Commit kimliği",
+      "eyebrow": "EK 02 · BAŞVURU",
+      "theme": "dark",
+      "layout": "code",
+      "lead": "Kayıtlarda görünen ad ve e-posta önceden ayarlanır.",
+      "code": "git config --global user.name \"Elif Örnek\"\ngit config --global user.email \"elif@example.com\"\ngit config --global init.defaultBranch main",
+      "caption": "Ad ve e-posta örnektir. Bu ayar GitHub'da kimlik doğrulama yapmaz.",
+      "notes": "Bu üç ayar, kayıtların kimlik bilgisini ve yeni depoların varsayılan dal adını belirler. Ekrandaki ad ve e-posta örnektir; gerçek kullanımda kişinin tercih ettiği doğru bilgiler yazılır. Global ayar kullanıcı hesabının genel ayarıdır; bir depoda ayrıca yerel ayar tanımlanabilir. Commit e-postası herkese açık geçmişte görünüyorsa gizlilik tercihi de düşünülür. Bu bilgiler GitHub'a giriş veya push yetkisi sağlamaz; kimlik doğrulama ayrı konudur.",
+      "duration": 0,
+      "sources": [
+        {
+          "title": "Git kimlik ayarları",
+          "url": "https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup"
+        }
+      ],
+      "appendix": true
+    },
+    {
+      "id": 35,
+      "title": "Editör ve terminal",
+      "eyebrow": "EK 03 · BAŞVURU",
+      "theme": "paper",
+      "layout": "columns",
+      "lead": "Aynı Git işlemi terminalde veya grafik arayüzde yapılabilir.",
+      "columns": [
+        {
+          "heading": "Terminal",
+          "body": "Komut ve seçenekleri açıkça görürsün; işlem adımları kolayca paylaşılır."
+        },
+        {
+          "heading": "VS Code",
+          "body": "Dosyalar, fark görünümü, Source Control ve entegre terminal aynı pencerededir."
+        }
+      ],
+      "caption": "Open Folder ile proje açılır; View → Terminal ile terminal görünür.",
+      "notes": "VS Code bir seçenek, Git ise ayrı araçtır. Editörün Source Control görünümü değişen dosyaları, hazırlık alanını ve commit işlemlerini görsel olarak sunabilir. Entegre terminalden aynı komutlar çalıştırılabilir. Terminalin ne yaptığı açıkça görünür; grafik arayüzde farkları incelemek kolay olabilir. İki yol birbirini dışlamaz ve biri tek başına kavramları anlama garantisi değildir. Ana dersteki çalışma alanı, hazırlık, yerel depo ve uzak depo modeli her iki kullanımda da geçerlidir.",
+      "duration": 0,
+      "sources": [
+        {
+          "title": "VS Code sürüm kontrolü",
+          "url": "https://code.visualstudio.com/docs/sourcecontrol/overview"
+        }
+      ],
+      "appendix": true
+    },
+    {
+      "id": 36,
+      "title": ".git ve .gitignore",
+      "eyebrow": "EK 04 · BAŞVURU",
+      "theme": "dark",
+      "layout": "code",
+      "lead": "Geçmişin veritabanı ile izleme tercihleri farklı dosyalarda durur.",
+      "code": "robot-projem/\n  .git/\n  .gitignore\n  README.md\n  robot.ino\n\n# .gitignore örneği\nbuild/\n.env",
+      "caption": ".git elle düzenlenmez. .gitignore, zaten izlenen dosyaları geçmişten silmez.",
+      "notes": "Git klasörü commit'ler, dallar ve ayarlar için yerel veritabanını içerir. Elle silmek veya düzenlemek yerel geçmişe zarar verebilir. Gitignore ise henüz izlenmeyen dosyalardan hangilerinin normal izleme kapsamına alınmayacağını belirtir. Derleme çıktıları ve ortam ayarları için kullanılabilir. Fakat daha önce commit edilmiş bir dosyayı gitignore'a yazmak geçmişten kaldırmaz. Hassas bir bilgi yanlışlıkla gönderildiyse yalnız ignore eklemek yeterli çözüm değildir; ilgili erişim bilgisi iptal edilmeli ve resmî temizleme süreci izlenmelidir.",
+      "duration": 0,
+      "sources": [
+        {
+          "title": "gitignore",
+          "url": "https://git-scm.com/docs/gitignore"
+        },
+        {
+          "title": "Hassas veriyi kaldırmak",
+          "url": "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository"
+        }
+      ],
+      "appendix": true
+    },
+    {
+      "id": 37,
+      "title": "SSH anahtar çifti",
+      "eyebrow": "EK 05 · BAŞVURU",
+      "theme": "paper",
+      "layout": "code",
+      "lead": "GitHub'a açık anahtar eklenir; özel anahtar kişide kalır.",
+      "code": "ssh-keygen -t ed25519 -C \"elif@example.com\"\n\n# GitHub'a eklenecek dosya:\n~/.ssh/id_ed25519.pub\n\n# Paylaşılmayacak özel anahtar:\n~/.ssh/id_ed25519",
+      "caption": "Anahtar için parola kullanımı koruma sağlar. Mevcut anahtarın üzerine yazılmaz.",
+      "notes": "SSH kimlik doğrulamasında açık ve özel anahtar çifti kullanılır. Ed25519 güncel belgelerde önerilen anahtar türüdür; eski sistemlerde alternatif gerekebilir. Açık anahtarın pub dosyası GitHub hesabındaki SSH and GPG keys bölümüne eklenir. Özel anahtar paylaşılmaz ve depoya yüklenmez. Komut örneğindeki e-posta yalnız etikettir. Anahtara parola eklemek koruma sağlar; bir SSH ajanı bu anahtarı oturumda kullanmayı kolaylaştırır. Yeni anahtar oluştururken var olan dosyanın üzerine istemeden yazılmaması gerekir.",
+      "duration": 0,
+      "sources": [
+        {
+          "title": "SSH anahtarı ve ajanı",
+          "url": "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent"
+        },
+        {
+          "title": "GitHub'a açık anahtar eklemek",
+          "url": "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account"
+        }
+      ],
+      "appendix": true
+    },
+    {
+      "id": 38,
+      "title": "SSH ajanı ve bağlantı",
+      "eyebrow": "EK 06 · BAŞVURU",
+      "theme": "dark",
+      "layout": "code",
+      "lead": "Ajanın kurulumu işletim sistemine göre değişir.",
+      "code": "# Bash / Git Bash örneği\neval \"$(ssh-agent -s)\"\nssh-add ~/.ssh/id_ed25519\n\n# GitHub bağlantısını kontrol et\nssh -T git@github.com",
+      "caption": "macOS Keychain ve Windows OpenSSH adımları farklı olabilir; resmî yönerge izlenir.",
+      "notes": "Bu komutlar Bash veya Git Bash için kısa bir ajan örneği. macOS Anahtar Zinciri ile çalışma ve Windows OpenSSH hizmeti için ayrıntılar farklıdır. Her işletim sistemine aynı yapılandırmayı zorunluymuş gibi kopyalamamak gerekir. SSH testindeki ilk bağlantıda sunucu kimliği kontrol edilir; doğrulama için GitHub'ın yayımladığı anahtar parmak izleri kullanılır. Başarılı kimlik doğrulama mesajı GitHub hesabına SSH ile erişildiğini gösterir; GitHub genel kabuk erişimi sağlamaz. Anahtar bağlantısı başarılı olsa bile depo yazma izinleri ayrıca değerlendirilir.",
+      "duration": 0,
+      "sources": [
+        {
+          "title": "SSH anahtarı ve ajanı",
+          "url": "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent"
+        }
+      ],
+      "appendix": true
+    },
+    {
+      "id": 39,
+      "title": "Yerel klasörden depoya",
+      "eyebrow": "EK 07 · BAŞVURU",
+      "theme": "paper",
+      "layout": "code",
+      "lead": "Bu örnek, GitHub'da boş bir uzak depo varsayar.",
+      "code": "cd robot-projem\ngit init -b main\ngit add README.md robot.ino\ngit commit -m \"Robot projesinin ilk kaydı\"\ngit remote add origin <depo-adresi>\ngit remote -v",
+      "caption": "README.md ve robot.ino önceden vardır. Uzak depoda başlangıç commit'i varsa clone daha sade olabilir.",
+      "notes": "Init mevcut klasörde yerel bir Git deposu başlatır. Örnekte main dal adını açıkça veriyoruz ve var olan README ile robot kodunu ilk kayda alıyoruz. Remote add, origin adına uzak adresi bağlar. Origin yaygın bir addır; özel bir parola veya hizmet değildir. Init GitHub'da depo oluşturmaz. Buradaki uzak depoyu ayrıca açılmış ve boş varsayıyoruz. Uzak tarafta README gibi başlangıç commit'leri varsa bağımsız iki geçmiş yaratmak yerine depoyu klonlamak daha sade bir başlangıç olabilir.",
+      "duration": 0,
+      "sources": [
+        {
+          "title": "git init",
+          "url": "https://git-scm.com/docs/git-init"
+        },
+        {
+          "title": "git remote",
+          "url": "https://git-scm.com/docs/git-remote"
+        }
+      ],
+      "appendix": true
+    },
+    {
+      "id": 40,
+      "title": "İlk gönderim ve izleme",
+      "eyebrow": "EK 08 · BAŞVURU",
+      "theme": "dark",
+      "layout": "code",
+      "lead": "-u, yerel dalın hangi uzak dalı izleyeceğini kaydeder.",
+      "code": "git push -u origin main\n\n# İzleme bağlantısı kurulduktan sonra:\ngit push\ngit pull --ff-only",
+      "caption": "Dal adını git branch ile kontrol et. Komutta projenin gerçek dal adı kullanılır.",
+      "notes": "İlk push sırasında u seçeneği yerel main ile uzak origin main arasında izleme bağlantısı kurar. Bundan sonra uygun ayarlarda kısa push ve pull komutları hedefi bu bağlantıdan öğrenebilir. Bu izlenen uzak dal bazen upstream diye adlandırılır. Fork akışında asıl projeye verilen upstream uzak adıyla aynı kullanım değildir; kelime iki farklı bağlamda görülebilir. Dal adı main olmak zorunda değildir, ancak sunumdaki örnekler main kullanır. Her durumda gerçek dal adı ve uzak adres kontrol edilir.",
+      "duration": 0,
+      "sources": [
+        {
+          "title": "git branch",
+          "url": "https://git-scm.com/docs/git-branch"
+        }
+      ],
+      "appendix": true
+    },
+    {
+      "id": 41,
+      "title": "Dal ve fark komutları",
+      "eyebrow": "EK 09 · BAŞVURU",
+      "theme": "paper",
+      "layout": "code",
+      "lead": "Karşılaştırmada başlangıç ve sonuç tarafı açık yazılır.",
+      "code": "git branch\ngit switch -c feature/sensor-esigi\n\n# İki dalın son hâli: main → feature\ngit diff main feature/sensor-esigi -- robot.ino\n\n# Ortak başlangıçtan feature dalındaki değişiklik:\ngit diff main...feature/sensor-esigi",
+      "caption": "Tab tamamlama kabuk ayarına bağlıdır; yazılan önek dal adının başlangıcı olmalıdır.",
+      "notes": "Switch c yeni dalı oluşturur ve o dala geçer. Branch listesinde yıldız etkin dalı gösterir. İki dalı diff ile karşılaştırırken ilk ad önceki, ikinci ad sonraki taraftır; eksi ve artı işaretleri buna göre okunur. Üç noktalı karşılaştırma ise ortak başlangıca göre ikinci dalın getirdiği değişiklikleri gösterir. Tab tamamlama kullanılabiliyorsa feature gibi dalın başlangıcı yazılır; dalın ortasındaki bir kelimenin her ortamda tamamlanması beklenmez. Kabuk ve tamamlama ayarları sonucu etkiler.",
+      "duration": 0,
+      "sources": [
+        {
+          "title": "git switch",
+          "url": "https://git-scm.com/docs/git-switch"
+        },
+        {
+          "title": "git diff",
+          "url": "https://git-scm.com/docs/git-diff"
+        }
+      ],
+      "appendix": true
+    },
+    {
+      "id": 42,
+      "title": "Geri alırken niyeti seç",
+      "eyebrow": "EK 10 · BAŞVURU",
+      "theme": "coral",
+      "layout": "columns",
+      "lead": "Dosya, hazırlık alanı ve geçmiş için farklı işlemler vardır.",
+      "columns": [
+        {
+          "heading": "Hazırlıktan çıkar",
+          "body": "git restore --staged README.md\nÇalışma dosyasındaki değişiklik korunur."
+        },
+        {
+          "heading": "Paylaşılan değişikliği tersine çevir",
+          "body": "git revert <commit>\nÖnceki etkiyi geri alan yeni commit oluşturur."
+        }
+      ],
+      "caption": "git reset HEAD~1, dalı önceki commit'e taşır; varsayılan mixed çalışma dosyalarını korur.",
+      "notes": "Geri alma deyince önce neyi geri almak istediğimizi belirlemek gerekir. Yanlışlıkla add edilen dosyayı restore staged ile hazırlıktan çıkarabiliriz; düzenleme dosyada kalır. Paylaşılmış bir commit'in etkisini geri almak için revert yeni bir kayıt üretir, böylece ortak geçmiş korunur. Reset ise dalın işaret ettiği kaydı ve seçilen moda göre hazırlık alanını veya dosyaları değiştirebilir. Varsayılan mixed reset çalışma dosyalarını korur fakat geçmiş konumunu taşır. Bu yüzden reset ile revert aynı amaç ve sonuçlara sahip değildir.",
+      "duration": 0,
+      "sources": [
+        {
+          "title": "git restore",
+          "url": "https://git-scm.com/docs/git-restore"
+        },
+        {
+          "title": "git revert",
+          "url": "https://git-scm.com/docs/git-revert"
+        },
+        {
+          "title": "git reset",
+          "url": "https://git-scm.com/docs/git-reset"
+        }
+      ],
+      "appendix": true
+    },
+    {
+      "id": 43,
+      "title": "Hard reset ve kurtarma sınırları",
+      "eyebrow": "EK 11 · BAŞVURU",
+      "theme": "dark",
+      "layout": "code",
+      "lead": "Commit edilmemiş çalışma, hard reset ile kaybolabilir.",
+      "code": "# Yalnız etkileri değerlendirilmişse:\ngit reset --hard <commit>\n\n# Yerel işaretçi hareketlerini incele:\ngit reflog",
+      "caption": "Reflog bazı eski commit'leri bulmaya yardımcı olur; kaydedilmemiş bütün işi kurtarma garantisi vermez.",
+      "notes": "Hard reset dalı seçilen commit'e taşırken hazırlık alanını ve izlenen çalışma dosyalarını o hâle eşitler. Commit edilmemiş düzenlemeler kaybolabilir; yoluna çıkan bazı izlenmeyen dosyalar da etkilenebilir. Önceden commit edilmiş bir kayıt bazen yerel reflog üzerinden bulunabilir, bu yüzden bütün durumlar için geri alınamaz demek doğru değildir. Ama reflog bir genel yedek değildir ve sonsuza kadar her şeyi tutmaz. Özellikle hiç commit edilmemiş çalışmanın kurtarılacağı varsayılmamalıdır. Önce status ve değişiklikler incelenir; komutun etkisi anlaşılmadan hard reset kullanılmaz.",
+      "duration": 0,
+      "sources": [
+        {
+          "title": "git reset",
+          "url": "https://git-scm.com/docs/git-reset"
+        },
+        {
+          "title": "git reflog",
+          "url": "https://git-scm.com/docs/git-reflog"
+        }
+      ],
+      "appendix": true
+    },
+    {
+      "id": 44,
+      "title": "Komutlara kısa bakış",
+      "eyebrow": "EK 12 · BAŞVURU",
+      "theme": "paper",
+      "layout": "code",
+      "lead": "Komutlar, ana dersteki kavramların kısa karşılığıdır.",
+      "code": "git clone <depo-adresi>\n# Dosyayı düzenle ve kaydet\ngit status\ngit add <dosya>\ngit commit -m \"Ne ve neden değişti?\"\ngit push\n\n# Takımın yeniliklerini al\ngit pull --ff-only\n# İş dalı oluştur\ngit switch -c feature/<is>",
+      "caption": "Yer tutucular gerçek değerlerle değiştirilir. Kurulum, kimlik ve izinler önce sağlanır.",
+      "notes": "Bu son ek günlük akışa yeniden bakmak için kısa bir başvuru sayfası. Clone ile başlanır, fakat sonraki commit için önce gerçek bir dosya düzenlemesi yapılır. Status durumumuzu gösterir, add seçer, commit kaydeder ve push gönderir. Takımın yeniliklerini pull ile alırız. Ayrı bir iş için dal açılır; değişiklikler PR ile incelenebilir. Bütün komutları her seferinde sırayla çalıştırmak gerekmez. Hangi adımın gerekli olduğuna, değişikliğin çalışma alanında mı hazırlıkta mı yerel geçmişte mi olduğuna bakarak karar veririz.",
+      "duration": 0,
+      "sources": [
+        {
+          "title": "Git ve GitHub kaynakları",
+          "url": "https://docs.github.com/en/get-started/start-your-journey/git-and-github-learning-resources"
+        }
+      ],
+      "appendix": true
+    }
+  ]
+}

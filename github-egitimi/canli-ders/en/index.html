@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>What&#x27;s GitHub Good For? — Slides</title>
-<meta name="description" content="A 45-minute beginner GitHub class for mechatronics students: six benefits, animations and a hands-on task.">
+<meta name="description" content="A 45-minute beginner GitHub class for mechatronics students: six benefits and explained examples, with no live exercise.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600..800&family=IBM+Plex+Sans:wght@400;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
@@ -54,14 +54,14 @@
   .thumb:focus-visible { outline: 2px solid #ff6b4a; outline-offset: 2px; }
   .thumb .mini { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; transform-origin: 0 0; pointer-events: none; }
   .thumb .mini > section { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden; }
-  .thumb span { position: absolute; right: 6px; bottom: 6px; background: rgba(13,16,21,.8); color: #f4f2ec; font-size: 12px; padding: 2px 7px; border-radius: 6px; }
+  .thumb > span { position: absolute; right: 6px; bottom: 6px; background: rgba(13,16,21,.8); color: #f4f2ec; font-size: 12px; padding: 2px 7px; border-radius: 6px; }
 
   @media (max-width: 640px) { #ui-help { display: none; } #ui-bar { gap: 6px; padding: 6px 8px; } #ui-bar button, #ui-bar a { padding: 6px 9px; } }
 
   /* ---- print: one slide per page ---- */
   @page { size: 1920px 1080px; margin: 0; }
   @media print {
-    body { overflow: visible; background: #fff; }
+    body { margin: 0; overflow: visible; background: #fff; }
     #ui-bar, #ui-notes, #ui-overview, #ui-progress { display: none !important; }
     #ui-viewport { position: static; display: block; }
     #ui-stage { transform: none !important; width: 1920px; height: auto; }
@@ -77,15 +77,11 @@
 <svg aria-label="A line with six numbered orange dots and an orange robot at the end: today's six benefits" width="1920" height="260" viewBox="0 0 1920 260" style="position:absolute;left:0;top:660px;width:1920px;height:260px"><path d="M128 150 H1600" stroke="#3a4766" stroke-width="8" stroke-linecap="round" fill="none"/><circle cx="300" cy="150" r="24" fill="#ff6b4a" stroke="#0d1424" stroke-width="6"/><circle cx="520" cy="150" r="24" fill="#ff6b4a" stroke="#0d1424" stroke-width="6"/><circle cx="740" cy="150" r="24" fill="#ff6b4a" stroke="#0d1424" stroke-width="6"/><circle cx="960" cy="150" r="24" fill="#ff6b4a" stroke="#0d1424" stroke-width="6"/><circle cx="1180" cy="150" r="24" fill="#ff6b4a" stroke="#0d1424" stroke-width="6"/><circle cx="1400" cy="150" r="24" fill="#ff6b4a" stroke="#0d1424" stroke-width="6"/><text x="300" y="158" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="22" font-weight="700" fill="#1a0f0b">1</text><text x="520" y="158" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="22" font-weight="700" fill="#1a0f0b">2</text><text x="740" y="158" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="22" font-weight="700" fill="#1a0f0b">3</text><text x="960" y="158" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="22" font-weight="700" fill="#1a0f0b">4</text><text x="1180" y="158" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="22" font-weight="700" fill="#1a0f0b">5</text><text x="1400" y="158" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="22" font-weight="700" fill="#1a0f0b">6</text><rect x="1676" y="112" width="28" height="12" rx="3" fill="#20242c"/><rect x="1676" y="176" width="28" height="12" rx="3" fill="#20242c"/><rect x="1664" y="122" width="70" height="56" rx="12" fill="#ff6b4a" stroke="#1a0f0b" stroke-width="3"/><rect x="1736" y="130" width="12" height="40" rx="3" fill="#2b3240"/><circle cx="1742" cy="139" r="3" fill="#9ef0c0"/><circle cx="1742" cy="150" r="3" fill="#9ef0c0"/><circle cx="1742" cy="161" r="3" fill="#9ef0c0"/></svg>
 <p style="font-size:24px;font-weight:600;letter-spacing:4px;color:#ff6b4a">MECHATRONICS · INTRO TO GITHUB · 45 MINUTES</p>
 <h1 style="font-family:'Bricolage Grotesque', Arial, sans-serif;font-size:120px;font-weight:800;line-height:1.02;letter-spacing:-2px;width:1664px">What's GitHub good for?</h1>
-<p style="font-size:36px;line-height:1.35;color:#b3bfd6;width:1250px">Never lose a project, work as a team, show what you've built. No terminal: it all happens in the browser.</p>
+<p style="font-size:36px;line-height:1.35;color:#b3bfd6;width:1250px">Never lose a project, work as a team, show what you've built. A lecture with animations and explained examples.</p>
 <p style="position:absolute;left:128px;bottom:64px;width:1200px;font-size:24px;color:#7686a6">Arif Solmaz · İSTÜN Mechatronics Engineering</p>
 <aside>⏱ 00:00–01:00 · 1 min
 
-Welcome. Today we won't treat GitHub as a tool just for programmers; we'll treat it as a tool that makes your own projects easier. No terminal, no commands: everything happens in the browser and on your phone.
-
-We'll look at six benefits. For each one you'll see a short animation first, then I'll do the same thing live on real GitHub. By the end of class, everyone will create their first repository on their phone and post its link on the class page.
-
-▶ BEFORE CLASS: signed in on github.com; the kit's example-project folder on the desktop; Arduino IDE open; the class page (sinif-duvari → Issues → #1) in a separate tab; students were asked to create a GitHub account.</aside>
+Welcome. GitHub helps people document and collaborate on projects. This is a lecture: each benefit is illustrated with an animation and an explanation. Students do not create accounts or repositories during class. The combined presentation is available from the navigation bar.</aside>
 </section>
 <section id="plan" data-transition="fade" style="background:#f4f1ea;color:#141b2b;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:56px">
 <div style="display:flex;flex-direction:column;gap:16px">
@@ -100,31 +96,21 @@ We'll look at six benefits. For each one you'll see a short animation first, the
 </div>
 <div style="display:grid;grid-template-columns:repeat(4, 1fr);gap:40px">
 <div style="display:flex;gap:18px;align-items:flex-start"><div style="width:28px;height:28px;flex:none;border-radius:6px;background:#141b2b"></div><div style="display:flex;flex-direction:column;gap:6px"><p style="font-size:32px;font-weight:600;line-height:1.1">Opening · 7 min</p><p style="font-size:24px;color:#4a5568">The messy folder, and what GitHub is</p></div></div>
-<div style="display:flex;gap:18px;align-items:flex-start"><div style="width:28px;height:28px;flex:none;border-radius:6px;background:#5b8cff"></div><div style="display:flex;flex-direction:column;gap:6px"><p style="font-size:32px;font-weight:600;line-height:1.1">Six benefits · 24 min</p><p style="font-size:24px;color:#4a5568">Each one: animation + live demo</p></div></div>
-<div style="display:flex;gap:18px;align-items:flex-start"><div style="width:28px;height:28px;flex:none;border-radius:6px;background:#ff6b4a"></div><div style="display:flex;flex-direction:column;gap:6px"><p style="font-size:32px;font-weight:600;line-height:1.1">Your turn · 9 min</p><p style="font-size:24px;color:#4a5568">Your first repository, on your phone</p></div></div>
-<div style="display:flex;gap:18px;align-items:flex-start"><div style="width:28px;height:28px;flex:none;border-radius:6px;background:#56627a"></div><div style="display:flex;flex-direction:column;gap:6px"><p style="font-size:32px;font-weight:600;line-height:1.1">Closing · 5 min</p><p style="font-size:24px;color:#4a5568">Recap and this week's task</p></div></div>
+<div style="display:flex;gap:18px;align-items:flex-start"><div style="width:28px;height:28px;flex:none;border-radius:6px;background:#5b8cff"></div><div style="display:flex;flex-direction:column;gap:6px"><p style="font-size:32px;font-weight:600;line-height:1.1">Six benefits · 24 min</p><p style="font-size:24px;color:#4a5568">Each one: animation + explanation</p></div></div>
+<div style="display:flex;gap:18px;align-items:flex-start"><div style="width:28px;height:28px;flex:none;border-radius:6px;background:#ff6b4a"></div><div style="display:flex;flex-direction:column;gap:6px"><p style="font-size:32px;font-weight:600;line-height:1.1">Project walkthrough · 9 min</p><p style="font-size:24px;color:#4a5568">Connect the ideas through one project</p></div></div>
+<div style="display:flex;gap:18px;align-items:flex-start"><div style="width:28px;height:28px;flex:none;border-radius:6px;background:#56627a"></div><div style="display:flex;flex-direction:column;gap:6px"><p style="font-size:32px;font-weight:600;line-height:1.1">Closing · 5 min</p><p style="font-size:24px;color:#4a5568">Recap, resources and questions</p></div></div>
 </div>
 <div style="flex:1"></div>
-<p style="font-size:28px;color:#4a5568;width:1400px">Have your phone and your GitHub account ready: by the end of class you'll create your first repository.</p>
+<p style="font-size:28px;color:#4a5568;width:1400px">Follow the project story; no phone, account or installation is required in class.</p>
 <aside>⏱ 01:00–02:00 · 1 min
 
-Here's the plan for 45 minutes. The first seven minutes: the problem, and what GitHub is. Then the longest part, in blue: six benefits. We'll see each one as an animation first, then live on real GitHub. The orange part is yours: you'll create your first repository on your phone. The last five minutes: a recap and a small task for this week.
-
-If you don't have an account yet, start now: github.com/signup. It takes two or three minutes; you'll need to enter a code from your email.
-
-▶ TIP: Ask "Hands up if you have a GitHub account." Those without one can sign up before their turn, or pair with a neighbor.</aside>
+The first seven minutes introduce the messy-folder problem and basic terms. Then six benefits take 24 minutes with prepared examples. The next nine minutes connect the concepts in the robot story and introduce resources. The final five minutes cover recap and questions. No account, installation or live application is required.</aside>
 </section>
 <section id="hook" data-transition="fade" style="background:#0d1424;color:#eef2fa;font-family:'IBM Plex Sans', Arial, sans-serif;padding:0px;display:flex;flex-direction:column">
 <img data-gif="1" data-src="../gif/en/01-messy-folder.gif" alt="Animation: seven copies such as robot_final_FINAL.ino pile up in the robot folder while nobody in the group chat knows which one is the latest; at the end they collapse into a single robot.ino with a history line" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:contain">
 <aside>⏱ 02:00–04:00 · 2 min
 
-Picture a robot team. The code lives in a folder, the talking happens in a group chat. Kaan asks for the latest code; Elif sends robot_final.ino; Deniz had fixed the sensor in a different copy. An hour later the folder has seven "final" files and nobody knows which one actually works.
-
-[Ask: "Anyone have a folder like this for their assignments? Hands up."]
-
-On GitHub this problem doesn't exist: there is one robot.ino, and every older version lives in its history. Who changed what, and when, is all recorded. At the end of the animation the seven files collapse into one file and a timeline.
-
-▶ Let the animation play through once, then talk.</aside>
+A robot team shares several files called final in a chat; each member has a different copy. Git can keep a recorded project history instead. Only changes deliberately committed are in that history, and only pushed commits reach GitHub. The animation simplifies this workflow; explain the two separate actions.</aside>
 </section>
 <section id="what" data-transition="fade" style="background:#f4f1ea;color:#141b2b;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:56px">
 <div style="display:flex;flex-direction:column;gap:16px">
@@ -133,18 +119,14 @@ On GitHub this problem doesn't exist: there is one robot.ino, and every older ve
 </div>
 <div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:32px">
 <div style="display:flex;flex-direction:column;gap:14px;background:#fbfaf6;border:1px solid #ddd6c8;border-radius:20px;padding:40px"><p style="font-family:'Bricolage Grotesque', Arial, sans-serif;font-size:56px;font-weight:800;line-height:1;color:#ff6b4a">01</p><h3 style="font-family:'Bricolage Grotesque', Arial, sans-serif;font-size:40px;font-weight:700">A folder</h3><p style="font-size:28px;line-height:1.4;color:#4a5568">Code, circuit diagram, report, photos: all in one place, online.</p></div>
-<div style="display:flex;flex-direction:column;gap:14px;background:#fbfaf6;border:1px solid #ddd6c8;border-radius:20px;padding:40px"><p style="font-family:'Bricolage Grotesque', Arial, sans-serif;font-size:56px;font-weight:800;line-height:1;color:#ff6b4a">02</p><h3 style="font-family:'Bricolage Grotesque', Arial, sans-serif;font-size:40px;font-weight:700">A time machine</h3><p style="font-size:28px;line-height:1.4;color:#4a5568">Every change is recorded; you can always look at an older version.</p></div>
+<div style="display:flex;flex-direction:column;gap:14px;background:#fbfaf6;border:1px solid #ddd6c8;border-radius:20px;padding:40px"><p style="font-family:'Bricolage Grotesque', Arial, sans-serif;font-size:56px;font-weight:800;line-height:1;color:#ff6b4a">02</p><h3 style="font-family:'Bricolage Grotesque', Arial, sans-serif;font-size:40px;font-weight:700">A time machine</h3><p style="font-size:28px;line-height:1.4;color:#4a5568">Committed changes enter the history; inspect older commits.</p></div>
 <div style="display:flex;flex-direction:column;gap:14px;background:#fbfaf6;border:1px solid #ddd6c8;border-radius:20px;padding:40px"><p style="font-family:'Bricolage Grotesque', Arial, sans-serif;font-size:56px;font-weight:800;line-height:1;color:#ff6b4a">03</p><h3 style="font-family:'Bricolage Grotesque', Arial, sans-serif;font-size:40px;font-weight:700">A meeting place</h3><p style="font-size:28px;line-height:1.4;color:#4a5568">Your team's to-do list, and a showcase for what you've built.</p></div>
 </div>
 <div style="flex:1"></div>
-<div style="display:flex;align-items:center;background:#141b2b;border-radius:16px;padding:28px 36px"><p style="font-size:30px;font-weight:600;color:#eef2fa">No terminal, no commands, no coding experience needed: today everything happens in the browser.</p></div>
+<div style="display:flex;align-items:center;background:#141b2b;border-radius:16px;padding:28px 36px"><p style="font-size:30px;font-weight:600;color:#eef2fa">No prior coding experience needed: the examples are explained on slides.</p></div>
 <aside>⏱ 04:00–06:00 · 2 min
 
-Think of GitHub as three things. First, a folder: your code, circuit diagram, report and photos, online, in one place. Second, a time machine: every change is saved, and you can always go back and look at an older version. Third, a meeting place: your team's to-do list, and a showcase for what you've built.
-
-Under the hood there's a recording tool called Git; programmers use it from the command line. We won't touch it today: GitHub's website and your phone are enough. Creating an account is free.
-
-[Ask: "Is it only for programmers?" No: people store circuit diagrams, reports, course notes, even 3D-printer files.]</aside>
+GitHub hosts repositories containing code, circuit diagrams, reports and photos. Git records project states in commits; GitHub makes pushed history available for collaboration. Issues organize work and README introduces the project. Neither saving a local file nor editing an uncommitted file creates automatic online backup.</aside>
 </section>
 <section id="words" data-transition="fade" style="background:#f4f1ea;color:#141b2b;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:56px">
 <div style="display:flex;flex-direction:column;gap:16px">
@@ -159,179 +141,97 @@ Under the hood there's a recording tool called Git; programmers use it from the 
 </div>
 <aside>⏱ 06:00–07:00 · 1 min
 
-Four words are enough for today. GitHub's interface is in English, and this is how you'll see these words on screen.
-Repository: your project's folder online; the files and their whole history.
-Commit: a save point, with a short note saying what changed.
-Issue: a task to do or a note about a bug; it gets a number.
-README: your project's front page; the first file anyone opening the repository reads.
-
-Don't memorize them; you'll see each one live in a minute.</aside>
+Repository contains project files and version history; it can be local or hosted online. Commit records a selected project state with a message. Issue tracks a task or problem. README explains what the project does and how to use it. Relate each word to the prepared examples.</aside>
 </section>
 <section id="lost" data-transition="fade" style="background:#0d1424;color:#eef2fa;font-family:'IBM Plex Sans', Arial, sans-serif;padding:0px;display:flex;flex-direction:column">
 <img data-gif="1" data-src="../gif/en/02-never-lost.gif" alt="Benefit 1 animation: a dead laptop, a lost USB stick and a wiped lab PC; the project is safe on GitHub, and the school computer, the laptop at home and the phone all open the same latest version" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:contain">
-<aside>⏱ 07:00–10:00 · 3 min
+<p style="position:absolute;left:96px;right:96px;bottom:50px;padding:18px 26px;border-radius:14px;background:rgba(13,20,36,.96);color:#eef2fa;font-size:28px;line-height:1.35">GitHub contains pushed commits. Local edits do not sync automatically.</p><aside>⏱ 07:00–10:00 · 3 min
 
-Benefit 1: your project is never lost. Laptops die, USB sticks get lost, lab computers get wiped every night. If the project is on GitHub, none of that matters: your files are safe online.
-
-You open the same project from the school computer, from your laptop at home, from your phone on the bus, and you always see the latest version. Upload once, open anywhere.
-
-[Ask: "Has anyone lost a project or an assignment?" Hear one or two stories.]
-
-▶ LIVE (30 s): Open your own GitHub profile on your phone and show it: the repositories on the computer are the same on the phone.</aside>
+An online copy can help when a laptop or USB drive fails. It contains the commits that were pushed, not every local edit. Another device can clone or pull that published history. Synchronization requires deliberate actions; GitHub is not a guarantee against every kind of data loss.</aside>
 </section>
 <section id="upload" data-transition="fade" style="background:#0d1424;color:#eef2fa;font-family:'IBM Plex Sans', Arial, sans-serif;padding:0px;display:flex;flex-direction:column">
 <img data-gif="1" data-src="../gif/en/03-put-your-project-on-github.gif" alt="Animation: Elif creates the my-robot repository with New repository, turns on Add README and clicks Create repository, then drags the code, circuit diagram, report and photos into Upload files and clicks Commit changes" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:contain">
 <aside>⏱ 10:00–14:00 · 4 min
 
-So how does a project get onto GitHub? It takes a minute. Elif creates a new repository: New repository. She names it, turns on Add README and clicks Create repository. Then Add file, Upload files: she drags the files in, writes a short note and clicks Commit changes. Done.
-
-Notice: it's not just code. The circuit diagram, the report, the photos: everything about the project in one place.
-
-▶ LIVE: github.com/new → name: example-project → Add README: On → Create repository → Add file → Upload files → from the kit's example-project folder drag README.md, robot.ino, circuit.png, project-report.pdf and the photos folder → note: Add project files → Commit changes. The README.md you upload replaces the old one and shows on the repository page right away.
-Write the word "repository" on the board.
-
-↺ BACKUP: If there's no internet, play the animation again and talk through the steps.</aside>
+Read the animation&#x27;s steps: create a repository, include a README, upload selected project files and commit changes. The web interface sends the committed change directly to GitHub. A local editor follows a different path: edit/save, add, commit, push. Explain that the project includes documentation and diagrams as well as code.</aside>
 </section>
 <section id="history" data-transition="fade" style="background:#0d1424;color:#eef2fa;font-family:'IBM Plex Sans', Arial, sans-serif;padding:0px;display:flex;flex-direction:column">
 <img data-gif="1" data-src="../gif/en/04-time-machine.gif" alt="Benefit 2 animation: History is clicked on robot.ino and every save is listed with who, when and what; in Deniz's save the red line shows the old threshold 500 and the green line the new threshold 900" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:contain">
-<aside>⏱ 14:00–18:00 · 4 min
+<p style="position:absolute;left:96px;right:96px;bottom:50px;padding:18px 26px;border-radius:14px;background:rgba(13,20,36,.96);color:#eef2fa;font-size:28px;line-height:1.35">History records commits; saving a file is a separate action.</p><aside>⏱ 14:00–18:00 · 4 min
 
-Benefit 2: a time machine. "It worked yesterday!" What changed? Open the file and click History. Every save is listed: who, when, and with what note. Nobody keeps this list by hand; GitHub records it automatically with every commit.
-
-Click yesterday's save and you see the change: the red line is the old version, the green line is the new one. Deniz raised the sensor threshold from 500 to 900. If needed, we can look at the whole project as it was that day.
-
-So don't be afraid to break things: every save is a way back.
-
-▶ LIVE: example-project → robot.ino → pencil (Edit) → change THRESHOLD = 500 to 900 → Commit changes → note: Change sensor threshold → History on the file page → click this save → point at the red and green lines.
-Write the word "commit" on the board.</aside>
+History lists commits, rather than every press of the editor&#x27;s Save button. A change to the robot&#x27;s sensor threshold from 500 to 900 is recorded when committed. Red and green lines compare removed and added text. Inspecting history helps identify the change that introduced a problem; undoing requires another deliberate Git operation.</aside>
 </section>
 <section id="team" data-transition="fade" style="background:#0d1424;color:#eef2fa;font-family:'IBM Plex Sans', Arial, sans-serif;padding:0px;display:flex;flex-direction:column">
 <img data-gif="1" data-src="../gif/en/05-team-to-do-list.gif" alt="Benefit 3 animation: the Issues tab lists the team's tasks; Elif opens a new task with New issue and assigns it to Kaan; when it's done it is closed with Close issue and leaves the list" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:contain">
 <aside>⏱ 18:00–22:00 · 4 min
 
-Benefit 3: your team's to-do list. Team tasks get lost in the group chat. On GitHub, every repository has an Issues tab: a shared to-do list.
-
-New issue: what needs doing? A title and a short description. Who's doing it? Pick someone under Assignees. Everyone sees the same list. When the task is done, Close issue: it leaves the list, but the record stays; you can find it months later.
-
-Capstone project, club project, assignment group: it fits all of them.
-
-▶ LIVE: example-project → Issues → New issue → title: Take photos of the robot → description: On the track, in good light → Assignees: pick yourself → Create → then Close issue.
-Write the word "issue" on the board.</aside>
+Issues provide a shared record of a task, its context, owner and discussion. In the example, taking robot photos is a task that can be assigned and closed. Closing keeps the history available. Features and permissions can depend on repository settings; explain the prepared example.</aside>
 </section>
 <section id="code" data-transition="fade" style="background:#0d1424;color:#eef2fa;font-family:'IBM Plex Sans', Arial, sans-serif;padding:0px;display:flex;flex-direction:column">
 <img data-gif="1" data-src="../gif/en/06-ready-made-code.gif" alt="Benefit 4 animation: GitHub is searched for hc-sr04 arduino, the library with many stars and a recent update is chosen, the wiring table in its README is read, it is downloaded with Code and Download ZIP and installed in the Arduino IDE with Add .ZIP Library" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:contain">
-<aside>⏱ 22:00–26:00 · 4 min
+<p style="position:absolute;left:96px;right:96px;bottom:50px;padding:18px 26px;border-radius:14px;background:rgba(13,20,36,.96);color:#eef2fa;font-size:28px;line-height:1.35">Check the license, hardware, examples and maintenance. Stars do not guarantee quality.</p><aside>⏱ 22:00–26:00 · 4 min
 
-Benefit 4: find ready-made code and use it. We're adding a distance sensor to the robot. Instead of writing the code from scratch, we search GitHub. Which one should you pick? One with lots of stars: many people use it. One that was updated recently. One whose README has a wiring diagram and an example.
-
-The Code button, Download ZIP: the whole project downloads as one file. In the Arduino IDE: Sketch → Include Library → Add .ZIP Library... The library is installed, and the sensor works with two lines of code.
-
-If you get stuck, you can ask a question in that repository's Issues tab.
-
-▶ LIVE: Search GitHub for "DHT sensor library" → adafruit/DHT-sensor-library → point at the stars and the latest update → in the README, point at the Adafruit Unified Sensor line (that's why reading the README matters) → Code → Download ZIP → Arduino IDE → Add .ZIP Library... → the downloaded zip → File → Examples → DHT sensor library → DHTtester.
-Note: the same library is in the Arduino Library Manager too; installing it from there also offers to install the other library it needs.
-
-The library and user names in the animation are examples.</aside>
+The robot example uses an HC-SR04 distance sensor. Before selecting a library, read its license, hardware compatibility, examples, dependencies, recent maintenance and known issues. Stars express interest or bookmarking; they do not prove usage, quality or suitability. Read the installation instructions and test the example against the actual board. The animation&#x27;s repository and usernames are illustrative; downloading a ZIP alone does not guarantee a working sensor.</aside>
 </section>
 <section id="portfolio" data-transition="fade" style="background:#0d1424;color:#eef2fa;font-family:'IBM Plex Sans', Arial, sans-serif;padding:0px;display:flex;flex-direction:column">
 <img data-gif="1" data-src="../gif/en/07-portfolio.gif" alt="Benefit 5 animation: Elif's GitHub profile shows four pinned projects and the green contribution squares filling in; the my-robot README has a moving robot, the parts and a description; finally the link github.com/elif goes on a CV" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:contain">
-<aside>⏱ 26:00–29:00 · 3 min
+<p style="position:absolute;left:96px;right:96px;bottom:50px;padding:18px 26px;border-radius:14px;background:rgba(13,20,36,.96);color:#eef2fa;font-size:28px;line-height:1.35">Contribution squares count qualifying activities, not every day worked.</p><aside>⏱ 26:00–29:00 · 3 min
 
-Benefit 5: your GitHub profile is your portfolio. Elif's profile shows all her projects on one page: the four she pinned, and the green squares. Each green square is a day she worked; her effort is visible.
-
-Click a project and you see its front page: the README. What it does, the parts, how it works, a picture of the robot. Applying for an internship or a job? One line on your CV is enough: github.com/your-username. Teachers and employers don't just read about what you did; they see it.
-
-▶ LIVE: Open your own profile: github.com/arifsolmaz → pinned repositories (Customize your pins) and the contribution graph → click one of your projects with a good README. Also show the README of the example-project we just created.
-Write the word "README" on the board.</aside>
+A profile can point to a small set of documented projects. A good README explains purpose, hardware, setup and results with pictures or demonstrations. Contribution squares count activities that meet GitHub&#x27;s contribution rules; they do not measure all workdays, effort or skill. Project evidence is more informative than the number of green squares.</aside>
 </section>
 <section id="free" data-transition="fade" style="background:#f4f1ea;color:#141b2b;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:56px">
 <div style="display:flex;flex-direction:column;gap:16px">
 <p style="font-size:24px;font-weight:600;letter-spacing:4px;color:#b93c1d">BENEFIT 6 · GITHUB EDUCATION</p>
-<h2 style="font-family:'Bricolage Grotesque', Arial, sans-serif;font-size:72px;font-weight:700;line-height:1.1">As a student, most of it is free</h2>
+<h2 style="font-family:'Bricolage Grotesque', Arial, sans-serif;font-size:72px;font-weight:700;line-height:1.1">Explore student benefits</h2>
 </div>
 <div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:32px">
-<div style="display:flex;flex-direction:column;gap:14px;background:#fbfaf6;border:1px solid #ddd6c8;border-radius:20px;padding:40px"><h3 style="font-family:'Bricolage Grotesque', Arial, sans-serif;font-size:40px;font-weight:700">GitHub Copilot Student</h3><p style="font-size:28px;line-height:1.4;color:#4a5568">An AI assistant that suggests code as you type.</p></div>
-<div style="display:flex;flex-direction:column;gap:14px;background:#fbfaf6;border:1px solid #ddd6c8;border-radius:20px;padding:40px"><h3 style="font-family:'Bricolage Grotesque', Arial, sans-serif;font-size:40px;font-weight:700">GitHub Pro</h3><p style="font-size:28px;line-height:1.4;color:#4a5568">Free for as long as you're a student.</p></div>
-<div style="display:flex;flex-direction:column;gap:14px;background:#fbfaf6;border:1px solid #ddd6c8;border-radius:20px;padding:40px"><h3 style="font-family:'Bricolage Grotesque', Arial, sans-serif;font-size:40px;font-weight:700">70+ partner offers</h3><p style="font-size:28px;line-height:1.4;color:#4a5568">Student deals on design, cloud and learning tools.</p></div>
+<div style="display:flex;flex-direction:column;gap:14px;background:#fbfaf6;border:1px solid #ddd6c8;border-radius:20px;padding:40px"><h3 style="font-family:'Bricolage Grotesque', Arial, sans-serif;font-size:40px;font-weight:700">Eligible tools</h3><p style="font-size:28px;line-height:1.4;color:#4a5568">Available tools depend on the current offer and eligibility.</p></div>
+<div style="display:flex;flex-direction:column;gap:14px;background:#fbfaf6;border:1px solid #ddd6c8;border-radius:20px;padding:40px"><h3 style="font-family:'Bricolage Grotesque', Arial, sans-serif;font-size:40px;font-weight:700">GitHub Pro</h3><p style="font-size:28px;line-height:1.4;color:#4a5568">Eligible verified students can access education benefits.</p></div>
+<div style="display:flex;flex-direction:column;gap:14px;background:#fbfaf6;border:1px solid #ddd6c8;border-radius:20px;padding:40px"><h3 style="font-family:'Bricolage Grotesque', Arial, sans-serif;font-size:40px;font-weight:700">Partner offers</h3><p style="font-size:28px;line-height:1.4;color:#4a5568">Check current offers, limits and availability.</p></div>
 </div>
 <div style="flex:1"></div>
 <div style="display:flex;align-items:center;background:#141b2b;border-radius:16px;padding:28px 36px"><p style="font-size:30px;font-weight:600;color:#eef2fa">Apply at <a href="https://education.github.com/pack"><span style="color:#ffb199">education.github.com/pack</span></a> → verify you're a student (school email or proof of enrollment).</p></div>
 <aside>⏱ 29:00–31:00 · 2 min
 
-Benefit 6: as a student, most of it is free. The GitHub Education Student Pack includes GitHub Copilot Student: an AI assistant that suggests code as you type. GitHub Pro is free for as long as you're a student. And there are more than seventy offers for design, cloud and learning tools.
-
-You apply at education.github.com/pack: you verify that you're a student with your school email or a proof of enrollment. Approval can take a few days.
-
-▶ LIVE: Open education.github.com/pack and scroll through the list. Offers change from time to time, so show the current list from the page.</aside>
+GitHub Education has benefits for eligible verified students. Individual partner offers, access conditions, quotas and availability can change. Explain eligibility and direct students to the current Student Pack page rather than promising a fixed number of offers, unlimited access or a particular approval time.</aside>
 </section>
-<section id="your-turn" data-transition="fade" style="background:#ff6b4a;color:#1a0f0b;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:row;gap:96px;align-items:center">
-<div style="flex:1;display:flex;flex-direction:column;gap:36px">
-<p style="font-size:24px;font-weight:700;letter-spacing:4px;color:#1a0f0b">YOUR TURN · 9 MINUTES</p>
-<h2 style="font-family:'Bricolage Grotesque', Arial, sans-serif;font-size:96px;font-weight:800;line-height:1.02;letter-spacing:-1px">Create your first repository</h2>
-<ol style="font-size:32px;line-height:1.5;color:#1a0f0b">
-<li><b>github.com/new</b> → name: <b>my-first-project</b></li>
-<li><b>Add README</b>: On → <b>Create repository</b></li>
-<li>Pencil on the README → 2 lines about you → <b>Commit changes</b></li>
-<li>Scan the QR → post your repository link → <b>Comment</b></li>
-</ol>
-</div>
-<div style="width:500px;display:flex;flex-direction:column;gap:24px;align-items:center">
-<div style="background:#fbfaf6;border-radius:28px;padding:28px;box-shadow:0px 16px 40px rgba(26,15,11,0.25)"><img src="../kit/qr-sinif-sayfasi.png" alt="QR code: the class page, issue 1 in the sinif-duvari repository" style="width:420px;height:420px;object-fit:contain"></div>
-<p style="font-size:24px;line-height:1.4;text-align:center">Class page: <b>github.com/arifsolmaz/<br>sinif-duvari/issues/1</b></p>
-</div>
-<aside>⏱ 31:00–32:00 · 1 min
-
-Now it's your turn. In your phone's browser, open github.com/new. Name the repository my-first-project. Turn on Add README, then Create repository. Next, tap the pencil on the README and write two lines about yourself: your name, your program, the kind of projects you want to build. Commit changes.
-
-Last step: scan this QR code. Our class page opens. Post your repository's link as a comment and tap Comment. Your link shows up on the projector right away.
-
-▶ TIP: Have them scan the QR with the phone camera and open it in the browser. Anyone without an account works with a neighbor.</aside>
-</section>
-<section id="your-turn-gif" data-transition="fade" style="background:#0d1424;color:#eef2fa;font-family:'IBM Plex Sans', Arial, sans-serif;padding:0px;display:flex;flex-direction:column">
-<img data-gif="1" data-src="../gif/en/08-your-turn.gif" alt="Hands-on animation: on a phone, the my-first-project repository is created at github.com/new, the README is edited with the pencil and committed, the QR code is scanned and the repository link is posted on the class page, where it shows up on the projector right away" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:contain">
-<aside>⏱ 32:00–40:00 · 8 min
-
-Let the animation loop; the steps are on the card in the middle. Walk around the room.
-
-▶ PROJECTOR: Play the animation once, then switch to the class page in the other tab (sinif-duvari → Issues → #1) and refresh it now and then. As comments come in, open a few links and show them.
-
-COMMON SNAGS
-• No account: github.com/signup; they'll need to enter the code from their email.
-• "already exists" warning: pick another name, for example my-first-project-2.
-• Can't find the pencil: top-right corner of the README box; if not, tap the README.md file and use the pencil there.
-• Commit changes: after typing, the green button at the top right, then Commit changes again in the dialog.
-• QR won't open: write the address on the board: github.com/arifsolmaz/sinif-duvari/issues/1
-• No comment box: they may not be signed in; Sign in.
-
-↺ BACKUP: If the internet is slow, let them do it on a computer, or leave it as this week's task.</aside>
-</section>
+<section id="your-turn" data-transition="fade" style="background:#f4f1ea;color:#141b2b;font-family:'IBM Plex Sans',Arial,sans-serif;padding:128px;display:flex;flex-direction:column;gap:48px">
+<p style="font-size:24px;font-weight:600;letter-spacing:4px;color:#b93c1d">RESOURCES FOR LATER</p>
+<h2 style="font-family:'Bricolage Grotesque',Arial,sans-serif;font-size:86px;font-weight:800;line-height:1.05">Keep exploring at your own pace</h2>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px">
+<div style="background:#fbfaf6;border:1px solid #ddd6c8;border-radius:20px;padding:36px;display:flex;flex-direction:column;gap:22px"><h3 style="font-size:40px">GitHub Skills</h3><p style="font-size:29px;line-height:1.4">A guided introduction for independent practice.</p><a href="https://github.com/skills/introduction-to-github" style="font-size:28px;color:#b93c1d">Introduction to GitHub ↗</a></div>
+<div style="background:#fbfaf6;border:1px solid #ddd6c8;border-radius:20px;padding:36px;display:flex;flex-direction:column;gap:22px"><h3 style="font-size:40px">GitHub Docs</h3><p style="font-size:29px;line-height:1.4">Read how repositories, commits and collaboration work.</p><a href="https://docs.github.com/en/get-started" style="font-size:28px;color:#b93c1d">Getting started ↗</a></div>
+<div style="background:#fbfaf6;border:1px solid #ddd6c8;border-radius:20px;padding:36px;display:flex;flex-direction:column;gap:22px"><h3 style="font-size:40px">Student Pack</h3><p style="font-size:29px;line-height:1.4">Check eligibility, current offers and individual terms.</p><a href="https://education.github.com/pack" style="font-size:28px;color:#b93c1d">Current student offers ↗</a></div>
+</div><p style="font-size:30px;line-height:1.4;color:#4a5568">These are optional resources for after class.</p>
+<aside>⏱ 31:00–34:00 · 3 min
+Introduce these resources briefly. The class has no practical exercise and no submission page. GitHub Skills is optional future study, Docs is a reference, and student offers require checking current eligibility and terms.</aside></section>
+<section id="your-turn-gif" data-transition="fade" style="background:#0d1424;color:#eef2fa;font-family:'IBM Plex Sans',Arial,sans-serif;padding:128px;display:flex;flex-direction:column;gap:44px">
+<p style="font-size:24px;font-weight:600;letter-spacing:4px;color:#ff6b4a">ONE PROJECT, ONE STORY</p><h2 style="font-family:'Bricolage Grotesque',Arial,sans-serif;font-size:86px;font-weight:800;line-height:1.05">Read the robot project's journey</h2>
+<ol style="font-size:34px;line-height:1.7;display:flex;flex-direction:column;gap:12px"><li>README explains the purpose, parts and wiring.</li><li>Commit records the revised sensor threshold.</li><li>Push makes that commit available on GitHub.</li><li>Issue tracks a task with context and an owner.</li><li>The profile links to the finished, documented project.</li></ol>
+<p style="font-size:30px;line-height:1.4;color:#b3bfd6">A save in the editor, a commit and a push are three different actions.</p>
+<aside>⏱ 34:00–40:00 · 6 min
+Explain the prepared robot example as one continuous story. Ask students to identify what a README, commit, push and issue contribute, without opening any app. Files on a computer are not sent automatically: saving, committing and pushing are distinct. The profile communicates the project through evidence and documentation.</aside></section>
 <section id="recap" data-transition="fade" style="background:#0d1424;color:#eef2fa;font-family:'IBM Plex Sans', Arial, sans-serif;padding:0px;display:flex;flex-direction:column">
 <img data-gif="1" data-src="../gif/en/09-recap.gif" alt="Recap animation: six benefit cards appear one by one: never lost, time machine, team to-do list, ready-made code, portfolio and free for students" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:contain">
-<aside>⏱ 40:00–42:00 · 2 min
+<p style="position:absolute;left:96px;right:96px;bottom:50px;padding:18px 26px;border-radius:14px;background:rgba(13,20,36,.96);color:#eef2fa;font-size:28px;line-height:1.35">Online access applies to pushed commits; student benefits depend on eligibility.</p><aside>⏱ 40:00–42:00 · 2 min
 
-What we saw today: six ways GitHub helps you. Your project is never lost. A time machine: every change is recorded. A team to-do list: everyone sees who's doing what. Ready-made code: search, download, use. A portfolio: your profile and your READMEs. And it's free for students.
-
-Four words: repository, commit, issue, README. Put one of your projects on GitHub this term; you took the first step today.</aside>
+The six themes are online access to pushed project history, commit history, shared task tracking, evaluating reusable code, documented portfolio evidence and eligible student benefits. Remember repository, commit, issue and README. The animation is a simplified summary: GitHub does not automatically record or synchronize every local edit.</aside>
 </section>
 <section id="this-week" data-transition="fade" style="background:#f4f1ea;color:#141b2b;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:56px">
 <div style="display:flex;flex-direction:column;gap:16px">
-<p style="font-size:24px;font-weight:600;letter-spacing:4px;color:#b93c1d">THIS WEEK</p>
-<h2 style="font-family:'Bricolage Grotesque', Arial, sans-serif;font-size:72px;font-weight:700;line-height:1.1">Put one of your projects on GitHub</h2>
+<p style="font-size:24px;font-weight:600;letter-spacing:4px;color:#b93c1d">OPTIONAL NEXT STEP</p>
+<h2 style="font-family:'Bricolage Grotesque', Arial, sans-serif;font-size:72px;font-weight:700;line-height:1.1">Plan a documented project</h2>
 </div>
 <div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:32px">
 <div style="display:flex;flex-direction:column;gap:14px;background:#fbfaf6;border:1px solid #ddd6c8;border-radius:20px;padding:40px"><p style="font-family:'Bricolage Grotesque', Arial, sans-serif;font-size:56px;font-weight:800;line-height:1;color:#ff6b4a">1</p><h3 style="font-family:'Bricolage Grotesque', Arial, sans-serif;font-size:40px;font-weight:700">Pick a project</h3><p style="font-size:28px;line-height:1.4;color:#4a5568">A robot, an assignment or a club project: code, diagram, photo.</p></div>
 <div style="display:flex;flex-direction:column;gap:14px;background:#fbfaf6;border:1px solid #ddd6c8;border-radius:20px;padding:40px"><p style="font-family:'Bricolage Grotesque', Arial, sans-serif;font-size:56px;font-weight:800;line-height:1;color:#ff6b4a">2</p><h3 style="font-family:'Bricolage Grotesque', Arial, sans-serif;font-size:40px;font-weight:700">Write a README</h3><p style="font-size:28px;line-height:1.4;color:#4a5568">What it does, the parts, how it works, a photo.</p></div>
-<div style="display:flex;flex-direction:column;gap:14px;background:#fbfaf6;border:1px solid #ddd6c8;border-radius:20px;padding:40px"><p style="font-family:'Bricolage Grotesque', Arial, sans-serif;font-size:56px;font-weight:800;line-height:1;color:#ff6b4a">3</p><h3 style="font-family:'Bricolage Grotesque', Arial, sans-serif;font-size:40px;font-weight:700">Share the link</h3><p style="font-size:28px;line-height:1.4;color:#4a5568">Post it as a comment on the class page.</p></div>
+<div style="display:flex;flex-direction:column;gap:14px;background:#fbfaf6;border:1px solid #ddd6c8;border-radius:20px;padding:40px"><p style="font-family:'Bricolage Grotesque', Arial, sans-serif;font-size:56px;font-weight:800;line-height:1;color:#ff6b4a">3</p><h3 style="font-family:'Bricolage Grotesque', Arial, sans-serif;font-size:40px;font-weight:700">Choose visibility</h3><p style="font-size:28px;line-height:1.4;color:#4a5568">Choose a suitable audience and check the repository visibility.</p></div>
 </div>
 <div style="flex:1"></div>
-<p style="font-size:28px;line-height:1.4;color:#4a5568;width:1600px">One more step: GitHub Skills · <b>Introduction to GitHub</b>, in the browser, under an hour · <a href="https://github.com/skills/introduction-to-github"><span style="color:#b93c1d">github.com/skills/introduction-to-github</span></a></p>
+<p style="font-size:28px;line-height:1.4;color:#4a5568;width:1600px">Optional resource: GitHub Skills · <b>Introduction to GitHub</b>, guided independent study · <a href="https://github.com/skills/introduction-to-github"><span style="color:#b93c1d">github.com/skills/introduction-to-github</span></a></p>
 <aside>⏱ 42:00–44:00 · 2 min
 
-This week's task is small: put one of your projects on GitHub. It can be a robot, an assignment or a club project; code, a circuit diagram and one photo are enough. In the README, write what it does, the parts and how it works. Then post its link as a comment on the class page.
-
-If you want to go one step further, try GitHub Skills' Introduction to GitHub course: it runs in the browser and takes under an hour.
-
-▶ TIP: Show the README of the kit's example-project as a model.</aside>
+These are optional ideas for future independent study, not an assigned task. Choose a project, plan a useful README and decide who should be able to access the repository. GitHub Skills provides a guided introduction if students later want practice. No class-wall submission or link posting is required.</aside>
 </section>
 <section id="thanks" data-transition="fade" style="background:#0d1424;color:#eef2fa;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:48px;justify-content:center">
 <h1 style="font-family:'Bricolage Grotesque', Arial, sans-serif;font-size:120px;font-weight:800;line-height:1.02;letter-spacing:-2px">Thank you</h1>
@@ -339,9 +239,7 @@ If you want to go one step further, try GitHub Skills' Introduction to GitHub co
 <p style="font-family:'Bricolage Grotesque', Arial, sans-serif;font-size:56px;font-weight:700;color:#ff6b4a">Questions?</p>
 <aside>⏱ 44:00–45:00 · 1 min
 
-Thank you. Today's four words: repository, commit, issue, README. Questions?
-
-▶ AFTER CLASS you can send students this: "Today's slides and animations: [link]. This week's task: put one of your projects on GitHub and post its link on the class page: github.com/arifsolmaz/sinif-duvari/issues/1. Student Pack: education.github.com/pack"</aside>
+Close with repository, commit, issue and README. Explain questions using the robot example. The combined deck, technical reference and optional resources are available through the navigation links.</aside>
 </section>
   </div>
 </main>
@@ -357,7 +255,8 @@ Thank you. Today's four words: repository, commit, issue, README. Questions?
   <button id="ui-btn-notes" aria-label="Speaker notes">N</button>
   <button id="ui-btn-fs" aria-label="Fullscreen">⛶</button>
   <a href="../" id="ui-lang-link">TR</a>
-  <a href="/github-egitimi/v2/en/">Version 2</a>
+  <a href="/github-egitimi/">Combined presentation</a>
+  <a href="/github-egitimi/v2/en/">Technical reference</a>
   <a href="../materyal.html#en">Materials</a>
   <a href="../../">Home</a>
   <span id="ui-help">← → navigate · N notes · O overview · F fullscreen · P print/PDF</span>
