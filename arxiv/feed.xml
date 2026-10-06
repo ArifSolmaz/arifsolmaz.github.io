@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 05 Oct 2026 08:04:47 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 06 Oct 2026 08:25:26 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,54 +15,81 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>A Missing Latent, Not a Missing Simulator: Radius-Augmented Inference for Real JWST Retrieval</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-02245v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-02245v1</guid>
-      <pubDate>Mon, 05 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Angshuman Chakravertty, P V V Raj</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.IM</category>
-        <category>astro-ph.EP</category>
-        <category>cs.LG</category>
-    </item>
-    <item>
-      <title>Joint RV-Astrometric Analysis of two-planet system HD 65216: Prospects for Gaia DR4</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-02783v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-02783v1</guid>
-      <pubDate>Mon, 05 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Alexander L. Wallace, Robert A. Wittenmyer, Jonathan Horner</dc:creator>
+      <title>Candidate O I 7774 Å Absorption from an Escaping Rock-Vapor Outflow of BD+05 4868 Ab</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-04986v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-04986v1</guid>
+      <pubDate>Tue, 06 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Kody M. Walker, James C. Wallace</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>Performance of AutoRegressive Planet Search methodology on simulated PLATO lightcurves</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-02629v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-02629v1</guid>
-      <pubDate>Mon, 05 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Eric D. Feigelson et al.</dc:creator>
+      <title>Irradiated Atmospheres VII. Effect of Mixing Energy Flux on Atmosphere-Interior Coupling</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-05287v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-05287v1</guid>
+      <pubDate>Tue, 06 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Wei Zhong et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
     </item>
     <item>
-      <title>TOI-1408: the limb darkening models, photometric and Doppler noises, and the exoplanetary system</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-02434v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-02434v1</guid>
-      <pubDate>Mon, 05 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Roman V. Baluev</dc:creator>
+      <title>Giant impacts preferentially remove low-mass atmospheres: a generalised scaling law for impact-driven atmospheric loss</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-06077v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-06077v1</guid>
+      <pubDate>Tue, 06 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Matthew J. Roche et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
     </item>
     <item>
-      <title>Plato benchmark stars I. The initial benchmark sample</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-02956v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-02956v1</guid>
-      <pubDate>Mon, 05 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>T. Merle et al.</dc:creator>
+      <title>Stellar magnetic activity and rocky planets in cool dwarf stars</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-04497v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-04497v1</guid>
+      <pubDate>Tue, 06 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>A. K. Stefanov</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
         <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>SPIRou near-infrared spectropolarimetry of the ultra-hot Jupiter KELT-9b: tentative detection of the planet magnetic field</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-05951v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-05951v1</guid>
+      <pubDate>Tue, 06 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Alexis Lavail et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>How dust particles orbiting white dwarfs can reveal undetected co-orbiting exoplanets II. Exoplanets on elliptic orbits</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-04358v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-04358v1</guid>
+      <pubDate>Tue, 06 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Kyriaki I. Antoniadou, Dimitri Veras</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.SR</category>
+        <category>math-ph</category>
+        <category>physics.space-ph</category>
+    </item>
+    <item>
+      <title>Shadows cast by precessing annuli as evidence for an inclined planet in HD 139614</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-06332v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-06332v1</guid>
+      <pubDate>Tue, 06 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Katie L. Milsom et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Measuring the Age and Initial Composition of Interstellar Objects</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-04050v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-04050v1</guid>
+      <pubDate>Tue, 06 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Aster G. Barry-Taylor</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.GA</category>
         <category>astro-ph.IM</category>
     </item>
   </channel>
