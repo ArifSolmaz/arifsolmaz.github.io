@@ -1,0 +1,45 @@
+:root{--editor-width:410px}
+body.editing #ui-viewport{right:var(--editor-width)}
+#ui-btn-edit[aria-pressed=true]{background:#ff6b4a;color:#1a0f0b;border-color:#ff6b4a}
+#lecture-editor{position:fixed;right:0;top:4px;bottom:64px;width:var(--editor-width);overflow:auto;background:#fbfaf6;color:#141b2b;border-left:1px solid #cfc7ba;z-index:16;font:16px/1.5 'IBM Plex Sans',Arial,sans-serif;scrollbar-gutter:stable}
+#lecture-editor[hidden]{display:none}
+#lecture-editor button,#lecture-editor input,#lecture-editor textarea,#lecture-editor select{font:inherit}
+#lecture-editor button{border:1px solid #b6beca;border-radius:8px;background:#fff;color:#141b2b;padding:8px 11px;min-height:39px;cursor:pointer}
+#lecture-editor button:disabled{opacity:.4;cursor:default}
+#lecture-editor button[data-action=html],#lecture-editor button.editor-primary{background:#141b2b;color:#fbfaf6;border-color:#141b2b}
+.editor-header{position:sticky;top:0;z-index:2;background:#fbfaf6;border-bottom:1px solid #ddd6c8;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.editor-header h2,.editor-header h3{font:700 24px/1.2 'IBM Plex Sans',Arial,sans-serif;letter-spacing:0;margin:0}
+.editor-header button{flex:none}
+.editor-help,.editor-total,.editor-status,.editor-slide-label{margin:14px 20px;font-size:14px;line-height:1.5}
+.editor-slide-label{font-weight:600;color:#a43f20}
+.editor-help{color:#536075}
+.editor-total{font-weight:600}
+.editor-status{padding:10px 12px;background:#edf5eb;border-left:3px solid #52724a;min-height:41px}
+.editor-status:empty{display:none}
+.editor-fit-warning{margin:14px 20px;padding:10px 12px;font-size:14px;line-height:1.5;background:#fff0e8;border-left:3px solid #b93c1d;color:#7c2d17}
+.editor-fit-warning[hidden]{display:none}
+.editor-status[data-kind=error],.editor-status[data-kind=warning],.editor-status.error{background:#fff0e8;border-color:#b93c1d;color:#7c2d17}
+.editor-reset-confirm{margin:0 20px 16px;padding:12px;background:#fff0e8;border-left:3px solid #b93c1d;font-size:14px}
+.editor-reset-confirm[hidden]{display:none}
+.editor-reset-confirm p{margin:0 0 12px}
+.editor-reset-confirm button{margin-right:8px}
+.editor-actions{display:flex;flex-wrap:wrap;gap:8px;padding:0 20px 14px;margin:0}
+.editor-actions+.editor-actions{border-bottom:1px solid #ddd6c8}
+.editor-fields{padding:8px 20px 24px;display:flex;flex-direction:column;gap:20px}
+.editor-field{display:flex;flex-direction:column;gap:7px;min-width:0}
+.editor-field label,.editor-field>span{font-weight:600;font-size:15px}
+.editor-field input,.editor-field textarea,.editor-field select{width:100%;padding:10px 11px;border:1px solid #b6beca;border-radius:8px;background:#fff;color:#141b2b;line-height:1.45;min-height:43px}
+.editor-field textarea{resize:vertical;min-height:80px}
+.editor-field textarea[data-editor-path=notes]{min-height:220px}
+.editor-field textarea[data-editor-path=code]{font:14px/1.55 'JetBrains Mono',monospace;min-height:160px;white-space:pre;overflow:auto}
+.editor-field small{font-size:13px;font-weight:400;color:#536075}
+.editor-fields h3{font:700 19px/1.3 'IBM Plex Sans',Arial,sans-serif;letter-spacing:0;margin-top:5px}
+.editor-fields fieldset{border:0;padding:0;margin:0;display:flex;flex-direction:column;gap:14px;min-width:0}
+.editor-fields legend{font-weight:600;padding:0 0 8px}
+body.editing #ui-stage [data-edit-field],body.editing #ui-stage [data-editor-field]{cursor:text;outline:2px dashed #a9a5a0;outline-offset:10px;border-radius:2px}
+body.editing #ui-stage [data-edit-field]:hover,body.editing #ui-stage [data-editor-field]:hover{outline:4px solid #ff6b4a}
+body.editing #ui-stage [data-edit-field]:focus-visible,body.editing #ui-stage [data-editor-field]:focus-visible{outline:4px solid #ff6b4a}
+body.editing #ui-notes{left:calc((100% - var(--editor-width))/2);width:min(760px,calc(100% - var(--editor-width) - 32px))}
+@media(max-width:980px){:root{--editor-width:360px}.editor-header{padding:14px 16px}.editor-fields{padding:8px 16px 24px}.editor-help,.editor-total,.editor-status{margin:12px 16px}.editor-actions{padding:0 16px 12px}}
+@media(max-width:740px){body.editing #ui-viewport{right:0;bottom:56vh}#lecture-editor{top:auto;left:0;right:0;bottom:64px;width:auto;height:calc(56vh - 64px);border-left:0;border-top:1px solid #cfc7ba}body.editing #ui-notes{left:50%;width:calc(100% - 32px);bottom:calc(56vh + 12px);max-height:32vh}}
+@media print{#lecture-editor{display:none!important}body.editing #ui-viewport{position:static;inset:auto}body.editing #ui-stage [data-edit-field],body.editing #ui-stage [data-editor-field]{outline:none!important}}
