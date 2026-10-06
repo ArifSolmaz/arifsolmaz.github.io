@@ -1,6 +1,6 @@
-# Git ve GitHub: Birleşik Anlatım
+# Git ve GitHub: Robot Dün Çalışıyordu
 
-Mekatronik öğrencileri için 45 dakikalık, anlatım ağırlıklı eğitim. Aynı çizgi izleyen robot projesi üzerinden Git ve GitHub ayrımı, kayıt geçmişi, ekip çalışması ve paylaşım anlatılır.
+Mekatronik öğrencileri için 45 dakikalık anlatım dersi. Elif ve Deniz’in kurgusal çizgi izleyen robotu dün çalışıyordu; bugün çizgiyi kaybediyor ve takımda farklı “son” dosyalar dolaşıyor. Aynı sensör değişikliğinin geçmişini bulur, ayrı bir dalda aday çözüm geliştirir, birlikte inceleyip kabul eder ve projeyi sonraki kişiye devrederiz.
 
 - **32 ana slayt:** anlatım ve sorular toplam 45 dakika.
 - **12 ek slayt:** kurulum, SSH ve ayrıntılı komutlar. Ana dersin süresine dahil değildir.
@@ -8,13 +8,13 @@ Mekatronik öğrencileri için 45 dakikalık, anlatım ağırlıklı eğitim. Ay
 
 ## Güncel girişler
 
-- `index.html`: birleşik sunum. Ana gezinme 32. slaytta biter. “Ek slaytlar” düğmesi teknik ayrıntılara geçer.
+- `index.html`: robot vakası üzerinden ana sunum. Ana gezinme 32. slaytta biter. “Ek slaytlar” düğmesi teknik ayrıntılara geçer.
 - `en/index.html`: aynı 44 slaytın İngilizce sürümü; dil değiştirirken slayt numarası korunur.
 - `konusmaci-notlari.html`: dakika planı, her slaytın konuşma metni ve kaynaklar.
 - `en/konusmaci-notlari.html`: bütün slaytların İngilizce konuşmacı notları ve aynı dakika planı.
 - `egitmen-rehberi.md`: aynı notların indirilebilir metni.
 - `pdf/git-github-tr.pdf` ve `pdf/git-github-en.pdf`: 44 sayfalık, 16:9 Türkçe ve İngilizce slayt çıktıları.
-- `canli-ders/materyal.html`: dersin dört animasyonu, notlar ve örnek proje.
+- `canli-ders/materyal.html`: dersin beş GIF animasyonu, notlar ve örnek proje.
 - `student/`: dersten sonra isteğe bağlı bağımsız kaynaklar.
 - `instructor/`: güncel ders bağlantıları.
 
@@ -32,7 +32,7 @@ Sunumdaki **Düzenle** düğmesi, seçili slaydın yanında düzenleme alanları
 
 Değişiklikler bu tarayıcıda otomatik kaydedilir. Paylaşmak için **HTML indir**, yedeklemek veya başka tarayıcıda düzenlemeye devam etmek için **Düzenleme dosyasını indir** kullanılır. İndirilen HTML, görselleri ve sunum araçlarını canlı siteden yükler; internet bağlantısı gerekir. **Dosyadan aç** ile düzenleme dosyası geri yüklenebilir.
 
-Güncellenen konuşmacı notları ayrıca indirilebilir. Düzenlenmiş slaytların PDF çıktısı için **Yazdır** kullanılır; tarayıcıda hedef olarak PDF seçilir. Bir düzenleme varsa PDF düğmesi bu güncel yazdırma akışını açar. Özgün PDF dosyaları ilk yayımlanan 44 slaydın çıktılarıdır.
+Güncellenen konuşmacı notları ayrıca indirilebilir. Düzenlenmiş slaytların PDF çıktısı için **Yazdır** kullanılır; tarayıcıda hedef olarak PDF seçilir. Bir düzenleme varsa PDF düğmesi bu güncel yazdırma akışını açar. PDF dosyaları, tarayıcıdaki düzenlemeler öncesindeki yayımlanan sunumun çıktılarıdır.
 
 Tarayıcıdaki düzenlemeler herkesin gördüğü siteyi değiştirmez. Site içeriğini kalıcı güncellemek için indirilen düzenleme dosyasının içerikleri ilgili kaynak dosyasına uygulanıp sunum yeniden üretilir ve yayımlanır. Tarayıcı verileri temizlenmeden önce düzenleme dosyası indirilmelidir.
 

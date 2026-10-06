@@ -6,3 +6,13 @@
 @page{size:1920px 1080px;margin:0}@media print{html,body{height:auto;overflow:visible;background:white;-webkit-print-color-adjust:exact;print-color-adjust:exact}#ui-bar,#ui-notes,#ui-overview,#ui-progress{display:none!important}#ui-viewport{position:static;display:block;overflow:visible}#ui-stage{height:auto;transform:none!important;margin:0!important;width:1920px}#ui-stage>section{position:relative;visibility:visible;opacity:1;break-after:page;page-break-after:always}#ui-stage>section:last-child{break-after:auto;page-break-after:auto}}
 
 .cheatsheet .codebox{font-size:28px;line-height:1.35;padding:28px}
+
+.story-cover .content{display:grid;grid-template-columns:minmax(0,1fr) 620px;grid-template-rows:auto auto minmax(0,1fr);gap:28px 58px;padding-top:24px}
+.story-cover .lead{grid-column:1;grid-row:1;max-width:none}
+.story-cover .byline{grid-column:1;grid-row:2;margin-top:0}
+.story-cover .diagram{grid-column:2;grid-row:1 / 4;align-self:center;width:100%;height:auto;max-height:500px}
+.story-cover .caption{grid-column:1;grid-row:3;align-self:end}
+.with-sources .content{justify-content:flex-start;padding-top:24px;gap:28px}
+.with-sources .slide-links{font-size:28px;gap:14px}
+
+.column p{white-space:pre-line}
