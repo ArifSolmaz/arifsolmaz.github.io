@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GitHub Ne İşime Yarar? | Arif Solmaz</title>
-<meta name="description" content="Mekatronik öğrencileri için 45 dakikalık, başlangıç seviyesinde GitHub dersi: altı fayda, animasyonlar ve ders kiti.">
+<title>Git ve GitHub · Ders materyali | Arif Solmaz</title>
+<meta name="description" content="Birleşik Git ve GitHub dersi: 32 ana slayt, 12 ek, konuşmacı notları ve örnek proje.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=IBM+Plex+Sans:wght@400;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
@@ -42,50 +42,53 @@ ol.plan{padding-left:20px;color:var(--fg2)} ol.plan li{margin:6px 0} ol.plan b{c
 <body>
 <div class="wrap">
   <div class="top">
-    <p class="eyebrow"><span data-l="tr">Mekatronik · GitHub'a giriş · 45 dakika</span><span data-l="en">Mechatronics · Intro to GitHub · 45 minutes</span></p>
+    <p class="eyebrow"><span data-l="tr">Mekatronik · Git ve GitHub · 45 dakika</span><span data-l="en">Mechatronics · Git and GitHub · 45 minutes</span></p>
     <div class="lang" role="group" aria-label="Dil / Language"><button data-set="tr">TR</button><button data-set="en">EN</button></div>
   </div>
-  <h1><span data-l="tr">GitHub ne işime yarar?</span><span data-l="en">What's GitHub good for?</span></h1>
-  <p class="lead"><span data-l="tr">Başlangıç seviyesinde bir ders: projeni kaybetme, takımınla düzenli çalış, yaptıklarını göster. Terminal yok; her şey tarayıcıda ve telefonda.</span><span data-l="en">A beginner class: never lose a project, work as a team, show what you've built. No terminal; everything happens in the browser and on your phone.</span></p>
+  <h1><span data-l="tr">Git ve GitHub</span><span data-l="en">Git and GitHub</span></h1>
+  <p class="lead"><span data-l="tr">45 dakikalık anlatım: projelerin geçmişi, GitHub ve ekip çalışması. 32 ana slayt ve 12 ek. Canlı gösterim, hesap hazırlığı ve sınıf içi uygulama yok.</span><span data-l="en">A 45-minute lecture on project history, GitHub and teamwork. 32 main slides and 12 appendix slides. No live demo, account setup or classroom exercise.</span></p>
   <div class="words"><span>repository</span><span>commit</span><span>issue</span><span>README</span></div>
   <div class="btns">
-    <a class="btn pri" href="https://github.com/arifsolmaz/sinif-duvari/issues/1"><span data-l="tr">Sınıf sayfası</span><span data-l="en">Class page</span></a>
-    <a class="btn" href="kit/HAZIRLIK.md" data-l="tr">Hazırlık rehberi</a>
-    <a class="btn" href="kit/SETUP.md" data-l="en">Setup guide</a>
-    <a class="btn" href="github-ders-kiti.zip"><span data-l="tr">Ders kitini indir (.zip)</span><span data-l="en">Download the class kit (.zip)</span></a>
+    <a class="btn pri" id="slides-link" href="../"><span data-l="tr">Birleşik sunum</span><span data-l="en">Combined presentation</span></a>
+    <a class="btn" id="notes-link" href="../konusmaci-notlari.html"><span data-l="tr">Konuşmacı notları</span><span data-l="en">Speaker notes</span></a>
+    <a class="btn" id="pdf-link" href="../pdf/git-github-tr.pdf" download><span data-l="tr">44 slaytın PDF'si</span><span data-l="en">All 44 slides as PDF</span></a>
+    <a class="btn" id="project-link" href="ornek-proje.zip"><span data-l="tr">Örnek projeyi indir (.zip)</span><span data-l="en">Download the example project (.zip)</span></a>
   </div>
 
   <h2><span data-l="tr">Dersin akışı</span><span data-l="en">Lesson plan</span></h2>
   <ol class="plan">
-    <li data-l="tr"><b>Açılış · 7 dk</b> — dağınık klasör sorunu, GitHub nedir, dört kelime</li>
-    <li data-l="tr"><b>Altı fayda · 24 dk</b> — her biri önce animasyon, sonra gerçek GitHub'da canlı</li>
-    <li data-l="tr"><b>Sıra sizde · 9 dk</b> — telefondan ilk depo, link sınıf sayfasına</li>
-    <li data-l="tr"><b>Kapanış · 5 dk</b> — özet ve bu haftanın görevi</li>
-    <li data-l="en"><b>Opening · 7 min</b> — the messy folder, what GitHub is, four words</li>
-    <li data-l="en"><b>Six benefits · 24 min</b> — each one as an animation, then live on real GitHub</li>
-    <li data-l="en"><b>Your turn · 9 min</b> — a first repository on the phone, link posted on the class page</li>
-    <li data-l="en"><b>Closing · 5 min</b> — recap and this week's task</li>
+    <li data-l="tr"><b>Temeller</b>: dosya sorunu, Git ve GitHub ayrımı, depo, commit, README</li>
+    <li data-l="tr"><b>Kayıt akışı</b>: hazırlık alanı, yerel geçmiş, push ve pull</li>
+    <li data-l="tr"><b>Takım çalışması</b>: issue, branch, pull request, inceleme ve çakışma</li>
+    <li data-l="tr"><b>Paylaşım</b>: kütüphane seçimi, lisans, fork, portfolyo ve öğrenci imkânları</li>
+    <li data-l="tr"><b>Ekler</b>: kurulum, SSH ve ayrıntılı komutlar, ana ders süresinin dışında</li>
+    <li data-l="en"><b>Foundations</b>: file versions, Git and GitHub, repository, commit, README</li>
+    <li data-l="en"><b>Saving changes</b>: staging, local history, push and pull</li>
+    <li data-l="en"><b>Teamwork</b>: issues, branches, pull requests, reviews and conflicts</li>
+    <li data-l="en"><b>Sharing</b>: libraries, licenses, forks, portfolios and student benefits</li>
+    <li data-l="en"><b>Appendix</b>: installation, SSH and detailed commands outside the main lecture</li>
   </ol>
 
   <h2><span data-l="tr">Animasyonlar</span><span data-l="en">Animations</span></h2>
   <div id="scenes"></div>
 
-  <p class="foot"><span data-l="tr">Animasyonlardaki kişi, kullanıcı ve kütüphane adları örnek amaçlıdır.</span><span data-l="en">The people, usernames and libraries in the animations are made up.</span> · <a href="./">Sunum / Slides</a> · <a href="../">GitHub Eğitimi</a> · <a href="/">arifsolmaz.github.io</a></p>
+  <p class="foot"><span data-l="tr">Animasyonlardaki kişi, kullanıcı ve kütüphane adları örnek amaçlıdır.</span><span data-l="en">The people, usernames and libraries in the animations are made up.</span> · <a id="footer-slides-link" href="../">Birleşik sunum / Combined slides</a> · <a href="/">arifsolmaz.github.io</a></p>
 </div>
 <script>
 const S = [
-  ['01-daginik-klasor','01-messy-folder','Hangisi son hâli?','Which one is the latest?','Yedi "final" dosya ve bir mesaj grubu; GitHub\'da tek dosya ve geçmişi.','Seven "final" files and a group chat; on GitHub, one file and its history.'],
-  ['02-projen-kaybolmaz','02-never-lost','Fayda 1 · Projen kaybolmaz','Benefit 1 · Never lost','Bir kez yükle; okulda, evde, telefonda aç.','Upload once; open it at school, at home, on your phone.'],
-  ['03-projeni-github-a-koy','03-put-your-project-on-github','Projeni GitHub\'a koy','Put your project on GitHub','New repository → Add README → Create repository → Upload files → Commit changes','New repository → Add README → Create repository → Upload files → Commit changes'],
-  ['04-zaman-makinesi','04-time-machine','Fayda 2 · Zaman makinesi','Benefit 2 · Time machine','History: kim, ne zaman, neyi değiştirdi. Kırmızı eski, yeşil yeni.','History: who changed what, and when. Red is before, green is after.'],
-  ['05-takimin-listesi','05-team-to-do-list','Fayda 3 · Takımın listesi','Benefit 3 · Team to-do list','Issues: New issue → Assignees → Close issue.','Issues: New issue → Assignees → Close issue.'],
-  ['06-hazir-kod','06-ready-made-code','Fayda 4 · Hazır kod','Benefit 4 · Ready-made code','Ara → Code → Download ZIP → Arduino IDE: .ZIP Kütüphanesi Ekle...','Search → Code → Download ZIP → Arduino IDE: Add .ZIP Library...'],
-  ['07-portfolyo','07-portfolio','Fayda 5 · Portfolyo','Benefit 5 · Portfolio','Profil, sabitlenmiş projeler, README ve CV\'deki tek satır.','Profile, pinned projects, README and one line on your CV.'],
-  ['08-sira-sizde','08-your-turn','Sıra sizde · İlk deponu aç','Your turn · First repository','Telefondan depo aç, README yaz, linki sınıf sayfasına yorum olarak ekle.','Create a repository on your phone, write a README, post the link on the class page.'],
-  ['09-ozet','09-recap','Özet · Altı fayda','Recap · Six benefits','Fayda 6: öğrenciye ücretsiz — education.github.com/pack','Benefit 6: free for students — education.github.com/pack'],
+ ['01-daginik-klasor','01-messy-folder','Dağınık dosya sorunu','The messy folder','Commit edilen sürümler tek bir geçmişte izlenir.','Committed versions can be followed in one history.'],
+ ['03-projeni-github-a-koy','03-put-your-project-on-github','Bir projenin depo görünümü','A project repository','Kod, şema ve rapor aynı depoda bulunabilir.','Code, diagrams and reports can live in the same repository.'],
+ ['04-zaman-makinesi','04-time-machine','Değişiklik geçmişi','Change history','Commit edilmiş değişiklikler: kim, ne zaman, neyi değiştirdi?','Committed changes: who changed what, and when?'],
+ ['05-takimin-listesi','05-team-to-do-list','Takımın iş listesi','The team task list','Issue işin tanımını, sorumlusunu ve durumunu tutar.','An issue tracks a task, its assignee and its status.'],
 ];
 function render(l){
+  l = l === 'en' ? 'en' : 'tr';
   document.documentElement.lang = l;
+  document.getElementById('slides-link').href = l === 'en' ? '../en/' : '../';
+  document.getElementById('footer-slides-link').href = l === 'en' ? '../en/' : '../';
+  document.getElementById('notes-link').href = l === 'en' ? '../en/konusmaci-notlari.html' : '../konusmaci-notlari.html';
+  document.getElementById('pdf-link').href = `../pdf/git-github-${l}.pdf`;
+  document.getElementById('project-link').href = l === 'en' ? 'example-project.zip' : 'ornek-proje.zip';
   document.querySelectorAll('.lang button').forEach(b => b.setAttribute('aria-pressed', b.dataset.set === l));
   const k = l === 'tr' ? 0 : 1;
   document.getElementById('scenes').innerHTML = S.map((s, i) => {

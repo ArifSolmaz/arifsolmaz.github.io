@@ -1,487 +1,364 @@
 <!doctype html>
-<html lang="tr">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GitHub Ne İşime Yarar? — Sunum</title>
-<meta name="description" content="Mekatronik öğrencileri için başlangıç seviyesinde 45 dakikalık GitHub dersi: altı fayda, animasyonlar ve uygulama.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Git ve GitHub: Tek Projede Temeller</title><meta name="description" content="Mekatronik öğrencileri için Git ve GitHub: 32 ana slayt ve 12 ek, 45 dakikalık anlatım, konuşmacı notları.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600..800&family=IBM+Plex+Sans:wght@400;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-<style>
-  * { margin: 0; box-sizing: border-box; }
-  html, body { height: 100%; }
-  body { background: #0d1424; color: #f4f2ec; font-family: Inter, Arial, sans-serif; overflow: hidden; }
-
-  /* ---- stage: a fixed 1920x1080 canvas scaled to the window ---- */
-  #ui-viewport { position: fixed; inset: 0; display: grid; place-items: center; }
-  #ui-stage { position: relative; width: 1920px; height: 1080px; transform-origin: center center; flex: none; }
-  #ui-stage > section p, #ui-stage > section h1, #ui-stage > section h2, #ui-stage > section h3, #ui-stage > section ol, #ui-stage > section ul { margin: 0; }
-  #ui-stage > section { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden;
-    opacity: 0; visibility: hidden; transition: opacity .35s ease, visibility 0s linear .35s; }
-  #ui-stage > section.active { opacity: 1; visibility: visible; transition: opacity .35s ease; }
-  section aside { display: none; }
-  section a { color: inherit; }
-  section table { border-spacing: 0; }
-
-  /* ---- chrome ---- */
-  #ui-bar { position: fixed; left: 0; right: 0; bottom: 0; display: flex; align-items: center; gap: 8px;
-    padding: 8px 12px; background: rgba(13,16,21,.86); backdrop-filter: blur(6px); font-size: 14px;
-    transition: opacity .3s; z-index: 10; }
-  body.idle #ui-bar { opacity: 0; }
-  #ui-bar button, #ui-bar a { white-space: nowrap; background: transparent; color: #f4f2ec; border: 1px solid #3a414d; border-radius: 8px;
-    padding: 6px 12px; font: inherit; cursor: pointer; text-decoration: none; min-height: 34px; display: inline-flex; align-items: center; }
-  #ui-bar button:hover, #ui-bar a:hover { border-color: #ff6b4a; }
-  #ui-bar button:focus-visible, #ui-bar a:focus-visible { outline: 2px solid #ff6b4a; outline-offset: 2px; }
-  #ui-count { font-variant-numeric: tabular-nums; color: #b9bec6; min-width: 64px; text-align: center; }
-  #ui-help { color: #8a919c; margin-left: auto; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  #ui-progress { position: fixed; left: 0; top: 0; height: 4px; background: #ff6b4a; transition: width .3s; z-index: 11; }
-
-  /* ---- speaker notes ---- */
-  #ui-notes { position: fixed; left: 50%; bottom: 60px; transform: translateX(-50%); width: min(960px, calc(100% - 32px));
-    max-height: 38vh; overflow: auto; background: #fbfaf6; color: #1b2129; border-radius: 12px;
-    padding: 16px 20px; font-size: 16px; line-height: 1.55; box-shadow: 0 10px 40px rgba(0,0,0,.45); display: none; z-index: 9; }
-  #ui-notes.show { display: block; }
-  #ui-notes h4 { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 1.5px; color: #b8491a; margin-bottom: 6px; text-transform: uppercase; }
-
-  /* ---- overview ---- */
-  #ui-overview { position: fixed; inset: 0; background: #0d1424; overflow: auto; padding: 24px 16px 80px; display: none; z-index: 20; }
-  #ui-overview.show { display: block; }
-  #ui-overview h3 { font-family: 'Space Grotesk', Arial, sans-serif; font-size: 22px; margin: 0 auto 16px; max-width: 1400px; }
-  #ui-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; max-width: 1400px; margin: 0 auto; }
-  .thumb { position: relative; aspect-ratio: 16/9; overflow: hidden; border-radius: 8px; border: 2px solid transparent; cursor: pointer; background: #14181f; padding: 0; }
-  .thumb.current { border-color: #ff6b4a; }
-  .thumb:focus-visible { outline: 2px solid #ff6b4a; outline-offset: 2px; }
-  .thumb .mini { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; transform-origin: 0 0; pointer-events: none; }
-  .thumb .mini > section { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden; }
-  .thumb span { position: absolute; right: 6px; bottom: 6px; background: rgba(13,16,21,.8); color: #f4f2ec; font-size: 12px; padding: 2px 7px; border-radius: 6px; }
-
-  @media (max-width: 640px) { #ui-help { display: none; } #ui-bar { gap: 6px; padding: 6px 8px; } #ui-bar button, #ui-bar a { padding: 6px 9px; } }
-
-  /* ---- print: one slide per page ---- */
-  @page { size: 1920px 1080px; margin: 0; }
-  @media print {
-    body { overflow: visible; background: #fff; }
-    #ui-bar, #ui-notes, #ui-overview, #ui-progress { display: none !important; }
-    #ui-viewport { position: static; display: block; }
-    #ui-stage { transform: none !important; width: 1920px; height: auto; }
-    #ui-stage > section { position: relative; opacity: 1; visibility: visible; page-break-after: always; break-after: page; }
-  }
-</style>
-</head>
-<body>
-<div id="ui-progress" role="presentation"></div>
-<main id="ui-viewport" aria-label="GitHub Ne İşime Yarar? — Sunum">
-  <div id="ui-stage">
-<section id="cover" data-transition="fade" style="background:#0d1424;color:#eef2fa;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:32px">
-<svg aria-label="Altı numaralı turuncu noktası olan bir çizgi ve sonunda turuncu robot: bugünün altı faydası" width="1920" height="260" viewBox="0 0 1920 260" style="position:absolute;left:0;top:660px;width:1920px;height:260px"><path d="M128 150 H1600" stroke="#3a4766" stroke-width="8" stroke-linecap="round" fill="none"/><circle cx="300" cy="150" r="24" fill="#ff6b4a" stroke="#0d1424" stroke-width="6"/><circle cx="520" cy="150" r="24" fill="#ff6b4a" stroke="#0d1424" stroke-width="6"/><circle cx="740" cy="150" r="24" fill="#ff6b4a" stroke="#0d1424" stroke-width="6"/><circle cx="960" cy="150" r="24" fill="#ff6b4a" stroke="#0d1424" stroke-width="6"/><circle cx="1180" cy="150" r="24" fill="#ff6b4a" stroke="#0d1424" stroke-width="6"/><circle cx="1400" cy="150" r="24" fill="#ff6b4a" stroke="#0d1424" stroke-width="6"/><text x="300" y="158" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="22" font-weight="700" fill="#1a0f0b">1</text><text x="520" y="158" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="22" font-weight="700" fill="#1a0f0b">2</text><text x="740" y="158" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="22" font-weight="700" fill="#1a0f0b">3</text><text x="960" y="158" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="22" font-weight="700" fill="#1a0f0b">4</text><text x="1180" y="158" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="22" font-weight="700" fill="#1a0f0b">5</text><text x="1400" y="158" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="22" font-weight="700" fill="#1a0f0b">6</text><rect x="1676" y="112" width="28" height="12" rx="3" fill="#20242c"/><rect x="1676" y="176" width="28" height="12" rx="3" fill="#20242c"/><rect x="1664" y="122" width="70" height="56" rx="12" fill="#ff6b4a" stroke="#1a0f0b" stroke-width="3"/><rect x="1736" y="130" width="12" height="40" rx="3" fill="#2b3240"/><circle cx="1742" cy="139" r="3" fill="#9ef0c0"/><circle cx="1742" cy="150" r="3" fill="#9ef0c0"/><circle cx="1742" cy="161" r="3" fill="#9ef0c0"/></svg>
-<p style="font-size:24px;font-weight:600;letter-spacing:4px;color:#ff6b4a">MEKATRONİK · GITHUB'A GİRİŞ · 45 DAKİKA</p>
-<h1 style="font-family:'Bricolage Grotesque', Arial, sans-serif;font-size:120px;font-weight:800;line-height:1.02;letter-spacing:-2px;width:1664px">GitHub ne işime yarar?</h1>
-<p style="font-size:36px;line-height:1.35;color:#b3bfd6;width:1250px">Projeni kaybetme, takımınla düzenli çalış, yaptıklarını göster. Terminal yok: her şey tarayıcıda.</p>
-<p style="position:absolute;left:128px;bottom:64px;width:1200px;font-size:24px;color:#7686a6">Arif Solmaz · İSTÜN Mekatronik Mühendisliği</p>
-<aside>⏱ 00:00–01:00 · 1 dk
-
-Hoş geldiniz. Bugün GitHub'ı yazılımcılara özel bir araç olarak değil, sizin projelerinizi kolaylaştıran bir araç olarak göreceğiz. Terminal yok, komut yok; her şey tarayıcıda ve telefonda.
-
-Altı fayda göreceğiz. Her birini önce kısa bir animasyonla, sonra gerçek GitHub'da canlı göstereceğim. Dersin sonunda herkes telefonundan ilk deposunu açacak ve linkini sınıf sayfasına yazacak.
-
-▶ HAZIRLIK (dersten önce): github.com'da giriş yapılmış; kitteki ornek-proje klasörü masaüstünde; Arduino IDE açık; sınıf sayfası (sinif-duvari → Issues → #1) ayrı sekmede; öğrencilere "GitHub hesabı açın" mesajı gönderilmiş.</aside>
-</section>
-<section id="plan" data-transition="fade" style="background:#f4f1ea;color:#141b2b;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:56px">
-<div style="display:flex;flex-direction:column;gap:16px">
-<p style="font-size:24px;font-weight:600;letter-spacing:4px;color:#b93c1d">BUGÜN</p>
-<h2 style="font-family:'Bricolage Grotesque', Arial, sans-serif;font-size:72px;font-weight:700;line-height:1.1">45 dakikanın planı</h2>
-</div>
-<div style="display:flex;gap:6px;height:64px">
-<div style="flex:7;background:#141b2b;border-radius:12px 0px 0px 12px"></div>
-<div style="flex:24;background:#5b8cff"></div>
-<div style="flex:9;background:#ff6b4a"></div>
-<div style="flex:5;background:#56627a;border-radius:0px 12px 12px 0px"></div>
-</div>
-<div style="display:grid;grid-template-columns:repeat(4, 1fr);gap:40px">
-<div style="display:flex;gap:18px;align-items:flex-start"><div style="width:28px;height:28px;flex:none;border-radius:6px;background:#141b2b"></div><div style="display:flex;flex-direction:column;gap:6px"><p style="font-size:32px;font-weight:600;line-height:1.1">Açılış · 7 dk</p><p style="font-size:24px;color:#4a5568">Dağınık klasör sorunu ve GitHub nedir?</p></div></div>
-<div style="display:flex;gap:18px;align-items:flex-start"><div style="width:28px;height:28px;flex:none;border-radius:6px;background:#5b8cff"></div><div style="display:flex;flex-direction:column;gap:6px"><p style="font-size:32px;font-weight:600;line-height:1.1">Altı fayda · 24 dk</p><p style="font-size:24px;color:#4a5568">Her biri: animasyon + canlı gösterim</p></div></div>
-<div style="display:flex;gap:18px;align-items:flex-start"><div style="width:28px;height:28px;flex:none;border-radius:6px;background:#ff6b4a"></div><div style="display:flex;flex-direction:column;gap:6px"><p style="font-size:32px;font-weight:600;line-height:1.1">Sıra sizde · 9 dk</p><p style="font-size:24px;color:#4a5568">Telefondan ilk deponu aç</p></div></div>
-<div style="display:flex;gap:18px;align-items:flex-start"><div style="width:28px;height:28px;flex:none;border-radius:6px;background:#56627a"></div><div style="display:flex;flex-direction:column;gap:6px"><p style="font-size:32px;font-weight:600;line-height:1.1">Kapanış · 5 dk</p><p style="font-size:24px;color:#4a5568">Özet ve bu haftanın görevi</p></div></div>
-</div>
-<div style="flex:1"></div>
-<p style="font-size:28px;color:#4a5568;width:1400px">Telefonunuz ve GitHub hesabınız hazır olsun: dersin sonunda ilk deponuzu açacaksınız.</p>
-<aside>⏱ 01:00–02:00 · 1 dk
-
-Kırk beş dakikanın planı bu. İlk yedi dakika sorun ve GitHub'ın ne olduğu. Sonra dersin en uzun kısmı, mavi bölüm: altı fayda. Her faydayı önce animasyonla, sonra gerçek GitHub'da göreceğiz. Turuncu bölüm sizin: telefonunuzdan ilk deponuzu açacaksınız. Son beş dakika özet ve bu haftanın küçük görevi.
-
-Hesabı olmayan varsa şimdi açmaya başlasın: github.com/signup. İki üç dakika sürüyor; e-postaya gelen kodu girmek gerekiyor.
-
-▶ İPUCU: "Hesabı olan el kaldırsın" diye sorun. Hesabı olmayanlar sıra kendilerine gelene kadar açabilir ya da yanındakiyle eşleşir.</aside>
-</section>
-<section id="hook" data-transition="fade" style="background:#0d1424;color:#eef2fa;font-family:'IBM Plex Sans', Arial, sans-serif;padding:0px;display:flex;flex-direction:column">
-<img data-gif="1" data-src="canli-ders/gif/tr/01-daginik-klasor.gif" alt="Animasyon: robot klasöründe robot_final_SON.ino gibi yedi kopya birikir, mesaj grubunda kimse hangisinin son hâli olduğunu bilmez; sonunda hepsi tek bir robot.ino ve geçmiş çizgisine dönüşür" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:contain">
-<aside>⏱ 02:00–04:00 · 2 dk
-
-Bir robot takımı düşünün. Kod bir klasörde, haberleşme bir mesaj grubunda. Kaan son kodu istiyor; Elif robot_final.ino'yu atıyor; Deniz ise sensörü başka bir kopyada düzeltmiş. Bir saat sonra klasörde yedi tane "son" dosya var ve kimse hangisinin çalıştığını bilmiyor.
-
-[Sınıfa sorun: "Ödevlerinizde böyle bir klasör olan var mı? El kaldırın."]
-
-GitHub'da bu sorun yok: tek bir robot.ino var ve eski hâllerinin hepsi geçmişte duruyor. Kim neyi, ne zaman değiştirdi, hepsi kayıtlı. Animasyonun sonunda yedi dosya tek dosyaya ve bir zaman çizgisine dönüşüyor.
-
-▶ Animasyon bir kez baştan sona dönsün, sonra konuşun.</aside>
-</section>
-<section id="what" data-transition="fade" style="background:#f4f1ea;color:#141b2b;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:56px">
-<div style="display:flex;flex-direction:column;gap:16px">
-<p style="font-size:24px;font-weight:600;letter-spacing:4px;color:#b93c1d">GITHUB NEDİR?</p>
-<h2 style="font-family:'Bricolage Grotesque', Arial, sans-serif;font-size:72px;font-weight:700;line-height:1.1;width:1500px">Projelerin için internette bir klasör, fazlası da var</h2>
-</div>
-<div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:32px">
-<div style="display:flex;flex-direction:column;gap:14px;background:#fbfaf6;border:1px solid #ddd6c8;border-radius:20px;padding:40px"><p style="font-family:'Bricolage Grotesque', Arial, sans-serif;font-size:56px;font-weight:800;line-height:1;color:#ff6b4a">01</p><h3 style="font-family:'Bricolage Grotesque', Arial, sans-serif;font-size:40px;font-weight:700">Bir klasör</h3><p style="font-size:28px;line-height:1.4;color:#4a5568">Kod, devre şeması, rapor, fotoğraf: hepsi bir yerde, internette.</p></div>
-<div style="display:flex;flex-direction:column;gap:14px;background:#fbfaf6;border:1px solid #ddd6c8;border-radius:20px;padding:40px"><p style="font-family:'Bricolage Grotesque', Arial, sans-serif;font-size:56px;font-weight:800;line-height:1;color:#ff6b4a">02</p><h3 style="font-family:'Bricolage Grotesque', Arial, sans-serif;font-size:40px;font-weight:700">Bir zaman makinesi</h3><p style="font-size:28px;line-height:1.4;color:#4a5568">Her değişiklik kayıtlı; eski hâline her zaman bakabilirsin.</p></div>
-<div style="display:flex;flex-direction:column;gap:14px;background:#fbfaf6;border:1px solid #ddd6c8;border-radius:20px;padding:40px"><p style="font-family:'Bricolage Grotesque', Arial, sans-serif;font-size:56px;font-weight:800;line-height:1;color:#ff6b4a">03</p><h3 style="font-family:'Bricolage Grotesque', Arial, sans-serif;font-size:40px;font-weight:700">Bir buluşma yeri</h3><p style="font-size:28px;line-height:1.4;color:#4a5568">Takımın yapılacaklar listesi ve yaptıklarını gösterdiğin vitrin.</p></div>
-</div>
-<div style="flex:1"></div>
-<div style="display:flex;align-items:center;background:#141b2b;border-radius:16px;padding:28px 36px"><p style="font-size:30px;font-weight:600;color:#eef2fa">Terminal yok, komut yok, kod bilgisi gerekmez: bugün her şey tarayıcıda.</p></div>
-<aside>⏱ 04:00–06:00 · 2 dk
-
-GitHub'ı üç şey olarak düşünün. Birincisi bir klasör: kodunuz, devre şemanız, raporunuz, fotoğraflarınız internette, tek bir yerde. İkincisi bir zaman makinesi: her değişiklik kaydediliyor, eski hâline her zaman dönüp bakabiliyorsunuz. Üçüncüsü bir buluşma yeri: takımınızın yapılacaklar listesi ve yaptıklarınızı gösterdiğiniz bir vitrin.
-
-Arka planda Git adında bir kayıt aracı çalışıyor; yazılımcılar onu komut satırından kullanır. Bugün ona hiç girmiyoruz: GitHub'ın web sitesi ve telefon yeter. Hesap açmak ücretsiz.
-
-[Sorun: "Sizce sadece yazılımcılar mı kullanır?" Hayır: devre şeması, rapor, ders notu, 3B yazıcı dosyaları da konur.]</aside>
-</section>
-<section id="words" data-transition="fade" style="background:#f4f1ea;color:#141b2b;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:56px">
-<div style="display:flex;flex-direction:column;gap:16px">
-<p style="font-size:24px;font-weight:600;letter-spacing:4px;color:#b93c1d">SÖZLÜK</p>
-<h2 style="font-family:'Bricolage Grotesque', Arial, sans-serif;font-size:72px;font-weight:700;line-height:1.1">Dört kelime yeter</h2>
-</div>
-<div style="display:grid;grid-template-columns:repeat(2, 1fr);gap:32px">
-<div style="display:flex;flex-direction:column;gap:10px;background:#fbfaf6;border:1px solid #ddd6c8;border-radius:20px;padding:36px 40px"><p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:40px;font-weight:700;color:#b93c1d">repository</p><p style="font-size:32px;font-weight:600">projenin internetteki klasörü</p><p style="font-size:24px;color:#4a5568">dosyalar + bütün geçmişi</p></div>
-<div style="display:flex;flex-direction:column;gap:10px;background:#fbfaf6;border:1px solid #ddd6c8;border-radius:20px;padding:36px 40px"><p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:40px;font-weight:700;color:#b93c1d">commit</p><p style="font-size:32px;font-weight:600">bir kayıt anı</p><p style="font-size:24px;color:#4a5568">yanında kısa bir not: ne değişti?</p></div>
-<div style="display:flex;flex-direction:column;gap:10px;background:#fbfaf6;border:1px solid #ddd6c8;border-radius:20px;padding:36px 40px"><p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:40px;font-weight:700;color:#b93c1d">issue</p><p style="font-size:32px;font-weight:600">yapılacak iş ya da hata notu</p><p style="font-size:24px;color:#4a5568">numara alır: #1, #2…</p></div>
-<div style="display:flex;flex-direction:column;gap:10px;background:#fbfaf6;border:1px solid #ddd6c8;border-radius:20px;padding:36px 40px"><p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:40px;font-weight:700;color:#b93c1d">README</p><p style="font-size:32px;font-weight:600">projenin vitrini</p><p style="font-size:24px;color:#4a5568">ne, neden, nasıl: ilk okunan dosya</p></div>
-</div>
-<aside>⏱ 06:00–07:00 · 1 dk
-
-Bugün dört kelime yeter. GitHub'ın arayüzü İngilizce; bu kelimeleri ekranda böyle göreceksiniz.
-Repository, yani depo: projenin internetteki klasörü; dosyalar ve bütün geçmişi.
-Commit: bir kayıt anı; yanında "ne değişti" diye kısa bir not.
-Issue: yapılacak bir iş ya da bir hata notu; numara alır.
-README: projenin vitrini; depoyu açan herkesin ilk okuduğu dosya.
-
-Ezberlemeyin; birazdan her birini canlı göreceksiniz.</aside>
-</section>
-<section id="lost" data-transition="fade" style="background:#0d1424;color:#eef2fa;font-family:'IBM Plex Sans', Arial, sans-serif;padding:0px;display:flex;flex-direction:column">
-<img data-gif="1" data-src="canli-ders/gif/tr/02-projen-kaybolmaz.gif" alt="Fayda 1 animasyonu: bozulan laptop, kaybolan USB ve silinen lab bilgisayarı; proje GitHub'da güvende ve okuldaki bilgisayar, evdeki laptop ve telefon aynı son hâli açar" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:contain">
-<aside>⏱ 07:00–10:00 · 3 dk
-
-Fayda 1: projen kaybolmaz. Laptop bozuluyor, USB kayboluyor, laboratuvar bilgisayarları her gece sıfırlanıyor. Proje GitHub'daysa bunların hiçbiri dert değil: dosyalar internette güvende.
-
-Okulda bilgisayardan, evde laptoptan, otobüste telefondan aynı projeyi açarsınız ve her zaman son hâlini görürsünüz. Bir kez yükle, her yerden aç.
-
-[Sorun: "Bir projesi ya da ödevi kaybolan oldu mu?" Bir iki hikâye dinleyin.]
-
-▶ CANLI (30 sn): Telefonunuzda kendi GitHub profilinizi açıp gösterin: bilgisayardaki depolar telefonda da aynı.</aside>
-</section>
-<section id="upload" data-transition="fade" style="background:#0d1424;color:#eef2fa;font-family:'IBM Plex Sans', Arial, sans-serif;padding:0px;display:flex;flex-direction:column">
-<img data-gif="1" data-src="canli-ders/gif/tr/03-projeni-github-a-koy.gif" alt="Animasyon: Elif New repository ile robot-projem deposunu açar, Add README'yi açıp Create repository der, sonra Upload files ile kod, devre şeması, rapor ve fotoğrafları sürükleyip Commit changes'e basar" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:contain">
-<aside>⏱ 10:00–14:00 · 4 dk
-
-Peki proje GitHub'a nasıl girer? Bir dakika sürüyor. Elif yeni bir depo açıyor: New repository. Bir ad veriyor, Add README'yi açıyor ve Create repository. Sonra Add file, Upload files: dosyaları sürükleyip bırakıyor, kısa bir not yazıyor ve Commit changes. Bitti.
-
-Dikkat: sadece kod değil. Devre şeması, rapor, fotoğraflar; projenin her şeyi aynı yerde.
-
-▶ CANLI: github.com/new → ad: ornek-proje → Add README: On → Create repository → Add file → Upload files → kitteki ornek-proje klasöründen README.md, robot.ino, devre-semasi.png, proje-raporu.pdf ve fotograflar klasörünü sürükleyin → not: Proje dosyaları eklendi → Commit changes. Yüklediğiniz README.md eskisinin yerine geçer ve depo sayfasında hemen görünür.
-"Repository" kelimesini tahtaya yazın.
-
-↺ YEDEK: İnternet yoksa animasyonu bir kez daha oynatıp adımları üzerinden anlatın.</aside>
-</section>
-<section id="history" data-transition="fade" style="background:#0d1424;color:#eef2fa;font-family:'IBM Plex Sans', Arial, sans-serif;padding:0px;display:flex;flex-direction:column">
-<img data-gif="1" data-src="canli-ders/gif/tr/04-zaman-makinesi.gif" alt="Fayda 2 animasyonu: robot.ino dosyasında History'ye tıklanır, kim ne zaman ne değiştirdi listelenir; Deniz'in kaydında kırmızı satır eski eşiği 500, yeşil satır yeni eşiği 900 gösterir" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:contain">
-<aside>⏱ 14:00–18:00 · 4 dk
-
-Fayda 2: zaman makinesi. "Dün çalışıyordu!" Ne değişti? Dosyayı açıp History'ye tıklıyoruz. Her kayıt listede: kim, ne zaman, hangi notla. Bunu kimse elle tutmuyor; GitHub her commit'te kendiliğinden kaydediyor.
-
-Dünkü kayda tıklayınca değişikliği görüyoruz: kırmızı satır eski hâli, yeşil satır yeni hâli. Deniz sensör eşiğini 500'den 900'e çıkarmış. Gerekirse projenin o günkü hâline dönüp bakabiliriz.
-
-Bu yüzden bozmaktan korkmayın: her kayıt bir geri dönüş noktası.
-
-▶ CANLI: ornek-proje → robot.ino → kalem (Edit) → ESIK = 500 satırını 900 yapın → Commit changes → not: Sensör eşiği değiştirildi → dosya sayfasında History → bu kayda tıklayın → kırmızı ve yeşil satırı gösterin.
-"Commit" kelimesini tahtaya yazın.</aside>
-</section>
-<section id="team" data-transition="fade" style="background:#0d1424;color:#eef2fa;font-family:'IBM Plex Sans', Arial, sans-serif;padding:0px;display:flex;flex-direction:column">
-<img data-gif="1" data-src="canli-ders/gif/tr/05-takimin-listesi.gif" alt="Fayda 3 animasyonu: Issues sekmesinde takımın işleri listelenir; Elif New issue ile yeni bir iş açıp Kaan'a atar, iş bitince Close issue ile kapatılır ve listeden düşer" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:contain">
-<aside>⏱ 18:00–22:00 · 4 dk
-
-Fayda 3: takımın yapılacaklar listesi. Takım işleri mesaj grubunda kaybolup gidiyor. GitHub'da her deponun bir Issues sekmesi var: ortak bir yapılacaklar listesi.
-
-New issue: ne yapılacak? Bir başlık, kısa bir açıklama. Kim yapacak? Assignees'ten birini seçiyoruz. Liste herkesin ekranında aynı. İş bitince Close issue: listeden düşüyor ama kaydı kalıyor; aylar sonra bile bulunur.
-
-Bitirme projesi, kulüp projesi, ödev grubu: hepsine uyar.
-
-▶ CANLI: ornek-proje → Issues → New issue → başlık: Robotun fotoğrafını çek → açıklama: Pistte, iyi ışıkta → Assignees: kendinizi seçin → Create → sonra Close issue.
-"Issue" kelimesini tahtaya yazın.</aside>
-</section>
-<section id="code" data-transition="fade" style="background:#0d1424;color:#eef2fa;font-family:'IBM Plex Sans', Arial, sans-serif;padding:0px;display:flex;flex-direction:column">
-<img data-gif="1" data-src="canli-ders/gif/tr/06-hazir-kod.gif" alt="Fayda 4 animasyonu: GitHub'da hc-sr04 arduino aranır, yıldızı çok ve yeni güncellenmiş kütüphane seçilir, README'deki bağlantı tablosu okunur, Code ve Download ZIP ile indirilir, Arduino IDE'de .ZIP Kütüphanesi Ekle ile kurulur" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:contain">
-<aside>⏱ 22:00–26:00 · 4 dk
-
-Fayda 4: hazır kodu bul, kullan. Robota mesafe sensörü ekleyeceğiz. Kodu sıfırdan yazmak yerine GitHub'da arıyoruz. Hangisini seçmeli? Yıldızı çok olanı: çok kişi kullanıyor demek. Yakın zamanda güncellenmiş olanı. README'sinde bağlantı şeması ve örnek olanı.
-
-Code düğmesi, Download ZIP: bütün proje tek dosya olarak iniyor. Arduino IDE'de Eskiz → Kütüphane Ekle → .ZIP Kütüphanesi Ekle... (İngilizce menüde: Sketch → Include Library → Add .ZIP Library...). Kütüphane kuruldu; iki satır kodla sensör çalışıyor.
-
-Takılırsanız o deponun Issues sekmesinden soru sorabilirsiniz.
-
-▶ CANLI: GitHub'da "DHT sensor library" arayın → adafruit/DHT-sensor-library → yıldız sayısını ve son güncellemeyi gösterin → README'de Adafruit Unified Sensor satırını gösterin (README'yi okumak bu yüzden önemli) → Code → Download ZIP → Arduino IDE → .ZIP Kütüphanesi Ekle... → indirilen zip → Dosya → Örnekler → DHT sensor library → DHTtester.
-Not: Aynı kütüphane Arduino'nun Kütüphane Yöneticisi'nde de var; oradan kurulursa gereken diğer kütüphaneyi de kurmayı önerir.
-
-Animasyondaki kütüphane ve kullanıcı adları örnek amaçlıdır.</aside>
-</section>
-<section id="portfolio" data-transition="fade" style="background:#0d1424;color:#eef2fa;font-family:'IBM Plex Sans', Arial, sans-serif;padding:0px;display:flex;flex-direction:column">
-<img data-gif="1" data-src="canli-ders/gif/tr/07-portfolyo.gif" alt="Fayda 5 animasyonu: Elif'in GitHub profili sabitlenmiş dört projeyi ve dolan yeşil katkı karelerini gösterir; robot-projem'in README'sinde hareket eden robot, malzemeler ve açıklama var; sonunda CV'ye github.com/elif linki eklenir" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:contain">
-<aside>⏱ 26:00–29:00 · 3 dk
-
-Fayda 5: GitHub profilin, portfolyon. Elif'in profilinde bütün projeleri tek sayfada: sabitlediği dört proje ve yeşil kareler. Her yeşil kare çalıştığı bir gün; emeği görünüyor.
-
-Bir projeye tıklayınca vitrinini görüyoruz: README. Ne yaptığı, malzemeler, nasıl çalıştığı, robotun bir görüntüsü. Staj ya da iş başvurusunda CV'ye tek satır yeter: github.com/kullanici-adin. Hocalar ve işverenler ne yaptığınızı okumakla kalmaz, görür.
-
-▶ CANLI: Kendi profilinizi açın: github.com/arifsolmaz → sabitlenmiş depolar (Customize your pins) ve katkı grafiği → iyi bir README'si olan bir projenize tıklayın. Az önce açtığımız ornek-proje'nin README'sini de gösterin.
-"README" kelimesini tahtaya yazın.</aside>
-</section>
-<section id="free" data-transition="fade" style="background:#f4f1ea;color:#141b2b;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:56px">
-<div style="display:flex;flex-direction:column;gap:16px">
-<p style="font-size:24px;font-weight:600;letter-spacing:4px;color:#b93c1d">FAYDA 6 · GITHUB EDUCATION</p>
-<h2 style="font-family:'Bricolage Grotesque', Arial, sans-serif;font-size:72px;font-weight:700;line-height:1.1">Öğrenciysen çoğu şey ücretsiz</h2>
-</div>
-<div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:32px">
-<div style="display:flex;flex-direction:column;gap:14px;background:#fbfaf6;border:1px solid #ddd6c8;border-radius:20px;padding:40px"><h3 style="font-family:'Bricolage Grotesque', Arial, sans-serif;font-size:40px;font-weight:700">GitHub Copilot Student</h3><p style="font-size:28px;line-height:1.4;color:#4a5568">Kod yazarken öneri veren yapay zekâ yardımcısı.</p></div>
-<div style="display:flex;flex-direction:column;gap:14px;background:#fbfaf6;border:1px solid #ddd6c8;border-radius:20px;padding:40px"><h3 style="font-family:'Bricolage Grotesque', Arial, sans-serif;font-size:40px;font-weight:700">GitHub Pro</h3><p style="font-size:28px;line-height:1.4;color:#4a5568">Öğrenci olduğun sürece ücretsiz.</p></div>
-<div style="display:flex;flex-direction:column;gap:14px;background:#fbfaf6;border:1px solid #ddd6c8;border-radius:20px;padding:40px"><h3 style="font-family:'Bricolage Grotesque', Arial, sans-serif;font-size:40px;font-weight:700">70'ten fazla iş ortağı teklifi</h3><p style="font-size:28px;line-height:1.4;color:#4a5568">Tasarım, bulut ve öğrenme araçlarında öğrenciye özel teklifler.</p></div>
-</div>
-<div style="flex:1"></div>
-<div style="display:flex;align-items:center;background:#141b2b;border-radius:16px;padding:28px 36px"><p style="font-size:30px;font-weight:600;color:#eef2fa">Başvuru: <a href="https://education.github.com/pack"><span style="color:#ffb199">education.github.com/pack</span></a> → öğrenci olduğunu doğrula (okul e-postası ya da öğrenci belgesi).</p></div>
-<aside>⏱ 29:00–31:00 · 2 dk
-
-Fayda 6: öğrenciyseniz çoğu şey ücretsiz. GitHub Education'ın öğrenci paketinde GitHub Copilot Student var: kod yazarken öneri veren bir yapay zekâ yardımcısı. Öğrenci olduğunuz sürece GitHub Pro ücretsiz. Bir de tasarım, bulut ve öğrenme araçlarından oluşan yetmişten fazla teklif var.
-
-Başvuru education.github.com/pack adresinden: öğrenci olduğunuzu okul e-postanızla ya da öğrenci belgenizle doğruluyorsunuz. Onay birkaç gün sürebilir.
-
-▶ CANLI: education.github.com/pack sayfasını açıp listeyi kaydırın. Teklifler zaman zaman değişiyor; güncel listeyi sayfadan gösterin.</aside>
-</section>
-<section id="your-turn" data-transition="fade" style="background:#ff6b4a;color:#1a0f0b;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:row;gap:96px;align-items:center">
-<div style="flex:1;display:flex;flex-direction:column;gap:36px">
-<p style="font-size:24px;font-weight:700;letter-spacing:4px;color:#1a0f0b">SIRA SİZDE · 9 DAKİKA</p>
-<h2 style="font-family:'Bricolage Grotesque', Arial, sans-serif;font-size:96px;font-weight:800;line-height:1.02;letter-spacing:-1px">İlk deponu aç</h2>
-<ol style="font-size:32px;line-height:1.5;color:#1a0f0b">
-<li><b>github.com/new</b> → ad: <b>ilk-projem</b></li>
-<li><b>Add README</b>: On → <b>Create repository</b></li>
-<li>README'deki kalem → kendini 2 satırda yaz → <b>Commit changes</b></li>
-<li>QR'ı okut → deponun linkini yorum olarak yaz → <b>Comment</b></li>
-</ol>
-</div>
-<div style="width:500px;display:flex;flex-direction:column;gap:24px;align-items:center">
-<div style="background:#fbfaf6;border-radius:28px;padding:28px;box-shadow:0px 16px 40px rgba(26,15,11,0.25)"><img src="canli-ders/kit/qr-sinif-sayfasi.png" alt="QR kod: sınıf sayfası, sinif-duvari deposunun 1 numaralı issue'su" style="width:420px;height:420px;object-fit:contain"></div>
-<p style="font-size:24px;line-height:1.4;text-align:center">Sınıf sayfası: <b>github.com/arifsolmaz/<br>sinif-duvari/issues/1</b></p>
-</div>
-<aside>⏱ 31:00–32:00 · 1 dk
-
-Şimdi sıra sizde. Telefonunuzun tarayıcısında github.com/new açın. Depoya bir ad verin: ilk-projem. Add README'yi açın, Create repository. Sonra README'deki kaleme dokunun, kendinizi iki satırda yazın: adınız, bölümünüz, ne tür projeler yapmak istediğiniz. Commit changes.
-
-Son adım: bu QR'ı okutun. Sınıfımızın sayfası açılacak. Deponuzun linkini yorum olarak yazın ve Comment'e basın. Linkiniz anında projeksiyonda görünecek.
-
-▶ İPUCU: QR'ı telefonun kamerasıyla okutup tarayıcıda açsınlar. Hesabı olmayanlar yanındakiyle birlikte yapsın.</aside>
-</section>
-<section id="your-turn-gif" data-transition="fade" style="background:#0d1424;color:#eef2fa;font-family:'IBM Plex Sans', Arial, sans-serif;padding:0px;display:flex;flex-direction:column">
-<img data-gif="1" data-src="canli-ders/gif/tr/08-sira-sizde.gif" alt="Uygulama animasyonu: telefonda github.com/new ile ilk-projem deposu açılır, README kalemle düzenlenip Commit changes yapılır, QR okutulup sınıf sayfasına depo linki yorum olarak yazılır ve link projeksiyonda anında görünür" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:contain">
-<aside>⏱ 32:00–40:00 · 8 dk
-
-Animasyon döngüde dönsün; adımlar ortadaki kartta yazıyor. Siz sınıfta dolaşın.
-
-▶ PROJEKSİYON: Animasyonu bir kez oynatın, sonra ayrı sekmedeki sınıf sayfasına (sinif-duvari → Issues → #1) geçin ve ara ara yenileyin. Yorumlar geldikçe birkaç linki açıp gösterin.
-
-SIK TAKILINANLAR
-• Hesap yok: github.com/signup; e-postaya gelen kodu girmek gerekiyor.
-• "already exists" uyarısı: başka bir ad seçsinler, örneğin ilk-projem-2.
-• Kalem görünmüyor: README kutusunun sağ üst köşesinde; bulamazlarsa README.md dosyasına dokunup oradaki kalemi kullansınlar.
-• Commit changes: metni yazdıktan sonra sağ üstteki yeşil düğme, sonra açılan pencerede tekrar Commit changes.
-• QR açılmıyor: adresi tahtaya yazın: github.com/arifsolmaz/sinif-duvari/issues/1
-• Yorum kutusu yok: giriş yapılmamış olabilir; Sign in.
-
-↺ YEDEK: İnternet yavaşsa bilgisayardan yapsınlar ya da bu haftanın görevi olarak eve bırakın.</aside>
-</section>
-<section id="recap" data-transition="fade" style="background:#0d1424;color:#eef2fa;font-family:'IBM Plex Sans', Arial, sans-serif;padding:0px;display:flex;flex-direction:column">
-<img data-gif="1" data-src="canli-ders/gif/tr/09-ozet.gif" alt="Özet animasyonu: altı fayda kartı sırayla belirir: projen kaybolmaz, zaman makinesi, takımın listesi, hazır kod, portfolyo ve öğrenciye ücretsiz" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:contain">
-<aside>⏱ 40:00–42:00 · 2 dk
-
-Bugün gördüklerimiz: GitHub'ın size altı faydası. Projen kaybolmaz. Zaman makinesi: her değişiklik kayıtlı. Takımın listesi: kim neyi yapıyor, herkes görür. Hazır kod: ara, indir, kullan. Portfolyo: profilin ve README'lerin. Ve öğrenciye ücretsiz.
-
-Dört kelime: repository, commit, issue, README. Bu dönem bir projenizi GitHub'a koyun; ilk adımı bugün attınız.</aside>
-</section>
-<section id="this-week" data-transition="fade" style="background:#f4f1ea;color:#141b2b;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:56px">
-<div style="display:flex;flex-direction:column;gap:16px">
-<p style="font-size:24px;font-weight:600;letter-spacing:4px;color:#b93c1d">BU HAFTA</p>
-<h2 style="font-family:'Bricolage Grotesque', Arial, sans-serif;font-size:72px;font-weight:700;line-height:1.1">Bir projeni GitHub'a koy</h2>
-</div>
-<div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:32px">
-<div style="display:flex;flex-direction:column;gap:14px;background:#fbfaf6;border:1px solid #ddd6c8;border-radius:20px;padding:40px"><p style="font-family:'Bricolage Grotesque', Arial, sans-serif;font-size:56px;font-weight:800;line-height:1;color:#ff6b4a">1</p><h3 style="font-family:'Bricolage Grotesque', Arial, sans-serif;font-size:40px;font-weight:700">Bir proje seç</h3><p style="font-size:28px;line-height:1.4;color:#4a5568">Robot, ödev ya da kulüp projesi: kod, şema, fotoğraf.</p></div>
-<div style="display:flex;flex-direction:column;gap:14px;background:#fbfaf6;border:1px solid #ddd6c8;border-radius:20px;padding:40px"><p style="font-family:'Bricolage Grotesque', Arial, sans-serif;font-size:56px;font-weight:800;line-height:1;color:#ff6b4a">2</p><h3 style="font-family:'Bricolage Grotesque', Arial, sans-serif;font-size:40px;font-weight:700">README yaz</h3><p style="font-size:28px;line-height:1.4;color:#4a5568">Ne yapıyor, malzemeler, nasıl çalışıyor, bir fotoğraf.</p></div>
-<div style="display:flex;flex-direction:column;gap:14px;background:#fbfaf6;border:1px solid #ddd6c8;border-radius:20px;padding:40px"><p style="font-family:'Bricolage Grotesque', Arial, sans-serif;font-size:56px;font-weight:800;line-height:1;color:#ff6b4a">3</p><h3 style="font-family:'Bricolage Grotesque', Arial, sans-serif;font-size:40px;font-weight:700">Linkini paylaş</h3><p style="font-size:28px;line-height:1.4;color:#4a5568">Sınıf sayfasına yorum olarak yaz.</p></div>
-</div>
-<div style="flex:1"></div>
-<p style="font-size:28px;line-height:1.4;color:#4a5568;width:1600px">Bir adım daha: GitHub Skills · <b>Introduction to GitHub</b>, tarayıcıda, bir saatten kısa · <a href="https://github.com/skills/introduction-to-github"><span style="color:#b93c1d">github.com/skills/introduction-to-github</span></a></p>
-<aside>⏱ 42:00–44:00 · 2 dk
-
-Bu haftanın görevi küçük: bir projenizi GitHub'a koyun. Robot, ödev ya da kulüp projesi olabilir; kod, devre şeması ve bir fotoğraf yeter. README'ye ne yaptığını, malzemeleri ve nasıl çalıştığını yazın. Sonra linkini sınıf sayfasına yorum olarak ekleyin.
-
-Bir adım daha atmak isteyen GitHub Skills'in Introduction to GitHub kursuna baksın: tarayıcıda, bir saatten kısa.
-
-▶ İPUCU: Kitteki ornek-proje'nin README'sini örnek olarak gösterin.</aside>
-</section>
-<section id="thanks" data-transition="fade" style="background:#0d1424;color:#eef2fa;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:48px;justify-content:center">
-<h1 style="font-family:'Bricolage Grotesque', Arial, sans-serif;font-size:120px;font-weight:800;line-height:1.02;letter-spacing:-2px">Teşekkürler</h1>
-<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:32px;line-height:1.5;color:#b3bfd6;width:1500px">repository · commit · issue · README</p>
-<p style="font-family:'Bricolage Grotesque', Arial, sans-serif;font-size:56px;font-weight:700;color:#ff6b4a">Sorular?</p>
-<aside>⏱ 44:00–45:00 · 1 dk
-
-Teşekkürler. Bugünün dört kelimesi: repository, commit, issue, README. Sorular?
-
-▶ DERSTEN SONRA öğrencilere şunu gönderebilirsiniz: "Bugünün slaytları ve animasyonları: [link]. Bu haftanın görevi: bir projenizi GitHub'a koyun ve linkini sınıf sayfasına yazın: github.com/arifsolmaz/sinif-duvari/issues/1. Öğrenci paketi: education.github.com/pack"</aside>
-</section>
-  </div>
-</main>
-
-<div id="ui-notes" role="note"><h4>Konuşmacı notları</h4><div id="ui-notes-body" style="white-space:pre-wrap"></div></div>
-<div id="ui-overview" role="dialog" aria-label="Tüm slaytlar"><h3>Tüm slaytlar</h3><div id="ui-grid"></div></div>
-
-<nav id="ui-bar" aria-label="Slide navigation">
-  <button id="ui-prev" aria-label="Previous">←</button>
-  <span id="ui-count" aria-live="polite"></span>
-  <button id="ui-next" aria-label="Next">→</button>
-  <button id="ui-btn-ov" aria-label="Genel bakış">Genel bakış</button>
-  <button id="ui-btn-notes" aria-label="Konuşmacı notları">N</button>
-  <button id="ui-btn-fs" aria-label="Fullscreen">⛶</button>
-  <a href="canli-ders/en/" id="ui-lang-link">EN</a>
-  <a href="/github-egitimi/v2/">Sürüm 2</a>
-  <a href="canli-ders/materyal.html">Materyal</a>
-  <a href="../">Ana sayfa</a>
-  <span id="ui-help">← → gezin · N notlar · O genel bakış · F tam ekran · P yazdır/PDF</span>
-</nav>
-<script>
-(function () {
-  var stage = document.getElementById('ui-stage');
-  var slides = Array.prototype.slice.call(stage.children);
-  var n = slides.length, i = 0;
-  var ov = document.getElementById('ui-overview'), grid = document.getElementById('ui-grid');
-  var count = document.getElementById('ui-count'), bar = document.getElementById('ui-progress');
-  var notes = document.getElementById('ui-notes'), notesBody = document.getElementById('ui-notes-body');
-  function toggleNotes() { notes.classList.toggle('show'); }
-  // GIFs play once: each time a slide opens, its GIF starts again from the first frame
-  var gifBlobs = {}, gifUrls = {};
-  function loadGif(p) { if (!gifBlobs[p]) gifBlobs[p] = fetch(p).then(function (r) { return r.blob(); }); return gifBlobs[p]; }
-  function playGif(s) { var g = s.querySelector('img[data-gif]'); if (!g) return; var p = g.getAttribute('data-src');
-    loadGif(p).then(function (b) { if (!s.classList.contains('active')) return; if (gifUrls[p]) URL.revokeObjectURL(gifUrls[p]); gifUrls[p] = URL.createObjectURL(b); g.src = gifUrls[p]; })
-      .catch(function () { g.src = p; }); }
-  slides.forEach(function (s) { var g = s.querySelector('img[data-gif]'); if (g) loadGif(g.getAttribute('data-src')); });
-  window.addEventListener('beforeprint', function () { slides.forEach(function (s) { var g = s.querySelector('img[data-gif]'); if (g && !g.getAttribute('src')) g.src = g.getAttribute('data-src'); }); });
-  document.getElementById('ui-btn-notes').onclick = toggleNotes;
-
-  function fit() {
-    var s = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
-    stage.style.transform = 'scale(' + s + ')';
-    // keep the scaled stage from creating scrollbars
-    stage.style.margin = (-(1080 - 1080 * s) / 2) + 'px ' + (-(1920 - 1920 * s) / 2) + 'px';
-  }
-
-  function go(k, push) {
-    k = Math.max(0, Math.min(n - 1, k));
-    slides[i].classList.remove('active');
-    i = k;
-    slides[i].classList.add('active');
-    playGif(slides[i]);
-    var a = slides[i].querySelector('aside'); notesBody.textContent = a ? a.textContent.trim() : '';
-    count.textContent = (i + 1) + ' / ' + n;
-    bar.style.width = ((i + 1) / n * 100) + '%';
-    var h = slides[i].querySelector('h1, h2');
-    var rawTitle = h ? (h.innerText || h.textContent || '') : '';
-    document.title = (rawTitle ? rawTitle.replace(/\s+/g, ' ').trim() + ' · ' : '') + "GitHub Ne \u0130\u015fime Yarar? \u2014 Sunum";
-    var hash = '#' + (i + 1);
-    if (location.hash !== hash) history[push ? 'pushState' : 'replaceState'](null, '', hash);
-    var cur = grid.querySelector('.current'); if (cur) cur.classList.remove('current');
-    if (grid.children[i]) grid.children[i].classList.add('current');
-  }
-  function fromHash() { var m = /^#(\d+)/.exec(location.hash); return m ? parseInt(m[1], 10) - 1 : 0; }
-
-  function buildOverview() {
-    if (grid.children.length) return;
-    slides.forEach(function (s, k) {
-      var b = document.createElement('button'); b.className = 'thumb';
-      var h = s.querySelector('h1, h2');
-      var rawLabel = h ? (h.innerText || h.textContent || '') : '';
-      b.setAttribute('aria-label', (k + 1) + '. ' + rawLabel.replace(/\s+/g, ' ').trim());
-      var mini = document.createElement('div'); mini.className = 'mini';
-      var c = s.cloneNode(true); c.removeAttribute('id'); c.classList.remove('active');
-      var cg = c.querySelector('img[data-gif]'); if (cg) cg.src = cg.getAttribute('data-src');
-      mini.appendChild(c); b.appendChild(mini);
-      var tag = document.createElement('span'); tag.textContent = k + 1; b.appendChild(tag);
-      b.addEventListener('click', function () { go(k, true); toggleOverview(false); });
-      grid.appendChild(b);
-    });
-    scaleThumbs();
-  }
-  function scaleThumbs() {
-    Array.prototype.forEach.call(grid.querySelectorAll('.thumb'), function (t) {
-      t.firstChild.style.transform = 'scale(' + (t.clientWidth / 1920) + ')';
-    });
-  }
-  function toggleOverview(force) {
-    var on = typeof force === 'boolean' ? force : !ov.classList.contains('show');
-    if (on) buildOverview();
-    ov.classList.toggle('show', on);
-    if (on) { scaleThumbs(); var c = grid.children[i]; if (c) { c.classList.add('current'); c.focus(); c.scrollIntoView({ block: 'center' }); } }
-  }
-  function fullscreen() {
-    if (!document.fullscreenElement) { (document.documentElement.requestFullscreen || function () {}).call(document.documentElement); }
-    else { document.exitFullscreen(); }
-  }
-
-  document.getElementById('ui-prev').onclick = function () { go(i - 1, true); };
-  document.getElementById('ui-next').onclick = function () { go(i + 1, true); };
-  document.getElementById('ui-btn-ov').onclick = function () { toggleOverview(); };
-  document.getElementById('ui-btn-fs').onclick = fullscreen;
-  // keep the slide number when switching language
-  document.getElementById('ui-lang-link').addEventListener('click', function (e) { this.href = this.getAttribute('href').split('#')[0] + '#' + (i + 1); });
-
-  document.addEventListener('keydown', function (e) {
-    if (e.metaKey || e.ctrlKey || e.altKey) return;
-    var k = e.key;
-    if (ov.classList.contains('show')) { if (k === 'Escape' || k === 'o' || k === 'O') { toggleOverview(false); e.preventDefault(); } return; }
-    if (k === 'ArrowRight' || k === 'PageDown' || k === ' ' || k === 'ArrowDown') { go(i + 1, true); e.preventDefault(); }
-    else if (k === 'ArrowLeft' || k === 'PageUp' || k === 'ArrowUp' || k === 'Backspace') { go(i - 1, true); e.preventDefault(); }
-    else if (k === 'Home') { go(0, true); e.preventDefault(); }
-    else if (k === 'End') { go(n - 1, true); e.preventDefault(); }
-    else if (k === 'o' || k === 'O' || k === 'Escape') toggleOverview(k === 'Escape' ? false : undefined);
-    else if (k === 'f' || k === 'F') fullscreen();
-    else if (k === 'n' || k === 'N') toggleNotes();
-    else if (k === 'p' || k === 'P') window.print();
-  });
-
-  // touch swipe
-  var x0 = null, y0 = null;
-  stage.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, { passive: true });
-  stage.addEventListener('touchend', function (e) {
-    if (x0 === null) return;
-    var dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0;
-    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) go(i + (dx < 0 ? 1 : -1), true);
-    x0 = null;
-  });
-
-  // hide controls when idle
-  var t; function wake() { document.body.classList.remove('idle'); clearTimeout(t); t = setTimeout(function () { document.body.classList.add('idle'); }, 2500); }
-  ['mousemove', 'touchstart', 'keydown'].forEach(function (ev) { document.addEventListener(ev, wake, { passive: true }); });
-
-  window.addEventListener('resize', function () { fit(); if (ov.classList.contains('show')) scaleThumbs(); });
-  window.addEventListener('popstate', function () { go(fromHash(), false); });
-
-  fit();
-  go(fromHash(), false);
-  wake();
-})();
-</script>
-</body>
-</html>
+<link rel="stylesheet" href="assets/lecture.css"></head><body data-lang="tr" data-main-count="32">
+<div id="ui-progress" aria-hidden="true"></div><main id="ui-viewport" aria-label="Birleşik Git ve GitHub sunumu"><div id="ui-stage"><section id="1" class="dark cover" aria-hidden="true">
+<p class="eyebrow">MEKATRONİK · 45 DAKİKA</p><h1>Git ve GitHub</h1><div class="content"><p class="lead">Projenin geçmişini tut, takımınla çalış, emeğini görünür kıl.</p><p class="byline">Arif Solmaz<br>İSTÜN Mekatronik Mühendisliği</p><img class="diagram" src="assets/lecture-cover.svg" alt="Git dalı ve ana akış"></div>
+<footer class="slide-footer"><span>Git ve GitHub</span><span>1 / 32</span></footer>
+<aside><div class="speech">00:00–00:45 · 45 saniye
+
+Hoş geldiniz. Bugün bir robot projesinin ilk dosyasından ekip çalışmasına kadar aynı hikâyeyi izleyeceğiz. Önce GitHub&#x27;ın bize ne kazandırdığını, ardından bu kazancın Git ile nasıl oluştuğunu konuşacağız. Dersin sonunda komut ezberlemekten çok, bir değişikliğin nerede durduğunu ve takıma nasıl ulaştığını anlayabilmenizi istiyorum. Kod, devre şeması ve açıklamayı aynı proje içinde düşünmek, yalnız yazılımda değil mekatronik projelerinde de işimizi kolaylaştırır.</div><div class="sources"></div></aside>
+</section><section id="2" class="paper steps" aria-hidden="true">
+<p class="eyebrow">DERSİN AKIŞI</p><h2>45 dakikalık rota</h2><div class="content"><p class="lead">Bir robot projesi, dört durak.</p><ol class="big-list"><li>Temeller: dosya, depo ve geçmiş · 9 dk 15 sn</li><li>Değişiklik: bilgisayardan GitHub&#x27;a · 12 dk 45 sn</li><li>Takım: issue, dal ve inceleme · 12 dk</li><li>Paylaşım, kaynaklar ve sorular · 11 dk</li></ol><p class="caption">32 ana slayt · 12 başvuru slaytı · Tek proje üzerinden anlatım</p></div>
+<footer class="slide-footer"><span>Git ve GitHub</span><span>2 / 32</span></footer>
+<aside><div class="speech">00:45–01:30 · 45 saniye
+
+Dersi dört bölümde izleyeceğiz. İlk bölümde dağınık dosya sorununu çözerek temel kavramları yerleştireceğiz. İkinci bölümde bir dosya değişikliğinin bilgisayardan GitHub&#x27;a giden yolunu takip edeceğiz. Üçüncü bölümde iki kişinin aynı projede nasıl çalıştığını göreceğiz. Son bölümde hazır kod seçimi, portfolyo ve öğrenci kaynakları var. Son üç dakikayı sorulara ayırdım. Kurulum ve ayrıntılı komutlar sunumun sonundaki eklerde duruyor; ana akışın odağı kavramlar ve aralarındaki ilişkiler.</div><div class="sources"></div></aside>
+</section><section id="3" class="coral animation" aria-hidden="true">
+<p class="eyebrow">01 · TEMELLER</p><h2>Son dosya hangisi?</h2><div class="content"><p class="lead">robot_final_SON.ino dosyası gerçekten son sürüm mü?</p><img src="assets/posters/01-daginik-klasor.png" data-animation="canli-ders/gif/tr/01-daginik-klasor.gif" data-poster="assets/posters/01-daginik-klasor.png" alt="Bir robot projesinin kopyaları birikir; hangi dosyanın son sürüm olduğu belirsizleşir." width="1920" height="1080"><p class="caption">Dosya adlarına sürüm yazmak yerine, değişikliklerin geçmişini tutarız.</p></div>
+<footer class="slide-footer"><span>Git ve GitHub</span><span>3 / 32</span></footer>
+<aside><div class="speech">01:30–03:00 · 90 saniye
+
+Bir robot takımında Elif motorları, Deniz çizgi sensörlerini düzenliyor. Kod mesaj grubunda paylaşıldıkça robot, robot_final ve robot_final_SON gibi kopyalar ortaya çıkıyor. Dosya adından hangisinin çalıştığını, kimin hangi değişikliği yaptığını anlayamıyoruz. İki kişinin düzeltmesini birleştirmek de elle karşılaştırma gerektiriyor. Git&#x27;in çözümü her kayıt için yeni bir dosya adı üretmek değil, projenin geçmişini tutmak. Böylece bugünkü dosya ile geçmişteki kayıtlar birbirinden ayrılıyor. Yine robot.ino dosyası üzerinde çalışıyoruz; yanında hangi değişikliklerin hangi sırayla kaydedildiğini anlatan bir zaman çizgisi oluşuyor. Bu çizgi yalnız seçip commit ettiğimiz değişiklikleri içeriyor.</div><div class="sources"><a href="https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History" target="_blank" rel="noopener">Commit geçmişini incelemek</a></div></aside>
+</section><section id="4" class="paper columns" aria-hidden="true">
+<p class="eyebrow">01 · TEMELLER</p><h2>Git ve GitHub</h2><div class="content"><p class="lead">Git geçmişi tutar. GitHub bu geçmiş etrafında birlikte çalışmayı sağlar.</p><div class="columns "><div class="column"><h3>Git · bilgisayarındaki araç</h3><p>Commit&#x27;leri, dalları ve yerel geçmişi yönetir. Birçok işlem internet olmadan çalışır.</p></div><div class="column"><h3>GitHub · ortak platform</h3><p>Depoyu barındırır; issue, pull request ve inceleme araçlarını bir araya getirir.</p></div></div><p class="caption">Git aynı zamanda GitLab ve diğer Git sunucularıyla da kullanılabilir.</p></div>
+<footer class="slide-footer"><span>Git ve GitHub</span><span>4 / 32</span></footer>
+<aside><div class="speech">03:00–04:30 · 90 saniye
+
+Bu iki adı ayırmak bütün dersin anahtarı. Git bilgisayarımızdaki sürüm kontrol aracı. Dosyalardaki değişiklikleri kaydetmek ve yerel geçmişi incelemek için internet gerekmiyor. GitHub ise Git depolarını barındıran ve bu depolar etrafında ekip çalışmasını düzenleyen platform. Dolayısıyla GitHub hesabına sahip olmak, bilgisayarda yaptığımız her değişikliğin kendiliğinden internete gideceği anlamına gelmiyor. İki taraf arasındaki aktarımı birazdan push ve pull ile açıklayacağız. GitHub&#x27;ı tarayıcıdan, Git&#x27;i terminalden veya bir grafik arayüzden kullanabiliriz. Menüleri farklı olsa da temel kavramlar aynıdır. Burada önemli olan hangi düğmeye basıldığı kadar işlemin neyi kaydettiğini anlamak.</div><div class="sources"><a href="https://docs.github.com/en/get-started/start-your-journey/what-is-github" target="_blank" rel="noopener">GitHub nedir?</a></div></aside>
+</section><section id="5" class="dark animation" aria-hidden="true">
+<p class="eyebrow">01 · TEMELLER</p><h2>Depo dosya ve geçmiştir</h2><div class="content"><p class="lead">Kod, devre şeması, rapor ve açıklama aynı projenin parçalarıdır.</p><img src="assets/posters/03-projeni-github-a-koy.png" data-animation="canli-ders/gif/tr/03-projeni-github-a-koy.gif" data-poster="assets/posters/03-projeni-github-a-koy.png" alt="Robot projesinin kod, şema, rapor ve fotoğrafları bir GitHub deposunda bir araya gelir." width="1920" height="1080"><p class="caption">Repository = depo · robot.ino + README.md + devre şeması + kayıtlı geçmiş</p></div>
+<footer class="slide-footer"><span>Git ve GitHub</span><span>5 / 32</span></footer>
+<aside><div class="speech">04:30–05:45 · 75 saniye
+
+Repository kelimesini depo diye kullanacağız. Depo yalnız internette duran bir klasör değildir; projenin dosyalarıyla birlikte kaydedilmiş geçmişini de taşır. Robot örneğimizde robot.ino kodu, IR sensörlerin bağlantı şeması, README açıklaması ve birkaç proje fotoğrafı aynı bağlamda duruyor. Animasyon bu dosyaların GitHub&#x27;da bir araya gelişini gösteriyor. Tarayıcıdan dosya yüklerken de bir commit oluşturulur. Yerelde çalışırkense kayıt ve gönderim iki ayrı işlemdir. Metin dosyalarında satır farklarını kolayca inceleyebiliriz. Fotoğraf ve PDF gibi dosyalar da saklanabilir; ancak onların değişimini metin kadar ayrıntılı karşılaştırmayı beklememeliyiz.</div><div class="sources"><a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories" target="_blank" rel="noopener">Depolar</a></div></aside>
+</section><section id="6" class="paper text" aria-hidden="true">
+<p class="eyebrow">01 · TEMELLER</p><h2>Commit bir kayıt noktası</h2><div class="content"><p class="lead">“IR sensör eşiği artırıldı” bir değişikliği ve amacını anlatır.</p><ul class="big-list"><li>Projenin seçilmiş hâlini geçmişe kaydeder.</li><li>Bir kimliği, yazarı ve açıklama mesajı vardır.</li><li>Bilgisayarda commit etmek, GitHub&#x27;a göndermekten ayrıdır.</li></ul><p class="caption">Kaydetmek ≠ commit etmek ≠ push etmek</p></div>
+<footer class="slide-footer"><span>Git ve GitHub</span><span>6 / 32</span></footer>
+<aside><div class="speech">05:45–07:00 · 75 saniye
+
+Commit, projenin belirli bir andaki hâlinin kayıt noktasıdır. Bir dosyayı editörde kaydetmek çalışma dosyasını değiştirir; bu işlem tek başına Git geçmişine girmez. Değişiklikleri seçip commit ettiğimizde geçmişte incelenebilen bir kayıt oluşur. Mesajı da bu kaydın neyi amaçladığını anlatır. Robot için “güncelleme” yerine “IR sensör eşiği artırıldı” demek, aylar sonra neden değişiklik yapıldığını anlamayı kolaylaştırır. Commit&#x27;in bir kimliği vardır; önceki kayıtlarla ilişkisi sayesinde zaman çizgisi kurulur. Bu kayıt bilgisayarda oluşturulduysa hâlâ yereldedir. Takımın GitHub&#x27;da görebilmesi için gönderilmesi gerekir. Bu ayrımı birazdan dört bölgeyle somutlaştıracağız.</div><div class="sources"><a href="https://git-scm.com/docs/git-commit" target="_blank" rel="noopener">git commit</a></div></aside>
+</section><section id="7" class="paper code" aria-hidden="true">
+<p class="eyebrow">01 · TEMELLER</p><h2>README giriş kapısıdır</h2><div class="content"><p class="lead">Projeyi açan biri neye baktığını birkaç cümlede anlayabilmeli.</p><pre class="codebox"><code><span class=""># Robot Projem</span>
+<span class=""></span>
+<span class="">IR sensörlerle çizgi izleyen Arduino robotu.</span>
+<span class=""></span>
+<span class="">## Donanım</span>
+<span class="">Arduino, IR sensörler, motor sürücü ve motorlar.</span>
+<span class=""></span>
+<span class="">## Çalıştırma</span>
+<span class="">Bağlantı şemasını ve robot.ino açıklamalarını izleyin.</span></code></pre><p class="caption">Amaç · donanım · kurulum · fotoğraf veya şema</p></div>
+<footer class="slide-footer"><span>Git ve GitHub</span><span>7 / 32</span></footer>
+<aside><div class="speech">07:00–08:15 · 75 saniye
+
+README, projeyi ilk kez gören kişiye rehberlik eder. Kodun bütün ayrıntılarını burada anlatmak gerekmiyor; robotun ne yaptığı, hangi malzemeleri kullandığı ve nasıl çalıştırıldığı anlaşılmalı. Bizim örneğimizde çizgi algılayan IR sensörler ve kontrol kartı Arduino. Bir bağlantı şeması, bir fotoğraf ve kullanılan kütüphanelerin adları açıklamayı tamamlar. README.md dosyası Markdown biçimindedir; başlık ve listeler basit işaretlerle yazılır. GitHub bunu okunabilir bir sayfa olarak gösterir. İyi açıklama takım arkadaşına olduğu kadar projeyi değerlendiren hocaya veya staj başvurusunu inceleyen kişiye de yardım eder. Çalıştırma adımlarının gerçekten projeyle eşleşmesi, güzel görünmesinden daha önemlidir.</div><div class="sources"><a href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes" target="_blank" rel="noopener">README dosyası</a></div></aside>
+</section><section id="8" class="coral columns" aria-hidden="true">
+<p class="eyebrow">01 · TEMELLER</p><h2>Kim görebilir?</h2><div class="content"><p class="lead">Görünürlük ve yazma izni ayrı kararlardır.</p><div class="columns "><div class="column"><h3>Public · herkese açık</h3><p>Herkes görebilir ve klonlayabilir. Ana depoya yazmak ayrıca izin gerektirir.</p></div><div class="column"><h3>Private · özel</h3><p>Erişimi yetkili kişilerle sınırlıdır. Takım üyelerine uygun izin verilir.</p></div></div><p class="caption">Parolalar, erişim anahtarları ve kişisel veriler proje dosyası değildir.</p></div>
+<footer class="slide-footer"><span>Git ve GitHub</span><span>8 / 32</span></footer>
+<aside><div class="speech">08:15–09:15 · 60 saniye
+
+Depoyu açarken görünürlüğünü seçiyoruz. Public depo herkes tarafından görülebilir ve klonlanabilir; bu, herkesin ana depoyu değiştirebildiği anlamına gelmez. Yazma yetkisi ayrı bir izindir. Private depo ise erişimi yetkili kişilerle sınırlar. Bir ders veya takım projesinde hangi dosyaların paylaşılacağına baştan karar vermek gerekir. Bağlantı şeması ve robot kodu başka, parola veya erişim anahtarı başka tür bilgidir. Hassas bir bilgi geçmişe girdiyse son dosyadan silmek önceki commit&#x27;leri ortadan kaldırmaz. Bu yüzden paylaşmadan önce dosyaların içeriği ve proje izinleri düşünülmelidir. Görünürlük tercihiyle birlikte lisans konusuna da kapanışta döneceğiz.</div><div class="sources"><a href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/setting-repository-visibility" target="_blank" rel="noopener">Depo görünürlüğü</a><a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository" target="_blank" rel="noopener">Hassas veriyi kaldırmak</a></div></aside>
+</section><section id="9" class="dark animation" aria-hidden="true">
+<p class="eyebrow">02 · DEĞİŞİKLİĞİN YOLU</p><h2>Dün çalışıyordu</h2><div class="content"><p class="lead">Geçmiş, “Ne değişti?” sorusuna somut bir cevap verir.</p><img src="assets/posters/04-zaman-makinesi.png" data-animation="canli-ders/gif/tr/04-zaman-makinesi.gif" data-poster="assets/posters/04-zaman-makinesi.png" alt="Commit geçmişinde sensör eşiğinin 500 değerinden 900 değerine değiştirildiği görülür." width="1920" height="1080"><p class="caption">Kim, ne zaman, hangi kayıtla? · Geçmiş yalnız commit edilen değişiklikleri kapsar.</p></div>
+<footer class="slide-footer"><span>Git ve GitHub</span><span>9 / 32</span></footer>
+<aside><div class="speech">09:15–10:45 · 90 saniye
+
+Robot dün çizgiyi takip ediyordu; bugün davranışı farklı. İlk tepki son dosyayı suçlamak olabilir. Geçmişe baktığımızda ise değişikliğin hangi commit ile geldiğini bulabiliriz. Animasyonda eşiğin 500&#x27;den 900&#x27;e geçtiği bir kayıt var. Ders kitindeki örnek robot, IR sensör değerlerini analogRead ile okur; bu sayılar sensör okumasını karşılaştırmak için seçilmiş örnek eşiklerdir. Bütün robotlar için geçerli kalibrasyon değerleri değildir. Kayıtta yazar, zaman ve açıklama bulunur. Bunlar değişikliği kimin yaptığını gösterir, ama doğru olduğunu tek başına kanıtlamaz. İncelememiz ve robot üzerinde doğrulamamız gerekir. Geçmişin değeri tartışmayı hatırlamak yerine kaydedilmiş hâlleri karşılaştırabilmektir.</div><div class="sources"><a href="https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History" target="_blank" rel="noopener">Commit geçmişini incelemek</a></div></aside>
+</section><section id="10" class="paper code" aria-hidden="true">
+<p class="eyebrow">02 · DEĞİŞİKLİĞİN YOLU</p><h2>Satır farkı nasıl okunur?</h2><div class="content"><p class="lead">Diff, iki hâl arasındaki değişikliği gösterir.</p><pre class="codebox"><code><span class="">robot.ino</span>
+<span class=""></span>
+<span class="removed">- const int ESIK = 500;</span>
+<span class="added">+ const int ESIK = 900;</span></code></pre><p class="caption">− önceki satır · + yeni satır · ESIK: IR sensör okuması için örnek eşik</p></div>
+<footer class="slide-footer"><span>Git ve GitHub</span><span>10 / 32</span></footer>
+<aside><div class="speech">10:45–12:00 · 75 saniye
+
+Diff kelimesi fark görünümünü anlatır. Eksi işareti karşılaştırmanın önceki tarafındaki satırı, artı işareti sonraki tarafındaki satırı gösterir. İki satır iki farklı sensörün çıktısı değil, aynı değişkenin eski ve yeni değeridir. Bu örnekte IR sensörün analog okuma eşiği 500&#x27;den 900&#x27;e çıkarılmış. Renkler olmasa bile artı ve eksi işaretlerinden fark okunabilir. Bu görünüm kod incelemesinde işe yarar: bütün dosyayı baştan okumak yerine değişen bölgeye odaklanırız. Fakat bağlamı da anlamalıyız; küçük bir sayı değişikliği robot davranışını etkileyebilir. İki dalı karşılaştırırken hangi tarafın önce ve hangi tarafın sonra olduğunu açık yazmak önemlidir.</div><div class="sources"><a href="https://git-scm.com/docs/git-diff" target="_blank" rel="noopener">git diff</a></div></aside>
+</section><section id="11" class="paper steps" aria-hidden="true">
+<p class="eyebrow">02 · DEĞİŞİKLİĞİN YOLU</p><h2>Değişiklik dört yerde durur</h2><div class="content"><p class="lead">Düzenle → hazırla → kaydet → paylaş</p><img class="diagram" src="assets/lecture-zones.svg" alt="Çalışma alanı, hazırlık alanı, yerel depo ve uzak depo arasında add, commit, push ve pull"><p class="caption">Add hazırlar. Commit yerelde kaydeder. Push gönderir. Pull uzaktaki yenilikleri alır.</p></div>
+<footer class="slide-footer"><span>Git ve GitHub</span><span>11 / 32</span></footer>
+<aside><div class="speech">12:00–13:45 · 105 saniye
+
+Bu dört bölgeyi dersin merkezine yerleştirelim. Çalışma alanı dosyaları açıp düzenlediğimiz yerdir. Hazırlık alanı bir sonraki kayda hangi değişikliklerin gireceğini seçer. Yerel depo bilgisayardaki commit geçmişidir. Uzak depo ise burada GitHub&#x27;da paylaştığımız geçmiş. Bunlar dört ayrı proje üretmek anlamına gelmiyor; aynı projenin farklı durumlarını anlatıyor. README&#x27;yi düzenlemek ilk bölgede olur. Add değişikliği hazırlığa alır. Commit hazırlanan hâli yerel geçmişe yazar. Push kayıtları uzak depoya gönderir. GitHub&#x27;da bir değişiklik yapılırsa bilgisayardaki kopya kendiliğinden güncellenmez; o değişikliği getirmek gerekir. Şimdi bu okların her birini aynı robot deposunda sırayla izleyeceğiz.</div><div class="sources"><a href="https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F" target="_blank" rel="noopener">Git: çalışma modeli</a></div></aside>
+</section><section id="12" class="dark code" aria-hidden="true">
+<p class="eyebrow">02 · DEĞİŞİKLİĞİN YOLU</p><h2>Clone ile yerel kopya</h2><div class="content"><p class="lead">Var olan depoyu dosyaları ve geçmişiyle bilgisayara alırız.</p><pre class="codebox"><code><span class="">git clone &lt;depo-adresi&gt;</span>
+<span class="">cd robot-projem</span></code></pre><p class="caption">Public depo HTTPS ile okunabilir; private depoda erişim gerekir. ZIP indirmek Git geçmişini getirmez.</p></div>
+<footer class="slide-footer"><span>Git ve GitHub</span><span>12 / 32</span></footer>
+<aside><div class="speech">13:45–15:00 · 75 saniye
+
+Clone, var olan bir Git deposunun yerel kopyasını oluşturur. Normal bir klonlamada dosyalarla birlikte kayıtlı geçmiş ve uzak depo adresi de gelir. Örneğin robot-projem deposunu bilgisayara aldığımızda README&#x27;yi düzenleyebilir ve önceki kayıtları inceleyebiliriz. Ekrandaki depo-adresi, gerçek projenin klonlama adresi için yer tutucudur. Herkese açık bir depo HTTPS üzerinden okunurken genellikle hesapla kimlik doğrulamak gerekmez. Özel bir depo için erişim yetkisi gerekir. Klonlayabilmek, projeye değişiklik gönderebilmekle aynı şey değildir. Download ZIP ise çoğunlukla seçili hâlin dosyalarını verir; yerel Git geçmişini oluşturmaz. Geçmişle çalışmak istediğimizde bu ayrım önem kazanır.</div><div class="sources"><a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository" target="_blank" rel="noopener">Depoyu klonlamak</a></div></aside>
+</section><section id="13" class="paper code" aria-hidden="true">
+<p class="eyebrow">02 · DEĞİŞİKLİĞİN YOLU</p><h2>Önce dosyayı değiştiririz</h2><div class="content"><p class="lead">README&#x27;ye çizgi sensörlerinin görevini ekledik ve dosyayı kaydettik.</p><pre class="codebox"><code><span class="">README.md</span>
+<span class=""></span>
+<span class="">## Sensörler</span>
+<span class="">IR sensörler çizgiyi algılamak için kullanılır.</span>
+<span class="">Bağlantılar devre-semasi.png dosyasındadır.</span>
+<span class=""></span>
+<span class=""># Dosyayı kaydet → ardından:</span>
+<span class="">git status</span></code></pre><p class="caption">Düzenleme adımı olmadan add ve commit yeni bir değişiklik üretmez.</p></div>
+<footer class="slide-footer"><span>Git ve GitHub</span><span>13 / 32</span></footer>
+<aside><div class="speech">15:00–16:15 · 75 saniye
+
+Klonlama ile kayıt arasında mutlaka bir değişiklik olmalı. Robotun README dosyasına IR sensörlerin görevini ve bağlantı şemasının yerini eklediğimizi düşünelim. Dosyayı editörde kaydettik; şimdi çalışma alanı önceki commit&#x27;ten farklı. Git status bu durumu gösterir. Henüz yeni commit yok ve GitHub&#x27;da da yeni içerik görünmez. Bu noktada metni tekrar okuyup yanlış bir bilgi ekleyip eklemediğimizi kontrol edebiliriz. Dikkat edilmesi gereken küçük ama önemli bir ayrıntı var: bir komut listesinde clone&#x27;dan hemen sonra add yazılması, sanki klonlama kendi başına yeni kayıt üretmiş gibi anlaşılabilir. Asıl işi yapan düzenleme burada gerçekleşiyor; sonraki işlemler bu değişikliği seçiyor ve kaydediyor.</div><div class="sources"><a href="https://git-scm.com/docs/git-status" target="_blank" rel="noopener">git status</a></div></aside>
+</section><section id="14" class="dark code" aria-hidden="true">
+<p class="eyebrow">02 · DEĞİŞİKLİĞİN YOLU</p><h2>Add ile değişikliği seçeriz</h2><div class="content"><p class="lead">Bir commit&#x27;in kapsamını bilinçli belirleriz.</p><pre class="codebox"><code><span class="">git add README.md</span>
+<span class="">git diff --cached</span></code></pre><p class="caption">Add, dosyanın o andaki hâlini hazırlar. Sonraki düzenleme için yeniden add gerekebilir.</p></div>
+<footer class="slide-footer"><span>Git ve GitHub</span><span>14 / 32</span></footer>
+<aside><div class="speech">16:15–17:45 · 90 saniye
+
+Add bir yükleme komutu değil; bir sonraki commit&#x27;in içeriğini hazırlama komutu. Burada yalnız README değişikliğini seçiyoruz. Robot kodunda aynı anda başka bir deneme varsa onu bu açıklama kaydına katmak zorunda değiliz. Git diff cached hazırlanan farkı gösterir; birazdan kaydedeceğimiz şey budur. Bir dosyayı add ettikten sonra yeniden düzenlersek hazırlık alanında önceki seçilmiş hâli kalabilir. Yeni düzenlemeyi de kayda almak istiyorsak yeniden add yaparız. Bu ayrıntı hazırlığın bir klasörü tamamen taşımak değil, değişikliği belirli bir anda seçmek olduğunu gösterir. Küçük ve anlaşılır kayıtlar üretmek, sonraki kod incelemesini ve gerektiğinde geri almayı kolaylaştırır.</div><div class="sources"><a href="https://git-scm.com/docs/git-add" target="_blank" rel="noopener">git add</a></div></aside>
+</section><section id="15" class="paper code" aria-hidden="true">
+<p class="eyebrow">02 · DEĞİŞİKLİĞİN YOLU</p><h2>Commit ile yerelde kaydederiz</h2><div class="content"><p class="lead">Mesaj, değişikliğin ne işe yaradığını anlatır.</p><pre class="codebox"><code><span class="">git commit -m &quot;IR sensör bağlantıları README&#x27;de açıklandı&quot;</span>
+<span class="">git log --oneline</span></code></pre><p class="caption">Bu kayıt bilgisayardadır. GitHub&#x27;a aktarım bir sonraki adımdır.</p></div>
+<footer class="slide-footer"><span>Git ve GitHub</span><span>15 / 32</span></footer>
+<aside><div class="speech">17:45–19:15 · 90 saniye
+
+Hazırladığımız README değişikliğini şimdi commit ile geçmişe yazıyoruz. Mesaj “IR sensör bağlantıları README&#x27;de açıklandı” diyor; böylece dosyanın hangi amaçla değiştiğini anlayabiliyoruz. Git log oneline geçmişi kısa bir liste hâlinde gösterir. Listede yeni kaydın kimliği ve açıklaması bulunur. Daha önceki robot kodu kaydı da geçmişte kalır. Bu işlem için internet şart değildir ve bilgisayardaki yerel depo güncellenir. Commit mesajı bir sonuç iddiası da taşıyabilir; bu yüzden “sensör düzeltildi” yazıyorsak gerçekten neyi doğruladığımızı açıklamak iyi olur. Buradaki değişiklik yalnız belgede; sensörün çalıştığına dair bir test sonucu üretmiyor. Şimdi bu yerel kaydı takımın ortak deposuna göndereceğiz.</div><div class="sources"><a href="https://git-scm.com/docs/git-commit" target="_blank" rel="noopener">git commit</a><a href="https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History" target="_blank" rel="noopener">Commit geçmişini incelemek</a></div></aside>
+</section><section id="16" class="dark code" aria-hidden="true">
+<p class="eyebrow">02 · DEĞİŞİKLİĞİN YOLU</p><h2>Push ile GitHub&#x27;a göndeririz</h2><div class="content"><p class="lead">Yerel kayıtlar, push sonrasında uzak depoda görünür.</p><pre class="codebox"><code><span class="">git push</span></code></pre><p class="caption">Yazma izni ve kimlik doğrulama gerekir. GitHub hesap parolası, Git için HTTPS parolası değildir.</p></div>
+<footer class="slide-footer"><span>Git ve GitHub</span><span>16 / 32</span></footer>
+<aside><div class="speech">19:15–20:30 · 75 saniye
+
+Push yerel commit&#x27;leri uzak depoya gönderir. İşlem başarılı olunca takım README açıklamasını GitHub&#x27;da görebilir. Push dosyayı editörde kaydetmenin başka adı değildir; commit edilmemiş çalışma alanı değişikliklerini doğrudan göndermiyoruz. Gönderim için uzak adres, hedef dal, yazma izni ve uygun kimlik doğrulama gerekir. HTTPS için bir erişim yöntemi veya SSH anahtarı kullanılabilir; ayrıntıları ek slaytlarda var. Burada hesabın normal parolasını terminalde kullanmak yeterli kabul edilmemelidir. İlk gönderimde izleme bağlantısı ayarlamak gerekebilir. Ayrıca uzakta yeni kayıtlar varsa Git gönderimi reddedebilir. Bu durumu zorla üzerine yazmak yerine takımın değişikliklerini anlayıp yerel çalışmaya dahil etmek gerekir.</div><div class="sources"><a href="https://git-scm.com/docs/git-push" target="_blank" rel="noopener">git push</a></div></aside>
+</section><section id="17" class="paper code" aria-hidden="true">
+<p class="eyebrow">02 · DEĞİŞİKLİĞİN YOLU</p><h2>Pull ile yenilikleri alırız</h2><div class="content"><p class="lead">Takımın ortak geçmişi ile yerel kopya yeniden buluşur.</p><pre class="codebox"><code><span class="">git status</span>
+<span class="">git pull --ff-only</span></code></pre><p class="caption">Örnek, yerel dalda ayrı commit yoksa ilerler. Geçmişler ayrılmışsa birleştirme yöntemi seçilir.</p></div>
+<footer class="slide-footer"><span>Git ve GitHub</span><span>17 / 32</span></footer>
+<aside><div class="speech">20:30–22:00 · 90 saniye
+
+Deniz robot kodunu GitHub&#x27;a gönderdiyse Elif&#x27;in bilgisayarındaki dosya kendi kendine değişmez. Pull uzaktaki güncellemeleri getirip yerel dala dahil eder. Önce status ile çalışma alanında commit edilmemiş değişiklik olup olmadığına bakılır. Buradaki ff-only seçeneği, yerel geçmiş ayrı bir yöne gitmemişse dalı ileri taşır. İki tarafta da farklı yeni commit&#x27;ler oluşmuşsa durur; bu durumda merge veya rebase gibi bir yöntemle geçmişlerin nasıl birleştirileceği seçilir. Genel pull davranışı ayarlara bağlı olabilir. Başlangıç için asıl ilişkiyi hatırlamak yeterli: push bizden ortak depoya, pull ortak depodan bize. GitHub&#x27;daki en yeni sürümü görebilmek ile bilgisayardaki kopyanın güncel olması aynı şey değildir.</div><div class="sources"><a href="https://git-scm.com/docs/git-pull" target="_blank" rel="noopener">git pull</a></div></aside>
+</section><section id="18" class="coral animation" aria-hidden="true">
+<p class="eyebrow">03 · TAKIM ÇALIŞMASI</p><h2>Issue işi görünür kılar</h2><div class="content"><p class="lead">“IR sensör eşiğini incele” ortak bir iş kaydıdır.</p><img src="assets/posters/05-takimin-listesi.png" data-animation="canli-ders/gif/tr/05-takimin-listesi.gif" data-poster="assets/posters/05-takimin-listesi.png" alt="GitHub Issues üzerinde bir iş açılır, takım üyesine atanır ve tamamlandığında kapatılır." width="1920" height="1080"><p class="caption">Başlık + gözlenen durum + beklenen sonuç + sorumlu</p></div>
+<footer class="slide-footer"><span>Git ve GitHub</span><span>18 / 32</span></footer>
+<aside><div class="speech">22:00–23:30 · 90 saniye
+
+Takımın işleri mesaj grubunda kaybolmasın diye issue açarız. Issue bir hata bildirimi, yapılacak iş veya geliştirme önerisi olabilir. Robot örneğimizde “IR sensör eşiğini incele” başlıklı bir kayıt düşünelim. Açıklamada robotun hangi koşulda çizgiyi kaybettiğini, beklenen davranışı ve ilgili dosyayı yazarız. Bir sorumlu atanabilir ve etiket eklenebilir. İş numarası konuşmalarda ve pull request içinde referans verir. Animasyonda bir fotoğraf işi gösteriliyor; aynı düzen sensör hatası veya README eksikliği için de kullanılabilir. Issue kapandığında geçmişi yok olmaz. Hangi kararların verildiğini daha sonra bulabiliriz. Böylece “ne yapacağız?” sorusu kod dosyasından ayrı ama projeyle bağlantılı durur.</div><div class="sources"><a href="https://docs.github.com/en/issues/tracking-your-work-with-issues/learning-about-issues/about-issues" target="_blank" rel="noopener">Issue kavramı</a></div></aside>
+</section><section id="19" class="dark text" aria-hidden="true">
+<p class="eyebrow">03 · TAKIM ÇALIŞMASI</p><h2>Dal ayrı bir çalışma çizgisidir</h2><div class="content"><p class="lead">Aynı başlangıçtan farklı değişiklikler ilerleyebilir.</p><img class="diagram" src="assets/lecture-branch.svg" alt="main dalından ayrılan özellik dalı ve inceleme sonrası birleşme"><p class="caption">Branch, bütün dosyaların fiziksel kopyası değil, bir commit&#x27;e işaret eden addır.</p></div>
+<footer class="slide-footer"><span>Git ve GitHub</span><span>19 / 32</span></footer>
+<aside><div class="speech">23:30–25:00 · 90 saniye
+
+Branch yani dal, projede ayrı bir çalışma çizgisi oluşturur. Ana çizgideki mevcut commit&#x27;ten IR sensör eşiğini düzenlemek için yeni bir dal açtığımızı düşünelim. O dalda yaptığımız yeni kayıtlar main dalını otomatik değiştirmez. Başka biri README üzerinde ayrı bir dalda çalışabilir. Branch açmayı bütün proje klasörünü fiziksel olarak kopyalamak gibi düşünmek pratikte kolay görünse de Git&#x27;in modeli böyle değildir. Dal adı bir commit&#x27;e işaret eder ve yeni kayıtlarla ilerler. Dosyaları hangi daldan açtığımız, çalışma alanında gördüğümüz hâli belirler. Dal bize düzenli çalışmayı sağlar; yapılan değişikliğin iyi veya hatasız olduğunu garanti etmez. Birleştirmeden önce inceleme ve doğrulama gerekir.</div><div class="sources"><a href="https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell" target="_blank" rel="noopener">Git dalları</a></div></aside>
+</section><section id="20" class="paper columns" aria-hidden="true">
+<p class="eyebrow">03 · TAKIM ÇALIŞMASI</p><h2>Başlangıç için sade dal düzeni</h2><div class="content"><p class="lead">Dal düzenini projenin ihtiyacı belirler.</p><div class="columns "><div class="column"><h3>Ana çizgi</h3><p>main · takımın kabul ettiği güncel çalışma.</p></div><div class="column"><h3>İş dalları</h3><p>feature/sensor-esigi · belirli değişiklik, inceleme, birleştirme.</p></div></div><p class="caption">dev veya staging her proje için zorunlu değildir. Hedef dal CONTRIBUTING kılavuzundan öğrenilir.</p></div>
+<footer class="slide-footer"><span>Git ve GitHub</span><span>20 / 32</span></footer>
+<aside><div class="speech">25:00–26:15 · 75 saniye
+
+Başlangıç düzeyindeki robot takımı için bir ana dal ve kısa süreli iş dalları yeterli bir düzen. Ana dalı bu sunumda main diye adlandırıyoruz. Başka projelerde master veya farklı adlar görülebilir; komutta gerçek dal adı kullanılır. Büyük projelerde dev, staging veya sürüm dalları bulunabilir, fakat bunları herkesin uygulaması gereken tek doğru düzen olarak sunmamak gerekir. Dışarıdaki bir projeye katkı verirken hedef dalı alışkanlıkla seçmeyiz. Önce CONTRIBUTING dosyasına veya katkı belgelerine bakarız. Projenin bakımcıları hangi dala ve hangi koşullarda katkı kabul edildiğini belirler. Dal sayısını artırmanın amacı düzen kurmak olmalı; anlaşılması güç bir süreç yaratmak değil.</div><div class="sources"><a href="https://git-scm.com/book/en/v2/Git-Branching-Branching-Workflows" target="_blank" rel="noopener">Dal düzenleri</a></div></aside>
+</section><section id="21" class="paper code" aria-hidden="true">
+<p class="eyebrow">03 · TAKIM ÇALIŞMASI</p><h2>Pull request bir öneridir</h2><div class="content"><p class="lead">“Bu dalın değişikliğini main&#x27;e alalım mı?”</p><pre class="codebox"><code><span class="">Kaynak: feature/sensor-esigi  →  Hedef: main</span>
+<span class=""></span>
+<span class="">Başlık: IR sensör eşiğini artır</span>
+<span class=""></span>
+<span class="">Neden: Robot bazı koşullarda çizgiyi kaybediyordu.</span>
+<span class="">Değişiklik: ESIK, 500 → 900.</span>
+<span class="">Doğrulama: Yapılan gözlem ve test burada belirtilir.</span></code></pre><p class="caption">PR açıklaması neyin, neden değiştiğini ve nasıl doğrulandığını anlatır.</p></div>
+<footer class="slide-footer"><span>Git ve GitHub</span><span>21 / 32</span></footer>
+<aside><div class="speech">26:15–28:00 · 105 saniye
+
+Pull request, bir dalı başka bir dala birleştirme önerisidir. Kaynak bizim sensör eşiği dalımız, hedef main. Bir PR açmak değişikliği hemen kabul ettirmek anlamına gelmez; inceleme için görünür hâle getirir. Başlık somut işi anlatır. Açıklamada sorun, değişiklik ve doğrulama yer alır. Burada 500 değerinden 900 değerine geçen eşik var. Gerçek projede hangi koşullarda denendiğini yazmak gerekir; sunumdaki örnek için yapılmamış bir testi yapılmış gibi göstermiyoruz. PR aynı zamanda ilgili issue&#x27;ya bağlantı kurabilir. “Ne yapacağız?” sorusu issue&#x27;da, “Bu çözümü kabul ediyor muyuz?” sorusu PR&#x27;da tartışılır. Kaynak ve hedef dalı doğru seçmek, içerik kadar önemlidir.</div><div class="sources"><a href="https://docs.github.com/en/pull-requests/reference/pull-requests" target="_blank" rel="noopener">Pull request</a></div></aside>
+</section><section id="22" class="dark text" aria-hidden="true">
+<p class="eyebrow">03 · TAKIM ÇALIŞMASI</p><h2>İnceleme çözümü güçlendirir</h2><div class="content"><p class="lead">Bir sayı değişikliği küçük görünür; robotun davranışını etkileyebilir.</p><ul class="big-list"><li>Files changed: değişen satırlar ve bağlam.</li><li>Yorum: “Bu eşik hangi koşulda denendi?”</li><li>Yeni commit aynı dala gönderilince PR güncellenir.</li><li>Onay ve gerekli kontroller sonrası birleştirme.</li></ul><p class="caption">İnceleme, kararın ve gerekçesinin projede kalmasını sağlar.</p></div>
+<footer class="slide-footer"><span>Git ve GitHub</span><span>22 / 32</span></footer>
+<aside><div class="speech">28:00–29:30 · 90 saniye
+
+Kod incelemesi yalnız yazım hatası aramak değildir. Takım arkadaşı eşiğin neden değiştiğini, analog okuma değerinin hangi koşullarda ölçüldüğünü ve başka bir davranışı etkileyip etkilemediğini sorabilir. GitHub&#x27;ın Files changed görünümünde yorum doğrudan ilgili satıra bağlanır. Yazar geri bildirime göre aynı dalda yeni commit oluşturup gönderirse PR güncellenir; baştan yeni bir PR açması gerekmez. Bir projede otomatik kontroller varsa onların sonuçları da görünür. İncelemenin amacı kişiyi değerlendirmekten çok çözümü anlaşılır ve güvenilir hâle getirmektir. Onay vermekle birleştirme yetkisine sahip olmak aynı şey olmayabilir. Takımın kuralları hangi koşullarda değişikliğin ana dala alınacağını belirler.</div><div class="sources"><a href="https://docs.github.com/en/pull-requests/reference/pull-request-reviews" target="_blank" rel="noopener">Pull request incelemeleri</a></div></aside>
+</section><section id="23" class="paper steps" aria-hidden="true">
+<p class="eyebrow">03 · TAKIM ÇALIŞMASI</p><h2>Birleştirme sonrası herkes günceller</h2><div class="content"><p class="lead">GitHub&#x27;da kabul edilen değişiklik, yerel main&#x27;e ayrıca alınır.</p><div class="code-layout"><pre class="codebox"><code><span class="">git switch main</span>
+<span class="">git pull --ff-only</span></code></pre><div><ol class="big-list"><li>PR, main&#x27;e birleştirilir.</li><li>Yerelde main dalına geçilir.</li><li>Uzak değişiklikler alınır.</li><li>Birleşmiş iş dalı gerekirse temizlenir.</li></ol></div></div><p class="caption">Dal silmeden önce değişikliğin hedef dalda bulunduğu doğrulanır.</p></div>
+<footer class="slide-footer"><span>Git ve GitHub</span><span>23 / 32</span></footer>
+<aside><div class="speech">29:30–30:45 · 75 saniye
+
+İnceleme tamamlanınca değişiklik GitHub&#x27;da main dalına birleştirilebilir. Ancak bizim bilgisayardaki main hâlâ önceki commit&#x27;te olabilir. Bu yüzden yerelde main&#x27;e geçip uzaktaki yeni hâli alırız. Slayttaki ff-only örneği yerel main&#x27;de ayrı yeni commit olmadığı varsayımıyla ilerler. Bundan sonra sensör eşiği değişikliği ana çalışma çizgisinde görünür. İş dalı artık gerekmiyorsa temizlenebilir. Main’e alınan içerik korunur. Geçmişin biçimi birleştirme yöntemine bağlıdır. GitHub&#x27;da farklı birleştirme yöntemleri vardır ve hepsi aynı geçmiş biçimini üretmez. Başlangıçta yöntem ayrıntısından önce şu döngüyü oturtmak önemli: değişikliği öner, incele, kabul et ve takımın yerel kopyalarını güncelle.</div><div class="sources"><a href="https://docs.github.com/en/get-started/using-github/github-flow" target="_blank" rel="noopener">GitHub akışı</a><a href="https://git-scm.com/docs/git-switch" target="_blank" rel="noopener">git switch</a></div></aside>
+</section><section id="24" class="coral code" aria-hidden="true">
+<p class="eyebrow">03 · TAKIM ÇALIŞMASI</p><h2>Çakışma kararı bize bırakır</h2><div class="content"><p class="lead">İki dal aynı satırı farklı biçimde değiştirmiş.</p><pre class="codebox"><code><span class="">robot.ino</span>
+<span class=""></span>
+<span class="">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span>
+<span class="">const int ESIK = 900;</span>
+<span class="">=======</span>
+<span class="">const int ESIK = 700;</span>
+<span class="">&gt;&gt;&gt;&gt;&gt;&gt;&gt; main</span></code></pre><p class="caption">HEAD: şu anki dal · main: birleştirdiğimiz dal · ESIK: IR sensör okuma eşiği</p></div>
+<footer class="slide-footer"><span>Git ve GitHub</span><span>24 / 32</span></footer>
+<aside><div class="speech">30:45–32:15 · 90 saniye
+
+Git farklı bölgelerdeki değişiklikleri çoğu zaman otomatik birleştirir. Ama ortak başlangıçta 500 olan aynı eşik, bir dalda 900 diğer dalda 700 yapılmışsa hangi değerin doğru olduğunu bilemez. O noktada çakışma işaretleriyle durur. Bu örnekte sensör eşiği dalındayız ve main&#x27;i o dala birleştiriyoruz. HEAD bölümünde 900, gelen main tarafında 700 var. HEAD sözcüğü her zaman “doğru olan taraf” anlamına gelmez; bulunduğumuz konumu gösterir. Bir dosyanın bir dalda silinip diğerinde değiştirilmesi de çakışma doğurabilir. Git&#x27;in durması bütün projenin bozulduğu anlamına gelmez. Takımın çözmesi gereken bir kararı görünür kılar.</div><div class="sources"><a href="https://docs.github.com/en/pull-requests/reference/merge-conflicts" target="_blank" rel="noopener">Birleştirme çakışmaları</a></div></aside>
+</section><section id="25" class="paper steps" aria-hidden="true">
+<p class="eyebrow">03 · TAKIM ÇALIŞMASI</p><h2>Çakışmayı anlamıyla çözeriz</h2><div class="content"><p class="lead">Önce doğru davranışa karar verilir, ardından işaretler temizlenir.</p><div class="code-layout"><pre class="codebox"><code><span class="">git add robot.ino</span>
+<span class="">git commit -m &quot;IR sensör eşik çakışması çözüldü&quot;</span></code></pre><div><ol class="big-list"><li>İki değişikliğin gerekçesini ve bağlamını oku.</li><li>Proje için uygun çözümü seç veya yeni çözüm yaz.</li><li>İşaretleri kaldır, dosyayı kaydet ve doğrula.</li><li>Dosyayı add ile hazırla, merge commit&#x27;ini tamamla.</li></ol></div></div><p class="caption">Örnek bir merge çözümüdür; devam komutu yapılan işleme göre değişir.</p></div>
+<footer class="slide-footer"><span>Git ve GitHub</span><span>25 / 32</span></footer>
+<aside><div class="speech">32:15–34:00 · 105 saniye
+
+Çözüm, iki seçenekten rastgele birini kabul etmek değildir. Eşiği değiştiren iki kişinin gerekçesini okuyup robotun beklenen davranışına karar veririz. Son dosyada tek ve anlamlı bir eşik kalmalı; çakışma işaretleri kaldırılmalı. Bazen iki değişikliği birleştirmek veya üçüncü bir çözüm yazmak gerekir. Dosyayı kaydettikten sonra projeye uygun doğrulama yapılır. Ardından add ve commit ile bu merge çözümü tamamlanır. Slayttaki komutlar merge örneği içindir; rebase sırasında devam adımı farklıdır. VS Code gibi editörler seçenekleri kolaylaştırır, fakat hangi içeriğin doğru olduğuna bizim karar vermemiz gerekir. İşaretleri silmek teknik işlemi bitirebilir; gerçek sorunun çözüldüğünü anlamak ise kodu ve proje davranışını incelemeyi gerektirir.</div><div class="sources"><a href="https://docs.github.com/en/pull-requests/how-tos/merge-and-close-pull-requests/resolving-a-merge-conflict-using-the-command-line" target="_blank" rel="noopener">Çakışmayı çözmek</a></div></aside>
+</section><section id="26" class="dark text" aria-hidden="true">
+<p class="eyebrow">04 · PAYLAŞIM VE GÖRÜNÜRLÜK</p><h2>Hazır kodu nasıl seçeriz?</h2><div class="content"><p class="lead">Robota HC-SR04 mesafe sensörü eklerken ilk sonuç tek başına yeterli değildir.</p><ul class="big-list"><li>Donanım ve kullanılan yazılım sürümüyle uyum.</li><li>README, bağlantı açıklaması ve çalışan örnekler.</li><li>Bakım durumu, açık sorunlar ve yayınlar.</li><li>Lisans ve projenin kullanım koşulları.</li></ul><p class="caption">Yıldız, ilgi ve kaydetme işaretidir; kalite veya kullanım garantisi değildir.</p></div>
+<footer class="slide-footer"><span>Git ve GitHub</span><span>26 / 32</span></footer>
+<aside><div class="speech">34:00–35:30 · 90 saniye
+
+Çizgi izleyen robota ayrıca HC-SR04 mesafe sensörü eklemek istediğimizi düşünelim. GitHub&#x27;da bir kütüphane bulmak başlangıcı hızlandırabilir. Ama yıldızı en çok olanı seçmek yeterli bir değerlendirme değildir. Yıldız bir kişinin projeyi kaydetmesi veya ilgi göstermesiyle ilişkilidir; kaç kişinin üründe kullandığını ya da kodun doğru olduğunu doğrudan ölçmez. Önce sensör ve Arduino ortamımızla uyuma bakarız. README&#x27;de bağlantı bilgisi ve örnek var mı, açık sorunlar neleri anlatıyor, projenin bakımı sürüyor mu diye inceleriz. Yakın tarihte güncelleme olması tek başına üstünlük de değildir; oturmuş bir proje daha seyrek değişebilir. Son olarak lisans koşullarını kontrol ederiz. Bu slayt bir belirli kütüphaneyi tavsiye etmiyor, seçim ölçütlerini gösteriyor.</div><div class="sources"><a href="https://docs.github.com/en/get-started/exploring-projects-on-github/saving-repositories-with-stars" target="_blank" rel="noopener">Yıldızların anlamı</a></div></aside>
+</section><section id="27" class="coral text" aria-hidden="true">
+<p class="eyebrow">04 · PAYLAŞIM VE GÖRÜNÜRLÜK</p><h2>Lisans kullanım şartlarını anlatır</h2><div class="content"><p class="lead">Bir kodu görebilmek, onu her amaçla kullanabilmek anlamına gelmez.</p><ul class="big-list"><li>LICENSE dosyasını ve bağımlılıkların lisanslarını oku.</li><li>Kopyalama, dağıtma ve değişiklik koşullarını öğren.</li><li>Gerekli atıf ve lisans bildirimlerini koru.</li></ul><p class="caption">Açık kaynak kullanırken teknik uygunluk ve kullanım izni birlikte değerlendirilir.</p></div>
+<footer class="slide-footer"><span>Git ve GitHub</span><span>27 / 32</span></footer>
+<aside><div class="speech">35:30–36:30 · 60 saniye
+
+Bir depoyu public görmek, bütün kullanım haklarının serbest olduğu sonucunu vermez. Lisans kodun hangi koşullarda kullanılabileceğini, değiştirilebileceğini ve dağıtılabileceğini açıklar. Robot projesine bir kütüphane eklerken hem o kütüphanenin hem bağlı olduğu parçaların koşullarına bakılır. Bazı lisanslar atıf veya lisans bildirimini korumayı ister; başka yükümlülükler de olabilir. Lisans yoksa “GitHub&#x27;da buldum, o yüzden her yerde kullanabilirim” varsayımıyla ilerlememek gerekir. Kendi projemizi başkalarının kullanmasını istiyorsak uygun lisansı açıkça belirtmek de işe yarar. Buradaki amaç lisans türlerini ezberlemek değil, paylaşım kararının teknik dosyalardan ibaret olmadığını fark etmek.</div><div class="sources"><a href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository" target="_blank" rel="noopener">Depo lisansları</a></div></aside>
+</section><section id="28" class="paper steps" aria-hidden="true">
+<p class="eyebrow">04 · PAYLAŞIM VE GÖRÜNÜRLÜK</p><h2>Fork ile dış projeye katkı</h2><div class="content"><p class="lead">Kendi kopyanda çalış, asıl projeye değişiklik öner.</p><ol class="big-list"><li>Katkı kılavuzunu oku ve hedef dalı öğren.</li><li>Depoyu hesabına fork et; kendi fork&#x27;unu klonla.</li><li>İş dalında değiştir, commit et ve fork&#x27;una gönder.</li><li>Asıl projeye doğru hedef dalı seçerek PR aç.</li></ol><p class="caption">Public depoyu doğrudan klonlamak mümkündür; fork, kendi uzak kopyanda çalışmanı sağlar.</p></div>
+<footer class="slide-footer"><span>Git ve GitHub</span><span>28 / 32</span></footer>
+<aside><div class="speech">36:30–38:00 · 90 saniye
+
+Kendi takımımızın deposuna yazma yetkimiz olabilir; dışarıdaki bir açık kaynak projede olmayabilir. Public projeyi okumak ve klonlamak için fork şart değildir. Ama kendi hesabımızda gönderim yapabileceğimiz bir uzak kopya istiyorsak fork kullanabiliriz. Önce katkı kılavuzunu okur, hangi dala katkı kabul edildiğini öğreniriz. Ardından fork&#x27;umuzu klonlayıp bir iş dalında değişiklik yaparız. Commit&#x27;leri kendi fork&#x27;umuza gönderdikten sonra asıl projeye PR açarız. Kaynak dal bizim fork&#x27;umuzda, hedef dal asıl projededir. Hedef her projede dev değildir; CONTRIBUTING veya bakımcıların talimatı belirler. Böylece yazma izni olmadan da projeye düzenli bir değişiklik önerisi sunabiliriz.</div><div class="sources"><a href="https://docs.github.com/en/pull-requests/reference/forks" target="_blank" rel="noopener">Fork kavramı</a></div></aside>
+</section><section id="29" class="dark columns" aria-hidden="true">
+<p class="eyebrow">04 · PAYLAŞIM VE GÖRÜNÜRLÜK</p><h2>Portfolyo projeyi anlaşılır kılar</h2><div class="content"><p class="lead">İyi açıklanan birkaç proje, katkı sayısından daha çok şey anlatabilir.</p><div class="columns "><div class="column"><h3>Projede göster</h3><p>Amaç, senin katkın, kullanılan donanım, sonuçlar ve çalışma sınırları.</p></div><div class="column"><h3>Profilde düzenle</h3><p>Öne çıkan depolar, açık README&#x27;ler ve doğru çalışan proje bağlantıları.</p></div></div><p class="caption">Katkı grafiği GitHub&#x27;ın saydığı etkinlikleri gösterir; bütün çalışma günlerini veya emeği ölçmez.</p></div>
+<footer class="slide-footer"><span>Git ve GitHub</span><span>29 / 32</span></footer>
+<aside><div class="speech">38:00–39:30 · 90 saniye
+
+GitHub profili bir portfolyo olabilir, ama depoların anlaşılır olması gerekir. Robot projesinde hangi sorunu çözmeye çalıştığımızı, takım içindeki katkımızı, kullanılan donanımı ve elde edilen sonucu açıklayabiliriz. Bir fotoğraf veya kısa gösterim projeyi canlandırır; aynı zamanda çalışmadığı koşulları dürüstçe yazmak değerlidir. Profilde birkaç iyi projeyi öne çıkarmak gezmeyi kolaylaştırır. Yeşil katkı karelerini ise bütün çalışma süresi gibi yorumlamayalım. GitHub belirli etkinlikleri ve belirli koşullardaki commit&#x27;leri sayar; laboratuvar çalışması veya tasarım düşüncesi bu grafiğe tamamen yansımaz. Bir başvuruda önemli olan kare sayısından çok, projenin ve kişinin katkısının somut biçimde görülebilmesidir.</div><div class="sources"><a href="https://docs.github.com/en/account-and-profile/reference/profile-contributions-reference" target="_blank" rel="noopener">Katkı grafiğinin ölçütleri</a></div></aside>
+</section><section id="30" class="paper text" aria-hidden="true">
+<p class="eyebrow">04 · PAYLAŞIM VE GÖRÜNÜRLÜK</p><h2>Öğrenci kaynakları</h2><div class="content"><p class="lead">GitHub Education, doğrulanmış öğrenciler için araç ve öğrenme imkânları sunar.</p><ul class="big-list"><li>Student Developer Pack: değişen iş ortağı teklifleri.</li><li>Copilot Student: doğrulanmış öğrenciler için ücretsiz erişim.</li><li>Başvuru: öğrenci durumu ve gerekli belgelerle doğrulama.</li></ul><p class="caption">Güncel şartlar ve teklifler: education.github.com/pack</p></div>
+<footer class="slide-footer"><span>Git ve GitHub</span><span>30 / 32</span></footer>
+<aside><div class="speech">39:30–40:30 · 60 saniye
+
+GitHub Education öğrencilere öğrenme kaynakları ve çeşitli araç avantajları sunuyor. Student Developer Pack içinde iş ortaklarının teklifleri yer alıyor; bunların sayısı ve koşulları zaman içinde değişebilir. Doğrulanmış öğrenciler için Copilot Student erişimi de var. Bu avantajlar her hesabın kendiliğinden alacağı sınırsız hizmetler olarak düşünülmemeli. Başvuru öğrenci durumunun doğrulanmasını gerektirir; gerekli e-posta veya belgeler başvuruya göre belirlenir. Bazı avantajların ayrıca etkinleştirilmesi gerekebilir. Burada sabit teklif sayısı veya kesin onay süresi vermek yerine resmî güncel sayfayı kaynak olarak bırakıyorum. İhtiyaç duyulan araç seçilmeli; bir aracın ücretsiz olması projenin ihtiyaçlarına uygun olduğu anlamına gelmez.</div><div class="sources"><a href="https://docs.github.com/en/education/about-github-education/github-education-for-students/about-github-education-for-students" target="_blank" rel="noopener">GitHub Education</a><a href="https://docs.github.com/en/education/about-github-education/github-education-for-students/apply-to-github-education-as-a-student" target="_blank" rel="noopener">Öğrenci başvurusu</a><a href="https://docs.github.com/en/copilot/how-tos/copilot-on-github/set-up-copilot/enable-copilot/set-up-for-students" target="_blank" rel="noopener">Copilot Student</a></div></aside>
+</section><section id="31" class="coral summary" aria-hidden="true">
+<p class="eyebrow">ÖZET</p><h2>Bir projenin bütün akışı</h2><div class="content"><p class="lead">Sorun → issue → dal → değişiklik → commit → push → PR → inceleme → merge → pull</p><ul class="big-list"><li>Git kaydeder; GitHub ortak çalışmayı düzenler.</li><li>Kaydet, commit ve push farklı adımlardır.</li><li>README projeyi, issue işi, PR çözümü açıklar.</li></ul><p class="caption">Kaynaklar: GitHub Docs · Pro Git · GitHub Skills</p></div>
+<footer class="slide-footer"><span>Git ve GitHub</span><span>31 / 32</span></footer>
+<aside><div class="speech">40:30–42:00 · 90 saniye
+
+Robotun çizgiyi kaybetme sorunundan başladık. Issue ile işi görünür yaptık, bir dalda değişikliği geliştirdik ve commit ile kaydettik. Push ile ortak platforma ulaştırdık; PR üzerinden inceleyip birleştirdik ve yerel kopyayı güncelledik. Bu akışın yanında README projeyi açıklıyor, geçmiş neyin değiştiğini gösteriyor ve lisans paylaşım şartlarını belirliyor. Üç ayrımı hatırlarsak geri kalan kavramlar yerine oturur: Git ile GitHub farklıdır; dosyayı kaydetmek, commit etmek ve push etmek farklıdır; issue ile PR farklı soruları cevaplar. Sunumun ekleri komutlara yeniden bakmak için kullanılabilir. Daha sonra isteyenler resmî GitHub Docs, Pro Git kitabı ve GitHub Skills kaynaklarından bağımsız olarak ilerleyebilir.</div><div class="sources"><a href="https://docs.github.com/en/get-started/start-your-journey/git-and-github-learning-resources" target="_blank" rel="noopener">Git ve GitHub kaynakları</a><a href="https://github.com/skills/introduction-to-github" target="_blank" rel="noopener">Introduction to GitHub</a></div></aside>
+</section><section id="32" class="dark cover" aria-hidden="true">
+<p class="eyebrow">KAPANIŞ</p><h2>Sorular</h2><div class="content"><p class="lead">Değişiklik nerede? Kim görebiliyor? Takıma nasıl ulaşıyor?</p><p class="caption">Git · GitHub · repository · commit · branch · issue · pull request</p><div class="slide-links"><a href="https://docs.github.com/en/get-started/start-your-journey/git-and-github-learning-resources" target="_blank" rel="noopener">GitHub Docs</a><a href="https://git-scm.com/book/tr/v2" target="_blank" rel="noopener">Pro Git · Türkçe</a><a href="https://github.com/skills/introduction-to-github" target="_blank" rel="noopener">GitHub Skills</a><a href="https://education.github.com/pack" target="_blank" rel="noopener">GitHub Education</a></div></div>
+<footer class="slide-footer"><span>Git ve GitHub</span><span>32 / 32</span></footer>
+<aside><div class="speech">42:00–45:00 · 180 saniye
+
+Teşekkürler. Soruları üç başlık etrafında düşünebiliriz: değişiklik şu anda nerede duruyor, kimler bu değişikliği görebiliyor ve takımın ortak çizgisine nasıl alınacak? Bir dosyanın kaydedildiği ama commit edilmediği durumla, commit edildiği ama gönderilmediği durum artık farklı anlamlar taşıyor. Bir dalda çalışmakla main&#x27;e birleştirmek de farklı adımlar. Son üç dakikada bu ilişkiler veya kendi projelerinizin nasıl düzenlenebileceğiyle ilgili soruları ele alabiliriz.</div><div class="sources"><a href="https://docs.github.com/en/get-started/start-your-journey/git-and-github-learning-resources" target="_blank" rel="noopener">GitHub Docs</a><a href="https://git-scm.com/book/tr/v2" target="_blank" rel="noopener">Pro Git · Türkçe</a><a href="https://github.com/skills/introduction-to-github" target="_blank" rel="noopener">GitHub Skills</a><a href="https://education.github.com/pack" target="_blank" rel="noopener">GitHub Education</a></div></aside>
+</section><section id="33" class="paper columns appendix" aria-hidden="true">
+<p class="eyebrow">EK 01 · BAŞVURU</p><h2>Git kurulumu</h2><div class="content"><p class="lead">İşletim sistemine uygun resmî kurulum yolunu seç.</p><div class="code-layout"><pre class="codebox"><code><span class="">git --version</span></code></pre><div><div class="column"><h3>Windows</h3><p>Git for Windows; Git Bash veya uygun terminal.</p></div><div class="column"><h3>macOS ve Linux</h3><p>İşletim sistemine uygun paket veya kurulum yöntemi.</p></div></div></div><p class="caption">Sürüm numarası sisteme göre değişir. Güncel kurulum: git-scm.com/install</p></div>
+<footer class="slide-footer"><span>Git ve GitHub</span><span>Ek 1 / 12</span></footer>
+<aside><div class="speech">Ek slayt · ana anlatım süresinin dışında
+
+Bu ek kurulum sırasında başvuru içindir. Git version komutu kurulu Git&#x27;in sürümünü gösterir. Kurulu değilse işletim sistemine uygun yöntem resmî Git sayfasından seçilir. macOS&#x27;ta Git&#x27;in her cihazda hazır olduğunu varsaymayalım; kullanılan ortam bunu değiştirebilir. Windows&#x27;ta Git for Windows ile Git Bash kullanılabilir. Linux&#x27;ta dağıtımın paket yöneticisi yaygın yoldur. Kurulum seçeneği Git kavramlarını değiştirmez.</div><div class="sources"><a href="https://git-scm.com/install/" target="_blank" rel="noopener">Git kurulumu</a></div></aside>
+</section><section id="34" class="dark code appendix" aria-hidden="true">
+<p class="eyebrow">EK 02 · BAŞVURU</p><h2>Commit kimliği</h2><div class="content"><p class="lead">Kayıtlarda görünen ad ve e-posta önceden ayarlanır.</p><pre class="codebox"><code><span class="">git config --global user.name &quot;Elif Örnek&quot;</span>
+<span class="">git config --global user.email &quot;elif@example.com&quot;</span>
+<span class="">git config --global init.defaultBranch main</span></code></pre><p class="caption">Ad ve e-posta örnektir. Bu ayar GitHub&#x27;da kimlik doğrulama yapmaz.</p></div>
+<footer class="slide-footer"><span>Git ve GitHub</span><span>Ek 2 / 12</span></footer>
+<aside><div class="speech">Ek slayt · ana anlatım süresinin dışında
+
+Bu üç ayar, kayıtların kimlik bilgisini ve yeni depoların varsayılan dal adını belirler. Ekrandaki ad ve e-posta örnektir; gerçek kullanımda kişinin tercih ettiği doğru bilgiler yazılır. Global ayar kullanıcı hesabının genel ayarıdır; bir depoda ayrıca yerel ayar tanımlanabilir. Commit e-postası herkese açık geçmişte görünüyorsa gizlilik tercihi de düşünülür. Bu bilgiler GitHub&#x27;a giriş veya push yetkisi sağlamaz; kimlik doğrulama ayrı konudur.</div><div class="sources"><a href="https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup" target="_blank" rel="noopener">Git kimlik ayarları</a></div></aside>
+</section><section id="35" class="paper columns appendix" aria-hidden="true">
+<p class="eyebrow">EK 03 · BAŞVURU</p><h2>Editör ve terminal</h2><div class="content"><p class="lead">Aynı Git işlemi terminalde veya grafik arayüzde yapılabilir.</p><div class="columns "><div class="column"><h3>Terminal</h3><p>Komut ve seçenekleri açıkça görürsün; işlem adımları kolayca paylaşılır.</p></div><div class="column"><h3>VS Code</h3><p>Dosyalar, fark görünümü, Source Control ve entegre terminal aynı pencerededir.</p></div></div><p class="caption">Open Folder ile proje açılır; View → Terminal ile terminal görünür.</p></div>
+<footer class="slide-footer"><span>Git ve GitHub</span><span>Ek 3 / 12</span></footer>
+<aside><div class="speech">Ek slayt · ana anlatım süresinin dışında
+
+VS Code bir seçenek, Git ise ayrı araçtır. Editörün Source Control görünümü değişen dosyaları, hazırlık alanını ve commit işlemlerini görsel olarak sunabilir. Entegre terminalden aynı komutlar çalıştırılabilir. Terminalin ne yaptığı açıkça görünür; grafik arayüzde farkları incelemek kolay olabilir. İki yol birbirini dışlamaz ve biri tek başına kavramları anlama garantisi değildir. Ana dersteki çalışma alanı, hazırlık, yerel depo ve uzak depo modeli her iki kullanımda da geçerlidir.</div><div class="sources"><a href="https://code.visualstudio.com/docs/sourcecontrol/overview" target="_blank" rel="noopener">VS Code sürüm kontrolü</a></div></aside>
+</section><section id="36" class="dark code appendix" aria-hidden="true">
+<p class="eyebrow">EK 04 · BAŞVURU</p><h2>.git ve .gitignore</h2><div class="content"><p class="lead">Geçmişin veritabanı ile izleme tercihleri farklı dosyalarda durur.</p><pre class="codebox"><code><span class="">robot-projem/</span>
+<span class="">  .git/</span>
+<span class="">  .gitignore</span>
+<span class="">  README.md</span>
+<span class="">  robot.ino</span>
+<span class=""></span>
+<span class=""># .gitignore örneği</span>
+<span class="">build/</span>
+<span class="">.env</span></code></pre><p class="caption">.git elle düzenlenmez. .gitignore, zaten izlenen dosyaları geçmişten silmez.</p></div>
+<footer class="slide-footer"><span>Git ve GitHub</span><span>Ek 4 / 12</span></footer>
+<aside><div class="speech">Ek slayt · ana anlatım süresinin dışında
+
+Git klasörü commit&#x27;ler, dallar ve ayarlar için yerel veritabanını içerir. Elle silmek veya düzenlemek yerel geçmişe zarar verebilir. Gitignore ise henüz izlenmeyen dosyalardan hangilerinin normal izleme kapsamına alınmayacağını belirtir. Derleme çıktıları ve ortam ayarları için kullanılabilir. Fakat daha önce commit edilmiş bir dosyayı gitignore&#x27;a yazmak geçmişten kaldırmaz. Hassas bir bilgi yanlışlıkla gönderildiyse yalnız ignore eklemek yeterli çözüm değildir; ilgili erişim bilgisi iptal edilmeli ve resmî temizleme süreci izlenmelidir.</div><div class="sources"><a href="https://git-scm.com/docs/gitignore" target="_blank" rel="noopener">gitignore</a><a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository" target="_blank" rel="noopener">Hassas veriyi kaldırmak</a></div></aside>
+</section><section id="37" class="paper code appendix" aria-hidden="true">
+<p class="eyebrow">EK 05 · BAŞVURU</p><h2>SSH anahtar çifti</h2><div class="content"><p class="lead">GitHub&#x27;a açık anahtar eklenir; özel anahtar kişide kalır.</p><pre class="codebox"><code><span class="">ssh-keygen -t ed25519 -C &quot;elif@example.com&quot;</span>
+<span class=""></span>
+<span class=""># GitHub&#x27;a eklenecek dosya:</span>
+<span class="">~/.ssh/id_ed25519.pub</span>
+<span class=""></span>
+<span class=""># Paylaşılmayacak özel anahtar:</span>
+<span class="">~/.ssh/id_ed25519</span></code></pre><p class="caption">Anahtar için parola kullanımı koruma sağlar. Mevcut anahtarın üzerine yazılmaz.</p></div>
+<footer class="slide-footer"><span>Git ve GitHub</span><span>Ek 5 / 12</span></footer>
+<aside><div class="speech">Ek slayt · ana anlatım süresinin dışında
+
+SSH kimlik doğrulamasında açık ve özel anahtar çifti kullanılır. Ed25519 güncel belgelerde önerilen anahtar türüdür; eski sistemlerde alternatif gerekebilir. Açık anahtarın pub dosyası GitHub hesabındaki SSH and GPG keys bölümüne eklenir. Özel anahtar paylaşılmaz ve depoya yüklenmez. Komut örneğindeki e-posta yalnız etikettir. Anahtara parola eklemek koruma sağlar; bir SSH ajanı bu anahtarı oturumda kullanmayı kolaylaştırır. Yeni anahtar oluştururken var olan dosyanın üzerine istemeden yazılmaması gerekir.</div><div class="sources"><a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent" target="_blank" rel="noopener">SSH anahtarı ve ajanı</a><a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account" target="_blank" rel="noopener">GitHub&#x27;a açık anahtar eklemek</a></div></aside>
+</section><section id="38" class="dark code appendix" aria-hidden="true">
+<p class="eyebrow">EK 06 · BAŞVURU</p><h2>SSH ajanı ve bağlantı</h2><div class="content"><p class="lead">Ajanın kurulumu işletim sistemine göre değişir.</p><pre class="codebox"><code><span class=""># Bash / Git Bash örneği</span>
+<span class="">eval &quot;$(ssh-agent -s)&quot;</span>
+<span class="">ssh-add ~/.ssh/id_ed25519</span>
+<span class=""></span>
+<span class=""># GitHub bağlantısını kontrol et</span>
+<span class="">ssh -T git@github.com</span></code></pre><p class="caption">macOS Keychain ve Windows OpenSSH adımları farklı olabilir; resmî yönerge izlenir.</p></div>
+<footer class="slide-footer"><span>Git ve GitHub</span><span>Ek 6 / 12</span></footer>
+<aside><div class="speech">Ek slayt · ana anlatım süresinin dışında
+
+Bu komutlar Bash veya Git Bash için kısa bir ajan örneği. macOS Anahtar Zinciri ile çalışma ve Windows OpenSSH hizmeti için ayrıntılar farklıdır. Her işletim sistemine aynı yapılandırmayı zorunluymuş gibi kopyalamamak gerekir. SSH testindeki ilk bağlantıda sunucu kimliği kontrol edilir; doğrulama için GitHub&#x27;ın yayımladığı anahtar parmak izleri kullanılır. Başarılı kimlik doğrulama mesajı GitHub hesabına SSH ile erişildiğini gösterir; GitHub genel kabuk erişimi sağlamaz. Anahtar bağlantısı başarılı olsa bile depo yazma izinleri ayrıca değerlendirilir.</div><div class="sources"><a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent" target="_blank" rel="noopener">SSH anahtarı ve ajanı</a></div></aside>
+</section><section id="39" class="paper code appendix" aria-hidden="true">
+<p class="eyebrow">EK 07 · BAŞVURU</p><h2>Yerel klasörden depoya</h2><div class="content"><p class="lead">Bu örnek, GitHub&#x27;da boş bir uzak depo varsayar.</p><pre class="codebox"><code><span class="">cd robot-projem</span>
+<span class="">git init -b main</span>
+<span class="">git add README.md robot.ino</span>
+<span class="">git commit -m &quot;Robot projesinin ilk kaydı&quot;</span>
+<span class="">git remote add origin &lt;depo-adresi&gt;</span>
+<span class="">git remote -v</span></code></pre><p class="caption">README.md ve robot.ino önceden vardır. Uzak depoda başlangıç commit&#x27;i varsa clone daha sade olabilir.</p></div>
+<footer class="slide-footer"><span>Git ve GitHub</span><span>Ek 7 / 12</span></footer>
+<aside><div class="speech">Ek slayt · ana anlatım süresinin dışında
+
+Init mevcut klasörde yerel bir Git deposu başlatır. Örnekte main dal adını açıkça veriyoruz ve var olan README ile robot kodunu ilk kayda alıyoruz. Remote add, origin adına uzak adresi bağlar. Origin yaygın bir addır; özel bir parola veya hizmet değildir. Init GitHub&#x27;da depo oluşturmaz. Buradaki uzak depoyu ayrıca açılmış ve boş varsayıyoruz. Uzak tarafta README gibi başlangıç commit&#x27;leri varsa bağımsız iki geçmiş yaratmak yerine depoyu klonlamak daha sade bir başlangıç olabilir.</div><div class="sources"><a href="https://git-scm.com/docs/git-init" target="_blank" rel="noopener">git init</a><a href="https://git-scm.com/docs/git-remote" target="_blank" rel="noopener">git remote</a></div></aside>
+</section><section id="40" class="dark code appendix" aria-hidden="true">
+<p class="eyebrow">EK 08 · BAŞVURU</p><h2>İlk gönderim ve izleme</h2><div class="content"><p class="lead">-u, yerel dalın hangi uzak dalı izleyeceğini kaydeder.</p><pre class="codebox"><code><span class="">git push -u origin main</span>
+<span class=""></span>
+<span class=""># İzleme bağlantısı kurulduktan sonra:</span>
+<span class="">git push</span>
+<span class="">git pull --ff-only</span></code></pre><p class="caption">Dal adını git branch ile kontrol et. Komutta projenin gerçek dal adı kullanılır.</p></div>
+<footer class="slide-footer"><span>Git ve GitHub</span><span>Ek 8 / 12</span></footer>
+<aside><div class="speech">Ek slayt · ana anlatım süresinin dışında
+
+İlk push sırasında u seçeneği yerel main ile uzak origin main arasında izleme bağlantısı kurar. Bundan sonra uygun ayarlarda kısa push ve pull komutları hedefi bu bağlantıdan öğrenebilir. Bu izlenen uzak dal bazen upstream diye adlandırılır. Fork akışında asıl projeye verilen upstream uzak adıyla aynı kullanım değildir; kelime iki farklı bağlamda görülebilir. Dal adı main olmak zorunda değildir, ancak sunumdaki örnekler main kullanır. Her durumda gerçek dal adı ve uzak adres kontrol edilir.</div><div class="sources"><a href="https://git-scm.com/docs/git-branch" target="_blank" rel="noopener">git branch</a></div></aside>
+</section><section id="41" class="paper code appendix" aria-hidden="true">
+<p class="eyebrow">EK 09 · BAŞVURU</p><h2>Dal ve fark komutları</h2><div class="content"><p class="lead">Karşılaştırmada başlangıç ve sonuç tarafı açık yazılır.</p><pre class="codebox"><code><span class="">git branch</span>
+<span class="">git switch -c feature/sensor-esigi</span>
+<span class=""></span>
+<span class=""># İki dalın son hâli: main → feature</span>
+<span class="">git diff main feature/sensor-esigi -- robot.ino</span>
+<span class=""></span>
+<span class=""># Ortak başlangıçtan feature dalındaki değişiklik:</span>
+<span class="">git diff main...feature/sensor-esigi</span></code></pre><p class="caption">Tab tamamlama kabuk ayarına bağlıdır; yazılan önek dal adının başlangıcı olmalıdır.</p></div>
+<footer class="slide-footer"><span>Git ve GitHub</span><span>Ek 9 / 12</span></footer>
+<aside><div class="speech">Ek slayt · ana anlatım süresinin dışında
+
+Switch c yeni dalı oluşturur ve o dala geçer. Branch listesinde yıldız etkin dalı gösterir. İki dalı diff ile karşılaştırırken ilk ad önceki, ikinci ad sonraki taraftır; eksi ve artı işaretleri buna göre okunur. Üç noktalı karşılaştırma ise ortak başlangıca göre ikinci dalın getirdiği değişiklikleri gösterir. Tab tamamlama kullanılabiliyorsa feature gibi dalın başlangıcı yazılır; dalın ortasındaki bir kelimenin her ortamda tamamlanması beklenmez. Kabuk ve tamamlama ayarları sonucu etkiler.</div><div class="sources"><a href="https://git-scm.com/docs/git-switch" target="_blank" rel="noopener">git switch</a><a href="https://git-scm.com/docs/git-diff" target="_blank" rel="noopener">git diff</a></div></aside>
+</section><section id="42" class="coral columns appendix" aria-hidden="true">
+<p class="eyebrow">EK 10 · BAŞVURU</p><h2>Geri alırken niyeti seç</h2><div class="content"><p class="lead">Dosya, hazırlık alanı ve geçmiş için farklı işlemler vardır.</p><div class="columns "><div class="column"><h3>Hazırlıktan çıkar</h3><p>git restore --staged README.md
+Çalışma dosyasındaki değişiklik korunur.</p></div><div class="column"><h3>Paylaşılan değişikliği tersine çevir</h3><p>git revert &lt;commit&gt;
+Önceki etkiyi geri alan yeni commit oluşturur.</p></div></div><p class="caption">git reset HEAD~1, dalı önceki commit&#x27;e taşır; varsayılan mixed çalışma dosyalarını korur.</p></div>
+<footer class="slide-footer"><span>Git ve GitHub</span><span>Ek 10 / 12</span></footer>
+<aside><div class="speech">Ek slayt · ana anlatım süresinin dışında
+
+Geri alma deyince önce neyi geri almak istediğimizi belirlemek gerekir. Yanlışlıkla add edilen dosyayı restore staged ile hazırlıktan çıkarabiliriz; düzenleme dosyada kalır. Paylaşılmış bir commit&#x27;in etkisini geri almak için revert yeni bir kayıt üretir, böylece ortak geçmiş korunur. Reset ise dalın işaret ettiği kaydı ve seçilen moda göre hazırlık alanını veya dosyaları değiştirebilir. Varsayılan mixed reset çalışma dosyalarını korur fakat geçmiş konumunu taşır. Bu yüzden reset ile revert aynı amaç ve sonuçlara sahip değildir.</div><div class="sources"><a href="https://git-scm.com/docs/git-restore" target="_blank" rel="noopener">git restore</a><a href="https://git-scm.com/docs/git-revert" target="_blank" rel="noopener">git revert</a><a href="https://git-scm.com/docs/git-reset" target="_blank" rel="noopener">git reset</a></div></aside>
+</section><section id="43" class="dark code appendix" aria-hidden="true">
+<p class="eyebrow">EK 11 · BAŞVURU</p><h2>Hard reset ve kurtarma sınırları</h2><div class="content"><p class="lead">Commit edilmemiş çalışma, hard reset ile kaybolabilir.</p><pre class="codebox"><code><span class=""># Yalnız etkileri değerlendirilmişse:</span>
+<span class="">git reset --hard &lt;commit&gt;</span>
+<span class=""></span>
+<span class=""># Yerel işaretçi hareketlerini incele:</span>
+<span class="">git reflog</span></code></pre><p class="caption">Reflog bazı eski commit&#x27;leri bulmaya yardımcı olur; kaydedilmemiş bütün işi kurtarma garantisi vermez.</p></div>
+<footer class="slide-footer"><span>Git ve GitHub</span><span>Ek 11 / 12</span></footer>
+<aside><div class="speech">Ek slayt · ana anlatım süresinin dışında
+
+Hard reset dalı seçilen commit&#x27;e taşırken hazırlık alanını ve izlenen çalışma dosyalarını o hâle eşitler. Commit edilmemiş düzenlemeler kaybolabilir; yoluna çıkan bazı izlenmeyen dosyalar da etkilenebilir. Önceden commit edilmiş bir kayıt bazen yerel reflog üzerinden bulunabilir, bu yüzden bütün durumlar için geri alınamaz demek doğru değildir. Ama reflog bir genel yedek değildir ve sonsuza kadar her şeyi tutmaz. Özellikle hiç commit edilmemiş çalışmanın kurtarılacağı varsayılmamalıdır. Önce status ve değişiklikler incelenir; komutun etkisi anlaşılmadan hard reset kullanılmaz.</div><div class="sources"><a href="https://git-scm.com/docs/git-reset" target="_blank" rel="noopener">git reset</a><a href="https://git-scm.com/docs/git-reflog" target="_blank" rel="noopener">git reflog</a></div></aside>
+</section><section id="44" class="paper code appendix cheatsheet" aria-hidden="true">
+<p class="eyebrow">EK 12 · BAŞVURU</p><h2>Komutlara kısa bakış</h2><div class="content"><p class="lead">Komutlar, ana dersteki kavramların kısa karşılığıdır.</p><pre class="codebox"><code><span class="">git clone &lt;depo-adresi&gt;</span>
+<span class=""># Dosyayı düzenle ve kaydet</span>
+<span class="">git status</span>
+<span class="">git add &lt;dosya&gt;</span>
+<span class="">git commit -m &quot;Ne ve neden değişti?&quot;</span>
+<span class="">git push</span>
+<span class=""></span>
+<span class=""># Takımın yeniliklerini al</span>
+<span class="">git pull --ff-only</span>
+<span class=""># İş dalı oluştur</span>
+<span class="">git switch -c feature/&lt;is&gt;</span></code></pre><p class="caption">Yer tutucular gerçek değerlerle değiştirilir. Kurulum, kimlik ve izinler önce sağlanır.</p></div>
+<footer class="slide-footer"><span>Git ve GitHub</span><span>Ek 12 / 12</span></footer>
+<aside><div class="speech">Ek slayt · ana anlatım süresinin dışında
+
+Bu son ek günlük akışa yeniden bakmak için kısa bir başvuru sayfası. Clone ile başlanır, fakat sonraki commit için önce gerçek bir dosya düzenlemesi yapılır. Status durumumuzu gösterir, add seçer, commit kaydeder ve push gönderir. Takımın yeniliklerini pull ile alırız. Ayrı bir iş için dal açılır; değişiklikler PR ile incelenebilir. Bütün komutları her seferinde sırayla çalıştırmak gerekmez. Hangi adımın gerekli olduğuna, değişikliğin çalışma alanında mı hazırlıkta mı yerel geçmişte mi olduğuna bakarak karar veririz.</div><div class="sources"><a href="https://docs.github.com/en/get-started/start-your-journey/git-and-github-learning-resources" target="_blank" rel="noopener">Git ve GitHub kaynakları</a></div></aside>
+</section></div></main>
+<div id="ui-notes" role="region" aria-label="Konuşmacı notları" hidden><h3 id="ui-notes-title"></h3><div id="ui-notes-body"></div><div id="ui-notes-sources"></div></div>
+<div id="ui-overview" role="dialog" aria-modal="true" aria-label="Tüm slaytlar" hidden><div class="overview-top"><h2>Tüm slaytlar</h2><button id="ui-close-ov">Sunuma dön</button></div><h3>Ana anlatım · 32 slayt · 45 dakika</h3><div class="overview-grid" id="ui-main-grid"></div><h3>Ekler · 12 slayt</h3><div class="overview-grid" id="ui-extra-grid"></div></div>
+<nav id="ui-bar" aria-label="Sunum gezinmesi"><button id="ui-prev" aria-label="Önceki slayt">←</button><span id="ui-count" aria-live="polite"></span><button id="ui-next" aria-label="Sonraki slayt">→</button><button id="ui-btn-ov">Genel bakış</button><button id="ui-btn-notes" aria-pressed="false">Notlar</button><button id="ui-appendix">Ek slaytlar</button><button id="ui-btn-replay">Animasyonu yinele</button><button id="ui-btn-fs">Tam ekran</button><button id="ui-btn-print">Yazdır</button><a id="ui-notes-document" href="konusmaci-notlari.html" target="_blank" rel="noopener">Not belgesi</a><a href="canli-ders/materyal.html">Materyal</a><a href="pdf/git-github-tr.pdf" download>PDF indir</a><a data-language-link href="en/" aria-label="Switch to English" hreflang="en">EN</a><span id="ui-help">← → gezin · N notlar · O genel bakış</span></nav>
+<script src="assets/lecture.js"></script></body></html>

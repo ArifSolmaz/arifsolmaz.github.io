@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="font-family:Arial,sans-serif" width="1920" height="300" viewBox="0 0 1920 300" aria-label="Git branch and main workflow">
+<path d="M128 200 H1660" stroke="#3a4766" stroke-width="8" stroke-linecap="round"/>
+<path d="M500 200 C 590 200 590 80 680 80 H1120 C 1210 80 1210 200 1300 200" stroke="#5b8cff" stroke-width="8" fill="none"/>
+<circle cx="260" cy="200" r="16" fill="#c7d1e4" stroke="#0d1424" stroke-width="6"/><circle cx="500" cy="200" r="16" fill="#c7d1e4" stroke="#0d1424" stroke-width="6"/>
+<circle cx="800" cy="80" r="16" fill="#5b8cff" stroke="#0d1424" stroke-width="6"/><circle cx="1000" cy="80" r="16" fill="#5b8cff" stroke="#0d1424" stroke-width="6"/>
+<circle cx="1300" cy="200" r="20" fill="#0d1424" stroke="#ff6b4a" stroke-width="7"/><circle cx="1300" cy="200" r="7" fill="#ff6b4a"/>
+<text x="1660" y="170" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="26" font-weight="700" fill="#ffb199">git push</text>
+</svg>

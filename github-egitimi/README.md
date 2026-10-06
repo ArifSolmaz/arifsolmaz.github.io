@@ -1,34 +1,33 @@
-# GitHub Eğitimi
+# Git ve GitHub: Birleşik Anlatım
 
-45 dakikalık sade GitHub dersi. Ana amaç komut ezberi değil:
-GitHub'ın ne için kullanıldığını, neden yazılımcılar ve ekipler için önemli olduğunu,
-insanların kod, web sitesi, kendini gösterme, görev takibi, açık paylaşım ve yeni sürüm
-alanlarında nasıl kullandığını anlatmak. Devam etmek isteyen öğrenciler görsel Git
-alıştırması, GitHub Skills, GitHub Pages ve takım projesi alıştırmalarıyla pratik yapar.
+Mekatronik öğrencileri için 45 dakikalık, anlatım ağırlıklı eğitim. Aynı çizgi izleyen robot projesi üzerinden Git ve GitHub ayrımı, kayıt geçmişi, ekip çalışması ve paylaşım anlatılır.
 
-Canlı sayfa: <https://arifsolmaz.github.io/github-egitimi/>
+- **32 ana slayt:** anlatım ve sorular toplam 45 dakika.
+- **12 ek slayt:** kurulum, SSH ve ayrıntılı komutlar. Ana dersin süresine dahil değildir.
+- Canlı gösterim, telefon veya hesap hazırlığı, sınıf içi uygulama ve zorunlu ödev yoktur.
 
-## Giriş kapıları
+## Güncel girişler
 
-- `index.html`: temiz ana sayfa
-- `neden-git/`: GitHub ne için kullanılır, neden önemlidir, best practices
-- `gercek-ornekler/`: web sayfası, görev listesi, değişiklik önerisi, kişisel vitrin, yeni sürüm, açık kaynak ve proje keşif örnekleri
-- `student/`: öğrenciler için dersten sonra izlenecek yol
-- `instructor/`: eğitmen için ders akışı ve hazırlık masası
-- `sunum/`: Türkçe slayt destesi
-- `sunum/en/`: İngilizce slayt destesi
+- `index.html`: birleşik sunum. Ana gezinme 32. slaytta biter. “Ek slaytlar” düğmesi teknik ayrıntılara geçer.
+- `en/index.html`: aynı 44 slaytın İngilizce sürümü; dil değiştirirken slayt numarası korunur.
+- `konusmaci-notlari.html`: dakika planı, her slaytın konuşma metni ve kaynaklar.
+- `en/konusmaci-notlari.html`: bütün slaytların İngilizce konuşmacı notları ve aynı dakika planı.
+- `egitmen-rehberi.md`: aynı notların indirilebilir metni.
+- `pdf/git-github-tr.pdf` ve `pdf/git-github-en.pdf`: 44 sayfalık, 16:9 Türkçe ve İngilizce slayt çıktıları.
+- `canli-ders/materyal.html`: dersin dört animasyonu, notlar ve örnek proje.
+- `student/`: dersten sonra isteğe bağlı bağımsız kaynaklar.
+- `instructor/`: güncel ders bağlantıları.
 
-## Destek dosyaları
+Eski Türkçe `canli-ders/` ve `sunum/` adresleri ana sunuma, İngilizce karşılıkları `en/` sunumuna, `v2/` teknik eklerin başlangıcına yönlenir. Eski slayt numaraları taşınmaz. Önceki sürümler arşivde korunur.
 
-- `egitmen-rehberi.md`: dakika dakika ders akışı ve genişletilmiş atölye planı
-- `katilimci-el-kitabi.md`: öğrenci için ayrıntılı adım adım rehber
-- `alistirmalar.md`: uygulamalı sürüm için alıştırmalar
-- `hazir-araclar.md`: görsel Git alıştırması, GitHub Skills ve proje keşif kaynakları
-- `degerlendirme-listesi.md`: kanıt ve değerlendirme tablosu
-- `ornek-depo/`: takım uygulaması için kopyalanabilir başlangıç deposu
+## Sunum kullanımı
 
-## Kullanım
+Sol/sağ oklarla gezinilir. `N` notları, `O` genel bakışı, `F` tam ekranı açar. `R` etkin animasyonu tekrar başlatır. Not belgesi ayrı pencerede okunabilir. Yazdırma bütün ana ve ek slaytları içerir. Animasyonlar yazdırılırken sabit son kareleri kullanır.
 
-1. Kısa ders için yalnızca `sunum/` ve `student/` bağlantılarını paylaşın.
-2. Uygulamalı sürüm için `instructor/` sayfasındaki hazırlık bağlantılarını izleyin.
-3. Takım çalışması yapacaksanız `ornek-depo/` içeriğini ayrı GitHub depolarına kopyalayın.
+Animasyonlar yalnız gerektiğinde yüklenir. Ağ veya dosya erişimi başarısız olduğunda sabit görsel kullanılır. Google Fonts yüklenemezse yerel yazı tiplerine geçilir. Paylaşılan kaynaklar öğrenci paketi teklifleri gibi değişebilen bilgilerin güncel resmi adreslerini içerir.
+
+## İçerik bakımı
+
+`ders.json` Türkçe, `lesson-en.json` İngilizce slayt metinleri, konuşmacı notları, süreler ve kaynakları içerir. `python3 build.py` iki dilde HTML sunumlarını ve not belgelerini üretir. Python standart kütüphanesi yeterlidir. Görseller özgün eğitimden alınmıştır. İçerik değiştiğinde PDF çıktıları da yenilenmelidir.
+
+Düzeltilmiş önceki teknik başvuru `arsiv/teknik/` altında, önceki Türkçe sunum `arsiv/onceki-sunum/` altında saklanır. Önceki geniş atölye rehberi `arsiv/egitmen-rehberi-atolye.md` dosyasındadır. Bu belgeler güncel ana dersin parçası değildir.
