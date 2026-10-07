@@ -11,8 +11,8 @@ UI = {
         'footer': 'Git ve GitHub', 'appendix': 'Ek', 'seconds': 'saniye',
         'appendix_timing': 'Ek slayt · ana anlatım süresinin dışında',
         'byline': 'İSTÜN Mekatronik Mühendisliği', 'cover_alt': 'Git dalı ve ana akış',
-        'description': 'Mekatronik öğrencileri için Git ve GitHub: {main_count} ana slayt ve {extra_count} ek, {minutes} dakikalık anlatım, konuşmacı notları.',
-        'lecture_label': 'Birleşik Git ve GitHub sunumu', 'notes': 'Konuşmacı notları',
+        'description': 'Git ve GitHub neden kullanılır? Çalışma felsefesi, gerçek kullanım, kazanımlar ve maliyetler: {main_count} ana slayt ve {extra_count} ek, {minutes} dakikalık anlatım.',
+        'lecture_label': 'Git ve GitHub çalışma felsefesi sunumu', 'notes': 'Konuşmacı notları',
         'all_slides': 'Tüm slaytlar', 'return': 'Sunuma dön',
         'main_heading': 'Ana anlatım · {main_count} slayt · {minutes} dakika', 'extra_heading': 'Ekler · {extra_count} slayt',
         'navigation': 'Sunum gezinmesi', 'previous': 'Önceki slayt', 'next': 'Sonraki slayt',
@@ -31,8 +31,8 @@ UI = {
         'footer': 'Git and GitHub', 'appendix': 'Appendix', 'seconds': 'seconds',
         'appendix_timing': 'Appendix slide · outside the main lecture time',
         'byline': 'İSTÜN Mechatronics Engineering', 'cover_alt': 'Git branch and main workflow',
-        'description': 'Git and GitHub for mechatronics students: {main_count} main slides, {extra_count} appendix slides, a {minutes}-minute lecture and complete speaker notes.',
-        'lecture_label': 'Combined Git and GitHub presentation', 'notes': 'Speaker notes',
+        'description': 'Why use Git and GitHub? Their working philosophy, real uses, benefits and costs: {main_count} main slides, {extra_count} appendix slides and a {minutes}-minute lecture.',
+        'lecture_label': 'Git and GitHub working philosophy presentation', 'notes': 'Speaker notes',
         'all_slides': 'All slides', 'return': 'Return to presentation',
         'main_heading': 'Main lecture · {main_count} slides · {minutes} minutes', 'extra_heading': 'Appendix · {extra_count} slides',
         'navigation': 'Presentation navigation', 'previous': 'Previous slide', 'next': 'Next slide',
@@ -216,7 +216,7 @@ def build(lang):
 <title>{esc(data['title'])}</title><meta name="description" content="{esc(ui['description'])}">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600..800&family=IBM+Plex+Sans:wght@400;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{prefix}assets/lecture.css"><link rel="stylesheet" href="{prefix}assets/editor.css"></head><body data-lang="{lang}" data-prefix="{prefix}" data-main-count="{main_count}" data-storage-key="git-github-editor-code-notes-v3:{lang}">
+<link rel="stylesheet" href="{prefix}assets/lecture.css"><link rel="stylesheet" href="{prefix}assets/editor.css"></head><body data-lang="{lang}" data-prefix="{prefix}" data-main-count="{main_count}" data-storage-key="git-github-editor-felsefe-v4:{lang}">
 <div id="ui-progress" aria-hidden="true"></div><main id="ui-viewport" aria-label="{esc(ui['lecture_label'])}"><div id="ui-stage">{''.join(rendered)}</div></main>
 <div id="ui-notes" role="region" aria-label="{esc(ui['notes'])}" hidden><h3 id="ui-notes-title"></h3><div id="ui-notes-body"></div><div id="ui-notes-sources"></div></div>
 <div id="ui-overview" role="dialog" aria-modal="true" aria-label="{esc(ui['all_slides'])}" hidden><div class="overview-top"><h2>{esc(ui['all_slides'])}</h2><button id="ui-close-ov">{esc(ui['return'])}</button></div><h3>{esc(ui['main_heading'])}</h3><div class="overview-grid" id="ui-main-grid"></div><h3>{esc(ui['extra_heading'])}</h3><div class="overview-grid" id="ui-extra-grid"></div></div>
