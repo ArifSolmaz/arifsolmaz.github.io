@@ -61,7 +61,7 @@
   let index = Math.max(0, Array.from(stage.children).findIndex(s => s.classList.contains('active')));
   let open = false, focusReturn = null, editGroup = null, restoring = false;
   const undo = [], redo = [];
-  const storageKey = document.body.dataset.storageKey || `git-github-editor-code-notes-v3:${lang}${document.body.dataset.deckId ? ':' + document.body.dataset.deckId : ''}`;
+  const storageKey = document.body.dataset.storageKey || `git-github-editor-felsefe-v4:${lang}${document.body.dataset.deckId ? ':' + document.body.dataset.deckId : ''}`;
   const canonicalRoot = 'https://arifsolmaz.github.io/github-egitimi/';
   const canonicalPage = canonicalRoot + (english ? 'en/' : '');
   const prefix = document.body.dataset.prefix || (english ? '../' : '');
@@ -413,7 +413,7 @@
     body.dataset.assetBase = canonicalRoot;
     body.dataset.notesBase = canonicalPage + 'konusmaci-notlari.html';
     const snapshot = globalThis.crypto?.randomUUID?.() || `${Date.now()}-${Math.random().toString(36).slice(2)}`;
-    body.dataset.deckId = snapshot; body.dataset.storageKey = `git-github-editor-code-notes-v3:${lang}:${snapshot}`;
+    body.dataset.deckId = snapshot; body.dataset.storageKey = `git-github-editor-felsefe-v4:${lang}:${snapshot}`;
     clone.querySelector('#lecture-data').textContent = JSON.stringify(payload()).replace(/</g, '\\u003c');
     clone.querySelectorAll('[src],[href],[data-animation],[data-poster]').forEach(element => {
       ['src', 'href', 'data-animation', 'data-poster'].forEach(attribute => {
