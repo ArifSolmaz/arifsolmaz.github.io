@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 07 Oct 2026 08:01:17 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 08 Oct 2026 08:15:50 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,62 +15,32 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>Discovery of a second-generation planet candidate accreting onto a white dwarf</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-07161v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-07161v1</guid>
-      <pubDate>Wed, 07 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Jamie T. Williams et al.</dc:creator>
+      <title>Searching for hot water world candidates with CHEOPS: II. A low-density super-Earth orbiting the K dwarf TOI-2211</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-08922v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-08922v1</guid>
+      <pubDate>Thu, 08 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>J. A. Egger et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Detection of escaping magnesium in the upper atmosphere of WASP-76b</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-09128v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-09128v1</guid>
+      <pubDate>Thu, 08 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Lakeisha M. Ramos Rosado et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Astrometric planet search around southern ultracool dwarfs: V. Discovery of the exoplanet candidate PALTA-1 b</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-09965v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-09965v1</guid>
+      <pubDate>Thu, 08 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>J. Sahlmann et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.SR</category>
-    </item>
-    <item>
-      <title>SOPHIE and TESS characterization of fourteen TESS Objects of Interest: nine planetary systems and five low-mass stellar companions</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-08584v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-08584v1</guid>
-      <pubDate>Wed, 07 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>N. Heidari et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>HD 715 b, a Warm Jupiter Orbiting a Massive Subgiant Discovered from a Single TESS Transit</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-08065v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-08065v1</guid>
-      <pubDate>Wed, 07 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Alexander Venner et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>First Direct Identification of a Multi-Star Microlens System Hosting a Planet</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-07133v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-07133v1</guid>
-      <pubDate>Wed, 07 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Sean K. Terry et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.GA</category>
-    </item>
-    <item>
-      <title>Enhancing the Interpretability of Radial Velocity Analysis Using Leave-one-out Cross-validation</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-07181v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-07181v1</guid>
-      <pubDate>Wed, 07 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Matthew C. Nixon et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
-    </item>
-    <item>
-      <title>Blinding Lights: Simulation-Based Evidence for Terrestrial Giant Impacts as Astronomically Observable Events</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-08273v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-08273v1</guid>
-      <pubDate>Wed, 07 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Lucy Taylor et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
     </item>
   </channel>
 </rss>
