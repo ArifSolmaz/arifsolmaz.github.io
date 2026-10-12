@@ -1,0 +1,238 @@
+{
+  "announcement_date": "2026-10-12",
+  "updated_at": "2026-10-12T08:24:23.895664+00:00",
+  "category": "astro-ph.EP",
+  "paper_count": 7,
+  "papers": [
+    {
+      "id": "2610.12677v1",
+      "title": "The GAPS programme at TNG LXXXII. The first atmospheric investigation of the gas giant WASP-13b at high resolution with GIARPS",
+      "abstract": "Low-density transiting gas giant exoplanets are key benchmarks for atmospheric studies. Despite their large-scale heights, many of them remain poorly characterised. We present the first atmospheric investigation at high-resolution of the inflated (R_p 1.4 RₐthrmJ), hot Jupiter (T 1500 K) WASP-13 b aiming at constraining its atmospheric composition and refine its orbital geometry. We analysed four transits observed with GIARPS at the TNG. Updated stellar and planetary parameters were re-derived from the most precise literature values, and a new Rossiter-McLaughlin analysis was performed to measure the projected spin-orbit angle (λ) and stellar rotational velocity (vi_). Atmospheric signals were searched using high-resolution spectroscopy, both with cross-correlation and single-line analyses, targeting key atomic and molecular species (e.g. HeI, Hα, NaI, H₂O, CO). We find a well-aligned orbit (λ = 2.7±1.1′) and vi_ = 4.5±0.1 km s⁻¹, improving upon previous constraints. No significant atmospheric absorption is detected in either VIS or NIR data. Injection-and-recovery tests exclude an isothermal atmosphere with metallicity [M/H]10×[M/H]_☉ and simultaneously a grey cloud top pressure P clₒud10 mbar, under the assumption of chemical equilibrium. WASP-13 b appears to belong to the class of low-density hot Jupiters with weak or featureless transmission spectra, most likely shaped by the presence of high-altitude clouds. Although a highly metal-enriched atmosphere cannot be fully excluded, current evidence disfavours this scenario. Further observations with next-generation facilities will be essential to characterise the atmospheric properties of this challenging target.",
+      "authors": [
+        "D. Sicilia",
+        "M. Basilicata",
+        "G. Guilluy",
+        "G. Scandariato",
+        "F. Borsa",
+        "C. Di Maio",
+        "M. Brogi",
+        "A. Chiavassa",
+        "L. Fossati",
+        "F. Amadori",
+        "P. Giacobbe",
+        "A. S. Bonomo",
+        "A. Sozzetti",
+        "L. Mancini",
+        "G. Andreuzzi",
+        "S. Colombo",
+        "V. Fardella",
+        "A. Ghedina",
+        "G. Mantovan",
+        "G. Piccinini"
+      ],
+      "categories": [
+        "astro-ph.EP"
+      ],
+      "published": "2026-10-08",
+      "updated": "2026-10-08",
+      "pdf_link": "https://arxiv.org/pdf/2610.12677v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2610.12677v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 36,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2610.12677v1/2610.12677v1/rm_analysis.png"
+    },
+    {
+      "id": "2610.13127v1",
+      "title": "Star Cluster Ecology VIII. -- Dynamically Forming S-Type and αCentauri-like Systems",
+      "abstract": "Aims: To analyse the impact of dynamically formed binaries emerging naturally from various star cluster environments on already established planetary systems. Methods: Numerical simulations replicating the star-forming region NGC 1333 are conducted. We consider three models, each using identical cluster realisations and simulation parameters. The cluster itself is initially sub-virial and fractally distributed. Model A assumes planetary systems are initially in mean motion resonance. In Model B, the same planetary systems are moved out of resonance, but remain intrinsically stable. Finally, Model C removes all planets from the simulation. Ten independent realisations are integrated per model until 30 Myr. Results: Dynamically formed binaries emerge at similar rates across models, indicating planets play little role in their formation. We also find a higher production rate of wide binaries compared to previous numerical studies which we attribute to the sub-virial and sub-clustered initial conditions. S-type and binary S-type planetary systems naturally emerge in our simulations, while P-type systems are rare. For Model A, the fraction of S-type or binary S-type systems is f S=0.02 and $f Biₙ,\\, S=0.05, respectively. Rogue planets originating from a binary system are ejected with a substantially larger velocity than those around singletons. Planet-star collisions and planet capture events occur disproportionately within binary systems. Finally, several αCentauri-like systems emerge in our simulations, suggesting that the nearest stellar system to the Sun may have a dynamical origin.",
+      "authors": [
+        "Erwan Hochart",
+        "Simon Portegies Zwart"
+      ],
+      "categories": [
+        "astro-ph.EP"
+      ],
+      "published": "2026-10-09",
+      "updated": "2026-10-09",
+      "pdf_link": "https://arxiv.org/pdf/2610.13127v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2610.13127v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 26,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2610.13127v1/2610.13127v1/binary_orbital_evolution.png"
+    },
+    {
+      "id": "2610.13686v1",
+      "title": "Assessing PLATO's Discovery Potential across Different Observing Strategies",
+      "abstract": "The PLATO mission, planned to launch in spring 2027, will observe a fixed Southern field, LOPS2, for at least 2 years with the goal of discovering and deriving precise parameters for planets as small as Earth around FGK dwarfs and sub-giants. Afterwards, PLATO could continue to monitor the same field or move to a Northern field, LOPN1, overlapping with the Kepler field. We assess these two observing strategies in terms of sensitivity of detecting small and long period planets, and subsequently we estimate yields for both observing strategies. Within this we account for including the Kepler data in the LOPN1 field, monitoring of up to 8 years of the LOPS2 field, and the sensitivity improvement from combining TESS and PLATO data since both fields have been and will be continued to be observed with TESS. We find that by monitoring both fields, and hence more stars, the total number of newly discovered planets is maximised. However, to optimise the number of discovered small and long periods planets, long-term monitoring of one field produces the best results. The combination of Kepler and PLATO data improves detection sensitivities; however, as this only covers a fraction of the LOPN1 field and stellar sample, it improves the yields of small and long period planets only marginally. Hence, to detect and characterise small and long period planets in this sparsely explored exoplanet parameter space, a longer continuous observation of the LOPS2 field is best.",
+      "authors": [
+        "Yoshi Nike Emilia Eschen",
+        "Michelle Kunimoto",
+        "Juan Cabrera",
+        "Adrien Leleu",
+        "Thomas G. Wilson",
+        "Heike Rauer",
+        "Alex Romanec",
+        "François Bouchy",
+        "Magali Deleuil",
+        "Nicholas Jannsen",
+        "Don Pollacco",
+        "Toby Rodel",
+        "Sophia Sulis",
+        "Stéphane Udry"
+      ],
+      "categories": [
+        "astro-ph.EP",
+        "astro-ph.IM"
+      ],
+      "published": "2026-10-09",
+      "updated": "2026-10-09",
+      "pdf_link": "https://arxiv.org/pdf/2610.13686v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2610.13686v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 18,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2610.13686v1/2610.13686v1/PLATO_Fields.png"
+    },
+    {
+      "id": "2610.12600v1",
+      "title": "\"Mega-Earths\" are likely an artifact of stellar activity",
+      "abstract": "Empirical relations and planet formation simulations suggest an upper mass limit for rocky planets of 10M⊕, as cores above this will almost certainly undergo runaway gas accretion. Nevertheless, a small number of planets appear to have densities consistent with rocky Earth-like compositions above this threshold, indicating that unusual formation and evolutionary scenarios are capable of producing extremely massive rocky planets called \"Mega-Earths.\" However, all of these planets orbit active stars with logR'HK >-4.75. We find a <1\\% probability that all literature ultra-massive rocky planets would coincidentally orbit such active stars, and find no astrophysical reason to expect Mega-Earths to preferentially form around active stars. We therefore conclude that Mega-Earths are artifacts of stellar activity, and we question the reliability of Gaussian Processes to enable mass measurements for rocky planets around active stars.",
+      "authors": [
+        "Casey L. Brinkman",
+        "Nicolas Cowan"
+      ],
+      "categories": [
+        "astro-ph.EP",
+        "astro-ph.IM",
+        "astro-ph.SR"
+      ],
+      "published": "2026-10-08",
+      "updated": "2026-10-08",
+      "pdf_link": "https://arxiv.org/pdf/2610.12600v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2610.12600v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 15,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2610.12600v1/2610.12600v1/Ultramassive_Earth_Mass_Rad_bivar2.png"
+    },
+    {
+      "id": "2610.13517v1",
+      "title": "The Hydrological Cycle and Circulation of Tidally-Locked Planets with a Finite Moisture Inventory",
+      "abstract": "Tidally-locked planets express a range of climate regimes distinct from those found in our solar system. Their atmospheres are often dominated by planetary-wide overturning circulations and super- rotating jets. In this paper we explore the hydrological cycle of such planets and how it might depend on the total inventory of condensate. To this end we use a set of idealised GCM simulations to probe the response of the hydrological cycle to the surface moisture budget in their atmospheres. We find that for low moisture inventories the climate quickly develops a barren day side and a moist night side where the moisture is trapped, as might be expected. For higher moisture inventories the drying of the day side is significantly delayed by the development of a substellar lake just east of the substellar point, which is sustained by the presence of a local thunderstorm-like convective system that persists even after the lake disappears. The timescales for the lake to disappear are millennia, suggesting that even a weak transfer of moisture through surface processes could maintain a moist day side. We also find that adjusting the threshold at which the evaporative rate becomes constrained by the remaining surface liquid depth modifies the longevity of the lake and surrounding day side conditions. These findings have implications for understanding a diverse range of planetary climates and habitability, given the distribution of moisture and presence of a substellar lake.",
+      "authors": [
+        "Daniel A. Williams",
+        "Geoffrey K. Vallis",
+        "Stephen I. Thomson",
+        "William J. M. Seviour"
+      ],
+      "categories": [
+        "astro-ph.EP",
+        "physics.ao-ph"
+      ],
+      "published": "2026-10-09",
+      "updated": "2026-10-09",
+      "pdf_link": "https://arxiv.org/pdf/2610.13517v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2610.13517v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 14,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2610.13517v1/2610.13517v1/7-lake_region_temp.png"
+    },
+    {
+      "id": "2610.13762v1",
+      "title": "The origin of the large heavy element contents of warm Jupiters",
+      "abstract": "Planet interior models have revealed that warm Jupiters should harbor large heavy element masses (up to 30-40% of the planetary mass). Within the pebble drift and evaporation scenario, inward drifting pebbles can evaporate and enrich the inner disc with vapor to super-stellar values, accreteable by giant planets. As H₂O ice evaporates in the inner disc, while CO₂, CH₄ and CO evaporate in the outer disc, the enrichment of the disc with vapor decreases with increasing orbital distance. We use the chemcomp code to model the migration and growth of planets via pebble and gas accretion in discs around stars with different masses and discs with different sizes. We show (i) that pebble drift and evaporation can explain the wide range of derived heavy element contents of giant planets. (ii) Giant planets forming around stars with larger disc sizes can accrete larger quantities of heavy elements, because these discs can maintain a high pebble flux for a longer time. (iii) Planets forming or migrating interior to the water ice line can accrete larger amounts of heavy elements via the accretion of vapor enriched gas compared to planets forming in the outer disc regions. (iv) Metal rich stars can allow the formation of planets that are more enriched in heavy elements, if they form in the inner disc regions. Planets forming in the outer disc regions will be - independently of the disc metallicity - much less enriched compared. (v) Planets forming in discs with the same size and total mass, but around stars with higher mass, are only marginally more enriched compared to their counterparts forming around lower mass star. Our study suggests that the trend of increasing total heavy element mass with increasing planetary mass is caused by the accretion of vapor enriched gas in discs with different sizes in the combination with different origins of warm giant planets from the inner and outer disc.",
+      "authors": [
+        "Bertram Bitsch"
+      ],
+      "categories": [
+        "astro-ph.EP"
+      ],
+      "published": "2026-10-09",
+      "updated": "2026-10-09",
+      "pdf_link": "https://arxiv.org/pdf/2610.13762v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2610.13762v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 12,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2610.13762v1/2610.13762v1/MZdistance.png"
+    },
+    {
+      "id": "2610.13200v1",
+      "title": "Detailed study of HD 219134: a benchmark K-dwarf with a compact planetary system",
+      "abstract": "Space missions such as CoRoT, Kepler, and TESS have transformed asteroseismology and its synergies with exoplanet science. We revisit the nearby K-dwarf HD 219134 to investigate the tension between asteroseismic and interferometric radii, update its fundamental parameters, and reconstruct the rotational, magnetic, and atmospheric evolution of the system. We combine forward asteroseismic modeling with seismic inversions to assess systematics from non-seismic constraints, radius measurements, and surface modeling. The revised stellar properties are then used for rotational evolution, stellar-wind, and high-energy irradiation calculations. Seismic inversions rule out the most recent interferometric radius, while the asteroseismic and spectroscopic results are compatible with the 2019 interferometric measurement. We obtain M=0.779±0.015_(stat)±0.006_(sys)\\ M_☉, R=0.753±0.005_(stat)±0.002_(sys)\\ R_☉, and an age of 8.92±0.89_(stat)±0.19_(sys) Gyr. These systematics include only non-seismic constraints; literature combined uncertainties from physical inputs and surface effects are 0.007M_☉, 0.002R_☉, and 0.81 Gyr. Rotational and wind modelling shows that standard magnetic braking is broadly compatible with the present-day rotation and angular-momentum loss. Weakened braking gives a closer match but challenges standard wind-loss scalings. The inferred X-ray history suggests early stripping of the innermost planets, while the outer planets likely retained part of their primordial envelopes; HD 219134d experienced only moderate erosion. The apparent radius discrepancy likely reflects underestimated uncertainties in previous interferometric analyses rather than an astrophysical inconsistency. We advocate adopting the asteroseismic radius, which is robust to modeling assumptions and optimisation strategies.",
+      "authors": [
+        "Jérôme Bétrisey",
+        "Camilla Pezzotti",
+        "Gaël Buldgen",
+        "Aline A. Vidotto",
+        "Colin P. Folsom",
+        "Michaël De Becker",
+        "Michaël Gillon"
+      ],
+      "categories": [
+        "astro-ph.EP",
+        "astro-ph.SR"
+      ],
+      "published": "2026-10-09",
+      "updated": "2026-10-09",
+      "pdf_link": "https://arxiv.org/pdf/2610.13200v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2610.13200v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 10,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2610.13200v1/2610.13200v1/HD219134_constraints_Mass.png"
+    }
+  ]
+}
