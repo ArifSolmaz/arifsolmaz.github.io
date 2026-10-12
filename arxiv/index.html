@@ -86,6 +86,17 @@
         }
 
         /* Subscribe Row - Minimal */
+        .lang-toggle {
+            font: inherit;
+            font-size: inherit;
+            padding: 2px 10px;
+            border: 1px solid currentColor;
+            border-radius: 999px;
+            background: transparent;
+            color: inherit;
+            cursor: pointer;
+        }
+        .lang-toggle:hover { opacity: .75; }
         .subscribe-row {
             display: flex;
             justify-content: center;
@@ -632,6 +643,7 @@
                 <p class="tagline">Daily research summaries for general audiences</p>
             </div>
             <div class="subscribe-row">
+                <button id="langToggle" class="lang-toggle" onclick="toggleLang()" aria-label="Switch language">🌐 EN | TR</button>
                 <a href="feed.xml">📡 RSS Feed</a>
                 <a href="https://twitter.com/arifsolmaz" target="_blank">𝕏 @arifsolmaz</a>
                 <a href="https://bsky.app/profile/arifsolmaz.bsky.social" target="_blank">🦋 Bluesky</a>
@@ -684,6 +696,37 @@
         const ARCHIVE_INDEX_URL = 'data/archive/index.json';
         
         let papersData = [];
+        let lang = 'en';
+        try { lang = localStorage.getItem('lang') || ((navigator.language || '').toLowerCase().startsWith('tr') ? 'tr' : 'en'); } catch (e) {}
+        const I18N = {
+            en: { featured: '⭐ Featured Research', readFull: 'Read full summary →', all: 'All Papers', articles: 'articles',
+                  label: '✨ Summary for General Audiences', na: 'Summary not available.', showAbs: '▼ Show original abstract' },
+            tr: { featured: '⭐ Öne Çıkan Araştırma', readFull: 'Tam özeti oku →', all: 'Tüm Makaleler', articles: 'makale',
+                  label: '✨ Genel Okur İçin Özet', na: 'Özet mevcut değil.', showAbs: '▼ Özgün özeti (İngilizce) göster' }
+        };
+        function t(k) { return I18N[lang][k]; }
+        function titleOf(p) { return (lang === 'tr' && p.title_tr) ? p.title_tr : p.title; }
+        function summaryHtmlOf(p) {
+            if (lang === 'tr' && p.summary_html_tr) return p.summary_html_tr;
+            return p.summary_html || '<p><em>' + t('na') + '</em></p>';
+        }
+        function applyLangUi() {
+            document.documentElement.lang = lang;
+            const b = document.getElementById('langToggle');
+            if (b) b.innerHTML = lang === 'tr' ? '🌐 <strong>TR</strong> | EN' : '🌐 <strong>EN</strong> | TR';
+        }
+        function toggleLang() {
+            lang = lang === 'en' ? 'tr' : 'en';
+            try { localStorage.setItem('lang', lang); } catch (e) {}
+            applyLangUi();
+            const content = document.getElementById('content');
+            if (content && papersData.length) content.innerHTML = renderPapersList(papersData);
+            if (document.getElementById('modalOverlay').classList.contains('active')) {
+                const hash = window.location.hash.replace('#paper-', '');
+                const paper = papersData.find(p => getSafeId(p.id) === hash);
+                if (paper) document.getElementById('modalContent').innerHTML = renderModalContent(paper);
+            }
+        }
         let archiveIndex = { dates: [] };
         let currentDate = null;
 
@@ -1082,7 +1125,9 @@
             const imageUrl = paper.figure_url || 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=800&q=80';
             
             let teaser = '';
-            if (paper.tweet_hook?.hook) {
+            if (lang === 'tr' && paper.summary_tr) {
+                teaser = paper.summary_tr.replace(/\*\*[^*]+\*\*\s*/g, '').substring(0, 200) + '...';
+            } else if (paper.tweet_hook?.hook) {
                 teaser = paper.tweet_hook.hook;
             } else if (paper.summary) {
                 teaser = paper.summary.replace(/\*\*/g, '').substring(0, 200) + '...';
@@ -1090,16 +1135,16 @@
             
             return `
                 <article class="lead-story" onclick="openModal('${safeId}')">
-                    <div class="lead-label">⭐ Featured Research</div>
+                    <div class="lead-label">${t('featured')}</div>
                     <div class="lead-grid">
                         <div class="lead-content">
-                            <h2 class="lead-title">${paper.title}</h2>
+                            <h2 class="lead-title">${titleOf(paper)}</h2>
                             <p class="lead-byline">
                                 <span class="authors">${formatAuthorsShort(paper.authors)}</span>
                                 <span class="arxiv-id">• arXiv:${paper.id}</span>
                             </p>
                             <p class="lead-excerpt">${teaser}</p>
-                            <span class="lead-cta">Read full summary →</span>
+                            <span class="lead-cta">${t('readFull')}</span>
                         </div>
                         <img class="lead-image" src="${imageUrl}" alt="" onerror="this.src='https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=800&q=80'" />
                     </div>
@@ -1117,7 +1162,7 @@
                         <span class="article-category">${(paper.categories || ['astro-ph.EP'])[0]}</span>
                         
                     </div>
-                    <h3 class="article-title">${paper.title}</h3>
+                    <h3 class="article-title">${titleOf(paper)}</h3>
                     <p class="article-byline">${formatAuthorsShort(paper.authors)}</p>
                 </article>
             `;
@@ -1146,8 +1191,8 @@
             
             html += `
                 <div class="section-header">
-                    <h2 class="section-title">All Papers</h2>
-                    <span class="section-count">${remainingPapers.length} articles</span>
+                    <h2 class="section-title">${t('all')}</h2>
+                    <span class="section-count">${remainingPapers.length} ${t('articles')}</span>
                 </div>
                 <div class="papers-grid">
                     ${remainingPapers.map(p => renderPaperItem(p)).join('')}
@@ -1172,20 +1217,20 @@
                         ).join('')}
                         
                     </div>
-                    <h2 class="modal-title">${paper.title}</h2>
+                    <h2 class="modal-title">${titleOf(paper)}</h2>
                     <p class="modal-authors">${formatAuthors(paper.authors)}</p>
                 </div>
                 
                 <div class="modal-summary">
-                    <div class="summary-label">✨ Summary for General Audiences</div>
+                    <div class="summary-label">${t('label')}</div>
                     <div class="summary-content">
-                        ${paper.summary_html || '<p><em>Summary not available.</em></p>'}
+                        ${summaryHtmlOf(paper)}
                     </div>
                 </div>
                 
                 <div class="modal-abstract">
                     <button class="abstract-toggle" onclick="toggleAbstract(event)">
-                        ▼ Show original abstract
+                        ${t('showAbs')}
                     </button>
                     <div class="abstract-content">
                         ${paper.abstract}
@@ -1235,10 +1280,10 @@
             
             if (content.classList.contains('visible')) {
                 content.classList.remove('visible');
-                btn.textContent = '▼ Show original abstract';
+                btn.textContent = t('showAbs');
             } else {
                 content.classList.add('visible');
-                btn.textContent = '▲ Hide original abstract';
+                btn.textContent = lang === 'tr' ? '▲ Özgün özeti gizle' : '▲ Hide original abstract';
             }
         }
 
@@ -1321,6 +1366,7 @@
 
         // Initialize
         async function init() {
+            applyLangUi();
             await loadArchiveIndex();
             loadToday();
         }

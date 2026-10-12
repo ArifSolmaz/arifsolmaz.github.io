@@ -7,6 +7,10 @@ on:
     - cron: '0 2 * * 1-5'
   workflow_dispatch:  # Allow manual trigger
 
+concurrency:
+  group: papers-data
+  cancel-in-progress: false
+
 jobs:
   update-papers:
     runs-on: ubuntu-latest

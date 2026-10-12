@@ -1,0 +1,50 @@
+name: Backfill Summaries (EN + TR)
+
+on:
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "Newest N archive days to process (0 = all)"
+        default: "0"
+      force:
+        description: "Regenerate even papers that already have content (1 = yes)"
+        default: "0"
+
+concurrency:
+  group: papers-data
+  cancel-in-progress: false
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - run: pip install anthropic
+
+      - name: Backfill missing summaries and Turkish translations
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          BACKFILL_DAYS: ${{ inputs.days }}
+          BACKFILL_FORCE: ${{ inputs.force }}
+        run: python arxiv/scripts/backfill_ai.py
+
+      - name: Regenerate RSS
+        if: always()
+        run: python arxiv/scripts/generate_rss.py
+
+      - name: Commit and push
+        if: always()
+        run: |
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git add arxiv/data arxiv/feed.xml
+          git diff --staged --quiet || (git commit -m "Backfill EN summaries and Turkish translations" && git pull --rebase && git push)
