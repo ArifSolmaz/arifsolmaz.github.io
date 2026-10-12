@@ -15,7 +15,7 @@ import os
 import re
 import time
 
-MODEL = os.environ.get("ANTHROPIC_MODEL", "claude-sonnet-4-5")
+MODEL = os.environ.get("ANTHROPIC_MODEL", "claude-sonnet-5-5")
 MAX_TOKENS = 4000
 
 SECTIONS_EN = ["Why It Matters", "What They Did", "Key Findings", "Looking Forward"]
