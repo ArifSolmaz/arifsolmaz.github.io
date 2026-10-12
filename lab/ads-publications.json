@@ -1,12 +1,12 @@
 {
   "responseHeader": {
     "status": 0,
-    "QTime": 58,
+    "QTime": 140,
     "params": {
       "q": "orcid:\"0000-0002-3076-164X\"",
       "fl": "bibcode,title,year,pub,volume,page,doi,bibstem,database,property,author_count,first_author,publisher",
       "start": "0",
-      "internal_logging_params": "X-Amzn-Trace-Id=Root=1-6ac37f5e-088b81464cfaf00258657284",
+      "internal_logging_params": "X-Amzn-Trace-Id=Root=1-6accc05b-2d489867407cc3fd43a6c022",
       "fq": "database:(astronomy OR physics)",
       "sort": "date desc,bibcode desc",
       "rows": "200",
@@ -26,9 +26,9 @@
           "MNRAS.543"
         ],
         "database": [
-          "astrophysics",
+          "astronomy",
           "planetary",
-          "astronomy"
+          "astrophysics"
         ],
         "doi": [
           "10.1093/mnras/staf1659",
@@ -63,9 +63,9 @@
           "A&A...703"
         ],
         "database": [
-          "astrophysics",
+          "astronomy",
           "planetary",
-          "astronomy"
+          "astrophysics"
         ],
         "doi": [
           "10.1051/0004-6361/202556498",
@@ -130,8 +130,8 @@
           "epsc.conf"
         ],
         "database": [
-          "planetary",
-          "astronomy"
+          "astronomy",
+          "planetary"
         ],
         "doi": [
           "10.5194/epsc-dps2025-39"
@@ -160,9 +160,9 @@
           "ApJS..265"
         ],
         "database": [
-          "astrophysics",
+          "astronomy",
           "planetary",
-          "astronomy"
+          "astrophysics"
         ],
         "doi": [
           "10.3847/1538-4365/ac9da4",
@@ -198,9 +198,9 @@
           "A&A...664"
         ],
         "database": [
-          "astrophysics",
+          "astronomy",
           "planetary",
-          "astronomy"
+          "astrophysics"
         ],
         "doi": [
           "10.1051/0004-6361/202141546",
@@ -235,8 +235,8 @@
           "NewA...86"
         ],
         "database": [
-          "astrophysics",
-          "astronomy"
+          "astronomy",
+          "astrophysics"
         ],
         "doi": [
           "10.1016/j.newast.2021.101571",
@@ -269,9 +269,9 @@
           "TJAA....2"
         ],
         "database": [
-          "astrophysics",
+          "astronomy",
           "heliophysics",
-          "astronomy"
+          "astrophysics"
         ],
         "doi": [
           "10.48550/arXiv.2103.04855"
@@ -302,8 +302,8 @@
           "AstL...47"
         ],
         "database": [
-          "astrophysics",
-          "astronomy"
+          "astronomy",
+          "astrophysics"
         ],
         "doi": [
           "10.1134/S1063773721060050",
@@ -364,7 +364,7 @@
       }
     ]
   },
-  "allocatedBytes": 8332112,
+  "allocatedBytes": 8315256,
   "filtered": "true",
   "access_modality": "api",
   "_meta": {
