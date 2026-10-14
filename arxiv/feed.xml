@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 13 Oct 2026 08:48:53 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 14 Oct 2026 07:05:12 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,119 +15,357 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>The GAPS programme at TNG LXXXII. The first atmospheric investigation of the gas giant WASP-13b at high resolution with GIARPS</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-12677v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-12677v1</guid>
-      <pubDate>Mon, 12 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>D. Sicilia et al.</dc:creator>
+      <title>Ultraviolet Reflected-Light Spectroscopy of Modern Earth Analogs with Starshade Observations</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-17377v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-17377v1</guid>
+      <pubDate>Wed, 14 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Zahra Ahmed et al.</dc:creator>
       <description><![CDATA[Why It Matters
-Some giant planets are astonishingly puffy. WASP-13b is a "hot Jupiter," a gas giant that orbits so close to its star that it reaches about 1500 K (roughly 1200 °C). It is also inflated, about 1.4 times the radius of Jupiter, so it has a very low density, a bit like a cosmic balloon. A puffy atmosphere should be easy to study, because more starlight filters through it when the planet passes in front of its star. Yet many of these planets have barely been examined. Until now, WASP-13b had never been probed with high-resolution spectroscopy, which splits light into fine detail like a prism.
+One of astronomy's biggest goals is to study Earth-sized planets around other stars and look for signs of life-friendly chemistry. Oxygen is a key clue, but the usual oxygen fingerprints in visible and near-infrared light fade when a planet has much less oxygen than today's Earth, as ours did for much of its history. Ultraviolet (UV) light offers a backup. Ozone, the molecule made from oxygen that forms our planet's sunscreen layer, absorbs strongly near 0.25 micrometers. This feature stays detectable even at 0.1% of present-day oxygen levels.
 What They Did
-The team used an instrument called GIARPS on the Telescopio Nazionale Galileo (TNG), a telescope in the Canary Islands, to watch four transits, which are the moments the planet crosses in front of its star. They searched the starlight for the fingerprints of helium, hydrogen, sodium, water vapour and carbon monoxide. They also measured how the planet's path sweeps across the spinning star, a technique called the Rossiter-McLaughlin effect. Finally, they planted fake atmospheric signals in the data to test what they would have been able to detect.
+The team built a complete simulated pipeline for a "starshade," a giant flower-shaped screen flown far in front of a space telescope to block a star's glare, so a faint planet next to it can be seen. The pipeline simulates the observation, cleans the data cautiously, and then uses a statistical method called Bayesian retrieval to judge how confidently ozone is detected. They tested 108 simulated scenes with different planet phases (how much of the planet is lit, like the Moon's phases), different tilts of the planetary system, and different amounts of exozodiacal dust, the dust in a planetary system that glows and acts like fog around the planet.
 Key Findings
-The planet's orbit is well aligned with the star's spin, with a misalignment of just 2.7 ± 1.1 degrees. The star's rotation speed is 4.5 ± 0.1 km per second, more precise than earlier estimates. No clear atmospheric signal showed up. The planted-signal tests rule out an atmosphere that is both rich in heavy elements (about ten times the Sun's level or more) and free of high clouds, meaning clouds sitting above roughly 10 millibar of pressure. The most likely explanation is a layer of high-altitude clouds or haze muting the signals, although a very metal-rich atmosphere cannot be fully excluded.
+Using only very coarse UV color information (resolution R=7, roughly a handful of broad colors), a reliable ozone detection needs a photometric signal-to-noise ratio of about 30, meaning the planet's signal is roughly 30 times the noise. The Habitable Worlds Observatory could reach this in 3-day exposures for a Sun-like star 10 parsecs (about 33 light-years) away, with system tilts up to 60 degrees and favorable phases up to 90 degrees. Above that threshold, detections held up even if the dust glow was mis-estimated by up to 30%. The median ozone amount recovered was within a factor of ten of the true value.
 Looking Forward
-WASP-13b joins a group of puffy hot Jupiters whose spectra look flat and featureless. Seeing through the clouds will take more powerful, next-generation telescopes and instruments.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Star Cluster Ecology VIII. -- Dynamically Forming S-Type and αCentauri-like Systems</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-13127v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-13127v1</guid>
-      <pubDate>Mon, 12 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Erwan Hochart, Simon Portegies Zwart</dc:creator>
-      <description><![CDATA[Why It Matters
-Most stars are born in crowded nurseries, not alone. Picture a busy playground where children bump into each other, pair up and sometimes get pulled apart. Young stars do something similar, and their planets are caught up in the shuffle. Many stars in our galaxy come in pairs, so it is worth asking how planets fare when a partner star appears. The work also asks whether our nearest stellar neighbour, the αCentauri system, could have formed through this kind of cosmic encounter.
-What They Did
-The researchers ran computer simulations of a young star cluster modelled on NGC 1333, a real star-forming region. The cluster starts out "sub-virial" (not yet expanding, so stars begin close together and fall toward each other) and "fractal" (clumpy, like clusters within clusters). They tested three setups. In Model A, planetary systems begin in mean motion resonance, meaning the planets' orbits keep a tidy rhythm. In Model B, the same systems are nudged out of that rhythm but stay stable. In Model C, there are no planets at all. Each model was run ten times, following the cluster for 30 million years.
-Key Findings
-Pairs of stars formed by chance encounters at similar rates in all three models, so planets barely influence whether such pairs form. The simulations also produced more wide pairs than earlier studies. The authors attribute this to the clumpy, collapsing starting conditions. Planets orbiting just one star of a pair ("S-type") appeared naturally. Planets circling both stars ("P-type") were rare. In Model A, 2% of systems were S-type and 5% were S-type planets in both stars of a binary. Planets thrown out of binary systems left much faster than those thrown out of single-star systems. Collisions between planets and stars, and captures of planets by other stars, happened mostly in binaries. Several αCentauri-like systems appeared, which suggests our nearest neighbour may have formed through such dynamical encounters.
-Looking Forward
-The results suggest that binaries and their planets can emerge from the chaos of a star cluster rather than only from the birth of a star. The abstract does not describe specific follow-up plans.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Assessing PLATO&#x27;s Discovery Potential across Different Observing Strategies</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-13686v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-13686v1</guid>
-      <pubDate>Mon, 12 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Yoshi Nike Emilia Eschen et al.</dc:creator>
-      <description><![CDATA[Why It Matters
-Astronomers have found thousands of planets beyond our solar system, but the ones we know best are large, or they orbit very close to their stars. Planets as small as Earth that take a long time to circle their stars, much like our own world does, are still hard to find. PLATO (PLAnetary Transits and Oscillations of stars), a European space telescope planned to launch in spring 2027, is built to fill this gap. Deciding where it should look, and for how long, will shape what it discovers.
-What They Did
-PLATO will first stare at one fixed patch of the Southern sky, called LOPS2, for at least 2 years. After that, it could either keep watching the same patch, for up to 8 years in total, or swing to a Northern patch, LOPN1. LOPN1 overlaps the field watched by the Kepler space telescope. The researchers compared these two plans by estimating how sensitive each would be to small, long-period planets, and how many planets each would likely find. They counted the old Kepler data for the Northern field. They also counted the extra detection power from combining PLATO's observations with those of TESS (Transiting Exoplanet Survey Satellite), which has watched both areas and will keep doing so.
-Key Findings
-Watching both fields means looking at more stars, so it gives the largest total number of newly discovered planets. But for small planets and those with long orbits, staying on one field for longer works best. Kepler's old data does sharpen the search in the Northern field. It covers only a fraction of that field and its stars, though, so the improvement for small, long-period planets is only marginal.
-Looking Forward
-If the goal is to explore the sparsely charted territory of Earth-sized planets on long orbits, the authors conclude that a longer continuous look at the Southern field, LOPS2, is the best choice. A longer stare is like keeping a camera shutter open longer to catch faint, slow signals. The final decision rests with the mission, but this study gives a clear way to weigh the trade-off.]]></description>
+These results give mission planners a concrete signal-quality target for UV observations of Earth-like worlds. They also show that ozone could be a useful oxygen clue even for planets whose oxygen is too scarce to show up at longer wavelengths.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.IM</category>
     </item>
     <item>
-      <title>&quot;Mega-Earths&quot; are likely an artifact of stellar activity</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-12600v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-12600v1</guid>
-      <pubDate>Mon, 12 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Casey L. Brinkman, Nicolas Cowan</dc:creator>
+      <title>Simulations of the Evolving Ozone Layer: Implications for the Early Earth, Exoplanets, and the Search For Life</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-18864v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-18864v1</guid>
+      <pubDate>Wed, 14 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Akhil Kumar, Gregory J. Cooke</dc:creator>
       <description><![CDATA[Why It Matters
-Astronomers think there is a ceiling on how massive a rocky planet can get. Above about 10 times the mass of Earth, a young planet's core should pull in huge amounts of gas and snowball into a gas giant, rather than staying rocky. Yet a handful of planets seem to be both extremely heavy and dense enough to be made of rock, like Earth. If real, these "Mega-Earths" would force scientists to rethink how planets form.
+For most of Earth's history, the air held almost no free oxygen. Today oxygen makes up 21% of the atmosphere by volume. That change allowed an ozone layer to form, a thin veil of gas high above us that works like planetary sunscreen, absorbing much of the harmful ultraviolet (UV) light from the Sun. Ozone is also one of the gases astronomers hope to detect on distant planets as a possible sign of oxygen, and perhaps life. To read those signals correctly, we need computer models of ozone that we can trust.
 What They Did
-The researchers looked at the ultra-massive rocky planets reported in the scientific literature and asked what they have in common. Every one of them orbits a magnetically active star, meaning one with a restless surface. Activity is measured by a number called logR'HK (a gauge of a star's glow from magnetic activity), and for these stars it is above -4.75. The team calculated how likely it would be for all of these planets to end up around such stars purely by chance. They also searched for any physical reason why giant rocky planets would prefer active stars.
+Earlier studies simulated how the ozone layer evolved over Earth's history, but separate research groups used separate models, so the results were hard to compare. In this work, the team ran simulations of Earth's atmosphere in four open-source one-dimensional (1D) photochemical models and one three-dimensional (3D) chemistry-climate model. A 1D model treats the atmosphere as a single column of air, like a core sample. A 3D model covers the whole globe, including winds and circulation. All the simulations assumed the modern Sun, and the team focused on ozone.
 Key Findings
-They found less than a 1% probability that the pattern is a coincidence. They also found no astrophysical reason to expect Mega-Earths to form preferentially around active stars. They conclude that Mega-Earths are most likely artifacts of stellar activity. In other words, the star's own behavior may be fooling the measurements, much like trying to hear a faint whisper next to a loud, unpredictable radio. The authors also question how reliable Gaussian Processes are for measuring the masses of rocky planets around active stars. This statistical technique is used to separate a star's activity "noise" from the tiny signal a planet leaves behind.
+The thickness of the ozone layer differed clearly between the 1D models and the 3D model. The authors trace this to several factors: how each model handles the splitting of oxygen molecules by sunlight, the lists of chemical reactions used, how water droplets and ice are treated, and the way air moves around the globe in 3D. They also find that 1D models can introduce a bias for climate states that have never been observed. That bias can carry through to estimates of biological UV damage and surface habitability. When the models were applied to specific exoplanet atmospheres, the differences became even larger.
 Looking Forward
-If this conclusion holds, the apparent exceptions to the 10-Earth-mass limit may disappear, and the standard picture of planet formation would stay intact. It also suggests that mass measurements of rocky planets around active stars deserve extra caution and a closer look at the methods used to obtain them.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
-        <category>astro-ph.SR</category>
-    </item>
-    <item>
-      <title>The Hydrological Cycle and Circulation of Tidally-Locked Planets with a Finite Moisture Inventory</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-13517v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-13517v1</guid>
-      <pubDate>Mon, 12 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Daniel A. Williams et al.</dc:creator>
-      <description><![CDATA[Why It Matters
-Many planets orbiting small, dim stars are "tidally locked." Like the Moon facing Earth, they keep one side in permanent daylight and the other in permanent night. Their weather looks nothing like ours, with planet-wide air flows and fast jet streams. Whether such a world can hold liquid water matters a great deal for judging whether it could support life. The risk is that water evaporates on the hot day side, travels to the night side, and freezes there for good, leaving the sunny side a desert.
-What They Did
-The researchers ran idealised computer simulations of a planet's atmosphere, known as general circulation models (GCMs). These are simplified versions of the software used for weather and climate forecasts. They varied the total amount of water available at the surface, from small to large, and watched how the water cycle of evaporation, clouds, rain and runoff evolved. They also changed the threshold at which evaporation starts to slow because the surface liquid is running low.
-Key Findings
-With little water, the planet quickly develops a barren day side and a wet night side where the moisture gets trapped. With more water, the drying of the day side is significantly delayed. A lake forms just east of the point directly beneath the star. A permanent thunderstorm-like system keeps it supplied, and the storm persists even after the lake itself has vanished. The lake takes thousands of years to disappear. Even a weak process returning moisture from the night side to the day side could therefore keep the day side moist. The evaporation threshold also changes how long the lake and the surrounding conditions last.
-Looking Forward
-These results suggest that the distribution of water, and the presence of a lake under the star, may shape the climate and habitability of tidally locked worlds. The study uses idealised simulations, so real planets may differ. Even so, it points to where astronomers might look for signs of moisture on these planets.]]></description>
+These discrepancies affect the predictions that guide the next generation of space telescopes, such as the Habitable Worlds Observatory (HWO) and the Large Interferometer For Exoplanets (LIFE). Both are designed to search for habitable and inhabited worlds. The results suggest that interpreting the ozone signals they detect will require careful, cross-checked modelling that accounts for each model's limitations.]]></description>
         <category>astro-ph.EP</category>
         <category>physics.ao-ph</category>
     </item>
     <item>
-      <title>The origin of the large heavy element contents of warm Jupiters</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-13762v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-13762v1</guid>
-      <pubDate>Mon, 12 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Bertram Bitsch</dc:creator>
+      <title>High-resolution transmission spectroscopy of KELT-18b Metastable helium detection at 1083 nm</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-17220v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-17220v1</guid>
+      <pubDate>Wed, 14 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>M. Chella et al.</dc:creator>
       <description><![CDATA[Why It Matters
-Warm Jupiters are giant planets that orbit their stars fairly closely, but not as scorchingly close as "hot" Jupiters. Models of their interiors show that many are packed with "heavy elements," meaning everything heavier than hydrogen and helium, such as rock, metal, and ices. In some cases these elements make up as much as 30-40% of the planet's mass. That is surprising, because giant planets are mostly made of hydrogen and helium gas. Working out how these planets collected so much heavy material helps us understand how planetary systems, possibly including our own, are built.
+Some planets orbit so close to their stars that they are slowly being stripped of their atmospheres, much like a snowball melting in the sun. KELT-18b is one of these "ultrahot Jupiters", a gas giant heated to extreme temperatures by a very hot star. Astronomers want to know how fast such planets lose gas, because that loss can reshape a planet over billions of years. One of the best tracers of escaping gas is helium, which absorbs a very specific color of infrared light (at 1083 nanometers). Until now, nobody had looked for it around KELT-18b.
 What They Did
-The researchers used a computer code called chemcomp. It simulates how planets grow and move inside the disc of gas and dust around a young star. The key idea is "pebble drift and evaporation." Small pebbles of ice and rock drift inward toward the star. When they get warm enough, the ices turn to vapor and enrich the inner disc's gas with heavy elements. Water ice evaporates fairly close to the star, while carbon dioxide, methane, and carbon monoxide evaporate farther out. A planet that grows from or swallows this enriched gas can take in a lot of heavy material. The team simulated planets that form and migrate through discs of different sizes, around stars of different masses and metal content.
+The team watched a single transit, the moment the planet passes in front of its star, using the CARMENES spectrograph, an instrument that splits starlight into fine detail. They looked for starlight dimmed by helium in the planet's atmosphere. The signal is hard to find because Earth's own atmosphere glows with interfering "OH" lines at nearly the same wavelengths. So the researchers used two different cleaning methods: one that models and masks the contamination, and a statistical method called principal component analysis (PCA). They also ran computer simulations of the planet's atmosphere, testing different helium-to-hydrogen ratios and different levels of the star's high-energy radiation.
 Key Findings
-Pebble drift and evaporation can explain the wide range of heavy element contents found in giant planets. Larger discs keep up a strong flow of pebbles for longer, so planets there collect more heavy elements. Planets that form or move inside the water ice line gain more heavy elements from the vapor-enriched gas than planets formed farther out. Stars rich in metals help inner-disc planets become more enriched, but planets forming in the outer disc stay much less enriched whatever the metal content. Stellar mass matters only slightly when disc size and mass are the same.
+They detected helium absorption of 1.10 ± 0.22 percent, at 5.1 sigma, meaning it is very unlikely to be a fluke. The signal showed no velocity shift, consistent with coming from the planet's atmosphere. A test showed the PCA method weakens the signal it recovers. Simulations indicate the planet is losing mass through photoevaporation, with an efficiency between about 15 and 32 percent. The models also rule out very low helium-to-hydrogen ratios at 3 sigma. KELT-18b is now the most massive planet orbiting the hottest star with a confirmed helium detection.
 Looking Forward
-The authors suggest that the observed trend of heavier planets holding more heavy elements comes from two things combined: discs of different sizes, and warm giants that originate in either the inner or outer disc. Future observations of planet interiors and compositions can test this picture.]]></description>
+This result comes from just one transit, so more observations would help confirm the details. It also widens the range of planets where helium escape is known, helping scientists test how atmospheric loss works around hot stars.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>Detailed study of HD 219134: a benchmark K-dwarf with a compact planetary system</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-13200v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-13200v1</guid>
-      <pubDate>Mon, 12 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Jérôme Bétrisey et al.</dc:creator>
+      <title>Dynamically Coupled Three-dimensional Cloud-Chemistry in Rapidly Rotating Irradiated Atmospheres: an Application to the Compact White Dwarf-Brown Dwarf system ZTFJ0038+2030</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-17714v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-17714v1</guid>
+      <pubDate>Wed, 14 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Yanhong Lai et al.</dc:creator>
       <description><![CDATA[Why It Matters
-To understand a planet, you first have to understand its star. If we misjudge the star's size, we misjudge the planets circling it. HD 219134 is a nearby orange dwarf star, cooler and smaller than our Sun, with a tightly packed family of planets. That makes it a "benchmark," a reference object that scientists use to test their methods. But two different ways of measuring its size disagreed. Interferometry combines light from several telescopes to directly measure the star's width. Asteroseismology reads the star's natural vibrations, a bit like judging a bell's size from its ring. The mismatch needed to be settled.
+Imagine a world where one side is blasted by light from a dead star while the other side stays dark, and the whole planet-sized object spins once every 10 hours. That is the brown dwarf orbiting the white dwarf ZTFJ0038+2030. A brown dwarf is an object too small to be a true star but bigger than a planet. Clouds and shifting chemistry shape what telescopes can see in such atmospheres. The James Webb Space Telescope (JWST) can now watch these objects rotate and track how their brightness changes, so we can test ideas about their weather in three dimensions.
 What They Did
-The team built computer models of the star and fitted them to its vibration patterns. They also used "seismic inversions," a technique that works backward from the vibrations to the star's interior. They tested how different assumptions changed the answers. They then used the updated star properties to reconstruct how its spin, magnetic activity, stellar wind, and high-energy X-ray output changed over billions of years, and what that meant for its planets.
+The team upgraded a computer weather model called ADAM. They added a simplified chemistry scheme that tracks how gases such as carbon monoxide (CO) and carbon dioxide (CO₂) are made and destroyed. They also added a simple cloud scheme in which vapor condenses into cloud and then rains out. They then simulated the brown dwarf's atmosphere. It receives starlight about as strong as its own internal heat.
 Key Findings
-The inversions rule out the most recent interferometric radius, while the 2019 interferometric measurement agrees with the vibration results. The star has a mass of 0.779 ± 0.015 times the Sun's, a radius of 0.753 ± 0.005 solar radii, and an age of about 8.92 ± 0.89 billion years. Standard models of magnetic braking, the gradual slowing of a star's spin, broadly match its present rotation, though weaker braking fits slightly better. The X-ray history suggests the innermost planets lost their atmospheres early, while the outer planets probably kept part of their original gas envelopes. HD 219134d lost only a moderate amount. The authors think the earlier interferometric uncertainties were underestimated.
+Fast rotation squeezes the main wind patterns toward the equator, much as a spinning top keeps its motion tight around its middle. As a result, the brightness changes as the object orbits are more symmetric, and the hottest spot is shifted less than on typical "hot Jupiters." This matches the JWST observations. Most gases are mixed evenly around the globe. CO and CO₂ are the exception: winds carry them up and down faster than rapid rotation lets them spread sideways, so they stay patchy. This could help explain a lopsided CO₂ signal seen by JWST. Clouds of sodium sulfide (Na₂S) dominate the visible layers and weaken the winds, which lowers CO and CO₂. Magnesium silicate and iron clouds sit deeper down. Because the sodium sulfide clouds lie mostly above the layer where the chemistry gets "frozen in," cloud-driven stirring has little effect on the CO and CO₂ amounts. Large-scale circulation sets those instead.
 Looking Forward
-The authors recommend adopting the asteroseismic radius, which held up under different modeling choices. A trustworthy size for this star gives a firmer base for studying its planets' composition and history, and for calibrating similar stars.]]></description>
+These predictions give astronomers specific patterns to look for in JWST data. They also offer a way to test whether such models can describe other fast-spinning, irradiated worlds.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>TESS Pulsation Timing Reveals the JWST Calibration Star HD 158485 as a Double-pulsator Binary</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-14371v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-14371v1</guid>
+      <pubDate>Wed, 14 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Chenglong Lv et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+Telescopes need reference points, much like a kitchen scale needs a trusted set of weights. The James Webb Space Telescope (JWST) uses a small group of well-studied stars as its "weights" to measure how bright things really are. One of them, HD 158485, was assumed to be a single star. Catalogs from the Gaia mission hinted that it is actually a binary, a pair of stars orbiting each other, but gave no details about the orbit. If a calibration star hides a companion, the light it is expected to give off could be slightly wrong.
+What They Did
+HD 158485 is a delta Scuti star, a type that pulses in brightness like a slow heartbeat. The researchers used years of observations from NASA's Transiting Exoplanet Survey Satellite (TESS) and tracked six pulsation rhythms. When a star orbits a companion, its light arrives a little earlier or later depending on where it is in the orbit, so the pulses drift out of step. The six rhythms split into two groups that drifted in opposite directions. That means both stars pulsate, and each acts as its own clock. The team then fitted the orbit directly to the light curve, the record of brightness over time.
+Key Findings
+The stars orbit each other every 382.80 days, on a moderately stretched orbit (eccentricity 0.242). The light-travel delays were about 196 and 240 seconds, and the second star is about 0.82 times as massive as the first. As a test, the team used only the first two long TESS campaigns to predict the third without adjusting anything. The prediction matched closely (correlation 0.983, typical error 83.8 seconds). Assuming a one-year orbit instead gave an error of 289.9 seconds. Independent evidence from the star's motion across the sky (Hipparcos and Gaia) also points to an unseen companion. Modeling the companion changes predicted infrared brightness by about 1.6% at 1–5 micrometers and 2.5% at 5–28 micrometers.
+Looking Forward
+This shows that pulsating stars can reveal hidden binaries even when catalogs lack an orbit. Calibration stars may deserve this kind of check, so that small hidden effects do not slip into precision measurements.]]></description>
+        <category>astro-ph.SR</category>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Extinction by non-spherical particles with the Nanoparticle Transition Matrix Code: perspectives for interstellar medium and exoplanetary atmospheres</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-17081v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-17081v1</guid>
+      <pubDate>Wed, 14 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>G. La Mura et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+When starlight passes through a cloud of cosmic dust or the hazy air of a distant planet, the light is dimmed and changed. Some of it is soaked up and some is bounced in new directions. Scientists call this combined dimming "extinction," and reading it correctly tells us what the dust and haze are made of. The trouble is that real cosmic particles are rarely neat little balls. They are lumpy, uneven, and built from many different ingredients. For decades, computing how light interacts with such messy grains has been so demanding that researchers often replaced them with simplified shapes. That shortcut can lead to misreading the data. The problem matters in two places: the dust between the stars, known as the interstellar medium, and the atmospheres of exoplanets, which are planets orbiting other stars.
+What They Did
+The authors describe a new software implementation called the Nano-particle Transition Matrix code. It builds on a mathematical method, the "T-matrix," developed by Borghese, Denti and Saija. Think of the method as a very detailed recipe for how light bounces among all the tiny pieces of one complicated grain. The new code is written to take advantage of modern computer hardware, which cuts the computing cost. This lets it handle particles made of far more components than before. They apply it to models of interstellar dust and to aerosols (tiny floating particles) in the atmospheres of "hot Jupiters," giant planets that orbit very close to their stars.
+Key Findings
+The abstract reports no specific numerical results. Its main claim is that the new implementation can handle calculations of increasing complexity at a lower computational cost. That makes it possible to model highly asymmetric and non-uniform particles without relying on heavy simplifying assumptions.
+Looking Forward
+The authors expect the tool to help interpret transmission spectra, which show how a planet's atmosphere filters starlight as the planet passes in front of its star. These spectra come from the James Webb Space Telescope and will come from the future ARIEL mission, the Atmospheric Remote-sensing Infrared Exoplanet Large survey.]]></description>
+        <category>astro-ph.IM</category>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.GA</category>
+    </item>
+    <item>
+      <title>A Spatial Map of the Atmospheric Limb of a Hot Jupiter</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-18806v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-18806v1</guid>
+      <pubDate>Wed, 14 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Lili Alderson et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+Planets are not flat discs. They are three-dimensional worlds with winds, weather and temperature differences from place to place. Hot Jupiters, giant gas planets that orbit extremely close to their stars, are expected to have especially dramatic contrasts. Astronomers have recently begun to see this 3D nature. The James Webb Space Telescope (JWST) has mapped the daytime side of such planets and spotted differences between the two edges of their atmospheres as they pass in front of their stars.
+What They Did
+The team applied a new mapping method called "transmission strings" to WASP-17b, a hot Jupiter. During a transit, a little starlight filters through the thin ring of atmosphere around the planet's edge, known as the limb. Earlier approaches could mostly compare the east side with the west. This method can also map changes from the equator toward the poles, at different angles around the ring. The researchers used light spanning 0.6 to 12 micrometres, from visible to infrared wavelengths, so they could study the atmosphere's temperature and chemistry.
+Key Findings
+The limb shows a clear change in temperature. The morning side is about 858 kelvin, with a wide uncertainty (roughly 233 K lower to 434 K higher). The evening side is about 1522 kelvin, with a tighter uncertainty of about 115 K. That is a difference of around 650 kelvin. These results agree with earlier measurements of the planet's glowing nightside and with maps of its dayside. The authors describe the combined picture as a fully comprehensive set of observations for a transiting exoplanet. They also found that the amounts of water (H₂O) and carbon dioxide (CO₂) can be held at constant values around the limb. This gives real observational tests for global circulation models, the computer simulations of a planet's winds and climate.
+Looking Forward
+The transmission string technique, together with how well WASP-17b can be observed, moves the study of exoplanet atmospheres toward a truly three-dimensional view. The goal is to understand both the motion and the chemistry of hot Jupiters, not just their average properties.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>The EBLM Project - XIX. The absence of radius inflation in a homogeneous analysis of 66 Northern low-mass eclipsing binaries</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-18338v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-18338v1</guid>
+      <pubDate>Wed, 14 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Yasmin T. Davis et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+Small, dim stars called M-dwarfs are popular hunting grounds for Earth-like planets. A planet's size and mass are worked out from its star's, so any error in the star's measurements carries straight into the planet's. It is like measuring a shadow without knowing how tall the lamp is. The computer models used to predict the sizes of small stars might be systematically off, so they need testing against real measurements.
+What They Did
+The team studied 66 "eclipsing binaries" in the northern sky. These are pairs of stars that orbit each other and take turns passing in front of one another, causing regular dips in brightness. They combined two kinds of data. The first was precise radial velocities from the SOPHIE spectrograph, which track how fast the stars move toward and away from us. The second was brightness measurements from TESS (the Transiting Exoplanet Survey Satellite). Together these give each star's mass and radius. The team focused on a high-quality group of 50 systems with orbital periods longer than 5 days. They then compared the results with two widely used sets of stellar models, called Baraffe and MIST.
+Key Findings
+For the low-mass companion stars, the median precision was 4.2% in radius and 8.6% in mass. The data agreed statistically with both sets of models. The measured "radius inflation", meaning how much larger stars appear than predicted, was just 0.3 ± 1.6%, which is no significant effect. The team also found no trend with metallicity (the amount of elements heavier than hydrogen and helium in a star), even though their precision was good enough to spot one. This differs from the metallicity trend predicted by MIST. The scatter in the results matched what the uncertainties alone would produce. This limits how large any unmodelled effect on the mass-radius relationship could be, ruling out deviations bigger than about 4.2%. However, the stars' temperatures did not agree with the models as well as their sizes did.
+Looking Forward
+The sizes of these small stars look reliable, which is good news for planet hunters. The mismatch in temperatures and metallicity trends shows where the stellar models may still need work.]]></description>
+        <category>astro-ph.SR</category>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Tracing the Influence of Distant companions on Exoplanetary Systems (TIDES) I. Highly Eccentric and Misaligned Binary Companions to Hot Jupiters</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-17811v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-17811v1</guid>
+      <pubDate>Wed, 14 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Marvin Morgan et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+Hot Jupiters are giant planets, similar in size to Jupiter, that circle their stars in just a few days, far closer than Mercury is to our Sun. Nobody is sure how they ended up so close, because giant planets are thought to form far from their stars. Many hot Jupiters live in star systems with a second, distant star. Yet the orbits of those companion stars are mostly poorly known, so we can't tell whether they helped drag the planets inward. It's like suspecting a bystander was involved in an event without knowing where they were standing.
+What They Did
+The researchers launched a survey called TIDES (Tracing the Influence of Distant companions on Exoplanetary Systems). Its goal is to map the orbits of companion stars in hot Jupiter systems. This first paper covers six systems: τ Boo, WASP-2, WASP-11, WASP-76, HAT-P-14, and HAT-P-16. They combined older observations with new Keck telescope data. The new data came from sharp infrared images (NIRC2) and from measurements of the companions' motion toward and away from us, made with the Keck Planet Imager and Characterizer (KPIC).
+Key Findings
+Four of the six systems have well-measured companion orbits, and all four are extremely stretched-out ovals. Their eccentricity, a measure of how elongated an orbit is, is 0.8 or higher, where 0 is a perfect circle and 1 is the limit of stretching. Three of these systems also show a misalignment of at least 20 degrees between the planet's orbit and the companion star's orbit. The authors say these orbits differ from those of ordinary double stars and of double-star systems with small planets close to their stars.
+Looking Forward
+These patterns fit the idea that companion stars help shape hot Jupiters. A companion could push a planet onto a stretched orbit that later shrinks, or it could take part in an earlier gravitational upheaval that created the hot Jupiter. The abstract stops short of proving cause and effect. The team plans to keep monitoring the full sample to find out whether the companions truly play a causal role.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>Rattling Resonant Chains with Dynamical Tides and Parametric Resonance Passage</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-17919v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-17919v1</guid>
+      <pubDate>Wed, 14 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Mohammad Farhat, Eugene Chiang</dc:creator>
+      <description><![CDATA[Why It Matters
+Many of the small planets orbiting close to their stars, called sub-Neptunes, are thought to be born in tidy "chains." In a chain, neighboring planets tug on each other in a steady rhythm, a bit like children on a row of swings pushed in time. Astronomers call this a mean-motion resonance. Yet most older planetary systems are not in such chains, so the chains must break apart, and observations suggest this happens on a timescale of about 100 million years. Computer models show the chains only break on that schedule if they are first "rattled," meaning their orbits are made a few percent more oval than a perfect circle. What does the rattling has been a puzzle.
+What They Did
+The authors propose that the rattling comes from inside the system. The star's gravity can drive internal oscillations in the innermost planet, much as a singer's note can make a wine glass ring. They built a mathematical theory, plus a simplified toy model, predicting a "parametric instability." This is like pumping a swing at just the right moment. It happens when the tidal pushing frequency equals the sum of the planet's internal oscillation frequency and the chain's own wobble frequency. They also created a new computer tool, MAQAM, which calculates the oscillation modes of spinning planets. They combined it with an evolution code called ORCHARD to follow how those modes change as sub-Neptunes cool.
+Key Findings
+As a sub-Neptune cools, the frequencies of its inner oscillations drift. Inertial modes, which are oscillations restored by the planet's rotation, in the gas envelope and fluid mantle can briefly line up with the chain's rhythm. Passing through just one such parametric resonance can raise the orbital oddness, or free eccentricities, of the chain to a few percent within a few tens of millions of years. No hidden reservoir of small bodies or distant perturbing planet is needed. The chain unravels from within.
+Looking Forward
+The work offers a self-contained explanation for why resonant chains break. It also links the interior structure of sub-Neptunes to the architecture of their planetary systems. The abstract does not describe observational tests.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Star spots mimic the proposed abundance signatures of planet formation</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-18509v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-18509v1</guid>
+      <pubDate>Wed, 14 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Andrew R. Casey et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+When astronomers measure what a star is made of, they hope to learn about the planets around it. One proposed clue is a pattern in the star's chemistry. Elements that condense into rock at high temperatures, called refractory elements, seem to be slightly depleted in some stars compared with elements that stay gaseous, called volatile ones. Some researchers have suggested this could be a fingerprint of rocky planet formation, as if the star's missing "rock ingredients" were locked up in planets. This paper offers a more mundane explanation that could change how we read those signals.
+What They Did
+The team argues that star spots, the cooler, magnetically disturbed patches like sunspots, can fake this pattern. Refractory elements tend to have atoms that lose an electron easily, and their strongest spectral lines are especially sensitive to the cooler conditions in spots. The researchers first re-examined published data on Sun-like stars near the Sun and compared a stellar activity indicator, R'HK, with the "Tc slope," which describes how measured abundances change with condensation temperature. They then used Korg.jl, a computer code that simulates starlight, to model the Sun with spots of different sizes and contrasts. Finally, they compared the spectrum of the ordinary Sun with that of a sunspot's darkest core, the umbra, line by line.
+Key Findings
+Stellar activity is correlated with the Tc slope in the literature sample. The simulations showed that many different spot setups can produce abundance patterns that look like a condensation-temperature trend. In the extreme sunspot comparison, high-condensation-temperature elements appeared to increase by a factor of three, or 0.5 dex, with no real change in composition.
+Looking Forward
+The authors say stellar activity is a serious concern for precision spectroscopy, the careful study of starlight to measure chemical makeup. Claims linking a star's chemistry to planet formation may need to account for spots. The paper also offers some direction on how to reduce the effect, though the abstract does not give details.]]></description>
+        <category>astro-ph.SR</category>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Mid-IR Water-Vapor Seeing: Implications for ELT/METIS High-Contrast Imaging from VLTI Data</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-14801v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-14801v1</guid>
+      <pubDate>Wed, 14 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Abhirami S Raghu et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+Finding and studying Earth-like rocky planets around other stars is one of astronomy's biggest challenges, because a planet is billions of times fainter than the star it orbits. In the mid-infrared, a type of light we feel as heat, the contrast between planet and star is gentler than in visible light. That makes it a promising window. A future instrument called METIS, planned for the Extremely Large Telescope (ELT), aims to detect the heat glow of rocky planets in this range. But there is a catch: water vapor in Earth's atmosphere.
+What They Did
+Water vapor bends infrared light differently from the way dry air does. Because it drifts around unevenly, it blurs the view in ways the telescope's correction system, which works at shorter wavelengths, cannot see. Think of heat shimmer over a road that only affects some colors of light. To measure this, the team used data from GRAVITY, an instrument at the Very Large Telescope Interferometer (VLTI) in Chile. They compared two kinds of timing measurements of starlight, called group delay and phase delay. The difference between them reveals how much water vapor sits above the telescopes. They then checked how this varied with total water vapor in the air, the telescope's viewing angle, atmospheric turbulence, and wind speed. They also used a method that breaks the fluctuations down by how quickly they change.
+Key Findings
+Of all the factors they tested, the total amount of water vapor in the air (precipitable water vapor) showed the strongest link to the fluctuations. They also explored how the height at which the vapor sits matters. For a telescope the size of the ELT, the resulting distortion of the light wave is about 15 nanometers (billionths of a meter) in one infrared band (the L-band) and about 175 nanometers in the N-band (8 to 13 micrometers), compared with the K-band.
+Looking Forward
+These numbers give engineers a concrete yardstick for how much water vapor will hamper METIS, and a starting point for designing ways to correct or work around it, bringing images of rocky planets closer to reality.]]></description>
+        <category>astro-ph.IM</category>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>The EBLM project - XX. Absolute dynamical masses of five low-mass eclipsing binaries, and an evaluation of mass estimation methods</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-18339v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-18339v1</guid>
+      <pubDate>Wed, 14 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Adam T. Stevenson et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+Most stars in our galaxy are small, dim "M dwarfs", and many of the best searches for Earth-sized, temperate planets target them. To understand those planets, we first need to know how heavy and how big their stars are. The most trustworthy way to weigh a star is to watch it orbit a partner in an "eclipsing binary", a pair of stars that pass in front of each other as seen from Earth. But for stars lighter than about 0.35 times the mass of the Sun, very few such pairs have been measured with both stars clearly detected. Scientists have therefore relied on pairs where only the brighter star's motion could be seen, such as those in the EBLM project (Eclipsing Binary – Low Mass).
+What They Did
+The team studied five systems, each a Sun-like star paired with a faint M dwarf. The M dwarf gives off less than 1 per cent of the system's visible light, like trying to hear a whisper next to a loudspeaker. Using high-resolution spectroscopy, which splits light into fine detail, they pulled out the faint companion's signal. This turned each system from "single-lined" into "double-lined", allowing a direct, dynamical measurement of both stars' masses. They then compared these true masses with the estimates that astronomers usually make for single-lined systems and ordinary field stars.
+Key Findings
+Most of the estimates agreed with the directly measured masses within their stated uncertainties (1-σ). However, the team found a small systematic overestimate in masses from the single-lined method that combines radial velocities (the star's back-and-forth motion) with eclipse brightness data. The cause is that the companion's faint light dims the measured brightness slightly and alters the star's colour pattern, which makes the primary star's radius come out too large during the analysis.
+Looking Forward
+With this bias understood and corrected through proper calibration, the large EBLM sample can be used with confidence. It can help map how mass, size and brightness relate in the smallest and most common stars, and so improve our understanding of the planets around them.]]></description>
+        <category>astro-ph.SR</category>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+    </item>
+    <item>
+      <title>Radiation limits on amino acid preservation and chiral measurement at Oxia Planum</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-17931v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-17931v1</guid>
+      <pubDate>Wed, 14 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Dimitra Atri</dc:creator>
+      <description><![CDATA[Why It Matters
+Life on Earth builds its proteins almost entirely from "left-handed" amino acids. These molecules come in mirror-image forms, like left and right gloves. Finding a lopsided mix on Mars could hint at biology. But radiation slowly destroys amino acids and also scrambles their handedness, so an ancient signal might fade before anyone can read it.
+What They Did
+The researchers asked when a measurement is limited by too little surviving material and when it is limited by scrambled handedness. They built a model for the Mars Organic Molecule Analyzer (MOMA), an instrument on the ExoMars Rosalind Franklin rover, which is bound for Oxia Planum. The model adds up radiation doses from cosmic rays (fast particles from space) and from radioactive elements in the rock. It then applies laboratory measurements of how quickly amino acids break down, plus assumed ratios between scrambling and destruction rates.
+Key Findings
+Suppose a population starts perfectly one-handed at 1000 parts per million by weight (ppmw). When the total falls to 1 ppmw, the remaining imbalance is 58% or 25%, for scrambling-to-destruction ratios of 0.04 or 0.10. But having 1 ppmw in total does not guarantee that both mirror forms can be measured. The team applied provisional thresholds of 1 ppmw per form and a 10% imbalance. Serine at 2 meters depth would then need to start at 340 ppmw after 10 million years of cosmic-ray exposure, or 960 ppmw after 100 million years. This assumes a radioactive dose of 1.57 megagray. Those starting amounts exceed serine levels measured in meteorites, though they do not predict what Oxia actually held. For organics sealed in rock since 3.9 billion years ago, the modeled radioactive dose is 1.6–5.6 megagray. In the lower-dose case, drilling to 2 meters reduces the total dose by only a factor of 1.5 after 10 million years.
+Looking Forward
+These limits depend on how amino acids behave in particular minerals and on how long the organics have resided in the rock. The authors stress that preserved handedness is not the same as a measurable excess. Both the survival of the molecules and the sensitivity of the measurement matter when judging what the rover could detect.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+        <category>physics.space-ph</category>
+    </item>
+    <item>
+      <title>An updated view of Jupiter&#x27;s UV main auroral emission: large-scale analysis of UV and particle data from Juno&#x27;s first 60 orbits</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-16602v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-16602v1</guid>
+      <pubDate>Wed, 14 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Linus Head et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+Jupiter has the most powerful auroras in our solar system, the same kind of glow as Earth's northern lights but far more intense. Its brightest ring of light, called the main emission, is still not fully understood. It has two parts, Zone-I and Zone-II, and scientists have debated whether they come from the same source. Jupiter is the closest example of a giant magnetized planet, so understanding its auroras also helps researchers interpret similar glows that may exist on distant planets and other worlds with strong magnetic fields.
+What They Did
+The team used data from NASA's Juno spacecraft, which orbits Jupiter and passes close to its poles. They combined two kinds of measurements: ultraviolet images, which show where the aurora glows, and direct measurements of the electrons raining down into the atmosphere. Using Juno's first 60 orbits, they built average maps of the main emission in both hemispheres and at all times of day. This is like averaging many weather snapshots to see the typical pattern instead of one stormy moment.
+Key Findings
+The electrons with the highest average energy fall consistently poleward of the brightest part of the aurora, meaning closer to the pole. This holds in both hemispheres and at all local times, and it matches the typical location of Zone-II. The link between brightness and electron energy follows theoretical patterns for two proposed ways of speeding up electrons: electric voltage drops along magnetic field lines, or turbulent magnetic waves called Alfvén waves. The relationship also shifts with the density of electrons in Jupiter's upper atmosphere, as theory predicts. Finally, the electron energy spectra differ between zones. In Zone-I they keep a power-law shape (a steady fall-off from many low-energy to few high-energy electrons) from 1 to 100 milliwatts per square metre of energy flux. In Zone-II, above about 5 milliwatts per square metre, they develop a flat-topped "plateau" shape.
+Looking Forward
+These results suggest that Zone-I and Zone-II are distinct phenomena rather than one process. Future studies of Jupiter's main aurora may therefore need to treat the two zones separately and look for different causes for each.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>An Intermediate-orbit Brown Dwarf Confirmed with Astrometry+Radial Velocity Joint Analysis, and the Eccentricity Distribution of Brown Dwarfs Across Different Locations</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-16662v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-16662v1</guid>
+      <pubDate>Wed, 14 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Lei Ren et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+Brown dwarfs are often called "failed stars." They are heavier than planets but too light to become true stars. How they form and settle into their orbits is still a puzzle. The best clues come from brown dwarfs whose true masses are known and that orbit at intermediate distances, roughly 1 astronomical unit (the Earth–Sun distance) or more. Such systems are rare, but astrometry, which precisely tracks the tiny motions of stars across the sky, is now helping to find more of them.
+What They Did
+The team studied HD 203771B, a brown dwarf circling a K dwarf star about 0.79 times the mass of the Sun. Radial velocities, which measure the star's wobble toward and away from us, reveal only part of the story. They cannot show how the orbit is tilted, so the true mass stays uncertain. To fix this, the researchers added position data from the Gaia and Hipparcos space telescopes, in two independent ways. One combined radial velocities with Gaia's two-body orbital solution. The other combined radial velocities with Hipparcos intermediate data and two Gaia observations. They then gathered 159 brown dwarfs with measured absolute masses from several detection methods. Using a statistical tool called a Beta distribution, they fitted how stretched the orbits (their eccentricity) tend to be, separately for different orbit sizes.
+Key Findings
+HD 203771B orbits every 1140 days on a stretched, tilted path, with an eccentricity of about 0.5 and an inclination of about 130 degrees. The two analyses gave true masses of about 74.2 and 69.0 Jupiter masses, which agree within their margins of error. Across the larger sample, the most typical eccentricity shifts steadily lower from wide orbits (beyond 20 AU) to intermediate ones (1–20 AU) and then to inner ones (0.1–1 AU). The authors suggest friction with the gas disk around a young star could explain this, like drag gradually smoothing out a stretched path. Other studies show brown dwarfs are mostly aligned with their host stars' spin. Together, these results hint that brown dwarfs move inward through calm, flat disk-driven processes rather than violent encounters.
+Looking Forward
+As astrometry adds more brown dwarfs with measured masses, this picture of gentle inward migration can be tested against larger samples.]]></description>
+        <category>astro-ph.SR</category>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>On the Orbital Evolution of Giant Planet Pair Embedded in a Gaseous Disk. III. simultaneous gas accretion and the final mass ratio</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-18368v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-18368v1</guid>
+      <pubDate>Wed, 14 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Bixuan Zhao et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+Astronomers have found many stars that host two giant planets, each at least 30 times Earth's mass. A pattern shows up in these pairs. Planets that orbit close together tend to have similar masses, while pairs that are far apart often have a heavier outer planet. The reason is not obvious. Explaining it would help us understand how planetary systems, including ones like our own Solar System, take shape and settle into their final layouts.
+What They Did
+The researchers ran two-dimensional computer simulations of two young giant planets, each starting at 15 to 30 Earth masses, embedded in the gas disk of dust and gas around a young star. The simulations followed two processes together: the planets gobbling up gas to grow, and the planets drifting inward or outward through the disk, which is called migration. They varied how thick or "sticky" the gas is (its viscosity), how quickly the gas density falls off with distance, and the starting mass ratio of the two planets.
+Key Findings
+When the planets migrate toward each other, they carve out one shared gap in the gas, like two boats cutting a single channel through water. This changes how gas flows. The inner planet is starved because the gap cuts off its supply, while the outer planet keeps feeding on the dense gas piled up at the gap's outer edge. As a result, the two masses tend to become more alike, and in many cases the planet that started out smaller ends up the heavier one. Outcomes depend strongly on the starting conditions. Systems with a heavier inner core tend to drift apart. Steeper gas density profiles and heavier outer cores favor planets drifting together and locking into a resonance, in which their orbital periods form a simple ratio.
+Looking Forward
+The authors propose that this shared-gap, lopsided feeding explains the observed link between planetary orbits, resonances and mass ratios. Because the results are so sensitive to starting conditions, future work will need to test the idea against more observed systems.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>DEMOS. II. What the full Lupus demographics truly tell us about protoplanetary disc evolution</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-17284v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-17284v1</guid>
+      <pubDate>Wed, 14 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Lorenzo A. Malanga et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+Planets are born in the dusty, gassy disks that swirl around young stars, so how those disks change over time shapes what kinds of planets can form. Astronomers have two main ideas for how a disk loses material. In the first, the gas behaves like thick syrup, with internal friction (viscosity) slowly moving matter inward while starlight blows some of it away. In the second, magnetic winds carry material off the disk surface, like a steady breeze stripping sand from a dune. Knowing which idea is right tells us the conditions in which planets assemble.
+What They Did
+The team used a statistical tool called DEMOS to study the Lupus star-forming region, a nearby nursery of young stars. Rather than studying disks one at a time, they treated the whole population as a crowd. They compared four measured properties: the star's mass, the disk's mass (estimated from its brightness at millimetre wavelengths), the rate at which gas falls onto the star, and the disk's size as traced by carbon monoxide gas. Using Bayesian inference, they tuned both the viscous model (with photoevaporation, meaning starlight heating the gas until it escapes) and the magnetic-wind model until each matched the data.
+Key Findings
+Both models reproduced Lupus about equally well, with a slight preference for the viscous one. Neither can be ruled out. Both suggest a young disk around a star 0.3 times the Sun's mass starts with a characteristic size of roughly 3-5 astronomical units (the Earth-Sun distance). Both need the disk's turbulence-like strength parameter to be small, about 3-4 × 10⁻⁴, and to grow roughly with the square of stellar mass. The initial disk properties must also correlate positively with stellar mass. The inferred mean age is 1.6 million years for the wind model and 0.9 million years for the viscous one. Their best-fit populations predict substantially different life stories for disks.
+Looking Forward
+Since Lupus alone cannot settle the question, the authors propose applying DEMOS to other regions, especially older ones such as Upper Scorpius, where the two models should diverge more clearly.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+    </item>
+    <item>
+      <title>DEMOS I. A Bayesian inference framework to constrain disc evolution from observed demographics</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-17254v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-17254v1</guid>
+      <pubDate>Wed, 14 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Lorenzo A. Malanga et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+Planets are born in giant spinning clouds of gas and dust around young stars, called protoplanetary discs. How these discs change and eventually disappear shapes what kinds of planets can form. Scientists currently have two main explanations. In one, the disc's gas slowly spreads and drains onto the star through internal friction, a process called viscous evolution, and the star's own radiation helps blow the gas away. In the other, magnetized winds carry material off the disc. Observations have not ruled out either idea. Until now, models were usually compared with telescope data simply by eye, which is like judging a recipe by glancing at a photo of the cake.
+What They Did
+The team built DEMOS, a statistical tool using Bayesian inference. This is a method that updates its best guesses about unknown quantities as it weighs evidence. DEMOS compares real observations of many discs with artificial populations of discs produced by a computer code called Diskpop. It then works out which model settings and starting conditions best match the data, along with how uncertain they are. The team tested it on fake populations whose true answers were known, using both the wind model and the viscous model with radiation-driven gas removal (internal photoevaporation).
+Key Findings
+In these tests, DEMOS correctly recovered the model parameters and their uncertainties for both models. This held even when starting conditions depended on the star's mass. When disc masses, accretion rates (how fast gas falls onto the star) and disc sizes were all available, it could also constrain a parameter describing how the disc moves angular momentum around. Samples of about 100 discs gave the most precise results, but groups of just 10-30 discs still gave useful constraints. Its predictions also matched those of earlier studies.
+Looking Forward
+The authors expect DEMOS to help infer the starting conditions of real disc populations, to plan future observing programmes, and to judge which evolution model best explains the data. The paper reports tests on synthetic populations, so applying the tool to real observations is the next step.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+    </item>
+    <item>
+      <title>Peering into the Midplane of the DM Tau Disk using N2H+ and DCO+</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-18821v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-18821v1</guid>
+      <pubDate>Wed, 14 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Amina Diop et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+Planets are born in the thin, dusty middle layer, called the midplane, of the spinning disks of gas and dust around young stars. This is where planets are assembled, yet it is the hardest region to study. The disk's glowing upper layers act like a bright fog and hide what lies underneath. The midplane's temperature, chemistry and radiation environment determine which ingredients young planets inherit. Learning about it therefore helps explain how planetary systems take shape and change over time.
+What They Did
+The team used the Atacama Large Millimeter/submillimeter Array (ALMA), a network of radio telescopes in Chile, to study the disk around a young star called DM Tau. They mapped two molecular ions, N2H+ and DCO+, at a resolution of 0.3 arcseconds, which corresponds to about 43 astronomical units (one unit is the Earth–Sun distance). These molecules are useful because they tend to trace the cold regions near the midplane. The researchers then built parametric models, which are simplified computer recipes for the disk's temperature, density and chemistry. They started with a baseline model built from measurements of carbon monoxide (CO) and checked whether it could reproduce what ALMA saw.
+Key Findings
+DCO+ is brightest near the center, with a dip around 120 au. N2H+ behaves differently: it has a central hole and a peak near 100 au. Both molecules also glow out to about 400 au. The baseline model explained the features within 200 au but could not produce the faint outer glow. After testing several explanations, the authors found the best match came from more ultraviolet light penetrating the disk from outside and higher ionization rates from cosmic rays and X-rays, possibly boosted by radial drift. Ultraviolet light can knock CO and nitrogen (N2) off icy grains. Ionization increases the amount of H3+, a key ingredient for making both molecules. The observed patterns broadly agree with earlier estimates of the CO snowline, the distance beyond which CO freezes. But ionization, CO depletion and multiple chemical pathways can also shape them.
+Looking Forward
+The main lesson is caution. N2H+ and DCO+ should not be treated as reliable stand-alone markers of the CO snowline. Pinning down conditions in the planet-forming midplane will require observations of additional molecules and more detailed chemical modeling.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>Scaled three-dimensional simulations of giant-planet accretion and disk clearing</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-15876v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-15876v1</guid>
+      <pubDate>Wed, 14 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Ignacio Mosqueira</dc:creator>
+      <description><![CDATA[Why It Matters
+Giant planets like Jupiter are born inside a disk of gas and dust around a young star, and they grow by swallowing that gas. Simulating the process in three dimensions is realistic but painfully slow, a bit like filming an entire growing season of a garden frame by frame. Because of this, it has been hard to test ideas about how planets feed, how they clear the gas around them, and how much material they can collect before the supply runs out.
+What They Did
+The researchers built a shortcut. They "compress" the ring of gas in which the planets sit. The simulated region becomes smaller and the predicted time to clear the gas becomes shorter, while the key physical ratios and the level of detail (grid resolution) stay the same. Each planet seed starts with a gravitational zone of influence (its Hill radius) as wide as the disk is thick, so gas still flows in three dimensions. They assumed the planets capture all gas that enters this zone and travel on circular orbits. They tested the method on scaled versions of PDS 70, a young star with growing giant planets, and of our own Solar System.
+Key Findings
+For PDS 70, a compression factor of 1.75 was compared with an unscaled run at the same resolution, up to a 1% drop in the gas between the planets. The scaled run was nearly ten times faster, gathered a similar amount of planetary mass, and split the gas between the planets in a comparable way. For the Solar System at a factor of 3, the method is forecast to be nearly one hundred times faster. On eight processor cores of a desktop computer, the scaled runs removed roughly half of the gas between the planets in under a day. As the planets grew, their orbits drew closer together, narrowing the zone they share for feeding. Together with the clearing of gas, this limits how much they can grow. The angular momentum (the "spin" of orbital motion) carried by gas flowing in along paths that curve in and out of the disk's flat plane puts direct limits on theories of how material is delivered to planets.
+Looking Forward
+The work offers a practical way to test planet-growth theories on fast, scaled-down simulations that run on ordinary computers. Theories that pass can then be applied to real, unscaled planetary systems.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.SR</category>
     </item>
