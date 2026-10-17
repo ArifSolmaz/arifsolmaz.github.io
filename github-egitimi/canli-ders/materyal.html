@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Git ve GitHub · Çalışma felsefesi | Arif Solmaz</title>
+<meta name="description" content="Git ve GitHub neden kullanılır? Çalışma felsefesi, gerçek kullanım, kazanımlar ve maliyetler: 45 dakika, 34 ana slayt ve 6 ek.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=IBM+Plex+Sans:wght@400;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0d1424;--ink2:#131d33;--line:#26365a;--fg:#eef2fa;--fg2:#b3bfd6;--fg3:#7686a6;--acc:#ff6b4a;--acc2:#ffb199}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ink);color:var(--fg);font-family:'IBM Plex Sans',Arial,sans-serif;line-height:1.5}
+a{color:var(--acc2)}
+.wrap{max-width:1080px;margin:0 auto;padding:48px 16px 80px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.16em;color:var(--acc);text-transform:uppercase;margin:0}
+h1{font-family:'Bricolage Grotesque',Arial,sans-serif;font-weight:800;font-size:clamp(36px,6vw,64px);line-height:1.04;margin:14px 0 12px;letter-spacing:-.01em}
+h2{font-family:'Bricolage Grotesque',Arial,sans-serif;font-weight:700;font-size:26px;margin:56px 0 14px}
+.lead{font-size:19px;color:var(--fg2);max-width:760px;margin:0}
+.lang{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.lang button{background:none;border:0;color:var(--fg2);font:600 14px 'IBM Plex Sans',sans-serif;padding:8px 16px;cursor:pointer}
+.lang button[aria-pressed=true]{background:var(--acc);color:#1a0f0b}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:10px;font-weight:600;text-decoration:none;border:1px solid var(--line);color:var(--fg)}
+.btn.pri{background:var(--acc);border-color:var(--acc);color:#1a0f0b}
+.words{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.words span{font-family:'JetBrains Mono',monospace;font-size:14px;padding:5px 11px;border-radius:8px;background:rgba(255,107,74,.12);border:1px solid rgba(255,107,74,.35);color:var(--acc2)}
+.scene{background:var(--ink2);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-bottom:22px}
+.scene img{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#0a101d}
+.scene .cap{display:flex;gap:14px;align-items:baseline;padding:14px 18px;flex-wrap:wrap}
+.scene .n{font-family:'JetBrains Mono',monospace;color:var(--acc);font-size:14px}
+.scene .t{font-weight:600;font-size:18px}
+.scene .d{color:var(--fg2);font-size:15px;flex-basis:100%}
+.scene .dl{margin-left:auto;font-size:13px}
+ol.plan{padding-left:20px;color:var(--fg2)} ol.plan li{margin:6px 0} ol.plan b{color:var(--fg)}
+.foot{margin-top:56px;color:var(--fg3);font-size:14px}
+[data-l]{display:none} html[lang=tr] [data-l=tr], html[lang=en] [data-l=en]{display:revert}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <p class="eyebrow"><span data-l="tr">Mekatronik · Git ve GitHub · 45 dakika</span><span data-l="en">Mechatronics · Git and GitHub · 45 minutes</span></p>
+    <div class="lang" role="group" aria-label="Dil / Language"><button data-set="tr">TR</button><button data-set="en">EN</button></div>
+  </div>
+  <h1><span data-l="tr">Neden böyle çalışıyoruz?</span><span data-l="en">Why work this way?</span></h1>
+  <p class="lead"><span data-l="tr">Git bir projenin değişim belleğidir. GitHub, bu belleğin etrafında insanların birlikte çalıştığı bir alan sağlar. Neden kullanıldıklarını, günlük işte ne değiştirdiklerini, ne kazandırdıklarını ve hangi maliyetleri getirdiklerini konuşuyoruz. 45 dakikalık anlatım: 34 ana slayt ve 6 ek. Canlı uygulama veya hesap hazırlığı gerekmiyor.</span><span data-l="en">Git is a project's memory of change. GitHub provides a space where people work together around that memory. We discuss why people use them, what changes in daily work, what they gain and what it costs. A 45-minute lecture: 34 main slides and 6 reference slides. No live exercise or account setup is required.</span></p>
+  <div class="words"><span data-l="tr">bellek</span><span data-l="en">memory</span><span data-l="tr">iş birliği</span><span data-l="en">collaboration</span><span data-l="tr">güven</span><span data-l="en">trust</span><span data-l="tr">sorumluluk</span><span data-l="en">responsibility</span></div>
+  <div class="btns">
+    <a class="btn pri" id="slides-link" href="../"><span data-l="tr">Sunumu aç</span><span data-l="en">Open the presentation</span></a>
+    <a class="btn" id="notes-link" href="../konusmaci-notlari.html"><span data-l="tr">Konuşmacı notları</span><span data-l="en">Speaker notes</span></a>
+    <a class="btn" id="pdf-link" href="../pdf/git-github-tr.pdf" download><span data-l="tr">40 slaytın PDF'si</span><span data-l="en">All 40 slides as PDF</span></a>
+    <a class="btn" id="project-link" href="ornek-proje.zip"><span data-l="tr">İsteğe bağlı örnek proje (.zip)</span><span data-l="en">Optional example project (.zip)</span></a>
+  </div>
+
+  <h2><span data-l="tr">Dersin akışı</span><span data-l="en">Lecture flow</span></h2>
+  <ol class="plan">
+    <li data-l="tr"><b>Neden ihtiyaç duyarız?</b>: değişen dosyalar, belirsiz son sürümler ve kaybolan kararlar</li>
+    <li data-l="tr"><b>Git nasıl düşünür?</b>: geçmişi kaydetmek, denemeye alan açmak ve değişiklikleri karşılaştırmak</li>
+    <li data-l="tr"><b>GitHub’da insanlar nasıl çalışır?</b>: görünür işler, değişiklik önerileri, inceleme ve proje devri</li>
+    <li data-l="tr"><b>Ne kazanırız, neye katlanırız?</b>: güven, öğrenme ve ortak üretim; zaman, bakım ve paylaşım sorumluluğu</li>
+    <li data-l="tr"><b>Nereden başlarız?</b>: ihtiyaca uygun kullanım, küçük alışkanlıklar ve ders sonrası kaynaklar</li>
+    <li data-l="en"><b>Why do we need it?</b>: changing files, uncertain latest versions and lost decisions</li>
+    <li data-l="en"><b>How does Git think?</b>: recording history, making room for experiments and comparing changes</li>
+    <li data-l="en"><b>How do people work on GitHub?</b>: visible tasks, change proposals, review and project handover</li>
+    <li data-l="en"><b>What do we gain and what does it cost?</b>: confidence, learning and shared work; time, maintenance and responsibility for sharing</li>
+    <li data-l="en"><b>Where do we start?</b>: appropriate use, small habits and resources for later</li>
+  </ol>
+
+  <h2><span data-l="tr">İsteğe bağlı örnek animasyonlar</span><span data-l="en">Optional example animations</span></h2>
+  <p class="lead" style="margin-bottom:22px"><span data-l="tr">Bu animasyonlar önceki teknik dersin örneklerini gösterir. Güncel sunumu anlamak için komutlarını öğrenmek gerekmez.</span><span data-l="en">These animations show examples from the earlier technical lecture. You do not need to learn their commands to follow the current presentation.</span></p>
+  <div id="scenes"></div>
+
+  <p class="foot"><span data-l="tr">Animasyonlardaki kişi, kullanıcı ve kütüphane adları örnek amaçlıdır.</span><span data-l="en">The people, usernames and libraries in the animations are made up.</span> · <a id="footer-slides-link" href="../">Ana sunum / Main presentation</a> · <a href="/">arifsolmaz.github.io</a></p>
+</div>
+<script>
+const S = [
+ ['01-daginik-klasor','01-messy-folder','Hangi dosyaya güveneceğiz?','Which file can we trust?','Farklı son dosyalar yerine kaydedilmiş geçmişi izleriz.','Follow recorded history instead of choosing between final files.'],
+ ['04-zaman-makinesi','04-time-machine','Dünle bugünü karşılaştır','Compare yesterday and today','500 → 900 değişikliğini buluruz; doğru eşik robotta doğrulanır.','Find the 500 → 900 change; validate the right threshold on the robot.'],
+ ['03-projeni-github-a-koy','03-put-your-project-on-github','Projeyi birlikte sakla','Keep the project together','Kod, bağlantı şeması ve açıklama aynı depoda bulunur.','Code, wiring and explanations share one repository.'],
+ ['05-takimin-listesi','05-team-to-do-list','Sorunu takip et','Track the problem','GIF fotoğraf işiyle issue arayüzünü gösterir; hikâyemizdeki iş sensör eşiğidir.','The GIF demonstrates issues with a photo task; our story tracks the sensor threshold.'],
+ ['07-portfolyo','07-portfolio','Yaptığın işi anlaşılır kıl','Make your work understandable','Projeyi, katkını ve kararlarının gerekçesini görünür kıl.','Show the project, your contribution and your reasoning.'],
+];
+function render(l){
+  l = l === 'en' ? 'en' : 'tr';
+  document.documentElement.lang = l;
+  document.getElementById('slides-link').href = l === 'en' ? '../en/' : '../';
+  document.getElementById('footer-slides-link').href = l === 'en' ? '../en/' : '../';
+  document.getElementById('notes-link').href = l === 'en' ? '../en/konusmaci-notlari.html' : '../konusmaci-notlari.html';
+  document.getElementById('pdf-link').href = `../pdf/git-github-${l}.pdf`;
+  document.getElementById('project-link').href = l === 'en' ? 'example-project.zip' : 'ornek-proje.zip';
+  document.querySelectorAll('.lang button').forEach(b => b.setAttribute('aria-pressed', b.dataset.set === l));
+  const k = l === 'tr' ? 0 : 1;
+  document.getElementById('scenes').innerHTML = S.map((s, i) => {
+    const src = `gif/${l}/${s[k]}.gif`;
+    return `<figure class="scene" style="margin:0 0 22px"><img src="${src}" alt="${s[2 + k]}" loading="lazy" width="1600" height="900">
+      <figcaption class="cap"><span class="n">${String(i + 1).padStart(2, '0')}</span><span class="t">${s[2 + k]}</span><a class="dl" href="${src}" download>${l === 'tr' ? 'GIF indir' : 'Download GIF'}</a><span class="d">${s[4 + k]}</span></figcaption></figure>`;
+  }).join('');
+  try { localStorage.setItem('gh-lang', l); } catch (e) {}
+}
+document.querySelectorAll('.lang button').forEach(b => b.onclick = () => render(b.dataset.set));
+let start = 'tr';
+try { start = localStorage.getItem('gh-lang') || (location.hash === '#en' ? 'en' : 'tr'); } catch (e) {}
+if (location.hash === '#en') start = 'en';
+render(start);
+</script>
+</body>
+</html>

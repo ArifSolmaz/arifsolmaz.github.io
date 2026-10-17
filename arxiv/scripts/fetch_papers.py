@@ -17,6 +17,11 @@ import requests
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
+import sys as _sys
+_sys.path.insert(0, str(__import__('pathlib').Path(__file__).parent))
+import ai_content
+AI_FIELDS = ["summary", "summary_html", "tweet_hook", "title_tr", "summary_tr", "summary_html_tr"]
+
 try:
     import anthropic
 except ImportError:
@@ -908,53 +913,39 @@ def main():
     existing_papers = load_existing_papers()
     
     # Initialize Claude client
-    client = None
-    api_key = os.environ.get("ANTHROPIC_API_KEY")
-    if api_key and anthropic:
-        client = anthropic.Anthropic(api_key=api_key)
-        print("\n✅ Claude API ready")
+    client = ai_content.make_client()
+    if client:
+        print(f"\n✅ Claude API ready (model: {ai_content.MODEL})")
     else:
         print("\n⚠️ No API key - summaries will be skipped")
-    
-    # Generate summaries
+
+    # Generate summaries (EN + TR + hook) - reuse anything already complete
     print("\n📝 Processing papers...")
     for i, paper in enumerate(papers):
-        # Reuse existing content if available
-        if paper["id"] in existing_papers:
-            existing = existing_papers[paper["id"]]
-            has_summary = existing.get("summary_html", "").strip() not in ["", "<p><em>Summary unavailable.</em></p>"]
-            has_hook = bool(existing.get("tweet_hook", {}).get("hook"))
-            
-            if has_summary:
-                paper["summary"] = existing.get("summary", "")
-                paper["summary_html"] = existing["summary_html"]
-            if has_hook:
-                paper["tweet_hook"] = existing["tweet_hook"]
-            if existing.get("figure_url"):
-                paper["figure_url"] = existing["figure_url"]
-            
-            if has_summary and has_hook:
-                print(f"  [{i+1}/{len(papers)}] {paper['id']} - reusing existing content")
-                continue
-        
+        existing = existing_papers.get(paper["id"], {})
+        if existing.get("figure_url"):
+            paper["figure_url"] = existing["figure_url"]
+
+        if ai_content.is_complete(existing):
+            for k in AI_FIELDS:
+                if k in existing:
+                    paper[k] = existing[k]
+            print(f"  [{i+1}/{len(papers)}] {paper['id']} - reusing existing content")
+            continue
+
         print(f"  [{i+1}/{len(papers)}] {paper['id']} - generating new content...")
-        
-        if client:
-            summary = generate_summary(client, paper)
-            paper["summary"] = summary
-            paper["summary_html"] = format_summary_html(summary)
-            
-            time.sleep(0.5)
-            tweet_hook = generate_tweet_hook(client, paper)
-            paper["tweet_hook"] = tweet_hook
-            
-            if i < len(papers) - 1:
-                time.sleep(1)
+        result = ai_content.generate_all(client, paper) if client else {}
+        if result:
+            paper.update(result)
         else:
-            paper["summary"] = ""
-            paper["summary_html"] = "<p><em>Summary unavailable.</em></p>"
-            paper["tweet_hook"] = {"hook": "", "claim": "", "evidence": "", "question": ""}
-    
+            # keep whatever partial content existed, else mark unavailable
+            for k in AI_FIELDS:
+                if k in existing:
+                    paper[k] = existing[k]
+            paper.setdefault("summary", "")
+            paper.setdefault("summary_html", ai_content.UNAVAILABLE_HTML)
+            paper.setdefault("tweet_hook", dict(ai_content.EMPTY_HOOK))
+
     # Fetch figures
     print("\n🖼️  Fetching figures...")
     for i, paper in enumerate(papers):

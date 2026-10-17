@@ -7,7 +7,7 @@ Automated daily digest of exoplanet research from arXiv with AI summaries, socia
 ## Features
 
 - **Daily arXiv fetch** from astro-ph.EP (exoplanet papers only)
-- **AI summaries** for general audiences (Claude)
+- **AI summaries** for general audiences (Claude), with **Turkish translations** and an EN/TR toggle on the page
 - **Auto-posting** to Twitter/X and Bluesky
 - **RSS feed** at `/arxiv/feed.xml`
 - **Paper archive** with date navigation
@@ -48,6 +48,9 @@ arxiv/
 │   └── archive/            # Past days
 └── scripts/
     ├── fetch_papers.py     # Fetch & summarize
+    ├── ai_content.py       # Claude: EN summary + hook + TR translation
+    ├── backfill_ai.py      # Fill missing content in old days
+    ├── (workflow) Backfill Summaries (EN + TR)  # Actions -> run manually
     ├── post_twitter.py     # Twitter posting
     ├── post_bluesky.py     # Bluesky posting
 ```

@@ -1,12 +1,12 @@
 {
   "responseHeader": {
     "status": 0,
-    "QTime": 135,
+    "QTime": 195,
     "params": {
       "q": "-docs(1f8e5e2fda6aa0148343a32ba70673cc) author:\"solmaz, arif\"",
-      "fl": "bibcode,title,year,pub,volume,page,doi,bibstem,database,property,author_count,first_author",
+      "fl": "bibcode,title,year,pub,volume,page,doi,bibstem,database,property,author_count,first_author,publisher",
       "start": "0",
-      "internal_logging_params": "X-Amzn-Trace-Id=Root=1-6aba3b3a-5276a9a113fddd1876d3052d",
+      "internal_logging_params": "X-Amzn-Trace-Id=Root=1-6accc05b-6a06ce8d24027c70079d094b",
       "fq": "database:(astronomy OR physics)",
       "sort": "date desc,bibcode desc",
       "rows": "200",
@@ -20,15 +20,15 @@
     "docs": [
       {
         "bibcode": "2026arXiv260811294D",
+        "database": [
+          "astronomy",
+          "planetary",
+          "astrophysics"
+        ],
         "author_count": 327,
         "bibstem": [
           "arXiv",
           "arXiv2608"
-        ],
-        "database": [
-          "planetary",
-          "astrophysics",
-          "astronomy"
         ],
         "doi": [
           "10.48550/arXiv.2608.11294"
@@ -89,7 +89,9 @@
           "ApJS..283"
         ],
         "database": [
-          "astronomy"
+          "astronomy",
+          "planetary",
+          "astrophysics"
         ],
         "doi": [
           "10.3847/1538-4365/ae3238",
@@ -105,6 +107,7 @@
         ],
         "volume": "283",
         "year": "2026",
+        "publisher": "IOP",
         "property": [
           "ARTICLE",
           "DATA",
@@ -123,9 +126,9 @@
           "MNRAS.543"
         ],
         "database": [
+          "astronomy",
           "planetary",
-          "astrophysics",
-          "astronomy"
+          "astrophysics"
         ],
         "doi": [
           "10.1093/mnras/staf1659",
@@ -141,6 +144,7 @@
         ],
         "volume": "543",
         "year": "2025",
+        "publisher": "OUP",
         "property": [
           "ARTICLE",
           "DATA",
@@ -159,9 +163,9 @@
           "A&A...703"
         ],
         "database": [
+          "astronomy",
           "planetary",
-          "astrophysics",
-          "astronomy"
+          "astrophysics"
         ],
         "doi": [
           "10.1051/0004-6361/202556498",
@@ -177,6 +181,7 @@
         ],
         "volume": "703",
         "year": "2025",
+        "publisher": "EDP",
         "property": [
           "ARTICLE",
           "DATA",
@@ -195,6 +200,7 @@
           "epsc.conf"
         ],
         "database": [
+          "planetary",
           "astronomy"
         ],
         "doi": [
@@ -224,7 +230,9 @@
           "epsc.conf"
         ],
         "database": [
-          "astronomy"
+          "planetary",
+          "astronomy",
+          "heliophysics"
         ],
         "doi": [
           "10.5194/epsc-dps2025-1467"
@@ -253,7 +261,8 @@
           "epsc.conf"
         ],
         "database": [
-          "astronomy"
+          "astronomy",
+          "planetary"
         ],
         "doi": [
           "10.5194/epsc-dps2025-39"
@@ -282,8 +291,8 @@
           "TJAA....4"
         ],
         "database": [
-          "astronomy",
           "planetary",
+          "astronomy",
           "astrophysics"
         ],
         "doi": [
@@ -313,8 +322,8 @@
           "TJAA....4"
         ],
         "database": [
-          "astronomy",
           "planetary",
+          "astronomy",
           "astrophysics"
         ],
         "doi": [
@@ -345,8 +354,8 @@
         ],
         "database": [
           "planetary",
-          "heliophysics",
-          "astronomy"
+          "astronomy",
+          "heliophysics"
         ],
         "doi": [
           "10.3847/25c2cfeb.e033d3ce"
@@ -377,7 +386,9 @@
           "yCat..226"
         ],
         "database": [
-          "astronomy"
+          "astronomy",
+          "planetary",
+          "astrophysics"
         ],
         "first_author": "Kokori, A.",
         "page": [
@@ -404,7 +415,9 @@
           "ApJS..265"
         ],
         "database": [
-          "astronomy"
+          "astronomy",
+          "planetary",
+          "astrophysics"
         ],
         "doi": [
           "10.3847/1538-4365/ac9da4",
@@ -420,6 +433,7 @@
         ],
         "volume": "265",
         "year": "2023",
+        "publisher": "IOP",
         "property": [
           "ARTICLE",
           "ASSOCIATED",
@@ -439,9 +453,9 @@
           "A&A...664"
         ],
         "database": [
+          "astronomy",
           "planetary",
-          "astrophysics",
-          "astronomy"
+          "astrophysics"
         ],
         "doi": [
           "10.1051/0004-6361/202141546",
@@ -457,6 +471,7 @@
         ],
         "volume": "664",
         "year": "2022",
+        "publisher": "EDP",
         "property": [
           "ARTICLE",
           "DATA",
@@ -475,7 +490,8 @@
           "NewA...86"
         ],
         "database": [
-          "astronomy"
+          "astronomy",
+          "astrophysics"
         ],
         "doi": [
           "10.1016/j.newast.2021.101571",
@@ -491,6 +507,7 @@
         ],
         "volume": "86",
         "year": "2021",
+        "publisher": "Elsevier",
         "property": [
           "ARTICLE",
           "EPRINT_OPENACCESS",
@@ -508,8 +525,8 @@
         ],
         "database": [
           "astronomy",
-          "astrophysics",
-          "heliophysics"
+          "heliophysics",
+          "astrophysics"
         ],
         "doi": [
           "10.48550/arXiv.2103.04855"
@@ -540,7 +557,8 @@
           "AstL...47"
         ],
         "database": [
-          "astronomy"
+          "astronomy",
+          "astrophysics"
         ],
         "doi": [
           "10.1134/S1063773721060050",
@@ -556,6 +574,7 @@
         ],
         "volume": "47",
         "year": "2021",
+        "publisher": "Springer",
         "property": [
           "ARTICLE",
           "EPRINT_OPENACCESS",
@@ -573,8 +592,8 @@
         ],
         "database": [
           "planetary",
-          "heliophysics",
-          "astronomy"
+          "astronomy",
+          "heliophysics"
         ],
         "doi": [
           "10.3847/25c2cfeb.53e7ca7e"
@@ -605,10 +624,9 @@
           "TJAA....1"
         ],
         "database": [
+          "astrophysics",
           "astronomy",
-          "earthscience",
-          "planetary",
-          "astrophysics"
+          "planetary"
         ],
         "first_author": "Kaygısız, Ersin",
         "page": [
@@ -634,6 +652,7 @@
           "BAAS...51"
         ],
         "database": [
+          "astrophysics",
           "astronomy"
         ],
         "first_author": "Harrington, Joseph",
@@ -662,8 +681,8 @@
           "BAAS...51"
         ],
         "database": [
-          "planetary",
-          "astronomy"
+          "astronomy",
+          "planetary"
         ],
         "first_author": "Mandt, Kathleen E.",
         "page": [
@@ -691,6 +710,7 @@
           "BAAS...51"
         ],
         "database": [
+          "astrophysics",
           "astronomy"
         ],
         "doi": [
@@ -706,6 +726,7 @@
         ],
         "volume": "51",
         "year": "2019",
+        "publisher": "AIP",
         "property": [
           "ARTICLE",
           "EPRINT_OPENACCESS",
@@ -723,7 +744,9 @@
           "astro2020"
         ],
         "database": [
-          "astronomy"
+          "astrophysics",
+          "astronomy",
+          "planetary"
         ],
         "doi": [
           "10.48550/arXiv.1801.06714"
@@ -754,9 +777,9 @@
           "BAAS...51"
         ],
         "database": [
+          "astrophysics",
           "astronomy",
-          "planetary",
-          "astrophysics"
+          "planetary"
         ],
         "first_author": "Harman, Chester",
         "page": [
@@ -784,8 +807,8 @@
           "BAAS...51"
         ],
         "database": [
-          "planetary",
-          "astronomy"
+          "astronomy",
+          "planetary"
         ],
         "first_author": "Line, Michael",
         "page": [
@@ -813,10 +836,9 @@
           "acm..conf"
         ],
         "database": [
-          "astronomy",
-          "earthscience",
-          "planetary",
           "astrophysics",
+          "planetary",
+          "astronomy",
           "heliophysics"
         ],
         "first_author": "Unsalan, O.",
@@ -840,6 +862,7 @@
     ]
   },
   "filtered": "true",
+  "access_modality": "api",
   "_meta": {
     "query": "-docs(1f8e5e2fda6aa0148343a32ba70673cc) author:\"solmaz, arif\""
   }
