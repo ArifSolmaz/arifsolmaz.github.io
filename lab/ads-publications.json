@@ -1,12 +1,12 @@
 {
   "responseHeader": {
     "status": 0,
-    "QTime": 140,
+    "QTime": 201,
     "params": {
       "q": "orcid:\"0000-0002-3076-164X\"",
       "fl": "bibcode,title,year,pub,volume,page,doi,bibstem,database,property,author_count,first_author,publisher",
       "start": "0",
-      "internal_logging_params": "X-Amzn-Trace-Id=Root=1-6accc05b-2d489867407cc3fd43a6c022",
+      "internal_logging_params": "X-Amzn-Trace-Id=Root=1-6ad5de81-29c257803c95a744373bd240",
       "fq": "database:(astronomy OR physics)",
       "sort": "date desc,bibcode desc",
       "rows": "200",
@@ -26,8 +26,8 @@
           "MNRAS.543"
         ],
         "database": [
-          "astronomy",
           "planetary",
+          "astronomy",
           "astrophysics"
         ],
         "doi": [
@@ -63,8 +63,8 @@
           "A&A...703"
         ],
         "database": [
-          "astronomy",
           "planetary",
+          "astronomy",
           "astrophysics"
         ],
         "doi": [
@@ -100,8 +100,8 @@
           "epsc.conf"
         ],
         "database": [
-          "planetary",
-          "astronomy"
+          "astronomy",
+          "planetary"
         ],
         "doi": [
           "10.5194/epsc-dps2025-1815"
@@ -154,15 +154,25 @@
       },
       {
         "bibcode": "2023ApJS..265....4K",
+        "database": [
+          "planetary",
+          "astronomy",
+          "astrophysics"
+        ],
+        "property": [
+          "ARTICLE",
+          "ASSOCIATED",
+          "DATA",
+          "EPRINT_OPENACCESS",
+          "ESOURCE",
+          "OPENACCESS",
+          "PUB_OPENACCESS",
+          "REFEREED"
+        ],
         "author_count": 217,
         "bibstem": [
           "ApJS",
           "ApJS..265"
-        ],
-        "database": [
-          "astronomy",
-          "planetary",
-          "astrophysics"
         ],
         "doi": [
           "10.3847/1538-4365/ac9da4",
@@ -178,17 +188,7 @@
         ],
         "volume": "265",
         "year": "2023",
-        "publisher": "IOP",
-        "property": [
-          "ARTICLE",
-          "ASSOCIATED",
-          "DATA",
-          "EPRINT_OPENACCESS",
-          "ESOURCE",
-          "OPENACCESS",
-          "PUB_OPENACCESS",
-          "REFEREED"
-        ]
+        "publisher": "IOP"
       },
       {
         "bibcode": "2022A&A...664A.130S",
@@ -198,8 +198,8 @@
           "A&A...664"
         ],
         "database": [
-          "astronomy",
           "planetary",
+          "astronomy",
           "astrophysics"
         ],
         "doi": [
@@ -269,8 +269,8 @@
           "TJAA....2"
         ],
         "database": [
-          "astronomy",
           "heliophysics",
+          "astronomy",
           "astrophysics"
         ],
         "doi": [
@@ -336,8 +336,8 @@
           "BAAS...51"
         ],
         "database": [
-          "astrophysics",
-          "astronomy"
+          "astronomy",
+          "astrophysics"
         ],
         "doi": [
           "10.48550/arXiv.1907.06320"
@@ -364,7 +364,7 @@
       }
     ]
   },
-  "allocatedBytes": 8315256,
+  "allocatedBytes": 8620616,
   "filtered": "true",
   "access_modality": "api",
   "_meta": {
