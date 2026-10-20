@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 16 Oct 2026 06:42:17 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 20 Oct 2026 07:01:01 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,261 +15,122 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>Chemistry on solar system scales</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-22055v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-22055v1</guid>
-      <pubDate>Fri, 16 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Catherine Walsh et al.</dc:creator>
+      <title>Microbial Methanogenesis on Mars: A Life Detection Target for an MLE-Type Mission and Future Human Exploration</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-24082v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-24082v1</guid>
+      <pubDate>Tue, 20 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Rachel L. Harris</dc:creator>
       <description><![CDATA[Why It Matters
-Every planet begins life inside a swirling disk of gas and dust around a young star, much like a cosmic kitchen where ingredients are mixed before the meal is baked. The chemistry of that disk sets the starting recipe for planets, for small icy bodies such as comets and asteroids in our own solar system, and for planets around other stars. The most interesting region is the inner part, within about 10 astronomical units (one astronomical unit is the distance from Earth to the Sun). This is where rocky, potentially habitable worlds could form. Right now, though, it is very hard to see the key molecules there, including those containing carbon, oxygen and nitrogen, and rarer ones containing sulphur and phosphorus.
+Methane is a simple gas, made of one carbon atom surrounded by four hydrogen atoms. On Mars it has become a stubborn puzzle. On Earth, living microbes produce most of our methane, although some geological processes can make it too. Spacecraft and instruments have reported what look like seasonal rises and falls, and localized plumes, of methane on Mars. Other researchers argue it has never been conclusively detected at all. If methane is really there, and if life made it, that would be one of the biggest discoveries in the history of science.
 What They Did
-This paper is a forward-looking science case rather than a new observation. The authors argue that current telescopes cannot reveal the chemistry of the inner disk, and they set out what a future upgrade, called ALMA2040, would need to do. ALMA is the Atacama Large Millimeter/submillimeter Array, a network of radio dishes in Chile.
+This paper surveys a lively area of research rather than reporting a single new measurement. Scientists in this field ask whether microbial methanogenesis could work in the shallow Martian underground. Methanogenesis is a way for microbes to make a living by producing methane, and it is one of the simplest and most ancient forms of metabolism known. Think of it as asking whether a very hardy tenant could survive in a harsh, remote basement. The studies examine a range of extreme physical and chemical conditions found in that environment.
 Key Findings
-The authors say the new facility must be more than 10 times more sensitive to the faint glow of individual molecules. It must also resolve details smaller than 5 astronomical units at a distance of 140 parsecs (roughly 450 light-years). That is 3 to 4 times sharper than is currently possible for faint, low-brightness emission. This distance matters because it includes nearby star-forming regions such as Taurus and Lupus, which host many young Sun-like stars. Such sharpness would let astronomers map chemistry inside the "water snowline", the distance from the star inside which water ice turns to vapor.
+The emerging consensus is a cautious but encouraging "possibly." Microbes that make methane could plausibly operate under the extreme conditions of the Martian shallow subsurface. Because of this, the authors rank methanogenesis as a top-priority candidate biosignature, meaning a chemical sign that could point to life that exists on Mars today. The abstract is clear that this does not prove life is there. The origin of Martian methane, and even how reliably it has been detected, remains an open question.
 Looking Forward
-If built, ALMA2040 would allow chemical maps of the zones where terrestrial planets form. It would also detect the molecules that serve as the raw ingredients for potentially habitable worlds. That would link what planets are made of to the conditions in the disks that birthed them.]]></description>
+The authors argue that these results justify urgently developing better instruments that can work directly on Mars. Those instruments would need to detect methane with confidence and help show whether it comes from biology or from non-living processes. The paper frames this as a target for a Mars Life Explorer-type mission, a mission concept focused on searching for life, and for future human exploration of Mars.]]></description>
         <category>astro-ph.IM</category>
         <category>astro-ph.EP</category>
+        <category>q-bio.PE</category>
     </item>
     <item>
-      <title>ALMA2040: Submillimeter-wave Limb Sounding of Venus and Mars</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-22233v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-22233v1</guid>
-      <pubDate>Fri, 16 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Hideo Sagawa et al.</dc:creator>
+      <title>Granulation in Color: The Chromatic Stellar Flicker of LTT-9779 and WASP-121</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-24550v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-24550v1</guid>
+      <pubDate>Tue, 20 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>William C. Waalkes et al.</dc:creator>
       <description><![CDATA[Why It Matters
-Venus and Mars are rocky planets, a bit like Earth, yet they ended up as strangers. Venus is a crushing, scorching greenhouse, and Mars is a cold, dry desert with a thin atmosphere. Working out how worlds with similar ingredients took such different paths helps scientists judge which rocky planets around other stars might be habitable. Our two neighbors are the closest test cases we have.
+Stars are not perfectly steady lamps. Like a pot of simmering soup, the outer layers of Sun-like stars bubble constantly, with hot gas rising and cooler gas sinking. This churning creates a patchwork of bright and dark cells on the stellar surface, called granulation. We cannot see individual cells on distant stars, but together they make a star's brightness flicker randomly over minutes to hours. For astronomers studying planets, this flicker is a source of noise that can muddy measurements of starlight. Knowing how strong it is, and whether it looks different in different colors of light, helps us read planetary signals more cleanly.
 What They Did
-This is a forward-looking proposal, not a report of new measurements. The authors describe what the Atacama Large Millimeter/submillimeter Array (ALMA), a giant network of radio dishes in Chile, could do in the 2040s after planned upgrades. They focus on "limb sounding." This means looking at the thin glowing edge of a planet's atmosphere sideways, much like studying the layers of a cake by looking at a slice instead of the top. Reaching about 0.01 arcseconds of sharpness would be like spotting a coin from thousands of kilometers away. At that sharpness, ALMA could separate atmospheric layers about as thick as the "scale heights" of Venus (around 5 kilometers) and Mars (around 11 kilometers).
+The team reused publicly available observations from the James Webb Space Telescope (JWST), taken with an instrument called NIRISS SOSS that splits starlight into a rainbow of near-infrared colors. They studied two stars: LTT-9779, a Sun-like star, and WASP-121, a somewhat hotter one. First they subtracted the signals of the orbiting planets: dips as planets pass in front, dips as they hide behind the star, and gradual brightness changes around the orbit. What remained was the star's own flicker. They then split that flicker into fast and slow rhythms, much as you might separate bass from treble in music, and fitted a standard mathematical model to it. They did this for all the light combined, and then color by color.
 Key Findings
-The abstract describes capabilities, not results. With this sharpness, ground-based observations could measure winds, temperature, and trace gases at different altitudes. The authors say this would allow three-dimensional studies of Venus's upper-atmosphere circulation and of Mars's planet-wide dust storms. It could also support studies of carbon dioxide chemistry, of water loss (by comparing heavy and normal water, HDO and H2O), and of Venus's sulfur chemistry and clouds.
+For LTT-9779, the flicker has an amplitude of about 54 parts per million (roughly 0.005% of the star's brightness) and a characteristic timescale of about 4.8 minutes. For WASP-121, the amplitude is about 59 parts per million and the timescale about 6.3 minutes. The power spectra also show peaks at about 3382 and 1649 microhertz for the two stars, respectively. When the light was split into individual colors, the flicker's strength decreased toward longer wavelengths.
 Looking Forward
-Spacecraft give sharp but brief snapshots. ALMA could watch the same planets again and again across different times of day, seasons, and levels of solar activity. This would turn snapshots into a long-running "movie" in three dimensions plus time. That record could connect spacecraft discoveries to how planetary atmospheres change, and it would help in interpreting rocky exoplanets.]]></description>
-        <category>astro-ph.IM</category>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>A Misaligned Debris Disk relative to the Host Star CPD-72 2713 from JWST/NIRCam Imaging</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-20700v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-20700v1</guid>
-      <pubDate>Fri, 16 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Jingwen Zhang et al.</dc:creator>
-      <description><![CDATA[Why It Matters
-Young stars are often surrounded by debris disks. These are belts of dust and rocky rubble left over from planet building, a bit like a far larger version of our own Kuiper Belt. In a tidy planetary system, the star's spin and its disk line up like records stacked on a spindle. When they don't, something may have disturbed the system's early history. CPD-72 2713 is a 24-million-year-old star in the β Pictoris moving group, a family of young stars drifting together through space. It gives astronomers a chance to test how well-ordered young systems really are.
-What They Did
-The team used the James Webb Space Telescope's NIRCam camera to take the first images of starlight bouncing off this star's disk, at two infrared wavelengths (the F210M and F444W filters). They built computer models of the disk to measure its size and tilt. To find the tilt of the star itself, they used brightness flickers recorded by the Transiting Exoplanet Survey Satellite (TESS) to measure its spin period, 4.47 days. They combined this with a spectroscopic measurement of how fast the star's surface moves, which gives the angle of its spin axis.
-Key Findings
-The disk is seen nearly face-on. Its radius is about 55 astronomical units (AU, the Earth–Sun distance) in one filter and about 39 AU in the other. Both are smaller than the sizes seen in heat emission by the ALMA and Herschel observatories. This suggests scattered light reveals the disk's inner region, while heat emission traces the outer parts. The star's spin axis is tilted about 47 degrees. The minimum mismatch between the star's equator and the disk is roughly 27 degrees, and it exceeds 10 degrees at 95% credibility in both filters. The authors caution that published disk tilts vary and that hidden systematic errors could affect this. No planets heavier than about 0.3 Jupiter masses turned up at 0.5 arcseconds or farther from the star.
-Looking Forward
-Since no such planet was found, a planet is disfavored as the cause of the misalignment. What did tilt the disk or star remains an open question. Firmer disk-tilt measurements would show how solid this misalignment is.]]></description>
-        <category>astro-ph.EP</category>
+The authors say this opens a new observational window on short-timescale stellar variability. It also offers a way to characterize color-dependent stellar noise in the light curves used to study transiting planets.]]></description>
         <category>astro-ph.SR</category>
+        <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>Identifying deformed exoplanets with JWST and Ariel: A target selection metric for phase curve observations</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-22338v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-22338v1</guid>
-      <pubDate>Fri, 16 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Vanesa Ramirez et al.</dc:creator>
+      <title>Companions of Hot Jupiters: two decades of radial velocity monitoring with CORALIE</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-25152v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-25152v1</guid>
+      <pubDate>Tue, 20 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Léna Parc et al.</dc:creator>
       <description><![CDATA[Why It Matters
-Most of what we know about planets beyond our solar system comes from their atmospheres or their orbits. Peering inside is much harder. One clue to a planet's interior is its shape. A hot Jupiter, a giant planet that circles extremely close to its star, is squeezed and stretched by the star's gravity, much as the Moon raises tides on Earth's oceans. How much it deforms depends on how its material is packed inside: a planet with a dense core bends differently from one that is uniformly fluffy. Scientists describe this response with numbers called fluid Love numbers, which link a planet's shape to its internal density.
+Hot Jupiters are giant planets that circle their stars in just a few days, far closer than Mercury orbits our Sun. They almost certainly did not form there, so astronomers want to know how they got so close. One theory says a distant companion gave the planet a gravitational shove, sending it onto a stretched-out path that was later pulled into a tight circle. If so, the hot Jupiter's neighbors should carry clues about this violent past.
 What They Did
-The team asked whether two space telescopes, JWST (the James Webb Space Telescope) and the upcoming Ariel mission, could detect this deformation by watching a planet's brightness change over a full orbit. This kind of recording is called a phase curve. To decide where to point the telescopes, they created a "deformation metric," called D. It combines how much a planet should deform with how clearly the telescope could see the signal. They applied it to the Ariel target list. They then simulated realistic observations of WASP-76 b and tried to recover its Love number from the simulated data.
+The team studied 147 hot Jupiter systems found by the WASP survey (Wide Angle Search for Planets). They used nearly two decades of data, from 2007 to 2025, from the CORALIE spectrograph. This instrument measures how a star wobbles toward and away from us as unseen planets tug on it, a technique called radial velocity. Because all the systems were analyzed the same way, the results can be compared fairly. The team found or refined 13 outer giant companions. They then used a statistical method to work out how common such companions are at different orbital periods, from 10 to 6,250 days.
 Key Findings
-The metric picked out WASP-33 b, WASP-76 b, and HAT-P-32 b as the best targets that do not yet have Love number measurements. For WASP-76 b, one continuous JWST observation could pin down the Love number h₂f to about ±0.09. A single Ariel visit could reach about ±0.18. The authors say this precision is likely good enough to constrain models of a planet's interior and to tell competing scenarios apart.
+Companions are rare close in and more common far out. Fewer than 1 in 100 systems have a giant companion with an orbit of 10–50 days, and about 2 in 100 for 50–250 days. The rate rises to about 5 in 100 for 250–1,250 days and 17 in 100 for 1,250–6,250 days. This matches how common giant planets are around ordinary Sun-like stars. Hot Jupiters with companions tend to have longer orbital periods and more stretched-out orbits. Companion orbits are less eccentric when the hot Jupiter's period is longer, and the companion's mass compared with the hot Jupiter's grows as the gap between their orbits widens. The authors say these patterns fit high-eccentricity migration, the shove-then-settle story.
 Looking Forward
-These results are simulations, not real measurements. They show that real observations are worth attempting, and the ranked target list tells observers where to start. If the approach works, the shape of a distant planet could become a new way to learn what lies deep inside it.]]></description>
+Radial velocity cannot reveal everything about a companion, such as how tilted its orbit is. Future data from the Gaia space telescope, which tracks the tiny sideways motions of stars, combined with these long records should pin down companion masses and orbital alignments, and reveal more about how hot Jupiters formed.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Robustness of C/O and mean molecular weight under disequilibrium chemistry</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-24583v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-24583v1</guid>
+      <pubDate>Tue, 20 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Bethany Burt et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+When telescopes study the atmospheres of planets beyond our solar system, scientists often boil a complex light pattern down to a few headline numbers. These include the carbon-to-oxygen ratio (C/O), the oxygen-to-hydrogen ratio (O/H), and the mean molecular weight (MMW), which is the average "heaviness" of the gas particles in an atmosphere. Researchers use these numbers to infer how planets formed. But a headline number is only as trustworthy as the measurements behind it.
+What They Did
+The team studied two kinds of worlds: hot Jupiters, giant gas planets orbiting very close to their stars, and sub-Neptunes, planets between Earth and Neptune in size. They worked out mathematically how uncertainty in the measured amounts of individual molecules carries through into each headline number. They also ran VULCAN, a computer model that simulates how starlight-driven chemistry and vertical mixing of gas reshuffle molecules. They compared the results with uncertainty levels from published analyses of real observations.
+Key Findings
+Uncertainties grew much larger for the element ratios than for MMW. The fractional uncertainties in C/O and O/H were typically about as large as the ratios themselves. That is like measuring a table as "one metre, give or take one metre." In atmospheres dominated by hydrogen and helium, the fractional uncertainty in MMW was more than two orders of magnitude smaller, meaning over a hundred times smaller. Photochemistry and mixing moved individual molecules around, but they changed C/O and MMW only slightly at the depths probed by transmission spectroscopy. This technique studies starlight filtering through a planet's atmosphere.
+Looking Forward
+C/O remains a valuable clue to atmospheric chemistry and planet formation, but it must be handled with careful accounting of uncertainty. MMW may be a steadier measure. It could offer a dependable way to connect observable atmospheres to a planet's overall makeup across whole populations of planets. This is especially promising for sub-Neptunes on either side of the "radius valley," a dip in how common planets of certain sizes are.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Single-Transit Parameter Estimation with Calibrated Uncertainties</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-24882v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-24882v1</guid>
+      <pubDate>Tue, 20 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Helem Salinas et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+Imagine watching a distant streetlight for months and catching a single moment when something passes in front of it. That is the problem astronomers face with "single transits": a planet crosses in front of its star only once during the observations, dimming the starlight briefly. Telescopes such as TESS (the Transiting Exoplanet Survey Satellite) collect huge amounts of data, and upcoming surveys will find even more of these one-time events. The usual methods for measuring a planet's signal depend on seeing the dip repeat and stacking the repeats together, so they don't work here. Other approaches need the star's brightness "cleaned up" first, or need prior knowledge of the star. That cleaning can distort or erase the very dip being studied.
+What They Did
+The researchers built a convolutional neural network, a type of artificial intelligence that is good at recognizing patterns. They trained it on synthetic (computer-made) light curves, which are records of a star's brightness over time. From one transit, the network estimates three things: how deep the dip is, how long it lasts, and when its midpoint occurs. It also gives calibrated uncertainties, meaning error bars that honestly reflect how much to trust each answer. They compared it with a standard method called trapezoidal least-squares fitting, which models the dip as a trapezoid.
+Key Findings
+On 120 confirmed exoplanets, both methods had comparable median errors. The baseline method failed to find the transit in 10% of cases, while the network failed in only 1%. The network also had lower mean absolute errors and needed no detrending or stellar priors. It worked well on stars with strong brightness variability, where cleaning the data would damage the signal. The team also identified 169 new transit candidates in TESS Sectors 27–60 and estimated their physical parameters. The resulting catalog includes single-transit, multi-transit and multi-planet systems.
+Looking Forward
+As surveys grow, single-transit events will become more common, and astronomers will need fast, automated ways to decide which ones deserve follow-up observations. This approach offers a scalable route to doing that, with trustworthy error bars to help prioritize targets.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.IM</category>
     </item>
     <item>
-      <title>Singles in Disguise: Kepler&#x27;s Low-SNR Single-Transiting Systems as Incompletely Detected Multis</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-22349v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-22349v1</guid>
-      <pubDate>Fri, 16 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Daniel A. Yahalomi et al.</dc:creator>
+      <title>A 36.34-day Sub-Neptune Candidate Transiting the Nearby K Dwarf TIC 402710280</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-26056v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-26056v1</guid>
+      <pubDate>Tue, 20 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Rishit Vora</dc:creator>
       <description><![CDATA[Why It Matters
-NASA's Kepler space telescope watched about 150,000 stars for planets passing in front of them, which causes a tiny dip in starlight called a transit. Astronomers noticed something odd. There were more stars with just one detected planet ("singles") than you would expect from the number of stars with several detected planets ("multis"). One idea was that two kinds of planetary systems exist: crowded, flat ones and lonely or tilted ones, a split nicknamed the Kepler dichotomy. Singles also had more faint, hard-to-confirm signals than multis. That raised a worry that many of them might be false alarms. Understanding where this excess comes from tells us how typical our own crowded solar system is.
+Planets larger than Earth but smaller than Neptune are among the most common in the galaxy, yet our own solar system has none. Learning what they are made of means finding them around bright, nearby stars, where follow-up observations are easiest. This new candidate circles TIC 402710280, an orange K dwarf (a star somewhat cooler and smaller than the Sun) about 218 light-years away. It is a candidate, not a confirmed planet.
 What They Did
-The team used a computer model called ExoMOD, which builds artificial populations of planetary systems. They "observed" these systems the way Kepler would have, using the real Kepler DR25 catalog (its final data release) as the benchmark. Both singles and multis were drawn from the same parent population, so the model could test whether one shared population could explain the differences.
+NASA's Transiting Exoplanet Survey Satellite (TESS) has only seen this star in "full-frame images," wide snapshots of the sky rather than dedicated pointings. In those snapshots the team found four small dips in starlight, called transits, recorded between 2021 and 2026. Three independent software pipelines processed the data. Two dips fell on back-to-back orbits, and the team showed that any shorter orbital period would predict dips in covered data that are not there. They then hunted for impostors. They checked where on the sky the dimming comes from, whether a faint background star 3.5 arcseconds away could be hiding a pair of eclipsing stars, and whether a secondary eclipse appears. They also ran a statistical tool called TRICERATOPS.
 Key Findings
-Multis have shorter orbital periods on average than singles. Planets on short orbits transit more often and give stronger, easier-to-detect signals. Spotting several planets in one system also favors tightly packed arrangements, which tend to have short periods. By contrast, a faint planet on a long orbit is usually the only one Kepler could find, so it gets labeled a single. Most of these singles are really multi-planet systems whose other planets were missed. The surplus of faint singles therefore needs neither false positives nor a separate population. Only the geometry of transits and how detection depends on orbital period are required.
+The candidate orbits every 36.34 days. Each transit dims the star by about 0.2% and lasts roughly 5.3 hours. That implies a planet about 3.75 times Earth's radius with an equilibrium temperature near 498 kelvin (about 225 °C). The dimming sits within 1.5 ± 1.3 arcseconds of the target. The background-star scenario requires eclipse shapes that are disfavoured for ordinary stars. No secondary eclipse was seen, and the false-positive probability is 0.003 ± 0.004. There are caveats. No high-resolution imaging exists, so very close companions are constrained only by Gaia astrometry. The transit times wander by about 21.8 minutes from a perfectly regular clock. The authors do not decide whether that comes from instruments or from gravitational tugs by another body. A separate 3.78-day signal also appears, and its source is unknown.
 Looking Forward
-The results suggest many "lonely" planetary systems are not lonely at all, and that the Kepler dichotomy may not be needed. This should help astronomers count planets and interpret system architectures more accurately. The abstract does not describe specific follow-up observations.]]></description>
+The team predicts future transit times, including one in TESS Sector 114 on 19 February 2027. Those observations, plus high-resolution imaging, could test the timing wobble and strengthen the planetary interpretation.]]></description>
         <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
     </item>
     <item>
-      <title>A Sample of Thick-Disk Stars Hosting Hot Jupiters</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-22254v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-22254v1</guid>
-      <pubDate>Fri, 16 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Victoria DiTomasso et al.</dc:creator>
+      <title>Kinematic structure and age of a Scorpius--Centaurus subcomponent: implications for PDS 70 planetary system</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-25987v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-25987v1</guid>
+      <pubDate>Tue, 20 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Arunima Arunima, Mike Ireland, Mark Krumholz</dc:creator>
       <description><![CDATA[Why It Matters
-Our Milky Way is built from distinct stellar populations, a bit like layers of a cake. The "thin disk" holds younger stars rich in heavy elements. The "thick disk" holds much older stars, more than 8 billion years old, with a different chemical makeup, including more "alpha elements" such as magnesium and silicon relative to iron. Hot Jupiters are giant planets that orbit extremely close to their stars. Astronomers still debate how they form and how their orbits change over time. Hot Jupiters around thick-disk stars are rare, and they offer a window into how planets form in different galactic neighborhoods and how orbits evolve over very long stretches of time.
+PDS 70 is a young star circled by two baby planets that astronomers have photographed directly while they are still growing inside the disk of gas and dust that made them. That makes it a benchmark for how giant planets form. But a planet's brightness only reveals its story if we know its age, much as a candle's remaining length means little unless you know when it was lit. The star's commonly used age of 5.4 million years (give or take 1 million) is much younger than the ages found for the larger stellar group it belongs to, Upper Centaurus–Lupus.
 What They Did
-The team studied 268 confirmed and candidate hot-Jupiter host stars that are similar to or somewhat cooler than the Sun (4800–6200 kelvin). They combined detailed spectra, which split starlight into its component colors like a prism, from an instrument called TRES. They added brightness measurements from Gaia, 2MASS and WISE, plus Gaia's position and motion data. Using these, they measured each star's temperature, surface gravity, size, iron content and alpha-element content. They then sorted the stars into thin-disk, thick-disk or ambiguous in-between groups based on their chemistry.
+Instead of judging the star's age by its brightness and color, the team traced how stars move. Stars born together drift apart over time, so running their motions backward shows when they were last bunched together. The team used the Wide Field Spectrograph (WiFeS) on the Australian National University 2.3-metre telescope to measure how fast 405 candidate members of a Scorpius–Centaurus subgroup, called the T subcomponent, move toward or away from us. These measurements were 5.5 times more precise than those from the Gaia space telescope. They combined them with Gaia's sky positions and motions in a modelling framework called Chronostar.
 Key Findings
-Two confirmed hot Jupiters, WASP-81 b and TOI-5322 b, and three candidates (TOI-3118.01, TOI-2728.01, TOI-5781.01) orbit previously unrecognized thick-disk stars. Comparing the groups hints at differences. Both confirmed thick-disk planets, and eight of eleven in the ambiguous group, are less massive than the median thin-disk planet. None of the thick-disk or ambiguous planets orbit in less than 2.7 days, whereas 22% of the thin-disk planets do. The authors say these patterns could come from differences in planet formation, later evolution, or the host stars themselves.
+The T subcomponent stars have a kinematic age of roughly 10–15 million years, and PDS 70 itself comes out at about 12–16 million years. That rules out ages as young as the published 5.4 million. At this older age, the brightness of planet PDS 70 b, and to a lesser degree planet c, does not match the "warm-start" cooling models, which assume a planet begins hot and fades, given current estimates of its mass. The most natural explanation is that planet b formed about 10.5 million years after its star, and no less than about 7.7 million years after it.
 Looking Forward
-This is the largest chemically identified catalog of thick-disk hot-Jupiter hosts. It gives researchers a ready list of ancient systems to study, helping test how galactic environment affects giant-planet birth and how orbits change over billions of years.]]></description>
+If this holds, giant planets may be able to form much later in a disk's life than many theories assume. Better mass measurements and further tests of the age will show whether the planets really are late arrivals.]]></description>
+        <category>astro-ph.SR</category>
         <category>astro-ph.EP</category>
         <category>astro-ph.GA</category>
-        <category>astro-ph.SR</category>
-    </item>
-    <item>
-      <title>Planetary system architectures in the final stages of planet formation</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-21957v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-21957v1</guid>
-      <pubDate>Fri, 16 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Patricia Luppe et al.</dc:creator>
-      <description><![CDATA[Why It Matters
-Planets do not finish forming when the gas-and-dust cloud around a young star disappears. What remains is a messy construction site of planets and leftover rocky and icy building blocks, much like our own Asteroid Belt and Kuiper Belt. Over the next 10 to a few hundred million years, collisions and gravitational nudges decide the final size, makeup and arrangement of the planets, including rocky ones like Earth. Studying this stage is like watching the last weeks of a building project to understand why the finished house looks the way it does.
-What They Did
-This paper is a review, not a single new measurement. It surveys what we have learned from images of "debris discs." These are belts of dust and gas produced when leftover bodies crash into each other and grind down, like sawdust from a workshop. The authors discuss how sharp images, taken with millimetre-wavelength radio telescopes, optical and near-infrared cameras, and the ALMA telescope array, let astronomers trace a system's history, including giant impacts and the effects of planets on belts.
-Key Findings
-Recent images have shown a surprising variety of belt shapes, and many carry marks that plausibly come from unseen planets sculpting them. ALMA has also found gas in a growing number of these systems. But there is a big caveat. Today's results are biased toward the brightest, mostly young belts around hot, massive stars. Even for those, faint details are hard to see because the belts have such low surface brightness, meaning their light is spread very thinly.
-Looking Forward
-The authors argue for a future (sub-)millimetre telescope with about ten times better sensitivity to continuum (broad-band) light and ten times better sensitivity to gas. It could survey faint belts around all kinds of stars in meaningful numbers, image planetary collisions in the inner regions of planetary systems, and measure gas that reveals how water-like volatile ingredients reach rocky planets. For the first time, astronomers would see the faint majority of belts rather than only the rare bright ones.]]></description>
-        <category>astro-ph.IM</category>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>WALTzER: Wide-band Atmospheric Laboratory for Transiting Exoplanet Research</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-21705v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-21705v1</guid>
-      <pubDate>Fri, 16 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>A. G. Sreejith et al.</dc:creator>
-      <description><![CDATA[Why It Matters
-Planets wrap themselves in layers of gas, much like an onion has layers. Scientists still do not fully understand how these atmospheres form and change over time, or how the deep, lower layers connect to the thin, high-altitude outer layers. Answering that requires looking at planets in many colors of light at once, from ultraviolet (the invisible light that causes sunburn) through visible light to near-infrared (a kind of heat-related light). Stars also flicker and have spots, and this can fool us into misreading a planet's atmosphere, so researchers need to track the star's behavior at the same moment.
-What They Did
-This paper presents WALTzER, short for Wide-band Atmospheric Laboratory for Transiting Exoplanet Research. It is a mission candidate for the European Space Agency's "F3" opportunity, which is a future fast-track space mission slot. The authors describe the science goals and the design of the spacecraft's instruments. At its heart is a 35-centimeter telescope, about the size of a large pizza pan. Its light is split into three co-aligned channels that share much of the same optical path, which reduces errors caused by the instrument itself. Two spectrographs, which spread light into rainbows, cover near-ultraviolet (240–325 nanometers) and visible light (450–820 nanometers). A broadband photometer, which measures total brightness, covers the near-infrared (900–1700 nanometers).
-Key Findings
-This is a mission design paper, so it reports a plan rather than observations. The authors state that WALTzER's broad, simultaneous coverage would let it detect and characterize the atmospheres of more than 30 gas-rich exoplanets, meaning planets beyond our solar system. They also say the data would be useful for a wide range of other topics, including Solar System science and studies of our Galaxy.
-Looking Forward
-WALTzER is still a candidate, not an approved mission, so its fate depends on the selection process. If chosen, it would give scientists a way to watch a planet's atmosphere and its host star's changes together, in one go, across a wide span of light.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
-        <category>astro-ph.SR</category>
-    </item>
-    <item>
-      <title>A New Method for Constraining 3D Exoplanet Atmospheres: Application to WASP-94A b&#x27;s Panchromatic Spectrum</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-22271v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-22271v1</guid>
-      <pubDate>Fri, 16 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Sagnick Mukherjee et al.</dc:creator>
-      <description><![CDATA[Why It Matters
-When a planet passes in front of its star, some starlight filters through the thin ring of air at the planet's edge. That air carries chemical fingerprints. Increasingly, astronomers see signs that the two edges of that ring, the leading (morning) side and the trailing (evening) side, are not alike. Reading those differences correctly is now the main bottleneck. The usual approach measures how much light each side blocks, but those two measurements behave like a seesaw: when one goes up, the other goes down. Treating them as independent can skew the inferred amounts of molecules by as much as three times the statistical uncertainty.
-What They Did
-The team built a new method that uses timing instead. Because the two sides differ, the transit's midpoint shifts slightly with wavelength (color). This "time-shift spectrum" can be measured from existing observations using a simple, spherically symmetric transit model. It is not entangled with the overall transit depth. They fit both signals together, giving each limb its own atmosphere. They then applied the method to the planet WASP-94A b using two James Webb Space Telescope instruments, NIRISS/SOSS and NIRSpec/G395H, covering 0.8 to 5 micrometers.
-Key Findings
-In tests, the method cut the mean squared error on retrieved molecular abundances by factors of 30–50 compared with the next best approach, and improved precision by 3–6 times. For WASP-94A b, the morning limb stays obscured by aerosols (clouds or hazes) across the whole range. The evening limb constrains water, carbon dioxide, carbon monoxide, and hydrogen sulfide. The limbs differ in temperature by 415 ± 58 kelvin at a pressure of 1 millibar. The planet's metal content ([M/H]) is +0.32 ± 0.11 and its carbon-to-oxygen ratio is 0.724 ± 0.013, both consistent with its host star.
-Looking Forward
-The framework offers a more trustworthy way to map how the atmospheres of other transiting planets differ from one side to the other, using data that may already exist.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
-    </item>
-    <item>
-      <title>Thermodynamics of Viscously Heated Circumplanetary Disks</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-21284v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-21284v1</guid>
-      <pubDate>Fri, 16 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Zhuo Chen, Jing Yang, Xue-Ning Bai</dc:creator>
-      <description><![CDATA[Why It Matters
-Giant planets like Jupiter are thought to grow inside a swirling pancake of gas and dust called a circumplanetary disk. It feeds the young planet, and it is also where moons are born. Yet we can barely observe these disks, and our theoretical models of them are incomplete. Understanding how they heat up and move material helps explain how giant planets and their moons take shape.
-What They Did
-The researchers built a computer model of a disk around a young planet. It includes friction inside the gas (viscosity), which works a bit like rubbing your hands together to make heat. It also includes gas falling onto the disk from the surrounding cloud, and a "boundary layer," the zone where material slows down and settles onto the planet's surface. They ran nine simulations with different planet masses and feeding rates, using a code called Guangqi that tracks how heat and radiation move through the gas. Eight of the nine settled into a steady, balanced state, and the team checked that energy was converted and transported consistently.
-Key Findings
-Disks grew thicker when material arrived faster and thinner around heavier planets, matching what simpler classical disk models predict. The boundary layer turned out to be very important near the planet. It controls how the inner disk loses spin and heat, and it produces very hot accreted gas that could vaporize dust. The simulations also revealed a fast, supersonic stream of gas high above the disk with little spin. It makes up only 2% to 5% of the total accretion. If the planet is massive (three times Jupiter's mass), this gas crashing onto the surface could produce detectable hydrogen-alpha light, a red glow, when the shock-accretion rate reaches about 5.5×10⁻⁸ Jupiter masses per year.
-Looking Forward
-These results give astronomers concrete signs to look for, such as hydrogen-alpha emission from young giant planets, to test models of how planets and moons form.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Time-reversible timestepping in many-body planetary systems</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-22007v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-22007v1</guid>
-      <pubDate>Fri, 16 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>David M. Hernandez, Tenri Jinno, Junichiro Makino</dc:creator>
-      <description><![CDATA[Why It Matters
-Imagine trying to film a slow cross-country road trip and a hummingbird's wings with the same camera setting. Capture the hummingbird and you waste huge amounts of footage on the road; set it for the road and the wings are a blur. Computer simulations of planetary systems face the same problem. When planets pass close to one another, scatter, or collide, the action happens very fast and needs fine time resolution. Most of the time, though, planets drift along calmly. Many simulations give every body the same fixed "time step," which wastes computing power and can still miss the fast moments. Giving each body its own time step usually breaks desirable mathematical properties, such as being able to run the simulation backward and recover the start. Those properties keep long-term errors in check.
-What They Did
-The researchers built a new simulation code called MTR. Each pair of planets gets its own time step, and that step can change as the system evolves. It adapts on the fly, with no global time step, and it is "almost" exactly time-reversible. They wrote it in the C programming language and tested it on several problems. For larger systems, up to 975 bodies, they compared it with a leading code called GPLUM. They ran GPLUM in its slower but precise "direct" mode and in its faster approximate "tree" mode.
-Key Findings
-MTR showed no energy error drift, so its errors do not steadily pile up over time, as expected of a reversible method. Against GPLUM's direct mode, MTR was up to two orders of magnitude (about 100 times) faster, while still agreeing with the distribution of orbits. In its default setup, MTR matched or beat the tree mode's speed, by up to a factor of ten, even though the tree mode uses quicker approximate force calculations.
-Looking Forward
-The abstract does not detail specific future applications. However, a faster and reliable way to follow chaotic, crowded planetary systems could make it practical to simulate more bodies and longer histories, including the close encounters and collisions that shape how planetary systems form and change.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
-        <category>nlin.CD</category>
-    </item>
-    <item>
-      <title>An HST survey of photometry and multiplicity of brown dwarfs and planetary-mass objects in the field of Taurus</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-21566v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-21566v1</guid>
-      <pubDate>Fri, 16 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Pengyu Liu et al.</dc:creator>
-      <description><![CDATA[Why It Matters
-Astronomers still debate how the lightest objects that float freely in space come to exist. Some are brown dwarfs, "failed stars" too small to shine through nuclear fusion. Others are planetary-mass objects, with masses comparable to giant planets. If they form the way stars do, from collapsing clouds of gas, we might expect many to have companions, just as many stars do. Counting how often they come in pairs tests how these small worlds are born and how fragile their partnerships are. It also helps explain how planet-like objects can end up on their own, away from any star.
-What They Did
-The team used the Hubble Space Telescope to study 26 young objects in the Taurus star-forming region, a stellar nursery. Their masses range from 6 to 37 times that of Jupiter. The team searched for faint companions in two ways. One combined colours from images taken in several filters. The other fitted the telescope's blur pattern, called the point spread function, to look for a hidden second source. They also updated each object's membership and age, then used evolutionary models to estimate its brightness, temperature and mass. To check what they could have detected, they injected artificial "fake companions" into the images.
-Key Findings
-No companion candidates turned up beyond 30 astronomical units, where one unit is the Earth–Sun distance. The images could detect companions down to about 1 Jupiter mass, and even lower for some targets. After correcting for the survey's completeness, the team found a binary frequency below 6.5% (68% confidence interval) for companions with 0.1 to 1 times the primary's mass, at separations of 30 to 7,000 astronomical units. This rate is not significantly different from that of planetary-mass objects in the Upper Scorpius region or in the general field.
-Looking Forward
-The similar rates in young and old groups suggest that the binary frequency is settled very early, probably within the first 1 to 10 million years. That points to wide pairs of planetary-mass objects forming inefficiently, or being pulled apart early in a sparse environment. Future studies could probe closer-in companions and larger samples to test this picture further.]]></description>
-        <category>astro-ph.SR</category>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Orbital Stability of Apsidally Aligned Planetary Systems</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-21117v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-21117v1</guid>
-      <pubDate>Fri, 16 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Gabriel Teixeira Guimarães, Eiichiro Kokubo</dc:creator>
-      <description><![CDATA[Why It Matters
-Many planetary systems pack several planets close together, like cars bumper to bumper on a highway. Whether such a crowded system stays orderly for billions of years or ends in collisions and ejections depends on how stretched, or "eccentric," the planets' orbits are. Astronomers have long known that more eccentric orbits make systems less stable. What has been poorly understood is the role of "apsidal alignment," which describes whether the long axes of the elliptical orbits point in the same direction. Understanding this helps us judge which real planetary systems are likely to survive over long times.
-What They Did
-The researchers ran direct N-body simulations, which are computer calculations that follow the gravitational tugs among every planet step by step. They split each planet's orbital eccentricity into two parts. One is a systematic part shared by all the planets. The other is a random part that differs from planet to planet and determines how well the orbits line up. They then tested how each part affects the time before the system becomes unstable.
-Key Findings
-The two parts behave very differently. Random eccentricity is destabilizing. It pushes neighboring planets into "mean-motion resonance overlap," a situation where repeated gravitational nudges from several rhythms combine, like pushing a swing at clashing timings, and the motion turns chaotic. Systematic eccentricity, by contrast, has little effect on the instability timescale over a wide range of values. When the orbits stay aligned, their relative orientations hardly change, so aligned systems are nearly as stable as perfectly circular ones. This protection has limits. Beyond a critical systematic eccentricity, the orbits stop turning together, they begin to precess (slowly rotate) at different rates, and the time to instability drops rapidly.
-Looking Forward
-Stability cannot be judged from eccentricity values alone. It also depends on whether the orbits keep rotating in step. The authors suggest this offers a new direction for developing analytical stability criteria, meaning mathematical rules for predicting which planetary systems will last.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Planet formation on solar system scales</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-21906v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-21906v1</guid>
-      <pubDate>Fri, 16 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Francesco Zagaria et al.</dc:creator>
-      <description><![CDATA[Why It Matters
-Think of giant planets like Jupiter as the architects of a planetary system. Their gravity shapes where smaller worlds and rocky building blocks end up, so a young system's final layout depends heavily on them. Our own solar system is a good example. If we could watch a giant planet while it is still being born, we could learn how our own neighbourhood came to be. The best chance to see this is during the early phase, when a young star is still surrounded by a spinning disc of gas and dust, the material that planets are built from.
-What They Did
-This is a forward-looking argument, not a report of new observations. Over the last decade, a telescope array in Chile called ALMA (the Atacama Large Millimeter/submillimeter Array) has transformed our understanding of planet formation. Even so, it has not been able to detect signs of planets as small as Jupiter. The authors propose a successor, "ALMA2040". It would be about 25 times more sensitive for detecting faint glowing dust, about 10 times more sensitive for detecting gas, and able to see details about three times finer than ALMA.
-Key Findings
-The authors argue that ALMA2040 would be able to pick up the faint radio-like glow around a forming Jupiter-like planet circling a Sun-like star as far away as 150 parsecs (roughly 490 light-years). It could also track how gas moves in the disc, revealing how Jupiter-sized and somewhat smaller planets interact with the disc they were born in. According to the authors, this would show how giant planets carve gaps in the disc, pull in material, form moons, and influence the other planets growing alongside them.
-Looking Forward
-If built, ALMA2040 would let astronomers watch the planet-building process at the scale of our own solar system, rather than only seeing its larger-scale effects. That could connect what we see in young planetary systems to the story of how Jupiter and the rest of our solar system came together.]]></description>
-        <category>astro-ph.IM</category>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Evolved stars, multiplicity and planets: Shaping and Being Shaped by Stellar Evolution</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-21827v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-21827v1</guid>
-      <pubDate>Fri, 16 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Theo Khouri et al.</dc:creator>
-      <description><![CDATA[Why It Matters
-Stars like our Sun do not stay calm forever. Late in life they swell into enormous, bloated giants, and anything orbiting nearby, whether planets or companion stars, has to cope. Some may survive, some may spiral inward and be swallowed, and some may change how the star itself ages. Knowing which outcome happens, and when, is essential for predicting the long-term future of planetary systems like our own, including what may eventually happen to Earth. It also matters for galactic chemical evolution, the slow process by which dying stars return elements to space and seed the next generations of stars and planets.
-What They Did
-This paper is a white paper, a vision document rather than a single experiment. The authors describe how the next generation of ALMA (the Atacama Large Millimeter/submillimeter Array, a huge network of radio dishes in Chile) could tackle these questions. They call this future upgrade ALMA2040. Imagine swapping a good pair of binoculars for a far sharper telescope, one that can pick out faint details around aging stars.
-Key Findings
-The abstract reports no new measurements, so there are no results to announce yet. It makes a forward-looking case: ALMA2040 would transform the field by detecting and characterising two things. The first is companions that are accreting, meaning pulling in gas from their swollen host star. The second is signs of planetary engulfment, the fingerprints left when a star swallows a planet. The key number is "hundreds" of systems with evolved (aging) stars. Studying hundreds instead of a handful would let astronomers move from isolated curiosities to real statistics. The relationship also runs both ways, since stars shape the fate of their companions and planets, and those companions and planets in turn shape the stars.
-Looking Forward
-If this vision is realised, astronomers could watch many different stages of stellar aging and see directly how planets and companions are reshaped or destroyed. That would sharpen forecasts for planetary systems, our Solar System included. It would also improve our understanding of how aging stars enrich the galaxy with new material. Because the facility is still a plan, these benefits are goals rather than established results.]]></description>
-        <category>astro-ph.IM</category>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.SR</category>
     </item>
   </channel>
 </rss>
