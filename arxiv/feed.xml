@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 21 Oct 2026 06:56:35 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 22 Oct 2026 06:59:23 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,226 +15,107 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>TOI-3686: A Hot Jupiter and Sub-Neptune In A 2:1 Mean-Motion Resonance</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-28533v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-28533v1</guid>
-      <pubDate>Wed, 21 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Samuel W. Yee et al.</dc:creator>
+      <title>Systematic Uncertainties in Rocky Exoplanet Reflected Light from Incomplete Laboratory BRDF Measurements</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-28755v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-28755v1</guid>
+      <pubDate>Thu, 22 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Leonardos Gkouvelis et al.</dc:creator>
       <description><![CDATA[Why It Matters
-Hot Jupiters are giant planets that hug their stars, circling them in just a few days. Astronomers have long thought of them as "lonely," with no other planets nearby, probably because the violent events that push a giant planet inward would also fling away any neighbors. A small but growing number of exceptions have turned up, and each one is a clue to how these giants form and travel to their scorching orbits. TOI-3686 is a new and especially striking exception.
+Astronomers have started studying rocky planets outside our solar system, and they want to know what those planets' surfaces are made of. Is it dark basalt, pale sand, or something else? Reading a surface from a distance is like identifying a fabric from across a room. To do it, scientists compare a planet's light with laboratory measurements of rocks and minerals. But most of those lab measurements were taken from just one lighting and viewing angle. That is like judging a satin sheet by a single photograph, when its shine changes as you walk around it.
 What They Did
-The team started with TOI-3686 c, a hot Jupiter that NASA's Transiting Exoplanet Survey Satellite (TESS) watched cross its star every 5.078 days. Its transits arrived off schedule by up to 40 minutes from earliest to latest, among the largest such shifts ever seen for a hot Jupiter. That hinted at a hidden gravitational tugger. Searching the TESS data again, the researchers found the transits of a second planet, TOI-3686 b, a sub-Neptune (a planet between Earth and Neptune in size) orbiting every 2.54 days. They combined brightness measurements from TESS and ground-based telescopes with radial velocity measurements, which track tiny wobbles in the star's motion, from the NEID and MAROON-X spectrographs. They fit everything with a "photodynamical" model that simulates the planets' gravitational interactions and their transits together.
+The researchers asked what goes wrong when a lab spectrum comes from only one angle. They tested whether different combinations of the settings that describe how a surface scatters light could all match the same single-angle spectrum. They then used each combination to predict what a distant planet would look like. The predictions covered how brightness changes across the planet's phases, how reflective the planet is overall, and how bright it appears next to its star. They worked at wavelengths from 0.5 to 1.7 micrometres, the range future space telescopes such as the Habitable Worlds Observatory (HWO) are expected to target. They also checked the common shortcut of assuming light scatters equally in all directions. Finally, they used measurements taken at many angles from the Bloomsburg University Goniometer dataset.
 Key Findings
-The sub-Neptune's transit times drift by up to 10 hours from earliest to latest, which is 16% of its orbital period. The two planets are deep in a 2:1 mean-motion resonance. The inner planet circles twice for every orbit of the outer one, like two swings pushed in rhythm, so the planets tug on each other at the same points again and again. This makes TOI-3686 the only hot Jupiter system currently known to be truly resonant. The resonance may be related to the system's age of about 1 billion years.
+Many different combinations of settings reproduced the same single-angle spectrum yet predicted different angular behavior. That produced large uncertainties in the predicted signals, especially at small phase angles, when the planet is nearly fully lit as seen from Earth. The simple equal-scattering assumption can also bias the results. When the multi-angle measurements were used, the uncertainty collapsed.
 Looking Forward
-The authors conclude that systems like this likely formed through a calm, dynamically quiet pathway. The planets were then captured into resonance as they migrated inward through the disk of gas and dust around the young star. TOI-3686 may represent the high-mass end of processes that also shape compact systems of smaller planets.]]></description>
+The study argues that reliable models of rocky exoplanet light need laboratory measurements taken from many angles, not just one. Building such datasets would let future telescopes interpret planetary surfaces with much more confidence.]]></description>
         <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
     </item>
     <item>
-      <title>Beyond static torques: Self-consistent migration and dynamical trapping of low-mass planets in dusty disks</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-27071v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-27071v1</guid>
-      <pubDate>Wed, 21 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Jose L. Gomez et al.</dc:creator>
+      <title>Solar System Surface Technosignatures: Searching for Signs of Artificial Design on Extraterrestrial Terrain</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-28687v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-28687v1</guid>
+      <pubDate>Thu, 22 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Ana Henrique, Sofia Sheikh, Benjamin Fields</dc:creator>
       <description><![CDATA[Why It Matters
-Young planets form inside a spinning disk of gas and dust, and small ones seem to have a serious problem: the gas tugs on them in a way that makes them spiral inward toward their star, much like a marble rolling down a funnel. If this always happened, many planets would be swallowed before they could grow up. Recent work suggested that the dust in the disk can push back and counteract the gas. But those studies mostly held the planet fixed on one orbit, which is a bit like judging a surfer's ride while keeping the board nailed to the sand.
+For decades, the hunt for alien technology has mostly meant listening for radio signals, like sitting by a radio hoping to catch a distant station. But broadcasts are fleeting, and a civilization might transmit for only a short window. This paper argues for a complementary idea: look for lasting marks on the ground. Think of the pyramids, ancient roads, or giant earthworks on Earth, which outlast the people who built them. On quiet worlds like the Moon and Mars, where little geological activity erases the surface, artificial patterns could stay visible for hundreds of millions of years.
 What They Did
-The researchers ran detailed computer simulations in two dimensions, treating the gas and the dust as two separate fluids that exchange momentum. The key change was that the planet was free to move. It responded to the pushes and pulls from the disk and altered its own orbit as it went. The team explored a six-dimensional space of disk and planet properties, meaning six different settings that they varied in combination.
+This is a proposal, not an observing campaign. The authors borrow an anthropological lens, the way archaeologists read human-shaped landscapes, to define "surface technosignatures": non-random, intentional patterns on planetary terrain. They point to two recent developments that make the search timely. One is extremely sharp imagery, such as pictures from the HiRISE (High Resolution Imaging Science Experiment) camera on NASA's Mars Reconnaissance Orbiter. The other is machine-learning methods that are good at anomaly detection, meaning spotting things that look out of place.
 Key Findings
-Allowing the planet to move produced a wide variety of outcomes. Some planets drifted inward, some outward, and some settled into an oscillating back-and-forth motion that kept them confined to one region. Heavier cores could break through dust-created barriers and then migrate rapidly outward or inward. In dust-rich disks, the planet and the gas-dust exchange kept rebuilding lopsided dust clumps along its orbit. These clumps acted as a self-renewing trap, and super-Earths were held in stable oscillation, which halted their inward drift without any pre-existing ring or bump in the disk. The authors suggest this could matter in the outer disk beyond the water-ice line, where icy pebbles are moderately coupled to the gas. In disks with little dust or strong turbulence-like mixing, planets mostly just spiraled inward, apart from some outward cases.
+The paper does not report a discovery. Its main outcome is a roadmap with two possible ways to build an AI model for the search. A supervised approach would learn from labeled examples, like teaching a child to recognize cats from photos. An unsupervised approach would learn what ordinary terrain looks like and flag whatever doesn't fit. Flagged spots could then be checked with complementary tools: LiDAR (laser-based 3D mapping), ground-penetrating radar, and reflectance spectroscopy, which reads a surface's makeup from how it reflects light.
 Looking Forward
-The results show that fixed-orbit shortcuts are not good enough. To predict which planets survive and what planetary systems end up looking like, models need to include the full feedback between a moving planet and its disk.]]></description>
+The authors say these methods would allow the first quantitative upper limits on surface technosignatures. Even if nothing is found, scientists could state firmly how much, if anything, could be hiding in the terrain searched so far. The work would also bring side benefits for planetary science, since tools that find the unusual could help study odd natural features on other worlds.]]></description>
+        <category>astro-ph.IM</category>
         <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>A sub-Earth-sized TESS planet candidate in the nearby M-dwarf binary GJ 774, most likely orbiting GJ 774 A (TIC 351339274)</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-28575v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-28575v1</guid>
-      <pubDate>Wed, 21 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Jaden Tripp</dc:creator>
-      <description><![CDATA[Why It Matters
-The smallest rocky worlds are easiest to study when they circle stars close to us. Small, dim red stars called M dwarfs are especially good targets, because a planet passing in front of one blocks a larger share of the starlight. This paper reports a possible planet around GJ 774, a pair of red dwarf stars only 12.86 parsecs (about 42 light-years) away. If it is real, it would be smaller than Earth, which is rare among planets we can examine closely.
-What They Did
-The team studied data from TESS, NASA's planet-hunting space telescope, spanning eight observing periods between 2019 and 2026. They looked for tiny, regular dips in starlight, like a moth briefly passing in front of a distant lamp. Next, they checked whether the dips could be faked by eclipsing stars, using tests on alternating dips, on archival photographic plates, and on star-velocity measurements from the Gaia telescope. The 2026 data were held back from the original search, so they served as a fair, independent check. The two stars lie only 0.85 of a TESS pixel apart, so the team also separated their light mathematically to work out which star dims.
-Key Findings
-A dip lasting about 1.28 hours repeats every 4.225138 days, dimming the light by about 365 parts per million. The 2026 data show it right on schedule, and none of 100,000 scrambled versions of that data looked as strong. If the planet orbits the brighter star, GJ 774 A, it is about 0.70 times Earth's radius. It would receive about 15 times Earth's sunlight, with a temperature near 548 kelvin (roughly 275 °C). The fainter companion, GJ 774 B, is disfavoured because its own light does not dim enough. Still, in the 2026 data about 40% of the dimming appears at B's position, a puzzling 2–3 sigma tension that remains unexplained.
-Looking Forward
-The planet is a candidate and is not validated. Separate, sharp ground-based observations of the two stars could show directly which one dims, and would test whether B hosts the planet.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.SR</category>
-    </item>
-    <item>
-      <title>When the core ate the atmosphere</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-27788v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-27788v1</guid>
-      <pubDate>Wed, 21 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Vera Sparrman, Anders Johansen</dc:creator>
-      <description><![CDATA[Why It Matters
-Earth's air, rocky mantle, and metal core did not start out separate. They were stocked with life-essential ingredients such as hydrogen, carbon, and nitrogen while the planet was still growing. These ingredients are called volatiles because they easily turn to gas. Working out where they ended up is like reading a receipt: the amounts in each layer today record how the planet was built. This study asks how much of Earth's early supply was pulled into the core, out of reach of the surface.
-What They Did
-The researchers built computer models that follow volatiles as the young Earth grew, comparing two ways of delivering building material. In "pebble accretion," small pebbles rain onto the planet early and quickly. In "planetesimal accretion," larger rocky chunks arrive steadily over a longer period. The models track how volatiles split between the atmosphere, the molten rock (the magma ocean) and the metal core. That split depends on how readily each element dissolves into metal or into gas.
-Key Findings
-Timing matters a great deal. Early delivery, as in the pebble scenario, lets much more hydrogen and carbon sink into the core. The core holds about 70% of both elements in the early-delivery case, but only about 50% when delivery is continuous. The pebble model gives a carbon-dominated atmosphere of about 760 bar (Earth's air today is about 1 bar), with 39 bar of hydrogen and water and a few bars of nitrogen. The planetesimal model gives a heavier atmosphere of about 1,350 bar with a similar makeup. Both are consistent with estimates for the volatile content of the "bulk silicate Earth" (the mantle plus atmosphere). The results also depend strongly on planet mass and on how volatiles dissolve in metal and magma.
-Looking Forward
-The authors conclude that rocky planet cores swallow large amounts of volatiles during formation, and that the volatile inventory of the bulk silicate Earth was probably set during the magma ocean phase. The abstract does not describe specific follow-up studies, but the finding suggests that other rocky planets may also have hidden volatile reservoirs deep inside.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Ammonia-Hydrogen Phase Equilibria in Planetary Envelopes from First-Principles-Based Machine-Learning Molecular Dynamics</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-27136v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-27136v1</guid>
-      <pubDate>Wed, 21 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Akash Gupta, Austin Guo, Jie Deng</dc:creator>
-      <description><![CDATA[Why It Matters
-Ammonia (a gas made of nitrogen and hydrogen, the stuff in some household cleaners) and hydrogen are major ingredients of planets, both in our solar system and beyond. Yet how they mix deep inside a planet's thick outer layers has been poorly understood. Think of oil and vinegar: under some conditions they blend, and under others they separate. Whether ammonia stays blended with hydrogen or separates out shapes a planet's makeup, its heat flow, and how it changes over billions of years.
-What They Did
-The researchers ran huge computer simulations of ammonia and hydrogen together, covering temperatures from 500 to 4000 kelvin and pressures from 0.1 to 100 gigapascals (up to about a million times Earth's surface air pressure). Quantum-physics calculations would be too slow for this, so they trained machine-learning models on such calculations to act as fast, accurate stand-ins. They then simulated a hydrogen-rich region and an ammonia-rich region side by side and watched how they exchanged material.
-Key Findings
-The temperature above which the two fully mix rises with pressure, from 500 K at 0.1 GPa to about 2000 K near 30 GPa. Above roughly 30 GPa and 2000 K, where molecules begin to break into atoms, this curve nearly flattens. At 3000 and 4000 K, no separation occurred up to 100 GPa. The boundary lies close to, and crosses, published temperature profiles of Uranus and Neptune, suggesting ammonia may be raining out inside them today. In warm sub-Neptunes such as TOI-270 d, ammonia and hydrogen likely mix in all proportions. Combined with earlier work, the picture is that silicates (rock-forming materials), water, and then ammonia separate from hydrogen in that order as planets cool.
-Looking Forward
-These results give planetary scientists a map to use when modeling how planets are built and how they evolve. The findings about Uranus and Neptune are implications from comparing simulations with published models, not direct observations, so they remain to be tested.]]></description>
-        <category>astro-ph.EP</category>
-        <category>cond-mat.mtrl-sci</category>
         <category>cs.LG</category>
-        <category>physics.chem-ph</category>
-        <category>physics.geo-ph</category>
     </item>
     <item>
-      <title>Planets surviving common envelope evolution should be rare, massive, and orbit very close to their host star</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-27055v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-27055v1</guid>
-      <pubDate>Wed, 21 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Yadira S. Gaibor et al.</dc:creator>
+      <title>OGLE-2013-BLG-1125/MOA-2013-BLG-584: Discovery of a gas giant orbiting an M dwarf</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-29610v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-29610v1</guid>
+      <pubDate>Thu, 22 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>E. Bachelet et al.</dc:creator>
       <description><![CDATA[Why It Matters
-When a star like our Sun runs out of fuel, it swells into a red giant hundreds of times larger than before, then shrinks into a dense, Earth-sized ember called a white dwarf. Any planets nearby face a harsh test. Astronomers have found planets and planetary debris around white dwarfs, and each one tells us how planets survive, or fail to survive, their star's death. One proposed process is "common envelope" evolution. A planet gets swallowed by the bloated star and spirals inward through its gas, a bit like a spoon stirred through thick soup. If it survives, it could end up very close to the white dwarf. This study asks how often that should happen and what the survivors would look like.
+Giant planets like Saturn and Jupiter are thought to need a lot of raw material to form. Small, dim stars called M dwarfs, the most common kind in our galaxy, have less material around them, so finding a big planet circling one is a puzzle. Each new example helps astronomers test their ideas about how planets are built. So far, the list of giant planets around such small stars is short.
 What They Did
-The team built computer simulations of many giant-planet systems. They drew starting conditions, such as planet mass and distance from the star, from what is observed around stars that are still in their main, hydrogen-burning lives. They then evolved each host star forward to the white dwarf stage and checked which planets would survive being engulfed. The survivors formed the predicted post-common-envelope planet population.
+The team used a technique called gravitational microlensing. When one star drifts almost exactly in front of a more distant star, its gravity acts like a natural magnifying glass and briefly brightens the background star. If the foreground star has a planet, the planet adds a small extra blip to that brightening. This event, named OGLE-2013-BLG-1125/MOA-2013-BLG-584, was watched by two survey projects, OGLE (Optical Gravitational Lensing Experiment) and MOA (Microlensing Observations in Astrophysics). Follow-up telescopes from Las Cumbres Observatory (LCO), the Microlensing Follow-Up Network (μFUN), and Mindstep also contributed. The researchers built a computer model of how the brightness rose and fell over time. They also used data from the Keck II telescope, collected in 2018, to add further constraints on the lensing system.
 Key Findings
-Planets that survive this process should be rare, massive, and extremely close to their star. Most survivors are heavier than 10 times the mass of Jupiter, and they orbit within 1.4 times the tidal disruption radius, about 0.006 astronomical units (an astronomical unit is the Earth–Sun distance). This is the Roche limit, the distance inside which a star's gravity would tear a planet apart. The result differs from another proposed route, high-eccentricity migration, which leaves planets beyond twice that distance. The known planet WD 1856+534 b orbits close to its white dwarf, but its properties do not match the predicted survivors. That suggests it formed some other way.
+The model points to a planet with a mass of 105 ± 13 times the mass of Earth. That is similar to Saturn, which weighs in at roughly 95 Earths. The star it orbits is very light, at 0.139 ± 0.011 times the mass of our Sun, or about one-seventh of it. The system lies about 1.00 ± 0.08 kiloparsecs from us, which is roughly 3,300 light-years.
 Looking Forward
-Future white dwarf surveys can compare real planets with these predictions to see which formation routes actually operate. Finding massive planets hugging white dwarfs would support the common envelope path, while finding planets in other orbits would point to different mechanisms.]]></description>
+This discovery adds one more entry to the small collection of giant planets known around low-mass stars. Such systems provide constraints on theories of planet formation. As more of them are found, astronomers can better judge how often small stars manage to build large planets, and which formation ideas hold up.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Radio and high-energy variable emission from a multi-wavelength follow-up of the infant planet-hosting star V1298 Tau</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-29459v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-29459v1</guid>
+      <pubDate>Thu, 22 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>M. Damasso et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+Planets are born around young stars, and young stars can be rough neighbours. V1298 Tau is a very young, magnetically active star, a bit cooler than the Sun, that hosts several planets. That makes it a benchmark for studying how planetary systems form and change in their earliest stages. The star's magnetic storms, flares and radiation shape the environment its planets live in. Understanding the star's behaviour is therefore part of understanding the planets' history.
+What They Did
+Between 2025 and 2026, the team watched the star in several "colours" of light. The Karl G. Jansky Very Large Array (JVLA), a radio telescope, observed it at 4.5–6.5 gigahertz over repeated visits. The Swift satellite tracked X-rays and near-ultraviolet light for 20 days, ending one month before the radio campaign began. The team compared these data with a publicly available optical brightness record from the ASAS-SN survey, which follows the star's brightness as it spins.
+Key Findings
+Radio emission turned up in 90% of the visits. It switched between a bright state (at or above 0.1 millijansky per beam) and a faint one within days or even hours. The radio signal was moderately linked to the optical brightness, which hints that it rises and falls with the star's rotation. Except in one visit, there were no rapid changes over minutes and no sign of circularly polarised radio waves. Overall, the radio signal fits electrons spiralling in magnetic fields in the star's hot outer atmosphere, the corona. The X-ray output varied between 1.2 and 2.5 × 10³⁰ erg per second. The team also caught the fading phase of a stellar flare and found evidence that the X-rays track the optical light. Finally, V1298 Tau follows the Güdel-Benz relation, a nearly straight-line link between a star's radio and X-ray brightness.
+Looking Forward
+These results tie the star's radio and high-energy flickering to its magnetic activity, and they show it behaves like other active stars. The X-ray and radio observations were separated by about a month, so they could not be compared moment by moment. Observing a young planet-hosting star in all these bands at the same time would give a sharper picture of its stormy surroundings.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.HE</category>
+        <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>White dwarf pollution in wide binaries I: the effects of stellar evolution</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-28896v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-28896v1</guid>
+      <pubDate>Thu, 22 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Constanza Norambuena, Carolina Charalambous, Claudia Aguilera-Gómez</dc:creator>
+      <description><![CDATA[Why It Matters
+When a star like our Sun runs out of fuel, it swells up, sheds much of its material, and leaves behind a dense, Earth-sized ember called a white dwarf. Many white dwarfs have dust and metals such as iron and silicon in their thin outer layers. These elements should sink out of sight quickly, so astronomers think the white dwarfs are still "eating" rocky debris, probably leftovers from planets and asteroids that once circled them. That makes white dwarfs a way to study the building blocks of distant planetary systems. Many of these stars also have a distant stellar companion, so a key question is what pushes the rocky material inward: the aging star itself, or the pull of its companion?
+What They Did
+The researchers built computer simulations, using a tool called REBOUND that tracks how objects move under gravity. They modelled a wide pair of stars in which one star hosts a Jupiter-mass planet and a belt of small rocky bodies called planetesimals. To follow the star's changes, they used detailed stellar life-story models from a code called MESA (Modules for Experiments in Stellar Astrophysics). They tried two versions of how the star loses mass as it ages, and they varied the size and shape of the binary orbit. The simulations ran up to the white dwarf stage and included tidal effects.
+Key Findings
+The choice of mass-loss history had only a minor effect on whether the planet survived. It mainly changed the timing and efficiency of rocky material reaching the white dwarf. The layout of the binary mattered much more. Wider binaries delivered rocky material to the white dwarf at the highest rates, which fits the observation that polluted white dwarfs are common in wide binaries. The reservoirs of planetesimals also lasted a long time, and they lasted longer in wider binaries. That could allow metal pollution to continue for billions of years.
+Looking Forward
+This is the first paper in a series, and it points to the companion star's orbit as the main driver of pollution. The simulations used one planet and one disc, so future work can test more varied planetary systems.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.SR</category>
     </item>
     <item>
-      <title>Small Collisions, Big Impact: The Sensitivity of Atmospheric Temperatures to Collision-Induced Absorption</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-27067v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-27067v1</guid>
-      <pubDate>Wed, 21 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>David Dahlbüdding et al.</dc:creator>
+      <title>The Pandora SmallSat: Target Selection and Early Science</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-30028v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-30028v1</guid>
+      <pubDate>Thu, 22 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Emily A. Gilbert et al.</dc:creator>
       <description><![CDATA[Why It Matters
-Whether a planet is cozy, scorching, or frozen depends heavily on how its atmosphere handles heat. One overlooked ingredient is "collision-induced absorption" (CIA). Normally, some gas molecules, such as hydrogen or nitrogen, barely interact with heat radiation. When two of them bump into each other, though, the brief encounter lets them soak up energy they would otherwise let pass. Think of two people who can't lift a sofa alone but manage it together. This effect helps set atmospheric temperatures and therefore a planet's habitability. The catch is that the laboratory and theoretical data describing it are patchy. They cover only some wavelengths (colors of light) and temperatures, and different sources sometimes disagree.
+When a planet passes in front of its star, some starlight filters through the planet's atmosphere and carries chemical fingerprints. Stars are not smooth, though. They have dark spots and bright patches, a bit like freckles that come and go, and these can mimic or hide a planet's signal. Telescopes can mistake a star's moods for a planet's air. Learning to separate the two is essential if we want to read the atmospheres of faraway worlds correctly.
 What They Did
-The researchers first measured how much each colliding pair of molecules matters at different pressures and temperatures. They did this by calculating a type of average opacity, the Rosseland mean, with and without that pair included. Then they built simplified, idealized model atmospheres designed to make the effect of one pair as strong as possible. They ran each available data source through a radiative transfer model, which tracks how energy flows through an atmosphere. They also tested extrapolated versions that stretch the data to new wavelength and temperature ranges, to show where better data is needed.
+Pandora is a small satellite, or "smallsat," chosen in the first group of NASA's Pioneers missions. It measures a star's brightness in visible light while also splitting near-infrared light into its colors (spectroscopy). Watching both at once helps tell star effects from planet effects. The team picked 20 main targets. Each gets 10 separate transit observations, and each observation lasts 24 hours. All the planets orbit K and M dwarfs, which are cooler and smaller than our Sun. The stars were chosen to span different spin rates and activity levels.
 Key Findings
-Where data sources overlap in wavelength and temperature coverage, the predicted atmospheric temperatures differ by about 10 kelvin. Where sources have spectral gaps or different temperature limits, the differences exceed 100 kelvin. Gaps in wavelength coverage or narrow temperature ranges can also stop the model from settling on a stable temperature profile at all.
+This paper mainly describes how the targets were chosen. The abstract does not report specific scientific results. The planets range from 1.5 to 15 times Earth's radius and circle their stars every 1.7 to 11.5 days. Pandora also observes extra targets to fill gaps in its schedule. These include young star systems, planets whose transit times shift slightly, brown dwarfs (objects between planets and stars), and planets whose brightness changes as they orbit. The authors say early results are discussed in the full paper, but the abstract gives no details.
 Looking Forward
-The study offers guidance on which CIA datasets to choose for atmospheric modelling. It also points to the wavelength and temperature regimes where new laboratory measurements and theoretical calculations are most urgently needed. All results are published on an accessible website, so other scientists can check them and build on them.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>The T-matrix method for modeling the optical properties of grains in exoplanetary atmospheres</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-28117v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-28117v1</guid>
-      <pubDate>Wed, 21 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Giambattista Aresu et al.</dc:creator>
-      <description><![CDATA[Why It Matters
-Many planets orbiting other stars have atmospheres that are partly clear and partly filled with clouds or haze. These clouds are made of tiny solid grains, a bit like fine dust or smoke. How the grains absorb and scatter starlight changes what telescopes see when they study these distant worlds. If scientists model the grains badly, they may misjudge what the atmosphere is made of and how much cloud material it holds.
-What They Did
-The simplest approach is to treat every grain as a perfect little ball, which is easy to calculate with a long-established method called Mie theory. Real grains are rarely so tidy. The researchers used a more flexible technique, the transition matrix (T-matrix) method, which can handle lumpy, non-spherical shapes. They studied three materials: forsterite, spinel and silicon monoxide. They looked at light from the near to the far infrared. The grain shapes ranged from compact clusters of spheres to fluffy, porous aggregates, and the grains came in different sizes.
-Key Findings
-Depending on grain size and shape, the amount of light blocked could differ by a factor of 2 to 3 from the spherical case. For grains larger than about 1 micrometer (one millionth of a meter), structured grains absorbed near-infrared light more efficiently than spheres. The team also built a fiducial (example) transmission spectrum, which shows how starlight is filtered as it passes through a planet's atmosphere. At wavelengths of 1 to 5 micrometers, matching the effect of the structured grains required roughly twice as much spherical material.
-Looking Forward
-The team has made its calculations freely available to other scientists through a Zenodo repository, an online data archive. These results should help researchers interpret recent and upcoming observations of exoplanet atmospheres more realistically, with better estimates of how much cloud material is present.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
-    </item>
-    <item>
-      <title>A Solar Optical Clock</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-28485v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-28485v1</guid>
-      <pubDate>Wed, 21 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Connor Fredrick et al.</dc:creator>
-      <description><![CDATA[Why It Matters
-Finding a true Earth twin around a Sun-like star is one of astronomy's hardest measurements. As a small planet tugs on its star, the star wobbles toward and away from us, and its light shifts very slightly in color. For an Earth-Sun analog, that wobble is less than 10 centimeters per second, slower than a leisurely stroll. Detecting it means pinning down a spectral line, a dark fingerprint left by atoms in starlight, to a few parts in 100,000. Only a few instruments can do this today, and they need large gratings (devices that spread light into a rainbow) and must average thousands of lines.
-What They Did
-The team took a different route, borrowing tools from atomic clocks and quantum sensors. They locked a laser to a single iron absorption line in sunlight at a wavelength of 1565 nanometers, in the infrared. The laser was coupled to one mode of the Sun's thermal light field, much like tuning a radio to one station. They then counted the laser's frequency against an optical frequency comb, a ruler made of evenly spaced colors of light, which was tied to the international definition of the second. The result is effectively a solar optical clock.
-Key Findings
-The system worked at the fundamental photon-noise limit of this method. It pinned the line's center to one part in a billion of its optical frequency, equivalent to 30 centimeters per second in velocity. The measurement picked up the Sun's five-minute acoustic oscillations, the rhythmic pulsing of its surface. During a solar eclipse it also recovered the expected Rossiter-McLaughlin signal, a small line shift that appears when the Moon blocks part of the rotating Sun.
-Looking Forward
-The authors suggest that pairing these techniques with a thirty-meter-class telescope could reach this precision on the nearest Sun-like stars in a few hours. Measuring many lines that respond differently to magnetic fields and form at different depths could shorten the averaging time. It could also help separate the Doppler signal of terrestrial planets from the noise of stellar granulation and magnetic activity. These are proposals, not yet demonstrated on other stars.]]></description>
-        <category>astro-ph.IM</category>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.SR</category>
-        <category>physics.optics</category>
-    </item>
-    <item>
-      <title>Exomoonlight Sonata: On the Fate of Exomoons Around Migrating White Dwarf Planets</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-27484v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-27484v1</guid>
-      <pubDate>Wed, 21 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Ritvik Sai Narayan, Joseph R. Livesey, Juliette Becker</dc:creator>
-      <description><![CDATA[Why It Matters
-When a Sun-like star dies, it shrinks into a dense, fading ember called a white dwarf. Some planets survive this, and a few end up orbiting very close to the dead star. Astronomers want to know how they got there. If such planets once had moons, those moons could act like witnesses, and their survival or loss would help reveal the planet's travel history. Moons might also offer a surprising place for life to exist after a star's death, which gives the question extra weight.
-What They Did
-The researchers modeled a three-body system: the white dwarf, a planet, and a moon circling that planet. They began with the planet on a stretched-out, egg-shaped orbit. Over time, tides (the same stretching and squeezing of bodies by gravity that moves our oceans) gradually round the orbit and pull the planet inward, a process called high-eccentricity migration. Using a mathematical description of these tides, the team compared how the planet's orbit and the moon's orbit change. They also examined when an "evection resonance" could occur, a special timing match that can strongly alter a moon's orbit.
-Key Findings
-For planets whose spin has settled into a balance with their stretched orbits, moons always drift inward toward the planet. The reason is that the distance where a moon would orbit in step with the planet's spin always lies beyond the Hill radius, the zone where the planet's gravity beats the star's. This holds regardless of the masses involved or how elongated the orbit is. Moons orbiting close to the planet spiral inward quickly compared with the planet's own orbital change. Moons at wider distances, which suit slower planetary migration, are jolted each time the planet swings close to the star. The work done by those jolts is a substantial fraction of the moon's total orbital energy. Together, these results suggest moons likely do not survive a planet's high-eccentricity migration in this three-body setup.
-Looking Forward
-The study points to a clear obstacle for moons around close-in white dwarf planets. Finding such a moon would therefore be a strong hint that the planet reached its orbit by some other route, or that the moon formed or arrived later.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.SR</category>
-    </item>
-    <item>
-      <title>Two Validated Planets and 179 Candidates From a TESS Faint Star Transit Search in the ULTRASAT Fields</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-28518v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-28518v1</guid>
-      <pubDate>Wed, 21 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Matthew Lastovka et al.</dc:creator>
-      <description><![CDATA[Why It Matters
-Most planet hunting has focused on bright stars, much as you might inspect only the brightest streetlights on a road because they are easiest to see. NASA's Transiting Exoplanet Survey Satellite (TESS) was designed with that approach in mind. Faint stars are far more numerous, and TESS can detect them, but they have not been systematically searched for planets. There is a second motivation. Watching a planet cross its star in both ultraviolet (UV) light and ordinary visible light can reveal what the planet's atmosphere is made of and how it evolves. Very few telescopes can observe in the UV, so this area is still largely unexplored.
-What They Did
-The researchers looked for transits, the tiny dips in starlight that happen when a planet passes in front of its star, like a moth fluttering across a lamp. They searched stars as faint as magnitude 16 in TESS data, using light curves (records of a star's brightness over time) specially optimized for dim stars. They focused on the patches of sky that ULTRASAT, an upcoming ultraviolet space telescope, will monitor frequently. After careful vetting to weed out false alarms, they statistically validated two candidates as real planets. They also estimated how clearly ULTRASAT could see each planet's transit.
-Key Findings
-The search recovered 262 planet candidates, 181 of them new to this work. Two were statistically validated as genuine planets, meaning the odds that something else is mimicking the signal are very low. The team estimates that 113 of the candidates, both new and previously known, would be detectable by ULTRASAT. Observing them would make possible the largest study of transiting planets in both visible and UV light.
-Looking Forward
-The work shows that TESS can find planets around faint stars, an area that has been largely overlooked. It also provides a catalog of well-vetted candidates that ULTRASAT could observe once it is operating. Most of these objects remain candidates, so further confirmation will be needed. Still, the list gives astronomers a head start on studying how planetary atmospheres behave across different wavelengths of light.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>The science case for an in-situ measurement platform in the Venus clouds</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-27038v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-27038v1</guid>
-      <pubDate>Wed, 21 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Maureen Cohen et al.</dc:creator>
-      <description><![CDATA[Why It Matters
-Venus is often called Earth's twin, yet it took a very different path and became a world with a scorching surface. Understanding why helps us judge how planets, including those orbiting other stars, end up livable or hostile. In the early 2030s, a set of missions will study Venus with remote sensing, which means observing from orbit. That is like trying to understand a house by looking only at its outside walls. The authors argue that the next step is to go inside the atmosphere and measure things on the spot.
-What They Did
-This is a white paper, a position document rather than an experiment. It was written for the UK Space Agency's Space Frontiers 2035 programme. The authors set out the scientific reasons for sending an in-situ (on-the-spot) measurement platform into the Venus clouds. They describe such platforms as the Venus equivalent of Mars rovers. Instead of rolling across the ground, they would float high in the atmosphere, in the form of balloons. The paper notes that sophisticated Venus balloon technology is already under development. This gives the United Kingdom a chance to join as a bilateral partner, meaning a close one-to-one collaboration with another nation's space programme.
-Key Findings
-The paper reports no new measurements. Its result is a reasoned case built around three big questions. First, what is the volcanic and geological history of Venus? Second, could the Venus clouds be habitable, and might they offer conditions where life could survive? Third, how can Venus serve as an analogue, a nearby test case, for rocky exoplanets (planets around other stars) that may resemble it? According to the authors, a cloud-floating platform is well suited to tackle all three.
-Looking Forward
-After the remote sensing missions of the early 2030s, aerial platforms are presented as the natural next chapter in Venus exploration. If the UK commits to partnering on these missions, it could help shape that chapter. The paper is a call to action, and the missions themselves still have to be planned, funded and built.]]></description>
+If the mission is extended, Pandora could take on more science. The authors outline possible options for that extended phase. As the observations continue, they should show how well Pandora can separate starlight quirks from true planetary atmospheres.]]></description>
         <category>astro-ph.IM</category>
         <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Automated optimization of solar energetic particle acceleration and transport parameters against five-spacecraft observations of the 9 October 2021 event</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-28603v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-28603v1</guid>
-      <pubDate>Wed, 21 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Hiroyuki Tako Ishikawa et al.</dc:creator>
-      <description><![CDATA[Why It Matters
-The Sun sometimes hurls out bursts of fast-moving particles, much like a storm throwing hail. These "solar energetic particle" events can damage satellites, endanger astronauts and disrupt technology we depend on. Computer models that try to predict them contain many "dials" (free parameters) that scientists can't measure directly, so the models are hard to trust or use for real forecasting. This paper is about solar physics, not exoplanets, but it bears on the space weather that affects every spacecraft we launch.
-What They Did
-The team built an automated tuning system called SEITEN (Fujitsu Solar Energetic particle Intelligent Tuning and Evaluation Network). It links two models. One, called SUSANOO, simulates a huge solar eruption (a coronal mass ejection) travelling through space. The other, called SEPIF, simulates how that eruption's shock wave accelerates particles and how those particles then travel along magnetic field lines. Two key dials were allowed to vary independently along each field line and each longitude sector: how far particles travel before being scattered (the mean free path) and how many get picked up by the shock (the injection efficiency). That gave a 19-dimensional puzzle. They explored it first by smart random sampling, then refined it with a search method called a Tree-structured Parzen Estimator. The target was the 9 October 2021 event, observed by five spacecraft.
-Key Findings
-The tuned model reproduced proton flux at all five spacecraft with an average error of about 0.45 in log₁₀ flux. The inferred mean free paths showed a clear east-west pattern, though these are effective values that depend on the assumed geometry of the magnetic field lines. Six independent runs showed that whether mean free path or injection efficiency matters more depends on how strong the simulated shock is. Injection efficiencies differed by orders of magnitude between eruption simulations even when the fits looked almost equally good.
-Looking Forward
-Because very different parameter sets can match the same data, tuning the particle model alone is not enough. The authors argue that the eruption and particle models must be tuned together. That joint approach is a necessary step toward general, operational forecasts of these hazardous events.]]></description>
-        <category>astro-ph.SR</category>
-        <category>astro-ph.EP</category>
-        <category>physics.space-ph</category>
     </item>
   </channel>
 </rss>
