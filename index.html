@@ -536,6 +536,22 @@
       }
     }
   </style>
+
+<style>
+/* Dedicated training callout, preserving the original homepage layout. */
+html,body{overflow:auto}.page{height:auto;min-height:100vh;min-height:100dvh}
+a:focus-visible{outline:2px solid var(--color-stellar);outline-offset:5px}
+.training-callout{display:flex;align-items:center;justify-content:space-between;gap:1.3rem;color:var(--color-text);text-decoration:none;border:1px solid rgba(255,212,117,.35);background:linear-gradient(120deg,rgba(255,212,117,.08),rgba(255,212,117,.015));border-radius:8px;padding:1.15rem 1.3rem;transition:border-color .2s,background .2s}
+.training-callout:hover{border-color:var(--color-stellar);background:rgba(255,212,117,.1)}
+.training-kicker{display:block;font:.5rem/1.7 var(--font-mono);letter-spacing:.18em;color:var(--color-stellar);text-transform:uppercase;margin-bottom:.5rem}
+.training-title{display:block;font:400 1.3rem/1.3 var(--font-display);color:var(--color-stellar)}
+.training-description{display:block;font:.78rem/1.6 var(--font-body);color:#a4a4b5;margin-top:.5rem}
+.training-arrow{flex-shrink:0;display:grid;place-items:center;width:33px;height:33px;border:1px solid rgba(255,212,117,.3);border-radius:50%;color:var(--color-stellar)}
+#exo-daily-title{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.info-section .links>a{max-width:100%}.identity>.training-callout{max-width:410px;margin-top:.3rem}
+@media(max-width:768px){.page{min-height:100dvh}.training-title{font-size:1.2rem}.training-callout{padding:1rem}.identity>.training-callout{max-width:none}}
+@media(prefers-reduced-motion:reduce){.info-section,.name,.eyebrow,.tagline,.affiliation,.footer{animation:none;opacity:1}.transit-planet{display:none}}
+</style>
 </head>
 
 <body>
@@ -557,6 +573,7 @@
         <span class="affiliation-label">Institution</span>
         <span class="affiliation-value">Istanbul Health and Technology University</span>
       </div>
+<a class="training-callout" href="/ai/" lang="tr"><span><span class="training-kicker">Eğitimler · Kurumlara özel</span><span class="training-title">Yapay Zekâ &amp;<br>Veri Okuryazarlığı</span><span class="training-description">Üniversiteler, eğitimciler ve kurum ekipleri için.</span></span><span class="training-arrow" aria-hidden="true">↗</span></a>
     </div>
 
     <!-- Right: Info -->
@@ -581,13 +598,10 @@
           <a href="https://arifsolmaz.github.io/cv.pdf" target="_blank" rel="noopener" class="link">
             CV <span class="link-arrow">→</span>
           </a>
-          <a href="/ai/" class="link featured" lang="tr">
-            Yapay Zekâ &amp; Veri Okuryazarlığı <span class="link-arrow">→</span>
-          </a>
-          <a href="lab/" class="link">
+          <a href="/lab/" class="link">
             Research Group <span class="link-arrow">→</span>
           </a>
-          <a href="arxiv" class="link featured">
+          <a href="/arxiv" class="link featured">
             Exoplanet Papers <span class="link-badge">Daily</span> <span class="link-arrow">→</span>
           </a>
         </div>
@@ -598,15 +612,15 @@
   <p class="info-label">Idea of the day</p>
   <div class="links">
     <a href="/daily-idea/widget.html" target="_blank" rel="noopener" class="link featured">
-      <span id="exo-daily-title">Loading today's idea…</span>
+      <span id="exo-daily-title">Explore today's research idea</span>
       <span class="link-arrow">→</span>
     </a>
   </div>
 </div>
 <script>
   fetch('/daily-idea/state.json')
-    .then(r => r.json())
-    .then(s => { document.getElementById('exo-daily-title').textContent = s.picked_title; });
+    .then(r => { if (!r.ok) throw new Error('Unavailable'); return r.json(); })
+    .then(s => { if (s.picked_title) document.getElementById('exo-daily-title').textContent = s.picked_title; }).catch(() => {});
 </script>
 
       <div class="info-section">
@@ -642,7 +656,7 @@
     <footer class="footer">
       <span class="footer-text">© 2026 Arif Solmaz</span>
       <div class="footer-links">
-        <a href="arxiv" class="footer-link">arXiv Digest</a>
+        <a href="/arxiv" class="footer-link">arXiv Digest</a>
         <a href="https://ui.adsabs.harvard.edu/search/fq=%7B!type%3Daqp%20v%3D%24fq_database%7D&fq_database=(database%3Aastronomy%20OR%20database%3Aphysics)&q=-docs(1f8e5e2fda6aa0148343a32ba70673cc)%20%20author%3A%22solmaz%2C%20arif%22&sort=date%20desc%2C%20bibcode%20desc&p_=0" target="_blank" rel="noopener" class="footer-link">NASA ADS</a>
       </div>
     </footer>
