@@ -1,21 +1,244 @@
 <!doctype html>
-<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#d9e3df"><title>Merak — Arif Solmaz ile Yapay Zekâ ve Veri Okuryazarlığı</title><meta name="description" content="Üniversiteler, eğitimciler ve kurum ekipleri için uygulamalı yapay zekâ ve veri okuryazarlığı eğitimleri. Merak ettiğiniz yerden başlayın."><link rel="canonical" href="https://arifsolmaz.github.io/ai/"><link rel="icon" href="https://arifsolmaz.github.io/favicon.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;450;500;550;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"></head>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Yapay Zekâ ve Veri Okuryazarlığı Eğitimleri — Arif Solmaz</title>
+<meta name="description" content="Üniversiteler, eğitimciler ve kurum ekipleri için uygulamalı yapay zekâ ve veri okuryazarlığı eğitimleri.">
+<link rel="canonical" href="https://arifsolmaz.github.io/ai/">
+<link rel="icon" href="https://arifsolmaz.github.io/favicon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Yapay zekâ ve veri okuryazarlığı eğitimleri">
+<meta property="og:description" content="Üniversiteler, eğitimciler ve kurum ekipleri için uygulamalı eğitimler.">
+<meta property="og:url" content="https://arifsolmaz.github.io/ai/">
+<meta property="og:locale" content="tr_TR">
+<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#161616" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:light;
+  --bg:#FFFFFF;
+  --ink:#1C1C1C;
+  --muted:#6E6E6E;
+  --rule:#E4E4E1;
+  --link:#1E3F8A;
+  --font:"Newsreader",Charter,"Iowan Old Style",Georgia,serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{color-scheme:dark;--bg:#161616;--ink:#E9E7E2;--muted:#9A9893;--rule:#2C2C2A;--link:#A9BEF5}
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:400 1.1875rem/1.6 var(--font);font-optical-sizing:auto;-webkit-font-smoothing:antialiased;font-variant-numeric:oldstyle-nums;padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px)}
+a{color:var(--link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.18em;text-decoration-color:color-mix(in srgb,var(--link) 40%,transparent);transition:text-decoration-color .2s}
+a:hover{text-decoration-color:var(--link)}
+:focus-visible{outline:2px solid var(--link);outline-offset:3px;border-radius:2px}
+::selection{background:color-mix(in srgb,var(--link) 22%,transparent)}
+.skip{position:absolute;left:1rem;top:-4rem;background:var(--ink);color:var(--bg);padding:.5rem .9rem;text-decoration:none}
+.skip:focus{top:1rem}
+
+.page{max-width:58rem;margin:0 auto;padding:clamp(2rem,6vw,4.5rem) clamp(1.25rem,5vw,3rem) 3rem}
+header{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;font-size:1rem}
+header a{color:var(--ink);text-decoration:none}
+header nav{display:flex;gap:1.4rem;color:var(--muted)}
+header nav a{color:var(--muted)}
+header nav a:hover{color:var(--ink)}
+
+.intro{margin:clamp(5rem,14vw,9rem) 0 clamp(4rem,10vw,7rem)}
+h1{font-weight:400;font-size:clamp(2.4rem,5.6vw,3.9rem);line-height:1.08;letter-spacing:-.018em;max-width:16ch}
+.intro p{margin-top:1.6rem;max-width:34em;font-size:1.25rem;color:var(--muted)}
+.intro p.lead{color:var(--ink)}
+.intro .act{margin-top:2rem;font-size:1.25rem}
+
+section{display:grid;grid-template-columns:11rem minmax(0,1fr);gap:1rem 2.5rem;padding:2.5rem 0}
+section>h2{font-weight:400;font-size:1rem;line-height:1.3;padding-top:1.05rem;color:var(--muted)}
+section>div{max-width:36em}
+
+.prog + .prog{margin-top:2.75rem}
+.prog h3{font-weight:500;font-size:1.5rem;line-height:1.25;letter-spacing:-.01em}
+.prog .who{font-style:italic;color:var(--muted);margin-top:.15rem}
+.prog p{margin-top:.75rem}
+.prog ul{list-style:none;margin-top:.75rem}
+.prog li{position:relative;padding-left:1.2rem}
+.prog li::before{content:"–";position:absolute;left:0;color:var(--muted)}
+.prog .ex{margin-top:.9rem;color:var(--muted)}
+.prog .ex i{color:var(--ink)}
+.prog .ask{display:inline-block;margin-top:.9rem}
+
+.prog + .prog{margin-top:0}
+details.prog{border-bottom:1px solid var(--rule)}
+details.prog:first-child{border-top:1px solid var(--rule)}
+.bio details.prog{border:0}
+details.prog summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:1fr auto;grid-template-areas:"t m" "w m";column-gap:1rem;padding:1rem 0}
+details.prog summary::-webkit-details-marker{display:none}
+details.prog summary::after{content:"";grid-area:m;align-self:center;width:.6rem;height:.6rem;border-right:1.5px solid var(--muted);border-bottom:1.5px solid var(--muted);transform:rotate(45deg) translate(-2px,-2px);transition:transform .3s}
+details.prog[open] summary::after{transform:rotate(225deg) translate(-2px,-2px)}
+details.prog summary .t{grid-area:t;font-size:1.3rem;line-height:1.3;transition:color .2s}
+details.prog summary .who{grid-area:w;font-style:italic;color:var(--muted);font-size:1rem;margin-top:.1rem}
+details.prog summary:hover .t{color:var(--link)}
+details.prog .body{padding:0 0 1.4rem}
+details.prog .body>p:first-child{margin-top:0}
+details.prog[open] .body{animation:open .35s ease}
+@keyframes open{from{opacity:0;transform:translateY(-4px)}}
+.bio details.prog summary{padding-top:0}
+.bio details.prog summary .t{font-size:1.19rem}
+ol.steps{list-style:none;counter-reset:s}
+ol.steps li{counter-increment:s;position:relative;padding-left:2rem}
+ol.steps li + li{margin-top:1.4rem}
+ol.steps li::before{content:counter(s) ".";position:absolute;left:0;color:var(--muted)}
+ol.steps b{font-weight:500}
+.after{margin-top:1.6rem;color:var(--muted)}
+
+.bio p + p{margin-top:1rem}
+
+.mail{font-size:clamp(1.5rem,3.6vw,2.1rem);line-height:1.2;overflow-wrap:anywhere}
+.contact p{margin-top:1rem}
+.contact .muted{color:var(--muted)}
+.copy{font:inherit;font-size:1rem;color:var(--muted);background:none;border:0;border-bottom:1px solid var(--rule);cursor:pointer;margin-top:1.1rem;padding:0 0 .1rem}
+.copy:hover{color:var(--ink);border-color:var(--ink)}
+.status{display:inline-block;margin-left:.75rem;font-size:1rem;color:var(--muted)}
+
+footer{display:flex;justify-content:space-between;gap:1rem;margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--rule);font-size:.95rem;color:var(--muted)}
+footer a{color:var(--muted)}
+
+@media (max-width:720px){
+  body{font-size:1.125rem}
+  header nav a:not(:last-child){display:none}
+  section{grid-template-columns:1fr;gap:.6rem}
+  .intro p{font-size:1.15rem}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}details.prog[open] .body{animation:none}}
+</style>
+</head>
 <body>
-<a class="skip" href="#merak">İçeriğe geç</a>
-<div class="atmosphere" aria-hidden="true"><canvas id="light"></canvas><div class="grain"></div></div>
-<header class="masthead"><a class="name" href="https://arifsolmaz.github.io/">Arif Solmaz</a><p>Yapay zekâ &amp; veri okuryazarlığı</p><a class="contact-link" data-program="Yapay zekâ ve veri okuryazarlığı" href="mailto:arif.solmaz@istun.edu.tr">Bir not bırakın</a></header>
-<main class="world" id="merak" aria-labelledby="world-title">
-<div class="invitation"><p>Birlikte öğrenmek için</p><h1 id="world-title">merak ettiğiniz<br>yerden başlayın.</h1><span class="invitation-note">Bir alan seçin.</span></div>
-<button class="curiosity curiosity-academic" type="button" aria-haspopup="dialog" aria-controls="reading-room" data-open="akademi"><span class="small-note">Üniversiteler</span><span class="curiosity-name">Araştırmaya.</span><span class="afterword">Yapay zekâ ile derinleşmek</span></button>
-<button class="curiosity curiosity-education" type="button" aria-haspopup="dialog" aria-controls="reading-room" data-open="egitim"><span class="small-note">Eğitimciler</span><span class="curiosity-name">Öğrenmeye.</span><span class="afterword">Öğretmeye yeni bir bakış</span></button>
-<button class="curiosity curiosity-work" type="button" aria-haspopup="dialog" aria-controls="reading-room" data-open="kurum"><span class="small-note">Kurum ekipleri</span><span class="curiosity-name">Üretmeye.</span><span class="afterword">İş hayatında yeni olasılıklar</span></button>
-<button class="curiosity curiosity-data" type="button" aria-haspopup="dialog" aria-controls="reading-room" data-open="veri"><span class="small-note">Veri okuryazarlığı</span><span class="curiosity-name">Anlamaya.</span><span class="afterword">Sayıların ötesini görmek</span></button>
+<a class="skip" href="#programlar">İçeriğe geç</a>
+<div class="page">
+
+<header>
+  <a href="https://arifsolmaz.github.io/">Arif Solmaz</a>
+  <nav aria-label="Sayfa içi">
+    <a href="#programlar">Programlar</a>
+    <a href="#bicimler">Biçimler</a>
+    <a href="#iletisim">İletişim</a>
+  </nav>
+</header>
+
+<main>
+  <div class="intro">
+    <h1>Yapay zekâ ve veri okuryazarlığı eğitimleri</h1>
+    <p class="lead">Üniversiteler, eğitimciler ve kurum ekipleri için uygulamalı, kuruma göre planlanan eğitimler.</p>
+    <p class="act"><a data-mail data-subject="Eğitim talebi" href="mailto:arif.solmaz@istun.edu.tr">E-postayla eğitim isteyin</a></p>
+  </div>
+
+  <section id="programlar" aria-labelledby="h-prog">
+    <h2 id="h-prog">Programlar</h2>
+    <div>
+      <details class="prog" name="prog">
+        <summary><span class="t">Akademide yapay zekâ</span><span class="who">Üniversiteler ve araştırma ekipleri</span></summary>
+        <div class="body">
+        <p>Akademisyenler, lisansüstü öğrenciler ve araştırma destek ekipleri için araştırmanın her aşamasında bilinçli kullanım.</p>
+        <ul>
+          <li>Literatür taramasını planlama ve kaynakları doğrulama</li>
+          <li>Bilimsel metinleri yapılandırma ve dil desteği</li>
+          <li>Kod yazma, hata ayıklama ve veri analizine destek</li>
+          <li>Akademik dürüstlük, mahremiyet ve çıktı kontrolü</li>
+        </ul>
+        <p class="ex"><i>Örnek uygulama:</i> bir araştırma sorusundan yola çıkıp doğrulanabilir kaynaklara ve bir analiz planına ilerlemek.</p>
+        <a class="ask" data-mail data-subject="Akademide yapay zekâ eğitimi" href="mailto:arif.solmaz@istun.edu.tr">Bu programı isteyin</a>
+      </div>
+      </details>
+
+      <details class="prog" name="prog">
+        <summary><span class="t">Eğitimciler için yapay zekâ</span><span class="who">Öğretmenler ve eğitim yöneticileri</span></summary>
+        <div class="body">
+        <p>Yapay zekâyı öğretim süreçlerine katmak isteyen eğitimciler için dersin hedefinden başlayan uygulamalar.</p>
+        <ul>
+          <li>Ders planı ve farklı düzeylere uygun materyal hazırlama</li>
+          <li>Soru, rubrik ve geri bildirim taslakları oluşturma</li>
+          <li>Üretilen içeriğin doğruluğunu ve uygunluğunu değerlendirme</li>
+          <li>Öğrencilere sorumlu kullanım rehberliği</li>
+        </ul>
+        <p class="ex"><i>Örnek uygulama:</i> bir kazanım için ders etkinliği ve değerlendirme rubriği hazırlamak.</p>
+        <a class="ask" data-mail data-subject="Eğitimciler için yapay zekâ eğitimi" href="mailto:arif.solmaz@istun.edu.tr">Bu programı isteyin</a>
+      </div>
+      </details>
+
+      <details class="prog" name="prog">
+        <summary><span class="t">İş hayatında yapay zekâ</span><span class="who">Kurum çalışanları ve ekip liderleri</span></summary>
+        <div class="body">
+        <p>Şirketler, kamu kurumları ve sivil toplum kuruluşlarının ekipleri için günlük işlerden yola çıkan bir program.</p>
+        <ul>
+          <li>Açık talimat verme ve işe uygun bağlam oluşturma</li>
+          <li>Belge, rapor, e-posta ve sunum taslakları hazırlama</li>
+          <li>Uzun metinleri özetleme ve karşılaştırma</li>
+          <li>Hassas verileri koruma ve sonuçları insan kontrolünden geçirme</li>
+        </ul>
+        <p class="ex"><i>Örnek uygulama:</i> örnek belgelerden bir yönetici özeti ve sunum taslağı hazırlamak, iddiaların dayanaklarını kontrol etmek.</p>
+        <a class="ask" data-mail data-subject="İş hayatında yapay zekâ eğitimi" href="mailto:arif.solmaz@istun.edu.tr">Bu programı isteyin</a>
+      </div>
+      </details>
+
+      <details class="prog" name="prog">
+        <summary><span class="t">Veri okuryazarlığı</span><span class="who">Herkese açık, bağımsız program; kodlama bilgisi gerekmez</span></summary>
+        <div class="body">
+        <p>Tabloları, grafikleri ve sayısal iddiaları daha bilinçli değerlendirmek isteyen herkes için.</p>
+        <ul>
+          <li>Doğru soruyu sorma, veri kaynağını ve veri kalitesini değerlendirme</li>
+          <li>Ortalama, medyan, dağılım ve belirsizliği anlama</li>
+          <li>Grafikleri okuma ve yanıltıcı görselleştirmeleri fark etme</li>
+          <li>Korelasyonu nedensellikten ayırma, bulguları açıkça anlatma</li>
+        </ul>
+        <p class="ex"><i>Örnek uygulama:</i> bir tabloyu inceleyip uygun bir grafikle, verinin sınırlarını da belirten kısa bir bulgu notu hazırlamak.</p>
+        <a class="ask" data-mail data-subject="Veri okuryazarlığı eğitimi" href="mailto:arif.solmaz@istun.edu.tr">Bu programı isteyin</a>
+      </div>
+      </details>
+    </div>
+  </section>
+
+  <section id="bicimler" aria-labelledby="h-bic">
+    <h2 id="h-bic">Biçimler</h2>
+    <div>
+      <details class="prog" name="fmt"><summary><span class="t">1. Tanışma semineri</span></summary><div class="body"><p>Temel kavramlar, kullanım örnekleri ve soru-cevapla ortak bir başlangıç.</p></div></details>
+      <details class="prog" name="fmt"><summary><span class="t">2. Uygulamalı atölye</span></summary><div class="body"><p>Katılımcıların örnek görevler üzerinde çalıştığı, çıktıların birlikte değerlendirildiği bir deneyim.</p></div></details>
+      <details class="prog" name="fmt"><summary><span class="t">3. Çok oturumlu program</span></summary><div class="body"><p>Temellerden alanınıza özgü uygulamalara ilerleyen, aşamalı bir eğitim planı.</p></div></details>
+      <p class="after">Süre ve çevrim içi ya da yüz yüze tercih birlikte belirlenir.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-egt">
+    <h2 id="h-egt">Eğitmen</h2>
+    <div class="bio">
+      <details class="prog"><summary><span class="t">Veri analizi ve makine öğrenmesi üzerine çalışan bir araştırmacı</span></summary><div class="body">
+        <p>Eğitimlerde araştırmadaki yaklaşımı temel alıyorum: doğru soruyu sormak, veriyi incelemek ve sonucu kanıtlarla değerlendirmek. Amacım, katılımcıların araçları kendi alanlarında bilinçli kullanabilmesi ve üretilen sonuçları sorgulayabilmesi.</p>
+        <p><a href="https://arifsolmaz.github.io/">Hakkımda daha fazlası</a></p>
+      </div></details>
+    </div>
+  </section>
+
+  <section id="iletisim" class="contact" aria-labelledby="h-ilt">
+    <h2 id="h-ilt">İletişim</h2>
+    <div>
+      <a class="mail" data-mail data-subject="Eğitim talebi" href="mailto:arif.solmaz@istun.edu.tr">arif.solmaz@istun.edu.tr</a>
+      <p class="muted">Bağlantı, doldurmanız için hazır bir taslak açar.</p>
+      <button class="copy" type="button" id="copy">Adresi kopyalayın</button><span class="status" id="status" role="status"></span>
+    </div>
+  </section>
 </main>
-<footer class="quiet-footer"><button type="button" class="text-control" data-open="yaklasim">Bir araştırmacının bakış açısı</button><p>Kuruma özel · Uygulamalı öğrenme</p><button id="motion-control" class="text-control" type="button" aria-pressed="false">Hareketi durdur</button></footer>
-<dialog id="reading-room" aria-labelledby="reading-title"><div class="dialog-top"><span>Birlikte neler yapabiliriz?</span><button type="button" id="close-reading">Geri dön</button></div><div id="reading-content"></div></dialog>
-<template id="content-akademi"><article class="reading"><header><p class="overline">Üniversiteler ve araştırma ekipleri</p><h2 id="reading-title">Akademide<br>yapay zekâ.</h2></header><div class="reading-body"><p>Akademisyenler, lisansüstü öğrenciler ve araştırma destek ekipleri için araştırmanın her aşamasında bilinçli kullanım.</p><ul><li>Literatür taraması ve kaynak doğrulama</li><li>Bilimsel metinleri yapılandırma</li><li>Kod yazma, hata ayıklama ve analiz desteği</li><li>Akademik dürüstlük, mahremiyet ve çıktı kontrolü</li></ul><p class="practice"><em>Birlikte deneyelim:</em> Bir araştırma sorusundan, doğrulanabilir kaynaklara dayanan bir analiz planına ilerleyelim.</p><a class="programme-link" data-program="Akademide yapay zekâ" href="mailto:arif.solmaz@istun.edu.tr?subject=Akademide%20yapay%20zeka">Bu eğitimi konuşalım </a></div></article></template>
-<template id="content-egitim"><article class="reading"><header><p class="overline">Öğretmenler ve eğitim yöneticileri</p><h2 id="reading-title">Öğrenmeye<br>yeni bir bakış.</h2></header><div class="reading-body"><p>Öğretmenler ve eğitim yöneticileri için dersin hedefinden başlayıp öğrencinin ihtiyacına uzanan yapay zekâ uygulamaları.</p><ul><li>Ders planı ve farklı düzeylere uygun materyal</li><li>Soru, rubrik ve geri bildirim taslakları</li><li>İçeriğin doğruluğunu ve uygunluğunu değerlendirme</li><li>Öğrencilere sorumlu kullanım rehberliği</li></ul><p class="practice"><em>Birlikte deneyelim:</em> Bir kazanım için ders etkinliği ve değerlendirme rubriği tasarlayalım.</p><a class="programme-link" data-program="Eğitimciler için yapay zekâ" href="mailto:arif.solmaz@istun.edu.tr?subject=Egitimciler%20icin%20yapay%20zeka">Bu eğitimi konuşalım </a></div></article></template>
-<template id="content-kurum"><article class="reading"><header><p class="overline">Kurum çalışanları ve ekip liderleri</p><h2 id="reading-title">İşinize<br>yeni olasılıklar.</h2></header><div class="reading-body"><p>Şirketler, kamu kurumları ve sivil toplum ekipleri için günlük görevlerden yola çıkan bir çalışma.</p><ul><li>Açık talimat verme ve bağlam oluşturma</li><li>Belge, rapor, e-posta ve sunum taslakları</li><li>Uzun metinleri özetleme ve karşılaştırma</li><li>Hassas verileri koruma ve sonuçları kontrol etme</li></ul><p class="practice"><em>Birlikte deneyelim:</em> Örnek belgelerden bir yönetici özeti hazırlayalım; iddiaların dayanaklarını kontrol edelim.</p><a class="programme-link" data-program="İş hayatında yapay zekâ" href="mailto:arif.solmaz@istun.edu.tr?subject=Is%20hayatinda%20yapay%20zeka">Bu eğitimi konuşalım </a></div></article></template>
-<template id="content-veri"><article class="reading"><header><p class="overline">Veri Okuryazarlığı · Bağımsız program</p><h2 id="reading-title">Sayıların<br>ötesini görmek.</h2></header><div class="reading-body"><p>Tüm gruplara açık, bağımsız bir eğitim. Bir tabloyu, grafiği veya sayısal iddiayı bilinçli değerlendirmek isteyen herkes için. Kodlama bilgisi gerekmez.</p><ul><li>Doğru soru, veri kaynağı ve veri kalitesi</li><li>Ortalama, medyan, dağılım ve belirsizlik</li><li>Grafikleri okuma ve yanıltıcı sunumları fark etme</li><li>Korelasyon, nedensellik ve bulguları anlatma</li></ul><p class="practice"><em>Birlikte deneyelim:</em> Bir tablodan uygun bir grafik üretelim. Bulguyu, verinin sınırlarını da belirterek paylaşalım.</p><a class="programme-link" data-program="Veri Okuryazarlığı" href="mailto:arif.solmaz@istun.edu.tr?subject=Veri%20Okuryazarligi">Bu eğitimi konuşalım </a></div></article></template>
-<template id="content-yaklasim"><article class="reading about-reading"><header><p class="overline">Bir araştırmacının merakıyla</p><h2 id="reading-title">Önce bir soru.<br>Sonra birlikte.</h2></header><div class="reading-body"><p>Gökbilim çalışmalarımda uzay teleskobu verileri, zaman serileri ve makine öğrenmesi üzerine çalışıyorum. Eğitimlere de aynı yaklaşımı taşıyorum: iyi sorular sormak, çıktıları doğrulamak ve belirsizliği görebilmek.</p><p>Katılımcı profilini ve hedefinizi konuşur, içeriği birlikte şekillendiririz. Çevrim içi veya yüz yüze; bir seminer, uygulamalı atölye ya da çok oturumlu program.</p><p>Kendi alanınızdan örneklerle çalışır, öğrendiklerinizi günlük pratiğinize taşımak için bir başlangıç yaparız.</p><a class="programme-link" data-program="Kuruma özel eğitim" href="mailto:arif.solmaz@istun.edu.tr">Bir eğitim planlayalım</a></div></article></template>
-<noscript><p class="no-script">Üniversiteler, eğitimciler ve kurum ekipleri için yapay zekâ ve veri okuryazarlığı eğitimleri. Bilgi almak için <a href="mailto:arif.solmaz@istun.edu.tr">e-posta gönderin</a>.</p></noscript><script src="script.js"></script></body></html>
+
+<footer><span>© 2026</span><a href="https://arifsolmaz.github.io/">Ana sayfa</a></footer>
+</div>
+
+<script>
+(()=>{
+  const EMAIL='arif.solmaz@istun.edu.tr';
+  const body='Merhaba,\n\nKurum: \nKatılımcı profili ve yaklaşık sayısı: \nEğitim hedefimiz: \nDüşündüğümüz tarih aralığı: \nÇevrim içi / yüz yüze: \n';
+  document.querySelectorAll('[data-mail]').forEach(a=>a.href='mailto:'+EMAIL+'?subject='+encodeURIComponent(a.dataset.subject)+'&body='+encodeURIComponent(body));
+  const st=document.getElementById('status');
+  document.getElementById('copy').onclick=async()=>{try{await navigator.clipboard.writeText(EMAIL);st.textContent='Kopyalandı.'}catch(e){st.textContent=EMAIL}setTimeout(()=>st.textContent='',3000)};
+})();
+</script>
+</body>
+</html>
