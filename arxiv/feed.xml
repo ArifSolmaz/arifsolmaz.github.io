@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 23 Oct 2026 06:52:14 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 26 Oct 2026 07:19:05 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,155 +15,88 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>The coupled impacts of atmospheric dynamics and cloud microphysics on hot Jupiter atmospheres. I. An application to WASP-43b</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-30243v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-30243v1</guid>
-      <pubDate>Fri, 23 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Emeline F. Fromont et al.</dc:creator>
+      <title>Diversity of planetary origins and compositions traced by stellar abundance differences of co-natal star systems</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-32833v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-32833v1</guid>
+      <pubDate>Mon, 26 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Bertram Bitsch, Fan Liu, Haiyang S. Wang</dc:creator>
       <description><![CDATA[Why It Matters
-Clouds shape the climate of every planet with an atmosphere, from Earth to Jupiter. They are especially hard to understand on "hot Jupiters," giant planets that orbit so close to their stars that their atmospheres are scorching. Telescopes have seen hints that clouds are present. One example is a brightest spot that appears shifted in an unexpected direction. Another is chemical fingerprints that look weaker than expected. The James Webb Space Telescope (JWST) has also found tentative signs of silicate clouds, which are tiny grains of mineral much like sand or glass. Working out how these clouds form and move is key to reading what these distant worlds are really like.
+Imagine two siblings raised in the same household who end up with slightly different diets. Astronomers face a similar puzzle with "co-natal" stars: wide pairs of stars born from the same cloud of gas and dust, which should have identical chemical makeup. In a small fraction of these pairs, though, the stars differ in their chemistry. The leading explanation is that one star swallowed a planet, and that planet's material changed the star's outer layers. If that is right, a star's chemistry can reveal what a planet was made of, even after the planet is gone.
 What They Did
-Most computer models either simulate winds and weather in three dimensions or simulate how cloud particles form and grow, but rarely both. The team linked three tools in sequence. First, a 3D weather model called ADAM with SPARC simulated the planet WASP-43b without clouds. Next, a cloud-growth model called CARMA used the resulting temperatures to work out which clouds would form and where. Finally, a light-simulation code called PICASO predicted what the planet's glow would look like at different points in its orbit. They then compared these predictions with JWST observations.
+The researchers took an existing sample of these paired stars and worked out what kind of planets would have to be swallowed to produce the measured differences. They looked at two groups of elements. Refractory elements (iron, magnesium, silicon) are rocky materials that stay solid even when warm. Volatile elements (oxygen, carbon, sulfur) turn to gas more easily. They compared the pattern of differences in each pair against how planets form at different distances from their star, using "evaporation fronts" as markers. These are the distances where ices such as water, or carbon-bearing grains, change from solid to gas.
 Key Findings
-The comparison suggests WASP-43b has a cloudy nightside. The morning and evening edges look mostly clear, with patchy clouds. The dayside appears clear at the depth where light escapes the atmosphere. The model predicts five kinds of clouds, including silicates. However, it makes clouds that are too thick at every point in the orbit compared with what JWST saw, so something is missing from the model.
+When both refractory and volatile elements are enhanced in one star, a single swallowed planet can explain it. When the rocky elements are enhanced but oxygen and carbon are unchanged or lower, the pattern requires both stars to have swallowed planets that formed in different places, one inside and one outside an evaporation front. Some pairs show sulfur differences several times smaller than those of iron, silicon and magnesium. The authors suggest a planet may have migrated inward across the evaporation front for an iron-sulfur compound (FeS). It would first have collected plenty of sulfur and then none, while still gathering the other rocky elements, before being swallowed.
 Looking Forward
-This step-by-step approach gives a baseline for later work. The team plans to couple the weather and cloud models more directly, so clouds can influence winds and heat, and vice versa. That should help explain why the predicted clouds are too opaque, and it will also be useful for studying other planets.]]></description>
+The study suggests that detailed stellar chemistry can serve as a way to measure the composition of exoplanets, planets orbiting other stars. It also points to a wide diversity of planet compositions, which matches what planet formation models predict. The abstract does not give the number of star pairs analyzed.]]></description>
         <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>The first selection of optimal targets for the Lazuli ExtraSolar Coronagraph&#x27;s reflected starlight exoplanet campaign</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-31286v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-31286v1</guid>
-      <pubDate>Fri, 23 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Logan A. Pearce, Ewan Douglas</dc:creator>
-      <description><![CDATA[Why It Matters
-Most of the planets we have photographed so far were caught by their own heat, which means they were young and still glowing from their formation, like embers in a fire. Older planets, such as the ones in mature systems like ours, have cooled off and are far harder to see that way. There is another option: look at the starlight that bounces off a planet, the way you see the Moon by sunlight. This reflected light does not fade with the planet's age. It works at closer distances to the star, and in visible wavelengths it could eventually reveal atmospheric composition and even hints of biosignatures, which are chemical signs of life.
-What They Did
-The 3-meter Lazuli Space Telescope, part of the Eric and Wendy Schmidt Observatory System, was recently announced. It will carry the ExtraSolar Coronagraph (ESC), an instrument that blocks a star's glare so that a faint planet next to it can be seen, much like holding up your hand to block the Sun and spot something nearby. This was designed for giant planets seen in visible light. The authors went through the known giant exoplanets and chose 27 of them as the first target list for the campaign.
-Key Findings
-The 27 targets cover ages and temperatures that direct imaging has not examined before. Some of them can also be observed by two other facilities: the Nancy Grace Roman Space Telescope's Coronagraph instrument, and the thermal imager METIS on the Extremely Large Telescope (ELT). Seeing the same planet in reflected light and in heat would give a much fuller picture of its atmosphere. The authors also discuss the science that ESC observations of these planets could enable.
-Looking Forward
-The authors point out that future astrometric measurements, which track a star's tiny sideways wobble, and radial velocity measurements, which track its motion toward and away from us, could improve what ESC learns about these planets. Together these would tighten our understanding of the planets' orbits and properties.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
-    </item>
-    <item>
-      <title>Detection of Solar-like Oscillations and Granulation at Infrared Wavelengths using JWST</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-30594v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-30594v1</guid>
-      <pubDate>Fri, 23 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Angharad Weeks et al.</dc:creator>
-      <description><![CDATA[Why It Matters
-The surface of a star is never still. Hot gas rises, cools and sinks, much like a pot of soup at a rolling simmer. This churning is called convection, and it is one of the least understood processes in stars. It leaves two faint signatures in a star's brightness. One is oscillations, in which the whole star rings like a bell as sound waves move through it. The other is granulation, a bubbling pattern of bright and dark cells on the surface. Computer models predict that both signals should look different depending on the color of light used to observe them. Until now, they had only ever been measured in visible light.
-What They Did
-The team used the James Webb Space Telescope (JWST), which sees infrared light. They studied WASP-121, an F6V main-sequence star, meaning a hydrogen-burning star somewhat hotter than our Sun. The observations were originally taken to study the atmosphere of a planet orbiting this star. They are time-series data, meaning the star's brightness was recorded again and again over time. The researchers searched this data for the star's own tiny flickers.
-Key Findings
-This is the first detection of both oscillations and granulation at infrared wavelengths. The strength of both signals gets weaker at longer wavelengths, as expected. However, the way they fade does not follow the simple "blackbody" rule, which treats a star as an ideal glowing object. The real star behaves in a more complicated way.
-Looking Forward
-The result opens the door to detailed tests of three-dimensional convection models, which try to recreate the churning of stellar surfaces. It should also help astronomers model a star's flickers and a planet's signals together in JWST data, so the two can be separated more cleanly. Finally, it supports predictions for what NASA's upcoming Roman Space Telescope, which will watch stars in infrared light over time, can learn about stellar interiors.]]></description>
         <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>Demographics of Close-In TESS Exoplanets Orbiting FGK Main-sequence Stars II. Spectral-Type Dependence and the Neptunian Landscape</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-31784v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-31784v1</guid>
+      <pubDate>Mon, 26 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Kaiming Cui et al.</dc:creator>
+      <description><![CDATA[Why It Matters
+Planets don't form in a vacuum: the star they orbit shapes what kind of planets it ends up with. Astronomers want to know whether hotter, more massive stars make different planets than cooler, smaller ones, because that is a clue to how planets are born and how they change over time. Close to a star, there is also a puzzling "Neptunian desert," a region where medium-sized, Neptune-like planets are surprisingly rare. Mapping this empty zone helps test our ideas about how planets form and evolve.
+What They Did
+The team used images from NASA's Transiting Exoplanet Survey Satellite (TESS), a space telescope that watches stars for tiny dips in brightness when a planet passes in front. They split the stars into three groups, F-type (hotter), G-type (Sun-like), and K-type (cooler), and counted how common planets are on tight orbits of 0.5 to 16 days and sizes of 2 to 20 times Earth's radius. They then modelled the Neptunian desert directly in terms of how often planets occur, and tested statistically whether a distinct "ridge" of Neptune-sized planets stands out.
+Key Findings
+Overall, close-in planets are about equally common around all three star types: roughly 12, 10, and 13 per 100 stars for F, G, and K stars. Any differences are therefore local, not global. Hot Jupiters, giant planets on very close orbits, are rarer but peak around K stars, at about 0.67 percent versus 0.50 percent for G and 0.30 percent for F. This is the first such measurement for K stars. The Neptunian desert stretches to longer orbital periods around hotter stars. About one close-in planet in a hundred sits inside the desert, which is roughly twice as populated around K stars as around F stars. A distinct Neptunian ridge is not required to explain the data.
+Looking Forward
+These measurements give theorists firm numbers to test planet formation and migration models against. Future work can check whether the desert's shape holds up with more data and better stellar information.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>A Headwind-like Helium Outflow from TOI-3884b</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-31492v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-31492v1</guid>
-      <pubDate>Fri, 23 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Joe P. Ninan et al.</dc:creator>
+      <title>The ALMA Survey of Gas Evolution of PROtoplanetary disks (AGE-PRO): Evolution of dust properties from multi-wavelength observations</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-32906v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-32906v1</guid>
+      <pubDate>Mon, 26 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Camila Pulgarés et al.</dc:creator>
       <description><![CDATA[Why It Matters
-Planets can lose their atmospheres over time, much like a cup of hot tea slowly loses steam. How fast this happens shapes what kind of planet a world eventually becomes. Studying this loss helps astronomers understand how planetary atmospheres change over billions of years. This study looks at TOI-3884b, a "super-Neptune" (a planet larger than Neptune) that circles a small, dim red star called an M dwarf. Its orbit is also unusual: it passes over the star's poles instead of around its equator.
+Planets are born in the flat, spinning clouds of gas and dust around young stars, called protoplanetary discs. The dust is the raw material, a bit like flour and sugar for baking: the cores of giant planets and rocky worlds like Earth are built from it. To understand how planets form, we need to know how much dust a disc holds, how warm it is, and how big its grains grow, and how all of this changes as the disc ages.
 What They Did
-The team watched TOI-3884b cross in front of its star five separate times using the Habitable Zone Planet Finder, an instrument that splits starlight into its component colors. They focused on one specific color of infrared light, absorbed by helium atoms at a wavelength of 10830 angstroms. If helium is streaming away from the planet, it blocks extra starlight at this color, in the way smoke from a campfire dims the light behind it.
+The AGE-PRO project (the ALMA Survey of Gas Evolution of PROtoplanetary disks) used the Atacama Large Millimeter/submillimeter Array (ALMA), a network of radio telescopes in Chile, to study 30 discs at three life stages: embedded (0.5-1 million years old), middle-age (1-3 million years) and end of life (2-6 million years). Earlier work relied on a single wavelength, 1.3 millimetres. Here the team added new observations at 3.1 and 1.5 millimetres. Looking at several wavelengths is like examining an object under different colours of light: it helps separate how much dust there is from how it absorbs and emits light. They fitted the data and built brightness profiles showing how the glow changes with distance from the star. They resolved 20 of the 30 discs at both new wavelengths, then modelled all the wavelengths together.
 Key Findings
-The planet blocked about 6.8% more light at the helium wavelength than its solid body alone would explain. This is a clear sign of an escaping, evaporating atmosphere. The helium appeared as early as 5 hours before the planet began its visible transit, so the gas seems to run ahead of the planet, like a headwind blowing into its path. No significant trailing tail appeared behind it. Only one other planet, HAT-P-67b, a hot Saturn-sized world orbiting an F-type star, has shown this pattern. The lopsided shape favors an atmosphere driven off by the star's radiation rather than by heat from the planet's own interior. The authors also explore whether interactions between the star and the planet, possibly involving magnetic fields, could help shape the gas.
+The earlier trends held up. Dust discs stay about the same size as they age, while their dust mass declines. The exact mass is uncertain by a factor of 10-40, depending on assumptions about how the dust grains absorb light. This implies the ratio of gas to dust in these discs is much lower than earlier studies reported. The colour pattern of the glow, called the spectral index, suggests many discs, especially those in the Ophiuchus and Lupus star-forming regions, are optically thick. This means the dust is so dense that it hides material behind it, so we may be underestimating how much is there.
 Looking Forward
-Observing such complex outflow shapes opens a new way to test ideas about how stars and planets influence one another. It may also offer a route to probing planetary magnetic fields, which are very hard to measure directly.]]></description>
+The results show that estimates of disc mass depend heavily on the assumptions made about dust, so better dust models are needed. Resolving the discs more finely should clarify how much solid material is really available to build planets.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>The Pandora SmallSat: post-launch operations and mission update</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-30372v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-30372v1</guid>
-      <pubDate>Fri, 23 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Trevor O. Foote et al.</dc:creator>
+      <title>ExoVetter and a TESS Exoplanet Transit Search of Kepler Stars as Ground Truth</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-32949v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-32949v1</guid>
+      <pubDate>Mon, 26 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Matthew M. Dallas et al.</dc:creator>
       <description><![CDATA[Why It Matters
-When a planet passes in front of its star, a sliver of starlight filters through the planet's atmosphere. Astronomers can read the "fingerprints" of gases in that light. This technique is called transmission spectroscopy. The authors describe it as our best chance in the coming decade to learn what exoplanet atmospheres are made of, and it is a key goal for the Hubble Space Telescope and the James Webb Space Telescope. But stars are not evenly bright. Star spots, which are cooler, darker patches like sunspots on our Sun, can contaminate the measurements. It is like trying to read fine print through a smudged pair of glasses: you can mistake the smudge for part of the text.
+Space telescopes such as the Transiting Exoplanet Survey Satellite (TESS) watch hundreds of thousands of stars for tiny, regular dips in brightness. These dips can mean a planet is passing in front of its star. But many dips are impostors, such as pairs of stars eclipsing each other, or instrument glitches. Sorting real planet signals from false alarms is like picking out a real coin from a pile of lookalikes, and doing it by hand does not scale to this much data.
 What They Did
-This paper is an overview of Pandora, a small NASA satellite (a "SmallSat") selected in early 2021 as part of the first round of NASA's Astrophysics Pioneers Program. The authors lay out the science goals, how the mission will operate, the spacecraft itself, how observations will be planned, and the milestones ahead. Pandora will watch stars for long stretches, covering a full rotation of each star. One camera will track brightness in visible light. A second, near-infrared (heat-sensitive) channel will record spectra at the same time.
+The authors built an open-source Python tool called exoVetter. It calculates a set of checks (called vetting metrics) and makes visualizations that help judge whether a dip in starlight is a real planet signal. It is modular and not tied to any one mission, so other teams can adapt it to different telescopes and science goals. To test it, they ran a search for repeating dips, using a method called box-least squares, on 324,530 TESS light curves (records of a star's brightness over time). They limited the search to stars also watched by the Kepler telescope, which is more sensitive. Kepler's results served as "ground truth," a trusted answer key for checking which TESS events were real.
 Key Findings
-This is a mission description, not a results paper, so there are no new discoveries to report yet. What it presents is the plan. Watching in visible and infrared light at once should reveal how much of a star's surface is covered by spots. That would let scientists separate the star's signal from the planet's in transmission spectra. Pandora will target planets from Earth-sized to Jupiter-sized, orbiting stars from mid-K to late-M types, which are cooler and smaller than the Sun.
+Using that answer key, the team set baseline thresholds for exoVetter's metrics on TESS data: several based on the star's brightness measurements and one based on whether the dip's apparent position shifts, which can reveal a signal coming from a neighboring star. They also found that for short-period events (planets that orbit quickly), a catalog built from dim stars (fainter than 13.5 in TESS magnitude) could have a similar share of real events to one built from bright stars.
 Looking Forward
-The team is preparing for launch readiness in 2025. If Pandora works as designed, it could help make atmosphere measurements from major space telescopes more trustworthy. That would give us a clearer view of the gases surrounding distant worlds.]]></description>
-        <category>astro-ph.IM</category>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Searching for substellar companion candidates with Gaia. V. M dwarfs within 15 pc studied with absolute astrometry, radial velocities, and direct imaging</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-31006v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-31006v1</guid>
-      <pubDate>Fri, 23 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>F. Destriez et al.</dc:creator>
-      <description><![CDATA[Why It Matters
-Most stars in our galaxy are small, dim "red dwarfs," known to astronomers as M dwarfs. Many of our nearest stellar neighbours are of this type. Finding out what planets and other small companions orbit them tells us how planetary systems form and how common they are. Current theories of planet building, called core accretion, suggest that small stars should have trouble making giant planets. They simply have less raw material in their birth disks. Any surprising number of big companions would challenge that picture.
-What They Did
-The team studied 582 red dwarfs within 15 parsecs (about 49 light-years) of the Sun. They used precise position measurements from the Gaia space telescope. A star with an unseen companion wobbles slightly, like a dancer swinging a partner around, and Gaia can pick up the wobble. A software tool called GaiaPMEX searched for these wobbles. Where possible, the researchers added two other kinds of evidence: radial velocities, which track how the star's motion toward or away from us changes, and direct imaging, which looks for faint companions in pictures. Together these methods helped rule out heavy stellar partners and pin down what the hidden companions really are.
-Key Findings
-Of the 582 stars, 156 appear to have a bound companion that Gaia could detect. Of these, 37 are explained by known stellar companions and seven by known substellar ones (planets or objects between planets and stars). The team reports 35 new substellar companions. At least ten are giant planets with masses close to Jupiter's, orbiting between 0.2 and 2 times the Earth–Sun distance. They also list 77 further substellar candidates and provide detection limits for 50 stars with known planets that show no clear Gaia wobble. The authors say this large population challenges core accretion models.
-Looking Forward
-These results will help astronomers estimate how often planets occur around red dwarfs and how their systems are arranged. Some of the new companions orbit beyond the "water ice line," the distance where water freezes. They are promising targets for direct imaging or coronagraphy (blocking starlight to reveal faint neighbours) with the James Webb Space Telescope (JWST) and the future Extremely Large Telescope (ELT).]]></description>
+These thresholds give other researchers a starting point for sifting through TESS data. The results also suggest that faint stars, often overlooked, could be searched for planets without drowning the catalog in false alarms. That would greatly widen the pool of stars available for planet hunting.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.IM</category>
         <category>astro-ph.SR</category>
     </item>
     <item>
-      <title>The physical and chemical structure of Titan&#x27;s upper atmosphere: energy balance, photochemistry and Jeans escape</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-30258v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-30258v1</guid>
-      <pubDate>Fri, 23 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Sudeshna Boro Saikia et al.</dc:creator>
+      <title>A Study of the 30 May 2026 Meteor Event Employing Data from Raspberry Boom Infrasound Sensors in the Boston Area</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-31742v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-31742v1</guid>
+      <pubDate>Mon, 26 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>S. Africk, A. Loeb</dc:creator>
       <description><![CDATA[Why It Matters
-Titan, Saturn's largest moon, is wrapped in a thick, nitrogen-rich atmosphere that looks like orange smog. The thin upper layers, above the haze, are where the Sun's most energetic rays smash molecules apart and where gas can slowly leak into space. We cannot fly to exoplanets (planets orbiting other stars), so Titan serves as a nearby test case for the same processes: chemistry driven by light, haze formation and atmospheric escape.
+Every day, space rocks plunge into Earth's atmosphere. The brightest ones, called fireballs, end in a powerful blast. Some of that energy arrives as infrasound, sound pitched too low for human ears. On 30 May 2026, a meteor over Cape Cod Bay produced one of these signals. This study shows that a network of ground sensors, including privately owned ones, can pick up such a signal and work out what happened high overhead.
 What They Did
-The team extended a computer model called Kompot, which treats the atmosphere as a one-dimensional stack of layers, like floors in a skyscraper, rising from the haze upward. For every layer, the model solves linked equations for gas flow, heat and chemical reactions at the same time. Heating came from the Sun's X-rays and ultraviolet light plus infrared radiation. Cooling came from methane and hydrogen cyanide radiating heat away. The researchers added nineteen light-driven and 117 heat-driven reactions to the model's standard chemical list. They also estimated Jeans escape, in which the fastest molecules in the very thin top layer drift off into space.
+The researchers gathered recordings from several university and private Raspberry Boom infrasound sensors around the Greater Boston area. Each sensor caught the same faint pressure pulse: about one and a half cycles of a 0.4 hertz wave, a slow swell and dip repeating roughly every two and a half seconds. The team compared arrival times at the different sensors, much as you might guess where thunder came from by noticing which friend heard it first. That gave them the direction to the source. They then examined how arrival time related to each sensor's distance from the event, which let them work out what kind of event it was and where it happened. Finally, they used the strength of the pressure change at each site to estimate how much acoustic power the event released.
 Key Findings
-The simulated temperatures fell within the range actually observed on Titan. The model reproduced measured densities of nitrogen and methane in the upper atmosphere. The amounts of less common chemicals broadly matched estimates derived from observations. Near the exobase, the height where air is so thin that molecules rarely collide, the methane fraction overlapped results from the Cassini-Huygens mission, and hydrogen also showed broad agreement. The simulations suggest no significant thermal loss of methane, even under the stronger X-ray and ultraviolet glow of the early Sun.
+Timing differences between sensors were enough to define the direction to the source. The distance-and-timing analysis identified the signal as the atmospheric blast of the fireball, at an altitude between 40 and 50 kilometers. The pressure measurements indicate that the sound carried roughly 5% to 14% of the fireball's total energy.
 Looking Forward
-Matching so many Titan measurements gives researchers a tested toolkit built from basic physics. Because Titan acts as a benchmark, this kind of model can help scientists reason about how light, chemistry, haze and escape shape the atmospheres of exoplanets, where direct measurements like Titan's are impossible.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Astrometric detection of rocky exoplanets from inexpensive space platforms</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-30806v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-30806v1</guid>
-      <pubDate>Fri, 23 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Peter G. Tuthill et al.</dc:creator>
-      <description><![CDATA[Why It Matters
-Finding another Earth is one of the biggest goals in astronomy. One promising method is astrometry, which tracks a star's tiny wobble as an orbiting planet tugs on it. For an Earth-mass planet circling a Sun-like star, that wobble is almost unimaginably small, measured in micro-arcseconds. That is like spotting the width of a human hair from thousands of kilometres away. Missions able to measure this were long assumed to need flagship budgets, meaning huge, very expensive space telescopes. If smaller, cheaper spacecraft can do the job, the hunt for Earth-like worlds near us becomes far more realistic.
-What They Did
-The authors review a clever shortcut called narrow-angle astrometry. In a multiple-star system, the stars act as each other's measuring stick, so there is no need to rely on faint, distant background stars. This idea drives the TOLIMAN mission (the paper reports its progress and status), and the SHERA mission uses a similar approach. The catch is that only a handful of nearby systems suit this design. So the paper explores speculative designs for ultra-stable telescopes with mirrors smaller than 0.5 metres, built to monitor single, isolated stars at the same extreme precision.
-Key Findings
-In simulations, these small telescopes could exhaustively search for rocky planets around well-known nearby stars such as Epsilon Eridani and Tau Ceti. The searches would take dedicated observing campaigns lasting several years. The abstract stresses that these are concepts and simulations, not real detections, and the designs are described as speculative.
-Looking Forward
-If these ideas prove workable, relatively inexpensive orbiting platforms could help find Earth-mass planets in temperate orbits, where liquid water could exist, around nearby Sun-like stars. TOLIMAN's progress is an early test of the underlying principle. The next steps are turning the speculative optical concepts into real, ultra-stable instruments.]]></description>
+The results show that modest, widely spread sensors can locate a meteor blast and estimate how much energy it released as sound. Adding more sensors, including privately run ones, could help scientists study future fireballs in the same way.]]></description>
         <category>astro-ph.IM</category>
         <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>OGLE-2012-BLG-0563: Relative Proper Motion Constraint from Keck Follow-up finds the correct Lens</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-30310v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-30310v1</guid>
-      <pubDate>Fri, 23 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Aparna Bhattacharya et al.</dc:creator>
-      <description><![CDATA[Why It Matters
-Gravitational microlensing finds planets in an unusual way. When one star drifts almost exactly in front of a more distant star, its gravity acts like a magnifying glass and briefly brightens the background star's light. A planet orbiting the foreground star adds a short extra blip to that brightening. The method can detect planets thousands of light-years away, but the brightness record alone can be ambiguous. When two stars sit almost on top of each other, it can be unclear which one is the magnifying lens and which is the background source. A wrong choice gives the wrong mass and distance for the planet.
-What They Did
-The team observed the event OGLE-2012-BLG-0563 with the Keck telescope's NIRC2 camera and adaptive optics, a technology that cancels out much of the blurring caused by Earth's atmosphere. The two candidate stars were only 23.28 milliarcseconds apart, the smallest separation ever measured with Keck adaptive optics for this kind of study. The researchers then used the direction in which the two stars are moving relative to each other as an extra clue. They built this clue directly into the brightness-curve modeling, an approach called image-constrained modeling.
-Key Findings
-The planet has about 1.12 times the mass of Jupiter (give or take 0.09). It orbits a star with 0.81 times the mass of the Sun (give or take 0.04), about 5.49 kiloparsecs (roughly 18,000 light-years) from us. The earlier discovery paper, a later analysis, and a model without the image constraint all favored a wrong answer that treated the Northeast star as the background source. Once the Keck-based direction clue was included, the Northeast star turned out to be the lens. The disagreement came from small systematic errors in data from the FTS and MOA B and C telescopes, combined with the effect of the relative-motion direction.
-Looking Forward
-The authors draw two lessons for data from the future Roman space telescope. First, check carefully for systematic errors in every observing filter, and find exactly where differences in model fit come from. Second, use image-constrained modeling with the relative-motion direction to pick the correct lens.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
     </item>
   </channel>
 </rss>
