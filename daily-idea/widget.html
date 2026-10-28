@@ -3,56 +3,61 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Idea of the day &mdash; Galactic Chronochemistry of Planet Formation — Do Exoplanet Occurrence Rates Carry a Fossil Record of the Milky Way&#x27;s Chemical Evolution?</title>
+<title>Idea of the day &mdash; Starspot Latitude Mapping via Transit Chord Tomography Across Stellar Spectral Types</title>
 <link rel="stylesheet" href="widget.css"/>
 </head>
 <body>
 <section class="exo-daily" aria-label="Exoplanet idea of the day">
   <header class="exo-daily__head">
     <span class="exo-daily__eyebrow">Exoplanet idea of the day</span>
-    <time class="exo-daily__date" datetime="2026-10-27">2026-10-27</time>
+    <time class="exo-daily__date" datetime="2026-10-28">2026-10-28</time>
   </header>
-  <h2 class="exo-daily__title">Galactic Chronochemistry of Planet Formation — Do Exoplanet Occurrence Rates Carry a Fossil Record of the Milky Way&#x27;s Chemical Evolution?</h2>
+  <h2 class="exo-daily__title">Starspot Latitude Mapping via Transit Chord Tomography Across Stellar Spectral Types</h2>
   <div class="exo-daily__premise">
-    <p>We know that giant planet occurrence scales with host-star metallicity, and that sub-Neptune occurrence may be less metallicity-dependent. But metallicity is only one axis. Thanks to TESS asteroseismology (now delivering ages for &gt;130,000 red giants) and Gaia+APOGEE/GALAH spectroscopic surveys, we can now assign precise ages <em>and</em> multi-element abundance patterns ([Ce/Mg], [Zr/Ti], alpha-element ratios) to large samples of planet-hosting stars. The underexplored question: <strong>does the occurrence rate and architecture of planetary systems vary as a function of Galactic birth environment, traced through chemical clocks rather than bulk metallicity alone?</strong> In other words, can we read a "fossil record" of planet formation conditions in the Milky Way's chemodynamical substructure?</p>
+    <p>When a transiting exoplanet crosses a starspot, the resulting photometric "bump" in the transit light curve encodes information about the spot's position, size, and contrast. The transit chord acts as a one-dimensional knife-edge scan of the stellar surface. By aggregating many such crossings for the same system over time, one can reconstruct the latitude distribution of spots along the transit chord — and because the planet's orbital inclination constrains the chord's geometry on the stellar disk, the spot latitudes are physically meaningful.</p>
+<p>The key insight is that the <em>ensemble</em> of spot-crossing events across many different host stars, binned by spectral type and rotation period, could reveal systematic latitude-dependent activity patterns analogous to the Sun's butterfly diagram — but for stars spanning K0 to M4. While individual spot-crossing detections are well-studied, a homogeneous population-level latitude census tied to stellar Rossby number remains potentially underexplored.</p>
   </div>
   <details class="exo-daily__more">
     <summary>Read the full proposal</summary>
     <div class="exo-daily__full">
       <h3>Scientific Premise</h3>
-<p>We know that giant planet occurrence scales with host-star metallicity, and that sub-Neptune occurrence may be less metallicity-dependent. But metallicity is only one axis. Thanks to TESS asteroseismology (now delivering ages for &gt;130,000 red giants) and Gaia+APOGEE/GALAH spectroscopic surveys, we can now assign precise ages <em>and</em> multi-element abundance patterns ([Ce/Mg], [Zr/Ti], alpha-element ratios) to large samples of planet-hosting stars. The underexplored question: <strong>does the occurrence rate and architecture of planetary systems vary as a function of Galactic birth environment, traced through chemical clocks rather than bulk metallicity alone?</strong> In other words, can we read a "fossil record" of planet formation conditions in the Milky Way's chemodynamical substructure?</p>
+<p>When a transiting exoplanet crosses a starspot, the resulting photometric "bump" in the transit light curve encodes information about the spot's position, size, and contrast. The transit chord acts as a one-dimensional knife-edge scan of the stellar surface. By aggregating many such crossings for the same system over time, one can reconstruct the latitude distribution of spots along the transit chord — and because the planet's orbital inclination constrains the chord's geometry on the stellar disk, the spot latitudes are physically meaningful.</p>
+<p>The key insight is that the <em>ensemble</em> of spot-crossing events across many different host stars, binned by spectral type and rotation period, could reveal systematic latitude-dependent activity patterns analogous to the Sun's butterfly diagram — but for stars spanning K0 to M4. While individual spot-crossing detections are well-studied, a homogeneous population-level latitude census tied to stellar Rossby number remains potentially underexplored.</p>
 <h3>Target Datasets</h3>
 <ul>
-<li><strong>NASA Exoplanet Archive</strong> confirmed planets from Kepler, K2, and TESS</li>
-<li><strong>TESS asteroseismic catalogs</strong> (~132,000–158,000 red giants with inferred ages from Mackereth et al. 2025, Hon et al. 2025)</li>
-<li><strong>Gaia DR3</strong> astrometry + radial velocities for kinematic group assignment</li>
-<li><strong>APOGEE DR17</strong> and <strong>GALAH DR3</strong> for detailed chemical abundances (15–30 elements per star)</li>
-<li><strong>Kepler stellar properties catalog</strong> cross-matched with the above</li>
+<li><strong>Kepler</strong> long-cadence and short-cadence light curves for all confirmed transiting planets around K and M dwarfs (~400+ systems).</li>
+<li><strong>TESS</strong> Sectors 1–83+ (through Extended Mission 2) for bright K/M host stars with known transiting planets.</li>
+<li><strong>Stellar parameters</strong>: Gaia DR3 effective temperatures, rotation periods from McQuillan et al. (Kepler) or TESS rotation catalogs, and spectroscopic metallicities from LAMOST or GALAH where available.</li>
 </ul>
 <h3>Novelty</h3>
-<p>Most exoplanet–metallicity studies collapse stellar chemistry to [Fe/H]. A few recent papers have begun exploring alpha-element trends, but the systematic use of <em>chemical clocks</em> (s-process-to-alpha ratios like [Ce/Mg]) as age proxies — in tandem with asteroseismic ages — to build a time-resolved, chemically-resolved planet occurrence map across Galactic populations is largely unexplored. This turns exoplanet demographics into a tool for Galactic archaeology, and vice versa.</p>
+<p>Recent work (e.g., the 2025 homogeneous search for spot transits across K–M main-sequence stars in Kepler/TESS) has focused on detection frequency and spot property retrieval for individual events. However, a population-level reconstruction of spot latitude distributions as a function of stellar Rossby number — directly testing dynamo theory predictions for fully vs. partially convective stars — would go significantly beyond current analyses. Solar dynamo models predict spots migrate toward the equator over the activity cycle (the butterfly diagram), while fully convective M dwarfs may generate spots at all latitudes via a distributed dynamo. Transit chord tomography can test this.</p>
 <h3>Concrete Workflow</h3>
 <ol>
-<li>Cross-match the Kepler/K2/TESS planet host catalogs with APOGEE DR17 and GALAH DR3.</li>
-<li>Assign stellar ages using (a) asteroseismic scaling relations where oscillations are detected and (b) chemical clock calibrations ([Ce/Mg] vs. age) for the broader sample.</li>
-<li>Classify stars into chemodynamical populations: thin disk, thick disk, high-alpha metal-poor, Gaia-Enceladus debris, etc., using [alpha/Fe] vs. [Fe/H] and orbital actions from Gaia.</li>
-<li>Compute completeness-corrected planet occurrence rates (using injection-recovery statistics from Kepler/TESS pipelines) binned by stellar age, birth [Fe/H], [alpha/Fe], and Galactic population membership.</li>
-<li>Test specific hypotheses: (a) Do thick-disk stars (formed 8–12 Gyr ago in a more turbulent ISM) host fewer close-in sub-Neptunes? (b) Is there an age threshold below which hot Jupiter occurrence drops, potentially reflecting disk migration timescale dependencies? (c) Do stars from accreted satellite populations (Gaia-Enceladus) show anomalous planet occurrence consistent with their distinct chemical enrichment history?</li>
+<li><strong>Catalog assembly</strong>: Cross-match the NASA Exoplanet Archive with Kepler/TESS light curve catalogs. Select systems with ≥20 observed transits and host star Teff &lt; 5000 K.</li>
+<li><strong>Spot-crossing detection</strong>: Fit each transit with a standard limb-darkened model; identify residual bumps exceeding 3σ above photon noise using a matched-filter approach (Gaussian kernel bank of variable width).</li>
+<li><strong>Spot parameter extraction</strong>: For each detected event, sample the posterior over spot latitude (along the chord), spot-to-photosphere contrast ratio, and spot angular radius using an MCMC framework that marginalizes over stellar inclination (constrained by v sin i and rotation period).</li>
+<li><strong>Population binning</strong>: Aggregate spot latitude posteriors for all events in bins of Rossby number (Ro = P_rot / τ_conv). Construct latitude frequency histograms for each Ro bin.</li>
+<li><strong>Dynamo comparison</strong>: Compare observed latitude distributions against predictions from flux-transport dynamo models (for partially convective stars) and mean-field α² dynamo models (for fully convective stars).</li>
 </ol>
 <h3>Expected Signal / Observable</h3>
-<p>A statistically significant variation in planet occurrence (particularly for giant planets and sub-Neptunes) as a function of stellar age and chemodynamical population, <em>beyond</em> what is explained by [Fe/H] alone. Predicted effect size: factor of ~2–3 variation in giant planet occurrence between thin-disk and thick-disk populations at matched metallicity, detectable with the ~4,000+ planet hosts that should have APOGEE/GALAH coverage.</p>
+<ul>
+<li>For Sun-like and early-K stars (Ro ~ 0.5–2), expect a concentration of spots at low-to-mid latitudes (10°–30°), consistent with solar-type activity bands.</li>
+<li>For mid-to-late M dwarfs (Ro &lt; 0.1), expect a flatter latitude distribution extending to high latitudes (&gt;50°), reflecting a qualitatively different dynamo regime.</li>
+<li>The transition in latitude distribution shape as a function of Ro would be the primary observable — a "phase diagram" of stellar spot geography.</li>
+</ul>
 <h3>Possible False Positives</h3>
 <ul>
-<li>Systematic age errors from chemical clocks propagating into spurious trends (mitigated by cross-checking against asteroseismic subsample).</li>
-<li>Selection biases: evolved stars in asteroseismic samples may preferentially lose close-in planets to engulfment, creating a fake age–occurrence anti-correlation.</li>
-<li>Completeness correction errors if detection efficiency varies systematically with stellar type across Galactic populations.</li>
+<li><strong>Spot–inclination degeneracy</strong>: A small equatorial spot and a larger high-latitude spot can produce similar bumps. Mitigation: marginalize over inclination using v sin i priors; require systems with well-constrained stellar obliquities.</li>
+<li><strong>Instrumental systematics</strong>: Kepler long-cadence data smears short-duration bumps. Mitigation: use short-cadence data where available; calibrate bump detectability with injection-recovery tests.</li>
+<li><strong>Faculae masquerading as spots</strong>: Bright regions crossed during transit produce dips rather than bumps, but could bias contrast estimates. Mitigation: model both spot and facular crossings simultaneously.</li>
+<li><strong>Planet-induced gravity darkening</strong>: For very close-in planets, tidal distortion of the star can mimic spot signatures. Mitigation: restrict to systems with a/R* &gt; 5.</li>
 </ul>
-<h3>Why It Matters</h3>
-<p>If planet formation efficiency carries an imprint of the Galaxy's chemical evolution, it would (a) provide a new constraint on planet formation models sensitive to disk composition beyond iron, (b) inform target prioritization for future biosignature searches (should we look at young thin-disk stars or old thick-disk stars?), and (c) establish exoplanet science as a quantitative probe of Galactic archaeology — a genuine cross-disciplinary bridge.</p>
+<h3>Why This Could Matter</h3>
+<p>This would be one of the first empirical tests of dynamo theory at the level of spot-latitude geography for a statistically meaningful sample of stars other than the Sun. The fully convective boundary (~M3.5) is a critical divide in stellar physics — whether the spot distribution changes qualitatively at this boundary has implications for understanding magnetic braking, angular momentum evolution, and the activity environment experienced by habitable-zone planets around M dwarfs.</p>
     </div>
   </details>
   <footer class="exo-daily__foot">
-    <span class="exo-daily__meta">Source brief: 2026-04-07</span>
+    <span class="exo-daily__meta">Source brief: 2026-03-25</span>
     <span class="exo-daily__meta">Rotates daily &middot; 66 ideas in the pool</span>
   </footer>
 </section>
