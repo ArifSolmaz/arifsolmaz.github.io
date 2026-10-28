@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 27 Oct 2026 07:11:30 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 28 Oct 2026 07:49:36 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,86 +15,64 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>The Fate of Ice Sheets on Near-Synchronously Rotating Land Planets</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-33884v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-33884v1</guid>
-      <pubDate>Tue, 27 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Sarah Silverman et al.</dc:creator>
-      <description><![CDATA[Why It Matters
-Many of the rocky planets we can best study circle small, dim red stars called M dwarfs. Because these planets orbit so close to their stars, they are often assumed to be "tidally locked," meaning one side always faces the star, like the Moon always showing us the same face. That would leave one side in permanent daylight and the other in permanent darkness. A worry follows from this: water could evaporate on the warm side, drift to the cold side, and freeze into huge ice sheets, leaving the rest of the planet dry. If that happened, these worlds might be poor places for life.
-What They Did
-The researchers pointed out that in crowded planetary systems, the tug of neighboring planets can make the star's overhead position wobble back and forth or slowly circle around the planet over thousands of years. They call this "near-synchronous" rotation. Using a 3D global climate model, a computer simulation of an entire planet's weather, they tested this for TRAPPIST-1e, a rocky planet in a compact system, using several different day lengths. They also rebuilt the ice-growth estimate for a truly locked planet with a model that links the atmosphere to the ice and accounts for how thick ice changes its own surroundings, such as becoming colder at higher elevation and pressing down on the crust beneath it.
-Key Findings
-For every day length tested, a permanent ice reservoir formed near the poles. Longer days produced more temporary ice at lower latitudes on the dark side. A lasting ice-free region also appeared on the sunny side, with conditions that allow liquid water. The ice may never reach this final arrangement, because building it could take longer than the time between changes in the planet's spin. The improved model for a locked planet predicted about three times less ice than earlier estimates.
-Looking Forward
-Overall, ice trapping seems less severe than feared for these worlds. The results are for one test planet in a simulation, so they cannot confirm that any real planet is habitable. Still, they suggest that rocky planets around red dwarfs may keep more of their water available than previously thought.]]></description>
+      <title>Measuring masses of transiting Earth-like planets: first insights from the PLATO RV data challenge</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-36201v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-36201v1</guid>
+      <pubDate>Wed, 28 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>M. Cretignier et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
     </item>
     <item>
-      <title>Proxima Centauri&#x27;s Angular Diameter Revisited</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-33373v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-33373v1</guid>
-      <pubDate>Tue, 27 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Narsireddy Anugu et al.</dc:creator>
-      <description><![CDATA[Why It Matters
-Proxima Centauri is the nearest known star to host planets, and astronomers use it as a test case for how small, dim stars work. Yet published measurements of its size differ by several percent, which shifts its calculated radius and temperature. There is another wrinkle. Stars look dimmer at their edges than at their centers, like a glowing lamp seen from far away. Correcting for this "limb darkening" changes the inferred radius by a further 2–5%, depending on the model used.
-What They Did
-The team started with two observations from 2014, made with the Very Large Telescope Interferometer. This facility links several telescopes so they act like one giant telescope. The instrument was called PIONIER. They reprocessed that data from scratch and added three archival observations from 2017 and 2019 that had never been published. Then they fitted all five data sets together in two ways. First they treated the star as a flat, evenly bright disk. Then they used computer models of stellar atmospheres that include the dimming toward the edge.
-Key Findings
-The flat-disk fit gave an angular diameter of 1.117 ± 0.024 milliarcseconds, a milliarcsecond being a thousandth of an arcsecond. Using the PHOENIX atmosphere model and an adopted measurement of the star's total light output, the edge-darkened diameter came to 1.154 ± 0.026 milliarcseconds. That corresponds to a radius of 0.162 ± 0.004 times the Sun's, roughly one-sixth of the Sun's radius. Combining the star's size and total light output through the Stefan–Boltzmann law gives a surface temperature of 2833 ± 49 kelvin. The team also searched all five observations for a close companion star and found no significant detection within the range of separations and brightness contrasts they could probe.
-Looking Forward
-This work gives a fresh set of values for Proxima Centauri, derived from five data sets fitted together. It also shows that part of the remaining uncertainty comes from the model used to describe edge darkening, so that choice stays important for anyone using the star as a benchmark. The lack of a detected companion applies only to the separations and contrasts searched. Anything too close or too faint would not have shown up in this analysis.]]></description>
-        <category>astro-ph.SR</category>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Spatial variability of CH4-to-CO conversion pathways in irradiated gas giant atmospheres: implications for chemical relaxation and 1D quench schemes</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-33643v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-33643v1</guid>
-      <pubDate>Tue, 27 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Maria Zamyatina et al.</dc:creator>
-      <description><![CDATA[Why It Matters
-Many of the giant planets we can study orbit so close to their stars that their skies are scorching hot, and their chemistry is far from settled. Imagine a kitchen where ingredients keep getting stirred before they finish reacting. Winds mix the gas faster than chemistry can catch up, so the atmosphere never reaches its "resting" recipe. Simulating this properly in three dimensions takes enormous computing power, so scientists rely on shortcuts. This study asks whether those shortcuts can be trusted, using methane (CH4) and carbon monoxide (CO), two key carbon-bearing gases.
-What They Did
-The team compared two common simplifications with detailed three-dimensional computer simulations of four planets: HAT-P-11b, HD 189733b, HD 209458b and WASP-17b. The simulations assumed a sun-like composition and no clouds or hazes. One shortcut, used in global circulation models, relaxes gas abundances at the pace of a single chemical route. The other, used in one-dimensional models, picks a "quench level", a depth below which chemistry keeps up with mixing, and holds abundances constant above it.
-Key Findings
-The researchers found ten different routes by which methane turns into carbon monoxide, depending on depth, longitude and planet. On the three cooler planets one route dominates, while on WASP-17b two compete. The quench level is not a single fixed layer. It sits higher where the atmosphere is hotter or a faster route takes over. On WASP-17b, a switch of route lifts it over the tropics facing the star, deepening methane depletion near the equator. The one-dimensional approach usually placed the quench level within a factor of two in pressure for methane and about four for carbon monoxide. But above that level, the assumption of uniform abundances failed. The less abundant carbon gas was off by up to a factor of 100, and on HD 189733b the errors went in opposite directions at different latitudes.
-Looking Forward
-Quenching sets an abundance at one level but does not lock it in afterward. Even without light-driven chemistry, winds and reactions keep the gas patchy across the planet. Future models and interpretations of observations will need to account for this three-dimensional structure.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>The anomalously large transiting planet around Boyajian&#x27;s star: evidence for a circumplanetary ring</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-34806v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-34806v1</guid>
-      <pubDate>Tue, 27 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Wei Zhu, Quanyi Liu</dc:creator>
-      <description><![CDATA[Why It Matters
-Boyajian's star (KIC 8462852, also called Tabby's star) is famous for erratic, deep dips in brightness that have puzzled astronomers for years. A recent study reported a giant planet candidate on a wide orbit around it, with about 9.4 times the mass of Jupiter. Its measured size is a problem. At about 1.7 times Jupiter's radius, it is 60–70% larger than standard models allow, because cool giant planets of that mass should be roughly Jupiter-sized. Either the models are wrong or something else is going on.
-What They Did
-The authors asked whether the planet might be wearing a ring, something like Saturn's but far more extensive. A ring blocks extra starlight when the planet crosses in front of its star, so the planet looks bigger than it really is, much as a hat makes a head look larger in silhouette. They wrote a fast, accurate computer code to predict the dip in starlight caused by a ringed planet, then compared it with data from TESS (the Transiting Exoplanet Survey Satellite).
-Key Findings
-The ring model is slightly favoured. It improves the fit by more than 10 in chi-squared, a measure of mismatch between model and data. However, the Bayesian information criterion (BIC), a score that penalizes added complexity, differs by less than 2, so the preference is marginal. The best-fitting picture is a Jupiter-sized planet (1.1 Jupiter radii) surrounded by an opaque, very flat ring reaching 3.1 to 4.4 times the planet's radius, and tilted nearly polar. Simple estimates suggest a debris ring extending out to the planet's Roche limit, the distance inside which gravity would tear apart a loose clump, is needed to explain the large dip. This removes the size puzzle entirely, and it fits the dusty, comet-filled surroundings suggested by the star's past dimmings.
-Looking Forward
-The ring's exact shape remains uncertain, and the statistical support is modest. The ring is therefore a promising explanation rather than a confirmed one. Better data and further tests will be needed to decide whether this planet really wears a giant ring.]]></description>
+      <title>A Model to Map Brown Dwarf Companions to White Dwarfs in Partial Secondary Eclipse</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-36141v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-36141v1</guid>
+      <pubDate>Wed, 28 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Arthur D. Adams et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.SR</category>
     </item>
     <item>
-      <title>Planetesimal Delivery to Giant Planet Circumplanetary Disks: Bulk Ice Enrichment and an Ice-rich Iapetus</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-34081v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-34081v1</guid>
-      <pubDate>Tue, 27 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Ignacio Mosqueira</dc:creator>
-      <description><![CDATA[Why It Matters
-Jupiter and Saturn each have a family of large moons that look like miniature solar systems. These moons contain far more water ice than the rocky and icy debris that was floating around the outer Solar System when they formed. The pattern is also odd: the moons closer in than Saturn's big moon Titan, and the faraway moon Iapetus, are icier than Titan itself. Iapetus is the hardest to explain. It is about 700 kilometers in radius and orbits very far from Saturn, and it is rich in ice. Collisions and moons drifting inward can reshuffle the makeup of moons that sit deep in a planet's gravitational well. Those processes struggle to build a distant, icy moon like Iapetus.
-What They Did
-The authors modeled what happens when fragments of broken-up bodies from the outer Solar System fly into the gas-and-dust disk around a young giant planet. These fragments range from 1 meter to 1 kilometer across and come from bodies that were 30% ice by mass. The key idea is that the gas heats the fragments as they pass through, much like a meteor burning up in our sky. Ice is lost or captured differently from rock, so the material left behind is sorted by composition. They ran simplified calculations at fixed distances from Saturn, then followed full three-dimensional paths through repeated passes through the gas. They did the same for Jupiter.
-Key Findings
-In the simple Saturn calculation, the delivered material was about 50–66% ice at 20 Saturn radii, and nearly pure ice at 60 Saturn radii. The more realistic trajectory calculations gave ice fractions of about 0.4 near 20 Saturn radii and about 0.9 near 60. The Jupiter calculation gave a similar overall ice enrichment, with a compositional gradient across the region of the Galilean satellites. This delivery can supply the large ice-rich inventory Iapetus needs. The authors also note that moonlets drifting inward later modify what ends up in the moons.
-Looking Forward
-The paper briefly discusses what the results mean for the PDS 70 planetary system, where young giant planets are still forming. The authors do not claim to have settled the story, because inward migration of moon-building blocks can still change the final compositions.]]></description>
+      <title>Propulsion Systems for a Starshade Rendezvous Mission with the Habitable World Observatory</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-36200v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-36200v1</guid>
+      <pubDate>Wed, 28 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Mario Damiano et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.IM</category>
         <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Retention of primordial atmospheres through giant impacts</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-36446v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-36446v1</guid>
+      <pubDate>Wed, 28 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Darius Modirrousta-Galian, Jun Korenaga</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Revisiting the Photometric Modulation Amplitudes of Kepler Planet Hosts: A Confounder-Adjusted Test of Stellar Spin-Orbit Alignment</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-36664v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-36664v1</guid>
+      <pubDate>Wed, 28 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Kento Masuda, Subo Dong</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+        <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>Unbound grains in gaseous debris discs</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-37004v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-37004v1</guid>
+      <pubDate>Wed, 28 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Marija R. Jankovic et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.SR</category>
     </item>
   </channel>
 </rss>
