@@ -1,6 +1,6 @@
 {
   "announcement_date": "2026-10-28",
-  "updated_at": "2026-10-28T07:49:36.895211+00:00",
+  "updated_at": "2026-10-29T07:55:21.003385+00:00",
   "category": "astro-ph.EP",
   "paper_count": 6,
   "papers": [
@@ -47,6 +47,7 @@
       "abs_link": "https://arxiv.org/abs/2610.36201v1",
       "is_exoplanet_focused": true,
       "tweetability_score": 48,
+      "figure_url": "https://arxiv.org/html/2610.36201v1/2610.36201v1/Results_score.png",
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -54,8 +55,7 @@
         "claim": "",
         "evidence": "",
         "question": ""
-      },
-      "figure_url": "https://arxiv.org/html/2610.36201v1/2610.36201v1/Results_score.png"
+      }
     },
     {
       "id": "2610.36141v1",
@@ -85,6 +85,7 @@
       "abs_link": "https://arxiv.org/abs/2610.36141v1",
       "is_exoplanet_focused": true,
       "tweetability_score": 26,
+      "figure_url": "https://arxiv.org/html/2610.36141v1/2610.36141v1/WD1202_orbital_fit_2026-09-24_cv_normalized_l35_nonneg_light_curve_comparison.png",
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -92,8 +93,7 @@
         "claim": "",
         "evidence": "",
         "question": ""
-      },
-      "figure_url": "https://arxiv.org/html/2610.36141v1/2610.36141v1/WD1202_orbital_fit_2026-09-24_cv_normalized_l35_nonneg_light_curve_comparison.png"
+      }
     },
     {
       "id": "2610.36200v1",
@@ -116,6 +116,7 @@
       "abs_link": "https://arxiv.org/abs/2610.36200v1",
       "is_exoplanet_focused": true,
       "tweetability_score": 19,
+      "figure_url": "https://arxiv.org/html/2610.36200v1/2610.36200v1/images/figure1.png",
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -123,8 +124,7 @@
         "claim": "",
         "evidence": "",
         "question": ""
-      },
-      "figure_url": "https://arxiv.org/html/2610.36200v1/2610.36200v1/images/figure1.png"
+      }
     },
     {
       "id": "2610.36446v1",
@@ -143,6 +143,7 @@
       "abs_link": "https://arxiv.org/abs/2610.36446v1",
       "is_exoplanet_focused": true,
       "tweetability_score": 13,
+      "figure_url": "https://arxiv.org/html/2610.36446v1/2610.36446v1/Modirrousta-Galian_Fig1.png",
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -150,8 +151,7 @@
         "claim": "",
         "evidence": "",
         "question": ""
-      },
-      "figure_url": "https://arxiv.org/html/2610.36446v1/2610.36446v1/Modirrousta-Galian_Fig1.png"
+      }
     },
     {
       "id": "2610.36664v1",
@@ -172,6 +172,7 @@
       "abs_link": "https://arxiv.org/abs/2610.36664v1",
       "is_exoplanet_focused": true,
       "tweetability_score": 13,
+      "figure_url": "https://arxiv.org/html/2610.36664v1/2610.36664v1/lambda_teff.png",
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -179,8 +180,7 @@
         "claim": "",
         "evidence": "",
         "question": ""
-      },
-      "figure_url": "https://arxiv.org/html/2610.36664v1/2610.36664v1/lambda_teff.png"
+      }
     },
     {
       "id": "2610.37004v1",
@@ -203,6 +203,7 @@
       "abs_link": "https://arxiv.org/abs/2610.37004v1",
       "is_exoplanet_focused": true,
       "tweetability_score": 6,
+      "figure_url": "https://arxiv.org/html/2610.37004v1/data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==",
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -210,8 +211,7 @@
         "claim": "",
         "evidence": "",
         "question": ""
-      },
-      "figure_url": "https://arxiv.org/html/2610.37004v1/data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg=="
+      }
     }
   ]
 }
