@@ -1,54 +1,64 @@
 <section class="exo-daily" aria-label="Exoplanet idea of the day">
   <header class="exo-daily__head">
     <span class="exo-daily__eyebrow">Exoplanet idea of the day</span>
-    <time class="exo-daily__date" datetime="2026-10-28">2026-10-28</time>
+    <time class="exo-daily__date" datetime="2026-10-29">2026-10-29</time>
   </header>
-  <h2 class="exo-daily__title">Starspot Latitude Mapping via Transit Chord Tomography Across Stellar Spectral Types</h2>
+  <h2 class="exo-daily__title">Secular Transit Depth Drift as a Probe of Circumplanetary Rings, Obliquity Precession, and Atmospheric Mass Loss Over Decadal Baselines</h2>
   <div class="exo-daily__premise">
-    <p>When a transiting exoplanet crosses a starspot, the resulting photometric "bump" in the transit light curve encodes information about the spot's position, size, and contrast. The transit chord acts as a one-dimensional knife-edge scan of the stellar surface. By aggregating many such crossings for the same system over time, one can reconstruct the latitude distribution of spots along the transit chord — and because the planet's orbital inclination constrains the chord's geometry on the stellar disk, the spot latitudes are physically meaningful.</p>
-<p>The key insight is that the <em>ensemble</em> of spot-crossing events across many different host stars, binned by spectral type and rotation period, could reveal systematic latitude-dependent activity patterns analogous to the Sun's butterfly diagram — but for stars spanning K0 to M4. While individual spot-crossing detections are well-studied, a homogeneous population-level latitude census tied to stellar Rossby number remains potentially underexplored.</p>
+    <p>The apparent transit depth of an exoplanet should be constant if the planet is a static sphere. But several physical processes can cause the <em>measured</em> depth to change slowly over years or decades:</p>
+<ul>
+<li><strong>Circumplanetary ring precession.</strong> A ringed planet's projected cross-section changes as the ring plane precesses relative to our line of sight, modulating the transit depth on timescales of years to decades. Theoretical estimates suggest ~10–13 systems in the Kepler/TESS archive could show detectable depth variations from this effect.</li>
+<li><strong>Planetary obliquity precession.</strong> An oblate, tilted planet presents a varying projected area as its spin axis precesses.</li>
+<li><strong>Atmospheric escape / mass loss.</strong> Young, close-in planets actively losing their atmospheres (e.g., sub-Neptunes in the "radius valley") could show a <em>shrinking</em> transit depth over decades as the opaque atmospheric envelope deflates.</li>
+</ul>
+<p>A recent systematic search (arXiv 2505.05948, May 2025) examined 308 close-in TESS planets for ring signatures in individual transits and found no clear detections. However, the <em>decadal baseline</em> approach — comparing Kepler-era depths to TESS-era depths for the same planet — has not been exploited as a blind survey. The 8–12 year lever arm between Kepler (2009–2013) and TESS extended mission (2021–2026+) is now long enough to be sensitive to precession periods of ~50–200 years.</p>
   </div>
   <details class="exo-daily__more">
     <summary>Read the full proposal</summary>
     <div class="exo-daily__full">
       <h3>Scientific Premise</h3>
-<p>When a transiting exoplanet crosses a starspot, the resulting photometric "bump" in the transit light curve encodes information about the spot's position, size, and contrast. The transit chord acts as a one-dimensional knife-edge scan of the stellar surface. By aggregating many such crossings for the same system over time, one can reconstruct the latitude distribution of spots along the transit chord — and because the planet's orbital inclination constrains the chord's geometry on the stellar disk, the spot latitudes are physically meaningful.</p>
-<p>The key insight is that the <em>ensemble</em> of spot-crossing events across many different host stars, binned by spectral type and rotation period, could reveal systematic latitude-dependent activity patterns analogous to the Sun's butterfly diagram — but for stars spanning K0 to M4. While individual spot-crossing detections are well-studied, a homogeneous population-level latitude census tied to stellar Rossby number remains potentially underexplored.</p>
+<p>The apparent transit depth of an exoplanet should be constant if the planet is a static sphere. But several physical processes can cause the <em>measured</em> depth to change slowly over years or decades:</p>
+<ul>
+<li><strong>Circumplanetary ring precession.</strong> A ringed planet's projected cross-section changes as the ring plane precesses relative to our line of sight, modulating the transit depth on timescales of years to decades. Theoretical estimates suggest ~10–13 systems in the Kepler/TESS archive could show detectable depth variations from this effect.</li>
+<li><strong>Planetary obliquity precession.</strong> An oblate, tilted planet presents a varying projected area as its spin axis precesses.</li>
+<li><strong>Atmospheric escape / mass loss.</strong> Young, close-in planets actively losing their atmospheres (e.g., sub-Neptunes in the "radius valley") could show a <em>shrinking</em> transit depth over decades as the opaque atmospheric envelope deflates.</li>
+</ul>
+<p>A recent systematic search (arXiv 2505.05948, May 2025) examined 308 close-in TESS planets for ring signatures in individual transits and found no clear detections. However, the <em>decadal baseline</em> approach — comparing Kepler-era depths to TESS-era depths for the same planet — has not been exploited as a blind survey. The 8–12 year lever arm between Kepler (2009–2013) and TESS extended mission (2021–2026+) is now long enough to be sensitive to precession periods of ~50–200 years.</p>
 <h3>Target Datasets</h3>
 <ul>
-<li><strong>Kepler</strong> long-cadence and short-cadence light curves for all confirmed transiting planets around K and M dwarfs (~400+ systems).</li>
-<li><strong>TESS</strong> Sectors 1–83+ (through Extended Mission 2) for bright K/M host stars with known transiting planets.</li>
-<li><strong>Stellar parameters</strong>: Gaia DR3 effective temperatures, rotation periods from McQuillan et al. (Kepler) or TESS rotation catalogs, and spectroscopic metallicities from LAMOST or GALAH where available.</li>
+<li><strong>Kepler long-cadence and short-cadence light curves</strong> for all confirmed transiting planets.</li>
+<li><strong>TESS light curves</strong> (2-minute cadence, extended mission) for overlapping Kepler targets — roughly 500+ planets observed by both missions.</li>
+<li><strong>CHEOPS pointed observations</strong> for high-priority targets with apparent depth changes.</li>
+<li><strong>Spitzer 4.5μm archival transits</strong> (where available) to separate chromatic effects from geometric ones.</li>
 </ul>
 <h3>Novelty</h3>
-<p>Recent work (e.g., the 2025 homogeneous search for spot transits across K–M main-sequence stars in Kepler/TESS) has focused on detection frequency and spot property retrieval for individual events. However, a population-level reconstruction of spot latitude distributions as a function of stellar Rossby number — directly testing dynamo theory predictions for fully vs. partially convective stars — would go significantly beyond current analyses. Solar dynamo models predict spots migrate toward the equator over the activity cycle (the butterfly diagram), while fully convective M dwarfs may generate spots at all latitudes via a distributed dynamo. Transit chord tomography can test this.</p>
+<p>Individual ring searches (fitting asymmetric transit models to single light curves) have been tried and have come up empty for close-in planets, consistent with tidal stripping of rings at small orbital separations. But the <em>depth drift</em> approach is geometrically distinct: it does not require resolving the ring in a single transit. Instead, it detects the integrated change in projected area over time. This makes it sensitive to rings (or obliquity) even when the ring signal is below the noise floor in any single epoch. Additionally, using depth drift to flag atmospheric mass loss in real time is a genuinely novel observable — current mass-loss studies rely on spectroscopic proxies (Lyα, He 10830 Å) rather than photometric shrinkage.</p>
 <h3>Concrete Workflow</h3>
 <ol>
-<li><strong>Catalog assembly</strong>: Cross-match the NASA Exoplanet Archive with Kepler/TESS light curve catalogs. Select systems with ≥20 observed transits and host star Teff &lt; 5000 K.</li>
-<li><strong>Spot-crossing detection</strong>: Fit each transit with a standard limb-darkened model; identify residual bumps exceeding 3σ above photon noise using a matched-filter approach (Gaussian kernel bank of variable width).</li>
-<li><strong>Spot parameter extraction</strong>: For each detected event, sample the posterior over spot latitude (along the chord), spot-to-photosphere contrast ratio, and spot angular radius using an MCMC framework that marginalizes over stellar inclination (constrained by v sin i and rotation period).</li>
-<li><strong>Population binning</strong>: Aggregate spot latitude posteriors for all events in bins of Rossby number (Ro = P_rot / τ_conv). Construct latitude frequency histograms for each Ro bin.</li>
-<li><strong>Dynamo comparison</strong>: Compare observed latitude distributions against predictions from flux-transport dynamo models (for partially convective stars) and mean-field α² dynamo models (for fully convective stars).</li>
+<li><strong>Homogeneous re-reduction.</strong> Uniformly extract transit depths for all ~500 Kepler/TESS overlap planets using identical detrending and fitting pipelines (e.g., <code>juliet</code> or <code>exoplanet</code> with the same limb-darkening treatment and stellar parameters) to eliminate systematic depth offsets between missions.</li>
+<li><strong>Bandpass correction.</strong> The Kepler and TESS bandpasses differ (430–890 nm vs. 600–1000 nm). Compute expected chromatic depth differences using stellar models + planetary atmosphere models and subtract them, isolating the <em>achromatic</em> (geometric) depth change.</li>
+<li><strong>Statistical screen.</strong> Flag all planets whose Kepler-to-TESS depth change exceeds 3σ after corrections. Separate the sample into close-in (a &lt; 0.1 AU, rings unlikely) and longer-period (a &gt; 0.1 AU, rings plausible) subsamples.</li>
+<li><strong>Physical modeling of flagged systems.</strong> For each outlier, fit three competing models: (a) ringed planet with precessing ring plane, (b) oblate planet with precessing spin axis, (c) atmospheric radius evolution (mass loss or inflation). Use Bayesian model comparison.</li>
+<li><strong>Population-level upper limits.</strong> Even non-detections constrain the prevalence and geometry of exoplanetary ring systems, obliquity distributions, and atmospheric loss timescales.</li>
 </ol>
 <h3>Expected Signal / Observable</h3>
 <ul>
-<li>For Sun-like and early-K stars (Ro ~ 0.5–2), expect a concentration of spots at low-to-mid latitudes (10°–30°), consistent with solar-type activity bands.</li>
-<li>For mid-to-late M dwarfs (Ro &lt; 0.1), expect a flatter latitude distribution extending to high latitudes (&gt;50°), reflecting a qualitatively different dynamo regime.</li>
-<li>The transition in latitude distribution shape as a function of Ro would be the primary observable — a "phase diagram" of stellar spot geography.</li>
+<li>Ring precession: depth changes of ~100–500 ppm over a decade for Saturn-analog rings at moderate inclinations, detectable for ~10 favorable systems.</li>
+<li>Atmospheric shrinkage: depth decreases of ~50–200 ppm per decade for young sub-Neptunes undergoing photoevaporation (e.g., Kepler-36c-like planets around young stars).</li>
+<li>Null results still yield the first population-level upper limits on ring prevalence beyond the tidal disruption radius.</li>
 </ul>
-<h3>Possible False Positives</h3>
+<h3>Possible False Positives / Pitfalls</h3>
 <ul>
-<li><strong>Spot–inclination degeneracy</strong>: A small equatorial spot and a larger high-latitude spot can produce similar bumps. Mitigation: marginalize over inclination using v sin i priors; require systems with well-constrained stellar obliquities.</li>
-<li><strong>Instrumental systematics</strong>: Kepler long-cadence data smears short-duration bumps. Mitigation: use short-cadence data where available; calibrate bump detectability with injection-recovery tests.</li>
-<li><strong>Faculae masquerading as spots</strong>: Bright regions crossed during transit produce dips rather than bumps, but could bias contrast estimates. Mitigation: model both spot and facular crossings simultaneously.</li>
-<li><strong>Planet-induced gravity darkening</strong>: For very close-in planets, tidal distortion of the star can mimic spot signatures. Mitigation: restrict to systems with a/R* &gt; 5.</li>
+<li><strong>Stellar variability.</strong> Evolving starspot coverage changes the apparent transit depth (the transit light source effect). This is chromatic and can be partially corrected using the bandpass difference, but it remains the dominant systematic.</li>
+<li><strong>Instrumental systematics.</strong> Kepler and TESS have different pixel scales, PSFs, and contamination levels. Imperfect dilution corrections could create spurious depth changes. Mitigation: use high-resolution imaging (Gaia, speckle) to update dilution corrections.</li>
+<li><strong>Third-light contamination evolution.</strong> A background eclipsing binary blended with the target could produce depth changes if its own eclipse depth varies. Cross-check with Gaia astrometry and centroid analysis.</li>
 </ul>
 <h3>Why This Could Matter</h3>
-<p>This would be one of the first empirical tests of dynamo theory at the level of spot-latitude geography for a statistically meaningful sample of stars other than the Sun. The fully convective boundary (~M3.5) is a critical divide in stellar physics — whether the spot distribution changes qualitatively at this boundary has implications for understanding magnetic braking, angular momentum evolution, and the activity environment experienced by habitable-zone planets around M dwarfs.</p>
+<p>The detection of a circumplanetary ring system would be a landmark discovery — no exoplanet ring has been confirmed despite decades of searching. Even upper limits would constrain theories of ring formation, tidal disruption, and satellite accretion. The atmospheric mass-loss channel connects to one of the hottest topics in exoplanet science (the radius valley and its origins), and a photometric detection of real-time atmospheric shrinkage would provide a direct, model-independent constraint on mass-loss rates.</p>
     </div>
   </details>
   <footer class="exo-daily__foot">
-    <span class="exo-daily__meta">Source brief: 2026-03-25</span>
+    <span class="exo-daily__meta">Source brief: 2026-05-04</span>
     <span class="exo-daily__meta">Rotates daily &middot; 66 ideas in the pool</span>
   </footer>
 </section>
