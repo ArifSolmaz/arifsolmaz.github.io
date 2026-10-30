@@ -1,53 +1,61 @@
 {
-  "announcement_date": "2026-10-28",
-  "updated_at": "2026-10-29T07:55:21.003385+00:00",
+  "announcement_date": "2026-10-30",
+  "updated_at": "2026-10-30T07:59:34.958250+00:00",
   "category": "astro-ph.EP",
-  "paper_count": 6,
+  "paper_count": 12,
   "papers": [
     {
-      "id": "2610.36201v1",
-      "title": "Measuring masses of transiting Earth-like planets: first insights from the PLATO RV data challenge",
-      "abstract": "The PLATO Stellar Variability Mitigation Working Group designed a radial-velocity (RV) data challenge to assess the precision and accuracy achievable on RV semi-amplitudes in the context of the future PLATO follow-up. Using Sun-as-a-star observations obtained with HARPS-N, we generated three multi-planet systems with realistic sampling, an effective signal-to-noise ratio of S/N 450, an exposure time of 15 minutes, and a total of approximately 1000 observations. The resulting data set is publicly available and can serve as a benchmark for the community to test and compare RV analysis methods. Eight independent teams participated in the challenge, aiming to recover the semi-amplitudes of both transiting and non-transiting planets. A meta-analysis of the submitted results shows that, with current data analysis methods, HARPS-N-like stability and the observing strategy studied in this paper, achieving a precision on semi-amplitudes better than 10% for habitable-zone signals around a solar-type star is challenging, and is typically limited to planets with masses of approximately 8-10 Earth masses. This performance is expected to improve for K dwarfs, where planets down to approximately 2-5 Earth masses may be characterized at a similar level of precision. Finally, based on the results of this challenge and the occurrence of false positives, we derive an empirical detection threshold for RV surveys, which can be used to distinguish robust planetary detections from candidates.",
+      "id": "2610.38410v1",
+      "title": "PyMsOfa 2.0: A Pure-Python Implementation of the IAU Standards of Fundamental Astronomy Service",
+      "abstract": "Astrometric calculations require authoritative algorithms so that every result is correct and reproducible. The Standards of Fundamental Astronomy (SOFA) service of the International Astronomical Union (IAU) provides such algorithms, officially released only in Fortran 77 and ANSI C. In an earlier paper we presented the first version of PyMsOfa, a Python package wrapping the SOFA C library. Here we present PyMsOfa 2.0, which re-implements the complete SOFA library in pure Python with NumPy. All 247 official SOFA routines are ported directly to Python, requiring no compilation of any external C library and running identically on Linux, Windows, and macOS. The routines operate on NumPy arrays, so arguments can be processed in batch, which is convenient for survey pipelines and Monte Carlo simulations. The package also provides an extension module with validated models not yet part of the official SOFA release, such as the improved precession--nutation model IAU 2006J_₂/2000AR₂₆. The reimplementation reproduces the official SOFA algorithms: all constants, series, and coefficients are taken unchanged from the SOFA source files, and routine names differ only by the pym prefix. We verify every routine against the official SOFA C release: most reproduce the C results to machine precision, the remainder within the accuracy tolerance stated in the SOFA documentation. The package has been applied to Gaia astrometric reduction and used in astrometric studies of the Closeby Habitable Exoplanet Survey (CHES) mission, and is available through PyPI, GitHub, and Zenodo.",
       "authors": [
-        "M. Cretignier",
-        "N. C. Hara",
-        "S. Aigrain",
-        "S. Sulis",
-        "F. Bouchy",
-        "S. T. Hodgkin",
-        "J. Blanco-Pozo",
-        "A. Collier-Cameron",
-        "M. Damasso",
-        "E. C. Gonçalves",
-        "L. Malavolta",
-        "G. Mantovan",
-        "D. Nardiello",
-        "M. Perger",
-        "I. Ribas",
-        "Y. Zhao",
-        "X. Dumusque",
-        "A. Mortier",
-        "K. Al Moulla",
-        "S. C. C. Barros",
-        "A. Santerne",
-        "N. C. Santos",
-        "C. San Nicolas Martinez",
-        "C. Watson",
-        "T. Wilson",
-        "S. Udry",
-        "for the PLATO Stellar Variability Working Group"
+        "Dongjie Tan",
+        "Jianghui Ji",
+        "Jiacheng Liu"
+      ],
+      "categories": [
+        "astro-ph.IM",
+        "astro-ph.EP",
+        "astro-ph.GA",
+        "astro-ph.SR"
+      ],
+      "published": "2026-10-28",
+      "updated": "2026-10-28",
+      "pdf_link": "https://arxiv.org/pdf/2610.38410v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2610.38410v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 25,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2610.38410v1/data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "2610.40106v1",
+      "title": "Seven Years of TESS Precovery Observations of the Dwarf-planet Candidate 2026 ED₁₃₈",
+      "abstract": "The trans-Neptunian object 2026 ED₁₃₈ was announced in 2026 October as the first dwarf-planet candidate in our solar system discovered by the Vera C. Rubin Observatory. The Transiting Exoplanet Survey Satellite (TESS) observed it in five month-long sectors between 2019 and 2026, four of them before its discovery. We subtract every Gaia DR3 star from these crowded full-frame images with the TESS-Gaia Light Curve (TGLC) package, then remove static residuals with a running median. Stacking the images along its predicted path detects 2026 ED₁₃₈ in all five sectors at 5-21σ, and at 34σ combined. The TESS positions alone confirm the JPL orbit, and its brightness is consistent with the 0.08 mag fading expected from its increasing distance and changing phase angle.",
+      "authors": [
+        "Te Han",
+        "Jeroen Audenaert",
+        "Daniel Muthukrishna",
+        "Matthew Holman",
+        "George R. Ricker"
       ],
       "categories": [
         "astro-ph.EP",
         "astro-ph.IM"
       ],
-      "published": "2026-10-26",
-      "updated": "2026-10-26",
-      "pdf_link": "https://arxiv.org/pdf/2610.36201v1.pdf",
-      "abs_link": "https://arxiv.org/abs/2610.36201v1",
+      "published": "2026-10-29",
+      "updated": "2026-10-29",
+      "pdf_link": "https://arxiv.org/pdf/2610.40106v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2610.40106v1",
       "is_exoplanet_focused": true,
-      "tweetability_score": 48,
-      "figure_url": "https://arxiv.org/html/2610.36201v1/2610.36201v1/Results_score.png",
+      "tweetability_score": 23,
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -55,37 +63,47 @@
         "claim": "",
         "evidence": "",
         "question": ""
-      }
+      },
+      "figure_url": "https://arxiv.org/html/2610.40106v1/2610.40106v1/ed138_tess_orbit.png"
     },
     {
-      "id": "2610.36141v1",
-      "title": "A Model to Map Brown Dwarf Companions to White Dwarfs in Partial Secondary Eclipse",
-      "abstract": "Eclipse mapping is a well-established technique for constraining the spatial emission of hot Jupiter exoplanets. Brown dwarfs in ultra-short orbits around white dwarfs are an analog to hot Jupiters that can only ever be eclipsed within a limited range of latitudes. We adapt the eigenmapping method to disentangle the signals from the ever- and never-occulted regions. The result of this signal separation is a super-position of map structures, yielding sharp boundaries at the occultation region. We introduce a model that penalizes the harmonic complexity of the model map with Tikhonov regularization, whose parameters are tuned to reproduce the fit quality of the eigenmapping model. We use JWST NIRSpec/PRISM full-orbit observations of the eclipsing WD 1202-024 system as a template to construct and run injection-recovery tests on simulated light curves, isolating both latitudinal structures as well as emission from a physically-realistic general circulation model (GCM). In the latter, the narrow equatorial jet driven by the BD's rapid rotation manifests as an eclipse depth asymmetry, which our model reproduces as a latitude-dependent phase offset. Such a model, however, is only statistically preferred at approximately 3 × the signal-to-noise ratio of the JWST data. When fitting to the actual JWST data of WD 1202, the full-phase eigenbasis model is statistically preferred. However, the resulting model map of WD 1202 B does not resemble the GCM predictions, with a concentrated day-side hotspot at the sub-stellar point with an angular size ≈ 15′. Interpreting this result more carefully requires follow-up work to disentangle systematics from true emission signals. This model framework provides a means to detect emission features from these rare types of eclipses, and ultimately to test predictions of models of atmospheric circulation across hot Jupiters and their BD analogs.",
+      "id": "2610.38693v1",
+      "title": "2026 ED138: A Large Trans-Neptunian Object in Early Rubin Observatory Data, and How Many More May Remain",
+      "abstract": "We characterize a large trans-Neptunian object (TNO), 2026 ED138, discovered in data taken by the NSF-DOE Vera C. Rubin Observatory with the linking code pointdexter, and validate it independently. 2026 ED138 has absolute magnitude H_V=3.19, implying a diameter of 612-1530 km for geometric albedos between 0.25 and 0.04 and making it one of the ten intrinsically brightest known TNOs and a dwarf-planet candidate. At i≈19.4 it is bright enough in the sky for ground-based spectroscopy and light curves and for detailed study with HST and JWST. Archival DECam detections extend its arc to more than ten years (3789 days). Its orbit, with barycentric a=43.09 au, e=0.139 and i=24.4′, lies at the edge of the 12:7 mean-motion resonance with Neptune, like that of the dwarf planet Haumea, but with g-r=0.63 it is too red to be a member of Haumea's collisional family. 2026 ED138 was missed by earlier surveys because it lies far south and near the crowded regions of the Galactic plane. Our recoveries of the known TNOs with H_V<4 suggest that about 3 more objects like them, and probably more, remain undiscovered away from the Galactic plane. More such objects probably lie within 10′ of the plane, which no search has yet covered to this depth.",
       "authors": [
-        "Arthur D. Adams",
-        "Yifan Zhou",
-        "Daniel Apai",
-        "Daphne Broski-Laing",
-        "Sarah L. Casewell",
-        "Jenni R. French",
-        "L. C. Mayorga",
-        "Lael Shin",
-        "Xianyu Tan",
-        "Ben W. P. Lew",
-        "Joshua D. Lothringer",
-        "Vivien Parmentier"
+        "Matthew J. Holman",
+        "Mario Jurić",
+        "Kevin J. Napier",
+        "Jacob A. Kurlander",
+        "Aren Heinze",
+        "Joachim Moeyens",
+        "Megan E. Schwamb",
+        "Pedro H. Bernardinelli",
+        "Ian Sullivan",
+        "Eric C. Bellm",
+        "Silvia Protopapa",
+        "Colin Orion Chandler",
+        "Ian Chow",
+        "Eric J. Christensen",
+        "Samuel Cornwall",
+        "Siegfried Eggl",
+        "Sarah Greenstreet",
+        "Chester Li",
+        "Erfan Nourbakhsh",
+        "James E. Robinson",
+        "Devanshi Singh",
+        "Danica Zilkova"
       ],
       "categories": [
         "astro-ph.EP",
-        "astro-ph.SR"
+        "astro-ph.IM"
       ],
-      "published": "2026-10-26",
-      "updated": "2026-10-26",
-      "pdf_link": "https://arxiv.org/pdf/2610.36141v1.pdf",
-      "abs_link": "https://arxiv.org/abs/2610.36141v1",
+      "published": "2026-10-28",
+      "updated": "2026-10-28",
+      "pdf_link": "https://arxiv.org/pdf/2610.38693v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2610.38693v1",
       "is_exoplanet_focused": true,
-      "tweetability_score": 26,
-      "figure_url": "https://arxiv.org/html/2610.36141v1/2610.36141v1/WD1202_orbital_fit_2026-09-24_cv_normalized_l35_nonneg_light_curve_comparison.png",
+      "tweetability_score": 20,
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -93,30 +111,30 @@
         "claim": "",
         "evidence": "",
         "question": ""
-      }
+      },
+      "figure_url": "https://arxiv.org/html/2610.38693v1/2610.38693v1/fig_detections.png"
     },
     {
-      "id": "2610.36200v1",
-      "title": "Propulsion Systems for a Starshade Rendezvous Mission with the Habitable World Observatory",
-      "abstract": "We assess how propulsion and operational constraints affect exo-Earth characterization with a starshade rendezvous mission for a Habitable Worlds Observatory (HWO)-like telescope at Sun-Earth L2. Using end-to-end Monte Carlo simulations with EXOSIMS, we model a 60 m starshade for visible-band spectroscopy (500-1000 nm) and a 35 m starshade for near-ultraviolet characterization (250-550 nm). For the 60 m design, we compare AEPS Hall, NEXT ion, and Starlink-class Hall thrusters and examine sensitivity to propellant capacity, the fraction of each retargeting slew spent accelerating and decelerating, and on-orbit refueling. With 1000-3000 kg of initial propellant and no refueling, NEXT provides the highest characterization yield: 9-13% more characterizations than AEPS and 13-16% more than the Starlink-class option. Its higher specific impulse enables more retargeting slews per kilogram of propellant. With refueling, yields converge across thruster choices to about 120 cumulative characterizations over 10 years, while propulsion choice mainly affects the number of refueling events. For the 35 m starshade with AEPS, yields are less sensitive to fuel and are dominated by mission duration and geometric accessibility. Increasing the minimum solar keepout angle from 40 to 50 degrees has little effect on yield; increases from 50 to 65 degrees have a modest effect, while angles above 65 degrees rapidly reduce yield, with severe degradation near 80 degrees. These results distinguish fuel-limited and time- or keepout-limited regimes and guide propulsion selection, tank sizing, refueling policy, and keepout constraints for HWO starshade missions.",
+      "id": "2610.37773v1",
+      "title": "A double debris disc around a white dwarf sculpted by two planetary bodies",
+      "abstract": "Many planetary systems survive the metamorphosis of their hosts stars into white dwarfs, as demonstrated by the detection of dusty circumstellar discs around these stellar remnants as well as chemical signatures of planetary debris in atmospheres of these stars. A small fraction of these circumstellar discs also contain gas, detected in the form of emission lines from various ionic transitions (most commonly the near-infrared Ca ii triplet). All of the 21 known gas discs exhibit double-peaked line profile characteristic of a rotating flat disc. The mechanism behind the the generation of gas is still debated, but for at least one system it has been linked with the presence of a surviving planetesimal embedded within the dust disc. Here we report the discovery of WD J132800.85-145019.95, a new gas disc system which exhibits quadruple-peaked instead of double-peaked line profiles. These emission lines originate from two separate gaseous rings extending from 0.14 Rsun to 0.34 Rsun and from 0.54 Rsun to 1.93 Rsun. We propose that this structure results from the presence of two distinct planetary bodies within these discs, ranging in size from a few km to the size of Pluto. The detection this stable double-disc presents a new challenge for the current models of debris disc formation and evolution.",
       "authors": [
-        "Mario Damiano",
-        "Rhonda Morgan",
-        "Michael Turmon",
-        "Dmitry Savransky",
-        "Armen Tokadjian"
+        "Nicola Pietro Gentile Fusillo",
+        "Felipe Lagos-Vilches",
+        "Boris T. Gänsicke",
+        "Christopher J. Manser",
+        "Detlev Koester"
       ],
       "categories": [
-        "astro-ph.IM",
+        "astro-ph.SR",
         "astro-ph.EP"
       ],
-      "published": "2026-10-26",
-      "updated": "2026-10-26",
-      "pdf_link": "https://arxiv.org/pdf/2610.36200v1.pdf",
-      "abs_link": "https://arxiv.org/abs/2610.36200v1",
+      "published": "2026-10-27",
+      "updated": "2026-10-27",
+      "pdf_link": "https://arxiv.org/pdf/2610.37773v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2610.37773v1",
       "is_exoplanet_focused": true,
       "tweetability_score": 19,
-      "figure_url": "https://arxiv.org/html/2610.36200v1/2610.36200v1/images/figure1.png",
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -124,26 +142,219 @@
         "claim": "",
         "evidence": "",
         "question": ""
-      }
+      },
+      "figure_url": "https://arxiv.org/html/2610.37773v1/2610.37773v1/cartoon_disc.png"
     },
     {
-      "id": "2610.36446v1",
-      "title": "Retention of primordial atmospheres through giant impacts",
-      "abstract": "Rocky planets the size of Earth or larger are expected to undergo one or more giant impacts during the final stages of their formation. Some of these collisions occur after protoplanetary disk dissipation, potentially driving the loss of primordial hydrogen-rich atmospheres through elevated surface temperatures. However, whether giant impacts promote atmospheric loss or retention remains unclear because they both heat planetary interiors and increase atmospheric gravitational binding. Here we model the evolution of rocky planets after their largest post-disk giant impact, accounting self-consistently for the concurrent increase in gravitational binding energy and mantle thermal energy. Whereas the entire accreted mass contributes to the increase in gravitational binding energy, only part of the impact energy raises mantle temperature. Mantle melting consumes energy as latent heat, while the impactor's metallic core transfers little energy to the mantle and remains superheated at depth. Giant impacts therefore increase gravitational binding energy more than mantle thermal energy, shifting planets towards atmospheric retention. Larger, atmosphere-bearing planets emerge preferentially through collisional growth. By contrast, smaller planets without such impacts tend to lose their primordial atmospheres under sustained stellar irradiation. At the population level, these results suggest that sub-Neptunes have, on average, more massive rocky interiors than super-Earths.",
+      "id": "2610.39094v1",
+      "title": "The Korean Space Telescope (KST): A Dedicated Space Observatory for the Dark Universe",
+      "abstract": "The Korean Space Telescope (KST) is a next-generation 1.4-meter wide-field space observatory, a dedicated probe of the dark sector. Its single instrument provides diffraction-limited visible imaging ( 0.15 arcsec in the optical) together with simultaneous near-infrared (R 100) slitless spectrophotometry, so that every detected source is observed in the NIR by the survey itself, with spectral information delivered at a resolution set by its brightness (full R 100 typing at the bright end, synthetic medium-band or broadband photometry below it) and with no separate follow-up, a capability decisive for time-domain science. With it, KST addresses the three outstanding questions of dark physics in concert: the dynamics of dark energy, the nature of dark matter, and gravitational-wave dark sirens as independent cosmological rulers. KST combines measurements of expansion and structure growth to test dark-energy models. A two-tiered \"Wedding Cake\" strategy (2,000 deg² Wide plus 10 deg² cluster-targeted Deep Survey) combines weak lensing, baryon acoustic oscillations, and a near-infrared-standardized Type Ia supernova Hubble diagram to constrain dark energy at its pivot redshift (sigma(wₚ) 0.03); maps dark matter from cluster cores to galactic substructure to test cold dark matter against warm and self-interacting alternatives; and builds a deep near-infrared host catalog for a distance-ladder-independent H₀ from dark sirens. The same data yield a Legacy Science portfolio (galaxy evolution, active galactic nuclei, exoplanets, and the Milky Way) at no additional observing cost. As Korea's first dedicated astrophysics space mission, KST occupies a niche complementary to the Vera C. Rubin Observatory, Euclid, and Roman.",
       "authors": [
-        "Darius Modirrousta-Galian",
-        "Jun Korenaga"
+        "M. James Jee",
+        "Ho Seong Hwang",
+        "Dongwook Lim",
+        "Minjin Kim",
+        "Myungshin Im",
+        "Sungwook E. Hong",
+        "Ho-Gyu Lee",
+        "Soung-Chul Yang",
+        "David Parkinson",
+        "Arman Shafieloo",
+        "Jun-Qian Jiang",
+        "Haeng Pal Heo",
+        "Dongok Ryu",
+        "Hagyong Kihm",
+        "Hyung Yun Noh",
+        "Wooyong Kang",
+        "Youngsun Kim"
+      ],
+      "categories": [
+        "astro-ph.IM",
+        "astro-ph.CO",
+        "astro-ph.EP",
+        "astro-ph.GA",
+        "hep-ex"
+      ],
+      "published": "2026-10-29",
+      "updated": "2026-10-29",
+      "pdf_link": "https://arxiv.org/pdf/2610.39094v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2610.39094v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 16,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2610.39094v1/2610.39094v1/kst.png"
+    },
+    {
+      "id": "2610.40456v1",
+      "title": "Tailoring Infra-Red Filters for Global Mapping of Enceladus' Thermal Environment",
+      "abstract": "We present the results of an initial study into the feasibility and design of the Enceladus Thermal Mapper (ETM) instrument, designed to provide detailed temperature data for Enceladus, an icy moon of Saturn identified by the Cassini Mission as a prime candidate for astrobiological study due to its subsurface ocean and active cryovolcanism. Building on heritage from previous missions including TechDemoSat-1, Mars Climate Sounder, and Lunar Trailblazer, ETM aims to measure temperature variations across Enceladus' surface, including at the poles during the extreme cold of winter, when they can reach as low as 45 K. Where Cassini provided limited high-resolution flyby data of Enceladus due to its Saturn-centric orbit, ETM, in orbit around the icy moon will offer continuous high-resolution thermal mapping with a 384 x 288-pixel sensor, capable of 80 m/pixel resolution from 150 km altitude. This will improve constraints on the Enceladus' global conductive heat loss, and better characterise and contextualise its active South Polar Terrain. To optimise the instrument's filters for thermal emission measurements, a digital model of the filter assembly was developed. This lightweight, low-power instrument is capable of significantly advancing the understanding of Enceladus' geological behaviour and evaluating its potential habitability by providing comprehensive temperature data essential for interpreting its evolution.",
+      "authors": [
+        "D. G. Lyster",
+        "C. J. A. Howett",
+        "N. E. Bowles",
+        "K. Nowicki",
+        "R. Evans",
+        "T. J. Warren"
+      ],
+      "categories": [
+        "astro-ph.IM",
+        "astro-ph.EP"
+      ],
+      "published": "2026-10-29",
+      "updated": "2026-10-29",
+      "pdf_link": "https://arxiv.org/pdf/2610.40456v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2610.40456v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 15,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?w=800&q=80"
+    },
+    {
+      "id": "2610.38852v1",
+      "title": "Reconciling Giant Impacts with the Radius Valley: The Role of Silicate-Hydrogen Miscibility for Sub-Neptunes",
+      "abstract": "Giant impacts are believed to play a major role in the assembly, long-term orbital stability, and resonant structure of exoplanetary systems. We revisit giant impact driven atmospheric escape while chemically coupling the interior and atmosphere by allowing for silicate-hydrogen miscibility. Incorporating hydrogen-silicate miscibility fundamentally alters atmospheric escape compared to chemically-inert models. While previous work on chemically-inert planets has found sub-Neptunes to undergo total atmospheric loss following collisions with impactors only a tenth of their mass, we find that including silicate-hydrogen miscibility can significantly reduce mass loss. This results from an increased envelope mean molecular weight, interior hydrogen sequestration, and modified compositional gradients in miscible planets. Miscible planets sequester hydrogen in their interiors post-impact, reducing the hydrogen available in the envelope for mass loss. As planets cool, hydrogen exsolves into their envelopes. Because more massive planets cool slower, they sequester hydrogen for longer, undergoing less mass loss. Thus, atmospheric retention depends more strongly on planet mass than impact energy, provided the impact does not gravitationally unbind the planet. Planets with masses 4.50 M⊕ and hydrogen mass fractions > 5 % typically retain atmospheres of several percent after a giant impact, while planets with masses 3.30 M⊕ are almost entirely stripped of their envelopes. This allows sub-Neptunes with hydrogen-dominated envelopes to survive giant impacts. Contrastingly, lower-mass planets, which ultimately populate the super-Earth regime, are frequently stripped of their envelopes. Our findings suggest that super-Earths and sub-Neptunes could originate from a single population with rocky interiors even if post-disk-dispersal giant impacts were common.",
+      "authors": [
+        "Eva Zlimen",
+        "Hilke E. Schlichting",
+        "James G. Rogers"
+      ],
+      "categories": [
+        "astro-ph.EP"
+      ],
+      "published": "2026-10-28",
+      "updated": "2026-10-28",
+      "pdf_link": "https://arxiv.org/pdf/2610.38852v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2610.38852v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 13,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2610.38852v1/2610.38852v1/misc-im-impact-comp.png"
+    },
+    {
+      "id": "2610.40527v1",
+      "title": "Mapping Stellar Obliquity Across Space and Time",
+      "abstract": "The angle between a star's rotational angular momentum vector and the orbital angular momentum vector of its planets---stellar obliquity---encodes the initial conditions and dynamical history of planetary systems. Variations in obliquity with orbital separation may arise from either primordial disk structure (e.g., broken or warped protoplanetary disks with misaligned inner and outer regions) or subsequent dynamical interactions with planets or external perturbers. Comparing obliquities across orbital distance therefore probes the spatial imprint of these processes, while comparisons across age constrain their temporal evolution. To test for signatures of obliquity evolution in both space and time, we compare stellar inclinations with orbital inclinations for 114 single Sun-like stars spanning four samples that probe distinct regimes of orbital separation and age: 49 protoplanetary disk systems, 24 debris disk systems, 21 warm Jupiter systems, and 20 hot Jupiter systems. We find minimum misalignment rates of 33⁺⁷₋₆% for protoplanetary disk systems, 21⁺⁹₋₇% for debris disk systems, 23⁺¹⁰₋₈% for warm Jupiter systems, and 20⁺⁹₋₈% for hot Jupiter systems. These rates are consistent within 1σ across all samples. The absence of significant variation in minimum-obliquity distributions with either orbital separation or system age suggests that stellar obliquities for Sun-like stars may be largely established at formation with limited subsequent evolution in both space and time. These results are consistent with post-formation inclination evolution being either infrequent, confined to small misalignments, or restricted to regions of parameter space not examined here---such as systems with close stellar companions, hot host stars, small planets, and long-period giant planets.",
+      "authors": [
+        "Lauren I. Biddle",
+        "Brendan P. Bowler"
+      ],
+      "categories": [
+        "astro-ph.EP"
+      ],
+      "published": "2026-10-29",
+      "updated": "2026-10-29",
+      "pdf_link": "https://arxiv.org/pdf/2610.40527v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2610.40527v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 6,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2610.40527v1/2610.40527v1/Teff_vs_Deltai.png"
+    },
+    {
+      "id": "2610.38097v1",
+      "title": "Young Planets around Young Accreting Stars: II. Circumplanetary Disk Formation and Accretion",
+      "abstract": "We present global 3-D ideal-MHD simulations of young giant planets in a protoplanetary disk (PPD) undergoing magnetospheric accretion onto its host star. Extending our previous work, we insert three planets with planet-to-star mass ratio \\(q = 0.01\\) (\\( 10\\) Jupiter masses) at 0.45, 0.9, and 1.8 times the magnetospheric truncation radius, \\(R_T\\) , thereby probing the low-density cavity, disk-cavity boundary, and turbulent inner disk. The outermost two planets develop circumplanetary disks (CPDs), whereas the innermost planet forms no persistent bound structure because its high velocity relative to the magnetosphere reduces the effective Bondi radius below the planet's size. The outermost planet forms a stable, coplanar CPD whose inner region is rotationally supported and rotates at nearly the local Keplerian speed within \\( 0.25\\) Hill radii. High-latitude inflow and midplane decretion produce meridional circulation and continuous recycling between the CPD and surrounding disk. Inflow through the Hill sphere is comparable to previous Hill-based hydrodynamic estimates. The middle planet, located near \\(R_T\\), develops a persistent polar CPD whose angular-momentum vector is parallel to the disk midplane, demonstrating that coherent circumplanetary structures can form within highly dynamic magnetospheric flows. Based on both the effective Bondi radius and thermal-mass criterion, we identify conditions under which massive giant planets form CPDs in the inner disk. Estimated planetary inflow accretion rates imply mass-doubling timescales \\( 10\\) Myr due to the low disk surface density, suggesting that, in the magnetically active zone, these planets undergo only limited late-stage growth before disk dispersal.",
+      "authors": [
+        "Arturo Cevallos Soto",
+        "Zhaohuan Zhu"
+      ],
+      "categories": [
+        "astro-ph.EP"
+      ],
+      "published": "2026-10-28",
+      "updated": "2026-10-28",
+      "pdf_link": "https://arxiv.org/pdf/2610.38097v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2610.38097v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 5,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2610.38097v1/2610.38097v1/Planet_collage_streamlines_more_zoom_rev.png"
+    },
+    {
+      "id": "2610.37968v1",
+      "title": "Probabilistic Stellar Mass and Radius Estimation with Bayesian Hierarchical Stacking",
+      "abstract": "Accurate stellar parameters are essential for the characterisation of exoplanets, yet most host stars lack direct measurements of mass and radius. We aim to predict stellar masses and radii from commonly available observables and to quantify uncertainties and systematic effects in a way that is consistent with stellar observations. By not relying on a single model, we aim to obtain more robust predictive distributions and reduce sensitivity to model misspecification and outliers. We develop a Bayesian machine-learning framework that combines three probabilistic models through Bayesian hierarchical stacking (BHS): a Bayesian additive regression tree model, a two-process heteroscedastic sparse Gaussian process, and a hierarchical Bayesian neural network. The method propagates measurement uncertainties, accounts for correlations among inputs, and aggregates model variance into final predictive distributions. On a held-out test set the method attains a mean absolute relative difference (MARD) of 3.5% for mass and 2.1% for radius, improving on empirical-relation-based methods and standard machine-learning baselines. For 44 Kepler LEGACY stars, the BHS masses differ from estimates obtained with the BAyesian STellar Algorithm (BASTA) by a MARD of 4.8%, compared with 8.5% between the empirical relations and BASTA. Applied to about 2400 exoplanet host stars, the predictions differ from literature values by a MARD of 2.7% in both mass and radius. Residual analysis reveals mild underestimation for cool dwarfs, consistent with sparse training coverage, and positive offsets near the main-sequence turn-off that may reflect priors in isochrone-based catalogues. Internal consistency with g = GM/R² is greater for the BHS predictions, with a scatter in Delta log g lower by a factor of three than that of the literature values.",
+      "authors": [
+        "Maxence Lamirel",
+        "Andrés Moya",
+        "Roberto J. López-Sastre",
+        "Luis Manuel Sarro"
+      ],
+      "categories": [
+        "astro-ph.SR",
+        "astro-ph.EP",
+        "astro-ph.IM"
+      ],
+      "published": "2026-10-27",
+      "updated": "2026-10-27",
+      "pdf_link": "https://arxiv.org/pdf/2610.37968v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2610.37968v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 5,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2610.37968v1/2610.37968v1/fig13a.png"
+    },
+    {
+      "id": "2610.37789v1",
+      "title": "Revisiting Sub-Neptune Population Synthesis: The Role of Core Luminosity in Boil-off, Photoevaporation, and the Radius Distribution",
+      "abstract": "The observed bimodal radius distribution of close-in small planets provides important constraints on their formation and evolution. Two atmospheric escape mechanisms, photoevaporation and core-powered mass loss, have been widely invoked to explain this distribution. In this work, we revisit the physical assumptions underlying these models and investigate the role of core luminosity in driving outflows and shaping the radius distribution. We develop a population synthesis framework based on the SEAMIST evolution model, which self-consistently couples the two mass-loss mechanisms while accounting for envelope metallicity. We find that envelope metallicity strongly affects the resulting radius distribution, with 50-100× solar metallicity providing a good match to the observed population. Boil-off generally dominates atmospheric mass loss, while photoevaporation typically removes at most 3 wt\\% of the envelope mass. We find that core luminosity contributes only 10-20\\% of the thermal energy available for envelope re-equilibration during boil-off, producing an absolute mass-loss enhancement of only 0.4wt\\%. Its effect is larger during photoevaporation, where the longer mass-loss timescale allows core heating to accumulate. Nevertheless, core luminosity has little impact on the long-term planetary radius distribution. These results suggest that core-powered mass loss is better understood as a modification to atmospheric escape through its lower-boundary conditions rather than as a distinct mass-loss mechanism. In our best-fit model, the radiative atmosphere contributes a significant 20\\% of the total optical radius. Consequently, we highlight the need for improved radiative-atmosphere modeling in sub-Neptune evolution models to better understand the observed population distribution.",
+      "authors": [
+        "Yao Tang",
+        "Jonathan J. Fortney",
+        "Natalie Batalha",
+        "Ruth Murray-Clay"
       ],
       "categories": [
         "astro-ph.EP"
       ],
       "published": "2026-10-27",
       "updated": "2026-10-27",
-      "pdf_link": "https://arxiv.org/pdf/2610.36446v1.pdf",
-      "abs_link": "https://arxiv.org/abs/2610.36446v1",
+      "pdf_link": "https://arxiv.org/pdf/2610.37789v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2610.37789v1",
       "is_exoplanet_focused": true,
-      "tweetability_score": 13,
-      "figure_url": "https://arxiv.org/html/2610.36446v1/2610.36446v1/Modirrousta-Galian_Fig1.png",
+      "tweetability_score": 5,
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -151,28 +362,28 @@
         "claim": "",
         "evidence": "",
         "question": ""
-      }
+      },
+      "figure_url": "https://arxiv.org/html/2610.37789v1/data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg=="
     },
     {
-      "id": "2610.36664v1",
-      "title": "Revisiting the Photometric Modulation Amplitudes of Kepler Planet Hosts: A Confounder-Adjusted Test of Stellar Spin-Orbit Alignment",
-      "abstract": "T. Mazeh and coworkers pioneered a method using rotational photometric modulation as a proxy to infer stellar obliquities in Kepler transiting planetary systems, based on the expected positive correlation between spot-induced modulation amplitudes and stellar inclinations. They found that planet hosts cooler than the Sun showed larger modulation amplitudes than comparison stars, consistent with low stellar obliquities. For hotter hosts, however, they reported the opposite - a negative amplitude difference (hosts minus comparison stars) - which is difficult to interpret in terms of viewing geometry. We show that this comparison is affected by confounding variables not controlled for in the sample selection. One such confounder is apparent magnitude, whose distributions differ markedly between the two samples for hotter stars and affect the observed modulation amplitudes. We develop resampling and likelihood-based approaches that enable comparison of the amplitude distributions at fixed apparent magnitude, stellar radius, and rotation period. The previously reported negative amplitude difference for hot hosts is no longer present in either analysis. The likelihood-based analysis finds a positive amplitude difference up to 6100\\,K that becomes consistent with zero at higher temperatures, while the resampling analysis shows a similar but less pronounced trend. This result is qualitatively consistent with independent v i analyses suggesting low obliquities for cooler super-Earth and sub-Neptune hosts and broader obliquity distributions for hotter ones. This may also indicate a gradual change in the obliquity distribution with stellar temperature, although changes in spot distributions or selection effects could also contribute to the photometric trends in hot stars.",
+      "id": "2610.37792v1",
+      "title": "Searching for Circumplanetary Dust in the Cavity of the AB Aurigae Disk with ALMA",
+      "abstract": "The young intermediate-mass star AB Aurigae is surrounded by a transition disk whose cavity contains several proposed protoplanets, including the debated source \"AB Aur b\" at a projected separation of ≈ 0.6 arcsec (≈ 93 au). To search for circumplanetary material associated with these candidates, we have obtained the most sensitive ( 20 μJy/beam rms) and highest angular resolution ( 30 mas) ALMA Band 7 (0.88 mm) observations of AB Aur to date. We recover the asymmetric dust ring in the continuum emission peaking at 0.9 arcsec ( 140 au) and compact emission at the stellar position, but detect no point source at the location of AB Aur b or any of the other proposed protoplanet candidates down to a 3σ limit of 60 μJy. For optically thin emission, this corresponds to a dust mass of 0.0059 M_⊕ (for a dust temperature of 40 K), comparable to the circumplanetary disk around PDS 70 c. The ¹²CO emission fills the continuum cavity, revealing inner spiral structure and a clear rotation pattern. The gas at the position of AB Aur b is smoothly connected to the ambient disk with no localized excess or obvious kinematic deviation. If any proposed candidates are accreting, their circumplanetary material must have a low dust mass, a small physical size, dust that is optically thick, or a dearth of large mm-emitting grains.",
       "authors": [
-        "Kento Masuda",
-        "Subo Dong"
+        "Lillian Jiang",
+        "Brendan P. Bowler",
+        "Ya-lin Wu",
+        "Yifan Zhou"
       ],
       "categories": [
-        "astro-ph.EP",
-        "astro-ph.IM",
-        "astro-ph.SR"
+        "astro-ph.EP"
       ],
       "published": "2026-10-27",
       "updated": "2026-10-27",
-      "pdf_link": "https://arxiv.org/pdf/2610.36664v1.pdf",
-      "abs_link": "https://arxiv.org/abs/2610.36664v1",
+      "pdf_link": "https://arxiv.org/pdf/2610.37792v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2610.37792v1",
       "is_exoplanet_focused": true,
-      "tweetability_score": 13,
-      "figure_url": "https://arxiv.org/html/2610.36664v1/2610.36664v1/lambda_teff.png",
+      "tweetability_score": 0,
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -180,38 +391,8 @@
         "claim": "",
         "evidence": "",
         "question": ""
-      }
-    },
-    {
-      "id": "2610.37004v1",
-      "title": "Unbound grains in gaseous debris discs",
-      "abstract": "Context. Some debris discs contain cold molecular gas. The origin of this gas is one of the key questions in our understanding of the evolution of planetary systems. The effect of gas on the smallest dust grains, which are expected to be unbound due to radiation pressure, is not well understood. The unbound grains contribute to the brightness of scattered light and thermal emission from the disc halo at short wavelengths. Aims. We explored the conditions under which gas can prevent or slow down the escape of unbound grains and increase their number density in the disc halo sufficiently to affect its brightness and reveal properties of the gas. Methods. We numerically integrated the equations of motion of dust grains released on unbound orbits in optically thin, gaseous debris discs, taking into account stellar gravity, radiation pressure, Poynting-Robertson drag, and gas drag. Results. We find that gas drag can significantly slow down the escape of unbound grains only for very high gas masses, such as those expected if the gas is remnant protoplanetary gas and not of secondary origin. We also present an analytical model for estimating the density of unbound grains in gaseous discs. Conclusions. If a difference in the abundance of unbound grains between gaseous and non-gaseous debris discs were observed, it would imply that the gas in debris discs is protoplanetary. Currently, there is no evidence of such a difference, suggesting that the gas detected in debris discs is either secondary or strongly depleted protoplanetary gas.",
-      "authors": [
-        "Marija R. Jankovic",
-        "Tim D. Pearce",
-        "Johan Olofsson",
-        "Nicole Pawellek",
-        "Mark C. Wyatt"
-      ],
-      "categories": [
-        "astro-ph.EP",
-        "astro-ph.SR"
-      ],
-      "published": "2026-10-27",
-      "updated": "2026-10-27",
-      "pdf_link": "https://arxiv.org/pdf/2610.37004v1.pdf",
-      "abs_link": "https://arxiv.org/abs/2610.37004v1",
-      "is_exoplanet_focused": true,
-      "tweetability_score": 6,
-      "figure_url": "https://arxiv.org/html/2610.37004v1/data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==",
-      "summary": "",
-      "summary_html": "<p><em>Summary unavailable.</em></p>",
-      "tweet_hook": {
-        "hook": "",
-        "claim": "",
-        "evidence": "",
-        "question": ""
-      }
+      },
+      "figure_url": "https://arxiv.org/html/2610.37792v1/2610.37792v1/ab_aur_continuum_panels.png"
     }
   ]
 }

@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 29 Oct 2026 07:55:21 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 30 Oct 2026 07:59:34 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,64 +15,125 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>Measuring masses of transiting Earth-like planets: first insights from the PLATO RV data challenge</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-36201v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-36201v1</guid>
-      <pubDate>Wed, 28 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>M. Cretignier et al.</dc:creator>
+      <title>PyMsOfa 2.0: A Pure-Python Implementation of the IAU Standards of Fundamental Astronomy Service</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-38410v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-38410v1</guid>
+      <pubDate>Fri, 30 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Dongjie Tan, Jianghui Ji, Jiacheng Liu</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.IM</category>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.GA</category>
+        <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>Seven Years of TESS Precovery Observations of the Dwarf-planet Candidate 2026 ED₁₃₈</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-40106v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-40106v1</guid>
+      <pubDate>Fri, 30 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Te Han et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.IM</category>
     </item>
     <item>
-      <title>A Model to Map Brown Dwarf Companions to White Dwarfs in Partial Secondary Eclipse</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-36141v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-36141v1</guid>
-      <pubDate>Wed, 28 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Arthur D. Adams et al.</dc:creator>
+      <title>2026 ED138: A Large Trans-Neptunian Object in Early Rubin Observatory Data, and How Many More May Remain</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-38693v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-38693v1</guid>
+      <pubDate>Fri, 30 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Matthew J. Holman et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
-        <category>astro-ph.SR</category>
+        <category>astro-ph.IM</category>
     </item>
     <item>
-      <title>Propulsion Systems for a Starshade Rendezvous Mission with the Habitable World Observatory</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-36200v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-36200v1</guid>
-      <pubDate>Wed, 28 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Mario Damiano et al.</dc:creator>
+      <title>A double debris disc around a white dwarf sculpted by two planetary bodies</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-37773v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-37773v1</guid>
+      <pubDate>Fri, 30 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Nicola Pietro Gentile Fusillo et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.SR</category>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>The Korean Space Telescope (KST): A Dedicated Space Observatory for the Dark Universe</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-39094v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-39094v1</guid>
+      <pubDate>Fri, 30 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>M. James Jee et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.IM</category>
+        <category>astro-ph.CO</category>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.GA</category>
+        <category>hep-ex</category>
+    </item>
+    <item>
+      <title>Tailoring Infra-Red Filters for Global Mapping of Enceladus&#x27; Thermal Environment</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-40456v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-40456v1</guid>
+      <pubDate>Fri, 30 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>D. G. Lyster et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.IM</category>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>Retention of primordial atmospheres through giant impacts</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-36446v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-36446v1</guid>
-      <pubDate>Wed, 28 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Darius Modirrousta-Galian, Jun Korenaga</dc:creator>
+      <title>Reconciling Giant Impacts with the Radius Valley: The Role of Silicate-Hydrogen Miscibility for Sub-Neptunes</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-38852v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-38852v1</guid>
+      <pubDate>Fri, 30 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Eva Zlimen, Hilke E. Schlichting, James G. Rogers</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>Revisiting the Photometric Modulation Amplitudes of Kepler Planet Hosts: A Confounder-Adjusted Test of Stellar Spin-Orbit Alignment</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-36664v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-36664v1</guid>
-      <pubDate>Wed, 28 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Kento Masuda, Subo Dong</dc:creator>
+      <title>Mapping Stellar Obliquity Across Space and Time</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-40527v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-40527v1</guid>
+      <pubDate>Fri, 30 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Lauren I. Biddle, Brendan P. Bowler</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Young Planets around Young Accreting Stars: II. Circumplanetary Disk Formation and Accretion</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-38097v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-38097v1</guid>
+      <pubDate>Fri, 30 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Arturo Cevallos Soto, Zhaohuan Zhu</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Probabilistic Stellar Mass and Radius Estimation with Bayesian Hierarchical Stacking</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-37968v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-37968v1</guid>
+      <pubDate>Fri, 30 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Maxence Lamirel et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.SR</category>
         <category>astro-ph.EP</category>
         <category>astro-ph.IM</category>
-        <category>astro-ph.SR</category>
     </item>
     <item>
-      <title>Unbound grains in gaseous debris discs</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-37004v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-37004v1</guid>
-      <pubDate>Wed, 28 Oct 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Marija R. Jankovic et al.</dc:creator>
+      <title>Revisiting Sub-Neptune Population Synthesis: The Role of Core Luminosity in Boil-off, Photoevaporation, and the Radius Distribution</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-37789v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-37789v1</guid>
+      <pubDate>Fri, 30 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Yao Tang et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
-        <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>Searching for Circumplanetary Dust in the Cavity of the AB Aurigae Disk with ALMA</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2610-37792v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-37792v1</guid>
+      <pubDate>Fri, 30 Oct 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Lillian Jiang et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
     </item>
   </channel>
 </rss>
