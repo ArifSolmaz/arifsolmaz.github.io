@@ -1,0 +1,52 @@
+name: Build and install Stellarium Web Engine
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/build-stellarium-engine.yml
+permissions:
+  contents: write
+jobs:
+  engine:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: site
+      - uses: actions/checkout@v4
+        with:
+          repository: Stellarium/stellarium-web-engine
+          path: engine
+          submodules: recursive
+      - uses: mymindstorm/setup-emsdk@v14
+        with:
+          version: latest
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y scons pkg-config
+      - name: Compile official Stellarium Web Engine
+        working-directory: engine
+        run: make js
+      - name: Install and verify artifacts
+        run: |
+          set -euo pipefail
+          mkdir -p site/assets/stellarium
+          find engine -name 'stellarium-web-engine.js' -o -name 'stellarium-web-engine.wasm'
+          cp engine/build/stellarium-web-engine.js site/assets/stellarium/
+          cp engine/build/stellarium-web-engine.wasm site/assets/stellarium/
+          test -s site/assets/stellarium/stellarium-web-engine.js
+          test -s site/assets/stellarium/stellarium-web-engine.wasm
+          file site/assets/stellarium/*
+      - name: Commit compiled engine
+        working-directory: site
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/stellarium/stellarium-web-engine.js assets/stellarium/stellarium-web-engine.wasm
+          if ! git diff --cached --quiet; then
+            git commit -m 'Install compiled official Stellarium Web Engine'
+            git push
+          fi
