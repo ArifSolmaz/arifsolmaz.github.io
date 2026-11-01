@@ -1,0 +1,32 @@
+name: Update blog index
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'blog/**/index.html'
+      - 'scripts/build_blog_index.py'
+      - '.github/workflows/blog-index.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  index:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Rebuild blog index
+        run: python scripts/build_blog_index.py
+      - name: Commit changed index
+        run: |
+          if ! git diff --quiet -- blog/posts.json; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add blog/posts.json
+            git commit -m "Auto-update blog post index"
+            git push
+          fi
