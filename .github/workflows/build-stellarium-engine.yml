@@ -44,6 +44,12 @@ jobs:
               # Emscripten now warns when linker flags are passed to compile-only steps.
               # Upstream passes MODULARIZE to both; avoid treating that warning as fatal.
               updated=updated.replace('-Werror', '-Wno-error=unused-command-line-argument')
+              # Modern Emscripten no longer exposes these legacy JS runtime helpers.
+              for name in ('ALLOC_NORMAL','allocate','_malloc','_free'):
+                  updated=updated.replace("'"+name+"',", '')
+                  updated=updated.replace(",'"+name+"'", '')
+              # malloc/free, if needed by the generated JS, belong in EXPORTED_FUNCTIONS.
+              updated=updated.replace('EXPORTED_FUNCTIONS=[]', "EXPORTED_FUNCTIONS=['_malloc','_free']")
               if updated != content:
                   p.write_text(updated)
                   changed.append(str(p))
