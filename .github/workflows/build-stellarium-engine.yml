@@ -49,7 +49,8 @@ jobs:
                   updated=updated.replace("'"+name+"',", '')
                   updated=updated.replace(",'"+name+"'", '')
               # malloc/free, if needed by the generated JS, belong in EXPORTED_FUNCTIONS.
-              updated=updated.replace('EXPORTED_FUNCTIONS=[]', "EXPORTED_FUNCTIONS=['_malloc','_free']")
+              # Preserve the outer single-quoted Python literal in SConstruct.
+              updated=updated.replace('EXPORTED_FUNCTIONS=[]', 'EXPORTED_FUNCTIONS=["_malloc","_free"]')
               if updated != content:
                   p.write_text(updated)
                   changed.append(str(p))
