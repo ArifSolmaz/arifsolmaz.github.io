@@ -607,17 +607,26 @@ a:focus-visible{outline:2px solid var(--color-stellar);outline-offset:5px}
         </div>
       </div>
 
-      <!-- Writing / blog announcement -->
+      <!-- Latest blog post, automatically sourced from /blog/posts.json -->
       <div class="info-section" lang="tr">
-        <p class="info-label">Yazılar · Yeni</p>
+        <p class="info-label">Yazılar · Son yazı</p>
         <div class="links">
-          <a href="/blog/yasamayi-ne-zamana-erteliyoruz/" class="link featured" style="line-height:1.55">
-            <span><strong style="display:block;color:#ffd475;font-weight:500">Yaşamayı Ne Zamana Erteliyoruz?</strong><small style="display:block;color:#a4a4b5;margin-top:3px">Akademik hayat, çalışma tutkusu ve sosyal yaşam üzerine</small></span>
+          <a id="latest-blog-link" href="/blog/yasamayi-ne-zamana-erteliyoruz/" class="link featured" style="line-height:1.55">
+            <span><strong id="latest-blog-title" style="display:block;color:#ffd475;font-weight:500">Yaşamayı Ne Zamana Erteliyoruz?</strong><small id="latest-blog-description" style="display:block;color:#a4a4b5;margin-top:3px">Akademik hayat, çalışma tutkusu ve sosyal yaşam üzerine</small></span>
             <span class="link-arrow">→</span>
           </a>
           <a href="/blog/" class="link">Tüm yazılar <span class="link-arrow">→</span></a>
         </div>
       </div>
+      <script>
+        fetch('/blog/posts.json', {cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Blog index unavailable');return r.json()})
+          .then(posts=>{if(!Array.isArray(posts)||!posts.length)return;
+            const p=posts[0];if(typeof p.url!=='string'||!p.url.startsWith('/blog/'))return;
+            document.getElementById('latest-blog-link').href=p.url;
+            document.getElementById('latest-blog-title').textContent=p.title||'Son yazı';
+            document.getElementById('latest-blog-description').textContent=p.description||'Yeni blog yazısı';
+          }).catch(()=>{});
+      </script>
 
       <!-- Idea of the day -->
 <div class="info-section">
