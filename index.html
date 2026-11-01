@@ -7,6 +7,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Outfit:wght@300;400;500;600&family=Space+Mono&display=swap" rel="stylesheet">
 <style>
+#stellarium-hero-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:-2;pointer-events:none;opacity:0;transition:opacity 1.2s ease}.hero.sky-active #stellarium-hero-canvas{opacity:1}.hero.sky-active::before{background-image:linear-gradient(90deg,rgba(1,8,19,.8),rgba(2,10,23,.12) 80%),linear-gradient(0deg,#040911,transparent 35%)!important;z-index:-1}.sky-location{position:absolute;right:20px;bottom:12px;z-index:2;font:11px "Space Mono",monospace;color:#e0e8f4;background:rgba(3,9,19,.6);border-radius:6px;padding:7px}.sky-location button{border:0;background:none;color:var(--gold);cursor:pointer;font:inherit}
+
 :root{color-scheme:dark;--bg:#040911;--ink:#f6f4f0;--muted:#b4bbc7;--gold:#ffd475;--line:rgba(255,255,255,.17)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.65 Outfit,system-ui,sans-serif}a{color:inherit;text-decoration:none}a:focus-visible{outline:2px solid var(--gold);outline-offset:5px}
 .hero{min-height:650px;min-height:76svh;position:relative;isolation:isolate;display:flex;flex-direction:column;background:#081422;overflow:hidden}
@@ -93,7 +95,7 @@ nav a[aria-current="page"]{position:relative}nav a[aria-current="page"]::after{c
 </style>
 </head>
 <body>
-<section class="hero" id="top">
+<section class="hero" id="top"><canvas id="stellarium-hero-canvas" aria-hidden="true"></canvas><div class="sky-location" id="sky-location" hidden><span id="sky-place">Istanbul</span> · Live sky <button type="button" id="sky-permission">Use my location</button></div>
 <header class="site-header"><a class="brand" href="/" aria-label="Arif Solmaz home">Arif <em>Solmaz</em></a>
 <button class="mobile-menu" type="button" aria-controls="main-nav" aria-expanded="false">Menu <span aria-hidden="true">☰</span></button><nav id="main-nav" aria-label="Main navigation"><a href="/" aria-current="page">Home</a><a href="/lab/">Research</a><a href="https://ui.adsabs.harvard.edu/search/fq=%7B!type%3Daqp%20v%3D%24fq_database%7D&fq_database=(database%3Aastronomy%20OR%20database%3Aphysics)&q=-docs(1f8e5e2fda6aa0148343a32ba70673cc)%20%20author%3A%22solmaz%2C%20arif%22&sort=date%20desc%2C%20bibcode%20desc&p_=0" target="_blank" rel="noopener">Publications</a><a href="/courses/">Teaching</a><a href="/blog/">Blog</a><a href="/sky/">Live Sky</a><a href="#contact">Contact</a></nav></header>
 <div class="hero-main"><p class="eyebrow">Astronomy &amp; Data Science</p><h1>Exploring planets,<br>stars and galaxies</h1><p class="lead">Studying the Universe through data, modeling and computational methods, and sharing what we learn through research, teaching and writing.</p><div class="actions"><a class="button primary" href="/lab/">Research <span aria-hidden="true">→</span></a><a class="button" href="/blog/">Read the Blog</a><a class="button" href="/sky/">Live Sky ✦</a></div></div>
@@ -120,6 +122,51 @@ mobileMenu.addEventListener('click',()=>{const open=mobileMenu.getAttribute('ari
 mainNav.addEventListener('click',event=>{if(event.target.closest('a')){mobileMenu.setAttribute('aria-expanded','false');mainNav.classList.remove('is-open');}});
 document.addEventListener('keydown',event=>{if(event.key==='Escape'){mobileMenu.setAttribute('aria-expanded','false');mainNav.classList.remove('is-open');}});
 
+
+/* The canvas is the hero background, never a separate Stellarium iframe. */
+(function(){
+ const hero=document.getElementById('top'),canvas=document.getElementById('stellarium-hero-canvas');
+ const locationBar=document.getElementById('sky-location'),place=document.getElementById('sky-place');
+ const locationButton=document.getElementById('sky-permission');
+ let engine=null,position={lat:41.0082,lng:28.9784};
+ function setPosition(){
+  if(!engine)return;
+  try{
+   const observer=engine.core.observer;
+   observer.latitude=position.lat*engine.D2R;
+   observer.longitude=position.lng*engine.D2R;
+  }catch(err){console.warn('Stellarium observer setup:',err)}
+ }
+ function syncClock(){
+  if(!engine)return;
+  try{engine.core.time.utc=new Date().toISOString()}catch(err){console.warn('Stellarium time sync:',err)}
+ }
+ function loadEngine(){
+  const script=document.createElement('script');script.src='/assets/stellarium/stellarium-web-engine.js';script.async=true;
+  script.onerror=()=>console.info('Stellarium engine not installed; keeping photographic hero.');
+  script.onload=()=>{
+   if(typeof StelWebEngine!=='function')return;
+   StelWebEngine({wasmFile:'/assets/stellarium/stellarium-web-engine.wasm',canvas,
+    onReady(stel){engine=stel;setPosition();syncClock();
+     try{
+      const base='https://stellarium.sfo2.cdn.digitaloceanspaces.com/';
+      stel.core.stars.addDataSource({url:base+'stars'});
+      stel.core.milkyway.addDataSource({url:base+'surveys/milkyway'});
+     }catch(err){console.warn('Stellarium data sources:',err)}
+     hero.classList.add('sky-active');locationBar.hidden=false;
+     setInterval(syncClock,60000);
+    }
+   }).catch?.(err=>console.warn('Stellarium initialization:',err));
+  };document.head.appendChild(script);
+ }
+ locationButton.addEventListener('click',()=>{
+  if(!navigator.geolocation){place.textContent='Istanbul (default)';return}
+  navigator.geolocation.getCurrentPosition(p=>{
+   position={lat:p.coords.latitude,lng:p.coords.longitude};place.textContent='Your location';setPosition();
+  },()=>{place.textContent='Istanbul (default)'},{timeout:10000,maximumAge:300000});
+ });
+ if('WebGLRenderingContext'in window)loadEngine();
+})();
 fetch('/blog/posts.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Blog unavailable');return r.json()}).then(posts=>{if(!Array.isArray(posts)||!posts.length)return;const p=posts[0];if(typeof p.url!=='string'||!/^\/blog\/[a-z0-9-]+\/$/.test(p.url))return;document.getElementById('latest-blog-link').href=p.url;document.getElementById('latest-blog-title').textContent=p.title||'Latest post';document.getElementById('latest-blog-description').textContent=p.description||'';}).catch(()=>{});
 </script>
 </body></html>
