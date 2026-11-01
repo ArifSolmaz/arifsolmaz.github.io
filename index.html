@@ -61,6 +61,19 @@ nav a[aria-current="page"]{position:relative}nav a[aria-current="page"]::after{c
  footer{margin-top:27px}
 }
 @media(max-width:360px){.hero-main{padding-top:58px}.tile h2{font-size:17px}.tile{padding:14px 11px}.tile p{font-size:11px}}
+/* Reference composition: compact cinematic first viewport */
+@media(min-width:981px){
+.hero{min-height:0;height:76vh;max-height:760px;min-height:570px}
+.hero-main{padding-top:60px;padding-bottom:55px;justify-content:center}
+.content{padding-top:24px}
+.grid{gap:28px}
+.tile{min-height:153px}
+}
+.hero::before{background-image:linear-gradient(90deg,rgba(1,8,19,.77) 0%,rgba(2,10,23,.48) 32%,rgba(3,10,22,.08) 65%),linear-gradient(0deg,#040911 0%,rgba(4,9,17,.06) 21%,transparent 52%),url('/assets/images/milky-way-hero.jpg')}
+.eyebrow{letter-spacing:.26em}
+.tile{background:linear-gradient(135deg,rgba(7,18,32,.93),rgba(5,13,25,.94));border-color:rgba(193,207,224,.22)}
+.tile h2{font-size:24px}
+@media(max-width:650px){.hero{height:auto;max-height:none;min-height:0}.hero-main{min-height:470px}.hero::before{background-position:center,center,59% center}.tile h2{font-size:19px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
 </style>
 </head>
