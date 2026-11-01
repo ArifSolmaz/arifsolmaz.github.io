@@ -1,0 +1,47 @@
+name: Vendor homepage background
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  vendor-image:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download and validate image
+        run: |
+          set -euo pipefail
+          mkdir -p assets/images
+          curl --fail --location --retry 3 --max-time 90 \
+            'https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=2400&q=85' \
+            -o assets/images/milky-way-hero.jpg
+          file assets/images/milky-way-hero.jpg
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('assets/images/milky-way-hero.jpg')
+          assert p.stat().st_size > 30000, "Image unexpectedly small"
+          assert p.read_bytes()[:3] == b'\xff\xd8\xff', "Expected JPEG"
+          print('Validated JPEG', p.stat().st_size, 'bytes')
+          PY
+      - name: Update homepage to local asset
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('index.html')
+          html=p.read_text(encoding='utf-8')
+          remote='https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=2400&q=85'
+          local='/assets/images/milky-way-hero.jpg'
+          if remote in html:
+              p.write_text(html.replace(remote,local),encoding='utf-8')
+          elif local not in html:
+              raise SystemExit('Neither expected image reference found; refusing to modify')
+          PY
+      - name: Commit local image and homepage
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/images/milky-way-hero.jpg index.html
+          if ! git diff --cached --quiet; then
+            git commit -m 'Host cinematic hero background in repository'
+            git push
+          fi
