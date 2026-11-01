@@ -27,6 +27,26 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y scons pkg-config
+      - name: Adapt upstream Emscripten flags
+        working-directory: engine
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          changed=[]
+          for p in Path('.').rglob('*'):
+              if not p.is_file() or '.git' in p.parts or p.suffix not in ('.py','.txt','.mk',''):
+                  continue
+              try:
+                  content=p.read_text()
+              except (UnicodeError,OSError):
+                  continue
+              if 'EXTRA_EXPORTED_RUNTIME_METHODS' in content:
+                  p.write_text(content.replace('EXTRA_EXPORTED_RUNTIME_METHODS','EXPORTED_RUNTIME_METHODS'))
+                  changed.append(str(p))
+          if not changed:
+              raise SystemExit('Upstream Emscripten option not found; inspect build configuration')
+          print('Updated build configuration:',changed)
+          PY
       - name: Compile official Stellarium Web Engine
         working-directory: engine
         run: make js
