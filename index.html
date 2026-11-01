@@ -132,32 +132,45 @@ document.addEventListener('keydown',event=>{if(event.key==='Escape'){mobileMenu.
  function setPosition(){
   if(!engine)return;
   try{
-   const observer=engine.core.observer;
-   observer.latitude=position.lat*engine.D2R;
-   observer.longitude=position.lng*engine.D2R;
-  }catch(err){console.warn('Stellarium observer setup:',err)}
+   engine.observer.latitude=position.lat*engine.D2R;
+   engine.observer.longitude=position.lng*engine.D2R;
+  }catch(err){console.error('Stellarium observer:',err)}
  }
  function syncClock(){
   if(!engine)return;
-  try{engine.core.time.utc=new Date().toISOString()}catch(err){console.warn('Stellarium time sync:',err)}
+  try{engine.observer.utc=engine.date2MJD(new Date())}
+  catch(err){console.error('Stellarium UTC:',err)}
  }
  function loadEngine(){
-  const script=document.createElement('script');script.src='/assets/stellarium/stellarium-web-engine.js';script.async=true;
-  script.onerror=()=>console.info('Stellarium engine not installed; keeping photographic hero.');
+  const script=document.createElement('script');
+  script.src='/assets/stellarium/stellarium-web-engine.js';script.async=true;
+  script.onerror=()=>console.error('Stellarium engine JavaScript unavailable');
   script.onload=()=>{
    if(typeof StelWebEngine!=='function')return;
-   StelWebEngine({wasmFile:'/assets/stellarium/stellarium-web-engine.wasm',canvas,
-    onReady(stel){engine=stel;setPosition();syncClock();
-     try{
-      const base='https://stellarium.sfo2.cdn.digitaloceanspaces.com/';
-      stel.core.stars.addDataSource({url:base+'stars'});
+   StelWebEngine({
+    wasmFile:'/assets/stellarium/stellarium-web-engine.wasm',canvas,
+    onReady(stel){
+     engine=stel;setPosition();syncClock();
+     // Use the published Gaia survey path, not the nonexistent CDN /stars root.
+     // Do not claim that the live sky is ready until survey metadata is reachable.
+     const base='https://data.stellarium.org/';
+     const stars=base+'surveys/gaia';
+     fetch(stars+'/properties',{mode:'cors'}).then(response=>{
+      if(!response.ok)throw Error('Gaia metadata HTTP '+response.status);
+      stel.core.stars.addDataSource({url:stars});
+      stel.core.planets.addDataSource({url:base+'surveys/sso/moon',key:'moon'});
+      stel.core.planets.addDataSource({url:base+'surveys/sso/sun',key:'sun'});
       stel.core.milkyway.addDataSource({url:base+'surveys/milkyway'});
-     }catch(err){console.warn('Stellarium data sources:',err)}
-     hero.classList.add('sky-active');locationBar.hidden=false;
+      hero.classList.add('sky-active');locationBar.hidden=false;
+     }).catch(err=>{
+      console.error('Stellarium catalog unavailable; retaining homepage photo:',err);
+      hero.classList.remove('sky-active');locationBar.hidden=true;
+     });
      setInterval(syncClock,60000);
     }
-   }).catch?.(err=>console.warn('Stellarium initialization:',err));
-  };document.head.appendChild(script);
+   }).catch(err=>console.error('Stellarium startup:',err));
+  };
+  document.head.appendChild(script);
  }
  locationButton.addEventListener('click',()=>{
   if(!navigator.geolocation){place.textContent='Istanbul (default)';return}
