@@ -74,6 +74,21 @@ nav a[aria-current="page"]{position:relative}nav a[aria-current="page"]::after{c
 .tile{background:linear-gradient(135deg,rgba(7,18,32,.93),rgba(5,13,25,.94));border-color:rgba(193,207,224,.22)}
 .tile h2{font-size:24px}
 @media(max-width:650px){.hero{height:auto;max-height:none;min-height:0}.hero-main{min-height:470px}.hero::before{background-position:center,center,59% center}.tile h2{font-size:19px}}
+
+.live-sky{margin-top:26px;padding:26px;border:1px solid var(--line);border-radius:15px;background:linear-gradient(135deg,#0b1b30,#07101d)}
+.live-sky-head{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.live-sky h2{font:400 clamp(26px,3vw,37px)/1.2 "Playfair Display",Georgia,serif;margin:0 0 8px}
+.live-sky p{color:var(--muted);margin:0 0 15px}
+.sky-controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.sky-controls button,.sky-controls select,.sky-controls a{font:500 14px Outfit,system-ui,sans-serif;border:1px solid rgba(255,255,255,.4);border-radius:9px;background:#13253b;color:#fff;min-height:43px;padding:10px 14px;cursor:pointer}
+.sky-controls button.primary{background:var(--gold);color:#0b111d;border-color:var(--gold)}
+.sky-controls select{max-width:190px}
+.sky-status{font-size:13px;margin:12px 0!important}
+.sky-view{position:relative;margin-top:14px;height:clamp(340px,50vw,570px);border-radius:12px;overflow:hidden;background:radial-gradient(ellipse at center,#172944,#060c17);border:1px solid rgba(255,255,255,.12)}
+.sky-view iframe{width:100%;height:100%;border:0;background:#060c17}
+.sky-placeholder{height:100%;display:flex;align-items:center;justify-content:center;text-align:center;padding:25px;color:#c8d2e1}
+.sky-note{font-size:12px!important;margin-top:12px!important}
+@media(max-width:650px){.live-sky{padding:18px;margin-top:13px}.sky-view{height:400px}.sky-controls{align-items:stretch}.sky-controls button,.sky-controls select,.sky-controls a{flex:1 1 auto}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
 </style>
 </head>
@@ -91,6 +106,18 @@ nav a[aria-current="page"]{position:relative}nav a[aria-current="page"]::after{c
 <a class="tile" href="/courses/"><svg viewBox="0 0 24 24"><path d="m2 9 10-5 10 5-10 5-10-5Zm4 3v5c4 3 8 3 12 0v-5M22 9v9"/></svg><h2>Teaching <span class="arrow">→</span></h2><p>Courses, lecture notes and interactive learning materials.</p></a>
 <a class="tile" href="/blog/"><svg viewBox="0 0 24 24"><path d="M5 3h11l4 4v14H5zM16 3v5h4M8 12h9M8 16h9"/></svg><h2>Blog <span class="arrow">→</span></h2><p>Essays on science, academic life and everyday questions.</p></a>
 </div>
+
+<section class="live-sky" id="live-sky" aria-labelledby="sky-heading">
+ <div class="live-sky-head"><div><p class="section-label">Live astronomical sky · Stellarium Web</p><h2 id="sky-heading">Your sky, right now</h2><p>Explore the actual celestial positions for your location and current time. The sky changes with Earth’s rotation.</p></div></div>
+ <div class="sky-controls">
+  <button class="primary" type="button" id="sky-geolocate">Use my location</button>
+  <select id="sky-city" aria-label="Choose an observing city"><option value="">Choose a city</option><option value="41.0082,28.9784">Istanbul</option><option value="39.9334,32.8597">Ankara</option><option value="38.4237,27.1428">Izmir</option><option value="51.5074,-0.1278">London</option><option value="40.7128,-74.0060">New York</option><option value="35.6762,139.6503">Tokyo</option><option value="-33.8688,151.2093">Sydney</option></select>
+  <a id="sky-external" href="https://stellarium-web.org/" target="_blank" rel="noopener noreferrer">Open Stellarium ↗</a>
+ </div>
+ <p class="sky-status" id="sky-status" role="status" aria-live="polite">Select a city or allow location access to load your live sky.</p>
+ <div class="sky-view" id="sky-view"><div class="sky-placeholder">An interactive Stellarium sky will appear here after you choose a location.</div></div>
+ <p class="sky-note">Location is requested only after you click the button; this page does not store your coordinates. The Stellarium view is provided by an external service. If the embedded view is blocked by your browser, use “Open Stellarium”.</p>
+</section>
 <div class="lower">
 <section class="panel" aria-labelledby="latest-heading"><p class="section-label">Latest writing</p><h3 id="latest-heading"><a id="latest-blog-link" href="/blog/yasamayi-ne-zamana-erteliyoruz/"><span id="latest-blog-title">Yaşamayı Ne Zamana Erteliyoruz?</span> →</a></h3><p id="latest-blog-description">Akademik hayat, çalışma tutkusu ve sosyal yaşama ayıramadığımız zaman üzerine.</p><a href="/blog/">All writing →</a></section>
 <section class="panel"><p class="section-label">Explore more</p><h3>Research, ideas &amp; education</h3><div class="small-links"><a href="/arxiv">Exoplanet papers ↗</a><a href="/daily-idea/widget.html">Idea of the day ↗</a><a href="/ai/" lang="tr">Yapay Zekâ Eğitimleri ↗</a><a href="/cv.pdf">Curriculum vitae ↗</a></div></section>
@@ -103,6 +130,39 @@ const mainNav=document.getElementById('main-nav');
 mobileMenu.addEventListener('click',()=>{const open=mobileMenu.getAttribute('aria-expanded')!=='true';mobileMenu.setAttribute('aria-expanded',String(open));mainNav.classList.toggle('is-open',open);});
 mainNav.addEventListener('click',event=>{if(event.target.closest('a')){mobileMenu.setAttribute('aria-expanded','false');mainNav.classList.remove('is-open');}});
 document.addEventListener('keydown',event=>{if(event.key==='Escape'){mobileMenu.setAttribute('aria-expanded','false');mainNav.classList.remove('is-open');}});
+
+(function(){
+ const geo=document.getElementById('sky-geolocate'),city=document.getElementById('sky-city'),status=document.getElementById('sky-status'),view=document.getElementById('sky-view'),external=document.getElementById('sky-external');
+ let coords=null, label='';
+ function refresh(){
+  if(!coords)return;
+  const url=new URL('https://stellarium-web.org/');
+  url.searchParams.set('lat',coords.lat.toFixed(5));url.searchParams.set('lng',coords.lng.toFixed(5));url.searchParams.set('date',new Date().toISOString());
+  external.href=url.href;
+  const frame=document.createElement('iframe');
+  frame.title='Stellarium interactive sky for '+label;
+  frame.referrerPolicy='no-referrer';
+  frame.allow='fullscreen';
+  frame.loading='lazy';
+  frame.src=url.href;
+  view.replaceChildren(frame);
+  status.textContent='Sky for '+label+' · '+new Date().toLocaleString(undefined,{dateStyle:'medium',timeStyle:'short'})+' (your device time).';
+ }
+ city.addEventListener('change',function(){
+  if(!city.value)return;
+  const [lat,lng]=city.value.split(',').map(Number);
+  coords={lat,lng};label=city.options[city.selectedIndex].text;refresh();
+ });
+ geo.addEventListener('click',function(){
+  if(!navigator.geolocation){status.textContent='Geolocation unavailable. Choose a city instead.';return;}
+  status.textContent='Waiting for location permission…';
+  navigator.geolocation.getCurrentPosition(function(pos){
+   coords={lat:pos.coords.latitude,lng:pos.coords.longitude};label='your location';city.value='';refresh();
+  },function(){status.textContent='Location not available or permission declined. Choose a city instead.';},{enableHighAccuracy:false,timeout:12000,maximumAge:300000});
+ });
+ document.addEventListener('visibilitychange',function(){if(!document.hidden&&coords)refresh()});
+})();
+
 fetch('/blog/posts.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Blog unavailable');return r.json()}).then(posts=>{if(!Array.isArray(posts)||!posts.length)return;const p=posts[0];if(typeof p.url!=='string'||!/^\/blog\/[a-z0-9-]+\/$/.test(p.url))return;document.getElementById('latest-blog-link').href=p.url;document.getElementById('latest-blog-title').textContent=p.title||'Latest post';document.getElementById('latest-blog-description').textContent=p.description||'';}).catch(()=>{});
 </script>
 </body></html>
