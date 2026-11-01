@@ -58,6 +58,20 @@ jobs:
               raise SystemExit('Upstream Emscripten option not found; inspect build configuration')
           print('Updated build configuration:',changed)
           PY
+      - name: Accept Gaia HiPS catalog metadata without nonstandard type field
+        working-directory: engine
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('src/modules/stars.c')
+          s=p.read_text()
+          old='if (!args_type || strcmp(args_type, "stars")) {'
+          new='if (args_type && strcmp(args_type, "stars")) {'
+          if s.count(old)!=1:
+              raise SystemExit('Unexpected upstream stars.c: review before patching')
+          p.write_text(s.replace(old,new))
+          print('Patched Gaia HiPS metadata compatibility')
+          PY
       - name: Compile official Stellarium Web Engine
         working-directory: engine
         run: make js
