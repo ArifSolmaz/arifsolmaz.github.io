@@ -28,13 +28,43 @@ footer{border-top:1px solid var(--line);display:flex;justify-content:space-betwe
 @media(min-width:1700px){.hero{min-height:850px}.hero-main{padding-top:110px;padding-bottom:135px}}
 @media(max-width:980px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.lower{grid-template-columns:1fr}nav{gap:15px}}
 @media(max-width:650px){.hero{min-height:720px;min-height:91svh}.hero::before{background-position:center,center,60% center}.site-header{padding:18px 22px;align-items:flex-start;flex-wrap:wrap}nav{width:100%;overflow-x:auto;white-space:nowrap;padding-bottom:5px;font-size:13px}.hero-main{padding:65px 24px 95px}h1{font-size:clamp(43px,10vw,62px)}.lead{font-size:17px}.grid{grid-template-columns:1fr;gap:14px}.tile{min-height:150px}.content{padding:24px 20px 50px}.lower{gap:14px}.panel{padding:23px}}
+/* Compact mobile layout: no horizontal navigation strip, no repeated CTA cards */
+.mobile-menu{display:none}
+@media(max-width:650px){
+ .hero{min-height:0;min-height:0;overflow:visible}
+ .hero::before{background-position:center,center,55% center;filter:brightness(.76)}
+ .site-header{align-items:center;flex-wrap:nowrap;padding:16px 20px;position:relative;z-index:3}
+ .brand{font-size:26px}
+ .mobile-menu{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid rgba(255,255,255,.35);border-radius:9px;background:rgba(5,12,23,.68);color:#fff;font:500 14px Outfit,sans-serif;min-height:42px;padding:8px 13px;cursor:pointer}
+ .mobile-menu[aria-expanded="true"]{border-color:var(--gold);color:var(--gold)}
+ nav{display:none;position:absolute;top:100%;left:12px;right:12px;width:auto;padding:12px;overflow:visible;white-space:normal;background:#091525;border:1px solid var(--line);border-radius:12px;box-shadow:0 15px 40px rgba(0,0,0,.45);flex-direction:column;align-items:stretch;gap:0}
+ nav.is-open{display:flex}
+ nav a{display:block;padding:11px 13px;min-height:44px;border-radius:6px}
+ nav a:hover,nav a:focus-visible{background:rgba(255,255,255,.08)}
+ .hero-main{padding:78px 22px 65px;justify-content:center;min-height:480px}
+ .eyebrow{font-size:10px;letter-spacing:.19em;margin-bottom:18px}
+ h1{font-size:clamp(38px,10vw,53px);line-height:1.13;margin-bottom:20px}
+ .lead{font-size:16px;line-height:1.62;max-width:370px;margin-bottom:28px}
+ .actions{gap:10px}.button{min-height:46px;padding:10px 17px;font-size:14px}
+ .scroll-cue{display:none}
+ .content{padding:18px 18px 44px}
+ .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ .tile{min-height:116px;padding:17px 14px;border-radius:11px}
+ .tile svg{width:23px;height:23px;margin-bottom:11px}
+ .tile h2{font-size:19px;margin-bottom:3px}
+ .tile p{font-size:12px;line-height:1.4;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+ .lower{margin-top:13px;gap:13px}.panel{padding:19px}
+ .panel h3{font-size:22px}
+ footer{margin-top:27px}
+}
+@media(max-width:360px){.hero-main{padding-top:58px}.tile h2{font-size:17px}.tile{padding:14px 11px}.tile p{font-size:11px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
 </style>
 </head>
 <body>
 <section class="hero" id="top">
 <header class="site-header"><a class="brand" href="/" aria-label="Arif Solmaz home">Arif <em>Solmaz</em></a>
-<nav aria-label="Main navigation"><a href="/" aria-current="page">Home</a><a href="/lab/">Research</a><a href="https://ui.adsabs.harvard.edu/search/fq=%7B!type%3Daqp%20v%3D%24fq_database%7D&fq_database=(database%3Aastronomy%20OR%20database%3Aphysics)&q=-docs(1f8e5e2fda6aa0148343a32ba70673cc)%20%20author%3A%22solmaz%2C%20arif%22&sort=date%20desc%2C%20bibcode%20desc&p_=0" target="_blank" rel="noopener">Publications</a><a href="/courses/">Teaching</a><a href="/blog/">Blog</a><a href="#contact">Contact</a></nav></header>
+<button class="mobile-menu" type="button" aria-controls="main-nav" aria-expanded="false">Menu <span aria-hidden="true">☰</span></button><nav id="main-nav" aria-label="Main navigation"><a href="/" aria-current="page">Home</a><a href="/lab/">Research</a><a href="https://ui.adsabs.harvard.edu/search/fq=%7B!type%3Daqp%20v%3D%24fq_database%7D&fq_database=(database%3Aastronomy%20OR%20database%3Aphysics)&q=-docs(1f8e5e2fda6aa0148343a32ba70673cc)%20%20author%3A%22solmaz%2C%20arif%22&sort=date%20desc%2C%20bibcode%20desc&p_=0" target="_blank" rel="noopener">Publications</a><a href="/courses/">Teaching</a><a href="/blog/">Blog</a><a href="#contact">Contact</a></nav></header>
 <div class="hero-main"><p class="eyebrow">Astronomy &amp; Data Science</p><h1>Exploring planets,<br>stars and the Universe</h1><p class="lead">Studying worlds beyond our solar system through light, time and computational methods — and sharing what we learn through research, teaching and writing.</p><div class="actions"><a class="button primary" href="/lab/">Explore Research <span aria-hidden="true">→</span></a><a class="button" href="/blog/">Read the Blog</a></div></div>
 <a class="scroll-cue" href="#explore" aria-label="Explore website">⌄</a>
 </section>
@@ -52,6 +82,11 @@ footer{border-top:1px solid var(--line);display:flex;justify-content:space-betwe
 <footer id="contact"><span>© 2026 Arif Solmaz · Istanbul Health and Technology University</span><div class="small-links"><a href="mailto:arif.solmaz@istun.edu.tr">Email</a><a href="https://twitter.com/ArifSolmaz" target="_blank" rel="noopener">X</a><a href="https://bsky.app/profile/arifsolmaz.bsky.social" target="_blank" rel="noopener">Bluesky</a><a href="https://github.com/ArifSolmaz" target="_blank" rel="noopener">GitHub</a><a href="https://orcid.org/0000-0002-3076-164X" target="_blank" rel="noopener">ORCID</a></div></footer>
 </main>
 <script>
+const mobileMenu=document.querySelector('.mobile-menu');
+const mainNav=document.getElementById('main-nav');
+mobileMenu.addEventListener('click',()=>{const open=mobileMenu.getAttribute('aria-expanded')!=='true';mobileMenu.setAttribute('aria-expanded',String(open));mainNav.classList.toggle('is-open',open);});
+mainNav.addEventListener('click',event=>{if(event.target.closest('a')){mobileMenu.setAttribute('aria-expanded','false');mainNav.classList.remove('is-open');}});
+document.addEventListener('keydown',event=>{if(event.key==='Escape'){mobileMenu.setAttribute('aria-expanded','false');mainNav.classList.remove('is-open');}});
 fetch('/blog/posts.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Blog unavailable');return r.json()}).then(posts=>{if(!Array.isArray(posts)||!posts.length)return;const p=posts[0];if(typeof p.url!=='string'||!/^\/blog\/[a-z0-9-]+\/$/.test(p.url))return;document.getElementById('latest-blog-link').href=p.url;document.getElementById('latest-blog-title').textContent=p.title||'Latest post';document.getElementById('latest-blog-description').textContent=p.description||'';}).catch(()=>{});
 </script>
 </body></html>
