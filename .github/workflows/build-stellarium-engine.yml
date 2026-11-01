@@ -35,8 +35,11 @@ jobs:
           set -euo pipefail
           mkdir -p site/assets/stellarium
           find engine -name 'stellarium-web-engine.js' -o -name 'stellarium-web-engine.wasm'
-          cp engine/build/stellarium-web-engine.js site/assets/stellarium/
-          cp engine/build/stellarium-web-engine.wasm site/assets/stellarium/
+          JS=$(find engine -type f -name 'stellarium-web-engine.js' | head -n 1)
+          WASM=$(find engine -type f -name 'stellarium-web-engine.wasm' | head -n 1)
+          test -n "$JS" && test -n "$WASM"
+          cp "$JS" site/assets/stellarium/
+          cp "$WASM" site/assets/stellarium/
           test -s site/assets/stellarium/stellarium-web-engine.js
           test -s site/assets/stellarium/stellarium-web-engine.wasm
           file site/assets/stellarium/*
