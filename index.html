@@ -260,7 +260,11 @@ document.addEventListener('keydown',event=>{if(event.key==='Escape'){mobileMenu.
   });
  }
  layerToggle('sky-atmosphere',e=>e.core.atmosphere.visible,(e,v)=>{e.core.atmosphere.visible=v},'Atmosphere');
- layerToggle('sky-constellations',e=>e.core.constellations.lines_visible,(e,v)=>{e.core.constellations.lines_visible=v},'Constellations');
+ layerToggle('sky-constellations',e=>e.core.constellations.lines_visible,(e,v)=>{
+  if(v){try{e.core.skycultures.current_id='western'}catch(err){console.warn('Culture selection:',err)}}
+  e.core.constellations.lines_visible=v;
+  console.info('[Stellarium] Constellation state:',{enabled:e.core.constellations.lines_visible,culture:e.core.skycultures.current_id});
+ },'Constellations');
  // Display-only luminance control: prevents washed-out lunar highlights without altering sky physics.
  const exposure=document.getElementById('sky-exposure');
  const applyExposure=()=>{canvas.style.filter='brightness('+(Number(exposure.value)/100)+') contrast(1.08)';};
@@ -317,7 +321,11 @@ document.addEventListener('keydown',event=>{if(event.key==='Escape'){mobileMenu.
       stel.core.stars.addDataSource({url:stars});
       // Constellation lines require a loaded sky culture, not just a visibility flag.
       const western='https://raw.githubusercontent.com/Stellarium/stellarium-web-engine/master/apps/test-skydata/skycultures/western';
-      try{stel.core.skycultures.addDataSource({url:western,key:'western'});console.info('[Stellarium] Western sky culture registered')}
+      try{stel.core.skycultures.addDataSource({url:western,key:'western'});
+       // Registration does not select a culture. Activate it explicitly.
+       try{stel.core.skycultures.current_id='western';console.info('[Stellarium] Selected sky culture:',stel.core.skycultures.current_id)}
+       catch(err){console.error('[Stellarium] Sky culture activation failed',err)}
+       console.info('[Stellarium] Western sky culture registered')}
       catch(err){console.error('[Stellarium] Constellation catalog registration failed',err)}
       // Report the actual lunar survey metadata; a smooth Moon means its texture may not load.
       fetch(base+'surveys/moon/properties').then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.text()}).then(t=>{
