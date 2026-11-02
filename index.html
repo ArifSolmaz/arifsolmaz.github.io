@@ -118,6 +118,18 @@ body.sky-exploring #stellarium-hero-canvas{z-index:40!important;opacity:1!import
 .sky-object-panel{pointer-events:auto;position:absolute;top:85px;right:18px;width:min(340px,calc(100vw - 36px));max-height:calc(100dvh - 170px);overflow:auto;padding:18px;border:1px solid #ffffff50;border-radius:14px;background:#071426f2;box-shadow:0 15px 45px #0009}
 .sky-object-panel h2{font:400 24px 'Playfair Display',Georgia,serif;margin:0 0 12px}.sky-object-panel dl{display:grid;grid-template-columns:1fr 1fr;gap:7px 12px;margin:0}.sky-object-panel dt{color:#aebdd0}.sky-object-panel dd{margin:0;text-align:right;overflow-wrap:anywhere}.sky-object-panel .sky-close-object{float:right}
 @media(max-width:650px){.sky-explore-toggle{right:12px;bottom:max(12px,env(safe-area-inset-bottom,0px));font-size:13px;padding:11px 15px}.sky-explore-top{padding:12px}.sky-explore-top strong{font-size:14px}.sky-explore-hint{top:68px;left:12px}.sky-object-panel{top:auto;bottom:80px;left:12px;right:12px;width:auto;max-height:45dvh}.sky-explore-bottom{bottom:max(12px,env(safe-area-inset-bottom,0px))}}
+
+/* Hide the website completely during full-screen exploration. */
+body.sky-exploring .hero,body.sky-exploring .content{visibility:hidden!important}
+body.sky-exploring #stellarium-hero-canvas{position:fixed!important;inset:0!important;width:100vw!important;height:100dvh!important;background:#091629!important}
+body.sky-exploring .sky-explore-ui{visibility:visible!important}
+.sky-object-panel{width:min(420px,calc(100vw - 36px));padding:22px;max-height:calc(100dvh - 160px)}
+.sky-object-panel h2{font-size:29px;padding-right:42px;line-height:1.2}
+.sky-object-panel dl{grid-template-columns:minmax(0,1fr);gap:4px;margin-top:16px}
+.sky-object-panel dt{font-size:12px;letter-spacing:.06em;text-transform:uppercase;margin-top:12px}
+.sky-object-panel dd{text-align:left;font:500 15px/1.55 'Space Mono',monospace;overflow-wrap:anywhere;word-break:normal;color:#f2f6ff}
+.sky-object-subtitle{color:#afc5df;font-size:13px;margin:0 0 8px}
+@media(max-width:650px){.sky-object-panel{padding:19px;max-height:55dvh;bottom:70px;top:auto}.sky-object-panel h2{font-size:25px}.sky-object-panel dd{font-size:13px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
 </style>
 </head>
@@ -127,7 +139,7 @@ body.sky-exploring #stellarium-hero-canvas{z-index:40!important;opacity:1!import
 <div id="sky-explore-ui" class="sky-explore-ui" hidden role="region" aria-label="Interactive Stellarium sky">
  <div class="sky-explore-top"><strong>Explore the live sky</strong><button type="button" id="sky-explore-exit">✕ Return to website</button></div>
  <div class="sky-explore-hint">Drag to look around · Scroll or pinch to zoom · Tap a star for details</div>
- <aside id="sky-object-panel" class="sky-object-panel" hidden aria-live="polite"><button class="sky-close-object" type="button" id="sky-object-close" aria-label="Close object information">✕</button><h2 id="sky-object-title">Celestial object</h2><dl id="sky-object-details"></dl></aside>
+ <aside id="sky-object-panel" class="sky-object-panel" hidden aria-live="polite"><button class="sky-close-object" type="button" id="sky-object-close" aria-label="Close object information">✕</button><h2 id="sky-object-title">Celestial object</h2><p class="sky-object-subtitle">Live Stellarium object data</p><dl id="sky-object-details"></dl></aside>
  <div class="sky-explore-bottom"><button type="button" id="sky-zoom-in" aria-label="Zoom in">＋</button><button type="button" id="sky-zoom-out" aria-label="Zoom out">－</button><button type="button" id="sky-reset-view">Reset view</button></div>
 </div>
 <section class="hero" id="top"><div class="sky-location" id="sky-location" hidden><span id="sky-place">Istanbul</span> · Live sky <button type="button" id="sky-permission">Use my location</button></div>
@@ -173,14 +185,27 @@ document.addEventListener('keydown',event=>{if(event.key==='Escape'){mobileMenu.
   let name='Celestial object';
   try{name=obj.designations()[0].replace(/^NAME /,'')||name}catch(e){}
   title.textContent=name;details.replaceChildren();
-  const fields=[['Magnitude','vmag'],['Right ascension / declination','radec']];
-  for(const [label,key] of fields){
-   try{const value=obj.getInfo(key);if(value===undefined||value===null)continue;
-    const dt=document.createElement('dt'),dd=document.createElement('dd');
-    dt.textContent=label;dd.textContent=typeof value==='number'?value.toFixed(3):String(value);
-    details.append(dt,dd);
-   }catch(e){}
+  function addField(label,value){
+   if(value===undefined||value===null||value==='')return;
+   const dt=document.createElement('dt'),dd=document.createElement('dd');
+   dt.textContent=label;dd.textContent=String(value);details.append(dt,dd);
   }
+  try{
+   const v=obj.getInfo('vmag');
+   addField('Apparent magnitude',Number.isFinite(v)?v.toFixed(2):'Not available');
+  }catch(e){}
+  try{
+   const stel=engine,obs=stel.core.observer;
+   const cirs=stel.convertFrame(obs,'ICRF','CIRS',obj.getInfo('radec'));
+   const radec=stel.c2s(cirs),ra=stel.a2tf(stel.anp(radec[0]),1),dec=stel.a2af(stel.anpm(radec[1]),1);
+   const pad=n=>String(Math.abs(Math.trunc(n))).padStart(2,'0');
+   addField('Right ascension',pad(ra.hours)+'h '+pad(ra.minutes)+'m '+pad(ra.seconds)+'s');
+   addField('Declination',(dec.sign||'')+pad(dec.degrees)+'° '+pad(dec.arcminutes)+'′ '+pad(dec.arcseconds)+'″');
+   const observed=stel.convertFrame(obs,'CIRS','OBSERVED',cirs),azalt=stel.c2s(observed);
+   const az=stel.a2af(stel.anp(azalt[0]),1),alt=stel.a2af(stel.anpm(azalt[1]),1);
+   addField('Azimuth',pad(az.degrees)+'° '+pad(az.arcminutes)+'′');
+   addField('Altitude',(alt.sign||'')+pad(alt.degrees)+'° '+pad(alt.arcminutes)+'′');
+  }catch(e){console.warn('Object coordinates unavailable',e)}
   panel.hidden=false;
  }
  function enterExplore(){
@@ -223,6 +248,9 @@ document.addEventListener('keydown',event=>{if(event.key==='Escape'){mobileMenu.
     wasmFile:'/assets/stellarium/stellarium-web-engine.wasm',canvas,
     onReady(stel){
      engine=stel;setPosition();syncClock();
+     // The default horizon/landscape can form large opaque black polygons.
+     try{stel.core.landscapes.visible=false}catch(e){}
+     try{stel.core.atmosphere.visible=false}catch(e){}
      try{stel.change(function(obj,attr){if(attr==='selection'||(obj===stel.core&&attr==='selection'))showObject(stel.core.selection)})}catch(e){console.warn('Selection listener unavailable',e)}
      // Use the published Gaia survey path, not the nonexistent CDN /stars root.
      // Do not claim that the live sky is ready until survey metadata is reachable.
