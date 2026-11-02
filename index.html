@@ -91,11 +91,25 @@ nav a[aria-current="page"]{position:relative}nav a[aria-current="page"]::after{c
 .sky-placeholder{height:100%;display:flex;align-items:center;justify-content:center;text-align:center;padding:25px;color:#c8d2e1}
 .sky-note{font-size:12px!important;margin-top:12px!important}
 @media(max-width:650px){.live-sky{padding:18px;margin-top:13px}.sky-view{height:400px}.sky-controls{align-items:stretch}.sky-controls button,.sky-controls select,.sky-controls a{flex:1 1 auto}}
+/* One live Stellarium viewport behind the ENTIRE homepage, not just the hero. */
+#stellarium-hero-canvas{position:fixed!important;inset:0!important;width:100vw!important;height:100vh!important;z-index:0!important;pointer-events:none;opacity:0;transition:opacity 1.2s ease}
+body.sky-active #stellarium-hero-canvas{opacity:1}
+body{background:#040911}
+.hero{isolation:auto;background:transparent;overflow:visible;z-index:1}
+.hero::before{z-index:-1}
+.hero::after{z-index:-1}
+body.sky-active .hero::before{background-image:linear-gradient(90deg,rgba(1,8,19,.78),rgba(2,10,23,.12) 80%),linear-gradient(0deg,rgba(4,9,17,.75),transparent 35%)!important}
+body.sky-active .hero::after{background:transparent}
+.content{position:relative;z-index:1;background:transparent}
+body.sky-active .tile{background:linear-gradient(135deg,rgba(7,18,32,.88),rgba(5,13,25,.9))}
+body.sky-active .panel{background:rgba(10,20,35,.9)}
+body.sky-active .hero,body.sky-active .content{background:transparent}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
 </style>
 </head>
 <body>
-<section class="hero" id="top"><canvas id="stellarium-hero-canvas" aria-hidden="true"></canvas><div class="sky-location" id="sky-location" hidden><span id="sky-place">Istanbul</span> · Live sky <button type="button" id="sky-permission">Use my location</button></div>
+<canvas id="stellarium-hero-canvas" aria-hidden="true"></canvas>
+<section class="hero" id="top"><div class="sky-location" id="sky-location" hidden><span id="sky-place">Istanbul</span> · Live sky <button type="button" id="sky-permission">Use my location</button></div>
 <header class="site-header"><a class="brand" href="/" aria-label="Arif Solmaz home">Arif <em>Solmaz</em></a>
 <button class="mobile-menu" type="button" aria-controls="main-nav" aria-expanded="false">Menu <span aria-hidden="true">☰</span></button><nav id="main-nav" aria-label="Main navigation"><a href="/" aria-current="page">Home</a><a href="/lab/">Research</a><a href="https://ui.adsabs.harvard.edu/search/fq=%7B!type%3Daqp%20v%3D%24fq_database%7D&fq_database=(database%3Aastronomy%20OR%20database%3Aphysics)&q=-docs(1f8e5e2fda6aa0148343a32ba70673cc)%20%20author%3A%22solmaz%2C%20arif%22&sort=date%20desc%2C%20bibcode%20desc&p_=0" target="_blank" rel="noopener">Publications</a><a href="/courses/">Teaching</a><a href="/blog/">Blog</a><a href="#contact">Contact</a></nav></header>
 <div class="hero-main"><p class="eyebrow">Astronomy &amp; Data Science</p><h1>Exploring planets,<br>stars and galaxies</h1><p class="lead">Studying the Universe through data, modeling and computational methods, and sharing what we learn through research, teaching and writing.</p><div class="actions"><a class="button primary" href="/lab/">Research <span aria-hidden="true">→</span></a><a class="button" href="/blog/">Read the Blog</a></div></div>
@@ -161,10 +175,10 @@ document.addEventListener('keydown',event=>{if(event.key==='Escape'){mobileMenu.
       stel.core.planets.addDataSource({url:base+'surveys/sso/moon',key:'moon'});
       stel.core.planets.addDataSource({url:base+'surveys/sso/sun',key:'sun'});
       stel.core.milkyway.addDataSource({url:base+'surveys/milkyway'});
-      hero.classList.add('sky-active');locationBar.hidden=false;
+      hero.classList.add('sky-active');document.body.classList.add('sky-active');locationBar.hidden=false;
      }).catch(err=>{
       console.error('Stellarium catalog unavailable; retaining homepage photo:',err);
-      hero.classList.remove('sky-active');locationBar.hidden=true;
+      hero.classList.remove('sky-active');document.body.classList.remove('sky-active');locationBar.hidden=true;
      });
      setInterval(syncClock,60000);
     }
