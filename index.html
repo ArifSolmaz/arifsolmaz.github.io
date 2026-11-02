@@ -193,6 +193,7 @@ document.addEventListener('keydown',event=>{if(event.key==='Escape'){mobileMenu.
  const locationBar=document.getElementById('sky-location'),place=document.getElementById('sky-place');
  const locationButton=document.getElementById('sky-permission');
  let engine=null,position={lat:41.0082,lng:28.9784};
+ let clockTimer=null,clockBase=0,clockBaseMJD=0;
  const toggle=document.getElementById('sky-explore-toggle'),ui=document.getElementById('sky-explore-ui');
  const exit=document.getElementById('sky-explore-exit'),panel=document.getElementById('sky-object-panel');
  const title=document.getElementById('sky-object-title'),details=document.getElementById('sky-object-details');
@@ -266,8 +267,17 @@ document.addEventListener('keydown',event=>{if(event.key==='Escape'){mobileMenu.
  }
  function syncClock(){
   if(!engine)return;
-  try{engine.observer.utc=engine.date2MJD(new Date())}
-  catch(err){console.error('Stellarium UTC:',err)}
+  try{
+   clockBase=performance.now();clockBaseMJD=engine.date2MJD(new Date());
+   engine.observer.utc=clockBaseMJD;
+  }catch(err){console.error('Stellarium UTC:',err)}
+ }
+ function animateClock(){
+  if(!engine)return;
+  // Advance simulation time smoothly from the last wall-clock sync.
+  // Re-sync periodically to avoid drift, and after returning to a foreground tab.
+  try{engine.observer.utc=clockBaseMJD+(performance.now()-clockBase)/86400000}
+  catch(err){console.warn('Stellarium clock update:',err)}
  }
  function loadEngine(){
   const script=document.createElement('script');
@@ -279,6 +289,8 @@ document.addEventListener('keydown',event=>{if(event.key==='Escape'){mobileMenu.
     wasmFile:'/assets/stellarium/stellarium-web-engine.wasm',canvas,
     onReady(stel){
      engine=stel;setPosition();syncClock();
+     clockTimer=setInterval(animateClock,1000);
+     document.addEventListener('visibilitychange',()=>{if(!document.hidden)syncClock()});
      // The default horizon/landscape can form large opaque black polygons.
      try{stel.core.landscapes.visible=false}catch(e){}
      // A fully opaque black landscape was previously rendered without its image assets.
