@@ -1,12 +1,12 @@
 {
   "responseHeader": {
     "status": 0,
-    "QTime": 238,
+    "QTime": 373,
     "params": {
       "q": "-docs(1f8e5e2fda6aa0148343a32ba70673cc) author:\"solmaz, arif\"",
       "fl": "bibcode,title,year,pub,volume,page,doi,bibstem,database,property,author_count,first_author,publisher",
       "start": "0",
-      "internal_logging_params": "X-Amzn-Trace-Id=Root=1-6adf19c3-05cef3f62c67dde86a144826",
+      "internal_logging_params": "X-Amzn-Trace-Id=Root=1-6ae87491-3422fc2318f5badd2857760a",
       "fq": "database:(astronomy OR physics)",
       "sort": "date desc,bibcode desc",
       "rows": "200",
@@ -84,9 +84,9 @@
       {
         "bibcode": "2026ApJS..283....5K",
         "database": [
+          "astronomy",
           "planetary",
-          "astrophysics",
-          "astronomy"
+          "astrophysics"
         ],
         "author_count": 326,
         "bibstem": [
@@ -126,9 +126,9 @@
           "MNRAS.543"
         ],
         "database": [
+          "astronomy",
           "planetary",
-          "astrophysics",
-          "astronomy"
+          "astrophysics"
         ],
         "doi": [
           "10.1093/mnras/staf1659",
@@ -163,9 +163,9 @@
           "A&A...703"
         ],
         "database": [
+          "astronomy",
           "planetary",
-          "astrophysics",
-          "astronomy"
+          "astrophysics"
         ],
         "doi": [
           "10.1051/0004-6361/202556498",
@@ -200,8 +200,8 @@
           "epsc.conf"
         ],
         "database": [
-          "planetary",
-          "astronomy"
+          "astronomy",
+          "planetary"
         ],
         "doi": [
           "10.5194/epsc-dps2025-1815"
@@ -230,9 +230,9 @@
           "epsc.conf"
         ],
         "database": [
-          "heliophysics",
+          "astronomy",
           "planetary",
-          "astronomy"
+          "heliophysics"
         ],
         "doi": [
           "10.5194/epsc-dps2025-1467"
@@ -261,8 +261,8 @@
           "epsc.conf"
         ],
         "database": [
-          "planetary",
-          "astronomy"
+          "astronomy",
+          "planetary"
         ],
         "doi": [
           "10.5194/epsc-dps2025-39"
@@ -291,9 +291,9 @@
           "TJAA....4"
         ],
         "database": [
-          "planetary",
           "astrophysics",
-          "astronomy"
+          "astronomy",
+          "planetary"
         ],
         "doi": [
           "10.55064/tjaa.1203704"
@@ -322,9 +322,9 @@
           "TJAA....4"
         ],
         "database": [
+          "astronomy",
           "planetary",
-          "astrophysics",
-          "astronomy"
+          "astrophysics"
         ],
         "doi": [
           "10.55064/tjaa.1202812"
@@ -354,8 +354,8 @@
         ],
         "database": [
           "astronomy",
-          "heliophysics",
-          "planetary"
+          "planetary",
+          "heliophysics"
         ],
         "doi": [
           "10.3847/25c2cfeb.e033d3ce"
@@ -380,15 +380,15 @@
       },
       {
         "bibcode": "2023yCat..22650004K",
+        "database": [
+          "astronomy",
+          "planetary",
+          "astrophysics"
+        ],
         "author_count": 217,
         "bibstem": [
           "yCat",
           "yCat..226"
-        ],
-        "database": [
-          "astronomy",
-          "astrophysics",
-          "planetary"
         ],
         "first_author": "Kokori, A.",
         "page": [
@@ -400,6 +400,7 @@
         ],
         "volume": "226",
         "year": "2023",
+        "publisher": "CDS",
         "property": [
           "ASSOCIATED",
           "DATA",
@@ -744,9 +745,9 @@
           "astro2020"
         ],
         "database": [
-          "planetary",
+          "astronomy",
           "astrophysics",
-          "astronomy"
+          "planetary"
         ],
         "doi": [
           "10.48550/arXiv.1801.06714"
@@ -777,9 +778,9 @@
           "BAAS...51"
         ],
         "database": [
-          "planetary",
+          "astronomy",
           "astrophysics",
-          "astronomy"
+          "planetary"
         ],
         "first_author": "Harman, Chester",
         "page": [
@@ -837,8 +838,8 @@
         ],
         "database": [
           "astronomy",
-          "astrophysics",
           "heliophysics",
+          "astrophysics",
           "planetary"
         ],
         "first_author": "Unsalan, O.",
