@@ -283,12 +283,12 @@ document.addEventListener('keydown',event=>{if(event.key==='Escape'){mobileMenu.
    engine.observer.utc=clockBaseMJD;
   }catch(err){console.error('Stellarium UTC:',err)}
  }
+ let clockFrame=0;
  function animateClock(){
   if(!engine)return;
-  // Advance simulation time smoothly from the last wall-clock sync.
-  // Re-sync periodically to avoid drift, and after returning to a foreground tab.
   try{engine.observer.utc=clockBaseMJD+(performance.now()-clockBase)/86400000}
   catch(err){console.warn('Stellarium clock update:',err)}
+  clockFrame=requestAnimationFrame(animateClock);
  }
  function loadEngine(){
   const script=document.createElement('script');
@@ -300,7 +300,7 @@ document.addEventListener('keydown',event=>{if(event.key==='Escape'){mobileMenu.
     wasmFile:'/assets/stellarium/stellarium-web-engine.wasm',canvas,
     onReady(stel){
      engine=stel;setPosition();syncClock();
-     clockTimer=setInterval(animateClock,1000);
+     clockFrame=requestAnimationFrame(animateClock);
      document.addEventListener('visibilitychange',()=>{if(!document.hidden)syncClock()});
      // The default horizon/landscape can form large opaque black polygons.
      try{stel.core.landscapes.visible=false}catch(e){}
@@ -315,6 +315,10 @@ document.addEventListener('keydown',event=>{if(event.key==='Escape'){mobileMenu.
      fetch(stars+'/properties',{mode:'cors'}).then(response=>{
       if(!response.ok)throw Error('Gaia metadata HTTP '+response.status);
       stel.core.stars.addDataSource({url:stars});
+      // Constellation lines require a loaded sky culture, not just a visibility flag.
+      const western='https://raw.githubusercontent.com/Stellarium/stellarium-web-engine/master/apps/test-skydata/skycultures/western';
+      try{stel.core.skycultures.addDataSource({url:western,key:'western'});console.info('[Stellarium] Western sky culture registered')}
+      catch(err){console.error('[Stellarium] Constellation catalog registration failed',err)}
       // Report the actual lunar survey metadata; a smooth Moon means its texture may not load.
       fetch(base+'surveys/moon/properties').then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.text()}).then(t=>{
        const rows=Object.fromEntries(t.split(/\\r?\\n/).filter(line=>line.includes('=')).map(line=>{const i=line.indexOf('=');return [line.slice(0,i).trim(),line.slice(i+1).trim()]}));
