@@ -196,7 +196,7 @@ document.addEventListener('keydown',event=>{if(event.key==='Escape'){mobileMenu.
  toggle.addEventListener('click',enterExplore);exit.addEventListener('click',leaveExplore);
  document.getElementById('sky-object-close').addEventListener('click',()=>{panel.hidden=true});
  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&exploring)leaveExplore()});
- function zoom(factor){if(!engine)return;try{engine.core.on_zoom(factor,canvas.clientWidth/2,canvas.clientHeight/2)}catch(e){console.warn('Zoom control unavailable',e)}}
+ function zoom(factor){if(!engine)return;try{if(typeof engine._core_on_zoom==='function')engine._core_on_zoom(factor,canvas.clientWidth/2,canvas.clientHeight/2);else if(typeof engine.core.on_zoom==='function')engine.core.on_zoom(factor,canvas.clientWidth/2,canvas.clientHeight/2);else console.warn('Use trackpad or mouse wheel to zoom')}catch(e){console.warn('Zoom control unavailable',e)}}
  document.getElementById('sky-zoom-in').addEventListener('click',()=>zoom(1.3));
  document.getElementById('sky-zoom-out').addEventListener('click',()=>zoom(1/1.3));
  document.getElementById('sky-reset-view').addEventListener('click',()=>{if(!engine)return;try{engine.core.lock=null}catch(e){}});
