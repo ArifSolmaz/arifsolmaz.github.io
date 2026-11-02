@@ -147,6 +147,11 @@ body.sky-exploring .sky-explore-ui{visibility:visible!important}
 body.sky-active:not(.sky-exploring)::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 75% 48% at 65% 12%,rgba(56,81,127,.23),transparent 85%),linear-gradient(180deg,rgba(13,26,48,.12) 0%,rgba(7,17,33,.34) 58%,rgba(4,11,23,.66) 100%)}
 body.sky-active:not(.sky-exploring) .hero::before{background-image:linear-gradient(90deg,rgba(3,11,24,.77),rgba(5,16,34,.24) 82%),linear-gradient(0deg,rgba(4,11,23,.5),transparent 45%)!important}
 body.sky-exploring::before{display:none!important}
+
+.sky-exposure-label{display:flex;align-items:center;gap:9px;pointer-events:auto;color:#f3f6ff;font-size:13px;padding:0 8px;white-space:nowrap}
+.sky-exposure-label input{width:115px;accent-color:#a9caff;cursor:pointer}
+body.sky-active:not(.sky-exploring) #stellarium-hero-canvas{filter:brightness(.82) contrast(1.08)}
+body.sky-exploring #stellarium-hero-canvas{filter:brightness(.82) contrast(1.08)}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
 </style>
 </head>
@@ -157,7 +162,7 @@ body.sky-exploring::before{display:none!important}
  <div class="sky-explore-top"><strong>Explore the live sky</strong><button type="button" id="sky-explore-exit">✕ Return to website</button></div>
  <div class="sky-explore-hint">Drag to look around · Scroll or pinch to zoom · Tap a star for details</div>
  <aside id="sky-object-panel" class="sky-object-panel" hidden aria-live="polite"><button class="sky-close-object" type="button" id="sky-object-close" aria-label="Close object information">✕</button><h2 id="sky-object-title">Celestial object</h2><p class="sky-object-subtitle">Live Stellarium object data</p><dl id="sky-object-details"></dl></aside>
- <div class="sky-explore-bottom"><button type="button" id="sky-zoom-in" aria-label="Zoom in">＋</button><button type="button" id="sky-zoom-out" aria-label="Zoom out">－</button><button type="button" id="sky-reset-view">Reset view</button><button type="button" id="sky-atmosphere" aria-pressed="false">Atmosphere off</button><button type="button" id="sky-constellations" aria-pressed="false">Constellations off</button></div>
+ <div class="sky-explore-bottom"><button type="button" id="sky-zoom-in" aria-label="Zoom in">＋</button><button type="button" id="sky-zoom-out" aria-label="Zoom out">－</button><button type="button" id="sky-reset-view">Reset view</button><label class="sky-exposure-label" for="sky-exposure">Brightness <input id="sky-exposure" type="range" min="55" max="125" value="82" step="1" aria-label="Planetarium display brightness"></label><button type="button" id="sky-exposure-reset">Default brightness</button><button type="button" id="sky-atmosphere" aria-pressed="false">Atmosphere off</button><button type="button" id="sky-constellations" aria-pressed="false">Constellations off</button></div>
 </div>
 <section class="hero" id="top"><div class="sky-location" id="sky-location" hidden><span id="sky-place">Istanbul</span> · Live sky <button type="button" id="sky-permission">Use my location</button></div>
 <header class="site-header"><a class="brand" href="/" aria-label="Arif Solmaz home">Arif <em>Solmaz</em></a>
@@ -256,6 +261,12 @@ document.addEventListener('keydown',event=>{if(event.key==='Escape'){mobileMenu.
  }
  layerToggle('sky-atmosphere',e=>e.core.atmosphere.visible,(e,v)=>{e.core.atmosphere.visible=v},'Atmosphere');
  layerToggle('sky-constellations',e=>e.core.constellations.lines_visible,(e,v)=>{e.core.constellations.lines_visible=v},'Constellations');
+ // Display-only luminance control: prevents washed-out lunar highlights without altering sky physics.
+ const exposure=document.getElementById('sky-exposure');
+ const applyExposure=()=>{canvas.style.filter='brightness('+(Number(exposure.value)/100)+') contrast(1.08)';};
+ exposure.addEventListener('input',applyExposure);
+ document.getElementById('sky-exposure-reset').addEventListener('click',()=>{exposure.value='100';applyExposure()});
+ applyExposure();
  document.getElementById('sky-reset-view').addEventListener('click',()=>{if(!engine)return;try{engine.core.lock=null}catch(e){}});
 
  function setPosition(){
@@ -305,7 +316,7 @@ document.addEventListener('keydown',event=>{if(event.key==='Escape'){mobileMenu.
       if(!response.ok)throw Error('Gaia metadata HTTP '+response.status);
       stel.core.stars.addDataSource({url:stars});
       // Report the actual lunar survey metadata; a smooth Moon means its texture may not load.
-      fetch(base+'surveys/sso/moon/properties').then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.text()}).then(t=>{
+      fetch(base+'surveys/moon/properties').then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.text()}).then(t=>{
        const rows=Object.fromEntries(t.split(/\\r?\\n/).filter(line=>line.includes('=')).map(line=>{const i=line.indexOf('=');return [line.slice(0,i).trim(),line.slice(i+1).trim()]}));
        console.info('[Stellarium Moon survey]',{url:base+'surveys/moon',hips_tile_format:rows.hips_tile_format,hips_order:rows.hips_order,obs_frame:rows.obs_frame});
        if(!rows.hips_tile_format)console.warn('[Stellarium Moon] Survey metadata lacks hips_tile_format');
