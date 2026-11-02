@@ -137,6 +137,11 @@ body.sky-exploring .sky-explore-ui{visibility:visible!important}
 .sky-object-panel{background:#101924f5;border-color:#ffffff38;backdrop-filter:blur(16px)}
 .sky-object-panel dt{color:#a7b5c8}.sky-object-panel dd{color:#f3f7fd}
 @media(max-width:650px){.sky-explore-hint{font-size:11px!important;top:62px!important;right:12px}.sky-explore-bottom{max-width:calc(100vw - 24px)}.sky-object-panel{bottom:80px}}
+
+/* Keep planetarium controls usable on narrow screens without covering the sky. */
+.sky-explore-bottom{max-width:calc(100vw - 24px);overflow-x:auto;scrollbar-width:thin;justify-content:flex-start}
+.sky-explore-bottom button{flex:0 0 auto}
+@media(max-width:650px){.sky-explore-bottom{left:12px;right:12px;transform:none;width:auto;max-width:none;bottom:max(8px,env(safe-area-inset-bottom,0px))}.sky-object-panel{bottom:94px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
 </style>
 </head>
@@ -147,7 +152,7 @@ body.sky-exploring .sky-explore-ui{visibility:visible!important}
  <div class="sky-explore-top"><strong>Explore the live sky</strong><button type="button" id="sky-explore-exit">✕ Return to website</button></div>
  <div class="sky-explore-hint">Drag to look around · Scroll or pinch to zoom · Tap a star for details</div>
  <aside id="sky-object-panel" class="sky-object-panel" hidden aria-live="polite"><button class="sky-close-object" type="button" id="sky-object-close" aria-label="Close object information">✕</button><h2 id="sky-object-title">Celestial object</h2><p class="sky-object-subtitle">Live Stellarium object data</p><dl id="sky-object-details"></dl></aside>
- <div class="sky-explore-bottom"><button type="button" id="sky-zoom-in" aria-label="Zoom in">＋</button><button type="button" id="sky-zoom-out" aria-label="Zoom out">－</button><button type="button" id="sky-reset-view">Reset view</button></div>
+ <div class="sky-explore-bottom"><button type="button" id="sky-zoom-in" aria-label="Zoom in">＋</button><button type="button" id="sky-zoom-out" aria-label="Zoom out">－</button><button type="button" id="sky-reset-view">Reset view</button><button type="button" id="sky-atmosphere" aria-pressed="false">Atmosphere off</button><button type="button" id="sky-constellations" aria-pressed="false">Constellations off</button></div>
 </div>
 <section class="hero" id="top"><div class="sky-location" id="sky-location" hidden><span id="sky-place">Istanbul</span> · Live sky <button type="button" id="sky-permission">Use my location</button></div>
 <header class="site-header"><a class="brand" href="/" aria-label="Arif Solmaz home">Arif <em>Solmaz</em></a>
@@ -231,6 +236,16 @@ document.addEventListener('keydown',event=>{if(event.key==='Escape'){mobileMenu.
  function zoom(factor){if(!engine)return;try{if(typeof engine._core_on_zoom==='function')engine._core_on_zoom(factor,canvas.clientWidth/2,canvas.clientHeight/2);else if(typeof engine.core.on_zoom==='function')engine.core.on_zoom(factor,canvas.clientWidth/2,canvas.clientHeight/2);else console.warn('Use trackpad or mouse wheel to zoom')}catch(e){console.warn('Zoom control unavailable',e)}}
  document.getElementById('sky-zoom-in').addEventListener('click',()=>zoom(1.3));
  document.getElementById('sky-zoom-out').addEventListener('click',()=>zoom(1/1.3));
+ function layerToggle(id,getter,setter,label){
+  const btn=document.getElementById(id);
+  btn.addEventListener('click',()=>{
+   if(!engine)return;
+   try{const active=!getter(engine);setter(engine,active);btn.setAttribute('aria-pressed',String(active));btn.textContent=label+' '+(active?'on':'off')}
+   catch(err){console.warn(label+' unavailable',err)}
+  });
+ }
+ layerToggle('sky-atmosphere',e=>e.core.atmosphere.visible,(e,v)=>{e.core.atmosphere.visible=v},'Atmosphere');
+ layerToggle('sky-constellations',e=>e.core.constellations.lines_visible,(e,v)=>{e.core.constellations.lines_visible=v},'Constellations');
  document.getElementById('sky-reset-view').addEventListener('click',()=>{if(!engine)return;try{engine.core.lock=null}catch(e){}});
 
  function setPosition(){
@@ -259,6 +274,7 @@ document.addEventListener('keydown',event=>{if(event.key==='Escape'){mobileMenu.
      try{stel.core.landscapes.visible=false}catch(e){}
      // A fully opaque black landscape was previously rendered without its image assets.
      try{stel.core.atmosphere.visible=false}catch(e){}
+     try{stel.core.constellations.lines_visible=false}catch(e){}
      try{stel.change(function(obj,attr){if(attr==='selection'||(obj===stel.core&&attr==='selection'))showObject(stel.core.selection)})}catch(e){console.warn('Selection listener unavailable',e)}
      // Use the published Gaia survey path, not the nonexistent CDN /stars root.
      // Do not claim that the live sky is ready until survey metadata is reachable.
