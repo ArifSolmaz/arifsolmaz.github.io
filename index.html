@@ -142,6 +142,11 @@ body.sky-exploring .sky-explore-ui{visibility:visible!important}
 .sky-explore-bottom{max-width:calc(100vw - 24px);overflow-x:auto;scrollbar-width:thin;justify-content:flex-start}
 .sky-explore-bottom button{flex:0 0 auto}
 @media(max-width:650px){.sky-explore-bottom{left:12px;right:12px;transform:none;width:auto;max-width:none;bottom:max(8px,env(safe-area-inset-bottom,0px))}.sky-object-panel{bottom:94px}}
+
+/* Homepage is a designed sky-backed composition, not a black planetarium viewport. */
+body.sky-active:not(.sky-exploring)::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 75% 48% at 65% 12%,rgba(56,81,127,.23),transparent 85%),linear-gradient(180deg,rgba(13,26,48,.12) 0%,rgba(7,17,33,.34) 58%,rgba(4,11,23,.66) 100%)}
+body.sky-active:not(.sky-exploring) .hero::before{background-image:linear-gradient(90deg,rgba(3,11,24,.77),rgba(5,16,34,.24) 82%),linear-gradient(0deg,rgba(4,11,23,.5),transparent 45%)!important}
+body.sky-exploring::before{display:none!important}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
 </style>
 </head>
@@ -223,11 +228,15 @@ document.addEventListener('keydown',event=>{if(event.key==='Escape'){mobileMenu.
  function enterExplore(){
   if(!engine)return;
   exploring=true;document.body.classList.add('sky-exploring');ui.hidden=false;toggle.hidden=true;
+  // Use the engine's physically modeled atmosphere only in the immersive viewer.
+  // The fixed homepage canvas stays clear and dark behind text.
+  try{engine.core.atmosphere.visible=true;const btn=document.getElementById('sky-atmosphere');btn.setAttribute('aria-pressed','true');btn.textContent='Atmosphere on'}catch(err){console.warn('Atmosphere unavailable',err)}
   canvas.setAttribute('aria-hidden','false');
   exit.focus();
  }
  function leaveExplore(){
   exploring=false;document.body.classList.remove('sky-exploring');ui.hidden=true;panel.hidden=true;
+  try{engine.core.atmosphere.visible=false;const btn=document.getElementById('sky-atmosphere');btn.setAttribute('aria-pressed','false');btn.textContent='Atmosphere off'}catch(err){}
   canvas.setAttribute('aria-hidden','true');toggle.hidden=false;toggle.focus();
  }
  toggle.addEventListener('click',enterExplore);exit.addEventListener('click',leaveExplore);
