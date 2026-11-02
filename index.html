@@ -130,6 +130,13 @@ body.sky-exploring .sky-explore-ui{visibility:visible!important}
 .sky-object-panel dd{text-align:left;font:500 15px/1.55 'Space Mono',monospace;overflow-wrap:anywhere;word-break:normal;color:#f2f6ff}
 .sky-object-subtitle{color:#afc5df;font-size:13px;margin:0 0 8px}
 @media(max-width:650px){.sky-object-panel{padding:19px;max-height:55dvh;bottom:70px;top:auto}.sky-object-panel h2{font-size:25px}.sky-object-panel dd{font-size:13px}}
+
+/* Planetarium polish: readable details and calmer, layered controls. */
+.sky-explore-ui .sky-explore-hint{padding:8px 12px;border-radius:9px;background:#071426bd;max-width:calc(100vw - 32px)}
+.sky-explore-bottom{background:#071426e8;padding:7px;border:1px solid #ffffff35;border-radius:14px;box-shadow:0 12px 32px #0009}
+.sky-object-panel{background:#101924f5;border-color:#ffffff38;backdrop-filter:blur(16px)}
+.sky-object-panel dt{color:#a7b5c8}.sky-object-panel dd{color:#f3f7fd}
+@media(max-width:650px){.sky-explore-hint{font-size:11px!important;top:62px!important;right:12px}.sky-explore-bottom{max-width:calc(100vw - 24px)}.sky-object-panel{bottom:80px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
 </style>
 </head>
@@ -250,6 +257,7 @@ document.addEventListener('keydown',event=>{if(event.key==='Escape'){mobileMenu.
      engine=stel;setPosition();syncClock();
      // The default horizon/landscape can form large opaque black polygons.
      try{stel.core.landscapes.visible=false}catch(e){}
+     // A fully opaque black landscape was previously rendered without its image assets.
      try{stel.core.atmosphere.visible=false}catch(e){}
      try{stel.change(function(obj,attr){if(attr==='selection'||(obj===stel.core&&attr==='selection'))showObject(stel.core.selection)})}catch(e){console.warn('Selection listener unavailable',e)}
      // Use the published Gaia survey path, not the nonexistent CDN /stars root.
@@ -260,6 +268,8 @@ document.addEventListener('keydown',event=>{if(event.key==='Escape'){mobileMenu.
       if(!response.ok)throw Error('Gaia metadata HTTP '+response.status);
       stel.core.stars.addDataSource({url:stars});
       stel.core.planets.addDataSource({url:base+'surveys/sso/moon',key:'moon'});
+      // Upstream example also registers a default planetary texture survey.
+      stel.core.planets.addDataSource({url:base+'surveys/sso/moon',key:'default'});
       stel.core.planets.addDataSource({url:base+'surveys/sso/sun',key:'sun'});
       stel.core.milkyway.addDataSource({url:base+'surveys/milkyway'});
       hero.classList.add('sky-active');document.body.classList.add('sky-active');locationBar.hidden=false;toggle.hidden=false;
