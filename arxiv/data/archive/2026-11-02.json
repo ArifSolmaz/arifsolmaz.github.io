@@ -1,0 +1,124 @@
+{
+  "announcement_date": "2026-11-02",
+  "updated_at": "2026-11-02T08:43:37.715634+00:00",
+  "category": "astro-ph.EP",
+  "paper_count": 4,
+  "papers": [
+    {
+      "id": "2610.42035v1",
+      "title": "Distinguishing N₂-Dominated from O₂-Dominated Atmospheres on Terrestrial Exoplanets with Reflected-Light Spectroscopy",
+      "abstract": "Reflected-light spectra of Earth-sized exoplanets promise to probe habitability and biosignatures, but interpreting atmospheric oxygen can be challenging because O₂ can arise from both biological and abiotic processes. In addition, reflected-light retrievals exhibit degeneracies among atmospheric composition, clouds, surface reflectance, and gravity. We use the Bayesian retrieval framework ExoReL′, leveraging recent model developments that incorporate (i) O₂-O₂ collision-induced absorption (CIA), which produces the O₄ bands, and (ii) a wavelength-dependent (step-function) surface albedo parameterization. Focusing on a modern Earth analog, we compare retrievals with and without O₂-O₂ CIA using spectra within 0.25-1.8 μm, and perform signal-to-noise ratio (SNR) sweeps for two observing configurations motivated by the Habitable Worlds Observatory: a resolved-visible case (RVIS=140) and a broadband-visible case (three broad bins). Omitting O₂-O₂ CIA allows the retrieval to fit the spectrum with an incorrect O₂-dominated atmosphere. Including O₂-O₂ CIA leverages the O₄ bands to break this degeneracy and recover the correct N₂-dominated, O₂-rich solution without requiring a tight mass prior. Adopting a robustness criterion of 95\\% posterior mass in the N₂-dominated region, both configurations require SNR 20 at 0.75 μm (SNR ≈14 near the 1.27 μm O₄ band for RNIR=70) to identify the correct dominant gas, with higher cloud fraction increasing this threshold. Reducing near-IR coverage to 1.4 μm prevents recovery of the correct N₂-dominated solution across the explored SNR range, and instead favors a spurious O₂-dominated, CO₂-rich atmosphere. These results support near-IR coverage to 1.7 μm and SNR 20 at 0.75 μm for robust oxygen interpretation on Earth-like planets.",
+      "authors": [
+        "Nick Burri",
+        "Mario Damiano",
+        "Renyu Hu"
+      ],
+      "categories": [
+        "astro-ph.EP",
+        "astro-ph.IM"
+      ],
+      "published": "2026-10-30",
+      "updated": "2026-10-30",
+      "pdf_link": "https://arxiv.org/pdf/2610.42035v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2610.42035v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 85,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2610.42035v1/2610.42035v1/significance_heatmap.png"
+    },
+    {
+      "id": "2610.41621v1",
+      "title": "From Anoxic to Oxic Earth: Detectability of Atmospheric Biosignatures across Stellar Hosts with ELT/ANDES",
+      "abstract": "Earth's atmosphere evolved from an anoxic, methane-bearing Archean state through Proterozoic oxygenation to the O₂-rich modern atmosphere. However, most biosignature detectability studies focus on modern Earth, leaving earlier atmospheric states comparatively unexplored. We investigate how atmospheric evolution and stellar environments influence the detectability of O₂, CH₄, H₂O, and CO₂, and their potential to distinguish anoxic from oxygenated atmospheres. We construct two complementary photochemical grids: representative Archean, Proterozoic, and modern-Earth scenarios around the Sun, and four geological epochs (3.9, 2.0, 0.8 Ga, and modern Earth) across FGKM hosts. Combining one-dimensional photochemical modeling, high-resolution transmission spectral simulations, and instrument-noise modeling, we assess molecular detectability with ELT/ANDES under optimistic photon-noise-limited conditions. For solar-host Archean and Proterozoic models, CH₄ requires approximately 33 and 42 transits, respectively, to reach the adopted 5σ criterion, whereas O₂ remains below 3σ within the observing limits. Modern-Earth O₂ reaches 3σ after approximately 38 transits. Across the FGKM grid, O₂ does not reach 5σ for the 3.9 Ga models. However, For the M3V, K2V, and M8V proxies, modern-Earth O₂ reaches 5σ in 9, 15, and 20 transits, respectively, whereas CH₄ requires 11, 12, and 28 transits at 3.9 Ga and only 2--4 transits across the oxygenated epochs. These results reveal a strong O₂ detectability contrast around M and K-dwarfs, but not Sun-like hosts in the YJH bands. Robust biosignature interpretation requires complementary molecular constraints, including informative non-detections, within the context of atmospheric evolution and stellar environment.",
+      "authors": [
+        "Dwaipayan Dubey",
+        "Spandan Dash",
+        "Liton Majumdar"
+      ],
+      "categories": [
+        "astro-ph.EP"
+      ],
+      "published": "2026-10-30",
+      "updated": "2026-10-30",
+      "pdf_link": "https://arxiv.org/pdf/2610.41621v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2610.41621v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 38,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2610.41621v1/2610.41621v1/Earth_deep_time_spectra_timeline.png"
+    },
+    {
+      "id": "2610.42009v1",
+      "title": "An end-to-end CNN search for ultra-short-period planets in TESS: from the blend ceiling to the independent validation of TOI-6662 b",
+      "abstract": "We trained a convolutional neural network to detect ultra-short-period planets in TESS photometry, following the procedure now standard in the field: synthetic transits as positives, eclipsing binaries as negatives. Measured that way it reaches an area under the ROC curve of 0.97. Keeping the same model and the same planets, but replacing the negatives with false positives that the TESS Follow-up Observing Program has actually rejected, the area falls to 0.50 -- the value of a random classifier. The conventional benchmark had been measuring a problem that does not exist. The reason is physical, and it bounds what is possible. Of 145 such false positives examined at pixel level, 42% are blends: eclipses belonging to a neighbouring star, diluted into the target aperture. Their light curves are indistinguishable from shallow transits, capping the attainable area at 1 - f/2 = 0.79. Retraining on real false positives reaches 0.80 +/- 0.06, confirming the ceiling independently. No classifier reading a single-band light curve can do better. A detector alone is the wrong instrument. We built CASCADE-USP, a pipeline chaining the network with difference-image centroid analysis, scene modelling with high-resolution imaging and the Gaia astrometric solution, supplying in sequence what the light curve lacks. Its output is a prioritisation, not a verdict: it records what evidence each candidate still needs. Only the classifier is domain-specific; the other stages apply to any transit candidate. Of 435 unresolved TESS candidates it isolates 20; 19 prove false positives, traced to causes invisible in TESS photometry. The twentieth is TOI-6662 b, an Earth-sized planet (0.94 +/- 0.03 Earth radii) orbiting an M dwarf every 7.05 hours. Our validation, independent of a concurrent one, agrees with it in planetary parameters and classification, closing the CASCADE procedure with an external check.",
+      "authors": [
+        "Juan F. Pagés Navarrete"
+      ],
+      "categories": [
+        "astro-ph.EP",
+        "astro-ph.IM"
+      ],
+      "published": "2026-10-30",
+      "updated": "2026-10-30",
+      "pdf_link": "https://arxiv.org/pdf/2610.42009v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2610.42009v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 17,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2610.42009v1/2610.42009v1/fig_toi6662.png"
+    },
+    {
+      "id": "2610.40964v1",
+      "title": "Completeness and dynamical stability in exoplanet occurrence rates",
+      "abstract": "Exoplanet population studies are often quantified through the \"occurrence rate\" of certain types of planet. This value can be calculated from a survey of a sample of stars by taking the \"detection rate\" and correcting with a completeness factor. This completeness is calculated via detection limits on each individual star, and can be calculated either individually for each detected planet or averaged in a certain area of parameter space. We test whether either the average completeness or individual completeness performs better than the other. We also test whether including dynamical stability constraints in the detection limits improves the occurrence rate results. We use synthetic sets of exoplanetary systems and calculate occurrence rates for each and compare to what the value would be with perfect information. We compare how close each method is to the ground truth to assess which is most suitable. Overall, in our synthetic sets, the average completeness is more reliable though it can be a problem if there is a sharp change in the underlying population within the area of parameter-space considered. We find that using dynamical stability conditions causes a bias in the occurrence rate and do not recommend using these.",
+      "authors": [
+        "Thomas A. Baycroft",
+        "Manu Stalport",
+        "Romain Eltschinger",
+        "Matteo Pinamonti",
+        "Jeanne Davoult",
+        "Khaled Al Moulla",
+        "Yann Alibert"
+      ],
+      "categories": [
+        "astro-ph.EP"
+      ],
+      "published": "2026-10-29",
+      "updated": "2026-10-29",
+      "pdf_link": "https://arxiv.org/pdf/2610.40964v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2610.40964v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 6,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2610.40964v1/2610.40964v1/Figures/ARDENT_Example.png"
+    }
+  ]
+}
