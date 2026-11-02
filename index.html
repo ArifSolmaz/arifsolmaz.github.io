@@ -270,14 +270,19 @@ document.addEventListener('keydown',event=>{if(event.key==='Escape'){mobileMenu.
       // Report the actual lunar survey metadata; a smooth Moon means its texture may not load.
       fetch(base+'surveys/sso/moon/properties').then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.text()}).then(t=>{
        const rows=Object.fromEntries(t.split(/\\r?\\n/).filter(line=>line.includes('=')).map(line=>{const i=line.indexOf('=');return [line.slice(0,i).trim(),line.slice(i+1).trim()]}));
-       console.info('[Stellarium Moon survey]',{url:base+'surveys/sso/moon',hips_tile_format:rows.hips_tile_format,hips_order:rows.hips_order,obs_frame:rows.obs_frame});
+       console.info('[Stellarium Moon survey]',{url:base+'surveys/moon',hips_tile_format:rows.hips_tile_format,hips_order:rows.hips_order,obs_frame:rows.obs_frame});
        if(!rows.hips_tile_format)console.warn('[Stellarium Moon] Survey metadata lacks hips_tile_format');
       }).catch(e=>console.error('[Stellarium Moon] Survey metadata unavailable',e));
-      stel.core.planets.addDataSource({url:base+'surveys/sso/moon',key:'moon'});
+      stel.core.planets.addDataSource({url:base+'surveys/moon',key:'moon'});
       // Upstream example also registers a default planetary texture survey.
-      stel.core.planets.addDataSource({url:base+'surveys/sso/moon',key:'default'});
-      stel.core.planets.addDataSource({url:base+'surveys/sso/sun',key:'sun'});
+      stel.core.planets.addDataSource({url:base+'surveys/moon',key:'default'});
+      stel.core.planets.addDataSource({url:base+'surveys/sun',key:'sun'});
       stel.core.milkyway.addDataSource({url:base+'surveys/milkyway'});
+      // Published planetary HiPS catalog; use body-specific surveys.
+      for(const body of ['mercury','venus','mars','jupiter','saturn','uranus','neptune']){
+       try{stel.core.planets.addDataSource({url:base+'surveys/'+body,key:body})}catch(err){console.warn('Planet survey '+body,err)}
+      }
+      try{stel.core.planets.addDataSource({url:base+'surveys/moon-normal',key:'moon-normal'})}catch(err){console.warn('Moon normal map',err)}
       hero.classList.add('sky-active');document.body.classList.add('sky-active');locationBar.hidden=false;toggle.hidden=false;
      }).catch(err=>{
       console.error('Stellarium catalog unavailable; retaining homepage photo:',err);
