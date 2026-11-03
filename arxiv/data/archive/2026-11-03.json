@@ -1,0 +1,340 @@
+{
+  "announcement_date": "2026-11-03",
+  "updated_at": "2026-11-03T08:56:19.504265+00:00",
+  "category": "astro-ph.EP",
+  "paper_count": 11,
+  "papers": [
+    {
+      "id": "2611.00188v1",
+      "title": "First-principles calculations of far-wing absorption in He-broadened CO2 infrared spectra",
+      "abstract": "We report theoretical predictions and modeling of the far-wing absorption of CO2 broadened by He over a wide temperature range (200-1000 K), which are relevant for exoplanet atmosphere studies. Accurate modeling of He-broadened CO2 absorption is essential for opacity calculations used to characterize the composition, structure, and climate of exoplanet atmospheres. In particular, the strong CO2 band at 4.3 mum has been clearly identified in the spectra of several exoplanets observed with the James Webb Space Telescope (JWST). Requantized classical molecular dynamics simulations were first performed to predict absorption in the far wings of the 4.3 mum band of CO2. The resulting predictions show excellent agreement with available experimental data at room temperature. The theoretical predictions and measured data were then used to parameterize an impact energy-corrected sudden model, which allowed us to accurately reproduce the far-wing absorption of He-broadened CO2 in several infrared spectral regions over the (200-1000) K temperature range. Finally, for applications to exoplanet atmosphere opacity calculations, we derived temperature-dependent chi-factor corrections that account for the sub-Lorentzian behavior of the far wing of the major infrared bands of CO2.",
+      "authors": [
+        "Ha Tran",
+        "Emile Ducreux"
+      ],
+      "categories": [
+        "astro-ph.EP",
+        "astro-ph.IM"
+      ],
+      "published": "2026-10-30",
+      "updated": "2026-10-30",
+      "pdf_link": "https://arxiv.org/pdf/2611.00188v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.00188v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 44,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2611.00188v1/2611.00188v1/CMDS_measure_nu3_296K.jpg"
+    },
+    {
+      "id": "2611.03643v1",
+      "title": "The Neptunian ridge through the lens of TESS",
+      "abstract": "The Neptunian desert and savanna are separated by a ridge, an overdensity at orbital periods of approximately 3-6 d identified with Kepler. Like the hot Jupiter pileup at larger radii, this feature has been linked to the accumulation of successful outcomes of high-eccentricity migration (HEM). We revisit the ridge independently using TESS occurrence posteriors for FGK main-sequence stars. We quantify its excess over adjacent regions and compare six occurrence profiles using leave-one-out cross-validation and Bayesian evidence. For planets with radii of approximately 5-8 R_⊕, the ridge has twice the occurrence density of the denser neighbouring region (J=2.05⁺⁰.⁵²₋₀.₄₄), with 99.9% posterior support (one-sided Gaussian equivalent of 3.1σ). This contrast agrees with the discovery study and earlier Kepler occurrence measurements. Both predictive performance and Bayesian evidence strongly favour profiles peaking within the ridge over a single power law. The lognormal is preferred, suggesting a narrower inner wing and a more extended outer wing, although evidence for asymmetry remains weak. In the same period window, the analysis recovers the hot Jupiter pileup (approximately 10-16 R_⊕) with a contrast consistent with that of the ridge and excludes an analogous excess among sub-Neptunes (approximately 2-4 R_⊕) with 3.4σ posterior support. TESS thus provides an independent detection of the Neptunian ridge. Its possible asymmetry would be compatible with HEM, in which tidal disruption could produce a sharper inner edge and variations in circularisation efficiency a more gradual outer decline. Establishing whether the ridge has this shape requires more precise occurrence measurements, with PLATO's expected planet yield offering a promising opportunity to help unveil its morphology.",
+      "authors": [
+        "Amadeo Castro-González"
+      ],
+      "categories": [
+        "astro-ph.EP"
+      ],
+      "published": "2026-11-02",
+      "updated": "2026-11-02",
+      "pdf_link": "https://arxiv.org/pdf/2611.03643v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.03643v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 40,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2611.03643v1/data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "2611.02099v1",
+      "title": "Tracking the evolution of sub-Neptunes. II. The radius valley on gyrochronological ages",
+      "abstract": "The radius valley separating super-Earths from sub-Neptunes is understood as a signature of atmospheric mass loss, but the timescale over which it develops remains poorly constrained. We investigate the age evolution of the radius valley and the super-Earth population around FGK stars using gyrochronological ages. We select 746 planets around 510 FGK hosts with reliable gyrochronological ages between 0.1 and 4 Gyr. A subset of 581 planets around 404 hosts, for which detection and confirmation completeness can be characterised, forms the reference sample. We measure the valley morphology and its locus in the period-radius plane, and infer the intrinsic super-Earth fraction with a selection-conditioned mixture model that accounts for stellar-age uncertainties. The intrinsic super-Earth fraction increases primarily during the first 2 Gyr, with no significant subsequent evolution. An exponential approach-to-plateau model places 90\\% of this increase within 1.9 Gyr at 90\\% credibility. The radius valley is consistently resolved from 1.5 Gyr onwards, with no significant evolution in its depth or width. Its minimum may shift from 1.5\\,R_⊕ before 2 Gyr to 1.8\\,R_⊕ at older ages, accompanied by a change in the shape of the super-Earth radius distribution, although these changes are only suggestive. This evolution is consistent with atmospheric loss continuing up to approximately 1-2 Gyr for a fraction of planets. The tentative shift of the valley minimum towards larger radii may indicate that planets with more massive cores complete envelope loss later, although the present data do not uniquely distinguish between atmospheric-loss mechanisms.",
+      "authors": [
+        "N. Greco",
+        "A. C. Lanzafame",
+        "I. Pagano",
+        "G. Scandariato",
+        "V. Drago",
+        "F. Spada"
+      ],
+      "categories": [
+        "astro-ph.EP",
+        "astro-ph.SR"
+      ],
+      "published": "2026-11-01",
+      "updated": "2026-11-01",
+      "pdf_link": "https://arxiv.org/pdf/2611.02099v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.02099v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 26,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2611.02099v1/2611.02099v1/figures/valley_loci_by_age.png"
+    },
+    {
+      "id": "2611.03019v1",
+      "title": "Are habitable-zone TESS Objects of Interest really there? Period resolution from the full archive",
+      "abstract": "TESS Objects of Interest (TOIs) seen as single or duo transits carry a catalogue period that is undefined or equal to the separation of the two events, and their insolation and any habitable-zone label inherit it. We reanalyse all 187 TOIs catalogued with P = 0 or P >= 200 d using all public TESS data through Sector 107, with a flux-based method that weights each alias by per-epoch transit likelihoods, the transit duration and a geometric prior, and tests for coherence, data edges, contamination by other planets and instrumental artefacts. It recovers 12 published periods blindly and, in injection-recovery tests, 71 per cent of periods constrained by a new transit, with no wrong period. It resolves 28 periods and fixes 8 more by exclusion. Are habitable-zone TOIs really there? Mostly not: of the 28 duo-transits that a catalogue-period criterion places in the conservative habitable zone, about two are expected to lie there, both giants, and none of the 12 planet-sized ones; those resolved are aliases of hotter planets. Conversely, habitable-zone planets hide behind missing or wrong periods: we recover three published M-dwarf examples and validate four planets with new periods, including TOI-2298 b, a 3.0 Earth-radius sub-Neptune at 146.58 d in the conservative habitable zone of a K dwarf, and TOI-6075 b, a 1.7 Earth-radius planet at 416.5 d (833 d not excluded), the second validated transiting planet smaller than 2 Earth radii with P > 1 yr. We release alias-marginalised habitable-zone probabilities for the whole sample.",
+      "authors": [
+        "Juan F. Pagés Navarrete"
+      ],
+      "categories": [
+        "astro-ph.EP",
+        "astro-ph.IM"
+      ],
+      "published": "2026-11-02",
+      "updated": "2026-11-02",
+      "pdf_link": "https://arxiv.org/pdf/2611.03019v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.03019v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 20,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2611.03019v1/2611.03019v1/fig6_sector7.png"
+    },
+    {
+      "id": "2611.00856v1",
+      "title": "Tracking the evolution of sub-Neptunes. I. Gyrochronology of planet hosting stars",
+      "abstract": "Stellar age is fundamental for reconstructing planetary-system evolution but remains difficult to determine for unevolved main-sequence stars. Stellar rotation provides a sensitive age diagnostic and a temporal framework for investigating the evolution of close-in planets. This is the first paper in a series aimed at tracing the evolution of the sub-Neptune population through homogeneous ages of their host stars. We compiled rotation periods and stellar parameters for 4639 confirmed exoplanet hosts. Gyrochronological ages were inferred using a two-zone rotational evolution model and a Bayesian approach combining rotation periods, dereddened Gaia (BP-RP) colours, and literature stellar masses as Gaussian priors. Rotational tracks were extended to the terminal-age main sequence, beyond the empirical calibration range. We obtain gyrochronological constraints for 2204 host stars. Well-constrained ages have typical formal uncertainties of 10--15%, offering substantially greater precision than is generally achievable through isochrone fitting for unevolved stars. Inferred stellar masses agree with the literature priors, while model effective temperatures are consistent with independent determinations. Ages beyond the open-cluster calibration range remain model-dependent. The resulting homogeneous catalogue provides the age framework for investigating the evolution of sub-Neptune populations and the emergence of the radius valley. Stellar parameters, provenance, and gyrochronological results are publicly available through CDS.",
+      "authors": [
+        "Alessandro C. Lanzafame",
+        "Vincenzo Drago",
+        "Nino Greco",
+        "Isabella Pagano",
+        "Gaetano Scandariato",
+        "Federico Spada"
+      ],
+      "categories": [
+        "astro-ph.SR",
+        "astro-ph.EP",
+        "astro-ph.GA"
+      ],
+      "published": "2026-10-31",
+      "updated": "2026-10-31",
+      "pdf_link": "https://arxiv.org/pdf/2611.00856v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.00856v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 18,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2611.00856v1/2611.00856v1/rotation_tracks.png"
+    },
+    {
+      "id": "2611.01237v1",
+      "title": "Mean-element Parareal: Parallel-in-Time Integration of the Solar System",
+      "abstract": "Long-term integrations of planetary systems have long been considered inherently sequential: each time step must start from the exact state at the end of the previous one, because any error in that state, however small, is amplified by orbital shear and chaos and alters the trajectory. Because a single step of a modern Wisdom--Holman integrator takes only 100 ns - too short to split across cores - additional cores have previously only been used to run multiple simulations in parallel. We introduce mean-element parareal (MEP), a parallel-in-time scheme that accelerates a single Solar System integration (eight planets, general relativity) at the same accuracy as the serial integrator. Combined with a latency-optimized C kernel that integrates 5 Gyr on one core in 5.8 h, MEP completes a 5 Gyr integration in 52 min on 64 cores (a parallel speed-up of 6.7x, and 10.4x faster than the previous 9.0 h single-core record) or in 1.8 h on 16 cores (3.3x parallel speed-up, 5.0x faster than the previous record). MEP succeeds because its coarse propagator uses a numerical first-order mean-element theory to remove the short-period oscillations from the semi-major axes, preventing Keplerian shear from amplifying them into growing phase errors. Standard parareal with a coarse Wisdom-Holman integrator fails for planetary orbits because no inexpensive coarse integrator can resolve these oscillations. To our knowledge, this is the first measured multicore speed-up of a single long-term planetary integration and opens a pathway towards larger-scale parallelization.",
+      "authors": [
+        "Michael Hippke"
+      ],
+      "categories": [
+        "astro-ph.EP",
+        "astro-ph.IM"
+      ],
+      "published": "2026-10-31",
+      "updated": "2026-10-31",
+      "pdf_link": "https://arxiv.org/pdf/2611.01237v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.01237v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 15,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2611.01237v1/2611.01237v1/bias.png"
+    },
+    {
+      "id": "2611.00378v1",
+      "title": "HD 210058 b and BD+37 4838 b: A precessing eccentric hot Jupiter and a misaligned substellar companion around two A-type stars",
+      "abstract": "The number of A- and F-type stars known to host exoplanets is relatively low, as is the number of planets with measured spin-orbit angle, which is the angle between the planet's orbital axis and the star's rotational axis. Expanding the sample of such systems is important for constraining the formation and migration mechanisms of close-in giant planets around early-type stars. We aim to measure the sky-projected spin-orbit angles of HD 210058b (TOI-1355b) and BD+37 4838b (TOI-1414b), two objects still listed as candidate exoplanets, and to assess the planetary nature of these systems. Both of their host stars are fast rotators. We analyzed TESS photometry together with transit time-series of HARPS-N spectra. For both objects, we created cross-correlation functions from the spectra to analyze Doppler tomography and detect and model the Doppler shadow, while we also used the photometric observations to refine a number of previously poorly constrained photometric and spectroscopic parameters of both the host stars and the companions. When possible, we used the derived results to constrain the companion masses. We verified the planetary and substellar nature for both objects respectively. We report HD 210058 b to be a giant hot Jupiter with a mass of 10 M_Jup, residing on a slightly misaligned orbit with the sky-projected spin-orbit angle λ=-32 -6 +4 deg. Archival photometry reveals continuously changing inclination and impact parameter, pointing to a nodal precession with period of 860 yr, and giving availability of only about six upcoming years for any further transit observations. The second target, BD+37 4838 b, orbits a hybrid γ Dor-δ Sct pulsator on a misaligned orbit with λ=56.9 +1.4 -2.3 deg. Since we could not reliably recover its mass, we only report an upper limit of approx. 24.3 M_Jup, leaving the possible planetary nature of this object unresolved.",
+      "authors": [
+        "Z. Balkóová",
+        "J. Žák",
+        "M. Skarka",
+        "M. C. Johnson",
+        "A. W. Mann",
+        "M. G. Barber",
+        "P. Gajdoš",
+        "T. G. Beatty",
+        "M. A. Kroft",
+        "I. Ilyin",
+        "P. Kabáth"
+      ],
+      "categories": [
+        "astro-ph.EP"
+      ],
+      "published": "2026-10-30",
+      "updated": "2026-10-30",
+      "pdf_link": "https://arxiv.org/pdf/2611.00378v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.00378v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 15,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2611.00378v1/2611.00378v1/TOI-1355_allesfit_phase.png"
+    },
+    {
+      "id": "2611.02371v1",
+      "title": "A Century-Long Archival Search and Analysis of the Rubin Observatory-Discovered Dwarf Planet Candidate 2026 ED₁₃₈",
+      "abstract": "The trans-Neptunian object (TNO) 2026 ED₁₃₈ was discovered in early data from the NSF-DOE Vera C. Rubin Observatory, and recovered in Dark Energy Camera images back to 2016. With an absolute magnitude of H_V = 3.11 ± 0.05 mag, it is one of the largest known TNOs, with a diameter of 635-1590 km for geometric albedos between 0.25 and 0.04. Its position far to the south and close to the galactic plane kept it hidden in images that recorded it for decades. Here, we present archival observations of 2026 ED₁₃₈ spanning 89 years: twelve photographic plates taken between 1954 and 2000, a marginal detection on a 1937 Harvard plate, 2010-2017 VISTA near-infrared images, 2016-2020 SkyMapper images, and ten years of ATLAS photometry. The archival positions improve the long-term ephemeris fivefold, and we predict 15 occultations of G ≤ 16.5 mag stars in 2027-2030, six of which will occur over populated land. The line of sight from Earth has turned by 87′ since 1954, yet the plate magnitudes remain consistent with the present-day phase curve. Fitted plate by plate, they exclude oblate shapes with c/a ≤ 0.6 for at least half of all spin-axis orientations and, with a present-day light curve amplitude below 0.11-0.15 mag, a Haumea-like Jacobi ellipsoid for 90\\% of them. We find a tentative 10.4 h light curve period ( 20.7 h if double-peaked). Near-infrared colors place 2026 ED₁₃₈ in the BR (intermediate red) taxonomic class, with J-H = 0.60±0.15, redder than Haumea and without evidence of similar 1.5 μm water-ice absorption, supporting the conclusion that it is not a Haumea-family member. z-band photometry also limits Eris-like methane to 25\\% of the surface. Integrations over ±1 Gyr show it sticks to the 12:7 resonance with Neptune for tens of megayears at a time, but it rarely remains permanently captured.",
+      "authors": [
+        "Joseph Murtagh",
+        "Colin Orion Chandler",
+        "Mario Jurić",
+        "Ian Chow",
+        "Pedro H. Bernardinelli",
+        "Bruno M. Perroni",
+        "Ryder Strauss",
+        "Sam Deen",
+        "Hugues Talbot",
+        "Matthew J. Holman",
+        "Kevin J. Napier"
+      ],
+      "categories": [
+        "astro-ph.EP",
+        "astro-ph.IM"
+      ],
+      "published": "2026-11-02",
+      "updated": "2026-11-02",
+      "pdf_link": "https://arxiv.org/pdf/2611.02371v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.02371v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 12,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2611.02371v1/2611.02371v1/fig_plates_13.png"
+    },
+    {
+      "id": "2611.00936v1",
+      "title": "Cometary dust activity as a proxy for refractory organic material release",
+      "abstract": "Cometary dust is an important reservoir of refractory organic matter and may contribute to the redistribution of carbon-rich material throughout planetary systems. We investigate whether the widely used dust-activity parameter Afρ can serve as a first-order observational proxy for the release of refractory organic material. A sample of 27 active small bodies representing active asteroids, main-belt comets, quasi-Hilda comets, quasi-Trojan objects, Jupiter-family comets, Centaurs, and long-period comets was compiled from published photometric studies. Representative near-perihelion, phase-corrected A(0)fρ values span more than three orders of magnitude, from a few centimetres for weakly active asteroids and main-belt comets to 10⁴ cm for the most active long-period comets. The large dispersion within individual dynamical classes shows that orbital classification alone does not determine the level of dust activity. Direct compositional measurements of cometary dust, including the high refractory-organic fraction measured for 67P/Churyumov-Gerasimenko, support the interpretation of dust activity as an indirect indicator of potential organic-material release. However, a universal conversion of Afρ into dust mass-loss rate is not possible because of uncertainties in grain-size distribution, density, porosity, velocity, and optical properties. We therefore suggest that Afρ may be used as a comparative, first-order proxy for refractory-organic material release.",
+      "authors": [
+        "Serhii Borysenko"
+      ],
+      "categories": [
+        "astro-ph.EP"
+      ],
+      "published": "2026-10-31",
+      "updated": "2026-10-31",
+      "pdf_link": "https://arxiv.org/pdf/2611.00936v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.00936v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 10,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2611.00936v1/2611.00936v1/figure_1_600dpi.png"
+    },
+    {
+      "id": "2611.02753v1",
+      "title": "The colors of protoplanetary disks - Impact of nonspherical dust particles on the polarized and total intensity colors",
+      "abstract": "Dust properties in protoplanetary disks remain poorly understood despite their central role in planet formation. Recent studies based on analyses of scattered-light images and phase functions provide promising insights into dust characterization, but the phase function alone is insufficient to constrain dust properties. Degeneracies between dust remain a major obstacle to linking observations to realistic dust models. We investigate the behavior of the disk color as a function of dust. We used MCFOST to generate synthetic scattered-light images from the visible to the near-infrared, in total and polarized intensity. We considered compact spherical grains using, irregular particles and compact and fractal aggregates using optical properties from the AggScatVIR database. Disk colors were measured from these images. For aggregates larger than the wavelength, monomer size influences color, whereas aggregate size has little effect, especially at low fractal dimensions. Polarized color is more sensitive to dust properties than total intensity color, because it combines the wavelength dependences of scattered intensity and polarization degree. Effective medium theory is reliable only for compact aggregates with small monomers, becoming inaccurate for highly porous aggregates or larger monomers. Effective albedo helps predict disk colors, but radiative transfer is needed to account for multiple scattering. For HD 100546, red optical-to-near-infrared colors exclude compact grains and organic-rich compositions but are consistent with amorphous-carbon aggregates, compact or fractal, containing large monomers. These results show that combining color measurements with polarized scattering phase functions offers a promising way to break degeneracies between dust models. Applying this approach to larger disk samples could better constrain dust properties and evolution.",
+      "authors": [
+        "Maxime Roumesy",
+        "Jie Ma",
+        "Ryo Tazaki",
+        "François Ménard",
+        "Gaspard Duchêne"
+      ],
+      "categories": [
+        "astro-ph.SR",
+        "astro-ph.EP"
+      ],
+      "published": "2026-11-02",
+      "updated": "2026-11-02",
+      "pdf_link": "https://arxiv.org/pdf/2611.02753v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.02753v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 0,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2611.02753v1/2611.02753v1/Disk_Images_complet.png"
+    },
+    {
+      "id": "2611.03291v1",
+      "title": "White dwarf pollution in wide binaries: the role of planetary mass",
+      "abstract": "Atmospheric pollution in white dwarfs is interpreted as evidence for the accretion of rocky material from remnant planetary systems. In wide binaries, these reservoirs can be influenced by planetary perturbers. Here, we investigate how planetary mass affects the survival and delivery of planetesimals onto an evolving white dwarf. We perform N-body simulations incorporating time-dependent stellar evolution and a stellar companion, varying planetary masses and following the evolution of a planetesimal disc. We find that lower-mass planets perturb the planetesimal reservoir less efficiently, allowing more planetesimals to survive longer. Consequently, delivery onto the white dwarf can persist into the cool white dwarf phase, whereas high-mass planets deplete the reservoir earlier, preventing sustained pollution at late stages. Our results show that planetary mass regulates the timescale over which rocky material remains available for accretion, while the planet's location has minor impact. Pollution is more frequent in binaries with lower inclinations and eccentricities.",
+      "authors": [
+        "Constanza Norambuena",
+        "Carolina Charalambous",
+        "Claudia Aguilera-Gómez"
+      ],
+      "categories": [
+        "astro-ph.EP",
+        "astro-ph.SR"
+      ],
+      "published": "2026-11-02",
+      "updated": "2026-11-02",
+      "pdf_link": "https://arxiv.org/pdf/2611.03291v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.03291v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 0,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2611.03291v1/2611.03291v1/evol_temp_10mT.png"
+    }
+  ]
+}

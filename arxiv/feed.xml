@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 02 Nov 2026 08:43:37 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 03 Nov 2026 08:56:19 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,42 +15,112 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>Distinguishing N₂-Dominated from O₂-Dominated Atmospheres on Terrestrial Exoplanets with Reflected-Light Spectroscopy</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-42035v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-42035v1</guid>
-      <pubDate>Mon, 02 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Nick Burri, Mario Damiano, Renyu Hu</dc:creator>
+      <title>First-principles calculations of far-wing absorption in He-broadened CO2 infrared spectra</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-00188v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-00188v1</guid>
+      <pubDate>Tue, 03 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Ha Tran, Emile Ducreux</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.IM</category>
     </item>
     <item>
-      <title>From Anoxic to Oxic Earth: Detectability of Atmospheric Biosignatures across Stellar Hosts with ELT/ANDES</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-41621v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-41621v1</guid>
-      <pubDate>Mon, 02 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Dwaipayan Dubey, Spandan Dash, Liton Majumdar</dc:creator>
+      <title>The Neptunian ridge through the lens of TESS</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-03643v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-03643v1</guid>
+      <pubDate>Tue, 03 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Amadeo Castro-González</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>An end-to-end CNN search for ultra-short-period planets in TESS: from the blend ceiling to the independent validation of TOI-6662 b</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-42009v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-42009v1</guid>
-      <pubDate>Mon, 02 Nov 2026 20:00:00 +0000</pubDate>
+      <title>Tracking the evolution of sub-Neptunes. II. The radius valley on gyrochronological ages</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-02099v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-02099v1</guid>
+      <pubDate>Tue, 03 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>N. Greco et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>Are habitable-zone TESS Objects of Interest really there? Period resolution from the full archive</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-03019v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-03019v1</guid>
+      <pubDate>Tue, 03 Nov 2026 20:00:00 +0000</pubDate>
       <dc:creator>Juan F. Pagés Navarrete</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.IM</category>
     </item>
     <item>
-      <title>Completeness and dynamical stability in exoplanet occurrence rates</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2610-40964v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2610-40964v1</guid>
-      <pubDate>Mon, 02 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Thomas A. Baycroft et al.</dc:creator>
+      <title>Tracking the evolution of sub-Neptunes. I. Gyrochronology of planet hosting stars</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-00856v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-00856v1</guid>
+      <pubDate>Tue, 03 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Alessandro C. Lanzafame et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.SR</category>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.GA</category>
+    </item>
+    <item>
+      <title>Mean-element Parareal: Parallel-in-Time Integration of the Solar System</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-01237v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-01237v1</guid>
+      <pubDate>Tue, 03 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Michael Hippke</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+    </item>
+    <item>
+      <title>HD 210058 b and BD+37 4838 b: A precessing eccentric hot Jupiter and a misaligned substellar companion around two A-type stars</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-00378v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-00378v1</guid>
+      <pubDate>Tue, 03 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Z. Balkóová et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>A Century-Long Archival Search and Analysis of the Rubin Observatory-Discovered Dwarf Planet Candidate 2026 ED₁₃₈</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-02371v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-02371v1</guid>
+      <pubDate>Tue, 03 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Joseph Murtagh et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+    </item>
+    <item>
+      <title>Cometary dust activity as a proxy for refractory organic material release</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-00936v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-00936v1</guid>
+      <pubDate>Tue, 03 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Serhii Borysenko</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>The colors of protoplanetary disks - Impact of nonspherical dust particles on the polarized and total intensity colors</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-02753v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-02753v1</guid>
+      <pubDate>Tue, 03 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Maxime Roumesy et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.SR</category>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>White dwarf pollution in wide binaries: the role of planetary mass</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-03291v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-03291v1</guid>
+      <pubDate>Tue, 03 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Constanza Norambuena, Carolina Charalambous, Claudia Aguilera-Gómez</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.SR</category>
     </item>
   </channel>
 </rss>
