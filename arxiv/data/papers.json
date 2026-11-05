@@ -1,32 +1,32 @@
 {
-  "announcement_date": "2026-11-04",
-  "updated_at": "2026-11-04T08:26:27.986975+00:00",
+  "announcement_date": "2026-11-05",
+  "updated_at": "2026-11-05T08:51:26.527643+00:00",
   "category": "astro-ph.EP",
-  "paper_count": 7,
+  "paper_count": 4,
   "papers": [
     {
-      "id": "2611.04557v1",
-      "title": "Up in smoke: carbon-destruction in the terrestrial planet-forming region of a young Class I disk",
-      "abstract": "Earth's surface and deep mantle are strongly depleted in carbon compared to the Sun. Sublimation of solid carbonaceous material in the inner midplanes of young disks could cause this depletion. We study such thermal processing in HOPS-68, a Class I protostar with a rich hydrocarbon spectrum. A companion paper has shown that it is recondensing refractory dust from a hot inner disk region, and that oxygen-bearing species are tracing a warm (300-500 K) molecular layer entrained in a disk-wind. In this work, we analyze the carbon species in the JWST spectrum of this source using local thermal equilibrium slab models. We detect warm ( 400 K) HCN and C2H2 at the base of a disk wind, as well as colder ( 40 K) C4H2, CH3, and CS in the outer disk or outflow cavity wall. Additionally, 13CCH2, CH4, and C6H2 are detected, while ALMA observations reveal C2H tracing the outflow cavity walls. We suggest that in a \"refractory carbon destruction zone\" in the inner disk, carbon-bearing species are released from the grains, possibly contributing to the observed carbon depletion of Earth. The disk wind then redistributes carbon carried by HCN and C2H2 from the inner disk to the colder outer disk, where UV-induced gas-phase reactions with C2H in the outflow cavity walls could produce the aliphatic carbon chains seen. This result implies that the Warm Carbon Chain Chemistry (WCCC, e.g. N. Sakai & S. Yamamoto 2013) might trace outflows rather than infall. The formation of aliphatic chains in the disk wind could promote the abundant aliphatic organics found in meteorites and asteroids.",
+      "id": "2611.06765v1",
+      "title": "Migration and eccentricity damping timescales in overstable resonant planetary systems: hydrodynamic and N-body simulations",
+      "abstract": "Tidal interactions between planets and discs modify semimajor axes and eccentricities. These effects are represented by migration and eccentricity damping timescales in analytical and Nbody models, although they are assumed constant. This approximation is uncertain in resonant multiplanet systems, where coupled planet disc evolution can produce non-linear torque feedback. We investigate migration and eccentricity damping in two planet systems undergoing resonant and overstable evolution near the 2:1 mean motion resonance. Using hydrodynamic simulations with varying disc surface densities, viscosities, and aspect ratios, we measure both timescales from energy and angular momentum exchange between the planets and disc. We find that both timescales are time dependent and vary throughout the evolution. In resonant systems, sign reversals occur owing to eccentricity oscillations and disc torque variations. Moreover, migration timescales normalised by their expected dependence on planetary mass, disc surface density, and aspect ratio deviate between models. Likewise, the common relation between migration and eccentricity damping timescales is not recovered. We compare the hydrodynamic evolution with several Nbody approaches. Models with constant migration and damping timescales fail to reproduce the hydrodynamic evolution, whereas torque-based approaches provide better agreement. In particular, approaches including corotation torque saturation and planetary eccentricity reproduce the hydrodynamic evolution in the type I migration regime, whereas additional corrections are required when planets partially open gaps. These results show that time-dependent torque-based prescriptions provide a consistent physical link between hydrodynamic simulations and simplified Nbody models of resonant planetary systems.",
       "authors": [
-        "F. J. Ballieux",
-        "M. K. McClure",
-        "E. A. Bergin",
-        "M. L. R. Van 't Hoff",
-        "Ł. Tychoniec",
-        "L. Francis",
-        "E. F. Van Dishoeck"
+        "Zahra Afkanpour",
+        "Sareh Ataiee",
+        "Anna B. T. Penzlin",
+        "Alexandros Ziampras",
+        "Hadiseh Nabavinezhad",
+        "Christoph Schäfer",
+        "Hilke Schlichting",
+        "Rafael Sfair"
       ],
       "categories": [
-        "astro-ph.SR",
         "astro-ph.EP"
       ],
-      "published": "2026-11-03",
-      "updated": "2026-11-03",
-      "pdf_link": "https://arxiv.org/pdf/2611.04557v1.pdf",
-      "abs_link": "https://arxiv.org/abs/2611.04557v1",
+      "published": "2026-11-04",
+      "updated": "2026-11-04",
+      "pdf_link": "https://arxiv.org/pdf/2611.06765v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.06765v1",
       "is_exoplanet_focused": true,
-      "tweetability_score": 32,
+      "tweetability_score": 20,
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -35,26 +35,26 @@
         "evidence": "",
         "question": ""
       },
-      "figure_url": "https://arxiv.org/html/2611.04557v1/2611.04557v1/C2H_mom0_red_blue_contours.png"
+      "figure_url": "https://arxiv.org/html/2611.06765v1/2611.06765v1/alphas_revised.png"
     },
     {
-      "id": "2611.04039v1",
-      "title": "Precision Requirements for Robust Small Planet Classification",
-      "abstract": "Classifying small exoplanets as rocky, volatile-rich, or iron-enriched is a prerequisite for efficient allocation of atmospheric characterization resources. The Nominally Rocky Planet Zone (NRPZ) provides a framework for this classification by comparing observed bulk densities against the expected density range for volatile-free rocky planets, calibrated from stellar abundance distributions. However, the efficacy of classifying a planet using the NRPZ is critically dependent on the precision of the underlying mass and radius measurements. Here, we perform an analytical propagation of observational uncertainties through the NRPZ classification framework for 37 candidate rocky exoplanets with radii below 2 Earth radii orbiting stars with visual magnitudes <11. Among the 37 planets, we find 12 already possess sufficiently precise mass and radius measurements to be confidently classified as Mini-Neptunes or Super-Mercuries. The remaining planets require approximately a 60% reduction in the combined mass and radius uncertainties before they can be reliably classified. We find that 1-1,000 new observations are necessary to achieve these lower uncertainties, and these are likely lower limits. We argue that, while possible, this level of intense observation is likely not feasible for many of these planets and that mass-radius models alone are not likely to allow us to classify all but those planets with outlier densities. We therefore recommend a staged strategy in which improved mass and radius measurements are used to identify and prioritize ambiguous systems, followed (where feasible) by atmospheric observations with JWST or future facilities as a complementary test of whether selected planets retain substantial atmospheres.",
+      "id": "2611.05535v1",
+      "title": "On the Detectability of Compact Multi-Planet Systems via Gravitational Microlensing",
+      "abstract": "Compact multi-planet systems orbiting ultracool dwarfs, such as TRAPPIST-1, may be a major population of terrestrial worlds with poorly constrained demographics. Individual close-in planets are expected to escape microlensing detection, but whether a compact system can produce a detectable collective signal remains to be quantified. We calculate the microlensing signal from each TRAPPIST-1 planet, and of all seven combined, if the system were a lens toward the bulge. For a 0.09 M_☉ lens at 4 kpc, R_E ≈ 1.21 AU, placing the planets at s = 0.010--0.051 θ_E, 12--63 times interior to the lensing zone. We measure each signal as the residual after fitting a single-lens model, which accounts for the barycentric dipole. Because the quadrupole term cancels between the two images to first order, the residual scales as the octupole (q s³), reaching |δA / A| 10⁻⁶. The seven planets combined yield Δχ² 10⁻³ even at 1 mmag precision, five orders of magnitude below the standard detection threshold. Detection requires increasing all planet masses by a factor of 300, whereas the resonant chain loses its guarantee of Hill stability at a factor of 7. Only a lens within 15 pc of the source or the Sun places the outer planets in the lensing zone. The Nancy Grace Roman Space Telescope is therefore not expected to detect a TRAPPIST-1-like system through microlensing, whereas its transit channel in the same fields can detect such planets in large numbers, marking a sharp boundary in the Galactic census between microlensing and transit sensitivity.",
       "authors": [
-        "Cayman T. Unterborn",
         "Stephen R. Kane"
       ],
       "categories": [
         "astro-ph.EP",
+        "astro-ph.GA",
         "astro-ph.IM"
       ],
-      "published": "2026-11-02",
-      "updated": "2026-11-02",
-      "pdf_link": "https://arxiv.org/pdf/2611.04039v1.pdf",
-      "abs_link": "https://arxiv.org/abs/2611.04039v1",
+      "published": "2026-11-03",
+      "updated": "2026-11-03",
+      "pdf_link": "https://arxiv.org/pdf/2611.05535v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.05535v1",
       "is_exoplanet_focused": true,
-      "tweetability_score": 31,
+      "tweetability_score": 20,
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -63,62 +63,29 @@
         "evidence": "",
         "question": ""
       },
-      "figure_url": "https://arxiv.org/html/2611.04039v1/2611.04039v1/Planets.png"
+      "figure_url": "https://arxiv.org/html/2611.05535v1/2611.05535v1/fig_separation.png"
     },
     {
-      "id": "2611.03810v1",
-      "title": "The Hot Neptune Initiative (HONEI): IV. TOI-4129 b, an Adolescent Neptune in the Ridge",
-      "abstract": "Recent exoplanet demographics studies have uncovered the Neptune ridge: an overdensity of intermediate-size planets at orbital periods between 3--6 d. The origin of this pile-up remains unclear, but it could be a consequence of high-eccentricity migration (HEM). Here, we confirm TOI-4129\\,b, a planet that may help to reveal the origin of the Neptune ridge. Using radial velocities from HARPS-N and transit photometry from TESS and four ground-based telescopes, we found that TOI-4129\\,b has a relatively low density (Rₚ = 5.7 ± 0.2\\, R_⊕, Mₚ = 26± 6 \\,M_⊕, ρₚ = 0.8 ± 0.2 g cm⁻³) and orbits a V = 12.9 K dwarf star every 3.27 d, placing it at the inner edge of the Neptune ridge. We detect the stellar rotation period at 12.7 d in the photometry, implying a fairly young gyrochronal age of 1.20⁺⁰.¹⁶₋₀.₃₀ Gyr for the system. With a Transmission Spectroscopy Metric of 112± 30, this adolescent Neptune is a good target for atmospheric observations with JWST and Ariel, and we also find that it is amenable to future constraints on the (three-dimensional) stellar obliquity. TOI-4129\\,b will therefore be an important testing ground for the idea that planets in the Neptune ridge underwent HEM to arrive at their current locations.",
+      "id": "2611.05963v1",
+      "title": "Orbital Architecture of Super-Earth-Cold-Jupiter Systems from Transit Duration Ratios",
+      "abstract": "Super-Earths are commonly found with cold Jupiters, yet it is unclear whether these Super-Earth-Cold-Jupiter (SE-CJ) systems differ architecturally from other Kepler-like systems (Non-SE-CJ). One might expect the CJs to excite eccentricities and mutual inclinations among the SEs. We use two metrics: the normalized transit duration T/T₀, set by the host-star density, and the pairwise duration ratio ξ between neighboring transiting planets. We find no population-level difference in T/T₀ between the samples. Forward modeling of ξ, which is more directly sensitive to mutual inclinations because it isolates the impact-parameter contrast, finds no evidence that SE-CJ systems are more mutually inclined than Non-SE-CJ systems, and hints they could be even flatter. We infer a Rayleigh dispersion in mutual inclination of δ≈ 1.0′, or a characteristic eccentricity of e ≈ 0.035 (assuming equipartition), compared with δ≈ 1.5′ and e ≈ 0.05 for Non-SE-CJ systems. Many SE-CJ systems therefore retain nearly coplanar, low-eccentricity architectures despite hosting distant giants. We further show that secular coupling among the inner Super-Earths usually dominates over forcing from the cold Jupiter, leaving the inner planets resistant to excitation. Our analysis is limited to SE-CJ systems with multiple transiting SEs: systems in which the CJ has strongly excited the inner architecture are expected to present as single-transiting, and cannot be studied with the ξ metric. Another caveat of our result is that undetected cold Jupiters in the comparison sample could dilute the measured ξ distribution.",
       "authors": [
-        "Sureena Lakhanpal",
-        "Shreyas Vissapragada",
-        "Luca Naponiello",
-        "Simone Filomeno",
-        "Katia Biazzo",
-        "Vincent Bourrier",
-        "Tiziano Zingales",
-        "Erik Friden",
-        "Emily K. Pass",
-        "Aldo S. Bonomo",
-        "David W. Latham",
-        "Karen A. Collins",
-        "David R. Ciardi",
-        "David Baker",
-        "Khalid Barkaoui",
-        "Andrew Collier Cameron",
-        "Patrick Eggenberger",
-        "Akihiko Fukui",
-        "Ancy Anna John",
-        "Heather A. Knutson",
-        "Mercedes López-Morales",
-        "Jack Lubin",
-        "Luigi Mancini",
-        "Francesca Manni",
-        "Giacomo Mantovan",
-        "Annelies Mortier",
-        "Felipe Murgas",
-        "Norio Narita",
-        "Belinda A. Nicholson",
-        "Enric Palle",
-        "Matteo Pinamonti",
-        "Monica Rainer",
-        "Carolina Rodriguez",
-        "Pam Rowden",
-        "Miquel Serra-Ricart",
-        "Alessandro Sozzetti",
-        "Ivan A. Strakhov",
-        "Jhon Yana Galarza",
-        "Samuel W. Yee"
+        "Tom Lassmann",
+        "Joseph Hand",
+        "Fei Dai",
+        "Jiaxin Tang",
+        "Sharon Wang",
+        "Di-Chang Chen"
       ],
       "categories": [
         "astro-ph.EP"
       ],
-      "published": "2026-11-02",
-      "updated": "2026-11-02",
-      "pdf_link": "https://arxiv.org/pdf/2611.03810v1.pdf",
-      "abs_link": "https://arxiv.org/abs/2611.03810v1",
+      "published": "2026-11-04",
+      "updated": "2026-11-04",
+      "pdf_link": "https://arxiv.org/pdf/2611.05963v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.05963v1",
       "is_exoplanet_focused": true,
-      "tweetability_score": 25,
+      "tweetability_score": 19,
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -127,25 +94,19 @@
         "evidence": "",
         "question": ""
       },
-      "figure_url": "https://arxiv.org/html/2611.03810v1/2611.03810v1/TESS120s_Sector_Stack.png"
+      "figure_url": "https://arxiv.org/html/2611.05963v1/data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg=="
     },
     {
-      "id": "2611.04544v1",
-      "title": "The Survival Paradox of Close-In Planets Orbiting Red Clump Giants",
-      "abstract": "Close-in planets orbiting core-helium-burning red-clump (RC) giants directly challenge tidal-engulfment theory, which predicts that planets within about 1 au of Sun-like stars should be engulfed during red-giant-branch (RGB) expansion. The existence of such survivors would imply missing physical processes in the late stages of stellar and planetary evolution. Yet only one such \"forbidden\" planet had been identified to date. Here we report three systems-24 Boo b, HD 12648 b, and TYC 4282-605-1 b-whose host stars are confirmed red-clump giants through asteroseismology, showing that each has already undergone dramatic expansion and contraction following helium ignition. Their planets now reside at orbital separations smaller than the maximum stellar radii attained during the RGB phase, implying that they should not have survived. Among them, 24 Boo b orbits at only 0.183 au with a 30-day period, making it the closest planet known around a red-clump giant. These discoveries demonstrate that this paradox is not an isolated anomaly but signals the emergence of a new class of evolved planetary systems. Their survival defies current models of stellar-planetary coevolution and points to unexplored physics shaping planetary architectures around post-RGB stars.",
+      "id": "2611.05740v1",
+      "title": "The impact of M dwarf stellar convection on exoplanetary atmospheric signatures. A 3D radiation-hydrodynamics simulation analysis for high-resolution spectroscopy",
+      "abstract": "M dwarf stars represent prime targets for the detection and characterization of small, temperate exoplanets; however, their complex activity and convective surfaces pose significant challenges for high-resolution spectroscopic studies. This work aims to investigate the impact of stellar convection on high-resolution spectroscopic observations of M dwarf stars and develop an integrated approach combining 3D radiative hydrodynamical simulations, spectroscopic modeling, and transit analysis to mitigate stellar noise. We employ 3D radiative hydrodynamical simulations of M dwarf stellar convection to generate synthetic spectra. We compare the synthetic spectra to actual observations of GJ 3470. We model a high-resolution transit sequence of the Neptune-size GJ 3470 b, including centre-to-limb variations (CLVs) and the Rossiter-McLaughlin effect (RME), and process the sequence via principal component analysis (PCA) to de-trend stellar effects. Comparison of synthetic spectra with actual observations shows that current H2O line lists remain inaccurate, with modest agreement in line strength and position for the chosen K-band interval. During the transit of GJ 3470 b, the amplitude of CLVs+RME is comparable to exoplanet signals. Current PCA can in principle de-trend such effects, but its behaviour is highly dependent on the copresence of telluric and planetary signals. While we are able to correctly detect the exoplanet with no evident bias from stellar residuals, this result is limited to a narrow spectral interval and a specific orbital configuration. This study demonstrates that 3D radiative hydrodynamical simulations are essential for accurately modeling convection-induced spectral variability in M dwarfs. Our integrated framework establishes a foundation to obtain unbiased measurements from future ELT observations of exoplanets orbiting M dwarfs.",
       "authors": [
-        "Wen-Xu Lin",
-        "Sheng-Bang Qian",
-        "Qi-Bin Sun",
-        "Li-Ying Zhu",
-        "Wen-Ping Liao",
-        "Ting Li",
-        "Fu-Xing Li",
-        "Xiang-Dong Shi",
-        "Tao Wang",
-        "Ergang Zhao",
-        "Huiting Zhang",
-        "Ping Li"
+        "A. Chiavassa",
+        "M. Brogi",
+        "T. Masseron",
+        "R. Van den Broeck",
+        "L. Bigot",
+        "V. Parmentier"
       ],
       "categories": [
         "astro-ph.EP",
@@ -153,10 +114,10 @@
       ],
       "published": "2026-11-03",
       "updated": "2026-11-03",
-      "pdf_link": "https://arxiv.org/pdf/2611.04544v1.pdf",
-      "abs_link": "https://arxiv.org/abs/2611.04544v1",
+      "pdf_link": "https://arxiv.org/pdf/2611.05740v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.05740v1",
       "is_exoplanet_focused": true,
-      "tweetability_score": 22,
+      "tweetability_score": 4,
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -165,94 +126,7 @@
         "evidence": "",
         "question": ""
       },
-      "figure_url": "https://arxiv.org/html/2611.04544v1/2611.04544v1/Figure_1.png"
-    },
-    {
-      "id": "2611.04332v1",
-      "title": "Fitting Resonant Exoplanets Orbits. I. Properties and Applications of Fixed-Point Orbits",
-      "abstract": "Intact chains of mean-motion resonances may preserve information about the formation and early dynamical evolution of multiplanet systems. Although most mature multiplanet systems are non-resonant, the resonant fraction may have been substantially higher at young ages. Establishing whether exoplanet data are consistent with a resonant configuration is often challenging because the planetary orbits must be sufficiently well constrained. Moreover, while resonance configurations promote stability, standard orbital fitting methods do not impose such a dynamical constraint, with stability tested only a posteriori. As the first step in a series of papers aimed at favoring stable orbital solutions during the fitting process, we develop a method that restricts solutions to stable fixed-point orbits (fPOs)---coplanar, exactly periodic configurations associated with resonant dynamics. We show that dissipative evolution drive resonant systems toward an fPO state, motivating for fPO-constrained fitting for those planet systems that have avoided large-scale dynamical rearrangements since formation. The fPO model greatly reduces the number of free parameters and yields stable solutions by construction. We determine the best-fitting fPos through χ² minimization and apply the method to astrometric data for the directly imaged PDS 70 and HR 8799 systems and to radial-velocity data for GJ 876. For HR 8799 we independently recover a previously reported resonant solution, illustrating the fidelity of our method. For PDS 70 we find solutions fall in two groups, with the group where the outer planet c mass exceeds planet b more aligned with previous measurements. Finally, For GJ 876 our fPO fit is on par with previous unconstrained fitting, which strengthens the case that its planets reside deep in resonance.",
-      "authors": [
-        "Chris W. Ormel",
-        "Tian Yi",
-        "Shuo Huang"
-      ],
-      "categories": [
-        "astro-ph.EP",
-        "astro-ph.IM"
-      ],
-      "published": "2026-11-03",
-      "updated": "2026-11-03",
-      "pdf_link": "https://arxiv.org/pdf/2611.04332v1.pdf",
-      "abs_link": "https://arxiv.org/abs/2611.04332v1",
-      "is_exoplanet_focused": true,
-      "tweetability_score": 14,
-      "summary": "",
-      "summary_html": "<p><em>Summary unavailable.</em></p>",
-      "tweet_hook": {
-        "hook": "",
-        "claim": "",
-        "evidence": "",
-        "question": ""
-      },
-      "figure_url": "https://arxiv.org/html/2611.04332v1/2611.04332v1/poshowmulti.png"
-    },
-    {
-      "id": "2611.04676v1",
-      "title": "Outer pressure bumps beyond the dust disc: Missing Outer Rings in the exoALMA Sample: Physical Mechanisms Suppressing Dust Ring Formation Despite Strong Pressure Bumps",
-      "abstract": "The exoALMA survey has revealed candidate gas pressure bumps at radii beyond the observed millimetre continuum discs in several protoplanetary systems, raising the question of whether these regions could host undetected dust structures. We investigate this for nine of the exoALMA discs by reconstructing gas surface density profiles from midplane pressure gradient measurements derived from ¹²CO and ¹³CO ALMA Band 7 observations. We evolve the dust using DustPy across a grid of turbulence and fragmentation parameters (α \\10⁻⁴, 10⁻³\\; v_frag \\1, 10\\\\,m\\,s⁻¹), followed by radiative transfer calculations with RADMC-3D to give predictions for the continuum emission. We find that the dominant outcome across the explored parameter space is efficient outer dust trapping, leading to prominent outer continuum rings that should be detectable at ALMA Band 7, in tension with the observations. The ¹³CO-based reconstructions almost universally produce detectable outer rings, whereas the ¹²CO-based reconstructions show more variation. We further test delayed formation of the outer pressure bump and enhanced outer-disc turbulence as possible suppression mechanisms of ring formation. Enhanced turbulence weakens the predicted outer continuum emission most effectively, although the efficiency of the mechanism depends on the system explored and on where the turbulence transition is placed. Delayed bump formation generally does not prevent rapid outer dust accumulation.",
-      "authors": [
-        "Lilian Luo",
-        "Paola Pinilla",
-        "Jochen Stadler"
-      ],
-      "categories": [
-        "astro-ph.EP"
-      ],
-      "published": "2026-11-03",
-      "updated": "2026-11-03",
-      "pdf_link": "https://arxiv.org/pdf/2611.04676v1.pdf",
-      "abs_link": "https://arxiv.org/abs/2611.04676v1",
-      "is_exoplanet_focused": true,
-      "tweetability_score": 6,
-      "summary": "",
-      "summary_html": "<p><em>Summary unavailable.</em></p>",
-      "tweet_hook": {
-        "hook": "",
-        "claim": "",
-        "evidence": "",
-        "question": ""
-      },
-      "figure_url": "https://arxiv.org/html/2611.04676v1/2611.04676v1/lkca15_pressure_gradient_illustration.png"
-    },
-    {
-      "id": "2611.04030v1",
-      "title": "Measuring the gas mass of the protoplanetary disk around HD 179218 with CO isotopologues",
-      "abstract": "Carbon monoxide (CO) isotopologues are widely used to estimate protoplanetary disk gas masses, but their reliability is often compromised by CO freeze-out and subsequent chemical processing. The disk around the luminous Herbig star HD 179218 (L∗ 100\\,L_☉, M∗ 3.0\\,M_☉) offers a rare test case of CO-based mass measurements. Its CO snowline lies beyond the outer disk edge, and thus CO remains in the gas phase throughout. We present ALMA and NOEMA observations of six CO isotopologue lines (¹³CO, C¹⁸O, and C¹⁷O, J=2--1 and 1--0). Fitting the spectral energy distribution yields Mdust ≈ 3 × 10⁻⁵\\, M_☉. Modeling CO isotopologue emission with the thermochemical code DALI yields the gas-disk characteristic radius (Rc ≈ 90 au) and the gas mass (Mgₐs ≈ 8 × 10⁻³\\, M_☉). These results yield a gas-to-dust ratio of 270 for our fiducial dust opacity (a mₐₓ = 1 mm), above the canonical interstellar value of 100. The thermal structure of our best-fitting model confirms that CO never freezes out in this disk, so the elevated ratio is not an artifact of CO depletion; together with the compact millimeter dust disk relative to the gas disk, it is consistent with substantial inward radial drift of millimeter dust. In addition, we find a gas cavity inside 50\\,au that encloses the compact millimeter dust disk---the inverse of a typical transition disk---which we attribute to photoevaporative clearing of the inner gas after the pebbles drifted inward. HD 179218 thus provides a clean benchmark for studying the gas mass distribution and gas--dust interaction in protoplanetary disks, free from the CO-depletion biases that affect colder disks.",
-      "authors": [
-        "Nina Weichmann",
-        "Ke Zhang",
-        "Leon Trapman",
-        "Ao Zhang"
-      ],
-      "categories": [
-        "astro-ph.EP",
-        "astro-ph.IM"
-      ],
-      "published": "2026-11-02",
-      "updated": "2026-11-02",
-      "pdf_link": "https://arxiv.org/pdf/2611.04030v1.pdf",
-      "abs_link": "https://arxiv.org/abs/2611.04030v1",
-      "is_exoplanet_focused": true,
-      "tweetability_score": 0,
-      "summary": "",
-      "summary_html": "<p><em>Summary unavailable.</em></p>",
-      "tweet_hook": {
-        "hook": "",
-        "claim": "",
-        "evidence": "",
-        "question": ""
-      },
-      "figure_url": "https://arxiv.org/html/2611.04030v1/2611.04030v1/HD179218_moment0_gallery.png"
+      "figure_url": "https://arxiv.org/html/2611.05740v1/2611.05740v1/images/sketch_Mdwarf.png"
     }
   ]
 }

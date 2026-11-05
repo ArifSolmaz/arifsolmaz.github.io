@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 04 Nov 2026 08:26:27 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2026 08:51:26 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,72 +15,43 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>Up in smoke: carbon-destruction in the terrestrial planet-forming region of a young Class I disk</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-04557v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-04557v1</guid>
-      <pubDate>Wed, 04 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>F. J. Ballieux et al.</dc:creator>
+      <title>Migration and eccentricity damping timescales in overstable resonant planetary systems: hydrodynamic and N-body simulations</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-06765v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-06765v1</guid>
+      <pubDate>Thu, 05 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Zahra Afkanpour et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>On the Detectability of Compact Multi-Planet Systems via Gravitational Microlensing</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-05535v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-05535v1</guid>
+      <pubDate>Thu, 05 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Stephen R. Kane</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.GA</category>
+        <category>astro-ph.IM</category>
+    </item>
+    <item>
+      <title>Orbital Architecture of Super-Earth-Cold-Jupiter Systems from Transit Duration Ratios</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-05963v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-05963v1</guid>
+      <pubDate>Thu, 05 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Tom Lassmann et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>The impact of M dwarf stellar convection on exoplanetary atmospheric signatures. A 3D radiation-hydrodynamics simulation analysis for high-resolution spectroscopy</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-05740v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-05740v1</guid>
+      <pubDate>Thu, 05 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>A. Chiavassa et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
         <category>astro-ph.SR</category>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Precision Requirements for Robust Small Planet Classification</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-04039v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-04039v1</guid>
-      <pubDate>Wed, 04 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Cayman T. Unterborn, Stephen R. Kane</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
-    </item>
-    <item>
-      <title>The Hot Neptune Initiative (HONEI): IV. TOI-4129 b, an Adolescent Neptune in the Ridge</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-03810v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-03810v1</guid>
-      <pubDate>Wed, 04 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Sureena Lakhanpal et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>The Survival Paradox of Close-In Planets Orbiting Red Clump Giants</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-04544v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-04544v1</guid>
-      <pubDate>Wed, 04 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Wen-Xu Lin et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.SR</category>
-    </item>
-    <item>
-      <title>Fitting Resonant Exoplanets Orbits. I. Properties and Applications of Fixed-Point Orbits</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-04332v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-04332v1</guid>
-      <pubDate>Wed, 04 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Chris W. Ormel, Tian Yi, Shuo Huang</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
-    </item>
-    <item>
-      <title>Outer pressure bumps beyond the dust disc: Missing Outer Rings in the exoALMA Sample: Physical Mechanisms Suppressing Dust Ring Formation Despite Strong Pressure Bumps</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-04676v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-04676v1</guid>
-      <pubDate>Wed, 04 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Lilian Luo, Paola Pinilla, Jochen Stadler</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Measuring the gas mass of the protoplanetary disk around HD 179218 with CO isotopologues</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-04030v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-04030v1</guid>
-      <pubDate>Wed, 04 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Nina Weichmann et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
     </item>
   </channel>
 </rss>
