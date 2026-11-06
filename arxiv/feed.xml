@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 05 Nov 2026 08:51:26 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2026 08:51:27 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,43 +15,83 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>Migration and eccentricity damping timescales in overstable resonant planetary systems: hydrodynamic and N-body simulations</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-06765v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-06765v1</guid>
-      <pubDate>Thu, 05 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Zahra Afkanpour et al.</dc:creator>
+      <title>Prospects for detecting hot-Jupiter tidal decay through transit timing with the mission Earth 2.0</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-07427v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-07427v1</guid>
+      <pubDate>Fri, 06 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Wenqin Wang et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>On the Detectability of Compact Multi-Planet Systems via Gravitational Microlensing</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-05535v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-05535v1</guid>
-      <pubDate>Thu, 05 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Stephen R. Kane</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.GA</category>
         <category>astro-ph.IM</category>
     </item>
     <item>
-      <title>Orbital Architecture of Super-Earth-Cold-Jupiter Systems from Transit Duration Ratios</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-05963v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-05963v1</guid>
-      <pubDate>Thu, 05 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Tom Lassmann et al.</dc:creator>
+      <title>The JWST Early Release Science Program for Direct Observations of Exoplanetary Systems IX: A Multi-Wavelength Framework for Source Characterization in JWST Coronagraphic Imaging of the HIP 65426 System</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-07034v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-07034v1</guid>
+      <pubDate>Fri, 06 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Evelyn L. Bruinsma et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>The impact of M dwarf stellar convection on exoplanetary atmospheric signatures. A 3D radiation-hydrodynamics simulation analysis for high-resolution spectroscopy</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-05740v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-05740v1</guid>
-      <pubDate>Thu, 05 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>A. Chiavassa et al.</dc:creator>
+      <title>BeAR: The Bern Atmospheric Retrieval code - A GPU-accelerated framework for low-resolution, high-resolution, and joint retrievals of exoplanet atmospheres</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-08489v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-08489v1</guid>
+      <pubDate>Fri, 06 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Esther Wang et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+    </item>
+    <item>
+      <title>An analytical framework for atmospheric tides on rocky planets. II. Semidiurnal thermotidal torque</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-07060v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-07060v1</guid>
+      <pubDate>Fri, 06 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Pierre Auclair-Desrotour et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>physics.geo-ph</category>
+    </item>
+    <item>
+      <title>The slower rotation of planet-hosting stars revisited</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-08267v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-08267v1</guid>
+      <pubDate>Fri, 06 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Avraham Binnenfeld et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.SR</category>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>The Composition of M-dwarf Exoplanet Hosts: Atmospheric Parameters and O, Mg, Si, and Fe Abundances from IR Spectroscopy</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-07037v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-07037v1</guid>
+      <pubDate>Fri, 06 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Zachary G Maas et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.SR</category>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Using Structure Functions to Characterize Protoplanetary Disk Velocity Residuals</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-07305v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-07305v1</guid>
+      <pubDate>Fri, 06 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Richard Teague et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Mitigating scanning-induced systematics in Hipparcos and implications for Gaia astrometry</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-08282v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-08282v1</guid>
+      <pubDate>Fri, 06 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Avraham Binnenfeld et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.IM</category>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.GA</category>
     </item>
   </channel>
 </rss>

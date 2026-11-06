@@ -1,0 +1,285 @@
+{
+  "announcement_date": "2026-11-06",
+  "updated_at": "2026-11-06T08:51:27.268199+00:00",
+  "category": "astro-ph.EP",
+  "paper_count": 8,
+  "papers": [
+    {
+      "id": "2611.07427v1",
+      "title": "Prospects for detecting hot-Jupiter tidal decay through transit timing with the mission Earth 2.0",
+      "abstract": "Orbital decay of hot Jupiters provides a unique opportunity to probe tidal dissipation in star-planet systems. However, despite extensive observational efforts, only one hot Jupiter, namely WASP-12b, currently exhibits conclusive observational evidence for orbital decay. Expanding this sample is therefore crucial for establishing a statistical understanding of tidal interactions in planetary systems. Long-term transit timing variations (TTVs) provide a direct observational probe of orbital decay induced by tidal dissipation between a hot Jupiter and its host star. The Earth 2.0 (ET) mission will revisit the original Kepler field, delivering high-precision transit timing measurements and extending the observational baseline to approximately 24 years (2009--2033). In this work, we aim to assess the capability of ET to detect orbital decay in hot Jupiters previously observed by Kepler. We generate four years of simulated ET light curves based on the expected photometric precision and observing cadence of the mission and analyze them jointly with archival Kepler and TESS observations. Using these combined datasets, we perform long-term TTV analyses and predict the achievable precision for measuring orbital period variations. We find that ET can substantially improve the precision of orbital decay measurements in hot Jupiter systems by a factor of 7.2. Assuming the stellar tidal quality factor inferred from previous observations, ET is expected to detect orbital decay in three additional hot Jupiter systems. The expanded sample of hot Jupiters with measured orbital decay will establish ET as a powerful probe of tidal dissipation in star-planet systems, providing tighter constraints on stellar tidal quality factors and new insights into the tidal evolution of hot Jupiters.",
+      "authors": [
+        "Wenqin Wang",
+        "Yue Wang",
+        "Di-Chang Chen",
+        "Hui Zhang",
+        "Jian Ge",
+        "Bo Ma"
+      ],
+      "categories": [
+        "astro-ph.EP",
+        "astro-ph.IM"
+      ],
+      "published": "2026-11-05",
+      "updated": "2026-11-05",
+      "pdf_link": "https://arxiv.org/pdf/2611.07427v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.07427v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 28,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2611.07427v1/2611.07427v1/Kepler_light_curve.png"
+    },
+    {
+      "id": "2611.07034v1",
+      "title": "The JWST Early Release Science Program for Direct Observations of Exoplanetary Systems IX: A Multi-Wavelength Framework for Source Characterization in JWST Coronagraphic Imaging of the HIP 65426 System",
+      "abstract": "We present an updated analysis of the JWST coronagraphic imaging data of the HIP 65426 system. We aim to search for and characterize potential planetary companions as well as provide updated astrometry and photometry for the known exoplanet HIP 65426 b following updates to the JWST and spaceKLIP pipelines. Our measured photometry and astrometry show significant differences to those in Carter et al. (2023) but are consistent to within 2.2σ in separation, 1.5σ in position angle, and 3.7σ in flux. Our results indicate that pipeline updates have changed the photometry and astrometry significantly in some filters, especially in terms of observed flux. We see the greatest changes in separation in F444W and F1550C, position angle in F250M, and flux in F250M, F300M, F410M, F1140C, and F1550C. The SED of HIP 65426 b remains consistent with a young, giant planet best fit by models with a cloudy atmosphere and an effective temperature estimate of 1436 K. Using both NIRCam and MIRI data, we identified 21 candidate companion sources in addition to the known planet. Of the 21 sources, 13 were attributed to astrophysical sources with eight background stars, four galaxies, one unknown, and zero planets. While one of these sources was detected in Chauvin et al. (2017), the remaining point sources were undetected in previous ground-based observations, which makes this work an initial epoch of astrometry for these objects. One galaxy in particular appears as a point source in MIRI but is highly extended in NIRCam and exposes a potential drawback to single-epoch MIRI imaging in a blind search for companions.",
+      "authors": [
+        "Evelyn L. Bruinsma",
+        "Aarynn L. Carter",
+        "Sasha Hinkley",
+        "Beth A. Biller",
+        "Andy Skemer",
+        "William O. Balmer",
+        "Andrew D. James",
+        "Ellis X. Bogat",
+        "Ben J. Sutlieff",
+        "Michael Poon",
+        "Mathilde Mâlin",
+        "Katie A. Crotts",
+        "Genaro Suárez",
+        "Eileen Gonzales",
+        "Klaus Subbotina Stephenson",
+        "Markus Janson",
+        "Motohide Tamura",
+        "Raphaël Bendahan-West",
+        "Giovanni M. Strampelli",
+        "Michael R. Meyer",
+        "Emily Rickman",
+        "Julien H. Girard",
+        "Kellen Lawson",
+        "Alice Zurlo",
+        "Cecilia Lazzoni",
+        "Christopher A. Theissen",
+        "Thomas Henning",
+        "Pengyu Liu",
+        "Mark C. Wyatt",
+        "Isabel Rebollido",
+        "Aiza Kenzhebekova"
+      ],
+      "categories": [
+        "astro-ph.EP"
+      ],
+      "published": "2026-11-04",
+      "updated": "2026-11-04",
+      "pdf_link": "https://arxiv.org/pdf/2611.07034v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.07034v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 23,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2611.07034v1/2611.07034v1/sources_f444_f1550.png"
+    },
+    {
+      "id": "2611.08489v1",
+      "title": "BeAR: The Bern Atmospheric Retrieval code - A GPU-accelerated framework for low-resolution, high-resolution, and joint retrievals of exoplanet atmospheres",
+      "abstract": "We present BeAR, the Bern Atmospheric Retrieval code and successor of Helios-r, and its new high-resolution cross-correlation framework for emission and transmission spectra. BeAR performs joint retrievals by adding the log-likelihoods of high- and low-resolution data computed from the same model atmosphere. The framework implements established cross-correlation log-likelihoods, with the line-depth scaling either fitted analytically or sampled as a free parameter, their per-pixel generalization, fast model filtering, and model re-injection adapted to this filtering. The forward model and likelihood run entirely on a graphics processing unit (GPU). One forward model takes about 1 ms on an NVIDIA GH200, allowing millions of models per minute on a GPU cluster. In separate retrievals of Gemini South/IGRINS and JWST/NIRSpec dayside spectra of the hot Jupiter WASP-77Ab, BeAR reproduces published abundances, C/O ratios, and metallicities to within 1.5 sigma, the preference for 13CO, and the thermal structure and line contrast to within 1 sigma. The joint retrieval confirms a sub-solar metallicity and a near-solar C/O ratio. A full IGRINS retrieval with 17 free parameters takes 27 to 42 minutes on a single NVIDIA GeForce RTX 5080 or about 14 minutes on eight RTX 4090 GPUs. Injection--recovery tests show that the posteriors underestimate the uncertainties of abundance ratios by about a factor of two.",
+      "authors": [
+        "Esther Wang",
+        "Daniel Kitzmann",
+        "H. Jens Hoeijmakers",
+        "Joost P. Wardenier",
+        "Helena Lecoq-Molinos"
+      ],
+      "categories": [
+        "astro-ph.EP",
+        "astro-ph.IM"
+      ],
+      "published": "2026-11-05",
+      "updated": "2026-11-05",
+      "pdf_link": "https://arxiv.org/pdf/2611.08489v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.08489v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 23,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2611.08489v1/2611.08489v1/fig_injection_steps.png"
+    },
+    {
+      "id": "2611.07060v1",
+      "title": "An analytical framework for atmospheric tides on rocky planets. II. Semidiurnal thermotidal torque",
+      "abstract": "The thermodynamic acceleration induced by atmospheric thermal tides has a major impact on the rotation of temperate rocky planets, where gravitational and radiative tidal forcings are of comparable strength. This acceleration drives planets away from synchronous rotation, thereby affecting their climate, large-scale circulation, and surface conditions. These implications underline the need to better constrain the dependence of the thermotidal torque on the tidal frequency and on the physical parameters characterising the star-planet system, as this relationship remains insufficiently understood. In particular, the role of resonantly excited Lamb waves requires clarification due to its potential impact on Earth's length of day (LOD) during the Precambrian. Building on a previous work, which provided a fully analytical formulation of the atmospheric tidal response of rocky planets, we apply this framework to isentropic and isothermal atmospheres. We perform a comprehensive functional analysis of the resulting torque and compare the analytical predictions with numerical solutions from earlier general circulation model (GCM) studies. The analytical model agrees well with GCM results, accurately capturing the frequency dependence of tidal torque both for paleo-Earth and present-day Earth. More generally, the solutions capture the torque peak near synchronous rotation and the amplification associated with Lamb-wave resonance. Near resonance, the GCM results exhibit a stronger braking torque than accelerating torque. This asymmetry is reproduced by allowing tidal heating to lag behind insolation. The agreement with GCM spectra suggests that thermal tides in the benchmark simulations are driven predominantly by an indirect thermal forcing characterised by a substantial time delay, in contrast to the direct absorption of sunlight that dominates semidiurnal tides on present-day Earth.",
+      "authors": [
+        "Pierre Auclair-Desrotour",
+        "Jacques Laskar",
+        "Mohammad Farhat",
+        "Gwenaël Boué"
+      ],
+      "categories": [
+        "astro-ph.EP",
+        "physics.geo-ph"
+      ],
+      "published": "2026-11-04",
+      "updated": "2026-11-04",
+      "pdf_link": "https://arxiv.org/pdf/2611.07060v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.07060v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 18,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2611.07060v1/data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "2611.08267v1",
+      "title": "The slower rotation of planet-hosting stars revisited",
+      "abstract": "Previous studies combined rotation periods derived from Kepler photometry, stellar parameters from previous Gaia Data Releases, and planet hosts from the NASA Exoplanet Archive to conclude that statistically planet-hosting stars rotate slower than stars without detected planets. Here, we revisit these studies by using similar Kepler rotational period sample, but with an updated Gaia DR3-based stellar parameter catalogue and an updated exoplanet catalogue. We apply minimal sample cuts in evolutionary state, metallicity, and distance, and then model the stellar rotation period as a function of effective temperature alone. For each star, we derive the ratio of its observed period to the temperature-expected period, and compare the ratio distributions for the planet-host and non-host stars. For periods shorter than 20 d, the planet-host distribution of this ratio is shifted towards longer periods; the period-ratio median is 15% larger for hosts than for non-hosts (p_KS = 2.4 x 10⁻⁴). We also examine the recently published TESS All-Sky Rotation Survey (TARS) and find a similar trend. However, the strongly structured period distribution precludes a robust comparison between the host and the non-host stars. Therefore, the updated analysis, using more robust stellar and planetary parameters, recovers the previously reported association, strengthening the case for a genuine connection between stellar rotation and planet occurrence.",
+      "authors": [
+        "Avraham Binnenfeld",
+        "Amitay Sussholz",
+        "Simchon Faigler",
+        "Tsevi Mazeh"
+      ],
+      "categories": [
+        "astro-ph.SR",
+        "astro-ph.EP"
+      ],
+      "published": "2026-11-05",
+      "updated": "2026-11-05",
+      "pdf_link": "https://arxiv.org/pdf/2611.08267v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.08267v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 16,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2611.08267v1/2611.08267v1/kepler_full_cmd_with_mma_selection.png"
+    },
+    {
+      "id": "2611.07037v1",
+      "title": "The Composition of M-dwarf Exoplanet Hosts: Atmospheric Parameters and O, Mg, Si, and Fe Abundances from IR Spectroscopy",
+      "abstract": "Determining M-dwarf abundances is an important step to discerning the chemical evolution of the Milky Way and characterizing exoplanetary systems, especially since these objects commonly host small exoplanets. However, a dearth of M-dwarf abundance measurements exist compared to Sun-like stars, partially due to their complicated optical spectra dominated by molecular absorption lines and low luminosities. To overcome these issues, we have obtained high resolution H-band spectra of 40 planet-hosting M-dwarf stars and 2 M-dwarfs in wide binaries with FGK primaries with IGRINS on Gemini South and on the McDonald Observatory 2.7m telescope, and NIRSPEC on Keck. Abundances were derived by comparing each observed spectrum to synthetic spectral grids generated with MOOG and MARCS atmospheric models. Effective temperatures were derived using OH and H₂O lines and [Fe/H] from Fe I and FeH lines. Both Mg and Si abundances were determined using atomic features. Overall, we find that our abundances are broadly consistent with previous literature M-dwarf abundances. We complemented our abundances analysis with UVW velocities and Milky Way stellar population membership probabilities and identified 2 potential thick disk stars from our kinematic and chemical analysis: GJ 1252 and L181-1 which was a previously known thick disk star. Kinematic stellar population probabilities and a low [Fe/H] abundance makes Kepler 42 a likely thick disk star, although uncertain Mg and Si abundances make classification difficult. Lastly, we have determined Si/Mg and Fe/Mg molar ratios for M-dwarf exoplanet hosts and find the abundance distributions leads to exoplanet core-mass fractions between 20 - 40\\%.",
+      "authors": [
+        "Zachary G Maas",
+        "Natalie R. Hinkel",
+        "Gregory N. Mace",
+        "Cayman T. Unterborn",
+        "Catherine Pilachowski",
+        "Christopher Sneden",
+        "Isabella Flores",
+        "Joseph G. Schulze"
+      ],
+      "categories": [
+        "astro-ph.SR",
+        "astro-ph.EP"
+      ],
+      "published": "2026-11-04",
+      "updated": "2026-11-04",
+      "pdf_link": "https://arxiv.org/pdf/2611.07037v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.07037v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 13,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2611.07037v1/2611.07037v1/F9.png"
+    },
+    {
+      "id": "2611.07305v1",
+      "title": "Using Structure Functions to Characterize Protoplanetary Disk Velocity Residuals",
+      "abstract": "Protoplanetary disks, the birthplace of planetary systems, are highly dynamic environments. High angular and spectral resolution observations have revealed non-Keplerian motions in nearly every source studied, indicative of (magneto-)hydrodynamical instabilities or planet-disk interactions. However, these velocity perturbations rarely exhibit ordered structure, limiting our ability to attribute them to a specific mechanism. We propose the second-order structure function as a tool for recovering structural properties of velocity perturbations in the presence of significant noise. Using morphological models, we demonstrate how easy-to-calculate heuristics and parametric model fits together identify structure in noisy data and recover its properties, including correlation lengths, their radial scaling where genuinely present, and the anisotropy. We further outline a workflow to de-noise the data and to build a matched null model against which inferences are compared. Applying the framework to one numerical simulation each of the gravitational, magneto-rotational and vertical-shear instabilities, we recover their structure at high significance and the structural heuristics separate all three pairs, with the gravitational and vertical-shear instability simulations remaining the hardest to distinguish once observationally degraded. As a demonstration on real data, 12CO observations of TW Hya reveal azimuthally elongated velocity structure that persists once the large-scale m=1 component is removed. We also delineate where a Gaussian description breaks down for coherent features such as spiral arms, and how inclination affects the recovered heuristics. The methodology is implemented in the eddy package and provides a foundation for statistically characterizing turbulent velocity structure in high-resolution disk observations.",
+      "authors": [
+        "Richard Teague",
+        "Sean M. Andrews",
+        "Jaehan Bae",
+        "Marcelo Barraza-Alfaro",
+        "Abigail Bodner",
+        "Jonathan D. Henshaw",
+        "Giovanni Rosotti"
+      ],
+      "categories": [
+        "astro-ph.EP"
+      ],
+      "published": "2026-11-05",
+      "updated": "2026-11-05",
+      "pdf_link": "https://arxiv.org/pdf/2611.07305v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.07305v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 5,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2611.07305v1/2611.07305v1/structure_models.png"
+    },
+    {
+      "id": "2611.08282v1",
+      "title": "Mitigating scanning-induced systematics in Hipparcos and implications for Gaia astrometry",
+      "abstract": "Space-based astrometric missions such as Hipparcos and Gaia rely on one-dimensional scanning strategies that couple the measured signals with both observation times and scanning geometry. This coupling can introduce spurious periodicities and complicate their interpretation. We present a non-parametric extension of the phase-distance correlation (PDC) periodogram that quantifies and reduces dependence on scan geometry at the period-search stage. Using Hipparcos data, we identified recurrent periodicities associated with characteristic scanning-law timescales and showed that they are strongly suppressed by the scan-angle-controlled statistic. We then applied the method to Gaia Data Release 4 (DR4) prerelease epoch astrometry, where a recurrent 54-day feature is suppressed across multiple sources while independently known orbital signals remain detectable. The method provides a diagnostic of scan-angle dependence and a way to mitigate its impact on period searches. These results are particularly relevant for Gaia DR4, where public epoch astrometry will enable large-scale searches for companions ranging from exoplanets to dormant black holes.",
+      "authors": [
+        "Avraham Binnenfeld",
+        "Sahar Shahaf",
+        "Richard I. Anderson",
+        "Hans-Walter Rix",
+        "Shay Zucker"
+      ],
+      "categories": [
+        "astro-ph.IM",
+        "astro-ph.EP",
+        "astro-ph.GA"
+      ],
+      "published": "2026-11-05",
+      "updated": "2026-11-05",
+      "pdf_link": "https://arxiv.org/pdf/2611.08282v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.08282v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 0,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2611.08282v1/2611.08282v1/plots/ast_part_dist.png"
+    }
+  ]
+}
