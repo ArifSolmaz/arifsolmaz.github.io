@@ -4,7 +4,8 @@ A 14-week introduction to algorithm analysis with Python that builds the needed
 programming from the basics,
 published at:
 
-- Course home: <https://arifsolmaz.github.io/aa/>
+- Current course home: <https://arifsolmaz.github.io/courses/aa/>
+- Archived syllabus for this version: <https://arifsolmaz.github.io/aa/overview.html>
 - Weeks: <https://arifsolmaz.github.io/aa/w1> … `/aa/w14`
 
 ## Design
@@ -29,7 +30,8 @@ rewritten for a beginner audience with step counters and benchmarks added throug
 
 ```
 aa/
-  index.html          generated — course home + syllabus
+  index.html          redirect to the current course
+  overview.html       generated — archived course home + syllabus
   w1/ … w14/          generated — one folder per week (URL: /aa/w7)
   assets/style.css    hand-written — shared styles, dark + light themes
   assets/app.js       hand-written — theme, copy buttons, quizzes, growth widget,

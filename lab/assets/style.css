@@ -1,4 +1,6 @@
 body {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.125rem;
   max-width: 42rem;
   margin: 2rem auto;
   padding: 0 1rem;
@@ -44,16 +46,31 @@ li + li {
   margin-top: 0.5rem;
 }
 
-#pub-list .pub-heading {
-  list-style: none;
-  margin-inline-start: -1.25rem;
+figure {
+  margin: 1.5rem 0;
 }
 
-#pub-list h3 {
-  font-size: 1rem;
-  margin: 1.25rem 0 0.5rem;
-}
-
-#pub-list small {
+figure img {
   display: block;
+  width: 100%;
+  height: auto;
+}
+
+figcaption, footer, .publications small {
+  color: #53554e;
+  font-size: 0.875rem;
+}
+
+figcaption {
+  margin-top: 0.5rem;
+}
+
+.publications small {
+  display: block;
+}
+
+footer {
+  border-top: 1px solid #d9d8d0;
+  margin-top: 2rem;
+  padding-top: 1rem;
 }

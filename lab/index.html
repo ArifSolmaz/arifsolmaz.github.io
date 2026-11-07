@@ -3,92 +3,105 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Research on exoplanet transit timing, stellar activity, and scientific machine learning led by Arif Solmaz at İSTÜN.">
-  <title>Research Group | Arif Solmaz</title>
-  <link rel="stylesheet" href="assets/style.css?v=5">
+  <meta name="description" content="Arif Solmaz’s research on exoplanet transit timing, stellar activity, and scientific machine learning at İSTÜN.">
+  <title>Research | Arif Solmaz</title>
+  <link rel="canonical" href="https://arifsolmaz.github.io/lab/">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://arifsolmaz.github.io/lab/">
+  <meta property="og:title" content="Exoplanets and Scientific Machine Learning | Arif Solmaz">
+  <meta property="og:description" content="In simulations, a single starspot shifted the measured midpoint of a transit by up to five minutes. Research and student project enquiries at İSTÜN.">
+  <meta property="og:image" content="https://arifsolmaz.github.io/lab/assets/spot-crossing.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Illustrative transit light curve showing the bump from a planet crossing a starspot.">
+  <link rel="stylesheet" href="assets/style.css?v=6">
 </head>
 <body>
   <header>
-    <a href="/">Arif Solmaz</a> / Research group
+    <a href="/">Arif Solmaz</a> / Research
   </header>
 
   <main id="top">
     <h1>Exoplanets and Scientific Machine Learning</h1>
-    <p class="affiliation">İstanbul Health and Technology University</p>
-    <p>A single starspot shifted the measured midpoint of a transit by up to five minutes in <a href="https://doi.org/10.55064/tjaa.1203704">our simulations</a>. When a planet crosses a dark spot on its star, it leaves a bump in the dip we use to time the crossing. We study how effects like this shape what we infer from scientific data.</p>
+    <p class="affiliation">Department of Mechatronics Engineering<br>İstanbul Health and Technology University</p>
+    <p>A single starspot shifted the measured midpoint of a transit by up to five minutes in <a href="https://doi.org/10.55064/tjaa.1203704">a simulation study I co-authored with Özgür Baştürk and Aysun Akyüz</a>. When a planet crosses a dark spot on its star, it leaves a bump in the dip astronomers use to time the crossing.</p>
+
     <nav aria-label="On this page">
       <a href="#research">Research</a>
       <a href="#projects">Projects</a>
-      <a href="#people">People</a>
-      <a href="#outputs">Publications</a>
-      <a href="#training">Training</a>
+      <a href="#publications">Publications</a>
+      <a href="#training">Student projects</a>
       <a href="#contact">Contact</a>
     </nav>
 
+    <figure>
+      <img src="assets/spot-crossing.png" width="1200" height="630" alt="Starlight dims during a transit. The curve with a spot crossing rises briefly above the smooth curve before the transit ends.">
+      <figcaption>Illustrative light curve. For a telescope observation of a spot crossing on WASP-52 b, see <a href="https://dergipark.org.tr/en/download/article-file/2769008#page=3">Figure 1 in the paper</a>.</figcaption>
+    </figure>
+
     <section id="research">
       <h2>Research</h2>
-      <ul>
-        <li><strong>Transit timing.</strong> We refine predictions of future transits using space- and ground-based observations.</li>
-        <li><strong>Stellar activity.</strong> We study how starspots and instrumental effects influence measured transit times and depths.</li>
-        <li><strong>Scientific machine learning.</strong> We develop and test machine-learning and Bayesian methods for scientific time series and images.</li>
-        <li><strong>Atmospheres and occultations.</strong> We contribute to studies of exoplanet atmospheres and use stellar occultations to study distant Solar System bodies.</li>
-      </ul>
+      <p>I use statistical and computational methods to infer physical properties from noisy measurements. In exoplanet photometry, I study how stellar activity affects transit timing, transit depth, and predictions of future transits. This work connects to mechatronics through signal processing and the validation of models against sensor data.</p>
     </section>
 
     <section id="projects">
       <h2>Projects</h2>
       <ul>
-        <li><strong>Transit timing scatter.</strong> How do stellar activity and correlated noise affect apparent long-term timing trends?</li>
-        <li><strong>Microscopic wood identification.</strong> A TÜBİTAK 1002 collaboration using deep learning to identify wood species from microscopy images.</li>
-        <li><strong>Scientific model validation.</strong> How sensitive are model results to noisy data, changes in observing conditions, and modeling assumptions?</li>
+        <li><strong>Transit timing on HAT-P-11 b.</strong> The 2026 analysis tests how fitting starspot crossings in Kepler light curves can produce apparent timing shifts. The <a href="https://doi.org/10.5281/zenodo.20347258">research archive</a> includes the models, scripts, and tests with injected signals.</li>
+        <li><strong>Geometric modelling of exoplanet transits.</strong> A university funded project I led in 2019–2020. It used Bayesian models to estimate transit parameters and account for stellar activity.</li>
+      </ul>
+
+      <h3>Collaborations</h3>
+      <ul>
+        <li><strong>ExoClock.</strong> I contributed to the 2026 catalogue of updated transit predictions for 620 exoplanets, based on ground and space observations.</li>
+        <li><strong>Wood species identification.</strong> Ongoing · TÜBİTAK 1002 · team member. The project applies deep learning to microscopy images, extending the work on scientific data to image classification.</li>
       </ul>
     </section>
 
-    <section id="people">
-      <h2>People</h2>
-      <p><strong>Arif Solmaz, PhD</strong><br>Principal investigator and assistant professor, Department of Mechatronics Engineering, İSTÜN.</p>
-      <p><a href="https://orcid.org/0000-0002-3076-164X">ORCID</a> · <a href="https://github.com/ArifSolmaz">GitHub</a></p>
-    </section>
+    <section id="publications">
+      <h2 id="outputs">Publications</h2>
+      <h3>First author</h3>
+      <ul class="publications">
+        <li><a href="https://doi.org/10.55064/tjaa.1203704">Effects of Spot Occultations on Exoplanet Mid-Transit Timing Measurements</a><small>Arif Solmaz, Özgür Baştürk, and Aysun Akyüz · <cite>Turkish Journal of Astronomy and Astrophysics</cite> · 2023</small></li>
+      </ul>
 
-    <section id="outputs">
-      <h2>Selected publications</h2>
+      <h3>Selected co-authored research</h3>
+      <ul class="publications">
+        <li><a href="https://doi.org/10.3847/1538-4365/ae3238">ExoClock Project IV. A Homogeneous Catalog of 620 Updated Exoplanet Ephemerides</a><small>Kokori et al. · <cite>The Astrophysical Journal Supplement Series</cite> · 2026</small></li>
+        <li><a href="https://doi.org/10.1093/mnras/staf1659">Testing the performance of cross-correlation techniques to search for molecular features in JWST NIRSpec G395H observations of transiting exoplanets</a><small>Esparza-Borges et al. · <cite>Monthly Notices of the Royal Astronomical Society</cite> · 2025</small></li>
+        <li><a href="https://doi.org/10.1051/0004-6361/202556498">A high geometric albedo and small size for the Haumea cluster member (24835) 1995 SM55 determined from a stellar occultation and photometric observations</a><small>Ortiz et al. · <cite>Astronomy &amp; Astrophysics</cite> · 2025</small></li>
+      </ul>
+      <details>
+        <summary>Co-authored preprints and white papers</summary>
+        <ul class="publications">
+          <li><a href="https://arxiv.org/abs/2608.11294">Early Exploration of the Scientific Discovery Space for the Habitable Worlds Observatory</a><small>Dressing et al. · arXiv preprint · 2026</small></li>
+          <li><a href="https://arxiv.org/abs/2605.26140">The role of the Hubble Space Telescope in advancing our understanding of atmospheric escape in exoplanets</a><small>Dos Santos et al. · arXiv white paper · 2026</small></li>
+        </ul>
+      </details>
       <p><a href="https://ui.adsabs.harvard.edu/search/fq=%7B!type%3Daqp%20v%3D%24fq_database%7D&amp;fq_database=(database%3Aastronomy%20OR%20database%3Aphysics)&amp;p_=0&amp;q=-docs(1f8e5e2fda6aa0148343a32ba70673cc)%20%20author%3A%22solmaz%2C%20arif%22&amp;sort=date%20desc%2C%20bibcode%20desc">Full publication record on NASA ADS</a></p>
-      <ul id="pub-list" aria-live="polite">
-        <li class="pub-heading"><h3>2026 · Journal article</h3></li>
-        <li><a href="https://ui.adsabs.harvard.edu/abs/2026ApJS..283....5K/abstract"><strong>ExoClock Project. IV. A Homogeneous Catalog of 620 Updated Exoplanet Ephemerides</strong><small>Kokori et al. · The Astrophysical Journal Supplement Series</small></a></li>
-        <li class="pub-heading"><h3>2026 · Preprints &amp; white papers</h3></li>
-        <li><a href="https://ui.adsabs.harvard.edu/abs/2026arXiv260811294D/abstract"><strong>Early Exploration of the Scientific Discovery Space for the Habitable Worlds Observatory</strong><small>Dressing et al. · arXiv preprint</small></a></li>
-        <li><a href="https://ui.adsabs.harvard.edu/abs/2026arXiv260526140D/abstract"><strong>The role of the Hubble Space Telescope in advancing our understanding of atmospheric escape in exoplanets</strong><small>Dos Santos et al. · arXiv white paper</small></a></li>
-      </ul>
     </section>
 
     <section id="training">
-      <h2>Training</h2>
-      <p>Student projects include analysing transit light curves, simulating starspots, and testing Python workflows.</p>
-      <p><a href="/aa/">Algorithm Analysis</a> · <a href="/courses/">Course materials</a></p>
+      <h2>Student projects</h2>
+      <p>İSTÜN undergraduates and MSc students can email me to discuss a project. Possible starting points include fitting a public transit light curve or testing how a simulated starspot affects its measured timing. Basic Python and an interest in plotting and interpreting data are useful.</p>
+      <p>Undergraduates can also get in touch to discuss ideas for <a href="https://tubitak.gov.tr/tr/burslar/lisans-onlisans/destek-programlari/2209-universite-ogrencileri-arastirma-projeleri-destekleme-programi">TÜBİTAK 2209-A</a>.</p>
+      <p><a href="/courses/aa/">Algorithm Analysis</a> · <a href="/courses/">Course materials</a></p>
     </section>
 
     <section id="contact">
-      <h2>Contact</h2>
-      <p>Students and researchers interested in a project can email <a href="mailto:arif.solmaz@istun.edu.tr">arif.solmaz@istun.edu.tr</a>.</p>
+      <h2 id="people">Contact</h2>
+      <p>Arif Solmaz, PhD · Assistant Professor<br><a href="mailto:arif.solmaz@istun.edu.tr">arif.solmaz@istun.edu.tr</a> · <a href="https://orcid.org/0000-0002-3076-164X">ORCID</a> · <a href="https://github.com/ArifSolmaz">GitHub</a></p>
+      <p>For a project enquiry, include your programme and year, what you’d like to investigate, any Python or data analysis experience, and when you’d like to start.</p>
+      <p lang="tr">İSTÜN lisans ve yüksek lisans öğrencileri, araştırma projeleri hakkında bana e-posta yazabilir. Bölümünüzü, sınıfınızı, araştırmak istediğiniz konuyu ve varsa Python veya veri analizi deneyiminizi kısaca belirtin. Lisans öğrencileri TÜBİTAK 2209-A proje fikirleri için de yazabilir.</p>
+    </section>
+
+    <section aria-labelledby="acknowledgments">
+      <h2 id="acknowledgments">Acknowledgments</h2>
+      <p>TÜBİTAK supported the WASP-52 observations through T100 observing programme 19AT100-1471. Co-author Özgür Baştürk acknowledged TÜBİTAK 1001 grant 118F042. Çağ University supported my participation in the 22nd National Astronomy Congress.</p>
     </section>
   </main>
 
-  <script>
-    fetch("lab-data.json").then(r=>{if(!r.ok)throw Error("Publication data unavailable");return r.json()}).then(data=>{
- const list=document.querySelector("#pub-list"),pubs=(data.publications||[]).filter(p=>p.bibcode&&p.title);
- const recent=pubs.filter(p=>p.year>=2026).slice(0,10),older=pubs.filter(p=>p.year<2026&&p.kind==="journal").slice(0,2);
- if(!recent.length)throw Error("No recent publications");
- list.replaceChildren();
- function heading(label){const li=document.createElement("li"),h=document.createElement("h3");li.className="pub-heading";h.textContent=label;li.append(h);list.append(li)}
- function entry(p){const li=document.createElement("li"),a=document.createElement("a"),title=document.createElement("strong"),meta=document.createElement("small");a.href="https://ui.adsabs.harvard.edu/abs/"+encodeURIComponent(p.bibcode)+"/abstract";title.textContent=p.title;const kind=p.kind==="journal"?"Journal article":p.kind==="whitepaper"?"White paper":"Preprint";meta.textContent=(p.journal&&p.journal!=="arXiv"?p.journal:"arXiv")+" · "+kind;a.append(title,meta);li.append(a);list.append(li)}
- for(const year of [...new Set(recent.map(p=>p.year))].sort((a,b)=>b-a)){
-  const works=recent.filter(p=>p.year===year),journals=works.filter(p=>p.kind==="journal"),other=works.filter(p=>p.kind!=="journal");
-  if(journals.length){heading(year+" · Journal article"+(journals.length>1?"s":""));journals.forEach(entry)}
-  if(other.length){heading(year+" · Preprints & white papers");other.forEach(entry)}
- }
- if(older.length){heading("Earlier selected articles");older.forEach(entry)}
-}).catch(()=>{/* Keep the verified 2026 entries embedded in the page. */});
-  </script>
+  <footer>Last updated <time datetime="2026-11-07">7 November 2026</time></footer>
 </body>
 </html>
