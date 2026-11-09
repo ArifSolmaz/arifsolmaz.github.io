@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 06 Nov 2026 08:51:27 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 09 Nov 2026 08:57:35 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,83 +15,89 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>Prospects for detecting hot-Jupiter tidal decay through transit timing with the mission Earth 2.0</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-07427v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-07427v1</guid>
-      <pubDate>Fri, 06 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Wenqin Wang et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
-    </item>
-    <item>
-      <title>The JWST Early Release Science Program for Direct Observations of Exoplanetary Systems IX: A Multi-Wavelength Framework for Source Characterization in JWST Coronagraphic Imaging of the HIP 65426 System</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-07034v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-07034v1</guid>
-      <pubDate>Fri, 06 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Evelyn L. Bruinsma et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>BeAR: The Bern Atmospheric Retrieval code - A GPU-accelerated framework for low-resolution, high-resolution, and joint retrievals of exoplanet atmospheres</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-08489v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-08489v1</guid>
-      <pubDate>Fri, 06 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Esther Wang et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
-    </item>
-    <item>
-      <title>An analytical framework for atmospheric tides on rocky planets. II. Semidiurnal thermotidal torque</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-07060v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-07060v1</guid>
-      <pubDate>Fri, 06 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Pierre Auclair-Desrotour et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>physics.geo-ph</category>
-    </item>
-    <item>
-      <title>The slower rotation of planet-hosting stars revisited</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-08267v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-08267v1</guid>
-      <pubDate>Fri, 06 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Avraham Binnenfeld et al.</dc:creator>
+      <title>Expanding the Volatile Abundance Inventory for High-Priority K-Dwarf JWST Exoplanet Systems</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-08676v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-08676v1</guid>
+      <pubDate>Mon, 09 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>David R. Coria et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.SR</category>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>The Composition of M-dwarf Exoplanet Hosts: Atmospheric Parameters and O, Mg, Si, and Fe Abundances from IR Spectroscopy</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-07037v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-07037v1</guid>
-      <pubDate>Fri, 06 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Zachary G Maas et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.SR</category>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Using Structure Functions to Characterize Protoplanetary Disk Velocity Residuals</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-07305v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-07305v1</guid>
-      <pubDate>Fri, 06 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Richard Teague et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Mitigating scanning-induced systematics in Hipparcos and implications for Gaia astrometry</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-08282v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-08282v1</guid>
-      <pubDate>Fri, 06 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Avraham Binnenfeld et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.IM</category>
         <category>astro-ph.EP</category>
         <category>astro-ph.GA</category>
+    </item>
+    <item>
+      <title>Advances in High-Precision Astrometry for Exoplanet Detection for Astrometric Missions</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-09657v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-09657v1</guid>
+      <pubDate>Mon, 09 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Fabien Malbet et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+        <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>Validation of Habitable Zone Limits with a New Radiative-Convective Equilibrium Climate Model</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-09475v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-09475v1</guid>
+      <pubDate>Mon, 09 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Jacob Haqq-Misra, Eric T. Wolf, Ravi K. Kopparapu</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>Coherent radio emission at 45 MHz from the nearby planet-hosting star GJ 725A</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-08719v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-08719v1</guid>
+      <pubDate>Mon, 09 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>H. W. Edler et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>New optimisations for exact, scalable 2D Gaussian process inference, with applications to astronomical time-series</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-09198v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-09198v1</guid>
+      <pubDate>Mon, 09 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Mark Fortune, Neale P. Gibson, Benjamin Pope</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+        <category>stat.CO</category>
+    </item>
+    <item>
+      <title>Estimations for strong and weak hot Jupiter magnetism: A Python package with interpolators and scaling laws</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-09128v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-09128v1</guid>
+      <pubDate>Mon, 09 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Albert Elias-López et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+    </item>
+    <item>
+      <title>Predicting next-week VIIRS fire detections in Bolivia: a reproducible benchmark with temporal and geographic evaluation</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-08539v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-08539v1</guid>
+      <pubDate>Mon, 09 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Victor Hugo Cuellar Flores</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>physics.soc-ph</category>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+    </item>
+    <item>
+      <title>Interferometric survey of stellar parameters. Reliable methodology for a direct measurement of the angular diameter in exoplanet host stars</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-08824v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-08824v1</guid>
+      <pubDate>Mon, 09 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>H. Nowacki et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.SR</category>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
     </item>
   </channel>
 </rss>
