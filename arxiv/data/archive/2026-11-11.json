@@ -1,0 +1,345 @@
+{
+  "announcement_date": "2026-11-11",
+  "updated_at": "2026-11-11T08:44:31.538183+00:00",
+  "category": "astro-ph.EP",
+  "paper_count": 8,
+  "papers": [
+    {
+      "id": "2611.13321v1",
+      "title": "The climate and potential habitability of a warm and oxygenated Mars",
+      "abstract": "We present the first 3-D Global Climate Model simulations of an oxygen-rich, terraformed Mars. Assuming an O2-CO2 atmosphere, with additional warming from a well-mixed grey gas, we study (1) how surface temperatures change with atmospheric pressure and grey gas opacity, and (2) how temperature, pressure, and other effects limit life as oxygen builds up. We neglect the climate effects of dust and the water cycle, as well as possible soil-chemistry and nutrient limits to life. We find that (1) increasing grey gas opacity and increasing atmospheric pressure both moderate day-night temperature swings, but only slightly reduce seasonal temperature swings. Climate remains harsher in the Southern mid-latitudes relative to the Northern hemisphere. (2) For an atmospheric pressure of 30 hPa (5 times its present-day value), temperatures on Mars would be consistent with lichen and moss, followed at 60 hPa by forests (initially in the Hellas Basin). However, creating a human-breathable atmosphere through photosynthesis alone, at the oxygen production rates of biomes on Earth today, would take at least thousands of years, and require more oxygen than can be made via photosynthesis of known CO2 reserves on Mars alone (unless CO2 is recycled).",
+      "authors": [
+        "Ashwin S. Braude",
+        "Edwin S. Kite",
+        "Preston Cosslett Kemeny",
+        "Raymond T. Pierrehumbert",
+        "Alexandre Kling",
+        "Michael A. Mischna"
+      ],
+      "categories": [
+        "astro-ph.EP",
+        "physics.ao-ph",
+        "physics.geo-ph"
+      ],
+      "published": "2026-11-09",
+      "updated": "2026-11-09",
+      "pdf_link": "https://arxiv.org/pdf/2611.13321v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.13321v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 50,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2611.13321v1/2611.13321v1/fig5.png"
+    },
+    {
+      "id": "2611.13257v1",
+      "title": "Imaging exoplanets below the telescope stability limit",
+      "abstract": "Exoplanet imaging is the main method for detailed characterization of planets orbiting beyond 1 au but it requires suppressing the bright glare of the star to see the faint planet light. As well as sophisticated instrumentation, effective image processing is necessary for starlight suppression, which continues to be a substantial limitation. Standard algorithms use reference images for starlight modelling and thus they are limited by inevitable telescope instabilities that change from reference to science observation. Addressing this challenge will increase the number of planets amenable to direct imaging and will be a notable step towards imaging exo-Earths with future observatories. Here we present a new physics-based method for starlight subtraction. Our method combines a multistep optimization with a flexible physical model to produce a starlight model, allowing modelling and compensation of instrument instabilities. We use automatic differentiation (autodiff) to optimize millions of model parameters. We demonstrate our method on observations from the James Webb Space Telescope (JWST) Near-InfraRed Camera (NIRCam) coronagraph instrument. We achieve sensitivity 2-15 times superior to standard techniques, including the first detection of 51 Eridani b at 4.3 μm. This is the first time, to our knowledge, that such an approach has demonstrated substantially improved sensitivity on real, on-sky coronagraphic imaging. Our framework can be extended to other current and future ground-based and space-based observatories, including the Nancy Grace Roman Space Telescope and the Habitable Worlds Observatory (HWO), potentially relaxing the unprecedented stability requirements needed to make these a success.",
+      "authors": [
+        "Rodrigo Ferrer-Chavez",
+        "Jason J. Wang",
+        "Katherine L. Bouman",
+        "William T. Freeman",
+        "Laurent Pueyo",
+        "Brandon Y. Feng",
+        "Marshall D. Perrin"
+      ],
+      "categories": [
+        "astro-ph.EP",
+        "astro-ph.IM"
+      ],
+      "published": "2026-11-09",
+      "updated": "2026-11-09",
+      "pdf_link": "https://arxiv.org/pdf/2611.13257v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.13257v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 49,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2611.13257v1/2611.13257v1/subtractions.png"
+    },
+    {
+      "id": "2611.13343v1",
+      "title": "A TESS Disappearing Act: The Vanishing Transits of TOI-2535 b",
+      "abstract": "Planetary transits require a fortuitous alignment between a planet's orbit and our line of sight, but dynamical interactions can render this geometric coincidence only temporary. We report the discovery of the hot Jupiter TOI-2535 b, the first confirmed planet orbiting a single star whose transits have been directly observed to disappear. Over seven years of photometry from NASA's Transiting Exoplanet Survey Satellite (TESS), the planet's transit chord traversed and eventually moved off the stellar disk entirely, with an impact parameter changing at the rate of b = 0.16\\,yr⁻¹. The transit mid-times also show significant departures of ± 6 hours from a linear ephemeris. Joint modeling of the transit timing and duration variations (TTVs and TDVs) and NEID radial-velocity data indicates the presence of a nearby, mutually inclined (i_mut 5′) planetary perturber, with the TDV being primarily due to precession of the planets' orbital planes. Our dynamical modeling reveals that the perturber is likely of Saturn-mass or greater and in a mean-motion resonance with TOI-2535 b, making this an unusual system that contains two short-period giant planets. The TDVs measured for TOI-2535 b represent one of the most extreme examples of planet-planet interactions driving orbital evolution on human timescales.",
+      "authors": [
+        "Samuel W. Yee",
+        "Erik A. Petigura",
+        "Rafael Brahm",
+        "Karen A. Collins",
+        "Gregor Srdoc",
+        "David W. Latham",
+        "Allyson Bieryla",
+        "Victoria DiTomasso",
+        "Thomas Henning",
+        "Andrés Jordán",
+        "Trifon Trifonov",
+        "Khalid Barkaoui",
+        "Phil Evans",
+        "Mourad Ghachoui",
+        "Michaël Gillon",
+        "Eric Girardin",
+        "Emmanuel Jehin",
+        "Felipe Murgas",
+        "Enric Palle",
+        "Adam Popowicz",
+        "Don J. Radford",
+        "Howard M. Relles",
+        "Richard P. Schwarz",
+        "Avi Shporer",
+        "Abderahmane Soubkiou",
+        "David Watanabe",
+        "Francis P. Wilkin",
+        "Carl Ziegler"
+      ],
+      "categories": [
+        "astro-ph.EP"
+      ],
+      "published": "2026-11-09",
+      "updated": "2026-11-09",
+      "pdf_link": "https://arxiv.org/pdf/2611.13343v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.13343v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 41,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2611.13343v1/2611.13343v1/toi2535_figure1.png"
+    },
+    {
+      "id": "2611.13771v1",
+      "title": "Breaking the Chain: The Dynamical History of the Barnard's Star Planetary System",
+      "abstract": "Barnard's Star is the nearest single-star system to the Sun and hosts four recently detected sub-Earth-mass planets. The system exhibits architectural imprints of a \"broken resonant chain\". We explore scenarios in which the presence of a now-lost, additional planet provides a more natural explanation for the present-day architecture from a dynamical-formation perspective. In such a situation, a resonance-breaking event triggered a merger between two planets, forming the present-day planet c. We find two viable pathways that can reproduce the observed configuration: (i) stellar-driven, long-term tidal expansion and (ii) disk-driven, early expansion, in which one-sided Lindblad torques separate the two outermost planets. Both scenarios can lead to the c1-c2 merger required to form the present-day architecture. The latter pathway also agrees with the broader exoplanet census: among the 14 compact four-planet systems we identify with broken-chain architectures similar to Barnard's Star system, ten have the third planet \"breaking\" the resonant sequence.",
+      "authors": [
+        "Tian Yi",
+        "Qiran Huang",
+        "Shuo Huang",
+        "Chris W. Ormel"
+      ],
+      "categories": [
+        "astro-ph.EP"
+      ],
+      "published": "2026-11-10",
+      "updated": "2026-11-10",
+      "pdf_link": "https://arxiv.org/pdf/2611.13771v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.13771v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 24,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2611.13771v1/2611.13771v1/figures/period_distri.png"
+    },
+    {
+      "id": "2611.13260v1",
+      "title": "Beyond the Fast Rotators: A JWST Multi-Cycle Treasury Survey of Substellar Weather",
+      "abstract": "Atmospheric variability provides a unique window into the three-dimensional structure, dynamics, and evolution of brown dwarf and giant exoplanet atmospheres. Recent JWST time-resolved spectroscopic observations have revealed complex wavelength-dependent variability, offering unprecedented insights into cloud structures, thermal perturbations, and atmospheric chemistry. However, existing programs have focused primarily on individual benchmarks and specific scientific questions, resulting in heterogeneous spectral and temporal coverage and leaving important regions of the substellar population underexplored, particularly across a broad range of rotation periods, spectral types, and viewing geometries. A JWST Multi-Cycle Treasury program could systematically investigate substellar weather across a diverse, well-characterized population. By combining broad infrared spectroscopic coverage with observations spanning multiple rotations and strategically selected epochs, this program would constrain the contributions of different physical mechanisms while investigating how atmospheric structures depend on rotation, viewing geometry, and fundamental physical properties. Extended monitoring would also improve rotational-period determinations and reveal how atmospheric features evolve from rotation to rotation and over longer timescales. This coordinated effort would provide a consistently designed and uniformly processed dataset of time-resolved spectra and variability diagnostics, enabling population-level comparisons, testing predictions from three-dimensional circulation models, and establishing a framework for interpreting the atmospheric diversity and evolution of brown dwarfs and directly imaged giant exoplanets.",
+      "authors": [
+        "Natalia Oliveros-Gomez",
+        "Elena Manjavacas",
+        "Niall Whiteford",
+        "Caprice Phillips",
+        "Jared Bull",
+        "Kielan Hoch",
+        "Allison M. McCarthy",
+        "Beatriz Campos Estrada",
+        "Cian O'Toole",
+        "Evert Nasedkin",
+        "Stanimir Metchev",
+        "Gabriel-Dominique Marleau",
+        "Harshil Kothari",
+        "Antonia von Stauffenberg",
+        "Michael K. Plummer",
+        "Brianna I. Lacy",
+        "Fuda Nguyen",
+        "Xueqing Chen",
+        "Fei Wang",
+        "Genaro Súarez",
+        "Ben J. Sutlieff"
+      ],
+      "categories": [
+        "astro-ph.IM",
+        "astro-ph.EP",
+        "astro-ph.SR"
+      ],
+      "published": "2026-11-09",
+      "updated": "2026-11-09",
+      "pdf_link": "https://arxiv.org/pdf/2611.13260v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.13260v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 23,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2611.13260v1/2611.13260v1/White-paper2.png"
+    },
+    {
+      "id": "2611.13505v1",
+      "title": "A Possible Non-Transiting Companion in the TOI-2109 System Supported by Transit Timing Variations",
+      "abstract": "Transit timing variations are a powerful method for detecting non-transiting planets, particularly in systems near mean-motion resonances. We investigate the ultra-short-period hot Jupiter TOI-2109 b using 87 transit epochs spanning two decades (2006-2025), combining observations from TESS, CHEOPS, HST, and ground-based photometry. We compare five timing models representing different physical scenarios: a linear ephemeris, orbital decay, apsidal precession, a sinusoidal model, and a two-planet n-body dynamical model. The orbital-decay fit yields P = -3.96 ± 2.05 ms yr⁻¹, providing no significant evidence for ongoing orbital decay. The sinusoidal model reveals a periodic transit-timing-variation signal with an amplitude of ≈ 44\\,s. Dynamical modelling favours an additional non-transiting companion near the 7:3 mean-motion resonance with an orbital period of 1.57813± 8.9×10⁻⁵ days and a mass of 0.70 ± 0.02\\,M Juₚ. The two-planet model yields ΔBIC=4.95 relative to the sinusoidal model, indicating positive evidence that the observed transit timing variations are best explained by gravitational perturbations from an additional planet.",
+      "authors": [
+        "Kaviya Parthasarathy",
+        "Prangsutip Cherdwongsung",
+        "Ing-Guey Jiang",
+        "Li-Chin Yeh",
+        "Hsin-Min Liu",
+        "Shraddha Biswas",
+        "D. Bisht",
+        "Napaporn A-thano",
+        "Supachai Awiphan",
+        "Vineet Kumar Mannaday",
+        "Parijat Thakur",
+        "Evgeny Griv",
+        "David Mkrtichian",
+        "Karen A. Collins",
+        "Emma Nabbie",
+        "Richard P. Schwarz",
+        "Chris Stockdale",
+        "Khalid Barkaoui",
+        "Norio Narita",
+        "Akihiko Fukui",
+        "Adam Popowicz",
+        "Nikola Antonov"
+      ],
+      "categories": [
+        "astro-ph.EP"
+      ],
+      "published": "2026-11-10",
+      "updated": "2026-11-10",
+      "pdf_link": "https://arxiv.org/pdf/2611.13505v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.13505v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 15,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2611.13505v1/2611.13505v1/combined_TESS.png"
+    },
+    {
+      "id": "2611.13770v1",
+      "title": "ExoPlanetLab: Bayesian orbit fitting of Gaia-DR4 epoch astrometry, radial velocities and relative astrometry",
+      "abstract": "Gaia Data Release 4 (DR4) provides epoch astrometry from which thousands of giant planets and many substellar and stellar companions can be characterised. We present ExoPlanetLab, an open-source package for Bayesian orbit inference from Gaia epoch astrometry, radial velocities (RVs) and relative astrometry, validated on simulated and real data. The model orbit is compared with the epoch residuals after removing the part absorbed by the single-star fit. A Student-t likelihood describes heavy-tailed data. A robust Keplerian periodogram with bootstrap false-alarm probabilities gives starting values for a joint fit. Five samplers are available: tempered ensemble MCMC, two nested samplers and two reversible-jump samplers. Evidences for a fixed number of companions select that number. Acceleration and scan-angle models test whether an orbit is warranted. The samplers agree within 0.1 sigma on a simulated two-planet system. In 180 injections all fits converge, and all signals with signal-to-noise ratio S >= 10 are detected. The posteriors show no significant bias, but the period coverage is below nominal: 90% of the true periods lie within their 95% credible intervals. None of 30 companion-free data sets gives a false detection. On DR4 pre-release data the orbit of Gaia BH3 is recovered within 1.4 sigma of published solutions. The Student-t model brings the astrometric period and eccentricity of HD 114762 onto its RV orbit. Eight simulated relative positions narrow the period's credible interval to 0.27 of its width, and Octofitter agrees within 0.2 sigma on the same data. The code is validated for single sources with DR4-like epoch astrometry, with or without RVs. Relative astrometry is tested on simulated data only. The main limits are an uncorrelated noise model and the computing cost, which grows linearly with the number of measurements and steeply with the number of companions.",
+      "authors": [
+        "David Hobbs"
+      ],
+      "categories": [
+        "astro-ph.IM",
+        "astro-ph.EP",
+        "astro-ph.GA",
+        "astro-ph.SR"
+      ],
+      "published": "2026-11-10",
+      "updated": "2026-11-10",
+      "pdf_link": "https://arxiv.org/pdf/2611.13770v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.13770v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 11,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2611.13770v1/2611.13770v1/injection_calibration.png"
+    },
+    {
+      "id": "2611.13128v1",
+      "title": "Planetary material is a major source of hydrogen in helium-atmosphere white dwarfs",
+      "abstract": "Many white dwarfs with helium-dominated atmospheres show traces of hydrogen in their spectra. On average, the total mass of hydrogen within their convective envelopes increases with age, but there is no consensus on the origin of such hydrogen. Hypotheses include upward diffusion from hidden reservoirs deep within the envelope, or accretion, alongside heavier elements, of planetary material. We construct a simple model that includes both pathways, and test it using two independent samples of helium-atmosphere DB white dwarfs from the DESI and SDSS spectroscopic surveys, selected to have Gaia colours BP-RP > -0.25, corresponding roughly to 10000 < T ₑff < 19000K. We find that at least 22 ± 2 per cent of the helium-atmosphere white dwarfs with detectable hydrogen must have accreted some of it from their planetary systems, via ices, hydrated minerals or atmospheres. We thus demonstrate that planetary hydrogen is a necessary ingredient to explain the spectral evolution of white dwarfs as a population, rather than only extreme hydrogen-enriched cases.",
+      "authors": [
+        "Paula Izquierdo",
+        "Andrew Swan",
+        "Christopher J. Manser",
+        "Boris T. Gänsicke",
+        "Joan Najita",
+        "Jessica N. Aguilar",
+        "Steven Ahlen",
+        "Leandro Beraldo e Silva",
+        "Davide Bianchi",
+        "David Brooks",
+        "Todd Claybaugh",
+        "Kyle Dawson",
+        "Axel de la Macorra",
+        "Peter Doel",
+        "Andreu Font-Ribera",
+        "Jaime E. Forero-Romero",
+        "Enrique Gaztañaga",
+        "Satya Gontcho A Gontcho",
+        "Gaston Gutierrez",
+        "Klaus Honscheid",
+        "Robert Kehoe",
+        "Sergey E. Koposov",
+        "Andrew Lambert",
+        "Martin Landriau",
+        "Laurent Le Guillou",
+        "Ting S. Li",
+        "Aaron Meisner",
+        "Ramon Miquel",
+        "John Moustakas",
+        "Francisco Prada",
+        "Ignasi Pérez-Ràfols",
+        "Alexander H. Riley",
+        "Graziano Rossi",
+        "Eusebio Sanchez",
+        "Michael Schubnell",
+        "David Sprayberry",
+        "Gregory Tarlé",
+        "Benjamin A. Weaver",
+        "Hu Zou"
+      ],
+      "categories": [
+        "astro-ph.SR",
+        "astro-ph.EP"
+      ],
+      "published": "2026-11-09",
+      "updated": "2026-11-09",
+      "pdf_link": "https://arxiv.org/pdf/2611.13128v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.13128v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 5,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2611.13128v1/2611.13128v1/CaTeff.png"
+    }
+  ]
+}
