@@ -1,796 +1,367 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Arif Solmaz – Astronomer studying exoplanets and stellar activity using space telescope data.">
-  <title>Arif Solmaz – Astronomer</title>
-  <link rel="icon" type="image/png" href="/favicon.png">
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Space+Mono:wght@400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
-  
-  <style>
-    :root {
-      --color-void: #030308;
-      --color-text: #e4e4ec;
-      --color-muted: #6b6b80;
-      --color-stellar: #ffd475;
-      --color-stellar-glow: rgba(255, 212, 117, 0.3);
-      --color-transit: #4a9eff;
-      --color-glass-border: rgba(255, 255, 255, 0.08);
-      
-      --font-display: "Playfair Display", Georgia, serif;
-      --font-mono: "Space Mono", monospace;
-      --font-body: "Outfit", -apple-system, sans-serif;
-    }
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Arif Solmaz — astronomer researching exoplanets, stellar activity and transit timing variations. Research, publications, teaching and writing.">
+<title>Arif Solmaz — Astronomy & Data Science</title><link rel="icon" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Outfit:wght@300;400;500;600&family=Space+Mono&display=swap" rel="stylesheet">
+<style>
+#stellarium-hero-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:-2;pointer-events:none;opacity:0;transition:opacity 1.2s ease}.hero.sky-active #stellarium-hero-canvas{opacity:1}.hero.sky-active::before{background-image:linear-gradient(90deg,rgba(1,8,19,.8),rgba(2,10,23,.12) 80%),linear-gradient(0deg,#040911,transparent 35%)!important;z-index:-1}.sky-location{position:absolute;right:20px;bottom:12px;z-index:2;font:11px "Space Mono",monospace;color:#e0e8f4;background:rgba(3,9,19,.6);border-radius:6px;padding:7px}.sky-location button{border:0;background:none;color:var(--gold);cursor:pointer;font:inherit}
 
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+:root{color-scheme:dark;--bg:#040911;--ink:#f6f4f0;--muted:#b4bbc7;--gold:#ffd475;--line:rgba(255,255,255,.17)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.65 Outfit,system-ui,sans-serif}a{color:inherit;text-decoration:none}a:focus-visible{outline:2px solid var(--gold);outline-offset:5px}
+.hero{min-height:650px;min-height:76svh;position:relative;isolation:isolate;display:flex;flex-direction:column;background:#081422;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;z-index:-2;background-image:linear-gradient(90deg,rgba(2,9,19,.87) 0%,rgba(3,11,22,.69) 29%,rgba(4,11,22,.17) 67%,rgba(3,9,18,.16)),linear-gradient(0deg,#040911 0%,transparent 28%,rgba(1,7,15,.12) 75%),url('/assets/images/milky-way-hero.jpg');background-position:center,center,center 53%;background-size:cover}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 60% 20%,transparent 15%,rgba(0,0,0,.18) 95%)}
+.site-header{width:100%;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:22px clamp(24px,4vw,80px);border-bottom:1px solid rgba(255,255,255,.13);background:rgba(1,7,16,.22);backdrop-filter:blur(7px)}
+.brand{font:400 clamp(23px,2.2vw,31px)/1.2 "Playfair Display",Georgia,serif;white-space:nowrap}.brand em{color:var(--gold);font-weight:400}
+nav{display:flex;gap:clamp(14px,2.2vw,36px);align-items:center;font-size:15px}nav a{color:#f2f4f7;transition:color .2s}nav a:hover{color:var(--gold)}
+.hero-main{width:min(1540px,100%);margin:auto;flex:1;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:55px clamp(24px,4vw,80px) 75px}
+.eyebrow{font:11px/1.5 "Space Mono",monospace;letter-spacing:.29em;text-transform:uppercase;color:var(--gold);margin:0 0 26px}
+h1{font:italic 400 clamp(46px,4.4vw,76px)/1.11 "Playfair Display",Georgia,serif;letter-spacing:-.025em;max-width:820px;margin:0 0 27px;text-wrap:balance;text-shadow:0 2px 20px rgba(0,0,0,.2)}
+.lead{font-size:clamp(17px,1.5vw,22px);line-height:1.7;max-width:570px;color:#d5d9e1;margin:0 0 36px}
+.actions{display:flex;flex-wrap:wrap;gap:16px}.button{display:inline-flex;align-items:center;justify-content:center;gap:17px;min-height:49px;padding:11px 26px;border-radius:11px;border:1px solid rgba(255,255,255,.66);font-weight:500;background:rgba(2,8,18,.32);transition:transform .2s,background .2s}.button:hover{transform:translateY(-2px);background:rgba(255,255,255,.14)}.button.primary{background:var(--gold);color:#0b111d;border-color:var(--gold)}.button.primary:hover{background:#ffe3a3}
+.scroll-cue{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);font-size:26px;color:white;opacity:.9}
+.content{width:min(1540px,100%);margin:auto;padding:28px clamp(24px,4vw,80px) 70px}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}.tile{min-height:154px;padding:21px 26px;border:1px solid var(--line);border-radius:15px;background:linear-gradient(130deg,rgba(19,31,50,.9),rgba(6,14,28,.92));display:flex;flex-direction:column;transition:border-color .2s,transform .2s}.tile:hover{border-color:var(--gold);transform:translateY(-4px)}.tile svg{width:30px;height:30px;stroke:var(--gold);stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round;margin-bottom:11px}.tile h2{font:400 24px/1.3 "Playfair Display",Georgia,serif;margin:0 0 7px}.tile p{margin:0;color:var(--muted);font-size:14px;line-height:1.6}.tile .arrow{margin-left:auto;color:var(--gold)}
+.lower{display:grid;grid-template-columns:1.35fr 1fr;gap:26px;margin-top:26px}.panel{border:1px solid var(--line);border-radius:15px;padding:28px;background:#0a1423}.section-label{font:11px "Space Mono",monospace;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin:0 0 15px}.panel h3{font:400 26px/1.3 "Playfair Display",Georgia,serif;margin:0 0 8px}.panel p{color:var(--muted);margin:0 0 15px}.panel a:not(.button){color:var(--gold)}.panel a:hover{text-decoration:underline}.small-links{display:flex;flex-wrap:wrap;gap:12px 23px;font-size:14px}.small-links a{color:#f4f4f7!important}
+footer{border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:15px;margin-top:40px;padding-top:22px;color:#9ba6b7;font-size:13px}
+@media(min-width:1700px){.hero{min-height:850px}.hero-main{padding-top:110px;padding-bottom:135px}}
+@media(max-width:980px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.lower{grid-template-columns:1fr}nav{gap:15px}}
+@media(max-width:650px){.hero{min-height:720px;min-height:91svh}.hero::before{background-position:center,center,60% center}.site-header{padding:18px 22px;align-items:flex-start;flex-wrap:wrap}nav{width:100%;overflow-x:auto;white-space:nowrap;padding-bottom:5px;font-size:13px}.hero-main{padding:65px 24px 95px}h1{font-size:clamp(43px,10vw,62px)}.lead{font-size:17px}.grid{grid-template-columns:1fr;gap:14px}.tile{min-height:150px}.content{padding:24px 20px 50px}.lower{gap:14px}.panel{padding:23px}}
+nav a[aria-current="page"]{position:relative}nav a[aria-current="page"]::after{content:"";position:absolute;left:0;right:0;bottom:-11px;height:2px;background:var(--gold)}
+.eyebrow::after{content:"";display:inline-block;vertical-align:middle;width:50px;height:1px;background:var(--gold);margin-left:18px}
+@media(max-width:650px){nav a[aria-current="page"]::after{display:none}.eyebrow::after{width:25px;margin-left:10px}}
+/* Compact mobile layout: no horizontal navigation strip, no repeated CTA cards */
+.mobile-menu{display:none}
+@media(max-width:650px){
+ .hero{min-height:0;min-height:0;overflow:visible}
+ .hero::before{background-position:center,center,55% center;filter:brightness(.76)}
+ .site-header{align-items:center;flex-wrap:nowrap;padding:16px 20px;position:relative;z-index:3}
+ .brand{font-size:26px}
+ .mobile-menu{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid rgba(255,255,255,.35);border-radius:9px;background:rgba(5,12,23,.68);color:#fff;font:500 14px Outfit,sans-serif;min-height:42px;padding:8px 13px;cursor:pointer}
+ .mobile-menu[aria-expanded="true"]{border-color:var(--gold);color:var(--gold)}
+ nav{display:none;position:absolute;top:100%;left:12px;right:12px;width:auto;padding:12px;overflow:visible;white-space:normal;background:#091525;border:1px solid var(--line);border-radius:12px;box-shadow:0 15px 40px rgba(0,0,0,.45);flex-direction:column;align-items:stretch;gap:0}
+ nav.is-open{display:flex}
+ nav a{display:block;padding:11px 13px;min-height:44px;border-radius:6px}
+ nav a:hover,nav a:focus-visible{background:rgba(255,255,255,.08)}
+ .hero-main{padding:78px 22px 65px;justify-content:center;min-height:480px}
+ .eyebrow{font-size:10px;letter-spacing:.19em;margin-bottom:18px}
+ h1{font-size:clamp(38px,10vw,53px);line-height:1.13;margin-bottom:20px}
+ .lead{font-size:16px;line-height:1.62;max-width:370px;margin-bottom:28px}
+ .actions{gap:10px}.button{min-height:46px;padding:10px 17px;font-size:14px}
+ .scroll-cue{display:none}
+ .content{padding:18px 18px 44px}
+ .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ .tile{min-height:116px;padding:17px 14px;border-radius:11px}
+ .tile svg{width:23px;height:23px;margin-bottom:11px}
+ .tile h2{font-size:19px;margin-bottom:3px}
+ .tile p{font-size:12px;line-height:1.4;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+ .lower{margin-top:13px;gap:13px}.panel{padding:19px}
+ .panel h3{font-size:22px}
+ footer{margin-top:27px}
+}
+@media(max-width:360px){.hero-main{padding-top:58px}.tile h2{font-size:17px}.tile{padding:14px 11px}.tile p{font-size:11px}}
+/* Reference composition: compact cinematic first viewport */
+@media(min-width:981px){
+.hero{min-height:0;height:76vh;max-height:760px;min-height:570px}
+.hero-main{padding-top:60px;padding-bottom:55px;justify-content:center}
+.content{padding-top:24px}
+.grid{gap:28px}
+.tile{min-height:153px}
+}
+.hero::before{background-image:linear-gradient(90deg,rgba(1,8,19,.77) 0%,rgba(2,10,23,.48) 32%,rgba(3,10,22,.08) 65%),linear-gradient(0deg,#040911 0%,rgba(4,9,17,.06) 21%,transparent 52%),url('/assets/images/milky-way-hero.jpg')}
+.eyebrow{letter-spacing:.26em}
+.tile{background:linear-gradient(135deg,rgba(7,18,32,.93),rgba(5,13,25,.94));border-color:rgba(193,207,224,.22)}
+.tile h2{font-size:24px}
+@media(max-width:650px){.hero{height:auto;max-height:none;min-height:0}.hero-main{min-height:470px}.hero::before{background-position:center,center,59% center}.tile h2{font-size:19px}}
 
-    html, body {
-      height: 100%;
-      overflow: hidden;
-    }
+.live-sky{margin-top:26px;padding:26px;border:1px solid var(--line);border-radius:15px;background:linear-gradient(135deg,#0b1b30,#07101d)}
+.live-sky-head{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.live-sky h2{font:400 clamp(26px,3vw,37px)/1.2 "Playfair Display",Georgia,serif;margin:0 0 8px}
+.live-sky p{color:var(--muted);margin:0 0 15px}
+.sky-controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.sky-controls button,.sky-controls select,.sky-controls a{font:500 14px Outfit,system-ui,sans-serif;border:1px solid rgba(255,255,255,.4);border-radius:9px;background:#13253b;color:#fff;min-height:43px;padding:10px 14px;cursor:pointer}
+.sky-controls button.primary{background:var(--gold);color:#0b111d;border-color:var(--gold)}
+.sky-controls select{max-width:190px}
+.sky-status{font-size:13px;margin:12px 0!important}
+.sky-view{position:relative;margin-top:14px;height:clamp(340px,50vw,570px);border-radius:12px;overflow:hidden;background:radial-gradient(ellipse at center,#172944,#060c17);border:1px solid rgba(255,255,255,.12)}
+.sky-view iframe{width:100%;height:100%;border:0;background:#060c17}
+.sky-placeholder{height:100%;display:flex;align-items:center;justify-content:center;text-align:center;padding:25px;color:#c8d2e1}
+.sky-note{font-size:12px!important;margin-top:12px!important}
+@media(max-width:650px){.live-sky{padding:18px;margin-top:13px}.sky-view{height:400px}.sky-controls{align-items:stretch}.sky-controls button,.sky-controls select,.sky-controls a{flex:1 1 auto}}
+/* One live Stellarium viewport behind the ENTIRE homepage, not just the hero. */
+#stellarium-hero-canvas{position:fixed!important;inset:0!important;width:100vw!important;height:100vh!important;z-index:0!important;pointer-events:none;opacity:0;transition:opacity 1.2s ease}
+body.sky-active #stellarium-hero-canvas{opacity:1}
+body{background:#040911}
+.hero{isolation:auto;background:transparent;overflow:visible;z-index:1}
+.hero::before{z-index:-1}
+.hero::after{z-index:-1}
+body.sky-active .hero::before{background-image:linear-gradient(90deg,rgba(1,8,19,.78),rgba(2,10,23,.12) 80%),linear-gradient(0deg,rgba(4,9,17,.75),transparent 35%)!important}
+body.sky-active .hero::after{background:transparent}
+.content{position:relative;z-index:1;background:transparent}
+body.sky-active .tile{background:linear-gradient(135deg,rgba(7,18,32,.88),rgba(5,13,25,.9))}
+body.sky-active .panel{background:rgba(10,20,35,.9)}
+body.sky-active .hero,body.sky-active .content{background:transparent}
 
-    body {
-      font-family: var(--font-body);
-      font-size: 1rem;
-      font-weight: 300;
-      color: var(--color-text);
-      background: var(--color-void);
-      -webkit-font-smoothing: antialiased;
-    }
+/* Interactive planetarium: opt-in, accessible, and mobile-first. */
+.sky-explore-toggle{position:fixed;right:18px;bottom:20px;z-index:20;border:1px solid #ffd475;border-radius:999px;background:#ffd475;color:#091423;font:600 14px Outfit,system-ui,sans-serif;padding:12px 18px;cursor:pointer;box-shadow:0 6px 28px #0009}
+.sky-explore-toggle[hidden],.sky-explore-ui[hidden],.sky-object-panel[hidden]{display:none!important}
+body.sky-exploring{overflow:hidden!important}
+body.sky-exploring #stellarium-hero-canvas{z-index:40!important;opacity:1!important;pointer-events:auto!important;touch-action:none;background:#06101d}
+.sky-explore-ui{position:fixed;inset:0;z-index:41;pointer-events:none;color:white;font:14px Outfit,system-ui,sans-serif}
+.sky-explore-top{position:absolute;top:env(safe-area-inset-top,0px);left:0;right:0;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px max(16px,env(safe-area-inset-right,0px)) 12px max(16px,env(safe-area-inset-left,0px));background:linear-gradient(#040b17e8,transparent)}
+.sky-explore-top strong{font-size:17px}.sky-explore-top button,.sky-explore-bottom button,.sky-object-panel button{pointer-events:auto;cursor:pointer;border:1px solid #ffffff70;border-radius:9px;background:#12263de8;color:white;padding:10px 14px;font:inherit;min-height:44px}
+.sky-explore-bottom{position:absolute;bottom:max(16px,env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:8px;white-space:nowrap}
+.sky-explore-hint{position:absolute;top:70px;left:16px;color:#c7d3e6;font-size:12px;text-shadow:0 2px 5px #000}
+.sky-object-panel{pointer-events:auto;position:absolute;top:85px;right:18px;width:min(340px,calc(100vw - 36px));max-height:calc(100dvh - 170px);overflow:auto;padding:18px;border:1px solid #ffffff50;border-radius:14px;background:#071426f2;box-shadow:0 15px 45px #0009}
+.sky-object-panel h2{font:400 24px 'Playfair Display',Georgia,serif;margin:0 0 12px}.sky-object-panel dl{display:grid;grid-template-columns:1fr 1fr;gap:7px 12px;margin:0}.sky-object-panel dt{color:#aebdd0}.sky-object-panel dd{margin:0;text-align:right;overflow-wrap:anywhere}.sky-object-panel .sky-close-object{float:right}
+@media(max-width:650px){.sky-explore-toggle{right:12px;bottom:max(12px,env(safe-area-inset-bottom,0px));font-size:13px;padding:11px 15px}.sky-explore-top{padding:12px}.sky-explore-top strong{font-size:14px}.sky-explore-hint{top:68px;left:12px}.sky-object-panel{top:auto;bottom:80px;left:12px;right:12px;width:auto;max-height:45dvh}.sky-explore-bottom{bottom:max(12px,env(safe-area-inset-bottom,0px))}}
 
-    /* ═══════════════════════════════════════════
-       STARFIELD
-    ═══════════════════════════════════════════ */
-    #starfield {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-    }
+/* Hide the website completely during full-screen exploration. */
+body.sky-exploring .hero,body.sky-exploring .content{visibility:hidden!important}
+body.sky-exploring #stellarium-hero-canvas{position:fixed!important;inset:0!important;width:100vw!important;height:100dvh!important;background:#091629!important}
+body.sky-exploring .sky-explore-ui{visibility:visible!important}
+.sky-object-panel{width:min(420px,calc(100vw - 36px));padding:22px;max-height:calc(100dvh - 160px)}
+.sky-object-panel h2{font-size:29px;padding-right:42px;line-height:1.2}
+.sky-object-panel dl{grid-template-columns:minmax(0,1fr);gap:4px;margin-top:16px}
+.sky-object-panel dt{font-size:12px;letter-spacing:.06em;text-transform:uppercase;margin-top:12px}
+.sky-object-panel dd{text-align:left;font:500 15px/1.55 'Space Mono',monospace;overflow-wrap:anywhere;word-break:normal;color:#f2f6ff}
+.sky-object-subtitle{color:#afc5df;font-size:13px;margin:0 0 8px}
+@media(max-width:650px){.sky-object-panel{padding:19px;max-height:55dvh;bottom:70px;top:auto}.sky-object-panel h2{font-size:25px}.sky-object-panel dd{font-size:13px}}
 
-    /* ═══════════════════════════════════════════
-       MAIN LAYOUT - SINGLE SCREEN
-    ═══════════════════════════════════════════ */
-    .page {
-      position: relative;
-      z-index: 10;
-      height: 100vh;
-      height: 100dvh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr auto;
-      gap: 2rem;
-      padding: 3rem;
-    }
+/* Planetarium polish: readable details and calmer, layered controls. */
+.sky-explore-ui .sky-explore-hint{padding:8px 12px;border-radius:9px;background:#071426bd;max-width:calc(100vw - 32px)}
+.sky-explore-bottom{background:#071426e8;padding:7px;border:1px solid #ffffff35;border-radius:14px;box-shadow:0 12px 32px #0009}
+.sky-object-panel{background:#101924f5;border-color:#ffffff38;backdrop-filter:blur(16px)}
+.sky-object-panel dt{color:#a7b5c8}.sky-object-panel dd{color:#f3f7fd}
+@media(max-width:650px){.sky-explore-hint{font-size:11px!important;top:62px!important;right:12px}.sky-explore-bottom{max-width:calc(100vw - 24px)}.sky-object-panel{bottom:80px}}
 
-    /* ═══════════════════════════════════════════
-       LEFT COLUMN - IDENTITY
-    ═══════════════════════════════════════════ */
-    .identity {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 1.5rem;
-    }
+/* Keep planetarium controls usable on narrow screens without covering the sky. */
+.sky-explore-bottom{max-width:calc(100vw - 24px);overflow-x:auto;scrollbar-width:thin;justify-content:flex-start}
+.sky-explore-bottom button{flex:0 0 auto}
+@media(max-width:650px){.sky-explore-bottom{left:12px;right:12px;transform:none;width:auto;max-width:none;bottom:max(8px,env(safe-area-inset-bottom,0px))}.sky-object-panel{bottom:94px}}
 
-    .eyebrow {
-      font-family: var(--font-mono);
-      font-size: 0.65rem;
-      letter-spacing: 0.4em;
-      text-transform: uppercase;
-      color: var(--color-transit);
-      opacity: 0;
-      animation: fade-in 0.8s ease 0.2s forwards;
-    }
+/* Homepage is a designed sky-backed composition, not a black planetarium viewport. */
+body.sky-active:not(.sky-exploring)::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 75% 48% at 65% 12%,rgba(56,81,127,.23),transparent 85%),linear-gradient(180deg,rgba(13,26,48,.12) 0%,rgba(7,17,33,.34) 58%,rgba(4,11,23,.66) 100%)}
+body.sky-active:not(.sky-exploring) .hero::before{background-image:linear-gradient(90deg,rgba(3,11,24,.77),rgba(5,16,34,.24) 82%),linear-gradient(0deg,rgba(4,11,23,.5),transparent 45%)!important}
+body.sky-exploring::before{display:none!important}
 
-    .name-container {
-      position: relative;
-    }
-
-    .name {
-      font-family: var(--font-display);
-      font-size: clamp(2.5rem, 6vw, 5rem);
-      font-weight: 400;
-      line-height: 0.95;
-      color: #fff;
-      letter-spacing: -0.02em;
-      opacity: 0;
-      animation: fade-in 0.8s ease 0.3s forwards;
-    }
-
-    .name span {
-      display: block;
-      font-style: italic;
-      color: var(--color-stellar);
-    }
-
-    /* Transit animation - tiny planet crossing */
-    .transit-planet {
-      position: absolute;
-      width: 8px;
-      height: 8px;
-      background: var(--color-void);
-      border-radius: 50%;
-      top: 50%;
-      left: -20px;
-      opacity: 0;
-      box-shadow: 0 0 4px rgba(0,0,0,0.5);
-      animation: transit 12s ease-in-out infinite;
-      animation-delay: 3s;
-    }
-
-    @keyframes transit {
-      0% { left: -20px; opacity: 0; }
-      5% { opacity: 0.8; }
-      50% { opacity: 0.8; }
-      95% { opacity: 0.8; }
-      100% { left: calc(100% + 20px); opacity: 0; }
-    }
-
-    .tagline {
-      font-size: clamp(0.9rem, 1.5vw, 1.1rem);
-      color: var(--color-muted);
-      max-width: 400px;
-      line-height: 1.7;
-      opacity: 0;
-      animation: fade-in 0.8s ease 0.4s forwards;
-    }
-
-    .affiliation {
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
-      padding-top: 0.5rem;
-      border-top: 1px solid var(--color-glass-border);
-      opacity: 0;
-      animation: fade-in 0.8s ease 0.5s forwards;
-    }
-
-    .affiliation-label {
-      font-family: var(--font-mono);
-      font-size: 0.55rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--color-muted);
-    }
-
-    .affiliation-value {
-      font-size: 0.9rem;
-      color: var(--color-text);
-    }
-
-    /* ═══════════════════════════════════════════
-       RIGHT COLUMN - INFO GRID
-    ═══════════════════════════════════════════ */
-    .info {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 1.5rem;
-    }
-
-    .info-section {
-      opacity: 0;
-      animation: fade-in 0.8s ease forwards;
-    }
-
-    .info-section:nth-child(1) { animation-delay: 0.4s; }
-    .info-section:nth-child(2) { animation-delay: 0.5s; }
-    .info-section:nth-child(3) { animation-delay: 0.6s; }
-
-    .info-label {
-      font-family: var(--font-mono);
-      font-size: 0.55rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--color-transit);
-      margin-bottom: 0.75rem;
-    }
-
-    /* Research Topics */
-    .topics {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-
-    .topic {
-      font-size: 0.8rem;
-      color: var(--color-text);
-      padding: 0.4rem 0.8rem;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--color-glass-border);
-      border-radius: 20px;
-      transition: all 0.3s ease;
-    }
-
-    .topic:hover {
-      border-color: var(--color-stellar-glow);
-      background: rgba(255, 212, 117, 0.05);
-    }
-
-    /* Links */
-    .links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-    }
-
-    .link {
-      font-family: var(--font-body);
-      font-size: 0.85rem;
-      font-weight: 400;
-      color: #fff;
-      text-decoration: none;
-      padding: 0.5rem 1rem;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--color-glass-border);
-      border-radius: 6px;
-      transition: all 0.3s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .link:hover {
-      border-color: var(--color-stellar);
-      background: rgba(255, 212, 117, 0.08);
-      transform: translateY(-2px);
-    }
-
-    .link-arrow {
-      font-size: 0.75rem;
-      opacity: 0.5;
-      transition: all 0.3s ease;
-    }
-
-    .link:hover .link-arrow {
-      opacity: 1;
-      transform: translateX(2px);
-    }
-
-    /* Special highlight for arxiv link */
-    .link.featured {
-      border-color: rgba(74, 158, 255, 0.3);
-      background: rgba(74, 158, 255, 0.05);
-    }
-
-    .link.featured:hover {
-      border-color: var(--color-transit);
-      background: rgba(74, 158, 255, 0.12);
-    }
-
-    .link-badge {
-      font-family: var(--font-mono);
-      font-size: 0.5rem;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      color: var(--color-transit);
-      background: rgba(74, 158, 255, 0.15);
-      padding: 0.15rem 0.4rem;
-      border-radius: 3px;
-      margin-left: 0.25rem;
-    }
-
-    /* Contact */
-    .contact-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-    }
-
-    .contact-item {
-      display: flex;
-      flex-direction: column;
-      gap: 0.2rem;
-    }
-
-    .contact-key {
-      font-family: var(--font-mono);
-      font-size: 0.5rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--color-muted);
-    }
-
-    .contact-value {
-      font-size: 0.85rem;
-      color: var(--color-text);
-    }
-
-    .contact-value a {
-      color: var(--color-text);
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.3s ease;
-    }
-
-    .contact-value a:hover {
-      border-bottom-color: var(--color-stellar);
-    }
-
-    /* Social icons */
-    .social-links {
-      display: flex;
-      gap: 0.75rem;
-      margin-top: 0.5rem;
-    }
-
-    .social-link {
-      width: 32px;
-      height: 32px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--color-glass-border);
-      border-radius: 6px;
-      color: var(--color-muted);
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-
-    .social-link:hover {
-      border-color: var(--color-stellar);
-      color: var(--color-stellar);
-      transform: translateY(-2px);
-    }
-
-    .social-link svg {
-      width: 16px;
-      height: 16px;
-      fill: currentColor;
-    }
-
-    /* ═══════════════════════════════════════════
-       FOOTER
-    ═══════════════════════════════════════════ */
-    .footer {
-      grid-column: 1 / -1;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-top: 1rem;
-      border-top: 1px solid var(--color-glass-border);
-      opacity: 0;
-      animation: fade-in 0.8s ease 0.7s forwards;
-    }
-
-    .footer-text {
-      font-family: var(--font-mono);
-      font-size: 0.6rem;
-      letter-spacing: 0.1em;
-      color: var(--color-muted);
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    .footer-link {
-      font-family: var(--font-mono);
-      font-size: 0.6rem;
-      letter-spacing: 0.1em;
-      color: var(--color-muted);
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    .footer-link:hover {
-      color: var(--color-stellar);
-    }
-
-    /* ═══════════════════════════════════════════
-       ANIMATIONS
-    ═══════════════════════════════════════════ */
-    @keyframes fade-in {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* ═══════════════════════════════════════════
-       RESPONSIVE
-    ═══════════════════════════════════════════ */
-    @media (max-width: 1024px) {
-      .page {
-        padding: 2rem;
-        gap: 1.5rem;
-      }
-      
-      .topic {
-        font-size: 0.75rem;
-        padding: 0.35rem 0.7rem;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .page {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto;
-        padding: 1.5rem;
-        gap: 2rem;
-        height: auto;
-        min-height: 100vh;
-        min-height: 100dvh;
-        overflow-y: auto;
-      }
-      
-      html, body {
-        overflow: auto;
-      }
-      
-      .identity {
-        gap: 1rem;
-      }
-      
-      .name {
-        font-size: 2.5rem;
-      }
-      
-      .tagline {
-        font-size: 0.9rem;
-      }
-      
-      .info {
-        gap: 1.5rem;
-      }
-      
-      .topics {
-        gap: 0.4rem;
-      }
-      
-      .topic {
-        font-size: 0.7rem;
-        padding: 0.3rem 0.6rem;
-      }
-      
-      .links {
-        gap: 0.5rem;
-      }
-      
-      .link {
-        font-size: 0.8rem;
-        padding: 0.4rem 0.8rem;
-      }
-      
-      .contact-grid {
-        gap: 1rem;
-      }
-      
-      .footer {
-        flex-direction: column;
-        gap: 0.75rem;
-        text-align: center;
-      }
-
-      .transit-planet {
-        display: none;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .page {
-        padding: 1.25rem;
-      }
-      
-      .name {
-        font-size: 2rem;
-      }
-      
-      .eyebrow {
-        font-size: 0.55rem;
-      }
-      
-      .info-label {
-        font-size: 0.5rem;
-      }
-    }
-    
-    @media (max-height: 700px) and (min-width: 769px) {
-      .page {
-        padding: 2rem;
-        gap: 1rem;
-      }
-      
-      .identity {
-        gap: 1rem;
-      }
-      
-      .info {
-        gap: 1rem;
-      }
-      
-      .name {
-        font-size: clamp(2rem, 5vw, 3.5rem);
-      }
-      
-      .tagline {
-        font-size: 0.85rem;
-      }
-      
-      .topic {
-        font-size: 0.7rem;
-        padding: 0.3rem 0.6rem;
-      }
-      
-      .info-label {
-        margin-bottom: 0.5rem;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        transition-duration: 0.01ms !important;
-      }
-    }
-  </style>
+.sky-exposure-label{display:flex;align-items:center;gap:9px;pointer-events:auto;color:#f3f6ff;font-size:13px;padding:0 8px;white-space:nowrap}
+.sky-exposure-label input{width:115px;accent-color:#a9caff;cursor:pointer}
+body.sky-active:not(.sky-exploring) #stellarium-hero-canvas{filter:brightness(.82) contrast(1.08)}
+body.sky-exploring #stellarium-hero-canvas{filter:brightness(.82) contrast(1.08)}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+</style>
 </head>
-
 <body>
-  <canvas id="starfield"></canvas>
-
-  <div class="page">
-    <!-- Left: Identity -->
-    <div class="identity">
-      <p class="eyebrow">Astronomer</p>
-      <div class="name-container">
-        <h1 class="name">
-          Arif
-          <span>Solmaz</span>
-        </h1>
-        <div class="transit-planet"></div>
-      </div>
-      <p class="tagline">Searching for worlds beyond our solar system through the language of light and time. Specializing in transit timing variations, stellar activity, and space telescope data analysis.</p>
-      <div class="affiliation">
-        <span class="affiliation-label">Institution</span>
-        <span class="affiliation-value">Istanbul Health and Technology University</span>
-      </div>
-    </div>
-
-    <!-- Right: Info -->
-    <div class="info">
-      <div class="info-section">
-        <p class="info-label">Research Focus</p>
-        <div class="topics">
-          <span class="topic">Exoplanet Detection</span>
-          <span class="topic">Transit Timing Variations</span>
-          <span class="topic">Stellar Activity</span>
-          <span class="topic">TESS & JWST</span>
-          <span class="topic">Machine Learning</span>
-        </div>
-      </div>
-
-      <div class="info-section">
-        <p class="info-label">Work</p>
-        <div class="links">
-          <a href="https://ui.adsabs.harvard.edu/search/fq=%7B!type%3Daqp%20v%3D%24fq_database%7D&fq_database=(database%3Aastronomy%20OR%20database%3Aphysics)&q=-docs(1f8e5e2fda6aa0148343a32ba70673cc)%20%20author%3A%22solmaz%2C%20arif%22&sort=date%20desc%2C%20bibcode%20desc&p_=0" target="_blank" rel="noopener" class="link">
-            Publications <span class="link-arrow">→</span>
-          </a>
-          <a href="https://arifsolmaz.github.io/cv.pdf" target="_blank" rel="noopener" class="link">
-            CV <span class="link-arrow">→</span>
-          </a>
-          <a href="lab/" class="link">
-            Research Group <span class="link-arrow">→</span>
-          </a>
-          <a href="arxiv" class="link featured">
-            Exoplanet Papers <span class="link-badge">Daily</span> <span class="link-arrow">→</span>
-          </a>
-        </div>
-      </div>
-
-      <!-- Idea of the day -->
-<div class="info-section">
-  <p class="info-label">Idea of the day</p>
-  <div class="links">
-    <a href="/daily-idea/widget.html" target="_blank" rel="noopener" class="link featured">
-      <span id="exo-daily-title">Loading today's idea…</span>
-      <span class="link-arrow">→</span>
-    </a>
-  </div>
+<canvas id="stellarium-hero-canvas" aria-hidden="true"></canvas>
+<button type="button" id="sky-explore-toggle" class="sky-explore-toggle" hidden aria-controls="sky-explore-ui">Explore sky ✦</button>
+<div id="sky-explore-ui" class="sky-explore-ui" hidden role="region" aria-label="Interactive Stellarium sky">
+ <div class="sky-explore-top"><strong>Explore the live sky</strong><button type="button" id="sky-explore-exit">✕ Return to website</button></div>
+ <div class="sky-explore-hint">Drag to look around · Scroll or pinch to zoom · Tap a star for details</div>
+ <aside id="sky-object-panel" class="sky-object-panel" hidden aria-live="polite"><button class="sky-close-object" type="button" id="sky-object-close" aria-label="Close object information">✕</button><h2 id="sky-object-title">Celestial object</h2><p class="sky-object-subtitle">Live Stellarium object data</p><dl id="sky-object-details"></dl></aside>
+ <div class="sky-explore-bottom"><button type="button" id="sky-zoom-in" aria-label="Zoom in">＋</button><button type="button" id="sky-zoom-out" aria-label="Zoom out">－</button><button type="button" id="sky-reset-view">Reset view</button><label class="sky-exposure-label" for="sky-exposure">Brightness <input id="sky-exposure" type="range" min="55" max="125" value="82" step="1" aria-label="Planetarium display brightness"></label><button type="button" id="sky-exposure-reset">Default brightness</button><button type="button" id="sky-atmosphere" aria-pressed="false">Atmosphere off</button><button type="button" id="sky-constellations" aria-pressed="false">Constellations off</button></div>
 </div>
+<section class="hero" id="top"><div class="sky-location" id="sky-location" hidden><span id="sky-place">Istanbul</span> · Live sky <button type="button" id="sky-permission">Use my location</button></div>
+<header class="site-header"><a class="brand" href="/" aria-label="Arif Solmaz home">Arif <em>Solmaz</em></a>
+<button class="mobile-menu" type="button" aria-controls="main-nav" aria-expanded="false">Menu <span aria-hidden="true">☰</span></button><nav id="main-nav" aria-label="Main navigation"><a href="/" aria-current="page">Home</a><a href="/lab/">Research</a><a href="https://ui.adsabs.harvard.edu/search/fq=%7B!type%3Daqp%20v%3D%24fq_database%7D&fq_database=(database%3Aastronomy%20OR%20database%3Aphysics)&q=-docs(1f8e5e2fda6aa0148343a32ba70673cc)%20%20author%3A%22solmaz%2C%20arif%22&sort=date%20desc%2C%20bibcode%20desc&p_=0" target="_blank" rel="noopener">Publications</a><a href="/courses/">Teaching</a><a href="/blog/">Blog</a><a href="#contact">Contact</a></nav></header>
+<div class="hero-main"><p class="eyebrow">Astronomy &amp; Data Science</p><h1>Exploring planets,<br>stars and galaxies</h1><p class="lead">Studying the Universe through data, modeling and computational methods, and sharing what we learn through research, teaching and writing.</p><div class="actions"><a class="button primary" href="/lab/">Research <span aria-hidden="true">→</span></a><a class="button" href="/blog/">Read the Blog</a></div></div>
+<a class="scroll-cue" href="#explore" aria-label="Explore website">⌄</a>
+</section>
+<main class="content" id="explore">
+<div class="grid">
+<a class="tile" href="/lab/"><svg viewBox="0 0 24 24"><path d="M3 21l7-13 8-3 3 3-8 3-10 10ZM10 8l4 4M6 21h12M12 12v9"/></svg><h2>Research <span class="arrow">→</span></h2><p>Exoplanets, stellar activity, transit timing variations and data-driven astronomy.</p></a>
+<a class="tile" href="https://ui.adsabs.harvard.edu/search/fq=%7B!type%3Daqp%20v%3D%24fq_database%7D&fq_database=(database%3Aastronomy%20OR%20database%3Aphysics)&q=-docs(1f8e5e2fda6aa0148343a32ba70673cc)%20%20author%3A%22solmaz%2C%20arif%22&sort=date%20desc%2C%20bibcode%20desc&p_=0" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="m12 2 9 5-9 5-9-5 9-5Zm-9 10 9 5 9-5M3 17l9 5 9-5"/></svg><h2>Publications <span class="arrow">→</span></h2><p>Peer-reviewed research, articles and scholarly publications.</p></a>
+<a class="tile" href="/courses/"><svg viewBox="0 0 24 24"><path d="m2 9 10-5 10 5-10 5-10-5Zm4 3v5c4 3 8 3 12 0v-5M22 9v9"/></svg><h2>Teaching <span class="arrow">→</span></h2><p>Courses, lecture notes and interactive learning materials.</p></a>
+<a class="tile" href="/blog/"><svg viewBox="0 0 24 24"><path d="M5 3h11l4 4v14H5zM16 3v5h4M8 12h9M8 16h9"/></svg><h2>Blog <span class="arrow">→</span></h2><p>Essays on science, academic life and everyday questions.</p></a>
+</div>
+
+<div class="lower">
+<section class="panel" aria-labelledby="latest-heading"><p class="section-label">Latest writing</p><h3 id="latest-heading"><a id="latest-blog-link" href="/blog/yasamayi-ne-zamana-erteliyoruz/"><span id="latest-blog-title">Yaşamayı Ne Zamana Erteliyoruz?</span> →</a></h3><p id="latest-blog-description">Akademik hayat, çalışma tutkusu ve sosyal yaşama ayıramadığımız zaman üzerine.</p><a href="/blog/">All writing →</a></section>
+<section class="panel"><p class="section-label">Explore more</p><h3>Research, ideas &amp; education</h3><div class="small-links"><a href="/arxiv">Exoplanet papers ↗</a><a href="/daily-idea/widget.html">Idea of the day ↗</a><a href="/ai/" lang="tr">Yapay Zekâ Eğitimleri ↗</a><a href="/cv.pdf">Curriculum vitae ↗</a></div></section>
+</div>
+<footer id="contact"><span>© 2026 Arif Solmaz · Istanbul Health and Technology University</span><div class="small-links"><a href="mailto:arif.solmaz@istun.edu.tr">Email</a><a href="https://twitter.com/ArifSolmaz" target="_blank" rel="noopener">X</a><a href="https://bsky.app/profile/arifsolmaz.bsky.social" target="_blank" rel="noopener">Bluesky</a><a href="https://github.com/ArifSolmaz" target="_blank" rel="noopener">GitHub</a><a href="https://orcid.org/0000-0002-3076-164X" target="_blank" rel="noopener">ORCID</a></div></footer>
+</main>
 <script>
-  fetch('/daily-idea/state.json')
-    .then(r => r.json())
-    .then(s => { document.getElementById('exo-daily-title').textContent = s.picked_title; });
+const mobileMenu=document.querySelector('.mobile-menu');
+const mainNav=document.getElementById('main-nav');
+mobileMenu.addEventListener('click',()=>{const open=mobileMenu.getAttribute('aria-expanded')!=='true';mobileMenu.setAttribute('aria-expanded',String(open));mainNav.classList.toggle('is-open',open);});
+mainNav.addEventListener('click',event=>{if(event.target.closest('a')){mobileMenu.setAttribute('aria-expanded','false');mainNav.classList.remove('is-open');}});
+document.addEventListener('keydown',event=>{if(event.key==='Escape'){mobileMenu.setAttribute('aria-expanded','false');mainNav.classList.remove('is-open');}});
+
+
+/* The canvas is the hero background, never a separate Stellarium iframe. */
+(function(){
+ const hero=document.getElementById('top'),canvas=document.getElementById('stellarium-hero-canvas');
+ const locationBar=document.getElementById('sky-location'),place=document.getElementById('sky-place');
+ const locationButton=document.getElementById('sky-permission');
+ let engine=null,position={lat:41.0082,lng:28.9784};
+ let clockTimer=null,clockBase=0,clockBaseMJD=0;
+ const toggle=document.getElementById('sky-explore-toggle'),ui=document.getElementById('sky-explore-ui');
+ const exit=document.getElementById('sky-explore-exit'),panel=document.getElementById('sky-object-panel');
+ const title=document.getElementById('sky-object-title'),details=document.getElementById('sky-object-details');
+ let exploring=false;
+ function showObject(obj){
+  if(!exploring||!obj){panel.hidden=true;return}
+  let name='Celestial object';
+  try{name=obj.designations()[0].replace(/^NAME /,'')||name}catch(e){}
+  title.textContent=name;details.replaceChildren();
+  function addField(label,value){
+   if(value===undefined||value===null||value==='')return;
+   const dt=document.createElement('dt'),dd=document.createElement('dd');
+   dt.textContent=label;dd.textContent=String(value);details.append(dt,dd);
+  }
+  try{
+   const v=obj.getInfo('vmag');
+   addField('Apparent magnitude',Number.isFinite(v)?v.toFixed(2):'Not available');
+  }catch(e){}
+  try{
+   const stel=engine,obs=stel.core.observer;
+   const cirs=stel.convertFrame(obs,'ICRF','CIRS',obj.getInfo('radec'));
+   const radec=stel.c2s(cirs),ra=stel.a2tf(stel.anp(radec[0]),1),dec=stel.a2af(stel.anpm(radec[1]),1);
+   const pad=n=>String(Math.abs(Math.trunc(n))).padStart(2,'0');
+   addField('Right ascension',pad(ra.hours)+'h '+pad(ra.minutes)+'m '+pad(ra.seconds)+'s');
+   addField('Declination',(dec.sign||'')+pad(dec.degrees)+'° '+pad(dec.arcminutes)+'′ '+pad(dec.arcseconds)+'″');
+   const observed=stel.convertFrame(obs,'CIRS','OBSERVED',cirs),azalt=stel.c2s(observed);
+   const az=stel.a2af(stel.anp(azalt[0]),1),alt=stel.a2af(stel.anpm(azalt[1]),1);
+   addField('Azimuth',pad(az.degrees)+'° '+pad(az.arcminutes)+'′');
+   addField('Altitude',(alt.sign||'')+pad(alt.degrees)+'° '+pad(alt.arcminutes)+'′');
+  }catch(e){console.warn('Object coordinates unavailable',e)}
+  panel.hidden=false;
+ }
+ function enterExplore(){
+  if(!engine)return;
+  exploring=true;document.body.classList.add('sky-exploring');ui.hidden=false;toggle.hidden=true;
+  // Use the engine's physically modeled atmosphere only in the immersive viewer.
+  // The fixed homepage canvas stays clear and dark behind text.
+  try{engine.core.atmosphere.visible=true;const btn=document.getElementById('sky-atmosphere');btn.setAttribute('aria-pressed','true');btn.textContent='Atmosphere on'}catch(err){console.warn('Atmosphere unavailable',err)}
+  canvas.setAttribute('aria-hidden','false');
+  exit.focus();
+ }
+ function leaveExplore(){
+  exploring=false;document.body.classList.remove('sky-exploring');ui.hidden=true;panel.hidden=true;
+  try{engine.core.atmosphere.visible=false;const btn=document.getElementById('sky-atmosphere');btn.setAttribute('aria-pressed','false');btn.textContent='Atmosphere off'}catch(err){}
+  canvas.setAttribute('aria-hidden','true');toggle.hidden=false;toggle.focus();
+ }
+ toggle.addEventListener('click',enterExplore);exit.addEventListener('click',leaveExplore);
+ document.getElementById('sky-object-close').addEventListener('click',()=>{panel.hidden=true});
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&exploring)leaveExplore()});
+ function zoom(factor){if(!engine)return;try{if(typeof engine._core_on_zoom==='function')engine._core_on_zoom(factor,canvas.clientWidth/2,canvas.clientHeight/2);else if(typeof engine.core.on_zoom==='function')engine.core.on_zoom(factor,canvas.clientWidth/2,canvas.clientHeight/2);else console.warn('Use trackpad or mouse wheel to zoom')}catch(e){console.warn('Zoom control unavailable',e)}}
+ document.getElementById('sky-zoom-in').addEventListener('click',()=>zoom(1.3));
+ document.getElementById('sky-zoom-out').addEventListener('click',()=>zoom(1/1.3));
+ function layerToggle(id,getter,setter,label){
+  const btn=document.getElementById(id);
+  btn.addEventListener('click',()=>{
+   if(!engine)return;
+   try{const active=!getter(engine);setter(engine,active);btn.setAttribute('aria-pressed',String(active));btn.textContent=label+' '+(active?'on':'off')}
+   catch(err){console.warn(label+' unavailable',err)}
+  });
+ }
+ layerToggle('sky-atmosphere',e=>e.core.atmosphere.visible,(e,v)=>{e.core.atmosphere.visible=v},'Atmosphere');
+ layerToggle('sky-constellations',e=>e.core.constellations.lines_visible,(e,v)=>{
+  if(v){try{e.core.skycultures.current_id='western'}catch(err){console.warn('Culture selection:',err)}}
+  e.core.constellations.lines_visible=v;
+  console.info('[Stellarium] Constellation state:',{enabled:e.core.constellations.lines_visible,culture:e.core.skycultures.current_id});
+ },'Constellations');
+ // Display-only luminance control: prevents washed-out lunar highlights without altering sky physics.
+ const exposure=document.getElementById('sky-exposure');
+ const applyExposure=()=>{canvas.style.filter='brightness('+(Number(exposure.value)/100)+') contrast(1.08)';};
+ exposure.addEventListener('input',applyExposure);
+ document.getElementById('sky-exposure-reset').addEventListener('click',()=>{exposure.value='100';applyExposure()});
+ applyExposure();
+ document.getElementById('sky-reset-view').addEventListener('click',()=>{if(!engine)return;try{engine.core.lock=null}catch(e){}});
+
+ function setPosition(){
+  if(!engine)return;
+  try{
+   engine.observer.latitude=position.lat*engine.D2R;
+   engine.observer.longitude=position.lng*engine.D2R;
+  }catch(err){console.error('Stellarium observer:',err)}
+ }
+ function syncClock(){
+  if(!engine)return;
+  try{
+   clockBase=performance.now();clockBaseMJD=engine.date2MJD(new Date());
+   engine.observer.utc=clockBaseMJD;
+  }catch(err){console.error('Stellarium UTC:',err)}
+ }
+ let clockFrame=0;
+ function animateClock(){
+  if(!engine)return;
+  try{engine.observer.utc=clockBaseMJD+(performance.now()-clockBase)/86400000}
+  catch(err){console.warn('Stellarium clock update:',err)}
+  clockFrame=requestAnimationFrame(animateClock);
+ }
+ function loadEngine(){
+  const script=document.createElement('script');
+  script.src='/assets/stellarium/stellarium-web-engine.js';script.async=true;
+  script.onerror=()=>console.error('Stellarium engine JavaScript unavailable');
+  script.onload=()=>{
+   if(typeof StelWebEngine!=='function')return;
+   StelWebEngine({
+    wasmFile:'/assets/stellarium/stellarium-web-engine.wasm',canvas,
+    onReady(stel){
+     engine=stel;setPosition();syncClock();
+     clockFrame=requestAnimationFrame(animateClock);
+     document.addEventListener('visibilitychange',()=>{if(!document.hidden)syncClock()});
+     // The default horizon/landscape can form large opaque black polygons.
+     try{stel.core.landscapes.visible=false}catch(e){}
+     // A fully opaque black landscape was previously rendered without its image assets.
+     try{stel.core.atmosphere.visible=false}catch(e){}
+     try{stel.core.constellations.lines_visible=false}catch(e){}
+     try{stel.change(function(obj,attr){if(attr==='selection'||(obj===stel.core&&attr==='selection'))showObject(stel.core.selection)})}catch(e){console.warn('Selection listener unavailable',e)}
+     // Use the published Gaia survey path, not the nonexistent CDN /stars root.
+     // Do not claim that the live sky is ready until survey metadata is reachable.
+     const base='https://data.stellarium.org/';
+     const stars=base+'surveys/gaia';
+     fetch(stars+'/properties',{mode:'cors'}).then(response=>{
+      if(!response.ok)throw Error('Gaia metadata HTTP '+response.status);
+      stel.core.stars.addDataSource({url:stars});
+      // Constellation lines require a loaded sky culture, not just a visibility flag.
+      const western='https://raw.githubusercontent.com/Stellarium/stellarium-web-engine/master/apps/test-skydata/skycultures/western';
+      try{stel.core.skycultures.addDataSource({url:western,key:'western'});
+       // Registration does not select a culture. Activate it explicitly.
+       try{stel.core.skycultures.current_id='western';console.info('[Stellarium] Selected sky culture:',stel.core.skycultures.current_id)}
+       catch(err){console.error('[Stellarium] Sky culture activation failed',err)}
+       console.info('[Stellarium] Western sky culture registered')}
+      catch(err){console.error('[Stellarium] Constellation catalog registration failed',err)}
+      // Report the actual lunar survey metadata; a smooth Moon means its texture may not load.
+      fetch(base+'surveys/moon/properties').then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.text()}).then(t=>{
+       const rows=Object.fromEntries(t.split(/\\r?\\n/).filter(line=>line.includes('=')).map(line=>{const i=line.indexOf('=');return [line.slice(0,i).trim(),line.slice(i+1).trim()]}));
+       console.info('[Stellarium Moon survey]',{url:base+'surveys/moon',hips_tile_format:rows.hips_tile_format,hips_order:rows.hips_order,obs_frame:rows.obs_frame});
+       if(!rows.hips_tile_format)console.warn('[Stellarium Moon] Survey metadata lacks hips_tile_format');
+      }).catch(e=>console.error('[Stellarium Moon] Survey metadata unavailable',e));
+      stel.core.planets.addDataSource({url:base+'surveys/moon',key:'moon'});
+      // Upstream example also registers a default planetary texture survey.
+      stel.core.planets.addDataSource({url:base+'surveys/moon',key:'default'});
+      stel.core.planets.addDataSource({url:base+'surveys/sun',key:'sun'});
+      stel.core.milkyway.addDataSource({url:base+'surveys/milkyway'});
+      // Published planetary HiPS catalog; use body-specific surveys.
+      for(const body of ['mercury','venus','mars','jupiter','saturn','uranus','neptune']){
+       try{stel.core.planets.addDataSource({url:base+'surveys/'+body,key:body})}catch(err){console.warn('Planet survey '+body,err)}
+      }
+      try{stel.core.planets.addDataSource({url:base+'surveys/moon-normal',key:'moon-normal'})}catch(err){console.warn('Moon normal map',err)}
+      hero.classList.add('sky-active');document.body.classList.add('sky-active');locationBar.hidden=false;toggle.hidden=false;
+     }).catch(err=>{
+      console.error('Stellarium catalog unavailable; retaining homepage photo:',err);
+      hero.classList.remove('sky-active');document.body.classList.remove('sky-active');locationBar.hidden=true;toggle.hidden=true;if(exploring)leaveExplore();
+     });
+     setInterval(syncClock,60000);
+    }
+   }).catch(err=>console.error('Stellarium startup:',err));
+  };
+  document.head.appendChild(script);
+ }
+ locationButton.addEventListener('click',()=>{
+  if(!navigator.geolocation){place.textContent='Istanbul (default)';return}
+  navigator.geolocation.getCurrentPosition(p=>{
+   position={lat:p.coords.latitude,lng:p.coords.longitude};place.textContent='Your location';setPosition();
+  },()=>{place.textContent='Istanbul (default)'},{timeout:10000,maximumAge:300000});
+ });
+ if('WebGLRenderingContext'in window)loadEngine();
+})();
+fetch('/blog/posts.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Blog unavailable');return r.json()}).then(posts=>{if(!Array.isArray(posts)||!posts.length)return;const p=posts[0];if(typeof p.url!=='string'||!/^\/blog\/[a-z0-9-]+\/$/.test(p.url))return;document.getElementById('latest-blog-link').href=p.url;document.getElementById('latest-blog-title').textContent=p.title||'Latest post';document.getElementById('latest-blog-description').textContent=p.description||'';}).catch(()=>{});
 </script>
-
-      <div class="info-section">
-        <p class="info-label">Contact</p>
-        <div class="contact-grid">
-          <div class="contact-item">
-            <span class="contact-key">Email</span>
-            <span class="contact-value"><a href="mailto:arif.solmaz@istun.edu.tr">arif.solmaz@istun.edu.tr</a></span>
-          </div>
-          <div class="contact-item">
-            <span class="contact-key">Location</span>
-            <span class="contact-value">Istanbul, Turkey</span>
-          </div>
-        </div>
-        <div class="social-links">
-          <a href="https://twitter.com/ArifSolmaz" target="_blank" rel="noopener" class="social-link" title="X / Twitter">
-            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          </a>
-          <a href="https://bsky.app/profile/arifsolmaz.bsky.social" target="_blank" rel="noopener" class="social-link" title="Bluesky">
-            <svg viewBox="0 0 24 24"><path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.815 2.736 3.713 3.66 6.383 3.364.136-.02.275-.039.415-.056-.138.022-.276.04-.415.056-3.912.58-7.387 2.005-2.83 7.078 5.013 5.19 6.87-1.113 7.823-4.308.953 3.195 2.05 9.271 7.733 4.308 4.267-4.308 1.172-6.498-2.74-7.078a8.741 8.741 0 0 1-.415-.056c.14.017.279.036.415.056 2.67.297 5.568-.628 6.383-3.364.246-.828.624-5.79.624-6.478 0-.69-.139-1.861-.902-2.206-.659-.298-1.664-.62-4.3 1.24C16.046 4.748 13.087 8.687 12 10.8z"/></svg>
-          </a>
-          <a href="https://github.com/ArifSolmaz" target="_blank" rel="noopener" class="social-link" title="GitHub">
-            <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-          </a>
-          <a href="https://orcid.org/0000-0002-3076-164X" target="_blank" rel="noopener" class="social-link" title="ORCID">
-            <svg viewBox="0 0 24 24"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 4.022-2.484 4.022-3.722 0-2.016-1.284-3.722-4.097-3.722h-2.222z"/></svg>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="footer">
-      <span class="footer-text">© 2026 Arif Solmaz</span>
-      <div class="footer-links">
-        <a href="arxiv" class="footer-link">arXiv Digest</a>
-        <a href="https://ui.adsabs.harvard.edu/search/fq=%7B!type%3Daqp%20v%3D%24fq_database%7D&fq_database=(database%3Aastronomy%20OR%20database%3Aphysics)&q=-docs(1f8e5e2fda6aa0148343a32ba70673cc)%20%20author%3A%22solmaz%2C%20arif%22&sort=date%20desc%2C%20bibcode%20desc&p_=0" target="_blank" rel="noopener" class="footer-link">NASA ADS</a>
-      </div>
-    </footer>
-  </div>
-
-  <script>
-    const canvas = document.getElementById('starfield');
-    const ctx = canvas.getContext('2d');
-    
-    let stars = [];
-    let shootingStars = [];
-    let mouseX = window.innerWidth / 2;
-    let mouseY = window.innerHeight / 2;
-    const numStars = 220;
-    
-    // Realistic star colors (spectral types)
-    const starColors = [
-      { r: 155, g: 176, b: 255 },  // O/B - Blue
-      { r: 170, g: 191, b: 255 },  // A - Blue-white
-      { r: 255, g: 255, b: 255 },  // F - White
-      { r: 255, g: 244, b: 234 },  // G - Yellow-white (Sun-like)
-      { r: 255, g: 210, b: 161 },  // K - Orange
-      { r: 255, g: 204, b: 111 },  // K - Deep orange
-    ];
-    
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      initStars();
-    }
-    
-    function initStars() {
-      stars = [];
-      for (let i = 0; i < numStars; i++) {
-        const colorIndex = Math.random() < 0.7 
-          ? Math.floor(Math.random() * 3) + 2  // Mostly white/yellow
-          : Math.floor(Math.random() * starColors.length);  // Occasional blue/orange
-        
-        stars.push({
-          x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height,
-          size: Math.random() * 1.4 + 0.2,
-          speed: Math.random() * 0.5 + 0.1,
-          brightness: Math.random() * 0.5 + 0.3,
-          twinkleSpeed: Math.random() * 0.02 + 0.005,
-          twinkleOffset: Math.random() * Math.PI * 2,
-          color: starColors[colorIndex]
-        });
-      }
-    }
-    
-    function createShootingStar() {
-      if (Math.random() < 0.003 && shootingStars.length < 2) {  // ~1 every 5-10 seconds
-        const startX = Math.random() * canvas.width * 0.8;
-        const startY = Math.random() * canvas.height * 0.4;
-        shootingStars.push({
-          x: startX,
-          y: startY,
-          length: Math.random() * 80 + 50,
-          speed: Math.random() * 15 + 10,
-          angle: Math.PI / 4 + (Math.random() - 0.5) * 0.3,
-          opacity: 1,
-          trail: []
-        });
-      }
-    }
-    
-    function updateShootingStars() {
-      for (let i = shootingStars.length - 1; i >= 0; i--) {
-        const star = shootingStars[i];
-        star.x += Math.cos(star.angle) * star.speed;
-        star.y += Math.sin(star.angle) * star.speed;
-        star.opacity -= 0.015;
-        
-        if (star.opacity <= 0 || star.x > canvas.width || star.y > canvas.height) {
-          shootingStars.splice(i, 1);
-        }
-      }
-    }
-    
-    function drawShootingStars() {
-      shootingStars.forEach(star => {
-        const tailX = star.x - Math.cos(star.angle) * star.length;
-        const tailY = star.y - Math.sin(star.angle) * star.length;
-        
-        const gradient = ctx.createLinearGradient(tailX, tailY, star.x, star.y);
-        gradient.addColorStop(0, `rgba(255, 255, 255, 0)`);
-        gradient.addColorStop(0.7, `rgba(255, 255, 255, ${star.opacity * 0.5})`);
-        gradient.addColorStop(1, `rgba(255, 255, 255, ${star.opacity})`);
-        
-        ctx.beginPath();
-        ctx.moveTo(tailX, tailY);
-        ctx.lineTo(star.x, star.y);
-        ctx.strokeStyle = gradient;
-        ctx.lineWidth = 2;
-        ctx.stroke();
-        
-        // Bright head
-        ctx.beginPath();
-        ctx.arc(star.x, star.y, 2, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
-        ctx.fill();
-      });
-    }
-    
-    function drawStars() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      const time = Date.now() * 0.001;
-      
-      stars.forEach(star => {
-        const parallaxX = (mouseX - canvas.width / 2) * star.speed * 0.015;
-        const parallaxY = (mouseY - canvas.height / 2) * star.speed * 0.015;
-        
-        const x = star.x + parallaxX;
-        const y = star.y + parallaxY;
-        
-        const twinkle = Math.sin(time * star.twinkleSpeed * 10 + star.twinkleOffset) * 0.3 + 0.7;
-        const alpha = star.brightness * twinkle;
-        
-        ctx.beginPath();
-        ctx.arc(x, y, star.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${star.color.r}, ${star.color.g}, ${star.color.b}, ${alpha})`;
-        ctx.fill();
-        
-        // Glow for larger stars
-        if (star.size > 0.9) {
-          ctx.beginPath();
-          ctx.arc(x, y, star.size * 2.5, 0, Math.PI * 2);
-          const gradient = ctx.createRadialGradient(x, y, 0, x, y, star.size * 2.5);
-          gradient.addColorStop(0, `rgba(${star.color.r}, ${star.color.g}, ${star.color.b}, ${alpha * 0.3})`);
-          gradient.addColorStop(1, `rgba(${star.color.r}, ${star.color.g}, ${star.color.b}, 0)`);
-          ctx.fillStyle = gradient;
-          ctx.fill();
-        }
-      });
-      
-      createShootingStar();
-      updateShootingStars();
-      drawShootingStars();
-      
-      requestAnimationFrame(drawStars);
-    }
-    
-    window.addEventListener('resize', resizeCanvas);
-    window.addEventListener('mousemove', (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-    });
-    
-    resizeCanvas();
-    drawStars();
-  </script>
-</body>
-</html>
+</body></html>

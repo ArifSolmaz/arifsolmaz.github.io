@@ -1,0 +1,100 @@
+name: Build and install Stellarium Web Engine
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/build-stellarium-engine.yml
+permissions:
+  contents: write
+jobs:
+  engine:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: site
+      - uses: actions/checkout@v4
+        with:
+          repository: Stellarium/stellarium-web-engine
+          path: engine
+          submodules: recursive
+      - uses: mymindstorm/setup-emsdk@v14
+        with:
+          version: latest
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y scons pkg-config
+      - name: Adapt upstream Emscripten flags
+        working-directory: engine
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          changed=[]
+          for p in Path('.').rglob('*'):
+              if not p.is_file() or '.git' in p.parts or p.suffix not in ('.py','.txt','.mk',''):
+                  continue
+              try:
+                  content=p.read_text()
+              except (UnicodeError,OSError):
+                  continue
+              updated=content.replace('EXTRA_EXPORTED_RUNTIME_METHODS','EXPORTED_RUNTIME_METHODS')
+              # Emscripten now warns when linker flags are passed to compile-only steps.
+              # Upstream passes MODULARIZE to both; avoid treating that warning as fatal.
+              updated=updated.replace('-Werror', '-Wno-error=unused-command-line-argument')
+              # Modern Emscripten no longer exposes these legacy JS runtime helpers.
+              for name in ('ALLOC_NORMAL','allocate','_malloc','_free'):
+                  updated=updated.replace("'"+name+"',", '')
+                  updated=updated.replace(",'"+name+"'", '')
+              # malloc/free, if needed by the generated JS, belong in EXPORTED_FUNCTIONS.
+              # Preserve the outer single-quoted Python literal in SConstruct.
+              updated=updated.replace('EXPORTED_FUNCTIONS=[]', 'EXPORTED_FUNCTIONS=["_malloc","_free"]')
+              if updated != content:
+                  p.write_text(updated)
+                  changed.append(str(p))
+          if not changed:
+              raise SystemExit('Upstream Emscripten option not found; inspect build configuration')
+          print('Updated build configuration:',changed)
+          PY
+      - name: Accept Gaia HiPS catalog metadata without nonstandard type field
+        working-directory: engine
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('src/modules/stars.c')
+          s=p.read_text()
+          old='if (!args_type || strcmp(args_type, "stars")) {'
+          new='if (args_type && strcmp(args_type, "stars")) {'
+          if s.count(old)!=1:
+              raise SystemExit('Unexpected upstream stars.c: review before patching')
+          p.write_text(s.replace(old,new))
+          print('Patched Gaia HiPS metadata compatibility')
+          PY
+      - name: Compile official Stellarium Web Engine
+        working-directory: engine
+        run: make js
+      - name: Install and verify artifacts
+        run: |
+          set -euo pipefail
+          mkdir -p site/assets/stellarium
+          find engine -name 'stellarium-web-engine.js' -o -name 'stellarium-web-engine.wasm'
+          JS=$(find engine -type f -name 'stellarium-web-engine.js' | head -n 1)
+          WASM=$(find engine -type f -name 'stellarium-web-engine.wasm' | head -n 1)
+          test -n "$JS" && test -n "$WASM"
+          cp "$JS" site/assets/stellarium/
+          cp "$WASM" site/assets/stellarium/
+          test -s site/assets/stellarium/stellarium-web-engine.js
+          test -s site/assets/stellarium/stellarium-web-engine.wasm
+          file site/assets/stellarium/*
+      - name: Commit compiled engine
+        working-directory: site
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/stellarium/stellarium-web-engine.js assets/stellarium/stellarium-web-engine.wasm
+          if ! git diff --cached --quiet; then
+            git commit -m 'Install compiled official Stellarium Web Engine'
+            git push
+          fi

@@ -1,0 +1,51 @@
+name: Vendor Milky Way homepage background
+on:
+  push:
+    branches: [main]
+    paths:
+      - index.html
+      - .github/workflows/vendor-hero-image.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  vendor-image:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download new Milky Way mountain photograph
+        run: |
+          set -euo pipefail
+          mkdir -p assets/images
+          curl --fail --location --retry 3 --max-time 120 \
+            'https://images.pexels.com/photos/3213577/pexels-photo-3213577.jpeg?auto=compress&cs=tinysrgb&w=2400' \
+            -o assets/images/milky-way-hero.jpg
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('assets/images/milky-way-hero.jpg')
+          assert p.stat().st_size > 30000, "Image unexpectedly small"
+          assert p.read_bytes()[:3] == b'\xff\xd8\xff', "Expected JPEG"
+          print('Validated JPEG:', p.stat().st_size, 'bytes')
+          PY
+      - name: Use locally hosted image
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('index.html')
+          html=p.read_text(encoding='utf-8')
+          remote='https://images.pexels.com/photos/3213577/pexels-photo-3213577.jpeg?auto=compress&cs=tinysrgb&w=2400'
+          local='/assets/images/milky-way-hero.jpg'
+          if remote in html:
+              p.write_text(html.replace(remote,local),encoding='utf-8')
+          elif local not in html:
+              raise SystemExit('Expected hero image URL not found')
+          PY
+      - name: Commit image into repository
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/images/milky-way-hero.jpg index.html
+          if ! git diff --cached --quiet; then
+            git commit -m 'Store Milky Way hero photo locally'
+            git push
+          fi

@@ -7,7 +7,7 @@ Static site generator for the "Algorithm Analysis with Python" course.
 Reads the lesson fragments in aa/tools/weeks/wNN.html plus the course-home
 fragment aa/tools/home.html, wraps them in the shared page template and writes:
 
-    aa/index.html          course home + syllabus
+    aa/overview.html       archived course home + syllabus
     aa/w1/index.html ...   one folder per week, so the published URL is
     aa/w14/index.html      https://arifsolmaz.github.io/aa/w1 ... /w14
 
@@ -278,7 +278,7 @@ def home_page(intro):
         ),
         body.strip(),
         FOOT.format(site=SITE, base=""),
-    ])
+    ]).replace('href="index.html', 'href="overview.html')
 
 
 def main():
@@ -296,8 +296,9 @@ def main():
 
     home_frag = ROOT / "tools" / "home.html"
     if home_frag.exists():
-        (ROOT / "index.html").write_text(home_page(home_frag.read_text()), encoding="utf-8")
-        print(f"  wrote {(ROOT / 'index.html').relative_to(ROOT.parent)}")
+        target = ROOT / "overview.html"
+        target.write_text(home_page(home_frag.read_text(encoding="utf-8")), encoding="utf-8")
+        print(f"  wrote {target.relative_to(ROOT.parent)}")
     else:
         missing.append("home.html")
 

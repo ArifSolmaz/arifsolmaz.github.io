@@ -1,0 +1,132 @@
+{
+  "announcement_date": "2026-11-05",
+  "updated_at": "2026-11-05T08:51:26.527643+00:00",
+  "category": "astro-ph.EP",
+  "paper_count": 4,
+  "papers": [
+    {
+      "id": "2611.06765v1",
+      "title": "Migration and eccentricity damping timescales in overstable resonant planetary systems: hydrodynamic and N-body simulations",
+      "abstract": "Tidal interactions between planets and discs modify semimajor axes and eccentricities. These effects are represented by migration and eccentricity damping timescales in analytical and Nbody models, although they are assumed constant. This approximation is uncertain in resonant multiplanet systems, where coupled planet disc evolution can produce non-linear torque feedback. We investigate migration and eccentricity damping in two planet systems undergoing resonant and overstable evolution near the 2:1 mean motion resonance. Using hydrodynamic simulations with varying disc surface densities, viscosities, and aspect ratios, we measure both timescales from energy and angular momentum exchange between the planets and disc. We find that both timescales are time dependent and vary throughout the evolution. In resonant systems, sign reversals occur owing to eccentricity oscillations and disc torque variations. Moreover, migration timescales normalised by their expected dependence on planetary mass, disc surface density, and aspect ratio deviate between models. Likewise, the common relation between migration and eccentricity damping timescales is not recovered. We compare the hydrodynamic evolution with several Nbody approaches. Models with constant migration and damping timescales fail to reproduce the hydrodynamic evolution, whereas torque-based approaches provide better agreement. In particular, approaches including corotation torque saturation and planetary eccentricity reproduce the hydrodynamic evolution in the type I migration regime, whereas additional corrections are required when planets partially open gaps. These results show that time-dependent torque-based prescriptions provide a consistent physical link between hydrodynamic simulations and simplified Nbody models of resonant planetary systems.",
+      "authors": [
+        "Zahra Afkanpour",
+        "Sareh Ataiee",
+        "Anna B. T. Penzlin",
+        "Alexandros Ziampras",
+        "Hadiseh Nabavinezhad",
+        "Christoph Schäfer",
+        "Hilke Schlichting",
+        "Rafael Sfair"
+      ],
+      "categories": [
+        "astro-ph.EP"
+      ],
+      "published": "2026-11-04",
+      "updated": "2026-11-04",
+      "pdf_link": "https://arxiv.org/pdf/2611.06765v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.06765v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 20,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2611.06765v1/2611.06765v1/alphas_revised.png"
+    },
+    {
+      "id": "2611.05535v1",
+      "title": "On the Detectability of Compact Multi-Planet Systems via Gravitational Microlensing",
+      "abstract": "Compact multi-planet systems orbiting ultracool dwarfs, such as TRAPPIST-1, may be a major population of terrestrial worlds with poorly constrained demographics. Individual close-in planets are expected to escape microlensing detection, but whether a compact system can produce a detectable collective signal remains to be quantified. We calculate the microlensing signal from each TRAPPIST-1 planet, and of all seven combined, if the system were a lens toward the bulge. For a 0.09 M_☉ lens at 4 kpc, R_E ≈ 1.21 AU, placing the planets at s = 0.010--0.051 θ_E, 12--63 times interior to the lensing zone. We measure each signal as the residual after fitting a single-lens model, which accounts for the barycentric dipole. Because the quadrupole term cancels between the two images to first order, the residual scales as the octupole (q s³), reaching |δA / A| 10⁻⁶. The seven planets combined yield Δχ² 10⁻³ even at 1 mmag precision, five orders of magnitude below the standard detection threshold. Detection requires increasing all planet masses by a factor of 300, whereas the resonant chain loses its guarantee of Hill stability at a factor of 7. Only a lens within 15 pc of the source or the Sun places the outer planets in the lensing zone. The Nancy Grace Roman Space Telescope is therefore not expected to detect a TRAPPIST-1-like system through microlensing, whereas its transit channel in the same fields can detect such planets in large numbers, marking a sharp boundary in the Galactic census between microlensing and transit sensitivity.",
+      "authors": [
+        "Stephen R. Kane"
+      ],
+      "categories": [
+        "astro-ph.EP",
+        "astro-ph.GA",
+        "astro-ph.IM"
+      ],
+      "published": "2026-11-03",
+      "updated": "2026-11-03",
+      "pdf_link": "https://arxiv.org/pdf/2611.05535v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.05535v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 20,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2611.05535v1/2611.05535v1/fig_separation.png"
+    },
+    {
+      "id": "2611.05963v1",
+      "title": "Orbital Architecture of Super-Earth-Cold-Jupiter Systems from Transit Duration Ratios",
+      "abstract": "Super-Earths are commonly found with cold Jupiters, yet it is unclear whether these Super-Earth-Cold-Jupiter (SE-CJ) systems differ architecturally from other Kepler-like systems (Non-SE-CJ). One might expect the CJs to excite eccentricities and mutual inclinations among the SEs. We use two metrics: the normalized transit duration T/T₀, set by the host-star density, and the pairwise duration ratio ξ between neighboring transiting planets. We find no population-level difference in T/T₀ between the samples. Forward modeling of ξ, which is more directly sensitive to mutual inclinations because it isolates the impact-parameter contrast, finds no evidence that SE-CJ systems are more mutually inclined than Non-SE-CJ systems, and hints they could be even flatter. We infer a Rayleigh dispersion in mutual inclination of δ≈ 1.0′, or a characteristic eccentricity of e ≈ 0.035 (assuming equipartition), compared with δ≈ 1.5′ and e ≈ 0.05 for Non-SE-CJ systems. Many SE-CJ systems therefore retain nearly coplanar, low-eccentricity architectures despite hosting distant giants. We further show that secular coupling among the inner Super-Earths usually dominates over forcing from the cold Jupiter, leaving the inner planets resistant to excitation. Our analysis is limited to SE-CJ systems with multiple transiting SEs: systems in which the CJ has strongly excited the inner architecture are expected to present as single-transiting, and cannot be studied with the ξ metric. Another caveat of our result is that undetected cold Jupiters in the comparison sample could dilute the measured ξ distribution.",
+      "authors": [
+        "Tom Lassmann",
+        "Joseph Hand",
+        "Fei Dai",
+        "Jiaxin Tang",
+        "Sharon Wang",
+        "Di-Chang Chen"
+      ],
+      "categories": [
+        "astro-ph.EP"
+      ],
+      "published": "2026-11-04",
+      "updated": "2026-11-04",
+      "pdf_link": "https://arxiv.org/pdf/2611.05963v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.05963v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 19,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2611.05963v1/data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "2611.05740v1",
+      "title": "The impact of M dwarf stellar convection on exoplanetary atmospheric signatures. A 3D radiation-hydrodynamics simulation analysis for high-resolution spectroscopy",
+      "abstract": "M dwarf stars represent prime targets for the detection and characterization of small, temperate exoplanets; however, their complex activity and convective surfaces pose significant challenges for high-resolution spectroscopic studies. This work aims to investigate the impact of stellar convection on high-resolution spectroscopic observations of M dwarf stars and develop an integrated approach combining 3D radiative hydrodynamical simulations, spectroscopic modeling, and transit analysis to mitigate stellar noise. We employ 3D radiative hydrodynamical simulations of M dwarf stellar convection to generate synthetic spectra. We compare the synthetic spectra to actual observations of GJ 3470. We model a high-resolution transit sequence of the Neptune-size GJ 3470 b, including centre-to-limb variations (CLVs) and the Rossiter-McLaughlin effect (RME), and process the sequence via principal component analysis (PCA) to de-trend stellar effects. Comparison of synthetic spectra with actual observations shows that current H2O line lists remain inaccurate, with modest agreement in line strength and position for the chosen K-band interval. During the transit of GJ 3470 b, the amplitude of CLVs+RME is comparable to exoplanet signals. Current PCA can in principle de-trend such effects, but its behaviour is highly dependent on the copresence of telluric and planetary signals. While we are able to correctly detect the exoplanet with no evident bias from stellar residuals, this result is limited to a narrow spectral interval and a specific orbital configuration. This study demonstrates that 3D radiative hydrodynamical simulations are essential for accurately modeling convection-induced spectral variability in M dwarfs. Our integrated framework establishes a foundation to obtain unbiased measurements from future ELT observations of exoplanets orbiting M dwarfs.",
+      "authors": [
+        "A. Chiavassa",
+        "M. Brogi",
+        "T. Masseron",
+        "R. Van den Broeck",
+        "L. Bigot",
+        "V. Parmentier"
+      ],
+      "categories": [
+        "astro-ph.EP",
+        "astro-ph.SR"
+      ],
+      "published": "2026-11-03",
+      "updated": "2026-11-03",
+      "pdf_link": "https://arxiv.org/pdf/2611.05740v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.05740v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 4,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2611.05740v1/2611.05740v1/images/sketch_Mdwarf.png"
+    }
+  ]
+}
