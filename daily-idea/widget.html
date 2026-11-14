@@ -3,60 +3,57 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Idea of the day &mdash; Transit Depth Variation Periodograms as a Blind Survey for Exoplanetary Ring Precession</title>
+<title>Idea of the day &mdash; Hunting for Tidally-Driven Oblateness Signatures in Ultra-Short-Period Planet Transits Using Combined Kepler + TESS Photometry</title>
 <link rel="stylesheet" href="widget.css"/>
 </head>
 <body>
 <section class="exo-daily" aria-label="Exoplanet idea of the day">
   <header class="exo-daily__head">
     <span class="exo-daily__eyebrow">Exoplanet idea of the day</span>
-    <time class="exo-daily__date" datetime="2026-11-13">2026-11-13</time>
+    <time class="exo-daily__date" datetime="2026-11-14">2026-11-14</time>
   </header>
-  <h2 class="exo-daily__title">Transit Depth Variation Periodograms as a Blind Survey for Exoplanetary Ring Precession</h2>
+  <h2 class="exo-daily__title">Hunting for Tidally-Driven Oblateness Signatures in Ultra-Short-Period Planet Transits Using Combined Kepler + TESS Photometry</h2>
   <div class="exo-daily__premise">
-    <p>A ringed exoplanet produces a transit depth that depends on the projected area of the ring system as seen from our line of sight. If the ring plane is tilted relative to the orbital plane (as Saturn's rings are tilted 26.7 degrees relative to its orbit), then the ring undergoes nodal precession driven by the planet's oblate gravitational field and stellar tidal torques. This precession changes the apparent cross-section of the ring+planet system over time, producing a periodic variation in the measured transit depth. The precession period depends on the planet's oblateness (J2), the ring's semi-major axis, and the orbital distance, but for typical hot-to-warm Jupiters it ranges from years to decades, squarely within the combined Kepler+TESS baseline.</p>
-<p>A May 2025 study (Umetani et al.) searched 308 TESS candidates for static ring signatures in individual transit shapes and found no convincing detections. But that approach looks for the subtle ingress/egress asymmetry of a ring in a single epoch. The precession-induced depth variation is a fundamentally different observable: it accumulates over many epochs and is detectable as a periodic signal in a time series of transit depths, even when no single transit looks anomalous. This complementary approach appears to be largely untried at population scale.</p>
+    <p>Ultra-short-period (USP) planets — those with orbital periods under ~1 day — experience extreme tidal forces that should distort their shapes from spherical to oblate or even triaxial ellipsoids. The transit light curve of an oblate planet differs subtly from that of a spherical planet of the same cross-sectional area: deviations concentrate in the ingress and egress phases and depend on the planet's spin-axis obliquity relative to the line of sight. A recent review (Adams et al. 2025, PNAS) identified oblateness detection via transit photometry as a "first-ever detection" opportunity for JWST, but the same signal could plausibly be extracted from the extraordinary photometric precision of phase-folded Kepler long-cadence data for the best USP targets — something that has been discussed theoretically but never attempted systematically across the full USP population.</p>
   </div>
   <details class="exo-daily__more">
     <summary>Read the full proposal</summary>
     <div class="exo-daily__full">
       <h3>Scientific Premise</h3>
-<p>A ringed exoplanet produces a transit depth that depends on the projected area of the ring system as seen from our line of sight. If the ring plane is tilted relative to the orbital plane (as Saturn's rings are tilted 26.7 degrees relative to its orbit), then the ring undergoes nodal precession driven by the planet's oblate gravitational field and stellar tidal torques. This precession changes the apparent cross-section of the ring+planet system over time, producing a periodic variation in the measured transit depth. The precession period depends on the planet's oblateness (J2), the ring's semi-major axis, and the orbital distance, but for typical hot-to-warm Jupiters it ranges from years to decades, squarely within the combined Kepler+TESS baseline.</p>
-<p>A May 2025 study (Umetani et al.) searched 308 TESS candidates for static ring signatures in individual transit shapes and found no convincing detections. But that approach looks for the subtle ingress/egress asymmetry of a ring in a single epoch. The precession-induced depth variation is a fundamentally different observable: it accumulates over many epochs and is detectable as a periodic signal in a time series of transit depths, even when no single transit looks anomalous. This complementary approach appears to be largely untried at population scale.</p>
+<p>Ultra-short-period (USP) planets — those with orbital periods under ~1 day — experience extreme tidal forces that should distort their shapes from spherical to oblate or even triaxial ellipsoids. The transit light curve of an oblate planet differs subtly from that of a spherical planet of the same cross-sectional area: deviations concentrate in the ingress and egress phases and depend on the planet's spin-axis obliquity relative to the line of sight. A recent review (Adams et al. 2025, PNAS) identified oblateness detection via transit photometry as a "first-ever detection" opportunity for JWST, but the same signal could plausibly be extracted from the extraordinary photometric precision of phase-folded Kepler long-cadence data for the best USP targets — something that has been discussed theoretically but never attempted systematically across the full USP population.</p>
 <h3>Target Datasets</h3>
 <ul>
-<li><strong>Kepler DR25 transit depth measurements</strong> for all confirmed planets with &gt;30 transits (providing a ~4-year baseline).</li>
-<li><strong>TESS transit depth measurements</strong> from the primary mission through Extended Mission 2 (2018-2026), extending the baseline to ~12 years for targets in the Kepler field that TESS also observed.</li>
-<li><strong>Combined Kepler + TESS depth time series</strong> for the ~100+ systems observed by both, giving the longest possible baseline.</li>
-<li><strong>Supplementary</strong>: Ground-based transit surveys (e.g., WASP archival photometry) for even longer baselines on bright targets.</li>
+<li>Kepler long-cadence and short-cadence photometry for all confirmed USP planets in the Kepler field (~25 targets with P &lt; 1 day)</li>
+<li>TESS Sector 1–83 photometry for the ~50 confirmed TESS USP planets, plus new candidates from extended mission sectors</li>
+<li>Spectroscopic constraints on stellar limb darkening from LAMOST, GALAH, or literature values</li>
+<li>Theoretical tidal distortion models: interior structure models from Baumeister &amp; Tosi (2023) or similar, predicting Love numbers (k₂) for rocky super-Earths</li>
 </ul>
 <h3>Novelty</h3>
-<p>The theoretical framework for ring-precession depth variations was laid out by Ohta et al. (2009) and revisited by Akinsanmi et al. (2020), who estimated that 10-13 systems might be detectable in Kepler/TESS data. Yet no one has actually performed a systematic periodogram search on measured transit-depth time series for hundreds of planets. The Umetani et al. (2025) single-epoch ring search and this precession search are complementary and non-overlapping in methodology. This project would be the first blind survey for ring precession signatures.</p>
+<p>Oblateness searches have historically been proposed as single-target campaigns (e.g., for WASP-103b with JWST, or Kepler-1658b). A population-level, homogeneous search across all known USP planets — combining Kepler and TESS data where both exist — to place upper limits on oblateness (and by extension, interior rigidity and rotation state) has not been done. The key insight is that even non-detections are informative: an oblate shape requires rapid rotation, so a population of null detections would constrain the spin states of rocky USP planets and test tidal spin-synchronization theory. Furthermore, the combined Kepler+TESS baseline (spanning ~12 years) allows detection of subtle transit shape changes if the planet's obliquity is precessing.</p>
 <h3>Concrete Workflow</h3>
 <ol>
-<li>For every Kepler planet with &gt;30 transits, extract individual transit depths by fitting each transit epoch independently (allowing depth to float while holding limb-darkening and orbital parameters fixed at their catalog values).</li>
-<li>Build a time series of transit depths {d_i, t_i} for each planet.</li>
-<li>Compute a Lomb-Scargle periodogram of {d_i} for each system, searching for periodic signals with periods from ~50 days to ~4 years (the Kepler baseline).</li>
-<li>For systems also observed by TESS, extend the depth time series and recompute periodograms with the longer baseline, now sensitive to periods up to ~12 years.</li>
-<li>Assess significance via bootstrapping: shuffle the depth values randomly among the epochs 10,000 times and recompute periodograms to establish a false-alarm probability.</li>
-<li>For any significant detections, fit a physical ring-precession model (parameterized by ring inner/outer radius, ring optical depth, obliquity, and precession rate) to the depth time series.</li>
-<li>Cross-check: do the required J2 values and ring parameters fall in physically plausible ranges? Is the precession period consistent with the planet's known mass and orbital distance?</li>
+<li>Assemble the full USP planet catalog (P &lt; 1 day) from the NASA Exoplanet Archive, selecting targets with &gt;500 transit epochs in Kepler and/or &gt;20 TESS sectors.</li>
+<li>Phase-fold all available transits for each target, achieving effective per-point photometric precision of ~1–5 ppm for the best Kepler targets.</li>
+<li>Fit each phase-folded transit with two models: (a) a standard spherical-planet transit model (e.g., batman) and (b) an oblate-planet transit model parameterized by oblateness f = (R_eq − R_pol)/R_eq and projected obliquity θ.</li>
+<li>Compute Bayesian evidence (via nested sampling, e.g., dynesty) for each model to assess whether oblateness is statistically favored for any individual target.</li>
+<li>For all targets, place upper limits on f and compare to theoretical predictions for tidally locked rocky planets with known bulk densities.</li>
+<li>Search for epoch-dependent ingress/egress asymmetry that could signal obliquity precession.</li>
 </ol>
-<h3>Expected Signal/Observable</h3>
-<p>For a Saturn-analog ring system around a warm Jupiter, the peak-to-trough transit depth variation due to ring precession is ~5-15% of the base transit depth (Akinsanmi et al. 2020). For a Jupiter-sized planet with a transit depth of ~1% (10,000 ppm), this corresponds to depth variations of 500-1500 ppm, which is readily detectable in Kepler photometry (typical per-transit depth precision ~50-200 ppm for bright hosts). The signal would appear as a clean sinusoid in the depth time series with a period set by the precession rate.</p>
+<h3>Expected Signal / Observable</h3>
+<p>For a maximally oblate rocky planet (f ~ 0.01–0.03, comparable to Saturn's oblateness), the transit depth deviation during ingress/egress is ~5–20 ppm relative to a spherical model. With ~4,000 phase-folded Kepler transits for a target like Kepler-78b (per-transit depth precision ~50 ppm), the folded precision reaches ~1 ppm — theoretically sufficient for a 5–20σ detection if the planet is rapidly rotating and significantly oblate. For TESS targets with fewer transits, the project will set meaningful upper limits (f &lt; 0.05 at 95% confidence).</p>
 <h3>Possible False Positives</h3>
 <ul>
-<li><strong>Stellar activity cycles</strong>: Spots and faculae change the effective stellar luminosity and limb-darkening profile, modulating apparent transit depth on timescales of the stellar activity cycle (years). Mitigation: simultaneously fit for a linear or quadratic trend in out-of-transit flux and for correlations between depth and stellar activity indicators (e.g., photometric variability amplitude).</li>
-<li><strong>Instrumental systematics</strong>: Kepler's quarterly roll changes can introduce depth offsets. Mitigation: include quarter-dependent offsets as nuisance parameters.</li>
-<li><strong>Blended eclipsing binaries</strong>: Background eclipsing binaries with their own period can produce periodic depth-like variations. Mitigation: check Kepler pixel-level centroid shifts; these would already be flagged in the DR25 vetting.</li>
-<li><strong>Actual TTVs</strong>: Transit timing variations shift the transit in time but shouldn't change depth unless the impact parameter also varies. Transit duration variations (TDVs) from inclination changes could mimic depth changes; fitting both depth and duration simultaneously can disentangle these.</li>
+<li>Stellar granulation and p-mode oscillations can introduce correlated noise in ingress/egress that mimics oblateness at the few-ppm level.</li>
+<li>Imperfect limb-darkening models: errors in the stellar intensity profile can bias ingress/egress shapes, mimicking or masking oblateness.</li>
+<li>Unresolved companion transits: a blended eclipsing binary can alter the effective transit shape.</li>
+<li>Kepler long-cadence smearing: 30-minute integrations smooth ingress/egress, requiring careful integration of the model over finite exposure times.</li>
 </ul>
-<h3>Why It Could Matter</h3>
-<p>Rings are a missing piece of the exoplanet census. We know rings are common in our Solar System (all four giant planets have them), yet zero confirmed exoplanetary rings exist despite thousands of known exoplanets. A detection, or even a strong upper limit from a population-level survey, would constrain ring survival timescales around close-in giants (where tidal forces and Roche limits predict ring destruction) and inform theories of giant planet formation and satellite accretion. The methodology is cheap (archival data only) and the tools (periodograms, transit fitting) are standard, making this highly accessible.</p>
+<h3>Why This Could Matter</h3>
+<p>Detecting — or ruling out — planetary oblateness for USP planets would provide the first direct constraints on the rotation states and interior rigidity of rocky exoplanets. A detection would indicate a planet that is not tidally locked (or is locked in a non-synchronous spin-orbit resonance), challenging standard tidal theory. A population of non-detections would confirm the theoretical expectation that tidal dissipation synchronizes rotation on &lt;1 Gyr timescales for close-in rocky worlds, validating a foundational assumption in habitability assessments of tidally locked planets around M dwarfs.</p>
     </div>
   </details>
   <footer class="exo-daily__foot">
-    <span class="exo-daily__meta"></span>
+    <span class="exo-daily__meta">Source brief: 2026-05-12</span>
     <span class="exo-daily__meta">Rotates daily &middot; 66 ideas in the pool</span>
   </footer>
 </section>
