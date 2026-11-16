@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 13 Nov 2026 09:01:45 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 16 Nov 2026 08:54:29 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,166 +15,106 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>Signatures of CH₄ and NH₃ in the atmosphere of β Pictoris b</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-14646v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-14646v1</guid>
-      <pubDate>Fri, 13 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>A. Barone et al.</dc:creator>
+      <title>Multimessenger Exoplanets: Combining Infrared Excess and Astrometry with Gravitational-wave Detections of Double White Dwarf Exoplanets</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-17572v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-17572v1</guid>
+      <pubDate>Mon, 16 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Casey McGrath et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.SR</category>
         <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+        <category>gr-qc</category>
     </item>
     <item>
-      <title>JWST Rocky Worlds DDT Observations of LTT 1445 A b and c in Secondary Eclipse Using MIRI/F1500W</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-17300v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-17300v1</guid>
-      <pubDate>Fri, 13 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Jegug Ih et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Hydrolyzed Hazes on Water-rich Exoplanets: Composition and Prebiotic Chemistry</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-14666v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-14666v1</guid>
-      <pubDate>Fri, 13 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Cara Pesciotta et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Desorption of water from cosmic silicates</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-16077v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-16077v1</guid>
-      <pubDate>Fri, 13 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>C. Jäger et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>A Joint Study of Epoch Astrometry and Radial Velocities of Gaia-4b</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-15537v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-15537v1</guid>
-      <pubDate>Fri, 13 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Shubham Kanodia et al.</dc:creator>
+      <title>Model Choice or Model Bias? How stellar spectral libraries and activity modelling choices influence Ariel spectra- I. Forward model</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-18107v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-18107v1</guid>
+      <pubDate>Mon, 16 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>N. -E. Nèmec et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.IM</category>
     </item>
     <item>
-      <title>Observational constraints on CO sequestration and disk mass in the planet-hosting PDS 70 disk</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-14632v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-14632v1</guid>
-      <pubDate>Fri, 13 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>M. Leemker et al.</dc:creator>
+      <title>Euclid DR1 Legacy Science on Ultracool Dwarfs: New URLD candidates in Euclid and SPHEREx</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-17519v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-17519v1</guid>
+      <pubDate>Mon, 16 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>N. Lodieu et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.SR</category>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>On the Existence of a Third Planet and an Apsidal Resonance Chain in the Kepler-396 System through TESS Data</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-17667v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-17667v1</guid>
+      <pubDate>Mon, 16 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Li-Chin Yeh et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>TOI-1699A: a sub-Neptune and a super-Jovian in an S-type planetary system</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-18481v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-18481v1</guid>
+      <pubDate>Mon, 16 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Angelica Psaridi et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Eleven Trans-Neptunian Objects and Eight Candidates Discovered by TESS</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-18452v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-18452v1</guid>
+      <pubDate>Mon, 16 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Te Han et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>A Multiscale Analysis of an Interplanetary Shock from IMAP, SOLAR-1, and the L1 Constellation to Earth</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-18314v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-18314v1</guid>
+      <pubDate>Mon, 16 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Savvas Raptis et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>physics.space-ph</category>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.SR</category>
+        <category>physics.plasm-ph</category>
+    </item>
+    <item>
+      <title>Receiving Exoplanet Messages with Gravitational-wave Carriers: The Gravitational-wave Radial Velocity Method</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-17571v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-17571v1</guid>
+      <pubDate>Mon, 16 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Casey McGrath</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.SR</category>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+        <category>gr-qc</category>
+    </item>
+    <item>
+      <title>The effect of vertical mixing on oxygen sequestration by refractory elements in the atmosphere of giant planets</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-18431v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-18431v1</guid>
+      <pubDate>Mon, 16 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Paolo Simonetti et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Exoplanets are predominately aligned with exo-Kuiper Belts</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-17423v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-17423v1</guid>
+      <pubDate>Mon, 16 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Jingwen Zhang et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.SR</category>
-    </item>
-    <item>
-      <title>Earth accreted increasingly oxidized material as it grew constraining Theia to be small and relatively oxidized</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-14842v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-14842v1</guid>
-      <pubDate>Fri, 13 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Gabriel I. Nathan, Hung D. Nguyen, Seth A. Jacobson</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Combining TTVs, RVs, and astrometry to characterize distant giant companions of transiting hot Jupiters: Application to WASP-4</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-16782v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-16782v1</guid>
-      <pubDate>Fri, 13 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>J. -V. Harre, Louise D. Nielsen, A. M. S. Smith</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
-    </item>
-    <item>
-      <title>OGLE Pre-discovery Observations of the Dwarf Planet Candidate 2026 ED138</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-15959v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-15959v1</guid>
-      <pubDate>Fri, 13 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>P. Mróz et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
-    </item>
-    <item>
-      <title>Magellan PFS Discovery of a Cold Gas Giant Exoplanet Likely Formed by a Gas Disk Gravitational Instability</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-16032v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-16032v1</guid>
-      <pubDate>Fri, 13 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Alan P. Boss et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.SR</category>
-    </item>
-    <item>
-      <title>Self-Consistent Microscopic Description of the 146Sm Half-Life for Early Solar System Chronology</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-16251v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-16251v1</guid>
-      <pubDate>Fri, 13 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Shulin Tang et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>nucl-th</category>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Stellar-Field-Driven Induction Heating Unlikely To Cause Significant Heating in Giant Exoplanets</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-16949v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-16949v1</guid>
-      <pubDate>Fri, 13 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Madison Brady, Darryl Z. Seligman, Cassidy Walker</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Dynamical stability of double planets in compact multiplanetary systems</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-16091v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-16091v1</guid>
-      <pubDate>Fri, 13 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Wolf Cukier, Tansu Daylan</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Swept by the Galactic Tide: How Galactic Tides and Stellar Encounters Drive the Evolution of Wide Binaries and Their Giant Planets</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-15913v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-15913v1</guid>
-      <pubDate>Fri, 13 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Vighnesh Nagpal et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.SR</category>
-    </item>
-    <item>
-      <title>Minimum observations for accurate Exoplanetary mass estimation with Radial Velocity Analysis (MINERVA)</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-15350v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-15350v1</guid>
-      <pubDate>Fri, 13 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>C. Di Maio et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
-    </item>
-    <item>
-      <title>Elemental Abundance Trends with Condensation Temperature are Unrelated to Planet Formation</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-15902v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-15902v1</guid>
-      <pubDate>Fri, 13 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Le-Chris Wang, Kevin C. Schlaufman</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Crater Scaling Relationships for Gas Impingement on Planetary Regolith</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-16040v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-16040v1</guid>
-      <pubDate>Fri, 13 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Ronald-L. Ballouz et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
     </item>
   </channel>
 </rss>
