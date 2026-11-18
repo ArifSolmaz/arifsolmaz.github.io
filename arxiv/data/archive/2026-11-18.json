@@ -1,0 +1,137 @@
+{
+  "announcement_date": "2026-11-18",
+  "updated_at": "2026-11-18T09:36:50.182815+00:00",
+  "category": "astro-ph.EP",
+  "paper_count": 4,
+  "papers": [
+    {
+      "id": "2611.22150v1",
+      "title": "Exomoons and Exorings with the Habitable Worlds Observatory. III. Icy Moons and Rings Often Outshine Their Planets",
+      "abstract": "If we could observe the Solar System's giant planets with the upcoming Habitable Worlds Observatory (HWO), the dominant sources of reflected near-infrared light would not always be the planets themselves. In fact, the brightest sources are split roughly evenly between the giants and their icy companions: at the locations of the giant planets, the dominant point sources would be Jupiter, Saturn's rings, Uranus, and Triton (Neptune's icy moon). Motivated by these Solar System cases in which rings or moons outshine their host planets, we investigate the detectability of analogous exomoons and exorings with HWO. We compute the expected signal-to-noise ratios (S/N) for moons and rings with the same albedos as their Solar System counterparts over a range of sizes, system distances, and star to planet+moon or star to planet+ring separations. We find that reflected light from Triton-analog exomoons and Saturn-analog exorings is detectable with HWO over a broad parameter space. In the nearest systems, icy Titan-sized moons are detectable at star-moon separations of 2 AU and icy Earth-sized moons out to 6 AU. Moreover, Saturn-like exorings are likely to be the brightest point sources in many extrasolar systems, capable of greatly outshining any planets, while remaining potentially detectable at system distances out to 100 pc. These results highlight the need for further work to develop methods for identifying and disentangling exoring and exomoon signatures from exoplanet signals in HWO observations, where these sources will be blended and spatially unresolved.",
+      "authors": [
+        "Sam Hopper",
+        "Mary Anne Limbach",
+        "Rachel Bowens-Rubin"
+      ],
+      "categories": [
+        "astro-ph.EP",
+        "astro-ph.IM"
+      ],
+      "published": "2026-11-17",
+      "updated": "2026-11-17",
+      "pdf_link": "https://arxiv.org/pdf/2611.22150v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.22150v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 37,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2611.22150v1/2611.22150v1/saturn_methane.png"
+    },
+    {
+      "id": "2611.22454v1",
+      "title": "Unveiling the mutual inclination distribution in astrometric surveys",
+      "abstract": "Mutual inclination in three (or more) body systems (triple stars, circumbinary planets, multi-planetary systems, etc.) is a tracer of their formation and evolution. Gaia Data Release 4 will provide for the first time a catalog of orbital solutions for three-body systems. Because astrometry is only sensitive to the motion in the plane of the sky, there is a degeneracy in the orbital solutions leading to two possible solutions for the mutual inclination in three-body systems. We propose a hierarchical Bayesian framework to circumvent this degeneracy and unveil the mutual inclination distribution in the population. We tested our methods on simulated datasets, and showed that it reliably recovered the injected mutual inclination distributions in various cases. The method is thus promising for the statistical analysis of Gaia DR4 three-body systems.",
+      "authors": [
+        "Jean-Baptiste Delisle"
+      ],
+      "categories": [
+        "astro-ph.EP",
+        "astro-ph.IM"
+      ],
+      "published": "2026-11-17",
+      "updated": "2026-11-17",
+      "pdf_link": "https://arxiv.org/pdf/2611.22454v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.22454v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 10,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=800&q=80"
+    },
+    {
+      "id": "2611.21758v1",
+      "title": "NEMESIS: Exoplanet TraNsit SurvEy of Nearby M-dwarfs in TESS FFIS II - 262 Transiting Planet Candidates from the TESS Primary Mission",
+      "abstract": "We present NEMESIS II, a blind transit search of nearby M-dwarfs in TESS Primary Mission full-frame images (Sectors 1-26), including stars lacking 2-minute observations. Using the open-source NEMESIS pipeline, we extracted, detrended, and searched 213,658 single-sector light curves of 113,047 M-dwarfs within 100 pc, yielding 23,339 threshold crossing events. Automated LEO-Vetter vetting, applied identically to the survey and its injection-recovery and orbit-scrambling controls, retains 558 detections corresponding to 525 distinct signals with converged transit fits and periods of 0.51-9.10 days. Of these, 482 lie on stars without TOI, CTOI, or NASA Exoplanet Archive transiting-planet entries. Orbit-scrambling predicts 329 false alarms among the 558 detections, all but 14 of them among the 408 below Multiple Event Statistic 8. Assuming an astrophysical signal, TRICERATOPS favors a planetary origin for 262 of 525 candidates (232 new), which we classify as planet candidates; it also excludes resolved-neighbor eclipses for 105. Known planets and TOI candidates survive vetting at 1.01 +/- 0.07 of the injection-predicted rate. Correcting for each light curve's sensitivity, false alarms, and astrophysical false positives, we infer 0.81 +/- 0.44 planets per star for periods between 1.0-10.0 days and planet radii between 0.5-11.0 Earth radii. This is a lower limit, because our injections recover few or no planets near and below 1 Earth radii and assume central transits. Light curves, catalogs, vetting reports, and injection-recovery results will be released as a High Level Science Product at MAST upon publication. Documentation for the NEMESIS pipeline is available at https://nemesis-tess.readthedocs.io/.",
+      "authors": [
+        "Dax L. Feliz",
+        "Madeline Maldonado Gutierrez",
+        "Maliyah Adams",
+        "Shreeya KC",
+        "Kylor G. Ghai",
+        "Thamim Chowdhury",
+        "August Fischer",
+        "Jashcelyn S. Canada",
+        "Donovan Bradley",
+        "Mary Jimenez",
+        "Samantha N. Bianco",
+        "Bryan Villarreal Alvarado",
+        "Keivan G. Stassun",
+        "Peter Plavchan",
+        "Kevin I. Collins",
+        "Ruth Angus"
+      ],
+      "categories": [
+        "astro-ph.EP",
+        "astro-ph.SR"
+      ],
+      "published": "2026-11-16",
+      "updated": "2026-11-16",
+      "pdf_link": "https://arxiv.org/pdf/2611.21758v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.21758v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 5,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2611.21758v1/2611.21758v1/Fig1_split.png"
+    },
+    {
+      "id": "2611.22225v1",
+      "title": "3D and 2D Radiation Non-ideal MHD modeling of the decay of FUor outbursts",
+      "abstract": "FU Orionis (FUor) outbursts are high-accretion events in protoplanetary disks thought to be driven by the magnetorotational instability (MRI). Although these outbursts span a wide range of observed durations and can thermally process and potentially transport disk material, the physical processes governing their decay remain poorly understood. We present a three-dimensional radiative non-ideal magnetohydrodynamic (MHD) simulation of the decay of an MRI-driven FUor outburst, complemented by a suite of two-dimensional models that explore its dependence on disk properties. During the decay, rings and gaps form naturally within the inner disk. Magnetic flux preferentially concentrates in the gaps, while the rings remain comparatively weakly magnetized. We show that MRI-active rings act as ``magnetic dams,'' confining magnetic flux within adjacent gaps. As the rings cool below the MRI activation temperature, non-ideal MHD effects decouple the gas from the magnetic field, allowing the trapped flux to diffuse outward. This outward diffusion can sometimes transiently reactivate MRI in neighboring rings, producing localized reheating events that we term ``Reactivation.'' By comparing otherwise identical two- and three-dimensional simulations, we find that MRI heating is systematically less efficient in two dimensions, leading to outburst durations shorter by a factor of 3--4. Our model suite further shows that the decay timescale depends primarily on the disk surface density and distance from the central star, with only a weak dependence on the magnetic field strength. We further derive an empirical relation linking the outburst duration to these quantities.",
+      "authors": [
+        "Yisheng Tu",
+        "Lee Hartmann",
+        "Zhaohuan Zhu",
+        "Conel M. O'D. Alexander",
+        "Fred J. Ciesla",
+        "Eric Rapp"
+      ],
+      "categories": [
+        "astro-ph.EP"
+      ],
+      "published": "2026-11-17",
+      "updated": "2026-11-17",
+      "pdf_link": "https://arxiv.org/pdf/2611.22225v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.22225v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 0,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2611.22225v1/2611.22225v1/f3D_3slices_new_01000.png"
+    }
+  ]
+}
