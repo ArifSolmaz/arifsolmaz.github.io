@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 18 Nov 2026 09:36:50 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 19 Nov 2026 09:44:57 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,43 +15,69 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>Exomoons and Exorings with the Habitable Worlds Observatory. III. Icy Moons and Rings Often Outshine Their Planets</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-22150v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-22150v1</guid>
-      <pubDate>Wed, 18 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Sam Hopper, Mary Anne Limbach, Rachel Bowens-Rubin</dc:creator>
+      <title>NEXONN: Advancing the NEXOTRANS Exoplanet Atmospheric Retrieval Framework with Transformer-Based Neural Posterior Estimation for JWST Transmission Spectroscopy of WASP-39b</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-23818v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-23818v1</guid>
+      <pubDate>Thu, 19 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Tasneem Basra Khan et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.IM</category>
     </item>
     <item>
-      <title>Unveiling the mutual inclination distribution in astrometric surveys</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-22454v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-22454v1</guid>
-      <pubDate>Wed, 18 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Jean-Baptiste Delisle</dc:creator>
+      <title>A Homogeneous Benchmark of Exoplanet Mass-Radius Relations</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-24812v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-24812v1</guid>
+      <pubDate>Thu, 19 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Ailar Alizadehsabegh, Soroush Sarabi, Atila Poro</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Thermodynamics of gas giants accreting via shocks: the role of molecular hydrogen dissociation</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-24615v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-24615v1</guid>
+      <pubDate>Thu, 19 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Bingjie Zha, Zhuo Chen</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Discovery of a Massive Outer Companion to the TOI-178 Resonant Chain</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-24854v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-24854v1</guid>
+      <pubDate>Thu, 19 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Emma V. Turtelboom et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Potential spectral markers of intrinsic magnetic fields of hot exoplanets in the UV range</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-24811v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-24811v1</guid>
+      <pubDate>Thu, 19 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>M. Rumenskikh et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Analytical formulae for planet-planet or moon-moon tides</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-24416v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-24416v1</guid>
+      <pubDate>Thu, 19 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Michaela Walterová, Marie Běhounková</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Asgard/NOTT: L-band nulling interferometry at the VLTI IV. Prospects for characterising hot exozodiacal dust</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-24397v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-24397v1</guid>
+      <pubDate>Thu, 19 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Kevin Ollmann et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.IM</category>
-    </item>
-    <item>
-      <title>NEMESIS: Exoplanet TraNsit SurvEy of Nearby M-dwarfs in TESS FFIS II - 262 Transiting Planet Candidates from the TESS Primary Mission</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-21758v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-21758v1</guid>
-      <pubDate>Wed, 18 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Dax L. Feliz et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.SR</category>
-    </item>
-    <item>
-      <title>3D and 2D Radiation Non-ideal MHD modeling of the decay of FUor outbursts</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-22225v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-22225v1</guid>
-      <pubDate>Wed, 18 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Yisheng Tu et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
     </item>
   </channel>
 </rss>
