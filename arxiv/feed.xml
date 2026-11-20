@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 19 Nov 2026 09:44:57 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 09:32:33 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,69 +15,93 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>NEXONN: Advancing the NEXOTRANS Exoplanet Atmospheric Retrieval Framework with Transformer-Based Neural Posterior Estimation for JWST Transmission Spectroscopy of WASP-39b</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-23818v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-23818v1</guid>
-      <pubDate>Thu, 19 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Tasneem Basra Khan et al.</dc:creator>
+      <title>Transition Zone from ExoEarth to ExoVenus: Critical Insight from Planets on the Edge</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-25255v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-25255v1</guid>
+      <pubDate>Fri, 20 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Lisa Kaltenegger et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+        <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>Validation and Physical Characterization of Seven TESS Exoplanets: A Compact Multi-Planet System and Targets for Atmospheric Spectroscopy</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-25079v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-25079v1</guid>
+      <pubDate>Fri, 20 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Biel Escolà-Rodrigo</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.IM</category>
     </item>
     <item>
-      <title>A Homogeneous Benchmark of Exoplanet Mass-Radius Relations</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-24812v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-24812v1</guid>
-      <pubDate>Thu, 19 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Ailar Alizadehsabegh, Soroush Sarabi, Atila Poro</dc:creator>
+      <title>The SPACE Program IV: Atmospheric Features on the Cold Transiting Sub-Neptune TOI-6478 b</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-25230v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-25230v1</guid>
+      <pubDate>Fri, 20 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Anastasia Triantafillides et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>Thermodynamics of gas giants accreting via shocks: the role of molecular hydrogen dissociation</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-24615v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-24615v1</guid>
-      <pubDate>Thu, 19 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Bingjie Zha, Zhuo Chen</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Discovery of a Massive Outer Companion to the TOI-178 Resonant Chain</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-24854v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-24854v1</guid>
-      <pubDate>Thu, 19 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Emma V. Turtelboom et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Potential spectral markers of intrinsic magnetic fields of hot exoplanets in the UV range</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-24811v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-24811v1</guid>
-      <pubDate>Thu, 19 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>M. Rumenskikh et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Analytical formulae for planet-planet or moon-moon tides</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-24416v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-24416v1</guid>
-      <pubDate>Thu, 19 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Michaela Walterová, Marie Běhounková</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Asgard/NOTT: L-band nulling interferometry at the VLTI IV. Prospects for characterising hot exozodiacal dust</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-24397v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-24397v1</guid>
-      <pubDate>Thu, 19 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Kevin Ollmann et al.</dc:creator>
+      <title>Demographic inference in exoplanet chemistry is shaped by retrieval assumptions</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-26548v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-26548v1</guid>
+      <pubDate>Fri, 20 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Dwaipayan Dubey et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.IM</category>
+    </item>
+    <item>
+      <title>The Ionospheric Cut-off as a Potential Radio Technosignature</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-26025v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-26025v1</guid>
+      <pubDate>Fri, 20 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Michael A. Garrett</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.IM</category>
+        <category>physics.pop-ph</category>
+    </item>
+    <item>
+      <title>Where Did the Angular Momentum Go? WASP-12 b May Have Circularized on a Retrograde Orbit</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-25203v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-25203v1</guid>
+      <pubDate>Fri, 20 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Elina Y. Zhang et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.SR</category>
+    </item>
+    <item>
+      <title>The Atmospheric Circulation of Cloudy Hot and Ultra-hot Jupiters: the Need for Dissipation of Large-scale Flows to Reduce the Nightside Brightness Temperatures of Ultra-hot Jupiters</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-25803v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-25803v1</guid>
+      <pubDate>Fri, 20 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Xianyu Tan et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Lower-Mass Giants Can Spare Inner Planets during High-Eccentricity Migration</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-26372v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-26372v1</guid>
+      <pubDate>Fri, 20 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Qunfeng Jiang</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>On the High Eccentricity Orbit of 51 Eri b and Constraints on Interactions with a Second Companion</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-25120v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-25120v1</guid>
+      <pubDate>Fri, 20 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>William O. Balmer et al.</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+        <category>astro-ph.SR</category>
     </item>
   </channel>
 </rss>

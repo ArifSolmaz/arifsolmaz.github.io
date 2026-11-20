@@ -1,21 +1,46 @@
 {
-  "announcement_date": "2026-11-19",
-  "updated_at": "2026-11-19T09:44:57.854869+00:00",
+  "announcement_date": "2026-11-20",
+  "updated_at": "2026-11-20T09:32:33.579758+00:00",
   "category": "astro-ph.EP",
-  "paper_count": 7,
+  "paper_count": 9,
   "papers": [
     {
-      "id": "2611.23818v1",
-      "title": "NEXONN: Advancing the NEXOTRANS Exoplanet Atmospheric Retrieval Framework with Transformer-Based Neural Posterior Estimation for JWST Transmission Spectroscopy of WASP-39b",
-      "abstract": "The James Webb Space Telescope is delivering unprecedented constraints on exoplanet atmospheres, but computationally intensive Bayesian retrievals challenge the transition from individual planets to population-level studies of planetary formation and evolution. We introduce NEXONN, a transformer-conditioned normalizing-flow framework within NEXOTRANS that enables rapid atmospheric posterior estimation with uncertainty quantification. Incorporating PandExo-based JWST noise, we benchmark NEXONN against PyMultiNest using simulated spectra and JWST observations of WASP-39 b (0.6-12 microns). For simulated MIRI/LRS data, eight posteriors achieve a mean overlap of 80.32%. Retrievals of combined NIRISS, NIRSpec, and MIRI observations yield consistent atmospheric properties. For the full dataset, NEXONN infers C/O = 0.82 (+0.01/-0.02) and [M/H] = 1.13 (+0.04/-0.04), compared with PyMultiNest values of 0.80 (+0.03/-0.01) and 1.19 (+0.05/-0.03). Divergence metrics, Wasserstein distances, posterior overlaps, and coverage tests assess posterior fidelity and uncertainty calibration, revealing parameter-dependent differences. Once trained, NEXONN performs posterior inference within seconds, enabling scalable population studies of exoplanet atmospheric composition, formation, and evolution.",
+      "id": "2611.25255v1",
+      "title": "Transition Zone from ExoEarth to ExoVenus: Critical Insight from Planets on the Edge",
+      "abstract": "Venus and Earth, planets with similar masses and radii, provide astonishingly different environments, raising the question of why these two rocky worlds evolved so differently. Explaining this divergence is a central challenge in comparative planetology and astrobiology. Now, atmospheric studies of exoplanets can explore the possibilities of terrestrial planet evolution, especially in the era of JWST; however, we have not yet realized the critical insights rocky exoplanets in the Transition Zone (TZ) can provide. These TZ planets in the overlap between the Habitable Zone and Venus Zone can test how incident stellar irradiation affects surface water retention and habitability. Observations of exoplanets in the TZ can probe not only the emergence and decline of exoplanet habitability but also test hypotheses about Venus' past, complementing upcoming Venus flagship missions. Here, we analyze NASA's Exoplanet Archive, updated with Gaia DR3 data, and provide a target list of 23 rocky exoplanets in the Earth-to-Venus Transition Zone, along with 2 planets in the Venus Evolution Zone (EV). We examine their demographics and quantify their potential for follow-up observations. This list of rocky TZ and EV planets allows observers to optimize target selection and observing strategy for specific instruments. Characterizing exoplanets in the Transition Zone will be critical to investigating open questions about the emergence and decline of habitability on rocky worlds, the evolution from an exo-Earth to an exo-Venus, and Earth's future.",
       "authors": [
-        "Tasneem Basra Khan",
-        "Liton Majumdar",
-        "Mithun Patra",
-        "Tonmoy Deka",
-        "Swastik Dewan",
-        "Priyankush Ghosh",
-        "Vishal Meena"
+        "Lisa Kaltenegger",
+        "Abigail Bohl",
+        "Connor Novak",
+        "Gillis Lowry"
+      ],
+      "categories": [
+        "astro-ph.EP",
+        "astro-ph.IM",
+        "astro-ph.SR"
+      ],
+      "published": "2026-11-18",
+      "updated": "2026-11-18",
+      "pdf_link": "https://arxiv.org/pdf/2611.25255v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.25255v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 35,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2611.25255v1/2611.25255v1/all_planets.png"
+    },
+    {
+      "id": "2611.25079v1",
+      "title": "Validation and Physical Characterization of Seven TESS Exoplanets: A Compact Multi-Planet System and Targets for Atmospheric Spectroscopy",
+      "abstract": "The Transiting Exoplanet Survey Satellite (TESS) continues to identify thousands of transit candidates that require statistical validation to rule out astrophysical false positives before atmospheric characterization can be pursued. We statistically validate and characterize seven TESS exoplanet candidates orbiting five host stars. As a consistency check of our automated vetting and Bayesian inference pipeline, we include TOI-2392.03, a sub-Neptune companion previously validated in the literature. Our framework combines automated signal retrieval, pixel-level centroid and Gaia DR3 contamination analysis, and false positive probability (FPP) computation with the TRICERATOPS vetting engine. Physical and orbital parameters are derived via nested sampling (juliet/Dynesty), complemented by an empirical mass-radius relation, since no dynamical mass measurements are available. Applying the same procedure to all candidates, we statistically validate six new exoplanets (FPP < 0.015 and NFPP < 0.001), one of which (TOI-7721.01) lies close to the FPP threshold. We report the period ratios of the three-planet system TOI-2392, and identify TOI-7721.01 and TOI-1277.02 as the candidates with the highest Transmission Spectroscopy Metrics (TSM) in our sample, making them targets of interest for atmospheric follow-up with the James Webb Space Telescope (JWST) and the upcoming Ariel mission.",
+      "authors": [
+        "Biel Escolà-Rodrigo"
       ],
       "categories": [
         "astro-ph.EP",
@@ -23,8 +48,8 @@
       ],
       "published": "2026-11-18",
       "updated": "2026-11-18",
-      "pdf_link": "https://arxiv.org/pdf/2611.23818v1.pdf",
-      "abs_link": "https://arxiv.org/abs/2611.23818v1",
+      "pdf_link": "https://arxiv.org/pdf/2611.25079v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.25079v1",
       "is_exoplanet_focused": true,
       "tweetability_score": 33,
       "summary": "",
@@ -35,26 +60,34 @@
         "evidence": "",
         "question": ""
       },
-      "figure_url": "https://arxiv.org/html/2611.23818v1/2611.23818v1/Figures/NexoNN_arch.png"
+      "figure_url": "https://arxiv.org/html/2611.25079v1/2611.25079v1/SC_2392.png"
     },
     {
-      "id": "2611.24812v1",
-      "title": "A Homogeneous Benchmark of Exoplanet Mass-Radius Relations",
-      "abstract": "The mass-radius (M-R) relation is fundamental to inferring the bulk composition and internal structure of exoplanets. However, published relations remain difficult to compare directly because studies adopt different planetary samples, fitting procedures, and evaluation metrics. We construct a homogeneous, quality-controlled benchmark of 963 exoplanets with dynamically measured masses and transit radii from the NASA Exoplanet Archive. We compare empirical power laws, probabilistic models, and machine-learning (ML) regressors using point accuracy, interval coverage, and probabilistic calibration. On the full test set, a multi-feature random forest has the lowest root-mean-square error, 0.329 dex in ₁₀ M versus 0.368 dex for a fitted two-parameter power law (p = 0.007 unadjusted; p = 0.059 after Holm correction across 13 comparisons). Radius-only ML models perform comparably to the single power law. In three ranges of the measured radius, several methods improve on the power law below 1.6 R_⊕, but none does between 1.6 and 4 R_⊕. Including stellar and orbital covariates significantly improves predictions only for low-mass planets (M < 4.4\\,M_⊕), although this result is sensitive to missing covariate data and weakens when the training and test sets are separated by host star. Within their calibrated radius domains, the published empirical and probabilistic relations remain highly competitive. Finally, a first-order variance decomposition shows that formal measurement uncertainties account for only 3\\% of the residual variance (0.067 of 0.401 dex), and the remaining 0.396 dex arises from compositional diversity, selection effects, and model approximation error.",
+      "id": "2611.25230v1",
+      "title": "The SPACE Program IV: Atmospheric Features on the Cold Transiting Sub-Neptune TOI-6478 b",
+      "abstract": "Among the current population of exoplanets there are very few sub-Neptunes that have their atmospheric composition identified. This is primarily due to sub-Neptunes having high metallicity, clouds, and/or hazes obscuring absorption features. This often produces a spectrum that presents itself as a featureless spectrum especially in the near-IR. However, there are tentative trends that suggest sub-Neptunes with the lowest equilibrium temperatures (Tₑq < 400\\:K) have detectable features, perhaps due to inefficient haze production or cloud sedimentation. TOI-6478 b is a low-density sub-Neptune exoplanet ( <9.9\\:M⊕ and 4.5R⊕) with an equilibrium temperature Tₑq = 220 \\:K assuming zero albedo. In this study, we present the highest S/N spectral feature ( 6) of any sub-Neptune detected using HST/WFC3. We detect this spectral feature using a robust analysis that incorporates the Transit Light Source Effect (TLSE) to rule out false detections due to stellar activity. With the narrow bandpass of HST we were unable to distinguish whether the spectral feature at 1.4μm is from H₂O or CH₄ absorption. Meanwhile, self-consistent atmospheric models provide physical motivation for CH₄ to be the dominant absorber given that H₂O should condense or cold trap at higher pressures. Through our analysis we determine that HST/WFC3 alone cannot distinguish between major absorbers. However, a broader wavelength coverage by JWST will be able to measure the atmospheric composition in detail, due to the high S/N features for this target.",
       "authors": [
-        "Ailar Alizadehsabegh",
-        "Soroush Sarabi",
-        "Atila Poro"
+        "Anastasia Triantafillides",
+        "Jason S. Pero",
+        "Angelique Kahle",
+        "Thomas Beatty",
+        "Renyu Hu",
+        "Caroline V. Morley",
+        "David J. Wilson",
+        "Laura Kreidberg",
+        "Drake Deming",
+        "Ian J. M. Crossfield",
+        "Madison G. Scott"
       ],
       "categories": [
         "astro-ph.EP"
       ],
       "published": "2026-11-18",
       "updated": "2026-11-18",
-      "pdf_link": "https://arxiv.org/pdf/2611.24812v1.pdf",
-      "abs_link": "https://arxiv.org/abs/2611.24812v1",
+      "pdf_link": "https://arxiv.org/pdf/2611.25230v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.25230v1",
       "is_exoplanet_focused": true,
-      "tweetability_score": 18,
+      "tweetability_score": 27,
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -63,25 +96,30 @@
         "evidence": "",
         "question": ""
       },
-      "figure_url": "https://arxiv.org/html/2611.24812v1/2611.24812v1/F1_mr_plane.png"
+      "figure_url": "https://arxiv.org/html/2611.25230v1/2611.25230v1/toi-6478_all_stis.png"
     },
     {
-      "id": "2611.24615v1",
-      "title": "Thermodynamics of gas giants accreting via shocks: the role of molecular hydrogen dissociation",
-      "abstract": "Within the core-accretion framework, gas giants acquire most of their mass through accretion shocks during runaway gas accretion. The shock thermodynamics---governed by radiative cooling, accretion history, and equation of state (EoS)---sets the post-shock gas entropy and initial thermal state, strongly influencing both observables and subsequent evolution. We aim to build a coupled evolutionary model predicting the initial thermodynamic conditions, intrinsic luminosities, and upper limits on magnetic field strengths of gas giants across diverse accretion histories. We couple radiation hydrodynamics and H₂ dissociation to long-term planetary interior evolution by training a physics-informed neural network (PINN) predictor on 1000 first-principles simulations resolving the shock physics. This PINN provides post-shock outer boundary conditions for MESA to evolve the planetary envelope beyond runaway accretion. The PINN predicts higher post-shock temperatures than the canonical cold-start model, with the discrepancy widening with planetary mass, while post-shock entropy jumps sharply when H₂ dissociates at 2000 K. Gas giants evolved with PINN-derived boundary conditions achieve intrinsic luminosities 4--10 times higher than cold-start models. Under optimistic assumptions, the maximum magnetic field strength at 2 RₐthrmJ reaches a few gauss for a 0.3 MₐthrmJ planet, 100 G for 1 MₐthrmJ, and 500 G for 3 MₐthrmJ. Incorporating detailed radiation hydrodynamics and realistic thermodynamics into accretion shock models yields higher initial entropies, brighter intrinsic luminosities, and stronger magnetic fields, providing improved constraints on the masses and accretion rates of directly imaged exoplanets.",
+      "id": "2611.26548v1",
+      "title": "Demographic inference in exoplanet chemistry is shaped by retrieval assumptions",
+      "abstract": "Understanding the chemical diversity of exoplanet atmospheres is crucial for linking atmospheric composition to planetary formation history. Atmospheric C/O can provide clues about where and how planets form, particularly through the accretion of gas and solids across disk snowlines. Since planetary migration can change orbital distances and hence equilibrium temperatures (Tₑq), investigating C/O across different planetary populations may provide insights into their formation and evolution. As observational precision improves with the JWST, the limits of standard atmospheric retrieval methods that assume altitude-independent molecular abundances have become apparent. We present atmospheric retrievals for 20 transiting planets with published JWST transmission spectra, including complementary HST spectra for targets where such data are available, spanning gas giants, warm Neptunes, and temperate/warm sub-Neptunes, to test how population-level chemical inferences depend on retrieval assumptions. Free-chemistry retrievals show a visually non-monotonic C/O-Tₑq distribution, but this apparent pattern is not statistically robust and is sensitive to sample composition. When molecular abundances are constrained by a grid of disequilibrium models, the inferred C/O distribution becomes more restricted, showing that demographic chemical trends can depend strongly on the adopted retrieval parameterization. Several hot Jupiters converge to low C/O (≤ 0.05), whereas colder, cloudy planets retain broad posteriors that reflect limited information content of their spectra. Our results suggest that population-level chemical trends inferred from free-chemistry retrievals should be interpreted with caution unless sample selection, residual structure, prior sensitivity, and chemical assumptions are explicitly tested.",
       "authors": [
-        "Bingjie Zha",
-        "Zhuo Chen"
+        "Dwaipayan Dubey",
+        "Karan Molaverdikhani",
+        "Barbara Ercolano",
+        "Surya Shivaprasad",
+        "Fabian Grübel",
+        "Rosa Arenales-Lope"
       ],
       "categories": [
-        "astro-ph.EP"
+        "astro-ph.EP",
+        "astro-ph.IM"
       ],
-      "published": "2026-11-18",
-      "updated": "2026-11-18",
-      "pdf_link": "https://arxiv.org/pdf/2611.24615v1.pdf",
-      "abs_link": "https://arxiv.org/abs/2611.24615v1",
+      "published": "2026-11-19",
+      "updated": "2026-11-19",
+      "pdf_link": "https://arxiv.org/pdf/2611.26548v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.26548v1",
       "is_exoplanet_focused": true,
-      "tweetability_score": 10,
+      "tweetability_score": 27,
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -90,46 +128,138 @@
         "evidence": "",
         "question": ""
       },
-      "figure_url": "https://arxiv.org/html/2611.24615v1/2611.24615v1/schematic.png"
+      "figure_url": "https://arxiv.org/html/2611.26548v1/2611.26548v1/Figure_3.png"
     },
     {
-      "id": "2611.24854v1",
-      "title": "Discovery of a Massive Outer Companion to the TOI-178 Resonant Chain",
-      "abstract": "We report the discovery of a massive outer companion around TOI-178, a known planetary system with six inner small planets within 0.15 AU, five of which are in a 2:4:6:9:12 resonant chain. We analyse the astrometric anomalies in the combined Gaia DR2/DR3 - Hipparcos catalogue (G23H) and literature radial velocities, revealing strong evidence for a massive outer companion at several AU. We combine the resulting orbital fit posterior with archival high-contrast imaging to constrain the properties of the corresponding massive outer companion, TOI-178 h. We also study the dynamical stability of the inner resonant chain in the presence of this previously unknown outer companion via both heuristic and N-body simulations. We find that the inner system appears to be robust to the perturbing influence of TOI-178\\,h, in line with the systems several Gyr age. Our analysis results in a final posterior solution for TOI-178\\,h with a semi-major axis of 6.9⁺¹².³₋₃.₃ AU, a mass of 21⁺⁴⁷₋₁₁ M_J, and eccentricity of 0.76⁺⁰.¹⁸₋₀.₃₅, likely corresponding to an eccentric brown dwarf. TOI-178 is currently the only known system that has maintained a high-multiplicity resonant chain whilst in the dynamical presence of a massive outer companion, showcasing a unique outcome of planet formation.",
+      "id": "2611.26025v1",
+      "title": "The Ionospheric Cut-off as a Potential Radio Technosignature",
+      "abstract": "Radio emission generated on a planetary surface must cross the planet's ionosphere before escaping into space: below the local plasma frequency it is reflected back towards the surface. We investigate this process for broadband radio technosignatures (BRaTs) using a Chapman-layer description of photoionised atmospheres. The plasma frequency depends only weakly on stellar XUV irradiation, scaling as Q∞¹/⁴, implying turnover frequencies of 5-40 MHz for most terrestrial habitable-zone planets, potentially rising towards 100 MHz in extreme environments. The basic signature is simple: the continuum of a surface-origin BRaT should be strongly suppressed below a characteristic frequency that can be estimated from the XUV output of the host star, at every orbital phase and for any viewing geometry. Oblique propagation, magnetic fields, and collisional absorption broaden the cut-off into a smooth escape function, fₐthrmₑsc(ν,φ), where φ is the orbital phase. Because the day-night ionisation pattern is anchored to the substellar point rather than to the rotating surface, disc integration adds a second, more discriminating signature: the half-escape frequency ν₁/₂ varies predictably (by about 40-50 per cent over the orbit, depending on the angular emission pattern of the leakage) and remains locked to the orbital ephemeris. Finite atmospheric response times introduce modest phase lags but preserve the modulation. A low-frequency turnover alone is not unique to technology, but one that varies periodically with the orbital period would be difficult to reproduce through known astrophysical processes. Although observationally challenging, the ionospheric cut-off is a potential technosignature diagnostic and a novel probe of exoplanet ionospheres.",
       "authors": [
-        "Emma V. Turtelboom",
-        "William Thompson",
-        "Ryan Cloutier",
-        "Alexandra Rochon",
-        "Charles A. Beichman",
-        "Trevor Campbell",
-        "Nick Choksi",
-        "Doug Johnstone",
-        "Jessica Speedie",
-        "Dori Blakely",
-        "Simon Blouin",
-        "Alexandre Bouchard-Côté",
-        "Brendan P. Bowler",
-        "David R. Ciardi",
-        "Clarissa R. Do Ó",
-        "Andre Fogal",
-        "Kyle Franson",
-        "Kaitlyn Hessel",
-        "Christian Marois",
-        "Eric Nielsen",
-        "William Roberson",
-        "Jean-Baptiste Ruffio",
+        "Michael A. Garrett"
+      ],
+      "categories": [
+        "astro-ph.EP",
+        "astro-ph.IM",
+        "physics.pop-ph"
+      ],
+      "published": "2026-11-19",
+      "updated": "2026-11-19",
+      "pdf_link": "https://arxiv.org/pdf/2611.26025v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.26025v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 20,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2611.26025v1/2611.26025v1/cutoff_geometry.png"
+    },
+    {
+      "id": "2611.25203v1",
+      "title": "Where Did the Angular Momentum Go? WASP-12 b May Have Circularized on a Retrograde Orbit",
+      "abstract": "WASP-12 b is the only exoplanet with confirmed orbital decay. Angular momentum transferred from its decaying orbit should have realigned the star's thin convective layer, yet an earlier Rossiter--McLaughlin (RM) measurement suggested a 60′ spin--orbit misalignment. We present two new Keck Planet Finder RM measurements. We measure a sky-projected obliquity of λ=-1.3±8.7′; and the star's projected rotation velocity is v i_=1.3±0.1 km\\,s⁻¹, an order of magnitude lower than expected for a star of its mass and age. With WASP-12's low chromospheric activity, R′′ HK=-5.5, our analysis favors an aligned system in which v i_ reflects slow surface rotation with P rₒt 60 days, rather than a projection effect. Our evolution models favor a late-main-sequence star rather than a subgiant, with a central convective core found in 99\\% of posterior samples. This internal structure suppresses the central-focusing and nonlinear wave-breaking mechanisms for inward-propagating gravity waves. We propose that WASP-12 b was initially placed on a retrograde orbit after high-eccentricity migration, when its host rotated at v i_≈14 km s⁻¹ (or P rₒt 6 days). Tidal decay transferred orbital angular momentum to the convective envelope, aligning the surface. The retrograde interior acts as an angular-momentum reservoir, while interior--envelope coupling slows the surface rotation. A semi-empirical relation gives an envelope--interior angular-momentum exchange timescale of 4 Myr, similar to the observed orbital-decay timescale of 3.25 Myr. The angular-momentum budget also permits this initially retrograde evolution. In contrast, an initially prograde planet would have spun up the surface rotation to a rate substantially higher than observed.",
+      "authors": [
+        "Elina Y. Zhang",
+        "Fei Dai",
+        "Yaguang Li",
+        "Jennifer van Saders",
+        "Morgan Saidel",
+        "Heather A. Knutson",
+        "Daniel Huber",
+        "Jingyi Zhang",
+        "Andrew W. Howard",
+        "Samuel P. Halverson",
+        "Howard Isaacson",
+        "Ryan A. Rubenzahl",
+        "Benjamin J. Fulton",
+        "Jack Lubin",
+        "Luke B. Handley",
+        "Steven Giacalone",
+        "Erik A. Petigura",
+        "Jingwen Zhang",
+        "Rafael Luque",
         "Judah Van Zandt",
-        "Jerry W. Xuan",
-        "Jingwen Zhang"
+        "Joshua N. Winn",
+        "Simon H. Albrecht",
+        "Samuel W. Yee",
+        "Xian-Yu Wang",
+        "Songhu Wang",
+        "Steve R. Gibson",
+        "Kodi Rider",
+        "Arpita Roy",
+        "Ashley Baker",
+        "Jerry Edelstein",
+        "Christopher L. Smith",
+        "Josh Walawender"
+      ],
+      "categories": [
+        "astro-ph.EP",
+        "astro-ph.SR"
+      ],
+      "published": "2026-11-18",
+      "updated": "2026-11-18",
+      "pdf_link": "https://arxiv.org/pdf/2611.25203v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.25203v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 16,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2611.25203v1/2611.25203v1/WASP-12_RM_side_by_side.png"
+    },
+    {
+      "id": "2611.25803v1",
+      "title": "The Atmospheric Circulation of Cloudy Hot and Ultra-hot Jupiters: the Need for Dissipation of Large-scale Flows to Reduce the Nightside Brightness Temperatures of Ultra-hot Jupiters",
+      "abstract": "We perform general circulation modeling of hot and ultra-hot Jupiters across equilibrium temperatures of Tₑq=1600 to 2800 K, incorporating cloud formation and its feedback on atmospheric dynamics. This study specifically examines whether clouds explain the systematically low nightside brightness observed in Spitzer thermal phase curves of ultra-hot Jupiters. We found that clouds generally increase phase-curve amplitudes and reduce eastward offsets, and these effects are most pronounced at relatively low Tₑq and gradually weaken as Tₑq increases. We discussed two mechanisms responsible for reducing the phase-curve offsets by clouds: the dynamical and geometric effects. Without explicit dissipation of large-scale winds, strong equatorial jets develop, maintaining a hot equatorial region and clearing clouds near the nightside equator at Tₑq >= 2200 K, with thick clouds instead forming mainly at mid-to-high latitudes. These patchy nightside clouds do not sustain low nightside fluxes as temperatures rise, suggesting that clouds alone cannot explain the observed nightside brightness for ultra-hot Jupiters. Strong dissipation, parameterized as magnetic drags, suppresses equatorial jets and promotes nightside cloud coverage. In both clear and cloudy models, drag weakens the dependence of Spitzer nightside brightness temperature on equilibrium temperature; clouds further lower the nightside brightness temperature with the same drag prescription. Clouds also dampen amplitudes of thermal spectra on the nightside and, under small-particle conditions, can even produce emission features. Due to limited dayside cloud cover, our models yield negligible Bond albedos. Finally, interpreting simulated thermal phase curves with energy balance models in near-IR and IR bands tends to overestimate the Bond albedos of ultra-hot Jupiters by an order of magnitude or more.",
+      "authors": [
+        "Xianyu Tan",
+        "Yanhong Lai",
+        "Jinghao Zhang",
+        "Thaddeus D. Komacek",
+        "Tao Cai"
       ],
       "categories": [
         "astro-ph.EP"
       ],
-      "published": "2026-11-18",
-      "updated": "2026-11-18",
-      "pdf_link": "https://arxiv.org/pdf/2611.24854v1.pdf",
-      "abs_link": "https://arxiv.org/abs/2611.24854v1",
+      "published": "2026-11-19",
+      "updated": "2026-11-19",
+      "pdf_link": "https://arxiv.org/pdf/2611.25803v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.25803v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 11,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2611.25803v1/2611.25803v1/figures/temp_cloud_nodrag_lev26.png"
+    },
+    {
+      "id": "2611.26372v1",
+      "title": "Lower-Mass Giants Can Spare Inner Planets during High-Eccentricity Migration",
+      "abstract": "The survival of an inner planet next to a close-in giant is commonly used to argue against high-eccentricity migration (HEM), because the eccentric giant is expected to destabilize the inner system. Existing survival calculations have concentrated on Jupiter-mass migrants, although several Jupiter-sized close-in giants with nearby companions have sub-Jovian masses. We use dissipative three-body integrations to measure the collision-survival boundary at seven giant masses from 0.25 to 1.0,M Juₚ and combine it with uncompressed equilibrium-tide circularization times. At fixed physical periapse, lower giant mass weakens the forcing of the inner orbit and shifts the survival boundary inward. It also shortens the circularization time for a common radius and tidal prescription. These dynamical and tidal limits enclose a viable HEM region in which a sub-Jovian giant can circularize within a system age while retaining an ultra-short-period companion. We screen known companion-hosting close-in giants and perform system-specific integrations of WASP-132; every current candidate lies outside the region. A future system inside it would show directly that HEM can produce a close-in giant while preserving an inner planet, converting companion survival into positive evidence for this formation channel.",
+      "authors": [
+        "Qunfeng Jiang"
+      ],
+      "categories": [
+        "astro-ph.EP"
+      ],
+      "published": "2026-11-19",
+      "updated": "2026-11-19",
+      "pdf_link": "https://arxiv.org/pdf/2611.26372v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.26372v1",
       "is_exoplanet_focused": true,
       "tweetability_score": 8,
       "summary": "",
@@ -140,95 +270,52 @@
         "evidence": "",
         "question": ""
       },
-      "figure_url": "https://arxiv.org/html/2611.24854v1/2611.24854v1/Figs/log_orbitsv2.png"
+      "figure_url": "https://arxiv.org/html/2611.26372v1/2611.26372v1/figure3_wasp132.png"
     },
     {
-      "id": "2611.24811v1",
-      "title": "Potential spectral markers of intrinsic magnetic fields of hot exoplanets in the UV range",
-      "abstract": "A method for detecting the intrinsic magnetic fields of exoplanets, based on the effect of atomic alignment (the redistribution of populations among magnetic sublevels under the action of anisotropic radiation from the host star), has been adapted for observations with the Spektr-UV space telescope. A procedure for selecting sensitive transitions is proposed, and triplet absorption lines in the UV range that are sensitive to alignment are identified. On the basis of three-dimensional aeronomic models of the hot Jupiters KELT-20 b and HAT-P-32 b, absorption spectra in these lines are calculated for cases with and without intrinsic magnetic fields of the exoplanets. Using the Spektr-UV exposure-time calculator, the observability of the effect is assessed, and an observing program is proposed, specifying the optimal duration of individual exposures and the number of transits required to detect the signal.",
+      "id": "2611.25120v1",
+      "title": "On the High Eccentricity Orbit of 51 Eri b and Constraints on Interactions with a Second Companion",
+      "abstract": "The eccentricity of an exoplanet's orbit is a key observational quantity that can be used to infer its dynamical past and predict its future orbital evolution. Planets are expected to emerge from their protoplanetary cradles with roughly circular eccentricities, and non-circular eccentricites to arise from subsequent dynamical processing in the absence of the gas disk. We present an updated orbit for 51 Eridani b based on 5 years of 0.2 mas precision optical interferometry from VLTI/GRAVITY(+). This planet is young ( 20\\,Myr old), temperate (T ₑff 650\\,K), and on a wide orbit (a=9.36\\,au) with an uncertain mass (M b≤12\\,M J). We measured the planet's motion to an exceptionally high precision, confirming that its orbit is very eccentric (eb=0.574±0.003). We observe residuals to the absolute astrometry of the host star based on a single planet orbit that could be attributable to reflex motion from a third body in the system. We construct a two companion orbit model that could explain the apparent reflex motion of 51 Eri A: this model predicts that the putative second companion has Mc[1.0, 2900]₉₅\\%\\,M Juₚ and ac[0.3, 3.1]₉₅\\%\\,au. In this framework, a dynamical interaction between b and ``c\" could have kicked the exterior, lower mass b out onto its present, eccentric orbit. If this signal is astrophysical, and not due to a systematic error, this candidate should be confirmable with Gaia DR4 epoch astrometry in the near future.",
       "authors": [
-        "M. Rumenskikh",
-        "S. S. Sharipov",
-        "I. F. Shaikhislamov",
-        "A. E. Ivanova",
-        "M. P. Golubovsky",
-        "K. S. Shcherbakov",
-        "A. V. Taichenachev",
-        "L. A. Maksimova"
-      ],
-      "categories": [
-        "astro-ph.EP"
-      ],
-      "published": "2026-11-18",
-      "updated": "2026-11-18",
-      "pdf_link": "https://arxiv.org/pdf/2611.24811v1.pdf",
-      "abs_link": "https://arxiv.org/abs/2611.24811v1",
-      "is_exoplanet_focused": true,
-      "tweetability_score": 6,
-      "summary": "",
-      "summary_html": "<p><em>Summary unavailable.</em></p>",
-      "tweet_hook": {
-        "hook": "",
-        "claim": "",
-        "evidence": "",
-        "question": ""
-      },
-      "figure_url": "https://images.unsplash.com/photo-1614732414444-096e5f1122d5?w=800&q=80"
-    },
-    {
-      "id": "2611.24416v1",
-      "title": "Analytical formulae for planet-planet or moon-moon tides",
-      "abstract": "Almost negligible among the solar system planets, mutual tides raised by a secondary on another secondary orbiting the same primary may gain increased importance in tightly packed systems, e.g., between the components of close-in exoplanetary systems or between the moons of gas giants. In this work, we derive an analytical formula for the planet-planet tidal potential and for the effect of mutual tides on the rotational and orbital evolution of moons or planets in a coplanar configuration. The procedure follows closely the steps of W. M. Kaula (1961), and the resulting potential and derived quantities are presented in the form of an expansion into modes of different frequencies (in the temporal domain) and spherical harmonic components (in the spatial domain). The analytical formulae are implemented into a code and compared with an independent numerical solution.",
-      "authors": [
-        "Michaela Walterová",
-        "Marie Běhounková"
-      ],
-      "categories": [
-        "astro-ph.EP"
-      ],
-      "published": "2026-11-18",
-      "updated": "2026-11-18",
-      "pdf_link": "https://arxiv.org/pdf/2611.24416v1.pdf",
-      "abs_link": "https://arxiv.org/abs/2611.24416v1",
-      "is_exoplanet_focused": true,
-      "tweetability_score": 4,
-      "summary": "",
-      "summary_html": "<p><em>Summary unavailable.</em></p>",
-      "tweet_hook": {
-        "hook": "",
-        "claim": "",
-        "evidence": "",
-        "question": ""
-      },
-      "figure_url": "https://arxiv.org/html/2611.24416v1/2611.24416v1/geometry.png"
-    },
-    {
-      "id": "2611.24397v1",
-      "title": "Asgard/NOTT: L-band nulling interferometry at the VLTI IV. Prospects for characterising hot exozodiacal dust",
-      "abstract": "Near-infrared interferometric surveys have revealed extended emission around the photosphere of ≈ 40 main-sequence stars, attributed to the presence of hot exozodiacal dust (HEZD). A promising technique for investigating this phenomenon is nulling interferometry. The Very Large Telescope Interferometer (VLTI) nulling interferometer NOTT (Nulling Observations of exoplaneTs and dusT) is designed to characterise exoplanets and HEZD in the L' band (3.5-4.0\\,μm). We aim to assess NOTT's potential for the detection and characterisation of HEZD with various instrumental and model parameter configurations. We model the HEZD as an optically thin dust ring, using the nearby Sun-like star τ Ceti with HEZD as a reference model. Applying the end-to-end nulling tool SCIFYsim to model the instrumental response of NOTT to simulated HEZD brightness distributions, we evaluate how variations in HEZD and instrumental parameters affect NOTT's key observables: the photon flux rate and the null depth. We demonstrate that NOTT is capable of disentangling stellar and dust contributions to the signal and detecting HEZD. The null depth and photon flux rate are sensitive to the HEZD geometry, with inclination, position angle, and ring location having the strongest impact on the signal. Although the detailed temporal signatures are target-specific, the results can be generalised to other systems. NOTT has the potential to deliver unprecedented sensitivity for HEZD observations, granting access to detailed information through spectral dispersion, beam-combination schemes, and exploitation of sky rotation. This enables more sensitive HEZD detections than is possible with current instruments, and improved spatial constraints on the dust, as well as variability studies.",
-      "authors": [
-        "Kevin Ollmann",
-        "Romain Laugier",
-        "Jeremy P. Scott",
-        "Thomas A. Stuber",
-        "Steve Ertel",
-        "Denis Defrere",
-        "Florian Kirchschlager",
-        "Olivier Absil",
-        "Germain Garreau",
-        "Jean-Charles Augereau",
-        "William Danchi",
-        "Tim D. Pearce",
-        "Sebastian Wolf"
+        "William O. Balmer",
+        "William Thompson",
+        "Rodrigo P. Silva",
+        "Laurent Pueyo",
+        "Sylvestre Lacour",
+        "Alexandre C. M. Correia",
+        "Mathias Nowak",
+        "Dori Blakely",
+        "Marshall D. Perrin",
+        "Allan Denis",
+        "Jason J. Wang",
+        "Jens Kammerer",
+        "Paulo J. V. Garcia",
+        "Jonathan Roberts",
+        "Guillaume Bourdarot",
+        "Gaël Chauvin",
+        "Thomas Henning",
+        "Sasha Hinkley",
+        "Kielan K. W. Hoch",
+        "Pierre Kervella",
+        "Laura Kreidberg",
+        "Roeland P. van der Marel",
+        "Mathilde Mâlin",
+        "Florentin Millour",
+        "Nitya Pandey",
+        "Emily L. Rickman",
+        "Matthias Samland",
+        "Tomas Stolker",
+        "Arthur Vigan",
+        "Jerry W. Xuan"
       ],
       "categories": [
         "astro-ph.EP",
-        "astro-ph.IM"
+        "astro-ph.SR"
       ],
       "published": "2026-11-18",
       "updated": "2026-11-18",
-      "pdf_link": "https://arxiv.org/pdf/2611.24397v1.pdf",
-      "abs_link": "https://arxiv.org/abs/2611.24397v1",
+      "pdf_link": "https://arxiv.org/pdf/2611.25120v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.25120v1",
       "is_exoplanet_focused": true,
       "tweetability_score": 0,
       "summary": "",
@@ -239,7 +326,7 @@
         "evidence": "",
         "question": ""
       },
-      "figure_url": "https://arxiv.org/html/2611.24397v1/2611.24397v1/Transmission_single.png"
+      "figure_url": "https://arxiv.org/html/2611.25120v1/2611.25120v1/cEri_2021-10-28-irdis_fmmf_all_gravi_pointings.png"
     }
   ]
 }
