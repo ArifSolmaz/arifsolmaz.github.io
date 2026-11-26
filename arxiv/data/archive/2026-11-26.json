@@ -1,0 +1,258 @@
+{
+  "announcement_date": "2026-11-26",
+  "updated_at": "2026-11-26T10:19:14.796323+00:00",
+  "category": "astro-ph.EP",
+  "paper_count": 8,
+  "papers": [
+    {
+      "id": "2611.34720v1",
+      "title": "NASA's Pandora SmallSat Mission: Gaussian Processes for Simulated Stellar Heterogeneity Corrections under Imperfect Stellar Models",
+      "abstract": "Stellar contamination is the primary bottleneck limiting robust atmospheric characterization of exoplanets orbiting active K- and M-dwarfs with James Webb Space Telescope (JWST) transmission spectroscopy. Launched in January 2026, NASA's Pandora SmallSat mission addresses this challenge through long-term, simultaneous visible photometry and near-infrared spectroscopy of planet-hosting stars, providing the data to disentangle planetary and stellar signals. However, conventional stellar-contamination corrections rely on stellar atmosphere models, making them vulnerable to model inaccuracies that can impede accurate inferences. Here, we investigate how Pandora data can be used to mitigate stellar contamination without an accurate host star model. We present a Gaussian-process-aided stellar retrieval framework that learns wavelength-dependent deviations from current stellar model grids. We propagate stellar contamination factors directly from the stellar retrieval into the planetary atmospheric retrievals, allowing the atmospheric inference to marginalize over stellar-contamination uncertainty without relying on a biased stellar model. Tests using simulated Pandora observations with realistic stellar model mismatch show that this framework consistently improves the recovery of disk-integrated stellar spectra. For a WASP-69 b-like system, this approach can reduce model-driven biases in inferred atmospheric properties, though degeneracies among stellar and atmospheric parameters can leave residual biases. This flexible, data-driven framework is a promising approach toward accurate stellar-contamination corrections and more robust atmospheric inference even when host-star model grids are inaccurate.",
+      "authors": [
+        "Zoe Ko",
+        "Peter McGill",
+        "Benjamin V. Rackham",
+        "Dániel Apai",
+        "Aishwarya R. Iyer",
+        "Jason F. Rowe",
+        "Luis Welbanks",
+        "Suman Saha",
+        "Yoav Rotman",
+        "Elisa V. Quintana",
+        "Jessie L. Dotson",
+        "Knicole D. Colón",
+        "Thomas Barclay",
+        "Christina Hedges",
+        "Emily A. Gilbert",
+        "Néstor Espinoza",
+        "Trevor O. Foote",
+        "Rae Holcomb",
+        "Benjamin J. Hord",
+        "Brett M. Morris",
+        "Joe P. Renaud"
+      ],
+      "categories": [
+        "astro-ph.SR",
+        "astro-ph.EP",
+        "astro-ph.IM"
+      ],
+      "published": "2026-11-25",
+      "updated": "2026-11-25",
+      "pdf_link": "https://arxiv.org/pdf/2611.34720v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.34720v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 33,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2611.34720v1/2611.34720v1/dataset.png"
+    },
+    {
+      "id": "2611.33214v1",
+      "title": "OSIRIS-REx Lessons Learned Report: Insights from the Journey to Bennu and Back",
+      "abstract": "OSIRIS-REx, NASA's third New Frontiers mission, was the first U.S. mission to return a sample from an asteroid. Proposed in 2010 for an \\811 million lifecycle cost, the mission was completed for \\828 million, returned more than \\$52 million of Headquarters reserves unused, and delivered at least 121.6 g of pristine material from near-Earth asteroid (101955) Bennu in September 2023, more than twice the Level-1 requirement. It did so despite a surface far more rugged than predicted, the discovery of particle ejection, sampling in a regolith much weaker than expected, operations during the COVID-19 pandemic, and an off-nominal parachute sequence on Earth return. This report sets out the lessons learned by the mission's leadership across six areas: leadership and governance; cost, schedule and risk management; systems engineering; mission operations; sample return, curation and analysis; and data archiving. Recurring themes are that a PI-led structure integrating science, engineering and project management gives the discipline to make fast, informed decisions; that reserves and schedule margin spent early to retire risk, such as funding Natural Feature Tracking as a backup navigation system, buy the flexibility to absorb discovery; that heritage hardware reduces risk only when its verification and engineering knowledge are preserved; and that contamination knowledge, sample science and data stewardship are mission-long responsibilities, not post-flight tasks. Each section pairs background with specific recommendations for future sample-return and small-body missions.",
+      "authors": [
+        "Dante S. Lauretta",
+        "Heather L. Enos",
+        "C. W. V. Wolner"
+      ],
+      "categories": [
+        "astro-ph.IM",
+        "astro-ph.EP"
+      ],
+      "published": "2026-11-23",
+      "updated": "2026-11-23",
+      "pdf_link": "https://arxiv.org/pdf/2611.33214v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.33214v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 30,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?w=800&q=80"
+    },
+    {
+      "id": "2611.33404v1",
+      "title": "Planetary biotechnospheres, biotechnosignatures and the search for extraterrestrial intelligence",
+      "abstract": "The concept of planetary intelligence as collective intelligence is used to consider possible evolutionary paths of biotechnospheres that emerge on the intersection of the technosphere with the biosphere and support coupling of the technosphere with the biosphere, thus affecting planetary evolution. In mature biotechnospheres, the intelligence of technologies and the intelligence of life forms, including engineered life forms, could act in concert to perform various tasks (e.g. monitoring and restoring planetary environments and biodiversity; supporting space missions; terraforming cosmic objects). Space exploration can expand biotechnospheres beyond planets and create cosmic ecosystems. Humankind, other civilizations or their intelligent machines may produce biotechnosignatures (i.e. observables and artefacts of biotechnospheres) in the Solar System and beyond. I propose ten possible biotechnosignatures and strategies for the search for these biotechnosignatures in situ and over interstellar distances. For example, if a non-human advanced civilization existed and built biotechnospheres on Earth in the past, the descendants of its engineered bacteria could currently exist on Earth and have properties pertaining to the functions of the ancient bacteria in the biotechnospheres; intelligent technologies created by the ancient civilization could migrate to the Solar System's outer regions; these two scenarios are described as the Cosmic Descendants hypothesis. Interstellar asteroids, free-floating planets, spacecraft and objects gravitationally bound to flyby stars might carry extraterrestrial biotechnospheres and pass through the Solar System. In connection to the fate of post-main-sequence stars and their Oort clouds, the probability for interstellar asteroids to carry biotechnospheres or to be interstellar spacecraft is estimated as very low.",
+      "authors": [
+        "Irina K. Romanovskaya"
+      ],
+      "categories": [
+        "astro-ph.EP"
+      ],
+      "published": "2026-11-24",
+      "updated": "2026-11-24",
+      "pdf_link": "https://arxiv.org/pdf/2611.33404v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.33404v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 27,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?w=800&q=80"
+    },
+    {
+      "id": "2611.33711v1",
+      "title": "Planetary Habitable Zones around Magnetized White Dwarfs",
+      "abstract": "White dwarfs are known to host remnant planetary material, indicating that rocky objects can survive post-main-sequence evolution and migrate into very close orbits. However, the decline of white dwarf luminosity makes it difficult for a planet to remain habitable for long when relying only on the white dwarf's irradiative heating. While several non-radiative energy sources have been proposed, the role of white dwarf magnetism in planetary energy budgets remains largely unexplored. We examine whether magnetic unipolar induction could provide sustained heating for close-in rocky planets. By coupling white dwarf cooling tracks with an orbit-dependent induction model, we evaluate the contribution of ohmic dissipation to planetary surface energy budgets and estimate the upper limit with efficient heat deposition. It is possible for the induction heating to supply a nearly steady surface energy flux for certain orbital distances and stellar spins, partially offsetting the decline in the white dwarf irradiation at late times. This leads to a persistent outer temperate region and, in some cases, a narrow inner zone that emerges after substantial cooling, identifying magnetic induction as a viable long-lived supplement to radiative heating.",
+      "authors": [
+        "Xueyuan Wang",
+        "Cong Yu",
+        "Bo Ma",
+        "Di-Chang Chen",
+        "Jianheng Guo"
+      ],
+      "categories": [
+        "astro-ph.EP",
+        "astro-ph.SR"
+      ],
+      "published": "2026-11-25",
+      "updated": "2026-11-25",
+      "pdf_link": "https://arxiv.org/pdf/2611.33711v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.33711v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 15,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2611.33711v1/2611.33711v1/F1.workflow_diagram.png"
+    },
+    {
+      "id": "2611.33297v1",
+      "title": "The fate of Mercury's ejected mantle",
+      "abstract": "Mercury's unusually high core mass fraction, inferred from its high bulk density, remains difficult to explain. Mantle stripping by a giant impact provides a plausible origin, but without efficient removal, the ejected debris remains on Mercury-crossing orbits and later gets re-accreted. Here, we show that re-accretion of impact debris onto Mercury is inefficient, making a giant-impact origin plausible. We combine N-body simulations of giant-impact ejecta with a collisional evolution model and consideration of processes acting on small dust. We find that, when the ejecta are dominated by large, several hundred km-sized non-vaporized fragments, the debris disk remains optically thin and the collisional cascade is truncated near the radiation-pressure blowout limit, where micron-sized grains are removed. In contrast, if vaporized, the ejecta recondense into mm to cm-sized droplets and form an optically thick disk, in which radiation pressure cannot efficiently truncate the cascade. The debris can then be ground down to nanometre-sized grains, where collisions become predominantly non-fragmenting and dissipative rather than destructive. Subsequent inelastic collisions damp the eccentricities and inclinations of the nanodust, producing a geometrically thin disk whose lifetime is governed by removal through exposed surface layers, where grains acquire large charge-to-mass ratios through solar UV radiation and are rapidly removed by electromagnetic forces. In either scenario, collisional evolution strongly reduces the re-accretion of debris and alleviates a key difficulty for the giant-impact origin of Mercury's large core. More broadly, highly energetic giant impacts in the inner regions of planetary systems may lead to short-lived populations of nanometre-sized dust.",
+      "authors": [
+        "Tuhin Ghosh",
+        "Mark Wyatt",
+        "Alan P. Jackson",
+        "Oliver Shorttle",
+        "Maximilian Sommer"
+      ],
+      "categories": [
+        "astro-ph.EP"
+      ],
+      "published": "2026-11-24",
+      "updated": "2026-11-24",
+      "pdf_link": "https://arxiv.org/pdf/2611.33297v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.33297v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 12,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2611.33297v1/2611.33297v1/snap_0.1_yr.png"
+    },
+    {
+      "id": "2611.33506v1",
+      "title": "Stellar Obliquities of Cold Jupiter and Brown Dwarf Systems I: Spin-Orbit Misalignment Grows with Orbital Eccentricity",
+      "abstract": "Stellar obliquity provides insights into the formation and dynamical evolution of planetary systems. Most obliquity measurements to date have focused on close-in transiting giant planets, whose orbits may have been altered by migration and tidal interactions. In contrast, the stellar obliquities of cold Jupiters, the most common class of giant planets, remain largely unexplored. Here, we measure the minimum stellar obliquity for 69 cold Jupiters and brown dwarfs (Mₚ > 0.3 M_J, a > 1 au), by comparing stellar inclinations derived from stellar rotation measurements with companion orbital inclinations constrained by radial velocities, relative astrometry and Hipparcos-Gaia absolute astrometry. We find that spin-orbit misalignments are common among cold Jupiters and brown dwarf companions, with 19/69 (28 +6/-5%) exhibiting significant misalignments. Furthermore, the stellar obliquities depends strongly on orbital eccentricity, whereby 0/17 (0 +8/-0%) companions with eₒrb <= 0.15 are misaligned, compared to 19/52 (37 +7/-6%) with more eccentric orbits. This pattern reveals a connection between orbital eccentricity and stellar obliquity: companions on nearly circular orbits tend to be aligned with their host stars, whereas those on eccentric orbits exhibit a broader range of obliquities. This finding suggests that post-formation dynamical interactions, such as planet-planet scattering or secular chaos, may play an important role in exciting both orbital eccentricities and spin-orbit misalignments.",
+      "authors": [
+        "Lauren I. Biddle",
+        "Jingwen Zhang"
+      ],
+      "categories": [
+        "astro-ph.EP",
+        "astro-ph.SR"
+      ],
+      "published": "2026-11-24",
+      "updated": "2026-11-24",
+      "pdf_link": "https://arxiv.org/pdf/2611.33506v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.33506v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 8,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2611.33506v1/2611.33506v1/sample_mass_sep.png"
+    },
+    {
+      "id": "2611.34674v1",
+      "title": "A Large Envelope Can Explain Super-Puffs",
+      "abstract": "Super-puffs are a class of exoplanets with extremely low bulk densities, having masses of a few to tens of Earth masses but radii comparable to that of Jupiter. Observations suggest that these inflated radii can persist for Gyr timescales, even for planets receiving relatively low stellar irradiation. The physical mechanisms responsible for maintaining such large radii, however, remain poorly understood. Here, we model the thermal evolution of super-puffs with substantial H/He envelopes using a one-dimensional planetary structure and cooling model. We follow the coupled cooling and contraction of the planetary interior and H/He envelope while self-consistently calculating the planet's hydrostatic and radiative--convective structure. We find that planets with H/He envelope mass fractions of approximately 40-60\\% can retain Jupiter-like radii over Gyr timescales, provided that they begin with sufficiently hot interiors. Massive H/He envelopes substantially delay planetary contraction through two effects: (1) strong thermal blanketing, which slows the cooling of the underlying rocky core, and (2) Kelvin--Helmholtz luminosity generated by the cooling and contraction of the envelope itself, which helps maintain its high entropy and inflated radius. Our results suggest that super-puffs may represent a distinct class of planets that accreted large quantities of nebular gas during formation without undergoing runaway gas accretion.",
+      "authors": [
+        "Xiumin Huang",
+        "Darius Modirrousta-Galian",
+        "Dong Lai",
+        "Ren Wang"
+      ],
+      "categories": [
+        "astro-ph.EP"
+      ],
+      "published": "2026-11-25",
+      "updated": "2026-11-25",
+      "pdf_link": "https://arxiv.org/pdf/2611.34674v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.34674v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 8,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2611.34674v1/2611.34674v1/superpuff_data.png"
+    },
+    {
+      "id": "2611.33290v1",
+      "title": "line racer: Rapid Calculation of Exoplanetary Radiative Opacities",
+      "abstract": "Detailed studies of exoplanet and brown dwarf atmospheres rely on precise knowledge of the spectral features of possible atmospheric species. These features are a result of the interaction of different molecules and atoms with the radiation of the host star or the intrinsic thermal radiation of the object. The interaction is described by the opacity of a species, which determines how much light is absorbed at a given wavelength. The strength and shape of these opacities are very dependent on the temperature and pressure of the atmosphere, which is why they have to be calculated for a wide range of conditions. line racer is a Python package that enables computing high-resolution opacities from large molecular and atomic line lists in an effective manner. It offers users a wide range of options to customize opacity calculations to their needs and available hardware. The code is designed for efficient parallelization on multi-core and multi-node systems and can produce outputs compatible with popular atmospheric modeling and retrieval tools.",
+      "authors": [
+        "David B. Hägele",
+        "Paul Mollière",
+        "Michiel Min"
+      ],
+      "categories": [
+        "astro-ph.IM",
+        "astro-ph.EP"
+      ],
+      "published": "2026-11-24",
+      "updated": "2026-11-24",
+      "pdf_link": "https://arxiv.org/pdf/2611.33290v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.33290v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 5,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://images.unsplash.com/photo-1543722530-d2c3201371e7?w=800&q=80"
+    }
+  ]
+}

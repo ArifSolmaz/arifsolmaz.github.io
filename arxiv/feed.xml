@@ -7,7 +7,7 @@
     <link>https://arifsolmaz.github.io/arxiv</link>
     <description>Daily summaries of exoplanet research papers from arXiv astro-ph.EP, written for general audiences.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 25 Nov 2026 10:47:44 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 26 Nov 2026 10:19:14 +0000</lastBuildDate>
     <atom:link href="https://arifsolmaz.github.io/arxiv/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://arifsolmaz.github.io/arxiv/icon.png</url>
@@ -15,107 +15,79 @@
       <link>https://arifsolmaz.github.io/arxiv</link>
     </image>
     <item>
-      <title>The Jupiter ICy moons Explorer (JUICE) Mission: Post-Launch Status and Mission Overview</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-31467v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-31467v1</guid>
-      <pubDate>Wed, 25 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Olivier Witasse et al.</dc:creator>
+      <title>NASA&#x27;s Pandora SmallSat Mission: Gaussian Processes for Simulated Stellar Heterogeneity Corrections under Imperfect Stellar Models</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-34720v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-34720v1</guid>
+      <pubDate>Thu, 26 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Zoe Ko et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.SR</category>
         <category>astro-ph.EP</category>
         <category>astro-ph.IM</category>
     </item>
     <item>
-      <title>Revisiting TOI-2120 b: Updated mass and radius constraints on a sub-Neptune orbiting an M4 dwarf</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-31406v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-31406v1</guid>
-      <pubDate>Wed, 25 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Rachel B. Fernandes et al.</dc:creator>
+      <title>OSIRIS-REx Lessons Learned Report: Insights from the Journey to Bennu and Back</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-33214v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-33214v1</guid>
+      <pubDate>Thu, 26 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Dante S. Lauretta, Heather L. Enos, C. W. V. Wolner</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.IM</category>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Planetary biotechnospheres, biotechnosignatures and the search for extraterrestrial intelligence</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-33404v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-33404v1</guid>
+      <pubDate>Thu, 26 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Irina K. Romanovskaya</dc:creator>
+      <description><![CDATA[Summary unavailable.]]></description>
+        <category>astro-ph.EP</category>
+    </item>
+    <item>
+      <title>Planetary Habitable Zones around Magnetized White Dwarfs</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-33711v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-33711v1</guid>
+      <pubDate>Thu, 26 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Xueyuan Wang et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.SR</category>
     </item>
     <item>
-      <title>A homogeneous mass campaign of transiting sub-Neptunes around FGK stars</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-32356v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-32356v1</guid>
-      <pubDate>Wed, 25 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Pierrot Lamontagne et al.</dc:creator>
+      <title>The fate of Mercury&#x27;s ejected mantle</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-33297v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-33297v1</guid>
+      <pubDate>Thu, 26 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Tuhin Ghosh et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>A New Population of Jovian Exoplanets Suitable For Direct Imaging with the Habitable Worlds Observatory, the Roman Coronagraph, and ELTs Identified from HARPS Radial-Velocity Data and Hipparcos-Gaia Astrometry</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-31419v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-31419v1</guid>
-      <pubDate>Wed, 25 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Jie Li et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
-    </item>
-    <item>
-      <title>Kepler-404: A near-resonant pair of sub-Neptunes. Reinterpreting a false-positive signal with the novel detection method RIVERS.radon</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-32298v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-32298v1</guid>
-      <pubDate>Wed, 25 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Yannick Eyholzer et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-        <category>astro-ph.IM</category>
-    </item>
-    <item>
-      <title>A comparative analysis of the presence of haze in sub-Neptunes observed with JWST</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-32950v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-32950v1</guid>
-      <pubDate>Wed, 25 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>A. Y. Jaziri, T. Drant, M. Turbet</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>Sulfur chemistry in temperate N₂-dominated exoplanetary atmospheres investigated through experimental simulations: Volatile characterization</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-32250v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-32250v1</guid>
-      <pubDate>Wed, 25 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Louis Maratrat et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>CORALIE Radial Velocity Search for Companions around Evolved Stars (CASCADES) VI. Revised masses and homogeneous estimation of the stellar parameters of 583 red giants</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-32831v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-32831v1</guid>
-      <pubDate>Wed, 25 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Emile Fontanet et al.</dc:creator>
+      <title>Stellar Obliquities of Cold Jupiter and Brown Dwarf Systems I: Spin-Orbit Misalignment Grows with Orbital Eccentricity</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-33506v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-33506v1</guid>
+      <pubDate>Thu, 26 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Lauren I. Biddle, Jingwen Zhang</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
         <category>astro-ph.SR</category>
     </item>
     <item>
-      <title>Eccentricities and inclinations are decoupled in super-Earth systems</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-31617v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-31617v1</guid>
-      <pubDate>Wed, 25 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Sacha Kuhn et al.</dc:creator>
+      <title>A Large Envelope Can Explain Super-Puffs</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-34674v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-34674v1</guid>
+      <pubDate>Thu, 26 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>Xiumin Huang et al.</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.EP</category>
     </item>
     <item>
-      <title>Refining the Architecture of the Quadruple Pre-main-sequence System HD 98800: Improved Orbits, Dynamical Masses, and a Transiting Circumbinary Disk</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-31363v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-31363v1</guid>
-      <pubDate>Wed, 25 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Guillermo Torres et al.</dc:creator>
-      <description><![CDATA[Summary unavailable.]]></description>
-        <category>astro-ph.SR</category>
-        <category>astro-ph.EP</category>
-    </item>
-    <item>
-      <title>An exact and fast solution for the common overlap of three disks in mutual transits and eclipses</title>
-      <link>https://arifsolmaz.github.io/arxiv#paper-2611-31456v1</link>
-      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-31456v1</guid>
-      <pubDate>Wed, 25 Nov 2026 20:00:00 +0000</pubDate>
-      <dc:creator>Michael Hippke, René Heller</dc:creator>
+      <title>line racer: Rapid Calculation of Exoplanetary Radiative Opacities</title>
+      <link>https://arifsolmaz.github.io/arxiv#paper-2611-33290v1</link>
+      <guid isPermaLink="true">https://arifsolmaz.github.io/arxiv#paper-2611-33290v1</guid>
+      <pubDate>Thu, 26 Nov 2026 20:00:00 +0000</pubDate>
+      <dc:creator>David B. Hägele, Paul Mollière, Michiel Min</dc:creator>
       <description><![CDATA[Summary unavailable.]]></description>
         <category>astro-ph.IM</category>
         <category>astro-ph.EP</category>

@@ -1,92 +1,76 @@
 {
-  "announcement_date": "2026-11-25",
-  "updated_at": "2026-11-25T10:47:44.844702+00:00",
+  "announcement_date": "2026-11-26",
+  "updated_at": "2026-11-26T10:19:14.796323+00:00",
   "category": "astro-ph.EP",
-  "paper_count": 11,
+  "paper_count": 8,
   "papers": [
     {
-      "id": "2611.31467v1",
-      "title": "The Jupiter ICy moons Explorer (JUICE) Mission: Post-Launch Status and Mission Overview",
-      "abstract": "The JUpiter ICy Moons Explorer (JUICE) is the first large-class mission in ESA's Cosmic Vision programme. Proposed in 2007 and selected in 2012, it was launched on 14 April 2023 from Kourou and is now en route towards Jupiter. After arrival in July 2031, JUICE will spend approximately four years studying the Jupiter system, performing multiple flybys of three of its Galilean moons, the icy moons Ganymede, Europa, and Callisto, before entering orbit around Ganymede for its final year. The mission will investigate conditions that may support habitable environments within the satellites, all of which are thought to contain subsurface liquid water oceans. Ganymede, the largest moon in the Solar System, is a prime target due to its internal structure and possible subsurface ocean, its unique intrinsic magnetic field, and its complex interactions with Jupiter's magnetosphere, offering a natural laboratory for studying the emergence, evolution and potential habitability of icy worlds around giant planets. JUICE will also conduct a global investigation of the Jupiter system as the archetype for gaseous giant planet systems: it will study Jupiter's atmospheric circulation, composition, and flow of energy from the cloud tops to the thermosphere and characterise the 3D structure of the magnetosphere and its coupling with the ionosphere and thermosphere. Interactions between the moons and the magnetosphere, as well as tidal and gravitational evolution within the Galilean system, will also be assessed. Additional science objectives include the innermost Galilean moon, Io and its neutral cloud and plasma torus, some small inner and irregular moons, and the ring systems. The payload includes 10 instruments and one experiment using the spacecraft's telecommunications system to connect with ground-based radio telescopes, plus an onboard radiation monitor.",
+      "id": "2611.34720v1",
+      "title": "NASA's Pandora SmallSat Mission: Gaussian Processes for Simulated Stellar Heterogeneity Corrections under Imperfect Stellar Models",
+      "abstract": "Stellar contamination is the primary bottleneck limiting robust atmospheric characterization of exoplanets orbiting active K- and M-dwarfs with James Webb Space Telescope (JWST) transmission spectroscopy. Launched in January 2026, NASA's Pandora SmallSat mission addresses this challenge through long-term, simultaneous visible photometry and near-infrared spectroscopy of planet-hosting stars, providing the data to disentangle planetary and stellar signals. However, conventional stellar-contamination corrections rely on stellar atmosphere models, making them vulnerable to model inaccuracies that can impede accurate inferences. Here, we investigate how Pandora data can be used to mitigate stellar contamination without an accurate host star model. We present a Gaussian-process-aided stellar retrieval framework that learns wavelength-dependent deviations from current stellar model grids. We propagate stellar contamination factors directly from the stellar retrieval into the planetary atmospheric retrievals, allowing the atmospheric inference to marginalize over stellar-contamination uncertainty without relying on a biased stellar model. Tests using simulated Pandora observations with realistic stellar model mismatch show that this framework consistently improves the recovery of disk-integrated stellar spectra. For a WASP-69 b-like system, this approach can reduce model-driven biases in inferred atmospheric properties, though degeneracies among stellar and atmospheric parameters can leave residual biases. This flexible, data-driven framework is a promising approach toward accurate stellar-contamination corrections and more robust atmospheric inference even when host-star model grids are inaccurate.",
       "authors": [
-        "Olivier Witasse",
-        "Giuseppe Sarri",
-        "Christian Erd",
-        "Philippe Gare",
-        "Nicolas Altobelli",
-        "Claire Vallat",
-        "Santa Martinez",
-        "Rosario Lorente",
-        "Angela Dietz",
-        "Arnaud Boutonnet",
-        "Frank Budnik",
-        "Ignacio Tanco",
-        "Cyril Cavel",
-        "Frederic Faye",
-        "Didier Radola",
-        "Vincent Poinsignon",
-        "Pasquale Palumbo",
-        "Francois Poulet",
-        "Giuseppe Piccioni",
-        "Yves Langevin",
-        "Kurt D. Retherford",
-        "Randy Gladstone",
-        "Paul Hartogh",
-        "Luciano Iess",
-        "Hauke Hussmann",
-        "Giuseppe Cimò",
-        "Leonid I. Gurvits",
-        "Lorenzo Bruzzone",
-        "Michele K. Dougherty",
-        "Stas Barabash",
-        "Jan-Erik Wahlund",
-        "Olivier Grasset",
-        "Leigh N. Fletcher",
-        "Norbert Krupp",
-        "Gabriele Cremonese",
-        "Ganna Portyankina",
-        "Yohai Kaspi",
-        "David Stevenson",
-        "Dominik Dirkx",
-        "Jeffrey J. Plaut",
-        "Pontus Brandt",
-        "Peter Wurz",
-        "Baptiste Cecconi",
-        "Ingo Mueller-Wodarg",
-        "Hanna Rothkaehl",
-        "Ondrej Santolík",
-        "Patricia Gonçalves",
-        "Wojtek Hajdas",
-        "Emma J. Bunce",
-        "Tim Van Hoolst",
-        "Gabriel Tobie",
-        "Thomas Roatsch",
-        "Federico Tosi",
-        "Cecilia Tubiana",
-        "John Carter",
-        "Adam Masters",
-        "Ronan Modolo",
-        "Elias Roussos",
-        "Thibault Cavalié",
-        "Alexander Stark",
-        "Elke Kersten",
-        "Tilmann Denk",
-        "Athena Coustenis",
-        "Dmitrij Titov",
-        "Michel Blanc",
-        "Jean-Pierre Lebreton",
-        "Veronique Loisel"
+        "Zoe Ko",
+        "Peter McGill",
+        "Benjamin V. Rackham",
+        "Dániel Apai",
+        "Aishwarya R. Iyer",
+        "Jason F. Rowe",
+        "Luis Welbanks",
+        "Suman Saha",
+        "Yoav Rotman",
+        "Elisa V. Quintana",
+        "Jessie L. Dotson",
+        "Knicole D. Colón",
+        "Thomas Barclay",
+        "Christina Hedges",
+        "Emily A. Gilbert",
+        "Néstor Espinoza",
+        "Trevor O. Foote",
+        "Rae Holcomb",
+        "Benjamin J. Hord",
+        "Brett M. Morris",
+        "Joe P. Renaud"
       ],
       "categories": [
+        "astro-ph.SR",
         "astro-ph.EP",
         "astro-ph.IM"
       ],
+      "published": "2026-11-25",
+      "updated": "2026-11-25",
+      "pdf_link": "https://arxiv.org/pdf/2611.34720v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.34720v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 33,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://arxiv.org/html/2611.34720v1/2611.34720v1/dataset.png"
+    },
+    {
+      "id": "2611.33214v1",
+      "title": "OSIRIS-REx Lessons Learned Report: Insights from the Journey to Bennu and Back",
+      "abstract": "OSIRIS-REx, NASA's third New Frontiers mission, was the first U.S. mission to return a sample from an asteroid. Proposed in 2010 for an \\811 million lifecycle cost, the mission was completed for \\828 million, returned more than \\$52 million of Headquarters reserves unused, and delivered at least 121.6 g of pristine material from near-Earth asteroid (101955) Bennu in September 2023, more than twice the Level-1 requirement. It did so despite a surface far more rugged than predicted, the discovery of particle ejection, sampling in a regolith much weaker than expected, operations during the COVID-19 pandemic, and an off-nominal parachute sequence on Earth return. This report sets out the lessons learned by the mission's leadership across six areas: leadership and governance; cost, schedule and risk management; systems engineering; mission operations; sample return, curation and analysis; and data archiving. Recurring themes are that a PI-led structure integrating science, engineering and project management gives the discipline to make fast, informed decisions; that reserves and schedule margin spent early to retire risk, such as funding Natural Feature Tracking as a backup navigation system, buy the flexibility to absorb discovery; that heritage hardware reduces risk only when its verification and engineering knowledge are preserved; and that contamination knowledge, sample science and data stewardship are mission-long responsibilities, not post-flight tasks. Each section pairs background with specific recommendations for future sample-return and small-body missions.",
+      "authors": [
+        "Dante S. Lauretta",
+        "Heather L. Enos",
+        "C. W. V. Wolner"
+      ],
+      "categories": [
+        "astro-ph.IM",
+        "astro-ph.EP"
+      ],
       "published": "2026-11-23",
       "updated": "2026-11-23",
-      "pdf_link": "https://arxiv.org/pdf/2611.31467v1.pdf",
-      "abs_link": "https://arxiv.org/abs/2611.31467v1",
+      "pdf_link": "https://arxiv.org/pdf/2611.33214v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.33214v1",
       "is_exoplanet_focused": true,
-      "tweetability_score": 55,
+      "tweetability_score": 30,
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -98,37 +82,52 @@
       "figure_url": "https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?w=800&q=80"
     },
     {
-      "id": "2611.31406v1",
-      "title": "Revisiting TOI-2120 b: Updated mass and radius constraints on a sub-Neptune orbiting an M4 dwarf",
-      "abstract": "We present updated mass and radius measurements of TOI-2120 b, a short-period (5.80 days) planet orbiting a mid-M dwarf identified by the Transiting Exoplanet Survey Satellite (TESS). TOI-2120 b was previously validated through transit photometry and high-resolution imaging, with a radius near the upper boundary of the radius valley around low-mass stars. We refined the planetary properties by combining archival TESS and ground-based photometry with new transit observations from the ARC 3.5m and Red Buttes Observatory (RBO) telescopes and new precision RV measurements obtained with the Habitable-zone Planet Finder (HPF) spectrograph. Our joint analysis yields a radius of 2.31±0.7 Rearth, larger than previously reported. We also measure a planetary mass of 5.81⁺².⁹⁴₋₂.₆₉ Mearth at 2σ, corresponding to a bulk density of 2.62⁺¹.³⁷₋₁.₂₂ g cm⁻³, positioning TOI-2120 b toward the water-rich region predicted by isocomposition models. Additional RV observations will be needed to further constrain its mass and composition.",
+      "id": "2611.33404v1",
+      "title": "Planetary biotechnospheres, biotechnosignatures and the search for extraterrestrial intelligence",
+      "abstract": "The concept of planetary intelligence as collective intelligence is used to consider possible evolutionary paths of biotechnospheres that emerge on the intersection of the technosphere with the biosphere and support coupling of the technosphere with the biosphere, thus affecting planetary evolution. In mature biotechnospheres, the intelligence of technologies and the intelligence of life forms, including engineered life forms, could act in concert to perform various tasks (e.g. monitoring and restoring planetary environments and biodiversity; supporting space missions; terraforming cosmic objects). Space exploration can expand biotechnospheres beyond planets and create cosmic ecosystems. Humankind, other civilizations or their intelligent machines may produce biotechnosignatures (i.e. observables and artefacts of biotechnospheres) in the Solar System and beyond. I propose ten possible biotechnosignatures and strategies for the search for these biotechnosignatures in situ and over interstellar distances. For example, if a non-human advanced civilization existed and built biotechnospheres on Earth in the past, the descendants of its engineered bacteria could currently exist on Earth and have properties pertaining to the functions of the ancient bacteria in the biotechnospheres; intelligent technologies created by the ancient civilization could migrate to the Solar System's outer regions; these two scenarios are described as the Cosmic Descendants hypothesis. Interstellar asteroids, free-floating planets, spacecraft and objects gravitationally bound to flyby stars might carry extraterrestrial biotechnospheres and pass through the Solar System. In connection to the fate of post-main-sequence stars and their Oort clouds, the probability for interstellar asteroids to carry biotechnospheres or to be interstellar spacecraft is estimated as very low.",
       "authors": [
-        "Rachel B. Fernandes",
-        "Andrea S. J. Lin",
-        "Paul Robertson",
-        "Shubham Kanodia",
-        "Anne Dattilo",
-        "Megan Delamer",
-        "Brock Parker",
-        "Caleb I. Cañas",
-        "Suzanne Hawley",
-        "Henry A. Kobulnicky",
-        "William D. Cochran",
-        "Scott A. Diddams",
-        "Samuel Halverson",
-        "Joe P. Ninan",
-        "Leonardo A. Paredes",
-        "Christian Schwab"
+        "Irina K. Romanovskaya"
+      ],
+      "categories": [
+        "astro-ph.EP"
+      ],
+      "published": "2026-11-24",
+      "updated": "2026-11-24",
+      "pdf_link": "https://arxiv.org/pdf/2611.33404v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.33404v1",
+      "is_exoplanet_focused": true,
+      "tweetability_score": 27,
+      "summary": "",
+      "summary_html": "<p><em>Summary unavailable.</em></p>",
+      "tweet_hook": {
+        "hook": "",
+        "claim": "",
+        "evidence": "",
+        "question": ""
+      },
+      "figure_url": "https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?w=800&q=80"
+    },
+    {
+      "id": "2611.33711v1",
+      "title": "Planetary Habitable Zones around Magnetized White Dwarfs",
+      "abstract": "White dwarfs are known to host remnant planetary material, indicating that rocky objects can survive post-main-sequence evolution and migrate into very close orbits. However, the decline of white dwarf luminosity makes it difficult for a planet to remain habitable for long when relying only on the white dwarf's irradiative heating. While several non-radiative energy sources have been proposed, the role of white dwarf magnetism in planetary energy budgets remains largely unexplored. We examine whether magnetic unipolar induction could provide sustained heating for close-in rocky planets. By coupling white dwarf cooling tracks with an orbit-dependent induction model, we evaluate the contribution of ohmic dissipation to planetary surface energy budgets and estimate the upper limit with efficient heat deposition. It is possible for the induction heating to supply a nearly steady surface energy flux for certain orbital distances and stellar spins, partially offsetting the decline in the white dwarf irradiation at late times. This leads to a persistent outer temperate region and, in some cases, a narrow inner zone that emerges after substantial cooling, identifying magnetic induction as a viable long-lived supplement to radiative heating.",
+      "authors": [
+        "Xueyuan Wang",
+        "Cong Yu",
+        "Bo Ma",
+        "Di-Chang Chen",
+        "Jianheng Guo"
       ],
       "categories": [
         "astro-ph.EP",
         "astro-ph.SR"
       ],
-      "published": "2026-11-23",
-      "updated": "2026-11-23",
-      "pdf_link": "https://arxiv.org/pdf/2611.31406v1.pdf",
-      "abs_link": "https://arxiv.org/abs/2611.31406v1",
+      "published": "2026-11-25",
+      "updated": "2026-11-25",
+      "pdf_link": "https://arxiv.org/pdf/2611.33711v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.33711v1",
       "is_exoplanet_focused": true,
-      "tweetability_score": 28,
+      "tweetability_score": 15,
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -137,129 +136,26 @@
         "evidence": "",
         "question": ""
       },
-      "figure_url": "https://arxiv.org/html/2611.31406v1/2611.31406v1/Transit_PhaseFolded_Grid.png"
+      "figure_url": "https://arxiv.org/html/2611.33711v1/2611.33711v1/F1.workflow_diagram.png"
     },
     {
-      "id": "2611.32356v1",
-      "title": "A homogeneous mass campaign of transiting sub-Neptunes around FGK stars",
-      "abstract": "Sub-Neptunes are among the most common planets in our Galaxy, but are still poorly understood. Addressing their origins and compositions requires precise bulk densities, but literature values come from studies using different radial velocity (RV) extraction methods, stellar activity treatments, and statistical frameworks, which introduces systematic biases that can lead to spurious conclusions in population-level analyses. We conducted a systematic and homogeneous mass-measurement campaign for 12 sub-Neptune systems observed by Kepler and K2, selected for their absent or poorly constrained masses (σM_ₚ/Mₚ > 25\\%). Using new HIRES, HARPS-N, and ESPRESSO spectroscopy as well as archival data, we applied a unified hierarchical Bayesian framework with homogeneous data curation. For HARPS-N and ESPRESSO, we applied four independent extraction pipelines (CCF, SERVAL, LBL, sBART) and combined the posteriors via leave-one-out cross-validation stacking, so that no mass would hinge on a single pipeline. A preferred noise model for each target was selected through a uniform Bayesian procedure. We obtained >3σ masses for four transiting planets: Kepler-21 b (5.66⁺⁰.⁶⁵₋₀.₉₆ M_⊕, 7.61⁺⁰.⁹⁶₋₁.₂₈ g cm⁻³), K2-66 b (17.9 ± 3.2 M_⊕, 4.69 ± 1.31 g cm⁻³), Kepler-538 b (10.8⁺².⁴₋₂.₈ M_⊕), and K2-182 b (20.1⁺⁴.⁵₋₇.₈ M_⊕). We also provide updated masses for the non-transiting giants Kepler-65 e and Kepler-129 d, and upper limits for the remaining 15 signals, including the first constraints for K2-184, K2-244, and K2-269. No new non-transiting companion was detected in any system. The semi-amplitudes of the four reductions span a median of 0.75σ of the stacked posterior, and up to 2.7σ, a systematic that a single-pipeline analysis would ignore.",
+      "id": "2611.33297v1",
+      "title": "The fate of Mercury's ejected mantle",
+      "abstract": "Mercury's unusually high core mass fraction, inferred from its high bulk density, remains difficult to explain. Mantle stripping by a giant impact provides a plausible origin, but without efficient removal, the ejected debris remains on Mercury-crossing orbits and later gets re-accreted. Here, we show that re-accretion of impact debris onto Mercury is inefficient, making a giant-impact origin plausible. We combine N-body simulations of giant-impact ejecta with a collisional evolution model and consideration of processes acting on small dust. We find that, when the ejecta are dominated by large, several hundred km-sized non-vaporized fragments, the debris disk remains optically thin and the collisional cascade is truncated near the radiation-pressure blowout limit, where micron-sized grains are removed. In contrast, if vaporized, the ejecta recondense into mm to cm-sized droplets and form an optically thick disk, in which radiation pressure cannot efficiently truncate the cascade. The debris can then be ground down to nanometre-sized grains, where collisions become predominantly non-fragmenting and dissipative rather than destructive. Subsequent inelastic collisions damp the eccentricities and inclinations of the nanodust, producing a geometrically thin disk whose lifetime is governed by removal through exposed surface layers, where grains acquire large charge-to-mass ratios through solar UV radiation and are rapidly removed by electromagnetic forces. In either scenario, collisional evolution strongly reduces the re-accretion of debris and alleviates a key difficulty for the giant-impact origin of Mercury's large core. More broadly, highly energetic giant impacts in the inner regions of planetary systems may lead to short-lived populations of nanometre-sized dust.",
       "authors": [
-        "Pierrot Lamontagne",
-        "Rafael Luque",
-        "Pedro Figueira",
-        "Carlos Cifuentes",
-        "Matthew C. Nixon",
-        "Luis Welbanks",
-        "Enric Pallé",
-        "Ilaria Carleo",
-        "María Rosa Zapatero Osorio",
-        "Dawid Jankowski",
-        "Grzegorz Nowak",
-        "Natalie M. Batalha",
-        "Joseph M. Akana Murphy",
-        "Gaia Lacedelli",
-        "Felipe Murgas"
+        "Tuhin Ghosh",
+        "Mark Wyatt",
+        "Alan P. Jackson",
+        "Oliver Shorttle",
+        "Maximilian Sommer"
       ],
       "categories": [
         "astro-ph.EP"
       ],
       "published": "2026-11-24",
       "updated": "2026-11-24",
-      "pdf_link": "https://arxiv.org/pdf/2611.32356v1.pdf",
-      "abs_link": "https://arxiv.org/abs/2611.32356v1",
-      "is_exoplanet_focused": true,
-      "tweetability_score": 25,
-      "summary": "",
-      "summary_html": "<p><em>Summary unavailable.</em></p>",
-      "tweet_hook": {
-        "hook": "",
-        "claim": "",
-        "evidence": "",
-        "question": ""
-      },
-      "figure_url": "https://arxiv.org/html/2611.32356v1/2611.32356v1/cargo_mr_displacement.png"
-    },
-    {
-      "id": "2611.31419v1",
-      "title": "A New Population of Jovian Exoplanets Suitable For Direct Imaging with the Habitable Worlds Observatory, the Roman Coronagraph, and ELTs Identified from HARPS Radial-Velocity Data and Hipparcos-Gaia Astrometry",
-      "abstract": "We jointly analyze archival radial-velocity data from the HARPS spectrograph and astrometry from Hipparcos and Gaia to identify and constrain the dynamical properties of new and known long-period jovian exoplanets. Our search yields 14 new confirmed planets with masses of 0.04--6.1 M Juₚ and semimajor axes of 0.1--12.6 au. Planets include a super-Jupiter in a near-Saturn-like orbit producing a strong astrometric acceleration (HIP 669 b), an eccentric Jupiter around a K star with a modest acceleration (HIP 39039 b), a 74-day-orbit warm Neptune (HIP 64550 b), and a giant planet around a Tier A Habitable Worlds Observatory target that may endanger any habitable zone Earth (HIP 17378 b). Three systems show evidence for candidate planets requiring additional data for confirmation. Our modeling also constrains the dynamical masses and orbits for 32 previously known radial-velocity-discovered planets. Orbits, masses, and ages for our sample show that five targets are potentially detectable in reflected light with the Roman Coronagraph, 28 should be imageable in reflected light with the Habitable Worlds Observatory, and six may be detectable in thermal emission with E-ELT/METIS. These results demonstrate the power of combining archival radial-velocity data with astrometry to discover and characterize long-period giant planets, a capability that will only grow with Gaia DR4. It provides a new sample of targets for future direct-imaging observations, and shows a path forward for timely vetting of targets for exo-Earth imaging with the Habitable Worlds Observatory.",
-      "authors": [
-        "Jie Li",
-        "Thayne Currie",
-        "Yiting Li",
-        "Mona El Morsy",
-        "Jack Lubin",
-        "Danielle Bovie",
-        "Nathaniel Lujan",
-        "Erica Dykes"
-      ],
-      "categories": [
-        "astro-ph.EP",
-        "astro-ph.IM"
-      ],
-      "published": "2026-11-23",
-      "updated": "2026-11-23",
-      "pdf_link": "https://arxiv.org/pdf/2611.31419v1.pdf",
-      "abs_link": "https://arxiv.org/abs/2611.31419v1",
-      "is_exoplanet_focused": true,
-      "tweetability_score": 23,
-      "summary": "",
-      "summary_html": "<p><em>Summary unavailable.</em></p>",
-      "tweet_hook": {
-        "hook": "",
-        "claim": "",
-        "evidence": "",
-        "question": ""
-      },
-      "figure_url": "https://arxiv.org/html/2611.31419v1/2611.31419v1/Corner_HIP669.png"
-    },
-    {
-      "id": "2611.32298v1",
-      "title": "Kepler-404: A near-resonant pair of sub-Neptunes. Reinterpreting a false-positive signal with the novel detection method RIVERS.radon",
-      "abstract": "According to the current understanding of planet formation and evolution, (near)-resonant systems should be a common occurrence in nature. However, pairs of planets with period ratios close to commensurability are rarely observed. In this paper, we discuss how observational bias caused by transit timing variations (TTVs) can affect the detection of low signal-to-noise ratio (S/N) planets in transit surveys, playing a role in the lack of representation of these systems. We present an alternative detection method, RIVERS.radon, which overcomes the effect of TTVs on planet detectability by not relying on an exact periodic solution for the transit signal. It leverages 2D representations of the light curve and approximates the transits with a set of local periodic solutions with the use of 2D cross-correlation. We present an application of RIVERS.radon to the near-resonant system Kepler-404, showing that the signal of the false-positive candidate KOI-2768.03 belongs to the planet Kepler-404b and that it is in a near 5:4 resonance with its companion Kepler-404c, causing TTVs of amplitudes 117.64 and 110.09 minutes, respectively. With a photodynamical fit, we retrieve a pair of similar planets, respectively of radii 1.68⁺⁰.⁰⁹₋₀.₀₉ and 1.69⁺⁰.¹⁰₋₀.₁₀\\,R_⊕ and of masses 1.91⁺⁰.⁴¹₋₀.₃₃ and 2.34⁺⁰.⁴⁷₋₀.₄₀\\,M_⊕. We find that these planets exhibit typical (near)-resonant features: their densities are lower than the bulk population of exoplanets, and their orbits are nearly coplanar. Interestingly, the planets are found outside the resonance but at a significant distance from the equilibrium point of the (X rₑs, δ) plane of the Hamiltonian, which is consistent with post-disk instability but somewhat at odds with the observed coplanarity.",
-      "authors": [
-        "Yannick Eyholzer",
-        "Marylyn Rosenqvist",
-        "Adrien Leleu",
-        "Vitaliy Kinakh",
-        "Slava Voloshynovskiy"
-      ],
-      "categories": [
-        "astro-ph.EP",
-        "astro-ph.IM"
-      ],
-      "published": "2026-11-24",
-      "updated": "2026-11-24",
-      "pdf_link": "https://arxiv.org/pdf/2611.32298v1.pdf",
-      "abs_link": "https://arxiv.org/abs/2611.32298v1",
-      "is_exoplanet_focused": true,
-      "tweetability_score": 17,
-      "summary": "",
-      "summary_html": "<p><em>Summary unavailable.</em></p>",
-      "tweet_hook": {
-        "hook": "",
-        "claim": "",
-        "evidence": "",
-        "question": ""
-      },
-      "figure_url": "https://arxiv.org/html/2611.32298v1/2611.32298v1/images/stacked_periodic_ttv.png"
-    },
-    {
-      "id": "2611.32950v1",
-      "title": "A comparative analysis of the presence of haze in sub-Neptunes observed with JWST",
-      "abstract": "Photochemical hazes have been proposed to explain the diversity of sub-Neptune transmission spectra, with early HST observations suggesting a temperature-dependent trend in aerosol opacity. However, JWST observations reveal a more heterogeneous picture. Here, we perform a consistent atmospheric retrieval analysis of eight moderately irradiated JWST-observed sub-Neptunes, LP 791-18 c, TOI-1231 b, TOI-732 c, TOI-270 d, GJ 1214 b, GJ 9827 d, GJ 3090 b, and TOI-421 b, using experimentally derived haze optical properties. We compare haze-free models with two experimentally haze analogues to assess haze evidence and spectral signatures. We find significant evidence for haze in LP 791-18 c, TOI-732 c and GJ 3090 b, while LP 791-18 c and GJ 3090 b evidences may be biased by TLS. Haze-favored solutions are primarily driven by short-wavelength spectral slope rather than characteristic infrared absorption features of the experimental analogues, except for TOI-732 c. We find no clear correlation between retrieved CH4 abundance and haze preference, suggesting that haze formation also depends on atmospheric composition and photochemical conditions. For TOI-270 d, the inferred haze properties vary with the MIRI inter-instrument offset and temperature parameterization without yielding significant evidence for haze, highlighting multidimensional retrieval degeneracies. Overall, our results do not support a ubiquitous haze trend across the JWST sub-Neptune sample, but rather a heterogeneous picture that could nevertheless evolve toward the HST trend with improved characterization of the host stars, more accurate TLS corrections and accounting for different haze types. Broader experimental haze measurements and multi-wavelength observations, including phase curves, will be essential to disentangle atmospheric aerosols from stellar contamination and other retrieval degeneracies.",
-      "authors": [
-        "A. Y. Jaziri",
-        "T. Drant",
-        "M. Turbet"
-      ],
-      "categories": [
-        "astro-ph.EP"
-      ],
-      "published": "2026-11-24",
-      "updated": "2026-11-24",
-      "pdf_link": "https://arxiv.org/pdf/2611.32950v1.pdf",
-      "abs_link": "https://arxiv.org/abs/2611.32950v1",
+      "pdf_link": "https://arxiv.org/pdf/2611.33297v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.33297v1",
       "is_exoplanet_focused": true,
       "tweetability_score": 12,
       "summary": "",
@@ -270,50 +166,15 @@
         "evidence": "",
         "question": ""
       },
-      "figure_url": "https://arxiv.org/html/2611.32950v1/data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg=="
+      "figure_url": "https://arxiv.org/html/2611.33297v1/2611.33297v1/snap_0.1_yr.png"
     },
     {
-      "id": "2611.32250v1",
-      "title": "Sulfur chemistry in temperate N₂-dominated exoplanetary atmospheres investigated through experimental simulations: Volatile characterization",
-      "abstract": "Aims. This study addresses through an experimental approach an understudied aspect of sulfur atmospheric chemistry which is the coupled and complex reactivity existing between sulfur, carbon, and nitrogen elements. Experimental simulations have been used to better characterize the volatile products resulting from the coupling between these three elements and discuss the potential observability of such species. Sulfur chemistry appears as a source of diversified signatures which need to be characterized for the current and the future exploration of exoplanetary atmospheres. Methods. SO₂ and H₂S reactivity was explored experimentally in plasma discharges using mixtures of either pure N₂ or composed of N₂ and CH₄. The volatile species produced in such conditions were analyzed and quantified by in situ mass spectrometry. Results. SO₂ reactivity in the presence of N₂ alone or combined with methane led to the detection of six sulfur species: H₂S, NHSO, S₂O, CS₂, OCS, and CH₃SH. Under the same conditions, the reactivity of H₂S resulted in the observation of CS₂, CS, and CH₃SH. The detection of these species highlights the need to establish a consistent photochemical network describing this sulfur chemistry. Furthermore, the study addresses the detectability of these sulfur compounds via transit spectroscopy. Among them, OCS and CS₂, exhibit several detectable bands in the mid-infrared, and constitute promising targets to probe sulfur active chemistry with space- telescopes. In contrast, the detection of the other sulfur volatiles observed appears more challenging at low spectral resolution.",
+      "id": "2611.33506v1",
+      "title": "Stellar Obliquities of Cold Jupiter and Brown Dwarf Systems I: Spin-Orbit Misalignment Grows with Orbital Eccentricity",
+      "abstract": "Stellar obliquity provides insights into the formation and dynamical evolution of planetary systems. Most obliquity measurements to date have focused on close-in transiting giant planets, whose orbits may have been altered by migration and tidal interactions. In contrast, the stellar obliquities of cold Jupiters, the most common class of giant planets, remain largely unexplored. Here, we measure the minimum stellar obliquity for 69 cold Jupiters and brown dwarfs (Mₚ > 0.3 M_J, a > 1 au), by comparing stellar inclinations derived from stellar rotation measurements with companion orbital inclinations constrained by radial velocities, relative astrometry and Hipparcos-Gaia absolute astrometry. We find that spin-orbit misalignments are common among cold Jupiters and brown dwarf companions, with 19/69 (28 +6/-5%) exhibiting significant misalignments. Furthermore, the stellar obliquities depends strongly on orbital eccentricity, whereby 0/17 (0 +8/-0%) companions with eₒrb <= 0.15 are misaligned, compared to 19/52 (37 +7/-6%) with more eccentric orbits. This pattern reveals a connection between orbital eccentricity and stellar obliquity: companions on nearly circular orbits tend to be aligned with their host stars, whereas those on eccentric orbits exhibit a broader range of obliquities. This finding suggests that post-formation dynamical interactions, such as planet-planet scattering or secular chaos, may play an important role in exciting both orbital eccentricities and spin-orbit misalignments.",
       "authors": [
-        "Louis Maratrat",
-        "Adam Yassin Jaziri",
-        "Ludovic Vettier",
-        "Audrey Chatain",
-        "Maeva Millan",
-        "Nathalie Carrasco"
-      ],
-      "categories": [
-        "astro-ph.EP"
-      ],
-      "published": "2026-11-24",
-      "updated": "2026-11-24",
-      "pdf_link": "https://arxiv.org/pdf/2611.32250v1.pdf",
-      "abs_link": "https://arxiv.org/abs/2611.32250v1",
-      "is_exoplanet_focused": true,
-      "tweetability_score": 9,
-      "summary": "",
-      "summary_html": "<p><em>Summary unavailable.</em></p>",
-      "tweet_hook": {
-        "hook": "",
-        "claim": "",
-        "evidence": "",
-        "question": ""
-      },
-      "figure_url": "https://arxiv.org/html/2611.32250v1/2611.32250v1/Vulcain_set_up_article_AA_fig1.png"
-    },
-    {
-      "id": "2611.32831v1",
-      "title": "CORALIE Radial Velocity Search for Companions around Evolved Stars (CASCADES) VI. Revised masses and homogeneous estimation of the stellar parameters of 583 red giants",
-      "abstract": "Giant-star radial-velocity surveys allow us to study how the exoplanet population varies with stellar mass and evolution. However, obtaining accurate estimates of stellar masses for such stars is challenging, as methods like isochrone fitting are prone to large errors due to the degeneracy associated with the closeness of isochrones. We provide a homogeneous re-derivation of the stellar parameters of the CASCADES giant-star survey. This includes parameters obtained from spectral energy distribution fitting, as well as an update of the stellar masses using asteroseismology. We use TESS light curves to measure the frequency of maximum oscillation power, ν mₐₓ, for all the stars when applicable. We re-extract the stellar radii of the survey by fitting broadband photometry with ARIADNE, a spectral energy distribution (SED) fitting package, using priors from spectroscopy for the effective temperature, metallicity and g. By using scaling relations, we compute revised estimates of the stellar masses of targets with a ν mₐₓ measurement. We obtain new estimates of mass for 583 out of the 640 stars of the survey. These revised masses are typically 15 to 20% lower (median difference of -0.35\\,M_☉) than the ones obtained by isochrone fitting, in particular for low-metallicity stars for which this effect is stronger. These new masses impact the overall mass distribution of the sample, whose median decreases from 2.11\\,M_☉ to 1.65\\,M_☉. These revised masses provide the basis for future occurrence-rate analyses aiming to study the link between host-star mass and planet occurrence. They also highlight the uncertainties associated with the determination of masses for evolved stars.",
-      "authors": [
-        "Emile Fontanet",
-        "Stéphane Udry",
-        "Damien Ségransan",
-        "Patrick Eggenberger",
-        "Pedro Figueira",
-        "João P. Faria"
+        "Lauren I. Biddle",
+        "Jingwen Zhang"
       ],
       "categories": [
         "astro-ph.EP",
@@ -321,37 +182,8 @@
       ],
       "published": "2026-11-24",
       "updated": "2026-11-24",
-      "pdf_link": "https://arxiv.org/pdf/2611.32831v1.pdf",
-      "abs_link": "https://arxiv.org/abs/2611.32831v1",
-      "is_exoplanet_focused": true,
-      "tweetability_score": 9,
-      "summary": "",
-      "summary_html": "<p><em>Summary unavailable.</em></p>",
-      "tweet_hook": {
-        "hook": "",
-        "claim": "",
-        "evidence": "",
-        "question": ""
-      },
-      "figure_url": "https://arxiv.org/html/2611.32831v1/2611.32831v1/fig01_hr_diagram.png"
-    },
-    {
-      "id": "2611.31617v1",
-      "title": "Eccentricities and inclinations are decoupled in super-Earth systems",
-      "abstract": "Recent work on the longterm evolution of the inner Solar System has shown that the inclination contribution to the Angular Momentum Deficit (AMD) is almost constant even though inclinations and eccentricities are highly coupled in expansions of the perturbing function. We wish to characterize the conservation of the eccentricity AMD and inclination AMD, respectively describing the average eccentricity and mutual inclination of planetary orbits, beyond the case of the Solar System. We aim at showing that this conservation is a general feature of the stable planetary systems dynamics, in particular, in the context of low mass multiplanetary systems. We perform a series of numerical simulations using both N-body and secular codes to study the dynamics over billions of orbits. Taking as a template four equal mass Super-Earth with non uniform orbital spacing, we consider sets of systems with different AMD and use the orbital elements evolution to assess the conservation of inclination and eccentricity AMD components. For stable systems, the inclination AMD and eccentricity AMD relative variation is typically below 1%, making them quasi-integrals of motion. At low AMD, despite short Lyapunov timescales, the secular diffusion is confined and the dynamics almost quasi-periodic. As the AMD increases, the emergence of large scale secular chaos only weakly affects the conservation of the quasi-integrals, which breaks when systems become fully unstable. The eccentricity and inclination evolution (as measured by the variation of their AMD contributions) are largely decoupled for low mass multiplanetary systems. Combined with the weak diffusion of the Laplace-Lagrange modes at low AMD, these findings paint a picture where the secular dynamics are not necessarily ergodic. The uncovering of these quasi-integrals opens a new path to relate the observed planetary architecture to its formation.",
-      "authors": [
-        "Sacha Kuhn",
-        "Antoine C. Petit",
-        "Federico Mogavero",
-        "Aurélien Crida"
-      ],
-      "categories": [
-        "astro-ph.EP"
-      ],
-      "published": "2026-11-23",
-      "updated": "2026-11-23",
-      "pdf_link": "https://arxiv.org/pdf/2611.31617v1.pdf",
-      "abs_link": "https://arxiv.org/abs/2611.31617v1",
+      "pdf_link": "https://arxiv.org/pdf/2611.33506v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.33506v1",
       "is_exoplanet_focused": true,
       "tweetability_score": 8,
       "summary": "",
@@ -362,38 +194,27 @@
         "evidence": "",
         "question": ""
       },
-      "figure_url": "https://arxiv.org/html/2611.31617v1/2611.31617v1/Springs_sketch.png"
+      "figure_url": "https://arxiv.org/html/2611.33506v1/2611.33506v1/sample_mass_sep.png"
     },
     {
-      "id": "2611.31363v1",
-      "title": "Refining the Architecture of the Quadruple Pre-main-sequence System HD 98800: Improved Orbits, Dynamical Masses, and a Transiting Circumbinary Disk",
-      "abstract": "We present new spectroscopic and interferometric observations of the pre-main-sequence hierarchical quadruple system HD 98800, a member of the nearby TW Hya association. Our radial velocity monitoring extends the total coverage to over 36 years, sampling the periastron passage in the 240-yr outer orbit. By combining these velocities with new and archival interferometric observations of both inner binaries (A and B), we significantly refine the system orbits and constrain the dynamical masses of all four stars to ≤ 2.6 percent. The resulting stellar properties (masses, effective temperatures, and absolute magnitudes) are found to agree well with current stellar evolution models. Notably, binary B hosts a known circumbinary disk in a polar orientation. Our interferometric imaging, as well as ground-based photometry by others, capture binary A currently passing directly behind the disk, a striking alignment given the outer orbit's long period. We use the photometry to infer the optical extinction produced by the disk material. The eclipse is expected to last about a decade, and offers an unprecedented opportunity to probe the structure and composition of the potentially planet-forming disk. Our refined orbits and component masses provide a robust dynamical framework to support ongoing and future studies of this unique event.",
+      "id": "2611.34674v1",
+      "title": "A Large Envelope Can Explain Super-Puffs",
+      "abstract": "Super-puffs are a class of exoplanets with extremely low bulk densities, having masses of a few to tens of Earth masses but radii comparable to that of Jupiter. Observations suggest that these inflated radii can persist for Gyr timescales, even for planets receiving relatively low stellar irradiation. The physical mechanisms responsible for maintaining such large radii, however, remain poorly understood. Here, we model the thermal evolution of super-puffs with substantial H/He envelopes using a one-dimensional planetary structure and cooling model. We follow the coupled cooling and contraction of the planetary interior and H/He envelope while self-consistently calculating the planet's hydrostatic and radiative--convective structure. We find that planets with H/He envelope mass fractions of approximately 40-60\\% can retain Jupiter-like radii over Gyr timescales, provided that they begin with sufficiently hot interiors. Massive H/He envelopes substantially delay planetary contraction through two effects: (1) strong thermal blanketing, which slows the cooling of the underlying rocky core, and (2) Kelvin--Helmholtz luminosity generated by the cooling and contraction of the envelope itself, which helps maintain its high entropy and inflated radius. Our results suggest that super-puffs may represent a distinct class of planets that accreted large quantities of nebular gas during formation without undergoing runaway gas accretion.",
       "authors": [
-        "Guillermo Torres",
-        "John D. Monnier",
-        "Gail H. Schaefer",
-        "Andrew F. Boden",
-        "Matthew J. Holman",
-        "Stefan Kraus",
-        "Noura Ibrahim",
-        "James W. Davidson,",
-        "Elliott P. Horch",
-        "Lisa Prato",
-        "David W. Latham",
-        "Robert P. Stefanik",
-        "Narsireddy Anugu",
-        "Claire L. Davies"
+        "Xiumin Huang",
+        "Darius Modirrousta-Galian",
+        "Dong Lai",
+        "Ren Wang"
       ],
       "categories": [
-        "astro-ph.SR",
         "astro-ph.EP"
       ],
-      "published": "2026-11-23",
-      "updated": "2026-11-23",
-      "pdf_link": "https://arxiv.org/pdf/2611.31363v1.pdf",
-      "abs_link": "https://arxiv.org/abs/2611.31363v1",
+      "published": "2026-11-25",
+      "updated": "2026-11-25",
+      "pdf_link": "https://arxiv.org/pdf/2611.34674v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.34674v1",
       "is_exoplanet_focused": true,
-      "tweetability_score": 0,
+      "tweetability_score": 8,
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -402,26 +223,27 @@
         "evidence": "",
         "question": ""
       },
-      "figure_url": "https://arxiv.org/html/2611.31363v1/2611.31363v1/PastedGraphic-1.png"
+      "figure_url": "https://arxiv.org/html/2611.34674v1/2611.34674v1/superpuff_data.png"
     },
     {
-      "id": "2611.31456v1",
-      "title": "An exact and fast solution for the common overlap of three disks in mutual transits and eclipses",
-      "abstract": "The area common to three disks determines how much light is blocked during mutual events of transiting planets, moons, and eclipsing multiple stars. We present a new solution that removes every case distinction from the evaluation and corrects several errors in earlier work. We prove that a non-degenerate overlap has at most four corners, which reduces the geometry to five topologies that a single directed walk along the boundary arcs resolves. Green's theorem then yields the area as a sum of circular segments and a vertex polygon. The evaluation needs one arctangent per arc, suffers no subtractive cancellation, and handles arcs longer than π without a special case. We verify the solution for all cases and show that the algorithm is componentwise backward stable. Five public packages that compute the same area fail on some of our test configurations, either through undefined values, missing topologies, or lost precision. Our complete computation takes 45 ns per configuration on one CPU core, which is four to several thousand times faster than the public packages. The same decomposition also delivers the centroid of the overlap in closed form.",
+      "id": "2611.33290v1",
+      "title": "line racer: Rapid Calculation of Exoplanetary Radiative Opacities",
+      "abstract": "Detailed studies of exoplanet and brown dwarf atmospheres rely on precise knowledge of the spectral features of possible atmospheric species. These features are a result of the interaction of different molecules and atoms with the radiation of the host star or the intrinsic thermal radiation of the object. The interaction is described by the opacity of a species, which determines how much light is absorbed at a given wavelength. The strength and shape of these opacities are very dependent on the temperature and pressure of the atmosphere, which is why they have to be calculated for a wide range of conditions. line racer is a Python package that enables computing high-resolution opacities from large molecular and atomic line lists in an effective manner. It offers users a wide range of options to customize opacity calculations to their needs and available hardware. The code is designed for efficient parallelization on multi-core and multi-node systems and can produce outputs compatible with popular atmospheric modeling and retrieval tools.",
       "authors": [
-        "Michael Hippke",
-        "René Heller"
+        "David B. Hägele",
+        "Paul Mollière",
+        "Michiel Min"
       ],
       "categories": [
         "astro-ph.IM",
         "astro-ph.EP"
       ],
-      "published": "2026-11-23",
-      "updated": "2026-11-23",
-      "pdf_link": "https://arxiv.org/pdf/2611.31456v1.pdf",
-      "abs_link": "https://arxiv.org/abs/2611.31456v1",
+      "published": "2026-11-24",
+      "updated": "2026-11-24",
+      "pdf_link": "https://arxiv.org/pdf/2611.33290v1.pdf",
+      "abs_link": "https://arxiv.org/abs/2611.33290v1",
       "is_exoplanet_focused": true,
-      "tweetability_score": 0,
+      "tweetability_score": 5,
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -430,7 +252,7 @@
         "evidence": "",
         "question": ""
       },
-      "figure_url": "https://arxiv.org/html/2611.31456v1/2611.31456v1/accuracy.png"
+      "figure_url": "https://images.unsplash.com/photo-1543722530-d2c3201371e7?w=800&q=80"
     }
   ]
 }
