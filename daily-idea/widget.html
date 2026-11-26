@@ -3,59 +3,54 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Idea of the day &mdash; Lava World Atmosphere Demographics — Mining the Ultra-Short-Period Population for Magma-Ocean Volatile Fingerprints</title>
+<title>Idea of the day &mdash; Systematic Search for Exoplanetary Ring Systems via Ingress–Egress Morphology Decomposition in Kepler Long-Cadence Data</title>
 <link rel="stylesheet" href="widget.css"/>
 </head>
 <body>
 <section class="exo-daily" aria-label="Exoplanet idea of the day">
   <header class="exo-daily__head">
     <span class="exo-daily__eyebrow">Exoplanet idea of the day</span>
-    <time class="exo-daily__date" datetime="2026-11-25">2026-11-25</time>
+    <time class="exo-daily__date" datetime="2026-11-26">2026-11-26</time>
   </header>
-  <h2 class="exo-daily__title">Lava World Atmosphere Demographics — Mining the Ultra-Short-Period Population for Magma-Ocean Volatile Fingerprints</h2>
+  <h2 class="exo-daily__title">Systematic Search for Exoplanetary Ring Systems via Ingress–Egress Morphology Decomposition in Kepler Long-Cadence Data</h2>
   <div class="exo-daily__premise">
-    <p>JWST recently detected a thick atmosphere on TOI-561b, a small, scorching-hot rocky planet orbiting one of the oldest stars in the Milky Way — a planet that, under prevailing models, should have been stripped bare long ago. This discovery, alongside the confirmed atmosphere on 55 Cancri e, suggests that magma-ocean outgassing can sustain secondary atmospheres even under extreme irradiation. Yet no systematic demographic study has asked: across the full population of known ultra-short-period (USP) planets, which ones should harbor magma-ocean atmospheres, and what does the presence or absence of such atmospheres tell us about interior composition and mantle volatile budgets?</p>
-<p>The idea is to build a predictive framework — grounded in bulk density, irradiation environment, and host-star age/activity — and test it against JWST secondary eclipse and phase curve observations as they accumulate. The key scientific leverage is that magma-ocean atmospheres are not primordial. Their composition (SiO, Na, K, SiO₂, FeO vapors) is set by the rock vapor equilibrium of the mantle, making them direct probes of interior mineralogy in a way that no other technique currently achieves.</p>
+    <p>Despite Saturn being one of our solar system's most visually iconic objects, <strong>no exoplanetary ring system has been confirmed around a transiting planet</strong>. Previous searches have focused on anomalous transit depth (a ringed planet mimics a larger planet) or gross light-curve shape. However, a ring system's most diagnostic signature is subtler: the <em>morphology</em> of ingress and egress should differ from a spherical planet because the ring's projected cross-section is not circularly symmetric. A tilted ring produces a characteristic asymmetry — the ingress and egress durations differ, and the curvature of the light curve during these phases departs from the standard limb-darkening model. This has been modeled theoretically but never systematically exploited across a large sample with modern Bayesian inference.</p>
   </div>
   <details class="exo-daily__more">
     <summary>Read the full proposal</summary>
     <div class="exo-daily__full">
       <h3>Scientific Premise</h3>
-<p>JWST recently detected a thick atmosphere on TOI-561b, a small, scorching-hot rocky planet orbiting one of the oldest stars in the Milky Way — a planet that, under prevailing models, should have been stripped bare long ago. This discovery, alongside the confirmed atmosphere on 55 Cancri e, suggests that magma-ocean outgassing can sustain secondary atmospheres even under extreme irradiation. Yet no systematic demographic study has asked: across the full population of known ultra-short-period (USP) planets, which ones should harbor magma-ocean atmospheres, and what does the presence or absence of such atmospheres tell us about interior composition and mantle volatile budgets?</p>
-<p>The idea is to build a predictive framework — grounded in bulk density, irradiation environment, and host-star age/activity — and test it against JWST secondary eclipse and phase curve observations as they accumulate. The key scientific leverage is that magma-ocean atmospheres are not primordial. Their composition (SiO, Na, K, SiO₂, FeO vapors) is set by the rock vapor equilibrium of the mantle, making them direct probes of interior mineralogy in a way that no other technique currently achieves.</p>
+<p>Despite Saturn being one of our solar system's most visually iconic objects, <strong>no exoplanetary ring system has been confirmed around a transiting planet</strong>. Previous searches have focused on anomalous transit depth (a ringed planet mimics a larger planet) or gross light-curve shape. However, a ring system's most diagnostic signature is subtler: the <em>morphology</em> of ingress and egress should differ from a spherical planet because the ring's projected cross-section is not circularly symmetric. A tilted ring produces a characteristic asymmetry — the ingress and egress durations differ, and the curvature of the light curve during these phases departs from the standard limb-darkening model. This has been modeled theoretically but never systematically exploited across a large sample with modern Bayesian inference.</p>
 <h3>Target Datasets</h3>
 <ul>
-<li><strong>NASA Exoplanet Archive</strong> for the full USP planet catalog (P &lt; 1 day): masses, radii, densities, host-star properties.</li>
-<li><strong>JWST Cycle 1–4 archival spectra</strong> (NIRSpec, MIRI) for secondary eclipses and thermal emission of USP rocky planets (55 Cnc e, TOI-561b, GJ 367b, K2-141b, LHS 3844b, and others observed as part of GO programs).</li>
-<li><strong>TESS phase curves</strong> of USP planets — even non-detections constrain dayside brightness temperatures and therefore surface/atmospheric thermal budgets.</li>
-<li><strong>Spitzer 4.5 μm archival eclipses</strong> for supplementary thermal constraints.</li>
+<li><strong>Kepler DR25</strong> long-cadence and short-cadence light curves for all confirmed and candidate giant planets (R &gt; 6 R_Earth) with well-sampled transits</li>
+<li><strong>TESS</strong> full-frame image light curves for bright giant planet hosts (for independent validation)</li>
+<li><strong>Spitzer</strong> secondary eclipse and phase curve data where available (to constrain thermal emission and break ring-vs-oblateness degeneracy)</li>
 </ul>
 <h3>Novelty</h3>
-<p>Individual lava-world atmosphere detections are being published one at a time. What is missing is a population-level analysis that asks: given interior structure models and magma-ocean thermochemistry, can we predict which USP planets should retain rock-vapor atmospheres and which should not? The detection of an atmosphere on TOI-561b (an ancient, metal-poor star) immediately challenges the expectation that old, heavily irradiated planets lose atmospheres. A systematic census would turn individual surprises into a testable demographic trend linking mantle composition, stellar environment, and atmospheric retention.</p>
+<p>A 2025 TESS-based search of 308 candidates found 6 statistically favored ringed models, but none was conclusive — partly because TESS's 2-minute cadence and shorter baselines limit ingress/egress sampling. Kepler's 4-year baseline and ~1-minute short-cadence mode for many targets provide far superior ingress/egress morphology constraints. The key novelty here is <strong>not just searching for rings, but building a hierarchical Bayesian framework</strong> that simultaneously fits for planetary oblateness, ring optical depth (as a function of wavelength if multi-band data exist), ring inclination, and ring inner/outer radii — while marginalizing over stellar limb darkening and instrumental systematics. This converts each non-detection into a quantitative <em>upper limit</em> on ring size/opacity, enabling population-level statements (e.g., "fewer than X% of warm Jupiters host Saturn-like ring systems").</p>
 <h3>Concrete Workflow</h3>
 <ol>
-<li>Compile the complete USP planet sample (~40–50 planets with measured masses and radii) from the NASA Exoplanet Archive.</li>
-<li>For each planet, compute the expected magma-ocean vapor pressure and atmospheric scale height using published rock-vapor-equilibrium codes (e.g., MAGMA, VapoRock), parameterized by plausible mantle compositions (Earth-like BSE, Mg-rich, Fe-rich).</li>
-<li>Model atmospheric escape rates under each planet's XUV environment using host-star activity proxies (rotation period, X-ray luminosity from eROSITA or archival XMM/Chandra).</li>
-<li>Predict a binary outcome (atmosphere-retaining vs. stripped) for each target and rank by observational accessibility (emission signal-to-noise in MIRI/NIRSpec).</li>
-<li>Cross-match predictions against existing JWST and Spitzer secondary eclipse detections and non-detections.</li>
-<li>Perform a Bayesian hierarchical analysis: what mantle composition distribution across the USP population best explains the observed detection/non-detection pattern?</li>
+<li>Select all Kepler giant planets with at least 10 well-observed transits (to enable phase-folding for high-SNR ingress/egress profiles). Expected sample: ~200 systems.</li>
+<li>Implement a fast analytic transit+ring model (building on Zuluaga et al. 2015's framework) in a differentiable code (JAX/NumPyro) to enable gradient-based Bayesian inference.</li>
+<li>For each system, fit four nested models: (a) spherical planet, (b) oblate planet, (c) spherical planet + ring, (d) oblate planet + ring. Use Bayesian model comparison (evidence ratios) to rank.</li>
+<li>For the top candidates, validate against TESS data (different bandpass → different ring opacity if rings are icy/dusty) and check for secondary eclipse depth anomalies (a ring would increase geometric albedo).</li>
+<li>Compile population-level ring occurrence rate upper limits as a function of planet mass, orbital period, and stellar irradiation.</li>
 </ol>
 <h3>Expected Signal / Observable</h3>
-<p>Secondary eclipse depths of 50–200 ppm in MIRI bands for planets with rock-vapor atmospheres (SiO, Na features), versus bare-rock blackbody emission for stripped surfaces. The key discriminant is the ratio of optical (TESS) to infrared (MIRI 15 μm) eclipse depths: a planet with a greenhouse atmosphere will show a steeper spectral slope than a bare rock.</p>
+<p>For a Saturn-analog ring (1.5–2.5 planetary radii, optical depth ~0.5) around a Jupiter-sized planet at 0.1–1 AU, the ingress/egress asymmetry is ~50–200 ppm above the symmetric model — detectable in phase-folded Kepler short-cadence data at 2–5 sigma for bright hosts. Even non-detections constrain ring properties: the population-level statement "warm Jupiters have ring occurrence &lt;5% at 95% confidence" would be a publishable first.</p>
 <h3>Possible False Positives</h3>
 <ul>
-<li>Residual stellar variability mimicking shallow eclipse depth variations.</li>
-<li>Instrumental systematics in MIRI at the ~50 ppm level for faint targets.</li>
-<li>Degeneracy between thin rock-vapor atmospheres and high-albedo bare surfaces (both reduce dayside brightness temperature relative to a zero-albedo blackbody).</li>
-<li>Uncertainty in XUV flux histories, which propagates into escape-rate predictions.</li>
+<li>Starspot crossings during ingress/egress can mimic asymmetry (mitigated by requiring consistent asymmetry across many epochs and checking for spot-induced chromaticity in multi-quarter data).</li>
+<li>Planetary oblateness produces a similar but subtly different ingress/egress signature (mitigated by fitting both oblate and ringed models simultaneously).</li>
+<li>TTVs causing slight epoch-to-epoch transit shape variations that, when phase-folded, produce spurious asymmetries (mitigated by fitting individual transit times before folding).</li>
 </ul>
-<h3>Why This Matters</h3>
-<p>This would be the first population-level test of magma-ocean atmospheric theory. It directly constrains mantle volatile inventories — a fundamental unknown in rocky planet geophysics — using only photometric data. If the detection pattern correlates with host-star metallicity or age, it opens a window into how rocky planet interiors evolve on Gyr timescales, which is central to understanding habitability.</p>
+<h3>Why It Matters</h3>
+<p>Rings are a natural outcome of tidal disruption, giant impacts, and satellite dynamics — all processes fundamental to planetary system evolution. A population-level constraint on ring occurrence would test theories of ring longevity (are rings transient or stable over Gyr?), inform models of satellite formation around giant exoplanets, and — if a detection is made — open an entirely new phenomenology for characterization with JWST transmission spectroscopy through ring material.</p>
     </div>
   </details>
   <footer class="exo-daily__foot">
-    <span class="exo-daily__meta">Source brief: 2026-04-01</span>
+    <span class="exo-daily__meta">Source brief: 2026-04-07</span>
     <span class="exo-daily__meta">Rotates daily &middot; 66 ideas in the pool</span>
   </footer>
 </section>
