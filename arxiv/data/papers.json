@@ -1,6 +1,6 @@
 {
   "announcement_date": "2026-11-26",
-  "updated_at": "2026-11-26T10:19:14.796323+00:00",
+  "updated_at": "2026-11-27T10:25:34.612241+00:00",
   "category": "astro-ph.EP",
   "paper_count": 8,
   "papers": [
@@ -42,6 +42,7 @@
       "abs_link": "https://arxiv.org/abs/2611.34720v1",
       "is_exoplanet_focused": true,
       "tweetability_score": 33,
+      "figure_url": "https://arxiv.org/html/2611.34720v1/2611.34720v1/dataset.png",
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -49,8 +50,7 @@
         "claim": "",
         "evidence": "",
         "question": ""
-      },
-      "figure_url": "https://arxiv.org/html/2611.34720v1/2611.34720v1/dataset.png"
+      }
     },
     {
       "id": "2611.33214v1",
@@ -71,6 +71,7 @@
       "abs_link": "https://arxiv.org/abs/2611.33214v1",
       "is_exoplanet_focused": true,
       "tweetability_score": 30,
+      "figure_url": "https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?w=800&q=80",
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -78,8 +79,7 @@
         "claim": "",
         "evidence": "",
         "question": ""
-      },
-      "figure_url": "https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?w=800&q=80"
+      }
     },
     {
       "id": "2611.33404v1",
@@ -97,6 +97,7 @@
       "abs_link": "https://arxiv.org/abs/2611.33404v1",
       "is_exoplanet_focused": true,
       "tweetability_score": 27,
+      "figure_url": "https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?w=800&q=80",
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -104,8 +105,7 @@
         "claim": "",
         "evidence": "",
         "question": ""
-      },
-      "figure_url": "https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?w=800&q=80"
+      }
     },
     {
       "id": "2611.33711v1",
@@ -128,6 +128,7 @@
       "abs_link": "https://arxiv.org/abs/2611.33711v1",
       "is_exoplanet_focused": true,
       "tweetability_score": 15,
+      "figure_url": "https://arxiv.org/html/2611.33711v1/2611.33711v1/F1.workflow_diagram.png",
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -135,8 +136,7 @@
         "claim": "",
         "evidence": "",
         "question": ""
-      },
-      "figure_url": "https://arxiv.org/html/2611.33711v1/2611.33711v1/F1.workflow_diagram.png"
+      }
     },
     {
       "id": "2611.33297v1",
@@ -158,6 +158,7 @@
       "abs_link": "https://arxiv.org/abs/2611.33297v1",
       "is_exoplanet_focused": true,
       "tweetability_score": 12,
+      "figure_url": "https://arxiv.org/html/2611.33297v1/2611.33297v1/snap_0.1_yr.png",
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -165,8 +166,7 @@
         "claim": "",
         "evidence": "",
         "question": ""
-      },
-      "figure_url": "https://arxiv.org/html/2611.33297v1/2611.33297v1/snap_0.1_yr.png"
+      }
     },
     {
       "id": "2611.33506v1",
@@ -186,6 +186,7 @@
       "abs_link": "https://arxiv.org/abs/2611.33506v1",
       "is_exoplanet_focused": true,
       "tweetability_score": 8,
+      "figure_url": "https://arxiv.org/html/2611.33506v1/2611.33506v1/sample_mass_sep.png",
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -193,8 +194,7 @@
         "claim": "",
         "evidence": "",
         "question": ""
-      },
-      "figure_url": "https://arxiv.org/html/2611.33506v1/2611.33506v1/sample_mass_sep.png"
+      }
     },
     {
       "id": "2611.34674v1",
@@ -215,6 +215,7 @@
       "abs_link": "https://arxiv.org/abs/2611.34674v1",
       "is_exoplanet_focused": true,
       "tweetability_score": 8,
+      "figure_url": "https://arxiv.org/html/2611.34674v1/2611.34674v1/superpuff_data.png",
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -222,8 +223,7 @@
         "claim": "",
         "evidence": "",
         "question": ""
-      },
-      "figure_url": "https://arxiv.org/html/2611.34674v1/2611.34674v1/superpuff_data.png"
+      }
     },
     {
       "id": "2611.33290v1",
@@ -244,6 +244,7 @@
       "abs_link": "https://arxiv.org/abs/2611.33290v1",
       "is_exoplanet_focused": true,
       "tweetability_score": 5,
+      "figure_url": "https://images.unsplash.com/photo-1543722530-d2c3201371e7?w=800&q=80",
       "summary": "",
       "summary_html": "<p><em>Summary unavailable.</em></p>",
       "tweet_hook": {
@@ -251,8 +252,7 @@
         "claim": "",
         "evidence": "",
         "question": ""
-      },
-      "figure_url": "https://images.unsplash.com/photo-1543722530-d2c3201371e7?w=800&q=80"
+      }
     }
   ]
 }
